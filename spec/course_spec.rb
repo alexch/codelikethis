@@ -13,25 +13,36 @@ describe Course do
 
   it "renders HTML" do
     lessons = Course.new(["foo", "bar"])
-    lessons.to_html.should == "<ul>" +
-        "<li><a href=\"foo/\">foo</a></li>" +
-        "<li><a href=\"bar/\">bar</a></li>" +
+    lessons.to_html.should ==
+        "<h2>Course</h2>" +
+        "<ul>" +
+        "<li><a href=\"/course/foo\">Foo</a></li>" +
+        "<li><a href=\"/course/bar\">Bar</a></li>" +
         "</ul>"
 
   end
 
-  it "lets a subclass define its lessons inline" do
+  class HowToCook < Course
+    lesson "scramble_eggs"
+    lesson "boil_water"
+  end
 
-    class HowToCook < Course
-      lesson "scramble_eggs"
-      lesson "boil_water"
-    end
+
+  it "lets a subclass define its lessons inline" do
 
     HowToCook.new.lesson_names.should == [
         "scramble_eggs",
         "boil_water",
     ]
 
+  end
+
+  it "has a name" do
+    HowToCook.new.name.should == "how_to_cook"
+  end
+
+  it "has a title" do
+    HowToCook.new.title.should == "How To Cook"
   end
 
 end

@@ -1,4 +1,5 @@
 require 'erector'
+require 'active_support'
 
 class Course < Erector::Widget
   def self.lesson lesson_name
@@ -17,13 +18,27 @@ class Course < Erector::Widget
     @lesson_names
   end
 
+  def name
+    self.class.name.underscore
+  end
+
+  def title
+    self.class.name.titleize
+  end
+
   def content
+    h2 title
     ul {
-      @lesson_names.each do |name|
+      @lesson_names.each do |lesson_name|
         li {
-          a name, :href => "#{name}/"
+          a lesson_name.titleize, :href => "/#{self.name}/#{lesson_name}"
         }
       end
     }
   end
+
+  def lesson lesson_name
+    Lesson.new(self, lesson_name)
+  end
+
 end

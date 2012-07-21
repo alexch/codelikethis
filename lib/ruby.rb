@@ -1,4 +1,4 @@
-class RubyForProgrammers < Course
+class Ruby < Course
   lesson "credits"
   lesson "meta"
   lesson "intro"
