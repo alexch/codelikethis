@@ -28,7 +28,7 @@ Matz (Yukihiro Matsumoto), Ruby creator, says:
 
 "For me the purpose of life is partly to have joy. Programmers often feel joy when they can concentrate on the creative side of programming, So Ruby is designed to make programmers happy."
 
-"I wanted a scripting language that was more powerful than Perl, and more object-oriented than Python." 
+"I wanted a scripting language that was more powerful than Perl, and more object-oriented than Python."
 
 * <http://linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html>
 * <http://www.ruby-lang.org/en/about/>
@@ -82,7 +82,7 @@ Please fire up `irb` on your computer and try this out right now!
     @@@ ruby
     >> 2.class
     => Fixnum
-    
+
     >> 2.to_s
     => "2"
 
@@ -109,7 +109,7 @@ Please fire up `irb` on your computer and try this out right now!
     >> puts "foo"
     foo
     => nil
-    
+
 The *output* is `foo\n` but the *value* is `nil`.
 
 # Printing
@@ -180,7 +180,7 @@ With chaining:
         def inc(x); x + 1; end
 
         def inc(x) x + 1; end
-        
+
 # Poetry vs Prose
 
 Other languages are prose:
@@ -201,7 +201,7 @@ Ruby is poetry:
 
     @@@ Ruby
     def titleize s
-      s.split.map{|word| word.capitalize}.join(" ")
+      s.split.map(&:capitalize).join(" ")
     end
 
 Cf. **declarative** vs. **algorithmic**
