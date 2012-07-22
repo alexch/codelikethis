@@ -66,6 +66,16 @@ class AppPage < Erector::Widgets::Page
         margin-left: 2em;
         font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
         max-width: 56em;
+        min-height: 30em;
+      }
+
+      .footer {
+        text-align: center;
+        border-top: 1px solid blue;
+        background: #C8D9E9;
+        font-size: 10pt;
+        min-height: 2em;
+
       }
 
       section.slide {
@@ -140,6 +150,9 @@ class AppPage < Erector::Widgets::Page
     div.main {
       call_block
       widget @widget if @widget
+    }
+    div.footer {
+      text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2012 by Alex Chaffee."
     }
   end
 end
