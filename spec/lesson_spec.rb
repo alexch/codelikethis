@@ -24,7 +24,7 @@ describe Lesson do
     lesson.to_html.should include(
         "<h2>" +
           "<span class=\"course\">" +
-            "<a href=\"/ruby\">" +
+            "<a href=\"/lessons/ruby\">" +
               "Ruby" +
             "</a>" +
           "</span>" +

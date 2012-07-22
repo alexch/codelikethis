@@ -17,7 +17,7 @@ class Lesson < Erector::Widget
   def content
     h2 {
       span.course {
-        a @course.title, href: "/#{@course.name}"  # todo: @course.link_to or something
+        a @course.title, href: "/lessons/#{@course.name}"  # todo: @course.link_to or something
       }
       text " > "
       span.lesson title
@@ -32,7 +32,7 @@ class Lesson < Erector::Widget
   def slides
     here = File.expand_path(File.dirname(__FILE__))
     project = File.expand_path("#{here}/..")
-    slides = Deck::Slide.from_file File.new("#{project}/lessons/#{@course.name}/#{@name}.md")
+    slides = Deck::Slide.from_file File.new("#{project}/public/lessons/#{@course.name}/#{@name}.md")
   end
 
 end

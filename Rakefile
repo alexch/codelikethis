@@ -14,3 +14,8 @@ RSpec::Core::RakeTask.new do |task|
   ]
   task.verbose = false
 end
+
+desc "run app"
+task :run do
+  sh "rerun rackup"
+end

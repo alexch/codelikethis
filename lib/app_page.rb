@@ -5,7 +5,7 @@ class AppPage < Erector::Widgets::Page
 
   def head_content
     font "Museo500"
-    style <<-CSS
+    style raw(<<-CSS)
       body {
         font-family: 'Museo500Regular', 'Arial', 'Sans';
         margin: 0; padding: 0;
@@ -46,13 +46,28 @@ class AppPage < Erector::Widgets::Page
         padding: 2px 20px;
         border-right: 1px solid blue;
       }
+
+      .main {
+        margin-left: 2em;
+        font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
+        max-width: 60em;
+      }
+      .main section.slide {
+        border-top: 1px solid #ddd;
+        padding-left: 1em;
+      }
+      .main section.slide > h2:first-child {
+        margin: 2px 0 2px -4px;
+        font-size: 2em;
+        text-shadow: #ddd 0.1em 0.1em 0.1em;
+      }
     CSS
   end
 
   def body_content
     div.header {
       span.logo { a "Code like this.", href: '/' }
-      span.tagline "opinionated expertise, on demand"
+      span.tagline "opinionated expertise"
     }
     div.nav {
       ul {

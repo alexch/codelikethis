@@ -31,7 +31,7 @@ class Course < Erector::Widget
     ul {
       @lesson_names.each do |lesson_name|
         li {
-          a lesson_name.titleize, :href => "/#{self.name}/#{lesson_name}"
+          a lesson_name.titleize, :href => "/lessons/#{self.name}/#{lesson_name}"
         }
       end
     }

@@ -16,8 +16,8 @@ describe Course do
     lessons.to_html.should ==
         "<h2>Course</h2>" +
         "<ul>" +
-        "<li><a href=\"/course/foo\">Foo</a></li>" +
-        "<li><a href=\"/course/bar\">Bar</a></li>" +
+        "<li><a href=\"/lessons/course/foo\">Foo</a></li>" +
+        "<li><a href=\"/lessons/course/bar\">Bar</a></li>" +
         "</ul>"
 
   end

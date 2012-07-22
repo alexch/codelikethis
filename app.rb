@@ -20,15 +20,18 @@ class App < Sinatra::Base
     AppPage.new.to_html
   end
 
-  get "/:course" do
+  get "/lessons/:course" do
     AppPage.new(:widget => course).to_html
   end
 
-  get "/:course/:lesson" do
-    AppPage.new(:widget => lesson).to_html
+  get "/lessons/:course/:file.:ext" do
+    here = File.expand_path(File.dirname(__FILE__))
+    send_file(File.join(here, "public", "lessons", params[:course], "#{params[:file]}.#{params[:ext]}"))
   end
 
-
+  get "/lessons/:course/:lesson" do
+    AppPage.new(:widget => lesson).to_html
+  end
 
   def course_class
     begin
