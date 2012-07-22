@@ -6,7 +6,7 @@ class Ruby < Course
   lesson "intro"
   # course "ruby_basics"
   # course "ruby_objects"
-
+  lesson "waka-waka"
   lesson "bad_names"
 
 end

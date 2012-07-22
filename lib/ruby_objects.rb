@@ -1,7 +1,6 @@
 require "course"
 
 class RubyObjects < Course
-  lesson "waka-waka"
   lesson "tiers"
   lesson "objects"
   lesson "classes"
