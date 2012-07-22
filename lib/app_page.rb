@@ -1,12 +1,19 @@
 require 'erector'
 
 class AppPage < Erector::Widgets::Page
+  # todo: promote into Page
   def font font_name
     link rel: "stylesheet", href: "/#{font_name}.css", type: "text/css", charset: "utf-8"
   end
 
+  # todo: promote into Page
+  def stylesheet src, attributes = {}
+    link({:rel => "stylesheet", :href => src}.merge(attributes))
+  end
+
   def head_content
     font "Museo500"
+    stylesheet "/coderay.css"
     style raw(<<-CSS)
       body {
         font-family: 'Museo500Regular', 'Arial', 'Sans';
@@ -58,13 +65,16 @@ class AppPage < Erector::Widgets::Page
       .main {
         margin-left: 2em;
         font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-        max-width: 60em;
+        max-width: 56em;
       }
 
       section.slide {
         border-top: 1px solid #ddd;
         padding-left: 1em;
         margin-bottom: 2em;
+      }
+      section.slide h1, section.slide > h2:first-child {
+        font-family: 'Museo500Regular', 'Helvetica Neue', Helvetica, Arial, Sans;
       }
       section.slide > h2:first-child {
         margin: 2px 0 2px -4px;
@@ -85,6 +95,31 @@ class AppPage < Erector::Widgets::Page
         border-left: 2px solid #ddd;
         padding-left: 1em;
       }
+
+      .slide li {
+        margin-bottom: .5em;
+      }
+      .slide li:first-child {
+        margin-top: .5em;
+      }
+
+      .slide pre, code, kbd, samp {
+        font-family:monospace, sans-serif;
+        background: #f4f4f1;
+      }
+      .slide pre {
+        white-space:pre;
+        white-space:pre-wrap;
+        word-wrap:break-word;
+        padding: 1em;
+        border:1px solid #ccc;
+        display: inline-block; /* so it's only as wide as its contents */
+      }
+      .slide code {
+        color:#444;
+        padding: 0 3px;
+      }
+
     CSS
   end
 

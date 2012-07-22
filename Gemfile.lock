@@ -101,8 +101,11 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  coderay
   deckrb
   erector (>= 0.9.0.pre1)
+  json
+  rack-codehighlighter
   rake
   rerun
   rspec
