@@ -1,5 +1,7 @@
+source :rubygems
+
 gem "sinatra"
-gem "erector"
+gem "erector", ">=0.9.0.pre1"
 gem "thin"
 gem "activesupport"
 gem "deckrb"

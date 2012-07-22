@@ -1,4 +1,5 @@
 GEM
+  remote: http://rubygems.org/
   specs:
     ParseTree (3.0.9)
       RubyInline (~> 3.9.0)
@@ -24,7 +25,7 @@ GEM
     erector (0.9.0.pre1)
       treetop (>= 1.2.3)
     eventmachine (0.12.10)
-    ffi (1.0.11)
+    ffi (1.1.0)
     file-tail (1.0.10)
       tins (~> 0.4.3)
     i18n (0.6.0)
@@ -56,14 +57,14 @@ GEM
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
       rspec-mocks (~> 2.11.0)
-    rspec-core (2.11.0)
+    rspec-core (2.11.1)
     rspec-expectations (2.11.1)
       diff-lcs (~> 1.1.3)
     rspec-mocks (2.11.1)
     ruby2ruby (1.3.1)
       ruby_parser (~> 2.0)
       sexp_processor (~> 3.0)
-    ruby_parser (2.0.6)
+    ruby_parser (2.0.5)
       sexp_processor (~> 3.0)
     sexp_processor (3.2.0)
     sinatra (1.3.2)
@@ -75,7 +76,7 @@ GEM
       ruby2ruby (>= 1.2.5)
       ruby_parser (>= 2.0.5)
       sexp_processor (>= 3.0.5)
-    thin (1.3.1)
+    thin (1.4.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
@@ -101,7 +102,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   deckrb
-  erector
+  erector (>= 0.9.0.pre1)
   rake
   rerun
   rspec
