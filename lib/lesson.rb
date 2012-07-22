@@ -10,18 +10,12 @@ class Lesson < Erector::Widget
     @course, @name = course, name
   end
 
-  def title
+  def display_name
     name.titleize
   end
 
   def content
-    h2 {
-      span.course {
-        a @course.title, href: "/lessons/#{@course.name}"  # todo: @course.link_to or something
-      }
-      text " > "
-      span.lesson title
-    }
+    widget Breadcrumbs, :parents => [Courses.new, @course], :display_name => display_name
 
     slides.each do |slide|
       widget slide

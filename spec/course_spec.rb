@@ -22,27 +22,40 @@ describe Course do
 
   end
 
-  class HowToCook < Course
-    lesson "scramble_eggs"
-    lesson "boil_water"
-  end
+  describe "a subclass" do
+    class HowToCook < Course
+      lesson "scramble_eggs"
+      lesson "boil_water"
+    end
 
+    subject { HowToCook.new }
 
-  it "lets a subclass define its lessons inline" do
+    it "lets a subclass define its lessons inline" do
 
-    HowToCook.new.lesson_names.should == [
-        "scramble_eggs",
-        "boil_water",
-    ]
+      HowToCook.new.lesson_names.should == [
+          "scramble_eggs",
+          "boil_water",
+      ]
 
-  end
+    end
 
-  it "has a name" do
-    HowToCook.new.name.should == "how_to_cook"
-  end
+    it "has a name" do
+      subject.name.should == "how_to_cook"
+    end
 
-  it "has a title" do
-    HowToCook.new.title.should == "How To Cook"
+    it "has a title" do
+      subject.title.should == "How To Cook"
+    end
+
+    it "has an href" do
+      subject.href.should == "/lessons/how_to_cook"
+    end
+
+    describe 'Course.descendants' do
+      it "knows all descendants of Course" do
+        Course.descendants.should include(HowToCook)
+      end
+    end
   end
 
 end

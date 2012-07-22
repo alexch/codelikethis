@@ -1,3 +1,5 @@
+require 'erector'
+
 class AppPage < Erector::Widgets::Page
   def font font_name
     link rel: "stylesheet", href: "/#{font_name}.css", type: "text/css", charset: "utf-8"
@@ -46,20 +48,42 @@ class AppPage < Erector::Widgets::Page
         padding: 2px 20px;
         border-right: 1px solid blue;
       }
+      .nav a {
+        text-decoration: none;
+      }
+      .nav a:visited {
+        color: black;
+      }
 
       .main {
         margin-left: 2em;
         font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
         max-width: 60em;
       }
-      .main section.slide {
+
+      section.slide {
         border-top: 1px solid #ddd;
         padding-left: 1em;
+        margin-bottom: 2em;
       }
-      .main section.slide > h2:first-child {
+      section.slide > h2:first-child {
         margin: 2px 0 2px -4px;
         font-size: 2em;
         text-shadow: #ddd 0.1em 0.1em 0.1em;
+      }
+      section.slide > h1 {
+        font-size: 3em;
+      }
+      section.slide.subsection {
+        border-top: 2px solid blue;
+      }
+      section.slide.subsection > h2:first-child {
+        font-size: 3em;
+      }
+      section.slide blockquote {
+        font-style: italic;
+        border-left: 2px solid #ddd;
+        padding-left: 1em;
       }
     CSS
   end
@@ -72,7 +96,9 @@ class AppPage < Erector::Widgets::Page
     div.nav {
       ul {
         li "Blog"
-        li "Lessons"
+        li {
+          a "Lessons", href: "/lessons"
+        }
         li "Labs"
       }
     }

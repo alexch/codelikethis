@@ -1,7 +1,15 @@
 require 'erector'
 require 'active_support'
 
+require 'breadcrumbs'
+require 'courses'
+
 class Course < Erector::Widget
+  # http://stackoverflow.com/questions/2393697/look-up-all-descendants-of-a-class-in-ruby
+  def self.descendants
+    ObjectSpace.each_object(Class).select { |klass| klass < self }
+  end
+
   def self.lesson lesson_name
     default_lessons << lesson_name
   end
@@ -22,16 +30,21 @@ class Course < Erector::Widget
     self.class.name.underscore
   end
 
-  def title
+  def display_name
     self.class.name.titleize
   end
 
+  def href
+    "/lessons/#{name}"
+  end
+
   def content
-    h2 title
+    widget Breadcrumbs, parents: [Courses.new], display_name: self.display_name
     ul {
       @lesson_names.each do |lesson_name|
+
         li {
-          a lesson_name.titleize, :href => "/lessons/#{self.name}/#{lesson_name}"
+          a lesson_name.titleize, :href => "#{self.href}/#{lesson_name}"
         }
       end
     }

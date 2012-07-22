@@ -2,18 +2,21 @@ require 'sinatra/base'
 require 'erector'
 
 here = File.expand_path(File.dirname(__FILE__))
+lib = "#{here}/lib"
+$: << lib
 
-$: << "#{here}/lib"
-require "course"
-require "lesson"
-require "ruby"
-require "app_page"
+Dir["#{lib}/**/*.rb"].each do |file|
+  file.slice! /^#{lib}\//
+  file.slice! /\.rb$/
+  require file
+end
 
 class App < Sinatra::Base
   include Erector::Mixin
 
   get '/lessons' do
-    "<h1>Lessons:</h1>" + Course.new("/lessons/ruby.json").to_list
+    all_courses = [Ruby, RubyBasics, RubyObjects]
+    AppPage.new(:widget => Courses.new(:courses => all_courses + (Course.descendants - all_courses))).to_html
   end
 
   get '/' do
