@@ -17,22 +17,12 @@ describe Lesson do
   end
 
   it "has a title" do
-    lesson.title.should == "Bad Names"
+    lesson.display_name.should == "Bad Names"
   end
 
   it "renders HTML" do
-    lesson.to_html.should include(
-        "<h2>" +
-          "<span class=\"course\">" +
-            "<a href=\"/lessons/ruby\">" +
-              "Ruby" +
-            "</a>" +
-          "</span>" +
-          " &gt; " +
-          "<span class=\"lesson\">Bad Names</span>" +
-        "</h2>")
+    breadcrumbs = Breadcrumbs.new(:display_name => lesson.display_name, :parents => [Courses.new, course])
+    lesson.to_html.should include(breadcrumbs.to_html)
   end
-
-  Deck
 
 end

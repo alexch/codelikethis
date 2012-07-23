@@ -13,12 +13,13 @@ describe Course do
 
   it "renders HTML" do
     lessons = Course.new(["foo", "bar"])
-    lessons.to_html.should ==
-        "<h2>Course</h2>" +
+    breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [Courses.new])
+    lessons.to_html.should include(breadcrumbs.to_html)
+    lessons.to_html.should include(
         "<ul>" +
         "<li><a href=\"/lessons/course/foo\">Foo</a></li>" +
         "<li><a href=\"/lessons/course/bar\">Bar</a></li>" +
-        "</ul>"
+        "</ul>")
 
   end
 
@@ -44,7 +45,7 @@ describe Course do
     end
 
     it "has a title" do
-      subject.title.should == "How To Cook"
+      subject.display_name.should == "How To Cook"
     end
 
     it "has an href" do
