@@ -1,8 +1,6 @@
 require "course"
 
 class RubyBasics < Course
-  lesson "tools"
-  lesson "rspec"
   lesson "more_neat_things"
   lesson "functions"
   # lab "Hello"

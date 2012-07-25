@@ -84,7 +84,7 @@ class AppPage < Erector::Widgets::Page
         margin-bottom: 2em;
       }
       section.slide h1, section.slide > h2:first-child {
-        font-family: 'Museo500Regular', 'Helvetica Neue', Helvetica, Arial, Sans;
+        font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
       }
       section.slide > h2:first-child {
         margin: 2px 0 2px -4px;

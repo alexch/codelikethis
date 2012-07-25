@@ -15,7 +15,7 @@ class App < Sinatra::Base
   include Erector::Mixin
 
   get '/lessons' do
-    all_courses = [Ruby, RubyBasics, RubyObjects]
+    all_courses = [Ruby, RubyTools, RubyBasics, RubyObjects]
     AppPage.new(:widget => Courses.new(:courses => all_courses + (Course.descendants - all_courses))).to_html
   end
 

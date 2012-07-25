@@ -78,3 +78,54 @@
 * there's also `before :all do..end` which executes only once
 * there's also `after` with similar semantics
 
+# let
+
+    @@@ruby
+    describe Counter do
+
+      let(:data) { [0,1,2,3] }
+
+      it "counts data" do
+        Counter.new(data).count.should == 4
+      end
+      it "adds data too" do
+        Counter.new(data).sum.should == 6
+      end
+    end
+
+# subject
+
+    @@@ruby
+    describe Counter do
+      let(:data) { [0,1,2,3] }
+
+      subject { Counter.new(data) }
+
+      it { should be_a(Counter) }
+
+      it { should_not be_nil }
+
+      it "counts data" do
+        subject.count.should == 4
+      end
+
+      it "adds data"do
+        subject.sum.should == 6
+      end
+
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
