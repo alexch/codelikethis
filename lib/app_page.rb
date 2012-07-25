@@ -130,6 +130,12 @@ class AppPage < Erector::Widgets::Page
         padding: 0 3px;
       }
 
+      .video {
+        margin: 1em;
+        padding: .5em;
+        border: 6px solid gray;
+      }
+
     CSS
   end
 
