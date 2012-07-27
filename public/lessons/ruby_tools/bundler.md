@@ -6,21 +6,33 @@
   * should be as general as possible
   * lists top-level gem names
   * each gem may also have a version *range*
-    * default range is "any version"
-    * `>=` means "greater or equal"
-    * `~>` means "approximately"
-      * `"~> 1.0.0"` matches 1.0.1 but not 1.1.0
 
 * `Gemfile.lock` is *specific*
   * always generated, never edited by you
   * lists *all* gem names with *exact* versions
     * including dependent gems
 
+
+# Version Ranges
+
+    gem 'foo'
+    gem 'bar', '>= 1.2.3'
+    gem 'baz', '~> 4.5.6'
+
+* default range is "any version"
+* `>=` means "greater or equal"
+* `~>` means "approximately"
+  * `"~> 1.2.3"` matches 1.2.4 but not 1.3.0
+
+# Bundler Workflow
+
+## Gemfile vs. Gemfile.lock
+
 * you always check in both `Gemfile` and `Gemfile.lock`
   * same Gemfile.lock => same gems and versions
   * assures consistency between all developers and servers
 
-# `bundle install` vs. `bundle update`
+## `bundle install` vs. `bundle update`
 
 * you usually run `bundle install`
 * you occasionally run `bundle update`
@@ -47,6 +59,15 @@
 
   * sets up the environment so that *all* and *only* the gems inside `Gemfile.lock` are available
   * then runs `command`
+
+# groups
+
+    group :test do
+      gem "wrong"
+    end
+
+* Groups define optional subsets of gems
+* *groups* usually map to *environments*
 
 # more help
 
