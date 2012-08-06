@@ -8,7 +8,7 @@ Ref. WGR Section 6.3, "Iterators and code blocks"
 
 the term "block" overlaps with the terms...
 
-> closure, proc, lambda, function, function pointer, anonymous function, 
+> closure, proc, lambda, function, function pointer, anonymous function,
 > callback, runnable, functor, delegate
 
 # function vs. block vs. proc
@@ -49,6 +49,17 @@ So you use blocks for...
   * iterators
 * running some extra code before and/or after
 * making your code look cool
+
+# The "Hole In The Middle" Pattern
+
+* Imagine two very similar algorithms
+  * capitalize each string in an array
+  * reverse each string in an array
+* Now imagine extracting the common parts into a single function...
+  * ...with a hole in the middle
+* The block you write fills that hole
+
+<http://blog.enfranchisedmind.com/posts/the-hole-in-the-middle-pattern/>
 
 # `proc`
 
@@ -127,7 +138,7 @@ Using procs:
       block.call
       block.call
     end
-    
+
     twice_do(proc { puts "hi" })
 
 Using the default block:
@@ -153,7 +164,7 @@ Using the default block:
       puts "#{i+1} Mississippi"
     end
 
-prints 
+prints
 
     1 Mississippi
     2 Mississippi
