@@ -20,7 +20,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    AppPage.new.to_html
+    AppPage.new(:widget => Home).to_html
   end
 
   get "/lessons/:course" do
