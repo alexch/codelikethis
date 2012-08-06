@@ -10,4 +10,5 @@
 * better home page copy
 * blog (jekyll?)
 * slides (inline deck frame or div)
+* next and previous buttons (at bottom of page, maybe top too)
 

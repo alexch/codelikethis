@@ -158,7 +158,8 @@ class AppPage < Erector::Widgets::Page
       widget @widget if @widget
     }
     div.footer {
-      text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2012 by Alex Chaffee."
+      text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2012 by "
+      a "Alex Chaffee.", href: "http://alexchaffee.com"
     }
   end
 end
