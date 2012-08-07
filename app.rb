@@ -14,27 +14,40 @@ Dir["#{lib}/**/*.rb"].each do |file|
   require file
 end
 
+module AppHelpers
+  def page_title object, extra = nil
+    [
+        (object.display_name rescue object.to_s),
+        extra,
+        "- Code Like This"
+    ].compact.join(' ')
+  end
+end
+
 class App < Sinatra::Base
   include Erector::Mixin
+  include AppHelpers
 
   get '/lessons' do
     all_courses = [Ruby, RubyTools, RubyBasics, RubyObjects]
-    AppPage.new(:widget => Courses.new(:courses => all_courses + (Course.descendants - all_courses))).to_html
+    courses = Courses.new(:courses => all_courses + (Course.descendants - all_courses))
+    AppPage.new(:widget => courses, :title => page_title("Lessons")).to_html
   end
 
   get '/' do
-    AppPage.new(:widget => Home).to_html
+    AppPage.new(:widget => Home, :title => "Code Like This").to_html
   end
 
   get "/lessons/:course" do
-    AppPage.new(:widget => course).to_html
+    AppPage.new(:widget => course, :title => page_title(course)).to_html
   end
 
   get "/lessons/:course/:file.:ext" do
     if params[:ext] == "slides"
       # slides are signified with a dot instead of a slash so that relative file references don't break
       file = File.join(course_dir, "#{params[:file]}.md")
-      deck_page = Deck::SlideDeck.new(:slides => Deck::Slide.from_file(file))
+      deck_page = Deck::SlideDeck.new(:slides => Deck::Slide.from_file(file),
+                                      :title => page_title(lesson, "Slides"))
       deck_page.to_html
     else
       send_file(File.join(course_dir, "#{params[:file]}.#{params[:ext]}"))
@@ -42,7 +55,7 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:course/:lesson" do
-    AppPage.new(:widget => lesson).to_html
+    AppPage.new(:widget => lesson, :title => lesson.display_name + " - Code Like This").to_html
   end
 
   error 404 do
@@ -68,7 +81,7 @@ class App < Sinatra::Base
   end
 
   def lesson
-    course.lesson(params[:lesson])
+    course.lesson(params[:lesson] || params[:file])
   end
 
 end

@@ -9,6 +9,7 @@ class Lesson < Erector::Widget
     padding: .2em 1em;
     border: 1px solid blue;
     background-color: #EEEEF2;
+    display: block;
   }"
 
   attr_reader :name
@@ -32,13 +33,7 @@ class Lesson < Erector::Widget
   end
 
   def slides
-    slides = Deck::Slide.from_file File.new(File.join(courses_dir, @course.name, "#{@name}.md"))
-  end
-
-  def courses_dir
-    here = File.expand_path(File.dirname(__FILE__))
-    project = File.expand_path("#{here}/..")
-    courses_dir = "#{project}/public/lessons/"
+    Deck::Slide.from_file File.new(File.join(@course.dir, "#{@name}.md"))
   end
 
 end

@@ -6,7 +6,6 @@ project = File.expand_path("#{here}/..")
 require "#{project}/lib/lesson"
 require "#{project}/lib/ruby"
 
-
 describe Lesson do
 
   let(:course) { Ruby.new }

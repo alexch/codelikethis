@@ -1,6 +1,10 @@
 require 'erector'
 
 class AppPage < Erector::Widgets::Page
+  def page_title
+    @title or super
+  end
+
   # todo: promote into Page
   def font font_name
     link rel: "stylesheet", href: "/#{font_name}.css", type: "text/css", charset: "utf-8"
@@ -12,6 +16,7 @@ class AppPage < Erector::Widgets::Page
   end
 
   def head_content
+    super
     font "Museo500"
     stylesheet "/coderay.css"
     style raw(<<-CSS)

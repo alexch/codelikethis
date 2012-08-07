@@ -1,4 +1,5 @@
 require "wrong"
+require "files"
 
 here = File.expand_path(File.dirname(__FILE__))
 project = File.expand_path("#{here}/..")
@@ -24,16 +25,26 @@ describe Course do
   end
 
   describe "a subclass" do
+
+    include Files
+
     class HowToCook < Course
       lesson "scramble_eggs"
       lesson "boil_water"
     end
 
-    subject { HowToCook.new }
+    subject {
+      HowToCook.new.tap do |course|
+        course.dir = files.dir "how_to_cook" do
+            file "scramble_eggs.md"
+            file "boil_water.md"
+        end
+      end
+    }
 
     it "lets a subclass define its lessons inline" do
 
-      HowToCook.new.lesson_names.should == [
+      subject.lesson_names.should == [
           "scramble_eggs",
           "boil_water",
       ]
@@ -53,10 +64,7 @@ describe Course do
     end
 
     it "has lessons" do
-      subject.lessons.should == [
-         Lesson.new(subject, "scramble_eggs"),
-         Lesson.new(subject, "boil_water"),
-      ]
+      subject.lessons.map(&:name).should == ["scramble_eggs", "boil_water"]
     end
 
     describe 'Course.descendants' do
@@ -66,9 +74,9 @@ describe Course do
     end
 
     describe 'next_lesson' do
-      it 'returns the next lesson' do
-        HowToCook.new.next_lesson('scramble_eggs')
-      end
+      it 'returns the next lesson' #do
+        #HowToCook.new.next_lesson('scramble_eggs')
+      #end
       it 'returns nil if there are no more lessons'
     end
   end

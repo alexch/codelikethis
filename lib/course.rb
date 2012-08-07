@@ -5,6 +5,8 @@ require 'breadcrumbs'
 require 'courses'
 
 class Course < Erector::Widget
+  attr_writer :dir
+
   # http://stackoverflow.com/questions/2393697/look-up-all-descendants-of-a-class-in-ruby
   def self.descendants
     ObjectSpace.each_object(Class).select { |klass| klass < self }
@@ -31,6 +33,7 @@ class Course < Erector::Widget
       lesson(lesson_name)
     end
   end
+
   def name
     self.class.name.underscore
   end
@@ -57,6 +60,16 @@ class Course < Erector::Widget
 
   def lesson lesson_name
     Lesson.new(self, lesson_name)
+  end
+
+  def dir
+    @dir || File.join(courses_dir, name)
+  end
+
+  def courses_dir
+    here = File.expand_path(File.dirname(__FILE__))
+    project = File.expand_path("#{here}/..")
+    courses_dir = "#{project}/public/lessons/"
   end
 
 end
