@@ -1,0 +1,51 @@
+{
+  "name": "Ruby Basics",
+  "description": "an introduction to the Ruby programming language",
+  "sections": [
+    "more_neat_things.md",
+    "functions.md",
+    "# Lab: Hello",
+
+    "types.md",
+    "numbers.md",
+    "# Lab: Temperature",
+    "# Lab: Calculator",
+
+    "conditionals.md",
+    "strings.md",
+    "chaining.md",
+    "# Lab: Simon Says",
+
+    "regexp.md",
+    "# Ablay: Igpay Atinlay",
+    "symbols.md",
+    "loops.md",
+
+    "collections.md",
+    "arrays.md",
+    /* todo: lab on arrays */
+    "ranges.md",
+    "hashes.md",
+    /* todo: lab on hashes */
+
+    "blocks.md",
+    "# Lab: Blocks",
+    "block_scope.md",
+    "stubbing.md",
+    "# Lab: Performance Monitor",
+
+    "iterators.md",
+
+
+
+    "# Advanced Topics",
+    "exceptions.md",
+    /* todo: exception exercise */
+    "more_blocks.md",
+    "enumerators_advanced.md"
+
+    /* "time.md", */
+    /* "io.md",  */
+    /* todo: file/io exercise, like scraper */
+  ]
+}

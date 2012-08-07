@@ -199,3 +199,13 @@ The "flying saucer" operator is used for sorting
 * `center(width)`
 
 some of these have `!` versions which modify the string in place
+
+# Encodings
+
+* Files and Strings have encodings
+* default is ASCII, but can be set to UTF-8 or whatever
+
+        # encoding: utf-8
+
+* more: <http://nuclearsquid.com/writings/ruby-1-9-encodings/>
+
