@@ -17,7 +17,7 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 
 # Arrays act like stacks
 
-    @@@ ruby
+    @@@ rubys
     a = [1, 2, 3]
     a.push "four" #=> [1, 2, 3, "four"]
     a.pop         #=> "four"
@@ -34,6 +34,8 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 
     a = [1, 2, 3]
     a.include?(2)  #=> true
+
+(technically an array is not a set because it doesn't enforce *uniqueness*)
 
 # `first` and `last`
     

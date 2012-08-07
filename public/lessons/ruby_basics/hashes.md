@@ -11,28 +11,37 @@ Ref. WGR Chapter 9, Section 9.3, Hashes
   * Dictionary
   * Name/Value Pair Store
   * Key/Value Pair Store
-  
-# Hash literal
+
+# Setting and Getting Hash Values
+
+    @@@ ruby
+    states = Hash.new
+    states["MA"] = "Massachusetts"
+    states["CA"] = "California"
+    states["NY"] = "New York"
+
+    states["MA"].reverse #=> "sttesuhcassaM"
+
+# Hash literals
 
 a Hash can be defined *literally* (inline) with braces e.g.
 
     @@@ ruby
-    states = {"MA" => "Massachusetts",
-              "CA" => "California"}
+    states = { "MA" => "Massachusetts",
+               "CA" => "California",
+               "NY" => "New York"
+             }
 
     states["MA"] #=> "Massachusetts"
 
-!SLIDE
+# Remember, strings are not symbols!
 
-    @@@ ruby
-    my_hash = {:a_symbol => 3, "a string" => 4}
-    my_hash[:a_symbol] #=> 3
-    
-    my_hash[:foo] = "bar"
-    my_hash #=> {:a_symbol => 3, "a string" => 4, :foo => "bar"}
-    
+    @@@ruby
+    states = {:MA => "Massachusets"}
+    states["MA"] #=> nil
+    states[:MA]  #=> "Massachusets"
 
-# Hash literals
+# Hash literals with Symbol Keys
 
 Ruby 1.8 or 1.9:
 
@@ -54,10 +63,9 @@ These are all equivalent:
     User.new name:"Alex", email:"alex@stinky.com"
     User.new email:"alex@stinky.com", name:"Alex"
 
-# Hash access
+...so using a hash literal *almost* looks like named parameters.
 
-    hash[:foo] = "bar"
-    hash[:foo] #=> "bar"
+(Ruby 2.0 will support proper named parameters, using the same calling syntax.)
 
 # Hash methods
 
