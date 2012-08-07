@@ -5,8 +5,8 @@ class Ruby < Course
   lesson "meta"
   lesson "intro"
   # course "ruby_basics"
-  # course "ruby_objects"
   lesson "waka-waka"
+  # course "ruby_blocks"
+  # course "ruby_objects"
   lesson "bad_names"
-
 end

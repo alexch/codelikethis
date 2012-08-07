@@ -1,9 +1,13 @@
 !SLIDE subsection
-# Hash
+# Hashes
 
 Ref. WGR Chapter 9, Section 9.3, Hashes
 
 # Hash
+
+![corned beef hash](cornedbeefhash.jpeg)
+
+* unordered set of key/value pairs
 
 * also known as...
   * Map
@@ -16,8 +20,9 @@ Ref. WGR Chapter 9, Section 9.3, Hashes
 
     @@@ ruby
     states = Hash.new
-    states["MA"] = "Massachusetts"
+
     states["CA"] = "California"
+    states["MA"] = "Massachusetts"
     states["NY"] = "New York"
 
     states["MA"].reverse #=> "sttesuhcassaM"
@@ -27,12 +32,15 @@ Ref. WGR Chapter 9, Section 9.3, Hashes
 a Hash can be defined *literally* (inline) with braces e.g.
 
     @@@ ruby
-    states = { "MA" => "Massachusetts",
+    states = {
                "CA" => "California",
+               "MA" => "Massachusetts",
                "NY" => "New York"
              }
 
     states["MA"] #=> "Massachusetts"
+
+The little `=>` arrow is called a **hash rocket**.
 
 # Remember, strings are not symbols!
 
@@ -41,7 +49,12 @@ a Hash can be defined *literally* (inline) with braces e.g.
     states["MA"] #=> nil
     states[:MA]  #=> "Massachusets"
 
-# Hash literals with Symbol Keys
+This is such an annoying problem that Rails invented a new version of Hash named `HashWithIndifferentAccess`
+that converts string keys into symbol keys.
+
+(`HashWithIndifferentAccess` is such an annoying name that many people call it `Mash` instead.)
+
+# Hash Literals with Symbol Keys
 
 Ruby 1.8 or 1.9:
 
@@ -51,19 +64,39 @@ Ruby 1.9 only:
 
     {foo: "bar", baz: "baf"}
 
+# Hash arguments
+
+When passing a hash to a method,
+
+*the braces are optional*...
+
+...**if** you're calling a method
+
+...**and** the hash is the final argument
+
+    @@@ruby
+    play_with({:name => "Alice", :age => 18})
+
+    play_with :name => "Alice", :age => 18
+
+This is called "the default hash" (which is a silly name for it).
+
 # hash parameters plus hash literals => named parameters
 
 These are all equivalent:
 
     @@@ruby
     User.new({:name => "Alex", :email => "alex@stinky.com"})
+
     User.new(:name => "Alex", :email => "alex@stinky.com")
+
     User.new :name => "Alex", :email => "alex@stinky.com"
+
     User.new name: "Alex", email: "alex@stinky.com"
-    User.new name:"Alex", email:"alex@stinky.com"
+
     User.new email:"alex@stinky.com", name:"Alex"
 
-...so using a hash literal *almost* looks like named parameters.
+...so passing a hash literal *kinda sorta almost* looks like named parameters.
 
 (Ruby 2.0 will support proper named parameters, using the same calling syntax.)
 
@@ -74,14 +107,6 @@ These are all equivalent:
 * has_key?, has_value?
 * merge, merge!
 * delete, delete_if
-
-# Hash arguments
-
-braces are optional...
-
-...**if** the hash is the final argument
-
-(except for a default block)
 
 # `merge` to combine two hashes
 

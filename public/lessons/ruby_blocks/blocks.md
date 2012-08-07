@@ -84,10 +84,10 @@ capitalize_it.call("cherry")   #=> "Cherry"
 
 # Passing Blocks to Methods Explicitly with Procs
 
-`twice_do` is a less cool version of `times` that takes a proc parameter
+`twice` is a less cool version of `times` that takes a proc parameter
 
     @@@ ruby
-    def twice_do(action)
+    def twice(action)
       action.call
       action.call
     end
@@ -97,11 +97,11 @@ You can assign a proc to a variable and pass it as a parameter
     say_hi = proc do
       puts "hi!"
     end
-    twice_do(say_hi)  # prints "hi!\n" twice
+    twice(say_hi)  # prints "hi!\n" twice
 
 You can also define proc *inline* rather than assigning it to a variable
 
-    twice_do(proc do
+    twice(proc do
       puts "hi!"
     end)  # prints "hi!\n" twice
 
@@ -134,12 +134,12 @@ Which is more beautiful?
 Using procs:
 
     @@@ ruby
-    def twice_do block
+    def twice block
       block.call
       block.call
     end
 
-    twice_do(proc { puts "hi" })
+    twice(proc { puts "hi" })
 
 Using the default block:
 

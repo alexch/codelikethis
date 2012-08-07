@@ -20,7 +20,12 @@
     @@@ ruby
     s.split.map{|w|w.capitalize}.join(' ')
 
-### Solution B: use `each` and an accumulator
+### Solution B: use `each` and `!`
+
+    @@@ ruby
+    s.split.each{|w|w.capitalize!}.join(' ')
+
+### Solution C: use `each` and an accumulator
 
     @@@ruby
     capitalized = []
