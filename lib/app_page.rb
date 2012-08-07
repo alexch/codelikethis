@@ -184,6 +184,6 @@ class AppPage < Erector::Widgets::Page
     JAVASCRIPT
   end
 
-  external :script, google_analytics_code('UA-23417120-1')
+  external :script, google_analytics_code('UA-23417120-3')
 
 end
