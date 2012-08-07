@@ -1,7 +1,10 @@
 require 'sinatra/base'
 require 'erector'
+require 'deck/slide'
+require 'deck/slide_deck'
+require 'deck/rack_app'
 
-here = File.expand_path(File.dirname(__FILE__))
+here = ::File.expand_path(File.dirname(__FILE__))
 lib = "#{here}/lib"
 $: << lib
 
@@ -28,12 +31,27 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:course/:file.:ext" do
-    here = File.expand_path(File.dirname(__FILE__))
-    send_file(File.join(here, "public", "lessons", params[:course], "#{params[:file]}.#{params[:ext]}"))
+    if params[:ext] == "slides"
+      # slides are signified with a dot instead of a slash so that relative file references don't break
+      file = File.join(course_dir, "#{params[:file]}.md")
+      deck_page = Deck::SlideDeck.new(:slides => Deck::Slide.from_file(file))
+      deck_page.to_html
+    else
+      send_file(File.join(course_dir, "#{params[:file]}.#{params[:ext]}"))
+    end
   end
 
   get "/lessons/:course/:lesson" do
     AppPage.new(:widget => lesson).to_html
+  end
+
+  error 404 do
+    Deck::RackApp.public_file_server.call(env)
+  end
+
+  def course_dir
+    here = File.expand_path(File.dirname(__FILE__))
+    ::File.join(here, "public", "lessons", params[:course])
   end
 
   def course_class

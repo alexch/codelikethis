@@ -26,6 +26,11 @@ class Course < Erector::Widget
     @lesson_names
   end
 
+  def lessons
+    @lesson_names.map do |lesson_name|
+      lesson(lesson_name)
+    end
+  end
   def name
     self.class.name.underscore
   end

@@ -52,10 +52,24 @@ describe Course do
       subject.href.should == "/lessons/how_to_cook"
     end
 
+    it "has lessons" do
+      subject.lessons.should == [
+         Lesson.new(subject, "scramble_eggs"),
+         Lesson.new(subject, "boil_water"),
+      ]
+    end
+
     describe 'Course.descendants' do
       it "knows all descendants of Course" do
         Course.descendants.should include(HowToCook)
       end
+    end
+
+    describe 'next_lesson' do
+      it 'returns the next lesson' do
+        HowToCook.new.next_lesson('scramble_eggs')
+      end
+      it 'returns nil if there are no more lessons'
     end
   end
 
