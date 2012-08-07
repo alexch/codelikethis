@@ -167,4 +167,23 @@ class AppPage < Erector::Widgets::Page
       a "Alex Chaffee.", href: "http://alexchaffee.com"
     }
   end
+
+  def self.google_analytics_code account_id
+    <<-JAVASCRIPT
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '#{account_id}']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    JAVASCRIPT
+  end
+
+  external :script, google_analytics_code('UA-23417120-1')
+
 end
