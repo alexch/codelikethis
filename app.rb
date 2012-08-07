@@ -29,7 +29,7 @@ class App < Sinatra::Base
   include AppHelpers
 
   get '/lessons' do
-    all_courses = [Ruby, RubyTools, RubyBasics, RubyObjects]
+    all_courses = [Ruby, RubyTools, RubyBasics, RubyBlocks, RubyObjects]
     courses = Courses.new(:courses => all_courses + (Course.descendants - all_courses))
     AppPage.new(:widget => courses, :title => page_title("Lessons")).to_html
   end

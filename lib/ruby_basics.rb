@@ -22,18 +22,6 @@ class RubyBasics < Course
   lesson "ranges"
   lesson "hashes"
   # todo: lab on hashes
-  lesson "blocks"
-  # lab "Blocks"
-  lesson "block_scope"
-  lesson "stubbing"
-  # lab "Performance Monitor"
-
-  lesson "iterators"
-
-  # todo: move to "advanced?"
-  lesson "more_blocks"
-  lesson "enumerators_advanced"
-
   lesson "exceptions"
   #todo: lab "exceptions"
 
