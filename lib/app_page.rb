@@ -151,11 +151,18 @@ class AppPage < Erector::Widgets::Page
     }
     div.nav {
       ul {
-        li "Blog"
+        li {
+          a "Blog", href: "#", onclick: "alert('no blog yet!')"
+        }
         li {
           a "Lessons", href: "/lessons"
         }
-        li "Labs"
+        li {
+          a "Labs", href: "http://testfirst.org/live"
+        }
+        li {
+          a "Alex", href: "http://alexchaffee.com"
+        }
       }
     }
     div.main {

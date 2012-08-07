@@ -10,4 +10,5 @@
 * blog (jekyll?)
 * inline slides (inline deck frame or div)
 * Like and +1 and Tweet buttons
+* comments per lesson (facebook? disqus?)
 
