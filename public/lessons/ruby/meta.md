@@ -2,7 +2,7 @@
 
 Taught by Alex Chaffee
 
-these slides are available at <http://github.com/alexch/ruby_notes>
+these slides are available at <http://codelikethis.com/lessons>
 
 # Test-First Teaching
 
