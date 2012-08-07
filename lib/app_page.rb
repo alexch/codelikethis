@@ -34,7 +34,7 @@ class AppPage < Erector::Widgets::Page
         color: black;
       }
       .header .logo {
-        font-size: 32px;
+        font-size: 64px;
         font-weight: bold;
       }
       .header .tagline {

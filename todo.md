@@ -1,5 +1,4 @@
 
-* google analytics
 * internal anchor link hidden rollover dealy
 * design a logo
 * favicon
@@ -9,6 +8,6 @@
 * table of contents per outline page
 * better home page copy
 * blog (jekyll?)
-* slides (inline deck frame or div)
-* next and previous buttons (at bottom of page, maybe top too)
+* inline slides (inline deck frame or div)
+* Like and +1 and Tweet buttons
 
