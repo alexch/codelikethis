@@ -62,6 +62,19 @@ class Course < Erector::Widget
     Lesson.new(self, lesson_name)
   end
 
+  def previous_lesson lesson_name
+    this_lesson_index = this_lesson_index(lesson_name)
+    this_lesson_index == 0 ? nil : lessons[this_lesson_index - 1]
+  end
+
+  def this_lesson_index(lesson_name)
+    lesson_names.index { |name| name == lesson_name }
+  end
+
+  def next_lesson lesson_name
+    lessons[this_lesson_index(lesson_name) + 1]
+  end
+
   def dir
     @dir || File.join(courses_dir, name)
   end

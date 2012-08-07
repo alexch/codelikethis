@@ -73,11 +73,19 @@ describe Course do
       end
     end
 
-    describe 'next_lesson' do
-      it 'returns the next lesson' #do
-        #HowToCook.new.next_lesson('scramble_eggs')
-      #end
-      it 'returns nil if there are no more lessons'
+    describe 'next and previous lesson' do
+      it 'returns the next lesson' do
+        subject.next_lesson('scramble_eggs').name.should == "boil_water"
+      end
+      it 'returns nil if there are no more lessons' do
+        subject.next_lesson('boil_water').should be_nil
+      end
+      it 'returns the previous lesson' do
+        subject.previous_lesson('boil_water').name.should == "scramble_eggs"
+      end
+      it 'returns nil if there are no previous lessons' do
+        subject.previous_lesson('scramble_eggs').should be_nil
+      end
     end
   end
 
