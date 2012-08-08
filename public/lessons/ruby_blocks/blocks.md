@@ -11,13 +11,13 @@ the term "block" overlaps with the terms...
 > closure, proc, lambda, function, function pointer, anonymous function,
 > callback, runnable, functor, delegate
 
-# function vs. block vs. proc
+# method vs. block vs. proc
 
-* a **function** is a chunk of code starting with `def`
+* a **method** is a chunk of code starting with `def`
 * a **block** is a chunk of code starting with `do`
 * a **proc** is an *object* that points to a *block*
 
-(In Ruby, only a *proc* can be stored in a variable or named parameter.)
+(Of these three, only a *proc* can be stored in a variable or named parameter.)
 
 # How do you declare a block?
 

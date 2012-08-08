@@ -37,6 +37,10 @@
 * stubs are a form of *test doubles*, aka *mock objects*
 * others include mocks, fakes, spies, saboteurs...
 
+> Never mock the object under test. - Alex
+
+*
+
 > Never mock values, sometimes mock entities, but mock services freely. - [J.B. Rainsberger](http://legacy.thecodewhisperer.com/post/1121713303/when-is-it-safe-to-introduce-test-doubles)
 
 * see also <http://www.confreaks.com/videos/659-rubyconf2011-why-you-don-t-get-mock-objects>
