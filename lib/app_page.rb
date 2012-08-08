@@ -63,7 +63,7 @@ class AppPage < Erector::Widgets::Page
       .nav a {
         text-decoration: none;
       }
-      .nav a:visited {
+      .nav a:visited, .nav a {
         color: black;
       }
 
