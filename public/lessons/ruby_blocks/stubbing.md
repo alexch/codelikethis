@@ -37,6 +37,8 @@
 * stubs are a form of *test doubles*, aka *mock objects*
 * others include mocks, fakes, spies, saboteurs...
 
+# Mocking Advice
+
 > Never mock the object under test. - Alex
 
 *

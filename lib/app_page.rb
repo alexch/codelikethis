@@ -172,6 +172,14 @@ class AppPage < Erector::Widgets::Page
     div.footer {
       text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2012 by "
       a "Alex Chaffee.", href: "http://alexchaffee.com"
+      br
+      text "This site built on "
+      a "Sinatra", href: "http://sinatrarb.com"
+      text ", "
+      a "Erector", href: "http://erector.rubyforge.org"
+      text ", "
+      a "Deck", href: "https://github.com/alexch/deck.rb"
+      text ", and so on."
     }
   end
 
