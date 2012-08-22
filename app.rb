@@ -29,8 +29,8 @@ class App < Sinatra::Base
   include AppHelpers
 
   get '/lessons' do
-    all_courses = [Ruby, RubyTools, RubyBasics, RubyBlocks, RubyObjects]
-    courses = Courses.new(:courses => all_courses + (Course.descendants - all_courses))
+    all_courses = [Course::Ruby, Course::RubyTools, Course::RubyBasics, Course::RubyBlocks, Course::RubyObjects]
+    courses = Courses.new(:courses => all_courses)
     AppPage.new(:widget => courses, :title => page_title("Lessons")).to_html
   end
 
@@ -67,21 +67,17 @@ class App < Sinatra::Base
     ::File.join(here, "public", "lessons", params[:course])
   end
 
-  def course_class
+  def course
     begin
-      course_class_name = params[:course].split('_').map(&:capitalize).join
-      course_class = Object.const_get(course_class_name)
+      course_constant_name = params[:course].split('_').map(&:capitalize).join
+      course = Course.const_get(course_constant_name)
     rescue NameError
       not_found
     end
   end
 
-  def course
-    course_class.new
-  end
-
   def lesson
-    course.lesson(params[:lesson] || params[:file])
+    course.lesson_named(params[:lesson] || params[:file])
   end
 
 end

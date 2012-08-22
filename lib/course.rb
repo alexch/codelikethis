@@ -3,43 +3,40 @@ require 'active_support'
 
 require 'breadcrumbs'
 require 'courses'
+require 'lesson'
+require 'lab'
 
 class Course < Erector::Widget
   attr_writer :dir
 
-  # http://stackoverflow.com/questions/2393697/look-up-all-descendants-of-a-class-in-ruby
-  def self.descendants
-    ObjectSpace.each_object(Class).select { |klass| klass < self }
-  end
-
-  def self.lesson lesson_name
-    default_lessons << lesson_name
-  end
-
-  def self.default_lessons
-    @default_lessons ||= []
-  end
-
-  def initialize lesson_names = nil
-    @lesson_names = (lesson_names or self.class.default_lessons)
-  end
-
-  def lesson_names
-    @lesson_names
+  def initialize name = "course", &block
+    @name = name.underscore
+    @stuff = []
+    instance_eval &block if block
   end
 
   def lessons
-    @lesson_names.map do |lesson_name|
-      lesson(lesson_name)
-    end
+    @stuff.select{|thing| thing.is_a? Lesson}
+  end
+
+  def lesson_names
+    lessons.map(&:name)
+  end
+
+  def labs
+    @stuff.select{|thing| thing.is_a? Lab}
+  end
+
+  def lab_names
+    labs.map(&:name)
   end
 
   def name
-    self.class.name.underscore
+    @name
   end
 
   def display_name
-    self.class.name.titleize
+    name.titleize
   end
 
   def href
@@ -49,7 +46,7 @@ class Course < Erector::Widget
   def content
     widget Breadcrumbs, parents: [Courses.new], display_name: self.display_name
     ul {
-      @lesson_names.each do |lesson_name|
+      lesson_names.each do |lesson_name|
 
         li {
           a lesson_name.titleize, :href => "#{self.href}/#{lesson_name}"
@@ -59,7 +56,21 @@ class Course < Erector::Widget
   end
 
   def lesson lesson_name
-    Lesson.new(self, lesson_name)
+    raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
+
+    Lesson.new(self, lesson_name).tap do |lesson|
+      @stuff << lesson
+    end
+  end
+
+  def lab lab_name
+    Lab.new(self, lab_name).tap do |lab|
+      @stuff << lab
+    end
+  end
+
+  def lesson_named lesson_name
+    @stuff[this_item_index(lesson_name)]
   end
 
   def previous_lesson lesson_name
@@ -67,12 +78,18 @@ class Course < Erector::Widget
     this_lesson_index == 0 ? nil : lessons[this_lesson_index - 1]
   end
 
-  def this_lesson_index(lesson_name)
-    lesson_names.index { |name| name == lesson_name }
-  end
-
   def next_lesson lesson_name
     lessons[this_lesson_index(lesson_name) + 1]
+  end
+
+  def next_labs lesson_name
+    next_item = this_item_index(lesson_name) + 1
+    labs = []
+    while (item = @stuff[next_item]).is_a? Lab
+      labs << item
+      next_item += 1
+    end
+    labs
   end
 
   def dir
@@ -84,5 +101,15 @@ class Course < Erector::Widget
     project = File.expand_path("#{here}/..")
     courses_dir = "#{project}/public/lessons/"
   end
+
+  private
+
+    def this_lesson_index(lesson_name)
+      lesson_names.index { |name| name == lesson_name }
+    end
+
+    def this_item_index(lesson_name)
+      @stuff.map(&:name).index { |name| name == lesson_name }
+    end
 
 end

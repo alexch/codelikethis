@@ -13,8 +13,8 @@ describe AppHelpers do
     example { page_title("Foo").should == "Foo - Code Like This" }
     example { page_title("Foo", "bar").should == "Foo bar - Code Like This" }
 
-    let(:course) { Ruby.new }
-    let(:lesson) { Lesson.new(course, "bad_names") }
+    let(:course) { Course::Ruby }
+    let(:lesson) { course.lesson_named "bad_names" }
 
     example { page_title(course).should == "Ruby - Code Like This" }
     example { page_title(lesson).should == "Bad Names - Code Like This" }

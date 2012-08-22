@@ -1,32 +1,34 @@
 require "course"
 
-class RubyBasics < Course
-  lesson "more_neat_things"
-  lesson "functions"
-  # lab "Hello"
-  lesson "types"
-  lesson "numbers"
-  # lab "Temperature"
-  # lab "Calculator"
-  lesson "conditionals"
-  lesson "strings"
-  lesson "chaining"
-  # lab "Simon Says"
-  lesson "regexp"
-  #lab "pig_latin"
-  lesson "symbols"
-  lesson "loops"
-  lesson "collections"
-  lesson "arrays"
-  # todo: lab on arrays
-  lesson "ranges"
-  lesson "hashes"
-  # todo: lab on hashes
-  lesson "exceptions"
-  #todo: lab "exceptions"
+class Course
+  RubyBasics = Course.new("ruby_basics") do
+    lesson "more_neat_things"
+    lesson "functions"
+    lab "Hello"
+    lesson "types"
+    lesson "numbers"
+    lab "Temperature"
+    lab "Calculator"
+    lesson "conditionals"
+    lesson "strings"
+    lesson "chaining"
+    lab "Simon Says"
+    lesson "regexp"
+    lab "pig_latin"
+    lesson "symbols"
+    lesson "loops"
+    lesson "collections"
+    lesson "arrays"
+    # todo: lab on arrays
+    lesson "ranges"
+    lesson "hashes"
+    # todo: lab on hashes
+    lesson "exceptions"
+    #todo: lab "exceptions"
 
-  #lesson "time"
-  #lesson "io"
-  #todo: lab on file/io exercise, like scraper
+    #lesson "time"
+    #lesson "io"
+    #todo: lab on file/io exercise, like scraper
 
+  end
 end

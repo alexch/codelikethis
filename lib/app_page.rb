@@ -70,8 +70,10 @@ class AppPage < Erector::Widgets::Page
       .main {
         margin-left: 2em;
         font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-        max-width: 56em;
         min-height: 30em;
+      }
+      .main_column {
+        max-width: 56em;
       }
 
       .footer {
