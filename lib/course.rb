@@ -45,9 +45,12 @@ class Course < Erector::Widget
 
   def content
     widget Breadcrumbs, parents: [Courses.new], display_name: self.display_name
+    list_lessons
+  end
+
+  def list_lessons
     ul {
       lesson_names.each do |lesson_name|
-
         li {
           a lesson_name.titleize, :href => "#{self.href}/#{lesson_name}"
         }

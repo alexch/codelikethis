@@ -67,11 +67,12 @@ class Lesson < Erector::Widget
     -webkit-padding-start: 0;
   }
   div.toc li {
-    padding: 2px 10px;
   }
   div.toc a {
+    padding: 2px 10px;
     text-decoration: none;
     color: black;
+    display: block;
   }
   div.toc a:visited {
     color: black;
@@ -79,6 +80,7 @@ class Lesson < Erector::Widget
   div.toc a:hover {
     color: blue;
     text-decoration: underline;
+    background: #EEEEF2;
   }
 
 "
