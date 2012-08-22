@@ -19,15 +19,21 @@ class AppPage < Erector::Widgets::Page
     super
     font "Museo500"
     stylesheet "/coderay.css"
+    nice_bg = "url(/bg.png)"  # background image courtesy of http://www.bgpatterns.com/ 779FC9/B2CFED
+    #nice_bg = "#C8D9E9"
     style raw(<<-CSS)
       body {
         font-family: 'Museo500Regular', 'Arial', 'Sans';
         margin: 0; padding: 0;
+        background: #{nice_bg};
+      }
+      .non_footer {
+        background: white;
       }
 
       .header {
         padding: 0 6px;
-        background: #C8D9E9;
+        background: #{nice_bg};
       }
       .header a {
         text-decoration: none;
@@ -45,6 +51,9 @@ class AppPage < Erector::Widgets::Page
         border-bottom: 1px solid black;
       }
 
+      .nav {
+        background: white;
+      }
       .nav ul {
         list-style-type: none;
         -webkit-margin-before: 0;
@@ -68,21 +77,22 @@ class AppPage < Erector::Widgets::Page
       }
 
       .main {
-        margin-left: 2em;
+        padding: 1em 1em 1em 2em;
         font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
         min-height: 30em;
+        background: white;
       }
       .main_column {
         max-width: 56em;
       }
 
       .footer {
+        padding: 4px 2px 8px;
         text-align: center;
         border-top: 1px solid blue;
-        background: #C8D9E9;
-        font-size: 10pt;
+        background:  #{nice_bg};
+        font-size: 11pt;
         min-height: 2em;
-
       }
 
       section.slide {
