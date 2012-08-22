@@ -13,7 +13,11 @@ class Lab < Erector::Widget
   end
 
   def content
-    a.lab.button "Lab: #{display_name}", href: "http://testfirst.org/live/learn_ruby/#{name}"
+    a.lab.button "Lab: #{display_name}", href: href
+  end
+
+  def href
+    "http://testfirst.org/live/learn_ruby/#{name}"
   end
 
 end

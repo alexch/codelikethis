@@ -1,7 +1,7 @@
 require "erector"
 
 class Breadcrumbs < Erector::Widget
-  external :style, <<-CSS
+  external :style, "
 .breadcrumbs {
   display: block;
   font-size: 1.5em;
@@ -14,7 +14,7 @@ class Breadcrumbs < Erector::Widget
   text-decoration: none;
   cursor: auto;
 }
-  CSS
+  "
 
   needs :parents => []
   needs :display_name

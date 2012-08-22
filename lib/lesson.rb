@@ -95,6 +95,10 @@ class Lesson < Erector::Widget
     name.titleize
   end
 
+  def href
+    @course.href + "/" + name
+  end
+
   def content
     div.extras {
       a.slides.button "Slides", href: "#{name}.slides"
@@ -106,7 +110,9 @@ class Lesson < Erector::Widget
         h2 "Contents"
         ul {
           slides.each do |slide|
-            li { a slide.title, href: "##{slide.slide_id}" }
+            li {
+              a slide.title, href: "##{slide.slide_id}"
+            }
           end
         }
       }

@@ -50,9 +50,11 @@ class Course < Erector::Widget
 
   def list_lessons
     ul {
-      lesson_names.each do |lesson_name|
+      @stuff.each do |item|
         li {
-          a lesson_name.titleize, :href => "#{self.href}/#{lesson_name}"
+          item_name = item.display_name
+          item_name = "Lab: #{item_name}" if item.is_a? Lab
+          a item_name, href: item.href
         }
       end
     }
