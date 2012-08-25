@@ -28,6 +28,14 @@ class App < Sinatra::Base
   include Erector::Mixin
   include AppHelpers
 
+  before do
+    Thread.current[:development] = (request.host =~ /^localhost/)
+  end
+
+  after do
+    Thread.current[:development] = nil
+  end
+
   get '/lessons' do
     all_courses = [
         Course::Ruby,

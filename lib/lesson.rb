@@ -83,6 +83,10 @@ class Lesson < Erector::Widget
     background: #EEEEF2;
   }
 
+  div#disqus_thread {
+    border-top: 1px dotted gray;
+    padding-top: 1em;
+  }
 "
 
   attr_reader :name
@@ -144,6 +148,8 @@ class Lesson < Erector::Widget
         next_lesson_button
         previous_button_button
       end
+
+      widget Disqus, shortname: "codelikethis", developer: (Thread.current[:development] ? 1 : nil), identifier: "lesson_#{@course.name}_#{name}"
     }
   end
 
