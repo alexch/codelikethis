@@ -29,7 +29,14 @@ class App < Sinatra::Base
   include AppHelpers
 
   get '/lessons' do
-    all_courses = [Course::Ruby, Course::RubyTools, Course::RubyBasics, Course::RubyBlocks, Course::RubyObjects]
+    all_courses = [
+        Course::Ruby,
+        Course::RubyTools,
+        Course::RubyBasics,
+        Course::RubyBlocks,
+        Course::RubyObjects,
+        Course::Javascript,
+    ]
     courses = Courses.new(:courses => all_courses)
     AppPage.new(:widget => courses, :title => page_title("Lessons")).to_html
   end

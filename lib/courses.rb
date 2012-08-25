@@ -46,15 +46,39 @@ class Courses < Erector::Widget
 
   CSS
 
+  # http://stackoverflow.com/a/1614698/190135
+  class ::Array
+    def odds
+      self.values_at(* self.each_index.select {|i| i.odd?})
+    end
+    def evens
+      self.values_at(* self.each_index.select {|i| i.even?})
+    end
+  end
+
+
   def content
     widget Breadcrumbs, display_name: display_name
 
+    table {
+      tr {
+        td(valign: 'top') {
+          courses_table @courses.evens # including 0
+        }
+        td(valign: 'top') {
+          courses_table @courses.odds
+        }
+      }
+    }
+  end
+
+  def courses_table courses
     table.courses {
       tr {
         th "Course"
         th "Lessons"
       }
-      @courses.each do |course|
+      courses.each do |course|
         tr {
           th(valign: "top") {
             a course.display_name, href: course.href

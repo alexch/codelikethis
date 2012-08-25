@@ -1,0 +1,47 @@
+<head>
+
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js">
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            console.log('ready');
+            $('body').delegate('#load_button', 'click', function () {
+                console.log('clicking')
+                var button = this;
+                $(this).attr('disabled', true);
+                $.ajax("ajax.html")
+                        .success(function (body) {
+                            $(button).parent().find(".text").html(body);
+                        })
+                        .error(function (xhr) {
+                            console.log(xhr.statusText);
+                        })
+                        .complete(function () {
+                            console.log("complete");
+                            setTimeout(function () {
+                                $(button).attr('disabled', false);
+                            }, 100);
+                        });
+            });
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+<h1>Fun with AJAX</h1>
+
+<div class='stuff'>
+    <input type="submit" id="load_button" value="Load">
+
+    <div class='text'
+         style="background-color: #EEEEEE; border: 1px solid blue; padding: 1em;">
+        hello
+    </div>
+</div>
+
+</body>

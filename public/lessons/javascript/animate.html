@@ -1,0 +1,38 @@
+<h1>fun with animation</h1>
+
+<script type="text/javascript"
+ src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script>
+
+Number.prototype.px = function() {
+    return "" + this + "px";
+}
+
+function slide(element) {
+    element.style.position = "fixed";
+    var x = 0;
+    function step() {
+        if (x > 1000) {
+            // stop the animation
+            return;
+        } else {
+            element.style.left = x.px();
+            x += 10;
+            // schedule the next animation
+            setTimeout(step, 100);
+        }
+    }
+    step();  // start animation
+}
+</script>
+
+<input type="submit" onclick="slide(document.getElementById('hello'))"
+value="slide it">
+
+<div id='hello' 
+    style="background-color: red; width: 10em;">
+    hello
+</div>
+<p>
+
