@@ -89,6 +89,7 @@ class Lesson < Erector::Widget
 
   def initialize course, name
     @course, @name = course, name
+    @videos = []
   end
 
   def display_name
@@ -97,6 +98,10 @@ class Lesson < Erector::Widget
 
   def href
     @course.href + "/" + name
+  end
+
+  def video youtube_id
+    @videos << youtube_id
   end
 
   def content
@@ -121,6 +126,14 @@ class Lesson < Erector::Widget
       }
     }
     widget Breadcrumbs, :parents => [Courses.new, @course], :display_name => display_name
+
+    div.videos {
+      @videos.each do |youtube_id|
+        # see https://developers.google.com/youtube/player_parameters
+        s = %Q(<iframe class="video youtube" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/#{youtube_id}" frameborder="0"></iframe>\n)
+        rawtext s
+      end
+    }
 
     div.main_column {
       slides.each do |slide|

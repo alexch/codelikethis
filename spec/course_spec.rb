@@ -114,5 +114,18 @@ describe Course do
       subject.next_labs("boil_water").map(&:name).should == ["turn_on_stove", "boiling"]
     end
   end
+
+  describe 'videos' do
+    it "can be set during course declaration" do
+      course = Course.new("course") do
+        lesson "lesson" do
+          video "video1"
+          video "video2"
+        end
+      end
+      lesson = course.lesson_named "lesson"
+      lesson.instance_variable_get(:@videos).should == ["video1", "video2"]
+    end
+  end
 end
 

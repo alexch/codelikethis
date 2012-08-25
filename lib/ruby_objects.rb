@@ -2,7 +2,9 @@ require "course"
 
 class Course
   RubyObjects = Course.new("ruby_objects") do
-    lesson "tiers"
+    lesson "tiers" do
+      video "FZkjE1_0XtI"
+    end
     lesson "objects"
     lab "hello_friend"
     lesson "classes"

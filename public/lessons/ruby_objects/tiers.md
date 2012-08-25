@@ -1,7 +1,5 @@
 # The CPU is a Honey Badger
 
-<!VIDEO FZkjE1_0XtI>
-
 <!SLIDE>
 <img src="honeybadger.jpg" width="720" height="538">
 

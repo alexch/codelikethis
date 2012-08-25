@@ -50,4 +50,21 @@ describe Lesson do
     course.lesson_named("boil_water").next_labs.map(&:name).should == ["turn_on_stove", "boiling"]
   end
 
+  describe 'videos' do
+    subject { Lesson.new(course, "scramble_eggs") }
+    it "can add a video" do
+      subject.video "abcdefg"
+    end
+    it "shows up in the rendered HTML" do
+      subject.video "abcdefg"
+      subject.to_html.should include("http://www.youtube.com/embed/abcdefg")
+    end
+    it "can add more than one video" do
+      subject.video "abcdefg"
+      subject.video "12345"
+      subject.to_html.should include("http://www.youtube.com/embed/abcdefg")
+      subject.to_html.should include("http://www.youtube.com/embed/12345")
+    end
+  end
+
 end

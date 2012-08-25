@@ -3,7 +3,9 @@ require "course"
 class Course
   RubyBlocks = Course.new("ruby_blocks") do
 
-    lesson "blocks"
+    lesson "blocks" do
+      video "K8uhD8mtorE"
+    end
     lesson "chaining"
     lab "Blocks"
     lesson "block_scope"

@@ -60,11 +60,12 @@ class Course < Erector::Widget
     }
   end
 
-  def lesson lesson_name
+  def lesson lesson_name, &block
     raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
 
     Lesson.new(self, lesson_name).tap do |lesson|
       @stuff << lesson
+      lesson.instance_eval(&block) if block
     end
   end
 
