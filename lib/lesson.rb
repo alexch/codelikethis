@@ -149,7 +149,7 @@ class Lesson < Erector::Widget
         previous_button_button
       end
 
-      widget Disqus, shortname: "codelikethis", developer: (Thread.current[:development] ? 1 : nil), identifier: "lesson_#{@course.name}_#{name}"
+      widget Disqus, shortname: "codelikethis", developer: (Thread.current[:development] ? 1 : nil), identifier: "lesson_#{@course.name}_#{name}", title: "#{@course.display_name}: #{display_name}"
     }
   end
 
