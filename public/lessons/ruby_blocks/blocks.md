@@ -111,6 +111,8 @@ You can also define proc *inline* rather than assigning it to a variable
 * Every method, no matter what its parameter list, might get an optional magic invisible block parameter
 * This is called "the default block" and the method can call it using `yield`
 
+![yield](yield.png)
+
 # Passing Blocks to Methods Implicitly with the Default Block
 
 `twice` is a less cool version of `times` that takes a default block (invisible parameter)
