@@ -46,15 +46,18 @@ class Courses < Erector::Widget
 
   CSS
 
-  # http://stackoverflow.com/a/1614698/190135
-  class ::Array
-    def odds
-      self.values_at(* self.each_index.select {|i| i.odd?})
+    module ::Enumerable
+      def select_with_index
+        index = -1
+        select { |x| yield(x, index += 1) }
+      end
+      def odds
+        select_with_index {|x,i| i.odd?}
+      end
+      def evens
+        select_with_index {|x,i| i.even?}
+      end
     end
-    def evens
-      self.values_at(* self.each_index.select {|i| i.even?})
-    end
-  end
 
 
   def content
