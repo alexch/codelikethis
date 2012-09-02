@@ -9,9 +9,9 @@ class Home < Erector::Widget
       text " has been teaching Ruby and JavaScript for years. This site contains his lectures and labs, in outline, slide, and video format."
     }
     p {
-      text "It's pretty barren at the moment, but click on "
+      text "Click on "
       a "Lessons", href: "/lessons"
-      text " in the nav bar to get started."
+      text " in the nav bar to get started. And I'm updating it every week or so with new videos and notes, so keep checking back!"
     }
   end
 
