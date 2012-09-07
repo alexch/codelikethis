@@ -51,6 +51,12 @@ class AppPage < Erector::Widgets::Page
         border-bottom: 1px solid black;
       }
 
+      .header .donate_button {
+        float: right;
+        margin: 1em;
+      }
+
+
       .nav {
         background: white;
       }
@@ -158,6 +164,7 @@ class AppPage < Erector::Widgets::Page
 
   def body_content
     div.header {
+      widget DonateButton
       span.logo { a "Code like this.", href: '/' }
       span.tagline "opinionated expertise"
     }
