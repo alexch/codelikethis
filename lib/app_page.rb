@@ -26,6 +26,8 @@ class AppPage < Erector::Widgets::Page
         font-family: 'Museo500Regular', 'Arial', 'Sans';
         margin: 0; padding: 0;
         background: #{nice_bg};
+        text-rendering: optimizelegibility;
+
       }
       .non_footer {
         background: white;
@@ -42,6 +44,8 @@ class AppPage < Erector::Widgets::Page
       .header .logo {
         font-size: 64px;
         font-weight: bold;
+        text-rendering: optimizelegibility;
+        text-shadow: #c8c8f1 2px 2px 0px;
       }
       .header .tagline {
         font-style: italic;
