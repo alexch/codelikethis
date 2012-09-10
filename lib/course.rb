@@ -45,12 +45,12 @@ class Course < Erector::Widget
 
   def content
     widget Breadcrumbs, parents: [Courses.new], display_name: self.display_name
-    list_lessons
+    list_items
   end
 
-  def list_lessons
+  def list_items items = @stuff
     ul {
-      @stuff.each do |item|
+      items.each do |item|
         li {
           item_name = item.display_name
           item_name = "Lab: #{item_name}" if item.is_a? Lab
@@ -58,6 +58,14 @@ class Course < Erector::Widget
         }
       end
     }
+  end
+
+  def list_lessons
+    list_items lessons
+  end
+
+  def list_labs
+    list_items labs
   end
 
   def lesson lesson_name, &block

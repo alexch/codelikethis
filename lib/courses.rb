@@ -7,6 +7,8 @@ class Courses < Erector::Widget
     border: 2px solid gray;
     border-collapse:collapse;
     margin-left: 10em;
+    box-shadow: #c8c8f1 2px 2px 4px;
+
   }
 
   table.courses ul {
@@ -22,11 +24,16 @@ class Courses < Erector::Widget
     padding-top: .5em;
   }
   table.courses, table.courses td, table.courses th {
-    border: 1px solid green;
+    border: 1px solid black;
     padding: 4px 8px 8px;
   }
+  table.courses th {
+    text-shadow: 1px 1px #ededed;
+  }
+  table.courses td {
+  }
   table.courses tr:nth-child(1) {
-    background-color: #A7C942;
+    background-color: #B3C8E8;
   }
   table.courses tr:nth-child(even) {
     background-color: #EEEEF2;
@@ -38,7 +45,7 @@ class Courses < Erector::Widget
   }
   table.courses a:hover {
     text-decoration: underline;
-    background-color: #EAF2D3;
+    background-color: #B3C8E8;
   }
   table.courses a:visited {
     color: black;
@@ -63,16 +70,7 @@ class Courses < Erector::Widget
   def content
     widget Breadcrumbs, display_name: display_name
 
-    table {
-      tr {
-        td(valign: 'top') {
-          courses_table @courses.evens # including 0
-        }
-        td(valign: 'top') {
-          courses_table @courses.odds
-        }
-      }
-    }
+    courses_table @courses
   end
 
   def courses_table courses
@@ -80,6 +78,7 @@ class Courses < Erector::Widget
       tr {
         th "Course"
         th "Lessons"
+        th "Labs"
       }
       courses.each do |course|
         tr {
@@ -88,6 +87,9 @@ class Courses < Erector::Widget
           }
           td.lessons(valign: "top") {
             widget course, {}, :content_method_name => :list_lessons
+          }
+          td.lessons(valign: "top") {
+            widget course, {}, :content_method_name => :list_labs
           }
         }
       end
