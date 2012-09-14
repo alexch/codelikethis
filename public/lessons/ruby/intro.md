@@ -112,6 +112,12 @@ Please fire up `irb` on your computer and try this out right now!
 
 The *output* is `foo\n` but the *value* is `nil`.
 
+# Variables are Names for Objects
+
+    fruit = "apple"
+
+* `fruit` is the name of an object containing `apple`
+
 # Printing
 
 * `print` prints its arg
