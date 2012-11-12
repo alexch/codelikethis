@@ -1,0 +1,19 @@
+Set
+
+collection
+unique
+unsorted
+unindexed
+add
+remove
+contains?
+empty?
+
+
+
+List (Array)
+
+collection
+non-unique
+sorted
+indexed

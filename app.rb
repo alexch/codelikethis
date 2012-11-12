@@ -38,6 +38,7 @@ class App < Sinatra::Base
 
   get '/lessons' do
     all_courses = [
+        Course::TestDriven,
         Course::Ruby,
         Course::RubyTools,
         Course::RubyBasics,
