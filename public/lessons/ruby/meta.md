@@ -30,6 +30,7 @@ then open `index.html` in a browser
 
 ## Arrange Your Windows
 
+  * Keep your console window open
   * Make your console window REALLY TALL
   * *Don't* overlap your windows
 
@@ -37,4 +38,4 @@ then open `index.html` in a browser
 
   * This is actually **very difficult** to do consistently and accurately
   * When you get an error, **SCROLL UP** and read down STARTING from where YOU HIT RETURN
-
+  * It's not all incomprehensible gibberish -- the computer is trying to tell you something, and it's your job to decipher it

@@ -21,6 +21,7 @@ class Course
     lab "xml_builder"
 
     lesson "class_methods"
+    lesson "factories"
     lesson "reopening_classes"
     lab "array_extensions"
     lab "in_words"
