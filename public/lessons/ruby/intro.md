@@ -127,7 +127,10 @@ The *output* is `foo\n` but the *value* is `nil`.
 # Advanced Printing
 * `pp` *pretty-prints* its arg plus a newline
   * `require "pp"`
-* `d` is even prettier than `pp`
+* `ap` is even prettier than `pp`
+  * uses color, indenting, array counting
+  * provided by the "awesome_print" gem
+* `d` is even prettier than `ap`
   * provided by the `wrong` gem
   * `require "wrong"; include Wrong::D`
   * if x is 10, `d { x }` prints `x is 10`
@@ -168,6 +171,19 @@ With chaining:
     s = "my dog has fleas"
     s.split.map{|word| word.capitalize}.join(" ")
 
+# Functions
+
+    @@@ ruby
+    def add a, b
+      a + b
+    end
+
+    add 2, 2
+    #=> 4
+
+* Note: no 'return' required
+* `def add(a, b)` is also legal
+
 # Optional Punctuation
 
 * semicolons, parens, and `return` are optional
@@ -175,17 +191,20 @@ With chaining:
 * These are equivalent:
 
         @@@ ruby
-        def inc(x)
+        def increment(x)
           return x + 1;
         end
 
-        def inc x
+        def increment x
           x + 1
         end
 
-        def inc(x); x + 1; end
+* Also these:
 
-        def inc(x) x + 1; end
+        @@@ ruby
+        def increment x; x + 1; end
+
+        def increment(x) x + 1; end
 
 # Poetry vs Prose
 
@@ -212,6 +231,13 @@ Ruby is poetry:
 
 Cf. **declarative** vs. **algorithmic**
 
+# Ruby has hash comments, like perl
+
+    @@@ ruby
+    # is a comment
+    2 + 2 # is a comment
+
+Ruby has a syntax for multiline comments too, but it's silly and nobody uses it.
 
 # Line Break Gotcha
 
@@ -241,14 +267,6 @@ Solution: always put operators on top line
     >> "Hello".gsub("H", "h").reverse
     => "olleh"
 
-# Ruby has hash comments, like perl
-
-    @@@ ruby
-    # is a comment
-    2 + 2 # is a comment
-
-Ruby has a syntax for multiline comments too, but it's silly and nobody uses it.
-
 # Variables are declared implicitly
 
     @@@ ruby
@@ -273,8 +291,6 @@ Ruby has a syntax for multiline comments too, but it's silly and nobody uses it.
 
 # Built-in Types (cont.)
 
-* Regular Expressions
-  * `/fo*/i`
 * Arrays
   * `["apple", "banana"]`
 * Ranges
@@ -282,6 +298,8 @@ Ruby has a syntax for multiline comments too, but it's silly and nobody uses it.
 * Hashes
   * `{:apple => 'red', :banana => 'yellow'}`
   * `{apple: 'red', banana: 'yellow'}`
+* Regular Expressions
+  * `/fo*/i`
 
 # String interpolation
 
@@ -304,19 +322,6 @@ Ruby has a syntax for multiline comments too, but it's silly and nobody uses it.
 ![cheatsheet](cheatsheet/cheatsheet.png)
 
 (_The Well-Grounded Rubyist_, p. 5, section 1.1.2)
-
-# Functions
-
-    @@@ ruby
-    def add a, b
-      a + b
-    end
-
-    add 2, 2
-    #=> 4
-
-* Note: no 'return' required
-* `def add(a, b)` is also legal
 
 # Interlude
 
