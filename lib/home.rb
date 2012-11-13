@@ -3,6 +3,10 @@ require 'courses'
 
 class Home < Erector::Widget
 
+  external :js, "https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+  external :js, "/zrssfeed-119/jquery.zrssfeed.min.js"
+  external :css, "/zrssfeed-119/jquery.zrssfeed.css"
+
   external :style, <<-CSS
 div.bubble {
   border: 1px solid black;
@@ -17,11 +21,19 @@ div.bubble h2 {
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
 }
+div.blog {
+  float: right;
+  max-width: 24em;
+}
+div.blog .rssHeader > a:after {
+  content: ' - Recent Blog Entries'
+}
   CSS
 
   def content
-    div.bubble {
+    blog
 
+    div.bubble {
       p {
         text "I'm "
         a "Alex Chaffee", href: "http://alexchaffee.com"
@@ -44,6 +56,19 @@ div.bubble h2 {
 
   def lesson lesson_name
     Lesson.new(self, lesson_name)
+  end
+
+  #external :
+
+  def blog
+    jquery :ready,  <<-JAVASCRIPT
+      $('#blog_feed').rssfeed('http://codelikethis.tumblr.com/rss', {
+        limit: 5
+      });
+    JAVASCRIPT
+    div.blog do
+      div.blog_feed!
+    end
   end
 
 end

@@ -1,6 +1,7 @@
 require 'erector'
 
 class AppPage < Erector::Widgets::Page
+
   def page_title
     @title or super
   end
@@ -175,7 +176,7 @@ class AppPage < Erector::Widgets::Page
     div.nav {
       ul {
         li {
-          a "Blog", href: "#", onclick: "alert('no blog yet!')"
+          a "Blog", href: "http://codelikethis.tumblr.com"
         }
         li {
           a "Lessons", href: "/lessons"
