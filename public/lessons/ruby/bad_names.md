@@ -2,6 +2,7 @@
 
 | name | why it's bad | alternative |
 |---|---|---|
+| Fixnum | | Integer |
 | attr_accessor | "access" implies reading, not writing | attribute |
 | default block | "default" is misleading  | anonymous block |
 | default hash | "default" is misleading  | automatic hash |

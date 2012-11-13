@@ -86,15 +86,15 @@ When calling a method, if the final argument is a hash, you can **leave off** th
     def add_to_x_and_y(amount, vals)
       vals[:x] + vals[:y] + amount
     end
-    
+
     print_value_plus(2, {:x => 1, :y => 2})
-    
+
     # same as...
     print_value_plus 2, :x => 1, :y => 2
-    
+
     # same as...
     print_value_plus 2, x: 1, y: 2
-    
+
     # same as...
     print_value_plus 2, y: 2, x: 1
 
@@ -104,12 +104,12 @@ To pass *variable* parameters, or to pass *named* parameters, you can use an *op
 
     @@@ruby
     bake("Wheat")
-    bake("Rubylicious", :flour => "sour")
-    bake("Rubynickel", :milk => "butter")
-    
+    bake("Sourdough", :flour => "sour")
+    bake("Pumpernickel", :creamer => "butter")
+
     def bake(name, options = {})
       flour = options[:flour] || "rye"
-      milk = options[:milk] || "cream"
-      puts "baking a nice #{flour} loaf with #{milk}"
+      creamer = options[:creamer] || "cream"
+      puts "baking a nice #{flour} loaf with #{creamer}"
     end
 

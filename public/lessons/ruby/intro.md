@@ -49,13 +49,14 @@ Matz (Yukihiro Matsumoto), Ruby creator, says:
 * Ruby 1.0 released in 1996
   * Fully Open Source
 
-![many rubies](rubies.png)
+![too many rubies](rubies.png)
 
 # Versions common today
 
 * MRI 1.8.7
 * MRI 1.9.2 or 1.9.3
 * JRuby
+* Coming soon: [Ruby 2.0](http://globaldev.co.uk/2012/11/ruby-2-0-0-preview-features/)
 
 # Ruby Language Overview
 

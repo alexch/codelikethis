@@ -10,64 +10,12 @@ Ref. WGR Chapter 8, Section 8.1, Working with strings
         "\t"  #=> "\t"
         name = "alice"
         "hello, #{name}" #=> "hello, alice"
-    
+
 * single-quotes are more literal-minded
 
         '\t' #=> "\\t"
 
-# weirdo string literals
-
-* %Q -- `%Q{don't worry, "man"}`
-    * just like double-quote only you don't need a backslash for "
-* %q -- `%q{don't #{interpolate}, "man"}`
-  * just like single-quote only you don't need a backslash for '
-* any delimiter will do
-  * `%Q{...}`, `%Q(...)`, `%Q|...|`, etc.
-
-# Multiline strings
-
-* newlines do *not* end a string
-
-        "Now is the winter of our discontent
-        made glorious summer by this son of York."
-        
-=>
-
-        "now is the winter of our discontent\nmade glorious summer by this son of York."
-
-# Here Docs
-
-    first_quatrain = <<END
-    My mistress' eyes are nothing like the sun;
-    Coral is far more red than her lips' red;
-    If snow be white, why then her breasts are dun;
-    If hairs be wires, black wires grow on her head.
-    END
-    
-# Here docs with indentation
-
-    def second_quatrain
-      x = <<-HTML
-        <blockquote>
-          I have seen roses damask'd, red and white,
-          But no such roses see I in her cheeks; 
-          And in some perfumes is there more delight
-          Than in the breath that from my mistress reeks.
-        </blockquote>
-      HTML
-      x
-    end
-    
-<!--# Here docs don't have to end the expression
-
-    @@@ruby
-    x = <<-NUM.to_i * 10
-    5
-    NUM
-    x  # => 50
-
-Weird, huh?
--->
+* there are many other bizarre ways to declare a string ([see below](#lots_of_ways_to_declare_a_string))
 
 # substrings
 
@@ -85,7 +33,7 @@ Weird, huh?
     s = "Ruby rocks"
     s[/r../] #=> "roc"
     s[/r../i] #=> "Rub"
-    
+
 # substring setting
 
     @@@ruby
@@ -97,12 +45,12 @@ Weird, huh?
 
 plus makes a new string
 
-    s = "dog" 
+    s = "dog"
     s + "cow"  #=> "dogcow"
     s          #=> "dog"
 
 shovel changes the original string
-    
+
     s = "dog"
     s << "cow" #=> "dogcow"
     s          #=> "dogcow"
@@ -144,7 +92,9 @@ The "flying saucer" operator is used for sorting
 
 `gsub` munges a string
 
-    s.gsub(/xyz/, "pdq")
+    s = "rubber baby buggy bumpers"
+    s.gsub(/b/, "g")
+    s #=> "rugger gagy guggy gumpers"
 
 * performs a regular expression search-and-replace on the string
 * `gsub!` modifies the string in place
@@ -155,7 +105,7 @@ The "flying saucer" operator is used for sorting
 
     "apple banana cherry".split
     => ["apple", "banana", "cherry"]
-    
+
 * splits on whitespace by default
   * or you can pass in a delimiter
 
@@ -208,4 +158,63 @@ some of these have `!` versions which modify the string in place
         # encoding: utf-8
 
 * more: <http://nuclearsquid.com/writings/ruby-1-9-encodings/>
+
+# lots of ways to declare a string
+
+* weird string literals
+* here docs
+
+# weird string literals
+
+* %Q -- `%Q{don't worry, "man"}`
+    * just like double-quote only you don't need a backslash for "
+* %q -- `%q{don't #{interpolate}, "man"}`
+  * just like single-quote only you don't need a backslash for '
+* any delimiter will do
+  * `%Q{...}`, `%Q(...)`, `%Q|...|`, etc.
+
+# Multiline strings
+
+* newlines do *not* end a string
+
+        "Now is the winter of our discontent
+        made glorious summer by this son of York."
+
+=>
+
+        "now is the winter of our discontent\nmade glorious summer by this son of York."
+
+# Here Docs
+
+    first_quatrain = <<END
+    My mistress' eyes are nothing like the sun;
+    Coral is far more red than her lips' red;
+    If snow be white, why then her breasts are dun;
+    If hairs be wires, black wires grow on her head.
+    END
+
+# Here docs with indentation
+
+    def second_quatrain
+      x = <<-HTML
+        <blockquote>
+          I have seen roses damask'd, red and white,
+          But no such roses see I in her cheeks;
+          And in some perfumes is there more delight
+          Than in the breath that from my mistress reeks.
+        </blockquote>
+      HTML
+      x
+    end
+
+<!--# Here docs don't have to end the expression
+
+    @@@ruby
+    x = <<-NUM.to_i * 10
+    5
+    NUM
+    x  # => 50
+
+Weird, huh?
+-->
 
