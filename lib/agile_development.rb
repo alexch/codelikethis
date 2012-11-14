@@ -1,7 +1,7 @@
 require "course"
 
 class Course
-  TestDriven = Course.new("test_driven") do
+  AgileDevelopment = Course.new("agile_development") do
     lesson "test_driven" do
       video "tFwAailXjeA"
       video "mzcBfUu15RU"

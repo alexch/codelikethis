@@ -38,7 +38,7 @@ class App < Sinatra::Base
 
   get '/lessons' do
     all_courses = [
-        Course::TestDriven,
+        Course::AgileDevelopment,
         Course::Ruby,
         Course::RubyTools,
         Course::RubyBasics,
@@ -52,6 +52,11 @@ class App < Sinatra::Base
 
   get '/' do
     AppPage.new(:widget => Home, :title => "Code Like This").to_html
+  end
+
+  # todo: use Refractor for these redirects
+  get '/lessons/test_driven/test_driven' do
+    response.redirect '/lessons/agile_development/test_driven'
   end
 
   get "/lessons/:course" do
