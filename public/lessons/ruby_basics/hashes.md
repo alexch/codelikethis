@@ -7,9 +7,12 @@ Ref. WGR Chapter 9, Section 9.3, Hashes
 
 ![corned beef hash](cornedbeefhash.jpeg)
 
-* unordered set of key/value pairs
+* unordered collection of key/value pairs
+* keys must be unique
+* values can be anything
 
-* also known as...
+# Hash is also known as...
+
   * Map
   * Associative Array
   * Dictionary

@@ -26,9 +26,14 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 ## or like queues
 
     a = [1, 2, 3]
-    a.unshift "zero" #=> ["zero", 1, 2, 3]
-    a.shift          #=> "zero"
+    a.push(4)        #=> [1, 2, 3, 4]
+    a.shift          #=> 1
     a                #=> [1, 2, 3]
+
+    a.unshift "zero" #=> ["zero", 1, 2, 3]
+
+* `push` means "enqueue"; `shift` means "dequeue"
+
 
 ## or like sets
 
@@ -38,7 +43,7 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 (technically an array is not a set because it doesn't enforce *uniqueness*)
 
 # `first` and `last`
-    
+
     a[0]          #=> 1
     a.first       #=> 1
     a[a.size-1]   #=> 3
@@ -71,7 +76,7 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
         a + "z"        #=> can't convert String into Array
         a + ["z"]      #=> ["x", "y", "z"] (but a is unchanged)
         a += ["z"]     #=> ["x", "y", "z"] (and a is changed)
-    
+
         a = b = ["x"]
         a += ["y"]
         a #=> ["x", "y"]
@@ -94,7 +99,7 @@ Arrays are zero-indexed
 
 ## Question: which is better?
 
-### zero-based indexing 
+### zero-based indexing
 ### or
 ### one-based indexing?
 
@@ -110,8 +115,8 @@ Arrays are zero-indexed
 ![array indexing](array_indexing.png)
 
 * This allows consistent length and looping semantics
-  * It's always "less than the limit" 
-  * and "the limit *is* the size" 
+  * It's always "less than the limit"
+  * and "the limit *is* the size"
   * i.e. a[0,3] has 3 things in it, indexed 0,1,2
 
 # Fun with Array Indexes
@@ -124,7 +129,7 @@ negative indexes count from the back
     @@@ ruby
     fruit[-1] #=> "date"
     fruit[-3] #=> "banana"
-        
+
 range indexes
 
     @@@ ruby
@@ -157,7 +162,7 @@ moral: getting past the end returns `nil`, not error
     >> a.size
     => 10
     >> a
-    => ["apple", "banana", "cherry", nil, nil, 
+    => ["apple", "banana", "cherry", nil, nil,
         nil, nil, nil, nil, "jicama"]
 
 moral: setting past the end autofills with `nil`
@@ -169,9 +174,9 @@ moral: setting past the end autofills with `nil`
 
         @@@ ruby
         times_table = []
-        4.times do |x| 
+        4.times do |x|
           times_table[x] = []
-          4.times do |y| 
+          4.times do |y|
             times_table[x][y] = x * y
           end
         end
@@ -182,4 +187,4 @@ moral: setting past the end autofills with `nil`
         => 6
         >> times_table[2]
         => [0, 2, 4, 6]
-                
+

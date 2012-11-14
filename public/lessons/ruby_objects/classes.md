@@ -21,7 +21,7 @@ class Cookie
     @chips ||= 0    # lazy initialization
     @chips += more_chips
   end
-  
+
   def yummy?
     @chips and @chips >= 20
   end
@@ -49,7 +49,7 @@ end
         class Cookie
           def initialize
             @chips = 0
-          end          
+          end
         end
 
         cookie = Cookie.new  # *not* Cookie.initialize!
@@ -65,16 +65,16 @@ Active initialization (inside the constructor) leads to simpler code elsewhere i
       def initialize
         @chips = 0    # active initialization
       end
-  
+
       def sweeten(more_chips = 10)
         @chips += more_chips
       end
 
       def yummy?
         @chips >= 20
-      end  
+      end
     end
-    
+
 # Lazy Initialization
 
     @@@ruby
@@ -97,6 +97,8 @@ Active initialization (inside the constructor) leads to simpler code elsewhere i
 3. returns a pointer to the instance
 
 So by the time assignment (`=`) happens, the object has been constructed and initialized.
+
+So a constructor is your **one big chance** to initialize everything before anyone else gets a pointer to it.
 
 # Instance methods
 
@@ -236,14 +238,14 @@ aka "macros"
         => [:foo, :foo=, :bar, :bar=,
 
 # Attribute Shortcuts (cont.)
-        
+
 * Wait a second!
 * Q: Where are `attr_reader` _et al._ defined?
 * A: They are *class methods* of `Object`
 * A: Or maybe they're *instance methods* of `Class` or `Module`; I'm not sure.
 
 # Attribute Shortcuts (cont.)
-        
+
 * Sadly, `attr_accessor` is misnamed
 * "accessor" means `reader`, but `attr_accessor` makes a reader *and* a writer
 * Should have been called just `attribute`
@@ -270,7 +272,7 @@ end
 
     alice.age = 16
     alice.child? #=> true
-    
+
 Note: query methods return a boolean by *convention* only
 
 # Bang methods
