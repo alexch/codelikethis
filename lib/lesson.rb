@@ -146,14 +146,14 @@ class Lesson < Erector::Widget
 
       div.next_and_previous do
         next_lesson_button
-        previous_button_button
+        previous_lesson_button
       end
 
       widget Disqus, shortname: "codelikethis", developer: (Thread.current[:development] ? 1 : nil), identifier: "lesson_#{@course.name}_#{name}", title: "#{@course.display_name}: #{display_name}"
     }
   end
 
-  def previous_button_button
+  def previous_lesson_button
     if previous_lesson
       a.button.previous_lesson href: previous_lesson.name do
         text "<< "
@@ -189,5 +189,8 @@ class Lesson < Erector::Widget
     @course.next_labs(name)
   end
 
+  def video?
+    !@videos.empty?
+  end
 
 end

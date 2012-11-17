@@ -7,7 +7,17 @@ require 'lesson'
 require 'lab'
 
 class Course < Erector::Widget
+
+  external :style, <<-CSS
+  span.video_link {
+    float: right;
+    border: 1px dotted black;
+    padding: 1px 2px;
+  }
+  CSS
+
   attr_writer :dir
+
 
   def initialize name = "course", &block
     @name = name.underscore
@@ -45,7 +55,9 @@ class Course < Erector::Widget
 
   def content
     widget Breadcrumbs, parents: [Courses.new], display_name: self.display_name
-    list_items
+    div style: "max-width: 30em;" do
+      list_items
+    end
   end
 
   def list_items items = @stuff
@@ -54,7 +66,10 @@ class Course < Erector::Widget
         li {
           item_name = item.display_name
           item_name = "Lab: #{item_name}" if item.is_a? Lab
-          a item_name, href: item.href
+          a href: item.href do
+            text item_name
+            span.video_link "Video" if item.respond_to? :video? and item.video?
+          end
         }
       end
     }

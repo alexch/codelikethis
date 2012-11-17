@@ -51,6 +51,13 @@ class Courses < Erector::Widget
     color: black;
   }
 
+  span.video_link {
+    float: right;
+    border: 1px dotted black;
+    padding: 1px 2px;
+    margin-top: -2px;
+  }
+
   CSS
 
     module ::Enumerable
