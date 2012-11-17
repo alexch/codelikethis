@@ -18,7 +18,7 @@
       end
     end
 
-* defines an *example* 
+* defines an *example*
   * (aka *spec* or *test*)
 * takes a string as its name
 
@@ -48,6 +48,7 @@
 
 * weirdo argument to `should`
 * performs a test on the object that `should` is called on
+* see <http://rubydoc.info/gems/rspec-expectations#Built-in_matchers>
 
 # be matchers
 
