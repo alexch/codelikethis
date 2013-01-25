@@ -97,6 +97,10 @@ class AppPage < Erector::Widgets::Page
         max-width: 56em;
       }
 
+      .pre_footer {
+        clear: both;
+        background: white;
+      }
       .footer {
         padding: 4px 2px 8px;
         text-align: center;
@@ -192,6 +196,9 @@ class AppPage < Erector::Widgets::Page
     div.main {
       call_block
       widget @widget if @widget
+      div.pre_footer {
+
+      }
     }
     div.footer {
       text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2012 by "
