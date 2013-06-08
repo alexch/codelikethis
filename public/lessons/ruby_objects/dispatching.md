@@ -84,3 +84,11 @@ From inside `method_missing`, `super` looks up the chain for another `method_mis
 Allows chaining/overriding of `method_missing` calls, or fallback to `NoMethodError`
 
 
+    def x.method_missing(name)
+      if (name == :hee)
+        puts "HAW!"
+      else
+        super
+      end
+    end
+

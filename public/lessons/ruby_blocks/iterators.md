@@ -38,7 +38,10 @@ prints
         yield i
         i += 1
       end
+      x
     end
+
+(`times` returns the number itself)
 
 # to `each` his own
 
@@ -112,6 +115,9 @@ Ref. [Using Select Etc.](http://matthewcarriere.com/2008/06/23/using-select-reje
 * it passes a persistent "accumulator" to each iteration
 * the return value of the block becomes the next accumulator
 
+* "inject" is also called "reduce", "fold", and "accumulate" in other languages
+  * see <http://railspikes.com/2008/8/11/understanding-map-and-reduce>
+  
 # `inject` example
 
     @@@ruby
@@ -126,6 +132,21 @@ Ref. [Using Select Etc.](http://matthewcarriere.com/2008/06/23/using-select-reje
       [1,2,3].sum #=> 6
 
 * To help understand this, write out a table with the values of total, current, and the return value for each iteration.
+
+# `inject` reduced
+
+You can also send `inject` (or `reduce`) the name of a method only:
+
+    @@@ruby
+    class Array
+      def sum
+        self.reduce(:+)
+      end
+    end
+
+    [1,2,3].sum #=> 6
+
+Here we are "reducing" the array by calling `+` on all its elements in succession.
 
 # more help
 

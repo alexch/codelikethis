@@ -84,19 +84,21 @@ When calling a method, if the final argument is a hash, you can **leave off** th
 
     @@@ ruby
     def add_to_x_and_y(amount, vals)
-      vals[:x] + vals[:y] + amount
+      x = vals[:x]
+      y = vals[:y]
+      x + y + amount
     end
 
-    print_value_plus(2, {:x => 1, :y => 2})
+    add_to_x_and_y(2, {:x => 1, :y => 2})
 
     # same as...
-    print_value_plus 2, :x => 1, :y => 2
+    add_to_x_and_y 2, :x => 1, :y => 2
 
     # same as...
-    print_value_plus 2, x: 1, y: 2
+    add_to_x_and_y 2, x: 1, y: 2
 
     # same as...
-    print_value_plus 2, y: 2, x: 1
+    add_to_x_and_y 2, y: 2, x: 1
 
 # the "options hash" pattern
 

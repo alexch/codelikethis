@@ -33,7 +33,6 @@ Matz (Yukihiro Matsumoto), Ruby creator, says:
 * <http://linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html>
 * <http://www.ruby-lang.org/en/about/>
 
-
 # Ruby Philosophy: Humane Interface
 
 * Ruby has a *humane interface*
@@ -53,12 +52,17 @@ Matz (Yukihiro Matsumoto), Ruby creator, says:
 
 # Versions common today
 
-* MRI 1.8.7
-* MRI 1.9.2 or 1.9.3
-* JRuby
-* Coming soon: [Ruby 2.0](http://globaldev.co.uk/2012/11/ruby-2-0-0-preview-features/)
+* MRI 1.8.7 
+  * old, on many production servers
+* MRI 1.9.3 
+  * stable, more modern
+* [Ruby 2.0](http://globaldev.co.uk/2012/11/ruby-2-0-0-preview-features/) was [*just* released](http://www.ruby-lang.org/en/news/2013/02/24/ruby-2-0-0-p0-is-released/)
+* JRuby 
+  * runs on Java VM and J2EE servers -- deploy = WAR file
 
 # Ruby Language Overview
+
+Ruby is...
 
 * Interpreted
 * Dynamically typed
@@ -76,7 +80,7 @@ Matz (Yukihiro Matsumoto), Ruby creator, says:
     >> 4+4
     => 8
 
-Please fire up `irb` on your computer and try this out right now!
+Please fire up `irb` on your computer and **try this out** right now!
 
 # Everything's an Object
 
@@ -136,6 +140,41 @@ The *output* is `foo\n` but the *value* is `nil`.
   * `require "wrong"; include Wrong::D`
   * if x is 10, `d { x }` prints `x is 10`
 
+# Functions
+
+    @@@ ruby
+    def add a, b
+      a + b
+    end
+
+    add 2, 2
+    #=> 4
+
+* Note: no 'return' required
+* `def add(a, b)` is also legal
+
+# Optional Punctuation
+
+* semicolons, parens, and `return` are optional
+
+* These are equivalent:
+
+        @@@ ruby
+        def increment(x)
+          return x + 1;
+        end
+
+        def increment x
+          x + 1
+        end
+
+* Also these:
+
+        @@@ ruby
+        def increment x; x + 1; end
+
+        def increment(x) x + 1; end
+
 # Blocks are like mini-functions
 
 * Blocks can also take parameters or return a value
@@ -171,41 +210,6 @@ With chaining:
 
     s = "my dog has fleas"
     s.split.map{|word| word.capitalize}.join(" ")
-
-# Functions
-
-    @@@ ruby
-    def add a, b
-      a + b
-    end
-
-    add 2, 2
-    #=> 4
-
-* Note: no 'return' required
-* `def add(a, b)` is also legal
-
-# Optional Punctuation
-
-* semicolons, parens, and `return` are optional
-
-* These are equivalent:
-
-        @@@ ruby
-        def increment(x)
-          return x + 1;
-        end
-
-        def increment x
-          x + 1
-        end
-
-* Also these:
-
-        @@@ ruby
-        def increment x; x + 1; end
-
-        def increment(x) x + 1; end
 
 # Poetry vs Prose
 
@@ -320,7 +324,7 @@ Solution: always put operators on top line
 
 # Ruby syntax cheatsheet
 
-![cheatsheet](cheatsheet/cheatsheet.png)
+![cheatsheet](/lessons/ruby_basics/cheatsheet/cheatsheet.png)
 
 (_The Well-Grounded Rubyist_, p. 5, section 1.1.2)
 
@@ -329,6 +333,19 @@ Solution: always put operators on top line
 Are you sick of hearing me speak?
 
 If so, do a lab: 01_temperature is right up your alley.
+
+# Iterators
+
+    @@@ ruby
+    my_array = ["cat", "dog", "world"]
+    my_array.each do |item|
+      puts "hello " + item
+    end
+
+* `do...end` defines a *block*
+* calls the block with `item = "cat"`
+* then calls the block with `item = "dog"`
+* then calls the block with `item = "world"`
 
 # Classes and methods
 
@@ -404,6 +421,12 @@ constants are in `ALL_CAPS`
   * omits the trailing `.rb`
   * can also be used for extensions written in C (`.so`, `.dll`, etc.)
 
+# Next steps
+
+* Lesson: [Ruby Tools](/lessons/ruby/tools)
+* Lesson: [Ruby Basics](/lessons/ruby/ruby_basics)
+* Lesson: [Ruby Objects](/lessons/ruby/ruby_basics)
+* [other lessons](http://localhost:9292/lessons)
 
 # Credits
 

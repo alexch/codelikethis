@@ -58,17 +58,19 @@ Note that the return value is *truthy* if the string is a match, and *falsey* if
 
 ```
 @@@ruby
-if "foobar" =~ /foo(.*)/ then
+if "the quick brown fox" =~ /(quick).*(f..)/ then
   puts "The matching string was #{$~}"
-  puts "The matching substring was #{$1}"
+  puts "The first substring was #{$1}"
+  puts "The second substring was #{$2}"
 end
 ```
 
 Prints this:
 
 ```
-The matching string was foobar
-The matching substring was bar
+The matching string was quick brown fox
+The first substring was quick
+The second substring was fox
 ```
 
 ### See Also

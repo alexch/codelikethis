@@ -3,19 +3,6 @@
 
 This section is a continuation of "ruby intro", covering more advanced topics. It is still intended as a brief, lightweight overview of the Ruby language; following sections will cover all these topics in much more detail. 
 
-# Iterators
-
-    @@@ ruby
-    my_array = ["cat", "dog", "world"]
-    my_array.each do |item|
-      puts "hello " + item
-    end
-
-* `do...end` defines a *block*
-* calls the block with `item = "cat"`
-* then calls the block with `item = "dog"`
-* then calls the block with `item = "world"`
-
 # Reopening classes
 
     @@@ ruby

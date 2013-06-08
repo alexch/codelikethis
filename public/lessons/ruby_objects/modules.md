@@ -96,6 +96,7 @@ end
 * **`<`** inherits a superclass (pronounced "inherits from")
   * `class BetterString < String`
 
+
 <!SLIDE incremental>
 # module lookup gotchas
 
@@ -111,6 +112,9 @@ class Foo
   include A  #<< ignored!
 end
 ```
+
+* Ruby 2.0 introduces the [`prepend` method](http://dev.af83.com/2012/10/19/ruby-2-0-module-prepend.html) for even more fun!
+
 
 <!SLIDE subsection>
 # Using Modules for Organization

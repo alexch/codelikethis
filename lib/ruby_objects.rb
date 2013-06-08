@@ -5,8 +5,10 @@ class Course
     lesson "tiers" do
       video "FZkjE1_0XtI"
     end
+
     lesson "objects"
     lab "hello_friend"
+
     lesson "classes"
     lab "book_titles"
 
