@@ -178,6 +178,10 @@ You can think of it as the answer to a question.
     2 + 2    # Question: What is 2 + 2?
     4        # Answer: 4
 
+
+    "apple".upcase  # Q: What is the upcase of the string "apple"?
+    "APPLE"         # A: the string "APPLE"
+
 # String Messages
 
 A string understands lots of messages. Here are a few:
@@ -316,31 +320,41 @@ Let's spend 15 minutes just playing around in IRB. Some things to try:
 * when you open the Terminal you are in your HOME DIRECTORY
 * usually you don't want to store files directly in here
 
+# Listing Directory Contents
+
+* when you type `ls` ("list") it shows the contents of the current directory
+
 # Making a directory
 
-* `mkdir` ("make dir") creates a new SUBDIRECTORY inside the current directory
+* when you type `mkdir` ("make dir") it creates a new SUBDIRECTORY inside the current directory
 
 # Changing directories
 
 * `cd` ("change dir") moves you into a different directory
 * For example, `cd code` would move you into a directory named `code`
-* If you ever get lost, type `cd` all on its own and press the return key. It will send you back to your home directory.
+* If you ever get lost, type `cd` all on its own and press the return key. This will send you back to your home directory.
 
 # Basic Command Line Glossary
 
 * `pwd` ("print working dir") -- shows the name of the current directory
 * `ls` ("list") -- shows the contents of the current directory
 * `mkdir` ("make dir") -- creates a new SUBDIRECTORY inside the current directory
-* `touch whatever.txt` -- creates an empty file named `whatever.txt` inside the current directory
 * `cd` ("change dir") -- move into a different directory
+* `touch whatever.txt` -- creates an empty file named `whatever.txt` inside the current directory
 
 # LAB: make a subdirectory and then enter it
 
 1. open Terminal
 2. make a new subdirectory using `mkdir code`
 3. change into that directory using `cd code`
+4. list its contents using `ls` (and note that it's empty)
 
 # Files
+
+* a file is a place on disk for storing stuff
+* "stuff" here could be anything at all
+  * documents, pictures, sounds, applications...
+* every file lives inside a directory
 
 # Text Editor
 
@@ -456,7 +470,7 @@ What happens? Is this what you expected?
 * What happens if you type your name in all lowercase?
 * Make the program capitalize your name for you even if you forget.
 
-* Now go crazy and make it do all sorts of silly things to your name
+* Now go crazy and make it do all sorts of silly things to your name!
 
 ---
 
@@ -494,6 +508,73 @@ If you want something to keep going forever, use a special loop called `while tr
 
 To stop it, hold down the CONTROL key and press the C key.
 
+# LAB: Infinite Hello
+
+Let's change `hello.rb` so that it keeps saying hello over and over again.
+
+    while true
+      puts "What is your name?"
+      name = gets.strip
+      puts "Hello, " + name + "!"
+    end
+
+# LAB: Infinite Food
+
+Write a program that
+
+1. asks the user for a food -- say, "pizza"
+2. prints "Yum, I love pizza!"
+3. asks again, and prints again, forever and ever
+
+---
+
+# Truthiness
+
+Computers have a very strict idea of when things are *true* and *false*.
+
+Try the following in irb:
+
+* `1 < 2`
+* `2 + 2 < 5`
+* `2.even?`
+* `4.odd?`
+* `"apple".empty?`
+* `"".empty?`
+
+# Conditions
+
+The magic word `if` is called a CONDITIONAL.
+
+    if age < 18
+      puts "Sorry, adults only."
+    end
+
+* todo
+
+# The Tragedy of the Equal Sign
+
+* a single equal sign means ASSIGNMENT
+  * `name = "Alice"` -- "assign the variable 'name' to the value 'Alice'"
+* two equal signs means COMPARISON
+  * `name == "Alice"` -- "does the variable 'name' contain the string 'Alice'?"
+
+> This is confusing, and you should feel confused.
+
+# LAB: Exiting
+
+Change your "infinite food" program so that if the user types "return" -- meaning the string is empty -- then the program exits.
+
+(You can do this with the magic words `if` and `exit`.)
+
+# Logic
+
+- or
+- and
+
+
+# LAB: Good Food, Bad Food
+
+
 ---
 
 # Arrays
@@ -508,14 +589,6 @@ An iterator is a special kind of loop that acts on the items in a collection.
 
 * todo
 
----
-
-# Conditions
-
-- if
-- while
-- or
-- and
 
 ---
 
