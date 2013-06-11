@@ -147,7 +147,7 @@ The most powerful operator is DOT.
 
 On screen she looks like a period, but here's what she looks like up close:
 
-[picture of Dot the Operator]
+![picture of Dot the Operator](dot.jpg)
 
 Dot can send any message she likes, by name, to any object.
 
@@ -434,7 +434,7 @@ What happens? Is this what you expected?
 * In addition to letters, numbers, and punctuation, computers also store other keys inside strings
 * Among these CONTROL CHARACTERS is the one that represents the RETURN KEY
 * This character's name is NEWLINE
-* Every time you use `gets`, Ruby reads *all* the characters, *including the newline*, !
+* Every time you use `gets`, Ruby reads *all* the characters, *including the newline*!
 
 # Strip it
 
@@ -498,11 +498,15 @@ To stop it, hold down the CONTROL key and press the C key.
 
 # Arrays
 
+* todo
+
 ---
 
 # Iterators
 
 An iterator is a special kind of loop that acts on the items in a collection.
+
+* todo
 
 ---
 
@@ -516,6 +520,8 @@ An iterator is a special kind of loop that acts on the items in a collection.
 ---
 
 # Functions
+
+* todo
 
 ---
 
@@ -572,5 +578,9 @@ and when someone requests this:
 they see this:
 
     DINNERTIME!!!
+
+# Detour: Deploying to Heroku
+
+* todo - link to Railsbridge pages describing account setup & deploy steps
 
 
