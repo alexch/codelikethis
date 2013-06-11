@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org' 
 
 gem "sinatra"
 gem "erector", ">=0.9.0.pre1"

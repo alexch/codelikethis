@@ -1,13 +1,17 @@
-todo: 
-loops
-numbers
-arrays
-  shuffle!
-hashes
-sinatra
+# todo: 
 
-bonus labs (for students who "get it" before the rest of the room and don't want to sit around bored (or help others))
+* loops
+* numbers
+* arrays
+  *  shuffle!
+* hashes
+* bonus labs (for students who "get it" before the rest of the room and don't want to sit around bored (or help others))
+* functions?
+* methods?
+* nil
+* interpolation?
 
+* diagram: memory (variables+objects)
 
 # Learn To Code
 
@@ -20,7 +24,6 @@ In this class, you will utilize Ruby to learn:
 *  Object concepts like Classes
 *  How to run your Ruby code interactively (irb) or from a file
 *  Make a very simple website run on your own computer
-
 
 ---
 
@@ -69,7 +72,7 @@ In this class, you will utilize Ruby to learn:
 
 * CPU ("the brain")
 * Memory
-* Input/Output 
+* Input/Output
   * keyboard, mouse, touch screen, monitor
 
 bonus: [Von Neumann Machine]()
@@ -88,9 +91,13 @@ Every piece of software on your computer is a PROGRAM.
 * a recipe is a collection of *ingredients* and *instructions*
 * a program is a collection of *data* and *code*
 
+> When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
+
 # Languages
 
-* every program is written in a LANGUAGE, like Java or Python or C or Fortran
+* every program is written in a LANGUAGE
+  * like Java or Python or C or Fortran
+  * even HTML and CSS and SQL are languages
   * every computer language has a silly name
 * different languages are useful in different areas, but there is a lot of overlap
 * today we will learn the RUBY programming language
@@ -98,9 +105,9 @@ Every piece of software on your computer is a PROGRAM.
 # Ruby
 
 * Ruby was invented in the 1990s by a very nice Japanese man named Matz
-* The motto of Ruby is MINISWAN:
+* The motto of Ruby is MINASWAN:
 
-> Matz is nice, so we are nice.
+> Matz is nice, and so we are nice.
 
 * Ruby was designed to be fun to write code in, while also being powerful and well-rounded.
 
@@ -112,7 +119,17 @@ An OBJECT is a location in computer memory where you can store DATA.
 
 [todo: say "values" or "info" instead of "data"?]
 
-There are many kinds of objects, including String, Number, Array, Hash, Time... These are called CLASSES. Some day soon you will create your own classes but for now, we will use the existing ones.
+There are many kinds of objects, including String, Number, Array, Hash, Time... These are called CLASSES. 
+
+Some day soon you will create your own classes but for now, we will use the built-in ones.
+
+# Numbers
+
+A NUMBER is what it sounds like.
+
+    10
+    -12
+    3.14
 
 # Strings
 
@@ -135,8 +152,31 @@ On screen she looks like a period, but here's what she looks like up close:
 Dot can send any message she likes, by name, to any object.
 
     "apple".upcase
+    
+# Other Operators
 
-There are other operators, like PLUS and TIMES, but they only send one message each.
+There are other operators, like PLUS (`+`) and TIMES (`*`), but they only send one message each.
+
+And remember, Dot is more powerful than any other operator!
+
+    2 + 7
+
+is the same as
+
+    2.+ 7
+
+Both send the message `+` to the object `2`.
+
+# Return Values
+
+Every time an object receives a message, it returns a response.
+
+The response is also called the VALUE or the RETURN VALUE.
+
+You can think of it as the answer to a question. 
+
+    2 + 2    # Question: What is 2 + 2?
+    4        # Answer: 4
 
 # String Messages
 
@@ -145,7 +185,7 @@ A string understands lots of messages. Here are a few:
     "banana".upcase
     "Cherry".downcase
     "date".capitalize
-    "stressed".reverse
+    "elderberry".reverse
     "fig".length
     "Fig Newton".swapcase
 
@@ -153,7 +193,7 @@ Try all of these out in irb!
 
 # String Operators
 
-A string also understands several operators:
+A string also understands several other operators:
 
     "blue" + "berry"
     "yum" * 10
@@ -161,12 +201,26 @@ A string also understands several operators:
 
 `+` `*` and `[]` are pronounced PLUS, TIMES, and SUB
 
+Try these out in irb!
+
 # Combining Messages and Operators
 
 You can combine messages and operators at will.
 
-    "blue".upcase.reverse
-    "yum".reverse * 10 + "!!!"
+    "fig".upcase.reverse
+    "grape".reverse * 10 + "!!!"
+
+Definitely try these out in irb! It's pretty fun.
+
+# LAB: Playing With Strings And Numbers
+
+Answer the following questions using irb:
+
+* How many seconds are in an hour?
+* How many seconds are in a week?
+* What is the reverse of "stressed"?
+* What does your name look like, repeated 1000 times?
+* What is the tenth character of "Matz is nice"? (Trick question!)
 
 ---
 
@@ -181,6 +235,18 @@ Anywhere you can use an object, you can use a variable instead.
 
     color + fruit
     fruit.upcase
+    
+# The Warehouse Metaphor
+
+![Warehouse from Raiders of the Lost Ark](warehouse.jpg)
+
+If memory is a giant warehouse...
+
+...and objects are boxes in that warehouse
+
+...then data is the **contents** of a box
+
+...and a variable is a **label** you stick on the outside of the box
 
 # Changing Variables
 
@@ -250,12 +316,23 @@ Let's spend 15 minutes just playing around in IRB. Some things to try:
 * when you open the Terminal you are in your HOME DIRECTORY
 * usually you don't want to store files directly in here
 
+# Making a directory
+
+* `mkdir` ("make dir") creates a new SUBDIRECTORY inside the current directory
+
+# Changing directories
+
+* `cd` ("change dir") moves you into a different directory
+* For example, `cd code` would move you into a directory named `code`
+* If you ever get lost, type `cd` all on its own and press the return key. It will send you back to your home directory.
+
 # Basic Command Line Glossary
 
 * `pwd` ("print working dir") -- shows the name of the current directory
 * `ls` ("list") -- shows the contents of the current directory
 * `mkdir` ("make dir") -- creates a new SUBDIRECTORY inside the current directory
 * `touch whatever.txt` -- creates an empty file named `whatever.txt` inside the current directory
+* `cd` ("change dir") -- move into a different directory
 
 # LAB: make a subdirectory and then enter it
 
@@ -267,9 +344,12 @@ Let's spend 15 minutes just playing around in IRB. Some things to try:
 
 # Text Editor
 
-* a program that edits a text file
+* a text editor is a program that edits a text file
 * a text editor is *like* a word processor
 * but a text editor is **not** a word processor
+* You probably have *Sublime Text* 
+  * others include *TextMate*, *Notepad++*
+  * but **NOT** *TextEdit* or *Notepad* or *Microsoft Word*
 
 # Source File
 
@@ -384,7 +464,7 @@ What happens? Is this what you expected?
 
 Computers, like robots, are good at doing things over and over and over again.
 
-A LOOPS is when we ask a program to do something many times.
+A LOOP is when we ask a program to do something many times.
 
 # times
 
@@ -416,6 +496,10 @@ To stop it, hold down the CONTROL key and press the C key.
 
 ---
 
+# Arrays
+
+---
+
 # Iterators
 
 An iterator is a special kind of loop that acts on the items in a collection.
@@ -426,6 +510,12 @@ An iterator is a special kind of loop that acts on the items in a collection.
 
 - if
 - while
+- or
+- and
+
+---
+
+# Functions
 
 ---
 
