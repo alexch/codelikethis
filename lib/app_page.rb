@@ -201,7 +201,7 @@ class AppPage < Erector::Widgets::Page
       }
     }
     div.footer {
-      text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2012 by "
+      text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013 by "
       a "Alex Chaffee.", href: "http://alexchaffee.com"
       br
       rawtext <<-HTML
