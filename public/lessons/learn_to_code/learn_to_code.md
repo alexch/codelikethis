@@ -44,8 +44,8 @@ In this class, you will utilize Ruby to learn:
 
 # The Command Line
 
-* the *TERMINAL* is a window into which you can talk directly to your computer
-* [find a picture: war games: shall we play a game?]
+* the *TERMINAL* is a window into which you can talk directly to your computer by typing
+![Shall we play a game?](wargames-terminal.jpg)
 * aka *console* or *command line* or *command prompt*
 
 # irb - the Interactive Ruby Browser
@@ -89,9 +89,14 @@ Every piece of software on your computer is a PROGRAM.
 # A Program Is Like A Recipe
 
 * a recipe is a collection of *ingredients* and *instructions*
+
+![Grandma's Cookie Recipe](cookie-recipe.gif)
+
 * a program is a collection of *data* and *code*
 
 > When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
+
+(recipe from <http://www.popcornpottery.com/rec.html>)
 
 # Languages
 
@@ -109,7 +114,7 @@ Every piece of software on your computer is a PROGRAM.
 
 > Matz is nice, and so we are nice.
 
-* Ruby was designed to be fun to write code in, while also being powerful and well-rounded.
+* Ruby was [designed to be fun](http://blog.crowdint.com/2013/06/11/matz-keynote-at-ruby-kaigi-2013.html) to write code in, while also being powerful and well-rounded.
 
 ---
 
@@ -225,6 +230,44 @@ Answer the following questions using irb:
 * What is the reverse of "stressed"?
 * What does your name look like, repeated 1000 times?
 * What is the tenth character of "Matz is nice"? (Trick question!)
+
+---
+
+# Strings are not numbers
+
+Hmmm....
+
+    1 + 2
+    "1" + "2"
+    "1 + 2"
+
+# Strings vs. Numbers
+
+Hmmm again...
+
+    "1" + 2
+
+Uh-oh!
+
+    TypeError: can't convert Fixnum into String
+
+Don't panic! The solution is easy.
+
+# Conversion
+
+Numbers know a message that converts them into strings. `to_s` means "to string".
+
+    "1" + 2.to_s
+    
+Likewise, strings know a message that converts them into numbers.
+    
+    1 + "2".to_i
+
+`to_i` means "to integer".
+
+# Advanced (skippable)
+
+* to_f
 
 ---
 
@@ -386,7 +429,6 @@ Let's spend 15 minutes just playing around in IRB. Some things to try:
 
 What happens? Is this what you expected?
 
-
 ---
 
 # Input and Output
@@ -471,6 +513,14 @@ What happens? Is this what you expected?
 * Make the program capitalize your name for you even if you forget.
 
 * Now go crazy and make it do all sorts of silly things to your name!
+
+# LAB: Full Name
+
+* Write a program that asks three things:
+  1. Your first name
+  2. Your middle name
+  3. Your last name
+* Then it says hello to the user by her *full name*.
 
 ---
 
