@@ -27,9 +27,10 @@
 
 * open a terminal
 * type `irb`
+* press the `return` key (also called `enter`)
 * see the `>` prompt
 * type `1 + 1`
-* press the `return` key (also called `enter`)
+* press the `return` key again
 * see the `2`
 * yay, a $1000 calculator!
 
@@ -86,3 +87,12 @@ Every piece of software on your computer is a PROGRAM.
 > Matz is nice, and so we are nice.
 
 * Ruby was [designed to be fun](http://blog.crowdint.com/2013/06/11/matz-keynote-at-ruby-kaigi-2013.html) to write code in, while also being powerful and well-rounded.
+
+# Errors Are Awesome
+
+* Don't be afraid of errors
+* Your computer is trying to help you fix your program
+  * It's just *really* bad at communicating
+* It's not all gibberish
+* Try to read it -- really try! -- and pull out the pearls from the pig slop
+

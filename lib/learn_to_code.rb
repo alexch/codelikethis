@@ -6,6 +6,7 @@ class Course
     lesson "computers"
     lesson "objects"
     lesson "variables"
+    lesson "nil"
     lesson "the_command_line"
     lesson "input_and_output"
     lesson "logic"
