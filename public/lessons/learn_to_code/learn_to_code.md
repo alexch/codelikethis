@@ -1,18 +1,3 @@
-# todo: 
-
-* loops
-* numbers
-* arrays
-  *  shuffle!
-* hashes
-* bonus labs (for students who "get it" before the rest of the room and don't want to sit around bored (or help others))
-* functions?
-* methods?
-* nil
-* interpolation?
-
-* diagram: memory (variables+objects)
-
 # Learn To Code
 
 You may have never programmed before. Now you will.
@@ -24,4 +9,22 @@ In this class, you will utilize Ruby to learn:
 *  Object concepts like Classes
 *  How to run your Ruby code interactively (irb) or from a file
 *  Make a very simple website run on your own computer
+
+
+# todo: 
+
+* numbers (split off from objects/strings)
+* strings (split off from objects)
+  * interpolation?
+* more on arrays
+* hashes
+* bonus labs (for students who "get it" before the rest of the room and don't want to sit around bored (or help others))
+* functions
+* methods
+* classes
+* more on nil
+* File I/O
+* diagram: memory (variables+objects)
+* testing
+* symbols
 

@@ -145,4 +145,49 @@ Likewise, strings know a message that converts them into numbers.
 
 # Advanced (skippable)
 
-* to_f
+# WTFixnum?
+
+The error said `can't convert Fixnum into String`. 
+
+Q: What is a Fixnum?
+A: It's one kind of number.
+
+# Math is hard
+
+There are many kinds of numbers!
+
+Each is useful in different situations.
+
+Without getting into too much detail, the two main number types in Ruby are:
+
+* `Fixnum` - for *integers* like 12 or -1023
+* `Float` - for *decimals* like 3.14
+
+(Other number types include Complex, Rational, and Bignum.)
+
+# Number to Number
+
+You can convert from one type of number to the other by sending a message:
+
+* `to_i` turns a Float into a Fixnum
+* `to_f` turns a Fixnum into a Float
+
+Try this:
+
+    3.to_f
+    3.14.to_i
+
+# String to Number
+
+`to_f` and `to_i` also work on Strings:
+
+    "3.14".to_f
+    "3.14".to_i
+
+and `to_s` works on numbers:
+
+    3.14.to_s
+
+
+
+

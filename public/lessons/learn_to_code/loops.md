@@ -32,6 +32,25 @@ If you want something to keep going forever, use a special loop called `while tr
 
 To stop it, hold down the CONTROL key and press the C key.
 
+# while what?
+
+`while X` means "keep doing this as long as X is true"
+
+so `while true` means "keep doing this as long as true is true"
+
+It's a truism! Otherwise known as an "Infinite Loop".
+
+# One Infinite Loop
+
+![One Infinite Loop](one-infinite-loop.jpg)
+
+*Fun Fact:* The address of Apple HQ is
+
+    1 Infinite Loop
+    Cupertino, CA 95014
+
+*Image from the Wikimedia Commons, licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Joe Ravi*
+
 # LAB: Infinite Hello
 
 Let's change `hello.rb` so that it keeps saying hello over and over again.
@@ -98,6 +117,8 @@ The magic word `break` means "stop the current loop". It's less dangerous -- but
 Here we introduce a LOOP VARIABLE to tell whether we still want to keep reading or not.
 
 The `while` statement keeps checking this variable every time through the loop; if it is `true` then it loops, but if it's `false` then it stops looping and goes on to the rest of the program.
+
+This is fairly complicated, so let's stop here and make sure to understand everything that's happening in this little program.
 
 # LAB: Good Food, Bad Food
 
