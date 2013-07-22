@@ -88,3 +88,9 @@ What happens? Is this what you expected?
   2. Your middle name
   3. Your last name
 * Then it says hello to the user by her *full name*.
+
+# CONGRATULATIONS!
+
+> You just wrote a program!
+
+You are now officially a coder. HIGH FIVE!

@@ -49,8 +49,6 @@ But some messages do change the data!
 
 This can be dangerous so sometimes those messages end with a BANG (exclamation point).
 
-[ later: multiple variables pointing to same object, etc. -- needs memory model diagram / animation ]
-
 # Lab: Play In IRB
 
 Let's spend 15 minutes just playing around in IRB. Some things to try:
@@ -61,3 +59,35 @@ Let's spend 15 minutes just playing around in IRB. Some things to try:
 * assign your best friend to a variable
 * reverse your best friend's name
 * get a new best friend and reverse her too
+
+# Variables are pointers
+
+a *variable* can only have one *value*
+
+but a *value* can have more than one *variable* 
+
+    fruit = "Apple"
+    snack = fruit
+
+After this both `snack` and `fruit`...
+  * are *pointing* to the same *object*
+  * have the same *value*
+
+[todo: diagram]
+
+# Return values are new
+
+most messages return *new* values
+
+    fruit = "banana"
+    snack = fruit.upcase
+
+Note that the value of `fruit` is still "banana" but the value of `snack` is "BANANA".
+
+`"banana"` and `"BANANA"` are two *different objects* in memory
+
+[todo: diagram]
+
+
+
+

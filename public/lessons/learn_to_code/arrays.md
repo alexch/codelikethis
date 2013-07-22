@@ -7,8 +7,8 @@
 
 * You can put any objects inside it
 * In any order
+* They stay in order
 * Duplicates are fine
-
 
 # Creating an array
 
@@ -29,7 +29,7 @@ Did you get the result you expected?
 
 Why or why not?
 
-# Zero
+# Start At Zero
 
 When counting, 
 

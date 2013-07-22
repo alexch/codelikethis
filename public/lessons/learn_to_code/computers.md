@@ -86,7 +86,11 @@ Every piece of software on your computer is a PROGRAM.
 
 > Matz is nice, and so we are nice.
 
+# Ruby is fun
+
 * Ruby was [designed to be fun](http://blog.crowdint.com/2013/06/11/matz-keynote-at-ruby-kaigi-2013.html) to write code in, while also being powerful and well-rounded.
+* *Ruby is poetry*
+  * especially compared to other languages
 
 # Errors Are Awesome
 
@@ -95,4 +99,5 @@ Every piece of software on your computer is a PROGRAM.
   * It's just *really* bad at communicating
 * It's not all gibberish
 * Try to read it -- really try! -- and pull out the pearls from the pig slop
+
 

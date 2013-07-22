@@ -5,6 +5,8 @@ class Course
     lesson "learn_to_code"
     lesson "computers"
     lesson "objects"
+    lesson "strings"
+    lesson "numbers"
     lesson "variables"
     lesson "nil"
     lesson "the_command_line"
@@ -12,8 +14,11 @@ class Course
     lesson "logic"
     lesson "loops"
     lesson "arrays"
+    lesson "hashes"
     lesson "iterators"
     lesson "functions"
     lesson "sinatra"
+    # lesson "methods"
+    # lesson "classes"
   end
 end
