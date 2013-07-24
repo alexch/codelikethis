@@ -18,7 +18,7 @@ A NUMBER is what it sounds like.
 
 # Strings
 
-A STRING is a collection of characters, like a word or a sentence.
+A STRING is an object that's a collection of characters, like a word or a sentence.
 
     "apple"
     "banana"
@@ -30,13 +30,23 @@ An object responds to MESSAGES. You send it messages using OPERATORS.
 
 The most powerful operator is DOT. 
 
-On screen she looks like a period, but here's what she looks like up close:
+On screen she looks like this...
+
+    .
+
+# Dot up close
+
+...but here's what she looks like up close:
 
 ![picture of Dot the Operator](dot.jpg)
+
+# Dot's job
 
 Dot can send any message she likes, by name, to any object.
 
     "apple".upcase
+
+The `upcase` message turns `"apple"` into `"APPLE"`.
     
 # Other Operators
 
