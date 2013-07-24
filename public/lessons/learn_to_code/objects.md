@@ -73,9 +73,11 @@ You can think of it as the answer to a question.
     2 + 2    # Question: What is 2 + 2?
     4        # Answer: 4
 
-
-    "apple".upcase  # Q: What is the upcase of the string "apple"?
-    "APPLE"         # A: the string "APPLE"
+    "apple".upcase  
+    # Q: What is the upcase of the string "apple"?
+    
+    "APPLE"         
+    # A: the string "APPLE"
 
 # TODO: message passing diagram
 

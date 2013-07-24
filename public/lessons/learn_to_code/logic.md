@@ -22,6 +22,18 @@ The magic word `if` is called a CONDITIONAL.
     if age < 18 then
       puts "Sorry, adults only."
     end
+    
+# One-Line Condition
+
+Ruby has a compact way of putting an entire `if` expression on one line:
+
+    puts "Sorry, adults only." if age < 18
+  
+Note that:
+
+* the action comes *first* in a one-line condition
+* this sounds kind of natural
+  * "Go to bed if you're sleepy."
 
 # if... then... else... end
 
