@@ -7,6 +7,7 @@ The following operations work on numbers:
   * * -- multiplication
   * / -- division
   * % -- modulus (nevermind)
+  * ** -- exponentiation (nevermind)
 
 # LAB: Playing With Numbers
 
@@ -53,7 +54,7 @@ Likewise, strings know a message that converts them into numbers.
 
 Try this in irb!
 
-# Advanced Number Theory (skippable)
+# Advanced Number Theory (optional)
 
 # WTFixnum?
 

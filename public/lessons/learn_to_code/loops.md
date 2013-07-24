@@ -201,3 +201,20 @@ Eventually, `count` becomes `5`, and the `while` expression is `false`, and so w
 
 Write a program called `potato.rb` that prints the entire potato poem, accurately.
 
+# Lab: Adder
+
+Write a program named `adder.rb` that keeps a *running total*.
+
+For example:
+
+    ruby adder.rb
+    1
+    Total: 1
+    2
+    Total: 3
+    4
+    Total: 7
+    -5
+    Total: 2
+
+

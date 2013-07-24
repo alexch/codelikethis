@@ -14,6 +14,7 @@ class Course
     lesson "logic"
     lesson "loops"
     lesson "arrays"
+    lesson "argv"
     lesson "hashes"
     lesson "iterators"
     lesson "functions"

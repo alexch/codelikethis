@@ -74,23 +74,41 @@ What happens? Is this what you expected?
 
 * Run it and make sure it works OK
 
-# LAB: capitalization
+# LAB: Capitalization
 
 * What happens if you type your name in all lowercase?
 * Make the program capitalize your name for you even if you forget.
+
+# LAB: Crazy Name
 
 * Now go crazy and make it do all sorts of silly things to your name!
 
 # LAB: Full Name
 
-* Write a program that asks three things:
+* Write a program named `name.rb` that asks three things:
   1. Your first name
   2. Your middle name
   3. Your last name
 * Then it says hello to the user by her *full name*.
+* Run the program by typing `ruby name.rb` on the command line.
 
 # CONGRATULATIONS!
 
 > You just wrote a program!
 
 You are now officially a coder. HIGH FIVE!
+
+# Lab: Name Length
+
+* Change `name.rb` so it prints the number of characters in the user's name.
+* For instance:
+
+        What is your first name?
+        Alex
+        What is your middle name?
+        Day
+        What is your last name?
+        Chaffee
+        Hello, Alex Day Chaffee! Your name is 14 characters long.
+
+

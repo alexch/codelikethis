@@ -48,26 +48,47 @@ And if you and your pair finish early...
 
 * a live Ruby installation 
   * e.g. http://railsinstaller.org
+  * Ruby version 2.0 preferred -- run `ruby -v` to check
 * a text editor
   * e.g. Sublime Text 2
 
 * If you do not have both of these things, RAISE YOUR HAND
   * visit http://installfest.railsbridge.org for more instructions
 
+# Schedule
+
+9:00 introductions
+
+9:30 lecture
+
+10:45 - 11:00 mandatory break
+
+12:30 lunch
+
+1:30 class resumes
+
+3:00 - 3:30 stretch break & snacks & coffee
+
+5:00 bye
 
 # todo: 
+
+* "next deck" button on last slide
+* diagram: memory (variables+objects)
+* diagram: message passing
 
 * interpolation?
 * more on arrays
 * hashes
 * more labs (for students who "get it" before the rest of the room and don't want to sit around bored (or help others))
 * functions
+* more array labs
 * methods
 * classes
-* more on nil
 * File I/O
-* diagram: memory (variables+objects)
-* diagram: message passing
 * testing
 * symbols
+* rand
+
+
 

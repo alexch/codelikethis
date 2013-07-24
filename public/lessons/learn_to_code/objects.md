@@ -1,12 +1,10 @@
 # Objects
 
-An OBJECT is a location in computer memory where you can store DATA.
+An OBJECT is a location in computer memory where you can store DATA (aka VALUES).
 
-[todo: say "values" or "info" instead of "data"?]
+There are many kinds of objects, including String, Number, Array, Hash, Time, ... 
 
-There are many kinds of objects, including String, Number, Array, Hash, Time... These are called CLASSES. 
-
-Some day soon you will create your own classes but for now, we will use the built-in ones.
+(The different kinds of objects are called CLASSES or TYPES. Some day soon you will create your own classes but for now, we will use the built-in ones.)
 
 # Numbers
 

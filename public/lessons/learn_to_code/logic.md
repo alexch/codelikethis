@@ -4,6 +4,8 @@ Computers have a very strict idea of when things are *true* and *false*.
 
 ![Truthiness](truthiness.png)
 
+(Unlike Stephen Colbert...)
+
 # True or False?
 
 Try the following in irb:

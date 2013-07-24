@@ -81,7 +81,7 @@ Every piece of software on your computer is a PROGRAM.
 
 # Ruby
 
-* Ruby was invented in the 1990s by a very nice Japanese man named Matz
+* Ruby was invented in the 1990s by a very nice Japanese man named Yukihiro Matsumoto (nicknamed Matz)
 * The motto of Ruby is MINASWAN:
 
 > Matz is nice, and so we are nice.
