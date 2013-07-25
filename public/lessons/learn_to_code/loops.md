@@ -45,6 +45,8 @@ Write a program called `food.rb` that
 2. prints "Yum, I love pizza!"
 3. asks again, and prints again, forever and ever
 
+Remember, CONTROL-C means "Stop everything!!!"
+
 # Exiting a Loop
 
 Next, we will change your `food.rb` program so that if the user types "return" -- meaning the string is empty -- then the program exits.
@@ -124,11 +126,13 @@ We're going to examine a few different ways to code this.
 
 Try this:
 
-    4.times do |x|
-      puts x.to_s + " potato"
+    4.times do |count|
+      puts count.to_s + " potato"
     end
 
-`|x|` means "inside the loop, `x` is the current value of the counter"
+`|count|` means 
+
+> "the `count` variable points to the current value of the counter"
 
 Whoops! What's wrong?
 
@@ -167,11 +171,14 @@ The magic word `while` combines `loop` and `break`.
       count = count + 1
     end
 
-The `while` statement keeps checking every time through the loop; if it is `true` then it loops, but if it's `false` then it stops looping and goes on to the rest of the program.
+* The `while` statement keeps checking the expression
+
+  * if it's `true` then it loops back
+  * if it's `false` then it stops looping and goes on to the rest of the program
 
 This is fairly complicated, so let's stop here and make sure to understand everything that's happening in this little program.
 
-# `while` breakdown
+# `while` breakdown (pt.1)
 
     count = 1
 
@@ -183,6 +190,8 @@ starts a loop and immediately compares `count` to `4`.
 
 `1` is less than `4`, so the expression is `true`, so we continue with the loop.
 
+# `while` breakdown (pt.2)
+
       puts count.to_s + " potato"
 
 prints the current value of count (and the word "potato").
@@ -193,7 +202,15 @@ prints the current value of count (and the word "potato").
 
     end
 
-goes *back to the `while`* and checks again
+goes *back to the `while` line* and checks again
+
+# `while` breakdown (pt.2)
+
+    while count <= 4
+
+compares `count` to `4`. 
+
+`2` is less than `4`, so the expression is `true`, so we continue with the loop.
 
 Eventually, `count` becomes `5`, and the `while` expression is `false`, and so we stop looping and go on.
 

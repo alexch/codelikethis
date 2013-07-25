@@ -85,10 +85,9 @@ What happens? Is this what you expected?
 
 # LAB: Full Name
 
-* Write a program named `name.rb` that asks three things:
+* Write a program named `name.rb` that asks two things:
   1. Your first name
-  2. Your middle name
-  3. Your last name
+  2. Your last name
 * Then it says hello to the user by her *full name*.
 * Run the program by typing `ruby name.rb` on the command line.
 
@@ -105,10 +104,8 @@ You are now officially a coder. HIGH FIVE!
 
         What is your first name?
         Alex
-        What is your middle name?
-        Day
         What is your last name?
         Chaffee
-        Hello, Alex Day Chaffee! Your name is 14 characters long.
+        Hello, Alex Chaffee! Your name is 11 characters long.
 
 

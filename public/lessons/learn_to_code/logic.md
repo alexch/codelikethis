@@ -11,7 +11,8 @@ Computers have a very strict idea of when things are *true* and *false*.
 Try the following in irb:
 
 * `1 < 2`
-* `2 + 2 < 5`
+* `2 + 2 < 4`
+* `2 + 2 <= 4`
 * `2.even?`
 * `4.odd?`
 * `"apple".empty?`
@@ -51,6 +52,18 @@ Like a fork in the road, the program chooses one path or the other.
 
 (In Ruby, `then` is optional, so we usually leave it off, but if it makes your code clearer, go ahead and use it.)
 
+# 2 + 2 = 4
+
+Sadly, this expression:
+
+    2 + 2 = 4
+    
+causes a `SyntaxError`. You need to do
+
+    2 + 2 == 4
+
+instead. Why?
+
 # The Tragedy of the Equal Sign
 
 * a single equal sign means ASSIGNMENT
@@ -60,6 +73,8 @@ Like a fork in the road, the program chooses one path or the other.
 
 > This is confusing, and you should feel confused.
 
+* (it's all FORTRAN's fault)
+
 # LAB: Good Friend, Bad Friend
 
 * Your `hello.rb` program should currently look something like this:
@@ -68,8 +83,8 @@ Like a fork in the road, the program chooses one path or the other.
         name = gets.strip
         puts "Hello, " + name + "!"
 
-* Change `hello.rb` so that it doesn't always say hello!
-* If the user's name is "Darth" then say "Oh no! It's Darth!"
+* Now change `hello.rb` so that it doesn't always say hello!
+  * If the user's name is "Darth" then say "Go away!"
 
 # Conjunction Junction
 
@@ -88,7 +103,7 @@ Like a fork in the road, the program chooses one path or the other.
 
 # LAB: Enemies List
 
-* Change `hello.rb` so that it says "Oh no!" if the user's name is any one of a number of evil names
+* Change `hello.rb` so that it says "Go away!" if the user's name is any one of a number of evil names
 * For instance, Voldemort, Satan, Lex Luthor...
 
 

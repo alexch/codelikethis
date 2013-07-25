@@ -103,6 +103,20 @@ The `[]` operator works for assignment as well.
 
     puts fruits.first
 
+# Checking an array
+
+The `include?` method checks if an object is inside an array or not.
+
+    fruits.include? "apple"
+    true
+    
+    fruits.include? "pizza"
+    false
+
+# LAB: enemies list refactoring
+
+I'd like you to **refactor** your old `hello.rb` program to use the `include?` method to check if someone is your enemy.
+
 # TODO: more array labs
 
 

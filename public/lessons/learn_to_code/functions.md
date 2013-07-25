@@ -26,4 +26,10 @@ Here's a silly function:
       string.split(' ').map(&:capitalize).join(' ')
     end
 
+* The funny `&:` means "send this message"
+* `map(&:capitalize)` means "send the message `capitalize` to every item in the array"
+
+
+# LAB: todo
+
 

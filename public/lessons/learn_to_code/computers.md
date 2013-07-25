@@ -13,13 +13,18 @@
 * This can be intimidating!
 * But the basic rules are simple
 
+# The Terminal
+
+* the *TERMINAL* is a window into which you can talk directly to your computer
+![Shall we play a game?](wargames-terminal.jpg)
+
 # In The Beginning Was The Command Line
 
-* the *TERMINAL* is a window into which you can talk directly to your computer by typing
-![Shall we play a game?](wargames-terminal.jpg)
+* the *TERMINAL* is a window into which you can talk directly to your computer
 * aka *console* or *command line* or *command prompt* or *shell* or *prompt*
   * contrast *CLI* (Command Line Interface) to *GUI* (Graphical User Interface)
-  * ["In The Beginning Was The Command Line"](http://www.cryptonomicon.com/beginning.html) is an essay by Neil Stephenson describing the history of computers in an enjoyable and clever way
+
+* ["In The Beginning Was The Command Line"](http://www.cryptonomicon.com/beginning.html) is an essay by Neil Stephenson describing the history of computers in an enjoyable and clever way
 
 # irb - the Interactive Ruby Browser
 

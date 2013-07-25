@@ -18,6 +18,23 @@ Answer the following questions using irb:
 * How many seconds old are you?
 * How many years old is someone who is 1 billion seconds old?
 
+# Order of operations
+
+Q: What is 1 plus 2 times 3?
+
+# Order of operations
+
+Q: What is 1 plus 2 times 3?
+
+A: *It depends!*
+
+    (1 + 2) * 3 == 9
+    1 + (2 * 3) == 7
+
+# Parentheses Are Free
+
+When in doubt, use parentheses!
+
 # Strings vs. Numbers
 
 Hmmm....
