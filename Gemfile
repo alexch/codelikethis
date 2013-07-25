@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem "sinatra"
-gem "erector", ">=0.9.0.pre1"
+gem "erector", ">=0.9.0"
 gem "thin"
 gem "activesupport"
-gem "deckrb", ">=0.4.0"
+gem "deckrb", ">=0.5.1"
 gem "coderay"
 gem "json"
 gem "rack-codehighlighter"
