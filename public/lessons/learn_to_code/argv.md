@@ -37,5 +37,16 @@ For instance:
     Hello, Bob!
     Hello, Charlie!
 
+# LAB: Add
+
+Write a program named `add.rb` that adds all of its command line arguments together.
+
+e.g.
+
+    ruby add.rb 1 2 3
+    6
+
+Do you remember how to convert a string to an integer?
+
 
 
