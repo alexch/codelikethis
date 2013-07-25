@@ -75,6 +75,10 @@
 * source files are text files that contain source code
 * to RUN a program you type `ruby` and then the name of the source file
 
+* The Recipe Metaphor
+  * source file = recipe
+  * running = cooking
+
 # LAB: Hello, World
 
 1. Make sure you are in your `code` subdirectory using `pwd`

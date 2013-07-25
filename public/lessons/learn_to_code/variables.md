@@ -14,13 +14,25 @@ Anywhere you can use an object, you can use a variable instead.
 
 ![Warehouse from Raiders of the Lost Ark](warehouse.jpg)
 
+Think of memory as a giant warehouse.
+
+# The Warehouse Metaphor Explained
+
 If memory is a giant warehouse...
 
-...and objects are boxes in that warehouse
+...and *objects* are **boxes** in that warehouse
 
-...then data is the **contents** of a box
+...then a *value* is the **contents** of a box
 
-...and a variable is a **label** you stick on the outside of the box
+...and a *variable* is a **label** you stick on the outside of the box
+
+# The Pointer Metaphor
+
+    snack = "Apple"
+
+![snack-apple](snack-apple.svg)
+
+Think of a variable as **pointing** to an object.
 
 # Changing Variables
 
@@ -35,6 +47,40 @@ You can assign and reassign variables at will.
     
 Changing a variable (using ASSIGNMENT) just changes the name of an object. It does *not* change the data inside the object.
 
+# Lab: Play In IRB
+
+Let's spend 15 minutes just playing around in IRB. Some things to try:
+
+* write a poem
+* YELL THE POEM
+* calculate 2 + 2 and more complicated things
+* assign your best friend to a variable
+* reverse your best friend's name
+* get a new best friend and reverse her too
+
+# Many pointers can point to the same thing
+
+    fruit = "Apple"
+    snack = fruit
+
+![snack-fruit](snack-fruit.svg)
+
+After this both `snack` and `fruit`...
+
+  * are *pointing* to the same *object*
+  * have the same *value*
+
+# Return values are new
+
+most messages return *new* values
+
+    fruit = "banana"
+    snack = fruit.upcase
+
+![fruit-banana-snack-banana](fruit-banana-snack-banana.svg)
+
+`"banana"` and `"BANANA"` are two *different objects* in memory
+
 # Changing Values
 
 Most messages do not change the data inside the object.
@@ -48,46 +94,5 @@ But some messages do change the data!
     color
 
 This can be dangerous so sometimes those messages end with a BANG (exclamation point).
-
-# Lab: Play In IRB
-
-Let's spend 15 minutes just playing around in IRB. Some things to try:
-
-* write a poem
-* YELL THE POEM
-* calculate 2 + 2 and more complicated things
-* assign your best friend to a variable
-* reverse your best friend's name
-* get a new best friend and reverse her too
-
-# Variables are pointers
-
-a *variable* can only have one *value*
-
-but a *value* can have more than one *variable* 
-
-    fruit = "Apple"
-    snack = fruit
-
-After this both `snack` and `fruit`...
-  * are *pointing* to the same *object*
-  * have the same *value*
-
-[todo: diagram]
-
-# Return values are new
-
-most messages return *new* values
-
-    fruit = "banana"
-    snack = fruit.upcase
-
-Note that the value of `fruit` is still "banana" but the value of `snack` is "BANANA".
-
-`"banana"` and `"BANANA"` are two *different objects* in memory
-
-[todo: diagram]
-
-
 
 
