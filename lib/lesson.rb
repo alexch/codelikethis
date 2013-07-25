@@ -107,13 +107,18 @@ class Lesson < Erector::Widget
   def video youtube_id
     @videos << youtube_id
   end
+  
+  def labs
+    next_labs.each do |lab|
+      widget lab
+    end
+  end
 
   def content
     div.extras {
       a.slides.button "Slides", href: "#{name}.slides"
-      next_labs.each do |lab|
-        widget lab
-      end
+
+      labs
 
       div.toc {
         h2 "Contents"

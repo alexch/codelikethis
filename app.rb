@@ -36,19 +36,26 @@ class App < Sinatra::Base
     Thread.current[:development] = nil
   end
 
-  get '/lessons' do
-    all_courses = [
-        Course::LearnToCode,
-        Course::AgileDevelopment,
-        Course::Ruby,
-        Course::RubyTools,
-        Course::RubyBasics,
-        Course::RubyBlocks,
-        Course::RubyObjects,
-        Course::Javascript,
+  # todo: make this an object, not just an array
+  def all_courses
+    [
+      Course::LearnToCode,
+      Course::AgileDevelopment,
+      Course::Ruby,
+      Course::RubyTools,
+      Course::RubyBasics,
+      Course::RubyBlocks,
+      Course::RubyObjects,
+      Course::Javascript,
     ]
-    courses = Courses.new(:courses => all_courses)
-    AppPage.new(:widget => courses, :title => page_title("Lessons")).to_html
+  end
+
+  def courses_widget
+    Courses.new(:courses => all_courses)
+  end
+
+  get '/lessons' do
+    AppPage.new(:widget => courses_widget, :title => page_title("Lessons")).to_html
   end
 
   get '/' do
@@ -68,7 +75,28 @@ class App < Sinatra::Base
     if params[:ext] == "slides"
       # slides are signified with a dot instead of a slash so that relative file references don't break
       file = File.join(course_dir, "#{params[:file]}.md")
-      deck_page = Deck::SlideDeck.new(:slides => Deck::Slide.from_file(file),
+      slides = Deck::Slide.from_file(file)
+      
+      # todo: Extract, move to Courses object
+      course = all_courses.detect do |course|
+        course.name == params[:course]
+      end
+      if course
+        slides << begin
+          slide = Deck::Slide.new(slide_id: '_next')
+          
+          lesson = course.lesson_named(params[:file])
+          
+          slide << lesson.to_s(content_method_name: :labs)
+          slide << lesson.to_s(content_method_name: :next_lesson_button)
+          slide << lesson.to_s(content_method_name: :previous_lesson_button)
+
+          slide << "<p><a href='#{lesson.href}'>Outline</a></p>"
+          slide
+        end
+      end
+      
+      deck_page = Deck::SlideDeck.new(:slides => slides,
                                       :title => page_title(lesson, "Slides"))
       deck_page.to_html
     else
