@@ -16,9 +16,10 @@ class Course
     lesson "arrays"
     lesson "argv"
     lesson "hashes"
-    lesson "iterators"
     lesson "functions"
+    lesson "extra"
     lesson "sinatra"
+    lesson "next_steps"
     # lesson "methods"
     # lesson "classes"
   end

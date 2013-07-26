@@ -69,11 +69,12 @@ And if you and your pair finish early...
 
 3:00 - 3:30 stretch break & snacks & coffee
 
+4:30 discussion and next steps
+
 5:00 bye
 
 # todo: 
 
-* "next deck" button on last slide
 * diagram: memory (variables+objects)
 * diagram: message passing
 
