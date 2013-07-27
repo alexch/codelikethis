@@ -77,5 +77,3 @@ You can think of it as the answer to a question.
     "APPLE"         
     # A: the string "APPLE"
 
-# TODO: message passing diagram
-

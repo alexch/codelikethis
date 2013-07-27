@@ -5,6 +5,13 @@
 * very low level, based entirely on text and typing, not graphics and mousing
 * when you type into the terminal, you are always issuing COMMANDS
   * which is why it's called the Command Line
+  
+# Opening the Terminal
+
+* to open your terminal:
+  * Mac OS: launch the "Terminal" application
+  * Windows with Railsinstaller: launch "Command Prompt with Ruby and Rails"
+* **Important:** make your terminal *as tall as possible*
 
 # Directories
 

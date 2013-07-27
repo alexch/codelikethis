@@ -43,9 +43,7 @@
 
 * From now on, whenever you see text in the `code font`, try typing it into irb and see what happens!
 
-# Computer Anatomy
-
-## Hardware
+# Computer Anatomy: Hardware
 
 * CPU ("the brain")
 * Memory
@@ -54,7 +52,7 @@
 
 bonus: [Von Neumann Machine]()
 
-## Software
+# Computer Anatomy: Software
 
 * Operating System
 * Libraries
@@ -71,9 +69,9 @@ Every piece of software on your computer is a PROGRAM.
 
 * a program is a collection of *data* and *code*
 
-> When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
+When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
 
-(recipe from <http://www.popcornpottery.com/rec.html>)
+(recipe from http://www.popcornpottery.com/rec.html)
 
 # Languages
 

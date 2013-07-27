@@ -6,8 +6,8 @@ The following operations work on numbers:
   * - -- subtraction
   * * -- multiplication
   * / -- division
-  * % -- modulus (nevermind)
-  * ** -- exponentiation (nevermind)
+  * % -- modulus
+  * ** -- exponentiation
 
 # LAB: Playing With Numbers
 

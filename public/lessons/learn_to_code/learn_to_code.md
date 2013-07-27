@@ -2,6 +2,24 @@
 
 You may have never programmed before. Now you will.
 
+# Schedule
+
+9:00 introductions
+
+9:30 lecture
+
+10:45 - 11:00 mandatory break
+
+12:30 lunch
+
+1:30 class resumes
+
+3:00 - 3:30 stretch break & snacks & coffee
+
+4:30 discussion and next steps
+
+5:00 bye
+
 # What is coding?
 
 * coding = programming
@@ -35,7 +53,12 @@ In this class, you will utilize Ruby to learn:
 * Pair up and fill in each other's gaps
 * Promote yourself to TA
 
-And if you and your pair finish early...
+
+# Go at your own pace
+
+* we will **definitely not** get through all the materials today
+
+## And if you and your pair finish early...
 
 * Let me know!
 * Start working on my Ruby For Programmers lessons
@@ -46,34 +69,25 @@ And if you and your pair finish early...
 
 # Technical requirements
 
+* WIFI
+  * SSID: CCV-RADIUS
+  * Username: guest-girlsdevit
+  * Password: Ruby921
+  * Accept that the server is invalid
 * a live Ruby installation 
-  * e.g. http://railsinstaller.org
-  * Ruby version 2.0 preferred -- run `ruby -v` to check
+  * e.g. http://railsinstaller.org -- click on the *BIG GREEN BUTTON*
+  * Ruby version 2.0 preferred, but 1.9 is fine too 
+    * run `ruby -v` to check
 * a text editor
   * e.g. Sublime Text 2
+  * www.sublimetext.com/2
 
 * If you do not have both of these things, RAISE YOUR HAND
   * visit http://installfest.railsbridge.org for more instructions
 
-# Schedule
-
-9:00 introductions
-
-9:30 lecture
-
-10:45 - 11:00 mandatory break
-
-12:30 lunch
-
-1:30 class resumes
-
-3:00 - 3:30 stretch break & snacks & coffee
-
-4:30 discussion and next steps
-
-5:00 bye
-
 # todo: 
+
+* toc.css line 52 --
 
 * diagram: memory (variables+objects)
 * diagram: message passing
