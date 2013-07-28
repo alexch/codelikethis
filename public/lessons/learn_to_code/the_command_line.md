@@ -38,7 +38,9 @@
 # Making a directory
 
 * when you type `mkdir` ("make dir") it creates a new SUBDIRECTORY inside the current directory
-
+        
+        mkdir code
+        
 # Changing directories
 
 * `cd` ("change dir") moves you into a different directory

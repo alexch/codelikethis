@@ -99,13 +99,14 @@ You are now officially a coder. HIGH FIVE!
 
 # Lab: Name Length
 
-* Change `name.rb` so it prints the number of characters in the user's name.
+* Change `name.rb` so it also prints the number of characters in the user's name.
 * For instance:
 
         What is your first name?
         Alex
         What is your last name?
         Chaffee
-        Hello, Alex Chaffee! Your name is 11 characters long.
+        Hello, Alex Chaffee! 
+        Your name is 11 characters long.
 
 

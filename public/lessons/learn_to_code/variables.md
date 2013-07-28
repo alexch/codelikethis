@@ -9,7 +9,7 @@ Anywhere you can use an object, you can use a variable instead.
 
     color + fruit
     fruit.upcase
-    
+
 # The Warehouse Metaphor
 
 ![Warehouse from Raiders of the Lost Ark](warehouse.jpg)
@@ -25,6 +25,32 @@ If memory is a giant warehouse...
 ...then a *value* is the **contents** of a box
 
 ...and a *variable* is a **label** you stick on the outside of the box
+
+# Variables are documentation
+
+Which is clearer, this:
+
+    60 * 60 * 24
+
+or this:
+
+    seconds_per_minute = 60
+    minutes_per_hour = 60
+    hours_per_day = 24
+    seconds_per_day = seconds_per_minute * minutes_per_day * hours_per_day
+
+?
+
+# Lab: Play In IRB
+
+Let's spend a few minutes just playing around in IRB. Some things to try:
+
+* write a poem
+* YELL THE POEM
+* calculate 2 + 2 and more complicated things
+* assign your best friend to a variable
+* reverse your best friend's name
+* get a new best friend and reverse her too
 
 # The Pointer Metaphor
 
@@ -46,17 +72,6 @@ You can assign and reassign variables at will.
     color + fruit
     
 Changing a variable (using ASSIGNMENT) just changes the name of an object. It does *not* change the data inside the object.
-
-# Lab: Play In IRB
-
-Let's spend 15 minutes just playing around in IRB. Some things to try:
-
-* write a poem
-* YELL THE POEM
-* calculate 2 + 2 and more complicated things
-* assign your best friend to a variable
-* reverse your best friend's name
-* get a new best friend and reverse her too
 
 # Many pointers can point to the same thing
 
@@ -94,5 +109,4 @@ But some messages do change the data!
     color
 
 This can be dangerous so sometimes those messages end with a BANG (exclamation point).
-
 

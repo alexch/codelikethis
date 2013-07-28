@@ -47,26 +47,13 @@ Write a program called `food.rb` that
 
 Remember, CONTROL-C means "Stop everything!!!"
 
-# Exiting a Loop
+# Who wants to loop forever?
 
 Next, we will change your `food.rb` program so that if the user types "return" -- meaning the string is empty -- then the program exits.
 
-Please try this yourself! But it's kind of tricky, so on the next slide I'll show you a solution (or two).
+Please try this yourself! But it's kind of tricky, so on the next slide I'll show you one solution.
 
-# Exiting a Loop: The Cheap Way
-
-The magic word `exit` means "stop the entire program right now".
-
-    loop do
-      puts "What is your name?"
-      name = gets.strip
-      exit if name.empty?
-      puts "Hello, " + name + "!"
-    end
-
-It's kind of rude, and more than a little bit dangerous.
-
-# Exiting a Loop: The Better Way
+# Exiting a Loop with break
 
 The magic word `break` stops a loop immediately.
 
@@ -90,8 +77,6 @@ Change your `food.rb` program so that if the user types "return" -- meaning the 
 * If it's a food you like (let's say, cabbage), make it print "Yuck! I hate cabbage."
 
 # times
-
-Usually you don't want to loop forever.
 
 Another loop in Ruby is called `times`, and it's a message you can send to a number.
 

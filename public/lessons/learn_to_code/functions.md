@@ -19,6 +19,21 @@ Here's a silly function:
 * `x + y` is the *body* of the function
   * also the *return value*
 
+# Rant!!!
+
+    def rant s
+      s.upcase.gsub(" ", "") + "!!!"
+    end
+    
+    puts rant "i like pizza"
+
+# Capitalize Just The First Character
+
+    def initial_cap s
+      s[0] + s[1,s.length]
+    end
+
+    puts initial_cap("McElaney")
 
 # Titleize
 
