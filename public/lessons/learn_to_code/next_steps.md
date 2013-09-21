@@ -14,6 +14,9 @@
 
 * _why's guide to Ruby (http://mislav.uniqpath.com/poignant-guide/)
 
+* <http://ruby.learncodethehardway.org/>
+* <http://tutorials.jumpstartlab.com/>
+
 # Thanks
 
 * to Girl Develop It
