@@ -423,9 +423,9 @@ constants are in `ALL_CAPS`
 
 # Next steps
 
-* Lesson: [Ruby Tools](/lessons/ruby/tools)
-* Lesson: [Ruby Basics](/lessons/ruby/ruby_basics)
-* Lesson: [Ruby Objects](/lessons/ruby/ruby_basics)
+* Lesson: [Ruby Tools](/lessons/ruby_tools/tools)
+* Lesson: [Ruby Basics](/lessons/ruby_basics)
+* Lesson: [Ruby Objects](/lessons/ruby_objects)
 * [other lessons](http://localhost:9292/lessons)
 
 # Credits
