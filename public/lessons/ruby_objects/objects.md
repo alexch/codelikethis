@@ -21,7 +21,7 @@ Note: Following WGR's lead, in this section we define methods on instances (not 
   * *behavior* - methods
   
 <!SLIDE incremental>
-# The Linugistic Metaphor for Objects
+# The Linguistic Metaphor for Objects
 
 One way to think about objects: 
 

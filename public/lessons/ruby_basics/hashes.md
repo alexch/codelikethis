@@ -124,6 +124,6 @@ Here's a handy trick:
     => {:foo=>1, :bar=>2}   # destructive
 
     {foo: 1} + {bar: 2}
-    => {:foo=>1, :bar=>2}   # creative
+    => {:foo=>1, :bar=>2}   # constructive
 
 

@@ -131,7 +131,35 @@ or
     
 # git
 
-![Git CheatSheet](https://github.com/nerdgirl/git-cheatsheet-visual/raw/master/gitcheatsheet.png)
+Git is a *Distributed Version Control System*. It's very popular these days, especially among Ruby developers.
 
-* <https://github.com/nerdgirl/git-cheatsheet-visual>
+Git allows *offline*, *asynchronous*, *decentralized* development.
+
+[GitHub](https://github.com) is a web service built on git that also adds issue tracking, automated pull requests and merging, etc.
+
+# git workflow
+
+![git workflow](git_workflow.png)
+
+# git cheatsheet
+
+* `git init` -- create a repo locally
+* `git clone` -- copy a repo from a server
+* `git status` -- what has changed
+* `git log` -- history
+* `git add` -- stage files for commit (*local*)
+* `git commit` -- commit staged files (*remote*)
+
+See also [nerdgirl's visual git cheatsheet](https://github.com/nerdgirl/git-cheatsheet-visual/raw/master/gitcheatsheet.png) at <https://github.com/nerdgirl/git-cheatsheet-visual>
     
+# Git Configuration
+
+Git needs to know who you are, so try this:
+
+    git config --global --list
+
+and if it doesn't have your name, do this:
+
+    git config --global user.name "Your Name"
+    git config --global user.email mail@example.com
+

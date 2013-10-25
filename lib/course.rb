@@ -138,7 +138,7 @@ class Course < Erector::Widget
     end
 
     def this_item_index(lesson_name)
-      @stuff.map(&:name).index { |name| name == lesson_name }
+      (@stuff.map(&:name).index { |name| name == lesson_name }) or raise "No lesson named #{lesson_name}"
     end
 
 end

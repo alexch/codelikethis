@@ -8,6 +8,23 @@ Ref. WGR Chapter 4, Modules and program organization
 
 ```
 @@@ ruby
+module Food
+  FRUITS = ["Apple", "Banana", "Cherry"]
+end
+```
+
+From outside the module:
+
+```
+Food::FRUITS.each do |fruit|
+  puts "This #{fruit} is yummy!"
+end
+```
+
+# Modules as namespaces for classes
+
+```
+@@@ ruby
 module Speakers
   class Hello
     def say_hello
@@ -93,7 +110,7 @@ end
   * `include Config`
 * **extend** mixes in a module into `self`, usually to add class methods
   * `extend Config`
-* **`<`** inherits a superclass (pronounced "inherits from")
+* **`<`** inherits a superclass (pronounced "inherits from", not "extends")
   * `class BetterString < String`
 
 
