@@ -116,17 +116,9 @@
 
     end
 
+# more
 
-
-
-
-
-
-
-
-
-
-
-
-
+* [Intro to RSpec](http://www.youtube.com/watch?v=aYXAWgSA5Kw) Video from RailsConf 2012 on YouTube.
+* [BDD and Acceptance Testing with RSpec & Capybara](https://www.youtube.com/watch?v=BG_DDUD4M9E) Video from RailsConf 2013 on YouTube.
+* [Code School's RSpec Introduction Course](https://www.codeschool.com/courses/testing-with-rspec)
 
