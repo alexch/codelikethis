@@ -1,18 +1,19 @@
-# This Rakefile has all the right settings to run the tests inside each lab
-gem 'rspec', '~>2'
-require 'rspec/core/rake_task'
+if defined? RSpec
 
-task :default => :spec
+  gem 'rspec', '~>2'
+  require 'rspec/core/rake_task'
 
-desc "run tests"
-RSpec::Core::RakeTask.new do |task|
-  lab = Rake.application.original_dir
-  task.pattern = "spec/**/*_spec.rb"
-  task.rspec_opts = [
-      '-f documentation',
-      '-r ./rspec_config'
-  ]
-  task.verbose = false
+  task :default => :spec
+
+  desc "run tests"
+  RSpec::Core::RakeTask.new do |task|
+    task.pattern = "spec/**/*_spec.rb"
+    task.rspec_opts = [
+        '-f documentation',
+        '-r ./rspec_config'
+    ]
+    task.verbose = false
+  end
 end
 
 desc "run app"
