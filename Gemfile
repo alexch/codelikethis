@@ -1,4 +1,4 @@
-source 'https://rubygems.org' 
+source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem "sinatra"
@@ -13,7 +13,7 @@ gem "rack-codehighlighter"
 group :development, :test do
   gem "rerun"
   gem "rspec"
-  gem "rake"
+  gem "rake", ">=10.0.1"
   gem "wrong"
   gem "files"
 end
