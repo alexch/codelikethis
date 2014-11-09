@@ -175,7 +175,7 @@ class AppPage < Erector::Widgets::Page
     div.header {
       widget DonateButton
       span.logo { a "Code like this.", href: '/' }
-      span.tagline "opinionated expertise"
+      span.tagline "You can learn to code. Here's how!"
     }
     div.nav {
       ul {
