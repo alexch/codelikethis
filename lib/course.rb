@@ -1,5 +1,5 @@
 require 'erector'
-require 'active_support'
+require 'active_support/inflector'
 
 require 'breadcrumbs'
 require 'courses_table'
@@ -17,7 +17,6 @@ class Course < Erector::Widget
   CSS
 
   attr_writer :dir
-
 
   def initialize name = "course", &block
     @name = name.underscore
