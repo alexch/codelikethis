@@ -1,6 +1,6 @@
 require 'erector'
 
-class Courses < Erector::Widget
+class CoursesTable < Erector::Widget
 
   external :style, <<-CSS
   table.courses {
@@ -77,17 +77,13 @@ class Courses < Erector::Widget
   def content
     widget Breadcrumbs, display_name: display_name
 
-    courses_table @courses
-  end
-
-  def courses_table courses
     table.courses {
       tr {
         th "Course"
         th "Lessons"
         th "Labs"
       }
-      courses.each do |course|
+      @courses.each do |course|
         course_row(course)
       end
     }

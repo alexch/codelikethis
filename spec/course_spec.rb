@@ -26,7 +26,7 @@ describe Course do
       lesson "bar"
     end
 
-    breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [Courses.new])
+    breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [CoursesTable.new])
     lessons.to_html.should include(breadcrumbs.to_html)
     lessons.to_html.should include(
                                "<ul>" +

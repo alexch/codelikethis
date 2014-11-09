@@ -2,7 +2,7 @@ require 'erector'
 require 'active_support'
 
 require 'breadcrumbs'
-require 'courses'
+require 'courses_table'
 require 'lesson'
 require 'lab'
 
@@ -54,7 +54,7 @@ class Course < Erector::Widget
   end
 
   def content
-    widget Breadcrumbs, parents: [Courses.new], display_name: self.display_name
+    widget Breadcrumbs, parents: [CoursesTable.new], display_name: self.display_name
     div style: "max-width: 30em;" do
       list_items
     end

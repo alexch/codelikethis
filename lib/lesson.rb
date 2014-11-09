@@ -107,7 +107,7 @@ class Lesson < Erector::Widget
   def video youtube_id
     @videos << youtube_id
   end
-  
+
   def labs
     next_labs.each do |lab|
       widget lab
@@ -134,7 +134,7 @@ class Lesson < Erector::Widget
         next_lesson_button
       }
     }
-    widget Breadcrumbs, :parents => [Courses.new, @course], :display_name => display_name
+    widget Breadcrumbs, :parents => [CoursesTable.new, @course], :display_name => display_name
 
     div.videos {
       @videos.each do |youtube_id|

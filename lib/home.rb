@@ -1,5 +1,5 @@
 require 'erector'
-require 'courses'
+require 'courses_table'
 
 class Home < Erector::Widget
 

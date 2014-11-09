@@ -51,7 +51,7 @@ class App < Sinatra::Base
   end
 
   def courses_widget
-    Courses.new(:courses => all_courses)
+    CoursesTable.new(:courses => all_courses)
   end
 
   get '/lessons' do
@@ -76,7 +76,7 @@ class App < Sinatra::Base
       # slides are signified with a dot instead of a slash so that relative file references don't break
       file = File.join(course_dir, "#{params[:file]}.md")
       slides = Deck::Slide.from_file(file)
-      
+
       # todo: Extract, move to Courses object
       course = all_courses.detect do |course|
         course.name == params[:course]
@@ -84,9 +84,9 @@ class App < Sinatra::Base
       if course
         slides << begin
           slide = Deck::Slide.new(slide_id: '_next')
-          
+
           lesson = course.lesson_named(params[:file])
-          
+
           slide << lesson.to_s(content_method_name: :labs)
           slide << lesson.to_s(content_method_name: :next_lesson_button)
           slide << lesson.to_s(content_method_name: :previous_lesson_button)
@@ -95,7 +95,7 @@ class App < Sinatra::Base
           slide
         end
       end
-      
+
       deck_page = Deck::SlideDeck.new(:slides => slides,
                                       :title => page_title(lesson, "Slides"))
       deck_page.to_html

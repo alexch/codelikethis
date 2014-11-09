@@ -38,7 +38,7 @@ describe Lesson do
   end
 
   it "renders HTML" do
-    breadcrumbs = Breadcrumbs.new(:display_name => lesson.display_name, :parents => [Courses.new, course])
+    breadcrumbs = Breadcrumbs.new(:display_name => lesson.display_name, :parents => [CoursesTable.new, course])
     lesson.to_html.should include(breadcrumbs.to_html)
   end
 
