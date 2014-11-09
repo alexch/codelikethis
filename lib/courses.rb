@@ -88,18 +88,22 @@ class Courses < Erector::Widget
         th "Labs"
       }
       courses.each do |course|
-        tr {
-          th(valign: "top") {
-            a course.display_name, href: course.href
-          }
-          td.lessons(valign: "top") {
-            widget course, {}, :content_method_name => :list_lessons
-          }
-          td.lessons(valign: "top") {
-            widget course, {}, :content_method_name => :list_labs
-          }
-        }
+        course_row(course)
       end
+    }
+  end
+
+  def course_row(course)
+    tr {
+      th(valign: "top") {
+        a course.display_name, href: course.href
+      }
+      td.lessons(valign: "top") {
+        widget course, {}, :content_method_name => :list_lessons
+      }
+      td.lessons(valign: "top") {
+        widget course, {}, :content_method_name => :list_labs
+      }
     }
   end
 
