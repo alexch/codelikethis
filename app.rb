@@ -17,9 +17,9 @@ end
 module AppHelpers
   def page_title object, extra = nil
     [
-        (object.display_name rescue object.to_s),
-        extra,
-        "- Code Like This"
+      (object.display_name rescue object.to_s),
+      extra,
+      "- Code Like This"
     ].compact.join(' ')
   end
 end
@@ -71,37 +71,38 @@ class App < Sinatra::Base
     AppPage.new(:widget => course, :title => page_title(course)).to_html
   end
 
-  get "/lessons/:course/:file.:ext" do
-    if params[:ext] == "slides"
-      # slides are signified with a dot instead of a slash so that relative file references don't break
-      file = File.join(course_dir, "#{params[:file]}.md")
-      slides = Deck::Slide.from_file(file)
+  get "/lessons/:course/:file.slides" do
+    # slides are signified with a dot instead of a slash so that relative file references don't break
+    file = File.join(course_dir, "#{params[:file]}.md")
+    slides = Deck::Slide.from_file(file)
 
-      # todo: Extract, move to Courses object
-      course = all_courses.detect do |course|
-        course.name == params[:course]
-      end
-      if course
-        slides << begin
-          slide = Deck::Slide.new(slide_id: '_next')
-
-          lesson = course.lesson_named(params[:file])
-
-          slide << lesson.to_html(content_method_name: :labs)
-          slide << lesson.to_html(content_method_name: :next_lesson_button)
-          slide << lesson.to_html(content_method_name: :previous_lesson_button)
-
-          slide << "<p><a href='#{lesson.href}'>Outline</a></p>"
-          slide
-        end
-      end
-
-      deck_page = Deck::SlideDeck.new(:slides => slides,
-                                      :title => page_title(lesson, "Slides"))
-      deck_page.to_html
-    else
-      send_file(File.join(course_dir, "#{params[:file]}.#{params[:ext]}"))
+    # todo: Extract, move to Courses object
+    course = all_courses.detect do |course|
+      course.name == params[:course]
     end
+
+    if course
+      slides << begin
+        slide = Deck::Slide.new(slide_id: '_next')
+
+        lesson = course.lesson_named(params[:file])
+
+        slide << lesson.to_html(content_method_name: :labs)
+        slide << lesson.to_html(content_method_name: :next_lesson_button)
+        slide << lesson.to_html(content_method_name: :previous_lesson_button)
+
+        slide << "<p><a href='#{lesson.href}'>Outline</a></p>"
+        slide
+      end
+    end
+
+    deck_page = Deck::SlideDeck.new(:slides => slides,
+                                    :title => page_title(lesson, "Slides"))
+    deck_page.to_html
+  end
+
+  get "/lessons/:course/:file.:ext" do
+    send_file(File.join(course_dir, "#{params[:file]}.#{params[:ext]}"))
   end
 
   get "/lessons/:course/:lesson" do
