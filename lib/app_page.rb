@@ -186,6 +186,9 @@ class AppPage < Erector::Widgets::Page
           a "Lessons", href: "/lessons"
         }
         li {
+          a "Test First", href: "http://testfirst.org/"
+        }
+        li {
           a "Labs", href: "http://testfirst.org/live"
         }
         li {
