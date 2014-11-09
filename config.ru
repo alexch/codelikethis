@@ -5,8 +5,11 @@ require 'rack/codehighlighter'
 use Rack::ShowExceptions
 use Rack::ShowStatus
 use Rack::Codehighlighter, :coderay,
-  :element => "pre>code",
-  :markdown => true,
-  :pattern => /\A[:@]{3}\s?(\w+)\s*(\n|&#x000A;)/i
+    :element => "pre>code",
+    :markdown => true,
+    :pattern => /\A[:@]{3}\s?(\w+)\s*(\n|&#x000A;)/i
 
-run App
+run Rack::Cascade.new([
+                        App,
+                        Deck::RackApp.build([])
+                      ])

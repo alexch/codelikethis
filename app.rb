@@ -87,9 +87,9 @@ class App < Sinatra::Base
 
           lesson = course.lesson_named(params[:file])
 
-          slide << lesson.to_s(content_method_name: :labs)
-          slide << lesson.to_s(content_method_name: :next_lesson_button)
-          slide << lesson.to_s(content_method_name: :previous_lesson_button)
+          slide << lesson.to_html(content_method_name: :labs)
+          slide << lesson.to_html(content_method_name: :next_lesson_button)
+          slide << lesson.to_html(content_method_name: :previous_lesson_button)
 
           slide << "<p><a href='#{lesson.href}'>Outline</a></p>"
           slide
@@ -106,10 +106,6 @@ class App < Sinatra::Base
 
   get "/lessons/:course/:lesson" do
     AppPage.new(:widget => lesson, :title => lesson.display_name + " - Code Like This").to_html
-  end
-
-  error 404 do
-    Deck::RackApp.public_file_server.call(env)
   end
 
   def course_dir
