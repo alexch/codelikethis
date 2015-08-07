@@ -13,162 +13,26 @@ class AppPage < Erector::Widgets::Page
 
   # todo: promote into Page
   def stylesheet src, attributes = {}
-    link({:rel => "stylesheet", :href => src}.merge(attributes))
+    link({:rel => "stylesheet", :href => "/stylesheets/#{src}.css"}.merge(attributes))
+  end
+
+  def body_scripts
+    script src: "/bower_components/jquery/dist/jquery.min.js"
+    script src: "/bower_components/foundation/js/foundation.min.js"
+    script src: "/js/app.js"
   end
 
   def head_content
     super
+
+    meta charset: "utf-8"
+    meta name: "viewport", content: "width=device-width, initial-scale=1.0"
+    stylesheet "app"
+    script src: "/bower_components/modernizr/modernizr.js"
+
     font "Museo500"
-    stylesheet "/coderay.css"
-    nice_bg = "url(/bg.png)"  # background image courtesy of http://www.bgpatterns.com/ 779FC9/B2CFED
-    #nice_bg = "#C8D9E9"
-    style raw(<<-CSS)
-      body {
-        font-family: 'Museo500Regular', 'Arial', 'Sans';
-        margin: 0; padding: 0;
-        background: #{nice_bg};
-        text-rendering: optimizelegibility;
-
-      }
-      .non_footer {
-        background: white;
-      }
-
-      .header {
-        padding: 0 6px;
-        background: #{nice_bg};
-      }
-      .header a {
-        text-decoration: none;
-        color: black;
-      }
-      .header .logo {
-        font-size: 64px;
-        font-weight: bold;
-        text-rendering: optimizelegibility;
-        text-shadow: #c8c8f1 2px 2px 0px;
-      }
-      .header .tagline {
-        font-style: italic;
-        padding-left: 1em;
-      }
-      .header {
-        border-bottom: 1px solid black;
-      }
-
-      .header .donate_button {
-        float: right;
-        margin: 1em;
-      }
-
-
-      .nav {
-        background: white;
-      }
-      .nav ul {
-        list-style-type: none;
-        -webkit-margin-before: 0;
-        -webkit-margin-after: 0;
-        -webkit-margin-start: 0;
-        -webkit-margin-end: 0;
-        -webkit-padding-start: 0;
-        padding: 1px 1em;
-        border-bottom: 1px solid blue;
-      }
-      .nav ul li {
-        display: inline;
-        padding: 2px 20px;
-        border-right: 1px solid blue;
-      }
-      .nav a {
-        text-decoration: none;
-      }
-      .nav a:visited, .nav a {
-        color: black;
-      }
-
-      .main {
-        padding: 1em 1em 1em 2em;
-        font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-        min-height: 30em;
-        background: white;
-      }
-      .main_column {
-        max-width: 56em;
-      }
-
-      .pre_footer {
-        clear: both;
-        background: white;
-      }
-      .footer {
-        padding: 4px 2px 8px;
-        text-align: center;
-        border-top: 1px solid blue;
-        background:  #{nice_bg};
-        font-size: 11pt;
-        min-height: 2em;
-      }
-
-      section.slide {
-        border-top: 1px solid #ddd;
-        padding-left: 1em;
-        margin-bottom: 2em;
-      }
-      section.slide h1, section.slide > h2:first-child {
-        font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-      }
-      section.slide > h2:first-child {
-        margin: 2px 0 2px -4px;
-        font-size: 2em;
-        text-shadow: #ddd 0.1em 0.1em 0.1em;
-      }
-      section.slide > h1 {
-        font-size: 3em;
-      }
-      section.slide.subsection {
-        border-top: 2px solid blue;
-      }
-      section.slide.subsection > h2:first-child {
-        font-size: 3em;
-      }
-      section.slide blockquote {
-        font-style: italic;
-        border-left: 2px solid #ddd;
-        padding-left: 1em;
-      }
-
-      .slide li {
-        margin-bottom: .5em;
-      }
-      .slide li:first-child {
-        margin-top: .5em;
-      }
-
-      .slide pre, code, kbd, samp {
-        font-family:monospace, sans-serif;
-        background: #f4f4f1;
-      }
-      .slide pre {
-        white-space:pre;
-        white-space:pre-wrap;
-        word-wrap:break-word;
-        padding: 1em;
-        border:1px solid #ccc;
-        display: inline-block; /* so it's only as wide as its contents */
-      }
-      .slide code {
-        color:#444;
-        padding: 0 3px;
-      }
-
-      .video {
-        margin: 1em;
-        padding: .5em;
-        border: 6px solid gray;
-      }
-
-    CSS
+    stylesheet "coderay"
+    stylesheet "codelikethis"
   end
 
   def body_content
@@ -221,6 +85,8 @@ class AppPage < Erector::Widgets::Page
         text ", and so on."
       end
     }
+
+    body_scripts
   end
 
   def self.google_analytics_code account_id
