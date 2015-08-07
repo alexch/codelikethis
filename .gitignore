@@ -1,1 +1,5 @@
 .idea
+# /public/bower_components/*
+# /public/stylesheets/*
+/.sass-cache/*
+*.DS_Store

@@ -9,6 +9,8 @@ gem "deckrb", ">=0.5.2"
 gem "coderay"
 gem "json"
 gem "rack-codehighlighter"
+gem "sass", "~> 3.4.0"
+gem "compass", "~> 1.0"
 
 group :development, :test do
   gem "rerun"
@@ -16,4 +18,5 @@ group :development, :test do
   gem "rake", ">=10.0.1"
   gem "wrong"
   gem "files"
+  gem "foundation"
 end
