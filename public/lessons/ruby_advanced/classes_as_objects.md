@@ -40,6 +40,16 @@ same as...
 
 aka "eigenclass" (but "metaclass" is incorrect)
 
+![method lookup](object_method_lookup.gif)
+
+from
+<http://blog.madebydna.com/all/code/2011/06/24/eigenclasses-demystified.html>
+
+# method lookup goes through the eigenclass
+
+![method lookup](eigenclass_method_lookup.gif)
+
+from
 <http://blog.madebydna.com/all/code/2011/06/24/eigenclasses-demystified.html>
 
 

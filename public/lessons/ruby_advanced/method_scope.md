@@ -10,7 +10,7 @@ Ref.: WGR Ch. 5, The default object (self), scope, and visibility
 * only accessible to that specific instance
   * i.e. from inside an instance method of that class
   * i.e. when `self` is the receiving object
-  
+
 # you can't even access your siblings' private parts
 
     @@@ ruby
@@ -18,7 +18,7 @@ Ref.: WGR Ch. 5, The default object (self), scope, and visibility
       def initialize(initial_gold)
         @gold = initial_gold
       end
-  
+
       def gold
         @gold
       end
@@ -26,7 +26,7 @@ Ref.: WGR Ch. 5, The default object (self), scope, and visibility
       def take_gold_from(other)
         @gold += other.gold
       end
-  
+
       private :gold
     end
 
@@ -43,7 +43,7 @@ Ref.: WGR Ch. 5, The default object (self), scope, and visibility
         class Midas
           protected :gold
         end
-    
+
         m1.take_gold_from(m2)
         => 30
 

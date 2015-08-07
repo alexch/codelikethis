@@ -27,11 +27,5 @@ class Course
     lesson "reopening_classes"
     lab "array_extensions"
     lab "in_words"
-    lesson "modules"
-    lesson "variable_scope"
-    lesson "method_scope"
-    lesson "classes_as_objects"
-    lesson "more_objects"
-    lesson "more_classes"
   end
 end

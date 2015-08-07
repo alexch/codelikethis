@@ -46,6 +46,7 @@ class App < Sinatra::Base
       Course::RubyBasics,
       Course::RubyBlocks,
       Course::RubyObjects,
+      Course::RubyAdvanced,
       Course::Javascript,
     ]
   end
