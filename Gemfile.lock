@@ -24,7 +24,7 @@ GEM
     diff-lcs (1.2.5)
     erector (0.10.0)
       treetop (>= 1.2.3)
-    eventmachine (1.0.3)
+    eventmachine (1.0.8)
     ffi (1.9.6)
     files (0.3.1)
     hitimes (1.2.2)
@@ -112,3 +112,6 @@ DEPENDENCIES
   sinatra
   thin
   wrong
+
+BUNDLED WITH
+   1.10.5
