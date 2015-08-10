@@ -1,2 +1,14 @@
 // The latest settings can be found here:
 // https://github.com/zurb/bower-foundation/blob/master/scss/foundation/_settings.scss
+
+// Allows the use of rem-calc() or lower-bound() in your settings
+@import 'foundation/functions';
+
+$nice-blue: #47CFFC;
+
+$topbar-bg-color: $nice-blue;
+$topbar-bg: $topbar-bg-color;
+
+$topbar-height: rem-calc(74);
+
+$topbar-link-font-size: rem-calc(14);

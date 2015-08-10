@@ -1,10 +1,11 @@
-$nice_bg: url(/bg.png);  // background image courtesy of http://www.bgpatterns.com/ 779FC9/B2CFED
+@import '_settings';
 
+$nice_bg: url(/bg.png);  // background image courtesy of http://www.bgpatterns.com/ 779FC9/B2CFED
 
 body {
   font-family: 'Museo500Regular', 'Arial', 'Sans';
-  margin: 0; padding: 0;
-  background: $nice_bg;
+  margin: 0;
+  padding: 0;
   text-rendering: optimizelegibility;
 }
 
@@ -12,55 +13,86 @@ body {
   background: white;
 }
 
-.header {
-  padding: 0 6px;
-  background: $nice_bg;
-  border-bottom: 1px solid black;
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  .logo {
-    font-size: 64px;
-    font-weight: bold;
-    text-rendering: optimizelegibility;
-    text-shadow: #c8c8f1 2px 2px 0px;
-  }
-  .tagline {
-    font-style: italic;
-    padding-left: 1em;
-  }
-  .donate_button {
-    float: right;
-    margin: 1em;
-  }
+center.logo {
+  background: $nice-blue;
 }
 
-.nav {
-  background: white;
+.top-bar {
+  background: $nice-blue;
+  border-bottom: 1px solid blue;
 
-  ul {
-    list-style-type: none;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    -webkit-padding-start: 0;
-    padding: 1px 1em;
-    border-bottom: 1px solid blue;
-    li {
-      display: inline;
-      padding: 2px 20px;
-      border-right: 1px solid blue;
+  .nav-buttons {
+    text-align: center;
+    padding: 0 6px;
+    background: $nice-blue;
+
+    ul {
+      list-style-type: none;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      -webkit-margin-start: 0;
+      -webkit-margin-end: 0;
+      -webkit-padding-start: 0;
+      padding: 1px 1em;
+      li {
+        display: inline;
+        padding: 2px 20px;
+        border-right: 1px solid blue;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:visited {
+      color: black;
+    }
+    a:hover {
+      background-color: darken($nice-blue, 10%);
+    }
+
+    .donate_button {
+      display: inline-block;
+      background-color: $topbar-bg-color;
+      vertical-align: middle;
+      input {
+        height: auto;
+        position: inherit;
+      }
     }
   }
-  a {
-    text-decoration: none;
+
+  // extra stuff (and overrides) for small-screen menu
+  .toggle-topbar.menu-icon {
+    margin-top: 0;
+    top: 0;
   }
-  a:visited, .nav a {
-    color: black;
+  &.expanded {
+    background: $nice-blue;
+    .nav-buttons {
+      padding: 0 0;
+      ul {
+        padding: 0 0;
+      }
+      li {
+        display: block;
+        padding: 2px 0px;
+        border-right: none;
+        border-top: 1px solid blue;
+        a {
+          display: block;
+        }
+      }
+    }
   }
+
 }
+
+/////
 
 .main {
   padding: 1em 1em 1em 2em;

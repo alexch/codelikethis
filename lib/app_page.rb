@@ -35,29 +35,96 @@ class AppPage < Erector::Widgets::Page
     stylesheet "codelikethis"
   end
 
-  def body_content
-    div.header {
-      widget DonateButton
-      span.logo { a "Code like this.", href: '/' }
-      span.tagline "You can learn to code. Here's how!"
+  def logo klass: nil, style: nil
+    a(href: '/') {
+      img.logo(src: '/images/logo.png', alt: "Code like this.", href: '/',
+               class: ['logo', klass].compact,
+               style: [style].compact)
     }
+  end
+
+  def nav_content
+
+
+    div(class: "sticky") {
+      center.logo {
+        logo(klass: 'show-for-medium-only', style: 'height: 50%')
+      }
+
+      nav({class: 'top-bar', role: 'navigation'} << {'data-topbar' => true}) {
+        ul(:class => 'title-area') {
+          li(:class => 'name') {
+            logo(klass: 'show-for-large-up')
+            logo(klass: 'show-for-small-only', style: 'height: 50%')
+          }
+          li(:class => 'toggle-topbar menu-icon') {# menu-icon = hamburger
+            a(:href => '#') {
+              span 'Menu'
+            }
+          }
+        }
+        section(:class => 'nav-buttons') {
+          ul {
+            li {
+              a "Blog", href: "http://codelikethis.tumblr.com"
+            }
+            li {
+              a "Lessons", href: "/lessons"
+            }
+            li {
+              a "Test First", href: "http://testfirst.org/"
+            }
+            li {
+              a "Labs", href: "http://testfirst.org/live"
+            }
+            li {
+              a "Alex", href: "http://alexchaffee.com"
+            }
+            li {
+              widget DonateButton
+            }
+
+            # li(:class => 'active') {
+            #   a(:href => '#') {
+            #     text 'Right Button Active'
+            #   }
+            # }
+            # li(:class => 'has-dropdown') {
+            #   a(:href => '#') {
+            #     text 'Right Button Dropdown'
+            #   }
+            #   ul(:class => 'dropdown') {
+            #     li {
+            #       a(:href => '#') {
+            #         text 'First link in dropdown'
+            #       }
+            #     }
+            #     li(:class => 'active') {
+            #       a(:href => '#') {
+            #         text 'Active link in dropdown'
+            #       }
+            #     }
+            #   }
+            # }
+          }
+
+          # ul(:class => 'left') {
+          #   li {
+          #     a(:href => '#') {
+          #       text 'Left Nav Button'
+          #     }
+          #   }
+          # }
+        }
+      }
+    }
+  end
+
+  def body_content
+
+    nav_content
     div.nav {
       ul {
-        li {
-          a "Blog", href: "http://codelikethis.tumblr.com"
-        }
-        li {
-          a "Lessons", href: "/lessons"
-        }
-        li {
-          a "Test First", href: "http://testfirst.org/"
-        }
-        li {
-          a "Labs", href: "http://testfirst.org/live"
-        }
-        li {
-          a "Alex", href: "http://alexchaffee.com"
-        }
       }
     }
     div.main {

@@ -1,6 +1,6 @@
 class DonateButton < Erector::Widget
   def content
-    div.donate_button do
+    div(class: 'donate_button') do
       rawtext <<-HTML
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
