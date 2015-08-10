@@ -1,3 +1,0 @@
-# Hashes
-
-todo
