@@ -62,10 +62,10 @@ div.blog .rssHeader > a:after {
       }
     }
     div.row {
-      div(class: 'small-12 medium-6 columns') {
+      div(class: 'small-12 medium-offset-1 medium-5 columns') {
         blog
       }
-      div(class: 'small-12 medium-6 columns') {
+      div(class: 'small-12 medium-5 columns end') {
         twitter
       }
     }
