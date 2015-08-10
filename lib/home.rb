@@ -21,6 +21,7 @@ div.bubble h2 {
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
 }
+
 div.right_side {
   float: right;
   max-width: 24em;
@@ -34,29 +35,39 @@ div.blog .rssHeader > a:after {
   CSS
 
   def content
-    div.right_side do
-      blog
-      twitter
-    end
 
-    div.bubble {
-      p {
-        text "I'm "
-        a "Alex Chaffee", href: "http://alexchaffee.com"
-        text " and I want to teach you how to code! This site contains my lectures and labs on Ruby, JavaScript, and more, in outline, slide, and video format."
+    div.row {
+      div(class: 'small-12 medium-6 columns') {
+        div.bubble {
+          p {
+            text "I'm "
+            a "Alex Chaffee", href: "http://alexchaffee.com"
+            text " and I want to teach you how to code! This site contains my lectures and labs on Ruby, JavaScript, and more, in outline, slide, and video format."
+          }
+          p {
+            text "Click on "
+            a "Lessons", href: "/lessons"
+            text " in the nav bar to get started. And I'm updating it every week or so with new videos and notes, so keep checking back!"
+          }
+        }
       }
-      p {
-        text "Click on "
-        a "Lessons", href: "/lessons"
-        text " in the nav bar to get started. And I'm updating it every week or so with new videos and notes, so keep checking back!"
+
+      div(class: 'small-12 medium-6 columns') {
+        div.bubble {
+          h2 "Licensing and Donations"
+          p "Please click the 'Donate' button in the top right corner to support this project financially."
+          p "I intend to make the vast majority of these materials open source, and completely free for either personal use or open workshops."
+          p "If you're using them to teach a class that you're getting paid for, I ask for a donation of $25 (or more) per student in your class."
+        }
       }
     }
-
-    div.bubble {
-      h2 "Licensing and Donations"
-      p "Please click the 'Donate' button in the top right corner to support this project financially."
-      p "I intend to make the vast majority of these materials open source, and completely free for either personal use or open workshops."
-      p "If you're using them to teach a class that you're getting paid for, I ask for a donation of $25 (or more) per student in your class."
+    div.row {
+      div(class: 'small-12 medium-6 columns') {
+        blog
+      }
+      div(class: 'small-12 medium-6 columns') {
+        twitter
+      }
     }
   end
 

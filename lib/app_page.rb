@@ -45,7 +45,6 @@ class AppPage < Erector::Widgets::Page
 
   def nav_content
 
-
     div(class: "sticky") {
       center.logo {
         logo(klass: 'show-for-medium-only', style: 'height: 50%')
@@ -123,10 +122,7 @@ class AppPage < Erector::Widgets::Page
   def body_content
 
     nav_content
-    div.nav {
-      ul {
-      }
-    }
+
     div.main {
       call_block
       widget @widget if @widget
