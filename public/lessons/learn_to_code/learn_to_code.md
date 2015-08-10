@@ -80,19 +80,16 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
 # Technical requirements
 
 * WIFI
-  * SSID: CCV-RADIUS
-  * Username: guest-girlsdevit
-  * Password: Ruby921
-  * Accept that the server is invalid
-* a live Ruby installation 
-  * e.g. http://railsinstaller.org -- click on the *BIG GREEN BUTTON*
-  * Ruby version 2.0 preferred, but 1.9 is fine too 
+  * SSID: ______
+  * Username: ______
+  * Password: ______
+* a live Ruby installation
+  * visit http://installfest.railsbridge.org for more instructions
+  * Ruby version 2.x is preferred, but 1.9 is fine too
     * run `ruby -v` to check
 * a text editor
   * e.g. Sublime Text 2
   * www.sublimetext.com/2
 
 * If you do not have both of these things, RAISE YOUR HAND
-  * visit http://installfest.railsbridge.org for more instructions
-
 

@@ -5,20 +5,17 @@ require 'deck'
 class Lesson < Erector::Widget
 
   external :style, "
-  a.button {
-    padding: .2em .5em;
-    border: 1px solid blue;
-    background-color: #EEEEF2;
-    display: block;
-    text-decoration: none;
-  }
 
+  .main {
+    max-width: 70em;
+    margin: auto;
+  }
 
   .extras {
     float:right;
     margin-right: 1em;
     min-width: 10em;
-    border-left: .5em solid white;
+    margin-left: .5em;
   }
   .extras a.button {
     border-top: none;
@@ -134,7 +131,10 @@ class Lesson < Erector::Widget
         next_lesson_button
       }
     }
+
     widget Breadcrumbs, :parents => [CoursesTable.new, @course], :display_name => display_name
+
+    br
 
     div.videos {
       @videos.each do |youtube_id|

@@ -6,9 +6,12 @@
 
 $nice-blue: #47CFFC;
 
+// http://foundation.zurb.com/docs/components/topbar.html
 $topbar-bg-color: $nice-blue;
 $topbar-bg: $topbar-bg-color;
-
 $topbar-height: rem-calc(74);
-
 $topbar-link-font-size: rem-calc(14);
+
+// http://foundation.zurb.com/docs/components/breadcrumbs.html
+$crumb-slash: "/";
+
