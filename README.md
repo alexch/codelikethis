@@ -21,13 +21,15 @@ http://foundation.zurb.com/docs/sass.html :
 
 ---
 
+SCSS currently built using Compass. Run this all the time in development, or at least once before deploy:
+
     bundle exec compass watch --time
 
-http://compass-style.org/help/documentation/configuration-reference/
+see http://compass-style.org/help/documentation/configuration-reference/
 
 ---
 
 # TODO:
 
-make a Heroku buildpack to run bower install (instead of checking in bower stuff)
+make a Heroku buildpack to run bower install (instead of checking in bower stuff)?
 

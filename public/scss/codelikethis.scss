@@ -112,10 +112,9 @@ center.logo {
   padding: 4px 2px 8px;
   text-align: center;
   border-top: 1px solid blue;
-  background:  #{nice_bg};
+  background: $nice_blue;
   font-size: 11pt;
   min-height: 2em;
-  max-width: 70rem;
 }
 
 section.slide {
