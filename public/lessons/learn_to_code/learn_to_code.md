@@ -2,7 +2,7 @@
 
 You may have never programmed before. Now you will.
 
-# Schedule
+<!--# Schedule
 
 9:00 introductions
 
@@ -19,6 +19,7 @@ You may have never programmed before. Now you will.
 4:30 discussion and next steps
 
 5:00 bye
+-->
 
 # What is coding?
 
@@ -48,29 +49,32 @@ You may have never programmed before. Now you will.
 
 # What will we learn today?
 
-In this class, you will utilize Ruby to learn:
+In this class, you will use Ruby to learn about:
 
 *  The command line and why we use it
-*  Learn about Strings, Arrays, Variables, Objects, Loops, Files
+*  Strings, Arrays, Variables, Objects, Loops, Files
 *  Object concepts like Methods
-
 *  How to run your Ruby code interactively (irb) or from a file
 *  Make a very simple website run on your own computer
 
 Follow along at http://codelikethis.com/lessons/learn_to_code
 
-# Go at your own pace
+<!--# Go at your own pace
 
 * we will **definitely not** get through all the materials today
+-->
 
-# What if I know some of that already?
+
+<!--# What if I know some of that already?
 
 * Pair up and fill in each other's gaps
 * Promote yourself to TA
+-->
 
-## And if you and your pair finish early...
+# And if you (and your pair) finish early...
 
-* Let us know!
+<!--* Let us know! -->
+* Look at [Next Steps](next_steps.md)
 * Start working on my Ruby For Programmers lessons
   * http://testfirst.org
   * http://codelikethis.com/lessons/
@@ -79,10 +83,12 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
 
 # Technical requirements
 
+<!--
 * WIFI
   * SSID: ______
   * Username: ______
   * Password: ______
+-->
 * a live Ruby installation
   * visit http://installfest.railsbridge.org for more instructions
   * Ruby version 2.x is preferred, but 1.9 is fine too
@@ -91,5 +97,5 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
   * e.g. Sublime Text 2
   * www.sublimetext.com/2
 
-* If you do not have both of these things, RAISE YOUR HAND
+<!--* If you do not have both of these things, RAISE YOUR HAND -->
 
