@@ -6,5 +6,6 @@ class Course
       video "tFwAailXjeA"
       video "mzcBfUu15RU"
     end
+    lesson "inceptions"
   end
 end
