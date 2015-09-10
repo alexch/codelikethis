@@ -1,12 +1,18 @@
 # What is an Inception?
 
-* an exploratory workshop
-* where the whole team
-* defines the goals and themes for a project
-* and produces an initial backlog
+* an exploratory workshop…
+* where the whole team…
+* defines the goals and themes for a project…
+* and produces an initial backlog…
 * to kickstart an iterative process
-* “Plans are useless, but planning is essential”
-* “No plan survives contact with the enemy”
+
+# On Planning
+
+> “Plans are useless, but planning is essential”
+
+.
+
+> “No plan survives contact with the enemy”
 
 # Inception Goals
 
@@ -17,11 +23,13 @@
 * produce a rough project timeline
 * establish initial recurring schedule for team meetings
 * sketch technical architecture (but avoid Big Design Up Front)
+* introduce the team to each other
 
 # Optional Inception Goals
 
 * build paper prototype
 * write team charter
+* determine need for more discovery
 
 # Inception Anti-Goals
 
@@ -38,7 +46,11 @@
 * needs a facilitator
 * invite as much of the whole team as possible
 
-![sample schedule](http://payload.cargocollective.com/1/3/120632/1725392/dev_inception_1day_860.jpg) from Pivotal Labs
+# Sample Inception Schedule
+
+![sample schedule](http://payload.cargocollective.com/1/3/120632/1725392/dev_inception_1day_860.jpg)
+
+from [Pivotal Labs](http://cargocollective.com/pivotallabs/No-7-Dev-Inception)
 
 # Project Goals
 
@@ -47,27 +59,48 @@
 *  business goals
 *  product goals
 *  engagement goals
-*  team goals
-  *    workday experience
-  *    explore technology
-  *    experiment with processes (e.g. remote pairing)
+
+# Team goals
+
+* workday experience and pacing
+* exploring technology vs. exercising skills
+* using new or old processes (e.g. remote pairing)
 
 # Project Non-Goals
 
-  *  things we explicitly do not want to accomplish in the project
-  *  useful when there’s a priority decision to be made
+* aka "The Not List"
+*  things we explicitly do not want to accomplish in the project
+*  useful when there’s a priority decision to be made
   *  e.g. if a non-goal is “support mobile” then we can ignore Mobile Safari bugs
+* It's also OK to list unknown or unresolved goals
 
 # Project Risks
 
-	>	Business risks (Does the market want this?  Will an emerging technology disrupt this product? 
+*	Business risks
+  * Does the market want this?  
+  * Will an emerging technology disrupt this product? 
+  * Can the client support success?
+*	Technical risks
+  * Are there 3rd party integrations?  
+  * Are there unknown technologies/libraries to learn?
+  * Does the product rely on platforms that are changing, e.g. Android or Apple Watch?
+*	Schedule risks
+  * Must we satisfy other parties, e.g. developers on another team?  
+  * Is there a near term, immovable milestone like a festival launch?
+*	Budget risks
+  * Will we run out of money before beta? Before launch? Before handoff?
 
-	>	Technical risks (Are there 3rd party integrations?  Are there unknown technologies/libraries to learn?  Does the product rely on platforms that are changing, e.g., iOS, Android?)
+Based off <http://pivotallabs.com/agile-inception_knowing-what-to-build-and-where-to-start/>
 
-	>	Schedule risks (Are there pre-MVP gates to satisfy third-parties, e.g.  developers on another team?  Is there a near term, immovable milestone like a festival launch?)
+# Team Risks
 
-	From <http://pivotallabs.com/agile-inception_knowing-what-to-build-and-where-to-start/>
+How do we want to work?
 
+* Part-time (vs. dedicated) team?
+* Remote (vs. co-located) team?
+* Customer unavailable?
+* Deployment environment hassles
+* Customer :: Project Manager :: Developer :: Designer :: QA Tester :: Support ratios
 
 # Elevator Pitch
 
@@ -79,7 +112,7 @@
 
 # Mission Statement Game
 
-* everyone writes one
+* everyone writes a mission statement
 * highlight important words
 * sit on it
 * collaborate to write and reach consensus on a final statement
@@ -91,11 +124,12 @@
 *  can also include developers, clients, admins, customer support reps, QA testers, apps, spammers…
 *  one persona per card/sheet
 
-# Persona Activities
+# Roles and Activities
 
 *  for each persona, ask what they can do (and can’t)
-*  one activity per card
-*  diagram relationships among personae and activities
+*  one card for each activity
+*  one card for each role
+*  diagram relationships among personae and activities and roles
 
 # Story Mapping
 
@@ -104,6 +138,8 @@
 *  goal is to get broad and deep, clustering rather than prioritizing
 *  looking for themes, not details
 *  but still, try to break down stories into smaller stories
+
+> ["The goal isn’t to get all the cards created, but to establish a rhythm of story creation."](http://agilecoffee.com/using-an-inception-to-kick-off-a-project/)
 
 # Epics
 
@@ -117,6 +153,7 @@
   (for Story Mapping but really for any planning or retro game)
 
 *  Stay impartial
+*  Assign a Timekeeper and a Scribe (so you can focus on the meeting, not the logistics)
 *  Try to ask questions, not make statements
 *  After asking a question, count to ten! someone else will fill the silence
 *  Ask clarifying questions, even if you know the answer
@@ -134,28 +171,6 @@
 5. Estimate Stories
 6. Prioritize Stories into a Backlog (across Epics)
 
-# Estimation and Prioritization
-
-* Estimation and Prioritization go hand in hand
-  * You shouldn’t prioritize until there’s an estimate, but you shouldn’t estimate until you know it’s near the top of the (unestimated) pile
-  * Sometimes unexpectedly high or low estimates will change the priority
-* Estimation is a technical task, prioritization is a customer task
-  * (except with chores)
-  * (and sometimes bugs)
-* Prioritize as "A-B-C" at first
-  * high-med-low or must-have/nice-to-have/meh
-* Write detailed stories for A's first, then B's, then C's
-
-# How to Prioritize?
-
-It’s up to the customer, BUT here are some guidelines:
-
-* - prioritize by business value (higher value first)
-* - prioritize by risk (higher risk first)
-* - prioritize by effort (easy wins first)
-* - prioritize by simplicity (technical merit first, e.g. code quality or UI consistency or system stability)
-* - prioritize by cost (but weigh dev hours against cash expenses)
-
 # Iteration Zero
 
 * sometimes inceptions reveal that a project is not yet ready to build
@@ -171,39 +186,35 @@ It’s up to the customer, BUT here are some guidelines:
 Inceptions are a great place to establish the regular rhythm of the project, as punctuated by recurring meetings.
 
 *  Daily Standup
-*  Weekly Iteration Planning (IPM)
-*  Acceptance (can be weekly, semi-weekly, ad hoc, or any combination)
-*  Retrospectives (weekly, bi-weekly, or monthly)
+*  Weekly Iteration [Planning](planning) (IPM)
+*  [Acceptance](planning) (can be weekly, semi-weekly, ad hoc, or any combination)
+*  [Retrospectives](planning) (weekly, bi-weekly, or monthly)
 *  Demos (often coincide with Acceptance, but not always)
 *  User Testing sessions
 * Others?
 
-# Acceptance Meetings
+# Next Steps
 
-* customer is presented with stories that have become "done" since the last acceptance meeting
-* problem stories can be Rejections, or become new Bugs or Features, or be deprioritized
-* be careful not to hastily prioritize or estimate new or split stories (including bugs) —
-  * put them in the Icebox or Inbox for later examination and get back to accepting the rest of the Done stories
-* Acceptance doesn’t need to include the whole team, but if the right people aren’t in the room, invite them or wait until the next meeting
-  * face-to-face is always better than high-latency channels like email or Tracker
-* shy or impatient coders may want to skip Acceptance meetings since they feel like project management, but it's very important to have coders in the room for...
-     * explaining technical details
-     * demoing
-     * watching the customer attempt to use their features
-     * understanding why a story was rejected
-     * understanding steps to reproduce bugs
-     * splitting stories along appropriate lines
-     * estimating new stories
+* Review Parking Lot / IOUs
+* Schedule additional meetings
+* Assign someone to capture cards and diagrams into Tracker
 
-# Retrospectives
+# Retrospective & Closing
 
-* the more frequent they are, the shorter they can be
-* good/bad/weird is a common game, but doesn’t need to be the only one
-* see Agile Retros book for a good structure and lots of games
-* or just use the Happy/Sad/Confused Game
+* Have a brief Retrospective about this inception.
+  * What worked?
+  * What didn't?
+  * Specific feedback for the facilitator?
+* Appreciation Circle
+* Any last thoughts?
+
+# Party Time!
+
+* We're done!
 
 # References
 
 * http://blog.pivotal.io/pivotal-labs/labs/agile-inception_knowing-what-to-build-and-where-to-start
 * http://agilecoffee.com/using-an-inception-to-kick-off-a-project/
 * http://cargocollective.com/pivotallabs/No-7-Dev-Inception
+* https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/
