@@ -30,6 +30,7 @@
 * build paper prototype
 * write team charter
 * determine need for more discovery
+* start project glossary (aka *ubiquitous language* or *domain language*)
 
 # Inception Anti-Goals
 
@@ -81,8 +82,8 @@ from [Pivotal Labs](http://cargocollective.com/pivotallabs/No-7-Dev-Inception)
   * Will an emerging technology disrupt this product? 
   * Can the client support success?
 *	Technical risks
-  * Are there 3rd party integrations?  
-  * Are there unknown technologies/libraries to learn?
+  * Are there 3rd party integrations?
+  * Are there unknown technologies or libraries to learn?
   * Does the product rely on platforms that are changing, e.g. Android or Apple Watch?
 *	Schedule risks
   * Must we satisfy other parties, e.g. developers on another team?  
@@ -131,23 +132,6 @@ How do we want to work?
 *  one card for each role
 *  diagram relationships among personae and activities and roles
 
-# Story Mapping
-
-*  very time-consuming
-*  take plenty of breaks! facilitator, don’t rush!
-*  goal is to get broad and deep, clustering rather than prioritizing
-*  looking for themes, not details
-*  but still, try to break down stories into smaller stories
-
-> ["The goal isn’t to get all the cards created, but to establish a rhythm of story creation."](http://agilecoffee.com/using-an-inception-to-kick-off-a-project/)
-
-# Epics
-
-*  An Epic is a series of Stories
-*  For instance the epic “User Accounts” could include “Sign up, Sign in, Change password, Edit profile, Upload avatar”
-  *  (not necessarily in that order, of course)
-*  Put epics across the top row, stories in columns underneath their epic
-
 # Advice for Facilitators
 
   (for Story Mapping but really for any planning or retro game)
@@ -161,6 +145,49 @@ How do we want to work?
   * Use a Parking Lot list for items to deal with immediately after the meeting
   * (I prefer the title IOU)
 *  If the conversation ebbs, ask if anyone sees a pattern… or has a suggestion… or if it’s time for a break
+
+# Story Mapping
+
+*  very time-consuming
+*  take plenty of breaks! facilitator, don’t rush!
+*  goal is to get broad and deep, clustering rather than prioritizing
+*  looking for themes, not details
+*  but still, try to break down stories into smaller stories
+
+> ["The goal isn’t to get all the cards created, but to establish a rhythm of story creation."](http://agilecoffee.com/using-an-inception-to-kick-off-a-project/)
+
+# Story Mapping Example
+
+![Winninpeg Example Story Map](http://3.bp.blogspot.com/-KWX3M3EbdzY/VTZr6PNJ1rI/AAAAAAAAAOs/8HTZDtGw1zc/s1600/UserStoryMap.png)
+
+<http://winnipegagilist.blogspot.com/2012/03/how-to-create-user-story-map.html>
+
+# Stories
+
+* A story:
+  * provides business value
+  * is discrete
+  * is testable
+  * is estimatable
+  * can be implemented within 1 iteration
+* Usually one story per feature, bug, or chore
+
+# Story Body Template
+
+```
+AS A ____
+I WANT TO ____
+SO THAT ___
+```
+
+ 
+
+# Epics
+
+*  An Epic is a series of Stories
+*  For instance the epic “User Accounts” could include “Sign up, Sign in, Change password, Edit profile, Upload avatar”
+  *  (not necessarily in that order, of course)
+*  Put epics across the top row, stories in columns underneath their epic
 
 # Story Mapping Order
 

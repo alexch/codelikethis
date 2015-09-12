@@ -1,3 +1,18 @@
+# Project Phases
+
+* Scoping => SOW
+
+* Discovery
+  * Research
+  * Prototyping 
+
+* Inception
+  * Story Mapping => Backlog
+
+* Release Planning
+* Development
+* Maintenance
+
 # Recurring Meetings
 
 *  Daily Standup
@@ -7,6 +22,26 @@
 *  Demos (often coincide with Acceptance, but not always)
 *  User Testing sessions
 * Others?
+
+# Stories
+
+* A story:
+  * provides business value
+  * is discrete
+  * is testable
+  * is estimatable
+  * is prioritizable
+  * can be implemented within 1 iteration
+* Usually one story per feature, bug, or chore
+
+# Story Body Template
+
+```
+AS A ____
+I WANT TO ____
+SO THAT ___
+```
+
 
 # Estimation and Prioritization
 
@@ -24,11 +59,21 @@
 
 It’s up to the customer, BUT here are some guidelines:
 
-* prioritize by business value (higher value first)
-* prioritize by risk (higher risk first)
-* prioritize by effort (easy wins first)
-* prioritize by simplicity (technical merit first, e.g. code quality or UI consistency or system stability)
-* prioritize by cost (but weigh dev hours against cash expenses)
+* by business value (higher value first)
+* by risk (higher risk first)
+* by effort (easy wins first)
+* by simplicity (technical merit first, e.g. code quality or UI consistency or system stability)
+* by cost (but weigh dev hours against cash expenses or profit/loss/ROI)
+* randomly!
+
+# How to Estimate?
+
+Each team needs to choose its "story point" scale, but in general...
+
+* 1 point = 1 pair-day or less
+* 2 points = a few pair-days
+* 3 points = a lot; try to split into several stories
+* 0 points = **actually** a few minutes, like changing button text
 
 # Acceptance Meetings
 
