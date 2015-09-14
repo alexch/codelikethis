@@ -15,6 +15,10 @@
 
     ["apple", "banana", "cherry"]
 
+(square brackets mean "please go *create* an array *object* now")
+
+(and put these 3 other objects inside it)
+
 # Array Indexes
 
 * Every slot in the array has a serial number
@@ -35,9 +39,9 @@ Why or why not?
 
 # Start At Zero
 
-When counting, 
+When counting,
 
-humans start at one, 
+humans start at one,
 
 but **computers start at zero**.
 
@@ -52,6 +56,16 @@ Try this:
 Did you get the result you expected?
 
 Why or why not?
+
+# Nil means none
+
+by returning *nil*, the computer is answering the question
+
+> "What is the 99th item?"
+
+with the answer
+
+> "There is no 99th item."
 
 # Array Methods
 
@@ -109,7 +123,7 @@ The `include?` method checks if an object is inside an array or not.
 
     fruits.include? "apple"
     true
-    
+
     fruits.include? "pizza"
     false
 
