@@ -127,12 +127,17 @@ The `include?` method checks if an object is inside an array or not.
     fruits.include? "pizza"
     false
 
+Remember, here we are sending a message *to an array*, asking if it includes a certain *string*.
+
 # LAB: enemies list refactoring
 
-I'd like you to **refactor** your old `hello.rb` program to use the `include?` method to check if someone is your enemy.
+Refactoring is changing existing code so that it *works* the same, but is cleaner and easier to read.
+
+In your old `hello.rb` program you had an `if` statement to check if someone is your enemy. Something like:
+
+    if name == "darth" or name == "voldemort" or name == "sauron" then
+
+I'd like you to **refactor** your old `hello.rb` program to use the `include?` method to check if someone is your enemy. Is it possible to make that `if` statement cleaner and easier to read?
 
 # TODO: more array labs
-
-
-
 
