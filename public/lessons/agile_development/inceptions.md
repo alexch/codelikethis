@@ -1,12 +1,18 @@
 # What is an Inception?
 
-* an exploratory workshop
-* where the whole team
-* defines the goals and themes for a project
-* and produces an initial backlog
+* an exploratory workshop…
+* where the whole team…
+* defines the goals and themes for a project…
+* and produces an initial backlog…
 * to kickstart an iterative process
-* “Plans are useless, but planning is essential”
-* “No plan survives contact with the enemy”
+
+# On Planning
+
+> “Plans are useless, but planning is essential”
+
+.
+
+> “No plan survives contact with the enemy”
 
 # Inception Goals
 
@@ -17,11 +23,13 @@
 * produce a rough project timeline
 * establish initial recurring schedule for team meetings
 * sketch technical architecture (but avoid Big Design Up Front)
+* introduce the team to each other
 
 # Optional Inception Goals
 
 * build paper prototype
 * write team charter
+* determine need for more discovery
 
 # Inception Anti-Goals
 
@@ -38,7 +46,11 @@
 * needs a facilitator
 * invite as much of the whole team as possible
 
-![sample schedule](http://payload.cargocollective.com/1/3/120632/1725392/dev_inception_1day_860.jpg) from Pivotal Labs
+# Sample Inception Schedule
+
+![sample schedule](http://payload.cargocollective.com/1/3/120632/1725392/dev_inception_1day_860.jpg)
+
+from [Pivotal Labs](http://cargocollective.com/pivotallabs/No-7-Dev-Inception)
 
 # Project Goals
 
@@ -47,27 +59,47 @@
 *  business goals
 *  product goals
 *  engagement goals
-*  team goals
-  *    workday experience
-  *    explore technology
-  *    experiment with processes (e.g. remote pairing)
+
+# Team goals
+
+* workday experience and pacing
+* exploring technology vs. exercising skills
+* using new or old processes (e.g. remote pairing)
 
 # Project Non-Goals
 
-  *  things we explicitly do not want to accomplish in the project
-  *  useful when there’s a priority decision to be made
+* aka "The Not List"
+*  things we explicitly do not want to accomplish in the project
+*  useful when there’s a priority decision to be made
   *  e.g. if a non-goal is “support mobile” then we can ignore Mobile Safari bugs
 
 # Project Risks
 
-	>	Business risks (Does the market want this?  Will an emerging technology disrupt this product? 
+*	Business risks
+  * Does the market want this?  
+  * Will an emerging technology disrupt this product? 
+  * Can the client support success?
+*	Technical risks
+  * Are there 3rd party integrations?  
+  * Are there unknown technologies/libraries to learn?
+  * Does the product rely on platforms that are changing, e.g. Android or Apple Watch?
+*	Schedule risks
+  * Must we satisfy other parties, e.g. developers on another team?  
+  * Is there a near term, immovable milestone like a festival launch?
+*	Budget risks
+  * Will we run out of money before beta? Before launch? Before handoff?
 
-	>	Technical risks (Are there 3rd party integrations?  Are there unknown technologies/libraries to learn?  Does the product rely on platforms that are changing, e.g., iOS, Android?)
+Based off <http://pivotallabs.com/agile-inception_knowing-what-to-build-and-where-to-start/>
 
-	>	Schedule risks (Are there pre-MVP gates to satisfy third-parties, e.g.  developers on another team?  Is there a near term, immovable milestone like a festival launch?)
+# Team Risks
 
-	From <http://pivotallabs.com/agile-inception_knowing-what-to-build-and-where-to-start/>
+How do we want to work?
 
+* Part-time (vs. dedicated) team?
+* Remote (vs. co-located) team?
+* Customer unavailable?
+* Deployment environment hassles
+* Customer :: Project Manager :: Developer :: Designer :: QA Tester :: Support ratios
 
 # Elevator Pitch
 
@@ -150,11 +182,11 @@
 
 It’s up to the customer, BUT here are some guidelines:
 
-* - prioritize by business value (higher value first)
-* - prioritize by risk (higher risk first)
-* - prioritize by effort (easy wins first)
-* - prioritize by simplicity (technical merit first, e.g. code quality or UI consistency or system stability)
-* - prioritize by cost (but weigh dev hours against cash expenses)
+* prioritize by business value (higher value first)
+* prioritize by risk (higher risk first)
+* prioritize by effort (easy wins first)
+* prioritize by simplicity (technical merit first, e.g. code quality or UI consistency or system stability)
+* prioritize by cost (but weigh dev hours against cash expenses)
 
 # Iteration Zero
 
@@ -186,6 +218,9 @@ Inceptions are a great place to establish the regular rhythm of the project, as 
   * put them in the Icebox or Inbox for later examination and get back to accepting the rest of the Done stories
 * Acceptance doesn’t need to include the whole team, but if the right people aren’t in the room, invite them or wait until the next meeting
   * face-to-face is always better than high-latency channels like email or Tracker
+
+# Acceptance Meetings: Coders Welcome
+
 * shy or impatient coders may want to skip Acceptance meetings since they feel like project management, but it's very important to have coders in the room for...
      * explaining technical details
      * demoing
@@ -194,6 +229,19 @@ Inceptions are a great place to establish the regular rhythm of the project, as 
      * understanding steps to reproduce bugs
      * splitting stories along appropriate lines
      * estimating new stories
+     * maintaining continuity, esp. with coders who aren't there right now
+
+# Planning Meetings
+
+* shy or impatient coders may want to skip Planning meetings
+* good PMs will groom the backlog before a planning meeting
+* but coders are still needed during the meeting proper, for...
+  * understanding user/customer requirements
+  * explaining technical details
+  * splitting stories along appropriate lines
+  * estimating new stories
+  * maintaining continuity, esp. with coders who aren't there right now
+  * thinking of chores
 
 # Retrospectives
 
@@ -207,3 +255,4 @@ Inceptions are a great place to establish the regular rhythm of the project, as 
 * http://blog.pivotal.io/pivotal-labs/labs/agile-inception_knowing-what-to-build-and-where-to-start
 * http://agilecoffee.com/using-an-inception-to-kick-off-a-project/
 * http://cargocollective.com/pivotallabs/No-7-Dev-Inception
+* https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/
