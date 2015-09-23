@@ -6,7 +6,7 @@ A LOOP is when we ask a program to do something many times.
 
 # loop
 
-If you want something to keep going forever, use a special loop called `loop`. 
+If you want something to keep going forever, use a special loop called `loop`.
 
     loop do
       puts "Hello"
@@ -74,7 +74,7 @@ Change your `food.rb` program so that if the user types "return" -- meaning the 
 
 * Change `food.rb` so that it doesn't love every food.
 * If it's a food you like (let's say, pizza), make it print "Yum! I love pizza."
-* If it's a food you like (let's say, cabbage), make it print "Yuck! I hate cabbage."
+* If it's a food you don't like (let's say, cabbage), make it print "Yuck! I hate cabbage."
 
 # times
 
@@ -96,7 +96,7 @@ Let's unpack this:
 
 Remember this poem?
 
-    1 potato 
+    1 potato
     2 potato
     3 potato
     4
@@ -115,7 +115,7 @@ Try this:
       puts count.to_s + " potato"
     end
 
-`|count|` means 
+`|count|` means
 
 > "the `count` variable points to the current value of the counter"
 
@@ -167,11 +167,11 @@ This is fairly complicated, so let's stop here and make sure to understand every
 
     count = 1
 
-creates a *variable* named `count` and sets its value to `1`. 
-    
+creates a *variable* named `count` and sets its value to `1`.
+
     while count <= 4
 
-starts a loop and immediately compares `count` to `4`. 
+starts a loop and immediately compares `count` to `4`.
 
 `1` is less than `4`, so the expression is `true`, so we continue with the loop.
 
@@ -193,7 +193,7 @@ goes *back to the `while` line* and checks again
 
     while count <= 4
 
-compares `count` to `4`. 
+compares `count` to `4`.
 
 `2` is less than `4`, so the expression is `true`, so we continue with the loop.
 
