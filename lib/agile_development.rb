@@ -7,5 +7,6 @@ class Course
       video "mzcBfUu15RU"
     end
     lesson "inceptions"
+    lesson "planning"
   end
 end
