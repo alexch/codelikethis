@@ -1,3 +1,9 @@
+# Planning in XP
+
+![planning loops](planning_loops.svg)
+
+(from <https://en.wikipedia.org/wiki/Extreme_programming>)
+
 # Project Phases
 
 * Scoping => SOW
@@ -26,13 +32,24 @@
 # Stories
 
 * A story:
-  * provides business value
-  * is discrete
+  * provides business value (*)
+  * is readable by a non-coder
+  * is independent
   * is testable
   * is estimatable
   * is prioritizable
   * can be implemented within 1 iteration
-* Usually one story per feature, bug, or chore
+  
+* (*) chores and spikes do not directly provide business value, but improve knowledge or reduce debt or increase simplicty
+  
+* Usually one story per feature, bug, spike, or chore
+* Pretend that dependencies between stories do not exist
+
+# Acceptance Criteria
+
+(the reason a story is called a story)
+
+(if well-written, Acceptance Criteria can turn into Acceptance Tests)
 
 # Story Body Template
 
@@ -41,6 +58,18 @@ AS A ____
 I WANT TO ____
 SO THAT ___
 ```
+
+# Backlog
+
+A backlog is a list of stories
+
+that have been **written**, 
+
+**estimated**, 
+
+and **prioritized** 
+
+in **strict** **linear** order
 
 
 # Estimation and Prioritization
@@ -51,6 +80,9 @@ SO THAT ___
 * Estimation is a technical task, prioritization is a customer task
   * (except with chores)
   * (and sometimes bugs)
+  
+> The customer gets to say **what**; the coders get to say **how long**
+  
 * Prioritize as "A-B-C" at first
   * high-med-low or must-have/nice-to-have/meh
 * Write detailed stories for A's first, then B's, then C's
@@ -63,6 +95,7 @@ It’s up to the customer, BUT here are some guidelines:
 * by risk (higher risk first)
 * by effort (easy wins first)
 * by simplicity (technical merit first, e.g. code quality or UI consistency or system stability)
+* by theme (a bunch of similar features together)
 * by cost (but weigh dev hours against cash expenses or profit/loss/ROI)
 * randomly!
 
@@ -74,6 +107,8 @@ Each team needs to choose its "story point" scale, but in general...
 * 2 points = a few pair-days
 * 3 points = a lot; try to split into several stories
 * 0 points = **actually** a few minutes, like changing button text
+
+A point is not a promise about *time*, but is an estimate about *effort* and/or *complexity* 
 
 # Acceptance Meetings
 

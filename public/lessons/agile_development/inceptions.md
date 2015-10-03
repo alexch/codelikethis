@@ -17,16 +17,17 @@
 # Inception Goals
 
 * define the project’s goals, anti-goals, risks
-* write elevator pitch and/or mission statement
-* define user Personas, Roles and Activities
 * produce an initial story backlog
 * produce a rough project timeline
 * establish initial recurring schedule for team meetings
 * sketch technical architecture (but avoid Big Design Up Front)
 * introduce the team to each other
+* define who is the customer (and other responsibilities)
 
 # Optional Inception Goals
 
+* write elevator pitch and/or mission statement
+* define user Personas, Roles and Activities
 * build paper prototype
 * write team charter
 * determine need for more discovery
