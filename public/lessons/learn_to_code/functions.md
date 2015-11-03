@@ -7,7 +7,7 @@
 
 # For example
 
-Here's a silly function:
+Here's a not very useful function:
 
     def add x, y
       x + y
@@ -19,21 +19,35 @@ Here's a silly function:
 * `x + y` is the *body* of the function
   * also the *return value*
 
+# Call Me, Maybe
+
+You call a function by its name
+
+    def add x, y
+      x + y
+    end
+
+    add 2, 3  # returns 5
+
+    add 12, 30  # returns 42
+
 # Rant!!!
 
     def rant s
       s.upcase.gsub(" ", "") + "!!!"
     end
-    
+
     puts rant "i like pizza"
 
 # Capitalize Just The First Character
 
     def initial_cap s
-      s[0] + s[1,s.length]
+      s[0] + s[1,s.length].downcase
     end
 
     puts initial_cap("McElaney")
+
+this program prints `Mcelaney`
 
 # Titleize
 
