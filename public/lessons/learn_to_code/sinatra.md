@@ -30,9 +30,24 @@ Change `hi.rb` to look like this:
       "Hi " + params[:who] + "!"
     end
 
-Now visit the following URL:
+Now go back to the command line and **restart** your web application:
+
+    CONTROL-C
+    ruby hi.rb
+
+And go to your browser and visit the following URL:
 
     http://localhost:4567/hi/alice
+
+# `:who`? what?
+
+To Sinatra, the line
+
+    get '/hi/:who' do
+
+means, "When someone asks for `/hi/`, take the rest of the URL and put it inside the `params` hash.
+
+So *inside* the do block, `params[:who]` contains the string `"alice"`.
 
 # LAB: Yeller
 
