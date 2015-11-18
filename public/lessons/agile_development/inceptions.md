@@ -6,14 +6,6 @@
 * and produces an initial backlog…
 * to kickstart an iterative process
 
-# On Planning
-
-> “Plans are useless, but planning is essential”
-
-.
-
-> “No plan survives contact with the enemy”
-
 # Inception Goals
 
 * define the project’s goals, anti-goals, risks
@@ -36,6 +28,7 @@
 # Inception Anti-Goals
 
 * working software
+  * this is **not** a hackathon
 * set anything in stone
   * it's an iterative process; everything may change
 * set rigid requirements and deadlines
@@ -173,7 +166,11 @@ How do we want to work?
   * can be implemented within 1 iteration
 * Usually one story per feature, bug, or chore
 
+(For more see the [Planning](planning#stories) lesson.)
+
 # Story Body Template
+
+Story *titles* should be brief; story *bodies* should follow this pattern:
 
 ```
 AS A ____
@@ -181,14 +178,13 @@ I WANT TO ____
 SO THAT ___
 ```
 
- 
-
 # Epics
 
-*  An Epic is a series of Stories
-*  For instance the epic “User Accounts” could include “Sign up, Sign in, Change password, Edit profile, Upload avatar”
-  *  (not necessarily in that order, of course)
-*  Put epics across the top row, stories in columns underneath their epic
+* An Epic is a series of Stories
+  * Can also be called a *Theme* or a *Feature Set*
+* For instance, the epic “User Accounts” could include “Sign up, Sign in, Change password, Edit profile, Upload avatar”
+* Put epics across the top row of your story map
+  * Put stories in columns underneath their epic
 
 # Story Mapping Order
 
@@ -213,11 +209,11 @@ SO THAT ___
 
 Inceptions are a great place to establish the regular rhythm of the project, as punctuated by recurring meetings.
 
-*  Daily Standup
-*  Weekly Iteration [Planning](planning) (IPM)
+*  Standup (daily)
+*  [Planning Meeting](planning) (at least once per iteration, up to several a week)
 *  [Acceptance](planning) (can be weekly, semi-weekly, ad hoc, or any combination)
-*  [Retrospectives](planning) (weekly, bi-weekly, or monthly)
-*  Demos (often coincide with Acceptance, but not always)
+*  Demo (often coincide with Acceptance, but not always)
+*  [Retrospective](planning) (weekly, bi-weekly, or monthly)
 *  User Testing sessions
 * Others?
 
