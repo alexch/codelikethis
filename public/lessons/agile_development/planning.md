@@ -218,11 +218,14 @@ It’s up to the customer, BUT here are some guidelines:
 * PMs will try to groom the backlog before a planning meeting
 * but coders are still needed during the meeting, for...
   * understanding user/customer requirements
-  * explaining technical details
+  * explaining technical details to the customer and each other
+  * thinking through technical steps and complications
   * splitting stories along appropriate lines
   * estimating new stories
   * maintaining continuity, esp. with coders who aren't there right now
-  * thinking of chores
+  * thinking of related chores
+
+> The goal is for any coder to be able to work on any story (maybe with help from the right pair partner).
 
 # Retrospectives
 
