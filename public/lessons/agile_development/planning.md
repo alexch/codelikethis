@@ -65,20 +65,53 @@ This is not waterfall! These phases often overlap and recur.
 * No dependencies makes planning **much** easier, 
 * and helps focus attention on business value, not technical problems
 
+# Story Body Template
+
+Story *titles* should be brief; story *bodies* should follow this pattern:
+
+```
+AS A ____      [role]
+I WANT TO ____ [action]
+SO THAT ____   [motivation]
+```
+
 # Acceptance Criteria
 
 * Each story should have a list of conditions by which we know when it's done
   * A story is called a story because it has a beginning, a middle, and an end
 * If well-written, Acceptance Criteria can turn into Acceptance Tests
 
-# Story Body Template
-
-Story *titles* should be brief; story *bodies* should follow this pattern:
+# Acceptance Criteria Template
 
 ```
-AS A ____
-I WANT TO ____
-SO THAT ___
+GIVEN ____ [precondition]
+WHEN ____  [action]
+THEN ____  [postcondition/assertion]
+```
+
+# Sample Story
+
+**Title**: Sign Out
+
+**Body**: As a user, I want to sign out of the application, so that my other family members can't use my account
+
+**Acceptance Criteria**:
+```
+Given I am signed in as a normal user
+When I look at the nav bar
+Then I see the "Sign Out" button
+
+Given I am signed in as a normal user
+When I click on the "Sign Out" button
+Then I am returned to the home page
+
+Given I am signed in as a normal user
+When I click on the "Sign Out" button
+Then I cannot view the "Edit Profile" page
+
+Given I am not signed in
+When I look at the nav bar
+Then I do not see the "Sign Out" button
 ```
 
 # Backlog
@@ -101,7 +134,8 @@ in **linear** order
   * re-prioritize, split, or delete any stories
   * (re-estimate old stories only if new information has come to light -- and never re-estimate stories that are already in progress)
   * look over upcoming stories, check if any need more research or design
-* Often combined with Acceptance
+* Often combined with Acceptance (but not always)
+* Often called "Backlog Grooming"
  
 # Estimation and Prioritization
 
