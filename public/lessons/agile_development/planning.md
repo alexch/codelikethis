@@ -143,7 +143,7 @@ in **linear** order
   * (except with chores)
   * (and sometimes bugs)
 
-> The customer gets to say **what**; the coders get to say **how long**
+> The customer gets to say **how soon**; the coders get to say **how hard**
 
 * Estimation and Prioritization go hand in hand
   * You shouldn’t prioritize until there’s an estimate, but you shouldn’t estimate until you know it’s near the top of the (unestimated) pile
