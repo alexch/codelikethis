@@ -96,6 +96,7 @@ THEN ____  [postcondition/assertion]
 **Body**: As a user, I want to sign out of the application, so that my other family members can't use my account
 
 **Acceptance Criteria**:
+
 ```
 Given I am signed in as a normal user
 When I look at the nav bar
