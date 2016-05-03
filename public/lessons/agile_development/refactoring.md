@@ -6,6 +6,19 @@ Refactoring is the process of restructuring existing computer code – changing 
 
 After these slides, we’ll start with some actual production code, make sure its unit tests work ok, then collaboratively, consciously contemplate the many forking paths that twine and wind through the Garden of Abstract Delights.
 
+
+# What is refactoring?
+
+* refactoring is a process
+
+> refactoring (verb): to restructure software by applying a series of refactorings without changing its observable behavior
+
+* *a* refactoring is a technique
+
+> refactoring (noun): a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior
+
+(definitions by [Martin Fowler](http://martinfowler.com/))
+
 # What is Zen?
 
 ![zen](./zen/don-zen.gif)
@@ -28,17 +41,7 @@ Refactoring is changing code without changing its behavior.
 
 Refactoring is change without change.
 
-Refactoring is nothing.
-
-# What is Refactoring?
-
-Refactoring is changing code without changing its behavior.
-
-Refactoring is change without change.
-
-Refactoring is nothing.
-
-Refactoring is everything.
+Refactoring is Zen.
 
 # refactoring is NOT
 
@@ -50,26 +53,13 @@ porting
 
 upgradging
 
-# verb or noun?
-
-* refactoring is a process
-
-* *a* refactoring is a technique
-  * like a kata
-
-# Fowler's definition:
-
-> refactoring (noun): a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior
-
-> refactoring (verb): to restructure software by applying a series of refactorings without changing its observable behavior
-
 # Why refactor?
 
 ![yoda](zen/yoda-clear-your-mind.gif)
 
 # Refactor to understand
 
-Clarity calm insight knowledge
+clarity calm insight knowledge understanding
 
 ![pool](zen/hand-pool.gif)
 
@@ -83,15 +73,16 @@ DRY
 
 # Refactor to increase code clarity
 
-readability
+sometimes clarity requires *more* duplication
 
-modularity
+# What is code clarity?
 
-maintainability
-
-teamwork
-
-change
+Clear code is:
+* readable
+* modular
+* maintainable
+* ready for teamwork
+* ready for change
 
 # "Zen Refactoring"
 
@@ -105,7 +96,20 @@ See what pops out
   * strange gaps?
   * comments?
 
+# How?
 
+1. Write some tests
+2. Change the code
+3. Run the tests
+4. Move ahead, or move back (revert)
+
+# Tests Are Essential
+
+run them before
+
+change them during
+
+tests are an extension of code
 
 # What are the qualities of a refactoring?
 
@@ -117,20 +121,9 @@ See what pops out
 
 ![grievous.gif](./zen/grievous.gif)
 
-# How?
+# Brief
 
-1. Write some tests
-2. Change the code
-3. Run the tests
-4. Move ahead, or back
-
-# Tests
-
-run them before
-
-change them during
-
-tests are a valid target of code
+or at least made of many short, reversible steps
 
 # Automated
 
@@ -152,13 +145,19 @@ Introduce duplication, increase clarity
 
 # Refactoring: Introduce Parameter
 
-# Feature Envy
+# Code Smells
 
-a *code smell*
+* [Code Smells](https://sourcemaking.com/refactoring/smells)
+* *[Feature Envy](https://sourcemaking.com/refactoring/smells/feature-envy)*
+  * when a method accesses the data of another object more than its own
+  * can be cured by **Refactoring: Move Method**
 
-can be cured by **Refactoring: Move Method**
+# Some Guidelines
 
-# Refactoring: Introduce Parameter
+* Short Lines
+* Short Methods
+* Fewer Dots
+* Meaningful Names
 
 # The Book
 
@@ -166,7 +165,8 @@ can be cured by **Refactoring: Move Method**
 
 # References
 
-http://refactoring.com/
-
-http://refactoring.com/catalog/
-
+* http://refactoring.com/
+* http://refactoring.com/catalog/
+* http://martinfowler.com/books/refactoringRubyEd.html
+* https://sourcemaking.com/refactoring
+* [these slides on the web](http://codelikethis.com/lessons/agile_development/refactoring)
