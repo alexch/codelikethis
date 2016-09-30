@@ -21,9 +21,13 @@ After these slides, we’ll start with some actual production code, make sure it
 
 # What is Zen?
 
+> mostly an excuse for pretty pictures and hippie jokes
+
 ![zen](./zen/don-zen.gif)
 
-mostly an excuse for fun pictures
+> disclaimer: I apologize for
+> appropriating and trivializing
+> anyone's cultural heritage
 
 # What is Refactoring?
 
@@ -57,6 +61,8 @@ upgradging
 
 ![yoda](zen/yoda-clear-your-mind.gif)
 
+(Yoda ~= Buddha)
+
 # Refactor to understand
 
 clarity calm insight knowledge understanding
@@ -78,11 +84,21 @@ sometimes clarity requires *more* duplication
 # What is code clarity?
 
 Clear code is:
+
 * readable
 * modular
 * maintainable
 * ready for teamwork
 * ready for change
+
+# rereading
+
+> “Curiously enough, one cannot read a book; one can only reread it. A good reader, a major reader, an active and creative reader is a rereader.” - Nabokov
+
+— applies to refactoring too, not just rereading
+
+https://www.goodreads.com/quotes/34497-curiously-enough-one-cannot-read-a-book-one-can-only
+
 
 # "Zen Refactoring"
 
@@ -128,6 +144,9 @@ or at least made of many short, reversible steps
 # Automated
 
 I choose my text editor based on how well it refactors
+
+![real programmers use](./real_programmers.png)
+<https://xkcd.com/378/>
 
 # Refactoring: Rename
 

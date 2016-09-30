@@ -67,13 +67,18 @@ This is not waterfall! These phases often overlap and recur.
 
 # Story Body Template
 
-Story *titles* should be brief; story *bodies* should follow this pattern:
+Story *titles* should be brief;
+story *bodies* should follow this pattern:
 
 ```
 AS A ____      [role]
 I WANT TO ____ [action]
 SO THAT ____   [motivation]
 ```
+
+*Notes:*
+ * If you write "As a user" you're probably doing it wrong -- use a more specific role name instead
+ * "I want to" should be an action, not just a desire
 
 # Acceptance Criteria
 
@@ -235,3 +240,30 @@ It’s up to the customer, BUT here are some guidelines:
 * see Agile Retros book for a good structure and lots of games
 * or just use the Happy/Sad/Confused Game
 * Great book: "Agile Retrospectives"  by Derby and Larsen
+
+
+# Project Planning with Pivotal Tracker
+
+* BACKLOG is ORDERED by the customer
+  * order by value, or risk, or learning
+* a feature story delivers VALUE to the customer
+* feature stories are ESTIMATED and TESTED by the developers
+* features are ACCEPTED by the customer
+* velocity is MEASURED by counting only the stories accepted in an iteration
+* iterations are BOUNDED by date and velocity
+  * not by scope or deadlines
+* velocity is an APPROXIMATION (prediction) of work per iteration
+* dependencies between stories are IGNORED
+  * but can be captured as LINKS to other stories
+* Project Planning with Pivotal Tracker (cont.)
+* ICEBOX is fluid and chaotic - unordered, unestimated, for possibilities or “cold storage”
+* an epic comprises MANY STORIES
+    * feature sets or themes, not releases
+* releases are GOALS not deadlines
+    * they can have a target date, but they might move past it and go red
+* labels are free text TAGS
+    * can be used to layer other workflows on top
+* tasks live inside a story and do not deliver value on their own
+* stories can be SPLIT at any time as needed
+* chores and bugs are POINTLESS (unestimated) and do not deliver value
+    * they pay off debt or increase knowledge

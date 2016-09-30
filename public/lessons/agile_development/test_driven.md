@@ -366,11 +366,14 @@ BDD can help...
 * Tests are examples of use
 
 
-# Refactor Test Code
-* Spend time refactoring your tests
+# Refactoring Test Code
+* Do spend time refactoring your tests
 * It'll pay off later, when writing new tests or extending/debugging old ones
 * Refactor for readability, not necessarily for removing all duplication
   * Different priorities than for production code
+  * MOIST not DRY
+
+# Refactoring Test Code - How?
 * Extract methods
 * Shorter lines
 * Break up long tests (scenario tests) into several short tests (feature tests)
