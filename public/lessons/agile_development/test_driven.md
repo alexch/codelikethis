@@ -35,18 +35,18 @@ alex @ stinky.com
 * Steady, incremental feeling of progress
 * Don't write code all day without knowing if it works
 
-# Three As
+# A Test In Three Acts
 
-* Arrange (set up preconditions)
-* Act (call production code)
-* Assert (check the results)
+* GIVEN (set up preconditions)
+* WHEN (call production code)
+* THEN (check the results)
 
 # Assert
 
 * The heart of a unit test
-* An assertion is a declaration of truth
-* Failed assertion -> incorrect behavior
-* "assert your postconditions"
+* An assertion is a *claim* about the code
+  * Failed assertion -> code is incorrect
+  * Passing assertion -> code is correct
 
 * Example:
 
@@ -54,7 +54,7 @@ alex @ stinky.com
         set.add("ice cream");
         assertTrue(set.contains("ice cream"));
 
-* In RSpec, "assert" is called "should"
+* In RSpec, "assert" is called "should" or "expect"
 
 # One Step At A Time
 
