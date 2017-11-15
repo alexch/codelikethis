@@ -12,15 +12,6 @@ source for Code Like This web site
 
 ---
 
-Foundation
-
-http://foundation.zurb.com/docs/sass.html :
-
-    npm install -g bower grunt-cli
-    gem install foundation
-
----
-
 SCSS currently built using Compass. Run this all the time in development, or at least once before deploy:
 
     bundle exec compass watch --time

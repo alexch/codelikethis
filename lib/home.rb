@@ -3,41 +3,10 @@ require 'courses_table'
 
 class Home < Erector::Widget
 
-  external :js, "https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
-  external :js, "/zrssfeed-119/jquery.zrssfeed.min.js"
-  external :css, "/zrssfeed-119/jquery.zrssfeed.css"
-
-  external :style, <<-CSS
-div.bubble {
-  border: 1px solid black;
-  box-shadow: #c8c8f1 2px 2px 4px;
-  max-width: 30em;
-  padding: .25em 1em;
-  margin-bottom: 1em;
-}
-div.bubble h2 {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
-}
-
-div.right_side {
-  float: right;
-  max-width: 24em;
-}
-div.twitter {
-  padding-left: 1em;
-}
-div.blog .rssHeader > a:after {
-  content: ' - Recent Blog Entries'
-}
-  CSS
-
   def content
 
     div.row {
-      div(class: 'small-12 medium-6 columns') {
+      div(class: 'col-sm') {
         div.bubble {
           p {
             text "I'm "
@@ -52,7 +21,7 @@ div.blog .rssHeader > a:after {
         }
       }
 
-      div(class: 'small-12 medium-6 columns') {
+      div(class: 'col-sm') {
         div.bubble {
           h2 "Licensing and Donations"
           p "Please click the 'Donate' button in the top right corner to support this project financially."
@@ -61,10 +30,8 @@ div.blog .rssHeader > a:after {
         }
       }
     }
+
     div.row {
-      div(class: 'small-12 medium-offset-1 medium-5 columns') {
-        blog
-      }
       div(class: 'small-12 medium-5 columns end') {
         twitter
       }
@@ -77,16 +44,16 @@ div.blog .rssHeader > a:after {
 
   #external :
 
-  def blog
-    jquery :ready,  <<-JAVASCRIPT
-      $('#blog_feed').rssfeed('http://codelikethis.tumblr.com/rss', {
-        limit: 5
-      });
-    JAVASCRIPT
-    div.blog do
-      div.blog_feed!
-    end
-  end
+  # def blog
+  #   jquery :ready,  <<-JAVASCRIPT
+  #     $('#blog_feed').rssfeed('http://codelikethis.tumblr.com/rss', {
+  #       limit: 5
+  #     });
+  #   JAVASCRIPT
+  #   div.blog do
+  #     div.blog_feed!
+  #   end
+  # end
 
   def twitter
     div.twitter do

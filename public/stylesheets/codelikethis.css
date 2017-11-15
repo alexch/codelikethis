@@ -1,192 +1,72 @@
 /* line 5, ../scss/codelikethis.scss */
 body {
+  padding-top: 6rem;
+}
+
+/* line 9, ../scss/codelikethis.scss */
+body {
   font-family: 'Museo500Regular', 'Arial', 'Sans';
-  margin: 0;
-  padding: 0;
   text-rendering: optimizelegibility;
 }
 
-/* line 12, ../scss/codelikethis.scss */
-.non_footer {
-  background: white;
-}
-
-/* line 16, ../scss/codelikethis.scss */
-center.logo {
-  background: #47CFFC;
-}
-
-/* line 20, ../scss/codelikethis.scss */
-.top-bar {
-  background: #47CFFC;
-  border-bottom: 1px solid blue;
-}
-/* line 24, ../scss/codelikethis.scss */
-.top-bar .nav-buttons {
-  text-align: center;
-  padding: 0 6px;
-  background: #47CFFC;
-}
-/* line 29, ../scss/codelikethis.scss */
-.top-bar .nav-buttons ul {
-  list-style-type: none;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
-  -webkit-padding-start: 0;
-  padding: 1px 1em;
-}
-/* line 37, ../scss/codelikethis.scss */
-.top-bar .nav-buttons ul li {
-  display: inline;
-  padding: 2px 20px;
-  border-right: 1px solid blue;
-}
-/* line 41, ../scss/codelikethis.scss */
-.top-bar .nav-buttons ul li:last-child {
-  border-right: none;
-}
-/* line 47, ../scss/codelikethis.scss */
-.top-bar .nav-buttons a {
-  text-decoration: none;
-  color: black;
-}
-/* line 51, ../scss/codelikethis.scss */
-.top-bar .nav-buttons a:visited {
-  color: black;
-}
-/* line 54, ../scss/codelikethis.scss */
-.top-bar .nav-buttons a:hover {
-  background-color: #15c2fb;
-}
-/* line 58, ../scss/codelikethis.scss */
-.top-bar .nav-buttons .donate_button {
-  display: inline-block;
-  background-color: #47CFFC;
-  vertical-align: middle;
-}
-/* line 62, ../scss/codelikethis.scss */
-.top-bar .nav-buttons .donate_button input {
-  height: auto;
-  position: inherit;
-}
-/* line 70, ../scss/codelikethis.scss */
-.top-bar .toggle-topbar.menu-icon {
-  margin-top: 0;
-  top: 0;
-}
-/* line 74, ../scss/codelikethis.scss */
-.top-bar.expanded {
-  background: #47CFFC;
-}
-/* line 76, ../scss/codelikethis.scss */
-.top-bar.expanded .nav-buttons {
-  padding: 0 0;
-}
-/* line 78, ../scss/codelikethis.scss */
-.top-bar.expanded .nav-buttons ul {
-  padding: 0 0;
-}
-/* line 81, ../scss/codelikethis.scss */
-.top-bar.expanded .nav-buttons li {
-  display: block;
-  padding: 2px 0px;
-  border-right: none;
-  border-top: 1px solid blue;
-}
-/* line 86, ../scss/codelikethis.scss */
-.top-bar.expanded .nav-buttons li a {
-  display: block;
-}
-
-/* line 97, ../scss/codelikethis.scss */
-.main {
-  padding: 1em 1em 1em 2em;
-  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-  min-height: 30em;
-  background: white;
-}
-
-/* line 103, ../scss/codelikethis.scss */
-.main_column {
-  max-width: 56em;
-}
-
-/* line 107, ../scss/codelikethis.scss */
-.pre_footer {
-  clear: both;
-  background: white;
-}
-
-/* line 111, ../scss/codelikethis.scss */
-.footer {
-  padding: 4px 2px 8px;
-  text-align: center;
-  border-top: 1px solid blue;
-  background: #47CFFC;
-  font-size: 11pt;
-  min-height: 2em;
-}
-
-/* line 120, ../scss/codelikethis.scss */
+/* line 122, ../scss/codelikethis.scss */
 section.slide {
   border-top: 1px solid #ddd;
   padding-left: 1em;
   margin-bottom: 2em;
 }
 
-/* line 125, ../scss/codelikethis.scss */
+/* line 127, ../scss/codelikethis.scss */
 section.slide h1, section.slide > h2:first-child {
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
 }
 
-/* line 128, ../scss/codelikethis.scss */
+/* line 130, ../scss/codelikethis.scss */
 section.slide > h2:first-child {
   margin: 2px 0 2px -4px;
   font-size: 2em;
   text-shadow: #ddd 0.1em 0.1em 0.1em;
 }
 
-/* line 133, ../scss/codelikethis.scss */
+/* line 135, ../scss/codelikethis.scss */
 section.slide > h1 {
   font-size: 3em;
 }
 
-/* line 136, ../scss/codelikethis.scss */
+/* line 138, ../scss/codelikethis.scss */
 section.slide.subsection {
   border-top: 2px solid blue;
 }
 
-/* line 139, ../scss/codelikethis.scss */
+/* line 141, ../scss/codelikethis.scss */
 section.slide.subsection > h2:first-child {
   font-size: 3em;
 }
 
-/* line 142, ../scss/codelikethis.scss */
+/* line 144, ../scss/codelikethis.scss */
 section.slide blockquote {
   font-style: italic;
   border-left: 2px solid #ddd;
   padding-left: 1em;
 }
 
-/* line 148, ../scss/codelikethis.scss */
+/* line 150, ../scss/codelikethis.scss */
 .slide li {
   margin-bottom: .5em;
 }
 
-/* line 151, ../scss/codelikethis.scss */
+/* line 153, ../scss/codelikethis.scss */
 .slide li:first-child {
   margin-top: .5em;
 }
 
-/* line 155, ../scss/codelikethis.scss */
+/* line 157, ../scss/codelikethis.scss */
 .slide pre, code, kbd, samp {
   font-family: monospace, sans-serif;
   background: #f4f4f1;
 }
 
-/* line 159, ../scss/codelikethis.scss */
+/* line 161, ../scss/codelikethis.scss */
 .slide pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -197,15 +77,48 @@ section.slide blockquote {
   /* so it's only as wide as its contents */
 }
 
-/* line 167, ../scss/codelikethis.scss */
+/* line 169, ../scss/codelikethis.scss */
 .slide code {
   color: #444;
   padding: 0 3px;
 }
 
-/* line 172, ../scss/codelikethis.scss */
+/* line 174, ../scss/codelikethis.scss */
 iframe.video {
   margin: 1em;
   padding: .5em;
   border: 6px solid gray;
+}
+
+/* line 180, ../scss/codelikethis.scss */
+div.bubble {
+  border: 1px solid black;
+  box-shadow: #c8c8f1 2px 2px 4px;
+  max-width: 30em;
+  padding: .25em 1em;
+  margin-bottom: 1em;
+}
+
+/* line 188, ../scss/codelikethis.scss */
+div.bubble h2 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+/* line 195, ../scss/codelikethis.scss */
+div.right_side {
+  float: right;
+  max-width: 24em;
+}
+
+/* line 199, ../scss/codelikethis.scss */
+div.twitter {
+  padding-left: 1em;
+}
+
+/* line 202, ../scss/codelikethis.scss */
+div.blog .rssHeader > a:after {
+  content: " - Recent Blog Entries";
 }

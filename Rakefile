@@ -16,6 +16,11 @@ if defined? RSpec
   end
 end
 
+desc "build app"
+task :build do
+  sh "compass compile"
+end
+
 desc "run app"
 task :run do
   sh "rerun rackup"

@@ -8,7 +8,6 @@ class Lesson < Erector::Widget
 
   .main {
     max-width: 70em;
-    margin: auto;
   }
 
   .extras {

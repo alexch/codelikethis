@@ -1,8 +1,8 @@
 # Test-Driven
 
-￼￼￼by Alex Chaffee
+by Alex Chaffee
 
-alex @ stinky.com
+alexch @ gmail.com
 
 # Intended Audience
 

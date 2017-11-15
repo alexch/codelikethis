@@ -1,137 +1,46 @@
 require 'erector'
+require 'bootstrap_page'
 
-class AppPage < Erector::Widgets::Page
-
-  def page_title
-    @title or super
-  end
-
-  # todo: promote into Page
-  def font font_name
-    link rel: "stylesheet", href: "/#{font_name}.css", type: "text/css", charset: "utf-8"
-  end
-
-  # todo: promote into Page
-  def stylesheet src, attributes = {}
-    link({:rel => "stylesheet", :href => "/stylesheets/#{src}.css"}.merge(attributes))
-  end
-
-  def body_scripts
-    script src: "/bower_components/jquery/dist/jquery.min.js"
-    script src: "/bower_components/foundation/js/foundation.min.js"
-    script src: "/js/app.js"
-  end
-
-  def head_content
-    super
-
-    meta charset: "utf-8"
-    meta name: "viewport", content: "width=device-width, initial-scale=1.0"
-    stylesheet "app"
-    script src: "/bower_components/modernizr/modernizr.js"
-
-    font "Museo500"
-    stylesheet "coderay"
-    stylesheet "codelikethis"
-  end
+class AppPage < BootstrapPage
 
   def logo klass: nil, style: nil
     a(href: '/') {
-      img.logo(src: '/images/logo.png', alt: "Code like this.", href: '/',
+      img.logo(src: '/images/logo.png',
+               alt: "Code like this.",
+               href: '/',
                class: ['logo', klass].compact,
                style: [style].compact)
     }
   end
 
-  def nav_content
+  def navbar_brand_content
+    logo style: 'height: 3rem'
+  end
 
-    div(class: "sticky") {
-      center.logo {
-        logo(klass: 'show-for-medium-only', style: 'height: 50%')
-      }
+  def navbar_items
+    nav_item name: "Blog", href: "http://codelikethis.tumblr.com"
+    nav_item name: "Lessons", href: "/lessons"
+    nav_item name: "Test First", href: "http://testfirst.org/"
+    nav_item name: "Labs", href: "http://testfirst.org/live"
+    nav_item name: "Alex", href: "http://alexchaffee.com"
 
-      nav({class: 'top-bar', role: 'navigation'} << {'data-topbar' => true}) {
-        ul(:class => 'title-area') {
-          li(:class => 'name') {
-            logo(klass: 'show-for-large-up')
-            logo(klass: 'show-for-small-only', style: 'height: 50%')
-          }
-          li(:class => 'toggle-topbar menu-icon') {# menu-icon = hamburger
-            a(:href => '#') {
-              span 'Menu'
-            }
-          }
-        }
-        section(:class => 'nav-buttons') {
-          ul {
-            li {
-              a "Blog", href: "http://codelikethis.tumblr.com"
-            }
-            li {
-              a "Lessons", href: "/lessons"
-            }
-            li {
-              a "Test First", href: "http://testfirst.org/"
-            }
-            li {
-              a "Labs", href: "http://testfirst.org/live"
-            }
-            li {
-              a "Alex", href: "http://alexchaffee.com"
-            }
-            li {
-              widget DonateButton
-            }
-
-            # li(:class => 'active') {
-            #   a(:href => '#') {
-            #     text 'Right Button Active'
-            #   }
-            # }
-            # li(:class => 'has-dropdown') {
-            #   a(:href => '#') {
-            #     text 'Right Button Dropdown'
-            #   }
-            #   ul(:class => 'dropdown') {
-            #     li {
-            #       a(:href => '#') {
-            #         text 'First link in dropdown'
-            #       }
-            #     }
-            #     li(:class => 'active') {
-            #       a(:href => '#') {
-            #         text 'Active link in dropdown'
-            #       }
-            #     }
-            #   }
-            # }
-          }
-
-          # ul(:class => 'left') {
-          #   li {
-          #     a(:href => '#') {
-          #       text 'Left Nav Button'
-          #     }
-          #   }
-          # }
-        }
-      }
-    }
+    # widget DonateButton
   end
 
   def body_content
 
-    nav_content
+    navbar_content
 
-    div.main {
+    #todo: add 'main' element type to Erector
+    element('main', class: [:container]) {
       call_block
       widget @widget if @widget
       div.pre_footer {
-
       }
     }
+
     div.footer {
-      text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2015 by "
+      text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2017 by "
       a "Alex Chaffee.", href: "http://alexchaffee.com"
       br
       rawtext <<-HTML
@@ -146,6 +55,8 @@ class AppPage < Erector::Widgets::Page
         a "Erector", href: "http://erector.rubyforge.org"
         text ", "
         a "Deck", href: "https://github.com/alexch/deck.rb"
+        text ", "
+        a "Bootstrap", href: "https://getbootstrap.com"
         text ", and so on."
       end
     }

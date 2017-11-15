@@ -1,7 +1,7 @@
 public_dir = "public"
 
 # Require any additional compass plugins here.
-add_import_path File.join public_dir, "bower_components/foundation/scss"
+# add_import_path File.join public_dir, "bower_components/foundation/scss"
 
 # Set this to the root of your project when deployed:
 http_path = "/"

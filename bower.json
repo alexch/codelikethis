@@ -1,8 +1,7 @@
 {
-  "name": "foundation-compass-app",
+  "name": "compass-app",
   "version": "0.0.1",
   "private": "true",
   "dependencies": {
-    "foundation": "zurb/bower-foundation"
   }
 }

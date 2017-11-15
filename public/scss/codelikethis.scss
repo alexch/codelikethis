@@ -3,119 +3,121 @@
 $nice_bg: url(/bg.png);  // background image courtesy of http://www.bgpatterns.com/ 779FC9/B2CFED
 
 body {
+  padding-top: $topbar-height; // to skip the fixed nav bar
+}
+
+body {
   font-family: 'Museo500Regular', 'Arial', 'Sans';
-  margin: 0;
-  padding: 0;
   text-rendering: optimizelegibility;
 }
 
-.non_footer {
-  background: white;
-}
-
-center.logo {
-  background: $nice-blue;
-}
-
-.top-bar {
-  background: $nice-blue;
-  border-bottom: 1px solid blue;
-
-  .nav-buttons {
-    text-align: center;
-    padding: 0 6px;
-    background: $nice-blue;
-
-    ul {
-      list-style-type: none;
-      -webkit-margin-before: 0;
-      -webkit-margin-after: 0;
-      -webkit-margin-start: 0;
-      -webkit-margin-end: 0;
-      -webkit-padding-start: 0;
-      padding: 1px 1em;
-      li {
-        display: inline;
-        padding: 2px 20px;
-        border-right: 1px solid blue;
-        &:last-child {
-          border-right: none;
-        }
-      }
-    }
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
-    a:visited {
-      color: black;
-    }
-    a:hover {
-      background-color: darken($nice-blue, 10%);
-    }
-
-    .donate_button {
-      display: inline-block;
-      background-color: $topbar-bg-color;
-      vertical-align: middle;
-      input {
-        height: auto;
-        position: inherit;
-      }
-    }
-  }
-
-  // extra stuff (and overrides) for small-screen menu
-  .toggle-topbar.menu-icon {
-    margin-top: 0;
-    top: 0;
-  }
-  &.expanded {
-    background: $nice-blue;
-    .nav-buttons {
-      padding: 0 0;
-      ul {
-        padding: 0 0;
-      }
-      li {
-        display: block;
-        padding: 2px 0px;
-        border-right: none;
-        border-top: 1px solid blue;
-        a {
-          display: block;
-        }
-      }
-    }
-  }
-
-}
+//.non_footer {
+//  background: white;
+//}
+//
+//center.logo {
+//  background: $nice-blue;
+//}
+//
+//.top-bar {
+//  background: $nice-blue;
+//  border-bottom: 1px solid blue;
+//
+//  .nav-buttons {
+//    text-align: center;
+//    padding: 0 6px;
+//    background: $nice-blue;
+//
+//    ul {
+//      list-style-type: none;
+//      -webkit-margin-before: 0;
+//      -webkit-margin-after: 0;
+//      -webkit-margin-start: 0;
+//      -webkit-margin-end: 0;
+//      -webkit-padding-start: 0;
+//      padding: 1px 1em;
+//      li {
+//        display: inline;
+//        padding: 2px 20px;
+//        border-right: 1px solid blue;
+//        &:last-child {
+//          border-right: none;
+//        }
+//      }
+//    }
+//
+//    a {
+//      text-decoration: none;
+//      color: black;
+//    }
+//    a:visited {
+//      color: black;
+//    }
+//    a:hover {
+//      background-color: darken($nice-blue, 10%);
+//    }
+//
+//    .donate_button {
+//      display: inline-block;
+//      background-color: $topbar-bg-color;
+//      vertical-align: middle;
+//      input {
+//        height: auto;
+//        position: inherit;
+//      }
+//    }
+//  }
+//
+//  // extra stuff (and overrides) for small-screen menu
+//  .toggle-topbar.menu-icon {
+//    margin-top: 0;
+//    top: 0;
+//  }
+//  &.expanded {
+//    background: $nice-blue;
+//    .nav-buttons {
+//      padding: 0 0;
+//      ul {
+//        padding: 0 0;
+//      }
+//      li {
+//        display: block;
+//        padding: 2px 0px;
+//        border-right: none;
+//        border-top: 1px solid blue;
+//        a {
+//          display: block;
+//        }
+//      }
+//    }
+//  }
+//
+//}
 
 /////
 
-.main {
-  padding: 1em 1em 1em 2em;
-  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-  min-height: 30em;
-  background: white;
-}
-.main_column {
-  max-width: 56em;
-}
-
-.pre_footer {
-  clear: both;
-  background: white;
-}
-.footer {
-  padding: 4px 2px 8px;
-  text-align: center;
-  border-top: 1px solid blue;
-  background: $nice_blue;
-  font-size: 11pt;
-  min-height: 2em;
-}
+//.main {
+//  padding: 1em 1em 1em 2em;
+//  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
+//  min-height: 30em;
+//  background: white;
+//}
+//.main_column {
+//  max-width: 56em;
+//}
+//
+//.pre_footer {
+//  clear: both;
+//  background: white;
+//}
+//.footer {
+//  padding: 4px 2px 8px;
+//  text-align: center;
+//  border-top: 1px solid blue;
+//  background: $nice_blue;
+//  font-size: 11pt;
+//  min-height: 2em;
+//}
 
 section.slide {
   border-top: 1px solid #ddd;
@@ -173,4 +175,30 @@ iframe.video {
   margin: 1em;
   padding: .5em;
   border: 6px solid gray;
+}
+
+div.bubble {
+  border: 1px solid black;
+  box-shadow: #c8c8f1 2px 2px 4px;
+  max-width: 30em;
+  padding: .25em 1em;
+  margin-bottom: 1em;
+}
+
+div.bubble h2 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+div.right_side {
+  float: right;
+  max-width: 24em;
+}
+div.twitter {
+  padding-left: 1em;
+}
+div.blog .rssHeader > a:after {
+  content: ' - Recent Blog Entries'
 }
