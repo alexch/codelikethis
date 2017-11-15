@@ -4,10 +4,9 @@ require 'bootstrap_page'
 class AppPage < BootstrapPage
 
   def logo klass: nil, style: nil
-    a(href: '/') {
-      img.logo(src: '/images/logo.png',
-               alt: "Code like this.",
-               href: '/',
+    a(href: 'http://www.burlingtoncodeacademy.com') {
+      img.logo(src: '/images/burlingtoncodeacademy-logo.png',
+               alt: "Burlington Code Academy",
                class: ['logo', klass].compact,
                style: [style].compact)
     }
@@ -18,12 +17,17 @@ class AppPage < BootstrapPage
   end
 
   def navbar_items
-    nav_item name: "Blog", href: "http://codelikethis.tumblr.com"
-    nav_item name: "Lessons", href: "/lessons"
-    nav_item name: "Test First", href: "http://testfirst.org/"
-    nav_item name: "Labs", href: "http://testfirst.org/live"
-    nav_item name: "Alex", href: "http://alexchaffee.com"
+    # nav_item name: "Blog", href: "http://codelikethis.tumblr.com"
+    nav_item name: "Bootcamp", href: "http://http://www.burlingtoncodeacademy.com/bootcamp/"
+    nav_item name: "Learn", href: "/"
+    nav_item name: "News", href: "http://www.burlingtoncodeacademy.com/news/"
+    nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/"
 
+    nav_item name: "Lessons", href: "/lessons"
+    nav_item name: "Labs", href: "http://testfirst.org/live"
+
+      # nav_item name: "Test First", href: "http://testfirst.org/"
+    # nav_item name: "Alex", href: "http://alexchaffee.com"
     # widget DonateButton
   end
 

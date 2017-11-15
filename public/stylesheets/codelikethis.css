@@ -9,6 +9,11 @@ body {
   text-rendering: optimizelegibility;
 }
 
+/* line 14, ../scss/codelikethis.scss */
+nav.navbar {
+  background: white;
+}
+
 /* line 122, ../scss/codelikethis.scss */
 section.slide {
   border-top: 1px solid #ddd;

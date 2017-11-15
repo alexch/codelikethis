@@ -92,13 +92,14 @@ class BootstrapPage < Erector::Widgets::Page
   end
 
   def navbar_content
-    nav class: 'navbar navbar-expand-md navbar-dark bg-dark fixed-top' do
+    nav class: 'navbar navbar-expand-md fixed-top navbar-light bg-light' do
       a class: 'navbar-brand', href: '#' do
         navbar_brand_content
       end
 
       # hamburger button
-      button :class => 'navbar-toggler', :type => 'button',
+      button :class => 'navbar-toggler',
+             :type => 'button',
              'data-toggle' => 'collapse',
              'data-target' => '#pageNavbar',
              'aria-controls' => 'navbarsExampleDefault',
@@ -108,10 +109,10 @@ class BootstrapPage < Erector::Widgets::Page
       end
 
       div :class => 'collapse navbar-collapse', :id => 'pageNavbar' do
-        ul :class => 'navbar-nav mr-auto' do
+        ul :class => 'navbar-nav ml-auto' do
           navbar_items
         end
-        navbar_search
+        # navbar_search
       end
     end
   end

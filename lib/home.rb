@@ -2,10 +2,28 @@ require 'erector'
 require 'courses_table'
 
 class Home < Erector::Widget
+  def centered_codelikethis_logo
+    center class: 'ml-auto mr-auto' do
+      img.logo(src: '/images/logo.png',
+               alt: "Code like this!",
+               style: 'height: 2rem'
+      )
+      br
+      text "Powered by Burlington Code Academy"
+    end
+  end
 
   def content
 
     div.row {
+      centered_codelikethis_logo
+    }
+
+    br
+    br
+
+    div.row {
+
       div(class: 'col-sm') {
         div.bubble {
           p {
