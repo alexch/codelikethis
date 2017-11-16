@@ -15,16 +15,20 @@ nav.navbar {
   background: white;
 }
 
-
 section.slide {
-  border-top: 1px solid #ddd;
+
   padding-left: 1em;
   margin-bottom: 2em;
-
-  /* to correct for anchor links scrolling to underneath the page header */
-  padding-top: $topbar-height;
-  margin-top: -$topbar-height;
 }
+
+/* to correct for anchor links scrolling to underneath the page header */
+section.slide:before {
+  content: "";
+  display: block;
+  height: $topbar-height;
+  border-bottom: 1px solid #ddd;
+}
+
 section.slide h1, section.slide > h2:first-child {
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
 }
@@ -108,13 +112,14 @@ div.blog .rssHeader > a:after {
 
 // @include media-breakpoint-up(md) {
   #sidebar, #right-sidebar {
+    @media only screen and (min-width : 768px) {
       display: block!important;
       max-height: calc(100vh - 6rem); // todo: use $topbar-height
       overflow-y: auto;
       position: sticky;
-      top: 6rem; // todo: use $topbar-height
-
+      top: $topbar-height; // todo: use $topbar-height
       z-index: 1000; // why?
+    }
   }
 // }
 #sidebar {

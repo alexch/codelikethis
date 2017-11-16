@@ -193,7 +193,7 @@ class AppPage < Erector::Widgets::Page
 
   def navbar_items
     # nav_item name: "Blog", href: "http://codelikethis.tumblr.com"
-    nav_item name: "Bootcamp", href: "http://http://www.burlingtoncodeacademy.com/bootcamp/"
+    nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
     nav_item name: "Learn", href: "/"
     nav_item name: "News", href: "http://www.burlingtoncodeacademy.com/news/"
     nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/"
