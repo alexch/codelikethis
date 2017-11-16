@@ -11,6 +11,7 @@ gem "json", "~>1.8"
 gem "rack-codehighlighter"
 gem "sass", "~> 3.4.0"
 gem "compass", "~> 1.0"
+gem "awesome_print"
 
 group :development, :test do
   gem "rerun"

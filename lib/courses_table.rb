@@ -60,18 +60,20 @@ class CoursesTable < Erector::Widget
 
   CSS
 
-    module ::Enumerable
-      def select_with_index
-        index = -1
-        select { |x| yield(x, index += 1) }
-      end
-      def odds
-        select_with_index {|x,i| i.odd?}
-      end
-      def evens
-        select_with_index {|x,i| i.even?}
-      end
+  module ::Enumerable
+    def select_with_index
+      index = -1
+      select {|x| yield(x, index += 1)}
     end
+
+    def odds
+      select_with_index {|x, i| i.odd?}
+    end
+
+    def evens
+      select_with_index {|x, i| i.even?}
+    end
+  end
 
 
   def content
@@ -95,10 +97,14 @@ class CoursesTable < Erector::Widget
         a course.display_name, href: course.href
       }
       td.lessons(valign: "top") {
-        widget course, {}, :content_method_name => :list_lessons
+        ul {
+          widget course, {}, :content_method_name => :list_lessons
+        }
       }
       td.lessons(valign: "top") {
-        widget course, {}, :content_method_name => :list_labs
+        ul {
+          widget course, {}, :content_method_name => :list_labs
+        }
       }
     }
   end

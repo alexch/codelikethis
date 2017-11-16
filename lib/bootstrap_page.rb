@@ -51,9 +51,7 @@ class BootstrapPage < Erector::Widgets::Page
     font "Museo500"
     stylesheet name: "coderay"
     stylesheet name: "codelikethis"
-  end
 
-  def body_scripts
     # todo: parameterize using CDN vs local file for jQuery
     script src: "https://code.jquery.com/jquery-3.2.1.slim.min.js",
            integrity: "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN",
@@ -74,6 +72,9 @@ class BootstrapPage < Erector::Widgets::Page
            integrity: "sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ",
            crossorigin: "anonymous"
 
+  end
+
+  def body_scripts
     # load this application's JS from /js/app.js
     script src: "/js/app.js"
   end

@@ -5,6 +5,7 @@ require 'breadcrumbs'
 require 'courses_table'
 require 'lesson'
 require 'lab'
+require 'awesome_print'
 
 class Course < Erector::Widget
 
@@ -24,8 +25,12 @@ class Course < Erector::Widget
     instance_eval &block if block
   end
 
+  def current= course_or_lesson
+    @current = course_or_lesson
+  end
+
   def lessons
-    @stuff.select{|thing| thing.is_a? Lesson}
+    @stuff.select {|thing| thing.is_a? Lesson}
   end
 
   def lesson_names
@@ -33,7 +38,7 @@ class Course < Erector::Widget
   end
 
   def labs
-    @stuff.select{|thing| thing.is_a? Lab}
+    @stuff.select {|thing| thing.is_a? Lab}
   end
 
   def lab_names
@@ -59,19 +64,19 @@ class Course < Erector::Widget
     end
   end
 
-  def list_items items = @stuff
-    ul {
-      items.each do |item|
-        li {
-          item_name = item.display_name
-          item_name = "Lab: #{item_name}" if item.is_a? Lab
-          a href: item.href do
-            text item_name
-            span.video_link "Video" if item.respond_to? :video? and item.video?
-          end
-        }
-      end
-    }
+  def list_items items = @stuff, options = {}
+    options = options.dup
+    element_name = options.delete(:element) || 'li'
+    items.each do |item|
+      div(class: ['list-group-item', ('active' if @current == item)]) {
+        item_name = item.display_name
+        item_name = "Lab: #{item_name}" if item.is_a? Lab
+        a href: item.href do
+          text item_name
+          span.video_link "Video" if item.respond_to? :video? and item.video?
+        end
+      }
+    end
   end
 
   def list_lessons
@@ -132,12 +137,12 @@ class Course < Erector::Widget
 
   private
 
-    def this_lesson_index(lesson_name)
-      lesson_names.index { |name| name == lesson_name }
-    end
+  def this_lesson_index(lesson_name)
+    lesson_names.index {|name| name == lesson_name}
+  end
 
-    def this_item_index(lesson_name)
-      (@stuff.map(&:name).index { |name| name == lesson_name }) or raise "No lesson named #{lesson_name}"
-    end
+  def this_item_index(lesson_name)
+    (@stuff.map(&:name).index {|name| name == lesson_name}) or raise "No lesson named #{lesson_name}"
+  end
 
 end

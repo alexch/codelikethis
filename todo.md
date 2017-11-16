@@ -1,3 +1,13 @@
+# TODO
+
+[ ] fix colors in sidebar
+[ ] Apply Now button border
+[ ] header font (match with main site) Raleway
+[ ] side nav all collapsed
+[ ] side nav collapsed except for current course
+[ ] tab view to switch between slides and outline
+[ ] rerun on windows
+[ ] track students progress
 
 # slides
 
@@ -32,7 +42,3 @@ sporadic error:
              File exists - //var/folders/ds/6t10dm2n4qn8_vlc2ngc875h0000gn/T/course_spec_1370525628_205
            # ./spec/course_spec.rb:51:in `block (2 levels) in <top (required)>'
            # ./spec/course_spec.rb:96:in `block (3 levels) in <top (required)>'
-
-
-
-

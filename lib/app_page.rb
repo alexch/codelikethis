@@ -1,5 +1,6 @@
 require 'erector'
 require 'bootstrap_page'
+require 'awesome_print'
 
 class AppPage < BootstrapPage
 
@@ -26,24 +27,55 @@ class AppPage < BootstrapPage
     nav_item name: "Lessons", href: "/lessons"
     nav_item name: "Labs", href: "http://testfirst.org/live"
 
-      # nav_item name: "Test First", href: "http://testfirst.org/"
+    # nav_item name: "Test First", href: "http://testfirst.org/"
     # nav_item name: "Alex", href: "http://alexchaffee.com"
     # widget DonateButton
   end
 
+  # todo: unify with app.rb
+  def all_courses
+    [
+        Course::LearnToCode,
+        Course::AgileDevelopment,
+        Course::Ruby,
+        Course::RubyTools,
+        Course::RubyBasics,
+        Course::RubyBlocks,
+        Course::RubyObjects,
+        Course::RubyAdvanced,
+        Course::Javascript,
+    ]
+  end
+
+
   def body_content
 
+    # top nav
     navbar_content
 
     #todo: add 'main' element type to Erector
-    element('main', class: [:container]) {
-      call_block
-      widget @widget if @widget
-      div.pre_footer {
+    element('main', class: 'container-fluid') {
+      div(class: "row") {
+
+        # first the sidebar
+        div(class: "col-md-3 col-xs-1", id: 'sidebar') {
+          ap self
+          widget CoursesSidebar.new(courses: all_courses, current: @widget)
+        }
+
+        # now the real body
+        div(class: "col-md-9 col-xs-11") {
+          call_block
+          widget @widget if @widget
+
+          div.pre_footer {
+
+          }
+        }
       }
     }
 
-    div.footer {
+    center.footer(class: ['footer', 'navbar-light', 'bg-light']) {
       text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2017 by "
       a "Alex Chaffee.", href: "http://alexchaffee.com"
       br

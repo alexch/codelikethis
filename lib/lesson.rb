@@ -85,7 +85,7 @@ class Lesson < Erector::Widget
   }
 "
 
-  attr_reader :name
+  attr_reader :name, :course
 
   def initialize course, name
     @course, @name = course, name
