@@ -1,42 +1,125 @@
-@import "settings";
-//@import "foundation";
+
+$topbar-height: 6rem;
 
 
+body {
+  padding-top: $topbar-height; // to skip the fixed nav bar
+}
 
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switches",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+body {
+  font-family: 'Museo500Regular', 'Arial', 'Sans';
+  text-rendering: optimizelegibility;
+}
+
+nav.navbar {
+  background: white;
+}
+
+
+section.slide {
+  border-top: 1px solid #ddd;
+  padding-left: 1em;
+  margin-bottom: 2em;
+
+  /* to correct for anchor links scrolling to underneath the page header */
+  padding-top: $topbar-height;
+  margin-top: -$topbar-height;
+}
+section.slide h1, section.slide > h2:first-child {
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
+}
+section.slide > h2:first-child {
+  margin: 2px 0 2px -4px;
+  font-size: 2em;
+  text-shadow: #ddd 0.1em 0.1em 0.1em;
+}
+section.slide > h1 {
+  font-size: 3em;
+}
+section.slide.subsection {
+  border-top: 2px solid blue;
+}
+section.slide.subsection > h2:first-child {
+  font-size: 3em;
+}
+section.slide blockquote {
+  font-style: italic;
+  border-left: 2px solid #ddd;
+  padding-left: 1em;
+}
+
+.slide li {
+  margin-bottom: .5em;
+}
+.slide li:first-child {
+  margin-top: .5em;
+}
+
+.slide pre, code, kbd, samp {
+  font-family:monospace, sans-serif;
+  background: #f4f4f1;
+}
+.slide pre {
+  white-space:pre;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  padding: 1em;
+  border:1px solid #ccc;
+  display: inline-block; /* so it's only as wide as its contents */
+}
+.slide code {
+  color:#444;
+  padding: 0 3px;
+}
+
+iframe.video {
+  margin: 1em;
+  padding: .5em;
+  border: 6px solid gray;
+}
+
+div.bubble {
+  border: 1px solid black;
+  box-shadow: #c8c8f1 2px 2px 4px;
+  max-width: 30em;
+  padding: .25em 1em;
+  margin-bottom: 1em;
+}
+
+div.bubble h2 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+div.right_side {
+  float: right;
+  max-width: 24em;
+}
+div.twitter {
+  padding-left: 1em;
+}
+
+div.blog .rssHeader > a:after {
+  content: ' - Recent Blog Entries'
+}
+
+
+// @include media-breakpoint-up(md) {
+  #sidebar, #right-sidebar {
+      display: block!important;
+      max-height: calc(100vh - 6rem); // todo: use $topbar-height
+      overflow-y: auto;
+      position: sticky;
+      top: 6rem; // todo: use $topbar-height
+
+      z-index: 1000; // why?
+  }
+// }
+#sidebar {
+    // padding-top: 1rem;
+    // padding-bottom: 1rem;
+    // padding-left: 1rem;
+    // padding-right: 0px;
+}

@@ -1,32 +1,40 @@
 require "erector"
 
 class Breadcrumbs < Erector::Widget
-#   external :style, "
-# .breadcrumbs {
-#   display: block;
-#   font-size: 1.5em;
-#   font-weight: bold;
-#   font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-#
-#   margin: 0 0 .5em -1em;
-# }
-# .breadcrumbs a {
-#   text-decoration: none;
-#   cursor: auto;
-# }
-#   "
+  external :style, <<-CSS
+.breadcrumbs {
+  display: block;
+  font-size: 80%;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
+  margin: 0 0 .5em -1em;
+}
+.breadcrumbs a {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumbs .breadcrumb-item.active {
+  font-size: 140%;
+  font-weight: bold;
+}
+  CSS
 
   needs :parents => []
   needs :display_name
 
   def content
-    nav({class: 'breadcrumbs', role: 'menubar'} << {'aria-label' => "breadcrumbs"}) {
-      @parents.each do |parent|
-        span.parent {
-          a parent.display_name, href: parent.href
+    # http://getbootstrap.com/docs/4.0/components/breadcrumb/
+    nav(class: 'breadcrumbs', role: 'menubar', 'aria-label': 'breadcrumb') {
+      ol.breadcrumb {
+        @parents.each do |parent|
+          li(class: 'breadcrumb-item') {
+            a parent.display_name, href: parent.href
+          }
+        end
+        li(class: 'breadcrumb-item active') {
+          text @display_name
         }
-      end
-      span.current @display_name
+      }
     }
   end
 end

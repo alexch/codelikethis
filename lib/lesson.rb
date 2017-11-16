@@ -4,7 +4,7 @@ require 'deck'
 
 class Lesson < Erector::Widget
 
-  external :style, "
+  external :style, <<-CSS
 
   .main {
     max-width: 70em;
@@ -23,7 +23,6 @@ class Lesson < Erector::Widget
     border-top: 1px solid blue;
   }
 
-
   div.next_and_previous a.next_lesson {
     float: right;
     margin-right: -1em;
@@ -40,50 +39,17 @@ class Lesson < Erector::Widget
     clear: both;
   }
 
-  div.toc {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 80%;
-    background-color: white;
-    border: 1px solid gray;
-  }
-  div.toc h2 {
-    margin: 0;
-    padding-left: 5px;
-    border-bottom: 1px dashed gray;
-  }
-  div.toc ul {
-    list-style: none;
-    padding: .5em .2em;
-
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    -webkit-padding-start: 0;
-  }
-  div.toc li {
-  }
-  div.toc a {
-    padding: 2px 10px;
-    text-decoration: none;
-    color: black;
-    display: block;
-  }
-  div.toc a:visited {
-    color: black;
-  }
-  div.toc a:hover {
-    color: blue;
-    text-decoration: underline;
-    background: #EEEEF2;
-  }
-
   div#disqus_thread {
     border-top: 1px dotted gray;
     padding-top: 1em;
   }
-"
+
+  div.main_column img {
+    width: 100%;
+  }
+
+
+  CSS
 
   attr_reader :name, :course
 
@@ -110,22 +76,25 @@ class Lesson < Erector::Widget
     end
   end
 
+  def outline
+    div.outline {
+        h3 "Outline"
+        ul(class: 'list-group') {
+          slides.each do |slide|
+            li(class: 'list-group-item') {
+              a slide.title, href: "##{slide.slide_id}"
+            }
+          end
+        }
+      }
+  end
+
   def content
     div.extras {
       a.slides.button "Slides", href: "#{name}.slides"
 
       labs
 
-      div.toc {
-        h2 "Contents"
-        ul {
-          slides.each do |slide|
-            li {
-              a slide.title, href: "##{slide.slide_id}"
-            }
-          end
-        }
-      }
       div {
         next_lesson_button
       }
