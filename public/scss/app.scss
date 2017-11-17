@@ -1,18 +1,29 @@
 
-$topbar-height: 6rem;
-
+$topbar-height: 4rem;
+$footer-bg: #f8f9fa; // todo: load bootstrap scss and use their light-bg var
 
 body {
   padding-top: $topbar-height; // to skip the fixed nav bar
-}
-
-body {
   font-family: 'Museo500Regular', 'Arial', 'Sans';
   text-rendering: optimizelegibility;
+  background-color: $footer-bg; // to avoid a big white area at the bottom
+}
+
+.main {
+  max-width: 70em;
+}
+
+main {
+  background-color: white;
+}
+
+main center.logo {
+  padding: 1rem;
 }
 
 nav.navbar {
   background: white;
+  height: $topbar-height;
 }
 
 section.slide {
@@ -122,9 +133,40 @@ div.blog .rssHeader > a:after {
     }
   }
 // }
+
 #sidebar {
     // padding-top: 1rem;
     // padding-bottom: 1rem;
     // padding-left: 1rem;
     // padding-right: 0px;
+}
+
+div.next_and_previous a.next_lesson {
+  float: right;
+  margin-right: -1em;
+}
+div.next_and_previous a.previous_lesson {
+  float: left;
+  margin-left: -1em;
+}
+div.next_and_previous {
+  margin: 2px;
+  height: 3em;
+}
+div.footer {
+  clear: both;
+}
+
+div#disqus_thread {
+  border-top: 1px dotted gray;
+  padding-top: 1em;
+}
+
+div.main_column img {
+  max-width: 100%;
+}
+
+.footer {
+  padding: 1rem;
+  background-color: $footer-bg;
 }

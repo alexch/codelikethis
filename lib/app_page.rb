@@ -1,7 +1,10 @@
 require 'erector'
 require 'awesome_print'
+require 'views'
 
 class AppPage < Erector::Widgets::Page
+
+  include Views
 
   def doctype
     '<!doctype html>'
@@ -77,14 +80,6 @@ class AppPage < Erector::Widgets::Page
     script src: "/js/app.js"
   end
 
-  def logo klass: nil, style: nil
-    a(href: '/') {
-      img.logo(src: '/images/logo.png', alt: "Code like this.", href: '/',
-               class: ['logo', klass].compact,
-               style: [style].compact)
-    }
-  end
-
   def navbar_content
     nav class: 'navbar navbar-expand-md fixed-top navbar-light bg-light' do
       a class: 'navbar-brand', href: '#' do
@@ -145,6 +140,7 @@ class AppPage < Erector::Widgets::Page
   end
 
   def footer_content
+
     text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2017 by "
     a "Alex Chaffee.", href: "http://alexchaffee.com"
     br
@@ -182,14 +178,6 @@ class AppPage < Erector::Widgets::Page
     JAVASCRIPT
   end
 
-  def logo klass: nil, style: nil
-    a(href: 'http://www.burlingtoncodeacademy.com') {
-      img.logo(src: '/images/burlingtoncodeacademy-logo.png',
-               alt: "Burlington Code Academy",
-               class: ['logo', klass].compact,
-               style: [style].compact)
-    }
-  end
 
   def navbar_items
     # nav_item name: "Blog", href: "http://codelikethis.tumblr.com"
@@ -221,6 +209,14 @@ class AppPage < Erector::Widgets::Page
     ]
   end
 
+  def rightbar_content
+    if @widget and @widget.respond_to?(:outline)
+      widget @widget, {}, content_method_name: :outline
+    else
+      twitter
+    end
+  end
+
   def body_content
 
     # top nav
@@ -247,11 +243,8 @@ class AppPage < Erector::Widgets::Page
 
         # next the right-side (contents) sidebar
         div(class: "col-md-3", id: 'right-sidebar') {
-            if @widget and @widget.respond_to?(:outline)
-              widget @widget, {}, content_method_name: :outline
-            end
+          rightbar_content
         }
-
 
       }
     }

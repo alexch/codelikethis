@@ -4,53 +4,6 @@ require 'deck'
 
 class Lesson < Erector::Widget
 
-  external :style, <<-CSS
-
-  .main {
-    max-width: 70em;
-  }
-
-  .extras {
-    float:right;
-    margin-right: 1em;
-    min-width: 10em;
-    margin-left: .5em;
-  }
-  .extras a.button {
-    border-top: none;
-  }
-  .extras a.button:first-child {
-    border-top: 1px solid blue;
-  }
-
-  div.next_and_previous a.next_lesson {
-    float: right;
-    margin-right: -1em;
-  }
-  div.next_and_previous a.previous_lesson {
-    float: left;
-    margin-left: -1em;
-  }
-  div.next_and_previous {
-    margin: 2px;
-    height: 3em;
-  }
-  div.footer {
-    clear: both;
-  }
-
-  div#disqus_thread {
-    border-top: 1px dotted gray;
-    padding-top: 1em;
-  }
-
-  div.main_column img {
-    width: 100%;
-  }
-
-
-  CSS
-
   attr_reader :name, :course
 
   def initialize course, name
@@ -78,15 +31,15 @@ class Lesson < Erector::Widget
 
   def outline
     div.outline {
-        h3 "Outline"
-        ul(class: 'list-group') {
-          slides.each do |slide|
-            li(class: 'list-group-item') {
-              a slide.title, href: "##{slide.slide_id}"
-            }
-          end
-        }
+      h3 "Outline"
+      ul(class: 'list-group') {
+        slides.each do |slide|
+          li(class: 'list-group-item') {
+            a slide.title, href: "##{slide.slide_id}"
+          }
+        end
       }
+    }
   end
 
   def content
