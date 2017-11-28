@@ -24,9 +24,13 @@ class Lesson < Erector::Widget
   end
 
   def labs
-    next_labs.each do |lab|
-      widget lab
-    end
+    div(class: 'list-group') {
+      next_labs.each do |lab|
+        div(class: 'list-group-item') {
+          widget lab
+        }
+      end
+    }
   end
 
   def outline
