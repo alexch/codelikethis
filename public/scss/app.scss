@@ -30,7 +30,7 @@ nav.navbar {
 
 main {
   background-color: white;
-  max-width: 70em;
+  max-width: 80em;
   center.logo {
     padding: 1rem;
   }
@@ -104,25 +104,12 @@ iframe.video {
   border: 6px solid gray;
 }
 
-div.bubble {
-  border: 1px solid black;
-  box-shadow: #c8c8f1 2px 2px 4px;
-  max-width: 30em;
-  padding: .25em 1em;
-  margin-bottom: 1em;
-}
-
-div.bubble h2 {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
-}
 
 div.right_side {
   float: right;
   max-width: 24em;
 }
+
 div.twitter {
   padding-left: 1em;
 }
@@ -141,13 +128,14 @@ div.blog .rssHeader > a:after {
       position: sticky;
       top: $topbar-height;
       z-index: 1000; // why?
+      padding-top: 1rem;
   }
 }
 
-#sidebar-courses {
+#sidebar-courses, #right-sidebar > .outline > .list-group {
   font-size: 85%;
   .list-group-item {
-    padding: .25rem 1rem;
+    padding: .4rem 0 .4rem 1rem;
   }
 }
 
@@ -183,8 +171,8 @@ div.footer {
 }
 
 div#disqus_thread {
-  border-top: 1px dotted gray;
-  padding-top: 1em;
+  border: 1px solid gray;
+  padding: 1em;
 }
 
 div.main_column img {

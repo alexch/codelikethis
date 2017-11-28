@@ -77,11 +77,15 @@ class Lesson < Erector::Widget
 
       next_and_previous
 
-      widget Disqus, shortname: "codelikethis",
-        developer: (Thread.current[:development] ? 1 : nil),
-        identifier: "lesson_#{@course.name}_#{name}",
-        title: "#{@course.display_name}: #{display_name}"
-    }
+      br
+      div.comments {
+        h2 "Comments"
+        widget Disqus, shortname: "codelikethis",
+          developer: (Thread.current[:development] ? 1 : nil),
+          identifier: "lesson_#{@course.name}_#{name}",
+          title: "#{@course.display_name}: #{display_name}"
+        }
+      }
   end
 
   def next_and_previous
