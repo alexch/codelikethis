@@ -233,6 +233,7 @@ class AppPage < Erector::Widgets::Page
 
         # now the real body
         div(class: "col-md-6") {
+          a name: 'content'
           call_block
           widget @widget if @widget
 

@@ -53,8 +53,8 @@ class Course < Erector::Widget
     name.titleize
   end
 
-  def href
-    "/lessons/#{name}"
+  def href anchor: nil
+    "/lessons/#{name}#{"##{anchor}" if anchor}"
   end
 
   def content
@@ -71,7 +71,7 @@ class Course < Erector::Widget
       div(class: ['list-group-item', ('active' if @current == item)]) {
         item_name = item.display_name
         item_name = "Lab: #{item_name}" if item.is_a? Lab
-        a href: item.href do
+        a href: "#{item.href}#content" do
           text item_name
           span.video_link "Video" if item.respond_to? :video? and item.video?
         end

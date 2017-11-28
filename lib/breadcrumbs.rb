@@ -7,7 +7,7 @@ class Breadcrumbs < Erector::Widget
   font-size: 80%;
   font-weight: bold;
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-  margin: 0 0 .5em -1em;
+  margin: 1em 0 .5em -1em;
 }
 .breadcrumbs a {
   text-decoration: none;

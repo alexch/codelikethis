@@ -28,17 +28,14 @@ nav.navbar {
   }
 }
 
-.main {
-  max-width: 70em;
-}
-
 main {
   background-color: white;
+  max-width: 70em;
+  center.logo {
+    padding: 1rem;
+  }
 }
 
-main center.logo {
-  padding: 1rem;
-}
 
 
 section.slide {
@@ -135,38 +132,53 @@ div.blog .rssHeader > a:after {
 }
 
 
-// @include media-breakpoint-up(md) {
+@include media-breakpoint-up(md) {
   #sidebar, #right-sidebar {
     @media only screen and (min-width : 768px) {
       display: block!important;
-      max-height: calc(100vh - 6rem); // todo: use $topbar-height
+      max-height: calc(100vh - $topbar-height); // todo: use $topbar-height
       overflow-y: auto;
       position: sticky;
-      top: $topbar-height; // todo: use $topbar-height
+      top: $topbar-height;
       z-index: 1000; // why?
     }
   }
-// }
-
-#sidebar {
-    // padding-top: 1rem;
-    // padding-bottom: 1rem;
-    // padding-left: 1rem;
-    // padding-right: 0px;
 }
 
-div.next_and_previous a.next_lesson {
-  float: right;
-  margin-right: -1em;
+#sidebar-courses {
+  font-size: 85%;
+  .list-group-item {
+    padding: .25rem 1rem;
+  }
 }
-div.next_and_previous a.previous_lesson {
-  float: left;
-  margin-left: -1em;
+
+h1.lesson-name {
+  border-bottom: 2px solid purple;
 }
+
 div.next_and_previous {
   margin: 2px;
-  height: 3em;
+  border: 1px dotted gray;
+  background-color: $light;
+  display: block;
+  font-size: 80%;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
+  font-style: italic;
+
+  a.next_lesson {
+    float: right;
+  //   margin-right: -1em;
+    // text-align: right;
+  }
+
+  a.previous_lesson {
+    float: left;
+  // text-align: left;
+  //   margin-left: -1em;
+  }
 }
+
 div.footer {
   clear: both;
 }

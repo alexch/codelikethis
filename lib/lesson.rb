@@ -40,20 +40,21 @@ class Lesson < Erector::Widget
         end
       }
     }
+    br
+    a.slides("View Slides", href: "#{name}.slides", class: 'btn btn-primary')
+
   end
 
   def content
+    br; br
+    next_and_previous
+
+    br; br
+    h1(display_name, class: 'lesson-name')
+
     div.extras {
-      a.slides.button "Slides", href: "#{name}.slides"
-
       labs
-
-      div {
-        next_lesson_button
-      }
     }
-
-    widget Breadcrumbs, :parents => [CoursesTable.new, @course], :display_name => display_name
 
     br
 
@@ -70,12 +71,23 @@ class Lesson < Erector::Widget
         widget slide
       end
 
-      div.next_and_previous do
-        next_lesson_button
-        previous_lesson_button
-      end
+      next_and_previous
 
-      widget Disqus, shortname: "codelikethis", developer: (Thread.current[:development] ? 1 : nil), identifier: "lesson_#{@course.name}_#{name}", title: "#{@course.display_name}: #{display_name}"
+      widget Disqus, shortname: "codelikethis",
+        developer: (Thread.current[:development] ? 1 : nil),
+        identifier: "lesson_#{@course.name}_#{name}",
+        title: "#{@course.display_name}: #{display_name}"
+    }
+  end
+
+  def next_and_previous
+    div.next_and_previous {
+      previous_lesson_button
+#      text raw('&nbsp;')
+      next_lesson_button
+      center {
+        a @course.display_name, href: @course.href
+      }
     }
   end
 
@@ -83,8 +95,8 @@ class Lesson < Erector::Widget
     if previous_lesson
       a.button.previous_lesson href: previous_lesson.name do
         text "<< "
-        text "Previous: "
         text previous_lesson.display_name
+        text " <<"
       end
     end
   end
@@ -92,7 +104,7 @@ class Lesson < Erector::Widget
   def next_lesson_button
     if next_lesson
       a.button.next_lesson href: next_lesson.name do
-        text "Next: "
+        text ">> "
         text next_lesson.display_name
         text " >>"
       end
