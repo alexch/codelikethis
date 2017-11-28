@@ -18,7 +18,22 @@ end
 
 desc "build app"
 task :build do
-  sh "compass compile"
+  public_dir = "public"
+  css_dir = File.join public_dir, "stylesheets"
+  sass_dir = File.join public_dir, "scss"
+  images_dir = File.join public_dir, "images"
+  javascripts_dir = File.join public_dir, "js"
+  bootstrap_dir = File.join sass_dir, "bootstrap-4.0.0-beta.2/scss"
+
+  http_path = "/"
+
+  sh(["sass",
+      "--load-path #{bootstrap_dir}",
+      "--line-numbers", # adds comments inside the .css file
+      "--line-comments", # creates a .map file
+      File.join(sass_dir, "app.scss"),
+      File.join(css_dir, "app.css"),
+      ].join(" "))
 end
 
 desc "run app"

@@ -12,15 +12,10 @@ source for Code Like This web site
 
 ---
 
-SCSS currently built using Compass. Run this all the time in development, or at least once before deploy:
+SCSS currently built using Sass. Run this all the time in development, or at least once before deploy:
 
-    bundle exec compass watch --time
-
-see http://compass-style.org/help/documentation/configuration-reference/
+    rake build
 
 ---
 
-# TODO:
-
-make a Heroku buildpack to run bower install (instead of checking in bower stuff)?
-
+see <todo.md> for some todo items

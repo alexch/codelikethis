@@ -82,27 +82,27 @@ class AppPage < Erector::Widgets::Page
 
   def navbar_content
     nav class: 'navbar navbar-expand-md fixed-top navbar-light bg-light' do
-      a class: 'navbar-brand', href: '#' do
-        logo style: 'height: 3rem'
-      end
+
+      div(class: 'navbar-left navbar-brand') {
+          logo
+      }
 
       # hamburger button
-      button :class => 'navbar-toggler',
+      button(:class => 'navbar-toggler navbar-right navbar-toggler-right',
              :type => 'button',
              'data-toggle' => 'collapse',
              'data-target' => '#pageNavbar',
              'aria-controls' => 'navbarsExampleDefault',
              'aria-expanded' => 'false',
-             'aria-label' => 'Toggle navigation' do
+             'aria-label' => 'Toggle navigation') {
         span :class => 'navbar-toggler-icon'
-      end
+      }
 
-      div :class => 'collapse navbar-collapse', :id => 'pageNavbar' do
-        ul :class => 'navbar-nav ml-auto' do
+      div(:class => 'collapse navbar-collapse navbar-right', :id => 'pageNavbar') {
+        ul(:class => 'navbar-nav ml-auto') {
           navbar_items
-        end
-        # navbar_search
-      end
+        }
+      }
     end
   end
 

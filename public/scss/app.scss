@@ -1,5 +1,9 @@
+// bootstrap imports
+@import "functions";
+@import "variables";
+@import "mixins";
 
-$topbar-height: 4rem;
+$topbar-height: 75px;
 $footer-bg: #f8f9fa; // todo: load bootstrap scss and use their light-bg var
 
 body {
@@ -7,6 +11,21 @@ body {
   font-family: 'Museo500Regular', 'Arial', 'Sans';
   text-rendering: optimizelegibility;
   background-color: $footer-bg; // to avoid a big white area at the bottom
+}
+
+nav.navbar {
+  background: white;
+  min-height: $topbar-height;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  div.logo-div {
+    img.logo {
+      height: auto;
+      max-width: 100%;
+      vertical-align: middle;
+    }
+  }
 }
 
 .main {
@@ -21,13 +40,8 @@ main center.logo {
   padding: 1rem;
 }
 
-nav.navbar {
-  background: white;
-  height: $topbar-height;
-}
 
 section.slide {
-
   padding-left: 1em;
   margin-bottom: 2em;
 }

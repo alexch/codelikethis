@@ -7,6 +7,7 @@ module Views
   def logo klass: nil, style: nil
     a(href: 'http://www.burlingtoncodeacademy.com') {
       img.logo(src: '/images/burlingtoncodeacademy-logo.png',
+               width: 265, height: 36,
                alt: "Burlington Code Academy",
                class: ['logo', klass].compact,
                style: [style].compact)
@@ -16,9 +17,7 @@ module Views
   def centered_codelikethis_logo
     center class: 'logo ml-auto mr-auto' do
       img.logo(src: '/images/logo.png',
-               alt: "Code like this!",
-               style: 'height: 2rem'
-      )
+               alt: "Code like this!")
       br
       text "Powered by Burlington Code Academy"
     end
