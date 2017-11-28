@@ -128,28 +128,28 @@ div.twitter {
 div.blog .rssHeader > a:after {
   content: " - Recent Blog Entries"; }
 
-@media only screen and (min-width: 768px) and (min-width: 768px) {
-  /* line 136, ../scss/app.scss */
+/* make the sidebars scrolly and fixed on bigger screens */
+@media (min-width: 768px) {
+  /* line 137, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block !important;
-    max-height: calc(100vh - $topbar-height);
+    max-height: calc(100vh - 75px);
     overflow-y: auto;
     position: sticky;
     top: 75px;
     z-index: 1000; } }
-
-/* line 148, ../scss/app.scss */
+/* line 147, ../scss/app.scss */
 #sidebar-courses {
   font-size: 85%; }
-  /* line 150, ../scss/app.scss */
+  /* line 149, ../scss/app.scss */
   #sidebar-courses .list-group-item {
     padding: .25rem 1rem; }
 
-/* line 155, ../scss/app.scss */
+/* line 154, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
 
-/* line 159, ../scss/app.scss */
+/* line 158, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   border: 1px dotted gray;
@@ -159,27 +159,27 @@ div.next_and_previous {
   font-weight: bold;
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
   font-style: italic; }
-  /* line 169, ../scss/app.scss */
+  /* line 168, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 175, ../scss/app.scss */
+  /* line 174, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
 
-/* line 182, ../scss/app.scss */
+/* line 181, ../scss/app.scss */
 div.footer {
   clear: both; }
 
-/* line 186, ../scss/app.scss */
+/* line 185, ../scss/app.scss */
 div#disqus_thread {
   border-top: 1px dotted gray;
   padding-top: 1em; }
 
-/* line 191, ../scss/app.scss */
+/* line 190, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 195, ../scss/app.scss */
+/* line 194, ../scss/app.scss */
 .footer {
   padding: 1rem;
   background-color: #f8f9fa; }

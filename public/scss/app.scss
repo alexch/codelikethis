@@ -132,16 +132,15 @@ div.blog .rssHeader > a:after {
 }
 
 
+/* make the sidebars scrolly and fixed on bigger screens */
 @include media-breakpoint-up(md) {
   #sidebar, #right-sidebar {
-    @media only screen and (min-width : 768px) {
       display: block!important;
-      max-height: calc(100vh - $topbar-height); // todo: use $topbar-height
+      max-height: calc(100vh - #{$topbar-height}); // using SassScript interpolation so the math happens at runtime
       overflow-y: auto;
       position: sticky;
       top: $topbar-height;
       z-index: 1000; // why?
-    }
   }
 }
 
