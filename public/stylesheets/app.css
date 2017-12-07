@@ -100,37 +100,22 @@ iframe.video {
   padding: .5em;
   border: 6px solid gray; }
 
-/* line 107, ../scss/app.scss */
-div.bubble {
-  border: 1px solid black;
-  box-shadow: #c8c8f1 2px 2px 4px;
-  max-width: 30em;
-  padding: .25em 1em;
-  margin-bottom: 1em; }
-
-/* line 115, ../scss/app.scss */
-div.bubble h2 {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0; }
-
-/* line 122, ../scss/app.scss */
+/* line 108, ../scss/app.scss */
 div.right_side {
   float: right;
   max-width: 24em; }
 
-/* line 126, ../scss/app.scss */
+/* line 113, ../scss/app.scss */
 div.twitter {
   padding-left: 1em; }
 
-/* line 130, ../scss/app.scss */
+/* line 117, ../scss/app.scss */
 div.blog .rssHeader > a:after {
   content: " - Recent Blog Entries"; }
 
 /* make the sidebars scrolly and fixed on bigger screens */
 @media (min-width: 768px) {
-  /* line 137, ../scss/app.scss */
+  /* line 124, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block !important;
     max-height: calc(100vh - 75px);
@@ -139,18 +124,18 @@ div.blog .rssHeader > a:after {
     top: 75px;
     z-index: 1000;
     padding-top: 1rem; } }
-/* line 148, ../scss/app.scss */
+/* line 135, ../scss/app.scss */
 #sidebar-courses, #right-sidebar > .outline > .list-group {
   font-size: 85%; }
-  /* line 150, ../scss/app.scss */
+  /* line 137, ../scss/app.scss */
   #sidebar-courses .list-group-item, #right-sidebar > .outline > .list-group .list-group-item {
     padding: .4rem 0 .4rem 1rem; }
 
-/* line 155, ../scss/app.scss */
+/* line 142, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
 
-/* line 159, ../scss/app.scss */
+/* line 146, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   border: 1px dotted gray;
@@ -160,27 +145,27 @@ div.next_and_previous {
   font-weight: bold;
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
   font-style: italic; }
-  /* line 169, ../scss/app.scss */
+  /* line 156, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 175, ../scss/app.scss */
+  /* line 162, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
 
-/* line 182, ../scss/app.scss */
+/* line 169, ../scss/app.scss */
 div.footer {
   clear: both; }
 
-/* line 186, ../scss/app.scss */
+/* line 173, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 191, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 195, ../scss/app.scss */
+/* line 182, ../scss/app.scss */
 .footer {
   padding: 1rem;
   background-color: #f8f9fa; }
