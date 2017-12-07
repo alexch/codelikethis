@@ -38,8 +38,7 @@ describe Lesson do
   end
 
   it "renders HTML" do
-    breadcrumbs = Breadcrumbs.new(:display_name => lesson.display_name, :parents => [CoursesTable.new, course])
-    lesson.to_html.should include(breadcrumbs.to_html)
+    lesson.to_html.should include("<p>contents of scramble_eggs.md</p>")
   end
 
   it "has a next lab" do

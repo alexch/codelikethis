@@ -2,30 +2,17 @@
 
 You may have never programmed before. Now you will.
 
-<!--# Schedule
+# What is code?
 
-9:00 introductions
+In general, code is something that stands for something else.
 
-9:30 lecture
-
-10:45 - 11:00 mandatory break
-
-12:30 lunch
-
-1:30 class resumes
-
-3:00 - 3:30 stretch break & snacks & coffee
-
-4:30 discussion and next steps
-
-5:00 bye
--->
+In computers, code is a series of instructions that tell a computer what to do.
 
 # What is coding?
 
-* coding = programming
-
-* ...thoughts?
+* coding (aka programming or software development) is a *human* activity
+* it's called *code* because what we write is *not* what the computer reads
+* to a computer, it's all ones and zeros; to us, it's words (and numerals and punctuation)
 
 # What is coding NOT?
 
@@ -49,13 +36,12 @@ You may have never programmed before. Now you will.
 
 # What will we learn today?
 
-In this class, you will use Ruby to learn about:
+In this class, you will learn about:
 
 *  The command line and why we use it
 *  Strings, Arrays, Variables, Objects, Loops, Files
-*  Object concepts like Methods
-*  How to run your Ruby code interactively (irb) or from a file
-*  Make a very simple website run on your own computer
+*  How to run your code interactively or from a file
+*  How to make a very simple website run on your own computer
 
 Follow along at http://codelikethis.com/lessons/learn_to_code
 
@@ -64,22 +50,21 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
 * we will **definitely not** get through all the materials today
 -->
 
-
 <!--# What if I know some of that already?
 
 * Pair up and fill in each other's gaps
 * Promote yourself to TA
 -->
 
-# And if you (and your pair) finish early...
-
-<!--* Let us know! -->
+<!--# And if you (and your pair) finish early...
+<!--* Let us know! 
 * Look at [Next Steps](next_steps.md)
 * Start working on my Ruby For Programmers lessons
   * http://testfirst.org
   * http://codelikethis.com/lessons/
 * Build a Rails website
   * http://docs.railsbridge.org/
+-->
 
 # Technical requirements
 
@@ -89,13 +74,23 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
   * Username: ______
   * Password: ______
 -->
-* a live Ruby installation
+* a text editor
+  * e.g. Atom <http://atom.io>
+  * Note: Microsoft Word is *not* a text editor
+
+*{Ruby}
+
+  * a live Ruby installation
   * visit http://installfest.railsbridge.org for more instructions
   * Ruby version 2.x is preferred, but 1.9 is fine too
     * run `ruby -v` to check
-* a text editor
-  * e.g. Sublime Text 2
-  * www.sublimetext.com/2
+
+*{JavaScript}
+
+  * a live node.js installation
+  * visit https://nodejs.org/ for more instructions
+  * version 9.2 is preferred, others are probably fine too
+    * run `node -v` to check
 
 <!--* If you do not have both of these things, RAISE YOUR HAND -->
 

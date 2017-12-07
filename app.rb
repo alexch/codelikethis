@@ -8,6 +8,7 @@ here = ::File.expand_path(File.dirname(__FILE__))
 lib = "#{here}/lib"
 $: << lib
 
+# require all lib ruby files (including subdirs)
 Dir["#{lib}/**/*.rb"].each do |file|
   file.slice! /^#{lib}\//
   file.slice! /\.rb$/

@@ -28,11 +28,8 @@ describe Course do
 
     breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [CoursesTable.new])
     lessons.to_html.should include(breadcrumbs.to_html)
-    lessons.to_html.should include(
-                               "<ul>" +
-                                   "<li><a href=\"/lessons/course/foo\">Foo</a></li>" +
-                                   "<li><a href=\"/lessons/course/bar\">Bar</a></li>" +
-                               "</ul>")
+    lessons.to_html.should include("<a href=\"/lessons/course/foo#content\">Foo</a>")
+    lessons.to_html.should include("<a href=\"/lessons/course/bar#content\">Bar</a>")
 
   end
 

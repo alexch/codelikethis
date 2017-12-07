@@ -26,7 +26,7 @@
 
 * ["In The Beginning Was The Command Line"](http://www.cryptonomicon.com/beginning.html) is an essay by Neil Stephenson describing the history of computers in an enjoyable and clever way
 
-# irb - the Interactive Ruby Browser
+#{Ruby} irb - the Interactive Ruby Browser
 
 ## Exercise: Calculator
 
@@ -43,6 +43,20 @@
 
 * From now on, whenever you see text in the `code font`, try typing it into irb and see what happens!
 
+# Computer Anatomy
+
+* hardware
+  * CPU
+  * Memory
+  * Storage
+  * Input/Output Devices (monitor, keyboard, etc.)
+* software
+  * Operating System
+  * Drivers
+  * Programs
+* wetware
+  * that's you!
+
 # Computer Anatomy: Hardware
 
 * CPU ("the brain")
@@ -50,12 +64,13 @@
 * Input/Output
   * keyboard, mouse, touch screen, monitor
 
-bonus: [Von Neumann Machine]()
+bonus: [Von Neumann Machine](https://en.wikipedia.org/wiki/Von_Neumann_architecture)
 
 # Computer Anatomy: Software
 
 * Operating System
 * Libraries
+* Drivers
 * Applications
 * Languages
 
@@ -69,7 +84,7 @@ Every piece of software on your computer is a PROGRAM.
 
 * a program is a collection of *data* and *code*
 
-When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
+> When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
 
 (recipe from http://www.popcornpottery.com/rec.html)
 
@@ -80,20 +95,8 @@ When you are writing code, you are not baking cookies, you are writing a recipe 
   * even HTML and CSS and SQL are languages
   * every computer language has a silly name
 * different languages are useful in different areas, but there is a lot of overlap
-* today we will learn the RUBY programming language
-
-# Ruby
-
-* Ruby was invented in the 1990s by a very nice Japanese man named Yukihiro Matsumoto (nicknamed Matz)
-* The motto of Ruby is MINASWAN:
-
-> Matz is nice, and so we are nice.
-
-# Ruby is fun
-
-* Ruby was [designed to be fun](http://blog.crowdint.com/2013/06/11/matz-keynote-at-ruby-kaigi-2013.html) to write code in, while also being powerful and well-rounded.
-* *Ruby is poetry*
-  * especially compared to other languages
+*{Ruby} today we will learn the RUBY programming language
+*{JavaScript} today we will learn the JavaScript programming language
 
 # Errors Are Awesome
 
@@ -102,5 +105,4 @@ When you are writing code, you are not baking cookies, you are writing a recipe 
   * It's just *really* bad at communicating
 * It's not all gibberish
 * Try to read it -- really try! -- and pull out the pearls from the pig slop
-
 
