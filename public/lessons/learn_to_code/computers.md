@@ -26,12 +26,29 @@
 
 * ["In The Beginning Was The Command Line"](http://www.cryptonomicon.com/beginning.html) is an essay by Neil Stephenson describing the history of computers in an enjoyable and clever way
 
-#{Ruby} irb - the Interactive Ruby Browser
+# {Ruby} irb - the Interactive Ruby Browser
 
 ## Exercise: Calculator
 
 * open a terminal
 * type `irb`
+* press the `return` key (also called `enter`)
+* see the `>` prompt
+* type `1 + 1`
+* press the `return` key again
+* see the `2`
+* yay, a $1000 calculator!
+
+* Bonus: what other math can you do?
+
+* From now on, whenever you see text in the `code font`, try typing it into irb and see what happens!
+
+# {JavaScript} node - the Interactive JavaScript Executor
+
+## Exercise: Calculator
+
+* open a terminal
+* type `node`
 * press the `return` key (also called `enter`)
 * see the `>` prompt
 * type `1 + 1`
@@ -95,8 +112,8 @@ Every piece of software on your computer is a PROGRAM.
   * even HTML and CSS and SQL are languages
   * every computer language has a silly name
 * different languages are useful in different areas, but there is a lot of overlap
-*{Ruby} today we will learn the RUBY programming language
-*{JavaScript} today we will learn the JavaScript programming language
+* {Ruby} today we will learn the RUBY programming language
+* {JavaScript} today we will learn the JavaScript programming language
 
 # Errors Are Awesome
 
