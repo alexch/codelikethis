@@ -25,61 +25,56 @@ main {
   main center.logo {
     padding: 1rem; }
 
-/* line 41, ../scss/app.scss */
+/* line 39, ../scss/app.scss */
 section.slide {
-  padding-left: 1em;
-  margin-bottom: 2em; }
+  padding: 1em;
+  margin-bottom: 2em;
+  /* this hocus-pocus is to correct for anchor links scrolling to underneath the page header */ }
+  /* line 45, ../scss/app.scss */
+  section.slide:before {
+    content: "";
+    display: block;
+    position: relative;
+    height: 75px;
+    top: -75px; }
+  /* line 53, ../scss/app.scss */
+  section.slide h1, section.slide > h2:first-child {
+    font-family: 'Helvetica Neue', Helvetica, Arial, Sans; }
+  /* line 56, ../scss/app.scss */
+  section.slide > h2:first-child {
+    margin: 2px 0 2px -4px;
+    font-size: 2em;
+    text-shadow: #ddd 0.1em 0.1em 0.1em; }
+  /* line 61, ../scss/app.scss */
+  section.slide > h1 {
+    font-size: 3em; }
+  /* line 66, ../scss/app.scss */
+  section.slide.subsection > h1 {
+    background-color: #e8e8fc;
+    text-align: center; }
+  /* line 70, ../scss/app.scss */
+  section.slide.subsection > h2:first-child {
+    font-size: 3em; }
+  /* line 75, ../scss/app.scss */
+  section.slide blockquote {
+    font-style: italic;
+    border-left: 2px solid #ddd;
+    padding-left: 1em; }
 
-/* to correct for anchor links scrolling to underneath the page header */
-/* line 47, ../scss/app.scss */
-section.slide:before {
-  content: "";
-  display: block;
-  height: 75px;
-  border-bottom: 1px solid #ddd; }
-
-/* line 54, ../scss/app.scss */
-section.slide h1, section.slide > h2:first-child {
-  font-family: 'Helvetica Neue', Helvetica, Arial, Sans; }
-
-/* line 57, ../scss/app.scss */
-section.slide > h2:first-child {
-  margin: 2px 0 2px -4px;
-  font-size: 2em;
-  text-shadow: #ddd 0.1em 0.1em 0.1em; }
-
-/* line 62, ../scss/app.scss */
-section.slide > h1 {
-  font-size: 3em; }
-
-/* line 65, ../scss/app.scss */
-section.slide.subsection {
-  border-top: 2px solid blue; }
-
-/* line 68, ../scss/app.scss */
-section.slide.subsection > h2:first-child {
-  font-size: 3em; }
-
-/* line 71, ../scss/app.scss */
-section.slide blockquote {
-  font-style: italic;
-  border-left: 2px solid #ddd;
-  padding-left: 1em; }
-
-/* line 77, ../scss/app.scss */
+/* line 82, ../scss/app.scss */
 .slide li {
   margin-bottom: .5em; }
 
-/* line 80, ../scss/app.scss */
+/* line 86, ../scss/app.scss */
 .slide li:first-child {
   margin-top: .5em; }
 
-/* line 84, ../scss/app.scss */
+/* line 90, ../scss/app.scss */
 .slide pre, code, kbd, samp {
   font-family: monospace, sans-serif;
   background: #f4f4f1; }
 
-/* line 88, ../scss/app.scss */
+/* line 95, ../scss/app.scss */
 .slide pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -89,33 +84,33 @@ section.slide blockquote {
   display: inline-block;
   /* so it's only as wide as its contents */ }
 
-/* line 96, ../scss/app.scss */
+/* line 104, ../scss/app.scss */
 .slide code {
   color: #444;
   padding: 0 3px; }
 
-/* line 101, ../scss/app.scss */
+/* line 109, ../scss/app.scss */
 iframe.video {
   margin: 1em;
   padding: .5em;
   border: 6px solid gray; }
 
-/* line 108, ../scss/app.scss */
+/* line 115, ../scss/app.scss */
 div.right_side {
   float: right;
   max-width: 24em; }
 
-/* line 113, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 div.twitter {
   padding-left: 1em; }
 
-/* line 117, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 div.blog .rssHeader > a:after {
   content: " - Recent Blog Entries"; }
 
 /* make the sidebars scrolly and fixed on bigger screens */
 @media (min-width: 768px) {
-  /* line 124, ../scss/app.scss */
+  /* line 130, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block !important;
     max-height: calc(100vh - 75px);
@@ -124,18 +119,21 @@ div.blog .rssHeader > a:after {
     top: 75px;
     z-index: 1000;
     padding-top: 1rem; } }
-/* line 135, ../scss/app.scss */
+/* line 141, ../scss/app.scss */
 #sidebar-courses, #right-sidebar > .outline > .list-group {
   font-size: 85%; }
-  /* line 137, ../scss/app.scss */
+  /* line 143, ../scss/app.scss */
   #sidebar-courses .list-group-item, #right-sidebar > .outline > .list-group .list-group-item {
     padding: .4rem 0 .4rem 1rem; }
 
-/* line 142, ../scss/app.scss */
+/* line 148, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
+  /* line 150, ../scss/app.scss */
+  h1.lesson-name span.course-name {
+    font-size: 80%; }
 
-/* line 146, ../scss/app.scss */
+/* line 155, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   border: 1px dotted gray;
@@ -145,27 +143,27 @@ div.next_and_previous {
   font-weight: bold;
   font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
   font-style: italic; }
-  /* line 156, ../scss/app.scss */
+  /* line 165, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 162, ../scss/app.scss */
+  /* line 171, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
 
-/* line 169, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 div.footer {
   clear: both; }
 
-/* line 173, ../scss/app.scss */
+/* line 182, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 178, ../scss/app.scss */
+/* line 187, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 182, ../scss/app.scss */
+/* line 191, ../scss/app.scss */
 .footer {
   padding: 1rem;
   background-color: #f8f9fa; }

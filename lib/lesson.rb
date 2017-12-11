@@ -23,6 +23,10 @@ class Lesson < Erector::Widget
     @videos << youtube_id
   end
 
+  def extras?
+    !next_labs.empty?
+  end
+
   def labs
     div(class: 'list-group') {
       next_labs.each do |lab|
@@ -54,11 +58,18 @@ class Lesson < Erector::Widget
     next_and_previous
 
     br; br
-    h1(display_name, class: 'lesson-name')
-
-    div.extras {
-      labs
+    h1(class: 'lesson-name') {
+      span course.display_name, class: 'course-name'
+      text ':'
+      br
+      text display_name
     }
+
+    if extras?
+      div.extras {
+        labs
+      }
+    end
 
     br
 

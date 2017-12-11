@@ -9,6 +9,7 @@ gem "deckrb", ">=0.5.2"
 gem "coderay"
 gem "json", "~>1.8"
 gem "rack-codehighlighter"
+gem "rack-rewrite", "~>1.5"
 gem "sass", "~> 3.5.0"
 gem "awesome_print"
 

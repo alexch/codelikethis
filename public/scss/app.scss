@@ -36,65 +36,73 @@ main {
   }
 }
 
-
-
 section.slide {
-  padding-left: 1em;
+  padding: 1em;
   margin-bottom: 2em;
-}
+  border: 1px solid black;
 
-/* to correct for anchor links scrolling to underneath the page header */
-section.slide:before {
-  content: "";
-  display: block;
-  height: $topbar-height;
-  border-bottom: 1px solid #ddd;
-}
+  //// this hocus-pocus is to correct for anchor links scrolling to underneath the page header
+  //&:before {
+  //  content: "";
+  //  display: block;
+  //  position: relative;
+  //  height: $topbar-height;
+  //  top: -$topbar-height;
+  //}
 
-section.slide h1, section.slide > h2:first-child {
-  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
-}
-section.slide > h2:first-child {
-  margin: 2px 0 2px -4px;
-  font-size: 2em;
-  text-shadow: #ddd 0.1em 0.1em 0.1em;
-}
-section.slide > h1 {
-  font-size: 3em;
-}
-section.slide.subsection {
-  border-top: 2px solid blue;
-}
-section.slide.subsection > h2:first-child {
-  font-size: 3em;
-}
-section.slide blockquote {
-  font-style: italic;
-  border-left: 2px solid #ddd;
-  padding-left: 1em;
+  h1, > h2:first-child {
+    font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
+  }
+  > h2:first-child {
+    margin: 2px 0 2px -4px;
+    font-size: 2em;
+    text-shadow: #ddd 0.1em 0.1em 0.1em;
+  }
+  > h1 {
+    font-size: 3em;
+  }
+
+  &.subsection {
+    > h1 {
+      background-color: #e8e8fc;
+      text-align: center;
+    }
+    > h2:first-child {
+      font-size: 3em;
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+    border-left: 2px solid #ddd;
+    padding-left: 1em;
+  }
 }
 
 .slide li {
   margin-bottom: .5em;
 }
+
 .slide li:first-child {
   margin-top: .5em;
 }
 
 .slide pre, code, kbd, samp {
-  font-family:monospace, sans-serif;
+  font-family: monospace, sans-serif;
   background: #f4f4f1;
 }
+
 .slide pre {
-  white-space:pre;
-  white-space:pre-wrap;
-  word-wrap:break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   padding: 1em;
-  border:1px solid #ccc;
+  border: 1px solid #ccc;
   display: inline-block; /* so it's only as wide as its contents */
 }
+
 .slide code {
-  color:#444;
+  color: #444;
   padding: 0 3px;
 }
 
@@ -103,7 +111,6 @@ iframe.video {
   padding: .5em;
   border: 6px solid gray;
 }
-
 
 div.right_side {
   float: right;
@@ -118,17 +125,16 @@ div.blog .rssHeader > a:after {
   content: ' - Recent Blog Entries'
 }
 
-
 /* make the sidebars scrolly and fixed on bigger screens */
 @include media-breakpoint-up(md) {
   #sidebar, #right-sidebar {
-      display: block!important;
-      max-height: calc(100vh - #{$topbar-height}); // using SassScript interpolation so the math happens at runtime
-      overflow-y: auto;
-      position: sticky;
-      top: $topbar-height;
-      z-index: 1000; // why?
-      padding-top: 1rem;
+    display: block !important;
+    max-height: calc(100vh - #{$topbar-height}); // using SassScript interpolation so the math happens at runtime
+    overflow-y: auto;
+    position: sticky;
+    top: $topbar-height;
+    z-index: 1000; // why?
+    padding-top: 1rem;
   }
 }
 
@@ -141,6 +147,9 @@ div.blog .rssHeader > a:after {
 
 h1.lesson-name {
   border-bottom: 2px solid purple;
+  span.course-name {
+    font-size: 80%;
+  }
 }
 
 div.next_and_previous {
@@ -155,14 +164,14 @@ div.next_and_previous {
 
   a.next_lesson {
     float: right;
-  //   margin-right: -1em;
+    //   margin-right: -1em;
     // text-align: right;
   }
 
   a.previous_lesson {
     float: left;
-  // text-align: left;
-  //   margin-left: -1em;
+    // text-align: left;
+    //   margin-left: -1em;
   }
 }
 
