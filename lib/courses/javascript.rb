@@ -1,7 +1,7 @@
 require "course"
 
 class Course
-  Javascript = Course.new("javascript") do
+  Javascript = Course.new("javascript", display_name: "JavaScript") do
     lesson "javascript_basics"
     lesson "functions_and_closures"
     lesson "dom"

@@ -1,4 +1,4 @@
-# Learn To Code
+# Intro
 
 You may have never programmed before. Now you will.
 
@@ -43,18 +43,18 @@ In this class, you will learn about:
 *  How to run your code interactively or from a file
 *  How to make a very simple website run on your own computer
 
-Follow along at http://codelikethis.com/lessons/learn_to_code
+Follow along at http://codelikethis.com/lessons/learn_to_code_with_javascript
 
 <!--# Go at your own pace
 
 * we will **definitely not** get through all the materials today
 -->
 
-<!--# What if I know some of that already?
+# What if I know some of this already?
 
 * Pair up and fill in each other's gaps
 * Promote yourself to TA
--->
+
 
 <!--# And if you (and your pair) finish early...
 <!--* Let us know! 
@@ -74,16 +74,16 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
   * Username: ______
   * Password: ______
 -->
-
 * a text editor
   * e.g. Atom <http://atom.io>
-  * Note: Microsoft Word is *not* a text editor
+  * Note: Microsoft Word is **not** a text editor
 
-* Ruby
+* JavaScript
 
-  * a live Ruby installation
-  * visit http://installfest.railsbridge.org for more instructions
-  * Ruby version 2.x is preferred, but 1.9 is fine too
-    * run `ruby -v` to check
+  * a live node.js installation
+  * visit https://nodejs.org/ for more instructions
+  * version 9.2 is preferred, others are probably fine too
+    * run `node -v` to check
 
+<!--* If you do not have both of these things, RAISE YOUR HAND -->
 

@@ -72,8 +72,14 @@ describe Course do
     subject.name.should == "how_to_cook"
   end
 
-  it "has a title" do
+  it "has a title (aka display name)" do
     subject.display_name.should == "How To Cook"
+  end
+
+  it "can have a custom display name" do
+    title = "Now We're Cooking!"
+    c = Course.new("how_to_cook", display_name: title)
+    c.display_name.should == title
   end
 
   it "has an href" do

@@ -19,8 +19,9 @@ class Course < Erector::Widget
 
   attr_writer :dir
 
-  def initialize name = "course", &block
+  def initialize name = "course", **options, &block
     @name = name.underscore
+    @display_name = options[:display_name]
     @stuff = []
     instance_eval &block if block
   end
@@ -50,7 +51,7 @@ class Course < Erector::Widget
   end
 
   def display_name
-    name.titleize
+    @display_name or name.titleize
   end
 
   def href anchor: nil

@@ -84,7 +84,7 @@ class AppPage < Erector::Widgets::Page
     nav class: 'navbar navbar-expand-md fixed-top navbar-light bg-light' do
 
       div(class: 'navbar-left navbar-brand') {
-          logo
+        logo
       }
 
       # hamburger button
@@ -194,19 +194,12 @@ class AppPage < Erector::Widgets::Page
     # widget DonateButton
   end
 
+  require 'util'
+  require_all('courses')
+
   # todo: unify with app.rb
   def all_courses
-    [
-        Course::LearnToCode,
-        Course::AgileDevelopment,
-        Course::Ruby,
-        Course::RubyTools,
-        Course::RubyBasics,
-        Course::RubyBlocks,
-        Course::RubyObjects,
-        Course::RubyAdvanced,
-        Course::Javascript,
-    ]
+    Courses::ALL
   end
 
   def rightbar_content

@@ -8,12 +8,8 @@ here = ::File.expand_path(File.dirname(__FILE__))
 lib = "#{here}/lib"
 $: << lib
 
-# require all lib ruby files (including subdirs)
-Dir["#{lib}/**/*.rb"].each do |file|
-  file.slice! /^#{lib}\//
-  file.slice! /\.rb$/
-  require file
-end
+require 'util'
+require_all(lib)
 
 module AppHelpers
   def page_title object, extra = nil
@@ -37,19 +33,8 @@ class App < Sinatra::Base
     Thread.current[:development] = nil
   end
 
-  # todo: make this an object, not just an array
   def all_courses
-    [
-      Course::LearnToCode,
-      Course::AgileDevelopment,
-      Course::Ruby,
-      Course::RubyTools,
-      Course::RubyBasics,
-      Course::RubyBlocks,
-      Course::RubyObjects,
-      Course::RubyAdvanced,
-      Course::Javascript,
-    ]
+    Courses::ALL
   end
 
   def courses_widget
