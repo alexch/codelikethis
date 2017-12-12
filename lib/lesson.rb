@@ -49,7 +49,12 @@ class Lesson < Erector::Widget
       }
     }
     br
-    a.slides("View Slides", href: "#{name}.slides", class: 'btn btn-primary')
+    div(class: 'row text-center') {
+      div(class: 'col') {
+        a.slides("Show Slides", href: "#{name}.slides", class: 'btn btn-primary')
+      }
+    }
+    br
 
   end
 
@@ -92,11 +97,11 @@ class Lesson < Erector::Widget
       div.comments {
         h2 "Comments"
         widget Disqus, shortname: "codelikethis",
-          developer: (Thread.current[:development] ? 1 : nil),
-          identifier: "lesson_#{@course.name}_#{name}",
-          title: "#{@course.display_name}: #{display_name}"
-        }
+               developer: (Thread.current[:development] ? 1 : nil),
+               identifier: "lesson_#{@course.name}_#{name}",
+               title: "#{@course.display_name}: #{display_name}"
       }
+    }
   end
 
   def next_and_previous
