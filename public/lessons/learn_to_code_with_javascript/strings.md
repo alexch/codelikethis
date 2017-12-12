@@ -18,7 +18,8 @@
 * backslash means "the next character means something special"
   * for instance backslash-n means "newline"
   
-```@@@ js
+```
+@@@ js
 console.log("Roses are red,\nViolets are blue;\nCandy is sweet,\nAnd so are you.")
 ```
 
