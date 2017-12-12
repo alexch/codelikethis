@@ -43,7 +43,7 @@ class Lesson < Erector::Widget
       ul(class: 'list-group') {
         slides.each do |slide|
           li(class: 'list-group-item') {
-            a slide.title, href: "##{slide.slide_id}"
+            a slide.title, href: "#anchor/#{slide.slide_id}"
           }
         end
       }
