@@ -83,7 +83,6 @@ module Deck
 
   def markdown
     @@markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-      :no_intra_emphasis => true,
       :tables => true,
       :fenced_code_blocks => true,
       :no_intra_emphasis => true,
