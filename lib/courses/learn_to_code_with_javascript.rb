@@ -6,7 +6,7 @@ class Course
     lesson "computers"
     lesson "values"
 
-    # lesson "strings"
+    lesson "strings"
     # lesson "numbers"
     # lesson "variables"
 

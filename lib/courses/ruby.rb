@@ -1,7 +1,6 @@
 require "course"
 
-class Course
-  Ruby = Course.new("ruby") do
+Course::Ruby = Course.new("ruby") do
     lesson "credits"
     lesson "meta"
     lesson "intro"
@@ -12,5 +11,4 @@ class Course
     # course "ruby_blocks"
     # course "ruby_objects"
     lesson "bad_names"
-  end
 end
