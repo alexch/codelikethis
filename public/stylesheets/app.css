@@ -25,18 +25,19 @@ main {
   main center.logo {
     padding: 1rem; }
 
-/* line 39, ../scss/app.scss */
+/* line 40, ../scss/app.scss */
+a.slide-anchor {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  height: 0;
+  top: -75px; }
+
+/* line 48, ../scss/app.scss */
 section.slide {
   padding: 1em;
   margin-bottom: 2em;
-  /* this hocus-pocus is to correct for anchor links scrolling to underneath the page header */ }
-  /* line 45, ../scss/app.scss */
-  section.slide:before {
-    content: "";
-    display: block;
-    position: relative;
-    height: 75px;
-    top: -75px; }
+  border: 1px solid black; }
   /* line 53, ../scss/app.scss */
   section.slide h1, section.slide > h2:first-child {
     font-family: 'Helvetica Neue', Helvetica, Arial, Sans; }

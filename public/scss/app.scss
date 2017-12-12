@@ -36,19 +36,19 @@ main {
   }
 }
 
+// this hocus-pocus is to correct for anchor links scrolling to underneath the page header
+a.slide-anchor {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  height: 0;
+  top: -$topbar-height;
+}
+
 section.slide {
   padding: 1em;
   margin-bottom: 2em;
   border: 1px solid black;
-
-  //// this hocus-pocus is to correct for anchor links scrolling to underneath the page header
-  //&:before {
-  //  content: "";
-  //  display: block;
-  //  position: relative;
-  //  height: $topbar-height;
-  //  top: -$topbar-height;
-  //}
 
   h1, > h2:first-child {
     font-family: 'Helvetica Neue', Helvetica, Arial, Sans;

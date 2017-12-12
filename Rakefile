@@ -21,8 +21,15 @@ task :build do
   javascripts_dir = File.join public_dir, "js"
   bootstrap_dir = File.join sass_dir, "bootstrap-4.0.0-beta.2/scss"
 
-  http_path = "/"
+  puts "Copying Deck.rb..."
+  gems_dir = "gems"
+  deckrb_dir = "../deck.rb"
+  FileUtils.cp_r deckrb_dir, gems_dir, preserve: true, remove_destination: true
+  FileUtils.rm_rf File.join(gems_dir, "deck.rb", ".git")
+  FileUtils.rm_rf File.join(gems_dir, "deck.rb", "pkg")
+  FileUtils.rm_rf File.join(gems_dir, "deck.rb", ".idea")
 
+  puts "Building CSS..."
   sh(["sass",
       "--load-path #{bootstrap_dir}",
       "--line-numbers", # adds comments inside the .css file
@@ -30,6 +37,8 @@ task :build do
       File.join(sass_dir, "app.scss"),
       File.join(css_dir, "app.css"),
       ].join(" "))
+
+  puts "Built."
 end
 
 desc "run app"
