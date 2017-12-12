@@ -67,7 +67,11 @@ from WarGames, (1983)
 * Input/Output
   * keyboard, mouse, touch screen, monitor
 
-bonus: [Von Neumann Machine](https://en.wikipedia.org/wiki/Von_Neumann_architecture)
+![Von Neumann Architecture](Von_Neumann_Architecture.svg)
+
+The basic architecture of computers has not changed since the invention of the 
+[Von Neumann Architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture)
+in the 1940s.
 
 # Computer Anatomy: Software
 
