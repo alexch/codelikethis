@@ -110,8 +110,9 @@ Every piece of software on your computer is a PROGRAM.
 * Your computer is trying to help you fix your program
   * It's just *really* bad at communicating
   
-> If your program is a two-year-old child, then an error is a temper tantrum. 
+> If your code is a two-year-old child, then an error is a temper tantrum. 
 
 * It's not all gibberish
 * Try to read it -- really try! -- and pull out the pearls from the pig slop
 
+See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong) from MDN

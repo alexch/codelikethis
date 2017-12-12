@@ -8,36 +8,46 @@ There are many kinds of values, including String, Number, Array, Date, ...
 
 # Numbers
 
-A NUMBER is what it sounds like.
+A **number** is what it sounds like -- any integer or decimal.
 
+    @@@ js
     10
     -12
     3.14
 
 # Strings
 
-A STRING is an object that's a collection of characters, like a word or a sentence.
+A **string** is an object that's a collection of characters, like a word or a sentence.
 
+    @@@ js
     "apple"
     "banana"
     "Cherry Pie"
 
+# Booleans
+
+A **boolean** is a value that is either `true` or `false`.
+
+(It's named after *[George Boole](https://en.wikipedia.org/wiki/George_Boole)*, 
+a 19th-century mathematician who invented [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra).)
+
 # Messages and Operators
 
-All values respond to MESSAGES. 
+<!-- todo: rewrite this replacing "messages" since not all JS statements are messages -->
 
-You send messages using OPERATORS, like PLUS (`+`) and TIMES (`*`) and DOT (`.`)
+All values respond to **messages**. 
+
+You send messages using **operators**, like PLUS (`+`) and TIMES (`*`) and DOT (`.`)
 
 (Dot is a special operator; we will learn more about her later.)
-    
+
 # Return Values
 
-Every time an object receives a message, it returns a response.
-
-The response is also called the VALUE or the RETURN VALUE.
+Every time a value receives a message, it returns a response.
 
 You can think of it as the answer to a question. 
 
+    @@@ js
     2 + 2    // Question: What is 2 + 2?
     4        // Answer: 4
 
@@ -46,22 +56,30 @@ You can think of it as the answer to a question.
     // A: the string "APPLE"
     "APPLE"
 
+The response is often called the **return value**; 
+you can also say that a statement **evaluates to** a value, as in
+"2 plus 2 evaluates to 4".
+
 # Return Values (cont.)
 
 Sometimes the return value is the same as the original value.
 
+    @@@ js
     4 * 1    // return value: 4
     
 Sometimes the return value is a different value.
 
+    @@@ js
     2 + 3    // return value: 5
     
 Sometimes the return value is a different value *and* a different type.
 
+    @@@ js
     "banana".length  // return value: 6
 
-Sometimes the return value is a magic value.
+Sometimes the return value is a magic value!
 
+    @@@ js
     (5).shape      // return value: undefined
     5 / 0          // return value: Infinity
     "cookie" * 10  // return value: NaN

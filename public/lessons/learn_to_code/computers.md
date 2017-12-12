@@ -107,7 +107,7 @@ Every piece of software on your computer is a PROGRAM.
 
 > When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
 
-(recipe from http://www.popcornpottery.com/rec.html)
+(recipe from <http://www.popcornpottery.com/rec.html>)
 
 # Languages
 
@@ -116,14 +116,16 @@ Every piece of software on your computer is a PROGRAM.
   * even HTML and CSS and SQL are languages
   * every computer language has a silly name
 * different languages are useful in different areas, but there is a lot of overlap
-* {Ruby} today we will learn the RUBY programming language
-* {JavaScript} today we will learn the JavaScript programming language
+* today we will learn the **RUBY** programming language
 
 # Errors Are Awesome
 
 * Don't be afraid of errors
 * Your computer is trying to help you fix your program
   * It's just *really* bad at communicating
+  
+> If your code is a two-year-old child, then an error is a temper tantrum. 
+
 * It's not all gibberish
 * Try to read it -- really try! -- and pull out the pearls from the pig slop
 

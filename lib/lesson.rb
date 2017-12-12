@@ -64,8 +64,10 @@ class Lesson < Erector::Widget
 
     br; br
     h1(class: 'lesson-name') {
-      span course.display_name, class: 'course-name'
-      text ':'
+      span(class: 'course-name') {
+        text course.display_name
+        text ':'
+      }
       br
       text display_name
     }

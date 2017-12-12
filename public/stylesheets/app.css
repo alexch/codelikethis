@@ -133,7 +133,7 @@ h1.lesson-name {
   border-bottom: 2px solid purple; }
   /* line 151, ../scss/app.scss */
   h1.lesson-name span.course-name {
-    font-size: 80%; }
+    font-size: 60%; }
 
 /* line 156, ../scss/app.scss */
 div.next_and_previous {
