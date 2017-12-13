@@ -7,7 +7,8 @@ class Course
     lesson "values"
 
     lesson "strings"
-    # lesson "numbers"
+    lesson "numbers"
+
     # lesson "variables"
 
     # lesson "null"
