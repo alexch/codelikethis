@@ -197,7 +197,6 @@ class AppPage < Erector::Widgets::Page
   require 'util'
   require_all('courses')
 
-  # todo: unify with app.rb
   def all_courses
     Courses::ALL
   end

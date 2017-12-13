@@ -59,10 +59,6 @@ class Lesson < Erector::Widget
   end
 
   def content
-    br; br
-    next_and_previous
-
-    br; br
     h1(class: 'lesson-name') {
       span(class: 'course-name') {
         text course.display_name
@@ -71,6 +67,7 @@ class Lesson < Erector::Widget
       br
       text display_name
     }
+    next_and_previous
 
     if extras?
       div.extras {
@@ -87,6 +84,8 @@ class Lesson < Erector::Widget
         rawtext s
       end
     }
+
+    br
 
     div.main_column {
       slides.each do |slide|

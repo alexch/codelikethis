@@ -137,6 +137,9 @@ div.blog .rssHeader > a:after {
     z-index: 1000; // why?
     padding-top: 1rem;
   }
+  a[name=content] {
+    top: $topbar-height;
+  }
 }
 
 #sidebar-courses, #right-sidebar > .outline > .list-group {
