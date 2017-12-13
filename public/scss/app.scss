@@ -36,15 +36,6 @@ main {
   }
 }
 
-// this hocus-pocus is to correct for anchor links scrolling to underneath the page header
-a.slide-anchor {
-  display: block;
-  position: relative;
-  visibility: hidden;
-  height: 0;
-  top: -$topbar-height;
-}
-
 section.slide {
   padding: 1em;
   margin-bottom: 2em;
@@ -52,7 +43,7 @@ section.slide {
   border: 1px solid black;
 
   h1, > h2:first-child {
-    font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
+    text-decoration: lightblue underline;
   }
   > h2:first-child {
     margin: 2px 0 2px -4px;
@@ -137,8 +128,19 @@ div.blog .rssHeader > a:after {
     z-index: 1000; // why?
     padding-top: 1rem;
   }
+
+  // this hocus-pocus is to correct for anchor links scrolling to underneath the page header
   a[name=content] {
-    top: $topbar-height;
+    display: block;
+    position: relative;
+    height: $topbar-height;
+  }
+  a.slide-anchor {
+    display: block;
+    position: relative;
+    visibility: hidden;
+    height: 0;
+    top: -$topbar-height;
   }
 }
 
@@ -163,7 +165,6 @@ div.next_and_previous {
   display: block;
   font-size: 80%;
   font-weight: bold;
-  font-family: 'Helvetica Neue', Helvetica, Arial, Sans;
   font-style: italic;
 
   a.next_lesson {

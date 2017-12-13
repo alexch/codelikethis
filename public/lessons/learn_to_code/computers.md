@@ -43,7 +43,7 @@
 
 * From now on, whenever you see text in the `code font`, try typing it into irb and see what happens!
 
-# {JavaScript} node - the Interactive JavaScript Executor
+# node - the Interactive JavaScript Executor
 
 ## Exercise: Calculator
 
