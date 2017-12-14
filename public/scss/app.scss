@@ -4,17 +4,35 @@
 @import "mixins";
 
 $topbar-height: 75px;
-$footer-bg: #f8f9fa; // todo: load bootstrap scss and use their light-bg var
+
+$title-font: 'Museo500Regular', 'Open Sans', Helvetica, Arial, sans-serif;
+$navbar-font: 'Raleway', Helvetica, Arial, sans-serif;
+$body-font: 'Open Sans', Helvetica, Arial, sans-serif;
 
 body {
-  padding-top: $topbar-height; // to skip the fixed nav bar
-  font-family: 'Museo500Regular', 'Arial', 'Sans';
+  font-family: $body-font;
+  font-weight: normal;
+  font-size: 1rem;
   text-rendering: optimizelegibility;
-  background-color: $footer-bg; // to avoid a big white area at the bottom
+
+  padding-top: $topbar-height; // to skip the fixed nav bar
 }
 
 nav.navbar {
   background: white;
+
+  font-family: $navbar-font;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+
+  a {
+    padding-left: 17px;
+    padding-right: 17px;
+    letter-spacing: 1px;
+    zoom: 1;
+  }
+
   min-height: $topbar-height;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -26,6 +44,13 @@ nav.navbar {
       vertical-align: middle;
     }
   }
+
+  li.nav-item {
+    &.bordered {
+      border: 1px solid black;
+      border-radius: .25rem;
+    }
+  }
 }
 
 main {
@@ -33,6 +58,9 @@ main {
   max-width: 80em;
   center.logo {
     padding: 1rem;
+  }
+  h1,h2,h3,h4,h5 {
+    font-family: $title-font;
   }
 }
 
@@ -46,9 +74,8 @@ section.slide {
     text-decoration: lightblue underline;
   }
   > h2:first-child {
-    margin: 2px 0 2px -4px;
-    font-size: 2em;
-    text-shadow: #ddd 0.1em 0.1em 0.1em;
+    margin: 2px 0 8px -4px;
+    font-size: 2rem;
   }
   > h1 {
     font-size: 3em;
@@ -180,10 +207,6 @@ div.next_and_previous {
   }
 }
 
-div.footer {
-  clear: both;
-}
-
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em;
@@ -194,6 +217,7 @@ div.main_column img {
 }
 
 .footer {
-  padding: 1rem;
-  background-color: $footer-bg;
+  clear: both;
+  padding: 2rem;
+  border-top: 1px solid #EEEEEE;
 }

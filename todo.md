@@ -9,6 +9,22 @@
 [ ] rerun on windows
 [ ] track students progress
 
+# benny
+
+header font: Raleway (free Google Font) black, allcaps
+header white 
+header link spacing (padding: 0 17px)
+remove hamburger border
+Open Sans slide text
+experiment with sidebar font - Open Sans or the current one
+make "Courses" menu a popup on mobile
+remove Lessons and Labs
+put "Learn" in a box -- maybe rename "Code Like This"
+change "Code like this." logo to a font, not PNG
+footer sucks
+Open Sans normal 20px lineheight 34px
+  14px 24px 
+
 # slides
 
 * needs "next deck" button not just next slide

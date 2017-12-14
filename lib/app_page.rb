@@ -19,8 +19,12 @@ class AppPage < Erector::Widgets::Page
   end
 
   # todo: promote into Page
-  def font font_name
-    link rel: "stylesheet", href: "/#{font_name}.css", type: "text/css", charset: "utf-8"
+  # font_name: if nil, use href param
+  # href: if nil or default, use local path /name.css
+  def font name: nil, href: nil
+    raise "name or href param required" unless (name or href)
+    href ||= "/#{name}.css"
+    link rel: "stylesheet", href: href, type: "text/css", charset: "utf-8"
   end
 
   # todo: promote into Page
@@ -48,7 +52,9 @@ class AppPage < Erector::Widgets::Page
                integrity: "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb",
                crossorigin: "anonymous"
 
-    font "Museo500"
+    font name: "Museo500"
+    font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
+
     stylesheet name: "coderay"
 
     # load this application's CSS from /stylesheets/app.css
@@ -81,14 +87,14 @@ class AppPage < Erector::Widgets::Page
   end
 
   def navbar_content
-    nav class: 'navbar navbar-expand-md fixed-top navbar-light bg-light' do
+    nav class: 'navbar navbar-expand-md fixed-top navbar-light' do
 
       div(class: 'navbar-left navbar-brand') {
         logo
       }
 
-      # hamburger button
-      button(:class => 'navbar-toggler navbar-right navbar-toggler-right',
+      # hamburger button for top navbar
+      button(:class => 'navbar-toggler navbar-right navbar-toggler-right border-0',
              :type => 'button',
              'data-toggle' => 'collapse',
              'data-target' => '#pageNavbar',
@@ -124,8 +130,11 @@ class AppPage < Erector::Widgets::Page
   # end
 
   # render a single nav item (an `li` with class `nav-item`)
-  def nav_item name: 'Item', href: '#', active: false, disabled: false
-    li_css_classes = ['nav-item', ('active' if active), ('disabled' if disabled)]
+  def nav_item name: 'Item', href: '#', active: false, disabled: false, bordered: false
+    li_css_classes = ['nav-item',
+                      ('active' if active),
+                      ('disabled' if disabled),
+                      ('bordered' if bordered)]
     li class: li_css_classes do
       a class: 'nav-link', href: href do
         text name
@@ -144,8 +153,12 @@ class AppPage < Erector::Widgets::Page
     text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2017 by "
     a "Alex Chaffee.", href: "http://alexchaffee.com"
     br
+
     rawtext <<-HTML
-    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Code Like This"</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://codelikethis.com" property="cc:attributionName" rel="cc:attributionURL">Alex Chaffee</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Code Like This"</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://codelikethis.com" property="cc:attributionName" rel="cc:attributionURL">Alex Chaffee</a> 
+    <br/>
+    is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />
     HTML
     br style: "clear:both"
     br
@@ -181,17 +194,17 @@ class AppPage < Erector::Widgets::Page
 
   def navbar_items
     # nav_item name: "Blog", href: "http://codelikethis.tumblr.com"
+    nav_item name: "Home", href: "http://www.burlingtoncodeacademy.com/"
     nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
-    nav_item name: "Learn", href: "/"
     nav_item name: "News", href: "http://www.burlingtoncodeacademy.com/news/"
     nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/"
 
-    nav_item name: "Lessons", href: "/lessons"
-    nav_item name: "Labs", href: "http://testfirst.org/live"
+    nav_item name: "Code Like This", href: "/", bordered: true
 
+    # nav_item name: "Lessons", href: "/lessons"
+    # nav_item name: "Labs", href: "http://testfirst.org/live"
     # nav_item name: "Test First", href: "http://testfirst.org/"
     # nav_item name: "Alex", href: "http://alexchaffee.com"
-    # widget DonateButton
   end
 
   require 'util'
@@ -242,7 +255,7 @@ class AppPage < Erector::Widgets::Page
       }
     }
 
-    center.footer(class: ['footer', 'navbar-light', 'bg-light']) {
+    center.footer(class: ['footer', 'navbar-light']) {
       footer_content
     }
 
