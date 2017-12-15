@@ -12,15 +12,7 @@ RSpec::Core::RakeTask.new do |task|
   task.verbose = false
 end
 
-desc "build app"
-task :build do
-  public_dir = "public"
-  css_dir = File.join public_dir, "stylesheets"
-  sass_dir = File.join public_dir, "scss"
-  images_dir = File.join public_dir, "images"
-  javascripts_dir = File.join public_dir, "js"
-  bootstrap_dir = File.join sass_dir, "bootstrap-4.0.0-beta.2/scss"
-
+task :copy_deck do
   puts "Copying Deck.rb..."
   gems_dir = "gems"
   deckrb_dir = "../deck.rb"
@@ -28,6 +20,15 @@ task :build do
   FileUtils.rm_rf File.join(gems_dir, "deck.rb", ".git")
   FileUtils.rm_rf File.join(gems_dir, "deck.rb", "pkg")
   FileUtils.rm_rf File.join(gems_dir, "deck.rb", ".idea")
+end
+
+task :build_css do
+  public_dir = "public"
+  css_dir = File.join public_dir, "stylesheets"
+  sass_dir = File.join public_dir, "scss"
+  images_dir = File.join public_dir, "images"
+  javascripts_dir = File.join public_dir, "js"
+  bootstrap_dir = File.join sass_dir, "bootstrap-4.0.0-beta.2/scss"
 
   puts "Building CSS..."
   sh(["sass",
@@ -36,8 +37,11 @@ task :build do
       "--line-comments", # creates a .map file
       File.join(sass_dir, "app.scss"),
       File.join(css_dir, "app.css"),
-      ].join(" "))
+     ].join(" "))
+end
 
+desc "build app"
+task :build => [:copy_deck, :build_css] do
   puts "Built."
 end
 

@@ -2,15 +2,6 @@ require 'erector'
 
 class CoursesSidebar < Erector::Widget
 
-  external :style, <<-CSS
-  #sidebar .active {
-    background-color: #EEF;
-  }
-#sidebar a {
-  color: black;
-}
-  CSS
-
   needs :courses, :current
 
   def current_course
@@ -26,11 +17,32 @@ class CoursesSidebar < Erector::Widget
   end
 
   def content
-    h3 "Courses"
-    div(id: html_id) {
-      @courses.each do |course|
-        course_row(course)
-      end
+    div(class: 'row justify-content-between') {
+      div(class: 'col-8') {
+        h3 "Courses"
+      }
+      div(class: 'col-4') {
+        # hamburger button for courses
+        button(:class => 'courses-toggler btn border-0 collapsed',
+               :type => 'button',
+
+               'data-toggle' => 'collapse',
+               'data-target' => "##{html_id}",
+
+               'aria-expanded' => 'false',
+               'aria-label' => 'Toggle navigation'
+        ) {
+          span :class => 'svg-icon'
+        }
+      }
+    }
+
+    div(id: html_id, class: 'collapse') {
+      div(id: "#{html_id}-courses") {
+        @courses.each do |course|
+          course_row(course)
+        end
+      }
     }
   end
 
@@ -39,7 +51,7 @@ class CoursesSidebar < Erector::Widget
   end
 
   def course_row(course)
-    classes = ['list-group-item', ('active' if current_course == course)]
+    classes = ['list-group-item', ('active show' if current_course == course)]
 
     div(class: classes) {
       lessons_id = "sidebar-#{course.name}-lessons"
@@ -48,7 +60,7 @@ class CoursesSidebar < Erector::Widget
         href: "##{lessons_id}",
         'data-toggle': 'collapse',
         'data-target': "##{lessons_id}",
-        'data-parent': html_id
+        'data-parent': "##{html_id}-courses"
 
       # button "lessons",
       #        class: 'btn',
@@ -68,8 +80,7 @@ class CoursesSidebar < Erector::Widget
       #        # 'aria-controls': '???'
 
       div(class: ['collapse', ('show' if course.lessons.include?(@current))],
-        id: lessons_id,
-        'data-parent': "##{html_id}") {
+          id: lessons_id) {
         div(class: 'list-group') {
           course.current = @current
           widget course, {}, :content_method_name => :list_lessons
@@ -81,14 +92,14 @@ class CoursesSidebar < Erector::Widget
       # }
     }
 
-    script raw(<<-JS)
-    // when a collapsible is shown
-    $('#sidebar .collapse').on('show.bs.collapse', function() {
-      console.log("hello!");
-      // then hide all currently shown
-      $('#sidebar .collapse.show').collapse('hide');
-    });
-    JS
+    # script raw(<<-JS)
+    # // when a collapsible is shown
+    # $('#sidebar .collapse').on('show.bs.collapse', function() {
+    #   console.log("hello!");
+    #   // then hide all currently shown
+    #   $('#sidebar .collapse.show').collapse('hide');
+    # });
+    # JS
   end
 
 end

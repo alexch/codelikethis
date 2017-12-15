@@ -144,6 +144,55 @@ div.blog .rssHeader > a:after {
   content: ' - Recent Blog Entries'
 }
 
+/* left sidebar ("Courses") */
+$triangle-pointing-right: str-replace(str-replace(
+                            url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><polygon points='1,1 1,30 30,15 1,1' style='fill:gray;stroke:black;stroke-width:1' /></svg>"),
+                          "<", "%3C"), ">", "%3E");
+$triangle-pointing-down: str-replace(str-replace(
+                            url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><polygon points='1,1 30,1 15,30 1,1' style='fill:gray;stroke:black;stroke-width:1' /></svg>"),
+                          "<", "%3C"), ">", "%3E");
+
+.courses-toggler {
+  @include media-breakpoint-up('md') {
+    display: none;
+  }
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background: 0 0;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  span.svg-icon {
+    background-image: $triangle-pointing-down;
+  }
+  &.collapsed span.svg-icon {
+    background-image: $triangle-pointing-right;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #sidebar > row:first-child {
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+
+
+span.svg-icon {
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  vertical-align: middle;
+  content: "";
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
 /* make the sidebars scrolly and fixed on bigger screens */
 @include media-breakpoint-up(md) {
   #sidebar, #right-sidebar {
@@ -171,10 +220,31 @@ div.blog .rssHeader > a:after {
   }
 }
 
+#sidebar-courses {
+  // show it by default on wider screens
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  // underline the title-plus-toggle-button on small screens
+  #sidebar {
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+  }
+}
+
 #sidebar-courses, #right-sidebar > .outline > .list-group {
   font-size: 85%;
   .list-group-item {
     padding: .4rem 0 .4rem 1rem;
+  }
+  .active {
+    background-color: #EEF;
+  }
+  a {
+    color: black;
   }
 }
 
