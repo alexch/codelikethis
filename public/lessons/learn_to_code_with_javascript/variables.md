@@ -5,17 +5,19 @@
     * It looks like an equal sign but is *not* a comparison.
     * often preceded by `let` as in "Let there be light" or "Let X equal 10".
 
-
-    @@@ js
-    let color = "blue"
-    let fruit = "berry"
+```js
+@@@ js
+let color = "blue"
+let fruit = "berry"
+```
 
 * Anywhere you would use a literal value, you can use a variable instead.
 
-
-    @@@ js
-    color + fruit       // "blueberry"
-    fruit.toUpperCase() // "BERRY"
+```js
+@@@ js
+color + fruit       // "blueberry"
+fruit.toUpperCase() // "BERRY"
+```
 
 # Let there be confusion
 
