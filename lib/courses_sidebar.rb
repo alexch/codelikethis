@@ -51,7 +51,10 @@ class CoursesSidebar < Erector::Widget
   end
 
   def course_row(course)
-    classes = ['list-group-item', ('show' if current_course == course)]
+    classes = ['list-group-item',
+               'course-name',
+               ('active' if current_course == course),
+    ]
 
     div(class: classes) {
       lessons_id = "sidebar-#{course.name}-lessons"
@@ -81,7 +84,7 @@ class CoursesSidebar < Erector::Widget
 
       div(class: ['collapse', ('show' if course.lessons.include?(@current))],
           id: lessons_id) {
-        div(class: 'list-group') {
+        div(class: ['list-group', 'lesson-names']) {
           course.current = @current
           widget course, {}, :content_method_name => :list_lessons
         }

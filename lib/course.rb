@@ -69,7 +69,7 @@ class Course < Erector::Widget
     options = options.dup
     element_name = options.delete(:element) || 'li'
     items.each do |item|
-      div(class: ['list-group-item', ('active' if @current == item)]) {
+      div(class: ['list-group-item',  'border-0', ('active' if @current == item)]) {
         item_name = item.display_name
         item_name = "Lab: #{item_name}" if item.is_a? Lab
         a href: "#{item.href}#content" do
