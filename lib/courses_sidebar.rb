@@ -4,6 +4,17 @@ class CoursesSidebar < Erector::Widget
 
   needs :courses, :current
 
+  external :script, (<<-JS)
+  $(document).ready(function() {
+    $('#sidebar a').click(function(eventObject) {
+      console.log($(this));
+      console.log($(this).find('.loading_image'));
+      $(this).find('.loading_image').css('display', 'inline-block');
+      return true; // propagate event
+    });
+  });
+  JS
+
   def current_course
     if @current.is_a?(Course)
       @current
@@ -95,7 +106,6 @@ class CoursesSidebar < Erector::Widget
       # }
     }
 
-    # script raw(<<-JS)
     # // when a collapsible is shown
     # $('#sidebar .collapse').on('show.bs.collapse', function() {
     #   console.log("hello!");

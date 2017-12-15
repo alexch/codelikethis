@@ -232,49 +232,59 @@ span.svg-icon {
     #sidebar-courses .list-group.lesson-names .list-group-item, #right-sidebar > .outline > .list-group .list-group.lesson-names .list-group-item {
       padding: .4rem 0 .4rem 1.8rem;
       margin: 0 -1rem; }
-  /* line 256, ../scss/app.scss */
+    /* line 255, ../scss/app.scss */
+    #sidebar-courses .list-group.lesson-names .loading_image, #right-sidebar > .outline > .list-group .list-group.lesson-names .loading_image {
+      background-image: url(/images/loading.gif);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      height: 18px;
+      width: 18px;
+      float: right;
+      display: none; }
+  /* line 269, ../scss/app.scss */
   #sidebar-courses .active, #right-sidebar > .outline > .list-group .active {
     background-color: #EEF; }
-  /* line 259, ../scss/app.scss */
+  /* line 272, ../scss/app.scss */
   #sidebar-courses a, #right-sidebar > .outline > .list-group a {
     color: black;
     display: inline-block;
     width: 100%; }
 
-/* line 266, ../scss/app.scss */
+/* line 279, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
-  /* line 268, ../scss/app.scss */
+  /* line 281, ../scss/app.scss */
   h1.lesson-name span.course-name {
     font-size: 60%; }
 
-/* line 273, ../scss/app.scss */
+/* line 286, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 280, ../scss/app.scss */
+  /* line 293, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 286, ../scss/app.scss */
+  /* line 299, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 292, ../scss/app.scss */
+  /* line 305, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 297, ../scss/app.scss */
+/* line 310, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 302, ../scss/app.scss */
+/* line 315, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 306, ../scss/app.scss */
+/* line 319, ../scss/app.scss */
 .footer {
   clear: both;
   padding: 2rem;

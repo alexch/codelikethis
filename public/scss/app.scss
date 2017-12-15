@@ -251,6 +251,19 @@ span.svg-icon {
       padding: .4rem 0 .4rem 1.8rem;
       margin: 0 -1rem;
     }
+
+    .loading_image {
+      background-image: url(/images/loading.gif);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      height: 18px;
+      width: 18px;
+      float: right;
+
+      display: none; // start off invisible
+    }
   }
 
   .active {

@@ -72,8 +72,14 @@ class Course < Erector::Widget
       div(class: ['list-group-item',  'border-0', ('active' if @current == item)]) {
         item_name = item.display_name
         item_name = "Lab: #{item_name}" if item.is_a? Lab
-        a href: "#{item.href}#content" do
+        href = if @current == item
+                 "#content"
+               else
+                 "#{item.href}#content"
+               end
+        a href: href do
           text item_name
+          span.loading_image unless @current == item
           span.video_link "Video" if item.respond_to? :video? and item.video?
         end
       }
