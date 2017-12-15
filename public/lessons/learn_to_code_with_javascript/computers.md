@@ -40,11 +40,11 @@ from WarGames, (1983)
 * type `1 + 1`
 * press the `return` key again
 * see the `2`
-* yay, a $1000 calculator!
+* Yay! Your computer is an expensive calculator!
 
 * Bonus: what other math can you do?
 
-* From now on, whenever you see text in the `code font`, try typing it into irb and see what happens!
+* From now on, whenever you see text in the `code font`, try typing it into node and see what happens!
 
 # Computer Anatomy
 
