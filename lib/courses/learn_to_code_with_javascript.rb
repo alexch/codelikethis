@@ -9,7 +9,7 @@ class Course
     lesson "strings"
     lesson "numbers"
 
-    # lesson "variables"
+    lesson "variables"
 
     # lesson "null"
     # lesson "the_command_line"

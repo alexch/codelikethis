@@ -37,7 +37,7 @@ or this:
     seconds_per_minute = 60
     minutes_per_hour = 60
     hours_per_day = 24
-    seconds_per_day = seconds_per_minute * minutes_per_day * hours_per_day
+    seconds_per_day = seconds_per_minute * minutes_per_hour * hours_per_day
 
 ?
 
@@ -73,6 +73,8 @@ You can assign and reassign variables at will.
     
 Changing a variable (using ASSIGNMENT) just changes the name of an object. It does *not* change the data inside the object.
 
+This is analogous to a label being removed from one box and placed on a different box.
+
 # Many pointers can point to the same thing
 
     fruit = "Apple"
@@ -84,6 +86,8 @@ After this both `snack` and `fruit`...
 
   * are *pointing* to the same *object*
   * have the same *value*
+
+This is analogous to two labels being placed on the same box.
 
 # Return values are new
 
@@ -109,4 +113,11 @@ But some messages do change the data!
     color
 
 This can be dangerous so sometimes those messages end with a BANG (exclamation point).
+
+# Variables summary
+
+* variables are names for objects
+* you can change which object a variable points to
+* you can have many names for the same object
+* sometimes values can change inside an object but the names (variables) stay the same
 
