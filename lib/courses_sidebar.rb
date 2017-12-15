@@ -51,7 +51,7 @@ class CoursesSidebar < Erector::Widget
   end
 
   def course_row(course)
-    classes = ['list-group-item', ('active show' if current_course == course)]
+    classes = ['list-group-item', ('show' if current_course == course)]
 
     div(class: classes) {
       lessons_id = "sidebar-#{course.name}-lessons"

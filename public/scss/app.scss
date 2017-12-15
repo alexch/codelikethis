@@ -3,6 +3,8 @@
 @import "variables";
 @import "mixins";
 
+@import "tables";
+
 $topbar-height: 75px;
 
 $title-font: 'Museo500Regular', 'Open Sans', Helvetica, Arial, sans-serif;
@@ -49,6 +51,14 @@ nav.navbar {
     &.bordered {
       border: 1px solid black;
       border-radius: .25rem;
+    }
+  }
+
+  #pageNavbar {
+    @include media-breakpoint-down(sm) {
+      // show a border when it pops up on small screens
+      padding-bottom: 1rem;
+      border-bottom: 1px solid lightgray;
     }
   }
 }
@@ -173,14 +183,6 @@ $triangle-pointing-down: str-replace(str-replace(
   }
 }
 
-@include media-breakpoint-down(sm) {
-  #sidebar > row:first-child {
-    border-bottom: 1px solid lightgray;
-  }
-}
-
-
-
 span.svg-icon {
   display: inline-block;
   width: 0.75em;
@@ -232,6 +234,9 @@ span.svg-icon {
   #sidebar {
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray;
+    h1,h2,h3,h4 {
+      margin: 2px 0;
+    }
   }
 }
 
@@ -257,8 +262,6 @@ h1.lesson-name {
 
 div.next_and_previous {
   margin: 2px;
-  border: 1px dotted gray;
-  background-color: $light;
   display: block;
   font-size: 80%;
   font-weight: bold;
@@ -274,6 +277,10 @@ div.next_and_previous {
     float: left;
     // text-align: left;
     //   margin-left: -1em;
+  }
+
+  a {
+    color: black;
   }
 }
 
