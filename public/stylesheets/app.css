@@ -241,50 +241,51 @@ span.svg-icon {
       height: 18px;
       width: 18px;
       float: right;
+      margin: 0 2px;
       display: none; }
-  /* line 269, ../scss/app.scss */
+  /* line 270, ../scss/app.scss */
   #sidebar-courses .active, #right-sidebar > .outline > .list-group .active {
     background-color: #EEF; }
-  /* line 272, ../scss/app.scss */
+  /* line 273, ../scss/app.scss */
   #sidebar-courses a, #right-sidebar > .outline > .list-group a {
     color: black;
     display: inline-block;
     width: 100%; }
 
-/* line 279, ../scss/app.scss */
+/* line 280, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
-  /* line 281, ../scss/app.scss */
+  /* line 282, ../scss/app.scss */
   h1.lesson-name span.course-name {
     font-size: 60%; }
 
-/* line 286, ../scss/app.scss */
+/* line 287, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 293, ../scss/app.scss */
+  /* line 294, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 299, ../scss/app.scss */
+  /* line 300, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 305, ../scss/app.scss */
+  /* line 306, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 310, ../scss/app.scss */
+/* line 311, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 315, ../scss/app.scss */
+/* line 316, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 319, ../scss/app.scss */
+/* line 320, ../scss/app.scss */
 .footer {
   clear: both;
   padding: 2rem;
