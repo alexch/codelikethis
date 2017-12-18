@@ -1,7 +1,8 @@
 require "course"
 
 class Course
-  LearnToCodeWithJavascript = Course.new("learn_to_code_with_javascript", display_name: "Learn to Code with JavaScript") do
+  LearnToCodeWithJavascript = Course.new("learn_to_code_with_javascript",
+                                         display_name: "Learn to Code with JavaScript") do
     lesson "intro"
     lesson "computers"
     lesson "values"
@@ -10,10 +11,11 @@ class Course
     lesson "numbers"
 
     lesson "variables"
+    lesson "null"
 
-    # lesson "null"
-    # lesson "the_command_line"
+    lesson "the_command_line"
     # lesson "input_and_output"
+
     # lesson "logic"
     # lesson "loops"
     # lesson "arrays"
