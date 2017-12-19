@@ -16,8 +16,10 @@
     
     * Reading a line in NodeJS is weird; here's one way to do it
     
-        @@@ js
-        process.stdin.on('data', (chunk) => { console.log(chunk); })
+```
+@@@ js
+process.stdin.on('data', (chunk) => { console.log(chunk); })
+```
 
 # LAB: Hello, friend!
 
