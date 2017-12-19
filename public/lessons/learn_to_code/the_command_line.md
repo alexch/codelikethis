@@ -1,7 +1,7 @@
 # The Command Line
 
 * the TERMINAL is a window into which you can talk directly to your computer
-  * aka *console* or *command line* or *command prompt*
+  * aka *console* or *command line* or *command prompt* or *shell*
 * very low level, based entirely on text and typing, not graphics and mousing
 * when you type into the terminal, you are always issuing COMMANDS
   * which is why it's called the Command Line

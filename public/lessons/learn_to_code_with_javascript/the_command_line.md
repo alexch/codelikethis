@@ -1,7 +1,7 @@
 # The Command Line
 
 * the **TERMINAL** is a window into which you can talk directly to your computer
-  * aka *console* or *command line* or *command prompt*
+  * aka *console* or *command line* or *command prompt* or *shell*
 * very low level, based entirely on text and typing, not graphics and mousing
 * when you type into the terminal, you are always issuing **COMMANDS**
   * which is why it's called the Command Line
@@ -46,8 +46,9 @@
 # Changing directories
 
 * `cd` ("change dir") moves you into a different directory
-* For example, `cd code` would move you into a directory named `code`
+* For example, `cd code` would move you into a subdirectory named `code`
 * If you ever get lost, type `cd` all on its own and press the return key. This will send you back to your home directory.
+  * (unix shell only, not Windows)
 
 # Basic Command Line Glossary
 
@@ -55,7 +56,6 @@
 * `ls` ("list") -- shows the contents of the current directory
 * `mkdir` ("make dir") -- creates a new SUBDIRECTORY inside the current directory
 * `cd` ("change dir") -- move into a different directory
-* `touch whatever.txt` -- creates an empty file named `whatever.txt` inside the current directory
 
 *These apply to Unix shells, but most work in Windows too*
 
@@ -106,4 +106,8 @@
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?
+
+# Side Trip
+
+* this might be a good time to learn about `git` and version control
 
