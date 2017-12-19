@@ -21,7 +21,7 @@
 process.stdin.on('data', (chunk) => { console.log(chunk) })
 ```
 
-# node load code, unpacked
+# node load code, decoded
 
 ```
 @@@ js
@@ -150,7 +150,7 @@ NodeJS programs are written using *events*, which is like a bunch of cooks, each
 * when 20 minutes have elapsed, remove baking sheet from oven
 * when cookies are cool, decorate each cookie
 
-Evented programs are often a more flexible and high-performance than traditional sequenced programs, but they can be more confusing for humans to write and to read (and to debug!).
+Evented programs are often more flexible and high-performance than traditional sequenced programs, but they can be more confusing for humans to write and to read (and to debug!).
 
 Also, sequences naturally *end* when they are finished, but evented programs will just keep doing the same things over and over again, as long as the triggers keep happening. 
 
@@ -160,7 +160,7 @@ If you have a simple sequence in mind, and want to emulate it using an evented s
 
 Set up your event responders to happen only once.
 
-In NodeJS, this is accomplished by sending the `once` method in place of the `on` method.
+In NodeJS, this is accomplished by sending the `once` message in place of the `on` message.
 
     @@@ js
     console.log("What is your name?");
@@ -196,9 +196,9 @@ You are now officially a coder. HIGH FIVE!
         Hello, Grace Hopper! 
         Your name is 11 characters long.
 
-# Lab: Infinite Names
+<!-- wait until after "logic" cause this needs an if # Lab: Infinite Names
 
 * Change `name.js` so it keeps asking for names forever...
   * ...unless and until someone says their name is "bye!"
   * then it stops and exits back to the terminal
-
+-->
