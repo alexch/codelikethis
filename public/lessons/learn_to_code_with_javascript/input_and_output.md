@@ -123,8 +123,8 @@ This is a very big topic, but briefly...
 Traditional programs are written using *sequences*, which are performed in order like a traditional recipe, performed by a single chef:
 
 0. preheat oven to 350&deg;
-1. roll out batter on baking sheet
-2. cut out cookies and remove excess batter
+1. roll out dough on baking sheet
+2. cut out cookies and remove excess dough
 3. put baking sheet in the oven
 4. wait 20 minutes and remove baking sheet from oven
 5. place cookies on a tray and wait 10 more minutes for cookies to cool
