@@ -21,7 +21,7 @@
 process.stdin.on('data', (chunk) => { console.log(chunk) })
 ```
 
-# Unpacking the code
+# node load code, unpacked
 
 ```
 @@@ js
@@ -30,12 +30,12 @@ process.stdin.on('data', (chunk) => { console.log(chunk) })
 
 |phrase|meaning|
 |---|---|
-| `process.stdin` | terminal input |
-| `.on('data'`    | when you give me data |
-| `(chunk)`       | name it `chunk` |
-| ` => `          | and send it to |
-| ` {  }`         | this block of code |
-| `console.log(chunk)` | print `chunk` to the terminal |
+| `process.stdin`        | hey terminal input, |
+| `.on('data'` ... `)`   | when you get some data, |
+| `(chunk)`              | please name it `chunk` |
+| ` => `                 | and send it to |
+| ` { ` ... ` }`         | this block of code |
+| `console.log(chunk)`   | print `chunk` to the terminal |
 
 # LAB: Hello, friend!
 
