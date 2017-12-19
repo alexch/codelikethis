@@ -18,8 +18,24 @@
     
 ```
 @@@ js
-process.stdin.on('data', (chunk) => { console.log(chunk); })
+process.stdin.on('data', (chunk) => { ... })
 ```
+
+# Unpacking the line reading code
+
+```
+@@@ js
+process.stdin.on('data', (chunk) => { console.log(chunk) })
+```
+
+|phrase|meaning|
+|---|---|
+| `process.stdin` | terminal input |
+| `.on('data'`    | when you give me data |
+| `(chunk)`       | name it `chunk` |
+| ` => `          | and send it to |
+| ` {  }`         | this block of code |
+| `console.log(chunk)` | print `chunk` to the terminal |
 
 # LAB: Hello, friend!
 
