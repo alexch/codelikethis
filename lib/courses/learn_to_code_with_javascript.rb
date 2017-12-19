@@ -14,18 +14,22 @@ class Course
     lesson "null"
 
     lesson "the_command_line"
-    # lesson "input_and_output"
+    lesson "input_and_output"  # see also https://code-maven.com/reading-a-file-with-nodejs
 
     # lesson "logic"
     # lesson "loops"
     # lesson "arrays"
-    # lesson "argv"
-    # lesson "hashes"
-    # lesson "functions"
-    # lesson "sinatra"
+    # lesson "argv"   # https://code-maven.com/argv-raw-command-line-arguments-in-nodejs
+
+    # lesson "functions"  # this needs to lead up to nodejs callbacks
+
+    # lesson "hashes"  # aka objects
+    # lesson "methods"
+
+    # lesson "express"
+
     # lesson "extra"
     # lesson "next_steps"
-    # lesson "methods"
     # lesson "classes"
   end
 end
