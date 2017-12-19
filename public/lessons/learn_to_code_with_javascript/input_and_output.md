@@ -1,8 +1,8 @@
 # Input and Output
 
-* Computers have many senses -- keyboard, mouse, network card, digital camera, etc. Collectively, these are called INPUT.
+* Computers have many senses -- keyboard, mouse, network card, camera, joystick, etc. Collectively, these are called INPUT.
 
-* Computers can also express themselves in many ways -- text, graphics, sound, network, printers, etc. Collectively, these are called OUTPUT.
+* Computers can also express themselves in many ways -- text, graphics, sound, networking, printing, etc. Collectively, these are called OUTPUT.
 
 * Input and Output together are called **I/O**.
 
@@ -90,7 +90,7 @@ What happens? Is this what you expected?
 * What happens if you type your name in all lowercase?
 * Make the program capitalize your name for you even if you forget.
 
-(**Hint**: remember `slice` ?)
+**Hint**: remember `slice` ?
 
 # LAB: Crazy Name
 
