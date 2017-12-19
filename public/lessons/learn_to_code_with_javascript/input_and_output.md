@@ -31,7 +31,7 @@ process.stdin.on('data', (chunk) => { console.log(chunk) })
 |phrase|meaning|
 |---|---|
 | `process.stdin`        | hey terminal input, |
-| `.on('data'` ... `)`   | when you get some data, |
+| `.on('data',` ... `)`  | when you get some data, |
 | `(chunk)`              | please name it `chunk` |
 | ` => `                 | and send it to |
 | ` { ` ... ` }`         | this block of code |
