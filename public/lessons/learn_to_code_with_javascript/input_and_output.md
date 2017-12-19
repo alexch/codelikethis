@@ -18,10 +18,10 @@
     
 ```
 @@@ js
-process.stdin.on('data', (chunk) => { ... })
+process.stdin.on('data', (chunk) => { console.log(chunk) })
 ```
 
-# Unpacking the line reading code
+# Unpacking the code
 
 ```
 @@@ js
