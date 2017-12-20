@@ -23,10 +23,11 @@ fruit.toUpperCase() // "BERRY"
 
 * `let` is just one way to declare a variable in JavaScript
 * `var` is a lot like `let` but has wider *scope* which is sometimes bad
-* if you don't use either `let` or `var` then the variable becomes *global* which is usually bad
+* If you don't use either `let` or `var` then the variable becomes *global* (which is dangerous)
 * Moral: *always use let* unless you have a good reason not to
   * but only use it once per variable name
-  
+  * in node, if you see this error then try again without the `let`
+
 ```js
 @@@js
 > let x = 1
@@ -36,6 +37,8 @@ SyntaxError: Identifier 'x' has already been declared
 > x = x + 2
 4
 ```
+
+* also confusing: the value of a `let` is `undefined`, but the value of a normal assignment is the value being assigned
 
 # The Warehouse Metaphor
 
@@ -73,9 +76,9 @@ or this:
 
 Let's spend a few minutes just playing around in node. Some things to try:
 
+* assign your birth year to a variable, then calculate your current age
 * write a poem and put it in a variable
 * YELL THE POEM
-* calculate 2 + 2 and more complicated things
 * assign your best friend to a variable
 * yell your best friend's name
 * get a new best friend and yell her name too
@@ -86,9 +89,7 @@ Let's spend a few minutes just playing around in node. Some things to try:
 
 ![snack-apple](snack-apple.svg)
 
-Think of a variable as an arrow **pointing** to an object.
-
-(Here "object" means generally "a location in memory" not necessarily a JavaScript "object" which we will get to shortly.)
+Think of a variable as an arrow **pointing** to a value.
 
 # Changing Variables
 
@@ -106,7 +107,9 @@ color + fruit           // 'blackberry'
 
 Changing a variable (using ASSIGNMENT) just changes the name of an object. It does *not* change the data inside the object.
 
-This is analogous to a label being removed from one box and placed on a different box.
+This is analogous to removing a label from one box and placing it on a different box.
+
+**Tip:** Did you get an `Identifier 'color' has already been declared` error? Try again without the `let`, or exit and relaunch `node`.
 
 # Many pointers can point to the same thing
 
@@ -121,7 +124,7 @@ After this both `snack` and `fruit`...
   * are *pointing* to the same *object*
   * have the same *value*
 
-This is analogous to two labels being placed on the same box.
+This is analogous to placing two labels on the same box.
 
 # Return values are new
 
@@ -147,18 +150,33 @@ This is true for all strings, since strings in JavaScript are *immutable*. Any m
 
 But some messages to some objects **do** change the contents!
 
+# Changing Values Example
+
+Let's say we have a friend named Joe and his birthday is Independence Day, 1990.
+
 ```js
 @@@ js
-let a_day_in_1990 = new Date(1990, 2, 4)
-let joes_birthday = a_day_in_1990
+let independence_day_1990 = new Date(1990, 6, 4)
+independence_day_1990.toDateString()    // 'Wed Jul 04 1990'
+let joes_birthday = independence_day_1990
+```
 
-// then we learn that Joe is younger than we thought
-joes_birthday.setYear(1999)
-joes_birthday.toDateString()     // 'Thu Mar 04 1999'
+Then we learn that Joe's birthday is actually Bastille Day. No problem, we'll just tweak the variable.
 
-// but what happened to the original date?
-a_day_in_1990.toDateString()     // 'Thu Mar 04 1999' -- oops?
-```    
+```js
+@@@ js
+joes_birthday.setDate(14)
+joes_birthday.toDateString()            // 'Sat Jul 14 1990'
+```
+
+But what happened to the original date?
+
+```js
+@@@ js
+independence_day_1990.toDateString()    // 'Sat Jul 14 1990'
+```
+
+Oops! Our program now thinks Independence Day 1990 was on July 14.
 
 # Summary: Variables
 
