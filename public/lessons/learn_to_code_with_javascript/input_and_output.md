@@ -15,7 +15,7 @@
     * `process.stdin` means "input coming from the terminal"
     
     * Reading a line in NodeJS is weird; here's one way to do it
-    
+
 ```
 @@@ js
 process.stdin.on('data', (chunk) => { console.log(chunk) })
@@ -196,9 +196,3 @@ You are now officially a coder. HIGH FIVE!
         Hello, Grace Hopper! 
         Your name is 11 characters long.
 
-<!-- wait until after "logic" cause this needs an if # Lab: Infinite Names
-
-* Change `name.js` so it keeps asking for names forever...
-  * ...unless and until someone says their name is "bye!"
-  * then it stops and exits back to the terminal
--->
