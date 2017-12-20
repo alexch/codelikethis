@@ -84,14 +84,14 @@ This can be confusing, so here's a visualization to help explain it.
 
 Think of the indexes as pointing at the *spaces between* characters, as in this diagram:
 
-     [b] [l] [u] [e] [b] [e] [r] [r] [y] 
-    0   1   2   3   4   5   6   7   8   9 
+    | B | L | U | E | B | E | R | R | Y |
+    0   1   2   3   4   5   6   7   8   9
      
 So with this picture in your mind, `slice`...
   
    * includes the character to the *right* of the start index
-   * includes the character to the *left* of the end index
-        * but *excludes* the character to the *right* of the end index
+   * includes the character to the *left* of the end index...
+   * ...but *excludes* the character to the *right* of the end index
 
 Try various start and end values in the console and see what happens!
 
