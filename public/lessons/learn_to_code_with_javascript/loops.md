@@ -121,18 +121,18 @@ compares `count` to `100`.
 
 Eventually, `count` becomes `101`, and the `while` expression is `false`, and so we stop looping and go on.
 
-# Exiting a Loop with break
+# `break` dancing
 
 The magic word `break` stops a loop immediately.
 
 Here's a more verbose way of counting to 100:
 
     @@@ js
-    let number = 0
+    let count = 0;
     while (true) {
-        console.log(number);   
-        number = number + 1;
-        if (number > 100) {
+        console.log(count);   
+        count = count + 1;
+        if (count > 100) {
             break;
         }
     }
@@ -158,8 +158,8 @@ Write a program called `potato.js` that prints that poem, using loops.
 
 Remember, there's always more than one solution to any problem! Don't get fixated on finding the One Right Answer.
 
-> "the strategy is definitely: first make it work, then make it right, and, finally, make it fast."
-> - Stephen C. Johnson and Brian W. Kernighan
+> "The strategy is definitely: first make it work, then make it right, and, finally, make it fast."
+> - Brian Kernighan, creator of the C programming language
 
 In the next slides we will examine several different ways to write the One Potato program.
 
@@ -168,11 +168,15 @@ In the next slides we will examine several different ways to write the One Potat
 The first thing we'll do is *decompose* the problem into two smaller problems:
 
 1. counting from 1 to 8
-2. printing the correct message
+2. printing the correct message for any value
 
-*decomposition* is one of the most important skills in programming. It allows you to focus.
+*Decomposition* is one of the most important skills in programming. It lets you focus. 
+
+Also known as "*divide and conquer*".
 
 Using a *function* is the most straightforward way to capture a smaller task.
+
+[Modular Decomposition](http://www.cs.columbia.edu/~evs/songs/Modular_20Decomposition.mp3) song by Eric Siegel, Ph.D.
 
 # counting potatoes
 
