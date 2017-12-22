@@ -46,6 +46,17 @@ A: *It depends!*
 
 When in doubt, use parentheses!
 
+# LAB: one nation, divisible
+
+One number is *divisible* by another if you divide them and the *remainder* is 0.
+
+Write code in `node` to figure out if...
+
+  * 100 is divisible by 5
+  * 100 is divisible by 8
+  * 330 is divisible by 11
+  * 337 is divisible by 7
+  
 # Strings vs. Numbers
 
 Hmmm....
@@ -66,7 +77,7 @@ But when two types meet, which one wins?
 
 # Type Conversion
 
-The clearest solution is that you, the programmer, explicitly declare which type you want to win.
+The clearest answer is that you, the programmer, explicitly declare which type you want to win.
 
 # Converting a Number to a String
 
@@ -76,25 +87,35 @@ The clearest solution is that you, the programmer, explicitly declare which type
 # Converting a String to a Number
 
 There are [many ways to convert a string to a number in JavaScript](https://coderwall.com/p/5tlhmw/converting-strings-to-number-in-javascript-pitfalls).
-
+ 
 The easiest and cleanest is `unary +`:
 
 |expression|value|
 |---|---|
-| +"12" | 12 |
+| +"12"  | 12 |
+| +"012" | 12 |
 | +"0.2" | 0.2 |
 | +"cheese" | NaN |
-| +"" | 0 |
+| +"0"   | 0 |
+| +""    | 0 |
+| +" "   | 0 |
 
-(Other methods can give bizarre results if the string contains letters or begins with a 0.)
+(Other ways can give bizarre results if the string contains letters or begins with a 0.)
 
 # Type Coercion
 
 If you don't explicitly do *type conversion* then JavaScript will "helpfully" convert the types for you.
 
-This is called *type coercion* and just like with people, it's unethical and often backfires.
+This is called type *coercion* and just like with people, it's unethical and often backfires.
 
-[todo: examples of type coercion, and unexpected results]
+For instance, if you ask the user their age, and read it from a web form or keyboard input, it will be in a string. If you forget to explicitly convert that to a number before using it in a calculation...
+
+      > "30" - 1              // "30" is coerced into a number
+      29            
+      > "30" + 1              // 1 is coerced into a string
+      '301'
+
+([You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md) has way more information than you wanted to know on this subject.)
 
 # Advanced Number Theory (optional)
 
@@ -160,5 +181,4 @@ Whoa! What just happened?
 -3
 ```
 
-# Okay, that's enough math!
-
+# Okay, that's enough math for now!

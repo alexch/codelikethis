@@ -37,8 +37,9 @@ Interpret this error:
 * the trick is reading the error and figuring out
     1. *where* it happened (*which line*)
     2. *which variable* was null
+    3. *why* it was null
 * often once you know *which*, knowing *why* is obvious
-* or at least tracing back the logic is possible
+    * but sometimes it's a puzzle
 
 # If You're Going To Fail...
 

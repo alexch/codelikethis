@@ -53,6 +53,8 @@ A string understands lots of messages. Here are a few:
 
 "apple" < "banana"
 "apple" < "BANANA"
+
+"blueberry".replace("blue", "black")
 ```
 
 Try all of these out in `node` or the browser console!

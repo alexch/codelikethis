@@ -12,20 +12,23 @@ class Course
 
     lesson "variables"
     lesson "null"
+    lesson "functions"
 
     lesson "the_command_line"
+
+    lesson "loops"
+
     lesson "input_and_output"
     lesson "logic"
 
-    # lesson "loops"
     lesson "arrays"
 
     # lesson "argv"   # https://code-maven.com/argv-raw-command-line-arguments-in-nodejs
-
-    # lesson "functions"  # this needs to lead up to nodejs callbacks
-
     # lesson "hashes"  # aka objects
+
     # lesson "methods"
+    # lesson "functions again"
+    # lesson "closures"
 
     # lesson "express"
 
