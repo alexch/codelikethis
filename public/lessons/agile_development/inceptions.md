@@ -20,15 +20,16 @@
 
 * write elevator pitch and/or mission statement
 * define user Personas, Roles and Activities
-* build paper prototype
+* build paper prototype or wireframe sketches
 * write team charter
 * determine need for more discovery
 * start project glossary (aka *ubiquitous language* or *domain language*)
+* examine assumptions (scope, schedule, feasability, business goals, risks, user population, team size, etc.)
 
 # Inception Anti-Goals
 
 * working software
-  * this is **not** a hackathon
+  * an inception is **not** a hackathon
 * set anything in stone
   * it's an iterative process; everything may change
 * set rigid requirements and deadlines
@@ -66,7 +67,7 @@ from [Pivotal Labs](http://cargocollective.com/pivotallabs/No-7-Dev-Inception)
 * aka "The Not List"
 *  things we explicitly do not want to accomplish in the project
 *  useful when there’s a priority decision to be made
-  *  e.g. if a non-goal is “support mobile” then we can ignore Mobile Safari bugs
+  *  e.g. if a non-goal is "support mobile" then we can ignore Mobile Safari UI bugs
 * It's also OK to list unknown or unresolved goals
 
 # Project Risks
@@ -93,8 +94,9 @@ How do we want to work?
 
 * Part-time (vs. dedicated) team?
 * Remote (vs. co-located) team?
-* Customer unavailable?
-* Deployment environment hassles
+* Customer availability? (in-room, on-site, etc.)
+* Deployment environment? (stability, automation, scripting, other hassles)
+* Desired test coverage?
 * Customer :: Project Manager :: Developer :: Designer :: QA Tester :: Support ratios
 
 # Elevator Pitch
@@ -108,15 +110,15 @@ How do we want to work?
 # Mission Statement Game
 
 * everyone writes a mission statement
-* highlight important words
-* sit on it
+* pass them around and highlight important/recurring words
 * collaborate to write and reach consensus on a final statement
-  * hopefully without a lot of “and” clauses
+  * hopefully without a lot of run-on "and" clauses
 
 # Personas
 
 *  traditionally: personas map to types of users
-*  can also include developers, clients, admins, customer support reps, QA testers, apps, spammers…
+*  practically: you can/should make personas for any human in the system
+    *  developers, clients, admins, customer support reps, QA testers, apps, spammers…
 *  one persona per card/sheet
 
 # Roles and Activities
@@ -128,7 +130,7 @@ How do we want to work?
 
 # Advice for Facilitators
 
-  (for Story Mapping but really for any planning or retro game)
+(for Story Mapping or any planning or retrospective workshop)
 
 *  Stay impartial
 *  Assign a Timekeeper and a Scribe (so you can focus on the meeting, not the logistics)
@@ -136,15 +138,14 @@ How do we want to work?
 *  After asking a question, count to ten! someone else will fill the silence
 *  Ask clarifying questions, even if you know the answer
 *  If the conversation veers, steer it back to the original topic (or ask for consensus to change topics)
-  * Use a Parking Lot list for items to deal with immediately after the meeting
-  * (I prefer the title IOU)
+  * Use a Parking Lot (or IOU) list for items to deal with immediately after the meeting
 *  If the conversation ebbs, ask if anyone sees a pattern… or has a suggestion… or if it’s time for a break
 
 # Story Mapping
 
 *  very time-consuming
 *  take plenty of breaks! facilitator, don’t rush!
-*  goal is to get broad and deep, clustering rather than prioritizing
+*  the goal is to get broad and deep, clustering rather than prioritizing
 *  looking for themes, not details
 *  but still, try to break down stories into smaller stories
 
@@ -170,19 +171,25 @@ How do we want to work?
 
 # Story Body Template
 
-Story *titles* should be brief; story *bodies* should follow this pattern:
+Story *titles* should be brief and imperative; story *bodies* should follow this pattern:
 
 ```
-AS A ____
-I WANT TO ____
-SO THAT ___
+AS A ____      [role or persona]
+I WANT TO ____ [action or goal]
+SO THAT ___    [value or motivation]
 ```
+
+e.g. 
+
+|Sort By Price|
+|---|
+|As a customer, I want to sort the matching cars by price, so that I can see the best deal.|
 
 # Epics
 
 * An Epic is a series of Stories
   * Can also be called a *Theme* or a *Feature Set*
-* For instance, the epic “User Accounts” could include “Sign up, Sign in, Change password, Edit profile, Upload avatar”
+* For instance, the epic “User Accounts” could include “Sign up, Sign in, Change password, Edit profile, Upload pic”
 * Put epics across the top row of your story map
   * Put stories in columns underneath their epic
 
@@ -212,7 +219,7 @@ Inceptions are a great place to establish the regular rhythm of the project, as 
 *  Standup (daily)
 *  [Planning Meeting](planning) (at least once per iteration, up to several a week)
 *  [Acceptance](planning) (can be weekly, semi-weekly, ad hoc, or any combination)
-*  Demo (often coincide with Acceptance, but not always)
+*  Demo (often coincides with Acceptance, but not always)
 *  [Retrospective](planning) (weekly, bi-weekly, or monthly)
 *  User Testing sessions
 * Others?
@@ -225,7 +232,7 @@ Inceptions are a great place to establish the regular rhythm of the project, as 
 
 # Retrospective & Closing
 
-* Have a brief Retrospective about this inception.
+* Have a brief (5 min.) retrospective about this inception.
   * What worked?
   * What didn't?
   * Specific feedback for the facilitator?
