@@ -4,9 +4,9 @@ require "wrong"
 here = File.expand_path(File.dirname(__FILE__))
 project = File.expand_path("#{here}/..")
 
-require "#{project}/app"
-require "#{project}/lib/lesson"
-require "#{project}/lib/ruby"
+require File.join(project, "app")
+require File.join(project, "lib/lesson")
+require File.join(project, "lib/courses/ruby")
 
 describe AppHelpers do
   include AppHelpers

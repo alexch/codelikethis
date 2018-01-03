@@ -4,7 +4,7 @@ here = File.expand_path(File.dirname(__FILE__))
 project = File.expand_path("#{here}/..")
 
 require "#{project}/lib/lesson"
-require "#{project}/lib/ruby"
+require "#{project}/lib/courses/ruby"
 
 
 describe Lesson do

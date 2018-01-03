@@ -106,9 +106,9 @@ The easiest and cleanest is `unary +`:
 
 If you don't explicitly do *type conversion* then JavaScript will "helpfully" convert the types for you.
 
-This is called type *coercion* and just like with people, it's unethical and often backfires.
+This is called type *coercion* and just like with people, coercion is stressful and often backfires.
 
-For instance, if you ask the user their age, and read it from a web form or keyboard input, it will be in a string. If you forget to explicitly convert that to a number before using it in a calculation...
+For instance, if you ask the user their age, and read it from a web form or keyboard input, it will be in a string. If you forget to explicitly convert that to a number before using it in a calculation, the results can be unexpected...
 
       > "30" - 1              // "30" is coerced into a number
       29            
@@ -117,8 +117,6 @@ For instance, if you ask the user their age, and read it from a web form or keyb
 
 ([You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md) has way more information than you wanted to know on this subject.)
 
-# Advanced Number Theory (optional)
-
 # Math is hard
 
 There are many types of numbers!
@@ -126,6 +124,7 @@ There are many types of numbers!
 Each is useful in different situations.
 
 In elementary school, we learned
+
  * *natural numbers* (aka *counting numbers*)
  * *integer numbers* (naturals, negatives, and zero)
  * *rational numbers* (aka *fractions* or *ratios*)
@@ -138,11 +137,11 @@ JavaScript numbers are different from all of those!
 
 JavaScript numbers...
 
-  * are decimals
-  * stored in binary
-  * with a fixed length 
+  * use decimal notation
+  * are stored in binary
+  * have a fixed bit-length
 
-This means that some rational numbers cannot be represented, which means that simple arithmetic may give unexpected results.
+Some rational numbers *cannot be represented* in floating-point, which means that simple arithmetic may give unexpected results.
 
 For instance, you can't go higher than about 9 quadrillion without glitching...
 
@@ -164,9 +163,19 @@ Try this in node:
     3 - 4
     5 * 6
     7 / 8
+    2 / 3
     7 / 9
 
-Whoa! What just happened?
+Wait a second...
+
+```js
+> 2/3
+0.6666666666666666
+> 7/9
+0.7777777777777778
+```
+
+Why did it round up the last digit for `7/9` but not for `2/3`?
 
 # Floating Point Arithmetic is Bizarre
 
@@ -179,6 +188,13 @@ Whoa! What just happened?
 
 > (0.8 - 0.7 - 0.1)/(0.5 - 0.4 - 0.1)
 -3
+
+> 2**53 == 2**53+1
+true
+
+> 2**10000
+Infinity
 ```
 
 # Okay, that's enough math for now!
+ 

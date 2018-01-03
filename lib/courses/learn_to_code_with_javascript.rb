@@ -22,11 +22,12 @@ class Course
     lesson "logic"
 
     lesson "arrays"
-
-    # lesson "argv"   # https://code-maven.com/argv-raw-command-line-arguments-in-nodejs
-    # lesson "hashes"  # aka objects
+    lesson "argv"   # https://code-maven.com/argv-raw-command-line-arguments-in-nodejs
+    lesson "stacks"
+    lesson "hashes"  # (as data structures, not objects)
 
     # lesson "methods"
+
     # lesson "functions again"
     # lesson "closures"
 
