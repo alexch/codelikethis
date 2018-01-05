@@ -22,6 +22,8 @@ In other words, a hash defines a *mapping* from one group of things to another, 
   * associative array
   * lookup table
   * key/value store
+
+# hash or object?
   
 and in JavaScript, a hash is officially called an
 
@@ -95,9 +97,22 @@ The most common and useful implementation of this data structure uses something 
 
 Because programmers are humans, and humans can be very literal-minded, people named it based on *how* it works, rather than *what* it does or *why* it does it.
 
-*Map* and *dictionary* are much better names but we're stuck with *hash* for now.
+*Map* and *dictionary* are much better names (and in fact there is a recently-introduced JavaScript type called [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) which behaves better than the built-in "object" hash; for instance, its keys are not limited to being strings).
 
 Also, *hash* is a silly-sounding word, and programmers love jokes.
+
+# JS "Object" Hash Rules
+
+* All keys are strings
+
+* **Beware** of using these as keys:
+
+    * `null`
+    * `undefined`
+    * `""` 
+    * `false` or `true`
+    * `0` (or any number)
+
 
 # Hash methods
 
