@@ -26,10 +26,13 @@ class Course
     lesson "stacks"
     lesson "hashes"  # (as data structures, not objects)
 
-    # lesson "methods"
+    lesson "recursion"
 
-    # lesson "functions again"
-    # lesson "closures"
+    # lesson "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
+
+    # lesson "function pointers"
+    # lesson "methods" -- hash-as-object and `this`
+    # lesson "closures" -- scope
 
     # lesson "express"
 
