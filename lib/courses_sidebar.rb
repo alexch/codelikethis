@@ -76,8 +76,8 @@ class CoursesSidebar < Erector::Widget
           'data-toggle': 'collapse',
           'data-target': "##{lessons_id}",
           'data-parent': "##{html_id}-courses"
-          # 'aria-expanded': false
-          # 'aria-controls': '???'
+        # 'aria-expanded': false
+        # 'aria-controls': '???'
 
       }
 
@@ -92,9 +92,11 @@ class CoursesSidebar < Erector::Widget
 
       div(class: ['collapse', ('show' if course.lessons.include?(@current))],
           id: lessons_id) {
-        a "[Course Info]", href: course.href,
-          float: 'right',
-          class: 'course-info-link'
+        unless @current == course
+          a "[Course Info]", href: course.href,
+            float: 'right',
+            class: 'course-info-link'
+        end
         div(class: ['list-group', 'lesson-names']) {
           course.current = @current
           widget course, {}, :content_method_name => :list_lessons

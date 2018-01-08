@@ -73,14 +73,20 @@ class Course < Erector::Widget
         p self.abstract # todo: markdown?
       end
     end
-    div class: 'lessons', style: "max-width: 30em;" do
-      h2 "Lessons"
-      list_lessons
-    end
-    div class: 'labs', style: "max-width: 30em;" do
-      h2 "Labs"
-      list_labs
-    end
+    div.container {
+      div.row {
+        div(class: 'col-12 col-md-6 lessons') {
+          h2 "Lessons"
+          list_lessons
+        }
+        unless labs.empty?
+          div(class: 'col-12 col-md-6 lessons') {
+            h2 "Labs"
+            list_labs
+          }
+        end
+      }
+    }
   end
 
   def list_items items = @stuff, options = {}
