@@ -9,6 +9,7 @@
 
 Here's a not very useful function:
 
+    @@@ ruby
     def add x, y
       x + y
     end
@@ -23,6 +24,7 @@ Here's a not very useful function:
 
 You call a function by its name
 
+    @@@ ruby
     def add x, y
       x + y
     end
@@ -33,6 +35,7 @@ You call a function by its name
 
 # Rant!!!
 
+    @@@ ruby
     def rant s
       s.upcase.gsub(" ", "") + "!!!"
     end
@@ -41,6 +44,7 @@ You call a function by its name
 
 # Capitalize Just The First Character
 
+    @@@ ruby
     def initial_cap s
       s[0] + s[1,s.length].downcase
     end
@@ -51,6 +55,7 @@ this program prints `Mcelaney`
 
 # Titleize
 
+    @@@ ruby
     def titleize string
       string.split(' ').map(&:capitalize).join(' ')
     end

@@ -23,13 +23,13 @@ class Lesson < Erector::Widget
     @videos << youtube_id
   end
 
-  def extras?
-    !next_labs.empty?
+  def labs
+    slide_labs + next_labs
   end
 
-  def labs
+  def labs_list
     div(class: 'list-group') {
-      next_labs.each do |lab|
+      labs.each do |lab|
         div(class: 'list-group-item') {
           widget lab
         }
@@ -69,14 +69,6 @@ class Lesson < Erector::Widget
     }
     next_and_previous
 
-    if extras?
-      div.extras {
-        labs
-      }
-    end
-
-    br
-
     div.videos {
       @videos.each do |youtube_id|
         # see https://developers.google.com/youtube/player_parameters
@@ -91,10 +83,19 @@ class Lesson < Erector::Widget
       slides.each do |slide|
         widget slide
       end
+      br
+
+      unless next_labs.empty?
+        div(class: 'next-labs') {
+          h2 "Labs"
+          labs_list
+        }
+        br
+      end
 
       next_and_previous
-
       br
+
       div.comments {
         h2 "Comments"
         widget Disqus, shortname: "codelikethis",
@@ -103,6 +104,8 @@ class Lesson < Erector::Widget
                title: "#{@course.display_name}: #{display_name}"
       }
     }
+
+
   end
 
   def next_and_previous
@@ -146,6 +149,14 @@ class Lesson < Erector::Widget
 
   def previous_lesson
     @course.previous_lesson(name)
+  end
+
+  def slide_labs
+    slides.select do |slide|
+      slide.title =~ /lab: /i
+    end.map do |slide|
+      Lab.new @course, slide.title.slice(4..-1).strip, href: "#{self.href}#anchor/#{slide.slide_id}"
+    end
   end
 
   def next_labs

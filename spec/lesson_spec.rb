@@ -22,7 +22,12 @@ describe Lesson do
 
     course.dir = files.dir "how_to_cook" do
       file "scramble_eggs.md"
-      file "boil_water.md"
+      file "boil_water.md", <<-MD
+# water
+water is a molecule
+# LAB: using faucets
+fill a glass of water at the sink
+      MD
     end
 
     course
@@ -42,11 +47,15 @@ describe Lesson do
   end
 
   it "has a next lab" do
-    lesson.next_labs.map(&:name).should == ["egg_lab"]
+    lesson.labs.map(&:name).should == ["egg_lab"]
+  end
+
+  it "includes slide-defined labs" do
+    course.lesson_named("boil_water").labs.map(&:name).should include("using faucets")
   end
 
   it "has several next labs" do
-    course.lesson_named("boil_water").next_labs.map(&:name).should == ["turn_on_stove", "boiling"]
+    course.lesson_named("boil_water").labs.map(&:name).should include("turn_on_stove", "boiling")
   end
 
   describe 'videos' do

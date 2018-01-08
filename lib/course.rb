@@ -46,7 +46,13 @@ class Course < Erector::Widget
   end
 
   def labs
-    @stuff.select {|thing| thing.is_a? Lab}
+    @stuff.map do |thing|
+      if thing.is_a? Lab
+        thing
+      elsif thing.is_a? Lesson
+        thing.slide_labs
+      end
+    end.compact.flatten
   end
 
   def lab_names
@@ -95,12 +101,14 @@ class Course < Erector::Widget
     items.each do |item|
       div(class: ['list-group-item', 'border-0', ('active' if @current == item)]) {
         item_name = item.display_name
-        item_name = "Lab: #{item_name}" if item.is_a? Lab
+        # item_name = "Lab: #{item_name}" if item.is_a? Lab
         href = if @current == item
-                 "#content"
+                 ""
                else
-                 "#{item.href}#content"
+                 "#{item.href}"
                end
+        href += "#content" unless href.include?("#")
+
         a href: href do
           text item_name
           span.loading_image unless @current == item

@@ -68,7 +68,7 @@ Put the above in a source file called `countdown.js` and try it now.
 
 Note that when recursing, you *must change* the value of the counter, else recurse forever.
 
-# Challenge: Recursive Factorial
+# Lab: Recursive Factorial
 
 To find the *factorial* of a number N, you take all the counting numbers between 1 and N and multiply them together. 
 
@@ -118,7 +118,7 @@ For example, here is `factorial` using a stack instead of recursion:
 
 What do you think about this implementation compared to the previous one? What are the advantages and disadvantages of recursion vs. loops?
 
-# Challenge: Recursive Fibonacci
+# Lab: Recursive Fibonacci
 
 Using recursion, write a program called `fib.js` so that running `node fib.js 10` prints
 
@@ -128,6 +128,5 @@ Using recursion, write a program called `fib.js` so that running `node fib.js 10
 ```
 
 which are the first 10 elements of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
-
 
 

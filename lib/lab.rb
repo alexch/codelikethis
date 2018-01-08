@@ -4,8 +4,9 @@ class Lab < Erector::Widget
 
   attr_reader :name
 
-  def initialize course, name
+  def initialize course, name, href: nil
     @course, @name = course, name
+    @href = href
   end
 
   def display_name
@@ -13,11 +14,11 @@ class Lab < Erector::Widget
   end
 
   def content
-    a.lab.button "Lab: #{display_name}", href: href
+    a.lab.button display_name, href: href
   end
 
   def href
-    "http://testfirst.org/live/learn_ruby/#{name}"
+    @href || "http://testfirst.org/live/learn_ruby/#{name}"
   end
 
 end

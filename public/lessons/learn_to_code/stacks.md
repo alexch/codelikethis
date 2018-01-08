@@ -70,7 +70,7 @@ For instance, in the above stack trace, you can see that the function `<main>` c
 
 Now you know why a stack trace is upside down! It's because a stack is LIFO.
 
-# Challenge: Fibonacci Stack
+# Lab: Fibonacci Stack
 
 Using a stack, put the following program into a file called `fib.rb`...
 

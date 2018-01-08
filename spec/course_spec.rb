@@ -8,6 +8,8 @@ require "#{project}/lib/course"
 
 describe Course do
 
+  include Files
+
   describe "by default" do
 
     subject {Course.new}
@@ -35,6 +37,11 @@ describe Course do
       lesson "bar"
     end
 
+    lessons.dir = files.dir "foo" do
+      file "foo.md"
+      file "bar.md"
+    end
+
     breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [CoursesTable.new])
     lessons.to_html.should include(breadcrumbs.to_html)
     lessons.to_html.should include("<a href=\"/lessons/course/foo#content\">Foo")
@@ -42,7 +49,6 @@ describe Course do
   end
 
   describe 'with markdown lesson files' do
-    include Files
 
     subject {
 
@@ -58,7 +64,12 @@ describe Course do
 
       course.dir = files.dir "how_to_cook" do
         file "scramble_eggs.md"
-        file "boil_water.md"
+        file "boil_water.md", <<-MD
+# water
+water is a molecule
+# LAB: using faucets
+fill a glass of water at the sink
+        MD
       end
 
       course
@@ -76,11 +87,11 @@ describe Course do
     end
 
     it "lets a subclass define its labs inline" do
-      subject.lab_names.should == [
+      subject.lab_names.should include(
           "egg_lab",
           "turn_on_stove",
           "boiling",
-      ]
+          )
     end
 
     it "has a name" do
@@ -130,6 +141,15 @@ describe Course do
       end
       it "returns two labs" do
         subject.next_labs("boil_water").map(&:name).should == ["turn_on_stove", "boiling"]
+      end
+    end
+
+    describe 'labs' do
+      it 'should include slide labs' do
+        subject.labs.map(&:name).should include("using faucets")
+      end
+      it 'should include declared labs (next_labs)' do
+        subject.labs.map(&:name).should include("turn_on_stove", "boiling")
       end
     end
   end
