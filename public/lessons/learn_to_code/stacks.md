@@ -31,22 +31,24 @@ The theme of "Freedom of Constraints" is important in software design.
 
 # Arrays vs. Stacks
 
-In JavaScript, the easiest way to *implement* a stack is by using an *array*.
+In Ruby, the easiest way to *implement* a stack is by using an *array*.
 
 In fact, every array *already knows* how to `push` and `pop`.
 
-Try this in node:
+Try this in IRB:
 
-    @@@ js
-    let fruitStack = []
-    fruitStack.push("apple")
-    fruitStack.push("banana")
-    fruitStack                    // [ 'apple', 'banana' ]
-    fruitStack.push("cherry")
-    fruitStack                    // [ 'apple', 'banana', 'cherry' ]
-    let fruit = fruitStack.pop()
-    fruit                         // 'cherry'
-    fruitStack                    // [ 'apple', 'banana' ]
+```ruby
+@@@ ruby
+fruitStack = []
+fruitStack.push("apple")
+fruitStack.push("banana")
+fruitStack                    #  [ 'apple', 'banana' ]
+fruitStack.push("cherry")
+fruitStack                    #  [ 'apple', 'banana', 'cherry' ]
+fruit = fruitStack.pop()
+fruit                         #  'cherry'
+fruitStack                    #  [ 'apple', 'banana' ]
+```
     
 Note that after a `pop`, the stack's contents are *changed*. Pop *removes and returns* the final value from the array.
 
@@ -55,66 +57,61 @@ Note that after a `pop`, the stack's contents are *changed*. Pop *removes and re
 You may have heard the term "stack trace". A stack trace is part of most error messages, e.g.:
 
 ```
-ReferenceError: fizz is not defined
-    at ReadStream.process.stdin.once (C:\Users\alex\code\hello.js:32:5)
-    at Object.onceWrapper (events.js:254:19)
-    at ReadStream.emit (events.js:159:13)
-    at addChunk (_stream_readable.js:265:12)
-    at readableAddChunk (_stream_readable.js:252:11)
-    at ReadStream.Readable.push (_stream_readable.js:209:10)
-    at TTY.onread (net.js:598:20)
+fizz.rb:7:in `fizz': undefined local variable or method `buzz' for main:Object (NameError)
+        from fizz.rb:2:in `fizzbuzz'
+        from fizz.rb:17:in `<main>'```
 ```
 
 In this context the term "stack" refers to the *call stack*.
 
-The JavaScript interpreter is a program, and that program uses a stack internally to keep track of the list of functions that call functions that call functions that call...
+The Ruby interpreter is a program, and that program uses a stack internally to keep track of the list of functions that call functions that call functions that call...
 
-For instance, in the above stack trace, you can see that the function `TTY.onread` called the function `ReadStream.Readable.push`, which called the function `readableAddChunk`, and so on.
+For instance, in the above stack trace, you can see that the function `<main>` called the function `fizzbuzz`, which tried to call the function `buzz` (but couldn't find it).
 
 Now you know why a stack trace is upside down! It's because a stack is LIFO.
 
 # Challenge: Fibonacci Stack
 
-Using a stack, put the following program into a file called `fib.js`...
+Using a stack, put the following program into a file called `fib.rb`...
 
-```js
-@@@ js
-let series = [0, 1];
-while (series.length < 10) {
+```ruby
+@@@ ruby
+series = [0, 1];
+while (series.length < 10) do
 
 
 
-}
-console.log(series);
+end
+p series
 ```
 
-...and complete it so that running `node fib.js` prints 
+...and complete it so that running `ruby fib.rb` prints 
 
-```js
-@@@ js
+```ruby
+@@@ ruby
 [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 ```
 
 which are the first 10 elements of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
 
-Although `series` is an array, please treat it like a stack -- that is, you can **only** use `series.push()` and `series.pop()`, not any other array operations.
+Although `series` is an array, please treat it like a stack -- that is, you can **only** use `series.push` and `series.pop`, not any other array operations.
 
 Please split into pairs and do this right now. A solution is on the next slide.
 
 # Solution: Fibonacci Stack
 
-```js
-@@@ js
-let series = [0, 1];
-while (series.length < 10) {
-    let b = series.pop();
-    let a = series.pop();
-    let c = a + b;
-    series.push(a);
-    series.push(b);
-    series.push(c);
-}
-console.log(series);
+```ruby
+@@@ ruby
+series = [0, 1]
+while (series.length < 10) do
+    b = series.pop
+    a = series.pop
+    c = a + b
+    series.push(a)
+    series.push(b)
+    series.push(c)
+end
+p series
 ```
 
 Note that we had to pop `a` and `b` in *reverse* order because it's a stack.
@@ -131,6 +128,3 @@ Stacks are useful in many scenarios
 * recursion
     
 # Lab: reverse-polish calculator
-
-
-
