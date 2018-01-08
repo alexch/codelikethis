@@ -54,7 +54,7 @@ Wait a second. "Truthy?"
 
 # What is truthiness?
 
-![Truthiness](truthiness.png)
+![Truthiness](../images/truthiness.png)
 
 All values are truthy unless they are defined as falsy.
 

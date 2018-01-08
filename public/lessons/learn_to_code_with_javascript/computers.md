@@ -17,7 +17,7 @@
 # The Terminal
 
 * the *TERMINAL* is a window into which you can talk directly to your computer
-![Shall we play a game?](wargames-terminal.jpg)
+![Shall we play a game?](../images/wargames-terminal.jpg)
 
 from WarGames, (1983)
 
@@ -67,7 +67,7 @@ from WarGames, (1983)
 * Input/Output
   * keyboard, mouse, touch screen, monitor
 
-![Von Neumann Architecture](Von_Neumann_Architecture.svg)
+![Von Neumann Architecture](../images/Von_Neumann_Architecture.svg)
 
 The basic architecture of computers has not changed since the invention of the 
 [Von Neumann Architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture)
@@ -87,7 +87,7 @@ Every piece of software on your computer is a PROGRAM.
 
 * a recipe is a collection of *ingredients* and *instructions*
 
-![Grandma's Cookie Recipe](cookie-recipe.gif)
+![Grandma's Cookie Recipe](../images/cookie-recipe.gif)
 
 * a program is a collection of *data* and *code*
 

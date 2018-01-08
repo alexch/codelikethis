@@ -10,6 +10,7 @@ If the user types:
 
 then ARGV contains:
 
+    @@@ ruby
     ["Alice", "Bob"]
 
 # Why ARGV?
@@ -20,6 +21,7 @@ ARGV is a historical name. It means "Argument Vector" and has been around since 
 
 Change `hello.rb` to contain:
 
+    @@@ ruby
     puts "Hello, " + ARGV[0]
 
 and run it a few times, e.g.

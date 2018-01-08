@@ -42,7 +42,7 @@ SyntaxError: Identifier 'x' has already been declared
 
 # The Warehouse Metaphor
 
-![Warehouse from Raiders of the Lost Ark](warehouse.jpg)
+![Warehouse from Raiders of the Lost Ark](../images/warehouse.jpg)
 
 Think of memory as a giant warehouse.
 

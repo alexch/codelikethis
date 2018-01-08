@@ -63,10 +63,12 @@ that converts string keys into symbol keys.
 
 Ruby 1.8 or 1.9:
 
+    @@@ ruby
     {:foo => "bar", :baz => "baf"}
 
 Ruby 1.9 only:
 
+    @@@ ruby
     {foo: "bar", baz: "baf"}
 
 # Hash arguments
@@ -117,6 +119,7 @@ These are all equivalent:
 
 Here's a handy trick:
 
+    @@@ ruby
     class Hash
       alias_method :<<, :merge!
       alias_method :+, :merge

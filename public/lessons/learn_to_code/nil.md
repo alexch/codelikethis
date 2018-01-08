@@ -4,7 +4,7 @@
 
 # There Is No Spoon
 
-![](spoon.jpg)
+![Neo with Spoon](../images/spoon.jpg)
 
 *nil* is the object that means "there is no object"
 

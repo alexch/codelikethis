@@ -12,7 +12,7 @@ Anywhere you can use an object, you can use a variable instead.
 
 # The Warehouse Metaphor
 
-![Warehouse from Raiders of the Lost Ark](warehouse.jpg)
+![Warehouse from Raiders of the Lost Ark](../images/warehouse.jpg)
 
 Think of memory as a giant warehouse.
 

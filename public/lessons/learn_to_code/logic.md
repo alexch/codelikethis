@@ -22,6 +22,7 @@ Try the following in irb:
 
 The magic word `if` is called a CONDITIONAL.
 
+    @@@ ruby
     if age < 18 then
       puts "Sorry, adults only."
     end
@@ -30,6 +31,7 @@ The magic word `if` is called a CONDITIONAL.
 
 Ruby has a compact way of putting an entire `if` expression on one line:
 
+    @@@ ruby
     puts "Sorry, adults only." if age < 18
   
 Note that:
@@ -42,6 +44,7 @@ Note that:
 
 The magic word `else` allows BRANCHING.
 
+    @@@ ruby
     if age >= 18 then
       puts "allowed"
     else
@@ -79,6 +82,7 @@ instead. Why?
 
 * Your `hello.rb` program should currently look something like this:
 
+        @@@ ruby
         puts "What is your name?"
         name = gets.strip
         puts "Hello, " + name + "!"
@@ -91,7 +95,7 @@ instead. Why?
 * You can make more complicated logical expressions using conjunctions like `and`, `or`, `not`:
   * `X and Y` means "are both X and Y true?"
   * `X or Y` means "is either X or Y (or both) true?"
-  * `not X` means "is X false?" (think about it)
+  * `not X` means "is X false?"
 
 * For example:
 

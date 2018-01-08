@@ -64,6 +64,3 @@ this program prints `Mcelaney`
 * `map(&:capitalize)` means "send the message `capitalize` to every item in the array"
 
 
-# LAB: todo
-
-

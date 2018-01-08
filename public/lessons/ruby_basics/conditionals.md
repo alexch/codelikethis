@@ -7,7 +7,7 @@ In this section we cover truth, falsiness, and conditions.
 
 # Truthiness and Falsiness
 
-![truthiness.png](truthiness.png)
+![truthiness.png](../images/truthiness.png)
 
 (*not* in the Steven Colbert sense)
 

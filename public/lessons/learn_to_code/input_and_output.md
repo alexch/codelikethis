@@ -19,6 +19,7 @@
 1. Open `hello.rb` in your text editor
 2. Change it to contain the following code:
 
+        @@@ ruby
         puts "What is your name?"
         name = gets
         puts "Hello, " + name + "!"
@@ -68,6 +69,7 @@ What happens? Is this what you expected?
 
 * Change the program to look like this:
 
+        @@@ ruby
         puts "What is your name?"
         name = gets.strip
         puts "Hello, " + name + "!"

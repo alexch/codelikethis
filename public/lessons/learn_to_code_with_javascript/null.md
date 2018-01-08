@@ -4,7 +4,7 @@
 
 # There Is No Spoon
 
-![](spoon.jpg)
+![Neo With Spoon](../images/spoon.jpg)
 
 *null* is the pointer to an object that means "there is no object"
 

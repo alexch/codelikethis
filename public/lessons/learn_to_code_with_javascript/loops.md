@@ -35,7 +35,7 @@ This is called an *infinite loop*.
 
 # One Infinite Loop
 
-![One Infinite Loop](one-infinite-loop.jpg)
+![One Infinite Loop](../images/one-infinite-loop.jpg)
 
 *Fun Fact:* The address of Apple HQ is
 
@@ -266,15 +266,15 @@ To do this, your code will probably need to use one or the other, or both, of th
 
 Please try this now; if you get stuck, the next few slides have some tips.
 
-# LAB: Prime Numbers: Tip 1
+# TIP: Prime Numbers: Tip 1
 
 use the `isDivisible` function you wrote back in the [functions](functions) lesson
 
-# LAB: Prime Numbers: Tip 2
+# TIP: Prime Numbers: Tip 2
 
 write a function named `isPrime` that takes one parameter, and returns `true` if that number is prime
 
-# LAB: Prime Numbers: Tip 3
+# TIP: Prime Numbers: Tip 3
 
 write a main loop that counts from 2 to 100; inside that loop, call `isPrime` and print the number if `isPrime` is true
 
