@@ -1,7 +1,7 @@
 require "course"
 
 class Course
-  RubyAdvanced = Course.new("ruby_advanced") do
+  RubyAdvanced = Course.new(name: "ruby_advanced") do
     lesson "modules"
     lesson "variable_scope"
     lesson "method_scope"

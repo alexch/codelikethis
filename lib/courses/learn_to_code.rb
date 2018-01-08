@@ -1,6 +1,6 @@
 require "course"
 
-Course::LearnToCode = Course.new("learn_to_code", display_name: "Learn to Code with Ruby") do
+Course::LearnToCode = Course.new(name: "learn_to_code", display_name: "Learn to Code with Ruby") do
     lesson "intro"
     lesson "computers"
     lesson "ruby"

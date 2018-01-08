@@ -1,7 +1,7 @@
 require "course"
 
 class Course
-  RubyBasics = Course.new("ruby_basics") do
+  RubyBasics = Course.new(name: "ruby_basics") do
     lesson "more_neat_things"
     lab "hello"
     lesson "types"

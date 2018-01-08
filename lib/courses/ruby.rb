@@ -1,6 +1,6 @@
 require "course"
 
-Course::Ruby = Course.new("ruby") do
+Course::Ruby = Course.new(name: "ruby") do
     lesson "credits"
     lesson "meta"
     lesson "intro"

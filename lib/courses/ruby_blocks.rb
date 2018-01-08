@@ -1,7 +1,7 @@
 require "course"
 
 class Course
-  RubyBlocks = Course.new("ruby_blocks") do
+  RubyBlocks = Course.new(name: "ruby_blocks") do
 
     lesson "blocks" do
       video "K8uhD8mtorE"

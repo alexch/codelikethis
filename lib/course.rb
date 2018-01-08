@@ -19,8 +19,9 @@ class Course < Erector::Widget
 
   attr_writer :dir
 
-  def initialize name = "course", **options, &block
-    @name = name.underscore
+  def initialize **options, &block
+    @name = (options[:name] || "course").underscore
+    @abstract = options[:abstract]
     @display_name = options[:display_name]
     @stuff = []
     instance_eval &block if block
@@ -28,6 +29,12 @@ class Course < Erector::Widget
 
   def current= course_or_lesson
     @current = course_or_lesson
+  end
+
+  attr_reader :abstract
+
+  def abstract?
+    !!abstract
   end
 
   def lessons
@@ -60,8 +67,19 @@ class Course < Erector::Widget
 
   def content
     widget Breadcrumbs, parents: [CoursesTable.new], display_name: self.display_name
-    div style: "max-width: 30em;" do
-      list_items
+    if abstract?
+      div(class: 'abstract') do
+        h2 "Abstract"
+        p self.abstract # todo: markdown?
+      end
+    end
+    div class: 'lessons', style: "max-width: 30em;" do
+      h2 "Lessons"
+      list_lessons
+    end
+    div class: 'labs', style: "max-width: 30em;" do
+      h2 "Labs"
+      list_labs
     end
   end
 
@@ -69,7 +87,7 @@ class Course < Erector::Widget
     options = options.dup
     element_name = options.delete(:element) || 'li'
     items.each do |item|
-      div(class: ['list-group-item',  'border-0', ('active' if @current == item)]) {
+      div(class: ['list-group-item', 'border-0', ('active' if @current == item)]) {
         item_name = item.display_name
         item_name = "Lab: #{item_name}" if item.is_a? Lab
         href = if @current == item

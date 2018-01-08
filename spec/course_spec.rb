@@ -8,8 +8,17 @@ require "#{project}/lib/course"
 
 describe Course do
 
-  it "has a default name" do
-    Course.new.name.should == "course"
+  describe "by default" do
+
+    subject {Course.new}
+
+    it "has a default name" do
+      subject.name.should == "course"
+    end
+
+    it "has no abstract" do
+      subject.abstract.should be_nil
+    end
   end
 
   it "takes a list of lesson names" do
@@ -32,94 +41,102 @@ describe Course do
     lessons.to_html.should include("<a href=\"/lessons/course/bar#content\">Bar")
   end
 
-  include Files
+  describe 'with markdown lesson files' do
+    include Files
 
-  subject {
+    subject {
 
-    course = Course.new("how_to_cook") do
-      lesson "scramble_eggs"
-      lab "egg_lab"
-      lesson "boil_water"
-      lab "turn_on_stove"
-      lab "boiling"
+      course = Course.new(name: "how_to_cook",
+                          abstract: "learn how to cook with these great tips") do
+
+        lesson "scramble_eggs"
+        lab "egg_lab"
+        lesson "boil_water"
+        lab "turn_on_stove"
+        lab "boiling"
+      end
+
+      course.dir = files.dir "how_to_cook" do
+        file "scramble_eggs.md"
+        file "boil_water.md"
+      end
+
+      course
+    }
+
+    it "can have an abstract" do
+      subject.abstract.should == "learn how to cook with these great tips"
     end
 
-    course.dir = files.dir "how_to_cook" do
-      file "scramble_eggs.md"
-      file "boil_water.md"
+    it "lets a subclass define its lessons inline" do
+      subject.lesson_names.should == [
+          "scramble_eggs",
+          "boil_water",
+      ]
     end
 
-    course
-  }
-
-  it "lets a subclass define its lessons inline" do
-    subject.lesson_names.should == [
-        "scramble_eggs",
-        "boil_water",
-    ]
-  end
-
-  it "lets a subclass define its labs inline" do
-    subject.lab_names.should == [
-        "egg_lab",
-        "turn_on_stove",
-        "boiling",
-    ]
-  end
-
-  it "has a name" do
-    subject.name.should == "how_to_cook"
-  end
-
-  it "has a title (aka display name)" do
-    subject.display_name.should == "How To Cook"
-  end
-
-  it "can have a custom display name" do
-    title = "Now We're Cooking!"
-    c = Course.new("how_to_cook", display_name: title)
-    c.display_name.should == title
-  end
-
-  it "has an href" do
-    subject.href.should == "/lessons/how_to_cook"
-  end
-
-  it "has lessons" do
-    subject.lessons.map(&:name).should == ["scramble_eggs", "boil_water"]
-  end
-
-  it "can find a lesson by name" do
-    subject.lesson_named("boil_water").name.should == "boil_water"
-  end
-
-  describe 'next and previous lesson' do
-    it 'returns the next lesson' do
-      subject.next_lesson('scramble_eggs').name.should == "boil_water"
+    it "lets a subclass define its labs inline" do
+      subject.lab_names.should == [
+          "egg_lab",
+          "turn_on_stove",
+          "boiling",
+      ]
     end
-    it 'returns nil if there are no more lessons' do
-      subject.next_lesson('boil_water').should be_nil
-    end
-    it 'returns the previous lesson' do
-      subject.previous_lesson('boil_water').name.should == "scramble_eggs"
-    end
-    it 'returns nil if there are no previous lessons' do
-      subject.previous_lesson('scramble_eggs').should be_nil
-    end
-  end
 
-  describe 'next_labs' do
-    it "returns one lab" do
-      subject.next_labs("scramble_eggs").map(&:name).should == ["egg_lab"]
+    it "has a name" do
+      subject.name.should == "how_to_cook"
     end
-    it "returns two labs" do
-      subject.next_labs("boil_water").map(&:name).should == ["turn_on_stove", "boiling"]
+
+    it "has a title (aka display name)" do
+      subject.display_name.should == "How To Cook"
+    end
+
+    it "can have a custom display name" do
+      title = "Now We're Cooking!"
+      c = Course.new(name: "how_to_cook", display_name: title)
+      c.display_name.should == title
+    end
+
+    it "has an href" do
+      subject.href.should == "/lessons/how_to_cook"
+    end
+
+    it "has lessons" do
+      subject.lessons.map(&:name).should == ["scramble_eggs", "boil_water"]
+    end
+
+    it "can find a lesson by name" do
+      subject.lesson_named("boil_water").name.should == "boil_water"
+    end
+
+    describe 'next and previous lesson' do
+      it 'returns the next lesson' do
+        subject.next_lesson('scramble_eggs').name.should == "boil_water"
+      end
+      it 'returns nil if there are no more lessons' do
+        subject.next_lesson('boil_water').should be_nil
+      end
+      it 'returns the previous lesson' do
+        subject.previous_lesson('boil_water').name.should == "scramble_eggs"
+      end
+      it 'returns nil if there are no previous lessons' do
+        subject.previous_lesson('scramble_eggs').should be_nil
+      end
+    end
+
+    describe 'next_labs' do
+      it "returns one lab" do
+        subject.next_labs("scramble_eggs").map(&:name).should == ["egg_lab"]
+      end
+      it "returns two labs" do
+        subject.next_labs("boil_water").map(&:name).should == ["turn_on_stove", "boiling"]
+      end
     end
   end
 
   describe 'videos' do
     it "can be set during course declaration" do
-      course = Course.new("course") do
+      course = Course.new(name: "course") do
         lesson "lesson" do
           video "video1"
           video "video2"

@@ -1,7 +1,7 @@
 require "course"
 
 class Course
-  RubyTools = Course.new("ruby_tools") do
+  RubyTools = Course.new(name: "ruby_tools") do
     lesson "tools"
     lesson "bundler"
     lesson "rspec"
