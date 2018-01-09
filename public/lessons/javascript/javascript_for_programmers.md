@@ -1,7 +1,6 @@
 # JavaScript Basics
 
-"In JavaScript, there is a beautiful, elegant, highly expressive language that is buried under a steaming pile of good intentions and blunders."
- - Douglas Crockford, JavaScript: The Good Parts
+"In JavaScript, there is a beautiful, elegant, highly expressive language that is buried under a steaming pile of good intentions and blunders." - Douglas Crockford, *JavaScript: The Good Parts*
 
 # Types
 
@@ -16,6 +15,7 @@ JavaScript has seven data types; six are called *primitives*:
 
 Object (sometimes called "hash") comprises all other types, including
 
+* `RegExp`
 * `Function`
 * `Date`
 * `Map`

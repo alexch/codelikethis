@@ -138,9 +138,9 @@ $('#someButton').click(function(event) {
 
 * Note: remember the commas between elements
 * Note: remember to **omit** the comma on the last element
-  * Protip: make a "done" element, so you don't have to remember, e.g.:
+  * Protip: make a "done" element at the bottom of every class, so you don't have to remember to omit the comma on all other methods, e.g.:
 
-           DONE: null
+               DONE: null
 
 # Constructors and "new"
 

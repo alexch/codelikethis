@@ -4,18 +4,22 @@ require_all('courses')
 
 class Courses
   ALL = [
-      ::Course::LearnToCodeWithJavascript,
       ::Course::AgileDevelopment,
 
-      ::Course::Javascript,
+      ::Course::Separator,
 
+      ::Course::LearnToCodeWithJavascript,
+      ::Course::Javascript, # "JavaScript Topics"
+      ::Course::ClientSideCoding,
+      ::Course::ServerSideJavascript,
 
-      ::Course::LearnToCode,
-      ::Course::Ruby,
+      ::Course::Separator,
+
+      ::Course::LearnToCode, # in Ruby
       ::Course::RubyTools,
       ::Course::RubyBasics,
       ::Course::RubyBlocks,
       ::Course::RubyObjects,
-      ::Course::RubyAdvanced,
+      ::Course::Ruby, # "Ruby Topics"
   ]
 end

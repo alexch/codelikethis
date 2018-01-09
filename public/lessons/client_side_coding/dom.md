@@ -156,7 +156,7 @@
 
 Scoping note: `step` is available inside the function itself because we defined it with a name, not anonymously.
 
-see [animate.html](animate.html) for a live example
+see [animate.html](../javascript/animate.html) for a live example
 
 # jQuery Animation
 

@@ -9,6 +9,7 @@ require 'awesome_print'
 
 class Course < Erector::Widget
 
+
   external :style, <<-CSS
   span.video_link {
     float: right;
@@ -189,6 +190,8 @@ class Course < Erector::Widget
     project = File.expand_path("#{here}/..")
     courses_dir = "#{project}/public/lessons/"
   end
+
+  Separator = new(name: "---")
 
   private
 

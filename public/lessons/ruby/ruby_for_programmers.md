@@ -1,91 +1,436 @@
-!SLIDE
-# Ruby For Programmers
+!SLIDE subsection
+# Introduction to Ruby for Programmers
 
-Taught by Alex Chaffee
+<img src="ruby-logo.jpg" width="250">
 
-<alex@purpletech.com>
+This section is intended as a brief, lightweight overview of the Ruby language; following sections will cover all these topics in much more detail. Students are encouraged to ask questions, but instructors are encouraged to answer, "We'll cover that later."
 
-GitHub/Twitter/LinkedIn/Google: alexch
+# Ruby vs. Rails
 
-In Collaboration with Marakana
+## Ruby is a Language
+<img src="ruby-logo.jpg" height="125" width="125">
 
-<http://marakana.com/training/ruby/ruby.html>
+## Rails is a Framework
+<img src="rails-logo.jpg" height="125" width="125">
 
-# Schedule
+## Rails is written in Ruby
 
-## Day One: Ruby Basics
+<!SLIDE subsection incremental>
+# Ruby Philosophy
 
-## Day Two: The Ruby Object Model
+Matz (Yukihiro Matsumoto), Ruby creator, says:
 
-## Textbook: The Well-Grounded Rubyist
+"I believe people want to express themselves when they program. They don't want to fight with the language."
 
-## Exercises: Learn Ruby Test First
-<http://testfirst.org/learn_ruby>
+"Programming languages must feel natural to programmers."
 
-# Day One: Ruby Basics
+"I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby."
 
-* Ruby Overview
-* Command-line Tools
-* Core Ruby
-  * Syntax
-  * Functions
-  * Control Flow
-  * Built-in Types
-* Collections
-* Blocks and Iterators
+"For me the purpose of life is partly to have joy. Programmers often feel joy when they can concentrate on the creative side of programming, So Ruby is designed to make programmers happy."
 
-# Day Two: The Ruby Object Model
+"I wanted a scripting language that was more powerful than Perl, and more object-oriented than Python."
 
-* Objects
-* Classes
-* Inheritance
-* Dispatching
-* Modules
-* Scope
+* <http://linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html>
+* <http://www.ruby-lang.org/en/about/>
 
-# Advanced Topics (if time)
+# Ruby Philosophy: Humane Interface
 
-* Exceptions
-* Advanced Blocks
-* Classes as Objects
-* Metaprogramming
-* IO
+* Ruby has a *humane interface*
+  * many ways to do things
+* Ruby favors readability and variety over concision and perfection
+* sometimes makes code hard to understand (but usually makes it easier)
+* contrast to *minimal interface*
+  * one (or a few) "right" ways to do things
+  * Python has a minimal philosophy
 
-## Test-driven Development with RSpec (probably not enough time)
-* Introduction to TDD
-* Red-Green-Refactor
-* Describing a feature
-* Verifying expectations
-* Mocks & Stubs
+# Many Rubies
 
-# Test-First Teaching
+* Ruby 1.0 released in 1996
+  * Fully Open Source
 
-* We use tests to check for code correctness
-* We use tests to define the task to implement
-* We know we're done when the tests pass
+![too many rubies](rubies.png)
 
-Conceived by Sarah Allen and Alex Chaffee
+# Versions common today
 
-# Let's get started
+* MRI 1.8.7 
+  * old, on many production servers
+* MRI 1.9.3 
+  * stable, more modern
+* [Ruby 2.0](http://globaldev.co.uk/2012/11/ruby-2-0-0-preview-features/) was [*just* released](http://www.ruby-lang.org/en/news/2013/02/24/ruby-2-0-0-p0-is-released/)
+* JRuby 
+  * runs on Java VM and J2EE servers -- deploy = WAR file
 
-Install Ruby, then open a terminal window and type this:
+# Ruby Language Overview
 
-    git clone https://github.com/alexch/learn_ruby.git
+Ruby is...
 
-    cd learn_ruby
+* Interpreted
+* Dynamically typed
+* Object oriented
+* Blocks / lambdas / closures
+* Perl-like regular expressions
+* Closely tied to shell & OS
 
-    open index.html in browser
+# IRB: Interactive RuBy
 
-# Very Important!
+    @@@ ruby
+    $ irb
+    >> 4
+    => 4
+    >> 4+4
+    => 8
 
-## READ THE ERROR
+Please fire up `irb` on your computer and **try this out** right now!
 
-This is actually very difficult to do, and very easy to miss.
+# Everything's an Object
 
-## Make your console window REALLY TALL
+    @@@ ruby
+    >> 2.class
+    => Fixnum
 
-## When you get an error, SCROLL UP and read down STARTING from where YOU HIT RETURN
+    >> 2.to_s
+    => "2"
 
+    >> 2.to_s.class
+    => String
 
+# Everything Has a Value
+
+    @@@ ruby
+    >> 2 + 2
+    => 4
+
+    >> (2+2).zero?
+    => false
+
+    >> if true then "yes" end
+    => "yes"
+
+    >> if false then "yes" end
+    => nil
+
+# Output vs Value
+
+    >> puts "foo"
+    foo
+    => nil
+
+The *output* is `foo\n` but the *value* is `nil`.
+
+# Variables are Names for Objects
+
+    fruit = "apple"
+
+* `fruit` is the name of an object containing `apple`
+
+# Printing
+
+* `print` prints its arg
+* `puts` prints its arg plus a newline
+* `p` *inspects* and prints its arg plus a newline
+
+# Advanced Printing
+* `pp` *pretty-prints* its arg plus a newline
+  * `require "pp"`
+* `ap` is even prettier than `pp`
+  * uses color, indenting, array counting
+  * provided by the "awesome_print" gem
+* `d` is even prettier than `ap`
+  * provided by the `wrong` gem
+  * `require "wrong"; include Wrong::D`
+  * if x is 10, `d { x }` prints `x is 10`
+
+# Functions
+
+    @@@ ruby
+    def add a, b
+      a + b
+    end
+
+    add 2, 2
+    #=> 4
+
+* Note: no 'return' required
+* `def add(a, b)` is also legal
+
+# Optional Punctuation
+
+* semicolons, parens, and `return` are optional
+
+* These are equivalent:
+
+        @@@ ruby
+        def increment(x)
+          return x + 1;
+        end
+
+        def increment x
+          x + 1
+        end
+
+* Also these:
+
+        @@@ ruby
+        def increment x; x + 1; end
+
+        def increment(x) x + 1; end
+
+# Blocks are like mini-functions
+
+* Blocks can also take parameters or return a value
+* e.g. the `map` iterator translates each item in an array into a new array
+
+        @@@ ruby
+        >> ["hello", "world"].map {|string| string.upcase}
+        => ["HELLO", "WORLD"]
+
+* `{|string| string.upcase}` defines a block
+
+# Method Chaining
+
+* Chaining is a *really* cool and powerful Ruby idiom
+* It depends on these three features:
+  * Every expression has a value
+  * Every value is an object
+  * Iterators are loops inside methods
+* So you can call a method on *anything*
+  * including the result of an iterator
+
+# Method Chaining Example
+
+    s = "my dog has fleas"
+
+Without chaining:
+
+    words = s.split
+    words = words.map{|word| word.capitalize}
+    s = words.join(" ")
+
+With chaining:
+
+    s = "my dog has fleas"
+    s.split.map{|word| word.capitalize}.join(" ")
+
+# Poetry vs Prose
+
+Other languages are prose:
+
+    @@@ Java
+    public String titleize(s) {
+      String words = s.split(" ");
+      String titleized = "";
+      for(int i =0; i < words.length ; i++) {
+        char capLetter = Character.toUpperCase(words[i].charAt(0));
+        String capWord =  capLetter + words[i].substring(1, words[i].length());
+        titleized += capWord + " ";
+      }
+      return titleized.trim();
+    }
+
+Ruby is poetry:
+
+    @@@ Ruby
+    def titleize s
+      s.split.map(&:capitalize).join(" ")
+    end
+
+Cf. **declarative** vs. **algorithmic**
+
+# Ruby has hash comments, like perl
+
+    @@@ ruby
+    # is a comment
+    2 + 2 # is a comment
+
+Ruby has a syntax for multiline comments too, but it's silly and nobody uses it.
+
+# Line Break Gotcha
+
+    @@@ ruby
+    x = 1 + 2
+    x #=> 3
+
+    x = 1
+      + 2
+    x #=> 1
+
+Solution: always put operators on top line
+
+    @@@ ruby
+    x = 1 +
+        2
+    x #=> 3
+
+# Use parens when you need them
+
+    @@@ ruby
+    >> "Hello".gsub "H", "h"
+    => "hello"
+
+    >> "Hello".gsub "H", "h".reverse
+    => "hello"
+
+    >> "Hello".gsub("H", "h").reverse
+    => "olleh"
+
+# Variables are declared implicitly
+
+    @@@ ruby
+    first_name = "Santa"
+    last_name = "Claus"
+    full_name = first_name + last_name
+    #=> "SantaClaus"
+
+# Built-in Types
+
+* Numbers
+  * `42` (Fixnum)
+  * `3.14159` (Float)
+* Booleans
+  * `true`
+  * `false`
+* Strings
+  * `"apple"`
+  * `'banana'`
+* Symbols
+  * `:apple`
+
+# Built-in Types (cont.)
+
+* Arrays
+  * `["apple", "banana"]`
+* Ranges
+  * `(1..10)`
+* Hashes
+  * `{:apple => 'red', :banana => 'yellow'}`
+  * `{apple: 'red', banana: 'yellow'}`
+* Regular Expressions
+  * `/fo*/i`
+
+# String interpolation
+
+    @@@ ruby
+    "boyz #{1 + 1} men"
+    => "boyz 2 men"
+
+* Any Ruby code can go inside the braces
+* It gets evaluated and stuck inside the string
+
+# equal, double-equal, and threequal
+
+* `x = 1` means "put the value `1` in the variable `x`"
+* `x == 2` means "`true` if `x` is `2`, otherwise `false`"
+* `x === 3` means the same as `==` but sometimes more
+  * threequal is rarely used
+
+# Ruby syntax cheatsheet
+
+![cheatsheet](/lessons/ruby_basics/cheatsheet/cheatsheet.png)
+
+(_The Well-Grounded Rubyist_, p. 5, section 1.1.2)
+
+# Interlude
+
+Are you sick of hearing me speak?
+
+If so, do a lab: 01_temperature is right up your alley.
+
+# Iterators
+
+    @@@ ruby
+    my_array = ["cat", "dog", "world"]
+    my_array.each do |item|
+      puts "hello " + item
+    end
+
+* `do...end` defines a *block*
+* calls the block with `item = "cat"`
+* then calls the block with `item = "dog"`
+* then calls the block with `item = "world"`
+
+# Classes and methods
+
+    @@@ ruby
+    class Calculator
+      def add(a,b)
+        a + b
+      end
+    end
+
+    calc = Calculator.new
+    calc.add(2, 2)
+    #=> 4
+
+* a *function* inside a *class* is called a *method*
+
+# Classes
+
+* A class defines a group of behaviors (methods)
+* Every object has a class, `Object` if nothing else
+
+# Messages and Methods
+
+* an object is referenced by a variable or a literal
+* the dot operator (`.`) sends a message to an object
+* an object receives a *message* and invokes a *method*
+* with no dot, the default object (`self`) is the receiver
+
+# bang and question mark methods
+
+* method names can end with `!` or `?`
+  * `?` means "boolean"
+  * `!` means "watch out!"
+
+# Ruby Naming Conventions
+
+methods and variables are in `snake_case`
+
+classes and modules are in `CamelCase`
+
+constants are in `ALL_CAPS`
+
+> Standard is better than better.
+>
+> -- Anon.
+
+# Ruby Identifiers
+
+* `local_variable` - start with letter or underscore, contain letters, numbers, underscored
+* `@instance_variable` - start with `@`
+* `@@class_variable` - start with `@@`
+* `$global_variable` - start with `$`
+* `Constant` or `CONSTANT` - must start with uppercase letter
+* `ClassName` - capitalized camel case
+* `method_name?` - like a local variable, but can end with `?` or `!` or `=`
+* keywords - about 40 reserved words (`def`) and weirdos (`__FILE__`)
+* literals - `"hi"` for strings, `[1,2]` for arrays, `{:a=>1, :b=>2}` for hashes, etc.
+
+# Variable Scopes
+
+    @@@ ruby
+    var   # local variable (or method call)
+    @var  # instance variable
+    @@var # class variable
+    $var  # global variable
+    VAR   # constant
+
+# `load` and `require`
+
+* `load` inserts a file's contents into the current file
+* `require` makes a *feature* available to the current file
+  * skips already-loaded files
+  * omits the trailing `.rb`
+  * can also be used for extensions written in C (`.so`, `.dll`, etc.)
+
+# Next steps
+
+* Lesson: [Ruby Tools](/lessons/ruby_tools/tools)
+* Lesson: [Ruby Basics](/lessons/ruby_basics)
+* Lesson: [Ruby Objects](/lessons/ruby_objects)
+
+# Credits
+
+* "Ruby Intro" slides based on [Ruby Quickstart for Refugees](https://gist.github.com/190567) by [Jacob Rothstein](http://about.me/jbr)
+* Improved by Alex Chaffee, Sarah Allen, Wolfram Arnold
 
 

@@ -5,11 +5,11 @@ class Course
       name: "learn_to_code_with_javascript",
       display_name: "Learn to Code with JavaScript",
       abstract: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn JavaScript from the ground up... then this course is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and intermediate computer science concepts like closures and recursion.",
-      goals: [ # "the student will learn"
+      goals: [ # "the student will learn..."
           "how to edit and execute code on their own computer using a text editor and a terminal (command line)",
           "fundamental coding concepts, including variables, types, functions, loops, I/O, logic, recursion",
           "how to recognize and use certain abstract data structures (arrays, stacks, hashes)",
-          "basic use of JavaScript and NodeJS",
+          "basic use of JavaScript",
       ]
   ) do
 

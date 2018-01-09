@@ -33,6 +33,7 @@ In computers, code is a series of instructions that tell a computer what to do.
 * coding is communication
   * between you and a computer
   * between you and other coders
+  * between you and future you
 
 # What will we learn today?
 
