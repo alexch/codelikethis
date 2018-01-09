@@ -10,6 +10,7 @@ If the user types:
 
 then `process.argv` contains:
 
+    @@@ js
     ["Alice", "Bob"]
 
 # Why ARGV?
@@ -20,6 +21,7 @@ ARGV is a historical name. It means "Argument Vector" and has been around since 
 
 Write a new program called `hi.js` that contains:
 
+    @@@ js
     console.log("Hi, " + process.argv[0])
 
 and run it a few times, e.g.
@@ -48,3 +50,7 @@ e.g.
     10
 
 > Hint: Do you remember how to cleanly convert a string to a number?
+
+# Links
+
+* <https://code-maven.com/argv-raw-command-line-arguments-in-nodejs>

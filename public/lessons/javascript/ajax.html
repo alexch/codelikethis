@@ -8,7 +8,7 @@
         $(document).ready(function () {
             console.log('ready');
             $('body').delegate('#load_button', 'click', function () {
-                console.log('clicking')
+                console.log('clicking');
                 var button = this;
                 $(this).attr('disabled', true);
                 $.ajax("ajax.html")

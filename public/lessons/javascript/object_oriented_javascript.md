@@ -10,6 +10,7 @@
   * the "this" variable
   * constructors
   * prototypes
+  * privacy (aka *data hiding* or *encapsulation*)
 
 # Definition of Object
 
@@ -61,13 +62,22 @@
 
   * this is a **terrible** mistake in the language design, even worse than that variables without "var" are global
 
+# `this` and callbacks
 
-# "this" and callbacks
+* some JS frameworks set `this` before calling your code via a callback function
 
-TODO
+  * e.g. before calling an event callback, JQuery sets `this` to point to the DOM element that originated the event
+  * this means that callback code that appears inside an object might be executed in the context of a *different* object
+  
+* to retain a pointer to your object, you can stash it in a closure-scoped variable, often named `self` by convention
 
-* a "callback" is a function that will be called later, by someone else
-* usually "this" is different
+```js
+@@@js
+var self = this;
+$('#someButton').click(function(event) {
+    self.clickedButton = $(this).value();
+});
+```
 
 # `apply` Yourself
 
