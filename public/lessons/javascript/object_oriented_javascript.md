@@ -173,9 +173,30 @@ $('#someButton').click(function(event) {
   * "Circle" with a capital C is the constructor
   * "circle" with a lowercase C is the object (instance)
 
+# Stay classy, JavaScript
+
 * This is the first time we've seen **classes** in JavaScript
-  * class ~= cookie cutter; instance ~= cookie
-  * for making lots of objects with the same methods and different data
+* classes are for making lots of objects with the same methods and different data
+* cookie analogy:
+  * class ~= cookie cutter
+  * instance ~= cookie
+  * instance data ~= icing and sprinkles
+
+# the `class` keyword
+
+In 2015, JavaScript introduced a `class` keyword which is "syntactical sugar over JavaScript's existing prototype-based inheritance".
+
+```js
+@@@js
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+```
+
+[MDN: classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 # Making an object with private data using closures
 
@@ -198,7 +219,7 @@ $('#someButton').click(function(event) {
         circle.radius; // undefined
         circle.area(); // 12.566370614359172
 
-* "radius" is private to the scope of the Circle function's closure
+* "radius" is private to the scope of the `Circle` function's closure
 * "circumference" and "area" are public (exposed) on each circle object
   * but since they were defined inside the constructor, they can see "radius"
 * Totally bizarre, huh?
