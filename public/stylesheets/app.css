@@ -291,4 +291,12 @@ div.main_column img {
   padding: 2rem;
   border-top: 1px solid #EEEEEE; }
 
+/* line 326, ../scss/app.scss */
+.preview {
+  font-size: 10pt;
+  border: 4px solid darkred;
+  background-color: cornsilk;
+  margin: 0 1em;
+  padding: .5em 1em; }
+
 /*# sourceMappingURL=app.css.map */

@@ -239,6 +239,10 @@ class AppPage < Erector::Widgets::Page
         # now the real body
         div(class: "col-md-6") {
           a name: 'content'
+          div(class: "row") {
+            preview
+          }
+
           call_block
           widget @widget if @widget
 
@@ -279,5 +283,15 @@ class AppPage < Erector::Widgets::Page
   end
 
   external :script, google_analytics_code('UA-23417120-3')
+  private
+  def preview
+    p.preview {
+      text "This site is a "
+      b "preview"
+      text " of the curriculum for our Summer 2018 bootcamp in Burlington, Vermont. "
+      text "As we continue our preparation, courses and lessons will appear and disappear; we will rename, rearrange, clarify, and (occasionally) obfuscate as needed... "
+      text "Please consider this a work in progress and keep on checking in."
+    }
+  end
 
 end
