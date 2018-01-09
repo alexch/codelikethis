@@ -23,8 +23,8 @@ In this section we cover truth, falsiness, and conditions.
 ## Truthy Things
 * `true`
 * `0`
-* ""
-* "false"
+* `""`
+* `"false"`
 * pretty much anything else
 
 
