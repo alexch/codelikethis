@@ -22,6 +22,7 @@ class Course < Erector::Widget
   def initialize **options, &block
     @name = (options[:name] || "course").underscore
     @abstract = options[:abstract]
+    @goals = options[:goals]
     @display_name = options[:display_name]
     @stuff = []
     instance_eval &block if block
@@ -31,10 +32,14 @@ class Course < Erector::Widget
     @current = course_or_lesson
   end
 
-  attr_reader :abstract
+  attr_reader :abstract, :goals
 
   def abstract?
     !!abstract
+  end
+
+  def goals?
+    goals and not goals.empty?
   end
 
   def lessons
@@ -77,6 +82,17 @@ class Course < Erector::Widget
       div(class: 'abstract') do
         h2 "Abstract"
         p self.abstract # todo: markdown?
+      end
+    end
+    if goals?
+      div(class: 'goals') do
+        h2 "Goals"
+        p "The student will learn..."
+        ul do
+          goals.each do |goal|
+            li goal
+          end
+        end
       end
     end
     div.container {

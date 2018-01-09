@@ -53,7 +53,9 @@ describe Course do
     subject {
 
       course = Course.new(name: "how_to_cook",
-                          abstract: "learn how to cook with these great tips") do
+                          abstract: "learn how to cook with these great tips",
+                          goals: ["boil water", "scramble eggs"]
+                          ) do
 
         lesson "scramble_eggs"
         lab "egg_lab"
@@ -77,6 +79,13 @@ fill a glass of water at the sink
 
     it "can have an abstract" do
       subject.abstract.should == "learn how to cook with these great tips"
+    end
+
+    it "can have a list of goals" do
+      subject.goals.should == [
+          "boil water",
+          "scramble eggs",
+          ]
     end
 
     it "lets a subclass define its lessons inline" do
