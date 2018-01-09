@@ -11,6 +11,9 @@ use Rack::Rewrite do
   moved_permanently '/lessons/learn_to_code/learn_to_code', '/lessons/learn_to_code/intro'
   moved_permanently '/lessons/ruby_advanced/intro', '/lessons/ruby/ruby_for_programmers'
   moved_permanently '/lessons/ruby/intro', '/lessons/ruby/ruby_for_programmers'
+  moved_permanently '/lessons/javascript/dom', '/lessons/client_side_coding/dom'
+  moved_permanently '/lessons/javascript/jquery', '/lessons/client_side_coding/jquery'
+  moved_permanently '/lessons/javascript/ajax', '/lessons/client_side_coding/ajax'
 
   moved_permanently %r{/lessons/ruby_advanced/(\w+)}, '/lessons/ruby/$1'
 end
