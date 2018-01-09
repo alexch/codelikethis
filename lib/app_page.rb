@@ -288,9 +288,11 @@ class AppPage < Erector::Widgets::Page
     p.preview {
       text "This site is a "
       b "preview"
-      text " of the curriculum for our Summer 2018 bootcamp in Burlington, Vermont. "
-      text "As we continue our preparation, courses and lessons will appear and disappear; we will rename, rearrange, clarify, and (occasionally) obfuscate as needed... "
-      text "Please consider this a work in progress and keep on checking in."
+      text " of the curriculum for our "
+      a "Summer 2018 bootcamp", href: "http://burlingtoncodeacademy.com/bootcamp"
+      text " in Burlington, Vermont. "
+      text "As we continue our preparation, courses and lessons will appear and disappear; we will rename, rearrange, clarify, and obfuscate as needed... "
+      text "Please consider this a work in progress and keep checking in."
     }
   end
 
