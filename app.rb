@@ -51,7 +51,7 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:course" do
-    AppPage.new(:widget => course, :title => page_title(course)).to_html
+    AppPage.new(:widget => course.widget, :title => page_title(course)).to_html
   end
 
   get "/lessons/:course/:file.slides" do

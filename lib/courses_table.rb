@@ -98,12 +98,12 @@ class CoursesTable < Erector::Widget
       }
       td.lessons(valign: "top") {
         ul {
-          widget course, {}, :content_method_name => :list_lessons
+          widget course.widget, {}, :content_method_name => :list_lessons
         }
       }
       td.lessons(valign: "top") {
         ul {
-          widget course, {}, :content_method_name => :list_labs
+          widget course.widget, {}, :content_method_name => :list_labs
         }
       }
     }

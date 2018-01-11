@@ -32,20 +32,20 @@ describe Course do
   end
 
   it "renders HTML" do
-    lessons = Course.new do
+    course = Course.new do
       lesson "foo"
       lesson "bar"
     end
 
-    lessons.dir = files.dir "foo" do
+    course.dir = files.dir "foo" do
       file "foo.md"
       file "bar.md"
     end
 
     breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [CoursesTable.new])
-    lessons.to_html.should include(breadcrumbs.to_html)
-    lessons.to_html.should include("<a href=\"/lessons/course/foo#content\">Foo")
-    lessons.to_html.should include("<a href=\"/lessons/course/bar#content\">Bar")
+    course.widget.to_html.should include(breadcrumbs.to_html)
+    course.widget.to_html.should include("<a href=\"/lessons/course/foo#content\">Foo")
+    course.widget.to_html.should include("<a href=\"/lessons/course/bar#content\">Bar")
   end
 
   describe 'with markdown lesson files' do

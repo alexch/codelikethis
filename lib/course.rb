@@ -81,80 +81,6 @@ class Course < Erector::Widget
     "/lessons/#{name}#{"##{anchor}" if anchor}"
   end
 
-  def content
-    widget Breadcrumbs, parents: [CoursesTable.new], display_name: self.display_name
-    if abstract?
-      div(class: 'abstract') do
-        h2 "Abstract"
-        p self.abstract # todo: markdown?
-      end
-    end
-    if goals?
-      div(class: 'goals') do
-        h2 "Goals"
-        p "The student will learn..."
-        ul do
-          goals.each do |goal|
-            li goal
-          end
-        end
-      end
-    end
-    div.container {
-      div.row {
-        div(class: 'col-12 col-md-6 lessons') {
-          h2 "Lessons"
-          list_lessons
-        }
-        unless labs.empty?
-          div(class: 'col-12 col-md-6 lessons') {
-            h2 "Labs"
-            list_labs
-          }
-        end
-      }
-    }
-    if links?
-      h2 "Links"
-      ul(class: 'links') do
-        links.each do |link|
-          li { widget link }
-        end
-      end
-    end
-  end
-
-  def list_items items = @stuff, options = {}
-    options = options.dup
-    element_name = options.delete(:element) || 'li'
-    items.each do |item|
-      div(class: ['list-group-item', 'border-0', ('active' if @current == item)]) {
-        item_name = item.display_name
-        # item_name = "Lab: #{item_name}" if item.is_a? Lab
-        href = if @current == item
-                 ""
-               else
-                 "#{item.href}"
-               end
-        href += "#content" unless href.include?("#")
-
-        a href: href do
-          text item_name
-          span.loading_image unless @current == item
-          span.video_link "Video" if item.respond_to? :video? and item.video?
-        end
-      }
-    end
-  end
-
-  def list_lessons
-    list_items lessons
-  end
-
-  def list_labs
-    list_items labs
-  end
-
   def lesson lesson_name, abstract: nil, display_name: nil, &block
     raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
 
@@ -201,6 +127,98 @@ class Course < Erector::Widget
     here = File.expand_path(File.dirname(__FILE__))
     project = File.expand_path("#{here}/..")
     courses_dir = "#{project}/public/lessons/"
+  end
+
+  def widget
+    Widget.new(target: self)
+  end
+
+  class Widget < Erector::Widget
+    needs :target
+    attr_reader :target
+
+    def current_page? item
+      target.instance_variable_get(:@current) == item
+    end
+
+    def target_items
+      target.instance_variable_get(:@stuff) == item
+    end
+
+    def content
+      widget Breadcrumbs, parents: [CoursesTable.new], display_name: target.display_name
+      if target.abstract?
+        div(class: 'abstract') do
+          h2 "Abstract"
+          p target.abstract # todo: markdown?
+        end
+      end
+      if target.goals?
+        div(class: 'goals') do
+          h2 "Goals"
+          p "The student will learn..."
+          ul do
+            target.goals.each do |goal|
+              li goal
+            end
+          end
+        end
+      end
+      div.container {
+        div.row {
+          div(class: 'col-12 col-md-6 lessons') {
+            h2 "Lessons"
+            list_lessons
+          }
+          unless target.labs.empty?
+            div(class: 'col-12 col-md-6 lessons') {
+              h2 "Labs"
+              list_labs
+            }
+          end
+        }
+      }
+      if target.links?
+        h2 "Links"
+        ul(class: 'links') do
+          target.links.each do |link|
+            li {widget link}
+          end
+        end
+      end
+    end
+
+    def list_items items = target_items, options = {}
+      options = options.dup
+      element_name = options.delete(:element) || 'li'
+      items.each do |item|
+        div(class: ['list-group-item', 'border-0', ('active' if current_page? item)]) {
+          item_name = item.display_name
+          # item_name = "Lab: #{item_name}" if item.is_a? Lab
+          href = if current_page? item
+                   ""
+                 else
+                   "#{item.href}"
+                 end
+          href += "#content" unless href.include?("#")
+
+          a href: href do
+            text item_name
+            span.loading_image unless current_page? item
+            span.video_link "Video" if item.respond_to? :video? and item.video?
+          end
+        }
+      end
+    end
+
+    def list_lessons
+      list_items target.lessons
+    end
+
+    def list_labs
+      list_items target.labs
+    end
+
   end
 
   Separator = new(name: "---")
