@@ -7,15 +7,7 @@ require 'lesson'
 require 'lab'
 require 'awesome_print'
 
-class Course < Erector::Widget
-
-  external :style, <<-CSS
-  span.video_link {
-    float: right;
-    border: 1px dotted black;
-    padding: 1px 2px;
-  }
-  CSS
+class Course
 
   attr_writer :dir
 
@@ -129,13 +121,21 @@ class Course < Erector::Widget
     courses_dir = "#{project}/public/lessons/"
   end
 
-  def widget
+  def view
     Widget.new(target: self)
   end
 
   class Widget < Erector::Widget
     needs :target
     attr_reader :target
+
+    external :style, <<-CSS
+  span.video_link {
+    float: right;
+    border: 1px dotted black;
+    padding: 1px 2px;
+  }
+    CSS
 
     def current_page? item
       target.instance_variable_get(:@current) == item

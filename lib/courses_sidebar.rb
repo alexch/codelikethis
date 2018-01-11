@@ -99,12 +99,12 @@ class CoursesSidebar < Erector::Widget
         end
         div(class: ['list-group', 'lesson-names']) {
           course.current = @current
-          widget course.widget, {}, :content_method_name => :list_lessons
+          widget course.view, {}, :content_method_name => :list_lessons
         }
       }
 
       # ul(class: 'list-group', id: labs_id) {
-      #   widget course.widget, {}, :content_method_name => :list_labs
+      #   widget course.view, {}, :content_method_name => :list_labs
       # }
     }
 

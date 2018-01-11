@@ -43,9 +43,9 @@ describe Course do
     end
 
     breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [CoursesTable.new])
-    course.widget.to_html.should include(breadcrumbs.to_html)
-    course.widget.to_html.should include("<a href=\"/lessons/course/foo#content\">Foo")
-    course.widget.to_html.should include("<a href=\"/lessons/course/bar#content\">Bar")
+    course.view.to_html.should include(breadcrumbs.to_html)
+    course.view.to_html.should include("<a href=\"/lessons/course/foo#content\">Foo")
+    course.view.to_html.should include("<a href=\"/lessons/course/bar#content\">Bar")
   end
 
   describe 'with markdown lesson files' do

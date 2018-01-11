@@ -2,9 +2,9 @@ require 'erector'
 require 'active_support'
 require 'deck'
 
-class Lesson < Erector::Widget
+class Lesson
 
-  attr_reader :name, :course, :abstract
+  attr_reader :name, :course, :abstract, :videos
 
   def initialize course, name, abstract: nil, display_name: nil
     @course, @name, @abstract, @display_name = course, name, abstract, display_name
@@ -25,133 +25,6 @@ class Lesson < Erector::Widget
 
   def labs
     slide_labs + next_labs
-  end
-
-  def labs_list
-    div(class: 'list-group') {
-      labs.each do |lab|
-        div(class: 'list-group-item') {
-          widget lab
-        }
-      end
-    }
-  end
-
-  def outline
-    div.outline {
-      h3 "Outline"
-      ul(class: 'list-group') {
-        slides.each do |slide|
-          li(class: 'list-group-item') {
-            a slide.title, href: "#anchor/#{slide.slide_id}"
-          }
-        end
-      }
-    }
-    br
-    div(class: 'row text-center') {
-      div(class: 'col') {
-        a.slides("Show Slides", href: "#{name}.slides", class: 'btn btn-primary')
-      }
-    }
-    br
-
-  end
-
-  def content
-    h1(class: 'lesson-name') {
-      span(class: 'course-name') {
-        text course.display_name
-        text ':'
-      }
-      br
-      text display_name
-    }
-    next_and_previous
-
-    if abstract
-      div(class: 'abstract') {
-        h2 "Abstract"
-        p abstract
-      }
-      br
-    end
-
-    div.videos {
-      @videos.each do |youtube_id|
-        # see https://developers.google.com/youtube/player_parameters
-        # see https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
-        #
-        div(class: "video") {
-          s = %Q(<iframe class="youtube" type="text/html" width="560" height="349" src="http://www.youtube.com/embed/#{youtube_id}" frameborder="0" allowfullscreen></iframe>\n)
-          rawtext s
-        }
-      end
-    }
-
-    br
-
-    div.main_column {
-      if slides?
-        h2 "Slides"
-        slides.each do |slide|
-          widget slide
-        end
-        br
-      end
-
-      unless next_labs.empty?
-        div(class: 'next-labs') {
-          h2 "Labs"
-          labs_list
-        }
-        br
-      end
-
-      next_and_previous
-      br
-
-      div.comments {
-        h2 "Comments"
-        widget Disqus, shortname: "codelikethis",
-               developer: (Thread.current[:development] ? 1 : nil),
-               identifier: "lesson_#{@course.name}_#{name}",
-               title: "#{@course.display_name}: #{display_name}"
-      }
-    }
-
-
-  end
-
-  def next_and_previous
-    div.next_and_previous {
-      previous_lesson_button
-#      text raw('&nbsp;')
-      next_lesson_button
-      center {
-        a @course.display_name, href: @course.href
-      }
-    }
-  end
-
-  def previous_lesson_button
-    if previous_lesson
-      a.button.previous_lesson href: previous_lesson.name do
-        text "<< "
-        text previous_lesson.display_name
-        text " <<"
-      end
-    end
-  end
-
-  def next_lesson_button
-    if next_lesson
-      a.button.next_lesson href: next_lesson.name do
-        text ">> "
-        text next_lesson.display_name
-        text " >>"
-      end
-    end
   end
 
   def slides
@@ -186,6 +59,157 @@ class Lesson < Erector::Widget
 
   def slides?
     !slides.empty?
+  end
+
+  public
+
+  def to_html
+    view.to_html
+  end
+
+  def view
+    Widget.new(target: self)
+  end
+
+  class Widget < Erector::Widget
+    needs :target
+    attr_reader :target
+
+    [:labs, :slides, :course, :name, :display_name, :abstract,
+     :slides, :slides?,
+     :videos, :video?,
+     :next_lesson, :previous_lesson, :next_labs,
+
+    ].each do |method|
+      define_method method do
+        @target.send method
+      end
+    end
+
+    def labs_list
+      div(class: 'list-group') {
+        labs.each do |lab|
+          div(class: 'list-group-item') {
+            widget lab
+          }
+        end
+      }
+    end
+
+    def outline
+      div.outline {
+        h3 "Outline"
+        ul(class: 'list-group') {
+          slides.each do |slide|
+            li(class: 'list-group-item') {
+              a slide.title, href: "#anchor/#{slide.slide_id}"
+            }
+          end
+        }
+      }
+      br
+      div(class: 'row text-center') {
+        div(class: 'col') {
+          a.slides("Show Slides", href: "#{name}.slides", class: 'btn btn-primary')
+        }
+      }
+      br
+    end
+
+    def content
+      h1(class: 'lesson-name') {
+        span(class: 'course-name') {
+          text course.display_name
+          text ':'
+        }
+        br
+        text display_name
+      }
+      next_and_previous
+
+      if abstract
+        div(class: 'abstract') {
+          h2 "Abstract"
+          p abstract
+        }
+        br
+      end
+
+      div.videos {
+        videos.each do |youtube_id|
+          # see https://developers.google.com/youtube/player_parameters
+          # see https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+          #
+          div(class: "video") {
+            s = %Q(<iframe class="youtube" type="text/html" width="560" height="349" src="http://www.youtube.com/embed/#{youtube_id}" frameborder="0" allowfullscreen></iframe>\n)
+            rawtext s
+          }
+        end
+      }
+
+      br
+
+      div.main_column {
+        if slides?
+          h2 "Slides"
+          slides.each do |slide|
+            widget slide
+          end
+          br
+        end
+
+        unless next_labs.empty?
+          div(class: 'next-labs') {
+            h2 "Labs"
+            labs_list
+          }
+          br
+        end
+
+        next_and_previous
+        br
+
+        div.comments {
+          h2 "Comments"
+          widget Disqus, shortname: "codelikethis",
+                 developer: (Thread.current[:development] ? 1 : nil),
+                 identifier: "lesson_#{course.name}_#{name}",
+                 title: "#{course.display_name}: #{display_name}"
+        }
+      }
+
+
+    end
+
+    def next_and_previous
+      div.next_and_previous {
+        previous_lesson_button
+        next_lesson_button
+        center {
+          a course.display_name, href: course.href
+        }
+      }
+    end
+
+    def previous_lesson_button
+      if previous_lesson
+        a.button.previous_lesson href: previous_lesson.name do
+          text "<< "
+          text previous_lesson.display_name
+          text " <<"
+        end
+      end
+    end
+
+    def next_lesson_button
+      if next_lesson
+        a.button.next_lesson href: next_lesson.name do
+          text ">> "
+          text next_lesson.display_name
+          text " >>"
+        end
+      end
+    end
   end
 
 end

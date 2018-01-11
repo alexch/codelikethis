@@ -51,7 +51,7 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:course" do
-    AppPage.new(:widget => course.widget, :title => page_title(course)).to_html
+    AppPage.new(:widget => course.view, :title => page_title(course)).to_html
   end
 
   get "/lessons/:course/:file.slides" do
@@ -70,9 +70,9 @@ class App < Sinatra::Base
 
         lesson = course.lesson_named(params[:file])
 
-        slide << lesson.to_html(content_method_name: :labs)
-        slide << lesson.to_html(content_method_name: :next_lesson_button)
-        slide << lesson.to_html(content_method_name: :previous_lesson_button)
+        slide << lesson.view.to_html(content_method_name: :labs)
+        slide << lesson.view.to_html(content_method_name: :next_lesson_button)
+        slide << lesson.view.to_html(content_method_name: :previous_lesson_button)
 
         slide << "<p><a href='#{lesson.href}'>Outline</a></p>"
         slide
@@ -89,7 +89,7 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:course/:lesson" do
-    AppPage.new(:widget => lesson, :title => lesson.display_name + " - Code Like This").to_html
+    AppPage.new(:widget => lesson.view, :title => lesson.display_name + " - Code Like This").to_html
   end
 
   def course_dir
