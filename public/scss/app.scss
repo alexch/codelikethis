@@ -2,7 +2,6 @@
 @import "functions";
 @import "variables";
 @import "mixins";
-
 @import "tables";
 
 $topbar-height: 75px;
@@ -69,7 +68,7 @@ main {
   center.logo {
     padding: 1rem;
   }
-  h1,h2,h3,h4,h5 {
+  h1, h2, h3, h4, h5 {
     font-family: $title-font;
   }
 }
@@ -135,12 +134,6 @@ section.slide {
   padding: 0 3px;
 }
 
-iframe.video {
-  margin: 1em;
-  padding: .5em;
-  border: 6px solid gray;
-}
-
 div.right_side {
   float: right;
   max-width: 24em;
@@ -156,11 +149,11 @@ div.blog .rssHeader > a:after {
 
 /* left sidebar ("Courses") */
 $triangle-pointing-right: str-replace(str-replace(
-                            url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><polygon points='1,1 1,30 30,15 1,1' style='fill:gray;stroke:black;stroke-width:1' /></svg>"),
-                          "<", "%3C"), ">", "%3E");
+                url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><polygon points='1,1 1,30 30,15 1,1' style='fill:gray;stroke:black;stroke-width:1' /></svg>"),
+                "<", "%3C"), ">", "%3E");
 $triangle-pointing-down: str-replace(str-replace(
-                            url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><polygon points='1,1 30,1 15,30 1,1' style='fill:gray;stroke:black;stroke-width:1' /></svg>"),
-                          "<", "%3C"), ">", "%3E");
+                url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><polygon points='1,1 30,1 15,30 1,1' style='fill:gray;stroke:black;stroke-width:1' /></svg>"),
+                "<", "%3C"), ">", "%3E");
 
 .courses-toggler {
   @include media-breakpoint-up('md') {
@@ -234,7 +227,7 @@ span.svg-icon {
   #sidebar {
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray;
-    h1,h2,h3,h4 {
+    h1, h2, h3, h4 {
       margin: 2px 0;
     }
   }
@@ -329,4 +322,22 @@ div.main_column img {
   background-color: cornsilk;
   margin: 0 1em;
   padding: .5em 1em;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+
+  margin: 1em;
+  border: 6px solid gray;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -80,8 +80,12 @@ class Lesson < Erector::Widget
     div.videos {
       @videos.each do |youtube_id|
         # see https://developers.google.com/youtube/player_parameters
-        s = %Q(<iframe class="video youtube" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/#{youtube_id}" frameborder="0"></iframe>\n)
-        rawtext s
+        # see https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+        #
+        div(class: "video") {
+          s = %Q(<iframe class="youtube" type="text/html" width="560" height="349" src="http://www.youtube.com/embed/#{youtube_id}" frameborder="0" allowfullscreen></iframe>\n)
+          rawtext s
+        }
       end
     }
 
