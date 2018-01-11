@@ -14,9 +14,9 @@ describe Lesson do
 
   let(:course) {
     course = Course.new do
-      lesson "scramble_eggs", abstract: "how to scramble"
+      lesson name: "scramble_eggs", abstract: "how to scramble"
       lab "egg_lab"
-      lesson "boil_water"
+      lesson name: "boil_water"
       lab "turn_on_stove"
       lab "boiling"
     end
@@ -64,7 +64,7 @@ fill a glass of water at the sink
   end
 
   describe 'videos' do
-    subject { Lesson.new(course, "scramble_eggs") }
+    subject { Lesson.new(course: course, name: "scramble_eggs") }
     it "can add a video" do
       subject.video "abcdefg"
     end

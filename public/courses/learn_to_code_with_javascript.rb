@@ -8,12 +8,6 @@ class Course
       name: "learn_to_code_with_javascript",
       display_name: "Learn to Code with JavaScript",
       abstract: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn JavaScript from the ground up... then this course is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and intermediate computer science concepts like closures and recursion.",
-      goals: [ # "the student will learn..."
-          "how to edit and execute code on their own computer using a text editor and a terminal (command line)",
-          "fundamental coding concepts, including variables, types, functions, loops, I/O, logic, recursion",
-          "how to recognize and use certain abstract data structures (arrays, stacks, hashes)",
-          "basic use of JavaScript",
-      ],
       links: [
           Link.new(name: "Atom", href: "http://atom.io", description: "home page for the Atom text editor"),
           Link.new(href: "https://www.codecademy.com/tracks/javascript",
@@ -21,41 +15,48 @@ class Course
       ]
   ) do
 
-    lesson "intro"
-    lesson "computers"
-    lesson "values"
+    # "the student will learn..."
+    goal "how to edit and execute code on their own computer using a text editor and a terminal (command line)"
+    goal "fundamental coding concepts, including variables, types, functions, loops, I/O, logic, recursion"
+    goal "how to recognize and use certain abstract data structures (arrays, stacks, hashes)"
+    goal "basic use of JavaScript"
 
-    lesson "strings"
-    lesson "numbers"
 
-    lesson "variables"
-    lesson "null"
-    lesson "functions"
+    lesson name: "intro"
+    lesson name: "computers"
+    lesson name: "values"
 
-    lesson "the_command_line"
+    lesson name: "strings"
+    lesson name: "numbers"
 
-    lesson "loops"
+    lesson name: "variables"
+    lesson name: "null"
+    lesson name: "functions"
 
-    lesson "input_and_output"
-    lesson "logic"
+    lesson name: "the_command_line"
 
-    lesson "arrays"
-    lesson "argv"
-    lesson "stacks"
-    lesson "hashes"
+    lesson name: "loops"
 
-    lesson "recursion"
+    lesson name: "input_and_output"
+    lesson name: "logic"
 
-    # lesson "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
+    lesson name: "arrays"
+    lesson name: "argv"
+    lesson name: "stacks"
+    lesson name: "hashes"
 
-    # lesson "function pointers" -- and callbacks?
-    # lesson "methods" -- hash-as-object and `this`
-    # lesson "closures" -- scope
+    lesson name: "recursion"
 
-    # lesson "express"
+    # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
 
-    # lesson "extra"
-    # lesson "next_steps"
-    # lesson "classes"
+    # lesson name: "function pointers" -- and callbacks?
+    # lesson name: "methods" -- hash-as-object and `this`
+    # lesson name: "closures" -- scope
+
+    # lesson name: "express"
+
+    # lesson name: "extra"
+    # lesson name: "next_steps"
+    # lesson name: "classes"
   end
 end

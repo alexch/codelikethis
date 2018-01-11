@@ -2,13 +2,13 @@ require 'erector'
 require 'active_support'
 require 'deck'
 
-class Lesson
+class Lesson < Thing
 
-  attr_reader :name, :course, :abstract, :videos
+  attr_reader :course, :abstract, :videos
 
-  def initialize course, name, abstract: nil, display_name: nil
-    @course, @name, @abstract, @display_name = course, name, abstract, display_name
+  def initialize **args, &block
     @videos = []
+    super(**args, &block)
   end
 
   def display_name

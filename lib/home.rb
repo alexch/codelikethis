@@ -39,10 +39,4 @@ class Home < Erector::Widget
     twitter
   end
 
-  def lesson lesson_name
-    Lesson.new(self, lesson_name)
-  end
-
-
-
 end

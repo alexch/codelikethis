@@ -1,5 +1,7 @@
 require 'erector'
 
+#todo: < Thing
+
 class Lab < Erector::Widget
 
   attr_reader :name
@@ -22,3 +24,4 @@ class Lab < Erector::Widget
   end
 
 end
+

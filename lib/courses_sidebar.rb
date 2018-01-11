@@ -62,9 +62,10 @@ class CoursesSidebar < Erector::Widget
   end
 
   def course_row(course)
+    active = (current_course == course)
     classes = ['list-group-item',
                'course-name',
-               ('active' if current_course == course),
+               ('active' if active),
     ]
 
     div(class: classes) {

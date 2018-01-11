@@ -233,7 +233,7 @@ class AppPage < Erector::Widgets::Page
 
         # first the sidebar
         div(class: "col-md-3", id: 'sidebar') {
-          widget CoursesSidebar.new(courses: all_courses, current: @widget)
+          widget CoursesSidebar.new(courses: all_courses, current: @widget.target)
         }
 
         # now the real body

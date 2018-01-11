@@ -1,26 +1,36 @@
 require 'erector'
 require 'active_support/inflector'
+require 'awesome_print'
+
+require 'thing'
+require 'lesson'
+require 'lab'
 
 require 'breadcrumbs'
 require 'courses_table'
-require 'lesson'
-require 'lab'
-require 'awesome_print'
 
-class Course
+class Course < Thing
 
   attr_writer :dir
 
   def initialize **options, &block
-    @name = (options[:name] || "course").underscore
-    @abstract = options[:abstract]
-    @goals = options[:goals]
-    @links = options[:links]
-    @display_name = options[:display_name]
-    @stuff = []
-    instance_eval &block if block
+    @stuff = [] # lessons and labs
+    @goals = []
+    @links = []
+    super
   end
 
+  # setters (for use during initialize block)
+
+  def goal text
+    @goals << text
+  end
+
+  def link **options
+    @links << Link.new(**options)
+  end
+
+  # current page (for sidebar highlighting)
   def current= course_or_lesson
     @current = course_or_lesson
   end
@@ -62,7 +72,7 @@ class Course
   end
 
   def name
-    @name
+    (@name || "course").underscore
   end
 
   def display_name
@@ -73,13 +83,11 @@ class Course
     "/lessons/#{name}#{"##{anchor}" if anchor}"
   end
 
-  def lesson lesson_name, abstract: nil, display_name: nil, &block
+  def lesson **args, &block
+    lesson_name = args[:name]
     raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
 
-    Lesson.new(self, lesson_name, abstract: abstract, display_name: display_name).tap do |lesson|
-      @stuff << lesson
-      lesson.instance_eval(&block) if block
-    end
+    @stuff << Lesson.new(**(args + {course: self}), &block)
   end
 
   def lab lab_name

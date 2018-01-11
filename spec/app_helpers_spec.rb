@@ -12,6 +12,7 @@ require File.join(project, "public/courses/ruby")
 
 describe AppHelpers do
   include AppHelpers
+
   describe 'page_title' do
     example { page_title("Foo").should == "Foo - Code Like This" }
     example { page_title("Foo", "bar").should == "Foo bar - Code Like This" }

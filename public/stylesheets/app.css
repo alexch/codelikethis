@@ -254,38 +254,44 @@ h1.lesson-name {
     font-size: 60%; }
 
 /* line 280, ../scss/app.scss */
+span.video_link {
+  float: right;
+  border: 1px dotted black;
+  padding: 1px 2px; }
+
+/* line 286, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 287, ../scss/app.scss */
+  /* line 293, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 293, ../scss/app.scss */
+  /* line 299, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 299, ../scss/app.scss */
+  /* line 305, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 304, ../scss/app.scss */
+/* line 310, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 309, ../scss/app.scss */
+/* line 315, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 313, ../scss/app.scss */
+/* line 319, ../scss/app.scss */
 .footer {
   clear: both;
   padding: 2rem;
   border-top: 1px solid #EEEEEE; }
 
-/* line 319, ../scss/app.scss */
+/* line 325, ../scss/app.scss */
 .preview {
   font-size: 10pt;
   border: 4px solid darkred;
@@ -293,7 +299,7 @@ div.main_column img {
   margin: 0 1em;
   padding: .5em 1em; }
 
-/* line 327, ../scss/app.scss */
+/* line 333, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -302,7 +308,7 @@ div.main_column img {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 336, ../scss/app.scss */
+  /* line 342, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;

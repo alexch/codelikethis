@@ -25,16 +25,16 @@ describe Course do
 
   it "takes a list of lesson names" do
     lessons = Course.new do
-      lesson "foo"
-      lesson "bar"
+      lesson name: "foo"
+      lesson name: "bar"
     end
     lessons.lesson_names.should == ["foo", "bar"]
   end
 
   it "renders HTML" do
     course = Course.new do
-      lesson "foo"
-      lesson "bar"
+      lesson name: "foo"
+      lesson name: "bar"
     end
 
     course.dir = files.dir "foo" do
@@ -54,13 +54,15 @@ describe Course do
 
       course = Course.new(name: "how_to_cook",
                           abstract: "learn how to cook with these great tips",
-                          goals: ["boil water", "scramble eggs"],
-                          links: [Link.new(href: "http://cooking.com")]
                           ) do
 
-        lesson "scramble_eggs"
+        goal "boil water"
+        goal "scramble eggs"
+        link href: "http://cooking.com"
+
+        lesson name: "scramble_eggs"
         lab "egg_lab"
-        lesson "boil_water"
+        lesson name: "boil_water"
         lab "turn_on_stove"
         lab "boiling"
       end
@@ -173,7 +175,7 @@ fill a glass of water at the sink
   describe 'videos' do
     it "can be set during course declaration" do
       course = Course.new(name: "course") do
-        lesson "lesson" do
+        lesson name: "lesson" do
           video "video1"
           video "video2"
         end
@@ -186,7 +188,7 @@ fill a glass of water at the sink
   describe 'without markdown lesson files' do
     subject {
       Course.new(name: "gaming") do
-        lesson "shooters"
+        lesson name: "shooters"
       end
     }
     let(:lesson) { subject.lesson_named "shooters" }
