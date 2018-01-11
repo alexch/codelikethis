@@ -1,6 +1,13 @@
 require_relative('util')
 require_relative('course')
-require_all('courses')
+
+# add "public/courses" dir to Ruby load path
+here = ::File.expand_path(File.dirname(__FILE__))
+public_dir = ::File.expand_path(File.join(here, "..", "public"))
+courses_dir = File.join(public_dir, "courses")
+$: << courses_dir
+# load every course before making the ordered list of all courses
+require_all(courses_dir)
 
 class Courses
   ALL = [

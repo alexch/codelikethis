@@ -4,6 +4,7 @@ require 'deck/slide'
 require 'deck/slide_deck'
 require 'deck/rack_app'
 
+# add "lib" dir to Ruby load path
 here = ::File.expand_path(File.dirname(__FILE__))
 lib = "#{here}/lib"
 $: << lib
