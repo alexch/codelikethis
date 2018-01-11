@@ -110,11 +110,11 @@ class CoursesTable < Erector::Widget
   end
 
   def display_name
-    "Lessons"
+    "Courses"
   end
 
   def href
-    "/lessons"
+    "/lessons" # todo: make a "/courses" endpoint instead
   end
 
 end

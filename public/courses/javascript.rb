@@ -13,7 +13,7 @@ class Course
 
 
     lesson "object_oriented_javascript"
-    lesson "regular_expressions"
+    lesson "regexp", display_name: "Regular Expressions"
 
     lesson "tdd" # link to "Test Driven" perhaps?
     lesson "tdd_in_js"

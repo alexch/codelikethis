@@ -6,13 +6,13 @@ class Lesson < Erector::Widget
 
   attr_reader :name, :course, :abstract
 
-  def initialize course, name, abstract: nil
-    @course, @name, @abstract = course, name, abstract
+  def initialize course, name, abstract: nil, display_name: nil
+    @course, @name, @abstract, @display_name = course, name, abstract, display_name
     @videos = []
   end
 
   def display_name
-    name.titleize
+    @display_name || name.titleize
   end
 
   def href

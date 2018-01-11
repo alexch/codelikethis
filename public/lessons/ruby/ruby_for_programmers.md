@@ -323,11 +323,11 @@ Solution: always put operators on top line
 * `x === 3` means the same as `==` but sometimes more
   * threequal is rarely used
 
-# Ruby syntax cheatsheet
+# Ruby syntax cheatsheets
 
-![cheatsheet](/lessons/ruby_basics/cheatsheet/cheatsheet.png)
+[Ruby Cheat Sheets](http://www.rubyinside.com/ruby-cheat-sheet-734.html) from Ruby Inside
 
-(_The Well-Grounded Rubyist_, p. 5, section 1.1.2)
+see also _The Well-Grounded Rubyist_, p. 5, section 1.1.2
 
 # Interlude
 
