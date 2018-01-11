@@ -25,12 +25,7 @@ class Home < Erector::Widget
             p(class: 'card-text') {
               text "This site contains lectures and labs on Ruby, JavaScript, and more, in outline, slide, and video format."
               text " "
-              text "We'll be updating it with all our new lectures and labs and videos, so keep checking back!"
-            }
-            p(class: 'card-text') {
-              text "Click on "
-              a "Lessons", href: "/lessons"
-              text " in the side nav bar to get started. "
+              text "We'll be updating it with all our new lectures, labs, and videos, so keep checking back!"
             }
           }
         }
