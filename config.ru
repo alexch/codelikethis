@@ -16,6 +16,7 @@ use Rack::Rewrite do
   moved_permanently '/lessons/javascript/ajax', '/lessons/client_side_coding/ajax'
 
   moved_permanently %r{/lessons/ruby_advanced/(\w+)}, '/lessons/ruby/$1'
+  moved_permanently %r{/lessons/agile_development/(\w+)}, '/lessons/agile/$1'
 end
 
 use Rack::Codehighlighter, :coderay,

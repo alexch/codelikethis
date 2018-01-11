@@ -132,4 +132,4 @@ The second substring was fox
 * [`cheat regexp`](http://cheat.errtheblog.com/s/regexp) and [`cheat regex`](http://cheat.errtheblog.com/s/regex) have slightly different cheatsheets
   * `gem install cheat` for command-line tool or see <http://cheat.errtheblog.com>
 * [http://www.regular-expressions.info/tutorialcnt.html](http://www.regular-expressions.info/) has a good tutorial
-
+* [Very quick but nice video on how regular expressions are like FSAs and how to debug them visually.](https://www.youtube.com/watch?v=hprXxJHQVfQ)

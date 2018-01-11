@@ -11,7 +11,7 @@ require_all(courses_dir)
 
 class Courses
   ALL = [
-      ::Course::AgileDevelopment,
+      ::Course::Agile,
 
       ::Course::Separator,
 
