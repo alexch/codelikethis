@@ -122,20 +122,12 @@ class Course
   end
 
   def view
-    Widget.new(target: self)
+    View.new(target: self)
   end
 
-  class Widget < Erector::Widget
+  class View < Erector::Widget
     needs :target
     attr_reader :target
-
-    external :style, <<-CSS
-  span.video_link {
-    float: right;
-    border: 1px dotted black;
-    padding: 1px 2px;
-  }
-    CSS
 
     def current_page? item
       target.instance_variable_get(:@current) == item
@@ -205,6 +197,8 @@ class Course
           a href: href do
             text item_name
             span.loading_image unless current_page? item
+
+            # todo: handle lessons with videos better
             span.video_link "Video" if item.respond_to? :video? and item.video?
           end
         }

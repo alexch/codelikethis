@@ -63,23 +63,20 @@ class Lesson
 
   public
 
-  def to_html
-    view.to_html
-  end
-
   def view
-    Widget.new(target: self)
+    View.new(target: self)
   end
 
-  class Widget < Erector::Widget
+  class View < Erector::Widget
     needs :target
     attr_reader :target
 
-    [:labs, :slides, :course, :name, :display_name, :abstract,
-     :slides, :slides?,
-     :videos, :video?,
-     :next_lesson, :previous_lesson, :next_labs,
-
+    # proxy readers to the target (model) object
+    [
+        :labs, :course, :name, :display_name, :abstract, :slides, :videos,
+        :slides?, :video?,
+        :next_lesson, :previous_lesson,
+        :next_labs,
     ].each do |method|
       define_method method do
         @target.send method

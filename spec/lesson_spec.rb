@@ -48,7 +48,7 @@ fill a glass of water at the sink
   end
 
   it "renders HTML" do
-    lesson.to_html.should include("<p>contents of scramble_eggs.md</p>")
+    lesson.view.to_html.should include("<p>contents of scramble_eggs.md</p>")
   end
 
   it "has a next lab" do
@@ -70,13 +70,13 @@ fill a glass of water at the sink
     end
     it "shows up in the rendered HTML" do
       subject.video "abcdefg"
-      subject.to_html.should include("http://www.youtube.com/embed/abcdefg")
+      subject.view.to_html.should include("http://www.youtube.com/embed/abcdefg")
     end
     it "can add more than one video" do
       subject.video "abcdefg"
       subject.video "12345"
-      subject.to_html.should include("http://www.youtube.com/embed/abcdefg")
-      subject.to_html.should include("http://www.youtube.com/embed/12345")
+      subject.view.to_html.should include("http://www.youtube.com/embed/abcdefg")
+      subject.view.to_html.should include("http://www.youtube.com/embed/12345")
     end
   end
 
