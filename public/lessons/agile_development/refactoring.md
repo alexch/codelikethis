@@ -2,7 +2,7 @@
 
 ![buddha](./zen/buddha-statue.jpg)
 
-Refactoring is the process of restructuring existing computer code – changing its *factoring* – without changing its behavior. You probably knew that. But did you know it’s also a meditation technique? Come improve your practice of mindful coding.
+Refactoring is the process of restructuring existing computer code -- changing its *factoring* -- without changing its behavior. You probably knew that. But did you know it’s also a meditation technique? Come improve your practice of mindful coding.
 
 After these slides, we’ll start with some actual production code, make sure its unit tests work ok, then collaboratively, consciously contemplate the many forking paths that twine and wind through the Garden of Abstract Delights.
 

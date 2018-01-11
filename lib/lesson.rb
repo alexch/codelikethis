@@ -4,10 +4,10 @@ require 'deck'
 
 class Lesson < Erector::Widget
 
-  attr_reader :name, :course
+  attr_reader :name, :course, :abstract
 
-  def initialize course, name
-    @course, @name = course, name
+  def initialize course, name, abstract: nil
+    @course, @name, @abstract = course, name, abstract
     @videos = []
   end
 
@@ -69,6 +69,14 @@ class Lesson < Erector::Widget
     }
     next_and_previous
 
+    if abstract
+      div(class: 'abstract') {
+        h2 "Abstract"
+        p abstract
+      }
+      br
+    end
+
     div.videos {
       @videos.each do |youtube_id|
         # see https://developers.google.com/youtube/player_parameters
@@ -80,10 +88,13 @@ class Lesson < Erector::Widget
     br
 
     div.main_column {
-      slides.each do |slide|
-        widget slide
+      if slides?
+        h2 "Slides"
+        slides.each do |slide|
+          widget slide
+        end
+        br
       end
-      br
 
       unless next_labs.empty?
         div(class: 'next-labs') {
@@ -141,6 +152,8 @@ class Lesson < Erector::Widget
 
   def slides
     Deck::Slide.from_file File.new(File.join(@course.dir, "#{@name}.md"))
+  rescue Errno::ENOENT
+    []
   end
 
   def next_lesson
@@ -165,6 +178,10 @@ class Lesson < Erector::Widget
 
   def video?
     !@videos.empty?
+  end
+
+  def slides?
+    !slides.empty?
   end
 
 end

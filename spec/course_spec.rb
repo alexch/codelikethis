@@ -175,5 +175,18 @@ fill a glass of water at the sink
       lesson.instance_variable_get(:@videos).should == ["video1", "video2"]
     end
   end
+
+  describe 'without markdown lesson files' do
+    subject {
+      Course.new(name: "gaming") do
+        lesson "shooters"
+      end
+    }
+    let(:lesson) { subject.lesson_named "shooters" }
+    it "still works" do
+      expect(lesson.slides).to eq([])
+    end
+  end
+
 end
 

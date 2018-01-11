@@ -14,7 +14,7 @@ describe Lesson do
 
   let(:course) {
     course = Course.new do
-      lesson "scramble_eggs"
+      lesson "scramble_eggs", abstract: "how to scramble"
       lab "egg_lab"
       lesson "boil_water"
       lab "turn_on_stove"
@@ -41,6 +41,10 @@ fill a glass of water at the sink
 
   it "has a title" do
     lesson.display_name.should == "Scramble Eggs"
+  end
+
+  it "has an abstract" do
+    lesson.abstract.should == "how to scramble"
   end
 
   it "renders HTML" do
