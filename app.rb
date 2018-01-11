@@ -50,11 +50,6 @@ class App < Sinatra::Base
     AppPage.new(:widget => Home, :title => "Code Like This").to_html
   end
 
-  # todo: use Refractor for these redirects
-  get '/lessons/test_driven/test_driven' do
-    response.redirect '/lessons/agile_development/test_driven'
-  end
-
   get "/lessons/:course" do
     AppPage.new(:widget => course, :title => page_title(course)).to_html
   end

@@ -6,6 +6,8 @@ require 'rack/rewrite'
 use Rack::ShowExceptions
 use Rack::ShowStatus
 
+# todo: look into using Refractor for these redirects
+
 # https://github.com/jtrupiano/rack-rewrite
 use Rack::Rewrite do
   moved_permanently '/lessons/learn_to_code/learn_to_code', '/lessons/learn_to_code/intro'
@@ -15,7 +17,11 @@ use Rack::Rewrite do
   moved_permanently '/lessons/javascript/jquery', '/lessons/client_side_coding/jquery'
   moved_permanently '/lessons/javascript/ajax', '/lessons/client_side_coding/ajax'
 
-  moved_permanently %r{/lessons/ruby_advanced/(\w+)}, '/lessons/ruby/$1'
+  moved_permanently '/lessons/test_driven/test_driven',
+    '/lessons/agile_development/test_driven'
+
+
+    moved_permanently %r{/lessons/ruby_advanced/(\w+)}, '/lessons/ruby/$1'
   moved_permanently %r{/lessons/agile_development/(\w+)}, '/lessons/agile/$1'
 end
 
