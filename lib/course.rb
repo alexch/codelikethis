@@ -9,7 +9,6 @@ require 'awesome_print'
 
 class Course < Erector::Widget
 
-
   external :style, <<-CSS
   span.video_link {
     float: right;
@@ -24,6 +23,7 @@ class Course < Erector::Widget
     @name = (options[:name] || "course").underscore
     @abstract = options[:abstract]
     @goals = options[:goals]
+    @links = options[:links]
     @display_name = options[:display_name]
     @stuff = []
     instance_eval &block if block
@@ -33,7 +33,7 @@ class Course < Erector::Widget
     @current = course_or_lesson
   end
 
-  attr_reader :abstract, :goals
+  attr_reader :abstract, :goals, :links
 
   def abstract?
     !!abstract
@@ -41,6 +41,10 @@ class Course < Erector::Widget
 
   def goals?
     goals and not goals.empty?
+  end
+
+  def links?
+    links and not links.empty?
   end
 
   def lessons
@@ -110,6 +114,14 @@ class Course < Erector::Widget
         end
       }
     }
+    if links?
+      h2 "Links"
+      ul(class: 'links') do
+        links.each do |link|
+          li { widget link }
+        end
+      end
+    end
   end
 
   def list_items items = @stuff, options = {}

@@ -16,9 +16,16 @@ class Courses
       ::Course::Separator,
 
       ::Course::LearnToCodeWithJavascript,
-      ::Course::Javascript, # "JavaScript Topics"
+      ::Course::HelloNode,
+      ::Course::TheWorldWideWeb,
       ::Course::ClientSideCoding,
+      ::Course::Javascript, # "JavaScript Topics"
       ::Course::ServerSideJavascript,
+      ::Course::ClientSideCodingWithReact,
+
+      ::Course::Separator,
+
+      ::Course::Git,
 
       ::Course::Separator,
 
@@ -28,5 +35,12 @@ class Courses
       ::Course::RubyBlocks,
       ::Course::RubyObjects,
       ::Course::Ruby, # "Ruby Topics"
+
+      ::Course::Separator,
+
+      ::Course::UserExperience,
+      ::Course::TricksOfTheTrade, # or "trade secrets" ?
+      ::Course::Career,
+
   ]
 end

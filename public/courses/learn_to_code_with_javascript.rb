@@ -1,5 +1,8 @@
 require "course"
 
+require_relative '../../lib/link.rb'
+
+
 class Course
   LearnToCodeWithJavascript = Course.new(
       name: "learn_to_code_with_javascript",
@@ -10,6 +13,11 @@ class Course
           "fundamental coding concepts, including variables, types, functions, loops, I/O, logic, recursion",
           "how to recognize and use certain abstract data structures (arrays, stacks, hashes)",
           "basic use of JavaScript",
+      ],
+      links: [
+          Link.new(name: "Atom", href: "http://atom.io", description: "home page for the Atom text editor"),
+          Link.new(href: "https://www.codecademy.com/tracks/javascript",
+                   name: "CodeCademy Intro to JavaScript course"),
       ]
   ) do
 

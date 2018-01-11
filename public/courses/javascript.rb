@@ -8,7 +8,21 @@ class Course
   ) do
     lesson "javascript_for_programmers"
     lesson "functions_and_closures"
+
+    lesson "scope_review" # global, function, closure, private, this, arrows, etc.
+
+
     lesson "object_oriented_javascript"
     lesson "regular_expressions"
+
+    lesson "tdd" # link to "Test Driven" perhaps?
+    lesson "tdd_in_js"
+
+    lesson "ecmascript_6"
+    lesson "transpilers" # webpack, babel, etc.
+
+    lesson "rest_and_spread"
+    lesson "promises"
+    lesson "iterators"
   end
 end

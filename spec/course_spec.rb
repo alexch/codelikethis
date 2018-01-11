@@ -54,7 +54,8 @@ describe Course do
 
       course = Course.new(name: "how_to_cook",
                           abstract: "learn how to cook with these great tips",
-                          goals: ["boil water", "scramble eggs"]
+                          goals: ["boil water", "scramble eggs"],
+                          links: [Link.new(href: "http://cooking.com")]
                           ) do
 
         lesson "scramble_eggs"
@@ -85,6 +86,12 @@ fill a glass of water at the sink
       subject.goals.should == [
           "boil water",
           "scramble eggs",
+          ]
+    end
+
+    it "can have a list of links" do
+      subject.links.should == [
+          Link.new(href: "http://cooking.com")
           ]
     end
 

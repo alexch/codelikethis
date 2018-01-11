@@ -15,6 +15,6 @@ class Course
     lesson "dom"
     lesson "jquery"
     lesson "ajax"
-    lesson "apis"
+    lesson "apis" # calling APIs from JS
   end
 end

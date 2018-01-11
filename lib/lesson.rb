@@ -152,7 +152,7 @@ class Lesson < Erector::Widget
 
   def slides
     Deck::Slide.from_file File.new(File.join(@course.dir, "#{@name}.md"))
-  rescue Errno::ENOENT
+  rescue Errno::ENOENT, Errno::EINVAL
     []
   end
 
