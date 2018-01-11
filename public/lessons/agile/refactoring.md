@@ -188,4 +188,3 @@ Introduce duplication, increase clarity
 * http://refactoring.com/catalog/
 * http://martinfowler.com/books/refactoringRubyEd.html
 * https://sourcemaking.com/refactoring
-* [these slides on the web](http://codelikethis.com/lessons/agile_development/refactoring)
