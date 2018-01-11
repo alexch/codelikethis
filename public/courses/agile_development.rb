@@ -2,7 +2,7 @@ require "course"
 
 class Course
   Agile = Course.new(
-      name: "agile_development",
+      name: "agile",
       abstract: "The term 'Agile' describes many many software development methodologies: systems for designing, developing, and deploying products, and organizing the teams of people that do so in a way that respects their humanity and creativity. What makes a system Agile? What techniques can we use to increase communication, feedback, simplicity, reliability, and transparency? Take this course to find out."
     ) do
     lesson "test_driven" do
