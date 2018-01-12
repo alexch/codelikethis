@@ -2,7 +2,8 @@ require "course"
 
 class Course
   JustEnoughComputerScience = Course.new(
-      name: "javascript",
+      name: "cs",
+      display_name: "Just Enough Computer Science"
   ) do
     lesson name: "state_machines" # https://www.smashingmagazine.com/2018/01/rise-state-machines/
     lesson name: "big_o"
