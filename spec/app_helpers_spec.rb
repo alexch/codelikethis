@@ -14,7 +14,7 @@ describe AppHelpers do
   include AppHelpers
 
   describe 'page_title' do
-    example { page_title("Foo").should == "Foo - Code Like This" }
+    example { expect(page_title("Foo")).to eq("Foo - Code Like This") }
     example { page_title("Foo", "bar").should == "Foo bar - Code Like This" }
 
     let(:course) { Course::Ruby }

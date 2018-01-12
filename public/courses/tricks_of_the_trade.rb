@@ -20,7 +20,7 @@ class Course
     lesson name: "Authentication" # roll your own login
     lesson name: "Security"
     lesson name: "Google-Driven Debugging" # how to google error messages
-    lesson name: "Giving Feedback (on PRs, demos, etc)" # be specific, compassionate, actionable, "yes-and"
+    lesson name: "Giving Feedback" # (on PRs, demos, etc)" # be specific, compassionate, actionable, "yes-and"
     lesson name: "optimization" # and Big O
   end
 end

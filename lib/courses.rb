@@ -26,6 +26,7 @@ class Courses
       ::Course::Separator,
 
       ::Course::Git,
+      ::Course::JustEnoughComputerScience,
 
       ::Course::Separator,
 

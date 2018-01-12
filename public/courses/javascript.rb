@@ -11,7 +11,6 @@ class Course
 
     lesson name: "scope_review" # global, function, closure, private, this, arrows, etc.
 
-
     lesson name: "object_oriented_javascript"
     lesson name: "regexp", display_name: "Regular Expressions"
 

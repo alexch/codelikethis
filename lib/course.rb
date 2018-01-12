@@ -22,6 +22,19 @@ class Course < Thing
 
   # setters (for use during initialize block)
 
+  def lesson **args, &block
+    lesson_name = args[:name]
+    raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
+
+    @stuff << Lesson.new(**(args + {course: self}), &block)
+  end
+
+  def lab lab_name
+    Lab.new(self, lab_name).tap do |lab|
+      @stuff << lab
+    end
+  end
+
   def goal text
     @goals << text
   end
@@ -83,18 +96,6 @@ class Course < Thing
     "/lessons/#{name}#{"##{anchor}" if anchor}"
   end
 
-  def lesson **args, &block
-    lesson_name = args[:name]
-    raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
-
-    @stuff << Lesson.new(**(args + {course: self}), &block)
-  end
-
-  def lab lab_name
-    Lab.new(self, lab_name).tap do |lab|
-      @stuff << lab
-    end
-  end
 
   def lesson_named lesson_name
     @stuff[this_item_index(lesson_name)]

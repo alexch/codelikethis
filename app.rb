@@ -10,6 +10,7 @@ lib = "#{here}/lib"
 $: << lib
 
 require 'util'
+require "#{lib}/hash_extensions"
 require_all(lib)
 
 module AppHelpers
