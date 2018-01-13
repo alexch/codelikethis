@@ -14,10 +14,11 @@
     * **pop** removes an item from the top
 * a stack is a LIFO (last in, first out) structure
 
-[Wikipedia: Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type) )
+# Pushing and Popping
 
 ![stack](../images/stack.png) 
-(image via [this CMU page](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html) )
+
+<https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>
 
 # The Freedom of Constraints
 
