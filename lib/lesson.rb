@@ -4,12 +4,7 @@ require 'deck'
 
 class Lesson < Thing
 
-  attr_reader :course, :abstract, :videos
-
-  def initialize **args, &block
-    @videos = []
-    super(**args, &block)
-  end
+  attr_reader :course, :abstract
 
   def display_name
     @display_name || name.titleize
@@ -17,10 +12,6 @@ class Lesson < Thing
 
   def href
     @course.href + "/" + name
-  end
-
-  def video youtube_id
-    @videos << youtube_id
   end
 
   def labs
@@ -45,7 +36,7 @@ class Lesson < Thing
     slides.select do |slide|
       slide.title =~ /lab: /i
     end.map do |slide|
-      Lab.new @course, slide.title.slice(4..-1).strip, href: "#{self.href}#anchor/#{slide.slide_id}"
+      Lab.new course: course, name: slide.title.slice(4..-1).strip, href: "#{self.href}#anchor/#{slide.slide_id}"
     end
   end
 
@@ -54,7 +45,7 @@ class Lesson < Thing
   end
 
   def video?
-    !@videos.empty?
+    !videos.empty?
   end
 
   def slides?
@@ -87,7 +78,7 @@ class Lesson < Thing
       div(class: 'list-group') {
         labs.each do |lab|
           div(class: 'list-group-item') {
-            widget lab
+            widget lab.view
           }
         end
       }
@@ -133,15 +124,7 @@ class Lesson < Thing
       end
 
       div.videos {
-        videos.each do |youtube_id|
-          # see https://developers.google.com/youtube/player_parameters
-          # see https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
-          #
-          div(class: "video") {
-            s = %Q(<iframe class="youtube" type="text/html" width="560" height="349" src="http://www.youtube.com/embed/#{youtube_id}" frameborder="0" allowfullscreen></iframe>\n)
-            rawtext s
-          }
-        end
+        videos.each {|video| widget video.view}
       }
 
       br

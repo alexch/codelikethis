@@ -25,7 +25,9 @@ class Course
     lesson name: "NodeJS"
     lesson name: "Express"
     lesson name: "Routes"
-    lesson name: "Calling_APIs" # todo: project: build a Slack Bot
+    lesson name: "Calling_APIs"
+    lesson name: "Bots" # todo: project: build a Slack Bot
+    # link "https://medium.com/glitch/when-good-bots-go-bad-4007a2b2f41e"
     lesson name: "Building_APIs"
   end
 end

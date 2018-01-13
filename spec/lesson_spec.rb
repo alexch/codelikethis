@@ -66,15 +66,15 @@ fill a glass of water at the sink
   describe 'videos' do
     subject { Lesson.new(course: course, name: "scramble_eggs") }
     it "can add a video" do
-      subject.video "abcdefg"
+      subject.video youtube_id: "abcdefg"
     end
     it "shows up in the rendered HTML" do
-      subject.video "abcdefg"
+      subject.video youtube_id: "abcdefg"
       subject.view.to_html.should include("http://www.youtube.com/embed/abcdefg")
     end
     it "can add more than one video" do
-      subject.video "abcdefg"
-      subject.video "12345"
+      subject.video youtube_id: "abcdefg"
+      subject.video youtube_id: "12345"
       subject.view.to_html.should include("http://www.youtube.com/embed/abcdefg")
       subject.view.to_html.should include("http://www.youtube.com/embed/12345")
     end

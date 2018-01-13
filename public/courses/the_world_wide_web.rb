@@ -8,11 +8,13 @@ class Course
       name: "the_world_wide_web",
       display_name: "The World Wide Web",
       abstract: "Invented by Tim Berners-Lee in 1990 and launched to the actual world in 1993, the WWW is still with us and for many is synonymous with the Internet. What is it? How does it work? How do we create web pages, style them, lay them out, and navigate between them?",
-      links: [
-          Link.new(href: "http://docs.railsbridge.org/frontend",
-                   name: "RailsBridge Intro to Front End Web Dev"),
-      ]
   ) do
+
+    link href: "http://docs.railsbridge.org/frontend",
+         name: "RailsBridge Intro to Front End Web Dev"
+
+    link href: "https://www.codecademy.com/tracks/web",
+         name: "Codecademy HTML & CSS Track"
 
     lesson name: "HTTP"
     lesson name: "Styled formatting with HTML"
@@ -21,6 +23,11 @@ class Course
     lesson name: "Page layout with CSS"
     lesson name: "CSS Selectors"
     lesson name: "DOM Debugging"
+
+    link href: "http://docs.railsbridge.org/javascript-to-do-list/",
+         name: "RailsBridge To Do List"
+         # time: "3 hr"
+
     lesson name: "Page Layout with Bootstrap"
     lesson name: "Page Layout with CSS Flexbox"
     lesson name: "Page Layout with CSS Grid"

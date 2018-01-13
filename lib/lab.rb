@@ -1,26 +1,24 @@
 require 'erector'
 
-#todo: < Thing
 
-class Lab < Erector::Widget
+class Lab < Thing
 
-  attr_reader :name
-
-  def initialize course, name, href: nil
-    @course, @name = course, name
-    @href = href
-  end
-
-  def display_name
-    name.titleize
-  end
-
-  def content
-    a.lab.button display_name, href: href
-  end
+  attr_reader :name, :href
 
   def href
     @href || "http://testfirst.org/live/learn_ruby/#{name}"
+  end
+
+  def view
+    View.new(target: self)
+  end
+
+  class View < Erector::Widget
+    needs :target
+
+    def content
+      a.lab.button @target.display_name, href: @target.href
+    end
   end
 
 end

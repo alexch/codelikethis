@@ -34,6 +34,10 @@ class Course
     lesson name: "functions"
 
     lesson name: "the_command_line"
+    link href: "https://vimeo.com/152746852",
+         name: "Terminal 101",
+         description: "intro to unix command-line by a former Turing School student"
+    # time: "11 min",
 
     lesson name: "loops"
 

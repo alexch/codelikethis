@@ -3,7 +3,7 @@ require "course"
 class Course
   RubyObjects = Course.new(name: "ruby_objects") do
     lesson name: "tiers" do
-      video "FZkjE1_0XtI"
+      video youtube_id: "FZkjE1_0XtI"
     end
 
     lesson name: "objects"

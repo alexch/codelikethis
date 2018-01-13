@@ -176,12 +176,12 @@ fill a glass of water at the sink
     it "can be set during course declaration" do
       course = Course.new(name: "course") do
         lesson name: "lesson" do
-          video "video1"
-          video "video2"
+          video youtube_id: "video1"
+          video youtube_id: "video2"
         end
       end
       lesson = course.lesson_named "lesson"
-      lesson.instance_variable_get(:@videos).should == ["video1", "video2"]
+      lesson.videos.map(&:youtube_id).should == ["video1", "video2"]
     end
   end
 

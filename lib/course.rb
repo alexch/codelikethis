@@ -3,6 +3,7 @@ require 'active_support/inflector'
 require 'awesome_print'
 
 require 'thing'
+require 'link'
 require 'lesson'
 require 'lab'
 
@@ -14,9 +15,7 @@ class Course < Thing
   attr_writer :dir
 
   def initialize **options, &block
-    @stuff = [] # lessons and labs
     @goals = []
-    @links = []
     super
   end
 
@@ -26,21 +25,15 @@ class Course < Thing
     lesson_name = args[:name]
     raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
 
-    @stuff << Lesson.new(**(args + {course: self}), &block)
+    super(**(args + {course: self}), &block)
   end
 
-  def lab lab_name
-    Lab.new(self, lab_name).tap do |lab|
-      @stuff << lab
-    end
+  def lab lab_name, &block
+    super(**{course: self, name: lab_name}, &block)
   end
 
   def goal text
     @goals << text
-  end
-
-  def link **options
-    @links << Link.new(**options)
   end
 
   # current page (for sidebar highlighting)
@@ -48,7 +41,7 @@ class Course < Thing
     @current = course_or_lesson
   end
 
-  attr_reader :abstract, :goals, :links
+  attr_reader :abstract, :goals
 
   def abstract?
     !!abstract
@@ -62,22 +55,20 @@ class Course < Thing
     links and not links.empty?
   end
 
-  def lessons
-    @stuff.select {|thing| thing.is_a? Lesson}
-  end
-
   def lesson_names
     lessons.map(&:name)
   end
 
   def labs
-    @stuff.map do |thing|
-      if thing.is_a? Lab
-        thing
-      elsif thing.is_a? Lesson
-        thing.slide_labs
+    list = []
+    @things.map do |thing|
+      if thing.is_a? Lesson
+        list += thing.slide_labs
+      elsif thing.is_a? Lab
+        list << thing
       end
-    end.compact.flatten
+    end
+    list
   end
 
   def lab_names
@@ -98,7 +89,7 @@ class Course < Thing
 
 
   def lesson_named lesson_name
-    @stuff[this_item_index(lesson_name)]
+    @things[this_item_index(lesson_name)]
   end
 
   def previous_lesson lesson_name
@@ -113,7 +104,7 @@ class Course < Thing
   def next_labs lesson_name
     next_item = this_item_index(lesson_name) + 1
     labs = []
-    while (item = @stuff[next_item]).is_a? Lab
+    while (item = @things[next_item]).is_a? Lab
       labs << item
       next_item += 1
     end
@@ -183,7 +174,7 @@ class Course < Thing
         h2 "Links"
         ul(class: 'links') do
           target.links.each do |link|
-            li {widget link}
+            li {widget link.view}
           end
         end
       end
@@ -233,7 +224,7 @@ class Course < Thing
   end
 
   def this_item_index(lesson_name)
-    (@stuff.map(&:name).index {|name| name == lesson_name}) or raise "No lesson named #{lesson_name}"
+    (@things.map(&:name).index {|name| name == lesson_name}) or raise "No lesson named #{lesson_name}"
   end
 
 end

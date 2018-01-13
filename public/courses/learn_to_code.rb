@@ -12,7 +12,9 @@ Course::LearnToCode = Course.new(name: "learn_to_code",
     lesson name: "numbers"
     lesson name: "variables"
     lesson name: "nil"
+
     lesson name: "the_command_line"
+
     lesson name: "input_and_output"
     lesson name: "logic"
     lesson name: "loops"

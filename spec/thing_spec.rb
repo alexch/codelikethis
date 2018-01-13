@@ -29,20 +29,35 @@ describe Thing do
       expect(Thing.new(name: "object_oriented").display_name).to eq("Object-Oriented")
 
     end
-
   end
 
   it "has a default name" do
-    subject.name.should == "thing"
+    subject.name.should == "Thing"
+
+    expect(Thing.new(name: "ice_cream").name).to eq("ice_cream")
+  end
+
+  it "has a display_name based on its name" do
+    subject.display_name.should == "Thing"
+    expect(Thing.new(name: "ice_cream").display_name).to eq("Ice Cream")
   end
 
   it "instance_evals a block in its constructor" do
     whoami = nil
-    lessons = Course.new(name: "lessons") do
+    ice_cream = Thing.new(name: "ice_cream") do
       whoami = self
     end
-    expect(whoami).to eq(lessons)
+    expect(whoami).to eq(ice_cream)
+  end
+
+  require "link"
+
+  it "can initialize things as instance variables in its ctor block" do
+    ice_cream = Thing.new(name: "ice_cream") do
+      link href: "http://benandjerrys.com"
+    end
+    comparand = Link.new(href: "http://benandjerrys.com")
+    expect(ice_cream.links).to eq([comparand])
   end
 
 end
-

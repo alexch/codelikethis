@@ -13,8 +13,13 @@ class Course
     goal "AJAX, the system for asynchronously transmitting data between client-side and server-side applications"
     goal "Web APIs such as Google Maps and Google Analytics which add sophisticated features to simple Web sites"
 
+
     lesson name: "dom"
     lesson name: "jquery"
+    link href: "http://docs.railsbridge.org/frontend/jquery"
+    link href: "https://www.codecademy.com/tracks/jquery",
+              name: "Codecademy Track for jQuery"
+
     lesson name: "ajax"
     lesson name: "apis" # calling APIs from JS
   end

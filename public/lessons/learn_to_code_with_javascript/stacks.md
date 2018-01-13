@@ -73,6 +73,8 @@ For instance, in the above stack trace, you can see that the function `TTY.onrea
 
 Now you know why a stack trace is upside down! It's because a stack is LIFO.
 
+See [Understanding the JavaScript Call Stack](https://medium.freecodecamp.org/understanding-the-javascript-call-stack-861e41ae61d4)
+
 # Lab: Fibonacci Stack
 
 Using a stack, put the following program into a file called `fib.js`...

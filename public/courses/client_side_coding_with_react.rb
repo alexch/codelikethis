@@ -6,7 +6,11 @@ class Course
       display_name: "Client-Side Coding with React",
       abstract: "Learn React, the component-centric client-side Web framework from Facebook"
   ) do
-    lesson name: "react" # http://docs.railsbridge.org/javascript-to-do-list-with-react/
+
+    lesson name: "react"
+    link href: "http://docs.railsbridge.org/javascript-to-do-list-with-react/",
+         name: "RailsBridge Javascript To Do List With React"
+
     lesson name: "redux"
   end
 end

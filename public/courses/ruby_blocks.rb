@@ -4,7 +4,7 @@ class Course
   RubyBlocks = Course.new(name: "ruby_blocks") do
 
     lesson name: "blocks" do
-      video "K8uhD8mtorE"
+      video youtube_id: "K8uhD8mtorE"
     end
     lesson name: "chaining"
     lab "blocks"
