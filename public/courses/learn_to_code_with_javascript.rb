@@ -8,11 +8,6 @@ class Course
       name: "learn_to_code_with_javascript",
       display_name: "Learn to Code with JavaScript",
       abstract: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn JavaScript from the ground up... then this course is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and intermediate computer science concepts like closures and recursion.",
-      links: [
-          Link.new(name: "Atom", href: "http://atom.io", description: "home page for the Atom text editor"),
-          Link.new(href: "https://www.codecademy.com/tracks/javascript",
-                   name: "CodeCademy Intro to JavaScript course"),
-      ]
   ) do
 
     # "the student will learn..."
@@ -21,6 +16,9 @@ class Course
     goal "how to recognize and use certain abstract data structures (arrays, stacks, hashes)"
     goal "basic use of JavaScript"
 
+    link name: "Atom", href: "http://atom.io", description: "home page for the Atom text editor"
+    link href: "https://www.codecademy.com/tracks/javascript",
+         name: "CodeCademy Intro to JavaScript course"
 
     lesson name: "intro"
     lesson name: "computers"

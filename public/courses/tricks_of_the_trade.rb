@@ -3,12 +3,11 @@ require "course"
 class Course
   TricksOfTheTrade = Course.new(
       name: "tricks_of_the_trade",
-      abstract: "Secrets of the professional web dev!",
-      links: [
-          Link.new(href: "https://alistapart.com/article/aria-and-progressive-enhancement"),
-          Link.new(href: "https://hackernoon.com/how-i-landed-my-post-bootcamp-software-developer-job-in-just-seven-weeks-7b213c1bb867")
-      ]
+      abstract: "Secrets of the professional web dev!"
   ) do
+    link href: "https://alistapart.com/article/aria-and-progressive-enhancement"
+    link href: "https://hackernoon.com/how-i-landed-my-post-bootcamp-software-developer-job-in-just-seven-weeks-7b213c1bb867"
+
     lesson name: "best_practices"
     link href: "https://github.com/thoughtbot/guides/tree/master/best-practices"
 
