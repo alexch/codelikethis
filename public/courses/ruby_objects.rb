@@ -7,25 +7,25 @@ class Course
     end
 
     lesson name: "objects"
-    lab "hello_friend"
+    lab name: "hello_friend"
 
     lesson name: "classes"
-    lab "book_titles"
+    lab name: "book_titles"
 
     lesson name: "class_inheritance"
     #todo: lesson name: "creation patterns"
-    lab "temperature_object"
-    lab "timer"
-    lab "dictionary"
-    lab "rpn_calculator"
+    lab name: "temperature_object"
+    lab name: "timer"
+    lab name: "dictionary"
+    lab name: "rpn_calculator"
 
     lesson name: "dispatching"
-    lab "xml_builder"
+    lab name: "xml_builder"
 
     lesson name: "class_methods"
     lesson name: "factories"
     lesson name: "reopening_classes"
-    lab "array_extensions"
-    lab "in_words"
+    lab name: "array_extensions"
+    lab name: "in_words"
   end
 end

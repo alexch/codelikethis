@@ -7,10 +7,10 @@ class Course
       video youtube_id: "K8uhD8mtorE"
     end
     lesson name: "chaining"
-    lab "blocks"
+    lab name: "blocks"
     lesson name: "block_scope"
     lesson name: "stubbing"
-    lab "performance_monitor"
+    lab name: "performance_monitor"
     lesson name: "iterators"
     lesson name: "more_blocks"
     lesson name: "enumerators_advanced"

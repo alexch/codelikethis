@@ -14,22 +14,22 @@ class Course < Thing
 
   attr_writer :dir
 
+  contains :labs do |object, args|
+    args ||= {}
+    args + {course: object}
+  end
+  contains :lessons do |object, args|
+    args ||= {}
+    lesson_name = args[:name]
+    raise "already a lesson named #{lesson_name}" if object.this_lesson_index(lesson_name)
+
+    args + {course: object}
+  end
+  contains :links
+
   def initialize **options, &block
     @goals = []
     super
-  end
-
-  # setters (for use during initialize block)
-
-  def lesson **args, &block
-    lesson_name = args[:name]
-    raise "already a lesson named #{lesson_name}" if this_lesson_index(lesson_name)
-
-    super(**(args + {course: self}), &block)
-  end
-
-  def lab lab_name, &block
-    super(**{course: self, name: lab_name}, &block)
   end
 
   def goal text
@@ -51,8 +51,9 @@ class Course < Thing
     goals and not goals.empty?
   end
 
-  def links?
-    links and not links.empty?
+  # todo: test
+  def links
+    super + @things.map(&:links).flatten
   end
 
   def lesson_names
@@ -133,10 +134,6 @@ class Course < Thing
       target.instance_variable_get(:@current) == item
     end
 
-    def target_items
-      target.instance_variable_get(:@stuff) == item
-    end
-
     def content
       widget Breadcrumbs, parents: [CoursesTable.new], display_name: target.display_name
       if target.abstract?
@@ -180,7 +177,7 @@ class Course < Thing
       end
     end
 
-    def list_items items = target_items, options = {}
+    def list_items items, options = {}
       options = options.dup
       element_name = options.delete(:element) || 'li'
       items.each do |item|
@@ -216,8 +213,6 @@ class Course < Thing
   end
 
   Separator = new(name: "---")
-
-  private
 
   def this_lesson_index(lesson_name)
     lesson_names.index {|name| name == lesson_name}

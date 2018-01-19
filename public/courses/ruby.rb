@@ -9,8 +9,8 @@ Course::Ruby = Course.new(
     lesson name: "meta"
 
     lesson name: "ruby_for_programmers"
-    lab "hello"
-    lab "temperature"
+    lab name: "hello"
+    lab name: "temperature"
     # course "ruby_basics"
 
     lesson name: "waka-waka"

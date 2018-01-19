@@ -27,20 +27,36 @@ class Thing
     @display_name || titleized(name)
   end
 
-  def method_missing thing_type, *args, &block
+  def self.contains name, &arg_munger
 
-    getting = (thing_type[-1] == "s")
-    thing_type = thing_type[0..-2] if getting
+    plural_name = name
+    raise "#{name} must be plural" unless plural_name[-1] == "s"
+    singular_name = name[0...-1]
+
+    require singular_name.to_s # in case we don't know about "foo"s yet
+    thing_class = singular_name.to_s.camelize.constantize
+
+    define_method(singular_name) do |**args, &block|
+      args = arg_munger.call(self, args) if arg_munger
+      add_thing singular_name, args, block
+    end
+
+    define_method(plural_name) do
+      @things.select {|thing| thing.is_a? thing_class}
+    end
+
+    define_method("#{plural_name}?") do
+      things_of_this_type = self.send plural_name
+      (things_of_this_type and not things_of_this_type.empty?)
+    end
+  end
+
+  contains :links  # any thing can have links
+
+  def add_thing thing_type, options, block
     require thing_type.to_s # in case we don't know about "foo"s yet
     thing_class = thing_type.to_s.camelize.constantize
-
-    raise "#{thing_type} should be a Thing" unless thing_class < Thing
-
-    if getting
-      @things.select {|thing| thing.is_a? thing_class}
-    else # setting
-      @things << thing_class.new(**args[0], &block)
-    end
+    @things << thing_class.new(**options, &block)
   end
 
   def current= course_or_lesson

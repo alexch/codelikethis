@@ -61,10 +61,10 @@ describe Course do
         link href: "http://cooking.com"
 
         lesson name: "scramble_eggs"
-        lab "egg_lab"
+        lab name: "egg_lab"
         lesson name: "boil_water"
-        lab "turn_on_stove"
-        lab "boiling"
+        lab name: "turn_on_stove"
+        lab name: "boiling"
       end
 
       course.dir = files.dir "how_to_cook" do

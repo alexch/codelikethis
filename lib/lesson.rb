@@ -6,6 +6,9 @@ class Lesson < Thing
 
   attr_reader :course, :abstract
 
+  contains :videos
+  contains :links
+
   def display_name
     @display_name || name.titleize
   end
@@ -62,9 +65,12 @@ class Lesson < Thing
     needs :target
     attr_reader :target
 
+
     # proxy readers to the target (model) object
+    # todo: use DelegateClass?
     [
-        :labs, :course, :name, :display_name, :abstract, :slides, :videos,
+        :labs, :course, :name, :display_name,
+        :abstract, :slides, :videos,
         :slides?, :video?,
         :next_lesson, :previous_lesson,
         :next_labs,
@@ -144,6 +150,15 @@ class Lesson < Thing
             labs_list
           }
           br
+        end
+
+        if target.links?
+          h2 "Links"
+          ul(class: 'links') do
+            target.links.each do |link|
+              li {widget link.view}
+            end
+          end
         end
 
         next_and_previous

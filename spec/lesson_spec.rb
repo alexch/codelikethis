@@ -15,10 +15,10 @@ describe Lesson do
   let(:course) {
     course = Course.new do
       lesson name: "scramble_eggs", abstract: "how to scramble"
-      lab "egg_lab"
+      lab name: "egg_lab"
       lesson name: "boil_water"
-      lab "turn_on_stove"
-      lab "boiling"
+      lab name: "turn_on_stove"
+      lab name: "boiling"
     end
 
     course.dir = files.dir "how_to_cook" do
