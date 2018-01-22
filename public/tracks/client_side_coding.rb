@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  ClientSideCoding = Course.new(
+class Track
+  ClientSideCoding = Track.new(
       name: "client_side_coding",
       display_name: "Client-Side Coding",
       abstract: "Learn the data structures, coding patterns, and libraries that enable client-side coding in Web pages.",

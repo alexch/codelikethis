@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  ClientSideCodingWithReact = Course.new(
+class Track
+  ClientSideCodingWithReact = Track.new(
       name: "client_side_coding_with_react",
       display_name: "Client-Side Coding with React",
       abstract: "Learn React, the component-centric client-side Web framework from Facebook"

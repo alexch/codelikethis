@@ -1,9 +1,9 @@
-require "course"
+require "track"
 
-Course::Ruby = Course.new(
+Track::Ruby = Track.new(
     name: "ruby",
     display_name: "Ruby Topics",
-    abstract: "Extend your exploration of Ruby into distant lands. This course is a catch-all for advanced or esoteric topics that don't fit into other courses."
+    abstract: "Extend your exploration of Ruby into distant lands. This track is a catch-all for advanced or esoteric topics that don't fit into other tracks."
 ) do
     lesson name: "credits"
     lesson name: "meta"
@@ -11,11 +11,11 @@ Course::Ruby = Course.new(
     lesson name: "ruby_for_programmers"
     lab name: "hello"
     lab name: "temperature"
-    # course "ruby_basics"
+    # track "ruby_basics"
 
     lesson name: "waka-waka"
-    # course "ruby_blocks"
-    # course "ruby_objects"
+    # track "ruby_blocks"
+    # track "ruby_objects"
     lesson name: "bad_names"
 
 

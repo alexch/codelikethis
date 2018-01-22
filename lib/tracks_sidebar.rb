@@ -1,8 +1,8 @@
 require 'erector'
 
-class CoursesSidebar < Erector::Widget
+class TracksSidebar < Erector::Widget
 
-  needs :courses, :current
+  needs :tracks, :current
 
   external :script, (<<-JS)
   $(document).ready(function() {
@@ -15,11 +15,11 @@ class CoursesSidebar < Erector::Widget
   });
   JS
 
-  def current_course
-    if @current.is_a?(Course)
+  def current_track
+    if @current.is_a?(Track)
       @current
     elsif @current.is_a?(Lesson)
-      @current.course
+      @current.track
     end
   end
 
@@ -30,11 +30,11 @@ class CoursesSidebar < Erector::Widget
   def content
     div(class: 'row justify-content-between') {
       div(class: 'col-8') {
-        h3 "Courses"
+        h3 "Tracks"
       }
       div(class: 'col-4') {
-        # hamburger button for courses
-        button(:class => 'courses-toggler btn border-0 collapsed',
+        # hamburger button for tracks
+        button(:class => 'tracks-toggler btn border-0 collapsed',
                :type => 'button',
 
                'data-toggle' => 'collapse',
@@ -49,40 +49,40 @@ class CoursesSidebar < Erector::Widget
     }
 
     div(id: html_id, class: 'collapse') {
-      div(id: "#{html_id}-courses") {
-        @courses.each do |course|
-          course_row(course)
+      div(id: "#{html_id}-tracks") {
+        @tracks.each do |track|
+          track_row(track)
         end
       }
     }
   end
 
   def html_id
-    "sidebar-courses"
+    "sidebar-tracks"
   end
 
-  def course_row(course)
-    active = (current_course == course)
+  def track_row(track)
+    active = (current_track == track)
     classes = ['list-group-item',
-               'course-name',
+               'track-name',
                ('active' if active),
     ]
 
     div(class: classes) {
-      lessons_id = "sidebar-#{course.name}-lessons"
+      lessons_id = "sidebar-#{track.name}-lessons"
 
       div(class: 'lesson-name') {
-        a course.display_name,
+        a track.display_name,
           href: "##{lessons_id}",
           'data-toggle': 'collapse',
           'data-target': "##{lessons_id}",
-          'data-parent': "##{html_id}-courses"
+          'data-parent': "##{html_id}-tracks"
         # 'aria-expanded': false
         # 'aria-controls': '???'
 
       }
 
-      # labs_id = "sidebar-#{course.name}-labs"
+      # labs_id = "sidebar-#{track.name}-labs"
       # button "labs",
       #        class: 'btn btn-primary',
       #        type: 'button',
@@ -91,21 +91,21 @@ class CoursesSidebar < Erector::Widget
       #        'aria-expanded': false
       #        # 'aria-controls': '???'
 
-      div(class: ['collapse', ('show' if course.lessons.include?(@current))],
+      div(class: ['collapse', ('show' if track.lessons.include?(@current))],
           id: lessons_id) {
-        unless @current == course
-          a "[Course Info]", href: course.href,
+        unless @current == track
+          a "[Track Info]", href: track.href,
             float: 'right',
-            class: 'course-info-link'
+            class: 'track-info-link'
         end
         div(class: ['list-group', 'lesson-names']) {
-          course.current = @current
-          widget course.view, {}, :content_method_name => :list_lessons
+          track.current = @current
+          widget track.view, {}, :content_method_name => :list_lessons
         }
       }
 
       # ul(class: 'list-group', id: labs_id) {
-      #   widget course.view, {}, :content_method_name => :list_labs
+      #   widget track.view, {}, :content_method_name => :list_labs
       # }
     }
 

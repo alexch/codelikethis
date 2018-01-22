@@ -2,9 +2,12 @@ require 'active_support/inflector'
 require 'awesome_print'
 
 # abstract base class for items that can be initialized
-# via the DSL, like Course, Lesson, Lab
+# via the DSL, like Track, Lesson, Lab
 class Thing
-  attr_reader :name, :display_name
+  # every Thing has a name
+  attr_reader :name
+  # every Thing has a display name
+  attr_reader :display_name
 
   # todo: check keys against "needs"-style per-subclass attribute list
 
@@ -59,8 +62,8 @@ class Thing
     @things << thing_class.new(**options, &block)
   end
 
-  def current= course_or_lesson
-    @current = course_or_lesson
+  def current= track_or_lesson
+    @current = track_or_lesson
   end
 
   WEIRD_WORDS = [

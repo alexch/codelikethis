@@ -7,8 +7,8 @@ project = File.expand_path("#{here}/..")
 require File.join(project, "app")
 require File.join(project, "lib/lesson")
 
-# weird to be loading the public courses here
-require File.join(project, "public/courses/ruby")
+# weird to be loading the public tracks here
+require File.join(project, "public/tracks/ruby")
 
 describe AppHelpers do
   include AppHelpers
@@ -17,10 +17,10 @@ describe AppHelpers do
     example { expect(page_title("Foo")).to eq("Foo - Code Like This") }
     example { page_title("Foo", "bar").should == "Foo bar - Code Like This" }
 
-    let(:course) { Course::Ruby }
-    let(:lesson) { course.lesson_named "bad_names" }
+    let(:track) { Track::Ruby }
+    let(:lesson) { track.lesson_named "bad_names" }
 
-    example { page_title(course).should == "Ruby Topics - Code Like This" }
+    example { page_title(track).should == "Ruby Topics - Code Like This" }
     example { page_title(lesson).should == "Bad Names - Code Like This" }
   end
 end

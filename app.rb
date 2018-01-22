@@ -35,41 +35,41 @@ class App < Sinatra::Base
     Thread.current[:development] = nil
   end
 
-  def all_courses
-    Courses::ALL
+  def all_tracks
+    Tracks::ALL
   end
 
-  def courses_widget
-    CoursesTable.new(:courses => all_courses)
+  def tracks_widget
+    TracksTable.new(:tracks => all_tracks)
   end
 
   get '/lessons' do
-    AppPage.new(:widget => courses_widget, :title => page_title("Lessons")).to_html
+    AppPage.new(:widget => tracks_widget, :title => page_title("Lessons")).to_html
   end
 
   get '/' do
     AppPage.new(:widget => Home, :title => "Code Like This").to_html
   end
 
-  get "/lessons/:course" do
-    AppPage.new(:widget => course.view, :title => page_title(course)).to_html
+  get "/lessons/:track" do
+    AppPage.new(:widget => track.view, :title => page_title(track)).to_html
   end
 
-  get "/lessons/:course/:file.slides" do
+  get "/lessons/:track/:file.slides" do
     # slides are signified with a dot instead of a slash so that relative file references don't break
-    file = File.join(course_dir, "#{params[:file]}.md")
+    file = File.join(track_dir, "#{params[:file]}.md")
     slides = Deck::Slide.from_file(file)
 
-    # todo: Extract, move to Courses object
-    course = all_courses.detect do |course|
-      course.name == params[:course]
+    # todo: Extract, move to Tracks object
+    track = all_tracks.detect do |track|
+      track.name == params[:track]
     end
 
-    if course
+    if track
       slides << begin
         slide = Deck::Slide.new(slide_id: '_next')
 
-        lesson = course.lesson_named(params[:file])
+        lesson = track.lesson_named(params[:file])
 
         slide << lesson.view.to_html(content_method_name: :labs)
         slide << lesson.view.to_html(content_method_name: :next_lesson_button)
@@ -85,30 +85,30 @@ class App < Sinatra::Base
     deck_page.to_html
   end
 
-  get "/lessons/:course/:file.:ext" do
-    send_file(File.join(course_dir, "#{params[:file]}.#{params[:ext]}"))
+  get "/lessons/:track/:file.:ext" do
+    send_file(File.join(track_dir, "#{params[:file]}.#{params[:ext]}"))
   end
 
-  get "/lessons/:course/:lesson" do
+  get "/lessons/:track/:lesson" do
     AppPage.new(:widget => lesson.view, :title => lesson.display_name + " - Code Like This").to_html
   end
 
-  def course_dir
+  def track_dir
     here = File.expand_path(File.dirname(__FILE__))
-    ::File.join(here, "public", "lessons", params[:course])
+    ::File.join(here, "public", "lessons", params[:track])
   end
 
-  def course
+  def track
     begin
-      course_constant_name = params[:course].split('_').map(&:capitalize).join
-      course = Course.const_get(course_constant_name)
+      track_constant_name = params[:track].split('_').map(&:capitalize).join
+      track = Track.const_get(track_constant_name)
     rescue NameError
       not_found
     end
   end
 
   def lesson
-    course.lesson_named(params[:lesson] || params[:file])
+    track.lesson_named(params[:lesson] || params[:file])
   end
 
 end

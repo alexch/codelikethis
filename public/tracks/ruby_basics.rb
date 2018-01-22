@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  RubyBasics = Course.new(name: "ruby_basics") do
+class Track
+  RubyBasics = Track.new(name: "ruby_basics") do
     lesson name: "more_neat_things"
     lab name: "hello"
     lesson name: "types"

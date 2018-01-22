@@ -1,3 +1,4 @@
+require "files"
 require "wrong"
 
 here = File.expand_path(File.dirname(__FILE__))
@@ -5,23 +6,23 @@ project = File.expand_path("#{here}/..")
 
 require "#{project}/lib/lesson"
 
-require "#{project}/public/courses/ruby" # ???
-
+require "#{project}/public/tracks/ruby" # ???
 
 describe Lesson do
 
   include Files
 
-  let(:course) {
-    course = Course.new do
+  let(:track) {
+    track = Track.new do
       lesson name: "scramble_eggs", abstract: "how to scramble"
       lab name: "egg_lab"
       lesson name: "boil_water"
       lab name: "turn_on_stove"
       lab name: "boiling"
+      lesson name: "cooking_apis_with_nodejs"
     end
 
-    course.dir = files.dir "how_to_cook" do
+    track.dir = files.dir "how_to_cook" do
       file "scramble_eggs.md"
       file "boil_water.md", <<-MD
 # water
@@ -31,9 +32,9 @@ fill a glass of water at the sink
       MD
     end
 
-    course
+    track
   }
-  let(:lesson) { course.lesson_named "scramble_eggs" }
+  let(:lesson) { track.lesson_named "scramble_eggs" }
 
   it "has a name" do
     lesson.name.should == "scramble_eggs"
@@ -56,15 +57,19 @@ fill a glass of water at the sink
   end
 
   it "includes slide-defined labs" do
-    course.lesson_named("boil_water").labs.map(&:name).should include("using faucets")
+    track.lesson_named("boil_water").labs.map(&:name).should include("using faucets")
   end
 
   it "has several next labs" do
-    course.lesson_named("boil_water").labs.map(&:name).should include("turn_on_stove", "boiling")
+    track.lesson_named("boil_water").labs.map(&:name).should include("turn_on_stove", "boiling")
+  end
+
+  it "capitalizes lesson names correctly" do
+    expect(track.lesson_named("cooking_apis_with_nodejs").display_name).to eq("Cooking APIs With NodeJS")
   end
 
   describe 'videos' do
-    subject { Lesson.new(course: course, name: "scramble_eggs") }
+    subject { Lesson.new(track: track, name: "scramble_eggs") }
     it "can add a video" do
       subject.video youtube_id: "abcdefg"
     end

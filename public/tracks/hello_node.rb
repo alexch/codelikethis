@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  HelloNode = Course.new(
+class Track
+  HelloNode = Track.new(
       name: "hello_node",
       abstract: "Build and deploy a simple 'Hello World' application in NodeJS."
   ) do

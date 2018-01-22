@@ -23,6 +23,7 @@ describe Thing do
       expect(Thing.new(name: "javascript").display_name).to eq("JavaScript")
       expect(Thing.new(name: "api").display_name).to eq("API")
       expect(Thing.new(name: "apis").display_name).to eq("APIs")
+      expect(Thing.new(name: "calling_apis").display_name).to eq("Calling APIs")
     end
 
     pending "knows some hyphenated phrases" do

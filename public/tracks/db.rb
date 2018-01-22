@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  Db = Course.new(name: "db", display_name: 'Databases') do
+class Track
+  Db = Track.new(name: "db", display_name: 'Databases') do
     goal 'the general history of databases'
     goal 'the relational database model'
     goal 'the "NoSQL" document database model'

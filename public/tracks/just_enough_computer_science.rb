@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  JustEnoughComputerScience = Course.new(
+class Track
+  JustEnoughComputerScience = Track.new(
       name: "cs",
       display_name: "Just Enough Computer Science"
   ) do

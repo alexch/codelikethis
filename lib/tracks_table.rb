@@ -1,9 +1,9 @@
 require 'erector'
 
-class CoursesTable < Erector::Widget
+class TracksTable < Erector::Widget
 
   external :style, <<-CSS
-  table.courses {
+  table.tracks {
     border: 2px solid gray;
     border-collapse:collapse;
     margin-left: 10em;
@@ -11,7 +11,7 @@ class CoursesTable < Erector::Widget
 
   }
 
-  table.courses ul {
+  table.tracks ul {
     list-style: none;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
@@ -19,35 +19,35 @@ class CoursesTable < Erector::Widget
     -webkit-margin-end: 0;
     -webkit-padding-start: 0;
   }
-  table.courses td.lessons {
+  table.tracks td.lessons {
     font-size: 90%;
     padding-top: .5em;
   }
-  table.courses, table.courses td, table.courses th {
+  table.tracks, table.tracks td, table.tracks th {
     border: 1px solid black;
     padding: 4px 8px 8px;
   }
-  table.courses th {
+  table.tracks th {
     text-shadow: 1px 1px #ededed;
   }
-  table.courses td {
+  table.tracks td {
   }
-  table.courses tr:nth-child(1) {
+  table.tracks tr:nth-child(1) {
     background-color: #B3C8E8;
   }
-  table.courses tr:nth-child(even) {
+  table.tracks tr:nth-child(even) {
     background-color: #EEEEF2;
   }
-  table.courses a {
+  table.tracks a {
     text-decoration: none;
     display: block;
     padding: 2px;
   }
-  table.courses a:hover {
+  table.tracks a:hover {
     text-decoration: underline;
     background-color: #B3C8E8;
   }
-  table.courses a:visited {
+  table.tracks a:visited {
     color: black;
   }
 
@@ -79,42 +79,42 @@ class CoursesTable < Erector::Widget
   def content
     widget Breadcrumbs, display_name: display_name
 
-    table.courses {
+    table.tracks {
       tr {
-        th "Course"
+        th "Track"
         th "Lessons"
         th "Labs"
       }
-      @courses.each do |course|
-        course_row(course)
+      @tracks.each do |track|
+        track_row(track)
       end
     }
   end
 
-  def course_row(course)
+  def track_row(track)
     tr {
       th(valign: "top") {
-        a course.display_name, href: course.href
+        a track.display_name, href: track.href
       }
       td.lessons(valign: "top") {
         ul {
-          widget course.view, {}, :content_method_name => :list_lessons
+          widget track.view, {}, :content_method_name => :list_lessons
         }
       }
       td.lessons(valign: "top") {
         ul {
-          widget course.view, {}, :content_method_name => :list_labs
+          widget track.view, {}, :content_method_name => :list_labs
         }
       }
     }
   end
 
   def display_name
-    "Courses"
+    "Tracks"
   end
 
   def href
-    "/lessons" # todo: make a "/courses" endpoint instead
+    "/lessons" # todo: make a "/tracks" endpoint instead
   end
 
 end

@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  Career = Course.new(
+class Track
+  Career = Track.new(
       name: "career",
     ) do
     lesson name: "linked_in"

@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  ServerSideJavascript = Course.new(
+class Track
+  ServerSideJavascript = Track.new(
       name: "server_side_javascript",
       display_name: "Server-Side JavaScript",
       abstract: "Create web application servers using JavaScript.",

@@ -208,10 +208,10 @@ class AppPage < Erector::Widgets::Page
   end
 
   require 'util'
-  require_all('courses')
+  require_all('tracks')
 
-  def all_courses
-    Courses::ALL
+  def all_tracks
+    Tracks::ALL
   end
 
   def rightbar_content
@@ -233,7 +233,7 @@ class AppPage < Erector::Widgets::Page
 
         # first the sidebar
         div(class: "col-md-3", id: 'sidebar') {
-          widget CoursesSidebar.new(courses: all_courses, current: (@widget.respond_to? :target and @widget.target))
+          widget TracksSidebar.new(tracks: all_tracks, current: (@widget.respond_to? :target and @widget.target))
         }
 
         # now the real body

@@ -4,18 +4,18 @@ require "files"
 here = File.expand_path(File.dirname(__FILE__))
 project = File.expand_path("#{here}/..")
 
-require "#{project}/lib/course"
+require "#{project}/lib/track"
 
-describe Course do
+describe Track do
 
   include Files
 
   describe "by default" do
 
-    subject {Course.new}
+    subject {Track.new}
 
     it "has a default name" do
-      subject.name.should == "course"
+      subject.name.should == "track"
     end
 
     it "has no abstract" do
@@ -24,7 +24,7 @@ describe Course do
   end
 
   it "takes a list of lesson names" do
-    lessons = Course.new do
+    lessons = Track.new do
       lesson name: "foo"
       lesson name: "bar"
     end
@@ -32,27 +32,27 @@ describe Course do
   end
 
   it "renders HTML" do
-    course = Course.new do
+    track = Track.new do
       lesson name: "foo"
       lesson name: "bar"
     end
 
-    course.dir = files.dir "foo" do
+    track.dir = files.dir "foo" do
       file "foo.md"
       file "bar.md"
     end
 
-    breadcrumbs = Breadcrumbs.new(display_name: "Course", parents: [CoursesTable.new])
-    course.view.to_html.should include(breadcrumbs.to_html)
-    course.view.to_html.should include("<a href=\"/lessons/course/foo#content\">Foo")
-    course.view.to_html.should include("<a href=\"/lessons/course/bar#content\">Bar")
+    breadcrumbs = Breadcrumbs.new(display_name: "Track", parents: [TracksTable.new])
+    track.view.to_html.should include(breadcrumbs.to_html)
+    track.view.to_html.should include("<a href=\"/lessons/track/foo#content\">Foo")
+    track.view.to_html.should include("<a href=\"/lessons/track/bar#content\">Bar")
   end
 
   describe 'with markdown lesson files' do
 
     subject {
 
-      course = Course.new(name: "how_to_cook",
+      track = Track.new(name: "how_to_cook",
                           abstract: "learn how to cook with these great tips",
                           ) do
 
@@ -67,7 +67,7 @@ describe Course do
         lab name: "boiling"
       end
 
-      course.dir = files.dir "how_to_cook" do
+      track.dir = files.dir "how_to_cook" do
         file "scramble_eggs.md"
         file "boil_water.md", <<-MD
 # water
@@ -77,7 +77,7 @@ fill a glass of water at the sink
         MD
       end
 
-      course
+      track
     }
 
     it "can have an abstract" do
@@ -122,7 +122,7 @@ fill a glass of water at the sink
 
     it "can have a custom display name" do
       title = "Now We're Cooking!"
-      c = Course.new(name: "how_to_cook", display_name: title)
+      c = Track.new(name: "how_to_cook", display_name: title)
       c.display_name.should == title
     end
 
@@ -173,21 +173,21 @@ fill a glass of water at the sink
   end
 
   describe 'videos' do
-    it "can be set during course declaration" do
-      course = Course.new(name: "course") do
+    it "can be set during track declaration" do
+      track = Track.new(name: "track") do
         lesson name: "lesson" do
           video youtube_id: "video1"
           video youtube_id: "video2"
         end
       end
-      lesson = course.lesson_named "lesson"
+      lesson = track.lesson_named "lesson"
       lesson.videos.map(&:youtube_id).should == ["video1", "video2"]
     end
   end
 
   describe 'without markdown lesson files' do
     subject {
-      Course.new(name: "gaming") do
+      Track.new(name: "gaming") do
         lesson name: "shooters"
       end
     }

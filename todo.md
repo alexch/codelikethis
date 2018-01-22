@@ -4,7 +4,7 @@
 [ ] Apply Now button border
 [ ] header font (match with main site) Raleway
 [ ] side nav all collapsed
-[ ] side nav collapsed except for current course
+[ ] side nav collapsed except for current track
 [ ] tab view to switch between slides and outline
 [ ] rerun on windows
 [ ] track students progress
@@ -17,7 +17,7 @@ header link spacing (padding: 0 17px)
 remove hamburger border
 Open Sans slide text
 experiment with sidebar font - Open Sans or the current one
-make "Courses" menu a popup on mobile
+make "Tracks" menu a popup on mobile
 remove Lessons and Labs
 put "Learn" in a box -- maybe rename "Code Like This"
 change "Code like this." logo to a font, not PNG
@@ -32,7 +32,7 @@ Open Sans normal 20px lineheight 34px
 
 # organization
 
-* better course distinctions/flow
+* better track distinctions/flow
 
 # design
 
@@ -52,9 +52,9 @@ Open Sans normal 20px lineheight 34px
 # Bugs
 
 sporadic error:
-        1) Course next and previous lesson returns the next lesson
-           Failure/Error: course.dir = files.dir "how_to_cook" do
+        1) Track next and previous lesson returns the next lesson
+           Failure/Error: track.dir = files.dir "how_to_cook" do
            Errno::EEXIST:
-             File exists - //var/folders/ds/6t10dm2n4qn8_vlc2ngc875h0000gn/T/course_spec_1370525628_205
-           # ./spec/course_spec.rb:51:in `block (2 levels) in <top (required)>'
-           # ./spec/course_spec.rb:96:in `block (3 levels) in <top (required)>'
+             File exists - //var/folders/ds/6t10dm2n4qn8_vlc2ngc875h0000gn/T/track_spec_1370525628_205
+           # ./spec/track_spec.rb:51:in `block (2 levels) in <top (required)>'
+           # ./spec/track_spec.rb:96:in `block (3 levels) in <top (required)>'

@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  TricksOfTheTrade = Course.new(
+class Track
+  TricksOfTheTrade = Track.new(
       name: "tricks_of_the_trade",
       abstract: "Secrets of the professional web dev!"
   ) do

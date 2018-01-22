@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  UserExperience = Course.new(
+class Track
+  UserExperience = Track.new(
       name: "user_experience",
     ) do
     lesson name: "The Design Of Everyday Things"

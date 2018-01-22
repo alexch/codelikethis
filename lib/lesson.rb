@@ -4,17 +4,13 @@ require 'deck'
 
 class Lesson < Thing
 
-  attr_reader :course, :abstract
+  attr_reader :track, :abstract
 
   contains :videos
   contains :links
 
-  def display_name
-    @display_name || name.titleize
-  end
-
   def href
-    @course.href + "/" + name
+    @track.href + "/" + name
   end
 
   def labs
@@ -22,29 +18,29 @@ class Lesson < Thing
   end
 
   def slides
-    Deck::Slide.from_file File.new(File.join(@course.dir, "#{@name}.md"))
+    Deck::Slide.from_file File.new(File.join(@track.dir, "#{@name}.md"))
   rescue Errno::ENOENT, Errno::EINVAL
     []
   end
 
   def next_lesson
-    @course.next_lesson(name)
+    @track.next_lesson(name)
   end
 
   def previous_lesson
-    @course.previous_lesson(name)
+    @track.previous_lesson(name)
   end
 
   def slide_labs
     slides.select do |slide|
       slide.title =~ /lab: /i
     end.map do |slide|
-      Lab.new course: course, name: slide.title.slice(4..-1).strip, href: "#{self.href}#anchor/#{slide.slide_id}"
+      Lab.new track: track, name: slide.title.slice(4..-1).strip, href: "#{self.href}#anchor/#{slide.slide_id}"
     end
   end
 
   def next_labs
-    @course.next_labs(name)
+    @track.next_labs(name)
   end
 
   def video?
@@ -69,7 +65,7 @@ class Lesson < Thing
     # proxy readers to the target (model) object
     # todo: use DelegateClass?
     [
-        :labs, :course, :name, :display_name,
+        :labs, :track, :name, :display_name,
         :abstract, :slides, :videos,
         :slides?, :video?,
         :next_lesson, :previous_lesson,
@@ -112,8 +108,8 @@ class Lesson < Thing
 
     def content
       h1(class: 'lesson-name') {
-        span(class: 'course-name') {
-          text course.display_name
+        span(class: 'track-name') {
+          text track.display_name
           text ':'
         }
         br
@@ -168,8 +164,8 @@ class Lesson < Thing
           h2 "Comments"
           widget Disqus, shortname: "codelikethis",
                  developer: (Thread.current[:development] ? 1 : nil),
-                 identifier: "lesson_#{course.name}_#{name}",
-                 title: "#{course.display_name}: #{display_name}"
+                 identifier: "lesson_#{track.name}_#{name}",
+                 title: "#{track.display_name}: #{display_name}"
         }
       }
 
@@ -181,7 +177,7 @@ class Lesson < Thing
         previous_lesson_button
         next_lesson_button
         center {
-          a course.display_name, href: course.href
+          a track.display_name, href: track.href
         }
       }
     end

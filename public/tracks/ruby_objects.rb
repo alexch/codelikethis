@@ -1,7 +1,7 @@
-require "course"
+require "track"
 
-class Course
-  RubyObjects = Course.new(name: "ruby_objects") do
+class Track
+  RubyObjects = Track.new(name: "ruby_objects") do
     lesson name: "tiers" do
       video youtube_id: "FZkjE1_0XtI"
     end

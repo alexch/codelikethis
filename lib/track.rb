@@ -8,22 +8,22 @@ require 'lesson'
 require 'lab'
 
 require 'breadcrumbs'
-require 'courses_table'
+require 'tracks_table'
 
-class Course < Thing
+class Track < Thing
 
   attr_writer :dir
 
   contains :labs do |object, args|
     args ||= {}
-    args + {course: object}
+    args + {track: object}
   end
   contains :lessons do |object, args|
     args ||= {}
     lesson_name = args[:name]
     raise "already a lesson named #{lesson_name}" if object.this_lesson_index(lesson_name)
 
-    args + {course: object}
+    args + {track: object}
   end
   contains :links
 
@@ -37,8 +37,8 @@ class Course < Thing
   end
 
   # current page (for sidebar highlighting)
-  def current= course_or_lesson
-    @current = course_or_lesson
+  def current= track_or_lesson
+    @current = track_or_lesson
   end
 
   attr_reader :abstract, :goals
@@ -77,7 +77,7 @@ class Course < Thing
   end
 
   def name
-    (@name || "course").underscore
+    (@name || "track").underscore
   end
 
   def display_name
@@ -113,13 +113,13 @@ class Course < Thing
   end
 
   def dir
-    @dir || File.join(courses_dir, name)
+    @dir || File.join(tracks_dir, name)
   end
 
-  def courses_dir
+  def tracks_dir
     here = File.expand_path(File.dirname(__FILE__))
     project = File.expand_path("#{here}/..")
-    courses_dir = "#{project}/public/lessons/"
+    tracks_dir = "#{project}/public/lessons/"
   end
 
   def view
@@ -135,7 +135,7 @@ class Course < Thing
     end
 
     def content
-      widget Breadcrumbs, parents: [CoursesTable.new], display_name: target.display_name
+      widget Breadcrumbs, parents: [TracksTable.new], display_name: target.display_name
       if target.abstract?
         div(class: 'abstract') do
           h2 "Abstract"
