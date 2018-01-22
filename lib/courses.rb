@@ -21,6 +21,7 @@ class Courses
       ::Course::ClientSideCoding,
       ::Course::Javascript, # "JavaScript Topics"
       ::Course::ServerSideJavascript,
+      ::Course::Db,
       ::Course::ClientSideCodingWithReact,
 
       ::Course::Separator,
