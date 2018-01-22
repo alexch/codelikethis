@@ -7,9 +7,10 @@ class Course
       abstract: "Learn React, the component-centric client-side Web framework from Facebook"
   ) do
 
-    lesson name: "react"
-    link href: "http://docs.railsbridge.org/javascript-to-do-list-with-react/",
-         name: "RailsBridge Javascript To Do List With React"
+    lesson name: "react" do
+      link href: "http://docs.railsbridge.org/javascript-to-do-list-with-react/",
+           name: "RailsBridge Javascript To Do List With React"
+    end
 
     lesson name: "redux"
   end
