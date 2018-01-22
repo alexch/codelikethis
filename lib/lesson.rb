@@ -2,6 +2,7 @@ require 'erector'
 require 'active_support'
 require 'deck'
 
+require 'thing'
 class Lesson < Thing
 
   attr_reader :track, :abstract

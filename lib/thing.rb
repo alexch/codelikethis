@@ -54,7 +54,6 @@ class Thing
     end
   end
 
-  contains :links  # any thing can have links
 
   def add_thing thing_type, options, block
     require thing_type.to_s # in case we don't know about "foo"s yet
@@ -94,4 +93,9 @@ class Thing
     end.join(" ")
   end
 
+end
+
+require 'link'
+class Thing
+  contains :links  # any thing can have links
 end
