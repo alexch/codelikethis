@@ -254,44 +254,38 @@ h1.lesson-name {
     font-size: 60%; }
 
 /* line 280, ../scss/app.scss */
-span.video_link {
-  float: right;
-  border: 1px dotted black;
-  padding: 1px 2px; }
-
-/* line 286, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 293, ../scss/app.scss */
+  /* line 287, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 299, ../scss/app.scss */
+  /* line 293, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 305, ../scss/app.scss */
+  /* line 299, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 310, ../scss/app.scss */
+/* line 304, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 315, ../scss/app.scss */
+/* line 309, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 319, ../scss/app.scss */
+/* line 313, ../scss/app.scss */
 .footer {
   clear: both;
   padding: 2rem;
   border-top: 1px solid #EEEEEE; }
 
-/* line 325, ../scss/app.scss */
+/* line 319, ../scss/app.scss */
 .preview {
   font-size: 10pt;
   border: 4px solid darkred;
@@ -299,7 +293,7 @@ div.main_column img {
   margin: 0 1em;
   padding: .5em 1em; }
 
-/* line 333, ../scss/app.scss */
+/* line 327, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -308,12 +302,72 @@ div.main_column img {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 342, ../scss/app.scss */
+  /* line 336, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
+
+/* line 345, ../scss/app.scss */
+table.tracks {
+  border: 2px solid gray;
+  border-collapse: collapse;
+  box-shadow: #c8c8f1 2px 2px 4px; }
+  /* line 350, ../scss/app.scss */
+  table.tracks ul {
+    list-style: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0; }
+  /* line 358, ../scss/app.scss */
+  table.tracks td.lessons {
+    font-size: 90%;
+    padding-top: .5em; }
+  /* line 362, ../scss/app.scss */
+  table.tracks, table.tracks td, table.tracks th {
+    border: 1px solid black;
+    padding: 4px 8px 8px; }
+  /* line 366, ../scss/app.scss */
+  table.tracks th {
+    text-shadow: 1px 1px #ededed;
+    background-color: #B3C8E8; }
+  /* line 372, ../scss/app.scss */
+  table.tracks tr:nth-child(even) {
+    background-color: #EEEEF2; }
+  /* line 375, ../scss/app.scss */
+  table.tracks a {
+    text-decoration: none;
+    display: block;
+    padding: 2px; }
+  /* line 380, ../scss/app.scss */
+  table.tracks a:hover {
+    text-decoration: underline;
+    background-color: #B3C8E8; }
+  /* line 384, ../scss/app.scss */
+  table.tracks a:visited {
+    color: black; }
+
+/* line 389, ../scss/app.scss */
+.markdown {
+  padding-left: 4em; }
+  /* line 391, ../scss/app.scss */
+  .markdown h1 {
+    margin-left: -2em; }
+  /* line 394, ../scss/app.scss */
+  .markdown h2 {
+    margin-left: -2em; }
+  /* line 397, ../scss/app.scss */
+  .markdown h3 {
+    margin-left: -1em; }
+
+/* line 402, ../scss/app.scss */
+span.video_link {
+  float: right;
+  border: 1px dotted black;
+  padding: 1px 2px; }
 
 /*# sourceMappingURL=app.css.map */

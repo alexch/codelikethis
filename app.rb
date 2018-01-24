@@ -90,11 +90,19 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:track/:lesson" do
-    AppPage.new(:widget => lesson.view, :title => lesson.display_name + " - Code Like This").to_html
+    AppPage.new(:widget => lesson.view,
+                :title => lesson.display_name + " - Code Like This").to_html
+  end
+
+  get "/meta/:file" do
+
+    text = File.read(::File.join(here, 'public', 'meta', "#{params[:file]}.md"))
+    content_type('text/html')
+    AppPage.new(:widget => MarkdownWidget.new(text: text),
+                :title => params[:file] + " - Code Like This").to_html
   end
 
   def track_dir
-    here = File.expand_path(File.dirname(__FILE__))
     ::File.join(here, "public", "lessons", params[:track])
   end
 
@@ -109,6 +117,11 @@ class App < Sinatra::Base
 
   def lesson
     track.lesson_named(params[:lesson] || params[:file])
+  end
+
+  private
+  def here
+    File.expand_path(File.dirname(__FILE__))
   end
 
 end

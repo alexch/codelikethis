@@ -45,3 +45,7 @@ class Link < Thing
     end
   end
 end
+
+class Thing
+  contains :links  # any thing can have links
+end

@@ -41,11 +41,20 @@ task :build_css do
 end
 
 desc "build app"
-task :build => [:copy_deck, :build_css] do
+task :build => [
+  # :copy_deck, # for local development of deck only
+  :build_css] do
   puts "Built."
 end
 
+require 'awesome_print'
+desc "run app and keep building and running it"
+task :rerun do
+  cmd = %w{bundle exec rerun -- rake run}
+  sh *cmd
+end
+
 desc "run app"
-task :run do
-  sh "rerun rackup"
+task :run => :build do
+  sh "rackup"
 end

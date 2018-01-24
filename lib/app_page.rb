@@ -56,6 +56,7 @@ class AppPage < Erector::Widgets::Page
     font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
 
     stylesheet name: "coderay"
+    stylesheet name: "github-markdown"
 
     # load this application's CSS from /stylesheets/app.css
     stylesheet name: "app"
@@ -149,8 +150,7 @@ class AppPage < Erector::Widgets::Page
   end
 
   def footer_content
-
-    text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 by "
+    text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 foo "
     a "Alex Chaffee.", href: "http://alexchaffee.com"
     br
 

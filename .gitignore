@@ -3,3 +3,4 @@
 # /public/stylesheets/*
 /.sass-cache/*
 *.DS_Store
+spec/results.txt

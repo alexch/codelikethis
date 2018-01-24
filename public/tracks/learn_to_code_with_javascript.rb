@@ -22,14 +22,6 @@ class Track
 
     lesson name: "intro"
     lesson name: "computers"
-    lesson name: "values"
-
-    lesson name: "strings"
-    lesson name: "numbers"
-
-    lesson name: "variables"
-    lesson name: "null"
-    lesson name: "functions"
 
     lesson name: "the_command_line"
     link href: "https://vimeo.com/152746852",
@@ -37,10 +29,18 @@ class Track
          description: "intro to unix command-line by a former Turing School student"
     # time: "11 min",
 
-    lesson name: "loops"
+    lesson name: "values"
+    lesson name: "strings"
+    lesson name: "numbers"
+
+    lesson name: "variables"
+    lesson name: "null"
+    lesson name: "functions"
 
     lesson name: "input_and_output"
+
     lesson name: "logic"
+    lesson name: "loops"
 
     lesson name: "arrays"
     lesson name: "argv"

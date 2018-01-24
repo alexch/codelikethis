@@ -19,7 +19,7 @@ module Views
       img.logo(src: '/images/logo.png',
                alt: "Code like this!")
       br
-      text "Powered by Burlington Code Academy"
+      text "by Burlington Code Academy"
     end
   end
 
@@ -32,5 +32,20 @@ module Views
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       HTML
     end
+  end
+
+  def markdown text
+    @@markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                                           :tables => true,
+                                           :fenced_code_blocks => true,
+                                           :no_intra_emphasis => true,
+                                           :autolink => true,
+                                           :strikethrough => true,
+                                           :lax_html_blocks => false,
+                                           :space_after_headers => true,
+                                           :superscript => false
+    )
+
+    text raw(@@markdown.render(text))
   end
 end

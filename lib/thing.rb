@@ -95,7 +95,3 @@ class Thing
 
 end
 
-require 'link'
-class Thing
-  contains :links  # any thing can have links
-end
