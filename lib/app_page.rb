@@ -150,7 +150,7 @@ class AppPage < Erector::Widgets::Page
 
   def footer_content
 
-    text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2017 by "
+    text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 by "
     a "Alex Chaffee.", href: "http://alexchaffee.com"
     br
 
