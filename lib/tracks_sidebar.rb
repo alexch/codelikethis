@@ -62,36 +62,44 @@ class TracksSidebar < Erector::Widget
   end
 
   def track_row(track)
+    if track == Track::Separator
+      hr
+      return
+    end
+
     active = (current_track == track)
     classes = ['list-group-item',
                'track-name',
                ('active' if active),
     ]
-
     div(class: classes) {
       lessons_id = "sidebar-#{track.name}-lessons"
 
 
       div(class: 'lesson-name') {
 
-        unless @current == track or track == Track::Separator
+        unless @current == track or
           a(title: "Track Info for <br>#{track.display_name}",
             # https://getbootstrap.com/docs/4.0/components/tooltips/
             'data-html': true,
             'data-toggle': "tooltip",
             'data-placement': "right",
             href: track.href,
-            class: 'track-info-link pull-right') {
-            i(class: 'fas fa-info')
+            class: 'track-info-link') {
+            i(class: 'fas fa-info-circle')
           }
         end
 
-
-        a track.display_name,
-          href: "##{lessons_id}",
+        a(href: "##{lessons_id}",
           'data-toggle': 'collapse',
           'data-target': "##{lessons_id}",
-          'data-parent': "##{html_id}-tracks"
+          'data-parent': "##{html_id}-tracks") {
+          i(class: "fas fa-paw")
+          text nbsp
+          text nbsp
+          text track.display_name
+
+        }
         # 'aria-expanded': false
         # 'aria-controls': '???'
 
@@ -119,7 +127,7 @@ class TracksSidebar < Erector::Widget
       # }
     }
 
-    # // when a collapsible is shown
+      # // when a collapsible is shown
     # $('#sidebar .collapse').on('show.bs.collapse', function() {
     #   console.log("hello!");
     #   // then hide all currently shown

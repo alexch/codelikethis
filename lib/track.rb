@@ -192,11 +192,19 @@ class Track < Thing
           href += "#content" unless href.include?("#")
 
           a href: href do
+            i(class: 'fas fa-clone') # clone icon looks like slides
+            text nbsp
             text item_name
             span.loading_image unless current_page? item
 
             # todo: handle lessons with videos better
-            span.video_link "Video" if item.respond_to? :video? and item.video?
+            if item.respond_to? :video? and item.video?
+              span.video_link {
+                i(class: 'fas fa-video')
+                text nbsp
+                text "Video"
+              }
+            end
           end
         }
       end
