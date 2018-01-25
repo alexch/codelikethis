@@ -80,6 +80,16 @@ class AppPage < Erector::Widgets::Page
            integrity: "sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ",
            crossorigin: "anonymous"
 
+    # fontawesome is now SVGs
+    script defer: 'defer',
+           src: '/js/fontawesome-all.js'
+
+    script raw(<<-JS)
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+    JS
+
   end
 
   def body_scripts

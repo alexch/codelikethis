@@ -71,7 +71,22 @@ class TracksSidebar < Erector::Widget
     div(class: classes) {
       lessons_id = "sidebar-#{track.name}-lessons"
 
+
       div(class: 'lesson-name') {
+
+        unless @current == track or track == Track::Separator
+          a(title: "Track Info for <br>#{track.display_name}",
+            # https://getbootstrap.com/docs/4.0/components/tooltips/
+            'data-html': true,
+            'data-toggle': "tooltip",
+            'data-placement': "right",
+            href: track.href,
+            class: 'track-info-link pull-right') {
+            i(class: 'fas fa-info')
+          }
+        end
+
+
         a track.display_name,
           href: "##{lessons_id}",
           'data-toggle': 'collapse',
@@ -93,11 +108,6 @@ class TracksSidebar < Erector::Widget
 
       div(class: ['collapse', ('show' if track.lessons.include?(@current))],
           id: lessons_id) {
-        unless @current == track
-          a "[Track Info]", href: track.href,
-            float: 'right',
-            class: 'track-info-link'
-        end
         div(class: ['list-group', 'lesson-names']) {
           track.current = @current
           widget track.view, {}, :content_method_name => :list_lessons

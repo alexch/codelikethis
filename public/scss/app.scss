@@ -270,6 +270,27 @@ span.svg-icon {
   }
 }
 
+#sidebar-tracks {
+  a.track-info-link {
+    // this is an INSANE way to get it to float right
+    display: inline;
+    position: absolute;
+    border: 1px solid black;
+    padding: 2px;
+    margin: 0 2px;
+    width: 24px;
+    text-align: center;
+    right: 2px;
+
+    visibility: hidden;
+  }
+
+  div.track-name:hover a.track-info-link {
+    visibility: visible;
+    background-color: white;
+  }
+}
+
 h1.lesson-name {
   border-bottom: 2px solid purple;
   span.track-name {
