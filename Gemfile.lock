@@ -13,8 +13,9 @@ GIT
       thin
       trollop
 
-PATH
-  remote: ../rerun
+GIT
+  remote: https://github.com/alexch/rerun.git
+  revision: baf46e74438fb4c68743c9384874146ae520eb1d
   specs:
     rerun (0.12.0)
       listen (~> 3.0)

@@ -1,5 +1,5 @@
 require 'erector'
-
+require 'thing'
 
 class Lab < Thing
 
