@@ -28,6 +28,9 @@ class Track
          name: "Terminal 101",
          description: "intro to unix command-line by a former Turing School student"
     # time: "11 min",
+    link href: "https://www.youtube.com/watch?v=OAx_6-wdslM&list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-",
+         name: "How Computers Work",
+         description: "a series of short videos by code.org"
 
     lesson name: "values"
     lesson name: "strings"
@@ -37,7 +40,9 @@ class Track
     lesson name: "null"
     lesson name: "functions"
 
-    lesson name: "input_and_output"
+    lesson name: "input_and_output" do
+      video youtube_id: 'DKGZlaPlVLY'
+    end
 
     lesson name: "logic"
     lesson name: "loops"
