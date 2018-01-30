@@ -1,5 +1,6 @@
 require "files"
 require "wrong"
+require "spec_helper"
 
 here = File.expand_path(File.dirname(__FILE__))
 project = File.expand_path("#{here}/..")
