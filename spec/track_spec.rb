@@ -43,9 +43,12 @@ describe Track do
     end
 
     breadcrumbs = Breadcrumbs.new(display_name: "Track", parents: [TracksTable.new])
-    track.view.to_html.should include(breadcrumbs.to_html)
-    track.view.to_html.should include("<a href=\"/lessons/track/foo#content\">Foo")
-    track.view.to_html.should include("<a href=\"/lessons/track/bar#content\">Bar")
+    html = track.view.to_html
+    html.should include(breadcrumbs.to_html)
+    html.should include("<a href=\"/lessons/track/foo#content\"")
+    html.should include("Foo")
+    html.should include("<a href=\"/lessons/track/bar#content\"")
+    html.should include("Bar")
   end
 
   describe 'with markdown lesson files' do

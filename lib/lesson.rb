@@ -3,6 +3,8 @@ require 'active_support'
 require 'deck'
 
 require 'thing'
+require 'disqus'
+
 class Lesson < Thing
 
   attr_reader :track, :abstract

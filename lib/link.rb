@@ -1,3 +1,4 @@
+require 'erector'
 require 'thing'
 
 class Link < Thing

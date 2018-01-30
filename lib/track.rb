@@ -2,6 +2,8 @@ require 'erector'
 require 'active_support/inflector'
 require 'awesome_print'
 
+require 'hash_extensions'
+
 require 'thing'
 require 'link'
 require 'lesson'
