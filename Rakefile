@@ -24,7 +24,7 @@ end
 
 task :build_css do
   public_dir = "public"
-  css_dir = File.join public_dir, "stylesheets"
+  css_dir = File.join public_dir, "css"
   sass_dir = File.join public_dir, "scss"
   images_dir = File.join public_dir, "images"
   javascripts_dir = File.join public_dir, "js"

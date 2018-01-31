@@ -36,7 +36,7 @@ Open Sans normal 20px lineheight 34px
 
 # design
 
-* internal anchor link hidden rollover dealy
+* internal anchor link hidden rollover chain icon dealiebob
 * design a logo
 * favicon
 * labs
@@ -47,7 +47,6 @@ Open Sans normal 20px lineheight 34px
 * blog (jekyll?)
 * inline slides (inline deck frame or div)
 * Like and +1 and Tweet buttons
-* comments per lesson (facebook? disqus?)
 
 # Bugs
 

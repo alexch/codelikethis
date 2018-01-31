@@ -10,8 +10,14 @@ lib = "#{here}/lib"
 $: << lib
 
 require 'util'
-require "#{lib}/hash_extensions"
-require_all(lib)
+require "hash_extensions"
+# require_all(lib)
+
+require 'app_page'
+require 'home'
+require 'tracks'
+require 'tracks_table'
+require 'tracks_sidebar'
 
 module AppHelpers
   def page_title object, extra = nil

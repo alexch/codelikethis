@@ -28,6 +28,9 @@ class Tracks
 
       ::Track::Git,
       ::Track::JustEnoughComputerScience,
+      ::Track::UserExperience,
+      ::Track::TricksOfTheTrade, # or "trade secrets" ?
+      ::Track::Career,
 
       ::Track::Separator,
 
@@ -38,11 +41,6 @@ class Tracks
       ::Track::RubyObjects,
       ::Track::Ruby, # "Ruby Topics"
 
-      ::Track::Separator,
-
-      ::Track::UserExperience,
-      ::Track::TricksOfTheTrade, # or "trade secrets" ?
-      ::Track::Career,
 
   ]
 end

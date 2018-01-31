@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/alexch/deck.rb.git
-  revision: daa96c878f497be2b4a1b812380c5655a2b56a12
+  revision: 033cec7ad2d4f1703219aa5adb27e9aad1dfd427
   specs:
     deckrb (0.5.2)
       coderay
@@ -15,9 +15,9 @@ GIT
 
 GIT
   remote: https://github.com/alexch/rerun.git
-  revision: baf46e74438fb4c68743c9384874146ae520eb1d
+  revision: 9a5ad390d536cb626a06ec9ca291499573580a6d
   specs:
-    rerun (0.12.0)
+    rerun (0.13.0)
       listen (~> 3.0)
 
 GIT
@@ -59,11 +59,11 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mini_portile2 (2.3.0)
-    minitest (5.11.1)
+    minitest (5.11.3)
     mustermann (1.0.1)
-    nokogiri (1.8.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    nokogiri (1.8.1-x86-mingw32)
+    nokogiri (1.8.2-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     polyglot (0.3.5)
     predicated (0.2.6)
@@ -91,7 +91,7 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
-    rspec-support (3.7.0)
+    rspec-support (3.7.1)
     ruby2ruby (2.4.0)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.6)

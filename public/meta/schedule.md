@@ -149,9 +149,11 @@ Lecture: ???
 Track: [The World Wide Web](../lessons/the_world_wide_web)
 
 Homework:
+
 * FreeCodeCamp "Responsive Web Design"
 
 Project: 
+
 * FreeCodeCamp "Applied Responsive Web Design Projects"
 
 ### Monday
@@ -222,6 +224,7 @@ Homework:
 Track: [The World Wide Web](../lessons/the_world_wide_web)
 
 Homework:
+
 * FreeCodeCamp "Responsive Web Design"
 * FreeCodeCamp "Front End Libraries"
 
@@ -236,6 +239,7 @@ Lecture:
  * Bootstrap: layout / grid
 
 Homework:
+
 * FreeCodeCamp "Front End Libraries - Bootstrap"
 
     
@@ -249,6 +253,7 @@ Homework:
 * CSS Grid?
 
 Homework:
+
 * FreeCodeCamp "CSS Flexbox"
 
 
@@ -281,6 +286,15 @@ Lab: make your profile page pretty
 **National Holiday - Independence Day**
 
 ### Thursday
+
+*Career Day*
+
+* Lightning talks
+* Code Review
+* Whiteboarding pseudocode
+
+
+
 ### Friday
 
 ## Week 6: July 9

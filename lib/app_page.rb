@@ -32,7 +32,7 @@ class AppPage < Erector::Widgets::Page
     href = if attributes[:href]
              href
            elsif attributes[:name]
-             "/stylesheets/#{attributes[:name]}.css"
+             "/css/#{attributes[:name]}.css"
            else
              raise "requires either a name or an href"
            end
@@ -58,7 +58,7 @@ class AppPage < Erector::Widgets::Page
     stylesheet name: "coderay"
     stylesheet name: "github-markdown"
 
-    # load this application's CSS from /stylesheets/app.css
+    # load this application's CSS from /css/app.css
     stylesheet name: "app"
 
     # todo: parameterize using CDN vs local file for jQuery
