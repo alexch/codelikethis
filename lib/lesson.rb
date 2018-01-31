@@ -7,7 +7,7 @@ require 'disqus'
 
 class Lesson < Thing
 
-  attr_reader :track, :abstract
+  attr_reader :track, :description
 
   contains :videos
   contains :links
@@ -68,8 +68,9 @@ class Lesson < Thing
     # proxy readers to the target (model) object
     # todo: use DelegateClass?
     [
-        :labs, :track, :name, :display_name,
-        :abstract, :slides, :videos,
+        :labs, :track,
+        :name, :display_name,
+        :description, :slides, :videos,
         :slides?, :video?,
         :next_lesson, :previous_lesson,
         :next_labs,
@@ -120,10 +121,10 @@ class Lesson < Thing
       }
       next_and_previous
 
-      if abstract
-        div(class: 'abstract') {
-          h2 "Abstract"
-          p abstract
+      if description
+        div(class: 'description') {
+          h2 "Description"
+          p description
         }
         br
       end

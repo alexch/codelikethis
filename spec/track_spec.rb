@@ -19,8 +19,8 @@ describe Track do
       subject.name.should == "track"
     end
 
-    it "has no abstract" do
-      subject.abstract.should be_nil
+    it "has no description" do
+      subject.description.should be_nil
     end
   end
 
@@ -57,7 +57,7 @@ describe Track do
     subject {
 
       track = Track.new(name: "how_to_cook",
-                          abstract: "learn how to cook with these great tips",
+                          description: "learn how to cook with these great tips",
                           ) do
 
         goal "boil water"
@@ -84,8 +84,8 @@ fill a glass of water at the sink
       track
     }
 
-    it "can have an abstract" do
-      subject.abstract.should == "learn how to cook with these great tips"
+    it "can have a description" do
+      subject.description.should == "learn how to cook with these great tips"
     end
 
     it "can have a list of goals" do

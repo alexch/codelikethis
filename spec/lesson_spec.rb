@@ -14,7 +14,7 @@ describe Lesson do
 
   let(:track) {
     track = Track.new do
-      lesson name: "scramble_eggs", abstract: "how to scramble"
+      lesson name: "scramble_eggs", description: "how to scramble"
       lab name: "egg_lab"
       lesson name: "boil_water"
       lab name: "turn_on_stove"
@@ -44,8 +44,8 @@ fill a glass of water at the sink
     lesson.display_name.should == "Scramble Eggs"
   end
 
-  it "has an abstract" do
-    lesson.abstract.should == "how to scramble"
+  it "has a description" do
+    lesson.description.should == "how to scramble"
   end
 
   it "renders HTML" do

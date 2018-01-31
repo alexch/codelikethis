@@ -43,10 +43,10 @@ class Track < Thing
     @current = track_or_lesson
   end
 
-  attr_reader :abstract, :goals
+  attr_reader :description, :goals
 
-  def abstract?
-    !!abstract
+  def description?
+    !!description
   end
 
   def goals?
@@ -138,10 +138,10 @@ class Track < Thing
 
     def content
       widget Breadcrumbs, parents: [TracksTable.new], display_name: target.display_name
-      if target.abstract?
-        div(class: 'abstract') do
-          h2 "Abstract"
-          p target.abstract # todo: markdown?
+      if target.description?
+        div(class: 'description') do
+          h2 "Description"
+          p target.description # todo: markdown?
         end
       end
       if target.goals?
@@ -193,7 +193,19 @@ class Track < Thing
                  end
           href += "#content" unless href.include?("#")
 
-          a href: href do
+          tooltip = if item.description?
+                      {
+                        # https://getbootstrap.com/docs/4.0/components/tooltips/
+                        title: item.description,
+                        'data-html': true,
+                        'data-toggle': "tooltip",
+                        'data-placement': "right",
+                      }
+                    else
+                      {}
+                    end
+
+          a(**({href: href} + tooltip)) {
             i(class: 'fas fa-clone') # clone icon looks like slides
             text nbsp
             text item_name
@@ -207,7 +219,7 @@ class Track < Thing
                 text "Video"
               }
             end
-          end
+          }
         }
       end
     end

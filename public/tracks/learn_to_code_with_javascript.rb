@@ -7,7 +7,7 @@ class Track
   LearnToCodeWithJavascript = Track.new(
       name: "learn_to_code_with_javascript",
       display_name: "Learn to Code with JavaScript",
-      abstract: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn JavaScript from the ground up... then this track is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and intermediate computer science concepts like closures and recursion.",
+      description: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn JavaScript from the ground up... then this track is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and intermediate computer science concepts like closures and recursion.",
   ) do
 
     # "the student will learn..."
@@ -43,6 +43,8 @@ class Track
     lesson name: "input_and_output" do
       video youtube_id: 'DKGZlaPlVLY'
     end
+
+    lesson name: "hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
     lesson name: "logic"
     lesson name: "loops"

@@ -3,7 +3,7 @@ require "track"
 Track::Git = Track.new(
     name: "git",
     display_name: "Version Control with Git and GitHub",
-    abstract: "Git is very powerful, but also very confusing. This track explores git as a tool"
+    description: "Git is very powerful, but also very confusing. This track explores git as a tool"
 ) do
 
   link href: "https://try.github.io", name: "Try Github",

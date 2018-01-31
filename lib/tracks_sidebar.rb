@@ -79,13 +79,14 @@ class TracksSidebar < Erector::Widget
       div(class: 'lesson-name') {
 
         unless @current == track or
-          a(title: "Track Info for <br>#{track.display_name}",
+          a(href: track.href,
+            class: 'track-info-link',
             # https://getbootstrap.com/docs/4.0/components/tooltips/
+            title: "Track Info for <br>#{track.display_name}",
             'data-html': true,
             'data-toggle': "tooltip",
             'data-placement': "right",
-            href: track.href,
-            class: 'track-info-link') {
+            ) {
             i(class: 'fas fa-info-circle')
           }
         end

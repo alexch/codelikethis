@@ -4,7 +4,7 @@ class Track
   ServerSideJavascript = Track.new(
       name: "server_side_javascript",
       display_name: "Server-Side JavaScript",
-      abstract: "Create web application servers using JavaScript.",
+      description: "Create web application servers using JavaScript.",
       ) do
     # "the student will learn..."
     goal "how to create a self-contained server-side web application using NodeJS"

@@ -3,7 +3,7 @@ require "track"
 Track::Ruby = Track.new(
     name: "ruby",
     display_name: "Ruby Topics",
-    abstract: "Extend your exploration of Ruby into distant lands. This track is a catch-all for advanced or esoteric topics that don't fit into other tracks."
+    description: "Extend your exploration of Ruby into distant lands. This track is a catch-all for advanced or esoteric topics that don't fit into other tracks."
 ) do
     lesson name: "credits"
     lesson name: "meta"

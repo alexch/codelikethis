@@ -30,6 +30,10 @@ class Thing
     @display_name || titleized(name)
   end
 
+  def description?
+    !!@description
+  end
+
   def self.contains name, &arg_munger
 
     plural_name = name

@@ -4,7 +4,7 @@ class Track
   Javascript = Track.new(
       name: "javascript",
       display_name: "JavaScript Topics",
-      abstract: "Extend your exploration of JavaScript into distant lands. This track is a catch-all for advanced or esoteric topics that don't fit into other tracks."
+      description: "Extend your exploration of JavaScript into distant lands. This track is a catch-all for advanced or esoteric topics that don't fit into other tracks."
   ) do
     lesson name: "javascript_for_programmers"
     lesson name: "functions_and_closures"

@@ -16,7 +16,6 @@ class Tracks
       ::Track::Separator,
 
       ::Track::LearnToCodeWithJavascript,
-      ::Track::HelloNode,
       ::Track::TheWorldWideWeb,
       ::Track::ClientSideCoding,
       ::Track::Javascript, # "JavaScript Topics"

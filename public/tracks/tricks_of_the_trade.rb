@@ -3,7 +3,7 @@ require "track"
 class Track
   TricksOfTheTrade = Track.new(
       name: "tricks_of_the_trade",
-      abstract: "Secrets of the professional web dev!"
+      description: "Secrets of the professional web dev!"
   ) do
     link href: "https://alistapart.com/article/aria-and-progressive-enhancement"
     link href: "https://hackernoon.com/how-i-landed-my-post-bootcamp-software-developer-job-in-just-seven-weeks-7b213c1bb867"
