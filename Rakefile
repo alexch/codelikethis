@@ -12,16 +12,6 @@ RSpec::Core::RakeTask.new do |task|
   task.verbose = false
 end
 
-task :copy_deck do
-  puts "Copying Deck.rb..."
-  gems_dir = "gems"
-  deckrb_dir = "../deck.rb"
-  FileUtils.cp_r deckrb_dir, gems_dir, preserve: true, remove_destination: true
-  FileUtils.rm_rf File.join(gems_dir, "deck.rb", ".git")
-  FileUtils.rm_rf File.join(gems_dir, "deck.rb", "pkg")
-  FileUtils.rm_rf File.join(gems_dir, "deck.rb", ".idea")
-end
-
 task :build_css do
   public_dir = "public"
   css_dir = File.join public_dir, "css"
@@ -42,7 +32,6 @@ end
 
 desc "build app"
 task :build => [
-  # :copy_deck, # for local development of deck only
   :build_css] do
   puts "Built."
 end
