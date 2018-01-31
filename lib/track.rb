@@ -20,12 +20,22 @@ class Track < Thing
     args ||= {}
     args + {track: object}
   end
-  contains :lessons do |object, args|
+  contains :lessons do |track, args|
     args ||= {}
-    lesson_name = args[:name]
-    raise "already a lesson named #{lesson_name}" if object.this_lesson_index(lesson_name)
+    extra = {track: track}
 
-    args + {track: object}
+    lesson_name = args[:name]
+    starts_with_slash = /^\//
+    if lesson_name =~ starts_with_slash
+      require 'pathname'
+      path = Pathname.new(File.join(track.tracks_dir, lesson_name))
+      extra[:dir] = path.dirname.to_s
+      extra[:name] = lesson_name = path.basename.to_s
+    end
+
+    raise "already a lesson named #{lesson_name}" if track.this_lesson_index(lesson_name)
+
+    args + extra
   end
   contains :links
 
@@ -114,9 +124,11 @@ class Track < Thing
   end
 
   def tracks_dir
-    here = File.expand_path(File.dirname(__FILE__))
-    project = File.expand_path("#{here}/..")
-    tracks_dir = "#{project}/public/lessons/"
+    @@tracks_dir ||= begin
+      here = File.expand_path(File.dirname(__FILE__))
+      project = File.expand_path("#{here}/..")
+      "#{project}/public/lessons/"
+    end
   end
 
   def view

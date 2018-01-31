@@ -44,7 +44,7 @@ class Track
       video youtube_id: 'DKGZlaPlVLY'
     end
 
-    lesson name: "hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
+    lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
     lesson name: "logic"
     lesson name: "loops"

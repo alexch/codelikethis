@@ -20,8 +20,12 @@ class Lesson < Thing
     slide_labs + next_labs
   end
 
+  def dir
+    @dir || @track.dir
+  end
+
   def slides
-    Deck::Slide.from_file File.new(File.join(@track.dir, "#{@name}.md"))
+    Deck::Slide.from_file File.new(File.join(dir, "#{@name}.md"))
   rescue Errno::ENOENT, Errno::EINVAL
     []
   end

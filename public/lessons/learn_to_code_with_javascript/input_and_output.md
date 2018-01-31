@@ -62,7 +62,7 @@ What happens? Is this what you expected?
 * The first thing to do is DON'T PANIC!
 * You are *totally* going to figure this out.
 * And even if you don't, you haven't actually broken anything.
-* In fact, it's really hard to break a computer, so just stay calm.
+* In fact, it's really hard to break a computer just by typing, so stay calm.
 
 # Breathe
 

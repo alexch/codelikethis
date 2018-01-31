@@ -121,7 +121,7 @@ fill a glass of water at the sink
     end
 
     it "has a title (aka display name)" do
-      subject.display_name.should == "How To Cook"
+      subject.display_name.should == "How to Cook"
     end
 
     it "can have a custom display name" do
@@ -199,6 +199,31 @@ fill a glass of water at the sink
     it "still works" do
       expect(lesson.slides).to eq([])
     end
+  end
+
+  describe 'when lessons are part of other tracks' do
+    let!(:other_track) {
+      other_track = Track.new(name: "chickens") do
+        lesson name: "build_a_coop"
+      end
+
+      root = files.root
+      other_track.define_singleton_method(:tracks_dir) { root }
+      subject.define_singleton_method(:tracks_dir) { root }
+
+      other_track.dir = files.dir "chickens" do
+        file "build_a_coop.md"
+      end
+      other_track
+    }
+
+    it 'can load them into this track too' do
+      subject.lesson name: '/chickens/build_a_coop'
+      foreign_lesson = subject.lessons.last
+      expect(foreign_lesson.name).to eq("build_a_coop")
+      expect(foreign_lesson.dir).to eq("#{files.root}/chickens")
+    end
+
   end
 
 end
