@@ -69,31 +69,76 @@ class Thing
     @current = track_or_lesson
   end
 
-  WEIRD_WORDS = [
-      "API",
-      "APIs",
-      "ARIA",
-      "CGI",
-      "ECMAScript",
-      "HTML",
-      "JavaScript",
-      "jQuery",
-      "JS",
-      "MVC",
-      "NodeJS",
-      "RegExp",
-      "SQL",
-      "TDD",
-  ].inject({}) do |hash, word|
-    hash[word.downcase] = word
-    hash
+  def self.lookup a
+    a.inject({}) do |hash, word|
+      hash[word.downcase] = word
+      hash
+    end
   end
+
+  # please keep this list sorted alphabetically
+  WEIRD_WORDS = lookup %w[
+    AJAX
+    API
+    APIs
+    ARIA
+    CSS
+    CGI
+    DOM
+    ECMAScript
+    HTML
+    HTTP
+    JavaScript
+    jQuery
+    JS
+    MVC
+    NodeJS
+    NoSQL
+    RegExp
+    SEO
+    SQL
+    TDD
+    XP
+  ]
+
+  HYPHENATES = %w[
+    Object-Oriented
+    Client-Side
+    Server-Side
+  ]
+
+  # https://english.stackexchange.com/questions/14/which-words-in-a-title-should-be-capitalized
+  SMALL_WORDS = lookup %w[
+    a
+    an
+    and
+    but
+    for
+    nor
+    of
+    on
+    or
+    the
+    with
+  ]
 
   private
 
   def titleized name
+    first_word = true
+    HYPHENATES.each do |hyphenate|
+      name = name.sub(hyphenate.underscore, hyphenate)
+    end
+    if name.include?('-')
+      return name.split('-').map {|part| titleized(part)}.join('-')
+    end
+
     name.split(/[_\s]/).map do |word|
-      WEIRD_WORDS[word.downcase] || word.capitalize
+      word = WEIRD_WORDS[word.downcase] ||
+        (!first_word && SMALL_WORDS[word.downcase]) ||
+        word.capitalize
+      first_word = false
+      word
     end.join(" ")
   end
 

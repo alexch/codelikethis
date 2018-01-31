@@ -82,14 +82,9 @@ class Track < Thing
     (@name || "track").underscore
   end
 
-  def display_name
-    @display_name or name.titleize
-  end
-
   def href anchor: nil
     "/lessons/#{name}#{"##{anchor}" if anchor}"
   end
-
 
   def lesson_named lesson_name
     @things[this_item_index(lesson_name)]

@@ -35,6 +35,7 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |./app.rb | main app |
 |./config.ru | app config |
 |lib | ruby source code |
+|lib/thing.rb::WEIRD_WORDS | list of oddly-capitalized words (e.g. CSS, JavaScript) |
 |spec | ruby test source code |
 |public | web-visible files |
 |public/images | web site images |
