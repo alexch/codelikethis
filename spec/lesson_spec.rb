@@ -65,7 +65,7 @@ fill a glass of water at the sink
   end
 
   it "capitalizes lesson names correctly" do
-    expect(track.lesson_named("cooking_apis_with_nodejs").display_name).to eq("Cooking APIs With NodeJS")
+    expect(track.lesson_named("cooking_apis_with_nodejs").display_name).to eq("Cooking APIs with NodeJS")
   end
 
   describe 'videos' do

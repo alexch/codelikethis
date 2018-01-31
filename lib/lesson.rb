@@ -65,19 +65,21 @@ class Lesson < Thing
   end
 
   class View < Erector::Widget
+    include Views
+
     needs :target
     attr_reader :target
-
 
     # proxy readers to the target (model) object
     # todo: use DelegateClass?
     [
-        :labs, :track,
-        :name, :display_name,
-        :description, :slides, :videos,
-        :slides?, :video?,
-        :next_lesson, :previous_lesson,
-        :next_labs,
+      :labs, :track,
+      :name, :display_name,
+      :description, :description?,
+      :slides, :slides?,
+      :videos, :videos?, :video?,
+      :next_lesson, :previous_lesson,
+      :next_labs,
     ].each do |method|
       define_method method do
         @target.send method
@@ -97,6 +99,7 @@ class Lesson < Thing
     def outline
       div.outline {
         h3 "Outline"
+
         ul(class: 'list-group') {
           slides.each do |slide|
             li(class: 'list-group-item') {
@@ -108,24 +111,29 @@ class Lesson < Thing
       br
       div(class: 'row text-center') {
         div(class: 'col') {
-          a.slides("Show Slides", href: "#{name}.slides", class: 'btn btn-primary')
+          a("Show Slides", href: "#{name}.slides", class: 'slides btn btn-primary')
         }
       }
       br
     end
 
     def content
+      next_and_previous(show_track: false)
+
       h1(class: 'lesson-name') {
         span(class: 'track-name') {
+          i(class: "fas fa-paw")
+          text nbsp
           text track.display_name
           text ':'
         }
         br
-        text display_name
+        center {
+          text display_name
+        }
       }
-      next_and_previous
 
-      if description
+      if description?
         div(class: 'description') {
           h2 "Description"
           p description
@@ -133,15 +141,26 @@ class Lesson < Thing
         br
       end
 
-      div.videos {
-        videos.each {|video| widget video.view}
-      }
+      if videos?
+        div(class: 'videos', id: 'videos') {
+          h2 {
+            i(class: "fas fa-video")
+            text nbsp
+            text "Videos"
+          }
+          videos.each {|video| widget video.view}
+        }
+      end
 
       br
 
       div.main_column {
         if slides?
-          h2 "Slides"
+          h2 {
+            i(class: "fas fa-clone")
+            text nbsp
+            text "Slides"
+          }
           slides.each do |slide|
             widget slide
           end
@@ -165,10 +184,10 @@ class Lesson < Thing
           end
         end
 
-        next_and_previous
+        next_and_previous(show_track: true)
         br
 
-        div.comments {
+        div(class: 'comments', id: 'comments') {
           h2 "Comments"
           widget Disqus, shortname: "codelikethis",
                  developer: (Thread.current[:development] ? 1 : nil),
@@ -180,32 +199,42 @@ class Lesson < Thing
 
     end
 
-    def next_and_previous
+    def next_and_previous(show_track: true)
       div.next_and_previous {
         previous_lesson_button
         next_lesson_button
-        center {
-          a track.display_name, href: track.href
-        }
+        if show_track
+          center {
+            a(with_tooltip("This Track") + {href: track.href}) {
+              i(class: "fas fa-paw")
+              text nbsp
+              text track.display_name
+              text nbsp
+              i(class: "fas fa-paw")
+            }
+          }
+        end
       }
+      br clear: 'both'
     end
+
 
     def previous_lesson_button
       if previous_lesson
-        a.button.previous_lesson href: previous_lesson.name do
-          text "<< "
+        a.button.previous_lesson(with_tooltip("Previous Lesson") + {href: previous_lesson.name}) do
+          i(class: "fas fa-arrow-left")
+          text nbsp
           text previous_lesson.display_name
-          text " <<"
         end
       end
     end
 
     def next_lesson_button
       if next_lesson
-        a.button.next_lesson href: next_lesson.name do
-          text ">> "
+        a.button.next_lesson(with_tooltip("Next Lesson") + {href: next_lesson.name}) do
           text next_lesson.display_name
-          text " >>"
+          text nbsp
+          i(class: "fas fa-arrow-right")
         end
       end
     end

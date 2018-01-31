@@ -1,6 +1,7 @@
 require 'erector'
 
 class TracksSidebar < Erector::Widget
+  include Views
 
   needs :tracks, :current
 
@@ -75,7 +76,6 @@ class TracksSidebar < Erector::Widget
     div(class: classes) {
       lessons_id = "sidebar-#{track.name}-lessons"
 
-
       div(class: 'lesson-name') {
 
         unless @current == track
@@ -84,14 +84,9 @@ class TracksSidebar < Erector::Widget
             tooltip_text += "<p><small>#{track.description}</small><p>"
           end
           tooltip_text += "Click for More Info"
-          a(href: track.href,
-            class: 'track-info-link',
-            # https://getbootstrap.com/docs/4.0/components/tooltips/
-            title: tooltip_text,
-            'data-html': true,
-            'data-toggle': "tooltip",
-            'data-placement': "right",
-            ) {
+          a(**({href: track.href,
+            class: 'track-info-link'} +
+            with_tooltip(tooltip_text))) {
             i(class: 'fas fa-info-circle')
           }
         end
@@ -141,5 +136,7 @@ class TracksSidebar < Erector::Widget
     # });
     # JS
   end
+
+  private
 
 end

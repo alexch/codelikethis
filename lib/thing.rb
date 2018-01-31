@@ -17,7 +17,7 @@ class Thing
 
     options.each_pair do |key, value|
       instance_variable_set("@#{key}", value)
-      ap("@#{key}=#{value}")
+      # ap("@#{key}=#{value}")
     end
 
     instance_eval &block if block

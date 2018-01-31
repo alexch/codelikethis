@@ -48,4 +48,15 @@ module Views
 
     text raw(@@markdown.render(text))
   end
+
+  def with_tooltip(tooltip_text)
+    # https://getbootstrap.com/docs/4.0/components/tooltips/
+    tooltip_options = {
+      title: tooltip_text,
+      'data-html': true,
+      'data-toggle': "tooltip",
+      'data-placement': "right",
+    }
+  end
+
 end

@@ -37,7 +37,6 @@ describe Thing do
     it "keeps some words lowercased" do
       expect(Thing.new(name: "bread and butter").display_name).to eq("Bread and Butter")
       expect(Thing.new(name: "bread_and_butter").display_name).to eq("Bread and Butter")
-      expect(Thing.new(name: "and_so_it_goes").display_name).to eq("And So It Goes")
       expect(Thing.new(name: "of_mice_and_men").display_name).to eq("Of Mice and Men")
       expect(Thing.new(name: "tricks_of_the_trade").display_name).to eq("Tricks of the Trade")
     end
