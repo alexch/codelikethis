@@ -78,11 +78,16 @@ class TracksSidebar < Erector::Widget
 
       div(class: 'lesson-name') {
 
-        unless @current == track or
+        unless @current == track
+          tooltip_text = "Track: <u>#{track.display_name}</u><br>"
+          if track.description?
+            tooltip_text += "<p><small>#{track.description}</small><p>"
+          end
+          tooltip_text += "Click for More Info"
           a(href: track.href,
             class: 'track-info-link',
             # https://getbootstrap.com/docs/4.0/components/tooltips/
-            title: "Track Info for <br>#{track.display_name}",
+            title: tooltip_text,
             'data-html': true,
             'data-toggle': "tooltip",
             'data-placement': "right",
