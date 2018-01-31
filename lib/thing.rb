@@ -112,14 +112,21 @@ class Thing
     a
     an
     and
+    at
     but
+    by
     for
+    from
+    in
     nor
     of
     on
     or
+    so
     the
+    to
     with
+    yet
   ]
 
   private
