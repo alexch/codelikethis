@@ -33,7 +33,9 @@ class Track
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
            name: "Learn CSS Flexbox in 5 Minutes"
     end
-    lesson name: "Page Layout with CSS Grid"
+    lesson name: "Page Layout with CSS Grid" do
+      video youtube_id: '7kVeCqQCxlk'
+    end
     lesson name: "Navigation"
 
   end

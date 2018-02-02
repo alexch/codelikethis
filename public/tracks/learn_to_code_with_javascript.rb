@@ -62,10 +62,5 @@ class Track
     # lesson name: "methods" -- hash-as-object and `this`
     # lesson name: "closures" -- scope
 
-    # lesson name: "express"
-
-    # lesson name: "extra"
-    # lesson name: "next_steps"
-    # lesson name: "classes"
   end
 end

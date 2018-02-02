@@ -101,7 +101,9 @@ Lab:
 
 Track: [Learn To Code](../lessons/learn_to_code_with_javascript)
 
-Project: text adventure (in-browser or command-line)
+Project:
+ - text adventure (in-browser or command-line)
+ - chat client (in-browser or command-line)
 
 ### Monday
 

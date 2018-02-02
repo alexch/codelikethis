@@ -7,9 +7,10 @@ class Track
       description: "Extend your exploration of JavaScript into distant lands. This track is a catch-all for advanced or esoteric topics that don't fit into other tracks."
   ) do
     lesson name: "javascript_for_programmers"
+
     lesson name: "functions_and_closures"
 
-    lesson name: "scope_review" # global, function, closure, private, this, arrows, etc.
+    lesson name: "scope" # global, function, closure, private, this, arrows, etc.
 
     lesson name: "object_oriented_javascript"
     lesson name: "regexp", display_name: "Regular Expressions"
