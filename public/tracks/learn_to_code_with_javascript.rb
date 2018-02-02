@@ -20,17 +20,20 @@ class Track
     link href: "https://www.codecademy.com/tracks/javascript",
          name: "CodeCademy Intro to JavaScript course"
 
-    lesson name: "intro"
-    lesson name: "computers"
+    lesson name: "intro" do
+      video youtube_id: '_rkkFdQeBlA'
+    end
+    lesson name: "computers" do
+      link href: "https://www.youtube.com/watch?v=OAx_6-wdslM&list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-",
+           name: "How Computers Work",
+           description: "a series of short videos by code.org"
+    end
 
     lesson name: "the_command_line"
     link href: "https://vimeo.com/152746852",
          name: "Terminal 101",
          description: "intro to unix command-line by a former Turing School student"
     # time: "11 min",
-    link href: "https://www.youtube.com/watch?v=OAx_6-wdslM&list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-",
-         name: "How Computers Work",
-         description: "a series of short videos by code.org"
 
     lesson name: "values"
     lesson name: "strings"

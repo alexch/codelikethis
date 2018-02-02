@@ -28,8 +28,6 @@ In computers, code is a series of instructions that tell a computer what to do.
   * there is always a better way, and never a perfect way
   * "The only perfect program is an empty file." - Alex
 
-<http://marthakelly.github.io/blog/2012/05/30/what-every-girl-needs-to-know-about-programming/>
-
 # What is coding?
 
 * coding is fun!

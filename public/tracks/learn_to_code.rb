@@ -4,7 +4,9 @@ Track::LearnToCode = Track.new(name: "learn_to_code",
                                  display_name: "Learn to Code with Ruby",
                                  description: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn Ruby from the ground up... then this track is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and conclude by making a small (but functional) web application.",
                                  ) do
-    lesson name: "intro"
+    lesson name: "intro" do
+        video youtube_id: '_rkkFdQeBlA'
+    end
     lesson name: "computers"
     lesson name: "ruby"
     lesson name: "objects"

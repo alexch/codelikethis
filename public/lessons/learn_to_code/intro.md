@@ -16,14 +16,17 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 # What is coding NOT?
 
-* coding is not mathematical
+* coding is **not** mathematical
   * some logic
   * mostly just long todo lists
-* coding is not lonely
+* coding is **not** lonely
   * most coding happens in a team
   * pair programming is awesome
-
-<http://marthakelly.github.io/blog/2012/05/30/what-every-girl-needs-to-know-about-programming/>
+* coding is **not** about finding the right answer
+  * there's always more than one way to do it
+  * every solution has tradeoffs
+  * there is always a better way, and never a perfect way
+  * "The only perfect program is an empty file." - Alex
 
 # What is coding?
 
