@@ -20,6 +20,10 @@ class Track
     lesson name: "State: Sessions"
     lesson name: "State: Files"
     lesson name: "State: Databases"
+    lesson name: "mongodb" do
+      link href: "http://mongoosejs.com/", name: "mongoose",
+           description: "mongodb object modeling for node.js"
+    end
     lesson name: "SQL" do
       link href: 'http://docs.sequelizejs.com/',
            name: 'Sequelize',

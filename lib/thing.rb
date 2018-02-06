@@ -9,7 +9,7 @@ class Thing
   # every Thing has a display name
   attr_reader :display_name
 
-  # todo: check keys against "needs"-style per-subclass attribute list
+  # todo: check keys against "contains" per-subclass attribute list
 
   def initialize **options, &block
 

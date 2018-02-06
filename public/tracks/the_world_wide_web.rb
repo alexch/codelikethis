@@ -18,7 +18,10 @@ class Track
 
     lesson name: "HTTP"
     lesson name: "Styled formatting with HTML"
-    lesson name: "Styled formatting with CSS"
+    lesson name: "Styled formatting with CSS" do
+      link href: "https://meyerweb.com/eric/tools/css/reset/"
+
+    end
     lesson name: "Page layout with HTML and floats"
     lesson name: "Page layout with CSS"
     lesson name: "CSS Selectors"

@@ -7,9 +7,11 @@ class Track
   ) do
     link href: "http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Abstraction_(computer_science).html"
 
+    lesson name: "sorting"
+
     lesson name: "state_machines" # https://www.smashingmagazine.com/2018/01/rise-state-machines/
     lesson name: "big_o"
-    lesson name: "parsing_grammars"
+    lesson name: "parsing_and_grammars"
 
   end
 end

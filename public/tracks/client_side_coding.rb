@@ -22,5 +22,22 @@ class Track
 
     lesson name: "ajax"
     lesson name: "apis" # calling APIs from JS
+    lesson name: "geolocation" do
+      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
+    end
+
+    lesson name: "local_storage" do
+      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
+      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+    end
+
+    lesson name: "canvas"
+    lesson name: "svg"
+
+    lesson name: "security" do
+      link name: "xrf"
+      link name: "csrf"
+      linke href: "https://www.quora.com/What-is-the-difference-between-XSS-and-CSRF-from-their-execution-perspective"
+    end
   end
 end
