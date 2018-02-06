@@ -9,8 +9,15 @@ $: << tracks_dir
 # load every track before making the ordered list of all tracks
 require_all(tracks_dir)
 
-class Tracks
-  ALL = [
+class CodeLikeThis
+  # base site has all tracks
+  def hostname
+    "codelikethis.com"
+  end
+
+  def tracks
+
+    [
       ::Track::Agile,
 
       ::Track::Separator,
@@ -41,5 +48,36 @@ class Tracks
       ::Track::Ruby, # "Ruby Topics"
 
 
-  ]
+    ]
+  end
+end
+
+class Bootcamp
+
+  # base site has all tracks
+  def hostname
+    "bootcamp.burlingtoncodeacademy.com"
+  end
+
+  def tracks
+    [
+      ::Track::LearnToCodeWithJavascript,
+      ::Track::TheWorldWideWeb,
+      ::Track::ClientSideCoding,
+      ::Track::Javascript, # "JavaScript Topics"
+      ::Track::ServerSideJavascript,
+      ::Track::Db,
+      ::Track::ClientSideCodingWithReact,
+
+      ::Track::Separator,
+
+      ::Track::Agile,
+      ::Track::Git,
+      ::Track::JustEnoughComputerScience,
+      ::Track::UserExperience,
+      ::Track::TricksOfTheTrade, # or "trade secrets" ?
+      ::Track::Career,
+
+    ]
+  end
 end

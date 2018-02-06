@@ -4,6 +4,8 @@ require 'views'
 
 class AppPage < Erector::Widgets::Page
 
+  needs :site, :widget, :title
+
   include Views
 
   def doctype
@@ -221,7 +223,7 @@ $(function () {
   require_all('tracks')
 
   def all_tracks
-    Tracks::ALL
+    @site.tracks
   end
 
   def rightbar_content

@@ -15,7 +15,7 @@ require "hash_extensions"
 
 require 'app_page'
 require 'home'
-require 'tracks'
+require 'sites'
 require 'tracks_table'
 require 'tracks_sidebar'
 
@@ -34,15 +34,26 @@ class App < Sinatra::Base
   include AppHelpers
 
   before do
-    Thread.current[:development] = (request.host =~ /^localhost/)
+    Thread.current[:development_mode] = (request.host =~ /^localhost$/)
   end
 
   after do
-    Thread.current[:development] = nil
+    Thread.current[:development_mode] = nil
+  end
+
+  def site
+    # todo: ability to run any site on localhost, probably via an ENV var
+    if Thread.current[:development_mode]
+      CodeLikeThis.new
+    else
+      [CodeLikeThis, Bootcamp].map(&:new).detect do |site|
+        request.host.end_with? site.hostname
+      end or (raise "no site for #{request.host}")
+    end
   end
 
   def all_tracks
-    Tracks::ALL
+    site.tracks
   end
 
   def tracks_widget
@@ -58,15 +69,20 @@ class App < Sinatra::Base
   end
 
   get '/lessons' do
-    AppPage.new(:widget => tracks_widget, :title => page_title("Lessons")).to_html
+    AppPage.new(site: site,
+                widget: tracks_widget,
+                title: page_title("Lessons")).to_html
   end
 
   get '/' do
-    AppPage.new(:widget => Home, :title => "Code Like This").to_html
+    AppPage.new(site: site,
+                widget: Home,
+                title: "Code Like This").to_html
   end
 
   get "/lessons/:track" do
-    AppPage.new(:widget => track.view, :title => page_title(track)).to_html
+    AppPage.new(site: site, widget: track.view,
+                title: page_title(track)).to_html
   end
 
   get "/lessons/:track/:file.slides" do
@@ -104,16 +120,18 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:track/:lesson" do
-    AppPage.new(:widget => lesson.view,
-                :title => lesson.display_name + " - Code Like This").to_html
+    AppPage.new(site: site,
+                widget: lesson.view,
+                title: lesson.display_name + " - Code Like This").to_html
   end
 
   get "/meta/:file" do
 
     text = File.read(::File.join(here, 'public', 'meta', "#{params[:file]}.md"))
     content_type('text/html')
-    AppPage.new(:widget => MarkdownWidget.new(text: text),
-                :title => params[:file] + " - Code Like This").to_html
+    AppPage.new(site: site,
+                widget: MarkdownWidget.new(text: text),
+                title: params[:file] + " - Code Like This").to_html
   end
 
   def track_dir

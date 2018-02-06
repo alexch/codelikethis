@@ -61,13 +61,13 @@ class Lesson < Thing
   public
 
   def view
-    View.new(target: self)
+    View.new(target: self, development_mode: Thread.current[:development_mode])
   end
 
   class View < Erector::Widget
     include Views
 
-    needs :target
+    needs :target, :development_mode
     attr_reader :target
 
     # proxy readers to the target (model) object
@@ -189,13 +189,13 @@ class Lesson < Thing
 
         div(class: 'comments', id: 'comments') {
           h2 "Comments"
-          widget Disqus, shortname: "codelikethis",
-                 developer: (Thread.current[:development] ? 1 : nil),
+          widget Disqus,
+                 shortname: "codelikethis",
+                 developer: (@development_mode ? 1 : nil),
                  identifier: "lesson_#{track.name}_#{name}",
                  title: "#{track.display_name}: #{display_name}"
         }
       }
-
 
     end
 
