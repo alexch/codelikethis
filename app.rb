@@ -49,6 +49,14 @@ class App < Sinatra::Base
     TracksTable.new(:tracks => all_tracks)
   end
 
+  get '/host' do
+    content_type "text/plain"
+    {
+      SERVER_NAME: request.env["SERVER_NAME"],
+      host: request.host,
+    }.ai
+  end
+
   get '/lessons' do
     AppPage.new(:widget => tracks_widget, :title => page_title("Lessons")).to_html
   end

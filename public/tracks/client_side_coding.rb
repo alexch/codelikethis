@@ -37,7 +37,7 @@ class Track
     lesson name: "security" do
       link name: "xrf"
       link name: "csrf"
-      linke href: "https://www.quora.com/What-is-the-difference-between-XSS-and-CSRF-from-their-execution-perspective"
+      link href: "https://www.quora.com/What-is-the-difference-between-XSS-and-CSRF-from-their-execution-perspective"
     end
   end
 end
