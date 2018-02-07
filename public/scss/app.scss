@@ -26,17 +26,30 @@ nav.navbar {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 13px;
+  font-style: normal;
 
+  &.navbar-light .navbar-nav .nav-link {
+    color: #333333;
+    &.btn-sm {
+      font-weight: 600;
+      font-size: 13px;
+      color: white;
+      background-color: rgb(247, 147, 30); // orangeish
+      border-color: rgb(247, 147, 30); // orangeish
+      padding: 1em 1.5em;
+    }
+  }
+
+  li {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
   a {
-    padding-left: 17px;
-    padding-right: 17px;
     letter-spacing: 1px;
     zoom: 1;
   }
 
   min-height: $topbar-height;
-  padding-top: 0px;
-  padding-bottom: 0px;
 
   div.logo-div {
     img.logo {

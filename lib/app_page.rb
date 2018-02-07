@@ -38,7 +38,7 @@ class AppPage < Erector::Widgets::Page
            else
              raise "requires either a name or an href"
            end
-    link_attributes = {:rel => "stylesheet", :href => href}.merge(attributes)
+    link_attributes = {rel: "stylesheet", href: href}.merge(attributes)
     link(link_attributes)
   end
 
@@ -100,60 +100,51 @@ $(function () {
   end
 
   def navbar_content
-    nav class: 'navbar navbar-expand-md fixed-top navbar-light' do
+    nav(class: 'navbar navbar-expand-md fixed-top navbar-light') {
+      div(class: 'container') {
+        # div(class: ['row',
+        #             'align-items-center', # means vertical centering
+        # ]) {
 
-      div(class: 'navbar-left navbar-brand') {
-        logo
-      }
+          div(class: 'col navbar-left') {
+            logo
+          }
 
-      # hamburger button for top navbar
-      button(:class => 'navbar-toggler navbar-right navbar-toggler-right border-0',
-             :type => 'button',
-             'data-toggle' => 'collapse',
-             'data-target' => '#pageNavbar',
-             'aria-controls' => 'navbarsExampleDefault',
-             'aria-expanded' => 'false',
-             'aria-label' => 'Toggle navigation') {
-        span :class => 'navbar-toggler-icon'
-      }
+          # # hamburger button for top navbar
+          button(class: 'navbar-toggler navbar-right navbar-toggler-right border-0',
+                 type: 'button',
+                 'data-toggle' => 'collapse',
+                 'data-target' => '#pageNavbar',
+                 'aria-controls' => 'navbarsExampleDefault',
+                 'aria-expanded' => 'false',
+                 'aria-label' => 'Toggle navigation') {
+            span class: 'navbar-toggler-icon'
+          }
 
-      div(:class => 'collapse navbar-collapse navbar-right', :id => 'pageNavbar') {
-        ul(:class => 'navbar-nav ml-auto') {
-          navbar_items
+          div(class: 'col collapse navbar-collapse navbar-right', id: 'pageNavbar') {
+            ul(class: 'navbar-nav ml-auto align-items-center') {
+              navbar_items
+            }
+          }
         }
-      }
-    end
+      # }
+    }
   end
 
-  # # @override
-  # def navbar_items
-  #   nav_item name: 'Home', active: true
-  #   nav_item name: 'Disabled', disabled: true
-  #   nav_dropdown
-  # end
-  #
-  # # @override
-  # def navbar_search
-  #   form :class => 'form-inline my-2 my-lg-0' do
-  #     input :class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Search', 'aria-label' => 'Search'
-  #     button :class => 'btn btn-outline-success my-2 my-sm-0', :type => 'submit' do
-  #       text 'Search'
-  #     end
-  #   end
-  # end
-
   # render a single nav item (an `li` with class `nav-item`)
-  def nav_item name: 'Item', href: '#', active: false, disabled: false, bordered: false
+  def nav_item name: 'Item', href: '#', active: false, disabled: false, bordered: false, button: false
     li_css_classes = ['nav-item',
                       ('active' if active),
                       ('disabled' if disabled),
-                      ('bordered' if bordered)]
+                      ('bordered' if bordered),
+    ]
     li class: li_css_classes do
-      a class: 'nav-link', href: href do
+      a class: ['nav-link', ('btn btn-primary btn-sm' if button)],
+        href: href do
         text name
         if active
           # be nice to the visually impaired
-          span :class => 'sr-only' do
+          span class: 'sr-only' do
             text '(current)'
           end
         end
@@ -205,13 +196,16 @@ $(function () {
 
 
   def navbar_items
-    # nav_item name: "Blog", href: "http://codelikethis.tumblr.com"
-    nav_item name: "Home", href: "http://www.burlingtoncodeacademy.com/"
-    nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
-    nav_item name: "News", href: "http://www.burlingtoncodeacademy.com/news/"
-    nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/"
+    # nav_item name: "Home", href: "http://www.burlingtoncodeacademy.com/"
 
-    nav_item name: "Code Like This", href: "/", bordered: true
+    nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
+    nav_item name: "Hire Our Grads", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
+    nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
+    nav_item name: "News", href: "http://www.burlingtoncodeacademy.com/news/"
+    nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
+    nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
+
+    nav_item name: "Curriculum", href: "/"
 
     # nav_item name: "Lessons", href: "/lessons"
     # nav_item name: "Labs", href: "http://testfirst.org/live"
