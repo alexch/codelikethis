@@ -18,6 +18,7 @@ require 'home'
 require 'sites'
 require 'tracks_table'
 require 'tracks_sidebar'
+require 'markdown_widget'
 
 module AppHelpers
   def page_title object, extra = nil
