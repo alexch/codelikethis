@@ -1,29 +1,9 @@
 # TODO
 
-[ ] fix colors in sidebar
-[ ] Apply Now button border
-[ ] header font (match with main site) Raleway
-[ ] side nav all collapsed
-[ ] side nav collapsed except for current track
-[ ] tab view to switch between slides and outline
-[ ] rerun on windows
-[ ] track students progress
-
-# benny
-
-header font: Raleway (free Google Font) black, allcaps
-header white 
-header link spacing (padding: 0 17px)
-remove hamburger border
-Open Sans slide text
-experiment with sidebar font - Open Sans or the current one
-make "Tracks" menu a popup on mobile
-remove Lessons and Labs
-put "Learn" in a box -- maybe rename "Code Like This"
-change "Code like this." logo to a font, not PNG
-footer sucks
-Open Sans normal 20px lineheight 34px
-  14px 24px 
+ -[ ] tab view to switch between slides and outline
+ -[ ] track students progress
+ -[ ] change "Code like this." logo to a font, not PNG
+ -[ ] improve footer (content and style)
 
 # slides
 
@@ -42,7 +22,6 @@ Open Sans normal 20px lineheight 34px
 * labs
 * export video lectures to youtube
 * edit video lectures
-* table of contents per outline page
 * better home page copy
 * blog (jekyll?)
 * inline slides (inline deck frame or div)
