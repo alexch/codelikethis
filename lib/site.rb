@@ -1,6 +1,8 @@
 class Site
   def host? hostname
-    hostname.end_with? self.hostname
+    [self.hostname].flatten.detect do |possible_hostname|
+      hostname.end_with? possible_hostname
+    end
   end
 end
 

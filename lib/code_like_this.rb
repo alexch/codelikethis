@@ -18,15 +18,11 @@ require 'active_support/core_ext'
 
 class CodeLikeThis < Site
   def hostname
-    "codelikethis.com"
-  end
-
-  def host? hostname
-    super or hostname == "localhost"
+    ["codelikethis.com", "localhost"]
   end
 
   def tracks
-    ::Track.constants.map{|c| Track.const_get(c)}.select{|t| (t.is_a? Track and t != Track::Separator)}
+    ::Track.constants.map {|c| Track.const_get(c)}.select {|t| (t.is_a? Track and t != Track::Separator)}
   end
 
   def view
@@ -37,7 +33,6 @@ class CodeLikeThis < Site
     include Views
 
     def content
-
       div.row {
         br
         centered_codelikethis_logo
@@ -58,26 +53,42 @@ class CodeLikeThis < Site
                 text "."
               }
               p(class: 'card-text') {
-                text "This site contains lectures and labs on Ruby, JavaScript, and more, in outline, slide, and video format."
-                text " "
                 text "We'll be updating it with all our new lectures, labs, and videos, so keep checking back!"
-                text " "
-                text "Peruse the Tracks in the sidebar, browse the "
-                a "GitHub repository", href: "http://github.com/alexch/codelikethis"
-                text ", or sign up for our in-person "
-                a "2018 Web Development Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
-                text "."
+              }
+            }
+          }
+          br
+          div.card {
+            div(class: 'card-body') {
+              p(class: 'card-text') {
+                h2 "What next?"
+                ul {
+                  li {
+                    text "Peruse the "
+                    i(class: 'fas fa-angle-double-left')
+                    b "Tracks"
+                    i(class: 'fas fa-angle-double-left')
+                    text " in the sidebar"
+                  }
+                  li {
+                    text "Browse the "
+                    a "GitHub repository", href: "http://github.com/alexch/codelikethis"
+                  }
+                  li {
+                    text "Learn more about our in-person "
+                    a "2018 Web Development Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
+                  }
+                  li {
+                    text "See the full "
+                    a "Web Development Bootcamp Curriculum", href: "http://bootcamp.burlingtoncodeacademy.com/"
+                  }
+                }
               }
             }
           }
         }
-
       }
 
     end
-
-
-
   end
-
 end

@@ -16,11 +16,7 @@ class Bootcamp < Site
 
   # base site has all tracks
   def hostname
-    "bootcamp.burlingtoncodeacademy.com"
-  end
-
-  def host? hostname
-    super or (hostname == "bootcamp")
+    ["bootcamp.burlingtoncodeacademy.com", "bootcamp"]
   end
 
   def tracks
