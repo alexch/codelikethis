@@ -315,14 +315,6 @@ div.main_column img {
   border-top: 1px solid #EEEEEE; }
 
 /* line 354, ../scss/app.scss */
-.notice {
-  font-size: 10pt;
-  border: 4px solid darkred;
-  background-color: cornsilk;
-  margin: 0 1em;
-  padding: .5em 1em; }
-
-/* line 362, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -331,7 +323,7 @@ div.main_column img {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 371, ../scss/app.scss */
+  /* line 363, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;
@@ -339,12 +331,12 @@ div.main_column img {
     width: 100%;
     height: 100%; }
 
-/* line 380, ../scss/app.scss */
+/* line 372, ../scss/app.scss */
 table.tracks {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 385, ../scss/app.scss */
+  /* line 377, ../scss/app.scss */
   table.tracks ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -352,48 +344,48 @@ table.tracks {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 393, ../scss/app.scss */
+  /* line 385, ../scss/app.scss */
   table.tracks td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 397, ../scss/app.scss */
+  /* line 389, ../scss/app.scss */
   table.tracks, table.tracks td, table.tracks th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 401, ../scss/app.scss */
+  /* line 393, ../scss/app.scss */
   table.tracks th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 407, ../scss/app.scss */
+  /* line 399, ../scss/app.scss */
   table.tracks tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 410, ../scss/app.scss */
+  /* line 402, ../scss/app.scss */
   table.tracks a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 415, ../scss/app.scss */
+  /* line 407, ../scss/app.scss */
   table.tracks a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 419, ../scss/app.scss */
+  /* line 411, ../scss/app.scss */
   table.tracks a:visited {
     color: black; }
 
-/* line 424, ../scss/app.scss */
+/* line 416, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 426, ../scss/app.scss */
+  /* line 418, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 429, ../scss/app.scss */
+  /* line 421, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 432, ../scss/app.scss */
+  /* line 424, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
 
-/* line 437, ../scss/app.scss */
+/* line 429, ../scss/app.scss */
 span.video_link {
   float: right;
   border: 1px dotted black;

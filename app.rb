@@ -42,11 +42,7 @@ class App < Sinatra::Base
   end
 
   def site
-    ap params
-    hostname = params['host'] || request.host
-    [CodeLikeThis, Bootcamp].map(&:new).detect do |site|
-      site.host? hostname
-    end or (raise "no site for #{hostname}")
+    @site ||= create_site
   end
 
   def all_tracks
@@ -55,6 +51,10 @@ class App < Sinatra::Base
 
   def tracks_widget
     TracksTable.new(:tracks => all_tracks)
+  end
+
+  def page(widget:, title:)
+    AppPage.new(site: site, warning: @warning, widget: widget, title: title)
   end
 
   get '/host' do
@@ -66,20 +66,20 @@ class App < Sinatra::Base
   end
 
   get '/lessons' do
-    AppPage.new(site: site,
-                widget: tracks_widget,
-                title: page_title("Lessons")).to_html
+    page(
+      widget: tracks_widget,
+      title: page_title("Lessons")).to_html
   end
 
   get '/' do
-    AppPage.new(site: site,
-                widget: site.view,
-                title: "Code Like This").to_html
+    page(
+      widget: site.view,
+      title: "Code Like This").to_html
   end
 
   get "/lessons/:track" do
-    AppPage.new(site: site, widget: track.view,
-                title: page_title(track)).to_html
+    page(widget: track.view,
+         title: page_title(track)).to_html
   end
 
   get "/lessons/:track/:file.slides" do
@@ -117,18 +117,18 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:track/:lesson" do
-    AppPage.new(site: site,
-                widget: lesson.view,
-                title: lesson.display_name + " - Code Like This").to_html
+    page(
+      widget: lesson.view,
+      title: lesson.display_name + " - Code Like This").to_html
   end
 
   get "/meta/:file" do
 
     text = File.read(::File.join(here, 'public', 'meta', "#{params[:file]}.md"))
     content_type('text/html')
-    AppPage.new(site: site,
-                widget: MarkdownWidget.new(text: text),
-                title: params[:file] + " - Code Like This").to_html
+    page(
+      widget: MarkdownWidget.new(text: text),
+      title: params[:file] + " - Code Like This").to_html
   end
 
   def track_dir
@@ -149,6 +149,18 @@ class App < Sinatra::Base
   end
 
   private
+  def create_site
+    hostname = params['host'] || request.host
+    site = [CodeLikeThis, Bootcamp].map(&:new).detect do |site|
+      site.host? hostname
+    end
+    if site.nil?
+      @warning = "No site found for #{hostname}; using CodeLikeThis content."
+      site = CodeLikeThis
+    end
+    site
+  end
+
   def here
     File.expand_path(File.dirname(__FILE__))
   end

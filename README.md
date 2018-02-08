@@ -46,3 +46,21 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |public/tracks  | track description files; names match public/lessons subdirs |
 |public/meta    | notes about specific classes, viz. our summer bootcamp |
 
+## Sites
+
+a Site is
+
+  * a hostname
+  * an ordered collection of Tracks
+  * a home page
+  
+Currently there are two Sites:
+
+1. CodeLikeThis <http://codelikethis.com> - the main site, containing all Tracks (listed in alphabetical order)
+2. Bootcamp <http://bootcamp.burlingtoncodeacademy.com> - the site for *Burlington Code Academy's 2018 Web Development Bootcamp*, which runs from June through August in (where else?) Burlington, Vermont 
+
+Both sites are served from the same web application instance, running on Heroku (http://codelikethis.herokuapp.com). The app looks at `request.host` and serves a different Site to each hostname.
+
+To add a Site, follow the example of [Bootcamp](lib/bootcamp.rb).
+
+## Adding a Track

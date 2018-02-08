@@ -6,9 +6,7 @@ require 'track'
 require 'tracks_table'
 
 # add "public/tracks" dir to Ruby load path
-here = ::File.expand_path(File.dirname(__FILE__))
-public_dir = ::File.expand_path(File.join(here, "..", "public"))
-tracks_dir = File.join(public_dir, "tracks")
+tracks_dir = ::File.expand_path(File.join(File.dirname(__FILE__), "..", "public", "tracks"))
 $: << tracks_dir
 # load every track before making the ordered list of all tracks
 require_all(tracks_dir)
@@ -22,7 +20,7 @@ class Bootcamp < Site
   end
 
   def host? hostname
-    super or hostname == "bootcamp"
+    super or (hostname == "bootcamp")
   end
 
   def tracks

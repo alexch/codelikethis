@@ -6,6 +6,7 @@ require 'nav_bar'
 class AppPage < Erector::Widgets::Page
 
   needs :site, :widget, :title
+  needs warning: nil
 
   include Views
 
@@ -176,9 +177,17 @@ $(function () {
         div(class: "col-md-6") {
           a name: 'content'
 
+          if @warning
+            div(class: 'row') {
+              div(@warning, class: "warning alert alert-warning")
+            }
+          end
+
           if @site.view.respond_to? :notice
-            div(class: "row") {
-              widget @site.view, {}, content_method_name: :notice
+            div(class: 'row') {
+              div(class: "notice alert alert-primary") {
+                widget @site.view, {}, content_method_name: :notice
+              }
             }
           end
 
