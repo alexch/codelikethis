@@ -13,9 +13,8 @@ require 'util'
 require "hash_extensions"
 # require_all(lib)
 
+require 'site'
 require 'app_page'
-require 'home'
-require 'sites'
 require 'tracks_table'
 require 'tracks_sidebar'
 require 'markdown_widget'
@@ -43,14 +42,11 @@ class App < Sinatra::Base
   end
 
   def site
-    # todo: ability to run any site on localhost, probably via an ENV var
-    if Thread.current[:development_mode]
-      CodeLikeThis.new
-    else
-      [CodeLikeThis, Bootcamp].map(&:new).detect do |site|
-        request.host.end_with? site.hostname
-      end or (raise "no site for #{request.host}")
-    end
+    ap params
+    hostname = params['host'] || request.host
+    [CodeLikeThis, Bootcamp].map(&:new).detect do |site|
+      site.host? hostname
+    end or (raise "no site for #{hostname}")
   end
 
   def all_tracks
@@ -77,7 +73,7 @@ class App < Sinatra::Base
 
   get '/' do
     AppPage.new(site: site,
-                widget: Home,
+                widget: site.view,
                 title: "Code Like This").to_html
   end
 

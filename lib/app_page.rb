@@ -175,9 +175,12 @@ $(function () {
         # now the real body
         div(class: "col-md-6") {
           a name: 'content'
-          div(class: "row") {
-            preview
-          }
+
+          if @site.view.respond_to? :notice
+            div(class: "row") {
+              widget @site.view, {}, content_method_name: :notice
+            }
+          end
 
           call_block
           widget @widget if @widget
@@ -219,17 +222,4 @@ $(function () {
   end
 
   external :script, google_analytics_code('UA-23417120-3')
-  private
-  def preview
-    p.preview {
-      text "This site is a "
-      b "preview"
-      text " of the curriculum for our "
-      a "Summer 2018 bootcamp", href: "http://burlingtoncodeacademy.com/bootcamp"
-      text " in Burlington, Vermont. "
-      text "As we continue our preparation, courses and lessons will appear and disappear; we will rename, rearrange, clarify, and obfuscate as needed... "
-      text "Please consider this a work in progress and keep checking in."
-    }
-  end
-
 end
