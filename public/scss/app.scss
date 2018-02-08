@@ -51,11 +51,15 @@ nav.navbar {
 
   min-height: $topbar-height;
 
-  div.logo-div {
-    img.logo {
-      height: auto;
+  /* so the logo doesn't push the hamburger down on narrow screens */
+  .col.navbar-left {
+    max-width: 75%;
+    a.navbar-brand {
       max-width: 100%;
-      vertical-align: middle;
+      img.logo {
+        height: auto;
+        vertical-align: middle;
+      }
     }
   }
 
