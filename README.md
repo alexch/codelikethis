@@ -70,5 +70,6 @@ To view a Site locally, use a `host` parameter, e.g. <http://localhost:9292/?hos
 1. Decide on its name. Its name is a `camelcase_word` that will automatically turn into titlecase when displayed. (e.g.  `cook_food` => `Cook Food`)
 2. define a `Track` subclass in a new file inside `public/tracks` (e.g. `public/tracks/cook_food.rb`) and create a new subdir inside `public/lessons` (e.g. `public/lessons/cook_food/`)
 3. declare your lessons inside the track file. Look at the existing `.rb` files inside `public/tracks` for examples.
-4. for each Lesson, put its slides in a markdown file with its name in the lessons directory (e.g. `public/lessons/cook_food/stirfry.rb`)
+4. for each Lesson, put its slides in a markdown file with its name in the lessons directory (e.g. `public/lessons/cook_food/stirfry.md`)
 5. add the Track to your Site by following the example of [Bootcamp](lib/bootcamp.rb)
+
