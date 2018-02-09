@@ -63,7 +63,7 @@ Both sites are served from the same web application instance, running on Heroku 
 
 To add a Site, follow the example of [Bootcamp](lib/bootcamp.rb).
 
-To view a Site locally, use a `host` parameter, e.g. <http://localhost:9292/?host=bootcamp>. This parameter is *not* propagated to new pages so you'll have to keep adding it explicitly to test different pages.
+To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?site=bootcamp>. This parameter is *not* propagated to new pages so you'll have to keep adding it explicitly to test different pages.
 
 ## Adding a Track
 

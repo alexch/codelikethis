@@ -150,12 +150,12 @@ class App < Sinatra::Base
 
   private
   def create_site
-    hostname = params['host'] || request.host
+    sitename = params['site'] || request.host
     site = [CodeLikeThis, Bootcamp].map(&:new).detect do |site|
-      site.host? hostname
+      site.host? sitename
     end
     if site.nil?
-      @warning = "No site found for #{hostname}; using CodeLikeThis content."
+      @warning = "No site found for #{sitename}; using CodeLikeThis content."
       site = CodeLikeThis
     end
     site
