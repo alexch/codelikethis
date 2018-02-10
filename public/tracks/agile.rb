@@ -4,7 +4,7 @@ class Track
   Agile = Track.new(
       name: "agile",
       display_name: "Agile Development",
-      description: "The term 'Agile' describes many many software development methodologies: systems for designing, developing, and deploying products, and organizing the teams of people that do so in a way that respects their humanity and creativity. What makes a system Agile? What techniques can we use to increase communication, feedback, simplicity, reliability, and transparency? What if my pair programming partner has B.O.? Take this course to find out."
+      description: "The term 'Agile' describes many many software development methodologies: systems for designing, developing, and deploying products, and organizing the teams of people that do so in a way that respects their humanity and creativity. What makes a system Agile? What techniques can we use to increase communication, feedback, simplicity, reliability, and transparency? What if my pair programming partner has bad breath? Take this course to find out."
     ) do
 
     lesson name: "what_is_agile" do
