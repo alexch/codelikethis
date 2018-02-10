@@ -12,6 +12,8 @@ class Track
            name: "RailsBridge Javascript To Do List With React"
     end
 
-    lesson name: "redux"
+    lesson name: "redux" do
+      link href: "https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367"
+    end
   end
 end

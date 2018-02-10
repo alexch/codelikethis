@@ -18,13 +18,18 @@ class Track
            description: 'Learn about character encodings, Unicode, emoji, escaping, and why curly quotes are horrible.'
 
     lesson name: "Responsive Layouts"
-    lesson name: "Accessibility and ARIA"
+    lesson name: "Accessibility and ARIA" do
+      link href: 'https://github.com/turingschool/front-end-curriculum/blob/gh-pages/lessons/module-1/aria-accessibility.md'
+      link href: 'https://alistapart.com/article/aria-and-progressive-enhancement'
+    end
     lesson name: "site_maps" # XML file, also link to information architecture and site maps lesson
     lesson name: "Clip art"
     lesson name: "SEO"
     lesson name: "User upload: server storage"
     lesson name: "User upload: cloud storage"
     lesson name: "Authentication" # roll your own login
+
+    lesson name: "oauth"
 
     lesson name: "Security" do
       link href: "https://medium.com/@keeayluh/the-fundamentals-of-information-security-eb13876a06db"

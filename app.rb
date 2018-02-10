@@ -156,7 +156,7 @@ class App < Sinatra::Base
     end
     if site.nil?
       @warning = "No site found for #{sitename}; using CodeLikeThis content."
-      site = CodeLikeThis
+      site = CodeLikeThis.new
     end
     site
   end

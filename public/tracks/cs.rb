@@ -13,6 +13,15 @@ class Track
     lesson name: "big_o"
     lesson name: "parsing_and_grammars"
 
+    lesson name: "oo",
+         display_name: "Object-Oriented Design"
+
+    lesson name: "Multitasking and Multithreading"
+    lesson name: "Dependency Injection"
+    lesson name: "Recursion & Re-entry"
+    lesson name: "Abstractions"
+    lesson name: "Dependencies" # explicit v implicit; global vs injected; language and framework *are* dependencies; don't test the library, test the connection; gems and npm and
+
   end
 end
 
