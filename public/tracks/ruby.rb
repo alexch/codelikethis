@@ -3,12 +3,16 @@ require "track"
 Track::Ruby = Track.new(
     name: "ruby",
     display_name: "Ruby Topics",
-    description: "Extend your exploration of Ruby into distant lands. This track is a catch-all for advanced or esoteric topics that don't fit into other tracks."
+    description: 'Extend your exploration of Ruby -- the programming language designed to "make programmers happy" -- into distant lands. This track is a catch-all for advanced or esoteric topics that don\'t fit into other tracks.'
 ) do
     lesson name: "credits"
     lesson name: "meta"
 
-    lesson name: "ruby_for_programmers"
+    lesson name: "ruby_for_programmers" do
+      link href: "http://www.artima.com/intv/rubyP.html",
+           name: "The Philosophy of Ruby",
+           description: "an interview with Yukihiro Matsumoto (Matz)"
+    end
     lab name: "hello"
     lab name: "temperature"
     # track "ruby_basics"
