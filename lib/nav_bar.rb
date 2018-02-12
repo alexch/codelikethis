@@ -31,9 +31,8 @@ class NavBar < Erector::Widget
             nav_item name: "Hire Our Grads", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
             nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
             nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
+            nav_item name: "Curriculum", href: "http://bootcamp.burlingtoncodeacademy.com"
             nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
-
-            nav_item name: "Curriculum", href: "/"
           }
         }
       }
