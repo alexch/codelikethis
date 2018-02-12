@@ -12,7 +12,10 @@ class Track
 
     lesson name: "javascript_for_programmers"
 
-    lesson name: "functions_and_closures"
+    lesson name: "functions_and_closures" do
+      link href: "https://dev.to/rpalo/closure-i-hardly-know-her--1h40",
+           description: "a Python dev explains what closures are and why they're cool"
+    end
     lesson name: "scope" # global, function, closure, private, this, arrows, etc.
 
     lesson name: "/cs/oo"

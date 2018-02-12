@@ -15,7 +15,9 @@ class Track
     link href: "http://thinkingwithtype.com/"
 
     lesson name: "building_character",
-           description: 'Learn about character encodings, Unicode, emoji, escaping, and why curly quotes are horrible.'
+           description: 'Learn about character encodings, Unicode, emoji, escaping, and why curly quotes are horrible.' do
+      link href: "https://imgs.xkcd.com/comics/the_history_of_unicode.png"
+    end
 
     lesson name: "Responsive Layouts"
     lesson name: "Accessibility and ARIA" do

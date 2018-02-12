@@ -152,6 +152,8 @@ some of these have `!` versions which modify the string in place
 
 # Encodings
 
+![history of unicode](https://imgs.xkcd.com/comics/the_history_of_unicode.png)
+
 * Files and Strings have encodings
 * default is ASCII, but can be set to UTF-8 or whatever
 

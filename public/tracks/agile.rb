@@ -17,6 +17,7 @@ class Track
     end
 
     lesson name: "refactoring", description: "Refactoring is the process of restructuring existing computer code -- changing its factoring -- without changing its behavior. You probably knew that. But did you know it's also a meditation technique? Improve your practice of mindful coding with this light overview to the Zen of Refactoring."
+    
     lesson name: "inceptions" do
       link href: "https://martinfowler.com/articles/lean-inception/"
     end
