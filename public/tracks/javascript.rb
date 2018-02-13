@@ -17,6 +17,7 @@ class Track
            description: "a Python dev explains what closures are and why they're cool"
     end
     lesson name: "scope" # global, function, closure, private, this, arrows, etc.
+    lesson name: "json"
 
     lesson name: "/cs/oo"
     lesson name: "object_oriented_javascript"

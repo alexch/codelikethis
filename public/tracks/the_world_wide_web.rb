@@ -17,6 +17,7 @@ class Track
          name: "Codecademy HTML & CSS Track"
 
     lesson name: "HTTP"
+
     lesson name: "Styled formatting with HTML"
     lesson name: "Styled formatting with CSS" do
       link href: "https://meyerweb.com/eric/tools/css/reset/"

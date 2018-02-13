@@ -92,10 +92,12 @@ class Thing
     JavaScript
     jQuery
     JS
+    JSON
     MVC
     NodeJS
     NoSQL
     RegExp
+    RegEx
     SEO
     SQL
     TDD
