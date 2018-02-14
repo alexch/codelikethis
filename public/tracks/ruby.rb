@@ -13,6 +13,7 @@ Track::Ruby = Track.new(
            name: "The Philosophy of Ruby",
            description: "an interview with Yukihiro Matsumoto (Matz)"
     end
+
     lab name: "hello"
     lab name: "temperature"
     # track "ruby_basics"

@@ -1,22 +1,122 @@
 # Hello, Node!
 
-Please do this tutorial, up to and including "Create a Server in node js and Serve a String":
+In this lesson you will create a trivial web application in NodeJS and deploy it to Heroku, where it will be visible to everyone on the Internet.
 
-<https://www.nodejsera.com/nodejs-tutorial-day1-thebeginning.html>
+# Hello, File!
 
-or this one: <https://ilovecoding.org/lessons/create-a-simple-http-server-with-nodejs>
+- In your Terminal, make a directory called `hello_node` with `mkdir hello_node`
+ 
+- Immediately enter the directory with `cd hello_node` 
 
-see also <https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/>
+- Launch the Atom text editor in this directory with `atom .` (pronounced "Atom Dot")
+
+- Inside this directory make a file named `index.js` and fill it with the following code:
+
+```js
+@@@ js
+var http = require('http');
+var port = process.env.PORT || 5000;
+http.createServer(function(request, response){
+  response.write('Hello from NodeJS!');
+  response.end();
+}).listen(port);
+```
 
 # Hello, Localhost!
 
-Visit <http://localhost:3000/> to see it running on your own computer.
+- Go back to the Terminal and run the app with `node index.js`
 
-# Hello, GitHub!
+- Visit <http://localhost:5000/> to see it running on your own computer.
 
-Now make a git repo for it, and push it to GitHub.
+# Hello, Procfile!
+
+A *Procfile* tells Heroku what commands to run when it launches your app. 
+
+Go back to Atom and create a file named `Procfile` (there is *no extension* on this filename) and fill it with this:
+
+```
+web: node index.js
+```
+
+> Note that the code after `web:` is *exactly* what you typed to run the app locally.
+
+You also need a `package.json` file. Create it in Atom and fill it with this:
+
+```json
+{
+  "name": "hello-node"
+}
+```
+
+# Hello, Git!
+
+Now make a git repo for your app.
+
+> Remember to press CTRL-C to stop the server!
+
+```sh
+@@@sh
+git init
+git add .
+git commit -m 'first commit'
+```
 
 # Hello, Heroku!
 
-Now deploy it to Heroku.
+Heroku uses git for its deploys. Whenever you push a new version of your git repo to Heroku, it automatically deploys the app.
+
+```sh
+@@@sh
+heroku create
+git push heroku master
+```
+
+If all goes well, you will see a URL on your console, something like this:
+
+```js
+remote: https://damp-retreat-99529.herokuapp.com/ deployed to Heroku
+```
+
+Visit this URL in a web browser using copy-and-paste, or use this handy shortcut from the console:
+
+```js
+heroku open
+```
+
+# High Five!
+
+If you are working with a partner, give them a high five.
+
+If you are alone, give yourself a high five.
+
+![high five](/images/high-five.gif)
+
+You deserve it! 
+
+<small>photo: <https://dribbble.com/shots/3702481-High-Five-s-for-15Five> 
+</small>
+
+# Hello, You!
+
+Now go back to Atom, and modify the app so instead of saying "Hello from NodeJS!" it says something clever and personalized. 
+
+Once you've made the change...
+
+1. test it locally
+2. add the changed file to git and commit the change
+3. re-deploy to Heroku
+4. reload the web page and read your new message
+5. give yourself a high five!
+
+# Resources
+
+Some other Node tutorials:
+
+* <https://devcenter.heroku.com/articles/getting-started-with-nodejs>
+
+* <https://www.nodejsera.com/nodejs-tutorial-day1-thebeginning.html>
+
+* <https://ilovecoding.org/lessons/create-a-simple-http-server-with-nodejs>
+
+see also <https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/>
 

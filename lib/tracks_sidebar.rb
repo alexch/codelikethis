@@ -34,7 +34,7 @@ class TracksSidebar < Erector::Widget
         h3 "Tracks"
       }
       div(class: 'col-4') {
-        # hamburger button for tracks
+        # expando button for tracks
         button(:class => 'tracks-toggler btn border-0 collapsed',
                :type => 'button',
 

@@ -1,0 +1,171 @@
+{
+  "day": [
+    [
+      " 8:30 am",
+      "orientation, Q & A, paired code review"
+    ],
+    [
+      " 9:15 am",
+      "daily standup (all hands)"
+    ],
+    [
+      " 9:30 am",
+      "coffee break"
+    ],
+    [
+      "10:00 am",
+      "lecture  "
+    ],
+    [
+      "11:00 am",
+      "morning break"
+    ],
+    [
+      "11:15 am",
+      "lecture"
+    ],
+    [
+      "12:15 pm",
+      "pair up and lab preview"
+    ],
+    [
+      "12:30 pm",
+      "lunch break"
+    ],
+    [
+      " 2:00 pm",
+      "lab"
+    ],
+    [
+      " 3:45 pm",
+      "afternoon break"
+    ],
+    [
+      " 4:00 pm",
+      "lab time / project time / mentoring time"
+    ],
+    [
+      " 6:00 pm",
+      "go home!"
+    ]
+  ],
+  "weeks": [
+    {
+      "start": "2018-06-04",
+      "track": "learn_to_code_with_javascript",
+      "projects": [
+        "Create your GitHub User page, see https://help.github.com/articles/user-organization-and-project-pages/"
+      ],
+      "days": [
+        {
+          "lessons": [
+            "intro",
+            "computers",
+            "the_command_line"
+          ]
+        },
+        {
+          "lessons": [
+            "values",
+            "strings",
+            "numbers",
+            "variables",
+            "null"
+          ]
+        },
+        {
+          "lessons": [
+            "functions",
+            "input_and_output",
+            "hello_node"
+          ]
+        },
+        {
+          "theme": "Career Day",
+          "lessons": [
+            "???"
+          ]
+        },
+        {
+          "theme": "Project Day",
+          "lessons": [
+            "/agile/what_is_agile"
+          ],
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "projects": [
+        "text adventure"
+      ],
+      "days": [
+        {
+          "lessons": [
+            "logic",
+            "loops",
+            "arrays"
+          ]
+        },
+        {
+          "lessons": [
+            "argv",
+            "stacks",
+            "hashes"
+          ]
+        },
+        {
+          "lessons": [
+            "recursion"
+          ]
+        },
+        {
+        },
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track": "the_world_wide_web"
+    },
+    {
+      "track": "the_world_wide_web"
+    },
+    {
+      "track": "client_side_coding"
+    },
+    {
+      "track": "javascript_topics"
+    },
+    {
+      "track": "server_side_javascript"
+    },
+    {
+      "track": "databases"
+    },
+    {
+      "theme": "projects"
+    },
+    {
+      "theme": "projects"
+    },
+    {
+      "theme": "projects"
+    },
+    {
+      "theme": "projects"
+    }
+  ]
+}

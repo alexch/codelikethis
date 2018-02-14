@@ -184,7 +184,8 @@ $triangle-pointing-down: str-replace(str-replace(
   @include hover-focus {
     text-decoration: none;
   }
-
+}
+.tracks-toggler, .toggler {
   span.svg-icon {
     background-image: $triangle-pointing-down;
   }
@@ -373,7 +374,7 @@ div.main_column img {
   }
 }
 
-table.tracks {
+table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px;

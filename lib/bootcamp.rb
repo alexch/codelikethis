@@ -42,7 +42,7 @@ class Bootcamp < Site
   end
 
   def view
-    View.new
+    View.new(site: self)
   end
 
   class View < Erector::Widget
@@ -91,6 +91,7 @@ class Bootcamp < Site
           }
         }
       }
+
     end
 
     def notice

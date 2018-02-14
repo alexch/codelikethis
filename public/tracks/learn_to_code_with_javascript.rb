@@ -21,7 +21,7 @@ class Track
          name: "CodeCademy Intro to JavaScript course"
 
     lesson name: "intro" do
-      video youtube_id: '_rkkFdQeBlA'
+      video youtube_id: '-jRREn6ifEQ'
     end
     lesson name: "computers" do
       link href: "https://www.youtube.com/watch?v=OAx_6-wdslM&list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-",

@@ -18,6 +18,8 @@ class Track
     goal "how to extend your application's functionality by calling APIs"
     goal "how to streamline and codify your application with an API of its own"
 
+    lesson name: "hello_node"
+
     # should these all go into an HTTP or WWW lesson?
     lesson name: "HTTP Headers"
     lesson name: "routing"

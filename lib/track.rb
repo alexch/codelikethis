@@ -14,6 +14,7 @@ require 'tracks_table'
 
 class Track < Thing
 
+
   attr_writer :dir
 
   contains :labs do |object, args|

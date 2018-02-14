@@ -23,9 +23,14 @@ class Track
     end
     lesson name: "planning" #  Agile Planning: Build, Measure, Predict, Repeat
 
+    lesson name: "flavors" # agile flavors (methodologies): Scrum, XP, Kanban, Lean
+
     lesson name: "lean_product_design" # based on The Lean Startup
     lesson name: "scrum"
+    lesson name: "kanban"
     lesson name: "extreme_programming_xp"
+
+
     lesson name: "flow_and_maker_time" # https://www.ted.com/talks/mihaly_csikszentmihalyi_on_flow
     # http://www.paulgraham.com/makersschedule.html
   end

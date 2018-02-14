@@ -11,13 +11,14 @@ gem "rack-codehighlighter"
 gem "rack-rewrite", "~>1.5"
 gem "sass", "~> 3.5.0"
 gem "awesome_print"
+gem "chronic"
 
 # gem "deckrb", path: "gems/deck.rb"  # for local development
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
-  gem "rerun", git: "https://github.com/alexch/rerun.git"
-  # gem "rerun", path: "../rerun"  # for local development
+  # gem "rerun", git: "https://github.com/alexch/rerun.git"
+  gem "rerun", path: "../rerun"  # for local development
 
   gem "listen"
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?

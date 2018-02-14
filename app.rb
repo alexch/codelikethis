@@ -122,6 +122,12 @@ class App < Sinatra::Base
       title: lesson.display_name + " - Code Like This").to_html
   end
 
+  get "/schedule" do
+    widget = site.schedule_view if site and site.schedule
+    page(widget: widget,
+         title: site.name).to_html
+  end
+
   get "/meta/:file" do
 
     text = File.read(::File.join(here, 'public', 'meta', "#{params[:file]}.md"))
