@@ -81,15 +81,15 @@
           ]
         },
         {
-          "theme": "Career Day",
+          "track": "career",
           "lessons": [
             "???"
           ]
         },
         {
-          "theme": "Project Day",
+          "track": "agile",
           "lessons": [
-            "/agile/what_is_agile"
+            "what_is_agile"
           ],
           "events": [
             {
@@ -192,7 +192,7 @@
           ]
         },
         {
-          "theme": "ux",
+          "track": "ux",
           "lessons": [
             "/ux/web_accessibility_and_aria"
           ]
@@ -228,7 +228,7 @@
           ]
         },
         {
-          "theme": "career"
+          "track": "career"
         },
         {
           "events": [
@@ -324,7 +324,7 @@
       ]
     },
     {
-      "theme": "projects",
+      "track": "projects",
       "days": [
         {},
         {},
@@ -341,7 +341,7 @@
       ]
     },
     {
-      "theme": "projects",
+      "track": "projects",
       "days": [
         {},
         {},
@@ -358,7 +358,7 @@
       ]
     },
     {
-      "theme": "projects",
+      "track": "projects",
       "days": [
         {},
         {},

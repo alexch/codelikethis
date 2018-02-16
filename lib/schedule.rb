@@ -8,7 +8,7 @@ class Schedule
     new site: site, data: JSON.parse(File.read(path)) if File.exist?(path)
   end
 
-  def initialize(site: , data:)
+  def initialize(site:, data:)
     @site = site
     @data = data
   end
@@ -59,7 +59,9 @@ class Schedule
 
         ap week
 
-        track = @site.track_named(week['track'])
+        track_name = week['track']
+        track = @site.track_named(track_name)
+        other_tracks = week['days'] && week['days'].map {|day| day['track']}.compact.sort.uniq - [track_name]
 
         div.row {
           br
@@ -74,10 +76,23 @@ class Schedule
               }
               div(class: 'card-text col') {
                 if track
-                  h4 "Track: "
-                  a track.display_name,
-                    href: "/lessons/#{week['track']}"
-                  #todo: rename /lessons to /tracks in URL here?
+                  h4 {
+                    text "Main Track: "
+                    a track.display_name, href: track.href
+                    #todo: rename /lessons to /tracks in URL here?
+                  }
+                  if other_tracks.present?
+                    h5 {
+                      text "Side Track#{'s' if other_tracks.size > 1}: "
+                      comma = false
+                      other_tracks.each do |other_track_name|
+                        other_track = @site.track_named(other_track_name)
+                        text ', ' if comma
+                        comma = true
+                        a other_track.display_name, href: other_track.href
+                      end
+                    }
+                  end
                 end
               }
               div(class: 'card-text col') {
@@ -120,17 +135,22 @@ class Schedule
 
     private
     def day_content(day, day_number, track, week, week_start)
-      div(class: 'col col-sm-12 card') {
+      if day['track']
+        track = @site.track_named(day['track'])
+      end
+      div(class: 'col col-sm-12 col-md-6 card') {
         div(class: 'card-body') {
           day_date = week_start + day_number.days
           h4(class: 'card-title') {
             text day_date.strftime("%A")
           }
           div.row {
-            if day['theme']
+            if day['track']
               div.col {
-                b "Theme: "
-                i day['theme']
+                h5 {
+                  text "Track: "
+                  a track.display_name, href: track.href
+                }
               }
             end
             if day['lessons']
