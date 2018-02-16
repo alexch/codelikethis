@@ -1,6 +1,6 @@
 # What is a computer?
 
-* A smart box
+* A calculating machine
   * desktop
   * laptop
   * cell phone

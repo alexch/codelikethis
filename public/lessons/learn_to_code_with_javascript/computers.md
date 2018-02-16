@@ -1,18 +1,13 @@
 # What is a computer?
 
-* A smart box
+* A calculating machine
   * desktop
   * laptop
   * cell phone
   * smart phone
   * thermostat
-
-# The Universal Machine
-
-* A computer can do anything
-  * (at least on the inside)
-* This can be intimidating!
-* But the basic rules are simple
+  * credit card
+  * hotel room door
 
 # The Terminal
 
@@ -111,6 +106,8 @@ Every piece of software on your computer is a PROGRAM.
   * It's just *really* bad at communicating
   
 > If your code is a two-year-old child, then an error is a temper tantrum. 
+
+(It can take effort to figure out why they're upset and fix it.)
 
 * It's not all gibberish
 * Try to read it -- really try! -- and pull out the pearls from the pig slop
