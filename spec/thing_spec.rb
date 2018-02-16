@@ -41,6 +41,10 @@ describe Thing do
       expect(Thing.new(name: "tricks_of_the_trade").display_name).to eq("Tricks of the Trade")
     end
 
+    it "capitalizes quoted words" do
+      expect(Thing.new(name: "the \"good\" place").display_name).to eq("The \"Good\" Place")
+      expect(Thing.new(name: "the 'good' place").display_name).to eq("The 'Good' Place")
+    end
   end
 
   it "has a default name" do

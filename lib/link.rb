@@ -37,7 +37,12 @@ class Link < Thing
 
     def content
       span(class: 'link') {
-        a display_name, href: href
+        if href
+          a display_name, href: href
+        else
+          span display_name
+        end
+
         if description
           text " - "
           span description, class: "description"

@@ -138,34 +138,241 @@
       ]
     },
     {
-      "track": "the_world_wide_web"
+      "track": "www",
+      "days": [
+        {
+          "lessons": [
+            "http",
+            "html"
+          ]
+        },
+        {
+          "lessons": [
+            "css",
+            "dom_debugging"
+          ]
+        },
+        {
+          "lessons": [
+            "css_selectors"
+          ]
+        },
+        {
+          "lessons": [
+            "css_frameworks"
+          ]
+        },
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "track": "the_world_wide_web"
+      "track": "www",
+      "days": [
+        {
+          "lessons": [
+            "bootstrap_layout"
+          ]
+        },
+        {
+          "lessons": [
+            "flexbox"
+          ]
+        },
+        {
+          "lessons": [
+            "navigation",
+            "embedding"
+          ]
+        },
+        {
+          "theme": "ux",
+          "lessons": [
+            "/ux/web_accessibility_and_aria"
+          ]
+        },
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "track": "client_side_coding"
+      "track": "client_side_coding",
+      "days": [
+        {
+          "lessons": [
+            "dom",
+            "jquery"
+          ]
+        },
+        {
+          "lessons": [
+            "ajax",
+            "apis"
+          ]
+        },
+        {
+          "lessons": [
+            "bootstrap_components"
+          ]
+        },
+        {
+          "theme": "career"
+        },
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "track": "javascript_topics"
+      "track": "javascript",
+      "days": [
+        {
+          "lessons": [
+            "functions_and_closures"
+          ]
+        },
+        {
+          "lessons": [
+            "object_oriented_javascript"
+          ]
+        },
+        {},
+        {},
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "track": "server_side_javascript"
+      "track": "server_side_javascript",
+      "days": [
+        {},
+        {},
+        {},
+        {},
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "track": "databases"
+      "track": "db",
+      "days": [
+        {},
+        {},
+        {},
+        {},
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "theme": "projects"
+      "track": "react",
+      "days": [
+        {
+          "events": [
+            {
+              "start": "2:00 pm",
+              "name": "capstone inception"
+            }
+          ]
+        },
+        {},
+        {},
+        {},
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "theme": "projects"
+      "theme": "projects",
+      "days": [
+        {},
+        {},
+        {},
+        {},
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "theme": "projects"
+      "theme": "projects",
+      "days": [
+        {},
+        {},
+        {},
+        {},
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     },
     {
-      "theme": "projects"
+      "theme": "projects",
+      "days": [
+        {},
+        {},
+        {},
+        {},
+        {
+          "events": [
+            {
+              "start": "4:00 pm",
+              "name": "retrospective"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

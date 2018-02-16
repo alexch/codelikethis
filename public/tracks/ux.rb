@@ -18,6 +18,12 @@ class Track
     end
     lesson name: "Paper Prototypes"
 
+    lesson name: "web_accessibility_and_aria" do
+      link href: 'https://github.com/turingschool/front-end-curriculum/blob/gh-pages/lessons/module-1/aria-accessibility.md'
+      link href: 'https://alistapart.com/article/aria-and-progressive-enhancement'
+    end
+    lab name: 'FreeCodeCamp "Responsive Web Design - Applied Accessibility"'
+
   end
 end
 

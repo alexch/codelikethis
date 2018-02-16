@@ -21,7 +21,7 @@ class Track
     lesson name: "hello_node"
 
     # should these all go into an HTTP or WWW lesson?
-    lesson name: "HTTP Headers"
+    lesson name: "http"
     lesson name: "routing"
     lesson name: "state", description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
     lesson name: "parameters", display_name: "CGI and Parameters"
@@ -30,18 +30,8 @@ class Track
     lesson name: "sessions", display_name: "State: Sessions"
 
     lesson name: "uploads" # forms, server store, cloud store, plugins  -- optional?
-    lesson name: "databases", display_name: "State: Databases"
 
-    lesson name: "mongodb" do
-      link href: "http://mongoosejs.com/", name: "mongoose",
-           description: "mongodb object modeling for node.js"
-    end
-
-    lesson name: "SQL" do
-      link href: 'http://docs.sequelizejs.com/',
-           name: 'Sequelize',
-           description: 'a promise-based Object-Relational Mapper for Node.js'
-    end
+    lesson name: "/db/overview", display_name: "State: Databases"
 
     lesson name: "MVC"
     lesson name: "NodeJS"

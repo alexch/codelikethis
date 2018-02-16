@@ -146,89 +146,16 @@ Lecture: ???
 
 
 
-## Week 3: June 18 
-
-Track: [The World Wide Web](../lessons/the_world_wide_web)
-
-Homework:
-
-* FreeCodeCamp "Responsive Web Design"
-
-Project: 
-
-* FreeCodeCamp "Applied Responsive Web Design Projects"
-
-### Monday
-
-Lecture:
-
-* HTTP
-    * Networking
-    * Request and Response
-    * Headers and Body
-    * TELNET demo
-
-* HTML
-    * text
-    * styling text with elements
-    * attributes
-
-* Page Layout with HTML
-    * H1 / P
-    * Floats
-    * Tables
-
-Homework:
-
-* FreeCodeCamp "Responsive Web Design - Basic HTML and HTML5"
-
 
 ### Tuesday
 
-Lecture:
-
-* Styling text with CSS
- 
-* Page layout with CSS 
-    * padding and margin (the box model)
-    * div vs span (block vs. inline)
-
-* CSS Selectors in depth (optional)
-
-Homework:
-
-* FreeCodeCamp "Responsive Web Design - Basic CSS"
-    
 ### Wednesday
 
-Lecture:
-
-* Accessibility
-* Screen Reader Demo?
-
-Homework:
-
-* FreeCodeCamp "Responsive Web Design - Applied Visual Design"
-* FreeCodeCamp "Responsive Web Design - Applied Accessibility"
 
 ### Thursday
 
 *Career Day*
 
-
-### Friday
-
-*Project Day*
-
-
-## Week 4: June 25
-
-Track: [The World Wide Web](../lessons/the_world_wide_web)
-
-Homework:
-
-* FreeCodeCamp "Responsive Web Design"
-* FreeCodeCamp "Front End Libraries"
 
 
 ### Monday
@@ -242,7 +169,6 @@ Lecture:
 
 Homework:
 
-* FreeCodeCamp "Front End Libraries - Bootstrap"
 
     
 

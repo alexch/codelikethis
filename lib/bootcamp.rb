@@ -11,7 +11,6 @@ $: << tracks_dir
 # load every track before making the ordered list of all tracks
 require_all(tracks_dir)
 
-
 class Bootcamp < Site
 
   # base site has all tracks
@@ -22,12 +21,12 @@ class Bootcamp < Site
   def tracks
     [
       ::Track::LearnToCodeWithJavascript,
-      ::Track::TheWorldWideWeb,
+      ::Track::Www,
       ::Track::ClientSideCoding,
       ::Track::Javascript, # "JavaScript Topics"
       ::Track::ServerSideJavascript,
       ::Track::Db,
-      ::Track::ClientSideCodingWithReact,
+      ::Track::React,
 
       ::Track::Separator,
 

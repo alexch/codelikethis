@@ -8,7 +8,7 @@ class Schedule
     new site: site, data: JSON.parse(File.read(path)) if File.exist?(path)
   end
 
-  def initialize(site: site, data:)
+  def initialize(site: , data:)
     @site = site
     @data = data
   end

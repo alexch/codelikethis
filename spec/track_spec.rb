@@ -63,6 +63,7 @@ describe Track do
         goal "boil water"
         goal "scramble eggs"
         link href: "http://cooking.com"
+        project name: "bake a cake"
 
         lesson name: "scramble_eggs"
         lab name: "egg_lab"
@@ -98,6 +99,12 @@ fill a glass of water at the sink
     it "can have a list of links" do
       subject.links.should == [
           Link.new(href: "http://cooking.com")
+          ]
+    end
+
+    it "can have a list of projects" do
+      subject.projects.should == [
+          Project.new(name: "bake a cake")
           ]
     end
 

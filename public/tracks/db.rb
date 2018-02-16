@@ -15,11 +15,17 @@ class Track
     lesson name: 'sql_and_relations'
     lesson name: 'nosql_and_documents'
     lesson name: 'indexes'
+    lesson name: 'seeding_and_migration'
 
     # NoSQL
     lesson name: 'documents'
     lesson name: 'map_reduce' do
       link href: "https://docs.mongodb.com/manual/core/map-reduce/"
+    end
+
+    lesson name: "mongodb" do
+      link href: "http://mongoosejs.com/", name: "mongoose",
+           description: "mongodb object modeling for node.js"
     end
 
     # SQL
@@ -30,5 +36,13 @@ class Track
 
     lesson name: 'replication'
     lesson name: 'sharding'
+
+    lesson name: "SQL" do
+      link href: 'http://docs.sequelizejs.com/',
+           name: 'Sequelize',
+           description: 'a promise-based Object-Relational Mapper for Node.js'
+    end
+
+
   end
 end

@@ -8,11 +8,12 @@ class Thing
   attr_reader :name
   # every Thing has a display name
   attr_reader :display_name
+  # every Thing might have a description
+  attr_reader :description
 
   # todo: check keys against "contains" per-subclass attribute list
 
   def initialize **options, &block
-
     @things = [] # this thing's child things
 
     options.each_pair do |key, value|
@@ -21,6 +22,13 @@ class Thing
     end
 
     instance_eval &block if block
+  end
+
+  def ==(other)
+    # todo: make this respect "contains" ivars
+    other.is_a?(Thing) and
+      other.class == self.class and
+      other.name == name
   end
 
   def name # if no name, use class name
@@ -59,7 +67,6 @@ class Thing
     end
   end
 
-
   def add_thing thing_type, options, block
     require thing_type.to_s # in case we don't know about "foo"s yet
     thing_class = thing_type.to_s.camelize.constantize
@@ -87,6 +94,7 @@ class Thing
     CGI
     DOM
     ECMAScript
+    FreeCodeCamp
     HTML
     HTTP
     JavaScript
@@ -144,11 +152,14 @@ class Thing
     end
 
     name.split(/[_\s]/).map do |word|
+      (prefix, word) = word.scan(/^(["']*)(.*)$/).flatten
+
       word = WEIRD_WORDS[word.downcase] ||
         (!first_word && SMALL_WORDS[word.downcase]) ||
         word.capitalize
       first_word = false
-      word
+
+      prefix + word
     end.join(" ")
   end
 

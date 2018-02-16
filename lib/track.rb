@@ -13,8 +13,6 @@ require 'breadcrumbs'
 require 'tracks_table'
 
 class Track < Thing
-
-
   attr_writer :dir
 
   contains :labs do |object, args|
@@ -39,6 +37,7 @@ class Track < Thing
     args + extra
   end
   contains :links
+  contains :projects
 
   def initialize **options, &block
     @goals = []
@@ -163,6 +162,15 @@ class Track < Thing
           end
         end
       end
+      if target.projects?
+        h2 "Potential Projects"
+        ul(class: 'projects') do
+          target.projects.each do |project|
+            li {widget project.view}
+          end
+        end
+      end
+
       div.container {
         div.row {
           div(class: 'col-12 col-md-6 lessons') {

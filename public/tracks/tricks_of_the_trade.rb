@@ -19,23 +19,20 @@ class Track
       link href: "https://imgs.xkcd.com/comics/the_history_of_unicode.png"
     end
 
-    lesson name: "Responsive Layouts"
-    lesson name: "Accessibility and ARIA" do
-      link href: 'https://github.com/turingschool/front-end-curriculum/blob/gh-pages/lessons/module-1/aria-accessibility.md'
-      link href: 'https://alistapart.com/article/aria-and-progressive-enhancement'
-    end
+
     lesson name: "site_maps" # XML file, also link to information architecture and site maps lesson
     lesson name: "Clip art"
     lesson name: "SEO"
     lesson name: "User upload: server storage"
     lesson name: "User upload: cloud storage"
-    lesson name: "Authentication" # roll your own login
 
+    lesson name: "web_security" do
+      link href: "https://medium.com/@keeayluh/the-fundamentals-of-information-security-eb13876a06db"
+      link href: "https://medium.freecodecamp.org/360-million-reasons-to-destroy-all-passwords-9a100b2b5001"
+    end
+    lesson name: "Authentication" # roll your own login
     lesson name: "oauth"
 
-    lesson name: "Security" do
-      link href: "https://medium.com/@keeayluh/the-fundamentals-of-information-security-eb13876a06db"
-    end
 
     lesson name: "Google-Driven Debugging" # how to google error messages
     lesson name: "Giving Feedback" # (on PRs, demos, etc)" # be specific, compassionate, actionable, "yes-and"
