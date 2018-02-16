@@ -106,16 +106,7 @@ class TracksSidebar < Erector::Widget
 
       }
 
-      # labs_id = "sidebar-#{track.name}-labs"
-      # button "labs",
-      #        class: 'btn btn-primary',
-      #        type: 'button',
-      #        'data-toggle': 'collapse',
-      #        'data-target': labs_id,
-      #        'aria-expanded': false
-      #        # 'aria-controls': '???'
-
-      div(class: ['collapse', ('show' if track.lessons.include?(@current))],
+      div(class: ['collapse', ('show' if track == current_track)],
           id: lessons_id) {
         div(class: ['list-group', 'lesson-names']) {
           track.current = @current
@@ -123,20 +114,8 @@ class TracksSidebar < Erector::Widget
         }
       }
 
-      # ul(class: 'list-group', id: labs_id) {
-      #   widget track.view, {}, :content_method_name => :list_labs
-      # }
     }
 
-      # // when a collapsible is shown
-    # $('#sidebar .collapse').on('show.bs.collapse', function() {
-    #   console.log("hello!");
-    #   // then hide all currently shown
-    #   $('#sidebar .collapse.show').collapse('hide');
-    # });
-    # JS
   end
-
-  private
 
 end
