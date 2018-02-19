@@ -19,14 +19,11 @@ Track::LearnToCodeWithJavascript = Track.new(
   link href: "https://www.codecademy.com/tracks/javascript",
        name: "CodeCademy Intro to JavaScript course"
   link href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps", name: "MDN: JavaScript First Steps"
+  link href: "https://www.codecademy.com/articles/glossary-javascript",
+    name: "JavaScript Glossary"
 
   lesson name: "intro" do
     video youtube_id: '-jRREn6ifEQ'
-  end
-  lesson name: "computers" do
-    link href: "https://www.youtube.com/watch?v=OAx_6-wdslM&list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-",
-         name: "How Computers Work",
-         description: "a series of short videos by code.org"
   end
 
   lesson name: "the_command_line"

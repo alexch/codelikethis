@@ -38,6 +38,42 @@ In computers, code is a series of instructions that tell a computer what to do.
   * between you and other coders
   * between you and future you
 
+# A Program Is Like A Recipe
+
+* a recipe is a collection of *ingredients* and *instructions*
+
+![Grandma's Cookie Recipe](/images/cookie-recipe.gif)
+
+* a program is a collection of *data* and *code*
+
+> When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
+
+(recipe from http://www.popcornpottery.com/rec.html)
+
+# Languages
+
+* every program is written in a LANGUAGE
+  * like Java or Python or C or Fortran
+  * even HTML and CSS and SQL are languages
+  * every computer language has a silly name
+* different languages are useful in different areas, but there is a lot of overlap
+* today we will learn the JavaScript programming language
+
+# Errors Are Awesome
+
+* Don't be afraid of errors
+* Your computer is trying to help you fix your program
+  * It's just *really* bad at communicating
+
+> If your code is a two-year-old child, then an error is a temper tantrum.
+
+(It can take effort to figure out the underlying reason why they're upset and fix it.)
+
+* It's not all gibberish
+* Try to read it -- really try! -- and pull out the pearls from the pig slop
+
+See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong) from MDN
+
 # What will we learn today?
 
 In this class, you will learn about:
@@ -61,7 +97,7 @@ Follow along at http://codelikethis.com/lessons/learn_to_code_with_javascript
 
 
 <!--# And if you (and your pair) finish early...
-<!--* Let us know! 
+<!--* Let us know!
 * Look at [Next Steps](next_steps.md)
 * Start working on my Ruby For Programmers lessons
   * http://testfirst.org
@@ -87,7 +123,15 @@ Follow along at http://codelikethis.com/lessons/learn_to_code_with_javascript
   * a live node.js installation
   * visit https://nodejs.org/ for more instructions
   * version 9.2 is preferred, others are probably fine too
-    * run `node -v` to check
+    * run `node -v` in terminal to check
 
-<!--* If you do not have both of these things, RAISE YOUR HAND -->
+* Git
+  * https://git-scm.com/downloads
+  * https://gitforwindows.org/
 
+* Heroku
+  * **Sign up** for an account at https://signup.heroku.com
+  * **Install** the Heroku Command Line Interface (CLI) at https://devcenter.heroku.com/articles/heroku-cli
+
+* Please stop right now and check
+  * If you do not have these, RAISE YOUR HAND

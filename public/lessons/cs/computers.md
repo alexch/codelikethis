@@ -24,6 +24,23 @@ from WarGames, (1983)
 
 * ["In The Beginning Was The Command Line"](http://www.cryptonomicon.com/beginning.html) is an essay by Neil Stephenson describing the history of computers in an enjoyable and clever way
 
+# node - the Interactive JavaScript Executor
+
+## Exercise: Calculator
+
+* open a terminal
+* type `node`
+* press the `return` key (also called `enter`)
+* see the `>` prompt
+* type `1 + 1`
+* press the `return` key again
+* see the `2`
+* Yay! Your computer is an expensive calculator!
+
+* Bonus: what other math can you do?
+
+* From now on, whenever you see text in the `code font`, try typing it into node and see what happens!
+
 # Computer Anatomy
 
 * hardware

@@ -5,10 +5,11 @@ In this lesson you will create a trivial web application in NodeJS and deploy it
 # Hello, File!
 
 - In your Terminal, make a directory called `hello_node` with `mkdir hello_node`
- 
-- Immediately enter the directory with `cd hello_node` 
+
+- Immediately enter the directory with `cd hello_node`
 
 - Launch the Atom text editor in this directory with `atom .` (pronounced "Atom Dot")
+  - if `atom .` fails, launch Atom and select **Install Shell Commands** from either the *File* or the *Atom* menu
 
 - Inside this directory make a file named `index.js` and fill it with the following code:
 
@@ -30,7 +31,7 @@ http.createServer(function(request, response){
 
 # Hello, Procfile!
 
-A *Procfile* tells Heroku what commands to run when it launches your app. 
+A *Procfile* tells Heroku what commands to run when it launches your app.
 
 Go back to Atom and create a file named `Procfile` (there is *no extension* on this filename) and fill it with this:
 
@@ -40,11 +41,28 @@ web: node index.js
 
 > Note that the code after `web:` is *exactly* what you typed to run the app locally.
 
-You also need a `package.json` file. Create it in Atom and fill it with this:
+# Hello, NPM!
 
-```json
+You also need a `package.json` file. The easiest way to get one is to run
+
+`npm init -f`
+
+```sh
+PS C:\Users\alex\code\hello_node> npm init -f
+npm WARN using --force I sure hope you know what you are doing.
+Wrote to C:\Users\alex\code\hello_node\package.json:
+
 {
-  "name": "hello-node"
+  "name": "hello_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
 ```
 
@@ -52,10 +70,13 @@ You also need a `package.json` file. Create it in Atom and fill it with this:
 
 Now make a git repo for your app.
 
-> Remember to press CTRL-C to stop the server!
+> Remember to press CTRL-C to stop the server
+
+> Make sure you are in the correct directory with `pwd`
 
 ```sh
 @@@sh
+pwd           # the response should end with "hello_node"
 git init
 git add .
 git commit -m 'first commit'
@@ -91,14 +112,14 @@ If you are alone, give yourself a high five.
 
 ![high five](/images/high-five.gif)
 
-You deserve it! 
+You deserve it!
 
-<small>photo: <https://dribbble.com/shots/3702481-High-Five-s-for-15Five> 
+<small>photo: <https://dribbble.com/shots/3702481-High-Five-s-for-15Five>
 </small>
 
 # Hello, You!
 
-Now go back to Atom, and modify the app so instead of saying "Hello from NodeJS!" it says something clever and personalized. 
+Now go back to Atom, and modify the app so instead of saying "Hello from NodeJS!" it says something clever and personalized.
 
 Once you've made the change...
 
@@ -119,4 +140,3 @@ Some other Node tutorials:
 * <https://ilovecoding.org/lessons/create-a-simple-http-server-with-nodejs>
 
 see also <https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/>
-

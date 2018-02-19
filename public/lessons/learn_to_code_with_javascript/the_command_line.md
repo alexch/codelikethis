@@ -2,18 +2,43 @@
 
 * the **TERMINAL** is a window into which you can talk directly to your computer
   * aka *console* or *command line* or *command prompt* or *shell*
-* very low level, based entirely on text and typing, not graphics and mousing
-* when you type into the terminal, you are always issuing **COMMANDS**
-  * which is why it's called the Command Line
-  
+
+![Shall we play a game?](../images/wargames-terminal.jpg)
+
+<small>from WarGames, (1983)</small>
+
+* when you type into the terminal, you are issuing **COMMANDS** to the computer
+* a *CLI* (Command Line Interface) is different from the *GUI* (Graphical User Interface) you are used to
+  * more primitive
+  * more powerful
+
 # Opening the Terminal
 
 * to open your Terminal:
   * Mac OS: launch the "Terminal" application
-  * Windows: launch "Command Prompt" or "Windows PowerShell" or "bash"
-    * **[TODO: troubleshoot Windows terminal instructions]**
+  * Windows: launch "Windows PowerShell"
 * **Important:** make your terminal *as tall as possible*
   * errors are often long and you want to start reading at the very top
+
+> TODO: insert screenshot of terminal/browser layout
+
+# node - the Interactive JavaScript Executor
+
+## Exercise: Calculator
+
+* open a terminal
+* type `node`
+  * that's you *commanding* the computer to launch *node*
+* press the `return` key (also called `enter`)
+* see the `>` prompt
+* type `1 + 1`
+* press the `return` key again
+* see the `2`
+
+* Yay! Your computer is an expensive calculator!
+* Bonus: what other math can you do?
+
+* From now on, whenever you see text in the `code font`, try typing it into node and see what happens!
 
 # Directories
 
@@ -36,13 +61,14 @@
 # Listing Directory Contents
 
 * when you type `ls` ("list") it shows the contents of the current directory
+  * **On Windows** you might need to type `dir` instead
 
 # Making a directory
 
-* when you type `mkdir` ("make dir") it creates a new SUBDIRECTORY inside the current directory
-        
+* when you type `mkdir` ("make directory") it creates a new SUBDIRECTORY inside the current directory
+
         mkdir code
-        
+
 # Changing directories
 
 * `cd` ("change dir") moves you into a different directory
@@ -65,6 +91,7 @@
 2. make a new subdirectory using `mkdir code`
 3. change into that directory using `cd code`
 4. list its contents using `ls` (and note that it's empty)
+  * **On Windows** you might need to type `dir` instead of `ls`
 
 # Files
 
@@ -79,7 +106,7 @@
 * a text editor is *like* a word processor
 * but a text editor is **not** a word processor
 * You probably have *Atom* <http://atom.io>
-  * others include *TextMate*, *Notepad++*, *Sublime Text*
+  * others include *TextMate*, *Notepad++*, *Sublime Text*, *Vim*
   * but **NOT** *TextEdit* or *Notepad* or *Microsoft Word*
 
 # Source File
@@ -95,19 +122,14 @@
 # LAB: Hello, World
 
 1. Make sure you are in your `code` subdirectory using `pwd`
-2. Create a file named `hello.js` using `touch hello.js`
-3. Open `hello.js` in your favorite text editor
+2. Open this directory in Atom using `atom .`
+3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
 
         console.log("Hello, World!");
 
-5. Save the file 
+5. Save the file
 6. Go back to the terminal
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?
-
-# Side Trip
-
-* this might be a good time to learn about `git` and version control
-
