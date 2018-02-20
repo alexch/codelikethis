@@ -84,17 +84,16 @@ git commit -m 'first commit'
 
 # Hello, Heroku!
 
-Heroku uses git for its deploys. Whenever you push a new version of your git repo to Heroku, it automatically deploys the app.
+Heroku uses git for its deploys. Whenever you push a new version of your git repo to Heroku, it automatically deploys the app to the cloud.
 
 ```sh
-@@@sh
 heroku create
 git push heroku master
 ```
 
 If all goes well, you will see a URL on your console, something like this:
 
-```js
+```
 remote: https://damp-retreat-99529.herokuapp.com/ deployed to Heroku
 ```
 

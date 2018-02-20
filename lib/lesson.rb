@@ -16,6 +16,10 @@ class Lesson < Thing
     @track.href + "/" + name
   end
 
+  def slides_href
+    href + ".slides"
+  end
+
   def labs
     slide_labs + next_labs
   end
@@ -111,7 +115,7 @@ class Lesson < Thing
       br
       div(class: 'row text-center') {
         div(class: 'col') {
-          a("Show Slides", href: "#{name}.slides", class: 'slides btn btn-primary')
+          a("Show Slides", href: @target.slides_href, class: 'slides btn btn-primary')
         }
       }
       br

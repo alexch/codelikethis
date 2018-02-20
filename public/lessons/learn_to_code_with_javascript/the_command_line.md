@@ -17,14 +17,15 @@
 * to open your Terminal:
   * Mac OS: launch the "Terminal" application
   * Windows: launch "Windows PowerShell"
-* **Important:** make your terminal *as tall as possible*
-  * errors are often long and you want to start reading at the very top
+* **Important:** make your terminal *as **tall** as possible*
+  * errors are often long and you want to start reading at the very top without scrolling
+  * make it look like this:
 
-> TODO: insert screenshot of terminal/browser layout
+![terminal next to browser](../images/terminal-and-browser.png)
 
-# node - the Interactive JavaScript Executor
 
-## Exercise: Calculator
+# Lab: Interactive Calculator
+
 
 * open a terminal
 * type `node`
@@ -36,8 +37,9 @@
 * see the `2`
 
 * Yay! Your computer is an expensive calculator!
-* Bonus: what other math can you do?
+* **Bonus**: what other math can you do?
 
+## node is an interactive JavaScript interpreter
 * From now on, whenever you see text in the `code font`, try typing it into node and see what happens!
 
 # Directories

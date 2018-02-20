@@ -56,6 +56,7 @@ In computers, code is a series of instructions that tell a computer what to do.
   * like Java or Python or C or Fortran
   * even HTML and CSS and SQL are languages
   * every computer language has a silly name
+* computer languages are very **specific** compared to natural languages
 * different languages are useful in different areas, but there is a lot of overlap
 * today we will learn the JavaScript programming language
 
@@ -83,28 +84,13 @@ In this class, you will learn about:
 *  How to run your code interactively or from a file
 *  How to make a very simple website run on your own computer
 
-Follow along at http://codelikethis.com/lessons/learn_to_code_with_javascript
-
-<!--# Go at your own pace
-
-* we will **definitely not** get through all the materials today
--->
+Follow along online! Put a browser pointed at this site on one side of your screen, and Terminal on the other.
 
 # What if I know some of this already?
 
 * Pair up and fill in each other's gaps
 * Promote yourself to TA
-
-
-<!--# And if you (and your pair) finish early...
-<!--* Let us know!
-* Look at [Next Steps](next_steps.md)
-* Start working on my Ruby For Programmers lessons
-  * http://testfirst.org
-  * http://codelikethis.com/lessons/
-* Build a Rails website
-  * http://docs.railsbridge.org/
--->
+* Work on labs
 
 # Technical requirements
 
@@ -114,24 +100,29 @@ Follow along at http://codelikethis.com/lessons/learn_to_code_with_javascript
   * Username: ______
   * Password: ______
 -->
+
 * a text editor
   * e.g. Atom <http://atom.io>
   * Note: Microsoft Word is **not** a text editor
 
 * JavaScript
-
   * a live node.js installation
-  * visit https://nodejs.org/ for more instructions
+  * visit <https://nodejs.org/> for more instructions
   * version 9.2 is preferred, others are probably fine too
     * run `node -v` in terminal to check
 
 * Git
-  * https://git-scm.com/downloads
-  * https://gitforwindows.org/
+  * <https://git-scm.com/downloads>
+  * <https://gitforwindows.org/>
+
+* GitHub
+  * **Sign up** for an account at <https://github.com/>
+  * **Install** the GitHub Desktop app at <https://desktop.github.com/>
 
 * Heroku
-  * **Sign up** for an account at https://signup.heroku.com
-  * **Install** the Heroku Command Line Interface (CLI) at https://devcenter.heroku.com/articles/heroku-cli
+  * **Sign up** for an account at <https://signup.heroku.com>
+  * **Install** the Heroku Command Line Interface (CLI) at <https://devcenter.heroku.com/articles/heroku-cli>
 
 * Please stop right now and check
   * If you do not have these, RAISE YOUR HAND
+
