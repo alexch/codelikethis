@@ -13,7 +13,7 @@ gem "sass", "~> 3.5.0"
 gem "awesome_print"
 gem "chronic"
 
-# gem "deckrb", path: "gems/deck.rb"  # for local development
+# gem "deckrb", path: "../deck.rb"  # for local development
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do

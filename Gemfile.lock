@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/alexch/deck.rb.git
-  revision: 033cec7ad2d4f1703219aa5adb27e9aad1dfd427
+  revision: 7e651c8b4f0c60f0972733848c1d6a4baa669178
   specs:
     deckrb (0.5.2)
       coderay
