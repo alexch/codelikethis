@@ -82,9 +82,10 @@ class App < Sinatra::Base
          title: page_title(track)).to_html
   end
 
-  get "/lessons/:track/:file.slides" do
+  get "/lessons/:track/:lesson.slides" do
     # slides are signified with a dot instead of a slash so that relative file references don't break
-    file = File.join(track_dir, "#{params[:file]}.md")
+
+    file = File.join(lesson.dir, "#{params[:lesson]}.md")
     slides = Deck::Slide.from_file(file)
 
     # todo: Extract, move to Tracks object
@@ -96,7 +97,7 @@ class App < Sinatra::Base
       slides << begin
         slide = Deck::Slide.new(slide_id: '_next')
 
-        lesson = track.lesson_named(params[:file])
+        lesson = track.lesson_named(params[:lesson])
 
         slide << lesson.view.to_html(content_method_name: :labs)
         slide << lesson.view.to_html(content_method_name: :next_lesson_button)
@@ -123,7 +124,7 @@ class App < Sinatra::Base
   end
 
   get "/schedule" do
-    widget = site.schedule_view if site and site.schedule
+    widget = site.schedule_view if site&.schedule
     page(widget: widget,
          title: site.name).to_html
   end
@@ -138,7 +139,7 @@ class App < Sinatra::Base
   end
 
   def track_dir
-    ::File.join(here, "public", "lessons", params[:track])
+    track.dir
   end
 
   def track

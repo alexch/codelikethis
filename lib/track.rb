@@ -30,6 +30,7 @@ class Track < Thing
       path = Pathname.new(File.join(track.tracks_dir, lesson_name))
       extra[:dir] = path.dirname.to_s
       extra[:name] = lesson_name = path.basename.to_s
+      ap extra
     end
 
     raise "already a lesson named #{lesson_name}" if track.this_lesson_index(lesson_name)
@@ -125,9 +126,8 @@ class Track < Thing
 
   def tracks_dir
     @@tracks_dir ||= begin
-      here = File.expand_path(File.dirname(__FILE__))
-      project = File.expand_path("#{here}/..")
-      "#{project}/public/lessons/"
+      app_dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
+      File.join(app_dir, "public", "lessons")
     end
   end
 
