@@ -22,10 +22,13 @@ group :development, :test do
 
   gem "listen"
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-  gem "rspec"
   gem "rake", ">=10.0.1"
   gem "wrong", git: "https://github.com/alexch/wrong.git"
   gem "files"
+end
+
+group :test do
+  gem "rspec"
 end
 
 # odd fixed versions, for Windows
