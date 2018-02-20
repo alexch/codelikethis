@@ -1,20 +1,12 @@
+require 'active_support/core_ext'
 require 'erector'
-require 'views'
 
+require 'views'
 require 'util'
 require 'track'
 require 'tracks_table'
+require 'site'
 
-
-# add "public/tracks" dir to Ruby load path
-here = ::File.expand_path(File.dirname(__FILE__))
-public_dir = ::File.expand_path(File.join(here, "..", "..", "public"))
-tracks_dir = File.join(public_dir, "tracks")
-$: << tracks_dir
-# load every track before making the ordered list of all tracks
-require_all(tracks_dir)
-
-require 'active_support/core_ext'
 
 class CodeLikeThis < Site
   def hostname
@@ -22,6 +14,8 @@ class CodeLikeThis < Site
   end
 
   def tracks
+    # load every track before making the ordered list of all tracks
+    require_all(Track.tracks_dir)
     ::Track.constants.map {|c| Track.const_get(c)}.select {|t| (t.is_a? Track and t != Track::Separator)}
   end
 

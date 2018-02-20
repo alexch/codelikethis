@@ -9,7 +9,7 @@ require File.join(project, "app")
 require File.join(project, "lib/lesson")
 
 # weird to be loading the public tracks here
-require File.join(project, "public/tracks/ruby")
+require File.join(project, "public/lessons/ruby")
 
 describe AppHelpers do
   include AppHelpers

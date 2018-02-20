@@ -3,6 +3,10 @@ require 'chronic'
 require 'views'
 require 'schedule'
 
+require 'track'
+# add "public/lessons" dir to Ruby load path
+$: << Track.tracks_dir
+
 class Site
   def host? hostname
     [self.hostname].flatten.detect do |possible_hostname|

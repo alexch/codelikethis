@@ -5,11 +5,7 @@ require 'util'
 require 'track'
 require 'tracks_table'
 
-# add "public/tracks" dir to Ruby load path
-tracks_dir = ::File.expand_path(File.join(File.dirname(__FILE__), "..", "public", "tracks"))
-$: << tracks_dir
-# load every track before making the ordered list of all tracks
-require_all(tracks_dir)
+require 'site'
 
 class Bootcamp < Site
 

@@ -4,6 +4,7 @@ require 'deck'
 
 require 'thing'
 require 'disqus'
+require 'views'
 
 class Lesson < Thing
 

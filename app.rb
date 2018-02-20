@@ -45,12 +45,8 @@ class App < Sinatra::Base
     @site ||= create_site
   end
 
-  def all_tracks
-    site.tracks
-  end
-
   def tracks_widget
-    TracksTable.new(:tracks => all_tracks)
+    TracksTable.new(:tracks => site.tracks)
   end
 
   def page(widget:, title:)
@@ -85,15 +81,11 @@ class App < Sinatra::Base
   get "/lessons/:track/:lesson.slides" do
     # slides are signified with a dot instead of a slash so that relative file references don't break
 
-    file = File.join(lesson.dir, "#{params[:lesson]}.md")
-    slides = Deck::Slide.from_file(file)
-
-    # todo: Extract, move to Tracks object
-    track = all_tracks.detect do |track|
-      track.name == params[:track]
-    end
+    track = site.track_named(params[:track])
 
     if track
+      file = File.join(lesson.dir, "#{params[:lesson]}.md")
+      slides = Deck::Slide.from_file(file)
       slides << begin
         slide = Deck::Slide.new(slide_id: '_next')
 
@@ -144,9 +136,10 @@ class App < Sinatra::Base
 
   def track
     begin
-      track_constant_name = params[:track].split('_').map(&:capitalize).join
-      track = Track.const_get(track_constant_name)
-    rescue NameError
+      Track.named(params[:track])
+    rescue NameError => e
+      $stderr.puts(e)
+      $stderr.puts "\t" + e.backtrace.join("\n\t")
       not_found
     end
   end
@@ -156,6 +149,7 @@ class App < Sinatra::Base
   end
 
   private
+
   def create_site
     sitename = params['site'] || request.host
     site = [CodeLikeThis, Bootcamp].map(&:new).detect do |site|

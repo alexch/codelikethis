@@ -8,11 +8,21 @@ require 'thing'
 require 'link'
 require 'lesson'
 require 'lab'
-
 require 'breadcrumbs'
 require 'tracks_table'
 
 class Track < Thing
+
+  # @return a class object representing the track
+  # @raise NameError if not found
+  def self.named track_name
+    # first load every track in the filesystem
+    require_all(tracks_dir)
+
+    track_constant_name = track_name.split('_').map(&:capitalize).join
+    Track.const_get(track_constant_name)
+  end
+
   attr_writer :dir
 
   contains :labs do |object, args|
@@ -30,7 +40,6 @@ class Track < Thing
       path = Pathname.new(File.join(track.tracks_dir, lesson_name))
       extra[:dir] = path.dirname.to_s
       extra[:name] = lesson_name = path.basename.to_s
-      ap extra
     end
 
     raise "already a lesson named #{lesson_name}" if track.this_lesson_index(lesson_name)
@@ -124,11 +133,15 @@ class Track < Thing
     @dir || File.join(tracks_dir, name)
   end
 
-  def tracks_dir
+  def self.tracks_dir
     @@tracks_dir ||= begin
       app_dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
       File.join(app_dir, "public", "lessons")
     end
+  end
+
+  def tracks_dir
+    self.class.tracks_dir
   end
 
   def view

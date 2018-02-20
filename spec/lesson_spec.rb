@@ -1,12 +1,8 @@
 require "files"
 require "wrong"
 require "spec_helper"
-
-here = File.expand_path(File.dirname(__FILE__))
-project = File.expand_path("#{here}/..")
-
-require "#{project}/lib/lesson"
-require "#{project}/public/tracks/ruby" # ???
+require "lesson"
+require 'track'
 
 describe Lesson do
 

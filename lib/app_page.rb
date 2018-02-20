@@ -1,6 +1,7 @@
 require 'erector'
 require 'awesome_print'
 require 'views'
+require 'util'
 require 'nav_bar'
 
 class AppPage < Erector::Widgets::Page
@@ -143,9 +144,6 @@ $(function () {
     JAVASCRIPT
   end
 
-
-  require 'util'
-  require_all('tracks')
 
   def all_tracks
     @site.tracks

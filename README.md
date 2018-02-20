@@ -36,6 +36,8 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`./config.ru` | app config |
 |`lib` | ruby source code |
 |`lib/thing.rb::WEIRD_WORDS` | list of oddly-capitalized words (e.g. CSS, JavaScript) |
+| `lib/bootcamp.rb` | ruby Site describing the Bootcamp course(s) |
+| `lib/bootcamp-schedule.json` | JSON describing the Bootcamp course schedule |
 |`spec` | ruby test source code |
 |`public` | web-visible files |
 |`public/images` | web site images |
@@ -43,7 +45,9 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`public/css`    | web site css files -- **do not edit** these directly! |
 |`public/scss`    | web site sass source files, compiled into public/css |
 |`public/lessons` | course files (markdown and images), organized by track |
-|`public/tracks`  | track description files; names match public/lessons subdirs |
+|`public/lessons/track.rb`  | track description files; names match public/lessons subdirs |
+|`public/lessons/track/` | course files (markdown and images), organized by track |
+|`public/lessons/track/lesson.md` | markdown slides for a single lesson |
 |`public/meta`    | notes about specific classes, viz. our summer bootcamp |
 
 ## Sites

@@ -3,3 +3,6 @@ RSpec.configure do |config|
     c.syntax = [:should, :expect]
   end
 end
+
+project_dir = File.expand_path(File.join(File.dirname(__FILE__), ".."))
+$: << File.join(project_dir, "lib")
