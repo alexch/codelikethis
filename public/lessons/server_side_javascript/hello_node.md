@@ -109,7 +109,7 @@ If you are working with a partner, give them a high five.
 
 If you are alone, give yourself a high five.
 
-![high five](/images/high-five.gif)
+![high five](../images/high-five.gif)
 
 You deserve it!
 

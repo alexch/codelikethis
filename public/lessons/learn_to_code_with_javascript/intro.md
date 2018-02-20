@@ -42,7 +42,7 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 * a recipe is a collection of *ingredients* and *instructions*
 
-![Grandma's Cookie Recipe](/images/cookie-recipe.gif)
+![Grandma's Cookie Recipe](../images/cookie-recipe.gif)
 
 * a program is a collection of *data* and *code*
 
