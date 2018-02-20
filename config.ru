@@ -20,9 +20,14 @@ use Rack::Rewrite do
   moved_permanently '/lessons/test_driven/test_driven',
     '/lessons/agile_development/test_driven'
 
-
-    moved_permanently %r{/lessons/ruby_advanced/(\w+)}, '/lessons/ruby/$1'
-  moved_permanently %r{/lessons/agile_development/(\w+)}, '/lessons/agile/$1'
+  # renamed tracks
+  {
+    ruby_advanced: 'ruby',
+    agile_development: 'agile',
+    the_world_wide_web: 'www',
+  }.each_pair do |old_name, new_name|
+    moved_permanently %r{/lessons/#{old_name}(/\w*)?}, "/lessons/#{new_name}$1"
+  end
 end
 
 use Rack::Codehighlighter, :coderay,
