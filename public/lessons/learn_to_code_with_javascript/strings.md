@@ -127,12 +127,12 @@ A: a character is a *number* (or *character code*) that stands for a *symbol*.
 
 * ASCII only goes from 0 to 127
 * Unicode is the same as ASCII for values from 0 and 127
-* Unicode goes a *lot* higher, including symbols for 
+    * but Unicode goes a *lot* higher
+* Currently more than 130,000 characters, including symbols for
   * 139 modern and historic scripts
   * accents and other diacritics
-  * mathematical, phonetic, currency, cultural symbols
-  * emoji
-* Currently more than 130,000 characters
+  * various mathematical ∞, currency £, and cultural ☮ symbols
+  * [emoji](https://en.wikipedia.org/wiki/Emoji) 😂
   
 # Unicode String Encodings
 
