@@ -28,7 +28,7 @@ class Bootcamp < Site
 
       ::Track::Agile,
       ::Track::Git,
-      ::Track::JustEnoughComputerScience,
+      ::Track::Cs,
       ::Track::UserExperience,
       ::Track::TricksOfTheTrade, # or "trade secrets" ?
       ::Track::Career,

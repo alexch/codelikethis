@@ -26,21 +26,20 @@
 
 # Lab: Interactive Calculator
 
-
-* open a terminal
-* type `node`
-  * that's you *commanding* the computer to launch *node*
-* press the `return` key (also called `enter`)
-* see the `>` prompt
-* type `1 + 1`
-* press the `return` key again
-* see the `2`
+1. open a terminal
+2. type `node` -- that's you *commanding* the computer to launch *node*
+1. press the `return` key (also called `enter`)
+1. see the `>` prompt
+1. type `1 + 1`
+1. press the `return` key again
+1. see the `2`
 
 * Yay! Your computer is an expensive calculator!
 * **Bonus**: what other math can you do?
 
 ## node is an interactive JavaScript interpreter
-* From now on, whenever you see text in the `code font`, try typing it into node and see what happens!
+
+* From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens! 
 
 # Directories
 

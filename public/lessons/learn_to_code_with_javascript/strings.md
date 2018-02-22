@@ -134,17 +134,23 @@ A: a character is a *number* (or *character code*) that stands for a *symbol*.
   * various mathematical ∞, currency £, and cultural ☮ symbols
   * [emoji](https://en.wikipedia.org/wiki/Emoji) 😂
   
-# Unicode String Encodings
+# Unicode Strings
 
-* UTF-32 is a *fixed-width encoding* for Unicode
-  * every character is 32 bits long
-* UTF-8 is a *variable-width encoding* for Unicode
-  * all ASCII characters are one byte long (8 bits)
-  * other characters are up to four bytes long (32 bits)
-  * used for text files
-* UTF-16 is a *variable-width encoding* for Unicode
-  * every character is either 16 or 32 bits long
-  * used by JavaScript at runtime
+JavaScript strings are Unicode
+  * technically it uses the *UTF-16 encoding* in memory
+  * and the *UTF-8 encoding* for text files
+
+> That means you can use emoji in your JavaScript programs!
+
+Like this:
+
+```js
+@@@js
+"😂".repeat(20)
+```
+
+(sadly this doesn't work in Windows PowerShell, but it does work in Atom+node+HTML+`<meta charset="UTF-8">`)
+
 
 # Comparing Strings
 
@@ -198,7 +204,7 @@ false
 
 This works fine for some applications, but if you're dealing with user input or multiple languages...
 
-...use [localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) instead, which understands capitals and diacriticals and dialects.
+...use [localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) instead, which understands case and diacriticals and dialects.
 
 ```js
 @@@js

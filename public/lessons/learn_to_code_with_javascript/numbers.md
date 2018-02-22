@@ -17,7 +17,7 @@ The following operations work on numbers:
 | * | multiplication | 3 * 2 | 6 |
 | / | division | 3 / 2 | 1.5 |
 | % | modulus ("remainder") | 3 % 2 | 1 |
-| **| exponentiation | 3 ** 2 | 9 |
+| **| exponentiation ("power of") | 3 ** 2 | 9 |
 
 # LAB: Playing With Numbers
 
@@ -44,7 +44,9 @@ A: *It depends!*
 
 # Parentheses Are Free
 
-When in doubt, use parentheses!
+> When in doubt, use parentheses!
+
+(or, when there's any doubt, make your assumptions explicit)
 
 # LAB: one nation, divisible
 
