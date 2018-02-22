@@ -29,42 +29,24 @@ http.createServer(function(request, response){
 
 - Visit <http://localhost:5000/> to see it running on your own computer.
 
-# Hello, Procfile!
+# Hello, Package!
 
-A *Procfile* tells Heroku what commands to run when it launches your app.
+A *package* file contains information about how to build and run your app.
 
-Go back to Atom and create a file named `Procfile` (there is *no extension* on this filename) and fill it with this:
+In Atom, create a file named `package.json` and fill it with this:
 
-```
-web: node index.js
-```
-
-> Note that the code after `web:` is *exactly* what you typed to run the app locally.
-
-# Hello, NPM!
-
-You also need a `package.json` file. The easiest way to get one is to run
-
-`npm init -f`
-
-```sh
-PS C:\Users\alex\code\hello_node> npm init -f
-npm WARN using --force I sure hope you know what you are doing.
-Wrote to C:\Users\alex\code\hello_node\package.json:
-
+```json
 {
-  "name": "hello_node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "hello-node",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "start": "node index.js"
+  }
 }
 ```
+
+> Note that the code after `start` is *exactly* what you typed in the shell to run the app locally.
+
+You can test this locally by running `npm start` and refreshing your browser.
 
 # Hello, Git!
 
