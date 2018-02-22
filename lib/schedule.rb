@@ -72,7 +72,7 @@ class Schedule
           div(class: 'col col-sm-12 card') {
             div(class: 'card-body') {
               h2(class: 'card-title') {
-                text "Week #{week_number} (#{week_start.strftime("%Y-%m-%d")})"
+                text "Week #{week_number+1} (#{week_start.strftime("%Y-%m-%d")})"
               }
               div(class: 'card-text col') {
                 if track
@@ -98,8 +98,14 @@ class Schedule
               div(class: 'card-text col') {
                 h5 "Projects"
                 ul {
-                  week['projects'].each do |name|
-                    li name
+                  week['projects'].each do |project_info|
+                    #todo: unit test this hash-to-object magic
+                    project_info = {name: project_info} if project_info.is_a? String
+                    project_info.symbolize_keys!
+                    project = Project.new(**project_info)
+                    li {
+                      widget project.link_view
+                    }
                   end if week['projects']
                 }
               }

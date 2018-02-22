@@ -16,6 +16,9 @@ class Thing
   def initialize **options, &block
     @things = [] # this thing's child things
 
+    #TODO: test
+    options = {name: options} if options.is_a? String
+
     options.each_pair do |key, value|
       instance_variable_set("@#{key}", value)
       # ap("@#{key}=#{value}")
@@ -90,11 +93,14 @@ class Thing
     API
     APIs
     ARIA
+    CodeCademy
     CSS
     CGI
     DOM
     ECMAScript
     FreeCodeCamp
+    freeCodeCamp:
+    GitHub
     HTML
     HTTP
     JavaScript

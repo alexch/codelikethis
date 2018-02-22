@@ -182,7 +182,7 @@ So if you say `"apple" < "apricot"`...
 
 In the above, 112 is less than 114, so the comparison stops there and returns `true`.
 
-# String comparison gotcha
+# String Comparison Gotcha
 
 In ASCII and Unicode, all the uppercase letters are together (codes 65 to 90), then all lowercase letters (codes 97 to 122).
 
@@ -196,9 +196,11 @@ true
 false
 ``` 
 
-The standard code-to-code comparison algorithm is simplistic but very fast.
+The standard left-to-right code-to-code comparison algorithm is simplistic but very fast.
 
 It works fine for many applications, but if you're dealing with user input or multiple languages...
+
+# Smart String Comparison
 
 ...use [localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) instead, which understands case and diacriticals and dialects.
 

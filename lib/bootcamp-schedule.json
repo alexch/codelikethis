@@ -54,36 +54,56 @@
       "start": "2018-06-04",
       "track": "learn_to_code_with_javascript",
       "projects": [
-        "Create your GitHub User page, see https://help.github.com/articles/user-organization-and-project-pages/"
+        {
+          "name": "create_your_github_user_page",
+          "href": "https://help.github.com/articles/user-organization-and-project-pages/"
+        },
+        {
+          "name": "FreeCodeCamp: Javascript Algorithms And Data Structures: Basic JavaScript",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-javascript/concatenating-strings-with-plus-operator",
+          "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
+        },
+        {
+          "name": "CodeCademy: Getting Started with Programming",
+          "href": "https://www.codecademy.com/tracks/javascript",
+          "optional": true
+        }
       ],
       "days": [
         {
           "lessons": [
             "intro",
-            "computers",
-            "the_command_line"
+            "the_command_line",
+            "hello_node"
           ]
         },
         {
           "lessons": [
             "values",
             "strings",
-            "numbers",
+            "numbers"
+          ]
+        },
+        {
+          "lessons": [
             "variables",
-            "null"
+            "null",
+            "functions"
           ]
         },
         {
           "lessons": [
-            "functions",
-            "input_and_output",
-            "hello_node"
-          ]
-        },
-        {
-          "track": "career",
-          "lessons": [
-            "???"
+            "input_and_output"
+          ],
+          "events": [
+            {
+              "start": "2:00 pm",
+              "name": "improv workshop 1"
+            },
+            {
+              "start": "2:00 pm",
+              "name": "improv workshop 2"
+            }
           ]
         },
         {
@@ -103,7 +123,23 @@
     {
       "track": "learn_to_code_with_javascript",
       "projects": [
-        "text adventure"
+        {
+          "name": "FreeCodeCamp: Debugging",
+          "href": "https://beta.freecodecamp.org/en/challenges/debugging/introduction-to-the-debugging-challenges",
+          "optional": true
+        },
+        {
+          "name": "FreeCodeCamp: Basic Data Structures",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-data-structures/introduction-to-arrays"
+        },
+        {
+          "name": "FreeCodeCamp: Basic Algorithm Scripting",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
+        },
+        "zorkington",
+        "yelpington",
+        "chat_client",
+        "make_a_linkedin_profile"
       ],
       "days": [
         {
@@ -126,6 +162,7 @@
           ]
         },
         {
+          "track": "career"
         },
         {
           "events": [
@@ -139,6 +176,16 @@
     },
     {
       "track": "www",
+      "projects": [
+        {
+          "name": "FreeCodeCamp: Basic HTML",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
+        },
+        {
+          "name": "FreeCodeCamp: Basic CSS",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
+        }
+      ],
       "days": [
         {
           "lessons": [
@@ -159,7 +206,7 @@
         },
         {
           "lessons": [
-            "css_frameworks"
+            "mockups"
           ]
         },
         {
@@ -174,6 +221,16 @@
     },
     {
       "track": "www",
+      "projects": [
+        {
+          "name": "FreeCodeCamp: Applied Visual Design",
+          "href": "https://beta.freecodecamp.org/en/challenges/applied-visual-design/introduction-to-the-applied-visual-design-challenges"
+        },
+        {
+          "name": "FreeCodeCamp: Bootstrap",
+          "href": "https://beta.freecodecamp.org/en/challenges/bootstrap/introduction-to-the-bootstrap-challenges"
+        }
+      ],
       "days": [
         {
           "lessons": [
@@ -195,6 +252,12 @@
           "track": "ux",
           "lessons": [
             "/ux/web_accessibility_and_aria"
+          ],
+          "events": [
+            {
+              "start": "2:00 pm",
+              "name": "mockup_swapathon"
+            }
           ]
         },
         {
@@ -209,6 +272,12 @@
     },
     {
       "track": "client_side_coding",
+      "projects": [
+        {
+          "name": "FreeCodeCamp: jQuery",
+          "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
+        }
+      ],
       "days": [
         {
           "lessons": [
@@ -242,6 +311,17 @@
     },
     {
       "track": "javascript",
+      "projects": [
+        {
+          "name": "FreeCodeCamp: Intermediate Algorithm Scripting",
+          "href": "https://beta.freecodecamp.org/en/challenges/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
+        },
+        {
+          "name": "FreeCodeCamp: JavaScript Algorithms and Data Structures Projects",
+          "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
+          "description": "choose one"
+        }
+      ],
       "days": [
         {
           "lessons": [
@@ -250,10 +330,14 @@
         },
         {
           "lessons": [
+            "regular_expressions"
+          ]
+        },
+        {
+          "lessons": [
             "object_oriented_javascript"
           ]
         },
-        {},
         {},
         {
           "events": [

@@ -25,10 +25,12 @@ class Link < Thing
 
   class View < Erector::Widget
     needs :target
+    attr_reader :target
 
     # proxy readers to the target (model) object
     [
-        :display_name, :href, :description
+        :display_name, :href, :description,
+        :optional # hack: this is on Project
     ].each do |method|
       define_method method do
         @target.send method
@@ -47,6 +49,9 @@ class Link < Thing
           text " - "
           span description, class: "description"
         end
+
+        # hack: for Project
+        span " [optional]" if target.respond_to? :optional and target.optional
       }
     end
   end
