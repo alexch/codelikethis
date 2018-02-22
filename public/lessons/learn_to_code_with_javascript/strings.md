@@ -48,12 +48,6 @@ A string understands lots of messages. Here are a few:
 "banana".includes("nan")
 "banana".endsWith("ana")
 
-"cherry" > "banana"
-"apple" > "cherry"
-
-"apple" < "banana"
-"apple" < "BANANA"
-
 "blueberry".replace("blue", "black")
 ```
 
@@ -137,8 +131,6 @@ A: a character is a *number* (or *character code*) that stands for a *symbol*.
 # Unicode Strings
 
 JavaScript strings are Unicode
-  * technically it uses the *UTF-16 encoding* in memory
-  * and the *UTF-8 encoding* for text files
 
 > That means you can use emoji in your JavaScript programs!
 
@@ -149,8 +141,8 @@ Like this:
 "😂".repeat(20)
 ```
 
-(sadly this doesn't work in Windows PowerShell, but it does work in Atom+node+HTML+`<meta charset="UTF-8">`)
-
+ * sadly, this doesn't work in Windows PowerShell
+ * more details at our [unicode lesson](/lessons/cs/unicode)
 
 # Comparing Strings
 
@@ -198,11 +190,15 @@ In ASCII and Unicode, all the uppercase letters are together (codes 65 to 90), t
 
 ```js
 @@@js
-> "banana" < "CHERRY"
+> "apple" < "banana"
+true
+> "apple" < "BANANA"
 false
 ``` 
 
-This works fine for some applications, but if you're dealing with user input or multiple languages...
+The standard code-to-code comparison algorithm is simplistic but very fast.
+
+It works fine for many applications, but if you're dealing with user input or multiple languages...
 
 ...use [localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) instead, which understands case and diacriticals and dialects.
 
