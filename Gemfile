@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
-gem "sinatra"
+gem "sinatra", "~> 2.0.1"
 gem "erector", ">=0.9.0"
 gem "thin"
 gem "activesupport"
