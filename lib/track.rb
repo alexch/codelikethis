@@ -179,7 +179,7 @@ class Track < Thing
         h2 "Potential Projects"
         ul(class: 'projects') do
           target.projects.each do |project|
-            li {widget project.view}
+            li {widget project.link_view}
           end
         end
       end
