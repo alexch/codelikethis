@@ -29,7 +29,7 @@ class Bootcamp < Site
       ::Track::Agile,
       ::Track::Git,
       ::Track::Cs,
-      ::Track::UserExperience,
+      ::Track::Ux,
       ::Track::TricksOfTheTrade, # or "trade secrets" ?
       ::Track::Career,
 

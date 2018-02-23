@@ -1,7 +1,7 @@
 require "track"
 
 class Track
-  UserExperience = Track.new(
+  Ux = Track.new(
     name: "ux",
     display_name: "User Experience"
   ) do
