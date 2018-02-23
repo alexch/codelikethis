@@ -6,9 +6,13 @@ class Track
     display_name: "User Experience"
   ) do
 
-    lesson name: "The Design Of Everyday Things"
+    lesson name: "the design of everyday things" do
+      link href: "https://smile.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654/"
+      link href: "https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/"
+    end
     lesson name: "Principles of Web Design" do
       link href: "https://shortiedesigns.com/2014/03/10-top-principles-effective-web-design/"
+      link href: "https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/"
     end
     lesson name: "Information Architecture and Site Maps"
     lesson name: "Wireframes and Mockups"
