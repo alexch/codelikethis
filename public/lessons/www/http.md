@@ -1,4 +1,12 @@
+	a) Browser - what does it do? HTTP 
+	b) How DNS works
+	c) What is front-end code? Difference between front-end, back-end, and full-stack code.
+	d) How a website works - HTML, CSS, and other examples of front-end code. Content, structure, and appearence
+	e) Cross browser compatibility - what to be aware of? Chrome, Firefox, IE - caniuse.com 
+
 # HTTP
+
+# Browsers - what do they do?
 
 # Request - Response
 
