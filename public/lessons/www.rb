@@ -64,9 +64,17 @@ class Track
     lesson name: "Page Layout with CSS Flexbox" do
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
            name: "Learn CSS Flexbox in 5 Minutes"
+      link href: "https://css-tricks.com/snippets/css/a-guide-to-flexbox"
+      link href: "https://flexboxfroggy.com",
+           name: "Flexbox Froggy",
+           description: "a step-by-step test-driven game that teaches you flexbox"
     end
+
     lesson name: "Page Layout with CSS Grid" do
       video youtube_id: '7kVeCqQCxlk'
+      link href: "https://cssgridgarden.com",
+           name: "Grid Garden",
+           description: "a step-by-step game that teaches you CSS Grid"
     end
 
     lab name: 'FreeCodeCamp "Responsive Web Design - Applied Visual Design"'
