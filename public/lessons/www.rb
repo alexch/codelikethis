@@ -18,7 +18,8 @@ class Track
 
     project name: 'FreeCodeCamp "Applied Responsive Web Design Projects"'
 
-    lesson name: "http"
+    lesson name: "http",
+            display_name: "How the Web Works"
 
     lesson name: "html",
            display_name: "Styling with HTML"
