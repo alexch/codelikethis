@@ -7,13 +7,16 @@ see [todo.md](todo.md) for some todo items
 
 ## Setup
 
-1. `git clone`
+First, make your own fork, and [install Ruby](http://installfest.railsbridge.org/installfest/) and [git](https://git-scm.com/) on your computer. Then...
+
+1. `git clone XXX` (where XXX is your personal github repo URL)
 2. `cd codelikethis`
-3. `bundle install`
-4. `rake spec` (to run all tests and verify setup)
-5. `rake build` (to compile CSS)
-6. `rake run` (or `rake rerun` to rebuild/restart on file changes) 
-7. open <http://localhost:9292>
+3. `gem install bundler`
+4. `bundle install`
+5. `rake spec` (to run all tests and verify setup)
+6. `rake build` (to compile CSS)
+7. `rake run` (or `rake rerun` to rebuild/restart on file changes) 
+8. open <http://localhost:9292>
 
 ## Usage
 
@@ -48,7 +51,6 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`public/lessons/track.rb`  | track description files; names match public/lessons subdirs |
 |`public/lessons/track/` | course files (markdown and images), organized by track |
 |`public/lessons/track/lesson.md` | markdown slides for a single lesson |
-|`public/meta`    | notes about specific classes, viz. our summer bootcamp |
 
 ## Sites
 
@@ -57,6 +59,7 @@ a Site is
   * a hostname
   * an ordered collection of Tracks
   * a home page
+  * a schedule
   
 Currently there are two Sites:
 

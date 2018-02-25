@@ -16,6 +16,9 @@ class Track
     end
     lesson name: "Information Architecture and Site Maps"
     lesson name: "Wireframes and Mockups"
+    lesson name: "web_fonts" do
+      link href: "https://twitter.com/jamescullen123/status/966672438816858113"
+    end
     lesson name: "Agile Design"
     lesson name: "User Research" do
       link href: "http://info.carbonfive.com/user-research-guide"

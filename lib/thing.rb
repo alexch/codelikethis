@@ -102,6 +102,7 @@ class Thing
     freeCodeCamp:
     GitHub
     HTML
+    HTML5
     HTTP
     JavaScript
     jQuery
