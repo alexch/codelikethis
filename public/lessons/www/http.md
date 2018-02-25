@@ -3,7 +3,7 @@
 A web browser is a computer application that reads files. When entering a **domain** (ex. https://www.facebook.com) into the URL bar in a browser, the browser requests information in the form of a file associated with the URL input. Essentially, your browser renders code in the form of a website. 
 
 # Request - Response
-In a nutshell, an HTTP request is sent by the **client** (a browser), which is used to locate information in the form of a file. This file contains code, which tells your browser how, and what, to render.
+HTTP stands for **Hypertext Transfer Protocol**. In a nutshell, an HTTP request is sent by the **client** (a browser), which is used to locate information in the form of a file. This file contains code, which tells your browser how, and what, to render. A web server responds to this request, by telling the browser where the file lives. 
 
 ![](http://betterexplained.com/wp-content/uploads/compression/HTTP_request.png ""HTTP Request"")
 
@@ -13,7 +13,7 @@ DNS stands for Domain Name System - this is a standardized way for a browser to 
 
 ![](https://s.hswstatic.com/gif/dns-rev-1.gif "DNS Illustration")
 
-Remember, websites live at an **IP Address**. This is a string of numbers, (ex. http://70.42.251.42/). A URL is simply an easy way to remember where a website lives. It is important to remember however, not all websites can be accessed by their IP address. This can be due to security, or other reasons. 
+Remember, websites live at an **IP Address**. This is a string of numbers, (ex. 70.42.251.42). A URL is simply a translation that provides humans with an easy way to remember where a website lives. It is important to remember however, not all websites can be accessed by their IP address. This can be due to security, or other reasons. 
 
 # Other DNS Info
 Your nameserver may also contain other information about your domain, such as where your email server lives. For example, if I try to send an email to mark@facebook.com, your email server is going to communicate with the nameserver for facebook.com and say, "Where does this email server live?". 
@@ -30,6 +30,6 @@ Web code can be any language used to create web pages or applications. Common ex
 For now, we are going to focus on **HTML and CSS**. This is the most common codebase used for creating webpages, and what is used for virtually all websites. 
 
 # Browsers and Cross-Compatibility
-It is important to note that not all browsers render HTML and CSS equally. We will explore this further later on in the course, however this is important to keep in mind as we move forward.
+It is important to note that not all browsers render HTML/CSS equally. We will explore this further later on in the course, however this is important to keep in mind as we move forward.
 
 

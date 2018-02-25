@@ -18,6 +18,12 @@ class Track
 
     project name: 'FreeCodeCamp "Applied Responsive Web Design Projects"'
 
+    lesson name: "intro",
+            display_name: "Introductions and Requirements"
+
+    lesson name: "hello-world",
+            display_name: "Hello World!"
+
     lesson name: "http",
             display_name: "How the Web Works"
 
