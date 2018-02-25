@@ -1,55 +1,35 @@
-	a) Browser - what does it do? HTTP 
-	b) How DNS works
-	c) What is front-end code? Difference between front-end, back-end, and full-stack code.
-	d) How a website works - HTML, CSS, and other examples of front-end code. Content, structure, and appearence
-	e) Cross browser compatibility - what to be aware of? Chrome, Firefox, IE - caniuse.com 
-
-# HTTP
 
 # Browsers - what do they do?
+A web browser is a computer application that reads files. When entering a **domain** (ex. https://www.facebook.com) into the URL bar in a browser, the browser requests information in the form of a file associated with the URL input. Essentially, your browser renders code in the form of a website. 
 
 # Request - Response
+In a nutshell, an HTTP request is sent by the **client** (a browser), which is used to locate information in the form of a file. This file contains code, which tells your browser how, and what, to render.
 
-# Telnet Demo
+![](http://betterexplained.com/wp-content/uploads/compression/HTTP_request.png ""HTTP Request"")
 
-`GET / HTTP/1.0`
+# DNS - How it works!
 
-# Request Headers
+DNS stands for Domain Name System - this is a standardized way for a browser to know **where** your website lives. This is done by communicating with a **nameserver**, which tells your browser the IP address of where the files for your website are located. The information on your nameserver are known as **DNS Records**. 
 
-# Request Body
+![](https://s.hswstatic.com/gif/dns-rev-1.gif "DNS Illustration")
 
-# Request Methods
+Remember, websites live at an **IP Address**. This is a string of numbers, (ex. http://70.42.251.42/). A URL is simply an easy way to remember where a website lives. It is important to remember however, not all websites can be accessed by their IP address. This can be due to security, or other reasons. 
 
-* GET
-  * default for links
-  * no body
-  * parameters passed in query string
-* POST
-  * default for forms
-  * parameters passed in body
+# Other DNS Info
+Your nameserver may also contain other information about your domain, such as where your email server lives. For example, if I try to send an email to mark@facebook.com, your email server is going to communicate with the nameserver for facebook.com and say, "Where does this email server live?". 
 
-# More Request Methods
+# Examples of Web Code
+Web code can be any language used to create web pages or applications. Common examples of these are
 
-* PUT
-  * a lot like POST
-* HEAD
-  * same as GET but skips body
-  * used to ask if content has changed or expired
-* DELETE
-  * only used by APIs
+* HTML and CSS
+* Javascript
+* PHP
+* Ruby
+* Python
 
-# Cookies
+For now, we are going to focus on **HTML and CSS**. This is the most common codebase used for creating webpages, and what is used for virtually all websites. 
 
-a cookie is a message 
+# Browsers and Cross-Compatibility
+It is important to note that not all browsers render HTML and CSS equally. We will explore this further later on in the course, however this is important to keep in mind as we move forward.
 
-that a server
-
-sends to *itself*
-
-via the client
-
-# Sockets
-
-- HTTP socket
-- socket.io
 
