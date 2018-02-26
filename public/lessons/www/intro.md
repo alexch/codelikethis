@@ -6,11 +6,11 @@
 4. Google is your best friend. So is Stack Overflow. 
 
 
-# Always multiple ways to skin a cat
+# Always many ways to skin a cat
 	
 * Just because there is another way to accomplish something in coding, doesn't mean it is the wrong way. I am always open to alternative approaches to reaching an end result, as long as it makes sense. 
 
-![](http://2.bp.blogspot.com/-zv1l0jnUDXE/TjAbwrzR8FI/AAAAAAAAVbM/ir653ml3_Jc/s1600/46.jpeg)
+![shaved cat](http://2.bp.blogspot.com/-zv1l0jnUDXE/TjAbwrzR8FI/AAAAAAAAVbM/ir653ml3_Jc/s1600/46.jpeg)
 
 # Be Prepared to Work Together
 
