@@ -115,6 +115,14 @@ class App < Sinatra::Base
       title: lesson.display_name + " - Code Like This").to_html
   end
 
+  get "/project/:project_name" do
+    project = Project.new(name: params[:project_name])
+    page(
+      widget: project.view,
+      title: page_title("Project")).to_html
+
+  end
+
   get "/schedule" do
     widget = site.schedule_view if site&.schedule
     page(widget: widget,

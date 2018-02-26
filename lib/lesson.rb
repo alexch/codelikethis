@@ -29,8 +29,12 @@ class Lesson < Thing
     @dir || @track.dir
   end
 
+  def content_file
+    File.new(File.join(dir, "#{@name}.md"))
+  end
+
   def slides
-    Deck::Slide.from_file File.new(File.join(dir, "#{@name}.md"))
+    ::Deck::Slide.from_file content_file
   rescue Errno::ENOENT, Errno::EINVAL
     []
   end

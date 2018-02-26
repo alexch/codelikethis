@@ -55,8 +55,7 @@
       "track": "learn_to_code_with_javascript",
       "projects": [
         {
-          "name": "create_your_github_user_page",
-          "href": "https://help.github.com/articles/user-organization-and-project-pages/"
+          "name": "create_your_github_user_page"
         },
         {
           "name": "FreeCodeCamp: Javascript Algorithms And Data Structures: Basic JavaScript",
@@ -276,6 +275,9 @@
         {
           "name": "FreeCodeCamp: jQuery",
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
+        },
+        {
+          "name": "twitch_status"
         }
       ],
       "days": [

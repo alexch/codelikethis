@@ -48,9 +48,10 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`public/css`    | web site css files -- **do not edit** these directly! |
 |`public/scss`    | web site sass source files, compiled into public/css |
 |`public/lessons` | course files (markdown and images), organized by track |
-|`public/lessons/track.rb`  | track description files; names match public/lessons subdirs |
-|`public/lessons/track/` | course files (markdown and images), organized by track |
-|`public/lessons/track/lesson.md` | markdown slides for a single lesson |
+|`public/lessons/trackname.rb`  | track description files; names match public/lessons subdirs |
+|`public/lessons/trackname/` | course files (markdown and images), organized by track |
+|`public/lessons/trackname/baking.md` | markdown slides for a single lesson named `baking` (served from `/lessons/trackname/bake_cookies` URL path) |
+|`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/project/bake_cookies` URL path) |
 
 ## Sites
 
