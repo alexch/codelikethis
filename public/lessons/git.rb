@@ -8,6 +8,8 @@ Track::Git = Track.new(
 
   link href: "https://try.github.io", name: "Try Github",
        description: "interactive online git demo"
+  link href: "http://gitimmersion.com", name: "Git Immersion",
+       description: "a guided tour that walks through the fundamentals of git"
   link href: "https://medium.com/@keeayluh/git-all-the-things-a359c23745aa"
   link href: "https://git-scm.com/book/en/v2"
   link href: "https://vimeo.com/152746496", time: "10 min", name: "Git Demo",
