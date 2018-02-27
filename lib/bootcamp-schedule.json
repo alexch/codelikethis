@@ -354,6 +354,9 @@
     },
     {
       "track": "server_side_javascript",
+      "projects": [
+        "shortly"
+      ],
       "days": [
         {},
         {},
