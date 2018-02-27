@@ -1,7 +1,8 @@
 # git vs GitHub
+
 [git](https://git-scm.com/book/) is a *distributed version control tool*
 
-[GitHub dot com](https://github.com/) is a *centralized collaboration website*
+[GitHub](https://github.com/) is a *centralized collaboration website*
 
 # Git Conceptual Model
 
@@ -20,24 +21,34 @@
 |`git status`| run this all the time!|
 
 # Git Is Weird
+
+> "Git was written by very smart aliens." -Alex
+
+![here be dragons](here-be-dragons.png)
+
+Here are some examples of how git's commands are counterintuitive and inconsistent.
+
+> Don't bother to memorize these (yet)!
+
 * `git checkout .`
-    * reverts local file changes
-    * but git checkout foo switches to branch foo
+    * *reverts* local file changes
+    * but `git checkout foo` *switches* to branch `foo`
 * `git add`
     * *stages* your changes locally
-    * but `git commit` *saves* your staged changes locally
+    * and `git commit` *saves* your staged changes locally
 * `git push origin foo`
-    * sends all your commits to a remote branch named `foo`
+    * *adds* all your commits to a remote branch named `foo`
     * but `git push origin :foo` *deletes* remote branch named `foo`
 * `git reset`
-    * reverts staged edits, but doesn’t revert file changes
-* `git branch`
-    * *lists* local branches
-    * but `git checkout -b` *creates* a local branch
+    * reverts *staged* changes
+    * but *doesn’t revert* actual changed *files*
+* `git branch foo`
+    * *creates* a local branch named `foo` but *doesn't switch to it*
+    * `git checkout -b foo` *creates and switches to* a local branch named `foo`
 
 # Branches
 
-> A branch is a **pointer** to a **commit**
+> A branch is a **pointer** to a **commit**.
 
 * When you run git commit, the current branch is updated to point to the new commit
 * When you run git push, the remote branch is updated to point to the same commit as your local branch
@@ -62,7 +73,7 @@ http://www.slideshare.net/GoAtlassian/superpowered-ci-with-git-sarah-goffdupont
 # Pull Request
 
 * Also known as "PR"
-* A *GitHub* (**not** git!) feature to share your work before merging to master
+* A *GitHub* ( **not** git! ) feature to share your work before merging to master
 * For feedback, code review, and to keep master consistent and correct ("green")
 
 > If you always use pull requests, then code on `master` is **guaranteed** to have been reviewed.
