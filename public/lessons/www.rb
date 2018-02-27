@@ -28,7 +28,7 @@ class Track
             display_name: "How the Web Works"
 
     lesson name: "html",
-           display_name: "Styling with HTML"
+           display_name: "Introduction to HTML"
 
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic HTML and HTML5"'
 

@@ -80,7 +80,7 @@ Attributes further define HTML elements and their purpose. For example, an image
 
 # Style vs Layout vs Semantics
 
-The war that has raged inside HTML since the beginning of the WWW. Some tags exclusively describe _how_ it's contents should be displayed (ex. <b>), where as some _describe_ it's contents (ex. ```<strong>```). Web content isn't just about appearence. It matters how it is intepreted. 
+The war that has raged inside HTML since the beginning of the WWW. Some tags exclusively describe _how_ it's contents should be displayed (ex. ```<b>```), where as some _describe_ it's contents (ex. ```<strong>```). Web content isn't just about appearence. It matters how it is intepreted. 
 
 * Semantics are all about meaning - what is the purpose?
 * Not all HTML elements convey meaning - not all HTML elements are semantic (ex. div). 
