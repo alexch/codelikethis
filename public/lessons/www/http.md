@@ -7,6 +7,14 @@ HTTP stands for **Hypertext Transfer Protocol**. In a nutshell, an HTTP request 
 
 ![](http://betterexplained.com/wp-content/uploads/compression/HTTP_request.png ""HTTP Request"")
 
+# HTTP Methods
+HTTP is a protocol that allows clients to communicate with web servers, and is a primary underlying infrastructure of the Internet. The two most common HTTP methods are:
+
+* GET
+* POST
+
+When a URL is inputted, the browser sends a GET request to a web server. When a form is submitted on a website, a POST request is submitted, and the browser hands off the form data to be handled by the web server. 
+
 # DNS - How it works!
 
 DNS stands for Domain Name System - this is a standardized way for a browser to know **where** your website lives. This is done by communicating with a **nameserver**, which tells your browser the IP address of where the files for your website are located. The information on your nameserver are known as **DNS Records**. 
