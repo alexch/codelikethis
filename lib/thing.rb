@@ -61,7 +61,7 @@ class Thing
     end
 
     define_method(plural_name) do
-      @things.select {|thing| thing.is_a? thing_class}
+      self.things_of_class(thing_class)
     end
 
     define_method("#{plural_name}?") do
@@ -74,6 +74,10 @@ class Thing
     require thing_type.to_s # in case we don't know about "foo"s yet
     thing_class = thing_type.to_s.camelize.constantize
     @things << thing_class.new(**options, &block)
+  end
+
+  def things_of_class(thing_class)
+    @things.select {|thing| thing.is_a? thing_class}
   end
 
   def current= track_or_lesson

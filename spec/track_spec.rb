@@ -174,12 +174,19 @@ fill a glass of water at the sink
     end
 
     describe 'labs' do
-      it 'should include slide labs' do
+      it 'should include labs declared inside nested lessons'
+      it 'should include labs defined as slides titled LAB:xxx inside nested lessons' do
         subject.labs.map(&:name).should include("using faucets")
       end
       it 'should include declared labs (next_labs)' do
         subject.labs.map(&:name).should include("turn_on_stove", "boiling")
       end
+    end
+
+    # TODO
+    describe 'projects' do
+      it 'should include projects inside nested lessons'
+      it 'should include projects declared inside itself'
     end
   end
 

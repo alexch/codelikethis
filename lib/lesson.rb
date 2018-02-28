@@ -12,6 +12,7 @@ class Lesson < Thing
 
   contains :videos
   contains :links
+  contains :projects
 
   def href
     @track.href + "/" + name
@@ -189,6 +190,15 @@ class Lesson < Thing
           ul(class: 'links') do
             target.links.each do |link|
               li {widget link.view}
+            end
+          end
+        end
+
+        if target.projects?
+          h2 "Suggested Projects"
+          ul(class: 'links') do
+            target.projects.each do |project|
+              li {widget project.link_view}
             end
           end
         end

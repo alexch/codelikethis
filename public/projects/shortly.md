@@ -19,7 +19,7 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
     @@@json
     {
         "btvca": "http://www.burlingtoncodeacademy.com/",
-        "icecream": "http://www.benjerry.com/"
+        "iccrm": "http://www.benjerry.com/"
     }
 
 **When** a web browser requests the URL path `/icecream`
@@ -44,8 +44,6 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
 
 #### Add Link
 
-**Given** that there is no path named `garden`
-
 **When** a user visits the landing page
 
 **Then** they should see a form with the following items:
@@ -67,8 +65,15 @@ where `xyzzy` is a pseudorandom 5-character alphanumeric string
 
 **Then** the server should return a [301 Redirect](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes##3xx_Redirection) response to `http://www.gardeners.com`
 
+#### Reuse Link
+
+**Given** the above setup of a link to `http://www.gardeners.com`
+
+**When** they enter `http://www.gardeners.com` again
+
+**Then** they see the *same* short name (`xyzzy` in the example)
+
 ## TODO: more stories
 
 ## TODO: cypress tests
-
 
