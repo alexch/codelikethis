@@ -20,8 +20,16 @@ class Track
     link href: "https://www.codecademy.com/tracks/jquery",
               name: "Codecademy Track for jQuery"
 
-    lesson name: "ajax"
-    lesson name: "apis" # calling APIs from JS
+    lesson name: "ajax" do
+      project name: "github_emoji"
+      project name: "github_repos"
+    end
+
+    lesson name: "apis" do # calling APIs from JS
+      project name: "socket_chat"
+    end
+
+
     lesson name: "geolocation" do
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
     end

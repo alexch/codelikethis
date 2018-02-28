@@ -94,6 +94,16 @@ class Track < Thing
     list
   end
 
+  # todo: unit test this
+  def projects
+    track_defined_projects = things_of_class(Project)
+    lesson_defined_projects = []
+    things_of_class(Lesson).each do |lesson|
+      lesson_defined_projects += lesson.projects
+    end
+    (track_defined_projects + lesson_defined_projects).uniq
+  end
+
   def lab_names
     labs.map(&:name)
   end
@@ -175,8 +185,9 @@ class Track < Thing
           end
         end
       end
+
       if target.projects?
-        h2 "Potential Projects"
+        h2 "Suggested Projects"
         ul(class: 'projects') do
           target.projects.each do |project|
             li {widget project.link_view}
