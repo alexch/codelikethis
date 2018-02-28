@@ -1,9 +1,10 @@
 # Intro to HTML
 
-HTML stands for Hyper-Text Markup Language. Every HTML file = one web page. It is the standard language used for creating web pages. 
-
+* Stands for Hyper-Text Markup Language.
+* Every HTML file = one web page.
 * Invented by Tim Berners-Lee
 * Based on SGML
+* Standard language used for creating web pages.
 * Comprised of tags
 * Used in tandem with CSS and Javascript
 * HTML is for structuring content. It does not perform complex computations. 
@@ -15,6 +16,10 @@ HTML is a coding language comprised of various types of tags, also known as elem
 * HTML is used to **build** web pages by using **tags**.
 * Web browsers "read" HTML and render it as pretty visual elements for humans.
 
+## Flaws:
+
+* Difficult to parse
+* Poor whitespace rules
 
 # Standard Page Structure
 
@@ -30,7 +35,7 @@ HTML is a coding language comprised of various types of tags, also known as elem
      house, with two cats in the yard.</p>
     <p>Life used to be <strong>so
      hard</strong>; now everything is
-     easy because of you.</p>
+     easy cause of you.</p>
   </body>
 </html>
 ```
@@ -80,11 +85,11 @@ Attributes further define HTML elements and their purpose. For example, an image
 
 # Style vs Layout vs Semantics
 
-The war that has raged inside HTML since the beginning of the WWW. Some tags exclusively describe _how_ it's contents should be displayed (ex. ```<b>```), where as some _describe_ it's contents (ex. ```<strong>```). Web content isn't just about appearence. It matters how it is intepreted. 
+The war that has raged inside HTML since the beginning of the WWW. Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>`), where as some _describe_ it's contents (ex. `<strong>`). Web content isn't just about appearence. It matters how it is intepreted. 
 
 * Semantics are all about meaning - what is the purpose?
 * Not all HTML elements convey meaning - not all HTML elements are semantic (ex. div). 
-* Imagine a blind person using a screen reader - how might they understand the difference between a ```<strong>``` or a ```<b>``` tag?
+* Imagine a blind person using a screen reader - how might they understand the difference between a `<strong>` or a `<b>` tag?
 * Not all elements **style** content, and not all elements define **structure** or layout.
 
 
