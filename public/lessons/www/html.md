@@ -75,7 +75,7 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 
 Attributes further define HTML elements and their purpose. For example, an image tag may have the following attributes:
 
-```<img src="/images/cat-pic.jpg" alt="Picture of a fuzzy cat"```
+```<img src="/images/cat-pic.jpg" title="Cat Pic" alt="Picture of a fuzzy cat">```
 
 * src defines where the image file is located.
 * alt is alternative text to be displayed if the image cannot be. 
@@ -91,5 +91,4 @@ The war that has raged inside HTML since the beginning of the WWW. Some tags exc
 * Not all HTML elements convey meaning - not all HTML elements are semantic (ex. div). 
 * Imagine a blind person using a screen reader - how might they understand the difference between a `<strong>` or a `<b>` tag?
 * Not all elements **style** content, and not all elements define **structure** or layout.
-
 

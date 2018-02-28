@@ -30,6 +30,9 @@ class Track
     lesson name: "html",
            display_name: "Introduction to HTML"
 
+    lesson name: "html-structure",
+           display_name: "Going Further With HTML"
+
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic HTML and HTML5"'
 
     lesson name: "css",
