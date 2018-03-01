@@ -81,3 +81,15 @@ To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?sit
 4. for each Lesson, put its slides in a markdown file with its name in the lessons directory (e.g. `public/lessons/cook_food/stirfry.md`)
 5. add the Track to your Site by following the example of [Bootcamp](lib/bootcamp.rb)
 
+## Projects
+
+Currently a project consists of a markdown file in the `public/projects/` directory e.g. `public/projects/foo.md`. It is viewable via the path `/project/foo` (note the pluralization difference and lack of file extension).
+
+To declare a project is a bit scattershot. It can be referenced in several places:
+
+1. in the schedule JSON attached to a given week
+2. in a Lesson file (not the slides markdown)
+3. in a Track file, directly under the Track
+4. in a Track file, nested under a Lesson
+
+

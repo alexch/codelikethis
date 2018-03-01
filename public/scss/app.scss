@@ -17,6 +17,10 @@ body {
   text-rendering: optimizelegibility;
 
   padding-top: $topbar-height; // to skip the fixed nav bar
+
+  img {
+    max-width: 100%;
+  }
 }
 
 nav.navbar {

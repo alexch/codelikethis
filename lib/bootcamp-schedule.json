@@ -277,9 +277,8 @@
           "name": "FreeCodeCamp: jQuery",
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
-        {
-          "name": "twitch_status"
-        }
+        "twitch_status",
+        "pomodoro"
       ],
       "days": [
         {
