@@ -51,7 +51,7 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`public/lessons/trackname.rb`  | track description files; names match public/lessons subdirs |
 |`public/lessons/trackname/` | course files (markdown and images), organized by track |
 |`public/lessons/trackname/baking.md` | markdown slides for a single lesson named `baking` (served from `/lessons/trackname/bake_cookies` URL path) |
-|`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/project/bake_cookies` URL path) |
+|`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/projects/bake_cookies` URL path) |
 
 ## Sites
 
@@ -83,7 +83,7 @@ To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?sit
 
 ## Projects
 
-Currently a project consists of a markdown file in the `public/projects/` directory e.g. `public/projects/foo.md`. It is viewable via the path `/project/foo` (note the pluralization difference and lack of file extension).
+Currently a project consists of a markdown file in the `public/projects/` directory e.g. `public/projects/foo.md`. It is viewable via the path `/projects/foo` (note the lack of file extension).
 
 To declare a project is a bit scattershot. It can be referenced in several places:
 
