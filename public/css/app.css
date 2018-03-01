@@ -31,11 +31,8 @@ body {
   font-size: 1rem;
   text-rendering: optimizelegibility;
   padding-top: 75px; }
-  /* line 21, ../scss/app.scss */
-  body img {
-    max-width: 100%; }
 
-/* line 26, ../scss/app.scss */
+/* line 22, ../scss/app.scss */
 nav.navbar {
   background: white;
   font-family: "Raleway", Helvetica, Arial, sans-serif;
@@ -45,10 +42,10 @@ nav.navbar {
   font-style: normal;
   min-height: 75px;
   /* so the logo doesn't push the hamburger down on narrow screens */ }
-  /* line 35, ../scss/app.scss */
+  /* line 31, ../scss/app.scss */
   nav.navbar.navbar-light .navbar-nav .nav-link {
     color: #333333; }
-    /* line 37, ../scss/app.scss */
+    /* line 33, ../scss/app.scss */
     nav.navbar.navbar-light .navbar-nav .nav-link.btn-sm {
       font-weight: 600;
       font-size: 13px;
@@ -56,88 +53,91 @@ nav.navbar {
       background-color: #f7931e;
       border-color: #f7931e;
       padding: 1em 1.5em; }
-  /* line 47, ../scss/app.scss */
+  /* line 43, ../scss/app.scss */
   nav.navbar li {
     padding-left: 7px;
     padding-right: 7px; }
-  /* line 51, ../scss/app.scss */
+  /* line 47, ../scss/app.scss */
   nav.navbar a {
     letter-spacing: 1px;
     zoom: 1; }
-  /* line 59, ../scss/app.scss */
+  /* line 55, ../scss/app.scss */
   nav.navbar .col.navbar-left {
     max-width: 75%; }
-    /* line 61, ../scss/app.scss */
+    /* line 57, ../scss/app.scss */
     nav.navbar .col.navbar-left a.navbar-brand {
       max-width: 100%; }
-      /* line 63, ../scss/app.scss */
+      /* line 59, ../scss/app.scss */
       nav.navbar .col.navbar-left a.navbar-brand img.logo {
         height: auto;
         vertical-align: middle; }
-  /* line 71, ../scss/app.scss */
+  /* line 67, ../scss/app.scss */
   nav.navbar li.nav-item.bordered {
     border: 1px solid black;
     border-radius: .25rem; }
   @media (max-width: 767px) {
-    /* line 77, ../scss/app.scss */
+    /* line 73, ../scss/app.scss */
     nav.navbar #pageNavbar {
       padding-bottom: 1rem;
       border-bottom: 1px solid lightgray; } }
 
-/* line 86, ../scss/app.scss */
+/* line 82, ../scss/app.scss */
 main {
   background-color: white;
   max-width: 80em; }
-  /* line 89, ../scss/app.scss */
+  /* line 85, ../scss/app.scss */
   main center.logo {
     padding: 1rem; }
-  /* line 92, ../scss/app.scss */
+  /* line 88, ../scss/app.scss */
   main h1, main h2, main h3, main h4, main h5 {
     font-family: "Museo500Regular", "Open Sans", Helvetica, Arial, sans-serif; }
+  /* line 91, ../scss/app.scss */
+  main img {
+    max-width: 100%; }
 
-/* line 97, ../scss/app.scss */
+/* line 96, ../scss/app.scss */
 section.slide {
   padding: 1em;
   margin-bottom: 2em;
   margin-top: 3em;
   border: 1px solid black; }
-  /* line 103, ../scss/app.scss */
+  /* line 102, ../scss/app.scss */
   section.slide h1, section.slide > h2:first-child {
     text-decoration: lightblue underline; }
-  /* line 106, ../scss/app.scss */
+  /* line 105, ../scss/app.scss */
   section.slide > h2:first-child {
     margin: 2px 0 8px -4px;
     font-size: 2rem; }
-  /* line 110, ../scss/app.scss */
+  /* line 109, ../scss/app.scss */
   section.slide > h1 {
     font-size: 3em; }
-  /* line 115, ../scss/app.scss */
+  /* line 114, ../scss/app.scss */
   section.slide.subsection > h1 {
     background-color: #e8e8fc;
     text-align: center; }
-  /* line 119, ../scss/app.scss */
+  /* line 118, ../scss/app.scss */
   section.slide.subsection > h2:first-child {
     font-size: 3em; }
-  /* line 124, ../scss/app.scss */
+  /* line 123, ../scss/app.scss */
   section.slide blockquote {
     font-style: italic;
     border-left: 2px solid #ddd;
     padding-left: 1em; }
 
-/* line 131, ../scss/app.scss */
+/* line 130, ../scss/app.scss */
 .slide li {
   margin-bottom: .5em; }
 
-/* line 135, ../scss/app.scss */
+/* line 134, ../scss/app.scss */
 .slide li:first-child {
   margin-top: .5em; }
 
-/* line 139, ../scss/app.scss */
+/* line 138, ../scss/app.scss */
 .slide pre, code, kbd, samp {
   font-family: monospace, sans-serif;
   background: #f4f4f1; }
 
-/* line 144, ../scss/app.scss */
+/* line 143, ../scss/app.scss */
 .slide pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -147,47 +147,47 @@ section.slide {
   display: inline-block;
   /* so it's only as wide as its contents */ }
 
-/* line 153, ../scss/app.scss */
+/* line 152, ../scss/app.scss */
 .slide code {
   color: #444;
   padding: 0 3px; }
 
-/* line 158, ../scss/app.scss */
+/* line 157, ../scss/app.scss */
 div.right_side {
   float: right;
   max-width: 24em; }
 
-/* line 163, ../scss/app.scss */
+/* line 162, ../scss/app.scss */
 div.twitter {
   padding-left: 1em; }
 
-/* line 167, ../scss/app.scss */
+/* line 166, ../scss/app.scss */
 div.blog .rssHeader > a:after {
   content: " - Recent Blog Entries"; }
 
 /* left sidebar ("Tracks") */
-/* line 179, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 .tracks-toggler {
   padding: .25rem .75rem;
   font-size: 1.25rem;
   line-height: 1;
   background: 0 0; }
   @media (min-width: 768px) {
-    /* line 179, ../scss/app.scss */
+    /* line 178, ../scss/app.scss */
     .tracks-toggler {
       display: none; } }
   /* line 24, D:/Dropbox/dev/codelikethis/public/scss/bootstrap-4.0.0-beta.2/scss/mixins/_hover.scss */
   .tracks-toggler:focus, .tracks-toggler:hover {
     text-decoration: none; }
 
-/* line 193, ../scss/app.scss */
+/* line 192, ../scss/app.scss */
 .tracks-toggler span.svg-icon, .toggler span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 30,1 15,30 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
-/* line 196, ../scss/app.scss */
+/* line 195, ../scss/app.scss */
 .tracks-toggler.collapsed span.svg-icon, .toggler.collapsed span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 1,30 30,15 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
 
-/* line 201, ../scss/app.scss */
+/* line 200, ../scss/app.scss */
 span.svg-icon {
   display: inline-block;
   width: 0.75em;
@@ -201,7 +201,7 @@ span.svg-icon {
 
 /* make the sidebars scrolly and fixed on bigger screens */
 @media (min-width: 768px) {
-  /* line 215, ../scss/app.scss */
+  /* line 214, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block !important;
     max-height: calc(100vh - 75px);
@@ -211,13 +211,13 @@ span.svg-icon {
     z-index: 1000;
     padding-top: 1rem; }
 
-  /* line 226, ../scss/app.scss */
+  /* line 225, ../scss/app.scss */
   a[name=content] {
     display: block;
     position: relative;
     height: 75px; }
 
-  /* line 231, ../scss/app.scss */
+  /* line 230, ../scss/app.scss */
   a.slide-anchor {
     display: block;
     position: relative;
@@ -225,30 +225,30 @@ span.svg-icon {
     height: 0;
     top: -75px; } }
 @media (min-width: 768px) {
-  /* line 240, ../scss/app.scss */
+  /* line 239, ../scss/app.scss */
   #sidebar-tracks {
     display: block; } }
 
 @media (max-width: 767px) {
-  /* line 249, ../scss/app.scss */
+  /* line 248, ../scss/app.scss */
   #sidebar {
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray; }
-    /* line 252, ../scss/app.scss */
+    /* line 251, ../scss/app.scss */
     #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
       margin: 2px 0; } }
-/* line 258, ../scss/app.scss */
+/* line 257, ../scss/app.scss */
 #sidebar-tracks, #right-sidebar > .outline > .list-group {
   font-size: 85%; }
-  /* line 261, ../scss/app.scss */
+  /* line 260, ../scss/app.scss */
   #sidebar-tracks .list-group.lesson-names, #right-sidebar > .outline > .list-group .list-group.lesson-names {
     margin-top: .5rem;
     border-radius: 0; }
-    /* line 264, ../scss/app.scss */
+    /* line 263, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .list-group-item, #right-sidebar > .outline > .list-group .list-group.lesson-names .list-group-item {
       padding: .4rem 0 .4rem 1.8rem;
       margin: 0 -1rem; }
-    /* line 270, ../scss/app.scss */
+    /* line 269, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .loading_image, #right-sidebar > .outline > .list-group .list-group.lesson-names .loading_image {
       background-image: url(/images/loading.gif);
       background-repeat: no-repeat;
@@ -259,16 +259,16 @@ span.svg-icon {
       float: right;
       margin: 0 2px;
       display: none; }
-  /* line 285, ../scss/app.scss */
+  /* line 284, ../scss/app.scss */
   #sidebar-tracks .active, #right-sidebar > .outline > .list-group .active {
     background-color: #EEF; }
-  /* line 288, ../scss/app.scss */
+  /* line 287, ../scss/app.scss */
   #sidebar-tracks a, #right-sidebar > .outline > .list-group a {
     color: black;
     display: inline-block;
     width: 100%; }
 
-/* line 296, ../scss/app.scss */
+/* line 295, ../scss/app.scss */
 #sidebar-tracks a.track-info-link {
   display: inline;
   position: absolute;
@@ -280,51 +280,51 @@ span.svg-icon {
   font-size: 150%;
   right: 2px;
   visibility: hidden; }
-/* line 311, ../scss/app.scss */
+/* line 310, ../scss/app.scss */
 #sidebar-tracks div.track-name:hover a.track-info-link {
   visibility: visible;
   background-color: white; }
 
-/* line 317, ../scss/app.scss */
+/* line 316, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
-  /* line 319, ../scss/app.scss */
+  /* line 318, ../scss/app.scss */
   h1.lesson-name span.track-name {
     font-size: 60%; }
 
-/* line 324, ../scss/app.scss */
+/* line 323, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 331, ../scss/app.scss */
+  /* line 330, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 337, ../scss/app.scss */
+  /* line 336, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 343, ../scss/app.scss */
+  /* line 342, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 348, ../scss/app.scss */
+/* line 347, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 353, ../scss/app.scss */
+/* line 352, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 357, ../scss/app.scss */
+/* line 356, ../scss/app.scss */
 .footer {
   clear: both;
   padding: 2rem;
   border-top: 1px solid #EEEEEE; }
 
-/* line 363, ../scss/app.scss */
+/* line 362, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -333,7 +333,7 @@ div.main_column img {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 372, ../scss/app.scss */
+  /* line 371, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;
@@ -341,12 +341,12 @@ div.main_column img {
     width: 100%;
     height: 100%; }
 
-/* line 381, ../scss/app.scss */
+/* line 380, ../scss/app.scss */
 table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 386, ../scss/app.scss */
+  /* line 385, ../scss/app.scss */
   table ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -354,48 +354,48 @@ table {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 394, ../scss/app.scss */
+  /* line 393, ../scss/app.scss */
   table td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 398, ../scss/app.scss */
+  /* line 397, ../scss/app.scss */
   table, table td, table th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 402, ../scss/app.scss */
+  /* line 401, ../scss/app.scss */
   table th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 408, ../scss/app.scss */
+  /* line 407, ../scss/app.scss */
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 411, ../scss/app.scss */
+  /* line 410, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 416, ../scss/app.scss */
+  /* line 415, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 420, ../scss/app.scss */
+  /* line 419, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 425, ../scss/app.scss */
+/* line 424, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 427, ../scss/app.scss */
+  /* line 426, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 430, ../scss/app.scss */
+  /* line 429, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 433, ../scss/app.scss */
+  /* line 432, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
 
-/* line 438, ../scss/app.scss */
+/* line 437, ../scss/app.scss */
 span.video_link {
   float: right;
   border: 1px dotted black;
