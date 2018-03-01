@@ -7,7 +7,7 @@ module Views
 
   def centered_codelikethis_logo
     center class: 'logo ml-auto mr-auto' do
-      img.logo(src: '/images/logo.png',
+      img.logo(src: '/images/codelikethis-logo.png',
                alt: "Code like this!")
       br
       text "by Burlington Code Academy"

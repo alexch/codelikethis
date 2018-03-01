@@ -15,5 +15,3 @@ This project relies on [Socket.io](https://socket.io/) which is a Node library t
 * client-side and server-side node.js
 * Express (single route)
 
-## References
-

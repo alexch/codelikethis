@@ -6,7 +6,7 @@ require 'util'
 require 'track'
 require 'tracks_table'
 require 'site'
-
+require 'nav_bar'
 
 class CodeLikeThis < Site
   def hostname
@@ -39,15 +39,12 @@ class CodeLikeThis < Site
             div(class: 'card-body') {
               p(class: 'card-text') {
                 b "Code Like This"
-                text " is a repository of open-source lessons on software development maintained by "
+                text " is a repository of open-source lessons on software development, created and maintained by "
 
                 a "Alex Chaffee", href: "http://www.alexchaffee.com"
                 text " and "
                 a "Burlington Code Academy", href: "http://www.burlingtoncodeacademy.com"
                 text "."
-              }
-              p(class: 'card-text') {
-                text "We'll be updating it with all our new lectures, labs, and videos, so keep checking back!"
               }
             }
           }
@@ -85,4 +82,26 @@ class CodeLikeThis < Site
 
     end
   end
+
+  class NavBar < ::NavBar
+    needs :site
+
+    def logo klass: nil, style: nil
+      a(href: '/',
+        class: 'navbar-brand') {
+        img.logo(src: '/images/codelikethis-logo.png',
+                 width: 265, height: 36,
+                 alt: "Code Like This",
+                 class: ['logo', klass].compact,
+                 style: [style].compact)
+      }
+    end
+
+    def nav_items
+      nav_item name: "Lessons", href: "/lessons"
+      nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
+      nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
+    end
+  end
+
 end

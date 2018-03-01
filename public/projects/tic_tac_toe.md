@@ -42,7 +42,7 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 **Then** the game says "impossible!" and does not put an X or O in the cell
 
 **And** the current player does not change
-
+ 
 
 ### Win Condition
 
