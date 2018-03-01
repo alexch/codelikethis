@@ -278,7 +278,8 @@
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
         "twitch_status",
-        "pomodoro"
+        "pomodoro",
+        "tic_tac_toe"
       ],
       "days": [
         {

@@ -3,7 +3,7 @@ require "track"
 class Track
   ClientSideCoding = Track.new(
       name: "client_side_coding",
-      display_name: "Client-Side Coding",
+      display_name: "Client-Side Coding with JavaScript",
       description: "Learn the data structures, coding patterns, and libraries that enable client-side coding in Web pages.",
       ) do
 
@@ -13,11 +13,11 @@ class Track
     goal "AJAX, the system for asynchronously transmitting data between client-side and server-side applications"
     goal "Web APIs such as Google Maps and Google Analytics which add sophisticated features to simple Web sites"
 
+    project name: "pomodoro"
+    project name: "tic_tac_toe"
 
     lesson name: "dom"
     lesson name: "jquery"
-
-    project name: "pomodoro"
 
     link href: "http://docs.railsbridge.org/frontend/jquery"
     link href: "https://www.codecademy.com/tracks/jquery",
