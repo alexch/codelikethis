@@ -169,7 +169,9 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 
 # bind vs. bind
 
-In the [prototype JS framework](http://www.prototypejs.org) the function `bind` is used to stash and restore `this`. It's actually on Function.prototype, so you can do stuff like this:
+jQuery's `bind` is poorly named, since there are other functions named `bind` in the JavaScript ecosystem that do different things. jQuery's `bind` method should have been called `listen` or `handle` or even `bindToEvent`, since it's event-specific.
+
+In the [prototype JS framework](http://www.prototypejs.org) and [ES5 JavaScript](https://www.ecma-international.org/ecma-262/5.1/#sec-15.3.4.5) the function `bind` is used to stash and restore `this`. It's actually on Function.prototype, so you can do stuff like this:
 
     @@@ javascript
 
@@ -180,11 +182,13 @@ In the [prototype JS framework](http://www.prototypejs.org) the function `bind` 
 
 This is useful for passing callbacks that still refer to their own objects, rather than whatever random thing `this` is set to at the time they're called.
 
-Maybe jQuery's `bind` method should have been called `listen` or `handle`, since it's event-specific. Oh well.
+The [fat arrow](https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/) `=>` is used in CoffeeScript, ES6, and TypeScript to accomplish this.
 
-jQuery's version of prototypejs's `bind` method is called `proxy`, which is kind of a poor name since it doesn't really implement the Proxy Pattern, or help you to do so.
+[TODO: make these notes more slidey, and/or move Fat Arrow discussion to a different lesson]
 
-The [fat arrow](https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/) `=>` is used in CoffeeScript, ES6, and TypeScript to accomplish this, so `bind` is probably obsolete
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+
 
 # Ready, Fire, Aim
 
