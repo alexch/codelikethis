@@ -16,6 +16,9 @@ class Track
 
     lesson name: "dom"
     lesson name: "jquery"
+
+    project name: "pomodoro"
+
     link href: "http://docs.railsbridge.org/frontend/jquery"
     link href: "https://www.codecademy.com/tracks/jquery",
               name: "Codecademy Track for jQuery"

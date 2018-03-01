@@ -180,9 +180,11 @@ In the [prototype JS framework](http://www.prototypejs.org) the function `bind` 
 
 This is useful for passing callbacks that still refer to their own objects, rather than whatever random thing `this` is set to at the time they're called.
 
-Maybe jQuery's `bind` method should have been called `listen` or `handle`, since it's event specific. Oh well.
+Maybe jQuery's `bind` method should have been called `listen` or `handle`, since it's event-specific. Oh well.
 
 jQuery's version of prototypejs's `bind` method is called `proxy`, which is kind of a poor name since it doesn't really implement the Proxy Pattern, or help you to do so.
+
+The [fat arrow](https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/) `=>` is used in CoffeeScript, ES6, and TypeScript to accomplish this, so `bind` is probably obsolete
 
 # Ready, Fire, Aim
 
