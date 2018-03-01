@@ -17,7 +17,7 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 ## Considerations
 
 * the buttons should be *enabled* and *disabled* based on the system's state; e.g. if the timer is not running, the Pause button should be disabled
-* JavaScript timing events are not guaranteed to be called at accurate intervals. That means that even if you ask for a callback once a second, you might get a callback every 1.1 seconds or every 1.5 seconds. That means that you cannot simply decrement a "seconds" variable once per callback if you want accurate wall-clock time coordination.
+* JavaScript timing events are not guaranteed to be precise. That means that even if you ask for a callback once a second, you might actually get a callback every 1.1 seconds or every 0.8 seconds. That means that you cannot simply decrement a "seconds" variable once per callback if you want accurate wall-clock time synchronization.
 * seconds should be 0-padded e.g. `1:03` not `1:3`
 
 ## Stories
