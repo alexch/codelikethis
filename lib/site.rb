@@ -31,6 +31,14 @@ class Site
     schedule.view
   end
 
+  def navbar
+    navbar_class.new(site: self)
+  end
+
+  def navbar_class
+    self.class.const_get('NavBar') || NavBar
+  end
+
 end
 
 require 'bootcamp'

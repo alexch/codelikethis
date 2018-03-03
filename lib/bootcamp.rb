@@ -6,6 +6,7 @@ require 'track'
 require 'tracks_table'
 
 require 'site'
+require 'nav_bar'
 
 class Bootcamp < Site
 
@@ -101,4 +102,27 @@ class Bootcamp < Site
       }
     end
   end
+
+  class NavBar < ::NavBar
+    def logo klass: nil, style: nil
+      a(href: 'http://www.burlingtoncodeacademy.com',
+        class: 'navbar-brand') {
+        img.logo(src: '/images/burlingtoncodeacademy-logo.png',
+                 width: 265, height: 36,
+                 alt: "Burlington Code Academy",
+                 class: ['logo', klass].compact,
+                 style: [style].compact)
+      }
+    end
+
+    def nav_items
+      nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
+      nav_item name: "Hire Our Grads", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
+      nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
+      nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
+      nav_item name: "Curriculum", href: "http://bootcamp.burlingtoncodeacademy.com"
+      nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
+    end
+  end
+
 end

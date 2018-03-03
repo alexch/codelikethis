@@ -160,7 +160,7 @@ $(function () {
   def body_content
 
     # top nav
-    widget NavBar, site: @site
+    widget @site.navbar
 
     #todo: add 'main' element type to Erector
     element('main', class: 'container-fluid') {

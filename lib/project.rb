@@ -24,7 +24,7 @@ class Project < Thing
   def href
     # todo: figure out href based on type of project
     # -- CLT or CC or FCC or what
-    @href || "/project/#{name}"
+    @href || "/projects/#{name}"
   end
 
   def link_view

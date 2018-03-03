@@ -51,7 +51,7 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`public/lessons/trackname.rb`  | track description files; names match public/lessons subdirs |
 |`public/lessons/trackname/` | course files (markdown and images), organized by track |
 |`public/lessons/trackname/baking.md` | markdown slides for a single lesson named `baking` (served from `/lessons/trackname/bake_cookies` URL path) |
-|`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/project/bake_cookies` URL path) |
+|`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/projects/bake_cookies` URL path) |
 
 ## Sites
 
@@ -80,4 +80,16 @@ To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?sit
 3. declare your lessons inside the track file. Look at the existing `.rb` files inside `public/tracks` for examples.
 4. for each Lesson, put its slides in a markdown file with its name in the lessons directory (e.g. `public/lessons/cook_food/stirfry.md`)
 5. add the Track to your Site by following the example of [Bootcamp](lib/bootcamp.rb)
+
+## Projects
+
+Currently a project consists of a markdown file in the `public/projects/` directory e.g. `public/projects/foo.md`. It is viewable via the path `/projects/foo` (note the lack of file extension).
+
+To declare a project is a bit scattershot. It can be referenced in several places:
+
+1. in the schedule JSON attached to a given week
+2. in a Lesson file (not the slides markdown)
+3. in a Track file, directly under the Track
+4. in a Track file, nested under a Lesson
+
 

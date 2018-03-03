@@ -18,7 +18,7 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 * coding is **not** mathematical
   * some logic
-  * mostly just long todo lists
+  * mostly just counting
 * coding is **not** solitary
   * most coding happens in a team
   * pair programming is awesome
