@@ -39,18 +39,12 @@ class Track
            display_name: "Styling with CSS" do
       link href: "https://meyerweb.com/eric/tools/css/reset/"
     end
-    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
 
-    lesson name: "forms" do
-      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
-    end
-
-    lesson name: "css_box_model" do
-      link href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model"
-    end
     lesson name: "css_layout"
-    lesson name: "CSS Selectors"
+    
     lesson name: "DOM Debugging"
+
+    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
 
     link href: "http://docs.railsbridge.org/javascript-to-do-list/",
          name: "RailsBridge To Do List"
@@ -60,6 +54,10 @@ class Track
       link href: "https://www.thoughtco.com/whats-new-in-html5-3467974",
            name: "What's new in HTML5?"
       link href: "http://diveintohtml5.info/"
+    end
+
+    lesson name: "forms" do
+      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
     end
 
     lesson name: "css_frameworks" do
