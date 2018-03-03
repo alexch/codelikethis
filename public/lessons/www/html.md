@@ -1,25 +1,31 @@
-# HTML
+# Intro to HTML
 
-Hyper-Text Markup Language
-
-one HTML file = one page
-
-# History
-
+* Stands for Hyper-Text Markup Language.
+* Every HTML file = one web page.
 * Invented by Tim Berners-Lee
 * Based on SGML
+* Standard language used for creating web pages.
+* Comprised of tags
+* Used in tandem with CSS and Javascript
+* HTML is for structuring content. It does not perform complex computations. 
 
-## Features
+# What Is It?
+
+HTML is a coding language comprised of various types of tags, also known as elements. These are what are used to build web pages. They are the Lincoln Logs of the Internet.
+
+* HTML is used to **build** web pages by using **tags**.
+* Web browsers "read" HTML and render it as pretty visual elements for humans.
+
+## Flaws:
 
 * Difficult to parse
 * Poor whitespace rules
-* Semantics usually ignored for visual effect
-* plain text -> human-readable
 
-# Page Structure
+# Standard Page Structure
 
 ```html
 @@@html
+<!DOCTYPE html>
 <html>
   <head>
     <title>My House</title>
@@ -36,35 +42,53 @@ one HTML file = one page
 
 # Elements (aka Tags)
 
-# Attributes
+Lets break down the page structure above. You can see above, all HTML tags are surrounded by angle brackets. You can also see that every tag has what is known as a **closing tag**. These are the tags that have a preceeding forward slash. For the most part, every HTML tag needs to have a closing tag.
 
-# Style vs Layout vs Semantics
+# Examples of Structural Tags (Layout)
 
-The war that has raged inside HTML since the beginning of the WWW.
+|tag|meaning|
+|---|---|
+|\<head>|head (contains metadata)|
+|\<body>|page body|
+|\<div>|division|
+|\<h1>|Heading (level 1)|
+|\<p>|Paragraph containing text|
+|\<span>|Text without a line break|
+|\<img>|Image tag|
 
-# Style Tags
+
+# Examples of Style Tags
 
 |tag|example|
 |---|---|
 |\<b>|<b>bold</b>|
 |\<i>|<i>italic</i>|
 |\<strong>|<strong>strong</strong>|
+|\<em>|<em>emphasis</em>|
+|\<br>|Line break|
+|\<hr>|Horizontal rule (dividing line)|
+|\<width> / \<height>|self-explanatory|
+|\<blockquote>|also self-explanatory|
 |etc|
 
-# Layout Tags
+# Attributes
 
-|tag|meaning|
-|---|---|
-|h1|
-|div|
-|p|
-|hr|
+Attributes further define HTML elements and their purpose. For example, an image tag may have the following attributes:
 
-# Tables
+```<img src="/images/cat-pic.jpg" title="Cat Pic" alt="Picture of a fuzzy cat">```
 
-Tables embody the tension between style, layout, and semantics.
+* src defines where the image file is located.
+* alt is alternative text to be displayed if the image cannot be. 
+* Attributes are not always required. However in the example above, a source is needed for the image to be displayed.
+* Others include style (bad), title (tooltips), href (hyperlink reference)
+* Should always be lowercase
 
-# Floats
+# Style vs Layout vs Semantics
 
-# Centering
+The war that has raged inside HTML since the beginning of the WWW. Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>`), where as some _describe_ it's contents (ex. `<strong>`). Web content isn't just about appearence. It matters how it is intepreted. 
+
+* Semantics are all about meaning - what is the purpose?
+* Not all HTML elements convey meaning - not all HTML elements are semantic (ex. div). 
+* Imagine a blind person using a screen reader - how might they understand the difference between a `<strong>` or a `<b>` tag?
+* Not all elements **style** content, and not all elements define **structure** or layout.
 
