@@ -107,7 +107,7 @@ Every piece of software on your computer is a PROGRAM.
 
 > When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
 
-(recipe from <http://www.popcornpottery.com/rec.html>)
+(recipe from popcornpottery.com)
 
 # Languages
 
