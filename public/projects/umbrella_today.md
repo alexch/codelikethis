@@ -35,7 +35,9 @@ OpenWeatherMap and WUnderground are two weather forecasting services you could u
 
 This bot will need to live on a server (e.g. Heroku) and will need to be configured with parameters for location, Slack group and channel name, Slack and weather API credentials, time(s) to check...
 
-**SMS Server** Write a server-side web app that stores a list of phone numbers (along with associated zip code and time info). Provide a web-based form to sign up, and an SMS-reply based way to delete your account. 
+To learn about Slack Apps you might want to walk through [this tutorial on slash commands and message buttons](https://api.slack.com/tutorials/intro-to-message-buttons).
+
+**SMS Server** Write a server-side web app that stores a list of phone numbers (along with associated zip code and time info). Provide a web-based form to sign up (like the screenshot below), and an SMS-reply based way to delete your account.
 
 ![umbrella today 2](umbrella-today-2.png)
 
