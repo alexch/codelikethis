@@ -15,6 +15,7 @@ class Track
 
     project name: "pomodoro"
     project name: "tic_tac_toe"
+    project name: "hangman"
 
     lesson name: "dom"
     lesson name: "jquery"
@@ -28,10 +29,14 @@ class Track
       project name: "github_repos"
     end
 
-    lesson name: "apis" do # calling APIs from JS
-      project name: "socket_chat"
+    lesson name: "libraries" do # JS libs and NPM install
+      project name: "markdown_preview"
     end
 
+    lesson name: "apis" do # calling APIs from JS
+      project name: "dothraki_translator"
+      project name: "socket_chat"
+    end
 
     lesson name: "geolocation" do
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
