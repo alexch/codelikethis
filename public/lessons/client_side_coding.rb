@@ -33,9 +33,10 @@ class Track
       project name: "markdown_preview"
     end
 
-    lesson name: "apis" do # calling APIs from JS
+    lesson name: "calling_apis" do # calling APIs from JS
       project name: "dothraki_translator"
       project name: "socket_chat"
+      project name: "umbrella_today"
     end
 
     lesson name: "geolocation" do
