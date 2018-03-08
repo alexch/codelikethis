@@ -278,4 +278,12 @@ write a function named `isPrime` that takes one parameter, and returns `true` if
 
 write a main loop that counts from 2 to 100; inside that loop, call `isPrime` and print the number if `isPrime` is true
 
+# Fake it 'til you make it
+
+Functional decomposition is also a great way to write a program that you haven't quite figured out yet.
+
+When you reach a step that you don't know how to do, or just don't want to think about right now, call a function *that you haven't written yet*.
+
+Then later on -- only *after* the parent function is written -- go back and write the faked-out function.
+
 
