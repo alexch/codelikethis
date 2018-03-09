@@ -47,7 +47,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   end
 
   lesson name: "logic"
-  lesson name: "loops"
+  lesson name: "loops" do
+    project name: 'guess'
+  end
 
   lesson name: "arrays"
   lesson name: "argv"
