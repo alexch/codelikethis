@@ -53,8 +53,8 @@ What is the CSS doing here?
 * CSS is constructed of **selectors** and **properties**.
 * Selectors determine where the styles are applied.
 * Properties determine what those styles are.
-* CSS begins with a selector, followed by curly brackets.
-* Styles are declared inside the curly brackets. 
+* CSS begins with a selector, followed by curly braces.
+* Declare your styles inside the curly braces. 
 
 # Examples of Selectors
 
