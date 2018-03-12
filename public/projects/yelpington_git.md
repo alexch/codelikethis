@@ -4,9 +4,14 @@ In this project, you will pair up and work with other teams to create an online 
 
 For this initial phase of the project we will *not* use a database, or a webapp, or even a programming language. Our entire directory will be inside a single GitHub repository, with each restaurant represented by a single file in Markdown format.
 
+# Tech
+
+* Git
+* Github
+
 ## Usage
 
-For the next 12 weeks we will all be eating lunch every day. This app can realistically help all of us find a place to eat downtown. This is *not* a toy problem. :-)
+For the next 12 weeks, we will all eat lunch every day. This app can realistically help each of us find a place to eat downtown. This is *not* a toy problem. :-)
 
 ## Goals
 
@@ -23,7 +28,7 @@ For the next 12 weeks we will all be eating lunch every day. This app can realis
   * The file extension will be `.md` which stands for Markdown. This hint causes GitHub to render the file with style.
   * The contents of the file must contain the name, address, hours, and meal recommendations
 
-Example: Let's say there's a restaurant called "Joe's Diner" on King Street. At the top level of the repository will be a file named `joes-diner.md`, containing:
+**Example:** Let's say there's a restaurant called "Joe's Diner" on King Street. At the top level of the repository will be a file named `joes-diner.md`, containing:
 
 ```markdown
 # Joe's Diner
@@ -68,5 +73,16 @@ bar
 >>>>>>>>>>>>>>>>
 ```
 
-and then manually edit the files until all the chevrons and dashes are gone, and what's left is correct. In this example, you might choose `foo` or `bar`, or both. Then `git add` the corrected file and follow the instructions on the console to finish the merge.
+and then manually edit the files until all the chevrons and dashes are gone, and what's left is correct. In this example, you might choose `foo` or `bar`, or `foobar`, or `foo + bar`, or something altogether different. Then `git add` the corrected file and follow the instructions on the console to finish the merge.
 
+As a more realistic example of a conflict:
+
+```
+<<<<<<<<<<<<<<<<
+M-F open at 9, closed weekends
+----------------
+9:00 am to 5:00 pm
+>>>>>>>>>>>>>>>>
+```
+
+This example shows why git *cannot* automatically resolve intra-line conflicts. As a human, you are the only one capable of making this sort of *semantic* choice. You must decide whether this file would be better off with one or the other or a creative combination, and you should communicate with other humans about this decision, in the GitHub discussion thread or face-to-face.

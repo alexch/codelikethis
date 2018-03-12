@@ -4,6 +4,7 @@ A simple command-line or single-page web toy that takes plain English text and "
 
 The pirate dialect consists mostly of emphasizing "R", replacing or abbreviating some words ("hello" => "ahoy"), and inserting colorful idioms like "Avast!" and "Shiver me timbers!" between sentences. 
 
+[TODO: define specific Piratese rules]
 
 ## Tech
 
@@ -23,5 +24,4 @@ The pirate dialect consists mostly of emphasizing "R", replacing or abbreviating
 * randomized insertions
 
 ## Todo: full test-driven suite?
-
 

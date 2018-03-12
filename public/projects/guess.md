@@ -2,7 +2,11 @@
 
 In this game, the *human* thinks of a number between 1 and 100 and the *computer* tries to guess it.
 
-Educationally speaking, this is a good example of a *binary search algorithm* (not to be confused with *binary notation* which is a different kind of binary). If the programmer does their job, then the game will find the correct number in no more than [log2(n)+1] guesses -- so for n=100, that's 7 guesses *max*.
+In the *optimal* solution, the game will find the correct number in no more than [log2(n)+1] guesses -- so for n=100, that's 7 guesses *max*. This solution is a good example of a *binary search algorithm* (not to be confused with *binary notation* which is a different kind of binary). 
+
+However, if you have trouble coding a binary search, start by getting it to work with something simpler, like guessing a [random number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) between 1 and 100. 
+
+> "Make it work, make it right, make it fast -- in that order." - Kent Beck
 
 ## Usage
 ```
@@ -36,4 +40,5 @@ Your number was 66!
 * https://www.khanacademy.org/computing/computer-science/algorithms/intro-to-algorithms/a/a-guessing-game - this describes the reverse guessing game, where the *computer* thinks of a number and the *human* guesses it
 * http://www.101computing.net/guess-the-number-binary-search/
 * https://en.wikipedia.org/wiki/Binary_search_algorithm
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 

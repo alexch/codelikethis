@@ -20,10 +20,11 @@ We will build this app in several phases:
 
 Once you figure out how to call the API from JavaScript, the most difficult part will likely be dealing with failure cases.
 
-OpenWeatherMap and WUnderground are two weather forecasting services you could use. Research them and choose one.
+There are several weather forecasting services you could use. Research them and choose one.
 
-* http://openweathermap.org/api
-* https://www.wunderground.com/weather/api/
+* Dark Sky - https://darksky.net/dev
+* OpenWeatherMap - http://openweathermap.org/api
+* WUnderground - https://www.wunderground.com/weather/api/
 
 **Web Server** Write a server-side web app that asks the user for their zip code, then responds with "Umbrella today!" or "All clear!" as appropriate. 
 

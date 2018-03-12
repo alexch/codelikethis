@@ -14,3 +14,10 @@ In this project you will make a command-line or web app that accepts user input 
 
 * AJAX (or node HTTP client)
 * JSON (for response parsing)
+
+## Stories
+
+## v2
+
+* add a cache layer where if the user asks for phrases that have already been translated, they are returned from local storage, and the rest of the message is sent for translation in whole or in part
+
