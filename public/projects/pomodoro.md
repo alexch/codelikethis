@@ -78,4 +78,5 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 * keyboard shortcuts
 * change duration to 2 different set values (10 min and 2 min)
 * change duration to arbitrary value (user input)
+* display the remaining time in the title of the tab (or browser window) so users can check it at a glance
 

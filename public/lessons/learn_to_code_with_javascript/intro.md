@@ -48,7 +48,7 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 > When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
 
-(recipe from http://www.popcornpottery.com/rec.html)
+(recipe from popcornpottery.com)
 
 # Languages
 

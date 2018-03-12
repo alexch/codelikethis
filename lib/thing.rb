@@ -27,11 +27,22 @@ class Thing
     instance_eval &block if block
   end
 
+  # todo: make these equality functions respect "contains" ivars
   def ==(other)
-    # todo: make this respect "contains" ivars
-    other.is_a?(Thing) and
-      other.class == self.class and
-      other.name == name
+    other.class == self.class and other.name == name
+  end
+
+  # This should not be necessary -- the docs for object.c say
+  # "The <code>eql?</code> method returns <code>true</code> if +obj+ and
+  # +other+ refer to the same hash key."
+  # but apparently the base class doesn't do that, instead just comparing
+  # object pointers -- see https://github.com/ruby/ruby/edit/trunk/object.c#L205
+  def eql?(other)
+    self.hash == other.hash
+  end
+
+  def hash
+    [self.class, self.name].hash
   end
 
   def name # if no name, use class name

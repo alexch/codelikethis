@@ -1,6 +1,7 @@
 require "wrong"
 require "files"
 require "spec_helper"
+require "wrong/adapters/rspec"
 
 here = File.expand_path(File.dirname(__FILE__))
 project = File.expand_path("#{here}/..")
@@ -74,6 +75,51 @@ describe Thing do
     end
     comparand = Link.new(href: "http://benandjerrys.com")
     expect(ice_cream.links).to eq([comparand])
+  end
+
+  describe "comparison - " do
+    include Wrong
+    class Dog < Thing
+    end
+
+    let(:rover1) {Dog.new(name: "rover")}
+    let(:rover2) {Dog.new(name: "rover")}
+    let(:fido) {Dog.new(name: "fido")}
+
+    describe "things of the same subclass with the same name" do
+      let(:rover1) {Dog.new(name: "rover")}
+      let(:rover2) {Dog.new(name: "rover")}
+      let(:fido) {Dog.new(name: "fido")}
+
+      specify "are equal" do
+        assert {rover1 == rover2}
+        assert {rover1 != fido}
+      end
+
+      specify "have the same hash" do
+        assert {rover1.hash == rover2.hash}
+        assert {rover1.hash != fido.hash}
+      end
+
+      specify "work with set operators - and uniq" do
+        assert {[rover1, fido] - [rover2] == [fido]}
+        assert {[rover1, rover2, fido].uniq == [rover1, fido]}
+      end
+    end
+
+    describe "things of different subclasses with the same name" do
+      class Cat < Thing
+      end
+      let(:fido_the_cat) {Cat.new(name: "fido")}
+
+      specify "are unequal" do
+        assert { fido != fido_the_cat }
+      end
+      specify "have different hashes" do
+        assert { fido.hash != fido_the_cat.hash }
+      end
+    end
+
   end
 
 end

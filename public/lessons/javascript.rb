@@ -18,6 +18,11 @@ class Track
     end
 
     lesson name: "scope" # global, function, closure, private, this, arrows, etc.
+
+    lesson name: "data_structures" do # maybe put this in "CS"?
+      project name: "animal"
+      project name: "hangman"
+    end
     lesson name: "json"
 
     lesson name: "/cs/oo"
