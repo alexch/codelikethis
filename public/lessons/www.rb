@@ -32,7 +32,6 @@ class Track
 
     lesson name: "html-structure",
            display_name: "Going Further With HTML"
-
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic HTML and HTML5"'
 
     lesson name: "css",
@@ -40,11 +39,14 @@ class Track
       link href: "https://meyerweb.com/eric/tools/css/reset/"
     end
 
-    lesson name: "css_layout"
+    lesson name: "css_layout",
+           display_name: "Page Layout With CSS" do
+      link href: "https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning1",
+            name: "W3Schools Positioning Exercise"
+    end
     
-    lesson name: "DOM Debugging"
-
-    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
+    lesson name: "dom_debugging",
+           display_name: "DOM Debugging"
 
     link href: "http://docs.railsbridge.org/javascript-to-do-list/",
          name: "RailsBridge To Do List"
@@ -59,15 +61,6 @@ class Track
     lesson name: "forms" do
       link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
     end
-
-    lesson name: "css_frameworks" do
-      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
-    end
-    lesson name: "responsive_layouts"
-    lab name: 'FreeCodeCamp "Responsive Web Design"'
-    lesson name: "bootstrap",
-           display_name: "Page Layout with Bootstrap"
-    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
 
     lesson name: "Page Layout with CSS Flexbox" do
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
@@ -85,7 +78,16 @@ class Track
            description: "a step-by-step game that teaches you CSS Grid"
     end
 
-    lab name: 'FreeCodeCamp "Responsive Web Design - Applied Visual Design"'
+    lesson name: "responsive_layouts",
+           display_name: "Web Design and Responsive Development"
+   lab name: 'FreeCodeCamp "Responsive Web Design - Applied Visual Design"'
+
+    lesson name: "css_frameworks",
+           display_name: "Developing With Bootstrap" do
+      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
+    end
+    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
+
 
     lesson name: "navigation", description: 'Nav bars, site maps, anchors...'
     lesson name: "embedding", description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do

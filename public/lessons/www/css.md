@@ -53,8 +53,8 @@ What is the CSS doing here?
 * CSS is constructed of **selectors** and **properties**.
 * Selectors determine where the styles are applied.
 * Properties determine what those styles are.
-* CSS begins with a selector, followed by curly brackets.
-* Inside the curly brackets is where your styles are declared. 
+* CSS begins with a selector, followed by curly braces.
+* Declare your styles inside the curly braces. 
 
 # Examples of Selectors
 
@@ -84,8 +84,3 @@ What is the CSS doing here?
   * Borders can be colored, or image-based. They can also be 'styled' (dashes, dots, etc
 
 ![Illustration of the CSS box model](https://pressupinc.com/wp-content/uploads/2014/01/box-model.png "CSS Box Model")
-
-#Inline vs. Block Level Elements
-
-	* Block level = New line, full width
-	* Inline level = Same line, width of content
