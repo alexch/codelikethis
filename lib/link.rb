@@ -2,7 +2,7 @@ require 'erector'
 require 'thing'
 
 class Link < Thing
-  attr_reader :name, :href, :description
+  attr_reader :name, :href, :description, :icon
 
   def ==(other)
     other.is_a?(Link) and
@@ -30,7 +30,7 @@ class Link < Thing
     # proxy readers to the target (model) object
     [
         :display_name, :href, :description,
-        :optional # hack: this is on Project
+        :optional, # hack: this is on Project
     ].each do |method|
       define_method method do
         @target.send method
@@ -39,6 +39,11 @@ class Link < Thing
 
     def content
       span(class: 'link') {
+        if target.respond_to? :icon and target.icon
+          span(class: 'icon') {
+            img src: target.icon, alt: 'icon', title: 'icon', style: "width: 42px; height: 30px; background: green; border: 2px solid green; margin: 0 2px;"
+          }
+        end
         if href
           a display_name, href: href
         else

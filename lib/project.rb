@@ -10,8 +10,7 @@ class Project < Thing
     end
   end
 
-
-  attr_reader :optional
+  attr_reader :optional, :from
 
   def projects_dir
     @projects_dir || Project.projects_dir
@@ -22,9 +21,20 @@ class Project < Thing
   end
 
   def href
-    # todo: figure out href based on type of project
-    # -- CLT or CC or FCC or what
-    @href || "/projects/#{name}"
+    case from
+    when nil
+      @href || "/projects/#{name}"
+    when 'fcc'
+      # TODO: fix FreeCodeCamp itself to allow links to challenges/lessons
+      "https://beta.freecodecamp.org/en/challenges/basic-javascript/introduction-to-javascript"
+    end
+  end
+
+  def icon
+    case from
+    when 'fcc'
+      '/images/fcc-fire-white.png'
+    end
   end
 
   def link_view
