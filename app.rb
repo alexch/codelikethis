@@ -134,15 +134,6 @@ class App < Sinatra::Base
          title: site.name).to_html
   end
 
-  get "/meta/:file" do
-
-    text = File.read(::File.join(here, 'public', 'meta', "#{params[:file]}.md"))
-    content_type('text/html')
-    page(
-      widget: MarkdownWidget.new(text: text),
-      title: params[:file] + " - Code Like This").to_html
-  end
-
   def track_dir
     track.dir
   end

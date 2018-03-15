@@ -55,7 +55,7 @@
       "track": "learn_to_code_with_javascript",
       "projects": [
         {
-          "name": "create_your_github_user_page"
+          "name": "basic_profile"
         },
         {
           "name": "FreeCodeCamp: Javascript Algorithms And Data Structures: Basic JavaScript",
@@ -162,10 +162,17 @@
           ]
         },
         {
-          "track": "career"
+          "track": "career",
+          "lessons": [
+            "linkedin"
+          ]
         },
         {
           "events": [
+            {
+              "start": "10:00 am",
+              "name": "code review"
+            },
             {
               "start": "4:00 pm",
               "name": "retrospective"
@@ -330,6 +337,10 @@
           "name": "FreeCodeCamp: JavaScript Algorithms and Data Structures Projects",
           "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
           "description": "choose one"
+        },
+        {
+          "name": "lightning_talk",
+          "description": "choose a topic for a lightning talk, and sign up for a slot"
         }
       ],
       "days": [
@@ -348,9 +359,18 @@
             "object_oriented_javascript"
           ]
         },
-        {},
+        {
+          "track": "career",
+          "lessons": [
+            "lightning_talks"
+          ]
+        },
         {
           "events": [
+            {
+              "start": "10:00 am",
+              "name": "lightning talks (round 1)"
+            },
             {
               "start": "4:00 pm",
               "name": "retrospective"
@@ -372,6 +392,10 @@
         {},
         {
           "events": [
+            {
+              "start": "10:00 am",
+              "name": "lightning talks (round 2)"
+            },
             {
               "start": "4:00 pm",
               "name": "retrospective"
