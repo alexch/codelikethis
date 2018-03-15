@@ -1,46 +1,6 @@
-
- 
-
-### Tuesday
-
 ### Wednesday
 
-
-### Thursday
-
-*Career Day*
-
-
-
-### Monday
-
-Lecture:
- * Responsive Layout
-    * Media Queries
-    * 12-grid
- 
- * Bootstrap: layout / grid
-
-Homework:
-
-
-    
-
-### Tuesday
-
-* Font Awesome
-* Bootstrap: components
-
-* CSS Flexbox?
-* CSS Grid?
-
-Homework:
-
-* FreeCodeCamp "CSS Flexbox"
-
-
-### Wednesday
-
+UX
 * Navigation
     * Site Maps
     * Nav Bars
@@ -65,7 +25,6 @@ Lab: make your profile page pretty
 
 ### Wednesday
 
-**National Holiday - Independence Day**
 
 ### Thursday
 

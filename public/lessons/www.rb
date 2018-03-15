@@ -2,12 +2,11 @@ require "track"
 
 require_relative '../../lib/link.rb'
 
-
 class Track
   Www = Track.new(
     name: "www",
     display_name: "The World Wide Web",
-    description: "Invented by Tim Berners-Lee in 1990 and launched to the actual world in 1993, the WWW is still with us and for many is synonymous with the Internet. What is it? How does it work? How do we create web pages, style them, lay them out, and navigate between them?",
+    description: "Invented by Tim Berners-Lee in 1990 and launched to the actual world in 1993, the WWW is still with us and for many is synonymous with the Internet. What is it? How does it work? How do we create web pages, style them up, lay them out, and navigate between them?",
     ) do
 
     link href: "http://docs.railsbridge.org/frontend",
@@ -19,18 +18,18 @@ class Track
     project name: 'FreeCodeCamp "Applied Responsive Web Design Projects"'
 
     lesson name: "intro",
-            display_name: "Introductions and Requirements"
+           display_name: "Introductions and Requirements"
 
-    lesson name: "hello-world",
-            display_name: "Hello World!"
+    lesson name: "hello_world",
+           display_name: "Hello World!"
 
     lesson name: "http",
-            display_name: "How the Web Works"
+           display_name: "How the Web Works"
 
     lesson name: "html",
            display_name: "Introduction to HTML"
 
-    lesson name: "html-structure",
+    lesson name: "html_structure",
            display_name: "Going Further With HTML"
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic HTML and HTML5"'
 
@@ -48,6 +47,8 @@ class Track
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
 
+    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
+
     link href: "http://docs.railsbridge.org/javascript-to-do-list/",
          name: "RailsBridge To Do List"
     # time: "3 hr"
@@ -62,7 +63,22 @@ class Track
       link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
     end
 
-    lesson name: "Page Layout with CSS Flexbox" do
+    lesson name: 'css_flexbox',
+           display_name: "Page Layout with CSS Flexbox" do
+
+    lesson name: "css_frameworks" do
+      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
+    end
+
+    lesson name: "responsive_layout"
+    lab name: 'FreeCodeCamp "Responsive Web Design"'
+
+    lesson name: "bootstrap_intro"
+
+    lesson name: "bootstrap_layout",
+           display_name: "Page Layout with Bootstrap"
+    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
+
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
            name: "Learn CSS Flexbox in 5 Minutes"
       link href: "https://css-tricks.com/snippets/css/a-guide-to-flexbox"
@@ -71,7 +87,8 @@ class Track
            description: "a step-by-step test-driven game that teaches you flexbox"
     end
 
-    lesson name: "Page Layout with CSS Grid" do
+    lesson name: "page_layout_with_css_grid",
+      display_name: "Page Layout with CSS Grid" do
       video youtube_id: '7kVeCqQCxlk'
       link href: "https://cssgridgarden.com",
            name: "Grid Garden",
@@ -89,8 +106,12 @@ class Track
     lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
 
 
-    lesson name: "navigation", description: 'Nav bars, site maps, anchors...'
-    lesson name: "embedding", description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
+    lesson name: "navigation", description: "Nav bars, site maps, anchors, Bootstrap's responsive nav bar... [move to UX track?]"
+
+    lesson name: "bootstrap_components", description: "buttons and accordions and such [move to UX track?]"
+
+    lesson name: "embedding",
+           description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
       link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
     end
 

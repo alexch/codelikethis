@@ -205,8 +205,9 @@
           ]
         },
         {
+          "track": "ux",
           "lessons": [
-            "mockups"
+            "accessibility_and_aria"
           ]
         },
         {
@@ -240,19 +241,18 @@
         },
         {
           "lessons": [
-            "flexbox"
+            "bootstrap_components"
           ]
         },
         {
           "lessons": [
-            "navigation",
             "embedding"
           ]
         },
         {
           "track": "ux",
           "lessons": [
-            "/ux/web_accessibility_and_aria"
+            "mockups"
           ],
           "events": [
             {
@@ -296,12 +296,18 @@
           ]
         },
         {
-          "lessons": [
-            "bootstrap_components"
+          "events": [
+            {
+              "start": "all day",
+              "name": "Holiday: Independence Day"
+            }
           ]
         },
         {
-          "track": "career"
+          "track": "ux",
+          "lessons": [
+            "navigation"
+          ]
         },
         {
           "events": [
