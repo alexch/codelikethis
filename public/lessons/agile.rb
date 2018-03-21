@@ -11,6 +11,8 @@ class Track
       link href: "https://www.slideshare.net/RyanLockard/secrets-from-the-agile-manifesto-authors-on-flow"
     end
 
+    link href: 'https://medium.freecodecamp.org/want-to-be-a-developer-you-should-probably-be-pair-programming-2c6ec12c4866'
+
     lesson name: "test_driven" do
       video youtube_id: "tFwAailXjeA"
       video youtube_id: "mzcBfUu15RU"
@@ -31,7 +33,9 @@ class Track
     lesson name: "extreme_programming_xp"
 
 
-    lesson name: "flow_and_maker_time" # https://www.ted.com/talks/mihaly_csikszentmihalyi_on_flow
-    # http://www.paulgraham.com/makersschedule.html
+    lesson name: "flow_and_maker_time" do
+      link href: 'https://www.ted.com/talks/mihaly_csikszentmihalyi_on_flow'
+      link href: 'http://www.paulgraham.com/makersschedule.html'
+    end
   end
 end

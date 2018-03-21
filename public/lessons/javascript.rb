@@ -30,8 +30,13 @@ class Track
 
     lesson name: "/agile/test_driven"
     lesson name: "tdd_in_js"
+    lesson name: "no_frills_testing"
 
     lesson name: "regexp", display_name: "Regular Expressions"
+
+    lesson name: "ecosystem",
+           display_name: "The JavaScript Ecosystem",
+           description: "ECMAScript? ES2015? Babel? Webpack? Browserify? Node? NPM? Wasm? WTF?"
 
     lesson name: "ecmascript_6"
     lesson name: "transpilers" # webpack, babel, etc.
@@ -39,5 +44,6 @@ class Track
     lesson name: "rest_and_spread"
     lesson name: "promises"
     lesson name: "iterators"
+    link name: "named_parameters", href: "http://2ality.com/2011/11/keyword-parameters.html"
   end
 end
