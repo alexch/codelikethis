@@ -22,6 +22,19 @@ function assert(value) {
 
 All you need is <del>love</del>assert.
 
+# Even better
+
+```js
+@@@js
+function assert(value, why) {
+  if (value) {
+    console.log("Success: " + why);
+  } else {
+    console.log(new Error(why).stack);
+  }
+}
+```
+
 # Test As You Go - Step 1
 
 ```
