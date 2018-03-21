@@ -22,10 +22,12 @@ Track::Git = Track.new(
 
   lesson name: "merging" # basics and conflicts
 
+  # should this be a separate "GitHub" track?
   lesson name: "github"
-
   lesson name: "github_forks_and_clones"
-  lesson name: "github_pull_requests"
+  lesson name: "github_pull_requests" do
+    link href: "https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c"
+  end
   lesson name: "github_ci"
 
   lesson name: "squashing"

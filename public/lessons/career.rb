@@ -7,7 +7,9 @@ class Track
     ) do
 
     lesson name: "linked_in"
-    lesson name: "resume_building"
+    lesson name: "resume_building" do
+      link href: "https://medium.freecodecamp.org/how-to-write-a-great-resume-for-software-engineers-75d514dd8322"
+    end
 
     lesson name: "coding_interviews" do
       link href: "https://technology.cloverhealth.com/how-to-interview-entry-level-software-engineers-daaecf9db97"

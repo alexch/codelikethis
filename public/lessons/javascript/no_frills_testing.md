@@ -124,8 +124,10 @@ function doFormat() {
 * Testing is delicious, do it all the time
 * Don't get trapped by your tools
 * Do what works and fix it later (or don't)
-* Using a standard format like TAP gives you an easy upgrade path
-  * from in-browser to command-line / continuous-integration / full suite
+* Optional: use a standard format like TAP 
+  * gives you an upgrade path from in-browser to command-line / continuous-integration / full suite
+  * integrates with other tools (like [Browser-Tap](https://chrome.google.com/webstore/detail/browser-tap/ncfblaiipckncgeipgmpdioedcdmofei) and [tap-spec](https://www.npmjs.com/package/tap-spec))
+  * might be more familiar to teammates 
 
 ## Links
 * https://fancy-form.herokuapp.com/
