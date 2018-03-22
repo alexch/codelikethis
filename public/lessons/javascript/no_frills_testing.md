@@ -7,7 +7,10 @@
 
 # The Best Tests
 
-"The best tests are the ones you actually write." - me
+> "The best tests are the ones you actually write." - me
+
+* Friction is the enemy of flow
+* If you're in the zone, don't get distracted by setup; just code 
 
 # The Best Test Framework
 
@@ -83,9 +86,7 @@ assert(fancyText('apple') === 'Apple');
 
 ![fancy screenshot with tap](fancy-screenshot-tap.png)
 
-# Tapped Source
-
-fancy.js:
+# Tapped Source: fancy.js
 
 ```js
 @@@js
@@ -105,6 +106,8 @@ test('fancy formatter', function(t) {
 });
 ```
 
+# Tapped Source: fancy-bundle.js
+
 shell:
 
 ```
@@ -113,7 +116,10 @@ npm install --save-dev browserify tape
 browserify -o fancy-bundle.js --standalone fancyText fancy.js
 ```
 
-index.html:
+* `-o fancy-bundle.js` means "bundle up all the JS into this file"
+* `--standalone fancyText` means "make the `fancyText` function available globally"
+
+# Tapped Source: index.html
 
 ```html
 @@@html
@@ -127,7 +133,7 @@ function doFormat() {
   var inputWidget = document.getElementById("input");
   var outputWidget = document.getElementById("output");
   var output = fancyText(inputWidget.value);
-    outputWidget.value = output;
+  outputWidget.value = output;
 }
 </script>
 ```
@@ -143,6 +149,7 @@ function doFormat() {
   * might be more familiar to teammates 
 
 ## Links
+
 * https://fancy-form.herokuapp.com/
 * http://codelikethis.com/lessons/javascript/no_frills_testing
 * [Browser-Tap](https://chrome.google.com/webstore/detail/browser-tap/ncfblaiipckncgeipgmpdioedcdmofei) Chrome Extension
