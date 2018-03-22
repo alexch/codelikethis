@@ -96,12 +96,15 @@ if (window.tapExtension) {
 }
 
 function fancyText(s) {
-  return s[0].toUpperCase() + s.slice(1,s.length).toLowerCase();
+  return s[0].toUpperCase() + 
+    s.slice(1,s.length).toLowerCase();
 }
 
 test('fancy formatter', function(t) {
-  t.equal(fancyText(""), "", "should not do anything to an empty string");
-  t.equal(fancyText("bob"), "Bob", "should capitalize a single word");
+  t.equal(fancyText(""), "", 
+    "should not do anything to an empty string");
+  t.equal(fancyText("bob"), "Bob", 
+    "should capitalize a single word");
   t.end()
 });
 ```
