@@ -52,7 +52,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   end
 
   lesson name: "arrays"
-  lesson name: "argv"
+  lesson name: "argv" do
+    project name: "today_i_learned_cli"
+  end
   lesson name: "stacks"
   lesson name: "hashes"
 
