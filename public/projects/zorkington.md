@@ -224,6 +224,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
     * buying and eating a slice of pizza at Mr. Mike's removes the status
 
+* [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing))
 
 ## Icebox
 
