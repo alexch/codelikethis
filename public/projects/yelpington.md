@@ -1,8 +1,8 @@
-# Yelpington: Git Phase
+# Yelpington: Git Repo
 
 In this project, you will pair up and work with other teams to create an online directory of restaurants in Burlington.
 
-For this initial phase of the project we will *not* use a database, or a webapp, or even a programming language. Our entire directory will be inside a single GitHub repository, with each restaurant represented by a single file in Markdown format.
+For this project we will *not* use a database, or a webapp, or even a programming language. Our entire directory will be inside a single GitHub repository, with each restaurant represented by a single file in Markdown format.
 
 # Tech
 
@@ -73,7 +73,7 @@ bar
 >>>>>>>>>>>>>>>>
 ```
 
-and then manually edit the files until all the chevrons and dashes are gone, and what's left is correct. In this example, you might choose `foo` or `bar`, or `foobar`, or `foo + bar`, or something altogether different. Then `git add` the corrected file and follow the instructions on the console to finish the merge.
+and then manually edit the files until all the chevrons and dashes are gone, and what's left is correct. In this example, you might choose `foo` or `bar`, or `foobar`, or `bar + foo`, or something altogether different. Then `git add` the corrected file and follow the instructions on the console to finish the merge.
 
 As a more realistic example of a conflict:
 
@@ -86,3 +86,8 @@ M-F open at 9, closed weekends
 ```
 
 This example shows why git *cannot* automatically resolve intra-line conflicts. As a human, you are the only one capable of making this sort of *semantic* choice. You must decide whether this file would be better off with one or the other or a creative combination, and you should communicate with other humans about this decision, in the GitHub discussion thread or face-to-face.
+
+## Icebox
+
+* make it a web app and/or API
+* make a slack plugin
