@@ -176,18 +176,18 @@ div.blog .rssHeader > a:after {
     /* line 178, ../scss/app.scss */
     .tracks-toggler {
       display: none; } }
-  /* line 24, /Users/Robin/codelikethis/public/scss/bootstrap-4.0.0-beta.2/scss/mixins/_hover.scss */
+  /* line 24, C:/Users/alex/codelikethis/public/scss/bootstrap-4.0.0-beta.2/scss/mixins/_hover.scss */
   .tracks-toggler:focus, .tracks-toggler:hover {
     text-decoration: none; }
 
-/* line 192, ../scss/app.scss */
+/* line 193, ../scss/app.scss */
 .tracks-toggler span.svg-icon, .toggler span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 30,1 15,30 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
-/* line 195, ../scss/app.scss */
+/* line 196, ../scss/app.scss */
 .tracks-toggler.collapsed span.svg-icon, .toggler.collapsed span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 1,30 30,15 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
 
-/* line 200, ../scss/app.scss */
+/* line 201, ../scss/app.scss */
 span.svg-icon {
   display: inline-block;
   width: 0.75em;
@@ -199,9 +199,17 @@ span.svg-icon {
   background-position-x: center;
   background-position-y: center; }
 
+/* line 214, ../scss/app.scss */
+.link .icon img {
+  width: 30px;
+  height: 24px;
+  background: green;
+  border: 2px solid green;
+  margin: 2px 4px; }
+
 /* make the sidebars scrolly and fixed on bigger screens */
 @media (min-width: 768px) {
-  /* line 214, ../scss/app.scss */
+  /* line 225, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block !important;
     max-height: calc(100vh - 75px);
@@ -211,13 +219,13 @@ span.svg-icon {
     z-index: 1000;
     padding-top: 1rem; }
 
-  /* line 225, ../scss/app.scss */
+  /* line 236, ../scss/app.scss */
   a[name=content] {
     display: block;
     position: relative;
     height: 75px; }
 
-  /* line 230, ../scss/app.scss */
+  /* line 241, ../scss/app.scss */
   a.slide-anchor {
     display: block;
     position: relative;
@@ -225,30 +233,30 @@ span.svg-icon {
     height: 0;
     top: -75px; } }
 @media (min-width: 768px) {
-  /* line 239, ../scss/app.scss */
+  /* line 250, ../scss/app.scss */
   #sidebar-tracks {
     display: block; } }
 
 @media (max-width: 767px) {
-  /* line 248, ../scss/app.scss */
+  /* line 259, ../scss/app.scss */
   #sidebar {
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray; }
-    /* line 251, ../scss/app.scss */
+    /* line 262, ../scss/app.scss */
     #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
       margin: 2px 0; } }
-/* line 257, ../scss/app.scss */
+/* line 268, ../scss/app.scss */
 #sidebar-tracks, #right-sidebar > .outline > .list-group {
   font-size: 85%; }
-  /* line 260, ../scss/app.scss */
+  /* line 271, ../scss/app.scss */
   #sidebar-tracks .list-group.lesson-names, #right-sidebar > .outline > .list-group .list-group.lesson-names {
     margin-top: .5rem;
     border-radius: 0; }
-    /* line 263, ../scss/app.scss */
+    /* line 274, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .list-group-item, #right-sidebar > .outline > .list-group .list-group.lesson-names .list-group-item {
       padding: .4rem 0 .4rem 1.8rem;
       margin: 0 -1rem; }
-    /* line 269, ../scss/app.scss */
+    /* line 280, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .loading_image, #right-sidebar > .outline > .list-group .list-group.lesson-names .loading_image {
       background-image: url(/images/loading.gif);
       background-repeat: no-repeat;
@@ -259,16 +267,16 @@ span.svg-icon {
       float: right;
       margin: 0 2px;
       display: none; }
-  /* line 284, ../scss/app.scss */
+  /* line 295, ../scss/app.scss */
   #sidebar-tracks .active, #right-sidebar > .outline > .list-group .active {
     background-color: #EEF; }
-  /* line 287, ../scss/app.scss */
+  /* line 298, ../scss/app.scss */
   #sidebar-tracks a, #right-sidebar > .outline > .list-group a {
     color: black;
     display: inline-block;
     width: 100%; }
 
-/* line 295, ../scss/app.scss */
+/* line 306, ../scss/app.scss */
 #sidebar-tracks a.track-info-link {
   display: inline;
   position: absolute;
@@ -280,51 +288,51 @@ span.svg-icon {
   font-size: 150%;
   right: 2px;
   visibility: hidden; }
-/* line 310, ../scss/app.scss */
+/* line 321, ../scss/app.scss */
 #sidebar-tracks div.track-name:hover a.track-info-link {
   visibility: visible;
   background-color: white; }
 
-/* line 316, ../scss/app.scss */
+/* line 327, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
-  /* line 318, ../scss/app.scss */
+  /* line 329, ../scss/app.scss */
   h1.lesson-name span.track-name {
     font-size: 60%; }
 
-/* line 323, ../scss/app.scss */
+/* line 334, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 330, ../scss/app.scss */
+  /* line 341, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 336, ../scss/app.scss */
+  /* line 347, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 342, ../scss/app.scss */
+  /* line 353, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 347, ../scss/app.scss */
+/* line 358, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 352, ../scss/app.scss */
+/* line 363, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 356, ../scss/app.scss */
+/* line 367, ../scss/app.scss */
 .footer {
   clear: both;
   padding: 2rem;
   border-top: 1px solid #EEEEEE; }
 
-/* line 362, ../scss/app.scss */
+/* line 373, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -333,7 +341,7 @@ div.main_column img {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 371, ../scss/app.scss */
+  /* line 382, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;
@@ -341,12 +349,12 @@ div.main_column img {
     width: 100%;
     height: 100%; }
 
-/* line 380, ../scss/app.scss */
+/* line 391, ../scss/app.scss */
 table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 385, ../scss/app.scss */
+  /* line 396, ../scss/app.scss */
   table ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -354,48 +362,48 @@ table {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 393, ../scss/app.scss */
+  /* line 404, ../scss/app.scss */
   table td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 397, ../scss/app.scss */
+  /* line 408, ../scss/app.scss */
   table, table td, table th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 401, ../scss/app.scss */
+  /* line 412, ../scss/app.scss */
   table th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 407, ../scss/app.scss */
+  /* line 418, ../scss/app.scss */
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 410, ../scss/app.scss */
+  /* line 421, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 415, ../scss/app.scss */
+  /* line 426, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 419, ../scss/app.scss */
+  /* line 430, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 424, ../scss/app.scss */
+/* line 435, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 426, ../scss/app.scss */
+  /* line 437, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 429, ../scss/app.scss */
+  /* line 440, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 432, ../scss/app.scss */
+  /* line 443, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
 
-/* line 437, ../scss/app.scss */
+/* line 448, ../scss/app.scss */
 span.video_link {
   float: right;
   border: 1px dotted black;

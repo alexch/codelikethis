@@ -188,6 +188,7 @@ $triangle-pointing-down: str-replace(str-replace(
     text-decoration: none;
   }
 }
+
 .tracks-toggler, .toggler {
   span.svg-icon {
     background-image: $triangle-pointing-down;
@@ -207,6 +208,16 @@ span.svg-icon {
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
+}
+
+.link .icon {
+  img {
+    width: 30px;
+    height: 24px;
+    background: green;
+    border: 2px solid green;
+    margin: 2px 4px;
+  }
 }
 
 /* make the sidebars scrolly and fixed on bigger screens */

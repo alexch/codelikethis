@@ -41,7 +41,7 @@ class Link < Thing
       span(class: 'link') {
         if target.respond_to? :icon and target.icon
           span(class: 'icon') {
-            img src: target.icon, alt: 'icon', title: 'icon', style: "width: 42px; height: 30px; background: green; border: 2px solid green; margin: 0 2px;"
+            img src: target.icon, alt: 'icon', title: 'icon'
           }
         end
         if href
