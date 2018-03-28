@@ -29,7 +29,10 @@ Think about how to track votes. Potentially every user can vote for every pair o
 
 Think about how to present pairs. Will it be a bracket tournament? Randomized pairing? Can you cute-fight yourself?
 
-## features
+## Stories
+
+todo
+
 
 
 

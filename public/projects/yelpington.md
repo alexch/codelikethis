@@ -15,7 +15,7 @@ For the next 12 weeks, we will all eat lunch every day. This app can realistical
 
 ## Goals
 
-* learn Markdown
+* learn [Markdown](https://www.gitbook.com/book/gitbookio/markdown/details)
 * learn about Git and GitHub workflow
 * submit Pull Requests
 * review Pull Requests

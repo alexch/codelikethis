@@ -37,6 +37,10 @@ class Project < Thing
     end
   end
 
+  def content
+    @content || File.read(content_file)
+  end
+
   def link_view
     Link::View.new(target: self)
   end
@@ -52,7 +56,19 @@ class Project < Thing
     attr_reader :target
 
     def content
-      markdown(File.read(target.content_file))
+      text raw(munge(from_markdown(target.content)))
+    end
+
+    def munge html
+      html.split("\n").map do |line|
+        if line == '<!--box-->'
+          '<div class="box">'
+        elsif line == '<!--/box-->'
+          '</div>'
+        else
+          line
+        end
+      end.compact.join("\n")
     end
   end
 

@@ -11,6 +11,8 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 ## Stories
 
+<!--box-->
+
 ### No Rules
 
 **Given** an empty board, and 
@@ -35,6 +37,10 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 **And** the turn ends, and the current player changes from O to X
 
+<!--/box-->
+
+<!--box-->
+
 ### Rules
 
 **When** the user clicks on a cell that is not empty
@@ -43,6 +49,8 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 **And** the current player does not change
  
+<!--/box-->
+<!--box-->
 
 ### Win Condition
 
@@ -58,9 +66,15 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
  
 (and the same for Player O)
 
+<!--/box-->
+<!--box-->
+
 ### Names
 
 - when starting a game, choose the names of the players (not just X and O)
+
+<!--/box-->
+<!--box-->
 
 ### Artificial Stupidity
 
@@ -68,12 +82,19 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 - simple AI that picks a random empty cell
 - human is always X and computer is always O
 
+<!--/box-->
+<!--box-->
+
 ### New Game UI
 
 - design a clean "New Game" UI allowing choice of human or computer, name, and symbol
+
+<!--/box-->
+<!--box-->
 
 ### Artificial Intelligence
 
 - instead of picking a random cell, the AI chooses the *best* random cell
 - this will require R&D 
 
+<!--/box-->

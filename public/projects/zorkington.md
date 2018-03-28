@@ -55,6 +55,7 @@ function moveToRoom(newRoom) {
 
 ## Stories
 
+<!--box-->
 ### One Room
 
 **When** the user launches the program
@@ -73,6 +74,8 @@ On the door is a handwritten sign.
 
 **And** waits for input
 
+<!--/box-->
+<!--box-->
 ### Read the sign
 
 **Given** the player is in the room "182 Main St."
@@ -89,6 +92,8 @@ up to the second floor. If the door is locked, use the code
 
 **And** returns to the command prompt
 
+<!--/box-->
+<!--box-->
 ### Don't take the sign
 
 **Given** the player is in the room `182 Main St.`
@@ -101,9 +106,12 @@ up to the second floor. If the door is locked, use the code
 That would be selfish. How will other students find their way?
 ```
 
-(assume "**And** returns to the command prompt" after all stories)
+(assume " **And** returns to the command prompt" after all stories)
+
+<!--/box-->
 
 
+<!--box-->
 ### Blocked
 
 **Given** the player is in the room `182 Main St.`
@@ -115,7 +123,10 @@ That would be selfish. How will other students find their way?
 ```
 The door is locked. There is a keypad on the door handle.
 ```
+</span>
 
+<!--/box-->
+<!--box-->
 ### Speak friend and enter
 
 **Given** the player is in the room `182 Main St.`
@@ -131,6 +142,8 @@ shuts behind you.
 
 **And** the player enters room `182 Main St. - Foyer`
 
+<!--/box-->
+<!--box-->
 ### Foyer
 
 **Given** the player is in `182 Main St. - Foyer`
@@ -146,6 +159,9 @@ and just call it a foyer. In Vermont, this is pronounced
 A copy of Seven Days lies in a corner.
 ```
 
+<!--/box-->
+<!--box-->
+
 ### Inventory
 
 **Given** the player is in `182 Main St. - Foyer`
@@ -157,13 +173,18 @@ A copy of Seven Days lies in a corner.
 **Then** the game displays the text
 
 ```
-You pick up the paper and leaf through it looking for comics,
-just like everybody else does.
+You pick up the paper and leaf through it looking for comics 
+and ignoring the articles, just like everybody else does.
 ```
 
 **And** the paper is added to the player's inventory
 
----
+<!--/box-->
+<!--box-->
+
+### Display Inventory
+
+**Given** the paper is in the player's inventory
 
 **When** the player types `i` or `inventory` or `take inventory`
 
@@ -174,7 +195,10 @@ You are carrying:
 A copy of Seven Days, Vermont's Alt-Weekly
 ```
 
----
+<!--/box-->
+<!--box-->
+
+### Drop Inventory
 
 **Given** the copy of Seven Days is in the player's inventory
 
@@ -184,15 +208,20 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 **And** the copy of Seven Days is added to the current room's inventory
 
+<!--/box-->
+
 ### More rooms and more stories, e.g.
 
 * `read paper` or `read seven days`
+
 * `go up` or `go upstairs` 
 
 * Alex C speaks gibberish until you get him a cup of coffee from Muddy's
+
     * then you can `attend lecture` or `sit down` or `pair up` or something
     
 * After class you are `hungry` (status) which makes your stomach growl before every command prompt
+
     * buying and eating a slice of pizza at Mr. Mike's removes the status
 
 
@@ -200,3 +229,5 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 * Status line (showing room name)
 * Web UI
+* if a [Yelpington](yelpington) entry exists for a business at the player's current location, display it somehow
+

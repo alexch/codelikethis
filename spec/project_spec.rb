@@ -49,4 +49,38 @@ describe Project do
     end
   end
 
+  context 'extra styling' do
+    it 'puts boxes around stories' do
+      project = Project.new(content: <<-MARKDOWN)
+# Stories
+
+<!--box-->
+
+## Slay the Dragon 
+
+**Given** a dragon
+
+**Then** it should be dead
+
+<!--/box-->
+                                    zork
+## Tech
+
+* blah
+      MARKDOWN
+      project.view.to_html.should include(<<-HTML)
+<div class="box">
+
+<h2>Slay the Dragon</h2>
+
+<p><strong>Given</strong> a dragon</p>
+
+<p><strong>Then</strong> it should be dead</p>
+
+</div>
+      HTML
+
+    end
+  end
+
 end

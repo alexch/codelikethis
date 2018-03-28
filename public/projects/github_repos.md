@@ -28,7 +28,9 @@ rerun           Restarts an app when the filesystem changes
 codelikethis    Code Like This web site
 ```
 
-## Features
+## Stories
+
+<!--box-->
 
 ### Big List
 
@@ -44,6 +46,9 @@ codelikethis    Code Like This web site
 
 **Then** the user should see a descriptive error message instead of the list
 
+<!--/box-->
+<!--box-->
+
 ### Recent First
 
 **When** a repo has been more recently updated than another
@@ -51,6 +56,8 @@ codelikethis    Code Like This web site
 **Then** the list should show that repo above the other
 
 **Hint:** there is a way to make GitHub perform this sort for you -- check the documentation for the "repos" endpoint here: https://developer.github.com/v3/repos/#list-user-repositories 
+
+<!--/box-->
 
 ### v2 Ideas
 

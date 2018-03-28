@@ -25,7 +25,7 @@ module Views
     end
   end
 
-  def markdown text
+  def from_markdown text
     @@markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
                                            :tables => true,
                                            :fenced_code_blocks => true,
@@ -34,10 +34,15 @@ module Views
                                            :strikethrough => true,
                                            :lax_html_blocks => false,
                                            :space_after_headers => true,
-                                           :superscript => false
+                                           :superscript => false,
+                                           :with_toc_data => true
     )
 
-    text raw(@@markdown.render(text))
+    @@markdown.render(text)
+  end
+
+  def markdown text
+    text raw(from_markdown(text))
   end
 
   def with_tooltip(tooltip_text)

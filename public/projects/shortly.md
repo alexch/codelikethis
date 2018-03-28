@@ -12,6 +12,8 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
 
 ## Stories
 
+<!--box-->
+
 #### Canned Links
 
 **Given** seed data mapping names to URLs in the following format,
@@ -26,6 +28,9 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
 
 **Then** the server should return a [301 Redirect](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes##3xx_Redirection) response to `http://www.benjerry.com/`
 
+<!--/box-->
+<!--box-->
+
 #### Case Insensitivity
 
 **Given** the above seed data
@@ -34,6 +39,9 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
 
 **Then** the server should return a [301 Redirect](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes##3xx_Redirection) response to `http://www.benjerry.com/`
 
+<!--/box-->
+<!--box-->
+
 #### Error Handling
 
 **Given** that there is no path named `bogus`
@@ -41,6 +49,9 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
 **When** a web browser requests the path `/bogus`
 
 **Then** the server should return a [404 Not Found](https://en.wikipedia.org/wiki/HTTP_404) response
+
+<!--/box-->
+<!--box-->
 
 #### Add Link
 
@@ -65,6 +76,9 @@ where `xyzzy` is a pseudorandom 5-character alphanumeric string
 
 **Then** the server should return a [301 Redirect](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes##3xx_Redirection) response to `http://www.gardeners.com`
 
+<!--/box-->
+<!--box-->
+
 #### Reuse Link
 
 **Given** the above setup of a link to `http://www.gardeners.com`
@@ -72,6 +86,8 @@ where `xyzzy` is a pseudorandom 5-character alphanumeric string
 **When** they enter `http://www.gardeners.com` again
 
 **Then** they see the *same* short name (`xyzzy` in the example)
+
+<!--/box-->
 
 ## TODO: more stories
 
