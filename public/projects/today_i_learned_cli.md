@@ -14,22 +14,19 @@ Your task for this project is to build a command line program which you can use 
 
 ### Creating a new TIL entry
 
-#### Given ####
-An empty command prompt
+**Given** an empty command prompt
 
-#### When ####
-
-A user inputs:
+**When** a user inputs:
 
 ``` sh
 til To convert JSON to a JavaScript object use JSON.parse(myObject)
 ```
 
-#### Then ###
+**Then**
 
 A new TIL entry is created
 
-#### And ###
+**And**
 
 The TIL entry.content equals:
 
@@ -39,7 +36,7 @@ To convert JSON to a JavaScript object, use JSON.parse(myObject)
 
 ### Listing existing TIL entries
 
-#### Given ####
+**Given**
 
 An existing TIL entry with the content:
 ```
@@ -49,7 +46,7 @@ To convert JSON to a JavaScript object, use JSON.parse(myObject)
 And the Date-Time:
 `2018-01-01T12:15:00+0400`
 
-#### When ####
+**When**
 
 A user inputs:
 
@@ -57,7 +54,7 @@ A user inputs:
 til --list
 ```
 
-#### Then ###
+**Then**
 
 Then the command prompt will contain
 
@@ -68,7 +65,7 @@ Then the command prompt will contain
 
 ### Display a TIL entry
 
-#### Given ####
+**Given**
 
 An existing TIL entry with the content:
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
@@ -76,7 +73,7 @@ An existing TIL entry with the content:
 And the Date-Time:
 `2018-01-01T12:15:00+0400`
 
-#### When ####
+**When**
 
 A user inputs:
 
@@ -84,7 +81,7 @@ A user inputs:
 til --show 0
 ```
 
-#### Then ##
+**Then ##
 
 Then the terminal will output
 
@@ -95,21 +92,21 @@ CONTENT: To convert JSON to a JavaScript object, use JSON.parse(myObject)
 
 ### Listing multiple TIL entries
 
-#### Given ####
+**Given**
 
 An existing TIL entry with the content:
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
 And the Date-Time:
 `2018-01-01T12:15:00+0400`
 
-#### And ####
+**And**
 
 An existing TIL entry with the content:
 `To get the length of a JavaScript Array, ['some', 'array'].length`
 And the Date-Time:
 `2018-03-02T18:30:00+0400`
 
-#### When ####
+**When**
 
 A user inputs:
 
@@ -117,7 +114,7 @@ A user inputs:
 til --list
 ```
 
-#### Then ###
+**Then**
 
 Then the command prompt will contain
 
@@ -128,12 +125,13 @@ Then the command prompt will contain
 
 ### Editing an existing TIL entry
 
-#### Given ####
+**Given**
 
 An existing TIL entry with the content:
+
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
 
-#### When ####
+**When**
 
 A user inputs:
 
@@ -141,7 +139,7 @@ A user inputs:
 til --edit 0
 ```
 
-#### And ####
+**And**
 
 The user changes the contents:
 
@@ -157,11 +155,11 @@ To:
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
 
-#### And ###
+**And**
 
 The TIL entry is saved
 
-#### Then ###
+**Then**
 
 The contents of the TIL entry will contain:
 
@@ -171,28 +169,24 @@ To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}
 
 ### Delete a TIL entry
 
-#### Given ####
+**Given**
 
 An existing TIL entry with the content:
 ``` text
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
 
-#### When ####
-
-A user inputs:
+**When** a user inputs:
 
 ``` sh
 til --delete 0
 ```
 
-#### Then ###
-
-Then the terminal will output
+**Then** the terminal will output
 
 `D 0 2018-01-01T12:15:00+0400 To convert JSON to a Javascript object, use JSON.parse('{"name": "Ada Lovelace"}')`
 
-#### And ###
+**And**
 There are zero entries when the user inputs
 
 ``` sh
