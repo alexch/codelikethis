@@ -10,7 +10,20 @@ class Project < Thing
     end
   end
 
-  attr_reader :optional, :from
+  def self.all
+    # for now, just get all projects ever
+    pattern = '*.md'
+    Dir[File.join(File.absolute_path(projects_dir), pattern)].sort.map do |file|
+      file.slice! /^#{projects_dir}\//
+      file.slice! /\.md$/
+      Project.new(name: file)
+    end
+  end
+
+  # is this project optional? default: false
+  attr_reader :optional
+  # where the project is located; nil means it's in here
+  attr_reader :from
 
   def projects_dir
     @projects_dir || Project.projects_dir
@@ -19,6 +32,8 @@ class Project < Thing
   def content_file
     File.new(File.join(projects_dir, "#{@name}.md"))
   end
+
+  # todo: use OO, not switch statement, for 'From' href and icon
 
   def href
     case from

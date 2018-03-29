@@ -115,6 +115,10 @@ class App < Sinatra::Base
       title: lesson.display_name + " - Code Like This").to_html
   end
 
+  get "/projects" do
+    page(widget: site.projects_view, title: 'Projects - Code Like This').to_html
+  end
+
   get "/projects/:file.:ext" do
     path = File.join(here, "public", "projects", "#{params[:file]}.#{params[:ext]}")
     send_file(path)

@@ -34,6 +34,7 @@ Your code will need to represent (or *reify*) several distinct states, including
 
   * current room
   * room descriptions (immutable)
+  * room connections (immutable)
   * room inventory (mutable)
   * player inventory (mutable)
   * player status (mutable) (hungry, tired, etc.)  
