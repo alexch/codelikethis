@@ -85,7 +85,11 @@ M-F open at 9, closed weekends
 >>>>>>>>>>>>>>>>
 ```
 
-This example shows why git *cannot* automatically resolve intra-line conflicts. As a human, you are the only one capable of making this sort of *semantic* choice. You must decide whether this file would be better off with one or the other or a creative combination, and you should communicate with other humans about this decision, in the GitHub discussion thread or face-to-face.
+This example shows why git *cannot* automatically resolve intra-line conflicts. As a human, you are the only one capable of making this sort of *semantic* choice. You must decide whether this file would be better off with one or the other or a creative combination of both changes, and you should communicate with other humans about this decision, in the GitHub discussion thread or face-to-face.
+
+## Secret Sneaky Teacher Step
+
+* If a student team is not getting merge conflicts, force one: after a PR is created, go into the main repo and commit a change to that file.  
 
 ## Icebox
 

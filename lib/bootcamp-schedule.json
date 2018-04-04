@@ -58,7 +58,8 @@
           "name": "basic_profile"
         },
         {
-          "from": "fcc", "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
+          "from": "fcc",
+          "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-javascript/concatenating-strings-with-plus-operator",
           "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
         },
@@ -89,11 +90,18 @@
             "variables",
             "null",
             "functions"
+          ],
+          "lessons": [
+            "input_and_output"
           ]
         },
         {
+          "track": "git",
           "lessons": [
-            "input_and_output"
+            "git_basics"
+          ],
+          "projects": [
+            "yelpington"
           ],
           "events": [
             {
@@ -124,16 +132,19 @@
       "track": "learn_to_code_with_javascript",
       "projects": [
         {
-          "from": "fcc", "name": "Debugging",
+          "from": "fcc",
+          "name": "Debugging",
           "href": "https://beta.freecodecamp.org/en/challenges/debugging/introduction-to-the-debugging-challenges",
           "optional": true
         },
         {
-          "from": "fcc", "name": "Basic Data Structures",
+          "from": "fcc",
+          "name": "Basic Data Structures",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-data-structures/introduction-to-arrays"
         },
         {
-          "from": "fcc", "name": "Basic Algorithm Scripting",
+          "from": "fcc",
+          "name": "Basic Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
         },
         "zorkington",
@@ -185,11 +196,13 @@
       "track": "www",
       "projects": [
         {
-          "from": "fcc", "name": "Basic HTML",
+          "from": "fcc",
+          "name": "Basic HTML",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
         },
         {
-          "from": "fcc", "name": "Basic CSS",
+          "from": "fcc",
+          "name": "Basic CSS",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
         }
       ],
@@ -231,11 +244,13 @@
       "track": "www",
       "projects": [
         {
-          "from": "fcc", "name": "Applied Visual Design",
+          "from": "fcc",
+          "name": "Applied Visual Design",
           "href": "https://beta.freecodecamp.org/en/challenges/applied-visual-design/introduction-to-the-applied-visual-design-challenges"
         },
         {
-          "from": "fcc", "name": "Bootstrap",
+          "from": "fcc",
+          "name": "Bootstrap",
           "href": "https://beta.freecodecamp.org/en/challenges/bootstrap/introduction-to-the-bootstrap-challenges"
         },
         "sriracha"
@@ -282,7 +297,8 @@
       "track": "client_side_coding",
       "projects": [
         {
-          "from": "fcc", "name": "jQuery",
+          "from": "fcc",
+          "name": "jQuery",
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
         "twitch_status",
@@ -330,11 +346,13 @@
       "track": "javascript",
       "projects": [
         {
-          "from": "fcc", "name": "Intermediate Algorithm Scripting",
+          "from": "fcc",
+          "name": "Intermediate Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
         },
         {
-          "from": "fcc", "name": "JavaScript Algorithms and Data Structures Projects",
+          "from": "fcc",
+          "name": "JavaScript Algorithms and Data Structures Projects",
           "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
           "description": "choose one"
         },

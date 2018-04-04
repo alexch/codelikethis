@@ -103,7 +103,7 @@ $(function () {
   end
 
   def footer_content
-    text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 foo "
+    text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 "
     a "Alex Chaffee.", href: "http://alexchaffee.com"
     br
 

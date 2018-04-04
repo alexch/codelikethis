@@ -109,6 +109,7 @@ class Thing
     APIs
     ARIA
     CodeCademy
+    CLI
     CSS
     CGI
     DOM

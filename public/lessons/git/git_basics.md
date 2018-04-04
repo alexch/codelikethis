@@ -20,6 +20,14 @@
 |`git checkout -b foo`| create a local branch named "foo"| 
 |`git status`| run this all the time!|
 
+# Git Is Elegant
+
+* A **commit** represents a set of changes, to be applied all at once, possibly to many different files
+* Each commit has a **pointer** to its parent commit(s), recursively
+* A commit also represents a **checkpoint** of all the files at a given point in history
+
+> So a commit is both a **minimal** set of changes and a **maximal** set of the contents of all files 
+ 
 # Git Is Weird
 
 > "Git was written by very smart aliens." -Alex
