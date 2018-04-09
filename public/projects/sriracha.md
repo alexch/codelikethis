@@ -37,8 +37,6 @@ Use empty boxes of different colors to replicate the grid layout of the label.
 
 What label design elements did you miss?
 
-<!--/box-->
-
 ## References
 
 * https://fontsinuse.com/uses/11193/huy-fong-sriracha-hot-sauce-label

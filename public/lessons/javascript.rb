@@ -43,7 +43,12 @@ class Track
 
     lesson name: "rest_and_spread"
     lesson name: "promises"
+    lesson name: "async_and_await" do
+      link href: "https://javascript.info/async-await"
+    end
     lesson name: "iterators"
     link name: "named_parameters", href: "http://2ality.com/2011/11/keyword-parameters.html"
+
+    link href: "http://news.codecademy.com/your-guide-to-semicolons-in-javascript/"
   end
 end

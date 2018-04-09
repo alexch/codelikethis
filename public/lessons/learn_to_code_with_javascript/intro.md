@@ -88,9 +88,11 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 # What if I know some of this already?
 
-* Pair up and fill in each other's gaps
+* Pair up
+* Help your partner, help your neighbor
 * Promote yourself to TA
-* Work on labs
+
+> The best way to learn is to teach. <br>- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
 
 # Technical requirements
 

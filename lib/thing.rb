@@ -108,6 +108,7 @@ class Thing
     API
     APIs
     ARIA
+    CI
     CodeCademy
     CLI
     CSS
@@ -124,9 +125,12 @@ class Thing
     jQuery
     JS
     JSON
+    LinkedIn
     MVC
     NodeJS
     NoSQL
+    PR
+    PRs
     RegExp
     RegEx
     SEO

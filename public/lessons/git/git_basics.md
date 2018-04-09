@@ -1,8 +1,10 @@
 # git vs GitHub
 
-[git](https://git-scm.com/book/) is a *distributed version control tool*
+[git](https://git-scm.com/book/) is a *distributed version control tool* that was built by Linus Torvalds in 2005 to help him manage the Linux Kernel project
 
-[GitHub](https://github.com/) is a *centralized collaboration website*
+[GitHub](https://github.com/) is a *centralized collaboration website* that was [started in 2007](https://www.inc.com/30under30/christine-lagorio/github-pj-hyett-chris-wanstrath-2013.html) by Tom Preston-Werner, Chris Wanstrath and P.J. Hyett in 2007
+
+> Does Linus use GitHub? Not much: <https://www.wired.com/2012/05/torvalds-github/>
 
 # Git Conceptual Model
 
@@ -34,9 +36,11 @@
 
 ![here be dragons](here-be-dragons.png)
 
+Git has an elegant data model, but a clunky command-line interface.
+
 Here are some examples of how git's commands are counterintuitive and inconsistent.
 
-> Don't bother to memorize these (yet)!
+> **Don't bother to memorize these (yet)!**
 
 * `git checkout .`
     * *reverts* local file changes
@@ -86,7 +90,7 @@ http://www.slideshare.net/GoAtlassian/superpowered-ci-with-git-sarah-goffdupont
 
 > If you always use pull requests, then code on `master` is **guaranteed** to have been reviewed.
 
-[TODO: screenshots?]
+[TODO: screenshots]
 
 # Feature Branch Details
 

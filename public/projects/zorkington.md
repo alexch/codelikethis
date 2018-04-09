@@ -227,6 +227,10 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 * [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing))
 
+## And Don't Forget to Demo!
+
+Find other student teams and play each others' Zorkington games!
+
 ## Icebox
 
 * Status line (showing room name)
