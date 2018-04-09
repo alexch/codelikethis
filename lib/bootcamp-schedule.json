@@ -1,5 +1,6 @@
 {
-  "day": [
+  "description": "This is the week-by-week schedule for the 2018 bootcamp. For the day-by-day breakdown, see [this Google calendar](https://calendar.google.com/calendar/b/1?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).",
+  "typical_day": [
     [
       " 8:30 am",
       "orientation, Q & A, paired code review"
@@ -53,10 +54,21 @@
     {
       "start": "2018-06-04",
       "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "intro",
+        "the_command_line",
+        "hello_node",
+        "values",
+        "strings",
+        "numbers",
+        "variables",
+        "null",
+        "functions",
+        "input_and_output"
+      ],
       "projects": [
-        {
-          "name": "basic_profile"
-        },
+        "basic_profile",
+        "yelpington",
         {
           "from": "fcc",
           "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
@@ -64,37 +76,14 @@
           "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
         },
         {
-          "name": "CodeCademy: Getting Started with Programming",
+          "from": "CodeCademy",
+          "name": "Getting Started with Programming",
           "href": "https://www.codecademy.com/tracks/javascript",
           "optional": true
         },
         "guess"
       ],
-      "days": [
-        {
-          "lessons": [
-            "intro",
-            "the_command_line",
-            "hello_node"
-          ]
-        },
-        {
-          "lessons": [
-            "values",
-            "strings",
-            "numbers"
-          ]
-        },
-        {
-          "lessons": [
-            "variables",
-            "null",
-            "functions"
-          ],
-          "lessons": [
-            "input_and_output"
-          ]
-        },
+      "side_tracks": [
         {
           "track": "git",
           "lessons": [
@@ -102,34 +91,41 @@
           ],
           "projects": [
             "yelpington"
-          ],
-          "events": [
-            {
-              "start": "2:00 pm",
-              "name": "improv workshop 1"
-            },
-            {
-              "start": "4:00 pm",
-              "name": "improv workshop 2"
-            }
           ]
         },
         {
           "track": "agile",
           "lessons": [
             "what_is_agile"
-          ],
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "Thursday 2:00 pm",
+          "name": "improv workshop 1"
+        },
+        {
+          "start": "Thursday 4:00 pm",
+          "name": "improv workshop 2"
+        },
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "logic",
+        "loops",
+        "arrays",
+        "argv",
+        "stacks",
+        "hashes",
+        "recursion"
+      ],
       "projects": [
         {
           "from": "fcc",
@@ -148,47 +144,25 @@
           "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
         },
         "zorkington",
-        "yelpington",
         "chat_client",
         "make_a_linkedin_profile"
       ],
-      "days": [
-        {
-          "lessons": [
-            "logic",
-            "loops",
-            "arrays"
-          ]
-        },
-        {
-          "lessons": [
-            "argv",
-            "stacks",
-            "hashes"
-          ]
-        },
-        {
-          "lessons": [
-            "recursion"
-          ]
-        },
+      "side_tracks": [
         {
           "track": "career",
           "lessons": [
             "linkedin"
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "10:00 am",
+          "name": "code review"
         },
         {
-          "events": [
-            {
-              "start": "10:00 am",
-              "name": "code review"
-            },
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -204,39 +178,27 @@
           "from": "fcc",
           "name": "Basic CSS",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
+        },
+        {
+          "name": "remock"
         }
       ],
-      "days": [
+      "lessons": [
+        "http",
+        "html",
+        "css",
+        "dom_debugging",
+        "css_selectors"
+      ],
+      "side_tracks": [
         {
-          "lessons": [
-            "http",
-            "html"
-          ]
-        },
+          "track": "ux"
+        }
+      ],
+      "events": [
         {
-          "lessons": [
-            "css",
-            "dom_debugging"
-          ]
-        },
-        {
-          "lessons": [
-            "css_selectors"
-          ]
-        },
-        {
-          "track": "ux",
-          "lessons": [
-            "accessibility_and_aria"
-          ]
-        },
-        {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -255,22 +217,12 @@
         },
         "sriracha"
       ],
-      "days": [
-        {
-          "lessons": [
-            "bootstrap_layout"
-          ]
-        },
-        {
-          "lessons": [
-            "bootstrap_components"
-          ]
-        },
-        {
-          "lessons": [
-            "embedding"
-          ]
-        },
+      "lessons": [
+        "bootstrap_layout",
+        "bootstrap_components",
+        "embedding"
+      ],
+      "side_tracks": [
         {
           "track": "ux",
           "lessons": [
@@ -282,14 +234,12 @@
               "name": "mockup_swapathon"
             }
           ]
-        },
+        }
+      ],
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -305,40 +255,28 @@
         "pomodoro",
         "tic_tac_toe"
       ],
-      "days": [
-        {
-          "lessons": [
-            "dom",
-            "jquery"
-          ]
-        },
-        {
-          "lessons": [
-            "ajax",
-            "calling_apis"
-          ]
-        },
-        {
-          "events": [
-            {
-              "start": "all day",
-              "name": "Holiday: Independence Day"
-            }
-          ]
-        },
+      "lessons": [
+        "dom",
+        "jquery",
+        "ajax",
+        "calling_apis"
+      ],
+      "side_tracks": [
         {
           "track": "ux",
           "lessons": [
             "navigation"
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "all day Wednesday",
+          "name": "Holiday: Independence Day"
         },
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -361,39 +299,32 @@
           "description": "choose a topic for a lightning talk, and sign up for a slot"
         }
       ],
-      "days": [
-        {
-          "lessons": [
-            "functions_and_closures"
-          ]
-        },
-        {
-          "lessons": [
-            "regular_expressions"
-          ]
-        },
-        {
-          "lessons": [
-            "object_oriented_javascript"
-          ]
-        },
+      "lessons": [
+        "functions_and_closures",
+        "regular_expressions",
+        "object_oriented_javascript"
+      ],
+      "side_tracks": [
         {
           "track": "career",
           "lessons": [
             "lightning_talks"
-          ]
-        },
-        {
+          ],
+          "projects": [
+            "lightning_talk"
+          ],
           "events": [
             {
               "start": "10:00 am",
               "name": "lightning talks (round 1)"
-            },
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
             }
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -403,114 +334,71 @@
         "shortly",
         "socket_chat"
       ],
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "10:00 am",
-              "name": "lightning talks (round 2)"
-            },
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "10:00 am",
+          "name": "lightning talks (round 2)"
+        },
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "db",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
+        }
+      ],
+      "side_tracks": [
+        {
+          "track": "agile",
+          "lessons": [
+            "inceptions"
           ]
         }
       ]
     },
     {
       "track": "react",
-      "days": [
+      "events": [
         {
-          "events": [
-            {
-              "start": "2:00 pm",
-              "name": "capstone inception"
-            }
-          ]
+          "start": "2:00 pm",
+          "name": "capstone inception"
         },
-        {},
-        {},
-        {},
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "projects",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "projects",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "projects",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     }

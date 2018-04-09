@@ -32,6 +32,14 @@ class Schedule
       }
 
       div.row {
+        h2 "Description"
+        p {
+          markdown(@schedule['description'])
+        }
+      }
+
+
+      div.row {
         h2 "A Typical Day"
       }
       div.row {
@@ -40,7 +48,7 @@ class Schedule
             th "time"
             th "activity"
           }
-          @schedule['day'].each do |event|
+          @schedule['typical_day'].each do |event|
             tr {
               td event[0]
               td event[1]
@@ -57,87 +65,34 @@ class Schedule
           week_start += 1.week
         end
 
-        ap week
-
         track_name = week['track']
         track = @site.track_named(track_name)
-        other_tracks = week['days'] && week['days'].map {|day| day['track']}.compact.sort.uniq - [track_name]
+        track = Track.new(name: track_name) if track.nil?
+
+        side_tracks = week['side_tracks']
 
         div.row {
           br
           br
         }
         div.row {
-
           div(class: 'col col-sm-12 card') {
             div(class: 'card-body') {
               h2(class: 'card-title') {
                 text "Week #{week_number + 1} (#{week_start.strftime("%Y-%m-%d")})"
+                # todo: link to or embed gcal for that week
               }
               div(class: 'card-text col') {
-                if track
-                  h4 {
-                    text "Main Track: "
-                    a track.display_name, href: track.href
-                    #todo: rename /lessons to /tracks in URL here?
-                  }
-                  if other_tracks.present?
-                    h5 {
-                      text "Side Track#{'s' if other_tracks.size > 1}: "
-                      comma = false
-                      other_tracks.each do |other_track_name|
-                        other_track = @site.track_named(other_track_name)
-                        text ', ' if comma
-                        comma = true
-                        a other_track.display_name, href: other_track.href
-                      end
-                    }
+                render_track(track, week)
+              }
+              div(class: 'card-text col') {
+                if side_tracks.present?
+                  side_tracks.each do |track_info|
+                    track_name = track_info['track']
+                    track = @site.track_named(track_name)
+                    render_track(track, track_info)
                   end
                 end
-              }
-              div(class: 'card-text col') {
-                h5 "Projects"
-                ul {
-                  schedule_projects =
-                    (week['projects'] || []).map do |project_info|
-                      #todo: unit test this hash-to-object magic
-                      project_info = {name: project_info} if project_info.is_a? String
-                      project_info.symbolize_keys!
-                      Project.new(**project_info)
-                    end
-                  track_projects = (track ? track.projects : []) - schedule_projects
-                  projects = (schedule_projects + track_projects)
-
-                  projects.each do |project|
-                    li {
-                      widget project.link_view
-                    }
-                  end
-                }
-              }
-              div(class: 'card-text col') {
-                h5(
-                  'data-toggle': 'collapse',
-                  'data-target': "#days-#{week_number}") {
-                  text "Days:"
-                  a(class: "btn border-0 collapsed toggler",
-                    'data-toggle' => 'collapse',
-                    'data-target' => "#days-#{week_number}") {
-                    span :class => 'svg-icon'
-                  }
-                }
-              }
-            }
-
-            div.row {
-              div(id: "days-#{week_number}",
-                  class: 'container-fluid collapse'
-              ) {
-                div.row {
-                  week['days'].each_with_index do |day, day_number|
-                    day_content(day, day_number, track, week, week_start)
-                  end if week['days']
-                }
               }
             }
           }
@@ -146,63 +101,88 @@ class Schedule
     end
 
     private
-    def day_content(day, day_number, track, week, week_start)
-      if day['track']
-        track = @site.track_named(day['track'])
-      end
-      div(class: 'col col-sm-12 col-md-6 card') {
-        div(class: 'card-body') {
-          day_date = week_start + day_number.days
-          h4(class: 'card-title') {
-            text day_date.strftime("%A")
-          }
-          div.row {
-            if day['track']
-              div.col {
-                h5 {
-                  text "Track: "
-                  a track.display_name, href: track.href
-                }
-              }
-            end
-            if day['lessons']
-              div.col {
-                b "Lessons: "
-                first = true
-                day['lessons'].each do |lesson_name|
-                  if first
-                    first = false
-                  else
-                    text ", "
-                  end
-                  lesson = track.lesson_named(lesson_name) rescue nil
-                  if lesson
-                    a lesson.display_name, href: lesson.href
-                  else
-                    text lesson_name
-                  end
-                end
-              }
-            end
-            if day['events']
-              div.col {
-                table {
-                  tr {
-                    th "time"
-                    th "event"
-                  }
-                  day['events'].each do |event|
-                    tr {
-                      td event['start']
-                      td event['name']
-                    }
-                  end
-                }
+
+    def render_events events
+      if events
+        div(class: 'col card-text col-md-4') {
+          b "Events:"
+          table {
+            tr {
+              th "time"
+              th "event"
+            }
+            events.each do |event|
+              tr {
+                td event['start']
+                td event['name']
               }
             end
           }
         }
+      end
+    end
+
+    def render_track(track, json)
+      div(class: 'box') {
+
+        p {
+          i(class: "fas fa-paw")
+          text nbsp
+          b " Track: "
+          a track.display_name, href: track.href
+        }
+
+        lesson_names = json['lessons']
+        if lesson_names
+          p {
+            b "Lessons: "
+            things_with_commas(lesson_names.map do |name|
+              (track.lesson_named(name) rescue nil) || name
+            end)
+          }
+        end
+
+        projects = json['projects']
+        events = json['events']
+
+        if projects || events
+          div(class: 'row') {
+            div(class: 'col card-text col-md-8') {
+              if projects
+                b "Projects: "
+                ul {
+                  projects.each do |project_info|
+                    project = Project.from_json(project_info)
+                    li {
+                      widget project.link_view
+                    }
+                  end
+                }
+              end
+            }
+            render_events(events) if events
+          }
+        end
       }
+    end
+
+    def things_with_commas(things)
+      first = true
+
+      things.each do |thing|
+        if first
+          first = false
+        else
+          text ", "
+        end
+        if thing.respond_to? :link_view
+          widget thing.link_view
+        elsif thing.is_a? Thing
+          a thing.display_name, href: thing.href
+        else
+          text thing.to_s
+        end
+      end
     end
 
   end

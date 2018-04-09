@@ -434,6 +434,9 @@ table {
   tr:nth-child(even) {
     background-color: #EEEEF2;
   }
+  tr:nth-child(odd) {
+    background-color: #FFFFFF;
+  }
   a {
     text-decoration: none;
     display: block;

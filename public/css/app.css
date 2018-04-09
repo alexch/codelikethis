@@ -391,32 +391,35 @@ table {
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
   /* line 437, ../scss/app.scss */
+  table tr:nth-child(odd) {
+    background-color: #FFFFFF; }
+  /* line 440, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 442, ../scss/app.scss */
+  /* line 445, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 446, ../scss/app.scss */
+  /* line 449, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 451, ../scss/app.scss */
+/* line 454, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 453, ../scss/app.scss */
+  /* line 456, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 456, ../scss/app.scss */
+  /* line 459, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 459, ../scss/app.scss */
+  /* line 462, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
 
-/* line 464, ../scss/app.scss */
+/* line 467, ../scss/app.scss */
 span.video_link {
   float: right;
   border: 1px dotted black;

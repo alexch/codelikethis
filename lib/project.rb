@@ -20,6 +20,13 @@ class Project < Thing
     end
   end
 
+  #todo: unit test this hash-or-string-to-object magic
+  def self.from_json project_info
+    project_info = {name: project_info} if project_info.is_a? String
+    project_info.symbolize_keys!
+    Project.new(**project_info)
+  end
+
   # is this project optional? default: false
   attr_reader :optional
   # where the project is located; nil means it's in here
@@ -39,6 +46,8 @@ class Project < Thing
     case from
     when nil
       @href || "/projects/#{name}"
+    when 'CodeCademy'
+      @href
     when 'fcc'
       # TODO: fix FreeCodeCamp itself to allow links to challenges/lessons
       "https://beta.freecodecamp.org/en/challenges/basic-javascript/introduction-to-javascript"
@@ -77,9 +86,9 @@ class Project < Thing
     def munge html
       html.split("\n").map do |line|
         if line == '<!--box-->'
-          '<div class="box">'
+          '<section class="box">'
         elsif line == '<!--/box-->'
-          '</div>'
+          '</section>'
         else
           line
         end
