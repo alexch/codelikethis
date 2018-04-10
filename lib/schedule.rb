@@ -38,6 +38,14 @@ class Schedule
         }
       }
 
+      div.row {
+        h2 "Class Mottos"
+        ul {
+          @schedule['mottos'].each do |motto|
+            li motto
+          end
+        }
+      }
 
       div.row {
         h2 "A Typical Day"
@@ -59,6 +67,7 @@ class Schedule
 
       week_start = nil
       @schedule['weeks'].each_with_index do |week, week_number|
+
         if week['start']
           week_start = Chronic.parse(week['start'])
         else
@@ -66,8 +75,8 @@ class Schedule
         end
 
         track_name = week['track']
-        track = @site.track_named(track_name)
-        track = Track.new(name: track_name) if track.nil?
+        track = @site.track_named(track_name) ||
+          Track.new(name: track_name)
 
         side_tracks = week['side_tracks']
 
@@ -79,18 +88,24 @@ class Schedule
           div(class: 'col col-sm-12 card') {
             div(class: 'card-body') {
               h2(class: 'card-title') {
-                text "Week #{week_number + 1} (#{week_start.strftime("%Y-%m-%d")})"
-                # todo: link to or embed gcal for that week
+                if week_number == 0
+                  text "Prerequisites"
+                else
+                  text "Week #{week_number} (#{week_start.strftime("%Y-%m-%d")})"
+                  # todo: link to or embed gcal for that week
+                end
               }
+
               div(class: 'card-text col') {
                 render_track(track, week)
               }
+
               div(class: 'card-text col') {
                 if side_tracks.present?
-                  side_tracks.each do |track_info|
-                    track_name = track_info['track']
-                    track = @site.track_named(track_name)
-                    render_track(track, track_info)
+                  side_tracks.each do |side_track_info|
+                    side_track_name = side_track_info['track']
+                    side_track = @site.track_named(side_track_name)
+                    render_track(side_track, side_track_info)
                   end
                 end
               }
@@ -136,9 +151,14 @@ class Schedule
         if lesson_names
           p {
             b "Lessons: "
-            things_with_commas(lesson_names.map do |name|
+            lessons = lesson_names.map do |name|
               (track.lesson_named(name) rescue nil) || name
-            end)
+            end
+            things_with_commas(lessons) do |lesson|
+              if lesson.respond_to?(:slides) && (lesson.slides.length == 0)
+                span("*", class: 'no-slides')
+              end
+            end
           }
         end
 
@@ -149,7 +169,7 @@ class Schedule
           div(class: 'row') {
             div(class: 'col card-text col-md-8') {
               if projects
-                b "Projects: "
+                b "Projects:"
                 ul {
                   projects.each do |project_info|
                     project = Project.from_json(project_info)
@@ -180,6 +200,7 @@ class Schedule
         else
           text thing.to_s
         end
+        yield thing
       end
     end
 

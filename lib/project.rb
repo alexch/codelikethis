@@ -54,6 +54,8 @@ class Project < Thing
     when 'fcc'
       # TODO: fix FreeCodeCamp itself to allow links to challenges/lessons
       "https://beta.freecodecamp.org/en/challenges/basic-javascript/introduction-to-javascript"
+    else
+      @href
     end
   end
 

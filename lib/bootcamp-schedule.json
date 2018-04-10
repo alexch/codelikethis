@@ -1,33 +1,30 @@
 {
-  "description": "This is the week-by-week schedule for the 2018 bootcamp. For the day-by-day breakdown, see [this Google calendar](https://calendar.google.com/calendar/b/1?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).\n \n## Mottos:\n \n* There's always another way (there's more than one way to skin a cat)\n* Make it green, then make it clean\n* No magic\n* Docendo discimus (\"By Teaching We Learn\")\n*  Read the error",
+  "description": "This is the week-by-week schedule for the 2018 bootcamp. For the day-by-day breakdown, see [this Google calendar](https://calendar.google.com/calendar/b/1?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).",
+  "mottos": [
+    "There's more than one way to skin a cat",
+    "Make it green, then make it clean",
+    "No magic",
+    "Docendo discimus (\"By Teaching We Learn\")",
+    "Read the error",
+    "Fail fast",
+    "Names hold power [?]"
+  ],
   "typical_day": [
     [
       " 8:30 am",
       "orientation, Q & A, paired code review"
     ],
     [
-      " 9:15 am",
-      "daily standup (all hands)"
-    ],
-    [
       " 9:30 am",
-      "coffee break"
-    ],
-    [
-      "10:00 am",
-      "lecture  "
+      "first lecture"
     ],
     [
       "11:00 am",
-      "morning break"
+      "second lecture"
     ],
     [
-      "11:15 am",
-      "lecture"
-    ],
-    [
-      "12:15 pm",
-      "pair up and lab preview"
+      "12:00 pm",
+      "preview and pair up"
     ],
     [
       "12:30 pm",
@@ -35,7 +32,7 @@
     ],
     [
       " 2:00 pm",
-      "lab"
+      "project/workshop time"
     ],
     [
       " 3:45 pm",
@@ -43,7 +40,7 @@
     ],
     [
       " 4:00 pm",
-      "lab time / project time / mentoring time"
+      "project/workshop time"
     ],
     [
       " 6:00 pm",
@@ -51,6 +48,23 @@
     ]
   ],
   "weeks": [
+    {
+      "start": "2018-04-01",
+      "track": "prerequisites",
+      "projects": [
+        {
+          "from": "fcc",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/learn-how-freecodecamp-works",
+          "name": "Basic HTML and HTML5"
+        },
+        {
+          "from": "fcc",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-css/introduction-to-basic-css",
+          "name": "Basic CSS"
+        }
+      ]
+    },
+
     {
       "start": "2018-06-04",
       "track": "learn_to_code_with_javascript",
