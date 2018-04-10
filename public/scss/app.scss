@@ -210,13 +210,23 @@ span.svg-icon {
   background-position-y: center;
 }
 
-.link .icon {
-  img {
-    width: 30px;
-    height: 24px;
-    background: green;
-    border: 2px solid green;
-    margin: 2px 4px;
+.link {
+  .icon.fcc {
+    img {
+      width: 30px;
+      height: 24px;
+      margin: 2px 4px;
+      background: green;
+      border: 2px solid green;
+    }
+  }
+  .icon.codecademy {
+    img {
+      width: 40px;
+      height: 40px;
+      margin: 2px 2px;
+      border: none;
+    }
   }
 }
 
@@ -226,7 +236,7 @@ span.svg-icon {
   padding: 1em;
   margin: 1em 0;
 
-  h2,h3,h4 {
+  h2, h3, h4 {
     text-decoration: underline;
     font-family: $body-font;
   }

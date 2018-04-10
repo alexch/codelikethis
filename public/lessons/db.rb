@@ -38,9 +38,12 @@ class Track
     lesson name: 'sharding'
 
     lesson name: "SQL" do
-      link href: 'http://docs.sequelizejs.com/',
-           name: 'Sequelize',
-           description: 'a promise-based Object-Relational Mapper for Node.js'
+      link href: "https://node-postgres.com/"
+      link href: "https://github.com/brianc/node-postgres"
+
+      # link href: 'http://docs.sequelizejs.com/',
+      #      name: 'Sequelize',
+      #      description: 'a promise-based Object-Relational Mapper for Node.js'
     end
 
 

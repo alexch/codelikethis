@@ -110,6 +110,3 @@ null         ==   undefined     // true
 * [JavaScript Garden](http://bonsaiden.github.com/JavaScript-Garden/) - "a growing collection of documentation about the most quirky parts of the JavaScript programming language. It gives advice to avoid common mistakes, subtle bugs, as well as performance issues and bad practices that non-expert JavaScript programmers may encounter on their endeavours into the depths of the language."
 
 
-# The Fine Print
-
-> This work is copyright (C) 2010-2012 by Alex Chaffee. All rights reserved. Permission is granted to use this material for non-profit educational purposes, including self-education and open workshops. Use by educational institutions or for-profit classes must be licensed. For permission, please contact Alex Chaffee at alex@stinky.com.

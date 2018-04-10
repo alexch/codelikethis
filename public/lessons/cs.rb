@@ -1,6 +1,6 @@
 require "track"
 
-class Track
+class Track < Thing
   Cs = Track.new(
     name: "cs",
     display_name: "Just Enough Computer Science",
@@ -16,7 +16,7 @@ class Track
 
 
     lesson name: "state_machines" do
-      link "https://www.smashingmagazine.com/2018/01/rise-state-machines/"
+      link href: "https://www.smashingmagazine.com/2018/01/rise-state-machines/"
     end
 
     lesson name: "sorting"

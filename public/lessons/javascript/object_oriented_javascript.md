@@ -589,6 +589,3 @@ class Rectangle {
 * <http://javascriptweblog.wordpress.com/2010/08/30/understanding-javascripts-this/>
 * <http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/>
 
-# The Fine Print
-
-> This work is copyright (C) 2010-2011 by Alex Chaffee. All rights reserved. Permission is granted to use this material for non-profit educational purposes, including self-education and open workshops. Use by educational institutions or for-profit classes must be licensed. For permission, please contact Alex Chaffee at alex@stinky.com.

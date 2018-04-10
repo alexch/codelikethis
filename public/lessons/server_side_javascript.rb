@@ -28,13 +28,11 @@ class Track
     lesson name: "forms"
     lesson name: "cookies", display_name: "State: Cookies"
     lesson name: "sessions", display_name: "State: Sessions"
-
     lesson name: "uploads" # forms, server store, cloud store, plugins  -- optional?
-
     lesson name: "/db/overview", display_name: "State: Databases"
 
-    lesson name: "MVC"
     lesson name: "NodeJS"
+    lesson name: "web_mvc"
     lesson name: "Express"
 
     lesson name: "security_overview" # id vs auth, login/logout, XSS etc?

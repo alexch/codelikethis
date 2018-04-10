@@ -29,8 +29,11 @@ class Project < Thing
 
   # is this project optional? default: false
   attr_reader :optional
+
   # where the project is located; nil means it's in here
-  attr_reader :from
+  def from
+    @from && @from.downcase
+  end
 
   def projects_dir
     @projects_dir || Project.projects_dir
@@ -55,9 +58,13 @@ class Project < Thing
   end
 
   def icon
-    case from
-    when 'fcc'
-      '/images/fcc-fire-white.png'
+    if from
+      case from.downcase
+      when 'fcc'
+        '/images/fcc-fire-white.png'
+      when 'codecademy'
+        '/images/codecademy-logo-400x400.jpg'
+      end
     end
   end
 
