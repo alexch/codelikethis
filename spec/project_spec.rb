@@ -69,7 +69,7 @@ describe Project do
 * blah
       MARKDOWN
       project.view.to_html.should include(<<-HTML)
-<div class="box">
+<section class="box">
 
 <h2>Slay the Dragon</h2>
 
@@ -77,7 +77,7 @@ describe Project do
 
 <p><strong>Then</strong> it should be dead</p>
 
-</div>
+</section>
       HTML
 
     end

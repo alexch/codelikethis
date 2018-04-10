@@ -24,11 +24,16 @@
 
 # Git Is Elegant
 
-* A **commit** represents a set of changes, to be applied all at once, possibly to many different files
-* Each commit has a **pointer** to its parent commit(s), recursively
+> Git's fundamental data model is a linked list.
+
+* A **commit** contains a *set of changes*, to be applied all at once, possibly to many different files
+  * (aka a "diff" or a "patch")
+
+* Each commit contains a **pointer** to its parent commit(s), recursively
+
 * A commit also represents a **checkpoint** of all the files at a given point in history
 
-> So a commit is both a **minimal** set of changes and a **maximal** set of the contents of all files 
+> Because a commit contains a diff and a pointer to history, a commit represents both a **minimal** set of changes to *some* files in the repo, and a **maximal** set of the contents of *all* files in the repo.
  
 # Git Is Weird
 
@@ -38,7 +43,9 @@
 
 Git has an elegant data model, but a clunky command-line interface.
 
-Here are some examples of how git's commands are counterintuitive and inconsistent.
+# Git Is Weird (examples)
+
+Here are some examples of how some of git's commands are counterintuitive and inconsistent.
 
 > **Don't bother to memorize these (yet)!**
 
