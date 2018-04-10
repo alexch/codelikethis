@@ -167,6 +167,10 @@ class Thing
     yet
   ]
 
+  def link_view show_description: false
+    Link::View.new(target: self, show_description: show_description)
+  end
+
   private
 
   def titleized name
@@ -191,4 +195,3 @@ class Thing
   end
 
 end
-

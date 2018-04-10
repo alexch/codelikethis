@@ -129,7 +129,7 @@ class Schedule
           i(class: "fas fa-paw")
           text nbsp
           b " Track: "
-          a track.display_name, href: track.href
+          widget track.link_view
         }
 
         lesson_names = json['lessons']
@@ -176,9 +176,7 @@ class Schedule
           text ", "
         end
         if thing.respond_to? :link_view
-          widget thing.link_view
-        elsif thing.is_a? Thing
-          a thing.display_name, href: thing.href
+          widget thing.link_view(show_description: false)
         else
           text thing.to_s
         end

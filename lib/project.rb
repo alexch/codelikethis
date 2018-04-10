@@ -72,10 +72,6 @@ class Project < Thing
     @content || File.read(content_file)
   end
 
-  def link_view
-    Link::View.new(target: self)
-  end
-
   def view
     View.new(target: self)
   end

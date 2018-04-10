@@ -55,7 +55,7 @@ class Site
       ul do
         @projects.each do |project|
           li do
-            a project.display_name, href: project.href
+            widget project.link_view(show_description: true)
           end
         end
       end
