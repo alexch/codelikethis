@@ -85,6 +85,12 @@ class App < Sinatra::Base
 
     if track
       file = File.join(lesson.dir, "#{params[:lesson]}.md")
+
+      if not File.exist?(file)
+        not_found
+        return
+      end
+
       slides = Deck::Slide.from_file(file)
       slides << begin
         slide = Deck::Slide.new(slide_id: '_next')
