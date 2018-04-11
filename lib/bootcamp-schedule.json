@@ -324,7 +324,6 @@
       ],
       "lessons": [
         "functions_and_closures",
-        "regular_expressions",
         "object_oriented_javascript"
       ],
       "side_tracks": [
