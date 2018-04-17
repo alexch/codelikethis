@@ -3,11 +3,13 @@
   "mottos": [
     "There's more than one way to skin a cat",
     "Make it green, then make it clean",
-    "No magic",
     "Docendo discimus (\"By Teaching We Learn\")",
     "Read the error",
     "Fail fast",
-    "Names hold power [?]"
+    "No magic",
+    "Names hold power (or, Names matter)",
+    "Friction is the enemy of flow",
+    "Zero defects"
   ],
   "typical_day": [
     [
@@ -61,6 +63,12 @@
           "from": "fcc",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-css/introduction-to-basic-css",
           "name": "Basic CSS"
+        },
+        {
+          "from": "CodeCademy",
+          "name": "Getting Started with Programming",
+          "href": "https://www.codecademy.com/tracks/javascript",
+          "optional": true
         }
       ]
     },
@@ -83,6 +91,7 @@
       "projects": [
         "basic_profile",
         "yelpington",
+        "guess",
         {
           "from": "fcc",
           "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
@@ -90,12 +99,12 @@
           "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
         },
         {
-          "from": "CodeCademy",
-          "name": "Getting Started with Programming",
-          "href": "https://www.codecademy.com/tracks/javascript",
-          "optional": true
+          "href": "https://github.com/alexch/test-first-teaching/tree/master/learn_javascript"
         },
-        "guess"
+        {
+          "from": "exercism",
+          "href": "http://exercism.io/exercises/javascript"
+        }
       ],
       "side_tracks": [
         {

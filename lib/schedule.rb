@@ -44,6 +44,10 @@ class Schedule
           @schedule['mottos'].each do |motto|
             li motto
           end
+          li {
+            text "See also "
+            a("Alexisms", href: "http://alexchaffee.com/alexisms")
+          }
         }
       }
 

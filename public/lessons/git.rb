@@ -1,9 +1,9 @@
 require "track"
 
 Track::Git = Track.new(
-    name: "git",
-    display_name: "Version Control with Git and GitHub",
-    description: "Git is very powerful, but also very confusing. This track explores git as a tool and as a lifestyle, discussing how to build workflows of increasing complexity for teams of increasing size and varying cohesion -- from a single developer, to tightly-knit application teams and loosely-knit open-source projects."
+  name: "git",
+  display_name: "Version Control with Git and GitHub",
+  description: "Git is very powerful, but also very confusing. This track explores git as a tool and as a lifestyle, discussing how to build workflows of increasing complexity for teams of increasing size and varying cohesion -- from a single developer, to tightly-knit application teams and loosely-knit open-source projects."
 ) do
 
   link href: "https://try.github.io", name: "Try Github",
@@ -16,8 +16,13 @@ Track::Git = Track.new(
        description: "screencast demo of basic git commands"
 
   lesson name: "git_basics" # what is VC? and some command-line labs
-  lesson name: "git_workflows" # one user, 'git flow' with deploys, OSS with issues and releases, feature & story branches
-  link href: "https://github.com/thoughtbot/guides/tree/master/protocol/git"
+
+  # one user, 'git flow' with deploys, OSS with issues and releases, feature & story branches
+  lesson name: "git_workflows" do
+    link href: "https://github.com/thoughtbot/guides/tree/master/protocol/git"
+    link href: "https://twitter.com/jezhumble/status/982991911937036288"
+    link href: "http://www.davefarley.net/?p=247"
+  end
 
   lesson name: "merging" # basics and conflicts
 

@@ -1,6 +1,6 @@
 require "track"
 
-class Track
+class Track < Thing
   TricksOfTheTrade = Track.new(
       name: "tricks_of_the_trade",
       description: "Secrets of the professional web dev!"
@@ -8,11 +8,18 @@ class Track
     link href: "https://alistapart.com/article/aria-and-progressive-enhancement"
     link href: "https://hackernoon.com/how-i-landed-my-post-bootcamp-software-developer-job-in-just-seven-weeks-7b213c1bb867"
 
-    lesson name: "best_practices"
-    link href: "https://github.com/thoughtbot/guides/tree/master/best-practices"
-    lesson name: "design_patterns"
-    lesson name: "optimization" # and Big O
+    lesson name: "debugging" do
+      link href: "https://m.xkcd.com/627/", name: "Tech Support Cheat Sheet (xkcd)"
+      link href: "https://www.learnenough.com/command-line-tutorial#aside-technical_sophistication"
+    end
+    lesson name: "Google-Driven Debugging" # how to google error messages
 
+    lesson name: "best_practices" do
+      link href: "https://github.com/thoughtbot/guides/tree/master/best-practices"
+    end
+    lesson name: "design_patterns"
+
+    lesson name: "optimization" # and Big O
 
     lesson name: "building_character",
            description: 'Learn about character encodings, Unicode, emoji, escaping, and why curly quotes are horrible.' do
@@ -22,7 +29,6 @@ class Track
       link href: "http://thinkingwithtype.com/"
     end
 
-    lesson name: "Google-Driven Debugging" # how to google error messages
     lesson name: "Giving Feedback" # (on PRs, demos, etc)" # be specific, compassionate, actionable, "yes-and"
 
     lesson name: "code_reviews" do
@@ -44,5 +50,8 @@ class Track
     lesson name: "oauth"
 
 
+    lesson name: "time_management" do
+      link href: "https://www.infoq.com/articles/queues-enemy-of-flow"
+    end
   end
 end

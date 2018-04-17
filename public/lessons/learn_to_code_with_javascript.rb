@@ -16,20 +16,27 @@ Track::LearnToCodeWithJavascript = Track.new(
   goal "basic use of JavaScript"
 
   link name: "Atom", href: "http://atom.io", description: "home page for the Atom text editor"
+
+  link name: "VS Code", href: "http://atom.io", description: "download page for the Visual Studio Code text editor"
+
   link href: "https://www.codecademy.com/tracks/javascript",
        name: "CodeCademy Intro to JavaScript course"
+
   link href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps", name: "MDN: JavaScript First Steps"
+
   link href: "https://www.codecademy.com/articles/glossary-javascript",
-    name: "JavaScript Glossary"
+       name: "JavaScript Glossary"
 
   lesson name: "intro" do
     video youtube_id: '-jRREn6ifEQ'
   end
 
-  lesson name: "the_command_line"
-  link href: "https://vimeo.com/152746852",
-       name: "Terminal 101",
-       description: "intro to unix command-line by a former Turing School student"
+  lesson name: "the_command_line" do
+    link href: "https://vimeo.com/152746852",
+         name: "Terminal 101",
+         description: "intro to unix command-line by a former Turing School student"
+    link href: "https://www.learnenough.com/command-line-tutorial"
+  end
   # time: "11 min",
 
   lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
@@ -41,6 +48,8 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "variables"
   lesson name: "null"
   lesson name: "functions"
+
+  lesson name: "/tricks_of_the_trade/debugging"
 
   lesson name: "input_and_output" do
     video youtube_id: 'DKGZlaPlVLY'
@@ -65,5 +74,8 @@ Track::LearnToCodeWithJavascript = Track.new(
   # lesson name: "function pointers" -- and callbacks?
   # lesson name: "methods" -- hash-as-object and `this`
   # lesson name: "closures" -- scope
+  #
+
+  link href: "https://learnpythonthehardway.org/book/advice.html"
 
 end
