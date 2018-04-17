@@ -140,6 +140,7 @@ DEPENDENCIES
   rack-codehighlighter
   rack-rewrite (~> 1.5)
   rake (>= 10.0.1)
+  redcarpet
   rerun!
   rspec
   sass (~> 3.5.0)
