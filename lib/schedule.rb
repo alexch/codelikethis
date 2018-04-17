@@ -203,8 +203,5 @@ class Schedule
         yield thing
       end
     end
-
   end
-
 end
-
