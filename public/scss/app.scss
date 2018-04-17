@@ -188,6 +188,7 @@ $triangle-pointing-down: str-replace(str-replace(
     text-decoration: none;
   }
 }
+
 .tracks-toggler, .toggler {
   span.svg-icon {
     background-image: $triangle-pointing-down;
@@ -207,6 +208,42 @@ span.svg-icon {
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
+}
+
+.link {
+  .icon.fcc {
+    img {
+      width: 30px;
+      height: 24px;
+      margin: 2px 4px;
+      background: green;
+      border: 2px solid green;
+    }
+  }
+  .icon.codecademy {
+    img {
+      width: 40px;
+      height: 40px;
+      margin: 2px 2px;
+      border: none;
+    }
+  }
+}
+
+// for showing story boxes in Markdown projects
+.box {
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em 0;
+
+  h2, h3, h4 {
+    text-decoration: underline;
+    font-family: $body-font;
+  }
+
+  pre {
+    background: #ededfc;
+  }
 }
 
 /* make the sidebars scrolly and fixed on bigger screens */
@@ -406,6 +443,9 @@ table {
   }
   tr:nth-child(even) {
     background-color: #EEEEF2;
+  }
+  tr:nth-child(odd) {
+    background-color: #FFFFFF;
   }
   a {
     text-decoration: none;

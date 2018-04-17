@@ -10,15 +10,25 @@ class Track
 
     lesson name: "best_practices"
     link href: "https://github.com/thoughtbot/guides/tree/master/best-practices"
+    lesson name: "design_patterns"
+    lesson name: "optimization" # and Big O
 
-    lesson name: "Typography and Web Fonts"
-    link href: "http://thinkingwithtype.com/"
 
     lesson name: "building_character",
            description: 'Learn about character encodings, Unicode, emoji, escaping, and why curly quotes are horrible.' do
       link href: "https://imgs.xkcd.com/comics/the_history_of_unicode.png"
     end
+    lesson name: "typography" do
+      link href: "http://thinkingwithtype.com/"
+    end
 
+    lesson name: "Google-Driven Debugging" # how to google error messages
+    lesson name: "Giving Feedback" # (on PRs, demos, etc)" # be specific, compassionate, actionable, "yes-and"
+
+    lesson name: "code_reviews" do
+      link href: "https://github.com/thoughtbot/guides/tree/master/code-review"
+      link href: "https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c"
+    end
 
     lesson name: "site_maps" # XML file, also link to information architecture and site maps lesson
     lesson name: "Clip art"
@@ -32,17 +42,6 @@ class Track
     end
     lesson name: "Authentication" # roll your own login
     lesson name: "oauth"
-
-
-    lesson name: "Google-Driven Debugging" # how to google error messages
-    lesson name: "Giving Feedback" # (on PRs, demos, etc)" # be specific, compassionate, actionable, "yes-and"
-
-    lesson name: "code_reviews"
-    link href: "https://github.com/thoughtbot/guides/tree/master/code-review"
-
-    lesson name: "design_patterns"
-
-    lesson name: "optimization" # and Big O
 
 
   end

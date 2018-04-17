@@ -20,7 +20,7 @@ Input some markdown source on the left and see it rendered on the right.
   * https://github.com/chjj/marked
   * https://github.com/showdownjs/showdown
 
-## features
+## Stories
 
 - render = just copy 
 - render = markdown

@@ -28,7 +28,11 @@ class Breadcrumbs < Erector::Widget
       ol.breadcrumb {
         @parents.each do |parent|
           li(class: 'breadcrumb-item') {
-            a parent.display_name, href: parent.href
+            if parent.respond_to? :link_view
+              widget parent.link_view
+            else
+              a parent.display_name, href: parent.href
+            end
           }
         end
         li(class: 'breadcrumb-item active') {

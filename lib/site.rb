@@ -39,6 +39,28 @@ class Site
     self.class.const_get('NavBar') || NavBar
   end
 
+  # todo: Test
+  def projects_view
+    # for now, just get all projects ever
+    ProjectsView.new(projects: Project.all)
+  end
+
+  class ProjectsView < Erector::Widget
+    include Views
+
+    # todo: show which track(s) each project is in
+    # todo: sort by schedule
+    def content
+      h1 "Projects"
+      ul do
+        @projects.each do |project|
+          li do
+            widget project.link_view(show_description: true)
+          end
+        end
+      end
+    end
+  end
 end
 
 require 'bootcamp'

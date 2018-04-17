@@ -32,4 +32,55 @@ describe Project do
     project.view.to_html.should include("<p>contents of bake_cookies.md</p>")
   end
 
+  context 'from FreeCodeCamp' do
+    let(:project) {
+      Project.new(name: "bake_cookies",
+                  from: 'fcc')
+    }
+    it "knows where it's from" do
+      expect(project.from).to eq('fcc')
+    end
+    it "uses a foreign URL" do
+      # TODO: fix FreeCodeCamp itself to allow links to challenges/lessons
+      expect(project.href).to eq('https://beta.freecodecamp.org/en/challenges/basic-javascript/introduction-to-javascript')
+    end
+    it "renders an icon" do
+      expect(project.link_view.to_html).to include("fcc-fire-white.png")
+    end
+  end
+
+  context 'extra styling' do
+    it 'puts boxes around stories' do
+      project = Project.new(content: <<-MARKDOWN)
+# Stories
+
+<!--box-->
+
+## Slay the Dragon 
+
+**Given** a dragon
+
+**Then** it should be dead
+
+<!--/box-->
+                                    zork
+## Tech
+
+* blah
+      MARKDOWN
+      project.view.to_html.should include(<<-HTML)
+<section class="box">
+
+<h2>Slay the Dragon</h2>
+
+<p><strong>Given</strong> a dragon</p>
+
+<p><strong>Then</strong> it should be dead</p>
+
+</section>
+      HTML
+
+    end
+  end
+
 end

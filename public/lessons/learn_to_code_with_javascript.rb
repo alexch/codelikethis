@@ -15,7 +15,7 @@ Track::LearnToCodeWithJavascript = Track.new(
   goal "how to recognize and use certain abstract data structures (arrays, stacks, hashes)"
   goal "basic use of JavaScript"
 
-  link name: "Atom", href: "http://atom.io", description: "home page for the Atom text editor"
+  link name: "VS Code", href: "https://code.visualstudio.com", description: "Installation instructions for the VS Code text editor"
   link href: "https://www.codecademy.com/tracks/javascript",
        name: "CodeCademy Intro to JavaScript course"
   link href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps", name: "MDN: JavaScript First Steps"
@@ -52,7 +52,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   end
 
   lesson name: "arrays"
-  lesson name: "argv"
+  lesson name: "argv" do
+    project name: "today_i_learned_cli"
+  end
   lesson name: "stacks"
   lesson name: "hashes"
 

@@ -73,6 +73,3 @@ useful only for debugging [and recursion?]
 
 "lexical scope" vs. "[compiled?] scope"
 
-# The Fine Print
-
-> This work is copyright (C) 2010-2011 by Alex Chaffee. All rights reserved. Permission is granted to use this material for non-profit educational purposes, including self-education and open workshops. Use by educational institutions or for-profit classes must be licensed. For permission, please contact Alex Chaffee at alex@stinky.com.

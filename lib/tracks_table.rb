@@ -36,7 +36,7 @@ class TracksTable < Erector::Widget
   def track_row(track)
     tr {
       th(valign: "top") {
-        a track.display_name, href: track.href
+        widget track.link_view(show_description: false)
       }
       td.lessons(valign: "top") {
         ul {

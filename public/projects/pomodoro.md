@@ -22,6 +22,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 ## Stories
 
+<!--box-->
+
 ### Countdown
 
 **Given** a set duration of 25 minutes
@@ -29,6 +31,9 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 **When** the user clicks the Start button
 
 **Then** the timer should begin counting down once per second, following the sequence: `24:59`, `24:58`, `24:57`, ... `24:00`, `23:59`, ... and so on
+
+<!--/box-->
+<!--box-->
 
 ### Ding!
 
@@ -41,6 +46,9 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 **And** the timer should stop counting down
 
 **And** the Start and Pause buttons should be disabled
+
+<!--/box-->
+<!--box-->
 
 ### Flash!
 
@@ -58,6 +66,9 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** the flashing should stop
 
+<!--/box-->
+<!--box-->
+
 ### Reset
 
 **When** the user clicks Reset
@@ -65,6 +76,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 **Then** the timer should become set to `25:00`
 
 * What if the timer is already running? Should it continue to run, or pause at 25:00?
+
+<!--/box-->
 
 ## Tech
 
@@ -79,4 +92,5 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 * change duration to 2 different set values (10 min and 2 min)
 * change duration to arbitrary value (user input)
 * display the remaining time in the title of the tab (or browser window) so users can check it at a glance
+* look at <https://tomato-timer.com/> for inspiration
 

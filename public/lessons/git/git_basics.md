@@ -1,8 +1,10 @@
 # git vs GitHub
 
-[git](https://git-scm.com/book/) is a *distributed version control tool*
+[git](https://git-scm.com/book/) is a *distributed version control tool* that was built by Linus Torvalds in 2005 to help him manage the Linux Kernel project
 
-[GitHub](https://github.com/) is a *centralized collaboration website*
+[GitHub](https://github.com/) is a *centralized collaboration website* that was [started in 2007](https://www.inc.com/30under30/christine-lagorio/github-pj-hyett-chris-wanstrath-2013.html) by Tom Preston-Werner, Chris Wanstrath and P.J. Hyett in 2007
+
+> Does Linus use GitHub? Not much: <https://www.wired.com/2012/05/torvalds-github/>
 
 # Git Conceptual Model
 
@@ -20,15 +22,32 @@
 |`git checkout -b foo`| create a local branch named "foo"| 
 |`git status`| run this all the time!|
 
+# Git Is Elegant
+
+> Git's fundamental data model is a linked list.
+
+* A **commit** contains a *set of changes*, to be applied all at once, possibly to many different files
+  * (aka a "diff" or a "patch")
+
+* Each commit contains a **pointer** to its parent commit(s), recursively
+
+* A commit also represents a **checkpoint** of all the files at a given point in history
+
+> Because a commit contains a diff and a pointer to history, a commit represents both a **minimal** set of changes to *some* files in the repo, and a **maximal** set of the contents of *all* files in the repo.
+ 
 # Git Is Weird
 
 > "Git was written by very smart aliens." -Alex
 
 ![here be dragons](here-be-dragons.png)
 
-Here are some examples of how git's commands are counterintuitive and inconsistent.
+Git has an elegant data model, but a clunky command-line interface.
 
-> Don't bother to memorize these (yet)!
+# Git Is Weird (examples)
+
+Here are some examples of how some of git's commands are counterintuitive and inconsistent.
+
+> **Don't bother to memorize these (yet)!**
 
 * `git checkout .`
     * *reverts* local file changes
@@ -78,7 +97,7 @@ http://www.slideshare.net/GoAtlassian/superpowered-ci-with-git-sarah-goffdupont
 
 > If you always use pull requests, then code on `master` is **guaranteed** to have been reviewed.
 
-[TODO: screenshots?]
+[TODO: screenshots]
 
 # Feature Branch Details
 

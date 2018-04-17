@@ -88,9 +88,11 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 # What if I know some of this already?
 
-* Pair up and fill in each other's gaps
+* Pair up
+* Help your partner, help your neighbor
 * Promote yourself to TA
-* Work on labs
+
+> The best way to learn is to teach. <br>- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
 
 # Technical requirements
 
@@ -102,7 +104,7 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 -->
 
 * a text editor
-  * e.g. Atom <http://atom.io>
+  * VS Code from Microsoft <https://code.visualstudio.com>
   * Note: Microsoft Word is **not** a text editor
 
 * JavaScript
@@ -125,4 +127,3 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 * Please stop right now and check
   * If you do not have these, RAISE YOUR HAND
-

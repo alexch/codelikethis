@@ -85,6 +85,12 @@ class App < Sinatra::Base
 
     if track
       file = File.join(lesson.dir, "#{params[:lesson]}.md")
+
+      if not File.exist?(file)
+        not_found
+        return
+      end
+
       slides = Deck::Slide.from_file(file)
       slides << begin
         slide = Deck::Slide.new(slide_id: '_next')
@@ -115,6 +121,10 @@ class App < Sinatra::Base
       title: lesson.display_name + " - Code Like This").to_html
   end
 
+  get "/projects" do
+    page(widget: site.projects_view, title: 'Projects - Code Like This').to_html
+  end
+
   get "/projects/:file.:ext" do
     path = File.join(here, "public", "projects", "#{params[:file]}.#{params[:ext]}")
     send_file(path)
@@ -132,15 +142,6 @@ class App < Sinatra::Base
     widget = site.schedule_view if site&.schedule
     page(widget: widget,
          title: site.name).to_html
-  end
-
-  get "/meta/:file" do
-
-    text = File.read(::File.join(here, 'public', 'meta', "#{params[:file]}.md"))
-    content_type('text/html')
-    page(
-      widget: MarkdownWidget.new(text: text),
-      title: params[:file] + " - Code Like This").to_html
   end
 
   def track_dir

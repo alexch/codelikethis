@@ -7,7 +7,9 @@ class Track
     ) do
 
     lesson name: "linked_in"
-    lesson name: "resume_building"
+    lesson name: "resume_building" do
+      link href: "https://medium.freecodecamp.org/how-to-write-a-great-resume-for-software-engineers-75d514dd8322"
+    end
 
     lesson name: "coding_interviews" do
       link href: "https://technology.cloverhealth.com/how-to-interview-entry-level-software-engineers-daaecf9db97"
@@ -15,6 +17,8 @@ class Track
       link href: "https://www.keyvalues.com/culture-queries",
            name: "questions to ask in your job interview",
            description: "A good job interview goes both ways. This site helps you think about questions a job seeker should ask about the company."
+      link href: "https://github.com/mzbat/mirr/",
+           name: "Mock Interview and Resume Review Workshop"
     end
 
     lesson name: "money" # freelance vs salary, negotiating, etc
@@ -26,7 +30,7 @@ class Track
            description: "A Conversation with Yukihiro Matsumoto, Part IV"
       link href: "https://www.artima.com/intv/craft2.html",
            name: "Matz on Craftsmanship (cont.)",
-           description: "A Conversation with Yukihiro Matsumoto, Part IV"
+           description: "A Conversation with Yukihiro Matsumoto, Part IV (continued)"
       link href: "http://manifesto.softwarecraftsmanship.org/"
     end
     lesson name: "contributing_to_open_source"

@@ -39,7 +39,7 @@
 
 ## node is an interactive JavaScript interpreter
 
-* From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens! 
+* From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens!
 
 # Directories
 
@@ -106,8 +106,8 @@
 * a text editor is a program that edits a text file
 * a text editor is *like* a word processor
 * but a text editor is **not** a word processor
-* You probably have *Atom* <http://atom.io>
-  * others include *TextMate*, *Notepad++*, *Sublime Text*, *Vim*
+* You probably have *VS Code* <https://code.visualstudio.com/>
+  * others include *TextMate*, *Notepad++*, *Sublime Text*, *Vim*, *Emacs*, *Atom*
   * but **NOT** *TextEdit* or *Notepad* or *Microsoft Word*
 
 # Source File

@@ -15,7 +15,8 @@ class Track
     link href: "https://www.codecademy.com/tracks/web",
          name: "Codecademy HTML & CSS Track"
 
-    project name: 'FreeCodeCamp "Applied Responsive Web Design Projects"'
+    project from: 'fcc',
+            name: 'Applied Responsive Web Design Projects'
 
     lesson name: "intro",
            display_name: "Introductions and Requirements"

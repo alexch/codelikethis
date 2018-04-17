@@ -79,7 +79,6 @@ class CodeLikeThis < Site
           }
         }
       }
-
     end
   end
 
@@ -99,6 +98,7 @@ class CodeLikeThis < Site
 
     def nav_items
       nav_item name: "Lessons", href: "/lessons"
+      nav_item name: "Projects", href: "/projects"
       nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
       nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
     end

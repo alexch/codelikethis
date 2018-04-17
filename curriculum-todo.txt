@@ -1,0 +1,37 @@
+
+* figure out which projects are mandatory for assessment
+
+* schedule: remove days
+
+* project: basic_profile:
+
+  -[ ] step-by-step instructions
+
+* project: til:
+
+  -[ ] validate sample code
+  -[ ] simplify arguments
+  -[ ] ? write a version of it for students to use during week 1
+  -[ ] phase
+
+* lessons
+
+    -[ ] javascript: npm - how to set up a node project (npm init, npm install / upgrade, npm build, npm run test, npm run, package.json vs package-lock.json)
+
+    -[ ] regex
+
+    -[ ] DOM Debugging
+
+    -[ ] css_selectors
+
+    -[ ] bootstrap_layout
+
+    -[ ] React plus CSS/Grid/Flexbox
+
+    -[ ] React plus Bootstrap https://react-bootstrap.github.io/ ???
+
+* QA track
+ - invite Brie
+ - ask Brie to review https://beta.freecodecamp.org/en/challenges/quality-assurance-and-testing-with-chai/quality-assurance-introduction
+
+

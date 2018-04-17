@@ -30,14 +30,25 @@ class Track
 
     lesson name: "/agile/test_driven"
     lesson name: "tdd_in_js"
+    lesson name: "no_frills_testing"
 
     lesson name: "regexp", display_name: "Regular Expressions"
+
+    lesson name: "ecosystem",
+           display_name: "The JavaScript Ecosystem",
+           description: "ECMAScript? ES2015? Babel? Webpack? Browserify? Node? NPM? Wasm? WTF?"
 
     lesson name: "ecmascript_6"
     lesson name: "transpilers" # webpack, babel, etc.
 
     lesson name: "rest_and_spread"
     lesson name: "promises"
+    lesson name: "async_and_await" do
+      link href: "https://javascript.info/async-await"
+    end
     lesson name: "iterators"
+    link name: "named_parameters", href: "http://2ality.com/2011/11/keyword-parameters.html"
+
+    link href: "http://news.codecademy.com/your-guide-to-semicolons-in-javascript/"
   end
 end

@@ -21,13 +21,22 @@ task :build_css do
   bootstrap_dir = File.join sass_dir, "bootstrap-4.0.0-beta.2/scss"
 
   puts "Building CSS..."
+  scss_file = File.join(sass_dir, "app.scss")
+  css_file = File.join(css_dir, "app.css")
+
+  if File.mtime(scss_file) > File.mtime(css_file)
   sh(["sass",
       "--load-path #{bootstrap_dir}",
       "--line-numbers", # adds comments inside the .css file
       "--line-comments", # creates a .map file
-      File.join(sass_dir, "app.scss"),
-      File.join(css_dir, "app.css"),
+      scss_file,
+      css_file,
      ].join(" "))
+  else
+    puts "Skipping CSS build; to force build, do this:"
+    puts "touch #{scss_file}"
+  end
+
 end
 
 desc "build app"

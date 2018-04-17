@@ -12,6 +12,7 @@ gem "rack-rewrite", "~>1.5"
 gem "sass", "~> 3.5.0"
 gem "awesome_print"
 gem "chronic"
+gem "redcarpet" # todo: , "~> 3.4"
 
 # gem "deckrb", path: "../deck.rb"  # for local development
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"

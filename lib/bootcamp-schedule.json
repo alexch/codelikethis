@@ -1,32 +1,30 @@
 {
-  "day": [
+  "description": "This is the week-by-week schedule for the 2018 bootcamp. For the day-by-day breakdown, see [this Google calendar](https://calendar.google.com/calendar/b/1?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).",
+  "mottos": [
+    "There's more than one way to skin a cat",
+    "Make it green, then make it clean",
+    "No magic",
+    "Docendo discimus (\"By Teaching We Learn\")",
+    "Read the error",
+    "Fail fast",
+    "Names hold power [?]"
+  ],
+  "typical_day": [
     [
       " 8:30 am",
       "orientation, Q & A, paired code review"
     ],
     [
-      " 9:15 am",
-      "daily standup (all hands)"
-    ],
-    [
       " 9:30 am",
-      "coffee break"
-    ],
-    [
-      "10:00 am",
-      "lecture  "
+      "first lecture"
     ],
     [
       "11:00 am",
-      "morning break"
+      "second lecture"
     ],
     [
-      "11:15 am",
-      "lecture"
-    ],
-    [
-      "12:15 pm",
-      "pair up and lab preview"
+      "12:00 pm",
+      "preview and pair up"
     ],
     [
       "12:30 pm",
@@ -34,7 +32,7 @@
     ],
     [
       " 2:00 pm",
-      "lab"
+      "project/workshop time"
     ],
     [
       " 3:45 pm",
@@ -42,7 +40,7 @@
     ],
     [
       " 4:00 pm",
-      "lab time / project time / mentoring time"
+      "project/workshop time"
     ],
     [
       " 6:00 pm",
@@ -51,172 +49,134 @@
   ],
   "weeks": [
     {
-      "start": "2018-06-04",
-      "track": "learn_to_code_with_javascript",
+      "start": "2018-04-01",
+      "track": "prerequisites",
       "projects": [
         {
-          "name": "create_your_github_user_page"
+          "from": "fcc",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/learn-how-freecodecamp-works",
+          "name": "Basic HTML and HTML5"
         },
         {
-          "name": "FreeCodeCamp: Javascript Algorithms And Data Structures: Basic JavaScript",
+          "from": "fcc",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-css/introduction-to-basic-css",
+          "name": "Basic CSS"
+        }
+      ]
+    },
+
+    {
+      "start": "2018-06-04",
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "intro",
+        "the_command_line",
+        "hello_node",
+        "values",
+        "strings",
+        "numbers",
+        "variables",
+        "null",
+        "functions",
+        "input_and_output"
+      ],
+      "projects": [
+        "basic_profile",
+        "yelpington",
+        {
+          "from": "fcc",
+          "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-javascript/concatenating-strings-with-plus-operator",
           "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
         },
         {
-          "name": "CodeCademy: Getting Started with Programming",
+          "from": "CodeCademy",
+          "name": "Getting Started with Programming",
           "href": "https://www.codecademy.com/tracks/javascript",
           "optional": true
         },
         "guess"
       ],
-      "days": [
+      "side_tracks": [
         {
+          "track": "git",
           "lessons": [
-            "intro",
-            "the_command_line",
-            "hello_node"
-          ]
-        },
-        {
-          "lessons": [
-            "values",
-            "strings",
-            "numbers"
-          ]
-        },
-        {
-          "lessons": [
-            "variables",
-            "null",
-            "functions"
-          ]
-        },
-        {
-          "lessons": [
-            "input_and_output"
+            "git_basics"
           ],
-          "events": [
-            {
-              "start": "2:00 pm",
-              "name": "improv workshop 1"
-            },
-            {
-              "start": "2:00 pm",
-              "name": "improv workshop 2"
-            }
+          "projects": [
+            "yelpington"
           ]
         },
         {
           "track": "agile",
           "lessons": [
             "what_is_agile"
-          ],
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "Thursday 2:00 pm",
+          "name": "improv workshop 1"
+        },
+        {
+          "start": "Thursday 4:00 pm",
+          "name": "improv workshop 2"
+        },
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "logic",
+        "loops",
+        "arrays",
+        "argv",
+        "stacks",
+        "hashes",
+        "recursion"
+      ],
       "projects": [
         {
-          "name": "FreeCodeCamp: Debugging",
+          "from": "fcc",
+          "name": "Debugging",
           "href": "https://beta.freecodecamp.org/en/challenges/debugging/introduction-to-the-debugging-challenges",
           "optional": true
         },
         {
-          "name": "FreeCodeCamp: Basic Data Structures",
+          "from": "fcc",
+          "name": "Basic Data Structures",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-data-structures/introduction-to-arrays"
         },
         {
-          "name": "FreeCodeCamp: Basic Algorithm Scripting",
+          "from": "fcc",
+          "name": "Basic Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
         },
         "zorkington",
-        "yelpington",
         "chat_client",
         "make_a_linkedin_profile"
       ],
-      "days": [
+      "side_tracks": [
         {
+          "track": "career",
           "lessons": [
-            "logic",
-            "loops",
-            "arrays"
+            "linkedin"
           ]
-        },
-        {
-          "lessons": [
-            "argv",
-            "stacks",
-            "hashes"
-          ]
-        },
-        {
-          "lessons": [
-            "recursion"
-          ]
-        },
-        {
-          "track": "career"
-        },
-        {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "track": "www",
-      "projects": [
-        {
-          "name": "FreeCodeCamp: Basic HTML",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
-        },
-        {
-          "name": "FreeCodeCamp: Basic CSS",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
         }
       ],
-      "days": [
+      "events": [
         {
-          "lessons": [
-            "http",
-            "html"
-          ]
+          "start": "10:00 am",
+          "name": "code review"
         },
         {
-          "lessons": [
-            "css",
-            "dom_debugging"
-          ]
-        },
-        {
-          "lessons": [
-            "css_selectors"
-          ]
-        },
-        {
-          "track": "ux",
-          "lessons": [
-            "accessibility_and_aria"
-          ]
-        },
-        {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -224,31 +184,59 @@
       "track": "www",
       "projects": [
         {
-          "name": "FreeCodeCamp: Applied Visual Design",
+          "from": "fcc",
+          "name": "Basic HTML",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
+        },
+        {
+          "from": "fcc",
+          "name": "Basic CSS",
+          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
+        },
+        {
+          "name": "remock"
+        }
+      ],
+      "lessons": [
+        "http",
+        "html",
+        "css",
+        "dom_debugging",
+        "css_selectors"
+      ],
+      "side_tracks": [
+        {
+          "track": "ux"
+        }
+      ],
+      "events": [
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
+        }
+      ]
+    },
+    {
+      "track": "www",
+      "projects": [
+        {
+          "from": "fcc",
+          "name": "Applied Visual Design",
           "href": "https://beta.freecodecamp.org/en/challenges/applied-visual-design/introduction-to-the-applied-visual-design-challenges"
         },
         {
-          "name": "FreeCodeCamp: Bootstrap",
+          "from": "fcc",
+          "name": "Bootstrap",
           "href": "https://beta.freecodecamp.org/en/challenges/bootstrap/introduction-to-the-bootstrap-challenges"
         },
         "sriracha"
       ],
-      "days": [
-        {
-          "lessons": [
-            "bootstrap_layout"
-          ]
-        },
-        {
-          "lessons": [
-            "bootstrap_components"
-          ]
-        },
-        {
-          "lessons": [
-            "embedding"
-          ]
-        },
+      "lessons": [
+        "bootstrap_layout",
+        "bootstrap_components",
+        "embedding"
+      ],
+      "side_tracks": [
         {
           "track": "ux",
           "lessons": [
@@ -256,18 +244,16 @@
           ],
           "events": [
             {
-              "start": "2:00 pm",
+              "start": "Thursday 2:00 pm",
               "name": "mockup_swapathon"
             }
           ]
-        },
+        }
+      ],
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -275,47 +261,36 @@
       "track": "client_side_coding",
       "projects": [
         {
-          "name": "FreeCodeCamp: jQuery",
+          "from": "fcc",
+          "name": "jQuery",
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
         "twitch_status",
         "pomodoro",
         "tic_tac_toe"
       ],
-      "days": [
-        {
-          "lessons": [
-            "dom",
-            "jquery"
-          ]
-        },
-        {
-          "lessons": [
-            "ajax",
-            "calling_apis"
-          ]
-        },
-        {
-          "events": [
-            {
-              "start": "all day",
-              "name": "Holiday: Independence Day"
-            }
-          ]
-        },
+      "lessons": [
+        "dom",
+        "jquery",
+        "ajax",
+        "calling_apis"
+      ],
+      "side_tracks": [
         {
           "track": "ux",
           "lessons": [
             "navigation"
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "all day Wednesday",
+          "name": "Holiday: Independence Day"
         },
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -323,39 +298,47 @@
       "track": "javascript",
       "projects": [
         {
-          "name": "FreeCodeCamp: Intermediate Algorithm Scripting",
+          "from": "fcc",
+          "name": "Intermediate Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
         },
         {
-          "name": "FreeCodeCamp: JavaScript Algorithms and Data Structures Projects",
+          "from": "fcc",
+          "name": "JavaScript Algorithms and Data Structures Projects",
           "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
           "description": "choose one"
+        },
+        {
+          "name": "lightning_talk",
+          "description": "choose a topic for a lightning talk, and sign up for a slot"
         }
       ],
-      "days": [
+      "lessons": [
+        "functions_and_closures",
+        "regular_expressions",
+        "object_oriented_javascript"
+      ],
+      "side_tracks": [
         {
+          "track": "career",
           "lessons": [
-            "functions_and_closures"
-          ]
-        },
-        {
-          "lessons": [
-            "regular_expressions"
-          ]
-        },
-        {
-          "lessons": [
-            "object_oriented_javascript"
-          ]
-        },
-        {},
-        {
+            "lightning_talks"
+          ],
+          "projects": [
+            "lightning_talk"
+          ],
           "events": [
             {
-              "start": "4:00 pm",
-              "name": "retrospective"
+              "start": "10:00 am",
+              "name": "lightning talks (round 1)"
             }
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -365,110 +348,71 @@
         "shortly",
         "socket_chat"
       ],
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "10:00 am",
+          "name": "lightning talks (round 2)"
+        },
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "db",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
+        }
+      ],
+      "side_tracks": [
+        {
+          "track": "agile",
+          "lessons": [
+            "inceptions"
           ]
         }
       ]
     },
     {
       "track": "react",
-      "days": [
+      "events": [
         {
-          "events": [
-            {
-              "start": "2:00 pm",
-              "name": "capstone inception"
-            }
-          ]
+          "start": "2:00 pm",
+          "name": "capstone inception"
         },
-        {},
-        {},
-        {},
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "projects",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "projects",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
     {
       "track": "projects",
-      "days": [
-        {},
-        {},
-        {},
-        {},
+      "events": [
         {
-          "events": [
-            {
-              "start": "4:00 pm",
-              "name": "retrospective"
-            }
-          ]
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     }
