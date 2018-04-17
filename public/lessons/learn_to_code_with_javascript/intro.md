@@ -104,7 +104,7 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 -->
 
 * a text editor
-  * e.g. Atom <http://atom.io>
+  * VS Code from Microsoft <https://code.visualstudio.com>
   * Note: Microsoft Word is **not** a text editor
 
 * JavaScript
@@ -127,4 +127,3 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 * Please stop right now and check
   * If you do not have these, RAISE YOUR HAND
-
