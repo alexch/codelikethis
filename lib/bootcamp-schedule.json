@@ -69,6 +69,11 @@
           "name": "Getting Started with Programming",
           "href": "https://www.codecademy.com/tracks/javascript",
           "optional": true
+        },
+        {
+          "from": "fcc",
+          "href": "https://beta.freecodecamp.org/en/challenges/regular-expressions/introduction-to-the-regular-expression-challenges",
+          "name": "Regular Expressions in Javascript"
         }
       ]
     },
