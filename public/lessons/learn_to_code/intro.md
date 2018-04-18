@@ -61,7 +61,7 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
 -->
 
 <!--# And if you (and your pair) finish early...
-<!--* Let us know! 
+<!--* Let us know!
 * Look at [Next Steps](next_steps.md)
 * Start working on my Ruby For Programmers lessons
   * http://testfirst.org
@@ -80,8 +80,8 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
 -->
 
 * a text editor
-  * e.g. Atom <http://atom.io>
-  * Note: Microsoft Word is *not* a text editor
+  * VS Code from Microsoft <https://code.visualstudio.com>
+  * Note: Microsoft Word is **not** a text editor
 
 * Ruby
 
@@ -89,5 +89,3 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
   * visit http://installfest.railsbridge.org for more instructions
   * Ruby version 2.x is preferred, but 1.9 is fine too
     * run `ruby -v` to check
-
-

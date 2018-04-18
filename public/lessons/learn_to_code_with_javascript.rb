@@ -15,9 +15,7 @@ Track::LearnToCodeWithJavascript = Track.new(
   goal "how to recognize and use certain abstract data structures (arrays, stacks, hashes)"
   goal "basic use of JavaScript"
 
-  link name: "Atom", href: "http://atom.io", description: "home page for the Atom text editor"
-
-  link name: "VS Code", href: "http://atom.io", description: "download page for the Visual Studio Code text editor"
+  link name: "VS Code", href: "https://code.visualstudio.com", description: "Installation instructions for the VS Code text editor"
 
   link href: "https://www.codecademy.com/tracks/javascript",
        name: "CodeCademy Intro to JavaScript course"
