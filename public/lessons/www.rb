@@ -15,8 +15,7 @@ class Track
     link href: "https://www.codecademy.com/tracks/web",
          name: "Codecademy HTML & CSS Track"
 
-    project from: 'fcc',
-            name: 'Applied Responsive Web Design Projects'
+    project name: 'FreeCodeCamp "Applied Responsive Web Design Projects"'
 
     lesson name: "intro",
            display_name: "Introductions and Requirements"
@@ -34,6 +33,13 @@ class Track
            display_name: "Going Further With HTML"
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic HTML and HTML5"'
 
+    lesson name: "html5", 
+           display_name: "Web Page Structure With HTML5" do
+      link href: "https://www.thoughtco.com/whats-new-in-html5-3467974",
+           name: "What's new in HTML5?"
+      link href: "http://diveintohtml5.info/"
+    end
+
     lesson name: "css",
            display_name: "Styling with CSS" do
       link href: "https://meyerweb.com/eric/tools/css/reset/"
@@ -45,25 +51,6 @@ class Track
            name: "W3Schools Positioning Exercise"
     end
 
-    lesson name: "dom_debugging",
-           display_name: "DOM Debugging"
-
-    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
-
-    link href: "http://docs.railsbridge.org/javascript-to-do-list/",
-         name: "RailsBridge To Do List"
-    # time: "3 hr"
-
-    lesson name: "html5" do
-      link href: "https://www.thoughtco.com/whats-new-in-html5-3467974",
-           name: "What's new in HTML5?"
-      link href: "http://diveintohtml5.info/"
-    end
-
-    lesson name: "forms" do
-      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
-    end
-
     lesson name: 'css_flexbox',
            display_name: "Page Layout with CSS Flexbox" do
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
@@ -73,6 +60,21 @@ class Track
            name: "Flexbox Froggy",
            description: "a step-by-step test-driven game that teaches you flexbox"
     end
+
+    lesson name: "dom_debugging",
+           display_name: "DOM Debugging"
+
+    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
+
+    link href: "http://docs.railsbridge.org/javascript-to-do-list/",
+         name: "RailsBridge To Do List"
+    # time: "3 hr"
+
+
+    lesson name: "forms" do
+      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
+    end
+
 
     lesson name: "css_frameworks" do
       link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
