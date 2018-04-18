@@ -53,6 +53,7 @@ function moveToRoom(newRoom) {
 }
 ```
 
+You may want to create a [State Machine](/lessons/cs/state_machines) to represent the rooms.
 
 ## Stories
 
