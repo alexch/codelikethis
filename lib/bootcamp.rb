@@ -22,6 +22,7 @@ class Bootcamp < Site
       ::Track::ClientSideCoding,
       ::Track::Javascript, # "JavaScript Topics"
       ::Track::ServerSideJavascript,
+      ::Track::Oo,
       ::Track::Db,
       ::Track::React,
 
