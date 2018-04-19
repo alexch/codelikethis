@@ -23,7 +23,7 @@ With both HTML and CSS, it can be easy to forget a semi-colon or a closing tag, 
 
 # Debugging With Your Browser
 
-I find Chrome to be just about the single most useful tool for debugging HTML and CSS.
+Chrome can be one of the most useful tools for debugging HTML and CSS.
 
 * Right clicking on an element in Chrome. You will see an option labeled 'Inspect'.
 * An easy-to-read visual representation of your DOM will open, which can be modified and analyzed to track down any code that may be of issue.
