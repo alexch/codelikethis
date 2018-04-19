@@ -50,10 +50,10 @@ Inherent display properties of commonly-used HTML elements.
 There are 4 commonly-used position properties in CSS. These further help to position elements on a page. They also help to further confuse you as a developer. 
 
 1. Relative - Elements are relative to the flow of the HTML document. 
-	- Elements moved around with the properties top, left, right, bottom. ``top:20px;`` will move a relatively positioned element 20 pixels from its natural postioning.  
-2. Absolute - This is positioned relative to its parent or ancestor (closest ancestor that is relatively positioned). 
-	- Any element that is positioned absolutely, will be placed (using the top/left/right/bottom CSS properties) specifically within the parent, irrespective of other sibling elements.
-3. Fixed - Position an element is relation to its viewport (browser window).
+	- Elements are moved around with the properties top, left, right, bottom. ``top:20px;`` will move a relatively positioned element 20 pixels from its natural postioning.  
+2. Absolute - This is positioned relative to its closest ancestor that is relatively positioned. 
+	- Any element that is positioned absolutely, will be placed (using the top/left/right/bottom CSS properties) specifically within the parent, irrespective of other sibling elements. ```top:20px; left:20px;``` will place an element 20 pixels from the top and 20 pixels from the left of its ancestor who has the property ```position:relative;```
+3. Fixed - Position an element in relation to its viewport (browser window). ```top:20px;``` will place an element 20 pixels from the top of the browser window at all times. 
 4. Static - Same as relative, but cannot be moved with top/left/right/bottom. It is relative to the flow of the HTML document.
 
 ![CSS Positioning Illustration](http://www.peachpit.com/content/images/ch21_0321703529/elementLinks/21fig10.jpg "Illustration of various positioning techniques using CSS")
