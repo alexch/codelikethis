@@ -5,5 +5,5 @@ Track::Oo = Track.new(
   display_name: "Object-Oriented Design",
   description: "The principles of designing programs using objects."
 ) do
-  lesson name: "intro"
+  lesson name: "introduction"
 end

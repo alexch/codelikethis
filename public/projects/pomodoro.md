@@ -1,6 +1,6 @@
 # Pomodoro
 
-The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a [useful way](https://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730) to focus on a problem [for a little while... but not too long](https://en.wikipedia.org/wiki/Timeboxing), and encourages regular breaks. 
+The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a [useful way](https://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730) to focus on a problem [for a little while... but not too long](https://en.wikipedia.org/wiki/Timeboxing) that encourages regular breaks and can [change your perception of time itself](https://hackernoon.com/change-how-you-perceive-time-618282a1a9ec). 
 
 ![tomato timer](pomodoro.jpg)
 

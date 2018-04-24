@@ -99,10 +99,13 @@
           "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
         },
         {
+          "from": "tft",
+          "name": "testfirst.org JS exercises",
           "href": "https://github.com/alexch/test-first-teaching/tree/master/learn_javascript"
         },
         {
           "from": "exercism",
+          "name": "exercism.io JS exercises",
           "href": "http://exercism.io/exercises/javascript"
         }
       ],
