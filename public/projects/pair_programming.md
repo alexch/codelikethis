@@ -17,6 +17,26 @@ There are several communities that you can use to find pairs within.
 
 ### Find a Pair
 
+Use one of the communities listed above in the description to find a pair or mentor who is willing to work on the project you are developing.
+
+* Agile Ventures
+  1. Create an account at [Agile Ventures Sign Up](https://www.agileventures.org/users/sign_up)
+  2. Sign up for the Agile Ventures Slack group
+  3. Review the projects and join if you are interested
+  4. Ask if anyone is interested in pairing with you on a personal or Agile Ventures project
+
+* Reactiflux
+  1. Sign up for Discord and optionally install their desktop application at [Discord](https://discordapp.com/ "Discord Sign Up")
+  2. Sign up for the Reactiflux Discord Group at [Reactiflux Sign Up](https://www.reactiflux.com/ "Reactiflux Discord Sign Up")
+  3. Introduce yourself within the `#introductions` chanel
+  4. Ask if anyone is willing to pair on a project within the `#need-help` channel
+
+* Code Together Reddit
+  1. Sign up for a Reddit account at [Sign up](https://www.reddit.com/register "Reddit Sign Up")
+  2. Subscribe to the [CodeTogether Sub-reddit](https://www.reddit.com/r/codetogether/ "CodeTogether Sub-reddit")
+  3. Introduce yourself and your project in a new post and describe the help you are looking for
+  4. Be open to accepting help and using the tools that your pair may be familiar with
+
 ### Schedule a Time
 
 ### Work on a Suggested Project
