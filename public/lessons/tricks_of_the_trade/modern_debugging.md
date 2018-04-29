@@ -11,6 +11,7 @@ Modern debugging:
 
   * Google.com
   * StackOverflow.com
+  * in-browser dev tools
 
 # True Names
 
@@ -46,7 +47,7 @@ If you get an error that you don't understand...
 
 # Modern Debugging: Step 1
 
-> Step 1: read it *carefully*. 
+> Step 1: Read the error... **carefully**.
 
 Mentally dissect the error report. Try to separate the *signal* from the *noise*.
 
@@ -120,12 +121,28 @@ Remember, though: *not all answers are correct*. You shouldn't just copy and pas
 
 Copy / paste / tweak is not ideal, but it is acceptable...
 
-...**with these caveats:**
+... **with these caveats:**
 
   * you must have unit tests, to prove that the code 
     * (a) does what you want
     * (b) doesn't do anything you *don't* want
   * you should refactor the code after you get it to work
-  * you must at least try to understand it, or mark (with a code comment or commit message) what parts of the code you don't understand
+  * you must at least try to understand it, then mark (with a code comment or commit message) what parts of the code you don't understand
   * you should put a code comment with a link to the Stack Overflow answer, so future coders (including you!) can learn more about how it works and why it was needed
+
+# Write a Failing Test
+
+When a user reports a bug, the first thing to do is to write a test that exposes the bug, then run it and watch it fail.
+
+This assures that you have *actually* identified the cause of the bug, and that once you think it's fixed, it's *actually* fixed.
+
+# In-Browser Debugging
+
+Web Browsers have some very good tools to help you inspect the state of your app, including
+
+  * JS console
+  * inspect DOM / CSS
+  * network access logs and graphs
+
+(These tools are useful, but you still need to ask and answer all the debugging questions yourself.)
 
