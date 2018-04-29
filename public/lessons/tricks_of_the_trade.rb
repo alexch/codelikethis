@@ -8,11 +8,11 @@ class Track < Thing
     link href: "https://alistapart.com/article/aria-and-progressive-enhancement"
     link href: "https://hackernoon.com/how-i-landed-my-post-bootcamp-software-developer-job-in-just-seven-weeks-7b213c1bb867"
 
-    lesson name: "debugging" do
+    lesson name: "modern_debugging" do
       link href: "https://m.xkcd.com/627/", name: "Tech Support Cheat Sheet (xkcd)"
-      link href: "https://www.learnenough.com/command-line-tutorial#aside-technical_sophistication"
+      link name: "on technical sophistication", 
+        href: "https://www.learnenough.com/command-line-tutorial#aside-technical_sophistication"
     end
-    lesson name: "Google-Driven Debugging" # how to google error messages
 
     lesson name: "best_practices" do
       link href: "https://github.com/thoughtbot/guides/tree/master/best-practices"
@@ -48,7 +48,6 @@ class Track < Thing
     end
     lesson name: "Authentication" # roll your own login
     lesson name: "oauth"
-
 
     lesson name: "time_management" do
       link href: "https://www.infoq.com/articles/queues-enemy-of-flow"
