@@ -39,11 +39,29 @@ Use one of the communities listed above in the description to find a pair or men
 
 ### Schedule a Time
 
+1. Introduce yourself to the community
+2. Explain that you are a beginner and are looking for some help working on one of your projects
+3. Ask whether anyone would like to help you for an hour or so.
+4. Either invite the person who agrees to help you using a calender invitation, or just start if they are ready.
+
 ### Work on a Suggested Project
+
+1. Pick one of the projects from the BTVCA curriculum if you can.
+2. If you have finished your assignments or are in between projects see if your pair has a project to work on.
+3. Have a plan of what you want to achieve in the pair programming session. Have an end in mind.
 
 ### Write About How It Went
 
+1. Take notes during or directly after your pairing session.
+2. Compile those rough notes along with your thoughts after the session has completed.
+3. Think about what things went well during the pairing session. What things didn't go well or felt awkward?
+4. If you could do things differently what would they be?
+
 ### Present Your Conclusions
+
+1. Write your conclusions from the session into a cohesive narrative, as though you were telling a story.
+2. Prepare a presentation to give to the other students about the pair programming session.
+3. Meet with an instructor to schedule a time to give your presentation.
 
 ## Tech
 
