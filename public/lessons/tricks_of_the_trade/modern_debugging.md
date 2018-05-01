@@ -37,6 +37,8 @@ If the first page is filled with clutter, add a term that distinguishes what you
 
 Example: `god` vs `god of war` vs `god of war greece` vs `god of war game`
 
+Example: `stack` vs `javascript stack` vs `javascript stack trace`
+
 Then once you find the docs, [RTFM]().
 
 # Google to Debug
@@ -70,7 +72,7 @@ After answering these questions, look at your code. Open up the file, scroll to 
 
   * there will often (though not always!) be a *stack trace* including paths, file names, line numbers
   * [todo: link to another per-language lesson with a lot more detail on stack traces]
-  * Once you mentally remove the stack trace, it becomes easier to understand the rest of the error.
+  * Once you mentally redact the stack trace, it becomes easier to understand the rest of the error.
 
 # What?
 
@@ -86,9 +88,9 @@ What is the **context** of the error? What is the code **expecting**, and what d
   * e.g. if it says "file not found", what is the file it is looking for? Is it looking in the right place and the file isn't there? Or is it looking in the wrong place?
   * e.g. if it says "undefined is not a function", *undefined* is the value of a variable that it expects to be a function. What is the name of the variable? Why doesn't it point to a function?
 
-# Root cause?
+# Which?
 
-If there are several error messages in a row, **which** is the root error?
+If there are several error messages in a row, **which** is the root cause?
 
   * errors often *cascade*, with one causing another causing another
   * remember to **scroll up** in your terminal to see the earlier error messages. Don't allow later errors to hide earlier ones.
@@ -138,11 +140,11 @@ This assures that you have *actually* identified the cause of the bug, and that 
 
 # In-Browser Debugging
 
-Web Browsers have some very good tools to help you inspect the state of your app, including
+Modern Web Browsers have some very good tools to help you inspect the state of your app, including
 
   * JS console
-  * inspect DOM / CSS
+  * inspect & edit DOM / CSS
   * network access logs and graphs
 
-(These tools are useful, but you still need to ask and answer all the debugging questions yourself.)
+These tools are useful, but you still need to ask and answer all the debugging questions yourself.
 

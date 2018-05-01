@@ -23,8 +23,10 @@ Track::Git = Track.new(
     link href: "https://twitter.com/jezhumble/status/982991911937036288"
     link href: "http://www.davefarley.net/?p=247"
   end
-
-  lesson name: "merging" # basics and conflicts
+  lesson name: "branches" # basics, feature branch workflow
+  lesson name: "remotes" # basics, origin vs upstream
+  lesson name: "merging" # basics, conflicts
+  lesson name: "rebasing_and_squashing"
 
   # should this be a separate "GitHub" track?
   lesson name: "github"
@@ -32,6 +34,5 @@ Track::Git = Track.new(
   lesson name: "github_pull_requests" do
     link href: "https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c"
   end
-  lesson name: "rebasing_and_squashing"
 
 end

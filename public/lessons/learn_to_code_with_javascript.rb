@@ -20,7 +20,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   link href: "https://www.codecademy.com/tracks/javascript",
        name: "CodeCademy Intro to JavaScript course"
 
-  link href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps", name: "MDN: JavaScript First Steps"
+  link from: 'mdn',
+       href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps",
+       name: "MDN: JavaScript First Steps"
 
   link href: "https://www.codecademy.com/articles/glossary-javascript",
        name: "JavaScript Glossary"
@@ -40,7 +42,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
   lesson name: "values"
-  lesson name: "strings"
+  lesson name: "strings" do
+    link href: "https://hackernoon.com/what-every-programmer-should-know-about-string-a6611537f84e"
+  end
   lesson name: "numbers"
 
   lesson name: "variables"
@@ -67,12 +71,12 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   lesson name: "recursion"
 
-  # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
+  lesson name: "closures"
 
+  # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
   # lesson name: "function pointers" -- and callbacks?
   # lesson name: "methods" -- hash-as-object and `this`
-  # lesson name: "closures" -- scope
-  #
+
 
   link href: "https://learnpythonthehardway.org/book/advice.html"
 

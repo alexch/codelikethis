@@ -55,12 +55,12 @@
       "track": "prerequisites",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/learn-how-freecodecamp-works",
           "name": "Basic HTML and HTML5"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-css/introduction-to-basic-css",
           "name": "Basic CSS"
         },
@@ -70,14 +70,9 @@
           "href": "https://www.codecademy.com/tracks/javascript",
           "optional": true
         },
-        {
-          "from": "fcc",
-          "href": "https://beta.freecodecamp.org/en/challenges/regular-expressions/introduction-to-the-regular-expression-challenges",
-          "name": "Regular Expressions in Javascript"
-        }
+        "what_the_regex"
       ]
     },
-
     {
       "start": "2018-06-04",
       "track": "learn_to_code_with_javascript",
@@ -98,7 +93,7 @@
         "yelpington",
         "guess",
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-javascript/concatenating-strings-with-plus-operator",
           "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
@@ -159,18 +154,18 @@
       ],
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Debugging",
           "href": "https://beta.freecodecamp.org/en/challenges/debugging/introduction-to-the-debugging-challenges",
           "optional": true
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic Data Structures",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-data-structures/introduction-to-arrays"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
         },
@@ -201,12 +196,12 @@
       "track": "www",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic HTML",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic CSS",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
         },
@@ -237,12 +232,12 @@
       "track": "www",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Applied Visual Design",
           "href": "https://beta.freecodecamp.org/en/challenges/applied-visual-design/introduction-to-the-applied-visual-design-challenges"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Bootstrap",
           "href": "https://beta.freecodecamp.org/en/challenges/bootstrap/introduction-to-the-bootstrap-challenges"
         },
@@ -278,7 +273,7 @@
       "track": "client_side_coding",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "jQuery",
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
@@ -315,12 +310,12 @@
       "track": "javascript",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Intermediate Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "JavaScript Algorithms and Data Structures Projects",
           "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
           "description": "choose one"

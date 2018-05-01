@@ -178,7 +178,7 @@ class Schedule
                   projects.each do |project_info|
                     project = Project.from_json(project_info)
                     li {
-                      widget project.link_view
+                      widget project.link_view(show_description: true)
                     }
                   end
                 }

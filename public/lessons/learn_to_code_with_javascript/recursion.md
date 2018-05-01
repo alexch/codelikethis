@@ -58,7 +58,8 @@ The simplest form of recursion uses a counter; in this example we are counting d
         console.log("Blastoff!");
       } else {
         console.log("" + seconds + "...");
-        countdown(seconds - 1);
+        let nextCount = seconds - 1;
+        countdown(nextCount);
       }
     }
 
@@ -67,6 +68,21 @@ The simplest form of recursion uses a counter; in this example we are counting d
 Put the above in a source file called `countdown.js` and try it now. 
 
 Note that when recursing, you *must change* the value of the counter, else recurse forever.
+
+# Exercise: Draw It Out
+
+Please dive into the above `countdown` function in excruiciating detail.
+
+Fill out the cells of the following table for the call `countdown(5)`:
+
+| Iteration | seconds | nextCount |
+|---|---|---|
+| 0 |   |   |
+| 1 |   |   |
+| 2 |   |   |
+| 3 |   |   |
+| 4 |   |   |
+
 
 # Lab: Recursive Factorial
 
@@ -94,11 +110,25 @@ Remember to start with the base case!
         }
     }
 
+# Exercise: Draw It Out
+
+Please dive into the above `factorial` function in excruiciating detail.
+
+Fill out the cells of the following table for the call `factorial(5)`:
+
+| Iteration | n | (n - 1) | factorial(n - 1) | return value |
+|---|---|---|---|---|
+| 0 |   |   |   |   |
+| 1 |   |   |   |   |
+| 2 |   |   |   |   |
+| 3 |   |   |   |   |
+| 4 |   |   |   |   |
+
 # Recursion vs Loops
 
 Recursion can be seen as another kind of [loop](loops), like `for` or `while` or `reduce`.
 
-In fact, every recursive function can be "unrolled" and rewritten using a loop and (usually) a [stack](stacks).
+In fact, most recursive functions can be "unrolled" and rewritten using a loop and a [stack](stacks).
 
 For example, here is `factorial` using a stack instead of recursion:
 

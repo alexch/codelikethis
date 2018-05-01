@@ -19,6 +19,10 @@ class Link < Thing
     @display_name || name
   end
 
+  def icon
+    @icon # || find_icon
+  end
+
   def view
     View.new(target: self)
   end
