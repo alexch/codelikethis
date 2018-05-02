@@ -28,8 +28,9 @@ class Track
     lesson name: "forms"
     lesson name: "cookies", display_name: "State: Cookies"
     lesson name: "sessions", display_name: "State: Sessions"
-    lesson name: "uploads" # forms, server store, cloud store, plugins  -- optional?
-    lesson name: "/db/overview", display_name: "State: Databases"
+    lesson name: "uploads", display_name: "State: Uploads" # forms, server store, cloud store, plugins  -- optional?
+    lesson name: "/db/overview", display_name: "State: Databases",
+      description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."
 
     lesson name: "NodeJS"
     lesson name: "web_mvc"

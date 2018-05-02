@@ -74,7 +74,7 @@ class Project < Thing
   def icon
     if from
       case from.downcase
-      when 'FreeCodeCamp'
+      when 'freecodecamp'
         '/images/fcc-fire-white.png'
       when 'codecademy'
         '/images/codecademy-logo-400x400.jpg'

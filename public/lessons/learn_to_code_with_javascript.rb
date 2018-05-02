@@ -37,10 +37,10 @@ Track::LearnToCodeWithJavascript = Track.new(
          description: "intro to unix command-line by a former Turing School student"
     link href: "https://www.learnenough.com/command-line-tutorial"
   end
-  # time: "11 min",
 
   lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
+ 
   lesson name: "values"
   lesson name: "strings" do
     link href: "https://hackernoon.com/what-every-programmer-should-know-about-string-a6611537f84e"
@@ -51,7 +51,7 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "null"
   lesson name: "functions"
 
-  lesson name: "/tricks_of_the_trade/debugging"
+  lesson name: "/tricks_of_the_trade/modern_debugging"
 
   lesson name: "input_and_output" do
     video youtube_id: 'DKGZlaPlVLY'

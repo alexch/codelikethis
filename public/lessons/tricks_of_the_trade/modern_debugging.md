@@ -20,32 +20,46 @@ Modern debugging:
 
 to know the true name of an object... or a concept... is to have power over it
 
-# Naming Is Hard
+**SO**
 
-> "There are only two hard problems in Computer Science: cache invalidation and naming things." 
-> &nbsp; - [Phil Karlton](https://skeptics.stackexchange.com/questions/19836/has-phil-karlton-ever-said-there-are-only-two-hard-things-in-computer-science)
+you can't google an error until you know the name of the error
 
 # Google to Learn
 
 Often, bugs and errors come from programmers not *quite* understanding the library or language feature they are using. 
 
-While reading docs can be tedious, it can only help you to understand what problem you're trying to solve... even if to be able to ask for help elsewhere and start by saying, "I've read the docs and I still don't get it."
+While reading docs can be tedious, it can help you to understand what problem you're trying to solve... 
 
-First, think of the base name of the concept/library/feature/language/tool. Google it and half the time you'll find what you're looking for on the first page of results.
+...even if only to be able to ask for help elsewhere and start by saying, "I've read the docs and I still don't get it."
 
-If the first page is filled with clutter, add a term that distinguishes what you're looking for from all those other results, and search again.
+# How to Google
 
-Example: `god` vs `god of war` vs `god of war greece` vs `god of war game`
+* First, think of the *name* of the concept/library/feature/language/tool/error. Remember, **names have power**.
 
-Example: `stack` vs `javascript stack` vs `javascript stack trace`
+* Search for it and half the time you'll find what you're looking for on the first page of results.
 
-Then once you find the docs, [RTFM]().
+* If the first page is filled with clutter, add a term that distinguishes what you're looking for from all those other results, and search again.
+  * Example: `god` vs `god of war` vs `god of war greece` vs `god of war game`
+  * Example: `stack` vs `javascript stack` vs `javascript stack trace`
+
+* Then once you find the docs, read the whole page.
+  * **Don't** just skim for code snippets!
+
+# How to Read
+
+[demo describing how to read MDN, man pages, etc.. Also, always skip W3Schools.]
 
 # Google to Debug
 
 If you get an error that you don't understand...
 
 ...the first thing to do is **not** to Google it.
+
+# Anatomy of an Error
+
+<!--box-->
+[TODO: diagram or demo of an error; interactively dissect the error, ask students "what is the name?" and "where is it happening?" and such]
+<!--/box-->
 
 # Modern Debugging: Step 1
 
@@ -64,7 +78,7 @@ Answer the following questions:
 
 (More detail on these questions in the following slides.)
 
-After answering these questions, look at your code. Open up the file, scroll to the line and read the code to yourself, or read it aloud to your pair partner or your [rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging). Many times the cause will be obvious.
+*After* answering these questions, look at your code. Open up the file, scroll to the line and read the code to yourself, or read it aloud to your pair partner or your [rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging). Many times the cause will be obvious.
 
 # Where?
 
@@ -115,13 +129,15 @@ If there are several error messages in a row, **which** is the root cause?
 
 > Step 4: Stack Overflow
 
-After googling, you will probably find your question answered on Stack Overflow.
+After googling, you will probably find your question answered on [StackOverflow.com](http://StackOverflow.com "Stack Overflow web site").
 
 Remember, though: *not all answers are correct*. You shouldn't just copy and paste code from the first result.
 
-# SOOP: Stack Overflow Oriented Programming
+# SOOP: StackOverflow Oriented Programming
 
-Copy / paste / tweak is not ideal, but it is acceptable...
+copy / paste / tweak / repeat
+
+This workflow is far from ideal, but it is acceptable...
 
 ... **with these caveats:**
 
@@ -130,7 +146,7 @@ Copy / paste / tweak is not ideal, but it is acceptable...
     * (b) doesn't do anything you *don't* want
   * you should refactor the code after you get it to work
   * you must at least try to understand it, then mark (with a code comment or commit message) what parts of the code you don't understand
-  * you should put a code comment with a link to the Stack Overflow answer, so future coders (including you!) can learn more about how it works and why it was needed
+  * you should put a code comment with a link to the StackOverflow answer, so future coders (including you!) can learn more about how it works and why it was needed
 
 # Write a Failing Test
 
@@ -140,7 +156,7 @@ This assures that you have *actually* identified the cause of the bug, and that 
 
 # In-Browser Debugging
 
-Modern Web Browsers have some very good tools to help you inspect the state of your app, including
+Modern Web Browsers (Chrome, Firefox, Safari, Edge) have some very good tools to help you inspect the state of your app, including
 
   * JS console
   * inspect & edit DOM / CSS
