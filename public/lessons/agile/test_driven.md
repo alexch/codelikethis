@@ -176,7 +176,7 @@ alexch @ gmail.com
 
 # Why test first?
 
-* Gets tests written￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼
+* Gets tests written
 * Easier than retrofitting tests onto an existing system
 * Guarantees 100% test coverage
   * Note: not the same as 100% functional coverage, or a guarantee that your code does what it's supposed to
@@ -601,9 +601,3 @@ Time.stub(:now) { @fake_time }
 # Part IV: Q&A
 
 Thanks!
-
-
-
-
-
-

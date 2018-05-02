@@ -6,3 +6,14 @@ A Regular Expression is a program that matches (or fails to match) parts of a st
 
 * Do these FreeCodeCamp exercises:  <https://beta.freecodecamp.org/en/challenges/regular-expressions/introduction-to-the-regular-expression-challenges>
 
+## Resources for debugging Regular Expressions
+
+- [Regexr - Symbol by symbol explanation of the regular expression](https://regexr.com/ "Symbol by symbol explanation of the regular expression")
+- [Regexper - Diagram the regular expression in a 'Railroad' style](https://regexper.com "Diagram the regular expression in 'railroad' style")
+- [Debuggex - Debug and diagram Regular Expressions](https://www.debuggex.com/ "Debug and diagram Regular Expressions")
+
+## Simple language matching library
+
+This library is similar to Regular Expressions but uses more verbose word-like symbols. It's is not the same as a RegExp but can help to form the problem if you think in a more narrative way.
+
+- [Simple RegEx Homepage ](https://simple-regex.com/ "Simple RegEx Homepage")
