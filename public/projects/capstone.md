@@ -17,9 +17,10 @@ Do you want to work with a client (or "project sponsor")? Here are some local pr
 # Step 2: Proposal
 
 Write up a brief (500 words or less) project proposal. Include
+
   * the team members
   * the business or personal issue the project will solve
-  * a rough list of features
+  * a rough description of core features
 
 Schedule a time to discuss the project with a teacher. We will evaluate it for feasibility, or send it back for more work (or for replacement with a more feasible idea).
 
