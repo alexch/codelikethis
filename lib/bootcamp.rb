@@ -19,6 +19,7 @@ class Bootcamp < Site
     [
       ::Track::LearnToCodeWithJavascript,
       ::Track::Www,
+      ::Track::ResponsiveLayout,
       ::Track::ClientSideCoding,
       ::Track::Javascript, # "JavaScript Topics"
       ::Track::ServerSideJavascript,

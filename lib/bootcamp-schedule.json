@@ -229,7 +229,7 @@
       ]
     },
     {
-      "track": "www",
+      "track": "responsive_layout",
       "projects": [
         {
           "from": "FreeCodeCamp",
@@ -308,6 +308,13 @@
     },
     {
       "track": "javascript",
+      "lessons": [
+        "json",
+        "scope",
+        "encapsulation",
+        "data_structures",
+        "ecosystem"
+      ],
       "projects": [
         {
           "from": "FreeCodeCamp",
@@ -324,10 +331,6 @@
           "name": "lightning_talk",
           "description": "choose a topic for a lightning talk, and sign up for a slot"
         }
-      ],
-      "lessons": [
-        "functions_and_closures",
-        "object_oriented_javascript"
       ],
       "side_tracks": [
         {
@@ -357,13 +360,6 @@
       "track": "oo",
       "lessons": [
         "introduction"
-      ],
-      "projects": [],
-      "events": [
-        {
-          "start": "Friday 4:00 pm",
-          "name": "retrospective"
-        }
       ]
     },
     {
@@ -371,6 +367,14 @@
       "projects": [
         "shortly",
         "socket_chat"
+      ],
+      "side_tracks": [
+        {
+          "track": "agile",
+          "lessons": [
+            "inceptions"
+          ]
+        }
       ],
       "events": [
         {
@@ -384,29 +388,21 @@
       ]
     },
     {
-      "track": "db",
-      "events": [
-        {
-          "start": "Friday 4:00 pm",
-          "name": "retrospective"
-        }
-      ],
-      "side_tracks": [
-        {
-          "track": "agile",
-          "lessons": [
-            "inceptions"
-          ]
-        }
-      ]
-    },
-    {
       "track": "react",
       "events": [
         {
           "start": "2:00 pm",
           "name": "capstone inception"
         },
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
+        }
+      ]
+    },
+    {
+      "track": "db",
+      "events": [
         {
           "start": "Friday 4:00 pm",
           "name": "retrospective"

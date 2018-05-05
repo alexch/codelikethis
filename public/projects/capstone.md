@@ -2,6 +2,8 @@
 
 During the last four weeks of this course, you'll spend most of your afternoons working on a single project. 
 
+Because the goal of this course is to prepare you for work on a software development team, your capstone project must be developed in a team. Team size can be as small as 2 people or as large as 6 (or 8, maybe, with special permission). Since we love to pair program, it's best if your team has an even number of members, but an odd number can also work (please discuss this with staff first).
+
 # Step 1: Discovery
 
 Spend this time exploring ideas and building a team. 
@@ -16,15 +18,19 @@ Do you want to work with a client (or "project sponsor")? Here are some local pr
 
 # Step 2: Proposal
 
+[TODO: deadline for this step?]
+
 Write up a brief (500 words or less) project proposal. Include
 
   * the team members
   * the business or personal issue the project will solve
   * a rough description of core features
 
-Schedule a time to discuss the project with a teacher. We will evaluate it for feasibility, or send it back for more work (or for replacement with a more feasible idea).
+Schedule a time to discuss the project with a teacher. We will evaluate it for feasibility, or send it back for more work (or for replacement with a different idea).
 
-If it's acceptable, we'll assign you a coach, who will check in with your team as needed, and attend demos and planning meetings for advice and counsel.
+If it's acceptable, we'll assign you a coach, who will check in with your team as needed, and attend demos, retros and planning meetings for advice and counsel.
+
+If your project is sponsorless (i.e. your own idea), your coach (or maybe another student?) may agree to act as the sponsor, or help you find one. (In XP/Agile this role is called the "customer" or "business owner"; it's useful to have a person who's detached from the day-to-day coding to make decisions about priority and scope.)
 
 # Step 3: Inception
 
@@ -39,5 +45,4 @@ During each of the four weeks, schedule the following:
  * Weekly retrospective
  * Acceptance meeting / sponsor demo (weekly, or more frequently if possible) -- to get the client to sign off on the features, report bugs, and adjust priorities
  * In-class demo (show and tell!) -- we will set up Friday morning slots during weeks 2 and 3 for you to demo your app to the class; consider this a dress rehearsal for Hiring Partner Demo Day
-
 

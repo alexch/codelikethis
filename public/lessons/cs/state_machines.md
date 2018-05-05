@@ -22,6 +22,27 @@
   \___________/
 ```
 
+# State Machine Example: Simon
+
+![simon game]()
+
+[todo: simon pic]
+
+1. How many states? What are their names?
+2. Can it be in more than one state at a time?
+3. What are the rules for transitioning between states?
+
+# State Transition Diagram: Simon
+
+```
+[G] <-> [Y] 
+ ^ \   / ^
+ |   X   |
+ |  / \  |
+ v       v
+[R] <-> [B]
+```
+
 # State Machine Example: GUI Button
 
 [TODO: picture(s) of MacOS button]
@@ -30,21 +51,22 @@ States:
 
 1. Enabled
 2. Disabled
-3. Depressed
+3. Pressed
 4. Active
 
 Transitions:
 
-* [1] mouseDown -> [3]
+* [enabled] -> mouseDown -> [pressed]
   * "when the mouse is pressed, render the button as being pressed"
-* [3] mouseUp -> [4]
+* [pressed] -> mouseUp -> [active]
   * "when the button is 'down', and the user releases the mouse button, enter the 'active' state"
-* [3] mouseExit -> [1]
-  * "when the pointer leaves the button, re-render the button as up (not pressed)"
-* [1] mouseUp -> [1]
+* [pressed] -> mouseExit -> [enabled]
+  * "when the button is 'down', and the pointer leaves the button, re-render the button as up (not pressed)"
+* [enabled] -> mouseUp -> []
   * "when the button is 'up', and the user releases the mouse button, do nothing"
+* ... and so on
 
-We will also need a state transition *action*: "when the button enters the 'active' state, send a 'click' event and then enter the 'Enabled' state"
+We may also need a state transition *action*: "when the button enters the 'active' state, send a 'click' event and then enter the 'Enabled' state"
 
 # Why use a state machine?
 
@@ -54,6 +76,7 @@ We will also need a state transition *action*: "when the button enters the 'acti
 
 * Many bugs are due to the system receiving unexpected input
 * If you get an "illegal state transition" error, then something unexpected *just* happened, and you may need to add a new transition or state to handle it when it happens again
+* Without a state machine, the system may remain in an invalid state for some time, making it harder to debug once something eventually *does* break
 
 # State of the State
 
@@ -74,20 +97,20 @@ We will also need a state transition *action*: "when the button enters the 'acti
 
 > There's more than one way to do it.
 
-Easiest way is to something like this:
+Easiest way is with something like this:
 
 ```js
 @@@js
-let stateTransitions = {
-  "green": ["yellow"],
-  "yellow": ["red"],
-  "red": ["green"]
+let states = {
+  "green": {canChangeTo: ["yellow"]},
+  "yellow": {canChangeTo: ["red"]},
+  "red": {canChangeTo: ["green"]}
 }
 
 let currentState = "green";
 
 function enterState(newState) {
-  validTransitions = stateTransitions[currentState];
+  let validTransitions = state[currentState].canChangeTo;
   if (validTransitions.includes(newState)) {
     currentState = newState;
   } else {

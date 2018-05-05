@@ -93,12 +93,6 @@ null         ==   undefined     // true
 
 ## Moral: always use === (triple equal)
 
-# Canvas
-
-* http://dev.w3.org/html5/2dcontext/
-* https://developer.mozilla.org/en/canvas_tutorial
-* http://www.selfhtml5.org/wp-content/uploads/2010/07/HTML5_Canvas_Cheat_Sheet.png
-
 # Resources
 
 ## General JavaScript Resources
