@@ -16,7 +16,7 @@ Do you want to work with a client (or "project sponsor")? Here are some local pr
 
 * http://codeforbtv.org/projects/greenup-app - work on the official Green Up Day mobile app (written in React Native), or grab a side project like facilitating communication between team leaders or displaying an embedded map in their web site
 
-
+* https://www.codeforamerica.org/past-projects/court-bot - integrate (or reimplement) CourtBot with the Vermont docket; CourtBot sends text messages or makes voice calls (using Twilio) to prompt people about outstanding citations or court appearances
 
 
 # Step 2: Proposal

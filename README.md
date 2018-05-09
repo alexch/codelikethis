@@ -44,6 +44,8 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`spec` | ruby test source code |
 |`public` | web-visible files |
 |`public/images` | web site images |
+|`public/lessons/images` | images used by some lessons |
+|`public/lessons/foo/bar.jpg` | an image used by only a single lesson |
 |`public/js`     | web site scripts |
 |`public/css`    | web site css files -- **do not edit** these directly! |
 |`public/scss`    | web site sass source files, compiled into public/css |

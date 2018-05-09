@@ -9,7 +9,8 @@
     "No magic",
     "Names hold power (or, Names matter)",
     "Friction is the enemy of flow",
-    "Zero defects"
+    "Zero defects",
+    "If it hurts, do it more"
   ],
   "typical_day": [
     [
@@ -129,11 +130,11 @@
       "events": [
         {
           "start": "Thursday 2:00 pm",
-          "name": "improv workshop 1"
+          "name": "escape workshop 1"
         },
         {
           "start": "Thursday 4:00 pm",
-          "name": "improv workshop 2"
+          "name": "escape workshop 2"
         },
         {
           "start": "Friday 4:00 pm",
@@ -171,7 +172,8 @@
         },
         "zorkington",
         "chat_client",
-        "make_a_linkedin_profile"
+        "tic_tac_toe",
+        "linkedin"
       ],
       "side_tracks": [
         {
@@ -241,7 +243,8 @@
           "name": "Bootstrap",
           "href": "https://beta.freecodecamp.org/en/challenges/bootstrap/introduction-to-the-bootstrap-challenges"
         },
-        "sriracha"
+        "sriracha",
+        "swapathon"
       ],
       "lessons": [
         "bootstrap_layout",
@@ -257,7 +260,7 @@
           "events": [
             {
               "start": "Thursday 2:00 pm",
-              "name": "mockup_swapathon"
+              "name": "swapathon"
             }
           ]
         }
@@ -278,8 +281,7 @@
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
         "twitch_status",
-        "pomodoro",
-        "tic_tac_toe"
+        "pomodoro"
       ],
       "lessons": [
         "dom",
@@ -364,13 +366,17 @@
       "track": "oo",
       "lessons": [
         "introduction"
+      ],
+      "projects": [
+        "resolve_an_issue"
       ]
     },
     {
       "track": "server_side_javascript",
       "projects": [
         "shortly",
-        "socket_chat"
+        "socket_chat",
+        "resolve_an_issue"
       ],
       "side_tracks": [
         {
@@ -382,7 +388,7 @@
       ],
       "events": [
         {
-          "start": "10:00 am",
+          "start": "Friday 10:00 am",
           "name": "lightning talks (round 2)"
         },
         {
