@@ -18,10 +18,10 @@ Components are individual pieces of a web page interface like:
 - a form
 - an up-vote button
 
-# Example
+# Components Example
 
 <!--
-Include screenshot of github feed here with boxes outlining
+Include screen-shot of Github feed here with boxes outlining
 the various sections of the web page as components.
 -->
 
@@ -58,77 +58,99 @@ React makes managing a complicated page like this easier by determining what the
 
 # Virtual DOM 5
 
-For every given frame
+For every given frame **React**:
 
-- Any changes within that time slot are recorded.
-- Interdependencies between components are calculated.
-- The next state of the interface is generated.
-- The frame is rendered to the browser.
+- Records any changes within that time slot.
+- Calculates the interdependencies between components.
+- Generates the next state of the interface.
+- Renders the frame to the browser.
 
 # Virtual DOM 6
 
-This lets you as a programmer
+This lets you as the **programmer**:
 
 - Declare the page you want.
 - Decide how to handle change when it occurs.
-- Allow React to build the page for you when changes happen.
+- Delegate to React how to build the page for you when changes happen.
 
 # Declarative Intent 1
 
-- React lets you to **declare** what you want the page to be.
+React lets you to **declare** what you want the page to be.
 
-        @@@javascript
-        ReactDOM.render(React.createElement(
-          'h1',
-          null,
-          'Hello, React!'
-        ), document.getElementById('root'));
-
-# Declarative Intent
-
-Given a `<root>` element exists the result is:
-
-```
-<root>
-  <h1>Hello, React!</h1>
-</root>
+```js
+@@@javascript
+ReactDOM.render(React.createElement(
+  'h1',
+  null,
+  'Hello, React!'
+), document.getElementById('root'));
 ```
 
-# Declarative Intent
+# Declarative Intent 2
 
-- Something a little more complicated
+What is **Declarative Intent**?
 
-        @@@javascript
-        const element = React.createClass({
-          render: function () {
-            return React.createElement(
-              "div",
-              null,
-              React.createElement(
-                "form",
-                {
-                  id: "my-form",
-                  onSubmit: this.handleSubmit
-                },
-                React.createElement(
-                  "input",
-                  {
-                    id: "create",
-                    type: "text",
-                    placeholder: "something"
-                  }
-                )
-              )
-            );
-          }
-        });
-        const container = document.getElementById('root');
-        ReactDOM.render(element, container);
+Declarative means that you do not instruct the computer about what steps to take in order to achieve your desired result.
 
-const container = document.getElementById('root');
-ReactDOM.render(element, container);
+- You only tell the computer what you want.
+- You must describe something that is possible.
+- The computer figures out how to make it so.
 
-# Declarative Intent
+!["make it so"](./make-it-so.jpg)
+
+# Declarative Intent 3
+
+Declarative is different than **Imperative** code which:
+
+- Requires a sequence of ordered steps
+- With transitions between the states
+
+An imperative example would be manipulating the DOM like this:
+
+```js
+@@@javascript
+window.onLoad function () {
+  var heading = document.createElement('h1');
+  var text = document.createTextNode('Hello DOM!');
+  heading.appendChild(text);
+  document.body.appendChild(heading);
+}
+```
+
+# Declarative Intent 4
+
+<p data-height="228" data-theme-id="dark" data-slug-hash="mLqoGK" data-default-tab="babel" data-user="Dangeranger" data-embed-version="2" data-pen-title="mLqoGK" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/mLqoGK/">mLqoGK</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+# Declarative Intent 5
+
+Something a little more complicated
+
+```js
+@@@javascript
+ReactDOM.render(
+  React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "form",
+      {
+        id: "my-form",
+        onSubmit: this.handleSubmit
+      },
+      React.createElement(
+        "input",
+        {
+          id: "create",
+          type: "text",
+          placeholder: "something"
+        }
+      )
+    )
+  ), document.getElementById('root'));
+```
+
+# Declarative Intent 6
 
 Given a `<root>` element exists the result is:
 
@@ -140,32 +162,36 @@ Given a `<root>` element exists the result is:
 
 But when the form initiates a `onSubmit` event React will handle the changes using the `handleSubmit` handler function.
 
-# Declarative Intent
+# Declarative Intent 7
 
-- Accepts a description of the components that make up the page, and what DOM node to **render** the results to.
+Accepts a description of the components that make up the page, and what DOM node to **render** the results to.
 
-        @@@javascript
-        ReactDOM.render()
-        // API signature
-        ReactDOM.render(element, container[, callback])
+```js
+@@@javascript
+ReactDOM.render()
+// API signature
+ReactDOM.render(element, container[, callback])
+```
 
 - `element` => The DOM element and children to generate.
 - `container` => What DOM element to generate within.
 - `callback` => Optional function to call after generation.
 - [ReactDOM.render API Docs](https://reactjs.org/docs/react-api.html#createelement)
 
-# Declarative Intent
+# Declarative Intent 8
 
-- Accepts an element type, props of the element, and child elements.
+Accepts an element type, props of the element, and child elements.
 
-        @@@javascript
-        React.createElement()
-        // API signature
-        React.createElement(
-          type,
-          [props],
-          [...children]
-        )
+```js
+@@@javascript
+React.createElement()
+// API signature
+React.createElement(
+  type,
+  [props],
+  [...children]
+)
+```
 
 - `type` => A DOM element like `<div>`, `<form>` or `<h1>`.
 - `props` => The element properties like `id`, `class`, `placeholder`, `onChange`, or `onSubmit`.
