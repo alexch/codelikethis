@@ -97,20 +97,9 @@ class Project < Thing
     attr_reader :target
 
     def content
-      text raw(munge(from_markdown(target.content)))
+      text raw(from_markdown(target.content))
     end
 
-    def munge html
-      html.split("\n").map do |line|
-        if line == '<!--box-->'
-          '<section class="box">'
-        elsif line == '<!--/box-->'
-          '</section>'
-        else
-          line
-        end
-      end.compact.join("\n")
-    end
   end
 
 end

@@ -38,7 +38,20 @@ module Views
                                            :with_toc_data => true
     )
 
-    @@markdown.render(text)
+    munge(@@markdown.render(text))
+  end
+
+  # todo: test
+  def munge html
+    html.split("\n").map do |line|
+      if line == '<!--box-->'
+        '<section class="box">'
+      elsif line == '<!--/box-->'
+        '</section>'
+      else
+        line
+      end
+    end.compact.join("\n")
   end
 
   def markdown text
