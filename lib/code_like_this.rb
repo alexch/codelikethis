@@ -16,7 +16,7 @@ class CodeLikeThis < Site
   def tracks
     # load every track before making the ordered list of all tracks
     require_all(Track.tracks_dir)
-    ::Track.constants.map {|c| Track.const_get(c)}.select {|t| (t.is_a? Track and t != Track::Separator)}
+    ::Track.constants.map {|c| Track.const_get(c)}.select {|t| (t.is_a? Track and t != Track::Separator)}.sort_by(&:display_name)
   end
 
   def view

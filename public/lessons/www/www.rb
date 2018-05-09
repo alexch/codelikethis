@@ -1,6 +1,6 @@
 require "track"
 
-require_relative '../../lib/link.rb'
+require_relative '../../../lib/link.rb' # :-(
 
 class Track
   Www = Track.new(

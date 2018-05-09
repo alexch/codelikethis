@@ -343,7 +343,7 @@ span.svg-icon {
     position: absolute;
     padding: 0 0;
     margin: -4px 2px;
-    width: 28px;
+    width: 28px; // ignore any warning; this width *is* needed
     text-align: center;
     vertical-align: center;
     font-size: 150%;
