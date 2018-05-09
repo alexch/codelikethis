@@ -119,3 +119,8 @@ console.log("Area is " + circle.area());
 
 <https://developer.mozilla.org/en-US/docs/Glossary/IIFE>
 
+# Example 4: private functions
+
+[TODO: exmaple]
+
+**Beware**: private functions are difficult to write unit tests for.

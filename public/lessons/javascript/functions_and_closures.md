@@ -73,3 +73,8 @@ useful only for debugging [and recursion?]
 
 "lexical scope" vs. "[compiled?] scope"
 
+# Map Filter Reduce
+
+![](../images/map-filter-reduce-in-emoji.png)
+
+(source unknown)
