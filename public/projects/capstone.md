@@ -14,7 +14,10 @@ Do you want to work with a client (or "project sponsor")? Here are some local pr
 
 * http://www.codeforbtv.org/projects/cvoeo-app - build a mobile app for a non-profit to help several hundred Vermonters per year to manage their money, complete their paperwork, and earn up to $750/year from Financial Futures benefits
 
-* ...
+* http://codeforbtv.org/projects/greenup-app - work on the official Green Up Day mobile app (written in React Native), or grab a side project like facilitating communication between team leaders or displaying an embedded map in their web site
+
+
+
 
 # Step 2: Proposal
 

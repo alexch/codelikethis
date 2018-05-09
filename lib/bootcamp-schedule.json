@@ -343,13 +343,17 @@
           ],
           "events": [
             {
-              "start": "10:00 am",
+              "start": "Friday 10:00 am",
               "name": "lightning talks (round 1)"
             }
           ]
         }
       ],
       "events": [
+        {
+          "start": "Wednesday 12:30 pm",
+          "name": "L&L: Code for BTV"
+        },
         {
           "start": "Friday 4:00 pm",
           "name": "retrospective"
