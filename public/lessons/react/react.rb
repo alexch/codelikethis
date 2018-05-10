@@ -44,6 +44,5 @@ class Track
          name: "You might not need Redux - Dan Abramov"
     link href: "http://buildwithreact.com/tutorial"
     link href: "https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/"
-
   end
 end
