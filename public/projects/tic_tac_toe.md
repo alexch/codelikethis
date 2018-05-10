@@ -2,12 +2,35 @@
 
 Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two players on a 3x3 grid.
 
-## Wireframes
-
-`Ready Player: X`
 ![tic tac toe completed](tic_tac_toe.svg)
 
-`[New Game]`
+In this project you will implement the game rules and a text-based UI.
+
+If you're ambitious you could rewrite it later using HTML5 and JS events, but start with the console version, then later integrate the core game code with an HTML app.
+
+## Wireframes
+
+```
+ 1 | 2 | 3 
+--- --- ---
+ 4 | 5 | 6  
+--- --- ---
+ 7 | 8 | 9
+
+Ready Player X
+Move to? 2
+```
+
+```
+ 1 | X | 3 
+--- --- ---
+ 4 | 5 | 6  
+--- --- ---
+ 7 | 8 | 9
+
+Ready Player O
+Move to? _
+```
 
 ## Stories
 
@@ -19,9 +42,11 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 **Given** the current player is X
 
-**When** the user clicks on a cell
+**When** the user selects a cell
 
-**Then** an X appears in that cell
+**Then** the board redraws
+
+**And** an X appears in that cell
 
 **And** the turn ends
  
@@ -31,7 +56,7 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 **Given** the player is O
 
-**When** the user clicks on a cell
+**When** the user selects a cell
 
 **Then** an O appears in that cell
 
@@ -43,9 +68,9 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 ### Rules
 
-**When** the user clicks on a cell that is not empty
+**When** the user selects a cell that is not empty
 
-**Then** the game says "impossible!" and does not put an X or O in the cell
+**Then** the game says "Impossible! That cell is already full." and does not put an X or O in the cell
 
 **And** the current player does not change
  
@@ -62,7 +87,7 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 **And** the app says "Congratulations! Player X wins!"
 
-**And** the "Ready Player" message disappears
+**And** the game ends
  
 (and the same for Player O)
 
@@ -85,9 +110,11 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 <!--/box-->
 <!--box-->
 
-### New Game UI
+### New Game UI (HTML VERSION ONLY)
 
 - design a clean "New Game" UI allowing choice of human or computer, name, and symbol
+- consider a modal dialog box
+- consider button placement and visibility
 
 <!--/box-->
 <!--box-->

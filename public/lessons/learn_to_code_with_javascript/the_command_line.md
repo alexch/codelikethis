@@ -138,6 +138,16 @@
 
 What happens? Is this what you expected?
 
+# Shortcuts
+
+![bash shortcuts](../images/bash-cursor-shortcuts.jpg)
+
+also:
+
+* use ESC instead of ALT for the above
+* ESC-Backspace (delete previous word)
+* up/down arrow (scroll through history)
+
 # Next Steps
 
 See <https://www.learnenough.com/command-line-tutorial> for a great command-line tutorial.

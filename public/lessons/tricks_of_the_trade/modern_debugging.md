@@ -58,7 +58,9 @@ If you get an error that you don't understand...
 # Anatomy of an Error
 
 <!--box-->
+
 [TODO: diagram or demo of an error; interactively dissect the error, ask students "what is the name?" and "where is it happening?" and such]
+
 <!--/box-->
 
 # Modern Debugging: Step 1
@@ -101,6 +103,10 @@ What is the **context** of the error? What is the code **expecting**, and what d
 
   * e.g. if it says "file not found", what is the file it is looking for? Is it looking in the right place and the file isn't there? Or is it looking in the wrong place?
   * e.g. if it says "undefined is not a function", *undefined* is the value of a variable that it expects to be a function. What is the name of the variable? Why doesn't it point to a function?
+
+You may have to use traditional debugging techniques to answer these questions, e.g. print statements to fill in the values that didn't make it into the error message itself.
+
+(Yes, a 'file not found' error really should tell you what file was not found; when you write your own error messages you should include as much relevant info as you can.)
 
 # Which?
 

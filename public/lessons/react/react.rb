@@ -42,5 +42,8 @@ class Track
 
     link href: "https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367",
          name: "You might not need Redux - Dan Abramov"
+    link href: "http://buildwithreact.com/tutorial"
+    link href: "https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/"
+
   end
 end

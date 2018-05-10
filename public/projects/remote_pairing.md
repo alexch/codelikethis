@@ -1,4 +1,4 @@
-# Anonymous Pair Programming
+# Remote Pairing
 
 For this project you will find another person to pair with within programmer communities.
 
