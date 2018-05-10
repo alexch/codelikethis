@@ -10,9 +10,14 @@ class Track
     lesson name: "what_is_react"
     lesson name: "jsx_and_the_virtual_dom",
            description: "How to write JSX and convert it to runnable React using Babel-Standalone in the browser."
-
+    lesson name: "functional_behavior",
+           description: "React adheres to a 'mostly' functional way of creating and composing components. This lesson will expose some of the ways this makes building interfaces easier."
+    lesson name: "simple_api",
+           description: "The React API is quite simple compared to other libraries and frameworks there are only a dozen or so functions which will be used regularaly."
+    lesson name: "component_oriented",
+           description: "React applications are organized into components. This lesson will show how components can be built up out of smaller components and then reused in new contexts."
     lesson name: "props_and_state",
-           description: "The difference between Props and State in React Components."
+           description: "Props and State are the two methods available to React to deal with immutable and mutable data within the application. This lesson will explain their uses and differences."
 
     # TODO: Update the Railsbridge Project
     # This Raisbridge project is great, but uses a very old version of React.
@@ -27,7 +32,7 @@ class Track
     lesson name: "the_flux_design_pattern",
            description: "How a one way flow of state will make managing change easier"
     lesson name: "managing_state_with_redux",
-           description: "The Redux library is a simplem implementation of the Flux Design Pattern"
+           description: "The Redux library is a simple implementation of the 'Flux Design Pattern' and will be useful for managing change within your application."
 
     link href: "https://reactjs.org/tutorial/tutorial.html",
          name: "Build a Tic-Tac-Toe game in the browser with React"

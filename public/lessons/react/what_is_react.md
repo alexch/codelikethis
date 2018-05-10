@@ -196,9 +196,3 @@ React.createElement(
 - `type` => A DOM element like `<div>`, `<form>` or `<h1>`.
 - `props` => The element properties like `id`, `class`, `placeholder`, `onChange`, or `onSubmit`.
 - `children` => Child elements to nest within the generated element.
-
-# Functional Behavior
-
-# Simple API
-
-# Component Oriented
