@@ -196,3 +196,12 @@ React.createElement(
 - `type` => A DOM element like `<div>`, `<form>` or `<h1>`.
 - `props` => The element properties like `id`, `class`, `placeholder`, `onChange`, or `onSubmit`.
 - `children` => Child elements to nest within the generated element.
+
+# Summary
+
+React allows you to:
+
+- Write JavaScript that builds HTML
+- Write functions that update the HTML when state changes
+- Delegate responsibility over the DOM to a library
+- Be confident that the desired application state will be achieved
