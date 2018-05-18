@@ -281,7 +281,11 @@
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
         "twitch_status",
-        "pomodoro"
+        "pomodoro",
+        {
+          "name": "lightning_talk",
+          "description": "choose a topic for a lightning talk, and sign up for a slot"
+        }
       ],
       "lessons": [
         "dom",
@@ -301,6 +305,10 @@
         {
           "start": "all day Wednesday",
           "name": "Holiday: Independence Day"
+        },
+        {
+          "start": "Friday 10:00 am",
+          "name": "lightning talks (round 1)"
         },
         {
           "start": "Friday 4:00 pm",
@@ -328,10 +336,6 @@
           "name": "JavaScript Algorithms and Data Structures Projects",
           "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
           "description": "choose one"
-        },
-        {
-          "name": "lightning_talk",
-          "description": "choose a topic for a lightning talk, and sign up for a slot"
         }
       ],
       "side_tracks": [
@@ -346,7 +350,7 @@
           "events": [
             {
               "start": "Friday 10:00 am",
-              "name": "lightning talks (round 1)"
+              "name": "lightning talks (round 2)"
             }
           ]
         }
@@ -368,7 +372,7 @@
         "introduction"
       ],
       "projects": [
-        "resolve_an_issue"
+        "peer_code_review"
       ]
     },
     {
