@@ -124,6 +124,7 @@ class Thing
     JavaScript
     jQuery
     JS
+    JSX
     JSON
     LinkedIn
     MVC
