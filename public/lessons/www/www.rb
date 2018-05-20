@@ -52,7 +52,6 @@ class Track
            name: "W3Schools Positioning Exercise"
     end
 
-<<<<<<< HEAD:public/lessons/www.rb
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
 
@@ -63,9 +62,9 @@ class Track
     end
 
     lesson name: "bootstrap_development",
-           display_name: "Responsive Development With Bootstrap" do
+           display_name: "Introduction to Bootstrap" do
       link href: "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
-           name: "Bootstrap Intro"
+           name: "Bootstrap Introduction"
     end
 
     lesson name: "bootstrap_webpage",
@@ -74,10 +73,6 @@ class Track
            name: "Building a Portfolio Page with Bootstrap"
     end
 
-    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
-
-=======
->>>>>>> da714dc0919d7b0a5cab5a6ad2e657f419198f5a:public/lessons/www/www.rb
     lesson name: 'css_flexbox',
            display_name: "Page Layout with CSS Flexbox" do
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
@@ -87,28 +82,6 @@ class Track
            name: "Flexbox Froggy",
            description: "a step-by-step test-driven game that teaches you flexbox"
     end
-
-<<<<<<< HEAD:public/lessons/www.rb
-    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
-
-    link href: "http://docs.railsbridge.org/javascript-to-do-list/",
-         name: "RailsBridge To Do List"
-    # time: "3 hr"
-
-    lesson name: "forms" do
-      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
-    end
-
-    lesson name: "css_frameworks" do
-      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
-    end
-
-    lesson name: "responsive_layout"
-    lab name: 'FreeCodeCamp "Responsive Web Design"'
-=======
-    lesson name: "dom_debugging",
-           display_name: "DOM Debugging"
->>>>>>> da714dc0919d7b0a5cab5a6ad2e657f419198f5a:public/lessons/www/www.rb
 
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
 
