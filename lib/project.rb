@@ -32,7 +32,7 @@ class Project < Thing
 
   # where the project is located; nil means it's in here
   def from
-    @from && @from.downcase
+    @from
   end
 
   def projects_dir
@@ -44,25 +44,37 @@ class Project < Thing
   end
 
   # todo: use OO, not switch statement, for 'From' href and icon
-
+  # todo: more unit tests around all these cases
   def href
     case from
     when nil
       @href || "/projects/#{name}"
     when 'CodeCademy'
       @href
-    when 'fcc'
-      # TODO: fix FreeCodeCamp itself to allow links to challenges/lessons
-      "https://beta.freecodecamp.org/en/challenges/basic-javascript/introduction-to-javascript"
+    when 'FreeCodeCamp'
+      if @href
+        if @href =~ /^\// #  allow partial paths e.g. /basic-javascript/introduction-to-javascript
+          "https://beta.freecodecamp.org/en/challenges#{@href}"
+        else  
+          @href
+        end
+      else
+        "https://beta.freecodecamp.org/en/challenges/basic-javascript/introduction-to-javascript"
+      end
     else
       @href
     end
   end
 
+
+  # def link
+  #   Link.new(name: name, href: href, description: description, from: from)
+  # end
+
   def icon
     if from
       case from.downcase
-      when 'fcc'
+      when 'freecodecamp'
         '/images/fcc-fire-white.png'
       when 'codecademy'
         '/images/codecademy-logo-400x400.jpg'
@@ -85,20 +97,9 @@ class Project < Thing
     attr_reader :target
 
     def content
-      text raw(munge(from_markdown(target.content)))
+      text raw(from_markdown(target.content))
     end
 
-    def munge html
-      html.split("\n").map do |line|
-        if line == '<!--box-->'
-          '<section class="box">'
-        elsif line == '<!--/box-->'
-          '</section>'
-        else
-          line
-        end
-      end.compact.join("\n")
-    end
   end
 
 end

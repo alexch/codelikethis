@@ -25,8 +25,16 @@ fruit.toUpperCase() // "BERRY"
 * `var` is a lot like `let` but has wider *scope* which is sometimes bad
 * If you don't use either `let` or `var` then the variable becomes *global* (which is dangerous)
 * Moral: *always use let* unless you have a good reason not to
-  * but only use it once per variable name
-  * in node, if you see this error then try again without the `let`
+
+# Don't let me down 
+
+Unfortunately, in JavaScript you can only use `let` once per variable name (in a given *scope*), otherwise you will get a syntax error:
+
+```js
+Identifier 'x' has already been declared
+```
+
+That means that when you're in the node console, if you see this error then try again without the `let`
 
 ```js
 @@@js
@@ -35,7 +43,7 @@ undefined
 > let x = x + 2
 SyntaxError: Identifier 'x' has already been declared
 > x = x + 2
-4
+3
 ```
 
 * also confusing: the value of a `let` is `undefined`, but the value of a normal assignment is the value being assigned
@@ -97,8 +105,8 @@ You can assign and reassign variables at will.
 
 ```js
 @@@ js
-let color = "blue"
-let fruit = "berry"
+color = "blue"
+fruit = "berry"
 color + fruit           // 'blueberry'
 
 color = "black"         // 'black'

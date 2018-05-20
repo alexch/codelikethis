@@ -81,6 +81,19 @@ What is the CSS doing here?
   * Every box consists of four different 'layers': Margin, Border, Padding, and Content.
   * Margins and padding help to position and align content inside an HTML element. 
   * Padding and margins are transparent. Think of it as empty space. 
-  * Borders can be colored, or image-based. They can also be 'styled' (dashes, dots, etc
+  * Borders can be colored, or image-based. They can also be 'styled' (dashes, dots, etc.)
 
 ![Illustration of the CSS box model](https://pressupinc.com/wp-content/uploads/2014/01/box-model.png "CSS Box Model")
+
+# @import
+
+* You can put all your CSS in one file
+
+OR...
+
+* You can load one CSS file into another using `@import`
+
+[todo: example]
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/%40import
+

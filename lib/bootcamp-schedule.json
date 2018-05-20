@@ -3,11 +3,14 @@
   "mottos": [
     "There's more than one way to skin a cat",
     "Make it green, then make it clean",
-    "No magic",
     "Docendo discimus (\"By Teaching We Learn\")",
     "Read the error",
     "Fail fast",
-    "Names hold power [?]"
+    "No magic",
+    "Names hold power (or, Names matter)",
+    "Friction is the enemy of flow",
+    "Zero defects",
+    "If it hurts, do it more"
   ],
   "typical_day": [
     [
@@ -53,18 +56,24 @@
       "track": "prerequisites",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/learn-how-freecodecamp-works",
           "name": "Basic HTML and HTML5"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-css/introduction-to-basic-css",
           "name": "Basic CSS"
-        }
+        },
+        {
+          "from": "CodeCademy",
+          "name": "Getting Started with Programming",
+          "href": "https://www.codecademy.com/tracks/javascript",
+          "optional": true
+        },
+        "what_the_regex"
       ]
     },
-
     {
       "start": "2018-06-04",
       "track": "learn_to_code_with_javascript",
@@ -83,19 +92,23 @@
       "projects": [
         "basic_profile",
         "yelpington",
+        "guess",
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-javascript/concatenating-strings-with-plus-operator",
           "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
         },
         {
-          "from": "CodeCademy",
-          "name": "Getting Started with Programming",
-          "href": "https://www.codecademy.com/tracks/javascript",
-          "optional": true
+          "from": "tft",
+          "name": "testfirst.org JS exercises",
+          "href": "https://github.com/alexch/test-first-teaching/tree/master/learn_javascript"
         },
-        "guess"
+        {
+          "from": "exercism",
+          "name": "exercism.io JS exercises",
+          "href": "http://exercism.io/languages/javascript/about"
+        }
       ],
       "side_tracks": [
         {
@@ -117,11 +130,11 @@
       "events": [
         {
           "start": "Thursday 2:00 pm",
-          "name": "improv workshop 1"
+          "name": "escape workshop 1"
         },
         {
           "start": "Thursday 4:00 pm",
-          "name": "improv workshop 2"
+          "name": "escape workshop 2"
         },
         {
           "start": "Friday 4:00 pm",
@@ -142,24 +155,25 @@
       ],
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Debugging",
           "href": "https://beta.freecodecamp.org/en/challenges/debugging/introduction-to-the-debugging-challenges",
           "optional": true
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic Data Structures",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-data-structures/introduction-to-arrays"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
         },
         "zorkington",
         "chat_client",
-        "make_a_linkedin_profile"
+        "tic_tac_toe",
+        "linkedin"
       ],
       "side_tracks": [
         {
@@ -184,12 +198,12 @@
       "track": "www",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic HTML",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Basic CSS",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
         },
@@ -217,19 +231,20 @@
       ]
     },
     {
-      "track": "www",
+      "track": "responsive_layout",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Applied Visual Design",
           "href": "https://beta.freecodecamp.org/en/challenges/applied-visual-design/introduction-to-the-applied-visual-design-challenges"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Bootstrap",
           "href": "https://beta.freecodecamp.org/en/challenges/bootstrap/introduction-to-the-bootstrap-challenges"
         },
-        "sriracha"
+        "sriracha",
+        "swapathon"
       ],
       "lessons": [
         "bootstrap_layout",
@@ -245,7 +260,7 @@
           "events": [
             {
               "start": "Thursday 2:00 pm",
-              "name": "mockup_swapathon"
+              "name": "swapathon"
             }
           ]
         }
@@ -261,13 +276,16 @@
       "track": "client_side_coding",
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "jQuery",
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
         "twitch_status",
         "pomodoro",
-        "tic_tac_toe"
+        {
+          "name": "lightning_talk",
+          "description": "choose a topic for a lightning talk, and sign up for a slot"
+        }
       ],
       "lessons": [
         "dom",
@@ -289,6 +307,10 @@
           "name": "Holiday: Independence Day"
         },
         {
+          "start": "Friday 10:00 am",
+          "name": "lightning talks (round 1)"
+        },
+        {
           "start": "Friday 4:00 pm",
           "name": "retrospective"
         }
@@ -296,27 +318,25 @@
     },
     {
       "track": "javascript",
+      "lessons": [
+        "json",
+        "scope",
+        "encapsulation",
+        "data_structures",
+        "ecosystem"
+      ],
       "projects": [
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "Intermediate Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
         },
         {
-          "from": "fcc",
+          "from": "FreeCodeCamp",
           "name": "JavaScript Algorithms and Data Structures Projects",
           "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
           "description": "choose one"
-        },
-        {
-          "name": "lightning_talk",
-          "description": "choose a topic for a lightning talk, and sign up for a slot"
         }
-      ],
-      "lessons": [
-        "functions_and_closures",
-        "regular_expressions",
-        "object_oriented_javascript"
       ],
       "side_tracks": [
         {
@@ -329,29 +349,16 @@
           ],
           "events": [
             {
-              "start": "10:00 am",
-              "name": "lightning talks (round 1)"
+              "start": "Friday 10:00 am",
+              "name": "lightning talks (round 2)"
             }
           ]
         }
       ],
       "events": [
         {
-          "start": "Friday 4:00 pm",
-          "name": "retrospective"
-        }
-      ]
-    },
-    {
-      "track": "server_side_javascript",
-      "projects": [
-        "shortly",
-        "socket_chat"
-      ],
-      "events": [
-        {
-          "start": "10:00 am",
-          "name": "lightning talks (round 2)"
+          "start": "Wednesday 12:30 pm",
+          "name": "L&L: Code for BTV"
         },
         {
           "start": "Friday 4:00 pm",
@@ -360,12 +367,20 @@
       ]
     },
     {
-      "track": "db",
-      "events": [
-        {
-          "start": "Friday 4:00 pm",
-          "name": "retrospective"
-        }
+      "track": "oo",
+      "lessons": [
+        "introduction"
+      ],
+      "projects": [
+        "peer_code_review"
+      ]
+    },
+    {
+      "track": "server_side_javascript",
+      "projects": [
+        "shortly",
+        "socket_chat",
+        "resolve_an_issue"
       ],
       "side_tracks": [
         {
@@ -373,6 +388,16 @@
           "lessons": [
             "inceptions"
           ]
+        }
+      ],
+      "events": [
+        {
+          "start": "Friday 10:00 am",
+          "name": "lightning talks (round 2)"
+        },
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
         }
       ]
     },
@@ -390,7 +415,7 @@
       ]
     },
     {
-      "track": "projects",
+      "track": "db",
       "events": [
         {
           "start": "Friday 4:00 pm",

@@ -39,17 +39,19 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`./config.ru` | app config |
 |`lib` | ruby source code |
 |`lib/thing.rb::WEIRD_WORDS` | list of oddly-capitalized words (e.g. CSS, JavaScript) |
-| `lib/bootcamp.rb` | ruby Site describing the Bootcamp course(s) |
-| `lib/bootcamp-schedule.json` | JSON describing the Bootcamp course schedule |
+|`lib/bootcamp.rb` | ruby Site describing the Bootcamp course(s) |
+|`lib/bootcamp-schedule.json` | JSON describing the Bootcamp course schedule |
 |`spec` | ruby test source code |
 |`public` | web-visible files |
 |`public/images` | web site images |
+|`public/lessons/images` | images used by some lessons |
+|`public/lessons/foo/bar.jpg` | an image used by only a single lesson |
 |`public/js`     | web site scripts |
 |`public/css`    | web site css files -- **do not edit** these directly! |
 |`public/scss`    | web site sass source files, compiled into public/css |
 |`public/lessons` | course files (markdown and images), organized by track |
-|`public/lessons/trackname.rb`  | track description files; names match public/lessons subdirs |
-|`public/lessons/trackname/` | course files (markdown and images), organized by track |
+|`public/lessons/trackname/` | track files (markdown and images), organized by track |
+|`public/lessons/trackname/trackname.rb`  | track description files; names match public/lessons subdirs |
 |`public/lessons/trackname/baking.md` | markdown slides for a single lesson named `baking` (served from `/lessons/trackname/bake_cookies` URL path) |
 |`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/projects/bake_cookies` URL path) |
 
@@ -76,10 +78,11 @@ To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?sit
 ## Adding a Track
 
 1. Decide on its name. Its name is a `camelcase_word` that will automatically turn into titlecase when displayed. (e.g.  `cook_food` => `Cook Food`)
-2. define a `Track` subclass in a new file inside `public/lessons` (e.g. `public/lessons/cook_food.rb`) and create a new subdir inside `public/lessons` (e.g. `public/lessons/cook_food/`)
-3. declare your lessons inside the track file. Look at the existing `.rb` files inside `public/lessons` for examples.
-4. for each Lesson, put its slides in a markdown file with its name in the lessons directory (e.g. `public/lessons/cook_food/stirfry.md`)
-5. add the Track to your Site by following the example of [Bootcamp](lib/bootcamp.rb)
+2. create a new subdir inside `public/lessons` (e.g. `public/lessons/cook_food/`)
+3. define a `Track` subclass in a new file inside that dir (e.g. `public/lessons/cook_food/cook_food.rb`) and 
+4. declare your lessons inside the track file. Look at the existing `.rb` files inside `public/lessons` for examples.
+5. for each Lesson, put its slides in a markdown file with its name in the lessons directory (e.g. `public/lessons/cook_food/stirfry.md`)
+6. add the Track to your Site by following the example of [Bootcamp](lib/bootcamp.rb)
 
 ## Projects
 
@@ -92,4 +95,5 @@ To declare a project is a bit scattershot. It can be referenced in several place
 3. in a Track file, directly under the Track
 4. in a Track file, nested under a Lesson
 
+We should clean this up, so we don't have duplication/omission of e.g. project descriptions depending on where they're defined/referenced.
 

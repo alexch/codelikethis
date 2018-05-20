@@ -44,6 +44,10 @@ class Schedule
           @schedule['mottos'].each do |motto|
             li motto
           end
+          li {
+            text "See also "
+            a("Alexisms", href: "http://alexchaffee.com/alexisms")
+          }
         }
       }
 
@@ -91,8 +95,11 @@ class Schedule
                 if week_number == 0
                   text "Prerequisites"
                 else
-                  text "Week #{week_number} (#{week_start.strftime("%Y-%m-%d")})"
-                  # todo: link to or embed gcal for that week
+                  text "Week #{week_number} "
+                  text "("
+                  gcal_link = "https://calendar.google.com/calendar/b/1/r/week/#{week_start.strftime("%Y/%m/%d")}?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+                  a week_start.strftime("%Y-%m-%d"), href: gcal_link
+                  text ")"
                 end
               }
 
@@ -174,7 +181,7 @@ class Schedule
                   projects.each do |project_info|
                     project = Project.from_json(project_info)
                     li {
-                      widget project.link_view
+                      widget project.link_view(show_description: true)
                     }
                   end
                 }
@@ -203,8 +210,5 @@ class Schedule
         yield thing
       end
     end
-
   end
-
 end
-

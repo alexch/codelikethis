@@ -1,6 +1,6 @@
 require "track"
 
-require_relative '../../lib/link.rb'
+require_relative '../../../lib/link.rb' # :-(
 
 
 Track::LearnToCodeWithJavascript = Track.new(
@@ -16,31 +16,42 @@ Track::LearnToCodeWithJavascript = Track.new(
   goal "basic use of JavaScript"
 
   link name: "VS Code", href: "https://code.visualstudio.com", description: "Installation instructions for the VS Code text editor"
+
   link href: "https://www.codecademy.com/tracks/javascript",
        name: "CodeCademy Intro to JavaScript course"
-  link href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps", name: "MDN: JavaScript First Steps"
+
+  link from: 'mdn',
+       href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps",
+       name: "MDN: JavaScript First Steps"
+
   link href: "https://www.codecademy.com/articles/glossary-javascript",
-    name: "JavaScript Glossary"
+       name: "JavaScript Glossary"
 
   lesson name: "intro" do
     video youtube_id: '-jRREn6ifEQ'
   end
 
-  lesson name: "the_command_line"
-  link href: "https://vimeo.com/152746852",
-       name: "Terminal 101",
-       description: "intro to unix command-line by a former Turing School student"
-  # time: "11 min",
+  lesson name: "the_command_line" do
+    link href: "https://vimeo.com/152746852",
+         name: "Terminal 101",
+         description: "intro to unix command-line by a former Turing School student"
+    link href: "https://www.learnenough.com/command-line-tutorial"
+  end
 
   lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
+ 
   lesson name: "values"
-  lesson name: "strings"
+  lesson name: "strings" do
+    link href: "https://hackernoon.com/what-every-programmer-should-know-about-string-a6611537f84e"
+  end
   lesson name: "numbers"
 
   lesson name: "variables"
   lesson name: "null"
   lesson name: "functions"
+
+  lesson name: "/tricks_of_the_trade/modern_debugging"
 
   lesson name: "input_and_output" do
     video youtube_id: 'DKGZlaPlVLY'
@@ -60,10 +71,13 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   lesson name: "recursion"
 
-  # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
+  lesson name: "closures"
 
+  # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
   # lesson name: "function pointers" -- and callbacks?
   # lesson name: "methods" -- hash-as-object and `this`
-  # lesson name: "closures" -- scope
+
+
+  link href: "https://learnpythonthehardway.org/book/advice.html"
 
 end

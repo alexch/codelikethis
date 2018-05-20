@@ -91,6 +91,14 @@ main {
   img {
     max-width: 100%;
   }
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 0.5em;
+    padding: 0.5em;
+    font-style: italic;
+    font-size: 110%;
+  }
 }
 
 section.slide {
@@ -211,7 +219,7 @@ span.svg-icon {
 }
 
 .link {
-  .icon.fcc {
+  .icon.freecodecamp {
     img {
       width: 30px;
       height: 24px;
@@ -335,7 +343,7 @@ span.svg-icon {
     position: absolute;
     padding: 0 0;
     margin: -4px 2px;
-    width: 28px;
+    width: 28px; // ignore any warning; this width *is* needed
     text-align: center;
     vertical-align: center;
     font-size: 150%;

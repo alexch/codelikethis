@@ -17,6 +17,8 @@ class Track < Thing
 
     lesson name: "state_machines" do
       link href: "https://www.smashingmagazine.com/2018/01/rise-state-machines/"
+      link href: "https://en.wikipedia.org/wiki/Finite-state_machine"
+      link href: "https://blog.markshead.com/869/state-machines-computer-science/"
     end
 
     lesson name: "sorting"

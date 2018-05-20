@@ -5,3 +5,4 @@
 *.DS_Store
 spec/results.txt
 *__
+.dropbox.attr

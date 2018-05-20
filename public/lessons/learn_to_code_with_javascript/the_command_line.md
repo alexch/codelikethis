@@ -84,7 +84,8 @@
 * `mkdir` ("make dir") -- creates a new SUBDIRECTORY inside the current directory
 * `cd` ("change dir") -- move into a different directory
 
-*These apply to Unix shells, but most work in Windows too*
+> These apply to Unix shells, but most work in Windows too
+
 
 # LAB: make a subdirectory and then enter it
 
@@ -123,7 +124,9 @@
 # LAB: Hello, World
 
 1. Make sure you are in your `code` subdirectory using `pwd`
-2. Open this directory in Atom using `atom .`
+2. Open this directory 
+  * for Atom, use `atom .`
+  * for VSCode, use `code .`
 3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
 
@@ -134,3 +137,17 @@
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?
+
+# Shortcuts
+
+![bash shortcuts](../images/bash-cursor-shortcuts.jpg)
+
+also:
+
+* use ESC instead of ALT for the above
+* ESC-Backspace (delete previous word)
+* up/down arrow (scroll through history)
+
+# Next Steps
+
+See <https://www.learnenough.com/command-line-tutorial> for a great command-line tutorial.
