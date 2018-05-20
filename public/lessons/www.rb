@@ -52,6 +52,12 @@ class Track
            name: "W3Schools Positioning Exercise"
     end
 
+    lesson name: "responsive_development",
+           display_name: "Introduction to Responsive Development" do
+      link href: "https://www.w3schools.com/html/html_responsive.asp",
+           name: "W3Schools Responsive HTML Development"
+    end
+
     lesson name: 'css_flexbox',
            display_name: "Page Layout with CSS Flexbox" do
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
