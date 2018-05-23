@@ -11,6 +11,9 @@ class Track
       link href: "https://www.slideshare.net/RyanLockard/secrets-from-the-agile-manifesto-authors-on-flow"
     end
 
+    lesson name: "cadence",
+      description: "'Cadence' refers to the pace, rhythm, and recurring themes of a march or other piece of music. The cadence of an Agile team revolves around its schedule of meetings, large and small. Daily standups, weekly demos, monthly retrospectives... all contribute to (or detract from!) the team's communication, feedback, and cohesion."
+
     link href: 'https://medium.freecodecamp.org/want-to-be-a-developer-you-should-probably-be-pair-programming-2c6ec12c4866'
 
     lesson name: "test_driven" do

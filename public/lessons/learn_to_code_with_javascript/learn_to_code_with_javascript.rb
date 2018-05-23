@@ -50,8 +50,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "variables"
   lesson name: "null"
   lesson name: "functions"
+  lesson name: "/tricks_of_the_trade/modern_debugging" # should be taught after functions (since call stack traces don't make sense without 'call')
 
-  lesson name: "/tricks_of_the_trade/modern_debugging"
+  lesson name: "intermission", description: "This is a good place for a break."
 
   lesson name: "input_and_output" do
     video youtube_id: 'DKGZlaPlVLY'

@@ -81,5 +81,14 @@ fill a glass of water at the sink
     end
   end
 
+  describe "projects" do
+    subject { Lesson.new(track: track, name: "scramble_eggs") do
+      project name: "cook_breakfast"
+    end
+    }
+    it "shows up" do
+      subject.view.to_html.should include("Cook Breakfast")
+    end
+  end
 
 end
