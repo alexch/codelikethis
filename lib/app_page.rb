@@ -57,7 +57,7 @@ class AppPage < Erector::Widgets::Page
                integrity: "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb",
                crossorigin: "anonymous"
 
-    font name: "Museo500"
+    font name: "fonts/Museo500"
     font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
 
     stylesheet name: "coderay"
