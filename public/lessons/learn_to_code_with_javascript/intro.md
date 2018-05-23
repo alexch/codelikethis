@@ -106,6 +106,7 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 * a text editor
   * VS Code from Microsoft <https://code.visualstudio.com>
   * Note: Microsoft Word is **not** a text editor
+  * [VS Code Overview](https://medium.freecodecamp.org/an-overview-of-visual-studio-code-for-front-end-developers-49a4aa0771fb)
 
 * JavaScript
   * a live node.js installation

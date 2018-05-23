@@ -79,5 +79,6 @@ Track::LearnToCodeWithJavascript = Track.new(
 
 
   link href: "https://learnpythonthehardway.org/book/advice.html"
-
+  link href: "http://jsforcats.com"
+  
 end

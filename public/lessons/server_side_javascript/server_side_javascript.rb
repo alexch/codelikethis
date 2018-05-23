@@ -3,7 +3,7 @@ require "track"
 class Track
   ServerSideJavascript = Track.new(
     name: "server_side_javascript",
-    display_name: "Server-Side JavaScript",
+    display_name: "Server-Side Coding with JavaScript",
     description: "Once you know the use of JavaScript as a command-line language, you can use it to create web application servers (aka \"web apps\"). First ",
     ) do
     # "the student will learn..."

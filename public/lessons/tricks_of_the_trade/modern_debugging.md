@@ -170,3 +170,6 @@ Modern Web Browsers (Chrome, Firefox, Safari, Edge) have some very good tools to
 
 These tools are useful, but you still need to ask and answer all the debugging questions yourself.
 
+"Modern Front-End Workflow with DevTools" talk: <https://www.youtube.com/watch?v=wz1Sy5C039M>
+
+

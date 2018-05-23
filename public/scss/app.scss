@@ -19,6 +19,16 @@ body {
   padding-top: $topbar-height; // to skip the fixed nav bar
 }
 
+@media print { 
+  nav.navbar, #sidebar, .twitter, div.notice, a[name=content] {
+    display: none !important;
+  }
+  body {
+    padding-top: 0;
+  }
+}
+
+
 nav.navbar {
   background: white;
 
@@ -257,7 +267,7 @@ span.svg-icon {
 /* make the sidebars scrolly and fixed on bigger screens */
 @include media-breakpoint-up(md) {
   #sidebar, #right-sidebar {
-    display: block !important;
+    display: block;
     max-height: calc(100vh - #{$topbar-height}); // using SassScript interpolation so the math happens at runtime
     overflow-y: auto;
     position: sticky;
@@ -483,7 +493,10 @@ table {
 }
 
 span.video_link {
-  float: right;
+  @media screen { 
+    float: right;
+  }
   border: 1px dotted black;
   padding: 1px 2px;
+  margin-left: 1em;
 }
