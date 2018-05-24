@@ -92,6 +92,7 @@
       "projects": [
         "basic_profile",
         "yelpington",
+        "escape_room",
         "guess",
         {
           "from": "FreeCodeCamp",
