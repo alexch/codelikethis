@@ -52,6 +52,27 @@ class Track
            name: "W3Schools Positioning Exercise"
     end
 
+    lesson name: "dom_debugging",
+           display_name: "DOM Debugging"
+
+    lesson name: "responsive_development",
+           display_name: "Introduction to Responsive Development" do
+      link href: "https://www.w3schools.com/html/html_responsive.asp",
+           name: "W3Schools Responsive HTML Development"
+    end
+
+    lesson name: "bootstrap_development",
+           display_name: "Introduction to Bootstrap" do
+      link href: "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
+           name: "Bootstrap Introduction"
+    end
+
+    lesson name: "bootstrap_webpage",
+           display_name: "Going Further With Bootstrap" do
+      link href: "https://medium.freecodecamp.org/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33",
+           name: "Building a Portfolio Page with Bootstrap"
+    end
+
     lesson name: 'css_flexbox',
            display_name: "Page Layout with CSS Flexbox" do
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
@@ -61,9 +82,6 @@ class Track
            name: "Flexbox Froggy",
            description: "a step-by-step test-driven game that teaches you flexbox"
     end
-
-    lesson name: "dom_debugging",
-           display_name: "DOM Debugging"
 
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
 
