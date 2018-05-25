@@ -1,7 +1,7 @@
 {
   "description": "This is the week-by-week schedule for the 2018 bootcamp. For the day-by-day breakdown, see [this Google calendar](https://calendar.google.com/calendar/b/1?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).",
   "mottos": [
-    "There's more than one way to skin a cat",
+    "There's more than one way to do it",
     "Make it green, then make it clean",
     "Docendo discimus (\"By Teaching We Learn\")",
     "Read the error",
@@ -10,7 +10,8 @@
     "Names hold power (or, Names matter)",
     "Friction is the enemy of flow",
     "Zero defects",
-    "If it hurts, do it more"
+    "If it hurts, do it more",
+    "Get comfortable with being uncomfortable"
   ],
   "typical_day": [
     [
@@ -281,11 +282,16 @@
           "name": "jQuery",
           "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
         },
+        {
+          "name": "markdown_preview",
+          "required": true
+        },
         "twitch_status",
         "pomodoro",
         {
           "name": "lightning_talk",
-          "description": "choose a topic for a lightning talk, and sign up for a slot"
+          "description": "choose a topic for a lightning talk, and sign up for a slot",
+          "required": true
         }
       ],
       "lessons": [

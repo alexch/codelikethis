@@ -44,9 +44,9 @@ module Views
   # todo: test
   def munge html
     html.split("\n").map do |line|
-      if line == '<!--box-->'
+      if line.strip == '<!--box-->'
         '<section class="box">'
-      elsif line == '<!--/box-->'
+      elsif line.strip == '<!--/box-->'
         '</section>'
       else
         line

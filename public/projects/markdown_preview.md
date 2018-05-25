@@ -37,26 +37,32 @@ When you change your source code, remember to **stop and restart** your node ser
 
 <!--box-->
 - elements exist on page
+
 <!--/box-->
 
 <!--box-->
 - click button -> render = just copy
+
 <!--/box-->
 
 <!--box-->
 - click button ->  render = markdown
+
 <!--/box-->
 
 <!--box-->
 - render on keypress, not button
+
 <!--/box-->
 
 <!--box-->
 - security (injection protection)
+
 <!--/box-->
 
 <!--box-->
 - colorized source
+
 <!--/box-->
 
 ## More Information
