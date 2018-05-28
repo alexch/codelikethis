@@ -14,8 +14,9 @@ Bootstrap is a mobile first, open-source, front-end development framework that h
 Bootstrap employs a *12 column layout* to help easily establish a styles for a responsive website. By adding classes to your HTML elements, you can set how many columns each div will span (out of 12). These classes are as follows:
 
 ```
-col-lg-12 // class used for large devices like laptops ~ 1024px
-col-md-12 // class used for medium devices like tablets ~ 992px
+col-xl-12 // class used for extra large devices ~ 1200px
+col-lg-12 // class used for large devices like laptops ~ 992px
+col-md-12 // class used for medium devices like tablets ~ 768px
 col-sm-12// class used for small devices like mobile phones ~ 768px
 ```
 
@@ -26,20 +27,39 @@ col-sm-12// class used for small devices like mobile phones ~ 768px
 
 ## Example
 
-if I want a sidebar on my website, I may want it to take up 3 columns, or one quarter of the page width (25%). If I want my sidebar to take up 3 columns, I would assign it the class `col-sm-3`. This says that on a small screen (less than 768px) or larger, the div will take up 3 columns. However, it is poosible you may want your sidebar to be a quarter of the page width on a desktop, but be full-width on a mobile device. In this instance you would add the classes `col-sm-3 col-md-12`. This applies the following CSS:
+* If I want a sidebar on my website, I may want it to take up 3 columns, or one quarter of the page width (25%). 
+* To achieve this I would assign it the class `col-sm-3`. This would add the following code:
 
 ```
+.sidebar{
+  width:25%;
+}
+
+```
+
+* Because the only class is `col-sm-3`, and no other screen size classes are being used, it will be 25% at all screen sizes. In other words, if you want your element to take up a given number of columns at all screen sizes, only add a `col-sm-` declaration. 
+* An element that is full-width at all screen sizes would have the class `col-sm-12`.
+
+## Example 2 (Different Widths for Different Screen Sizes)
+
+* You may want your sidebar to be full width on a mobile device, but change to a quarter width on desktop. In this instance you would add the following two classes: `col-sm-12 col-md-3`. This applies the following CSS:
+
+```
+.sidebar{
+  width:100%;
+}
+
+
 @media screen and (min-width:768px){
   .sidebar{
-    width:100%;
-  }
-}
-@media screen and (min-width:992px){
-  .nav{
     width:25%;
   }
 }
 ```
+
+* As you can see, this is where media queries come into play. 
+* Because the width needs to change on screens larger than a mobile device, Bootstrap adds a media query that says, 'when the screen is larger than 992px, shrink to 25% width'. 
+* Remember, because Bootstrap is a mobile-first development platform, the media query changes the layout for deskop screen size, not mobile screen size.
 
 <IMG OF BOOTSTRAP SIDEBAR>
 
@@ -52,5 +72,5 @@ Since websites are not newspapers, content is not exclusively broken out into co
 * The left and right padding of the first and last elements is then removed via negative margins that are applied to rows. Because of this, elements need to be nested in the following order: `container > row > columns`.
 
 
-![bootstrap columns and rows](https://i.imgur.com/FaYuui8.png "Bootstrap Rows")
+![Bootstrap columns and rows](https://i.imgur.com/FaYuui8.png "Bootstrap Rows")
 
