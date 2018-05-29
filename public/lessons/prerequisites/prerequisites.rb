@@ -7,11 +7,12 @@ Track::Prerequisites = Track.new(
   display_name: "Prerequisites",
   description: "Lessons and exercises to complete before the first day of class.") do
 
-  link href: "https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5",
-       name: "FreeCodeCamp Basic HTML and HTML5"
+  project name: "fcc_basic_html",
+          display_name: "FreeCodeCamp Basic HTML"
 
-  link href: "https://learn.freecodecamp.org/responsive-web-design/basic-css",
-       name: "FreeCodeCamp Basic CSS"
+  project name: "fcc_basic_css",
+          display_name: "FreeCodeCamp Basic CSS"
 
-  project name: "what_the_regex"
+  project name: "what_the_regex",
+          display_name: "What the RegEx"
 end

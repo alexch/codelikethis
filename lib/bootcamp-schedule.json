@@ -56,16 +56,8 @@
       "start": "2018-04-01",
       "track": "prerequisites",
       "projects": [
-        {
-          "from": "FreeCodeCamp",
-          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements",
-          "name": "Basic HTML and HTML5"
-        },
-        {
-          "from": "FreeCodeCamp",
-          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-css",
-          "name": "Basic CSS"
-        },
+        "fcc_basic_html",
+        "fcc_basic_css",
         "what_the_regex"
       ]
     },
