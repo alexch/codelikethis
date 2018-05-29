@@ -24,6 +24,14 @@ Track::LearnToCodeWithJavascript = Track.new(
        href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps",
        name: "MDN: JavaScript First Steps"
 
+  link href: 'https://play.elevatorsaga.com/', name: 'Elevator Saga'
+
+  link name: "Exercism [online]",
+    href: "http://exercism.io/languages/javascript"
+
+  link name: "Exercism [local]",
+    href: "http://github.com/alexch/exercism-javascript"
+
   link href: "https://www.codecademy.com/articles/glossary-javascript",
        name: "JavaScript Glossary"
 

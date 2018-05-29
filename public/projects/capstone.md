@@ -10,13 +10,17 @@ Spend this time exploring ideas and building a team.
 
 Do you have an idea? Discuss it with your fellow students.
 
-Do you want to work with a client (or "project sponsor")? Here are some local projects that could use your help:
+Do you want to work with a client (or "project sponsor")? Here are some worthy projects that could use your help:
 
 * http://www.codeforbtv.org/projects/cvoeo-app - build a mobile app for a non-profit to help several hundred Vermonters per year to manage their money, complete their paperwork, and earn up to $750/year from Financial Futures benefits
 
 * http://codeforbtv.org/projects/greenup-app - work on the official Green Up Day mobile app (written in React Native), or grab a side project like facilitating communication between team leaders or displaying an embedded map in their web site
 
 * https://www.codeforamerica.org/past-projects/court-bot - integrate (or reimplement) CourtBot with the Vermont docket; CourtBot sends text messages or makes voice calls (using Twilio) to prompt people about outstanding citations or court appearances
+
+* Home Outside Flower Pot Planner
+
+  * https://github.com/openopps/openopps-platform - Open Opportunities is creating a network of federal employees that will lead to a more effective, efficient, responsive government by sharing skills and collaborating on projects that support the mission of an agency or the government as a whole.
 
 
 # Step 2: Proposal
