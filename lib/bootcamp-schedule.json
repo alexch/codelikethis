@@ -58,12 +58,12 @@
       "projects": [
         {
           "from": "FreeCodeCamp",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/learn-how-freecodecamp-works",
+          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements",
           "name": "Basic HTML and HTML5"
         },
         {
           "from": "FreeCodeCamp",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-css/introduction-to-basic-css",
+          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-css",
           "name": "Basic CSS"
         },
         {
