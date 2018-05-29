@@ -66,12 +66,6 @@
           "href": "https://learn.freecodecamp.org/responsive-web-design/basic-css",
           "name": "Basic CSS"
         },
-        {
-          "from": "CodeCademy",
-          "name": "Getting Started with Programming",
-          "href": "https://www.codecademy.com/tracks/javascript",
-          "optional": true
-        },
         "what_the_regex"
       ]
     },
