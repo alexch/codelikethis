@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/alexch/rerun.git
-  revision: bd5ba839774e615183af7b611e85d475830f6d4f
+  revision: d9e3c160624be1b251dddf6156d7c95c752c60bf
   specs:
     rerun (0.13.0)
       listen (~> 3.0)
@@ -34,9 +34,9 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.1.4)
+    activesupport (5.2.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     awesome_print (1.8.0)
@@ -47,12 +47,12 @@ GEM
     diff-lcs (1.2.5)
     erector (0.10.0)
       treetop (>= 1.2.3)
-    eventmachine (1.2.5)
-    eventmachine (1.2.5-x86-mingw32)
-    ffi (1.9.21)
-    ffi (1.9.21-x86-mingw32)
+    eventmachine (1.2.7)
+    eventmachine (1.2.7-x86-mingw32)
+    ffi (1.9.23)
+    ffi (1.9.23-x86-mingw32)
     files (0.3.1)
-    i18n (0.9.3)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     json (1.8.6)
     listen (3.1.5)
@@ -68,15 +68,15 @@ GEM
       mini_portile2 (~> 2.3.0)
     polyglot (0.3.5)
     predicated (0.2.6)
-    rack (2.0.3)
+    rack (2.0.5)
     rack-codehighlighter (0.6.0)
       nokogiri (>= 1.4.1)
       rack (>= 2.0.0)
     rack-protection (2.0.1)
       rack
     rack-rewrite (1.5.1)
-    rake (12.3.0)
-    rb-fsevent (0.10.2)
+    rake (12.3.1)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redcarpet (2.3.0)
@@ -93,18 +93,18 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    ruby2ruby (2.4.0)
+    ruby2ruby (2.4.1)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.6)
     ruby_dep (1.5.0)
-    ruby_parser (3.10.1)
+    ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
-    sass (3.5.5)
+    sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sexp_processor (4.10.0)
+    sexp_processor (4.11.0)
     sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -116,10 +116,10 @@ GEM
       rack (>= 1, < 3)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    treetop (1.6.9)
+    treetop (1.6.10)
       polyglot (~> 0.3)
     trollop (2.1.2)
-    tzinfo (1.2.4)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
 
 PLATFORMS
@@ -149,7 +149,7 @@ DEPENDENCIES
   wrong!
 
 RUBY VERSION
-   ruby 2.3.3p222
+   ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
