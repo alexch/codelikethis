@@ -1,5 +1,5 @@
 {
-  "description": "This is the week-by-week schedule for the 2018 bootcamp. For the day-by-day breakdown, see [this Google calendar](https://calendar.google.com/calendar/b/1?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).",
+  "description": "This is the week-by-week schedule for the 2018 bootcamp. For the day-by-day breakdown, see [this Google calendar](https://calendar.google.com/calendar/b/1?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ). The high-level plan is: 1. Rudiments (tutorials), 2. Refinement (one-week projects), 3. Reality (multi-week capstone team project)",
   "mottos": [
     "There's more than one way to do it",
     "Make it green, then make it clean",
@@ -77,26 +77,13 @@
         "input_and_output"
       ],
       "projects": [
+        {
+          "name": "Local Exercism JavaScript",
+          "href": "https://github.com/alexch/exercism-javascript"
+        },
         "basic_profile",
-        "yelpington",
-        "escape_room",
         "guess",
-        {
-          "from": "FreeCodeCamp",
-          "name": "Javascript Algorithms And Data Structures: Basic JavaScript",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-javascript/concatenating-strings-with-plus-operator",
-          "description": "do all the challenges in 'Basic JavaScript', preferably with a pair"
-        },
-        {
-          "from": "tft",
-          "name": "testfirst.org JS exercises",
-          "href": "https://github.com/alexch/test-first-teaching/tree/master/learn_javascript"
-        },
-        {
-          "from": "exercism",
-          "name": "exercism.io JS exercises",
-          "href": "http://exercism.io/languages/javascript/about"
-        }
+        "escape_room"
       ],
       "side_tracks": [
         {
@@ -117,11 +104,11 @@
       ],
       "events": [
         {
-          "start": "Thursday 2:00 pm",
+          "start": "Thursday 1:30 pm",
           "name": "escape workshop 1"
         },
         {
-          "start": "Thursday 4:00 pm",
+          "start": "Thursday 3:30 pm",
           "name": "escape workshop 2"
         },
         {
@@ -147,6 +134,10 @@
           "name": "Debugging",
           "href": "https://beta.freecodecamp.org/en/challenges/debugging/introduction-to-the-debugging-challenges",
           "optional": true
+        },
+        {
+          "name": "Local Exercism JavaScript",
+          "href": "https://github.com/alexch/exercism-javascript"
         },
         {
           "from": "FreeCodeCamp",
