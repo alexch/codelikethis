@@ -30,10 +30,14 @@ Track::LearnToCodeWithJavascript = Track.new(
     href: "http://exercism.io/languages/javascript"
 
   link name: "Exercism [local]",
-    href: "http://github.com/alexch/exercism-javascript"
+    href: "http://github.com/BurlingtonCodeAcademy/exercism-javascript"
 
   link href: "https://www.codecademy.com/articles/glossary-javascript",
        name: "JavaScript Glossary"
+
+  project name: "exercism"
+
+  project name: "exercism_fork"
 
   lesson name: "intro" do
     video youtube_id: '-jRREn6ifEQ'
