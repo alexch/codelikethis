@@ -52,6 +52,12 @@ class Track
            name: "W3Schools Positioning Exercise"
     end
 
+    lesson name: "flexbox_layout",
+           display_name: "Page Layout With CSS Flexbox" do
+      link href: "https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35",
+           name: "How Flexbox Works With Animated Images"
+    end
+
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
 
