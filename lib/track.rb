@@ -197,12 +197,12 @@ class Track < Thing
 
       div.container {
         div.row {
-          div(class: 'col-12 col-md-6 lessons') {
+          div(class: 'col-sm-12 col-md-6 lessons') {
             h2 "Lessons"
             list_lessons
           }
           unless target.labs.empty?
-            div(class: 'col-12 col-md-6 lessons') {
+            div(class: 'col-sm-12 col-md-6 lessons') {
               h2 "Labs"
               list_labs
             }

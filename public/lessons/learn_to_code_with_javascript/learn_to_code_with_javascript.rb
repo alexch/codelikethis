@@ -24,8 +24,20 @@ Track::LearnToCodeWithJavascript = Track.new(
        href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps",
        name: "MDN: JavaScript First Steps"
 
+  link href: 'https://play.elevatorsaga.com/', name: 'Elevator Saga'
+
+  link name: "Exercism [online]",
+    href: "http://exercism.io/languages/javascript"
+
+  link name: "Exercism [local]",
+    href: "http://github.com/BurlingtonCodeAcademy/exercism-javascript"
+
   link href: "https://www.codecademy.com/articles/glossary-javascript",
        name: "JavaScript Glossary"
+
+  project name: "exercism"
+
+  project name: "exercism_fork"
 
   lesson name: "intro" do
     video youtube_id: '-jRREn6ifEQ'
@@ -50,8 +62,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "variables"
   lesson name: "null"
   lesson name: "functions"
+  lesson name: "/tricks_of_the_trade/modern_debugging" # should be taught after functions (since call stack traces don't make sense without 'call')
 
-  lesson name: "/tricks_of_the_trade/modern_debugging"
+  lesson name: "intermission", description: "This is a good place for a break."
 
   lesson name: "input_and_output" do
     video youtube_id: 'DKGZlaPlVLY'
@@ -79,5 +92,6 @@ Track::LearnToCodeWithJavascript = Track.new(
 
 
   link href: "https://learnpythonthehardway.org/book/advice.html"
-
+  link href: "http://jsforcats.com"
+  
 end

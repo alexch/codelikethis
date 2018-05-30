@@ -19,6 +19,7 @@ PLUS
 *scope* = all the variables that are *visible* from a given location in your code
 
 including:
+
   * local variables (`let` and `var`)
   * function parameters
 
@@ -48,12 +49,25 @@ and so on recursively
 
 # Why?
 
-* callbacks
+* so callbacks can access local variables just like their neighboring code can
+
+* nested functions, e.g.
+
+        @@@js
+        function printGrid(grid) {
+            function printRow(rowNum) {
+                console.log(grid[rowNum].join(","));
+            }
+            for (i=0; i<grid.length; ++i) {
+                printRow(i);
+            }
+        }
 
 * higher-order functions (functions that use other functions, like `map` or `forEach`)
 
 * encapsulation (this is tricky; see advanced OO in JS lesson)
 
+        @@@js
         var o = (function() {
             var x = 0;  // private variable
 

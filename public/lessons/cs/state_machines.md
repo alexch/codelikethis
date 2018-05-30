@@ -6,15 +6,16 @@
 
 # State Machine Example: Traffic Light
 
-![traffic light]()
-
-[todo: traffic light pic]
+![traffic light](traffic-light.jpg)
 
 1. How many states? What are their names?
 2. Can it be in more than one state at a time?
 3. What are the rules for transitioning between states?
 
-# State Transition Diagram
+<small>image by [katerha](https://www.flickr.com/photos/katerha/6919352910)
+</small>
+
+# State Transition Diagram: Traffic Light
 
 ```
 [G] -> [Y] -> [R]
@@ -22,11 +23,11 @@
   \___________/
 ```
 
+Q: What if there was a "left turn ok" green light as well?
+
 # State Machine Example: Simon
 
-![simon game]()
-
-[todo: simon pic]
+![simon game](simon.jpg)
 
 1. How many states? What are their names?
 2. Can it be in more than one state at a time?
@@ -74,8 +75,10 @@ We may also need a state transition *action*: "when the button enters the 'activ
 2. Predicability
 3. Fail-fast debugging
 
-* Many bugs are due to the system receiving unexpected input
-* If you get an "illegal state transition" error, then something unexpected *just* happened, and you may need to add a new transition or state to handle it when it happens again
+* Many bugs are due to the system receiving unexpected input, or input that is inappropriate *at the moment*
+  * (it's like rai-ee-ain on your wedding day)
+* an "illegal state transition" error means something unexpected *just* happened
+  * so you may need to add a new transition or state (or validation routine, or error handler) to handle it when it happens again
 * Without a state machine, the system may remain in an invalid state for some time, making it harder to debug once something eventually *does* break
 
 # State of the State

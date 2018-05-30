@@ -6,6 +6,11 @@ class Track
     display_name: "User Experience"
   ) do
 
+    lesson name: "what_is_user_experience",
+      display_name:"What is User Experience (UX)?" do
+      video youtube_id: "Ovj4hFxko7c"
+    end
+
     lesson name: "the_design_of_everyday_things" do
       link href: "https://smile.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654/"
       link href: "https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/"

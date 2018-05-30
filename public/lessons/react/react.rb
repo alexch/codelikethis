@@ -10,18 +10,13 @@ class Track
     lesson name: "what_is_react"
     lesson name: "jsx_and_the_virtual_dom",
            description: "How to write JSX and convert it to runnable React using Babel-Standalone in the browser."
-    lesson name: "functional_behavior",
-           description: "React adheres to a 'mostly' functional way of creating and composing components. This lesson will expose some of the ways this makes building interfaces easier."
-    lesson name: "simple_api",
-           description: "The React API is quite simple compared to other libraries and frameworks there are only a dozen or so functions which will be used regularaly."
+    lesson name: "setting_up_react",
+           description: "Preparing the development environment for React"
     lesson name: "component_oriented",
            description: "React applications are organized into components. This lesson will show how components can be built up out of smaller components and then reused in new contexts."
     lesson name: "props_and_state",
            description: "Props and State are the two methods available to React to deal with immutable and mutable data within the application. This lesson will explain their uses and differences."
 
-    # TODO: Update the Railsbridge Project
-    # This Raisbridge project is great, but uses a very old version of React.
-    # We should either update the project, or use something more recent.
     lesson name: "nested_components"
     lesson name: "using_the_context"
     lesson name: "responding_to_events"
@@ -36,7 +31,10 @@ class Track
 
     link href: "https://reactjs.org/tutorial/tutorial.html",
          name: "Build a Tic-Tac-Toe game in the browser with React"
-
+    
+    # TODO: Update the Railsbridge Project
+    # This Raisbridge project is great, but uses a very old version of React.
+    # We should either update the project, or use something more recent.
     link href: "http://docs.railsbridge.org/javascript-to-do-list-with-react/",
          name: "RailsBridge Javascript To Do List With React"
 

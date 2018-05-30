@@ -1,10 +1,9 @@
-
 # Building a Simple Web Page With Bootstrap
 
-Lets get started with Bootstrap by writing our first web page. 
+Lets get started with Bootstrap by writing our first web page.
 
-* first we need all of the code necessary to apply styles to your page elements. This includes a number of different files. 
-* We can obtain this by a number of different methods outlined on their website. 
+* first we need all of the code necessary to apply styles to your page elements. This includes a number of different files.
+* We can obtain this by a number of different methods outlined on their website.
 * The easiest and quickest method is to link to the files in our document `<head>` from their CDN.
 
 ```
@@ -17,12 +16,12 @@ Lets get started with Bootstrap by writing our first web page.
 ```
 * We can also download their compiled code locally from their website: https://getbootstrap.com/docs/4.0/getting-started/download/
 
-The following can be used as a starter template for your first Bootstrap Website! 
+The following can be used as a starter template for your first Bootstrap Website!
 More documentation (and anything you need to know about Bootstrap) can be found at:
 
 https://getbootstrap.com/docs/4.0/getting-started/introduction/
 
-# Basic Bootstrap Web Page Template 
+# Basic Bootstrap Web Page Template
 
 ```
 

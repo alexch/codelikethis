@@ -139,7 +139,7 @@ class App < Sinatra::Base
   end
 
   get "/schedule" do
-    widget = site.schedule_view if site&.schedule
+    widget = site.schedule_view if (site && site.schedule)
     page(widget: widget,
          title: site.name).to_html
   end

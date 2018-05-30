@@ -99,13 +99,13 @@ Because programmers are humans, and humans can be very literal-minded, people na
 
 *Map* and *dictionary* are much better names (and in fact there is a recently-introduced JavaScript type called [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) which behaves better than the built-in "object" hash; for instance, its keys are not limited to being strings).
 
-Also, *hash* is a silly-sounding word, and programmers love jokes.
+Also, *hash* is a funny word, and programmers love jokes.
 
-# JS "Object" Hash Rules
+# JS Object Hash Rules
 
 * All keys are strings
 
-* **Beware** of using these as keys:
+* **Beware** of using these as keys, since they get converted to strings in unexpected ways:
 
     * `null`
     * `undefined`
@@ -113,6 +113,35 @@ Also, *hash* is a silly-sounding word, and programmers love jokes.
     * `false` or `true`
     * `0` (or any number)
 
+# `delete`
+
+To remove a key-value pair from a hash, use the keyword `delete`.
+
+    @@@js
+    states = {
+                CA: "California",
+                MA: "Massachusetts",
+                NY: "New York"
+             }
+    { CA: 'California', MA: 'Massachusetts', NY: 'New York' }
+    > delete states.MA
+    true
+    > states
+    { CA: 'California', NY: 'New York' }
+
+# fake delete
+
+You can get a similar effect by setting the value to `null` or `undefined`, but beware: the key remains!
+
+    @@@js
+    > states.CA = null
+    null
+    > states.NY = undefined
+    undefined
+    > states
+    { CA: null, NY: undefined }
+
+> You probably shouldn't do this.
 
 # Hash methods
 

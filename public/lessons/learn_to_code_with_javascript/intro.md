@@ -90,6 +90,7 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 * Pair up
 * Help your partner, help your neighbor
+* Docendo discimus ("By Teaching We Learn")
 * Promote yourself to TA
 
 > The best way to learn is to teach. <br>- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
@@ -106,12 +107,14 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 * a text editor
   * VS Code from Microsoft <https://code.visualstudio.com>
   * Note: Microsoft Word is **not** a text editor
+  * [VS Code Overview](https://medium.freecodecamp.org/an-overview-of-visual-studio-code-for-front-end-developers-49a4aa0771fb)
 
 * JavaScript
   * a live node.js installation
   * visit <https://nodejs.org/> for more instructions
-  * version 9.2 is preferred, others are probably fine too
+  * version 9.2 is preferred
     * run `node -v` in terminal to check
+    * if you can't install v9.2, anything past 6.0 is probably okay
 
 * Git
   * <https://git-scm.com/downloads>
