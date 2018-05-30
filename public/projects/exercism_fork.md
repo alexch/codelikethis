@@ -49,7 +49,7 @@ upstream     /origin
 1. run `git remote -v` to see the current status; there should be one remote named `origin`
 1. This is the fun part! **Paste in** your repo's URL in the second command below:
 
-* `git rename origin upstream`
+* `git remote rename origin upstream`
 * `git remote add origin ` *paste your url here*
 
 Finally, run `git remote -v` again and make sure the remotes are correct.
