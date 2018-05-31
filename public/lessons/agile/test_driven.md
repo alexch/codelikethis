@@ -35,7 +35,7 @@ alexch @ gmail.com
 * Steady, incremental feeling of progress
 * Don't write code all day without knowing if it works
 
-# A Test In Three Acts
+# Blueprint for a Single Test
 
 * GIVEN (set up preconditions)
 * WHEN (call production code)
@@ -419,7 +419,7 @@ vs.
 *  Effective for large or risky refactorings
 *  Quite brittle, so often thrown away after the refactoring is done
 
-# Testing Exceptions
+# How to Test Exceptions?
 
     @@@java
     public void testUnknownCountry() {
@@ -430,6 +430,8 @@ vs.
         // ok
       }
     }
+
+The empty `catch` block is fine here, since here an exception is a success, not a failure to be handled.
 
 # Characterization Tests
 
