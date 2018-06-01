@@ -41,6 +41,20 @@
 
 * From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens!
 
+# A Tale of Two Prompts
+
+> WARNING: Before you start typing, look at the prompt!
+
+* *the shell* is the command line that the terminal starts with
+  * its prompt is usually `$` (Mac / Linux) or `C:\Users\alice>` (Windows)
+* *node* is a command line that is launched *from the shell*
+  * its prompt is usually `>`
+
+From inside `node`, if you want to get back to the shell...
+
+  * type CONTROL-C twice
+  * or type `.exit` and ENTER
+
 # Directories
 
 * a DIRECTORY is a location on your hard disk
@@ -68,7 +82,8 @@
 
 * when you type `mkdir` ("make directory") it creates a new SUBDIRECTORY inside the current directory
 
-        mkdir code
+      @@@sh
+      mkdir code
 
 # Changing directories
 
@@ -77,21 +92,32 @@
 * If you ever get lost, type `cd` all on its own and press the return key. This will send you back to your home directory.
   * (unix shell only, not Windows)
 
-# Basic Command Line Glossary
+# Where am I?
+
+It is very easy to get lost in a maze of directories.
+
+To find out which directory you are in, type
+
+    @@@sh
+    pwd
+
+This stands for "print working directory" (not "password").
+
+# Basic Command Review
 
 * `pwd` ("print working dir") -- shows the name of the current directory
 * `ls` ("list") -- shows the contents of the current directory
 * `mkdir` ("make dir") -- creates a new SUBDIRECTORY inside the current directory
 * `cd` ("change dir") -- move into a different directory
 
-> These apply to Unix shells, but most work in Windows too
-
+> These apply to Mac & Unix shells, but most work in Windows too
 
 # LAB: make a subdirectory and then enter it
 
 1. open Terminal
 2. make a new subdirectory using `mkdir code`
 3. change into that directory using `cd code`
+4. make sure you're really there using `pwd`
 4. list its contents using `ls` (and note that it's empty)
   * **On Windows** you might need to type `dir` instead of `ls`
 
@@ -118,36 +144,42 @@
 * to **RUN** a JavaScript program you type `node` and then the name of the source file
 
 * The Recipe Metaphor
-  * source file = recipe
-  * running = cooking
+  * source file =~= recipe
+  * run a program =~= cooking
 
 # LAB: Hello, World
 
 1. Make sure you are in your `code` subdirectory using `pwd`
-2. Open this directory 
-  * for Atom, use `atom .`
-  * for VSCode, use `code .`
+2. Open this directory in your text editor
+  * for VSCode, use `code .` ("code dot")
+  * for Atom, use `atom .` ("atom dot")
 3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
 
+        @@@js
         console.log("Hello, World!");
 
 5. Save the file
-6. Go back to the terminal
+6. Switch back to the terminal (using ALT-TAB or CMD-TAB or clicking)
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?
 
-# Shortcuts
+# Command-Line Shortcuts
+
+These work in `bash`:
 
 ![bash shortcuts](../images/bash-cursor-shortcuts.jpg)
 
-also:
+Also:
 
 * use ESC instead of ALT for the above
 * ESC-Backspace (delete previous word)
 * up/down arrow (scroll through history)
+* END and HOME (jump to end or beginning of line)
 
 # Next Steps
 
-See <https://www.learnenough.com/command-line-tutorial> for a great command-line tutorial.
+Want to learn enough command line to be dangerous?
+
+Check out <https://www.learnenough.com/command-line-tutorial> by Michael Hartl (founder of [Tau Day](https://tauday.com/) and all around solid geek).
