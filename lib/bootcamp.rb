@@ -74,6 +74,13 @@ class Bootcamp < Site
                     text " in the sidebar to see what we are teaching."
                   }
                   li {
+                    text "Look at the "
+                    a "class schedule", href: "/schedule"
+                    text " or a "
+                    a "list of possible projects", href: "/projects"
+                    text " the students will work on during the course."
+                  }
+                  li {
                     text "Browse the "
                     a "GitHub repository", href: "http://github.com/alexch/codelikethis"
                     text "."
@@ -92,17 +99,13 @@ class Bootcamp < Site
 
     end
 
-    def notice
-      p.notice {
-        text "This site is a "
-        b "preview"
-        text " of the curriculum for our "
-        a "Summer 2018 bootcamp", href: "http://burlingtoncodeacademy.com/bootcamp"
-        text " in Burlington, Vermont. "
-        text "As we continue our preparation, courses and lessons will appear and disappear; we will rename, rearrange, clarify, and obfuscate as needed... "
-        text "Please consider this a work in progress and keep checking in."
-      }
-    end
+    # def notice
+    #   p.notice {
+    #     text "This site contains the curriculum for our "
+    #     a "Summer 2018 bootcamp", href: "http://burlingtoncodeacademy.com/bootcamp"
+    #     text " in Burlington, Vermont. "
+    #   }
+    # end
   end
 
   class NavBar < ::NavBar
@@ -120,9 +123,10 @@ class Bootcamp < Site
     def nav_items
       nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
       nav_item name: "Hire Our Grads", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
-      nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
-      nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
-      nav_item name: "Curriculum", href: "http://bootcamp.burlingtoncodeacademy.com"
+      # nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
+      # nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
+      nav_item name: "Curriculum", href: "/"
+      nav_item name: "Schedule", href: "/schedule"
       nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
     end
   end
