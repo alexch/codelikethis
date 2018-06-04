@@ -82,7 +82,6 @@ From inside `node`, if you want to get back to the shell...
 
 * when you type `mkdir` ("make directory") it creates a new SUBDIRECTORY inside the current directory
 
-      @@@sh
       mkdir code
 
 # Changing directories
@@ -98,7 +97,6 @@ It is very easy to get lost in a maze of directories.
 
 To find out which directory you are in, type
 
-    @@@sh
     pwd
 
 This stands for "print working directory" (not "password").
@@ -156,7 +154,6 @@ This stands for "print working directory" (not "password").
 3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
 
-        @@@js
         console.log("Hello, World!");
 
 5. Save the file
