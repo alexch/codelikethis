@@ -12,6 +12,14 @@
   * more primitive
   * more powerful
 
+# Historical Terminal
+
+Computers used to not have screens! They looked like this:
+
+![tty](tty.jpg)
+
+the Terminal app is a direct descendant of a TeleType printer or TTY.
+
 # Opening the Terminal
 
 * to open your Terminal:

@@ -8,8 +8,8 @@ In this lesson you will create a trivial web application in NodeJS and deploy it
 
 - Immediately enter the directory with `cd hello_node`
 
-- Launch the Atom text editor in this directory with `atom .` (pronounced "Atom Dot")
-  - if `atom .` fails, launch Atom and select **Install Shell Commands** from either the *File* or the *Atom* menu
+- Launch the Visual Studio Code text editor in this directory with `code .` (pronounced "Code Dot")
+  - if `code .` fails, launch Code, type CMD-SHIFT-P, then type "install" and select **Install 'code' Command In Path**
 
 - Inside this directory make a file named `index.js` and fill it with the following code:
 
@@ -33,7 +33,7 @@ http.createServer(function(request, response){
 
 A *package* file contains information about how to build and run your app.
 
-In Atom, create a file named `package.json` and fill it with this:
+In Code, create a file named `package.json` and fill it with this:
 
 ```json
 {
@@ -100,7 +100,7 @@ You deserve it!
 
 # Hello, You!
 
-Now go back to Atom, and modify the app so instead of saying "Hello from NodeJS!" it says something clever and personalized.
+Now go back to Code, and modify the app so instead of saying "Hello from NodeJS!" it says something clever and personalized.
 
 Once you've made the change...
 
