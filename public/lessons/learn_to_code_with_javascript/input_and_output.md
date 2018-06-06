@@ -163,6 +163,25 @@ The source code of the evented cookie baking program in the previous slide could
 * when excess dough is removed, put the baking sheet in the oven
 * start!
 
+# Nesting
+
+To *force* events to happen *in order* you may need to *nest*.
+
+    console.log("what is your name?")
+    process.stdin.once('data', (name) => {
+        console.log("what is your quest?")
+        process.stdin.once('data', (quest) => {
+        console.log("what is your favorite color?")
+            process.stdin.once('data', (color) => {
+                console.log("Hello " + name + "! " + 
+                "Good luck with " + quest + 
+                "and here is a " + color + " flower for you.");
+                process.exit();
+            });
+        });
+    });
+
+
 # Events: pros and cons
 
 Evented programs are often more flexible and high-performance than traditional sequenced programs, but they can be more confusing for humans to write and to read (and to debug!).
