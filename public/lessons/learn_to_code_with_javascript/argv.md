@@ -11,7 +11,13 @@ If the user types:
 then `process.argv` contains:
 
     @@@ js
-    ["Alice", "Bob"]
+    [ 
+        '/usr/local/bin/node',
+        '/Users/alex/code/hello.js',
+        '1',
+        '2',
+        '3' 
+    ]
 
 # Why ARGV?
 
@@ -22,7 +28,7 @@ ARGV is a historical name. It means "Argument Vector" and has been around since 
 Write a new program called `hi.js` that contains:
 
     @@@ js
-    console.log("Hi, " + process.argv[0])
+    console.log("Hi, " + process.argv[2])
 
 and run it a few times, e.g.
 
