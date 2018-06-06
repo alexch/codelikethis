@@ -100,7 +100,7 @@ instead. Why?
 # The Tragedy of the Equal Sign
 
 * a single equal sign means ASSIGNMENT
-  * `name = "Alice"` -- "assign the variable 'name' to the value 'Alice'"
+  * `name = "Alice"` -- "assign the value 'Alice' to the variable 'name'"
 * two equal signs means COMPARISON
   * `name == "Alice"` -- "does the variable 'name' contain the string 'Alice'?"
 
@@ -110,7 +110,9 @@ instead. Why?
 
 > "A **notorious example for a bad idea** was the choice of the equal sign to denote assignment. It goes back to Fortran in 1957 and **has blindly been copied by armies of language designers**. Why is it a bad idea? Because it overthrows a century old tradition to let "=" denote a comparison for equality, a predicate which is either true or false. But Fortran made it to mean assignment, the **enforcing** of equality... `x = y` does not mean the same thing as `y = x`."
 >
-> — [Niklaus Wirth](http://en.wikipedia.org/wiki/Assignment_%28computer_science%29#Assignment_versus_equality), Good Ideas, Through the Looking Glass (2005)
+> — [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth), Good Ideas, Through the Looking Glass (2005)
+
+see also http://en.wikipedia.org/wiki/Assignment_%28computer_science%29#Assignment_versus_equality
 
 # The Tragedy of the Threequal Sign
 
@@ -122,27 +124,13 @@ That's three equal signs in a row.
 |---|---|---|---|
 | `=`   | assignment         | `X = Y`  | let X equal Y |
 | `==`  | comparison (fuzzy) | `X == Y` | does X *mostly* equal Y? |
-| `===` | comparison (exact) | `X = Y`  | does X *really* equal Y? |
+| `===` | comparison (exact) | `X === Y`  | does X *really* equal Y? |
 
 `==` means "does X equal Y, or if not, can Y be *converted* into something that equals X?"
 
 Since the rules for type conversion are confusing, most JavaScript experts recommend the following:
 
 > always use `===`, never use `==`
-
-# LAB: Good Friend, Bad Friend
-
-* Your `hello.js` program should currently look something like this:
-
-        @@@ js
-        console.log("What is your name?");
-        process.stdin.on('data', (chunk) => {
-            let name = chunk.toString(); 
-            console.log("Hello, " + name + "!"); 
-        });
-
-* Now change `hello.js` so that it doesn't always say hello!
-  * If the user's name is "Darth" then say "Go away, Darth!"
 
 # Conjunction Junction
 
@@ -166,6 +154,20 @@ if (age >= 18 || parent.gavePermissionSlip()) {
 ```
 
 [MDN: logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+
+# LAB: Good Friend, Bad Friend
+
+* Your `hello.js` program should currently look something like this:
+
+        @@@ js
+        console.log("What is your name?");
+        process.stdin.on('data', (chunk) => {
+            let name = chunk.toString(); 
+            console.log("Hello, " + name + "!"); 
+        });
+
+* Now change `hello.js` so that it doesn't always say hello!
+  * If the user's name is "Darth" then say "Noooooo! Go away, Darth!"
 
 # Lab: Infinite Names
 

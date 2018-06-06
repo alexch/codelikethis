@@ -32,6 +32,12 @@ While reading docs can be tedious, it can help you to understand what problem yo
 
 ...even if only to be able to ask for help elsewhere and start by saying, "I've read the docs and I still don't get it."
 
+# tech support cheat sheet
+
+![tech support cheat sheet](../images/tech_support_cheat_sheet.png)
+
+from https://xkcd.com/627/
+
 # How to Google
 
 * First, think of the *name* of the concept/library/feature/language/tool/error. Remember, **names have power**.

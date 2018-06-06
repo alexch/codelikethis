@@ -10,9 +10,7 @@ Before starting to code this project, please find a partner and play this game t
 
 After you get a feel for the game, it's time to write a software version of the game, where the *human* thinks of a number between 1 and 100 and the *computer* tries to guess it.
 
-In the *optimal* solution, the game will find the correct number in no more than `[log2(n)+1]` guesses -- so for n=100, that's 7 guesses *max*. This solution is a good example of a *binary search algorithm* (not to be confused with *binary notation* which is a different kind of binary).
-
-However, if you have trouble coding a binary search, start by getting it to work with something simpler, like guessing a [random number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) between 1 and 100. Once that's working, make a [WIP commit](), take a break, then try to use a binary search instead.
+Think carefully about how the computer will guess a number. Start with it guessing a [random number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) between 1 and 100. Once that's working, high five, take a break, then try to use a more efficient guessing algorithm instead.
 
 > "Make it work, make it right, make it fast -- in that order." - Kent Beck
 
@@ -51,6 +49,8 @@ I guessed it in 5 tries.
 * Sign reversal errors are also a strong possibility. Be clear about the distinction between "my guess is higher than your number" and "your number is higher than my guess" and so forth.
 
 ## Backlog
+
+* In the *optimal* solution, the game will find the correct number in no more than `[log2(n)+1]` guesses -- so for n=100, that's 7 guesses *max*. This solution is a good example of a *binary search algorithm* (not to be confused with *binary notation* which is a different kind of binary). Try implementing a binary search instead of a random search.
 
 * Accept a parameter specifying the maximum guess; e.g. `node guess.js 500` means `Please think of a number between 1 and 500 (inclusive)`.
 
