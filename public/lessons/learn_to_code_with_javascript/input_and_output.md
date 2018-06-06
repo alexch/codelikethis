@@ -37,6 +37,17 @@ process.stdin.on('data', (chunk) => { console.log(chunk) })
 | ` { ` ... ` }`         | this block of code |
 | `console.log(chunk)`   | print `chunk` to the terminal |
 
+---
+
+`=>` is called "fat arrow" and is equivalent to this:
+
+```
+@@@ js
+process.stdin.on('data', function(chunk) { console.log(chunk) })
+```
+
+and the block of code itself is called a *callback* (since you are asking `stdin` to *call you back* when it receives input).
+
 # LAB: Hello, friend!
 
 1. Open `hello.js` in your text editor
@@ -66,7 +77,7 @@ What happens? Is this what you expected?
 
 # Breathe
 
-* In through the nose...
+* [In through the nose](http://qr.ae/TUp1vd)...
 * Out through the mouth...
 * In through the nose...
 * Ahhhhhhhh.
@@ -126,7 +137,7 @@ Traditional programs are written using *sequences*, which are performed in order
 1. roll out dough on baking sheet
 2. cut out cookies and remove excess dough
 3. put baking sheet in the oven
-4. wait 20 minutes and remove baking sheet from oven
+4. wait 12 minutes and remove baking sheet from oven
 5. place cookies on a tray and wait 10 more minutes for cookies to cool
 6. decorate the cookies with icing and sprinkles
 
@@ -147,7 +158,7 @@ NodeJS programs are written using *events*, which is like a bunch of cooks, each
 * when the dough is on the baking sheet, start cutting out cookies
 * when all cookies are cut out, remove excess dough
 * when excess dough is removed, put the baking sheet in the oven
-* when 20 minutes have elapsed, remove baking sheet from oven
+* when 12 minutes have elapsed, remove baking sheet from oven
 * when cookies are cool, decorate each cookie
 
 # Events are not necessarily in order!
@@ -159,13 +170,13 @@ The source code of the evented cookie baking program in the previous slide could
 * when all cookies are cut out, remove excess dough
 * when starting, preheat oven to 350&deg;
 * when dough is mixed, roll it out onto the baking sheet
-* when 20 minutes have elapsed, remove baking sheet from oven
+* when 12 minutes have elapsed, remove baking sheet from oven
 * when excess dough is removed, put the baking sheet in the oven
-* start!
+* Start!
 
 # Nesting
 
-To *force* events to happen *in order* you may need to *nest*.
+To *force* events to happen *in order* you may need to *nest* your callbacks.
 
     console.log("what is your name?")
     process.stdin.once('data', (name) => {
