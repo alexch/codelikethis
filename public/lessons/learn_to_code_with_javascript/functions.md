@@ -22,15 +22,14 @@ Here's a not very useful function:
 
 # Call Me, Maybe
 
-You call a function by its name
+You call a function by its name, plus parentheses:
 
     function add(x, y) {
       return x + y;
     }
 
-    add(2, 3)   # returns 5
-
-    add(12, 30) # returns 42
+    add(2, 3)   // returns 5
+    add(12, 30) // returns 42
     
 # Lab: isDivisible
 

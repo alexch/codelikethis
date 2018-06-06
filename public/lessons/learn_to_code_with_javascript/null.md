@@ -8,7 +8,24 @@
 
 *null* is the pointer to an object that means "there is no object"
 
-# Experiment
+# Null is useful
+
+Null is used in cases where "nothing yet" is a valid scenario.
+
+For instance, if a user has an account, but doesn't (yet) have a profile picture, `user.profilePic` may be `null`.
+
+Then you can test for that case, e.g.
+
+```
+@@@js
+if (user.profilePic === null) {
+    showDefaultPicture();
+} else {
+    showPicture(user.profilePic);
+}
+```
+
+# Null is dangerous
 
     @@@ js
     let fruit = "apple"
@@ -52,23 +69,22 @@ Which idea is better?
 
 Why or why not?
 
+# failure recovery: different modes for different roles
+
+*graceful* - generally good for users
+
+  * provide information and context 
+  * help user accomplish their goal
+
+*fail-fast* - generally good for coders
+
+  * exposes errors early
+  * forces you to think through "rainy day" scenarios
+
 # JavaScript has several nulls
 
-* `null`
-* `undefined`
-* `NaN`
-
-```js
-@@@ js
-typeof null          // "object" (not "null" for legacy reasons)
-typeof undefined     // "undefined"
-null === undefined   // false
-null == undefined    // true
-null === null        // true
-null == null         // true
-!null                // true
-1 + null             // 1
-1 + undefined        // NaN
-```
+* `null` means "nothing"
+* `undefined` means "i don't know (yet)"
+* `NaN` means "not a number"
 
 Docs: [MDN: null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)

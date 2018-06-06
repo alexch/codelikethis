@@ -150,9 +150,26 @@ NodeJS programs are written using *events*, which is like a bunch of cooks, each
 * when 20 minutes have elapsed, remove baking sheet from oven
 * when cookies are cool, decorate each cookie
 
+# Events are not necessarily in order!
+
+The source code of the evented cookie baking program in the previous slide could *just as well* be written like this:
+
+* when cookies are cool, decorate each cookie
+* when the dough is on the baking sheet, start cutting out cookies
+* when all cookies are cut out, remove excess dough
+* when starting, preheat oven to 350&deg;
+* when dough is mixed, roll it out onto the baking sheet
+* when 20 minutes have elapsed, remove baking sheet from oven
+* when excess dough is removed, put the baking sheet in the oven
+* start!
+
+# Events: pros and cons
+
 Evented programs are often more flexible and high-performance than traditional sequenced programs, but they can be more confusing for humans to write and to read (and to debug!).
 
 Also, sequences naturally *end* when they are finished, but evented programs will just keep doing the same things over and over again, as long as the triggers keep happening. 
+
+This means that you may need to explicitly call `process.exit()` in NodeJS programs.
 
 # On vs Once
 
