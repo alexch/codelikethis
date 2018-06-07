@@ -65,7 +65,9 @@ Every Thursday is meatloaf day.
 9. Submit the PR.
 10. Ask another pair to review your PR, and raise your hand to signal that you are free to review someone else's PR. Visit <https://github.com/BurlingtonCodeAcademy/yelpington/pulls> to find PRs to review.
 11. Once the reviews are done, go back to your command line or GitHub GUI and switch back to your local master branch with `git checkout master`. 
-12. Pull the latest changes -- you want to see several pairs' entries, including your own.  
+12. Pull the latest changes -- you want to see several pairs' entries, including your own -- using
+
+        git pull upstream master  
 13. Choose *someone else's* restaurant and find out their hours. Maybe they have a web site; maybe you need to call them and ask. Make a change to that restaurant file with the new information.
 14. Make a new branch (e.g. `joes-diner-hours`) and submit a new PR, repeating the steps above and asking another pair to review your changes.
 
