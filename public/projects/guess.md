@@ -21,15 +21,15 @@ $ node guess.js
 Please think of a number between 1 and 100 (inclusive).
 I will try to guess it.
 Is it... 50?
-Enter Y for Yes, H if it's higher than 50, L if it's lower than 50: H
+Enter Y if it's 50, H if it's higher, L if it's lower: H
 Is it... 75?
-Enter Y for Yes, H if it's higher than 75, L if it's lower than 75: L
+Enter Y if it's 75, H if it's higher, L if it's lower: L
 Is it... 63?
-Enter Y for Yes, H if it's higher than 63, L if it's lower than 63: H
+Enter Y if it's 63, H if it's higher, L if it's lower: H
 Is it... 69?
-Enter Y for Yes, H if it's higher than 69, L if it's lower than 69: L
+Enter Y if it's 69, H if it's higher, L if it's lower: L
 Is it... 66?
-Enter Y for Yes, H if it's higher than 69, L if it's lower than 69: Y
+Enter Y if it's 66, H if it's higher, L if it's lower: Y
 Your number was 66!
 I guessed it in 5 tries.
 ```
@@ -54,7 +54,7 @@ I guessed it in 5 tries.
 
 * Accept a parameter specifying the maximum guess; e.g. `node guess.js 500` means `Please think of a number between 1 and 500 (inclusive)`.
 
-* **Cheat detector**: if a response contradicts an earlier response, complain and ask again. e.g. `Earlier, you said it was lower than 25, so it can't also be higher than 24!`
+* **Cheat detector**: if a response contradicts an earlier response, complain and ask again. e.g. `But you said it was lower than 25, so it can't also be higher than 24!`
 
 * **Role Reversal!** In two parts:
    1. Write the *reverse* game, where the *computer* thinks of a number and the *human* guesses it. (Put this in a different source file so you don't mess up the first program.)

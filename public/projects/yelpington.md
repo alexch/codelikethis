@@ -95,3 +95,12 @@ This example shows why git *cannot* automatically resolve intra-line conflicts. 
 
 * make it a web app and/or API
 * make a slack plugin
+
+## References
+
+book: https://book.git-scm.com/book/en/v2
+
+tutorial: http://gitimmersion.com …
+ 
+* most important chapters are 1-10, 20, and 24-30 (but they depend on each other, so don’t skip the intermediate chapters, just don’t worry *too* much if you don’t fully understand them)
+

@@ -6,6 +6,33 @@
 
 > Does Linus use GitHub? Not much: <https://www.wired.com/2012/05/torvalds-github/>
 
+# Git Typealong
+
+```
+@@@ sh
+mkdir project
+cd project
+git init .
+
+echo "hello" > hello.txt
+git diff
+git add .
+git status
+git commit -m 'said hello'
+git status
+
+git log
+
+echo "friend" >> hello.txt
+git diff
+git add .
+git status
+git commit -m 'said friend'
+git status
+
+git log
+```
+
 # Git Conceptual Model
 
 ![git conceptual model](git.png)
