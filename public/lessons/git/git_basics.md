@@ -2,7 +2,7 @@
 
 [git](https://git-scm.com/book/) is a *distributed version control tool* that was built by Linus Torvalds in 2005 to help him manage the Linux Kernel project
 
-[GitHub](https://github.com/) is a *centralized collaboration website* that was [started in 2007](https://www.inc.com/30under30/christine-lagorio/github-pj-hyett-chris-wanstrath-2013.html) by Tom Preston-Werner, Chris Wanstrath and P.J. Hyett in 2007
+[GitHub](https://github.com/) is a *centralized collaboration website* that was [started in 2007](https://www.inc.com/30under30/christine-lagorio/github-pj-hyett-chris-wanstrath-2013.html) by Tom Preston-Werner, Chris Wanstrath and P.J. Hyett
 
 > Does Linus use GitHub? Not much: <https://www.wired.com/2012/05/torvalds-github/>
 
@@ -16,11 +16,13 @@
 |---|---|
 |`git clone`|copy a remote repo to your local disk|
 |`git add`| stage your local changes|
-|`git commit`| save your local changes with comments| 
+|`git commit`| save your local changes with comments|
+|`git fetch`| get the changes from a remote, but don't apply them yet|
 |`git pull`| sync and merge with the remote repo|
 |`git push`| send all your local changes to and merge with the remote repo
-|`git checkout -b foo`| create a local branch named "foo"| 
+|`git checkout -b foo`| create a local branch named "foo"|
 |`git status`| run this all the time!|
+|`git diff`| show the changes since the last commit |
 
 # Git Is Elegant
 
@@ -34,7 +36,7 @@
 * A commit also represents a **checkpoint** of all the files at a given point in history
 
 > Because a commit contains a diff and a pointer to history, a commit represents both a **minimal** set of changes to *some* files in the repo, and a **maximal** set of the contents of *all* files in the repo.
- 
+
 # Git Is Weird
 
 > "Git was written by very smart aliens." -Alex
@@ -51,7 +53,7 @@ Here are some examples of how some of git's commands are counterintuitive and in
 
 * `git checkout .`
     * *reverts* local file changes
-    * but `git checkout foo` *switches* to branch `foo`
+    * but `git checkout some_branch_name` *switches* to branch `some_branch_name`
 * `git add`
     * *stages* your changes locally
     * and `git commit` *saves* your staged changes locally
@@ -102,13 +104,13 @@ http://www.slideshare.net/GoAtlassian/superpowered-ci-with-git-sarah-goffdupont
 # Feature Branch Details
 
 * aka Story Branch or Topic Branch
-* embodies a coherent *set of changes* for a *feature* 
+* embodies a coherent *set of changes* for a *feature*
   * or some other *coherent improvement* to the code
 * one branch can have several commits
 * includes code, documentation, tests, and other changes for *that feature*
-  * all changes hang together 
+  * all changes hang together
   * discuss and review on GitHub
-  
+
 # Feature Branch Rules
 
 * always work in a (local) branch
@@ -130,7 +132,7 @@ http://www.slideshare.net/GoAtlassian/superpowered-ci-with-git-sarah-goffdupont
 * be clear about the severity of your suggestions
   * BAD: "Rename this variable."
   * GOOD: "Nitpick time: this variable name is unclear to me; how do you feel about naming it 'numberOfCows' instead of 'cowNum'?"
- 
+
 
 # Apache Voting
 
