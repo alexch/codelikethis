@@ -4,7 +4,7 @@
 * Branches are a core part of Git and can make working with others easier
 * There are several *general* strategies for using branches
 
-# Branch Basics
+# Branch Basics Refresher
 
 * Branches are a pointer to a commit which includes set of changes
 * Branches are a lightweight tool for managing change in Git
@@ -39,6 +39,26 @@ Using this strategy, you would **merge** the **development** branch into **maste
 # Example: Long Running Diagram
 
 ![Long Running Branches](./long-running-branches-many.png "Long Running Branches")
+
+# Example: Long Running Code
+
+```sh
+@@@shell
+$ git checkout master
+$ git status
+
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+$ git branch develop
+$ git checkout develop
+$ git add files_that_changed
+$ git commit -m 'My awesome changes'
+$ git checkout master
+$ git pull
+$ git merge develop
+$ git push origin/master
+```
 
 # Feature Branches
 
