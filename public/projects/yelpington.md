@@ -55,7 +55,7 @@ Every Thursday is meatloaf day.
 3. Think of a restaurant. *Do not* coordinate with other students (one of the goals of this lesson is to experience conflicts).
 4. Create a local branch named after that restaurant. For example, `git checkout -b joes-diner`
 5. Create the menu file (`joes-diner.md`) including its name and address **but *not* its hours** and when you're satisfied, add it to git (using `git add`, `git commit`).
-6. Push your local branch to GitHub using `git push origin` (or perhaps `git push origin joes-diner`)
+6. Push your local branch to GitHub using `git push origin joes-diner`
 7. Using a web browser, visit GitHub and create a Pull Request (PR).
 8. In the description of the PR, put the names of both pair partners.
 9. Submit the PR.
