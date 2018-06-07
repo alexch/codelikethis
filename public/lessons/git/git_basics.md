@@ -58,6 +58,8 @@ git log
 * A **commit** contains a *set of changes*, to be applied all at once, possibly to many different files
   * (aka a "diff" or a "patch")
 
+* **to commit** means to save a set of changes to the log
+
 * Each commit contains a **pointer** to its parent commit(s), recursively
 
 * A commit also represents a **checkpoint** of all the files at a given point in history

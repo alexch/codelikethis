@@ -48,7 +48,7 @@ Every Thursday is meatloaf day.
 ## Steps
 
 1. pair up
-2. If you have not added an SSH key to your GitHub account, follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
+2. If you have not added an SSH key to your GitHub account, follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/> and if that doesn't work, here's an article for generating an SSH key on github *for windows* <http://guides.beanstalkapp.com/version-control/git-on-windows.html#installing-ssh-keys>
 2. visit the main repo <https://github.com/BurlingtonCodeAcademy/yelpington>
 2. fork the repo (click the word "Fork" in the button in the top left)
 2. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link.
@@ -59,7 +59,7 @@ Every Thursday is meatloaf day.
 7. Using a web browser, visit GitHub and create a Pull Request (PR).
 8. In the description of the PR, put the names of both pair partners.
 9. Submit the PR.
-10. Ask another pair to review your PR, and raise your hand to signal that you are free to review someone else's PR.
+10. Ask another pair to review your PR, and raise your hand to signal that you are free to review someone else's PR. Visit <https://github.com/BurlingtonCodeAcademy/yelpington/pulls> to find PRs to review.
 11. Once the reviews are done, go back to your command line or GitHub GUI and switch back to your local master branch with `git checkout master`. 
 12. Pull the latest changes -- you want to see several pairs' entries, including your own.  
 13. Choose *someone else's* restaurant and find out their hours. Maybe they have a web site; maybe you need to call them and ask. Make a change to that restaurant file with the new information.
