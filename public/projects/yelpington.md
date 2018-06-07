@@ -8,6 +8,7 @@ For this project we will *not* use a database, or a webapp, or even a programmin
 
 * Git
 * Github
+* Markdown
 
 ## Usage
 
@@ -47,7 +48,9 @@ Every Thursday is meatloaf day.
 ## Steps
 
 1. pair up
-2. clone the repo locally *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then ask the professor to make you a contributor. 
+2. visit the main repo <https://github.com/BurlingtonCodeAcademy/yelpington>
+2. fork the repo (click the word "Fork" in the button in the top left)
+2. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link.
 3. Think of a restaurant. *Do not* coordinate with other students (one of the goals of this lesson is to experience conflicts).
 4. Create a local branch named after that restaurant. For example, `git checkout -b joes-diner`
 5. Create the menu file (`joes-diner.md`) including its name and address **but *not* its hours** and when you're satisfied, add it to git (using `git add`, `git commit`).
@@ -100,7 +103,7 @@ This example shows why git *cannot* automatically resolve intra-line conflicts. 
 
 book: https://book.git-scm.com/book/en/v2
 
-tutorial: http://gitimmersion.com …
+tutorial: http://gitimmersion.com :
  
-* most important chapters are 1-10, 20, and 24-30 (but they depend on each other, so don’t skip the intermediate chapters, just don’t worry *too* much if you don’t fully understand them)
+  * most important chapters are 1-10, 20, and 24-30 (but they depend on each other, so don’t skip the intermediate chapters, just don’t worry *too* much if you don’t fully understand them)
 
