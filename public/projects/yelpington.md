@@ -51,7 +51,11 @@ Every Thursday is meatloaf day.
 2. If you have not added an SSH key to your GitHub account, follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/> and if that doesn't work, here's an article for generating an SSH key on github *for windows* <http://guides.beanstalkapp.com/version-control/git-on-windows.html#installing-ssh-keys>
 2. visit the main repo <https://github.com/BurlingtonCodeAcademy/yelpington>
 2. fork the repo (click the word "Fork" in the button in the top left)
-2. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link.
+2. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link. Use `git clone git@XXXX` (where XXX is the rest of the git URL you just copied).
+2. connect your local repo to the main repo like this:
+
+        git remote add upstream https://github.com/BurlingtonCodeAcademy/yelpington.git
+
 3. Think of a restaurant. *Do not* coordinate with other students (one of the goals of this lesson is to experience conflicts).
 4. Create a local branch named after that restaurant. For example, `git checkout -b joes-diner`
 5. Create the menu file (`joes-diner.md`) including its name and address **but *not* its hours** and when you're satisfied, add it to git (using `git add`, `git commit`).
