@@ -119,6 +119,23 @@ For instance, if you ask the user their age, and read it from a web form or keyb
 
 ([You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md) has way more information than you wanted to know on this subject.)
 
+# Randomize it!
+
+[Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) is your way to make things unpredictable!
+
+Calling `Math.random()` returns a random *decimal* number between 0 and 1.
+
+If you want a random *integer* you can multiply that decimal by a range, like this: 
+
+``` js
+function randomInteger(min, max) {
+  let range = max - min + 1; 
+  return min + Math.floor(Math.random() * range);
+}
+
+console.log(randomInteger(1, 3));
+```
+
 # Math is hard
 
 There are many types of numbers!

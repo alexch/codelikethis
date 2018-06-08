@@ -123,6 +123,7 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 * GitHub
   * **Sign up** for an account at <https://github.com/>
   * **Install** the GitHub Desktop app at <https://desktop.github.com/>
+  * Add an SSH key to your GitHub account; follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
 
 * Heroku
   * **Sign up** for an account at <https://signup.heroku.com>

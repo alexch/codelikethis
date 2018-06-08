@@ -48,7 +48,7 @@ Every Thursday is meatloaf day.
 ## Steps
 
 1. pair up
-2. If you have not added an SSH key to your GitHub account, follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/> and if that doesn't work, here's an article for generating an SSH key on github *for windows* <http://guides.beanstalkapp.com/version-control/git-on-windows.html#installing-ssh-keys>
+2. If you have not added an SSH key to your GitHub account, follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
 2. visit the main repo <https://github.com/BurlingtonCodeAcademy/yelpington>
 2. fork the repo (click the word "Fork" in the button in the top left)
 2. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link. Use `git clone git@XXXX` (where XXX is the rest of the git URL you just copied).

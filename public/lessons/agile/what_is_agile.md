@@ -11,9 +11,48 @@
 * the Mythical Man-Month 
   * adding more people to a late project makes it more late
 
+# Software Development, pre-Agile
+
+* start coding before you understand the problem
+* keep coding until it seems to work
+* move on to the next problem
+* work alone
+* wait for QA to find bugs
+* react defensively to feedback and bug reports
+
 # The Agile Manifesto
 
+<http://agilemanifesto.org/>
+
+```
+We are uncovering better ways of developing
+software by doing it and helping others do it.
+Through this work we have come to value:
+
+Individuals and interactions over processes and tools
+Working software over comprehensive documentation
+Customer collaboration over contract negotiation
+Responding to change over following a plan
+
+That is, while there is value in the items on
+the right, we value the items on the left more.
+```
+
 # Manifesto Principles
+
+<http://agilemanifesto.org/principles.html>
+
+# Beware of Dark Agile
+
+aka Faux Agile or Evil Agile
+
+<https://ronjeffries.com/articles/018-01ff/abandon-1/>
+
+this obeys Chaffee's Law of Titles: if a discipline's title includes a complimentary descriptor, then that descriptor does not apply
+
+  * Computer Science is not a science
+  * Agile is not agile
+
 
 # Extreme Programming (XP)
 
@@ -29,6 +68,33 @@ what if we do X **all the time** ?
 * Feedback
 * Simplicity
 * Courage
+
+# XP Practices
+
+##	Fine scale feedback
+*	Pair programming
+*	Planning game
+*	Release planning
+* Iteration planning
+
+##	Test driven development
+
+## 	Whole team
+* War Room
+*	Continuous integration
+*	Design improvement (Refactoring)
+*	Small releases
+
+## Shared understanding
+*	Coding standard
+*	Collective code ownership
+*	Simple design
+
+##	Programmer welfare
+*	Sustainable pace
+
+<https://en.wikipedia.org/wiki/Extreme_programming_practices>
+
 
 # iterations 
 
@@ -60,5 +126,4 @@ then improve the rules
 # retrospectives
 
 see [cadence](./cadence) and [retrospectives](./retrospectives) lessons
-
 
