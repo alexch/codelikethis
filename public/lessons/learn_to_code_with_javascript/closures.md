@@ -76,19 +76,14 @@ and so on recursively
         @@@js
         let o = (function() {
             let value = 0;  // private variable
-            object = {
-                inc: function() {
-                    value = value + 1;
-                    console.log(value);
-                },
-                printIt: function() {
-                    console.log(value);
-                }
+            let increment = function() {
+                value = value + 1;
+                console.log(value);
+                return value;
             };
-            return object;
+            return increment;
         })();
 
-        o.printIt()   // 0
-        o.inc()       
-        o.printIt()   // 1
-
+        o.increment() // prints and returns 1
+        o.increment() // prints and returns 2
+        
