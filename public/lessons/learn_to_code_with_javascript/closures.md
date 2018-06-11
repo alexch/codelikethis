@@ -74,7 +74,7 @@ and so on recursively
 * encapsulation (this is tricky; see advanced OO in JS lesson)
 
         @@@js
-        let o = (function() {
+        let counter = (function() {
             let value = 0;  // private variable
             let increment = function() {
                 value = value + 1;
@@ -84,6 +84,6 @@ and so on recursively
             return increment;
         })();
 
-        o.increment() // prints and returns 1
-        o.increment() // prints and returns 2
+        counter.increment() // prints and returns 1
+        counter.increment() // prints and returns 2
         
