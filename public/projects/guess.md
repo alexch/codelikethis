@@ -20,16 +20,28 @@ Think carefully about how the computer will guess a number. Start with it guessi
 $ node guess.js
 Please think of a number between 1 and 100 (inclusive).
 I will try to guess it.
+Press Enter to begin:
+
 Is it... 50?
-Enter Y if it's 50, H if it's higher, L if it's lower: H
+N
+Enter H if it's higher, L if it's lower: 
+H
 Is it... 75?
-Enter Y if it's 75, H if it's higher, L if it's lower: L
+N
+Enter H if it's higher, L if it's lower: 
+L
 Is it... 63?
-Enter Y if it's 63, H if it's higher, L if it's lower: H
+N
+Enter H if it's higher, L if it's lower: 
+H
 Is it... 69?
-Enter Y if it's 69, H if it's higher, L if it's lower: L
+N
+Enter H if it's higher, L if it's lower: 
+L
 Is it... 66?
-Enter Y if it's 66, H if it's higher, L if it's lower: Y
+N
+Enter H if it's higher, L if it's lower: 
+Y
 Your number was 66!
 I guessed it in 5 tries.
 ```

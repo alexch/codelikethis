@@ -64,17 +64,18 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "functions"
   lesson name: "/tricks_of_the_trade/modern_debugging" # should be taught after functions (since call stack traces don't make sense without 'call')
 
-  lesson name: "intermission", description: "This is a good place for a break."
-
   lesson name: "input_and_output" do
     video youtube_id: 'DKGZlaPlVLY'
   end
 
+  lesson name: "intermission", description: "This is a good place for a break, maybe between the first and second week of class."
+
   lesson name: "logic"
+  lesson name: "recursion"
+  lesson name: "closures"
   lesson name: "loops" do
     project name: 'guess'
   end
-
   lesson name: "arrays"
   lesson name: "argv" do
     project name: "today_i_learned_cli"
@@ -82,9 +83,6 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "stacks"
   lesson name: "hashes"
 
-  lesson name: "recursion"
-
-  lesson name: "closures"
 
   # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
   # lesson name: "function pointers" -- and callbacks?
