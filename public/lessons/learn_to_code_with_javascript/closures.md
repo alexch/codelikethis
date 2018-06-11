@@ -6,9 +6,7 @@ A closure is
 
 PLUS
 
-* all the parameters and local variables of its ancestors
-
-[todo: more detail]
+* access to all the parameters and local variables of its *ancestor functions*
 
 [todo: diagram]
 
@@ -47,9 +45,11 @@ and so on recursively
 [todo: nested scope example]
 
 
-# Why?
+# Why? 1
 
 * so callbacks can access local variables just like their neighboring code can
+
+# Why? 2
 
 * nested functions, e.g.
 
@@ -63,7 +63,11 @@ and so on recursively
             }
         }
 
+# Why? 3
+
 * higher-order functions (functions that use other functions, like `map` or `forEach`)
+
+# Why? 4
 
 * encapsulation (this is tricky; see advanced OO in JS lesson)
 
