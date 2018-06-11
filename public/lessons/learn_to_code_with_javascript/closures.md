@@ -74,18 +74,18 @@ and so on recursively
 * encapsulation (this is tricky; see advanced OO in JS lesson)
 
         @@@js
-        var o = (function() {
-            var x = 0;  // private variable
-
-            return {
+        let o = (function() {
+            let value = 0;  // private variable
+            object = {
                 inc: function() {
-                    x = x + 1;
-                    console.log(t);
+                    value = value + 1;
+                    console.log(value);
                 },
                 printIt: function() {
-                    console.log(x);
+                    console.log(value);
                 }
             };
+            return object;
         })();
 
         o.printIt()   // 0
