@@ -58,8 +58,10 @@ and so on recursively
             function printRow(rowNum) {
                 console.log(grid[rowNum].join(","));
             }
-            for (i=0; i<grid.length; ++i) {
+            let i = 0;
+            while (i<grid.length) {
                 printRow(i);
+                i = i + 1;
             }
         }
 

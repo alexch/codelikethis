@@ -11,7 +11,8 @@
     "Friction is the enemy of flow",
     "Zero defects",
     "If it hurts, do it more",
-    "Get comfortable with being uncomfortable"
+    "Get comfortable with being uncomfortable",
+    "Don't repeat yourself (DRY)"
   ],
   "typical_day": [
     [
@@ -128,6 +129,7 @@
       "projects": [
         "exercism",
         "exercism_fork",
+        "rpn_calculator",
         {
           "from": "FreeCodeCamp",
           "name": "Debugging",
@@ -145,7 +147,6 @@
           "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
         },
         "zorkington",
-        "chat_client",
         "tic_tac_toe",
         "linkedin"
       ],
