@@ -71,10 +71,10 @@ and so on recursively
 
 # Why? 4
 
-* encapsulation (this is tricky; see advanced OO in JS lesson)
+* encapsulation (this is tricky)
 
         @@@js
-        let counter = (function() {
+        let count = (function() {
             let value = 0;  // private variable
             let increment = function() {
                 value = value + 1;
@@ -84,6 +84,6 @@ and so on recursively
             return increment;
         })();
 
-        counter.increment() // prints and returns 1
-        counter.increment() // prints and returns 2
+        count() // prints and returns 1
+        count() // prints and returns 2
         
