@@ -21,7 +21,7 @@ including:
   * local variables (`let` and `var`)
   * function parameters
 
-a closure is a *scope* that includes another scope
+> scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
 
 # Example
 

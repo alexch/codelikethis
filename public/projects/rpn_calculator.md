@@ -33,6 +33,7 @@ Calculator.prototype.plus = function(value) { }
 and use this Jasmine spec (in `calculator.spec.js`) to start:
 
 ```
+let Calculator = require('./calculator.js');
 describe("Calculator", function() {
 
     var calculator;
@@ -62,9 +63,9 @@ describe("Calculator", function() {
         calculator.push(3);
         calculator.push(4);
         calculator.plus();
-    expect(calculator.value()).toEqual(7);
+        expect(calculator.value()).toEqual(7);
         calculator.plus();
-    expect(calculator.value()).toEqual(9);
+        expect(calculator.value()).toEqual(9);
     });
 
     it("adds and subtracts", function() {
@@ -72,9 +73,9 @@ describe("Calculator", function() {
         calculator.push(3);
         calculator.push(4);
         calculator.minus();
-    expect(calculator.value()).toEqual(-1);
+        expect(calculator.value()).toEqual(-1);
         calculator.plus();
-    expect(calculator.value()).toEqual(1);
+        expect(calculator.value()).toEqual(1);
     });
 
     it("multiplies and divides", function() {
@@ -82,9 +83,9 @@ describe("Calculator", function() {
         calculator.push(3);
         calculator.push(4);
         calculator.divide();
-    expect(calculator.value()).toEqual(0.75);
+        expect(calculator.value()).toEqual(0.75);
         calculator.times();
-    expect(calculator.value()).toEqual(1.5);
+        expect(calculator.value()).toEqual(1.5);
     });
 
     it("fails informatively when there's not enough values stashed away", function() {
@@ -113,6 +114,19 @@ describe("Calculator", function() {
 
 ## REPL
 
-Write a *read-eval-print-loop* that accepts input from the command line and feeds the input into your calculator
+Write a *read-eval-print-loop* that accepts input from the command line and feeds the input into your calculator, like this:
 
+> 2 2 +
+4
+
+<--/box-->
+
+
+<!--box-->
+
+## Pow
+
+Write *tests and code* for a "power of" operator
+ 
 <!--/box-->
+
