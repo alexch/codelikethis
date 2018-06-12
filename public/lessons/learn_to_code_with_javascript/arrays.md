@@ -190,4 +190,3 @@ In your old `hello.js` program you had an `if` statement to check if someone is 
 
 I'd like you to **refactor** your old `hello.js` program to use the `includes` method to check if someone is your enemy. Is it possible to make that `if` statement more concise?
 
-# TODO: more array labs
