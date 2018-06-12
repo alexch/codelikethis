@@ -14,9 +14,8 @@ then `process.argv` contains:
     [ 
         '/usr/local/bin/node',
         '/Users/alex/code/hello.js',
-        '1',
-        '2',
-        '3' 
+        'Alice',
+        'Bob'
     ]
 
 # Why ARGV?

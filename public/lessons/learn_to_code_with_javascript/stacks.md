@@ -136,7 +136,8 @@ Stacks are useful in many scenarios
 * backtracking, e.g. chess AI
 * recursion
     
-# Lab: reverse-polish calculator
+# Project: reverse-polish calculator
 
+<a href='/projects/rpn_calculator'>RPN Calculator</a>
 
 
