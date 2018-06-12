@@ -24,10 +24,18 @@ Another advantage is that you can represent any mathematical formula using a sim
 Start with this definition in `calculator.js`:
 
 ```
-var Calculator = function() {}
-Calculator.prototype.value = function() { }
-Calculator.prototype.push = function(value) { }
-Calculator.prototype.plus = function(value) { }
+var Calculator = function() {
+    var stack = [];
+    return {
+        value: function() {
+        },
+        push: function(value) {
+        },
+        plus: function() {
+        }
+    }
+}
+module.exports = Calculator;
 ```
 
 and use this Jasmine spec (in `calculator.spec.js`) to start:
@@ -127,6 +135,6 @@ Write a *read-eval-print-loop* that accepts input from the command line and feed
 ## Pow
 
 Write *tests and code* for a "power of" operator
- 
+
 <!--/box-->
 
