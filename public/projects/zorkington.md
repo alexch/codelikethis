@@ -72,9 +72,11 @@ On the door is a handwritten sign.
 >_
 ```
 
-(the chevron-and-underscore represents a command prompt)
+(the chevron-and-underscore represents a command prompt; the user should be able to type into it...)
 
 **And** waits for input
+
+(...but nothing will happen yet!)
 
 <!--/box-->
 <!--box-->
@@ -108,7 +110,7 @@ up to the second floor. If the door is locked, use the code
 That would be selfish. How will other students find their way?
 ```
 
-(assume " **And** returns to the command prompt" after all stories)
+(assume " **And** returns to the command prompt" after this and all future stories)
 
 <!--/box-->
 
@@ -145,6 +147,24 @@ shuts behind you.
 **And** the player enters room `182 Main St. - Foyer`
 
 <!--/box-->
+
+<!--box-->
+### Unauthorized Access
+
+**Given** the player is in the room `182 Main St.`
+
+**When** the player types `enter code 54321` (or any code that is not `12345`)
+
+**Then** the game displays the text
+
+```
+Bzzzzt! The door is still locked.
+```
+
+**And** the player remains in room `182 Main St.`
+
+<!--/box-->
+
 <!--box-->
 ### Foyer
 
@@ -228,9 +248,18 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 * [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing))
 
+Please *write stories* for each of these features *before* implementing them.
+
 ## And Don't Forget to Demo!
 
-Find other student teams and play each others' Zorkington games!
+After implementing a story, *before* starting work on the next story...
+
+* Ask a teacher or fellow student if they have time to "play client" for a demo
+* Launch the program and let the client use it
+* The client should try to prove that the program does what the story says it's supposed to do
+* If the client rejects your story, keep coding until it works right, then do another demo
+
+And during the day, take breaks, find other student teams and play each others' games!
 
 ## Icebox
 
