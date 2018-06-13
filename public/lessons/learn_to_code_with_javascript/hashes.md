@@ -4,12 +4,20 @@ a *hash* is an *abstract data type*
 
 ![corned beef hash](../images/cornedbeefhash.jpeg)
 
+# Hash Example
+
+let hashPrices = {
+    'corned beef hash': 3.69,
+    'roast beef hash': 3.89,
+    'homestyle hash': 4.47
+}
+
 # What makes a hash a hash?
 
 a hash is an
 
 * unordered 
-* indexed
+* indexed (by strings, not numbers)
 * collection
 * of key/value pairs
 
@@ -36,24 +44,24 @@ and in JavaScript, a hash is officially called an
     @@@ js
     let states = {}
 
-    states["CA"] = "California"
-    states["MA"] = "Massachusetts"
-    states["NY"] = "New York"
+    states['CA'] = 'California'
+    states['MA'] = 'Massachusetts'
+    states['NY'] = 'New York'
 
-    states["MA"]                // "Massachusetts"
-    states["MA"].toUpperCase()  // "MASSACHUSETTS"
+    states['MA']                // 'Massachusetts'
+    states['MA'].toUpperCase()  // 'MASSACHUSETTS'
 
 # Setting and Getting Hash Values with dots
 
     @@@ js
     let states = {}
 
-    states.CA = "California"
-    states.MA = "Massachusetts"
-    states.NY = "New York"
+    states.CA = 'California'
+    states.MA = 'Massachusetts'
+    states.NY = 'New York'
 
-    states.MA                // "Massachusetts"
-    states.MA.toUpperCase()  // "MASSACHUSETTS"
+    states.MA                // 'Massachusetts'
+    states.MA.toUpperCase()  // 'MASSACHUSETTS'
 
 # Dots vs. Brackets
 
@@ -63,17 +71,17 @@ Dots are a bit prettier than square brackets, but less versatile:
     > capitals = {}
     {}
     
-    > capitals.New York = "Albany"
-    capitals.New York = "Albany"
+    > capitals.New York = 'Albany'
+    capitals.New York = 'Albany'
                  ^^^^
     SyntaxError: Unexpected identifier
     
-    > capitals."New York" = "Albany"
-    capitals."New York" = "Albany"
+    > capitals.'New York' = 'Albany'
+    capitals.'New York' = 'Albany'
              ^^^^^^^^^^
     SyntaxError: Unexpected string
     
-    > capitals["New York"] = "Albany"
+    > capitals['New York'] = 'Albany'
     'Albany'
     > capitals
     { 'New York': 'Albany' }
@@ -84,12 +92,12 @@ a Hash can be defined *literally* (inline) with curly braces, like this:
 
     @@@ js
     states = {
-               CA: "California",
-               MA: "Massachusetts",
-               NY: "New York"
+               CA: 'California',
+               MA: 'Massachusetts',
+               NY: 'New York'
              }
 
-    states["MA"]  // "Massachusetts"
+    states['MA']  // 'Massachusetts'
 
 # Why is it called a hash?
 
@@ -109,7 +117,7 @@ Also, *hash* is a funny word, and programmers love jokes.
 
     * `null`
     * `undefined`
-    * `""` 
+    * `''` (empty string)
     * `false` or `true`
     * `0` (or any number)
 
@@ -119,9 +127,9 @@ To remove a key-value pair from a hash, use the keyword `delete`.
 
     @@@js
     states = {
-                CA: "California",
-                MA: "Massachusetts",
-                NY: "New York"
+                CA: 'California',
+                MA: 'Massachusetts',
+                NY: 'New York'
              }
     { CA: 'California', MA: 'Massachusetts', NY: 'New York' }
     > delete states.MA
@@ -145,5 +153,17 @@ You can get a similar effect by setting the value to `null` or `undefined`, but 
 
 # Hash methods
 
-todo
+```
+let rectangle = {
+    height: 10,
+    width: 8,
+    area: function() {
+        return this.10 * this.width;
+    }
+}
+
+rectangle.area()   //=> 80
+```
+
+`this` is a magic word that means "this object I'm in *right now*"
 
