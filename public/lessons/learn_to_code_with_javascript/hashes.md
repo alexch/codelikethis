@@ -99,6 +99,17 @@ a Hash can be defined *literally* (inline) with curly braces, like this:
 
     states['MA']  // 'Massachusetts'
 
+# Looping through a hash with for...in
+
+```
+@@@ js
+for (state in states) {
+    console.log(state);
+}
+```
+
+**Note:** use "for...of" for arrays, use "for...in" for hashes
+
 # Why is it called a hash?
 
 The most common and useful implementation of this data structure uses something called a *hashing function* to make the lookup efficient. A hashing function allows you to have **huge** amounts of data and still access a single item very quickly. Think of the Dewey Decimal System: when you look up a book in the index, it tells you what aisle and shelf to visit to find that book. You don't need to search through the entire library; you just need to search a single shelf.
@@ -148,6 +159,7 @@ You can get a similar effect by setting the value to `null` or `undefined`, but 
     undefined
     > states
     { CA: null, NY: undefined }
+    > for (state of states) { console.log(state) }
 
 > You probably shouldn't do this.
 
