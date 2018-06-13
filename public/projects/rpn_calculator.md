@@ -125,9 +125,27 @@ describe("Calculator", function() {
 Write a *read-eval-print-loop* that accepts input from the command line and feeds the input into your calculator, like this:
 
 ```
-> 2 2 +
-4
+$ node calculator.js
+I am a calculator!
+[]
+2               <<< user input
+[2]
+4               <<< user input
+[2, 4]
++               <<< user input
+[6]
+3               <<< user input
+[6, 3]
+11              <<< user input
+[6, 3, 11]
+-               <<< user input
+[6, -8]
++               <<< user input
+[-2]
+ERROR
 ```
+
+REMEMBER: you can use `(+value)` to turn a string into a number.
 
 <--/box-->
 
