@@ -106,12 +106,14 @@ a Hash can be defined *literally* (inline) with curly braces, like this:
 
 ```
 @@@ js
-for (state in states) {
+for (let state in states) {
     console.log(state);
 }
 ```
 
 **Note:** use "for...of" for arrays, use "for...in" for hashes
+
+**WARNING:** remember the `let` or you will be defining a *global variable* named `state`
 
 # Why is it called a hash?
 
