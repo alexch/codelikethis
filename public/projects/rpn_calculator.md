@@ -124,8 +124,10 @@ describe("Calculator", function() {
 
 Write a *read-eval-print-loop* that accepts input from the command line and feeds the input into your calculator, like this:
 
+```
 > 2 2 +
 4
+```
 
 <--/box-->
 
