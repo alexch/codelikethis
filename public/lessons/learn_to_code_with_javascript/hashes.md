@@ -6,10 +6,10 @@ a *hash* is an *abstract data type*
 
 # Hash Example
 
-let hashPrices = {
+let hashMenu = {
     'corned beef hash': 3.69,
     'roast beef hash': 3.89,
-    'homestyle hash': 4.47
+    'homestyle hash': 4.47,
 }
 
 # What makes a hash a hash?
@@ -101,7 +101,7 @@ a Hash can be defined *literally* (inline) with curly braces, like this:
 
 # Why is it called a hash?
 
-The most common and useful implementation of this data structure uses something called a *hashing function* to make the lookup efficient. (A hashing function allows you to have **huge** amounts of data and still access a single item very quickly.)
+The most common and useful implementation of this data structure uses something called a *hashing function* to make the lookup efficient. A hashing function allows you to have **huge** amounts of data and still access a single item very quickly. Think of the Dewey Decimal System: when you look up a book in the index, it tells you what aisle and shelf to visit to find that book. You don't need to search through the entire library; you just need to search a single shelf.
 
 Because programmers are humans, and humans can be very literal-minded, people named it based on *how* it works, rather than *what* it does or *why* it does it.
 
@@ -166,4 +166,3 @@ rectangle.area()   //=> 80
 ```
 
 `this` is a magic word that means "this object I'm in *right now*"
-
