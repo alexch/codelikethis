@@ -111,7 +111,7 @@ for (let state in states) {
 }
 ```
 
-**Note:** use "for...of" for arrays, use "for...in" for hashes
+**Note:** use "for...of" for arrays, use "for...in" for hashes -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail.
 
 **WARNING:** remember the `let` or you will be defining a *global variable* named `state`
 

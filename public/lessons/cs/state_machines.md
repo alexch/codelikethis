@@ -113,7 +113,7 @@ let states = {
 let currentState = "green";
 
 function enterState(newState) {
-  let validTransitions = state[currentState].canChangeTo;
+  let validTransitions = states[currentState].canChangeTo;
   if (validTransitions.includes(newState)) {
     currentState = newState;
   } else {
