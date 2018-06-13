@@ -177,6 +177,7 @@ let rectangle = {
     }
 }
 
+rectangle.height   //=> 10
 rectangle.area()   //=> 80
 ```
 
