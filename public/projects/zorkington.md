@@ -76,7 +76,13 @@ On the door is a handwritten sign.
 
 **And** waits for input
 
-(...but nothing will happen yet!)
+**And** if the user types "gargle"
+
+**Then** the game should output 
+
+```
+Sorry, I don't know how to gargle.
+```
 
 <!--/box-->
 <!--box-->
