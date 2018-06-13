@@ -6,11 +6,13 @@ a *hash* is an *abstract data type*
 
 # Hash Example
 
+```
 let hashMenu = {
     'corned beef hash': 3.69,
     'roast beef hash': 3.89,
     'homestyle hash': 4.47,
 }
+```
 
 # What makes a hash a hash?
 
@@ -98,6 +100,7 @@ a Hash can be defined *literally* (inline) with curly braces, like this:
              }
 
     states['MA']  // 'Massachusetts'
+    states.MA     // also 'Massachusetts'
 
 # Looping through a hash with for...in
 
@@ -170,7 +173,7 @@ let rectangle = {
     height: 10,
     width: 8,
     area: function() {
-        return this.10 * this.width;
+        return this.height * this.width;
     }
 }
 
