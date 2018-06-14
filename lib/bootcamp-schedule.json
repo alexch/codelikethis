@@ -130,6 +130,8 @@
         "exercism",
         "exercism_fork",
         "rpn_calculator",
+        "zorkington",
+        "tic_tac_toe",
         {
           "from": "FreeCodeCamp",
           "name": "Debugging",
@@ -145,16 +147,13 @@
           "from": "FreeCodeCamp",
           "name": "Basic Algorithm Scripting",
           "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
-        },
-        "zorkington",
-        "tic_tac_toe",
-        "linkedin"
+        }
       ],
       "side_tracks": [
         {
           "track": "career",
-          "lessons": [
-            "linkedin"
+          "projects": [
+            "github_portfolio_page"
           ]
         }
       ],
