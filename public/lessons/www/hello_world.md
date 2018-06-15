@@ -1,5 +1,6 @@
 # Lets write our first HTML document!
 
+* Create a file named index.html and open it in your text editor
 * All HTML documents should begin with a DOCTYPE declaration.  This does not require a **closing tag**.
 
 ```
