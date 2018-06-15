@@ -1,11 +1,3 @@
-# Hello World! Demo
-
-Let's jump right in! Please feel free to follow along - doing is always better than just watching :)
-
-* Download a text editor. Microsoft Word® is a **word processor**, not a **text editor**. 
-  * My favorite is Sublime Text, but you have the freedom to choose your own.
-  * Feel free to do a quick google for, 'best text editor'.
-
 # Lets write our first HTML document!
 
 * All HTML documents should begin with a DOCTYPE declaration.  This does not require a **closing tag**.
