@@ -38,4 +38,13 @@ Hello World!
 
 * We will now open our first web page using a web browser
 * Enter ```open index.html``` into your terminal
-* If that doesn't work, enter ```pwd``` and copy and paste the directory path into your browser, then click on the index.js file
+* If that doesn't work, enter ```pwd``` and copy and paste the directory path into your browser (chrome), then click on the index.js file
+
+
+# Inspect The File With Chrome
+
+* On Mac - ⌘ + Shift + C. On Windows / Linux - Ctrl + Shift + C OR F12
+* Or: Right click on the page and select 'inspect'
+* If it isn't clear, find and click on the elements tab 
+* Notice how the HTML tags are displayed
+* You can do this for any website to examine how it is structured
