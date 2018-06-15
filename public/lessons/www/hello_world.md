@@ -14,16 +14,17 @@
 ```
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-</body>
+  <head>
+  </head>
+  <body>
+  </body>
 </html>
 ```
 
 * Notice how the head and body sections are **nested** in the HTML tags. 
 * HTML does not *need* to be indented, however...
 * Nesting is *very* important to make your code easier to read for humans.
+* Add the code above into your file
 
 # Let's Add Content!
 
