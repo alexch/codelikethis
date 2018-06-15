@@ -36,4 +36,6 @@ Hello World!
  
 # Let's Open Our First Web Page!
 
-* We will now open our first web page using a web browser :)
+* We will now open our first web page using a web browser
+* Enter ```open index.html``` into your terminal
+* If that doesn't work, enter ```pwd``` and copy and paste the directory path into your browser, then click on the index.js file
