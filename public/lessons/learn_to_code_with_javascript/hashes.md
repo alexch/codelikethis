@@ -67,7 +67,7 @@ and in JavaScript, a hash is officially called an
 
 # Dots vs. Brackets
 
-Dots are a bit prettier than square brackets, but less versatile:
+Dots are prettier than square brackets, but less versatile:
 
     @@@ js
     > capitals = {}
@@ -87,6 +87,26 @@ Dots are a bit prettier than square brackets, but less versatile:
     'Albany'
     > capitals
     { 'New York': 'Albany' }
+
+# Dots vs. Brackets vs. Variables
+
+Given this code:
+```
+var items = {
+    brick: 'red'
+}
+var item = 'brick'
+```
+
+Two of these expressions look for *a key named `item`* but only one looks for a key named *the contents of the variable named item*
+
+```
+items.item      // undefined
+items['item']   // undefined
+items[item]     // "red"
+```
+
+> This is confusing!
 
 # Hash literals
 
