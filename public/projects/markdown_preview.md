@@ -44,7 +44,11 @@ Input some markdown source on the left and see it rendered on the right.
 
 ## User Stories
 
+We have provided Cypress tests that run through the first few features. Please make sure to keep running the tests, to ensure later changes don't break earlier features.
+
 <!--box-->
+## Page Elements
+
 **Given** a running app
 
 **Then** the following elements should exist on the page:
@@ -57,6 +61,8 @@ Input some markdown source on the left and see it rendered on the right.
 <!--/box-->
 
 <!--box-->
+## Render Text
+
 **Given** the user has entered text in the *source* text field
 
 **When** the user clicks *render* button
@@ -66,6 +72,8 @@ Input some markdown source on the left and see it rendered on the right.
 <!--/box-->
 
 <!--box-->
+## Render Markdown
+
 **Given** the user has entered *markdown format* text in the *source* text field
 
 **When** the user clicks *render* button
@@ -77,6 +85,7 @@ Input some markdown source on the left and see it rendered on the right.
 <!--/box-->
 
 <!--box-->
+## Auto-Render
 
 **Given** the user types into the *source* text field
 
@@ -89,19 +98,45 @@ Input some markdown source on the left and see it rendered on the right.
 <!--/box-->
 
 <!--box-->
+## Pretty Page
 
 Make the app look pretty.
 
 <!--/box-->
 
 <!--box-->
+## Pretty Preview
 
 Make the *formatted text* in the *preview* area look pretty. 
 
-Maybe make different elements different colors, or colored, or indented, or whatever you like.
+Maybe make different elements different colors, or improve margins and padding, or whatever you like.
+
+<!--/box-->
+
+<!--box-->
+
+## Refactoring
+
+This isn't a user story, but an invitation for you to clean your code and experiment with new techniques.
+
+Ideas:
+
+  * if you used  `<button onclick=...>` or  `element.onclick=...` you may want to try using `element.addEventListener('click', ...)` instead -- [here's an example](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Example)
+  * if you used an inline `<script>` you may want to try using an external `<script src=...>` instead
 
 <!--/box-->
 
 ## More Information
 
-<http://docs.cypress.io/guides/getting-started>
+* info on the Cypress test suite 
+  * <http://docs.cypress.io/guides> 
+  * <http://docs.cypress.io/api> 
+* how to write event listeners and attach them to DOM elements
+  * <https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick>
+  * <https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers>
+  * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
+  * <https://developer.mozilla.org/en-US/docs/Web/Events/click>
+* the Markdown language
+  * <https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf>
+* the Marked JavaScript library
+  * <https://marked.js.org/>
