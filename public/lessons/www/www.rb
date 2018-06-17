@@ -46,6 +46,11 @@ class Track
       link href: "https://meyerweb.com/eric/tools/css/reset/"
     end
 
+    lesson name: "dom_debugging",
+           display_name: "DOM Debugging"
+
+
+
     lesson name: "css_layout",
            display_name: "Page Layout With CSS" do
       link href: "https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning1",
@@ -57,9 +62,6 @@ class Track
       link href: "https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35",
            name: "How Flexbox Works With Animated Images"
     end
-
-    lesson name: "dom_debugging",
-           display_name: "DOM Debugging"
 
     lesson name: "responsive_development",
            display_name: "Introduction to Responsive Development" do

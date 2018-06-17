@@ -8,14 +8,15 @@
  * Arrangement (order) of elements 
  * Space distribution between elements
 
- ## Notes to Remember
+# Notes to Remember
 
  * Flexbox is one-dimensional. It can arrange items either in a row, or a column.
- * Flexbox can be extremely useful for laying out elements such as navigations, headers, images galleries, and more. 
+ * Flexbox can be extremely useful for laying out elements such as navigation bars, headers, image galleries, etc.
 
 # The Flex Container
 
  Flexbox works by applying CSS properties to both the container, and the children inside the container. 
+
  * First: add the CSS property `display:flex;` to the container of the items you intend to arrange. 
  * Remember, flexbox is one dimensional. `display:flex` arranges your items in a row. This can be changed with `flex-direction: column`
 
@@ -39,7 +40,10 @@ Until now, re-arranging items with pure CSS was not possible.
 
 # Justify Content
 
-Justifying your content, both horizontally and vertically, used to be a very large pain in the butt. Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 different values for the CSS property `justify-content`:
+Justifying your content, both horizontally and vertically, used to be a very large pain in the neck. 
+
+Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 different values for the CSS property `justify-content`:
+
 1. Flex-start
 2. Flex-end
 3. Center
@@ -53,15 +57,17 @@ Justifying your content, both horizontally and vertically, used to be a very lar
 # Align Items
 
 `align-items` is also applied to the flex container. This is similar to justify content, but works along the cross-axis. If your items are arranged in a row, this would act on the vertical axis. 
+
 * Align items allow you to fill the container vertically, or align it along the baseline of the flex container (bottom edge). Before Flexbox, this was very difficult to do. 
 * The five values for `align-items` are:
-1. flex-start
-2. flex-end
-3. center
-4. stretch
-5. baseline
 
-* Note that if you use `align-items:stretch`, any height values for the children inside the flex container will override this functionality. 
+  1. flex-start
+  2. flex-end
+  3. center
+  4. stretch
+  5. baseline
+
+* Note that if you use `align-items: stretch`, any height values for the children inside the flex container will override this functionality. 
 
 ![Flexbox Align Items Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Aligning items with Flexbox")
 
@@ -69,19 +75,28 @@ Justifying your content, both horizontally and vertically, used to be a very lar
 
 * As we covered earlier, your flex items can be arranged either in a row, or a column. This is done with either `flex-direction:column` and `flex-direction:row`
 
- ![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox"
+ ![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox")
 
- # Controlling Individual Flex Items
- * You can also apply specific flexbox properties to individual flex items, not just the flex container. There are a number of fairly advanced properties, but we will cover the most useful ones here.  
+# Controlling Individual Flex Items
 
- ## Order
+* You can also apply specific flexbox properties to individual flex items, not just the flex container. There are a number of fairly advanced properties, but we will cover the most useful ones here.
 
-  * This is a fairly simple property that accepts integer values for ordering items. Want to switch the first two navigation items on your website? First the container must have the property `display:flex;`. Then simply give the first item `order: 2`, and the second item `order: 1`. Note that the default value is `0`, so all items will need to be given an order number. 
-  * This is groundbreaking. Never before were we able to rearrange the order of elements on a website with pure CSS.
+# Order
 
-  ## Align Self 
+* This is a fairly simple property that accepts integer values for ordering items.
 
-  * You can also align individual items, rather than all flex items at once. This property accepts the same values as `align-items`, and achieves the same results, however for individual items:
+Want to switch the first two navigation items on your website? First the container must have the property `display: flex;`. 
+
+Then give the first item `order: 2`, and the second item `order: 1`. 
+
+(Note that the default value is `0`, so all items will need to be given an order number.)
+
+> This is groundbreaking. Never before were we able to rearrange the order of elements on a website with pure CSS.
+
+# Align Self 
+
+* You can also align individual items, rather than all flex items at once. This property accepts the same values as `align-items`, and achieves the same results, but for individual items:
+
   1. flex-start
   2. flex-end
   3. center
