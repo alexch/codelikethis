@@ -49,62 +49,23 @@ class Track
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
 
+    lesson name: "dom_scripting"
 
-
-    lesson name: "css_layout",
-           display_name: "Page Layout With CSS" do
-      link href: "https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning1",
-           name: "W3Schools Positioning Exercise"
-    end
-
-    lesson name: "flexbox_layout",
-           display_name: "Page Layout With CSS Flexbox" do
-      link href: "https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35",
-           name: "How Flexbox Works With Animated Images"
-    end
-
-    lesson name: "responsive_development",
-           display_name: "Introduction to Responsive Development" do
-      link href: "https://www.w3schools.com/html/html_responsive.asp",
-           name: "W3Schools Responsive HTML Development"
-    end
-
-    lesson name: "bootstrap_development",
-           display_name: "Introduction to Bootstrap" do
-      link href: "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
-           name: "Bootstrap Introduction"
-    end
-
-    lesson name: "bootstrap_webpage",
-           display_name: "Going Further With Bootstrap" do
-      link href: "https://medium.freecodecamp.org/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33",
-           name: "Building a Portfolio Page with Bootstrap"
-    end
-
-    lesson name: 'css_flexbox',
-           display_name: "Page Layout with CSS Flexbox" do
-      link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
-           name: "Learn CSS Flexbox in 5 Minutes"
-      link href: "https://css-tricks.com/snippets/css/a-guide-to-flexbox"
-      link href: "https://flexboxfroggy.com",
-           name: "Flexbox Froggy",
-           description: "a step-by-step test-driven game that teaches you flexbox"
-    end
 
     lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
 
     link href: "http://docs.railsbridge.org/javascript-to-do-list/",
-         name: "RailsBridge To Do List"
-    # time: "3 hr"
-
+         name: "RailsBridge To Do List",
+         description: "this is a paint-by-numbers lab where students use CSS and JavaScript to make a to do list; it uses jQuery not Vanilla DOM"
 
     lesson name: "forms" do
-      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms"
+      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms",
+      description: "this is actually a fairly advanced lab that asks you to create and style a login form like Mint.com's. It should be moved to a project, and we should have a lesson on basic FORM element creation and use."
     end
 
-
-    lesson name: "css_frameworks" do
-      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
+    lesson name: "embedding",
+           description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
+      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
     end
 
   end
