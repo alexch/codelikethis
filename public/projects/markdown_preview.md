@@ -24,44 +24,81 @@ Input some markdown source on the left and see it rendered on the right.
 
 ## Setup
 
-```
-git clone git@github.com:BurlingtonCodeAcademy/markdown_preview.git
-cd markdown_preview
-npm install -y
-npx cypress open  # opens runner window, click on test to run or click "Run All Tests"
-```
+* To clone the repo and install dependencies: (do this once)
 
-When you change your source code, remember to **stop and restart** your node server.
+        git clone git@github.com:BurlingtonCodeAcademy/markdown_preview.git
+        cd markdown_preview
+        npm install -y
+
+* To launch the app locally:
+
+        npm start
+
+* To launch the Cypress Runner window:
+  * open a *different terminal window* and `cd` to your project dir
+  * run `npx cypress open` <br><br>
+
+* To run the Cypress tests:
+ * in the Cypress Runner window, click the "Run All Tests" button, or click on a single test to run it alone
+
 
 ## User Stories
 
 <!--box-->
-- elements exist on page
+**Given** a running app
+
+**Then** the following elements should exist on the page:
+
+* *headline*: an `H1` element containing the text `Markdown Preview`
+* *source*: a `textarea` element with the id `source`
+* *preview*: a `div` element with the id `preview`
+* *render*: a `button` element  with the id `render`
 
 <!--/box-->
 
 <!--box-->
-- click button -> render = just copy
+**Given** the user has entered text in the *source* text field
+
+**When** the user clicks *render* button
+
+**Then** the text is copied into the *preview* area
 
 <!--/box-->
 
 <!--box-->
-- click button ->  render = markdown
+**Given** the user has entered *markdown format* text in the *source* text field
+
+**When** the user clicks *render* button
+
+**Then** the text is rendered as styled HTML into the *preview* area
+
+> Hint: use the `marked` library to convert markdown source into styled HTML
 
 <!--/box-->
 
 <!--box-->
-- render on keypress, not button
+
+**Given** the user types into the *source* text field
+
+**And** one second has elapsed since the user's last keypress
+
+**Then** the *render* button should activate automatically
+
+**And** the text is rendered as styled HTML into the *preview* area
 
 <!--/box-->
 
 <!--box-->
-- security (injection protection)
+
+Make the app look pretty.
 
 <!--/box-->
 
 <!--box-->
-- colorized source
+
+Make the *formatted text* in the *preview* area look pretty. 
+
+Maybe make different elements different colors, or colored, or indented, or whatever you like.
 
 <!--/box-->
 
