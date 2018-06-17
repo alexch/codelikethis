@@ -1,6 +1,9 @@
 # Introduction to Flexbox
 
- The Flexbox Module (commonly referred to as flexbox) may be one of the single most useful tools for website layout using CSS. It helps to solve many issues and fill gaps that have existed since the dawn of CSS. Flexbox helps accomplish the following:
+ The Flexbox Module (commonly referred to as flexbox) may be one of the single most useful tools for website layout using CSS. It helps to solve many issues and fill gaps that have existed since the dawn of CSS. 
+ 
+ Flexbox helps accomplish the following:
+
  * Horizontal or vertical alignment of elements
  * Arrangement (order) of elements 
  * Space distribution between elements

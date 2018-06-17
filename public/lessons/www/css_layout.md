@@ -1,27 +1,36 @@
 # Inline vs. Block Level Elements
 
 This is where things start to get a little bit tricky - positioning HTML elements using CSS.
-There are two main 'displays', for HTML elements.
+
+There are two main display rules (or "levels") for HTML elements.
 
 1. Block level
   - New line, full width
 2. Inline level
   - Same line, width of content
 
-It is important to note that inline elements should only contain data, or other inline elements. Block level elements can contain both block and inline elements.
+# Inline vs. Block: More Info
+
+Inline elements should only contain data, or other inline elements. 
+
+Block level elements can contain both block and inline elements.
 
 ![Illustration of HTML displays](http://www.girldevelopitfargo.com/holidayhtmlcss/img/example-blockinline.png "HTML Displays")
 
 # CSS Display Property
 
-All HTML elements should be viewed as a block, as discussed before. Elements are given a specific **display** - this is a CSS property that determines an element's layout, and how it interacts with other elements. In other words, it decides whether an element will be full-width, or in-line with other elements.
+Elements are given a default **display** value based on their type - this is a CSS property that determines an element's layout, and how it interacts with other elements. 
 
-* `display:block;`
+* `display: block;`
   - The element will take up the full width of the page
-* `display:inline;`
+* `display: inline;`
   - The element will only take up the width of the content within the element.
-* `display:inline-block`
+* `display: inline-block`
   - Acts as an inline element, but can be given a specific width and height.
+* `display: none;`
+  - The element will disappear, as will all its children, and its neighbors will be rendered as if it was never there.
+
+See <https://developer.mozilla.org/en-US/docs/Web/CSS/display> for many more `display` values.
 
 # Example of Block vs. Inline Elements
 
@@ -73,5 +82,9 @@ There are 4 commonly-used position properties in CSS. These further help to posi
 * Applying the style `float:left;` to an element will force that element to the left side of the container, and all other elements will 'wrap' around it. Again, this should only be applied to images that need to have text wrapped around them. The image below illustrates this.
 
 ![CSS Float Property Illustration](https://patriciasdesignsite.files.wordpress.com/2015/01/text-wrap_031.jpg "Illustration of text-wrapping with CSS float")
+
+# LAB: Learn CSS Layout
+
+https://learn.shayhowe.com/html-css/
 
 [Learn CSS Layout](http://learnlayout.com/position.html)
