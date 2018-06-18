@@ -35,6 +35,7 @@ class Bootcamp < Site
       ::Track::Ux,
       ::Track::TricksOfTheTrade, # or "trade secrets" ?
       ::Track::Career,
+      ::Track::Qa,
 
     ]
   end
