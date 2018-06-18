@@ -210,12 +210,12 @@
         {
           "from": "FreeCodeCamp",
           "name": "Applied Visual Design",
-          "href": "https://beta.freecodecamp.org/en/challenges/applied-visual-design/introduction-to-the-applied-visual-design-challenges"
+          "href": "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
         },
         {
           "from": "FreeCodeCamp",
           "name": "Bootstrap",
-          "href": "https://beta.freecodecamp.org/en/challenges/bootstrap/introduction-to-the-bootstrap-challenges"
+          "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
         },
         "sriracha",
         "swapathon"
@@ -252,7 +252,7 @@
         {
           "from": "FreeCodeCamp",
           "name": "jQuery",
-          "href": "https://beta.freecodecamp.org/en/challenges/jquery/introduction-to-jquery"
+          "href": "https://learn.freecodecamp.org/front-end-libraries/jquery"
         },
         {
           "name": "markdown_preview",
@@ -308,12 +308,12 @@
         {
           "from": "FreeCodeCamp",
           "name": "Intermediate Algorithm Scripting",
-          "href": "https://beta.freecodecamp.org/en/challenges/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
         },
         {
           "from": "FreeCodeCamp",
           "name": "JavaScript Algorithms and Data Structures Projects",
-          "href": "https://beta.freecodecamp.org/en/challenges/javascript-algorithms-and-data-structures-projects/palindrome-checker",
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker",
           "description": "choose one"
         }
       ],
