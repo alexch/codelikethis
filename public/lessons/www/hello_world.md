@@ -28,7 +28,7 @@
 
 # Let's Add Content!
 
-We will now add some text to our first web page! Inside of the ```<body>``` tag, let's add the following text:
+We will now add some text to our first web page! Inside of the `<body>` tag, let's add the following text:
 
 ```
 Hello World!
@@ -37,14 +37,17 @@ Hello World!
 # Let's Open Our First Web Page!
 
 * We will now open our first web page using a web browser
-* Enter ```open index.html``` into your terminal
-* If that doesn't work, enter ```pwd``` and copy and paste the directory path into your browser (chrome), then click on the index.js file
+* Enter `open index.html` into your terminal
+  * or on Windows, use `start index.html`
+  * or enter `pwd` and copy and paste the directory path into your browser (chrome), then click on the `index.js` file
 
 
 # Inspect The File With Chrome
 
-* On Mac - ⌘ + Shift + C. On Windows / Linux - Ctrl + Shift + C OR F12
-* Or: Right click on the page and select 'inspect'
+* In your browser, open the "Developer Tools" window
+  * On Mac - `⌘ + Shift + C`
+  * On Windows / Linux - `Ctrl + Shift + C` or `F12`
+  * Or: *right click* on the page and select 'inspect'
 * If it isn't clear, find and click on the elements tab 
 * Notice how the HTML tags are displayed
-* You can do this for any website to examine how it is structured
+* You can do this for **any website** to examine how it is structured

@@ -8,4 +8,4 @@ Let's build a web page! Remember how we discussed semantic HTML? Well in modern 
 
 * Not all of these elements _have_ to be used. 
 * Each is meant to contain a specific type of content. In fact, you do not need to use any of these. They help screen readers and search engines to determine the structure of your website, and help to achieve higher SEO rankings. You could simply replace all of these HTML5 tags with `<div>` tags
-* Using these tags will not automatically layout your page as shown in the previous image. They simply help to *describe* what the content is on your website. Browsers render them the same as a `<div>` element.
+* Using these tags **will not automatically layout your page** as shown in the previous image. They simply help to *describe* what the content is on your website. Browsers render them all the same as a `<div>` element.

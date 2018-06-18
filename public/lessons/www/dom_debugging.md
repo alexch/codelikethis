@@ -6,9 +6,9 @@
 
 # Is the DOM Just My HTML?
 
-* No, it isn't. 
-* The DOM can appear similar or identical to the HTML that comprises your website. However, browsers can fix small syntax errors in your HTML automatically (such as a missing tag), and your HTML can be modified using Javascript. 
-* Javascript isn't actually _editing_ your document. It is simply modifying the DOM. You can think of the DOM as a translation of your website's code that allows for it to be modified. 
+* No, it isn't. :-)
+* The DOM can appear similar or identical to the HTML that comprises your website. However, browsers can fix small syntax errors in your HTML automatically (such as a missing tag), and your HTML can be modified using JavaScript. 
+* Javascript isn't actually _editing_ your document. It is simply modifying the DOM. You can think of the DOM as an editable copy of your read-only website, which stays pristine on your server or filesystem.
 * If some Javascript is rearranging elements on your page, you won't see these changes in the HTML docmuent, as the JS isn't actually editing your document. 
 * A visual representation of the DOM can be seen by using the 'Inspect' feature of your browser. 
 

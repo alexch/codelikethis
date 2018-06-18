@@ -5,21 +5,16 @@
 * Invented by Tim Berners-Lee
 * Based on SGML
 * Standard language used for creating web pages.
-* Comprised of tags
-* Used in tandem with CSS and Javascript
+* Composed of tags
+* Used in tandem with CSS and JavaScript
 * HTML is for structuring content. It does not perform complex computations. 
 
 # What Is It?
 
-HTML is a coding language comprised of various types of tags, also known as elements. These are what are used to build web pages. They are the Lincoln Logs of the Internet.
+HTML is a coding language composed of various types of *tags*, also known as *elements*. These are what are used to build web pages. They are the Lincoln Logs of the Internet.
 
 * HTML is used to **build** web pages by using **tags**.
 * Web browsers "read" HTML and render it as pretty visual elements for humans.
-
-## Flaws:
-
-* Difficult to parse
-* Poor whitespace rules
 
 # Standard Page Structure
 
@@ -77,18 +72,31 @@ Attributes further define HTML elements and their purpose. For example, an image
 
 ```<img src="/images/cat-pic.jpg" title="Cat Pic" alt="Picture of a fuzzy cat">```
 
-* src defines where the image file is located.
-* alt is alternative text to be displayed if the image cannot be. 
+* `src` defines where the image file is located.
+* `alt` is alternative text to be displayed if the image cannot be. 
 * Attributes are not always required. However in the example above, a source is needed for the image to be displayed.
-* Others include style (bad), title (tooltips), href (hyperlink reference)
-* Should always be lowercase
+* Others include `style` (for inline CSS), `title` (for hover-over tooltips), `href` (hyperlink reference)
+* Attribute names should always be lowercase
 
 # Style vs Layout vs Semantics
 
-The war that has raged inside HTML since the beginning of the WWW. Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>`), where as some _describe_ it's contents (ex. `<strong>`). Web content isn't just about appearence. It matters how it is intepreted. 
+This war has raged inside HTML since the beginning of the WWW. 
+
+Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>`), where as some _describe_ it's contents (ex. `<strong>`). Web content isn't just about appearence. It matters how it is intepreted. 
 
 * Semantics are all about meaning - what is the purpose?
 * Not all HTML elements convey meaning - not all HTML elements are semantic (ex. div). 
-* Imagine a blind person using a screen reader - how might they understand the difference between a `<strong>` or a `<b>` tag?
+* Imagine a blind person using a screen reader - how might they understand the difference between a `<strong>` and a `<b>` tag?
 * Not all elements **style** content, and not all elements define **structure** or layout.
 
+# HTML Has Flaws
+
+* Difficult to parse
+* Poor whitespace rules
+* Case insensitive, except when it's not
+  * For example, Ç is &amp;Ccedil; and ç is &amp;ccedil;
+* Open and close tag names should match but often aren't required to
+  * For example, &lt;b>bold &lt;i>italic&lt;/b>&lt;/i>
+* Muddled distinctions
+  * between *semantics* (what the tag's content *means*) and *style* (how the tag's content is *displayed*)
+  * between *elements* and *attributes* and *content*
