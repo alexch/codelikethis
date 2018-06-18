@@ -182,8 +182,12 @@
           "href": "https://learn.freecodecamp.org/responsive-web-design/basic-css"
         },
         {
-          "name": "remock"
-        }
+          "from": "FreeCodeCamp",
+          "name": "Applied Visual Design",
+          "href": "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
+        },
+        "markdown_preview",
+        "web_text_game"
       ],
       "lessons": [
         "http",
@@ -194,10 +198,14 @@
       ],
       "side_tracks": [
         {
-          "track": "ux"
+          "track": "testing"
         }
       ],
       "events": [
+        {
+          "start": "Thursday 9:30am",
+          "name": "Testing"
+        },
         {
           "start": "Friday 4:00 pm",
           "name": "retrospective"
@@ -209,16 +217,12 @@
       "projects": [
         {
           "from": "FreeCodeCamp",
-          "name": "Applied Visual Design",
-          "href": "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
-        },
-        {
-          "from": "FreeCodeCamp",
           "name": "Bootstrap",
           "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
         },
         "sriracha",
-        "swapathon"
+        "swapathon",
+        "remock"
       ],
       "lessons": [
         "bootstrap_layout",

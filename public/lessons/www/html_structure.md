@@ -48,9 +48,13 @@
 
 # Lists
 
-* Three types of HTML lists: unordered, ordered, and descripton lists.
-* `<ul>` describes a unordered list, while `<ol>` describes an ordered list.
-* `<dl>` is the least common type of HTML list. 
+* Two main types of HTML lists: *ordered* and *unordered*.
+* `<ul>` describes a unordered list
+  * this list
+  * is unordered
+* `<ol>` describes an ordered list.
+  1. this list
+  2. is ordered
 
 ```
 <ul>
