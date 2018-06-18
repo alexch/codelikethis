@@ -64,15 +64,17 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 | \<em>                | <em>emphasis</em>               |
 | \<br>                | Line break                      |
 | \<hr>                | Horizontal rule (dividing line) |
-| \<width> / \<height> | self-explanatory                |
-| \<blockquote>        | also self-explanatory           |
+| \<blockquote>        | "call-out" quotation            |
 | etc.                 |                                 |
 
 # Attributes
 
 Attributes further define HTML elements and their purpose. For example, an image tag may have the following attributes:
 
-```<img src="/images/cat-pic.jpg" title="Cat Pic" alt="Picture of a fuzzy cat">```
+```
+@@@ html
+<img src="/images/cat-pic.jpg" title="Cat Picture" alt="Picture of a fuzzy cat">
+```
 
 * `src` defines where the image file is located.
 * `alt` is alternative text to be displayed if the image cannot be.
@@ -87,18 +89,19 @@ This war has raged inside HTML since the beginning of the WWW.
 Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>`), where as some _describe_ it's contents (ex. `<strong>`). Web content isn't just about appearence. It matters how it is intepreted.
 
 * Semantics are all about meaning - what is the purpose?
-* Not all HTML elements convey meaning - not all HTML elements are semantic (ex. div).
+* Not all HTML elements convey meaning - not all HTML elements are semantic (e.g. `div`).
 * Imagine a blind person using a screen reader - how might they understand the difference between a `<strong>` and a `<b>` tag?
 * Not all elements **style** content, and not all elements define **structure** or layout.
 
 # HTML Has Flaws
 
-* Difficult to parse
+* Difficult to parse (both for humans and for programs)
 * Poor whitespace rules
 * Case insensitive, except when it's not
   * For example, Ç is &amp;Ccedil; and ç is &amp;ccedil;
 * Open and close tag names should match but often aren't required to
   * For example, &lt;b>bold &lt;i>italic&lt;/b>&lt;/i>
+* Browsers will happily render invalid HTML, which leads to the propagation of invalid HTML
 * Muddled distinctions
   * between *semantics* (what the tag's content *means*) and *style* (how the tag's content is *displayed*)
   * between *elements* and *attributes* and *content*

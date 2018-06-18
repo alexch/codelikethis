@@ -9,9 +9,9 @@
 <h1>Grocery List</h1>
 <table>
   <tr>
-    <td>Fruit</td>
-    <td>Grains</td>
-    <td>Dairy</td>
+    <th>Fruit</th>
+    <th>Grains</th>
+    <th>Dairy</th>
   </tr>
   <tr>
     <td>Apples</td>
@@ -30,9 +30,9 @@
 <h1>Grocery List</h1>
 <table>
   <tr>
-    <td>Fruit</td>
-    <td>Grains</td>
-    <td>Dairy</td>
+    <th>Fruit</th>
+    <th>Grains</th>
+    <th>Dairy</th>
   </tr>
   <tr>
     <td>Apples</td>

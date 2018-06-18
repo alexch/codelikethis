@@ -31,7 +31,19 @@
 We will now add some text to our first web page! Inside of the `<body>` tag, let's add the following text:
 
 ```
-Hello World!
+Hello, world!
+```
+
+So it looks like this:
+```
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    Hello, world!
+  </body>
+</html>
 ```
 
 # Let's Open Our First Web Page!
@@ -51,3 +63,5 @@ Hello World!
 * If it isn't clear, find and click on the elements tab
 * Notice how the HTML tags are displayed
 * You can do this for **any website** to examine how it is structured
+  * or to change its colors, or remove ads, or...?
+
