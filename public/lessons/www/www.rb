@@ -54,7 +54,7 @@ class Track
     lesson name: "dom_scripting"
 
 
-    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css"
+    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css",
         name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
 
     link href: "http://docs.railsbridge.org/javascript-to-do-list/",
