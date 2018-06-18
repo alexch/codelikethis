@@ -41,30 +41,32 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 
 # Examples of Structural Tags (Layout)
 
-|tag|meaning|
-|---|---|
-|\<head>|head (contains metadata)|
-|\<body>|page body|
-|\<div>|division|
-|\<h1>|Heading (level 1)|
-|\<p>|Paragraph containing text|
-|\<span>|Text without a line break|
-|\<img>|Image tag|
+| tag      | meaning                   |
+|----------|---------------------------|
+| \<head>  | head (contains metadata)  |
+| \<body>  | page body                 |
+| \<div>   | division                  |
+| \<h1>    | Heading (level 1)         |
+| \<p>     | Paragraph containing text |
+| \<span>  | Text without a line break |
+| \<img>   | Image tag                 |
+| \<link>  | Link tag                  |
+| \<style> | Style tag                 |
 
 
 # Examples of Style Tags
 
-|tag|example|
-|---|---|
-|\<b>|<b>bold</b>|
-|\<i>|<i>italic</i>|
-|\<strong>|<strong>strong</strong>|
-|\<em>|<em>emphasis</em>|
-|\<br>|Line break|
-|\<hr>|Horizontal rule (dividing line)|
-|\<width> / \<height>|self-explanatory|
-|\<blockquote>|also self-explanatory|
-|etc|
+| tag                  | example                         |
+|----------------------|---------------------------------|
+| \<b>                 | <b>bold</b>                     |
+| \<i>                 | <i>italic</i>                   |
+| \<strong>            | <strong>strong</strong>         |
+| \<em>                | <em>emphasis</em>               |
+| \<br>                | Line break                      |
+| \<hr>                | Horizontal rule (dividing line) |
+| \<width> / \<height> | self-explanatory                |
+| \<blockquote>        | also self-explanatory           |
+| etc.                 |                                 |
 
 # Attributes
 
