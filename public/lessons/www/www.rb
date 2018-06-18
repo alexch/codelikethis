@@ -32,9 +32,11 @@ class Track
 
     lesson name: "html_structure",
            display_name: "Going Further With HTML"
-    lab name: 'FreeCodeCamp "Responsive Web Design - Basic HTML and HTML5"'
 
-    lesson name: "html5", 
+    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5",
+         name: "FreeCodeCamp 'Responsive Web Design - Basic HTML and HTML5'"
+
+    lesson name: "html5",
            display_name: "Web Page Structure With HTML5" do
       link href: "https://www.thoughtco.com/whats-new-in-html5-3467974",
            name: "What's new in HTML5?"
@@ -52,7 +54,8 @@ class Track
     lesson name: "dom_scripting"
 
 
-    lab name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
+    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css"
+        name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
 
     link href: "http://docs.railsbridge.org/javascript-to-do-list/",
          name: "RailsBridge To Do List",
