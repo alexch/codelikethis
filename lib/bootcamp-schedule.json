@@ -135,18 +135,18 @@
         {
           "from": "FreeCodeCamp",
           "name": "Debugging",
-          "href": "https://beta.freecodecamp.org/en/challenges/debugging/introduction-to-the-debugging-challenges",
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/",
           "optional": true
         },
         {
           "from": "FreeCodeCamp",
           "name": "Basic Data Structures",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-data-structures/introduction-to-arrays"
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures"
         },
         {
           "from": "FreeCodeCamp",
           "name": "Basic Algorithm Scripting",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-algorithm-scripting/get-set-for-our-algorithm-challenges"
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting"
         }
       ],
       "side_tracks": [
@@ -174,12 +174,12 @@
         {
           "from": "FreeCodeCamp",
           "name": "Basic HTML",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
+          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5"
         },
         {
           "from": "FreeCodeCamp",
           "name": "Basic CSS",
-          "href": "https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/introduction-to-the-basic-html-and-html5-challenges"
+          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-css"
         },
         {
           "name": "remock"
