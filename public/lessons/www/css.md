@@ -1,18 +1,18 @@
 # CSS
 
 * CSS = Cascading Style Sheet
-* CSS, by itself, does nothing. 
+* CSS, by itself, does nothing.
 * Responsible for determining how your HTML **looks**
 
 # Why Does CSS Exist?
 
-* CSS formats your webpage. Without it, there is only content, and no structure or styles. 
+* CSS formats your webpage. Without it, there is only content, and no structure or styles.
 * Can be written within HTML, or using an external style sheet (the correct way)
 * Creating external style sheets prevents you from having to write code multiple times, and makes it easy to modify.
 
 # Styling text with CSS
 
-* Using CSS **properties**, you can modify the appearence of your HTML. 
+* Using CSS **properties**, you can modify the appearence of your HTML.
 * This can done by targeting HTML **elements**.
 
 # Example:
@@ -54,7 +54,7 @@ What is the CSS doing here?
 * Selectors determine where the styles are applied.
 * Properties determine what those styles are.
 * CSS begins with a selector, followed by curly braces.
-* Declare your styles inside the curly braces. 
+* Declare your styles inside the curly braces.
 
 # Examples of Selectors
 
@@ -75,17 +75,78 @@ What is the CSS doing here?
 |font-size|size of font|
 |font-family|defines font|
 
-# Page layout with CSS 
+# Including CSS into HTML
+
+There are several ways to add style to an HTML page
+
+* `<style>` Tags
+* `<link>` Tag to a CSS file
+* `<style>` Tags with `@import` of CSS
+
+# CSS Style Tags
+
+```html
+@@@html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cat</title>
+    <style type="text/css" media="screen">
+     div {
+       float: left;
+       width: 49%;
+       height: 100px;
+       border: solid red 1px;
+     }
+
+     button {
+       float: left;
+       clear: both;
+     }
+    </style>
+  <body>
+  	<h1>My Cat Bob</h1>
+    <p>My cat is named Bob. He is a lazy cat.</p>
+  </body>
+</html>
+```
+
+# Linking to CSS
+
+```html
+@@@html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cat</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  	<h1>My Cat Bob</h1>
+    <p>My cat is named Bob. He is a lazy cat.</p>
+  </body>
+</html>
+```
+
+# @import
+
+```html
+@@@html
+<style type="text/css" media="screen">
+  @import 'my_special_css_file.css';
+</style>
+```
+
+# Page layout with CSS
 
   * Imagine every HTML element as a 'box'.
   * Every box consists of four different 'layers': Margin, Border, Padding, and Content.
-  * Margins and padding help to position and align content inside an HTML element. 
-  * Padding and margins are transparent. Think of it as empty space. 
+  * Margins and padding help to position and align content inside an HTML element.
+  * Padding and margins are transparent. Think of it as empty space.
   * Borders can be colored, or image-based. They can also be 'styled' (dashes, dots, etc.)
 
 ![Illustration of the CSS box model](https://pressupinc.com/wp-content/uploads/2014/01/box-model.png "CSS Box Model")
 
-# @import
 
 * You can put all your CSS in one file
 
@@ -96,4 +157,3 @@ OR...
 [todo: example]
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/%40import
-
