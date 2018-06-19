@@ -145,9 +145,17 @@ You can target the state of an element using `psuedo-class` selectors
 [MDN Psuedo-Class Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements "MDN Psuedo-Class Tutorial")
 
 ```css
-@css
+@@@css
 a:hover {
-  background-color: #red;
+  background-color: red;
+}
+
+a:clicked {
+  background-color: blue;
+}
+
+a:active {
+  background-color: green;
 }
 ```
 
