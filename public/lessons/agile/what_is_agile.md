@@ -2,7 +2,7 @@
 
 * Waterfall 
   * NASA-style
-* Auteurism 
+* Auteurism
   * "It's done when it's done"
 * Death March
   * Fixed scope, fixed time, fixed cost => 

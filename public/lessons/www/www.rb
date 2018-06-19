@@ -15,6 +15,8 @@ class Track
     link href: "https://www.codecademy.com/tracks/web",
          name: "Codecademy HTML & CSS Track"
 
+    link href: "http://validator.w3.org/"
+
     project from: 'FreeCodeCamp',
             name: 'Applied Responsive Web Design Projects'
 
