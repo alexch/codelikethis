@@ -74,20 +74,20 @@ What is the CSS doing here?
 
 | selector     | meaning          |
 |--------------|------------------|
-| p, div, etc. | element selector |
-| .class       | class selector   |
-| #id          | ID selector      |
-| *            | Wildcard         |
+| `p`, `div`, etc. | element selector |
+| `.class`     | class selector   |
+| `#id`        | ID selector      |
+| `*`          | Wildcard ("any") |
 
 # Examples of Properties
 
 | property    | meaning                                |
 |-------------|----------------------------------------|
-| color       | text color                             |
-| border      | Defines border width, style, and color |
-| text-align  | justifies text                         |
-| font-size   | size of font                           |
-| font-family | defines font                           |
+| `color`       | text color                             |
+| `border`      | Defines border width, style, and color |
+| `text-align`  | justifies text                         |
+| `font-size`   | size of font                           |
+| `font-family` | defines font                           |
 
 # Compound Selectors 1
 
@@ -123,7 +123,7 @@ Selectors can target specific elements with an ID
 ```css
 @@@css
 
-main h1 .introduction {
+main h1 #introduction {
   display: block;
   margin: 0, auto;
   padding-top: 1em;
@@ -268,7 +268,7 @@ h1 {
 <h1 class="title" id="introduction">Hi there, I am BLUE</h1>
 ```
 
-# The Important Declaration
+# The !Important Declaration
 
 Using `!important` in a declaration overrides all other declarations
 
@@ -288,16 +288,15 @@ h1 {
 #introduction {
   color: blue;
 }
-
 ```
 
 # Style Override Precedence
 
-5. Element Selectors
-4. Class Selectors
-3. ID Selectors
-2. In line CSS
-1. Important!
+* 5. Element Selectors
+* 4. Class Selectors
+* 3. ID Selectors
+* 2. Inline CSS
+* 1. Important!
 
 # Style Specificity Precedence
 
@@ -320,3 +319,9 @@ h1 {
   background-color: blue;
 }
 ```
+
+# TODO
+
+- `px` and `pt` and `em` and `rem`
+- fonts: which fonts are always available? what are web fonts?
+
