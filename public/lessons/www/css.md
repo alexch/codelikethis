@@ -159,84 +159,6 @@ a:active {
 }
 ```
 
-# Cascading Syles
-
-```css
-@@@css
-
-h1 {
-  color: red;
-}
-
-.title {
-  color: yellow;
-}
-
-#introduction {
-  color: blue;
-}
-```
-
-```html
-@@@html
-<h1>Hi there, I am RED</h1>
-<h1 class="title">Hi there, I am YELLOW</h1>
-<h1 class="title" id="introduction">Hi there, I am BLUE</h1>
-```
-
-# The Important Declaration
-
-Using `!important` in a declaration overrides all other declarations
-
-## Example
-
-```css
-@@@css
-
-h1 {
-  color: red;
-}
-
-.title {
-  color: yellow !important;
-}
-
-#introduction {
-  color: blue;
-}
-
-```
-
-# Style Override Precedence
-
-5. Element Selectors
-4. Class Selectors
-3. ID Selectors
-2. In line CSS
-1. Important!
-
-# Style Specificity Precedence
-
-* More specific selectors will override less specific
-
-```css
-@@@css
-.main p {
-  // Least specific
-  background-color: yellow;
-}
-
-.header .title h1{
-  // Somewhat specific
-  background-color: red;
-}
-
-.nav .menu .option li{
-  // Most specific
-  background-color: blue;
-}
-```
-
 # Including CSS into HTML
 
 There are several ways to add style to an HTML page
@@ -320,3 +242,81 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/%40import
 
 * More information: [MDN: CSS Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model "MDN CSS Box Model, additional information")
 * Even more information: [Shay Howe, opening the box model](https://learn.shayhowe.com/html-css/opening-the-box-model/ "Learn CSS with Shaw Howe, opening the box model")
+
+# Cascading Syles
+
+```css
+@@@css
+
+h1 {
+  color: red;
+}
+
+.title {
+  color: yellow;
+}
+
+#introduction {
+  color: blue;
+}
+```
+
+```html
+@@@html
+<h1>Hi there, I am RED</h1>
+<h1 class="title">Hi there, I am YELLOW</h1>
+<h1 class="title" id="introduction">Hi there, I am BLUE</h1>
+```
+
+# The Important Declaration
+
+Using `!important` in a declaration overrides all other declarations
+
+## Example
+
+```css
+@@@css
+
+h1 {
+  color: red;
+}
+
+.title {
+  color: yellow !important;
+}
+
+#introduction {
+  color: blue;
+}
+
+```
+
+# Style Override Precedence
+
+5. Element Selectors
+4. Class Selectors
+3. ID Selectors
+2. In line CSS
+1. Important!
+
+# Style Specificity Precedence
+
+* More specific selectors will override less specific
+
+```css
+@@@css
+.main p {
+  // Least specific
+  background-color: yellow;
+}
+
+.header .title h1{
+  // Somewhat specific
+  background-color: red;
+}
+
+.nav .menu .option li{
+  // Most specific
+  background-color: blue;
+}
+```
