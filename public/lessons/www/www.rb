@@ -50,6 +50,10 @@ class Track
       link href: "https://meyerweb.com/eric/tools/css/reset/"
     end
 
+    lesson name: "layout_survey", 
+      display_name: "A Historical Survey of Web Layout"
+      
+
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
 

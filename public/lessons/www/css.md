@@ -118,17 +118,18 @@ h1 .title {
 
 # Compound Selectors 3
 
-Selectors can target specific elements with an ID
+Selectors can target specific elements with several layers of nesting
 
 ```css
 @@@css
 
-main h1 #introduction {
-  display: block;
-  margin: 0, auto;
-  padding-top: 1em;
+main .introduction > p {
+  background-color: lightgray;
+  margin: 10px auto;
 }
 ```
+
+"apply these styles to all `p`s that are direct children of a `div` of class `introduction` inside the `main` section"
 
 # Psuedo-Class Selectors
 
@@ -190,6 +191,7 @@ There are several ways to add style to an HTML page
        clear: both;
      }
     </style>
+  </head>
   <body>
   	<h1>My Cat Bob</h1>
     <p>My cat is named Bob. He is a lazy cat.</p>
@@ -324,4 +326,8 @@ h1 {
 
 - `px` and `pt` and `em` and `rem`
 - fonts: which fonts are always available? what are web fonts?
-
+- space vs. greater-than (descendant vs. child)
+- "every config file eventually becomes Turing-complete" see also <http://beza1e1.tuxen.de/articles/accidentally_turing_complete.html> and
+<https://stackoverflow.com/questions/648246/at-what-point-does-a-config-file-become-a-programming-language>
+- reset.css
+- print.css
