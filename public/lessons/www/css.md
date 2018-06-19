@@ -123,7 +123,7 @@ Selectors can target specific elements with an ID
 ```css
 @@@css
 
-h1 #introduction {
+main h1 .introduction {
   display: block;
   margin: 0, auto;
   padding-top: 1em;
