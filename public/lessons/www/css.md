@@ -130,6 +130,27 @@ main h1 .introduction {
 }
 ```
 
+# Psuedo-Class Selectors
+
+You can target the state of an element using `psuedo-class` selectors
+
+  * Hover
+  * Visited
+  * Checked
+  * Active
+  * Many others
+
+[Full List on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes "Full list of CSS psuedo-classes on Mozilla Developer Network")
+
+[MDN Psuedo-Class Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements "MDN Psuedo-Class Tutorial")
+
+```css
+@css
+a:hover {
+  background-color: #red;
+}
+```
+
 # Cascading Syles
 
 ```css
