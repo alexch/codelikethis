@@ -2,7 +2,45 @@
 
 "Scripting" is a term used when you're writing programs that don't do much *on their own*; instead scripts usually use other, more advanced programs, or are embedded within them.
 
-"DOM Scripting" is using JavaScript to manipulate the DOM (page elements and contents) inside a web page, either during page load, or in response to user events, like clicking a button or selecting text.
+"DOM Scripting" means using JavaScript to manipulate the DOM (page elements and contents) inside a web page, either during page load, or in response to user events, like clicking a button or selecting text.
+
+# scripts as attributes
+
+This is the simplest way to execute JavaScript inside a Web page.
+
+```
+@@@html
+<button name="button" onclick="alert('Abracadabra!')">
+    Magic
+</button>
+```
+
+Try it out here: <button name="button" onclick="alert('Abracadabra!')">Magic</button>
+
+`onclick` is an *attribute* that contains a *script* that pops up an alert box. Also known as an *event handler*. 
+
+(We will discuss several other ways to attach event handlers later in this lesson.)
+
+# the script tag
+
+Without a `src` attribute, it defines a script and *immediately executes* its code:
+
+```
+@@@html
+<script>
+var message = "Shazam!"
+alert(message)
+</script>
+```
+
+With a `src` attribute, it *loads code from a separate file*, and and *immediately executes* it:
+
+```
+@@@html
+<script src="tictactoe.js"></script>
+```
+
+The `script` tag may appear in the `head` or in the `body`. Scripts are executed in top-to-bottom order.
 
 # `document`
 
@@ -10,13 +48,13 @@ In a DOM script, the current page is always available via the *global variable* 
 
 In addition to providing many useful *functions*, it also provides some *properties*:
 
-`document.URL` - the URL of the current page, in the form of a string. 
-
-`document.location` - the URL of the current page, in the form of a Location object. 
-
-`document.location = 'http://example.com'` - causes the browser to visit that web page.
-
-`document.title = 'the joy of cooking'` - changes the *title* of the document, which appears inside windows and tabs. Some apps use this to display, e.g., a count of unread messages, which the user can then see without switching tabs.
+|Property|Description|
+|---|---|
+| `document.URL` | the URL of the current page, in the form of a string. |
+| `document.location` | the URL of the current page, in the form of a Location object. |
+| `document.location = 'http://example.com'` | causes the browser to visit that web page.|
+| `document.title` | the *title* of the document, which appears inside windows and tabs.|
+| `document.title = 'the joy of cooking'` | immediately changes the *title* of the document. Some apps use this to display, e.g., a count of unread messages, which the user can then see without switching tabs.|
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Document>
 
@@ -24,17 +62,24 @@ In addition to providing many useful *functions*, it also provides some *propert
 
 If an element has an `id` attribute, you can get a *pointer* to that element with a single line of code:
 
+    @@@js
     var element = document.getElementById(id);
 
 Once you have a pointer to that element, you can manipulate it further. You can also log it to the console for further inspection using:
 
+    @@@js
     console.log(element)
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById>
 
 # Finding an Element by CSS Selector
 
-`var element = document.querySelector('h2.preview > p')` - returns the first Element within the document that matches the specified selector
+```
+@@@ js
+var element = document.querySelector('main div.preview > p')
+```
+
+This returns the first Element within the document that matches the specified selector (in this case, the first `<p>` that is a direct child of any `<div class='preview'>` that is in the `main` section).
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector>
 
@@ -66,7 +111,7 @@ When you're hunting for a function or property, sometimes it's on Node, and some
   * <https://developer.mozilla.org/en-US/docs/Web/API/Node>
   * <https://developer.mozilla.org/en-US/docs/Web/API/Element>
 
-Also, this sense of "node" is **completely different** from the "node" in NodeJS. :-(
+> Also, this sense of "node" is **completely different** from the "node" in NodeJS. :-(
 
 # Finding many elements
 
@@ -80,7 +125,7 @@ In addition to getting a *single* element by its `id` or a CSS selector, you can
 
 These return *collection* objects, so you must write more code to get the actual element objects, or to check the collection's length.
 
-# Events
+# Events as functions
 
 In JavaScript, *event handlers* are *callback functions*.
 
@@ -107,8 +152,14 @@ To attach an event handler,
 
 If you have already defined an event handler function, you can attach it by reference, like this:
 
-    @@@ js
+    @@@ html
+    <script>
+    function sayMagicWord() {
+        alert('Presto!');
+    }
+    var button = document.getElementById('magic');
     button.addEventListener('click', sayMagicWord)
+    </script>
 
 > NOTE: if you attach a listener by reference, pass the *name* of the function only! Do not immediately *invoke* the function, like this:
 
