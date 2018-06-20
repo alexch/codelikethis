@@ -100,16 +100,20 @@ There is also a property called `innerText` but it's confusing and implemented d
 
 In the DOM, the term "node" means *almost any* item that you can find in the document tree.
 
+When you're hunting for a function or property, sometimes it's on Node, and sometimes it's on Element. Make sure to check *both* of these documentation pages:
+
+  * <https://developer.mozilla.org/en-US/docs/Web/API/Node>
+  * <https://developer.mozilla.org/en-US/docs/Web/API/Element>
+
+For instance, `attributes` is a property of Element, but `childNodes` is a property of Node.
+
+# Other Node Types
+
 An element is a particular type of node, and it's the most common, but beware, these are also nodes...
 
 * Document, Element, Text, Comment, CDATASection, ProcessingInstruction, DocumentFragment, DocumentType, Notation, Entity, EntityReference
 
 ...and all of them have their own properties that are *not* part of the basic Node set.
-
-When you're hunting for a function or property, sometimes it's on Node, and sometimes it's on Element. Make sure to check *both* of these documentation pages:
-
-  * <https://developer.mozilla.org/en-US/docs/Web/API/Node>
-  * <https://developer.mozilla.org/en-US/docs/Web/API/Element>
 
 > Also, this sense of "node" is **completely different** from the "node" in NodeJS. :-(
 

@@ -52,7 +52,6 @@ class Track
 
     lesson name: "layout_survey", 
       display_name: "A Historical Survey of Web Layout"
-      
 
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
