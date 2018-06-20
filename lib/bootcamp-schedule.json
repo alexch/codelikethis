@@ -194,7 +194,9 @@
         "html",
         "css",
         "dom_debugging",
-        "css_selectors"
+        "dom_scripting",
+        "",
+        "embedding"
       ],
       "side_tracks": [
         {
