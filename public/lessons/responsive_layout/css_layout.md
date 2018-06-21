@@ -1,3 +1,7 @@
+# CSS Layout
+
+![css is awesome](../images/css-is-awesome.jpg)
+
 # Inline vs. Block Level Elements
 
 This is where things start to get a little bit tricky - positioning HTML elements using CSS.

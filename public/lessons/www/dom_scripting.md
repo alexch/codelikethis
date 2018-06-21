@@ -21,7 +21,7 @@ Try it out here: <button name="button" onclick="alert('Abracadabra!')">Magic</bu
 
 (We will discuss several other ways to attach event handlers later in this lesson.)
 
-# the script tag
+# the script tag (no src)
 
 Without a `src` attribute, it defines a script and *immediately executes* its code:
 
@@ -33,6 +33,8 @@ alert(message)
 </script>
 ```
 
+# the script tag (src)
+
 With a `src` attribute, it *loads code from a separate file*, and and *immediately executes* it:
 
 ```
@@ -41,6 +43,8 @@ With a `src` attribute, it *loads code from a separate file*, and and *immediate
 ```
 
 The `script` tag may appear in the `head` or in the `body`. Scripts are executed in top-to-bottom order.
+
+> HINT: to be sure that your code executes after the page has been fully loaded, put your `<script>` tags at the *bottom* of the `<body>` section.
 
 # `document`
 
