@@ -55,7 +55,7 @@ class Track
           link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
       end
  
-    lesson name: "page_layout_with_css_grid",
+    lesson name: "css_grid",
            display_name: "Page Layout with CSS Grid" do
       video youtube_id: '7kVeCqQCxlk'
       link href: "https://cssgridgarden.com",
@@ -68,7 +68,6 @@ class Track
 
     lesson name: "bootstrap_components", description: "buttons and accordions and such [move to UX track?]"
 
-    project name: "pretty_profile", description: "now that you know how to use styles and layouts, gussy up your profile page"
 
     end
 end

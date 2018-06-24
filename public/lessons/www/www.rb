@@ -66,15 +66,7 @@ class Track
          name: "RailsBridge To Do List",
          description: "this is a paint-by-numbers lab where students use CSS and JavaScript to make a to do list; it uses jQuery not Vanilla DOM"
 
-    lesson name: "forms" do
-      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms",
-      description: "this is actually a fairly advanced lab that asks you to create and style a login form like Mint.com's. It should be moved to a project, and we should have a lesson on basic FORM element creation and use."
-    end
-
-    lesson name: "embedding",
-           description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
-      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
-    end
+    project name: "pretty_profile", description: "now that you know how to use styles and layouts, gussy up your profile page"
 
   end
 end

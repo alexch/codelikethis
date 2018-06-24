@@ -17,23 +17,28 @@ class Track
     project name: "tic_tac_toe"
     project name: "hangman"
 
-    lesson name: "dom"
-    lesson name: "jquery"
+    project name: 'mint_login', href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms",
+      description: "this is actually a fairly advanced lab that asks you to create and style a login form like Mint.com's. It should be moved to a project, and we should have a lesson on basic FORM element creation and use."
 
-    link href: "http://docs.railsbridge.org/frontend/jquery"
-    link href: "https://www.codecademy.com/tracks/jquery",
-              name: "Codecademy Track for jQuery"
+    lesson name: "embedding",
+           description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
+      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
+    end
+
+    project name: "geo_guesser"
+
+    lesson name: "jquery" do
+      link href: "http://docs.railsbridge.org/frontend/jquery"
+      link href: "https://www.codecademy.com/tracks/jquery",
+                name: "Codecademy Track for jQuery"
+    end
 
     lesson name: "ajax" do
       project name: "github_emoji"
       project name: "github_repos"
     end
 
-    lesson name: "libraries" do # JS libs and NPM install
-      project name: "markdown_preview"
-    end
-
-    lesson name: "calling_apis" do # calling APIs from JS
+    lesson name: "calling_apis", display_name: "Calling APIs from JavaScript" do
       project name: "dothraki_translator"
       project name: "socket_chat"
       project name: "umbrella_today"

@@ -227,9 +227,13 @@
         "remock"
       ],
       "lessons": [
-        "bootstrap_layout",
-        "bootstrap_components",
-        "embedding"
+        "css_layout",
+        "flexbox_layout",
+        "responsive_layout",
+
+        "bootstrap_webpage",
+        "css_frameworks",
+        "css_grid"
       ],
       "side_tracks": [
         {
@@ -260,23 +264,21 @@
           "name": "jQuery",
           "href": "https://learn.freecodecamp.org/front-end-libraries/jquery"
         },
-        {
-          "name": "markdown_preview",
-          "required": true
-        },
         "twitch_status",
         "pomodoro",
         {
           "name": "lightning_talk",
           "description": "choose a topic for a lightning talk, and sign up for a slot",
           "required": true
-        }
+        },
+        "mint_login"
       ],
       "lessons": [
-        "dom",
+        "embedding",
         "jquery",
         "ajax",
-        "calling_apis"
+        "calling_apis",
+        "geolocation",
       ],
       "side_tracks": [
         {

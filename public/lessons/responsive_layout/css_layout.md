@@ -85,6 +85,8 @@ In order to make content layout work in CSS, you often need to introduce *wrappe
 
 For example, if you have an image with its own caption, and you want them to appear *together* and also have the caption positioned *relative to the image*, you might need to change this:
 
+* [cow html](./cow-raw.html) - raw
+
 ```
 @@@ html
 <img src='cow.jpg'>
@@ -92,6 +94,8 @@ For example, if you have an image with its own caption, and you want them to app
 ```
 
 Into this:
+
+* [cow html](./cow.html) - styled
 
 ```
 @@@ html
@@ -112,9 +116,6 @@ Into this:
 </style>
 ```
 
-* [cow html](./cow-raw.html) - raw
-* [cow html](./cow.html) - styled
-
 <https://www.flickr.com/photos/scott-teresi/7391832092>
 
 # Floats (Intro)
@@ -132,7 +133,7 @@ Into this:
 |left|
 |right|
 
-* Applying the style `float:left;` to an element will force that element to the left side of the container, and all other elements will 'wrap' around it. Again, this should only be applied to images that need to have text wrapped around them. The image below illustrates this.
+* Applying the style `float:left;` to an element will force that element to the left side of the container, and all other elements will 'wrap' around it. 
 
 ![CSS Float Property Illustration](https://patriciasdesignsite.files.wordpress.com/2015/01/text-wrap_031.jpg "Illustration of text-wrapping with CSS float")
 
