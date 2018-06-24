@@ -22,22 +22,15 @@ class Track
             description: "a step-by-step test-driven game that teaches you flexbox"
     end
 
-lesson name: "flexbox_layout",
-      display_name: "Page Layout With CSS Flexbox" do
- link href: "https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35",
-      name: "How Flexbox Works With Animated Images"
-end
+      lesson name: "flexbox_layout",
+            display_name: "Page Layout With CSS Flexbox" do
+      link href: "https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35",
+            name: "How Flexbox Works With Animated Images"
+      end
 
-      # TODO: unify these three 
-      lesson name: "responsive_layouts",
-            display_name: "Web Design and Responsive Development"
-
-      lesson name: "responsive_layout"
-      
-
-      lesson name: "responsive_development",
+      lesson name: "responsive_layout",
             display_name: "Introduction to Responsive Development" do
-         link href: "https://www.w3schools.com/html/html_responsive.asp",
+                  link href: "https://www.w3schools.com/html/html_responsive.asp",
             name: "W3Schools Responsive HTML Development"
       end
 
@@ -50,26 +43,18 @@ end
             name: "Bootstrap Introduction"
       end
 
+      lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
+
       lesson name: "bootstrap_webpage",
             display_name: "Going Further With Bootstrap" do
           link href: "https://medium.freecodecamp.org/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33",
             name: "Building a Portfolio Page with Bootstrap"
       end
 
-
-      lesson name: "css_frameworks" do
+      lesson name: "css_frameworks", display_name: "Other CSS Frameworks" do
           link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
       end
  
-
-    lesson name: "bootstrap_intro" do
-      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
-    end
-
-    lesson name: "bootstrap_layout",
-           display_name: "Page Layout with Bootstrap"
-    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
-
     lesson name: "page_layout_with_css_grid",
            display_name: "Page Layout with CSS Grid" do
       video youtube_id: '7kVeCqQCxlk'
@@ -78,7 +63,6 @@ end
            description: "a step-by-step game that teaches you CSS Grid"
     end
 
-    lab name: 'FreeCodeCamp "Responsive Web Design - Applied Visual Design"'
 
     lesson name: "navigation", description: "Nav bars, site maps, anchors, Bootstrap's responsive nav bar... [move to UX track?]"
 
