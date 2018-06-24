@@ -26,6 +26,8 @@ There are several weather forecasting services you could use. Research them and 
 * OpenWeatherMap - http://openweathermap.org/api
 * WUnderground - https://www.wunderground.com/weather/api/
 
+<!-- http://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key} -->
+
 **Web Server** Write a server-side web app that asks the user for their zip code, then responds with "Umbrella today!" or "All clear!" as appropriate. 
 
 > Q: Why does this need to be a server-side web app? Couldn't we make the API call from inside the browser? 

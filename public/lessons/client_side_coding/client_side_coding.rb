@@ -38,7 +38,14 @@ class Track
       project name: "github_repos"
     end
 
-    lesson name: "calling_apis", display_name: "Calling APIs from JavaScript" do
+    lesson name: "calling_apis", 
+      display_name: "Calling APIs from JavaScript", 
+      description: "jQuery.ajax(), XMLHttpRequest, Fetch" do
+        link href: 'https://www.codecademy.com/tracks/parse'
+        link href: 'https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data'
+        link href: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API'
+        link href: 'https://www.npmjs.com/package/node-fetch'
+
       project name: "dothraki_translator"
       project name: "socket_chat"
       project name: "umbrella_today"
@@ -48,6 +55,8 @@ class Track
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
     end
 
+    # probably should move all these lessons to later tracks
+ 
     lesson name: "local_storage" do
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
