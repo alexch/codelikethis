@@ -21,7 +21,8 @@
  * Remember, flexbox is one dimensional. `display:flex` arranges your items in a row. This can be changed with `flex-direction: column`
 
 ## Example
- ```
+ ```css
+@@@css
  #container {
   display: flex;
   flex-direction: column;
@@ -36,6 +37,15 @@ Until now, re-arranging items with pure CSS was not possible.
 * With Flexbox, you can reverse the order of your row or column, simply with `flex-direction:column-reverse;` or `flex-direction:row-reverse`
 * This property is applied to the flex container
 
+## Example
+```css
+@@@css
+#container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+```
+
 ![Illustration of Flex Reverse](https://cdn-images-1.medium.com/max/1000/1*PBr_ncouIehALaEOWmSbpQ.gif "Flex Reverse")
 
 # Justify Content
@@ -49,6 +59,15 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 3. Center
 4. Space-between
 5. Space-around
+
+## Example For Centering Content
+```css
+@@@css
+#container {
+  display: flex;
+  justify-content: center;
+}
+```
 
 * `Justify content` is applied to the flex container as well. It works along the main axis of the flex container, and does the following:
 
@@ -67,6 +86,15 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
   4. stretch
   5. baseline
 
+## Example
+```css
+@@@css
+#container {
+  display: flex;
+  align-items: stretch;
+}
+```
+
 * Note that if you use `align-items: stretch`, any height values for the children inside the flex container will override this functionality. 
 
 ![Flexbox Align Items Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Aligning items with Flexbox")
@@ -74,6 +102,16 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 # Flex Direction
 
 * As we covered earlier, your flex items can be arranged either in a row, or a column. This is done with either `flex-direction:column` and `flex-direction:row`
+
+## Example
+```css
+@@@css
+#container {
+  display: flex;
+  flex-direction: row;
+}
+```
+
 
  ![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox")
 
@@ -91,6 +129,20 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 
 (Note that the default value is `0`, so all items will need to be given an order number.)
 
+## Example 
+```css
+@@@css
+firstItem {
+  display: flex;
+  order: 1;
+}
+
+secondItem {
+  display: flex;
+  order: 2;
+}
+```
+
 > This is groundbreaking. Never before were we able to rearrange the order of elements on a website with pure CSS.
 
 # Align Self 
@@ -102,5 +154,14 @@ Then give the first item `order: 2`, and the second item `order: 1`.
   3. center
   4. stretch
   5. baseline
+
+## Example 
+```css
+@@@css
+navigationBarItem0 {
+  display: flex;
+  align-items: flex-start;
+}
+```
 
 ![Flexbox Align Self Property](https://cdn-images-1.medium.com/max/1000/1*HIADl1oL6pxXb2dMh_pXSQ.gif "Self aligning with Flexbox")
