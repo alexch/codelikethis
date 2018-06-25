@@ -1,6 +1,6 @@
 # Layout Survey
 
-> "The history of CSS is a series of failed attempts to center elements on a page." - Alex
+> "CSS is a series of failed attempts to center elements on a page." - Alex
 
 Here we will discuss *many* ways to align HTML elements relative to each other & to the page.
 

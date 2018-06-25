@@ -224,7 +224,8 @@
         },
         "sriracha",
         "swapathon",
-        "remock"
+        "remock",
+        "mint_login"
       ],
       "lessons": [
         "css_layout",
@@ -270,8 +271,7 @@
           "name": "lightning_talk",
           "description": "choose a topic for a lightning talk, and sign up for a slot",
           "required": true
-        },
-        "mint_login"
+        }
       ],
       "lessons": [
         "embedding",
