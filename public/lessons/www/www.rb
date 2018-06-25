@@ -58,6 +58,8 @@ class Track
 
     lesson name: "dom_scripting"
 
+    lesson name: "forms"
+
 
     lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css",
         name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'

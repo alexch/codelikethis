@@ -121,10 +121,24 @@ Into this:
 # Floats (Intro)
 
 * Floats, to say the least, are weird and can be frustrating.
-* It used to be that floats were the only way to achieve specific layouts using CSS.
-* For a long time, floats were the backbone of page layout using CSS.
-* However, recent developments have allowed developers to use new CSS properties to achieve the same result, and much more.
-* Because of this, the `float` property should only be used for wrapping text around images, which was its original purpose - gone are the days of CSS layout using floats.
+* It used to be that floats were the only way to achieve specific layouts using CSS, especially:
+  * stacking left-to-right or right-to-left
+  * forcing an element to be as wide as its contents, not as wide as its parent
+
+# Floating Cow
+
+```
+@@@ html
+<style>
+  .image-wrapper {
+    position: relative;
+    float: left;
+  }
+</style>
+```
+* [cow float html](./cow-float.html) - styled
+
+Now the caption can be as wide as its parent (the wrapper), since its parent is only as wide as its content (the image).
 
 # Float
 
@@ -143,6 +157,12 @@ Into this:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xara4Z1b18I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 > YouTube user: tobyonline; Published on Dec 19, 2013; https://youtu.be/xara4Z1b18I
+
+# Floats (Advice)
+
+* For a long time, floats were the backbone of page layout using CSS.
+* However, recent developments have allowed developers to use new CSS properties to achieve the same result, and much more.
+* Because of this, the `float` property should only be used for wrapping text around images, which was its original purpose - gone are the days of CSS layout using floats.
 
 # LAB: Learn CSS Layout
 
