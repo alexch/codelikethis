@@ -128,16 +128,21 @@ Into this:
 
 # Float
 
-|Float Properties|
-|---|---|
-|left|
-|right|
+| Float Properties |
+|------------------|
+| left             |
+| right            |
 
 * Applying the style `float:left;` to an element will force that element to the left side of the container, and all other elements will 'wrap' around it.
 
 ![CSS Float Property Illustration](https://patriciasdesignsite.files.wordpress.com/2015/01/text-wrap_031.jpg "Illustration of text-wrapping with CSS float")
 
 > TIP: applying `clear: both` to an element will make it skip down the page past *all* floats, left and right. This is usually done to a `<br>`
+
+# Float Explanation Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xara4Z1b18I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+> YouTube user: tobyonline; Published on Dec 19, 2013; https://youtu.be/xara4Z1b18I
 
 # LAB: Learn CSS Layout
 
