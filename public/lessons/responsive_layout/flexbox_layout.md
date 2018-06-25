@@ -12,6 +12,7 @@
 
  * Flexbox is one-dimensional. It can arrange items either in a row, or a column.
  * Flexbox can be extremely useful for laying out elements such as navigation bars, headers, image galleries, etc.
+ * Flexbox *fixes* CSS layout madness by placing the responsibility for layout with the *container*, and not asking *each item* to be responsible for laying *itself* out
 
 # The Flex Container
 
@@ -114,8 +115,7 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 }
 ```
 
-
- ![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox")
+![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox")
 
 # Controlling Individual Flex Items
 
@@ -134,12 +134,12 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 ## Example 
 ```css
 @@@css
-firstItem {
+.firstItem {
   display: flex;
   order: 1;
 }
 
-secondItem {
+.secondItem {
   display: flex;
   order: 2;
 }
@@ -160,10 +160,13 @@ secondItem {
 ## Example 
 ```css
 @@@css
-navigationBarItem0 {
+.navigationBarItem0 {
   display: flex;
-  align-items: flex-start;
+  align-self: flex-start;
 }
 ```
 
 ![Flexbox Align Self Property](https://cdn-images-1.medium.com/max/1000/1*HIADl1oL6pxXb2dMh_pXSQ.gif "Self aligning with Flexbox")
+# Flexigrid
+
+[flex-form](./flex-form.html)

@@ -1,0 +1,30 @@
+<style>
+    .form-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    div {
+        border: 1px solid red;
+        width: 20em;
+    }
+</style>
+
+<form>
+    <div class='form-column'>
+        <div class='form-row'>
+            <div>Name:</div>
+            <div><input name='name'></div>
+        </div>
+        <div class='form-row'>
+            <div>Password:</div>
+            <div><input type='password' name='password'></div>
+        </div>
+    </div>
+</form>
