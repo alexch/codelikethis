@@ -231,7 +231,6 @@
         "css_layout",
         "flexbox_layout",
         "responsive_layout",
-
         "bootstrap_webpage",
         "css_frameworks",
         "css_grid"
@@ -278,7 +277,7 @@
         "jquery",
         "ajax",
         "calling_apis",
-        "geolocation" 
+        "geolocation"
       ],
       "side_tracks": [
         {
