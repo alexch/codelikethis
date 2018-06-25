@@ -14,18 +14,18 @@ class Track
 
       link href: "https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning1",
            name: "W3Schools Positioning Exercise"
-      link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
-           name: "Learn CSS Flexbox in 5 Minutes"
-      link href: "https://css-tricks.com/snippets/css/a-guide-to-flexbox"
-      link href: "https://flexboxfroggy.com",
-           name: "Flexbox Froggy",
-           description: "a step-by-step test-driven game that teaches you flexbox"
     end
 
     lesson name: "flexbox_layout",
            display_name: "Page Layout With CSS Flexbox" do
+      link href: "https://flexboxfroggy.com",
+           name: "Flexbox Froggy",
+           description: "a step-by-step test-driven game that teaches you flexbox"
       link href: "https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35",
            name: "How Flexbox Works With Animated Images"
+      link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
+           name: "Learn CSS Flexbox in 5 Minutes"
+      link href: "https://css-tricks.com/snippets/css/a-guide-to-flexbox"
     end
 
     lesson name: "responsive_layout",
