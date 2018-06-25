@@ -298,7 +298,7 @@ h1 {
 * 4. Class Selectors
 * 3. ID Selectors
 * 2. Inline CSS
-* 1. Important!
+* 1. !important
 
 # Style Specificity Precedence
 
@@ -326,8 +326,11 @@ h1 {
 
 - `px` and `pt` and `em` and `rem`
 - fonts: which fonts are always available? what are web fonts?
-- space vs. greater-than (descendant vs. child)
+- fontawesome (inline icons as font glyphs)
+- space vs. greater-than (descendant vs. child) in css selectors
+
 - "every config file eventually becomes Turing-complete" see also <http://beza1e1.tuxen.de/articles/accidentally_turing_complete.html> and
 <https://stackoverflow.com/questions/648246/at-what-point-does-a-config-file-become-a-programming-language>
+
 - reset.css
 - print.css
