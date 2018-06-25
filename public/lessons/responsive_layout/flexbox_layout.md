@@ -32,6 +32,7 @@
 
 ![Illustration of Flex Container](https://cdn-images-1.medium.com/max/1600/1*4yKnG2-vuPF5XA-BmXADLQ.gif "Flex Container")
 
+
 # Reversing the Order
 
 * Until now, re-arranging items with pure CSS was not possible.
@@ -117,6 +118,8 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 
 ![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox")
 
+> NOTE: if you want your items to be columns, use `flex-direction: row` in the container, and if you want rows, use `flex-direction: column` in the container
+
 # Controlling Individual Flex Items
 
 * You can also apply specific flexbox properties to individual flex items, not just the flex container. There are a number of fairly advanced properties, but we will cover the most useful ones here.
@@ -167,6 +170,45 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 ```
 
 ![Flexbox Align Self Property](https://cdn-images-1.medium.com/max/1000/1*HIADl1oL6pxXb2dMh_pXSQ.gif "Self aligning with Flexbox")
+
 # Flexigrid
 
-[flex-form](./flex-form.html)
+**Q**: What do you get when you put a flexbox inside a flexbox?
+
+**A**: A grid! (But not CSS Grid)
+
+[flex-grid](./flex-grid.html)
+
+```html
+@@@html
+<div class='two-columns'>
+  <div class='column'>
+    <h2>Meats</h2>
+    <div>Turkey</div>
+    <div>Ham</div>
+  </div>
+  <div class='column'>
+    <h2>Cheeses</h2>
+    <div>Cheddar</div>
+    <div>Swiss</div>
+    <div>American</div>
+  </div>
+</div>
+  
+<style>
+.two-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+</style>
+```
+
+# TODO
+
+* find the original Medium article those gifs came from and link to it and also make sure we have permission to use them
+
