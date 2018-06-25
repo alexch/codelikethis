@@ -21,9 +21,9 @@ The `<form>` tag means:
 
 # Form Methods: GET vs. POST
 
- todo
+todo
 
- # 
+# References
 
  <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form> - docs
  <https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms> - guide
