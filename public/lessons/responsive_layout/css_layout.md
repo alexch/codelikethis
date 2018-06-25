@@ -15,7 +15,7 @@ There are two main display rules (or "levels") for HTML elements.
 
 # Inline vs. Block: More Info
 
-Inline elements should only contain data, or other inline elements. 
+Inline elements should only contain data, or other inline elements.
 
 Block level elements can contain both block and inline elements.
 
@@ -23,7 +23,7 @@ Block level elements can contain both block and inline elements.
 
 # CSS Display Property
 
-Elements are given a default **display** value based on their type - this is a CSS property that determines an element's layout, and how it interacts with other elements. 
+Elements are given a default **display** value based on their type - this is a CSS property that determines an element's layout, and how it interacts with other elements.
 
 * `display: block;`
   - The element will take up the full width of the page
@@ -40,23 +40,23 @@ See <https://developer.mozilla.org/en-US/docs/Web/CSS/display> for many more `di
 
 Inherent display properties of commonly-used HTML elements.
 
-|Block Level Elements|
-|---|---|
-|div|
-|p|
-|table|
-|form|
-|ul, ol|
-|nav|
+| Block Level Elements |
+|----------------------|
+| div                  |
+| p                    |
+| table                |
+| form                 |
+| ul, ol               |
+| nav                  |
 
-|Inline Elements|
-|---|---|
-|span|
-|a|
-|i, em|
-|b, strong|
-|ul, ol|
-|button|
+| Inline Elements |
+|-----------------|
+| span            |
+| a               |
+| i, em           |
+| b, strong       |
+| img             |
+| button          |
 
 # Positioning
 
@@ -120,7 +120,7 @@ Into this:
 
 # Floats (Intro)
 
-* Floats, to say the least, are weird and can be frustrating. 
+* Floats, to say the least, are weird and can be frustrating.
 * It used to be that floats were the only way to achieve specific layouts using CSS.
 * For a long time, floats were the backbone of page layout using CSS.
 * However, recent developments have allowed developers to use new CSS properties to achieve the same result, and much more.
@@ -133,11 +133,11 @@ Into this:
 |left|
 |right|
 
-* Applying the style `float:left;` to an element will force that element to the left side of the container, and all other elements will 'wrap' around it. 
+* Applying the style `float:left;` to an element will force that element to the left side of the container, and all other elements will 'wrap' around it.
 
 ![CSS Float Property Illustration](https://patriciasdesignsite.files.wordpress.com/2015/01/text-wrap_031.jpg "Illustration of text-wrapping with CSS float")
 
-> TIP: applying `clear: both` to an element will make it skip down the page past *all* floats, left and right. This is usually done to a `<br>` 
+> TIP: applying `clear: both` to an element will make it skip down the page past *all* floats, left and right. This is usually done to a `<br>`
 
 # LAB: Learn CSS Layout
 
@@ -146,4 +146,3 @@ Do these tutorials:
 https://learn.shayhowe.com/html-css/
 
 [Learn CSS Layout](http://learnlayout.com/position.html)
-
