@@ -17,9 +17,6 @@ class Track
     project name: "tic_tac_toe"
     project name: "hangman"
 
-    project name: 'mint_login', href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms",
-      description: "this is actually a fairly advanced lab that asks you to create and style a login form like Mint.com's. It should be moved to a project, and we should have a lesson on basic FORM element creation and use."
-
     lesson name: "embedding",
            description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
       link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
