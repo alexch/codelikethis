@@ -34,21 +34,25 @@
 
 # Using Media Queries
 
-* Media Queries (`@media`) cause different CSS rules to be applied on different screens
+* Media Queries (`@media (some_condition) { }`) cause different CSS rules to be applied on different screens
 
 
 #### Example
 
-This will make our `.nav` element position relative only when the screen size is less than or equal to 768px wide.
+This will make our `.nav` element position relative when the media type is `print`
 
 ```css
 @@@css
+
+// Default position layout
 
 .nav {
   position: absolute;
 }
 
-@media screen and (min-width:768px) {
+// Print media only layout
+
+@media print {
   .nav {
     position: relative;
   }
@@ -56,8 +60,113 @@ This will make our `.nav` element position relative only when the screen size is
 
 ```
 
-[MDN: Using Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries "Using_media_queries")
+# Media Query Examples
 
+| Query        | Description                                              |
+|--------------|----------------------------------------------------------|
+| width        | the width of the viewport                                |
+| height       | the height of the viewport                               |
+| aspect-ratio | Width-to-height aspect ratio of the viewport             |
+| orientation  | Orientation of the viewport                              |
+| resolution   | Pixel density of the output device                       |
+| color        | Number of bits per color component of the device         |
+| monochrome   | Is the device a monochrome display                       |
+| pointer      | Is the primary input mechanism a pointing device         |
+| hover        | Does the primary input mechanism allow the user to hover |
+| scripting    | Is JavaScript allowed?                                   |
+| all          | TRUE if the device responds to media queries             |
+
+# Media Query Conditionals - AND
+
+Only change the layout to `position: relative;` when
+
+  * The media is `screen`
+  * AND
+  * The screen width is greater than or equal to 768 pixels
+
+```css
+@@@css
+
+@media screen and (min-width:768px) {
+  .nav {
+    position: relative;
+  }
+}
+```
+
+# Media Query Conditionals - OR
+
+Only change the layout to `position: relative;` when
+
+  * The media is `screen`
+  * OR
+  * The screen width is greater than or equal to 768 pixels
+
+```css
+@@@css
+
+@media screen, (min-width:768px) {
+  .nav {
+    position: relative;
+  }
+}
+```
+
+# Media Query Conditionals - Simple NOT
+
+Only change the layout to `position: relative;` when
+
+  * The media is NOT `screen`
+
+```css
+@@@css
+
+@media not (screen) {
+  .nav {
+    position: relative;
+  }
+}
+```
+
+# Media Query Conditionals - Complicated NOT
+
+Here is an example of using a complex NOT clause
+
+```css
+@@@css
+
+@media not all and (monochrome)  {
+  .nav {
+    position: relative;
+  }
+}
+```
+
+The NOT is evaluated **LAST** so the above is equivalent to the following
+
+```css
+@@@css
+
+@media not (all and (monochrome))  {
+  .nav {
+    position: relative;
+  }
+}
+```
+
+# Media Query for Older Browsers
+
+The following will only be applied to modern browsers
+
+```css
+@@@css
+
+@media (only screen and (color)) {
+  .nav {
+    position: relative;
+  }
+}
+```
 
 # Mobile-First Development
 
