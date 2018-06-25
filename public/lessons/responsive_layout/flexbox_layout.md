@@ -33,9 +33,11 @@
 
 # Reversing the Order
 
-Until now, re-arranging items with pure CSS was not possible. 
-* With Flexbox, you can reverse the order of your row or column, simply with `flex-direction:column-reverse;` or `flex-direction:row-reverse`
-* This property is applied to the flex container
+* Until now, re-arranging items with pure CSS was not possible.
+* With Flexbox, you can reverse the order of your row or column with a single directive!
+* On the flex container, use 
+  * `flex-direction: column-reverse;` 
+  * or `flex-direction: row-reverse`
 
 ## Example
 ```css

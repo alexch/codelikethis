@@ -8,16 +8,20 @@ The `<form>` tag means:
 
 # Form Example
 
- todo
+<form method='post'>
+  Name: <input type='text' name='name' value='Alice'>
+  <br>
+  Password: <input type='password' name='password'>
+</form>
 
 # Forms are semantic
 
 * a form wraps *input* elements for submission
   * but may also *include* or *be included within* other styled elements
-* most of the time your `<form>` element will correspond to a block element (viz. the border of the form) 
+* most of the time your `<form>` element will correspond to a block element (viz. the border of the form)
   * but by default `<form>` is an *inline* element
-  * and instead of making it a block element, it's usually better to wrap it in a `div`
-
+  * and instead of making it a block element, it's usually better to wrap it in a `div` 
+  * and apply styles to the wrapper and leave the `form` alone
 
 # Form Methods: GET vs. POST
 
