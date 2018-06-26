@@ -24,7 +24,8 @@ SITEMAP: http://www.my-amazing-website.com/sitemap.txt
 
 ## Links
 
-Tech: [robots.txt / sitemap.txt / sitemap.xml](http://www.my-amazing-website.com/robots-sitemaps.html)
+Tech Overview: [robots.txt / sitemap.txt / sitemap.xml](http://www.my-amazing-website.com/robots-sitemaps.html)
+Google: [Google Webmasters Site Map Guide](https://support.google.com/webmasters/answer/183668?hl=en&ref_topic=4581190)
 
 # Site Map Text File
 
