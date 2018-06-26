@@ -15,7 +15,7 @@
 <a href="#some-place">Link to some-place</a>
 ```
 
-# Anchor Links Example
+# Anchor Links (Internal) Example
 
 ```html
 @@@html
@@ -38,7 +38,32 @@
 </html>
 ```
 
-[Internal Navigation Example](./navigation-anchors.html)
+[Internal Navigation Example](./navigation-anchors-internal.html)
+
+# Anchor Links (External) Example
+
+```html
+@@@html
+<!DOCTYPE html>
+<html>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/some_other_page.html">LINK</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div>
+        <h1>
+          Some content
+        </h1>
+      </div>
+    </main>
+  </body>
+</html>
+```
+
+[External Navigation Example](./navigation-anchors-external-0.html)
 
 # Navigation Bars
 
