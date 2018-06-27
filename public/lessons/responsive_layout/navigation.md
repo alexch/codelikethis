@@ -72,21 +72,56 @@
 * Several ways to build them
 * Flexbox makes building these much easier
 
-# Navigation Bars Example 1
-
-<iframe height="300" width="575" src="./navigation-bars-example-simple.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
-
-[Example page](./navigation-bars-example-simple.html)
+# Navigation Bars Example
 
 
-# Navigation Bars Example 2
-
-
-<iframe height="300" width="575" src="./navigation-bars-example-better.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
+<iframe height="50" width="575" src="./navigation-bars-example-better.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
 
 [Better Nav Bar Example](./navigation-bars-example-better.html)
 
-# Navigation Bars Example 3
+```html
+@@@html
+<nav>
+  <ul id="nav">
+      <li><a href="#about-us">About Us</a></li>
+      <li><a href="#our-products">Our Products</a></li>
+      <li><a href="#faq">FAQs</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#login">Login</a></li>
+  </ul>
+</nav>
+```
+
+```css
+@@@css
+
+#nav {
+  top: 0px;
+  float: left;
+  margin: 0 0 5em 0;
+  padding: 0;
+  list-style: none;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+#nav li {
+  float: left;
+}
+
+#nav li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #069;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+```
+
+# Navigation Bars Example Complete
 
 Follow the link to see a fairly complete navigation bar with internally linked content that includes:
 
@@ -95,11 +130,35 @@ Follow the link to see a fairly complete navigation bar with internally linked c
   * Hover state style change
   * Borders around all items
 
+## New CSS
+
+```css
+@@@css
+
+#nav {
+  position: fixed;
+  width: 100%;
+}
+
+#nav li:first-child {
+  border-left: 1px solid #ccc;
+}
+
+#nav li a:hover {
+  color: #40f;
+  background-color: #fff;
+}
+
+.section {
+  margin-top: 3em;
+}
+```
+
 <iframe height="300" width="575" src="./navigation-bars-example.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
 
 [Complete Example HTML](./navigation-bars-example.html)
 
-# Navigation Bars Flexbox
+# Navigation Bars Example Flexbox
 
 * Flexbox can make laying out a responsive navigation bar much easier
 
