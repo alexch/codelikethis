@@ -74,88 +74,15 @@
 
 # Navigation Bars Example 1
 
-```html
-@@@html
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    #nav {
-        width: 100%;
-        float: left;
-        margin: 0 0 3em 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    #nav li {
-        float: left;
-    }
-  </style>
-</head>
-  <body>
-    <nav>
-      <ul id="nav">
-	      <li><a href="#about-us">About Us</a></li>
-	      <li><a href="#our-products">Our Products</a></li>
-	      <li><a href="#faq">FAQs</a></li>
-	      <li><a href="#contact">Contact</a></li>
-	      <li><a href="#login">Login</a></li>
-      </ul>
-    </nav>
-  </body>
-</html>
-```
+<iframe height="300" width="575" src="./navigation-bars-example-simple.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
 
 [Example page](./navigation-bars-example-simple.html)
 
 
 # Navigation Bars Example 2
 
-```html
-@@@html
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    #nav {
-      top: 0px;
-      float: left;
-      margin: 0 0 5em 0;
-      padding: 0;
-      list-style: none;
-      background-color: #f2f2f2;
-      border-bottom: 1px solid #ccc;
-      border-top: 1px solid #ccc;
-    }
 
-    #nav li {
-      float: left;
-    }
-
-    #nav li a {
-      display: block;
-      padding: 8px 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #069;
-      border-right: 1px solid #ccc;
-    }
-  </style>
-</head>
-  <body>
-    <nav>
-      <ul id="nav">
-          <li><a href="#about-us">About Us</a></li>
-          <li><a href="#our-products">Our Products</a></li>
-	      <li><a href="#faq">FAQs</a></li>
-	      <li><a href="#contact">Contact</a></li>
-	      <li><a href="#login">Login</a></li>
-      </ul>
-    </nav>
-  </body>
-</html>
-```
+<iframe height="300" width="575" src="./navigation-bars-example-better.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
 
 [Better Nav Bar Example](./navigation-bars-example-better.html)
 
@@ -168,7 +95,7 @@ Follow the link to see a fairly complete navigation bar with internally linked c
   * Hover state style change
   * Borders around all items
 
-![](./navigation-bar-example-screenshot.png)
+<iframe height="300" width="575" src="./navigation-bars-example.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
 
 [Complete Example HTML](./navigation-bars-example.html)
 
