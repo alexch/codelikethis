@@ -46,7 +46,9 @@ What label design elements did you miss?
 ## References
 
 * https://fontsinuse.com/uses/11193/huy-fong-sriracha-hot-sauce-label
-* https://css-tricks.com/snippets/svg/curved-text-along-path/
+* Curved text:
+    * with CSS: https://css-tricks.com/set-text-on-a-circle/ -- make sure to read Viswanathan’s comment and jsfiddle too
+    * with SVG: https://css-tricks.com/snippets/svg/curved-text-along-path/
 * https://youtu.be/OwHosscUPAk
 * https://youtu.be/tXOAx58LBDo
 

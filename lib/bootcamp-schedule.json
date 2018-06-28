@@ -215,11 +215,6 @@
     {
       "track": "responsive_layout",
       "projects": [
-        {
-          "from": "FreeCodeCamp",
-          "name": "Bootstrap",
-          "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
-        },
         "sriracha",
         "swapathon",
         "remock",
@@ -230,8 +225,6 @@
         "css_layout",
         "flexbox_layout",
         "responsive_layout",
-        "bootstrap_webpage",
-        "css_frameworks",
         "css_grid"
       ],
       "side_tracks": [
@@ -279,6 +272,22 @@
         "geolocation"
       ],
       "side_tracks": [
+        {
+          "track": "responsive_layout",
+          "lessons": [
+            "bootstrap_development",
+            "bootstrap_webpage",
+            "css_frameworks",
+            "bootstrap_components"
+          ],
+          "projects": [
+            {
+              "from": "FreeCodeCamp",
+              "name": "Bootstrap",
+              "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
+            }
+          ]
+        },
         {
           "track": "ux",
           "lessons": [

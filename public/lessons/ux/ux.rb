@@ -38,6 +38,8 @@ class Track
     end
     lab name: 'FreeCodeCamp "Responsive Web Design - Applied Accessibility"'
 
+    link href: 'http://www.christopherswantz.com/guilt-trip', description: 'what a UX portfolio piece looks like, here is an example'
+
   end
 end
 

@@ -26,6 +26,7 @@ class Track
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
            name: "Learn CSS Flexbox in 5 Minutes"
       link href: "https://css-tricks.com/snippets/css/a-guide-to-flexbox"
+      link href: "https://yoksel.github.io/flex-cheatsheet/#align-items"
     end
 
     lesson name: "responsive_layout",
@@ -38,21 +39,6 @@ class Track
     end
 
     lab name: 'FreeCodeCamp "Responsive Web Design"'
-
-    # TODO: new Bootstrap-only track?
-    lesson name: "bootstrap_development",
-           display_name: "Introduction to Bootstrap" do
-      link href: "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
-           name: "Bootstrap Introduction"
-    end
-
-    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
-
-    lesson name: "bootstrap_webpage",
-           display_name: "Going Further With Bootstrap" do
-      link href: "https://medium.freecodecamp.org/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33",
-           name: "Building a Portfolio Page with Bootstrap"
-    end
 
     lesson name: "css_frameworks", display_name: "Other CSS Frameworks" do
       link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
@@ -72,6 +58,22 @@ class Track
 
     lesson name: "navigation",
            description: "Nav bars, drop-downs, breadcrumbs, site maps, anchors, Bootstrap's responsive nav bar"
+
+
+    # TODO: new Bootstrap-only track?
+    lesson name: "bootstrap_development",
+           display_name: "Introduction to Bootstrap" do
+      link href: "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
+           name: "Bootstrap Introduction"
+    end
+
+    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
+
+    lesson name: "bootstrap_webpage",
+           display_name: "Going Further With Bootstrap" do
+      link href: "https://medium.freecodecamp.org/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33",
+           name: "Building a Portfolio Page with Bootstrap"
+    end
 
     lesson name: "bootstrap_components", description: "buttons and accordions and such [move to UX track?]"
 
