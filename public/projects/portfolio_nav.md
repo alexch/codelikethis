@@ -1,4 +1,4 @@
-# portfolio prettification
+# Portfolio Pages with Nav
 
 Now that you've learned about navigation, add some nav to your [portfolio page](portfolio_page.md)
 
@@ -8,8 +8,8 @@ Now that you've learned about navigation, add some nav to your [portfolio page](
 * build several linked HTML pages, e.g.
   * Home
   * About Me
-  * Projects
-  * Work History
+  * Projects (a list of links to your github repos and/or links to your deployed projects, possibly with screenshots or a fancy flexboxy display)
+  * Work History (but *not* Case Studies -- wait for the Career Workshop on that)
   * Hobbies
 * create a nav bar (consistent UI on each page, with links to the various other pages)
   * style the navbar using Flexbox or another [CSS navbar technique](/lessons/responsive_layout/navigation)
