@@ -4,9 +4,9 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 ![tic tac toe completed](tic_tac_toe.svg)
 
-In this project you will implement the game rules and a text-based UI.
+In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) and a text-based UI.
 
-If you're ambitious you could rewrite it later using HTML5 and JS events, but start with the console version, then later integrate the core game code with an HTML app.
+If you're ambitious you could [rewrite it later using HTML5 and JS events](web_text_game), but start with the console version, then later integrate the core game code with an HTML app.
 
 ## Wireframes
 
@@ -121,7 +121,8 @@ Move to? _
 
 ### Artificial Intelligence
 
-- instead of picking a random cell, the AI chooses the *best* random cell
-- this will require R&D 
+- Instead of picking a random cell, the AI chooses the *best* random cell
+- This will require R&D 
+- See <https://www.youtube.com/watch?v=P2TcQ3h0ipQ> for inspiration
 
 <!--/box-->

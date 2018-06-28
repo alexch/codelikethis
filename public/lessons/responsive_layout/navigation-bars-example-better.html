@@ -3,35 +3,36 @@
   <head>
     <meta charset="UTF-8"/>
     <style>
-     #nav {
-       top: 0px;
-	     float: left;
+     nav ul {
 	     margin: 0 0 5em 0;
 	     padding: 0;
 	     list-style: none;
+			 padding-bottom: none;
 	     background-color: #f2f2f2;
 	     border-bottom: 1px solid #ccc;
 	     border-top: 1px solid #ccc;
      }
 
-     #nav li {
-	     float: left;
+     nav ul li {
+			display: inline-block;
+			border-right: 1px solid #ccc;
      }
+		 nav ul li:nth-child(1) {
+			border-left: 1px solid #ccc;
+		 }
 
-     #nav li a {
-		   display: block;
-		   padding: 8px 15px;
-		   text-decoration: none;
-		   font-weight: bold;
-		   color: #069;
-		   border-right: 1px solid #ccc;
-		   border-left: 1px solid #ccc;
+     nav ul li a {
+			display: inline-block;
+			padding: 8px 15px;
+			text-decoration: none;
+			font-weight: bold;
+			color: #069;
      }
     </style>
   </head>
   <body>
     <nav>
-      <ul id="nav">
+      <ul>
 	      <li><a href="#about-us">About Us</a></li>
 	      <li><a href="#our-products">Our Products</a></li>
 	      <li><a href="#faq">FAQs</a></li>

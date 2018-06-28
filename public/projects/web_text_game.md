@@ -31,8 +31,9 @@ What would you like to do?
 # Hints
 
 * Make a git branch for your new program (`git checkout -b web-ui`)
-* Feel free to "revert" (`git checkout .`) if you get lost halfway through a feature
-* You will want to *refactor* your program to separate the *input and output* from the *validation* and *logic*. See below for example.
+* Make lots of commits on this branch! Any time your program is stable, and especially once you add a feature, run `git add . ; git commit -m 'text displays in text box'` or whatever
+* Feel free to "revert" (`git checkout .`) if you get lost or introduce a bug halfway through a feature; starting over from the last checkin is often easier than fixing the bug
+* You will want to *refactor* your program to separate the *input and output* from the *validation* and *logic*, then replace the I/O with web-UI-aware code. See below for example.
 
 
 # Refactoring I/O Example
@@ -77,7 +78,6 @@ function outputMessage(message) {
 
 Then run it *from the command line* to make sure you didn't break anything during this step. Do a `git commit` after this, as a checkpoint.
 
-This will make it easier to rewrite `outputMessage` and `listenForCommand` to work with your Web UI instead of the command line.
+Then, one at a time, rewrite `outputMessage` and `listenForCommand` so they work with your Web UI instead of the NodeJS stdin/stdout/console streams.
 
-[TODO: make a clearer path from console to web... e.g. feature flag or environment inspection to use same program from either command-line or web, or a two-file solution (one entry point for node, another for web, and the same backend file for logic)]
-
+> Tip: in the above example, you could call the function `processCommand(input)` *directly* from your text entry button click event handler, passing in the value of the text field as `input`.

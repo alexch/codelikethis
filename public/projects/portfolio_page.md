@@ -1,10 +1,12 @@
-# GitHub Portfolio Page
+# Portfolio Page
 
 ## Background
 
 A "Portfolio Page" is a web site that showcases your personal work. It's like a resume that people can click on to see examples -- live and running in-browser if possible! -- of the work in question.
 
-We will use [GitHub Pages]() to build and host your portfolio site.
+We will use [GitHub Pages](http://pages.github.com) to build and host your portfolio site.
+
+(Over the course of this class, you will [keep improving](portfolio_prettification) this page, but for right now we're keeping it simple.)
 
 ## Steps
 

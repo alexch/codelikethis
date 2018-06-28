@@ -69,7 +69,8 @@ class Track
          name: "RailsBridge To Do List",
          description: "this is a paint-by-numbers lab where students use CSS and JavaScript to make a to do list; it uses jQuery not Vanilla DOM"
 
-    project name: "pretty_profile", description: "now that you know how to use styles and layouts, gussy up your profile page"
+    project name: "portfolio_prettification",
+      description: "now that you know how to use styles and layouts, gussy up your profile page"
 
   end
 end

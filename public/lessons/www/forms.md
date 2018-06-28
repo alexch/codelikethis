@@ -8,10 +8,22 @@ The `<form>` tag means:
 
 # Form Example
 
+```
 <form method='post'>
   Name: <input type='text' name='name' value='Alice'>
   <br>
   Password: <input type='password' name='password'>
+  <br>
+  <input type='submit'>
+</form>
+```
+
+<form method='post'>
+  Name: <input type='text' name='name' value='Alice'>
+  <br>
+  Password: <input type='password' name='password'>
+  <br>
+  <input type='submit'>
 </form>
 
 # Forms are semantic
@@ -26,6 +38,18 @@ The `<form>` tag means:
 # Form Methods: GET vs. POST
 
 todo
+
+# Intercepting forms with JavaScript
+
+* your JavaScript code can add a *submit event handler*
+  * also known as "onsubmit"
+* this function will be called after the user clicks "Submit"
+  * but before the data is sent to the server
+* this lets you *modify* the data sent to the server, or execute code *before* sending the data to the server, or just *cancel* the server call altogether
+* if you intend a form to only be used by JavaScript, do this: <br>`<form href='#'>`
+
+
+todo: example code
 
 # References
 

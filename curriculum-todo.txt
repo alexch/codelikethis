@@ -3,10 +3,6 @@
 
 * schedule: remove days
 
-* project: basic_profile:
-
-  -[ ] step-by-step instructions
-
 * project: til:
 
   -[ ] validate sample code

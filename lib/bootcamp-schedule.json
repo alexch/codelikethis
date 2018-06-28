@@ -79,7 +79,7 @@
       ],
       "projects": [
         "exercism",
-        "basic_profile",
+        "portfolio_page",
         "guess",
         "escape_room"
       ],
@@ -153,7 +153,7 @@
         {
           "track": "career",
           "projects": [
-            "github_portfolio_page"
+            "portfolio_page"
           ]
         }
       ],
@@ -194,9 +194,7 @@
         "html",
         "css",
         "dom_debugging",
-        "dom_scripting",
-        "",
-        "embedding"
+        "dom_scripting"
       ],
       "side_tracks": [
         {
@@ -225,7 +223,8 @@
         "sriracha",
         "swapathon",
         "remock",
-        "mint_login"
+        "mint_login",
+        "portfolio_prettification"
       ],
       "lessons": [
         "css_layout",
