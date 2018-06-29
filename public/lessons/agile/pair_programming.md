@@ -1,24 +1,115 @@
 # Pair Programming
 
-Programming together with another person on the same computer can provide a varienty of benefits to both participants.
+Pair programming = 
 
-One of the benefits are that both people are able to add input to the design of the program under development. This is helpful because each person thinks a little differently about the problem at hand and what solution would optimal.
+Two people +
 
-Another benefit is that the language used in the implementation will be more acceptable to people not directly related to the design. When a single person designs and builds a program in isolation their solution is often tied to their mental model during the process of design and implementation. By having more than a single programmer, the solution must be general enough for both people to understand and contribute.
+One problem
 
-## Example Scenario
+(and usually, one computer, one keyboard, one screen...
 
-Two people, let's call them Eve and Bob, sit shoulder to shoulder in front of a computer. They have been tasked with implementing a reservation form where customers of a restaurant can enter details about themselves and reserve a number of people for a meal slot.
+...notwithstanding remote pairing tools and face-to-face pairing desks)
 
-The process of building the system could play out like this:
+# Pair Programming Benefits
 
-1. Eve says to Bob:
-  "Let's "
+> Two heads are better than one!
 
-## Remote Pair Programming Tools
+* avoid dead ends and ratholes
+* simultaneously focus on current problem *and* context (one focus per person)
+* "rubber duck" - explaining a problem out loud often leads directly to a solution
+* instant code review
+* exploit complementary expertise / memory / personality / energy levels
+* less likely to fall into bad habits or get stuck
 
-## Pick a project
+# Pair Programming finds the Maximum of Two Minds
 
-## Demonstration of success and problems
+[insert graph of maxima]
 
----
+Every person thinks a little differently, has different expertise / experience / energy / perspective.
+
+So for any given problem, at any given moment, one of the partners will be more able to solve that problem.
+
+With pair programming, you get the *best of two* at every moment.
+
+(And often you get solutions that are better than any individual would have come up with alone.)
+
+# Pairing is efficient
+
+MYTH: pairing reduces productivity by 50%
+
+FACT: pairing (when done well) *increases* productivity, especially when the problem requires creativity to solve
+
+(pairing also increases communication, satisfaction, and the rate of high-fives per minute)
+
+
+# Pairing is teaching
+
+_Docendo discimus_ - "by teaching we learn"
+ 
+* Expert-expert pairing -- best case; experts share tidbits and experience as peers
+* Novice-novice pairing -- good case; novices can struggle and discover together 
+* Expert-novice pairing -- **beware** -- in this case, the expert must accept the role of mentor or teacher, and be patient and let the novice drive most of the time
+
+# Roles
+
+* Driver
+* Navigator
+
+# Driver
+
+* writes code, runs tests, has control of code
+* focuses on one problem at a time
+* self-narrates at a high level
+  * e.g. "Okay, now let's introduce a random number function"
+  * NOT "I'm now creating a variable named X that I'm assigning the value 4"
+    * assume your navigator can read the code and understand it; the goal is to communicate *purpose* and *intention*, not mechanics
+
+# Navigator
+
+* keeps a "todo" list
+* politely reminds driver, e.g.
+  * can we write a test for that?
+  * can we refactor a bit now?
+  * let's check in
+  * let's revert
+  * let's take a break
+* *always asks permission* before grabbing the keyboard
+  * "do you mind if I drive now?"
+* silently **count to 10** before interrupting with e.g. a typo or syntax error
+  * chances are that the driver will notice and fix it themselves 
+
+# Tag Team
+
+> Switch roles often!
+
+* at least once per hour, preferably more frequently
+* [pomodoro technique]() can help -- code for 25 min, then take a 5 min break, then switch drivers
+
+# Ping Pong
+
+* Alice and Bob are pairing
+
+1. Alice writes a unit test and gets it to fail correctly
+2. Alice hands the keyboard to Bob
+3. Bob writes code until the unit test passes ("goes green")
+4. Bob writes a unit test and gets it to fail correctly
+5. Bob hands the keyboard to Alice
+6. Alice writes code until the unit test passes ("goes green")
+7. Repeat until done!
+
+# Breath Mints
+
+> It's better to have them and not need them, than to need them and not have them.
+
+# References
+
+https://www.youtube.com/watch?v=vgkahOzFH2Q
+
+https://www.youtube.com/watch?v=YhV4TaZaB84
+
+https://www.youtube.com/watch?v=rG_U12uqRhE
+
+https://www.wikihow.com/Pair-Program
+
+https://pdfs.semanticscholar.org/a7b9/eaf874127108f131cb05f8f513c10b5f00d1.pdf
+
