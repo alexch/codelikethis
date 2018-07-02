@@ -90,7 +90,7 @@
             "git_basics"
           ],
           "projects": [
-            "yelpington"
+            "yelpington_repo"
           ]
         },
         {
@@ -232,12 +232,12 @@
           "track": "ux",
           "lessons": [
             "mockups"
-          ],
-          "events": [
-            {
-              "start": "Thursday 2:00 pm",
-              "name": "swapathon"
-            }
+          ]
+        },
+        {
+          "track": "agile",
+          "lessons": [
+            "pair_programming"
           ]
         }
       ],
@@ -251,17 +251,17 @@
     {
       "track": "client_side_coding",
       "projects": [
-        {
-          "from": "FreeCodeCamp",
-          "name": "jQuery",
-          "href": "https://learn.freecodecamp.org/front-end-libraries/jquery"
-        },
         "twitch_status",
         "pomodoro",
         {
           "name": "lightning_talk",
           "description": "choose a topic for a lightning talk, and sign up for a slot",
           "required": true
+        },
+        {
+          "from": "FreeCodeCamp",
+          "name": "jQuery",
+          "href": "https://learn.freecodecamp.org/front-end-libraries/jquery"
         }
       ],
       "lessons": [

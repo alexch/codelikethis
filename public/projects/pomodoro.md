@@ -41,7 +41,7 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **When** it reaches `0:00`
 
-**Then** it should play a sound
+**Then** it should [play a sound](https://stackoverflow.com/a/18628124/190135)
 
 **And** the timer should stop counting down
 

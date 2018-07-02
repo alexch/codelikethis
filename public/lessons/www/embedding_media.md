@@ -1,6 +1,6 @@
 # Embedding
 
-"embedding" means including other documents inside your web page
+[Embedding](/lessons/www/embedding_media) is the process of including *media* from other sources into your web sites.
 
 "other documents" can include: 
 
@@ -8,12 +8,24 @@
     * images, sound, video
   * other HTML (pages or snippets)
   * advertisements
-  * JavaScript-enabled apps
-    * interactive maps
-    * graphs and charts
-    * search box e.g. [Google custom search](https://cse.google.com/)
+  * maps, graphs, charts
+  * search box e.g. [Google custom search](https://cse.google.com/)
 
 "embedding" is sometimes also called "including" or "transcluding"
+
+# Interactive Embedding
+
+Sometimes you can use JavaScript to interact with the embedded file or app as if it were another User Interface element on your page!
+
+For instance, you could programmatically pause and play an embedded audio clip, say, playing "hoorah!" when the user wins a game of Tic-Tac-Toe.
+
+Or, if the user moves their location on an embedded Google Map, your app could be notified and find the city name and look up restaurants in that area on [Yelp's API](https://www.yelp.com/developers/documentation/v3).
+
+> This lesson focuses on *static* embedding: 
+> displaying media and allowing the user to interact with it directly.
+> The [Interactive Embedding](/lessons/client_side_coding/embedding) lesson focuses on *interactive* embedding: 
+> using JavaScript to pass messages between your page's 
+> scripts and the embedded media.
 
 # Embedding Images
 
@@ -66,14 +78,13 @@ HTML5 defines a standard `<video>` tag
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 
-
 # Embedding Maps
 
 <iframe id="inlineFrameExample"
     title="Inline Frame Example"
     width="300"
     height="200"
-    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-73.2130900,44.4749000,-73.2102500,44.4772200&layer=mapnik">
 </iframe>
 
 ```
@@ -81,15 +92,17 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
     title="Inline Frame Example"
     width="300"
     height="200"
-    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-73.2130900,44.4749000,-73.2102500,44.4772200&layer=mapnik">
 </iframe>
 ```
 
-[TODO: make this Burlington]
+OpenStreetMaps defines a "bounding box" as a four-tuple: min Longitude, min Latitude, max Longitude, max Latitude. 
+
+You can find the bounding box for a given map on https://www.openstreetmap.org/ by clicking the **Export** button.
 
 # Scripting Maps
 
-It is possible to use JavaScript to interact with an embedded map.
+It is possible to use JavaScript to interact with an embedded map. See [the client-side coding lesson on embedding](/lessons/client_side_coding/embedding)
 
 ### to change the map's location
 

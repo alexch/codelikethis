@@ -77,5 +77,4 @@ Since websites are not newspapers, content is not exclusively broken out into co
 * Padding is automatically added to columns to add a 'gutter' in between elements.
 * The left and right padding of the first and last elements is then removed via negative margins that are applied to rows. Because of this, elements need to be nested in the following order: `container > row > columns`.
 
-
 ![Bootstrap columns and rows](https://i.imgur.com/FaYuui8.png "Bootstrap Rows")

@@ -271,6 +271,6 @@ And during the day, take breaks, find other student teams and play each others' 
 
 * Status line (showing room name)
 * Web UI
-* if a [Yelpington](yelpington) entry exists for a business at the player's current location, display it somehow
+* if a [Yelpington](yelpington_app) entry exists for a business at the player's current location, display it somehow
 * write a *word wrapping* function and use it to format all output
 

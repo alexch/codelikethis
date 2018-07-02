@@ -9,7 +9,9 @@ Huy Fong Foods makes a very popular hot sauce. In this project you will do your 
 <!--box-->
 ### Grid
 
-Use empty boxes of different colors to replicate the grid layout of the label.
+Use empty boxes of different colors to replicate the grid layout of the label. 
+
+Use whatever layout system makes most sense to you (Grid, Flexbox, Absolute, Float...)
 
 <!--/box-->
 
