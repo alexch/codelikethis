@@ -251,6 +251,7 @@
     {
       "track": "client_side_coding",
       "projects": [
+        "yelpington_app",
         "twitch_status",
         "pomodoro",
         {

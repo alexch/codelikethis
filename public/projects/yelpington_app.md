@@ -89,65 +89,34 @@ Use AJAX or Fetch to load the data.
 
 **Given** the id of a restaurant (e.g. `joes-diner`)
 
-**When** the 
+**When** the user sees the restaurant's page (e.g. `/joes-diner`)
+
+**Then** they see an embedded map, centered at that restaurant's location
+
+> You must decide *how* and *when* to look up the restaurant's geolocation,
+> and what zoom level to display
 
 <!--/box-->
 
 
 <!--box-->
-### Show All Restaurants
+### Show All Restaurants (list)
 
-* as a list with links to 
-* On an embedded map, with pins.
+**When** the user visits `/`
+
+**Then** the user sees all restaurants as a list with links to the respective restaurant pages
 
 <!--/box-->
 
 
 <!--box-->
+### Show All Restaurants (map)
+
+**When** the user visits `/`
+
+**Then** the user sees all restaurants as "pins" on the embedded map
+
+**And** clicking on a pin visits that restaurant's page
 
 <!--/box-->
-
-
-## Merge Conflicts
-
-If there are merge conflicts, resolve them. This is a manual process and can be frustrating and confusing. The basic rule is that if there is a conflict, you need to look for lines like this:
-
-```
-<<<<<<<<<<<<<<<<
-foo
-----------------
-bar
->>>>>>>>>>>>>>>>
-```
-
-and then manually edit the files until all the chevrons and dashes are gone, and what's left is correct. In this example, you might choose `foo` or `bar`, or `foobar`, or `bar + foo`, or something altogether different. Then `git add` the corrected file and follow the instructions on the console to finish the merge.
-
-As a more realistic example of a conflict:
-
-```
-<<<<<<<<<<<<<<<<
-M-F open at 9, closed weekends
-----------------
-9:00 am to 5:00 pm
->>>>>>>>>>>>>>>>
-```
-
-This example shows why git *cannot* automatically resolve intra-line conflicts. As a human, you are the only one capable of making this sort of *semantic* choice. You must decide whether this file would be better off with one or the other or a creative combination of both changes, and you should communicate with other humans about this decision, in the GitHub discussion thread or face-to-face.
-
-## Secret Sneaky Teacher Step
-
-* If a student team is not getting merge conflicts, force one: after a PR is created, go into the main repo and commit a change to that file.  
-
-## Icebox
-
-* make it a web app and/or API
-* make a slack plugin
-
-## References
-
-book: https://book.git-scm.com/book/en/v2
-
-tutorial: http://gitimmersion.com :
- 
-  * most important chapters are 1-10, 20, and 24-30 (but they depend on each other, so don’t skip the intermediate chapters, just don’t worry *too* much if you don’t fully understand them)
 
