@@ -29,7 +29,19 @@ Or, if the user moves their location on an embedded Google Map, your app could b
 
 # Embedding Images
 
-`<img>` is the original embed
+`<img src=''>` is the original embed
+
+[MDN: img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+
+# Where does the media come from?
+
+* Usually images are served from the same web server as HTML.
+* Some web sites host images or other media for free or a small cost
+  * *images*: flickr.com, imgur.com, 500px.com, etc.
+  * *video*: YouTube.com, Vimeo.com, Wistia.com, etc.
+  * *audio*: SoundCloud.com, etc.
+* a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network#Notable_content_delivery_service_providers) hosts all sorts of media for you for $$$
+  * Amazon AWS / CloudFront, CloudFlare, Akamai...
 
 # Embedding IFrames
 
@@ -43,11 +55,16 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
 <iframe height='300' width='400' src='http://example.com'></iframe>
 
+# Malware Vectors
+
 **Beware** the "same origin policy":
 
 ```
 Refused to display 'http://www.burlingtoncodeacademy.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.
 ```
+
+  * some web servers (e.g. Wordpress) set these headers *on* by default
+  * other web servers (e.g. Apache) set these headers *off* by default
 
 **Beware** giving foreign JavaScript access to your page contents and user-input data
   
@@ -59,7 +76,17 @@ You can use iframes to load the same HTML onto several pages on your site.
 
 This is often used for login boxes.
 
-> Warning: iframes can take longer to load than the rest of the page, so don't overuse them
+> Warning: iframes can take longer to load than the rest of the page, and can eat up CPU and RAM, so don't overuse them
+
+# Embedding Flash
+
+<div style="border: 1px solid black; background: #FDFDFD; margin: auto; text-align: center">
+Adobe Flash <br>
+R.I.P. <br>
+1996 - 2015 
+</div>
+
+"In July 2017, Adobe announced that it would declare Flash to be [end-of-life](https://en.wikipedia.org/wiki/Adobe_Flash#End_of_life) in 2020, and will cease support, distribution, and security updates to Flash Player." 
 
 # Embedding Video
 
@@ -103,12 +130,3 @@ You can find the bounding box for a given map on https://www.openstreetmap.org/ 
 # Scripting Maps
 
 It is possible to use JavaScript to interact with an embedded map. See [the client-side coding lesson on embedding](/lessons/client_side_coding/embedding)
-
-### to change the map's location
-
-todo
-
-### to respond to changes in the map's location
-
-todo
-
