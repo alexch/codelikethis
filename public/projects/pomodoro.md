@@ -32,6 +32,38 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** the timer should begin counting down once per second, following the sequence: `24:59`, `24:58`, `24:57`, ... `24:00`, `23:59`, ... and so on
 
+**And** the Start button should be disabled
+
+<!--/box-->
+<!--box-->
+
+### Zero!
+
+**Given** that the timer is counting down 
+
+**When** it reaches `0:00`
+
+**Then** the timer should stop counting down
+
+**And** the Start button should be disabled
+
+**And** the Pause button should be disabled
+
+**And** the Reset button should be enabled
+
+<!--/box-->
+<!--box-->
+
+### Reset
+
+**When** the user clicks Reset
+
+**Then** the timer should reset to 25 min 0 sec
+
+**And** the countdown should stop (if was in progress)
+
+**And** the Start button should be enabled
+
 <!--/box-->
 <!--box-->
 
@@ -43,9 +75,20 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** it should [play a sound](https://stackoverflow.com/a/18628124/190135)
 
-**And** the timer should stop counting down
+<!--/box-->
+<!--box-->
 
-**And** the Start and Pause buttons should be disabled
+### Pause
+
+**Given** that the timer is counting down 
+
+**When** the user clicks the Pause button
+
+**Then** the countdown should stop
+
+**And** the Pause button should be disabled
+
+**And** the Start button should be enabled
 
 <!--/box-->
 <!--box-->
@@ -60,22 +103,9 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **And** the timer should stop counting down
 
-**And** the Start and Pause buttons should be disabled
-
 **When** the user clicks Reset
 
 **Then** the flashing should stop
-
-<!--/box-->
-<!--box-->
-
-### Reset
-
-**When** the user clicks Reset
-
-**Then** the timer should become set to `25:00`
-
-* What if the timer is already running? Should it continue to run, or pause at 25:00?
 
 <!--/box-->
 

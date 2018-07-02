@@ -61,9 +61,20 @@ we will need this JSON:
 ## Stories
 
 <!--box-->
+
+### Zero Pull Requests
+
+Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and getthe PRs accepted or closed.
+
+<!--/box-->
+
+<!--box-->
+
 ### Convert Data
 
-In pairs, split up and convert one restaurant at a time. Make a PR for each restaurant file. Your commit should *remove* the `.md` markdown file and *add* a `.json` file with the same base name.
+In pairs, split up and convert one restaurant at a time. Make a PR for each restaurant file. 
+
+Your commit should *remove* the `.md` markdown file and *add* a `.json` file with the same base name. (In `git status`, this may show up as a single "rename", or it may show as an add and a delete.)
 
 <!--/box-->
 
@@ -107,8 +118,6 @@ Use AJAX or Fetch to load the data.
 **Then** the user sees all restaurants as a list with links to the respective restaurant pages
 
 <!--/box-->
-
-
 <!--box-->
 ### Show All Restaurants (map)
 
@@ -117,6 +126,26 @@ Use AJAX or Fetch to load the data.
 **Then** the user sees all restaurants as "pins" on the embedded map
 
 **And** clicking on a pin visits that restaurant's page
+
+<!--/box-->
+<!--box-->
+
+### Formatted Notes
+
+**Given** markdown-formatted text inside a `notes` item
+
+**Then** the page should render it *into HTML* before inserting it into the page
+
+#### Example:
+
+JSON:
+```
+"notes": ["The pizza is **awesome** here!"]
+```
+
+HTML:
+
+The pizza is **awesome** here!
 
 <!--/box-->
 
