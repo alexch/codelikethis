@@ -34,7 +34,7 @@
 * (2005) AJAX Name coined by Jesse James Gerrett [0]
 
 
-# Jesse James Gerrett Quote
+# Jesse James Garrett Quote
 
 > Ajax isn’t a technology. It’s really several technologies, each flourishing in its own right, coming together in powerful new ways. Ajax incorporates:
 
