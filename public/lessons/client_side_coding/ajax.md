@@ -123,7 +123,7 @@ If you want to request data from a **local** webserver
 
 ```javascript
 @@@javascript
-fetch('city-market.json)
+fetch('city-market.json')
   .then(function(response) {
     return response.text();
   })
