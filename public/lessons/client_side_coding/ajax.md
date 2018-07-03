@@ -1,10 +1,19 @@
 # AJAX
 
-## Usage
+AJAX enables
 
-Loading data into your web application from the web server
+  * loading data into your web page from a web server...
+  * ...**after** the page initially loads!
 
-## Definition
+# AJAX Examples
+
+  * Load the comments on an article *later*, so the rest of the page is usable sooner
+  * Once a minute, check for any *new* comments and display them too
+  * Load today's weather forecast from DarkSky.net, and update it every hour
+  * Load an ad from a *different web server* and switch ads every few minutes
+  * Dynamically display *search results* as the user types their query
+
+# AJAX Definition
 
 **Asynchronous JavaScript And XML**
 
@@ -53,8 +62,7 @@ Loading data into your web application from the web server
 >
 > * and JavaScript binding everything together.
 
-### This was the moment that people realized the web could be a competitor to desktop applications, and one that every computer in the world could run.
-
+### This was the moment that people realized web applications could be a competitor to desktop applications, and could run on every computer in the world.
 
 # XMLHttpRequest (Old Way)
 
@@ -94,14 +102,14 @@ Loading data into your web application from the web server
 
 # Browser Fetch API - Remote
 
-* Please type this URL into your browser
+* Please type this URL into the address bar of your browser
 
 <https://jsonplaceholder.typicode.com/posts/1>
 
 ```javascript
 @@@javascript
-
-fetch('https://jsonplaceholder.typicode.com/posts/1')
+let postNumber = 1;
+fetch('https://jsonplaceholder.typicode.com/posts/' + postNumber)
   .then(function(response) {
     return response.json();
   })
@@ -110,8 +118,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
   });
 ```
 
-* fetch() takes at least one argument, the URL of the resource to fetch
-* The server returns the Response from the resource
+* `fetch()` takes at least one argument, the URL of the resource to fetch
+* `fetch` then calls the server, *just like you did* in the address bar above
+* The server passes the Response from the server into the first callback function
 * `response.json` parses the body of the response as JSON
 * The body of the response is then logged to the console
 
@@ -151,11 +160,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
     console.log(myJson);
   })
   .catch(function(error) {
-    console.error('Fetch Error:\n', error)
+    console.error('Yikes! I should handle this better:\n', error);
   });
-  // ^^^ This part handles or raises errors
 ```
-
 
 # JSON (JavaScript Object Notation)
 
@@ -197,12 +204,16 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 }
 ```
 
+This converts the String data into a JavaScript object:
+
 ```javascript
 @@@javascript
-
-// Convert the String data into a JavaScript object
 let data = JSON.parse(text)
+```
 
-// Convert the JavaScript object back into a String
+And this converts the JavaScript object back into a String:
+
+```javascript
+@@@javascript
 let newText = JSON.stringify(data)
 ```
