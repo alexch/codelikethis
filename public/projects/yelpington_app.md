@@ -66,6 +66,7 @@ we will need this JSON:
 
 Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and getthe PRs accepted or closed.
 
+
 <!--/box-->
 
 <!--box-->
@@ -76,6 +77,8 @@ In pairs, split up and convert one restaurant at a time. Make a PR for each rest
 
 Your commit should *remove* the `.md` markdown file and *add* a `.json` file with the same base name. (In `git status`, this may show up as a single "rename", or it may show as an add and a delete.)
 
+*Many hands make light work!* Once this step is done, make *your own fork* of the repo and do the rest of the project in there. (We may end up deploying one or more student projects for regular lunchtime use.)
+
 <!--/box-->
 
 <!--box-->
@@ -83,7 +86,7 @@ Your commit should *remove* the `.md` markdown file and *add* a `.json` file wit
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
 
-**When** the user visits `/joes-diner`
+**When** the user visits `/?name=joes-diner`
 
 **Then** they should see all the restaurant information, formatted and styled nicely 
 
@@ -92,6 +95,15 @@ Use AJAX or Fetch to load the data.
 > Note: the Fetch API [does not work well with the `file:///` URL scheme](https://github.com/github/fetch/pull/92). 
 > We've added a simple `node` app that serves files from a local server.
 > Launch it with `node .` and access it with `http://localhost:5000`
+
+To access *query parameters* like `?name=joes-diner`, use this incantation: 
+
+```
+let params = new URLSearchParams(document.location.search.slice(1));
+let name = params.get("name");
+```
+
+(`slice(1)` removes the `?` from the `search` field of the `document.location` URL.)
 
 <!--/box-->
 
@@ -104,8 +116,12 @@ Use AJAX or Fetch to load the data.
 
 **Then** they see an embedded map, centered at that restaurant's location
 
-> You must decide *how* and *when* to look up the restaurant's geolocation,
-> and what zoom level to display
+> You must decide *how* and *when* to look up the restaurant's geolocation, and 
+> whether to do it automatically or manually. 
+> Note that the browser [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+> will **not** work here, since that provides the location of the *current user*.
+> [Nominatum](https://nominatim.openstreetmap.org/) is a good option. Try
+> `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
 
 <!--/box-->
 

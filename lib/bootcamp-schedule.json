@@ -12,7 +12,8 @@
     "Zero defects",
     "If it hurts, do it more",
     "Get comfortable with being uncomfortable",
-    "Don't repeat yourself (DRY)"
+    "Don't repeat yourself (DRY)",
+    "Take a break, take a walk, hug a dog"
   ],
   "typical_day": [
     [
@@ -375,7 +376,8 @@
       "projects": [
         "shortly",
         "socket_chat",
-        "resolve_an_issue"
+        "resolve_an_issue",
+        "capstone"
       ],
       "side_tracks": [
         {
