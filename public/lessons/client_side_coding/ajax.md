@@ -134,6 +134,28 @@ fetch('city-market.md')
 * This happens to be `response.text` because it is a Markdown file
 * If it were JSON then `response.json` would be used
 
+# Browser Fetch API - Errors
+
+* Either handle or raise errors at the end
+* Use `.catch(function(error) { do_something_here })`
+
+```javascript
+@@@javascript
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(myJson);
+  })
+  .catch(function(error) {
+    console.error('Fetch Error:\n', error)
+  });
+  // ^^^ This part handles or raises errors
+```
+
+
 # JSON (JavaScript Object Notation)
 
 ### Example
