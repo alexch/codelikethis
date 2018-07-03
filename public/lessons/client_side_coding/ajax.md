@@ -136,7 +136,8 @@ fetch('city-market.md')
 
 # Browser Fetch API - Errors
 
-* Either handle or raise errors at the end
+* The system will raise errors as exceptions by default
+* If you want to handle errors catch them like shown below
 * Use `.catch(function(error) { do_something_here })`
 
 ```javascript
