@@ -132,3 +132,56 @@ fetch('city-market.md')
 
 * This happens to be `response.text` because it is a Markdown file
 * If it were JSON then `response.json` would be used
+
+# JSON (JavaScript Object Notation)
+
+### Example
+
+```javascript
+@@@javascript
+{"userId": 1,
+  "id": 1,
+  "title": "My most amazing post",
+  "body": "This is my first post, isn't it great. Maybe I'll write some more."
+}
+```
+
+### NOTE:
+* Only data is allowed
+    * Objects (Hashes)
+    * Arrays
+    * Numbers
+    * Booleans
+    * Strings
+* No comments
+* No functions
+
+# Parsing JSON
+
+* Assume the following is in a string named `text`
+
+```javascript
+@@@javascript
+
+{
+  "name": "Ada Lovelace",
+  "id": 1,
+  "title": "The Queen of Numbers",
+  "skills": ["mathematics", "abstract thinking", "reasoning", "intuition"],
+  "achievments": [
+    "Implemented the first computer program",
+    "Influenced the design of the first computer",
+    "Published several mathematical papers"
+  ]
+}
+```
+
+```javascript
+@@@javascript
+
+// Convert the String data into a JavaScript object
+let data = JSON.parse(text)
+
+// Convert the JavaScript object back into a String
+let newText = JSON.stringify(data)
+```
