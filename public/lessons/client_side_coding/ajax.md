@@ -38,11 +38,11 @@
 
 > Ajax isn’t a technology. It’s really several technologies, each flourishing in its own right, coming together in powerful new ways. Ajax incorporates:
 
-> * standards-based presentation using XHTML and CSS
+> * standards-based presentation using [HTML] and CSS
 >
 > * dynamic display and interaction using the Document Object Model
 >
-> * data interchange and manipulation using XML and XSLT
+> * data interchange and manipulation using [JSON]
 >
 > * asynchronous data retrieval using XMLHttpRequest
 >
