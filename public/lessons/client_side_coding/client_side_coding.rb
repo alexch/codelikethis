@@ -31,6 +31,7 @@ class Track
     end
 
     lesson name: "ajax" do
+      project name: "yelpington_app"
       project name: "github_emoji"
       project name: "github_repos"
     end
