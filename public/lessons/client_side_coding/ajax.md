@@ -147,14 +147,10 @@ fetch('city-market.md')
 ```
 
 ### NOTE:
-* Only data is allowed
-    * Objects (Hashes)
-    * Arrays
-    * Numbers
-    * Booleans
-    * Strings
 * No comments
 * No functions
+* Only data is allowed
+  * Objects (Hashes), Arrays, Numbers, Booleans, Strings
 
 # Parsing JSON
 
