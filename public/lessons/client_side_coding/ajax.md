@@ -96,7 +96,7 @@ Loading data into your web application from the web server
 
 * Please type this URL into your browser
 
-`https://jsonplaceholder.typicode.com/posts/1`
+<https://jsonplaceholder.typicode.com/posts/1>
 
 ```javascript
 @@@javascript
@@ -121,6 +121,7 @@ If you want to request data from a **local** webserver
 
 ```javascript
 @@@javascript
+
 fetch('city-market.md')
   .then(function(response) {
     return response.text();
@@ -139,6 +140,7 @@ fetch('city-market.md')
 
 ```javascript
 @@@javascript
+
 {"userId": 1,
   "id": 1,
   "title": "My most amazing post",
@@ -152,7 +154,7 @@ fetch('city-market.md')
 * Only data is allowed
   * Objects (Hashes), Arrays, Numbers, Booleans, Strings
 
-# Parsing JSON
+# Parsing & Producing JSON
 
 * Assume the following is in a string named `text`
 
