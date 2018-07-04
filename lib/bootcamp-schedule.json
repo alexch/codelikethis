@@ -275,22 +275,6 @@
       ],
       "side_tracks": [
         {
-          "track": "responsive_layout",
-          "lessons": [
-            "bootstrap_development",
-            "bootstrap_webpage",
-            "css_frameworks",
-            "bootstrap_components"
-          ],
-          "projects": [
-            {
-              "from": "FreeCodeCamp",
-              "name": "Bootstrap",
-              "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
-            }
-          ]
-        },
-        {
           "track": "ux",
           "lessons": [
             "navigation"
@@ -335,6 +319,22 @@
         }
       ],
       "side_tracks": [
+        {
+          "track": "bootstrap",
+          "lessons": [
+            "bootstrap_development",
+            "bootstrap_webpage",
+            "css_frameworks",
+            "bootstrap_components"
+          ],
+          "projects": [
+            {
+              "from": "FreeCodeCamp",
+              "name": "Bootstrap",
+              "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
+            }
+          ]
+        },
         {
           "track": "career",
           "lessons": [

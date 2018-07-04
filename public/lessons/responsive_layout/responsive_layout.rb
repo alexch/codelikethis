@@ -29,7 +29,7 @@ class Track
       link href: "https://yoksel.github.io/flex-cheatsheet/#align-items"
     end
 
-    lesson name: "responsive_layout",
+    lesson name: "responsive_intro",
            display_name: "Introduction to Responsive Development" do
       link href: "https://www.w3schools.com/html/html_responsive.asp",
            name: "W3Schools Responsive HTML Development"
@@ -39,10 +39,6 @@ class Track
     end
 
     lab name: 'FreeCodeCamp "Responsive Web Design"'
-
-    lesson name: "css_frameworks", display_name: "Other CSS Frameworks" do
-      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
-    end
 
     lesson name: "css_grid",
            display_name: "Page Layout with CSS Grid" do
@@ -55,28 +51,12 @@ class Track
            description: "a step-by-step game that teaches you CSS Grid"
     end
 
-
     lesson name: "navigation",
-           description: "Nav bars, drop-downs, breadcrumbs, site maps, anchors, Bootstrap's responsive nav bar"
+           description: "Nav bars, drop-downs, breadcrumbs, site maps, anchors" # todo: link to Bootstrap's responsive nav bar
 
-
-    # TODO: new Bootstrap-only track?
-    lesson name: "bootstrap_development",
-           display_name: "Introduction to Bootstrap" do
-      link href: "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
-           name: "Bootstrap Introduction"
+    lesson name: "css_frameworks", display_name: "Other CSS Frameworks" do
+      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
     end
-
-    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
-
-    lesson name: "bootstrap_webpage",
-           display_name: "Going Further With Bootstrap" do
-      link href: "https://medium.freecodecamp.org/learn-bootstrap-4-in-30-minute-by-building-a-landing-page-website-guide-for-beginners-f64e03833f33",
-           name: "Building a Portfolio Page with Bootstrap"
-    end
-
-    lesson name: "bootstrap_components", description: "buttons and accordions and such [move to UX track?]"
-
 
   end
 end

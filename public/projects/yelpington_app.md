@@ -114,7 +114,7 @@ let name = params.get("name");
 
 **When** the user sees the restaurant's page (e.g. `/joes-diner`)
 
-**Then** they see an embedded map, centered at that restaurant's location
+**Then** they see an [embedded map](/lessons/www/embedding_media.md), centered at that restaurant's location
 
 > You must decide *how* and *when* to look up the restaurant's geolocation, and 
 > whether to do it automatically or manually. 
@@ -122,6 +122,7 @@ let name = params.get("name");
 > will **not** work here, since that provides the location of the *current user*.
 > [Nominatum](https://nominatim.openstreetmap.org/) is a good option. Try
 > `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
+
 
 <!--/box-->
 
