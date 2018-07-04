@@ -166,6 +166,8 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 
 # JSON (JavaScript Object Notation)
 
+See full lesson here: [JSON lesson](/lessons/javascript/json)
+
 ### Example
 
 ```javascript
@@ -186,22 +188,15 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 
 # Parsing & Producing JSON
 
-* Assume the following is in a string named `text`
+The Fetch API converts text into JSON for you if you call `response.json()`
+
+but if you want to do it yourself...
+
+* Assume textual JSON is in a string named `text`:
 
 ```javascript
 @@@javascript
-
-{
-  "name": "Ada Lovelace",
-  "id": 1,
-  "title": "The Queen of Numbers",
-  "skills": ["mathematics", "abstract thinking", "reasoning", "intuition"],
-  "achievments": [
-    "Implemented the first computer program",
-    "Influenced the design of the first computer",
-    "Published several mathematical papers"
-  ]
-}
+let text = '{ "name": "Ada Lovelace", "id": 1, "title": "The Queen of Numbers" }'
 ```
 
 This converts the String data into a JavaScript object:
