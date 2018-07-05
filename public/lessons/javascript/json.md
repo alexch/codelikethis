@@ -13,7 +13,7 @@ JavaScript Object Notation
 
 * efficient to parse and compress
 * human-readable, for the most part
-* well-defined rules for whitespace and [character encoding](https://tools.ietf.org/html/rfc7159#section-8) 
+* well-defined rules for whitespace and [character encoding](https://tools.ietf.org/html/rfc7159#section-8)
   * always Unicode, usually UTF-8
 * very flexible data format
   * allows arbitrary nesting of arrays and objects (hashes)
@@ -79,7 +79,7 @@ whose IDs member is an array of numbers.
 * There are browser extensions that will render it better
   * Chrome: [JSON Viewer](https://github.com/tulios/json-viewer) (click on "Chrome Web Store" button to install)
 
-  
+
 ![json viewer screenshot](https://raw.githubusercontent.com/tulios/json-viewer/master/screenshot.png)
 
 # Viewing JSON in NodeJS Console
@@ -90,6 +90,7 @@ whose IDs member is an array of numbers.
 
 ```javascript
 @@@javascript
+
 $ node
 > { "Image": { "Width":  800, "Height": 600, "Title":  "View from 15th Floor", "Thumbnail": { "Url":    "http://www.example.com/image/481989943", "Height": 125, "Width":  100 }, "Animated" : false, "IDs": [116, 943, 234, 38793] } }
 { Image:
@@ -103,7 +104,7 @@ $ node
      Animated: false,
      IDs: [ 116, 943, 234, 38793 ] } }
 
-``` 
+```
 
 (beware multi-line strings though: https://github.com/nodejs/node/issues/21657 )
 
