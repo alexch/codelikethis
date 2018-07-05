@@ -1,21 +1,26 @@
 # Encapsulation in JavaScript
 
-*encapsulation* is an important principle of software design
+[encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming) is an important principle of software design
 
 essentially it means:
 
 > Keep similar things together; keep different things apart.
 
+Two related and overlapping concepts are [information hiding](https://en.wikipedia.org/wiki/Information_hiding) and [decomposition](https://en.wikipedia.org/wiki/Decomposition_(computer_science)).
+
 # Why encapsulate?
 
-* limit state mutations
-* limit reach of bugs 
+* keep *code* and *the data it uses* together
+* limit state mutations (to a single file or a contiguous block of code)
+* limit reach of bugs
 * *increase cohesion* of data & the code that loves it
 * *decrease coupling* of unrelated program features
 * focus on one thing at a time
   * so you know where in your code to look
 
 > "Do one thing, and do it well" is the encapsulator's motto
+
+# Encapsulation is for Humans
 
 Remember, the computer doesn't care about your fancy design, but humans will, so keep it simple.
 

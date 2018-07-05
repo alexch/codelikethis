@@ -27,7 +27,10 @@ class Track
            display_name: "Hello World!"
 
     lesson name: "http",
-           display_name: "How the Web Works"
+          display_name: "How the Web Works"
+
+    lesson name: "urls",
+          display_name: "URLs"
 
     lesson name: "html",
            display_name: "Introduction to HTML"
