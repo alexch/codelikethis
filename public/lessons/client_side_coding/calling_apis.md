@@ -13,3 +13,12 @@
 <img src="./postman-logo-512.png" width="380px"/>
 
 ## DEMO TIME
+
+# Postman Demo
+
+## How to
+
+* Query an API endpoint
+* Pass parameters (params) within the request
+* Read the formatted response within the UI
+* Save collections of requests
