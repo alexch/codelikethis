@@ -30,7 +30,10 @@ class Track
           display_name: "How the Web Works"
 
     lesson name: "urls",
-          display_name: "URLs"
+           display_name: "URLs" do
+      link href: "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL",
+           name: "MDN - URL components overview"
+    end
 
     lesson name: "html",
            display_name: "Introduction to HTML"
