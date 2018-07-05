@@ -60,6 +60,8 @@ we will need this JSON:
 
 ## Stories
 
+> TODO: move the git stories into a new intermediate project `yelpington_json`
+
 <!--box-->
 
 ### Zero Pull Requests
@@ -86,7 +88,7 @@ Your commit should *remove* the `.md` markdown file and *add* a `.json` file wit
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
 
-**When** the user visits `/?name=joes-diner`
+**When** the user visits `http://localhost:5000/index.html?name=joes-diner`
 
 **Then** they should see all the restaurant information, formatted and styled nicely 
 
