@@ -37,5 +37,21 @@ many others...
 
 * see [Query String Escaping](https://en.wikipedia.org/wiki/Query_string) aka [URL encoding](https://en.wikipedia.org/wiki/Percent-encoding)
 
-* in JS: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+# Getting Query Parameters in JavaScript
 
+`document.location.search` returns the URLs query string (everything after the `?`)
+
+```
+@@@js
+let params = new URLSearchParams(document.location.search.slice(1));
+
+for (let p of params) {
+  console.log(p);
+}
+
+let name = params.get("name");
+```
+
+(`slice(1)` removes the `?` from the `search` field of the `document.location` URL.)
+
+https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams

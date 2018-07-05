@@ -79,7 +79,9 @@ In pairs, split up and convert one restaurant at a time. Make a PR for each rest
 
 Your commit should *remove* the `.md` markdown file and *add* a `.json` file with the same base name. (In `git status`, this may show up as a single "rename", or it may show as an add and a delete.)
 
-*Many hands make light work!* Once this step is done, make *your own fork* of the repo and do the rest of the project in there. (We may end up deploying one or more student projects for regular lunchtime use.)
+*Many hands make light work!* Once this step is done, make *your own fork* of the repo and do the rest of the project in there. 
+
+> We might deploy one or more student projects for regular classroom lunchtime use!
 
 <!--/box-->
 
@@ -140,7 +142,7 @@ let name = params.get("name");
 <!--box-->
 ### Show All Restaurants (map)
 
-**When** the user visits `/`
+**When** the user visits `http://localhost:5000/` with no query string
 
 **Then** the user sees all restaurants as "pins" on the embedded map
 
