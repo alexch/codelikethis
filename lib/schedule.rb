@@ -111,7 +111,12 @@ class Schedule
                 if side_tracks.present?
                   side_tracks.each do |side_track_info|
                     side_track_name = side_track_info['track']
-                    side_track = @site.track_named(side_track_name)
+                    
+                    # todo: unify with line 82
+                    side_track = @site.track_named(side_track_name)  ||
+                      Track.new(name: track_name)
+                      
+
                     render_track(side_track, side_track_info)
                   end
                 end
