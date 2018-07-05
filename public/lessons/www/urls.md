@@ -9,6 +9,8 @@
 ![URL diagram](url_path.png)
 (via [usabilla](https://support.usabilla.com/hc/en-us/articles/115000046145-Target-visitors-on-a-particular-page-URL-vs-Path))
 
+Read https://doepud.co.uk/blog/anatomy-of-a-url
+
 # Protocol
 
 * `http` - the basics
