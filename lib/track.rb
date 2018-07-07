@@ -259,6 +259,12 @@ class Track < Thing
                 text "Video"
               }
             end
+
+            if item.respond_to?(:slides)
+              text ' '
+              span("(#{item.slides.length} slides)", class: 'slide_count')
+            end
+
           }
         }
       end

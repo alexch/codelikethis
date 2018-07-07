@@ -167,6 +167,7 @@ class Schedule
               (track.lesson_named(name) rescue nil) || name
             end
             things_with_commas(lessons) do |lesson|
+              # todo: unify with track.rb
               if lesson.respond_to?(:slides) && (lesson.slides.length == 0)
                 span("*", class: 'no-slides')
               end

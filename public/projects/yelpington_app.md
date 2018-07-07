@@ -99,7 +99,7 @@ Use AJAX or Fetch to load the data.
 > We've added a simple `node` app that serves files from a local server.
 > Launch it with `node .` and access it with `http://localhost:5000`
 
-To access *the path* -- from `/name` into `name` -- use this incantation: 
+To access *the path* -- from `/name` into `name` -- use this incantation:
 
 ```
 let name = document.location.pathname.slice(1)
