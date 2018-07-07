@@ -57,7 +57,17 @@ The map should be at a *fixed* zoom level, enough to show just the boundaries of
 
 **Then** the app chooses a random lat/long position *inside the boundaries of Vermont*
 
-**And** displays the position inside the `info` panel
+**And** zooms and centers the map to that location, with a *different fixed zoom level* of 18 [?]
+
+**And** disables the Start button and enables the "I Give Up" button
+
+**And** displays question marks inside the lat, long, county, and town fields
+
+<hr>
+
+**When** the user clicks the "I Give Up" button
+
+**Then** the app displays the lat/long position inside the `info` panel
 
 **And** uses *geocoding* to look up the town, city, and state, and displays those inside the `info` panel
 
@@ -68,8 +78,6 @@ The map should be at a *fixed* zoom level, enough to show just the boundaries of
 ### Game On
 
 **When** the user clicks *Start a Game*
-
-**Then** the app *hides* the lat, long, city, and state info fields and/or replaces them with '?'s
 
 ...more specification needed from here on
 
