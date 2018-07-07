@@ -22,8 +22,6 @@ class Track
       link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
     end
 
-    project name: "geo_guesser"
-
     lesson name: "jquery" do
       link href: "http://docs.railsbridge.org/frontend/jquery"
       link href: "https://www.codecademy.com/tracks/jquery",
@@ -50,16 +48,26 @@ class Track
       project name: "umbrella_today"
     end
 
+    # more advanced mapping
     lesson name: "geolocation" do
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
     end
 
-    # probably should move all these lessons to later tracks
+    lesson name: "geocoding" do
+      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
+    end
+
+    lesson name: "interactive_mapping" do
+      link href: "http://geojson.org/"
+      project name: "geo_vermonter"
+    end
 
     lesson name: "local_storage" do
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
     end
+
+    # probably should move all these lessons to later tracks
 
     lesson name: "canvas"
     lesson name: "svg"
