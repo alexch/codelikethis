@@ -170,9 +170,8 @@ See full lesson here: [JSON lesson](/lessons/javascript/json)
 
 ### Example
 
-```javascript
-@@@javascript
-
+```json
+@@@js
 {"userId": 1,
   "id": 1,
   "title": "My most amazing post",

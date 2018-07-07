@@ -57,3 +57,9 @@ let name = params.get("name");
 (`slice(1)` removes the `?` from the `search` field of the `document.location` URL.)
 
 https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+
+# anchor
+
+`#profile` is a hint to the *browser*
+
+to scroll to a location *inside* the document

@@ -34,6 +34,7 @@ class Track
       project name: "yelpington_app"
       project name: "github_emoji"
       project name: "github_repos"
+      video youtube_id: "https://www.youtube.com/watch?v=rJesac0_Ftw"
     end
 
     lesson name: "calling_apis",

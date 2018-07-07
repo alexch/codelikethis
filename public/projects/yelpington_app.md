@@ -68,7 +68,6 @@ we will need this JSON:
 
 Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and getthe PRs accepted or closed.
 
-
 <!--/box-->
 
 <!--box-->
@@ -90,7 +89,7 @@ Your commit should *remove* the `.md` markdown file and *add* a `.json` file wit
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
 
-**When** the user visits `http://localhost:5000/index.html?name=joes-diner`
+**When** the user visits `http://localhost:5000/joes-diner`
 
 **Then** they should see all the restaurant information, formatted and styled nicely 
 
@@ -100,14 +99,13 @@ Use AJAX or Fetch to load the data.
 > We've added a simple `node` app that serves files from a local server.
 > Launch it with `node .` and access it with `http://localhost:5000`
 
-To access *query parameters* like `?name=joes-diner`, use this incantation: 
+To access *the path* -- from `/name` into `name` -- use this incantation: 
 
 ```
-let params = new URLSearchParams(document.location.search.slice(1));
-let name = params.get("name");
+let name = document.location.pathname.slice(1)
 ```
 
-(`slice(1)` removes the `?` from the `search` field of the `document.location` URL.)
+(`slice(1)` removes the `/` from the `pathname` field of the `document.location` URL object.)
 
 <!--/box-->
 

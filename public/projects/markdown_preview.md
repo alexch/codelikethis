@@ -80,7 +80,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **Then** the text is rendered as styled HTML into the *preview* area
 
-> Hint: You can use the `marked` library to convert markdown source into styled HTML. You can load it like this: `<script src='node_modules/marked/lib/marked.js'>`. Alternately, you can use a CDN -- check the [Usage section of Marked's GitHub repo](https://github.com/markedjs/marked) for instructions.
+> Hint: You can use the `marked` library to convert markdown source into styled HTML. You can load it like this: `<script src='marked.js'>` since we added `marked.js` to the repository already. Alternately, you can use a CDN -- check the [Usage section of Marked's GitHub repo](https://github.com/markedjs/marked) for instructions.
 
 <!--/box-->
 
