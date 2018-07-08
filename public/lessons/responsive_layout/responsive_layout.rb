@@ -9,6 +9,8 @@ class Track
     # description: "When Twitter released its Bootstrap framework, the Web got a makeover. Suddenly developers had the ability to make web sites with a clean, standard, modern look and feel, with rules for grid layout much clearer than 'divs and floats'. More recently, the CSS Grid standard has been released, and it provides even more power and clarity than Bootstrap."
   ) do
 
+    lesson name: "response_intro"
+
     lesson name: "css_layout",
            display_name: "Page Layout With CSS" do
 
