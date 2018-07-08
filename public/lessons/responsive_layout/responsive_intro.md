@@ -111,38 +111,6 @@ Only change the layout to `position: relative;` when
 }
 ```
 
-# Media Query Conditionals - NOT
-
-Only change the layout to `position: relative;` when
-
-  * The media is NOT `screen`
-
-```css
-@@@css
-
-@media not (screen) {
-  .nav {
-    position: relative;
-  }
-}
-```
-
-# Media Query Conditionals - ONLY
-
-The `only` keyword can prevent older browsers from applying styles within a media query
-
-The following will only be applied to modern browsers with a `screen` viewport
-
-```css
-@@@css
-
-@media (only screen) {
-  .nav {
-    position: relative;
-  }
-}
-```
-
 # Mobile-First Development
 
 * Developing mobile first means to start styling out your web page for a mobile device, and then modify the layout for a desktop browser
