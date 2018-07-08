@@ -93,7 +93,7 @@ Only change the layout to `position: relative;` when
 
 # Media Query Conditionals - OR
 
-NOTE: OR is the `,` comma in a Media Query
+NOTE: OR is the `,` (comma) in a Media Query
 
 Only change the layout to `position: relative;` when
 
