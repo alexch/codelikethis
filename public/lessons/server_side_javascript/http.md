@@ -23,28 +23,37 @@
 # HTTP 0.9 example
 
 This still works on google.com!
+
 Type this:
+
 ```
 $ telnet google.com 80
 ```
+
+  * (on Windows 10 it's [a little complicated](https://social.technet.microsoft.com/wiki/contents/articles/38433.windows-10-enabling-telnet-client.aspx) to enable telnet but it does work eventually)
+
 then you'll see this:
+
 ```
 Trying 172.217.11.46...
 Connected to google.com.
 Escape character is '^]'.
 ```
+
 then type this and hit enter:
+
 ```
 GET /
 ```
 
 then you'll see this:
+
 ```
 HTTP/1.0 200 OK
 Date: Sat, 07 Jul 2018 19:50:23 GMT
 ...
 
-<!doctype html><html...
+<!doctype html><html>...
 ```
 
 # LAB: Simple Server
@@ -85,7 +94,9 @@ Date: Sat, 07 Jul 2018 19:50:23 GMT
 
 # Let's build a file server in NodeJS!
 
-### Simple Index Server
+It'll be fun!
+
+# Single File Server
 
 ```js
 @@@js
@@ -120,14 +131,14 @@ console.log("Listening on port " + port);
 
 * TODO: move to a gist
 
-# LAB: Simple Index Server
+# LAB: Single File Server
 
 1. Type in the above server, and launch it with `node index.js`
 2. *In a separate terminal window*, run `telnet localhost 5000`
 3. Type in `GET /` and hit the enter key *twice*
 4. Look at the output. Is it what you expect? Why or why not?
 
-# Simple Index Server: important points
+# Single File Server: important points
 
 * the server only serves a single file, `index.html`, no matter what the client requests
 * it uses the `Content-Type` header to tell the client that the file is in HTML format
@@ -146,7 +157,6 @@ http.createServer(function (request, response) {
   let contentType;
   let file;
   let data;
-
   let path = request.url;
 
   if (path === '/') {
@@ -185,7 +195,7 @@ console.log("Listening on port " + port);
 
 # Simple File Server: important points
 
-* the server *parses* the request path and uses it to locate a *file* on the server
+* the server *parses* the request path (e.g. `/index.js`) and uses it to locate a *file* on the server
 * it uses the `mime` library to look up the file MIME type (e.g. `application/javascript`) from the file extension (e.g. `.js`)
 * it uses the `Content-Type` header to tell the client that the file is in that format
 * there is a **major** security hole in this server. Can you find it?
@@ -194,8 +204,27 @@ console.log("Listening on port " + port);
 
 * this server is *terribly* insecure
 * any client can access *any* file on the server, simply by putting in a relative path
-  * e.g. `GET ../../../etc/passwd`
-  * e.g. `GET ../yelpington/index.js`
+  * e.g. `GET ../../../etc/passwd` - the system password file
+  * e.g. `GET ../yelpington/index.html` - files from a *different site* hosted on the *same computer*
+  * e.g. `GET /index.js` - *server* code, not *client* code
 
 > that's why most web servers use a `public` directory to store all publicly accessible files
+
+# Fixing the hole
+
+1. Create a *relative* file path from the request path
+2. Create an *absolute* file path from the relative path
+3. Make sure that file path is *inside* this site's `public` directory
+
+TODO: code fix
+
+# Simple Directory Server
+
+New rule:
+
+* when the user requests a *file*, we serve that file
+* when the user requests a *directory*, we serve an *HTML page* that includes *links* to each file in that directory
+  * aka an "index file" or "index.html"
+
+TODO: code
 
