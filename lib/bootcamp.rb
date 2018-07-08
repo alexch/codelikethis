@@ -21,6 +21,7 @@ class Bootcamp < Site
       ::Track::Www,
       ::Track::ResponsiveLayout,
       ::Track::ClientSideCoding,
+      ::Track::Bootstrap,
       ::Track::Javascript, # "JavaScript Topics"
       ::Track::ServerSideJavascript,
       ::Track::Oo,
