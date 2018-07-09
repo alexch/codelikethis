@@ -91,4 +91,14 @@ fill a glass of water at the sink
     end
   end
 
+  describe "topics" do
+    subject do
+      Lesson.new do
+        topic name: 'cooking'
+      end
+    end
+    it "has a topic" do
+      expect(subject.topics).to eq([Topic.new(name: 'cooking')])
+    end
+  end
 end

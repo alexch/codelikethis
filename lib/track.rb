@@ -48,6 +48,7 @@ class Track < Thing
   end
   contains :links
   contains :projects
+  contains :topics
 
   def initialize **options, &block
     @goals = []

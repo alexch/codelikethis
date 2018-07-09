@@ -27,6 +27,8 @@ class Project < Thing
     Project.new(**project_info)
   end
 
+  contains :topics
+
   # is this project optional? default: false
   attr_reader :optional
 

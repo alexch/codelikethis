@@ -1,0 +1,4 @@
+class Topic < Thing
+
+
+end

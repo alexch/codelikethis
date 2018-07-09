@@ -10,6 +10,8 @@ class Thing
   attr_reader :display_name
   # every Thing might have a description
   attr_reader :description
+  # every Thing might have topics
+  attr_reader :topics
 
   # todo: check keys against "contains" per-subclass attribute list
 

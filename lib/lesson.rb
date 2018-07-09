@@ -13,6 +13,7 @@ class Lesson < Thing
   contains :videos
   contains :links
   contains :projects
+  contains :topics
 
   def href
     @track.href + "/" + name

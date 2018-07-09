@@ -32,6 +32,17 @@ describe Project do
     project.view.to_html.should include("<p>contents of bake_cookies.md</p>")
   end
 
+  describe "topics" do
+    subject do
+      Project.new do
+        topic name: 'cooking'
+      end
+    end
+    it "has a topic" do
+      expect(subject.topics).to eq([Topic.new(name: 'cooking')])
+    end
+  end
+
   context 'from FreeCodeCamp' do
     let(:project) {
       Project.new(name: "bake_cookies",

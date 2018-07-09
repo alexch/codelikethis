@@ -32,6 +32,17 @@ describe Track do
     lessons.lesson_names.should == ["foo", "bar"]
   end
 
+  describe "topics" do
+    subject do
+      Track.new do
+        topic name: 'cooking'
+      end
+    end
+    it "has a topic" do
+      expect(subject.topics).to eq([Topic.new(name: 'cooking')])
+    end
+  end
+
   it "renders HTML" do
     track = Track.new do
       lesson name: "foo"
