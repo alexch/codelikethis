@@ -30,8 +30,8 @@ class Track
 
     lesson name: '/responsive_layout/navigation'
 
-    lesson name: "bootstrap_components", description: "buttons and accordions and such [move to UX track?]"
-#      description: "Nav bars, drop-downs, breadcrumbs, site maps, anchors, Bootstrap's responsive nav bar"
+    lesson name: "bootstrap_components",
+      description: "buttons, nav bars, drop-downs, breadcrumbs, site maps, anchors, accordions, etc."
 
     lesson name: "/responsive_layout/css_frameworks"
   end

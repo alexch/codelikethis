@@ -259,11 +259,6 @@
           "name": "lightning_talk",
           "description": "choose a topic for a lightning talk, and sign up for a slot",
           "required": true
-        },
-        {
-          "from": "FreeCodeCamp",
-          "name": "jQuery",
-          "href": "https://learn.freecodecamp.org/front-end-libraries/jquery"
         }
       ],
       "lessons": [
@@ -297,56 +292,34 @@
       ]
     },
     {
-      "track": "javascript",
+      "track": "bootstrap",
       "lessons": [
-        "json",
-        "scope",
-        "encapsulation",
-        "data_structures",
-        "ecosystem"
+        "bootstrap_development",
+        "bootstrap_webpage",
+        "css_frameworks",
+        "/client_side_coding/jquery",
+        "bootstrap_components"
       ],
       "projects": [
         {
           "from": "FreeCodeCamp",
-          "name": "Intermediate Algorithm Scripting",
-          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sum-all-numbers-in-a-range"
-        },
-        {
-          "from": "FreeCodeCamp",
-          "name": "JavaScript Algorithms and Data Structures Projects",
-          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker",
-          "description": "choose one"
+          "name": "Bootstrap",
+          "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
         }
       ],
       "side_tracks": [
-        {
-          "track": "bootstrap",
-          "lessons": [
-            "bootstrap_development",
-            "bootstrap_webpage",
-            "css_frameworks",
-            "bootstrap_components"
-          ],
-          "projects": [
-            {
-              "from": "FreeCodeCamp",
-              "name": "Bootstrap",
-              "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
-            }
-          ]
-        },
-        {
-          "track": "career",
-          "lessons": [
-            "lightning_talks"
-          ],
+      {
+        "track": "career",
+        "lessons": [
+          "lightning_talks"
+        ],
           "projects": [
             "lightning_talk"
           ],
           "events": [
             {
               "start": "Friday 10:00 am",
-              "name": "lightning talks (round 2)"
+              "name": "lightning talks (round 1)"
             }
           ]
         }
