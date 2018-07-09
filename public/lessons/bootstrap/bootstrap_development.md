@@ -13,6 +13,8 @@ Bootstrap is a mobile first, open-source, front-end development framework that h
 
 Bootstrap employs a *12 column layout* to help easily establish a styles for a responsive website. By adding classes to your HTML elements, you can set how many columns each div will span (out of 12). These classes are as follows:
 
+![Bootstrap 12 column grid](https://mobomo.s3.amazonaws.com/uploads/2017/09/BlogArticle-BootstrapGrid.png "Bootstrap Grid System")
+
 ```css
 @@@css
 
@@ -25,12 +27,22 @@ col-sm-12// class used for small devices like mobile phones ~ 768px
 * Lg, md, and sm designate the screen size, while the number indicates how many columns the element will span.
 * Tip: If more than 12 columns are designated inside a *row* (ex. an element 5 columns wide and an element 10 columns wide), extra columns will wrap to a new line;
 
-![Bootstrap 12 column grid](https://mobomo.s3.amazonaws.com/uploads/2017/09/BlogArticle-BootstrapGrid.png "Bootstrap Grid System")
 
 # Example of 12 Column Layout
 
 * If I want a sidebar on my website, I may want it to take up 3 columns, or one quarter of the page width (25%).
 * To achieve this I would assign it the class `col-sm-3`. This would add the following code:
+
+```html
+@@@html
+<div class="sidebar col-sm-3">
+  <ul>
+    <li>My</li>
+    <li>Sidebar</li>
+    <li>Items</li>
+  <ul>
+</div>
+```
 
 ```css
 @@@css
@@ -78,3 +90,100 @@ Since websites are not newspapers, content is not exclusively broken out into co
 * The left and right padding of the first and last elements is then removed via negative margins that are applied to rows. Because of this, elements need to be nested in the following order: `container > row > columns`.
 
 ![Bootstrap columns and rows](https://i.imgur.com/FaYuui8.png "Bootstrap Rows")
+
+# The Bootstrap Grid Examples
+
+```html
+@@@html
+<!-- this could also be "container-fluid" -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      Content 25% of page width
+    </div>
+    <div class="col-sm-6">
+      Content 50% of page width
+    </div>
+  </div>
+</div>
+```
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" style="background-color: #563d7c26; border: 1px, solid, black;">
+      Column with 25% of content width
+    </div>
+    <div class="col-sm-6" style="background-color: #563d7c10">
+      Column with 50% of content width
+    </div>
+  </div>
+</div>
+
+# Bootstrap Grid Example 2
+
+```html
+@@@html
+<div class="container">
+  <div class="row">
+    <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col">
+      2 of 3
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div>
+```
+
+<div class="container">
+  <div class="row">
+    <div class="col" style="background-color: #563a7a20">
+      1 of 2
+    </div>
+    <div class="col" style="background-color: #503f7b10">
+      2 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" style="background-color: #563c7c28">
+      1 of 3
+    </div>
+    <div class="col" style="background-color: #563d7d32">
+      2 of 3
+    </div>
+    <div class="col" style="background-color: #563e7e10">
+      3 of 3
+    </div>
+  </div>
+</div>
+
+# Media Query Breakpoints
+
+* Bootstrap has media query breakpoints for small, medium, large, and x-large device screens
+
+```css
+@@@css
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+```

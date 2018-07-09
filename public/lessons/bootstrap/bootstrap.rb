@@ -18,9 +18,9 @@ class Track
            display_name: "Introduction to Bootstrap" do
       link href: "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
            name: "Bootstrap Introduction"
+      link href: 'https://learn.freecodecamp.org/front-end-libraries/bootstrap',
+           name: 'Bootstrap - FreeCodeCamp Introduction'
     end
-
-    lab name: 'FreeCodeCamp "Front End Libraries - Bootstrap"'
 
     lesson name: "bootstrap_webpage",
            display_name: "Going Further With Bootstrap" do
