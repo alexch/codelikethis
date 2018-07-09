@@ -78,5 +78,15 @@
   "embedding",
   "apis",
   "servers",
+  "responsive-layout",
+  "media-queries",
+  "bootstrap",
+  "bootstrap-layout",
+  "bootstrap-components",
+  "jquery",
+  "jquery-selectors",
+  "jquery-collections",
+  "jquery-binding",
+  "jquery-animations",
   ""
 ]
