@@ -38,7 +38,7 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
   * [Selectors Doc](http://api.jquery.com/category/selectors/) for more details
   * [Interactive jQuery selector tester](http://www.woods.iki.fi/interactive-jquery-tester.html)
 
-# Core concept: Collections
+# Core concept: Collections 1
 
 * when you call the $ function you always get back a **jQuery Collection**
   * even if only one element matched
@@ -46,6 +46,9 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
   * the docs call it a [jQuery Object](http://api.jquery.com/Types/#jQuery)
 * a Collection has a length property
   * but it's not an Array
+
+# Core concept: Collections 2
+
 * every Collection has a gajillion methods on it
   * actually they're on its prototype
   * these are all documented at <http://api.jquery.com/>
@@ -53,6 +56,9 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
   * allows method chaining
   * some methods change the matched set
   * some methods return values, not collections, e.g. `attr` and `html`
+
+# Core concept: Collections 3
+
 * gotcha: some of the methods only act on the first item in the collection
   * `$('a').attr('href')` -- returns the `href` attribute of the **first** matching element
   * you can use `each` to execute a function on all items
@@ -63,18 +69,23 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 * gotcha: if you have an error in your selector, jQuery will **not** warn you
   * it will just return an empty collection
 
-
 # Loading jQuery
 
-  * <http://docs.jquery.com/Downloading_jQuery>
+* <http://docs.jquery.com/Downloading_jQuery>
 
-          <script type="text/javascript"
-           src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" />
+```html
+@@@html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+```
 
-  * [3 reasons why you should let Google host jQuery for you](http://encosia.com/2008/12/10/3-reasons-why-you-should-let-google-host-jquery-for-you/)
-    1. Decreased Latency
-    2. Increased parallelism
-    3. Better caching
+* All Google jQuery links:
+  - <https://developers.google.com/speed/libraries/#jquery>
+
+* [3 reasons why you should let Google host jQuery for you](http://encosia.com/2008/12/10/3-reasons-why-you-should-let-google-host-jquery-for-you/)
+  1. Decreased Latency
+  2. Increased parallelism
+  3. Better caching
 
 # Animation
 
@@ -211,4 +222,3 @@ This can be abbreviated, but this might be unclear:
     });
 
 "In cases where code relies on loaded assets (for example, if the dimensions of an image are required), the code should be placed in a handler for the load event instead." - <http://api.jquery.com/ready/>
-
