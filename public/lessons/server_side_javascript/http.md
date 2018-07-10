@@ -104,7 +104,7 @@ It'll be fun!
 
 # Single File Server
 
-```ecmascript 6
+```js
 @@@js
 let fs = require('fs');
 let http = require('http');
@@ -162,7 +162,7 @@ let http = require('http');
 
 loads required libraries "fs" (for filesystem access) and "http" (for fetching or serving files through HTTP).
 
-```ecmascript 6
+```js
   file = 'index.html';
 ```
 
@@ -170,7 +170,7 @@ loads required libraries "fs" (for filesystem access) and "http" (for fetching o
 
 # Single File Server: Code Walkthrough 2
 
-```ecmascript 6
+```js
 const port = process.env.PORT || 5000;
 http.createServer(function (request, response) {
     //...
@@ -185,7 +185,7 @@ http.createServer(function (request, response) {
 
 # Single File Server: Code Walkthrough 3
 
-```ecmascript 6
+```js
     data = fs.readFileSync(file);
 ```
 
@@ -197,7 +197,7 @@ but the standard `readFile` function returns it **eventually** by calling a call
 
 # Single File Server: Code Walkthrough 4
 
-```ecmascript 6
+```js
   try {
     data = fs.readFileSync(file);
     contentType = 'text/html'
@@ -231,7 +231,7 @@ In a URL, the `path` part maps nicely to a file path, so let's use it, like this
 
 # Simple File Server: Code
 
-```ecmascript 6
+```js
 @@@js
 let fs = require('fs');
 let http = require('http');
@@ -315,7 +315,7 @@ GET /../fancy/README.md
 2. Create an *absolute* file path from the relative path
 3. Make sure that file path is *inside* this site's `public` directory
 
-```ecmascript 6
+```js
 const $path = require('path');
 let file = '.' + decodeURIComponent(request.url);
 file = $path.resolve(file);
@@ -343,7 +343,7 @@ Historical note:
 
 # Simple Directory Server
 
-```ecmascript 6
+```js
 @@@js
 if (fs.statSync(file).isDirectory()) {
   let indexFile = file + "/index.html";
