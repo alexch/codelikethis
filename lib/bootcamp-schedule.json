@@ -263,7 +263,6 @@
       ],
       "lessons": [
         "embedding",
-        "jquery",
         "ajax",
         "calling_apis",
         "geolocation"

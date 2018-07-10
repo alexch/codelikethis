@@ -1,3 +1,9 @@
+# Server-Side JavaScript: HTTP
+
+In this lesson we discuss how to build a web server using NodeJS, and dive into the details of HTTP.
+
+For a lighter overview of HTTP and DNS, see [this lesson in the www track](/lessons/www/http).
+
 # HTTP: File Transfer for the Web
 
 * HTTP: HyperText Transfer Protocol
@@ -98,15 +104,15 @@ It'll be fun!
 
 # Single File Server
 
-```js
+```ecmascript 6
 @@@js
-var fs = require('fs');
-var http = require('http');
+let fs = require('fs');
+let http = require('http');
+const port = process.env.PORT || 5000;
 
-var port = process.env.PORT || 5000;
 http.createServer(function (request, response) {
   let contentType;
-  var file;
+  let file;
   let data;
 
   file = 'index.html';
@@ -117,6 +123,7 @@ http.createServer(function (request, response) {
   } catch (error) {
     console.log(error);
     data = "Error: " + error.toString();
+    contentType = 'text/plain';
     response.statusCode = 404;
   }
 
@@ -125,7 +132,6 @@ http.createServer(function (request, response) {
   response.write(data);
   response.end();
 }).listen(port);
-
 console.log("Listening on port " + port);
 ```
 
@@ -144,22 +150,99 @@ console.log("Listening on port " + port);
 * it uses the `Content-Type` header to tell the client that the file is in HTML format
 * if there is an error loading the file, it sends the correct *status code* 
   * (404 means "File not found" although other errors are possibly more correct)
+  
+# Single File Server: Code Walkthrough
+
+# Single File Server: Code Walkthrough 1
+
+```javascript
+let fs = require('fs');
+let http = require('http');
+```
+
+loads required libraries "fs" (for filesystem access) and "http" (for fetching or serving files through HTTP).
+
+```ecmascript 6
+  file = 'index.html';
+```
+
+"the only file we will ever serve is named `index.html`"
+
+# Single File Server: Code Walkthrough 2
+
+```ecmascript 6
+const port = process.env.PORT || 5000;
+http.createServer(function (request, response) {
+    //...
+}).listen(port);
+```
+
+* creates a server that immediately starts listening on port 5000
+* after each client request, it calls the anonymous function 
+* inside the function...
+  * the `request` object contains info about the request
+  * the function can modify the `response` object to generate the response
+
+# Single File Server: Code Walkthrough 3
+
+```ecmascript 6
+    data = fs.readFileSync(file);
+```
+
+`fs.readFile` is a NodeJS function in the `fs` library; it accepts a file path and returns an object containing that file's contents
+
+`readFileSync` returns the object **immediately** (aka *synchronously* => *sync* suffix) 
+
+but the standard `readFile` function returns it **eventually** by calling a callback function
+
+# Single File Server: Code Walkthrough 4
+
+```ecmascript 6
+  try {
+    data = fs.readFileSync(file);
+    contentType = 'text/html'
+  } catch (error) {
+    console.log(error);
+    data = "Error: " + error.toString();
+    response.statusCode = 404;
+  }
+```
+
+`try..catch` means "if anything goes wrong in the `try` block, then call the `catch` block with an object representing the error that just occurred"
+
+In this case the only thing that can go wrong is while reading the file, so we set a *404 Not Found* status code on the HTTP response
+
+and put the error message in the response body page
+
+so the client has some clue as to what went wrong
 
 # Simple File Server
 
-```js
-@@@js
-var fs = require('fs');
-var http = require('http');
+Next let's allow the client to request more than one file.
 
-var port = process.env.PORT || 5000;
+In a URL, the `path` part maps nicely to a file path, so let's use it, like this:
+
+|URL|path|file|
+|---|---|---|
+|http://localhost:5000/README.md   | /README.md | ./README.md |
+|http://localhost:5000/public/favicon.ico | /favicon.ico | ./public/favicon.ico |
+
+`./` ("dot slash") means "inside the current directory", which in this case is the directory the server is launched from.
+
+# Simple File Server: Code
+
+```ecmascript 6
+@@@js
+let fs = require('fs');
+let http = require('http');
+const port = process.env.PORT || 5000;
 http.createServer(function (request, response) {
   let contentType;
   let file;
   let data;
   let path = request.url;
 
-  if (path === '/') {
+  if (path === '/' || path === '') {
     file = 'index.html';
   }
   else {
@@ -182,7 +265,6 @@ http.createServer(function (request, response) {
   response.write(data);
   response.end();
 }).listen(port);
-
 console.log("Listening on port " + port);
 ```
 
@@ -196,9 +278,16 @@ console.log("Listening on port " + port);
 # Simple File Server: important points
 
 * the server *parses* the request path (e.g. `/index.js`) and uses it to locate a *file* on the server
-* it uses the `mime` library to look up the file MIME type (e.g. `application/javascript`) from the file extension (e.g. `.js`)
-* it uses the `Content-Type` header to tell the client that the file is in that format
-* there is a **major** security hole in this server. Can you find it?
+* if there is no request path (e.g. `http://localhost:5000/`) then it defaults to `index.html`
+* `decodeUriComponent` converts URLEncoded symbols
+  * (e.g. converting `%2F` back into a `/` slash, or `%25` into a single percent sign)
+* once it finds the file...
+  * it uses the `mime` library to look up the file MIME type (e.g. `application/javascript`) from the file extension (e.g. `.js`)
+  * it uses the `Content-Type` header to tell the client that the file is in that format
+
+Most important point:
+
+> There is a **major** security hole in this server. Can you find it?
 
 # Security Hole
 
@@ -210,13 +299,34 @@ console.log("Listening on port " + port);
 
 > that's why most web servers use a `public` directory to store all publicly accessible files
 
-# Fixing the hole
+btw, most browsers these days automatically remove `../` from URLs, to prevent this kind of attack, but we can get around that in `telnet`:
+
+```
+$ telnet localhost 5000
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+GET /../fancy/README.md
+```
+
+# Patching the hole
 
 1. Create a *relative* file path from the request path
 2. Create an *absolute* file path from the relative path
 3. Make sure that file path is *inside* this site's `public` directory
 
-TODO: code fix
+```ecmascript 6
+const $path = require('path');
+let file = '.' + decodeURIComponent(request.url);
+file = $path.resolve(file);
+let publicDir = $path.resolve('.');
+if (!file.startsWith(publicDir)) {
+  data = "Error: you are not permitted to access that file.";
+  response.statusCode = 403; // Forbidden
+  console.log("User requested file '" + request.url + "' (not permitted)");
+  file = null;
+}
+```
 
 # Simple Directory Server
 
@@ -224,7 +334,51 @@ New rule:
 
 * when the user requests a *file*, we serve that file
 * when the user requests a *directory*, we serve an *HTML page* that includes *links* to each file in that directory
-  * aka an "index file" or "index.html"
+  * aka an "index page" or "index.html"
 
-TODO: code
+Historical note:
+
+* This was the way the early webservers always used to work, and modern web servers can be configured to work the same way.
+* This is *why* index.html is named *index* -- it is a *replacement* for the automatic default *index* page.
+
+# Simple Directory Server
+
+```ecmascript 6
+@@@js
+if (fs.statSync(file).isDirectory()) {
+  let indexFile = file + "/index.html";
+  if (fs.existsSync(indexFile)) {
+    sendFile(indexFile);
+  } else {
+      
+    let files = fs.readdirSync(file);
+    let html = files
+        .map((f) => `<li><a href="${path}/${f}">${f}</a></li>`)
+        .join('\n');
+    data = `<h1>${path}</h1> <ul> ${html} </ul>`; 
+    contentType = 'text/html';
+    
+  }
+} else {
+  sendFile(file);
+}
+
+```
+
+* Our logic is getting a bit more complex, so we're extracting some functions to make it more readable
+* This is our first example of *dynamically generated HTML*
+* We're also using *backtick strings* (an ES6 feature) to "interpolate" strings into each other:
+  * with ticks: `'$' + dollars + '.' + cents`
+  * with backticks: &#96;`$${dollars}.${cents}`&#96;
+  * output: `"$24.03"` (same for both)
+
+# public dir
+
+One final change to our file server...
+
+Let's make it so you can't serve server-only file and directories like *node_modules* and *README.md*.
+
+run `node simple_dir.js` and visit <http://localhost:5000/images>
+
+note that these files are *inside* the `public` directory even though the *request path* did **not** include the word "public"
 
