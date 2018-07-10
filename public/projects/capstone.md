@@ -4,6 +4,18 @@ During the last four weeks of this course, you'll spend most of your afternoons 
 
 Because the goal of this course is to prepare you for work on a software development team, your capstone project must be developed in a team. Team size can be as small as 2 people or as large as 6 (or 8, maybe, with special permission). Since we love to pair program, it's best if your team has an even number of members, but an odd number can also work (please discuss this with staff first).
 
+Capstone work is set to begin somewhere around August 1 (either a bit before or a bit after) with an Inception meeting, to discuss scope and timing and how involved the sponsor wants to be. From then until the end of August, the students will spend at least half their days in teams working on user stories.
+
+> Are you a potential client/sponsor? 
+
+Here are some constraints for you when you're thinking of an appropriate project:
+
+  * it must be real work on a fresh code base -- not debugging or modifying an existing product or tool
+  * students can use existing libraries and assets, or tie together existing APIs and data sets, but the bulk of their work must be original
+  * the finished product may not be fully functional, but based on the weekly sprints and demos, it should be *partially* functional (i.e. not full of half-implemented features)
+  * the finished product must be suitable for inclusion in student portfolios, either as a link to a live app, or a screenshot with description, and be demoable in person during demo day
+  * if you are a *current bootcamp student* and want to sponsor a project of your own, you may *not* be a coder on that team. You will be the client, and learn about how to communicate your ideas and priorities to a team of developers who have their own ideas about how things should be implemented.
+
 # Step 1: Discovery
 
 Spend this time exploring ideas and building a team. 
