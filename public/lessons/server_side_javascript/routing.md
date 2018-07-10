@@ -31,17 +31,46 @@ We haven't learned about databases yet, which is fine:
 
 Our existing server code will handle a default home page; if we name it `index.html` then we're good.
 
-# List of articles is a file plus an API call
+# Article page is a file plus an API call
 
 Traditionally, a web server generates HTML "on the fly" in response to a web request.
 
 A more modern app will send *static* HTML/CSS/JS, then *that* code will run on the client and make a *new* request for JSON data to fill itself in.
 
-todo: code
+# Article Client
+
+### article.html 
+
+<div class='article'>
+  <h2 id='title'></h2>
+  <span id='author'>
+  <div id='body'>
+</div>
+
+### article.js
+
+let article_id = document.location.pathname.splice(-1)
+fetch('/articles/' + article_id)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    fillArticle(json);
+  });
+
+function fillArticle(article) {
+    
+}
+
+# Article Server
 
 # URL Path Parameters
 
-to find article number
+One thing a routing system can do is treat the path not as a series of *directories and files*, but as a series of *named parameters*
+
+* `/articles/1` becomes `{resource: 'articles', id: '1'}`
+
+todo: code
 
 # URL Query Parameters
 
