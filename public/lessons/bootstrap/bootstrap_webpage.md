@@ -50,3 +50,49 @@ https://getbootstrap.com/docs/4.0/getting-started/introduction/
 </html>
 
 ```
+
+# Advanced Navs in Bootstrap
+
+
+* The following markup may seem a bit complicated, however there are fairly simple classes and styles being applied here. Lets break this down
+
+```html
+@@@html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+```
+* In the above example, you will first see the wrapper element `<nav>`, with the classes 'navbar-expand-lg', and `navbar-light`. This tells the navbar to be full width, and have a light grey background.
+
+* Next you can see the button with the class `navbar-toggler`. This is hidden on desktop, but allows the navigation to easily switch to a mobile-friendly hamburger navigation at a specified break point, or screen size. When the breakpoint is hit, the desktop navigation is hidden, the button is revealed, and the navigation turns into a dropdown that can be toggled. 
+* There is native background JS that controls mobile/desktop navigation switching, so you do not need to write custom code to make this functionality occur. 
+
+* The `<li class="nav-item dropdown">` element is a dropdown, allowing you to easily add a secondary dropdown navigation to your individual nav links.
+
+* Navigations get much more in depth with various classes, controls, and styles. The above code is enough to get started with a simple and elegant navbar on your Bootstrap website. For more information, visit: https://getbootstrap.com/docs/4.0/components/navbar/
