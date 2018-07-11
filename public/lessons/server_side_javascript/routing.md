@@ -37,7 +37,7 @@ Traditionally, a web server generates HTML "on the fly" in response to a web req
 
 A more modern app will send *static* HTML/CSS/JS, then *that* code will run on the client and make a *new* request for JSON data to fill itself in.
 
-# Article Client
+# Blog Client
 
 ### article.html 
 
@@ -62,7 +62,7 @@ function fillArticle(article) {
     
 }
 
-# Article Server
+# Blog Server
 
 # URL Path Parameters
 
