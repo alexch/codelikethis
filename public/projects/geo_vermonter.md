@@ -99,6 +99,8 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **And** displays question marks inside the lat, long, county, and town fields
 
+*(optional)* **And** displays a small map of Vermont counties on the side, e.g. https://geology.com/county-map/vermont-county-map.gif
+
 <!--/box-->
 
 <!--box-->
