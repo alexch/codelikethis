@@ -103,32 +103,12 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 * jQuery UI has lots more
   * <http://jqueryui.com/>, not <http://jquery.com/>
 
-# Testing Animation
+# Event Listening
 
-  * Use a "Mock Clock"
-    * replace `setTimeout` with a different function during tests
-    * this function keeps track of what would be called when
-    * then "ticks" forward when asked
-    * you can simulate speeding up and slowing down time
-  * In Jasmine:
+* jQuery's `on` method
 
         @@@ javascript
-        beforeEach(function() {
-            jasmine.Clock.useMock();
-        });
-        //... call the code that calls setTimeout
-        jasmine.Clock.tick(500); // advance 500 msec
-
-    * see thread [How to test timers?](http://groups.google.com/group/jasmine-js/browse_thread/thread/f987956c624840d1/73b3ff5391244b19)
-
-# Events
-
-# Hooking Up
-
-* jQuery's `bind` method
-
-        @@@ javascript
-        $('#hi').bind('click', function() {
+        $('#hi').on('click', function() {
             alert("hi");
         });
 
@@ -146,7 +126,7 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 * if the event listener returns false, all further processing stops
 * usually used to stop a form from actually submitting after a handled `submit` event
 
-# more about jQuery event binding
+# More about jQuery Event Listening
 
     @@@ javascript
     var f = function(event) {....}
@@ -158,48 +138,25 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
         $('#hi').click(f);
         $('#hi').change(f);
 
-* using `bind` directly
+* using `on` directly
 
         @@@ javascript
 
-        $('#hi').bind('click', f);
-        $('#ho').bind('change', f);
+        $('#hi').on('click', f);
+        $('#ho').on('change', f);
 
-* `bind` can hook many events at once
+* `on` can hook many events at once
 
         @@@ javascript
 
-        $('#hi').bind('click change', f);
+        $('#hi').on('click change', f);
 
 * or you can use chaining for the same effect
 
         @@@ javascript
 
-        $('#hi').bind('click', f)
-                .bind('change', f);
-
-# bind vs. bind
-
-jQuery's `bind` is poorly named, since there are other functions named `bind` in the JavaScript ecosystem that do different things. jQuery's `bind` method should have been called `listen` or `handle` or even `bindToEvent`, since it's event-specific.
-
-In the [prototype JS framework](http://www.prototypejs.org) and [ES5 JavaScript](https://www.ecma-international.org/ecma-262/5.1/#sec-15.3.4.5) the function `bind` is used to stash and restore `this`. It's actually on Function.prototype, so you can do stuff like this:
-
-    @@@ javascript
-
-    var x = {name: 'Ulysses'};
-    x.getName = function() { return this.name; }
-    var boundGetName = x.getName.bind(x);
-    boundGetName();  // -> 'Ulysses'
-
-This is useful for passing callbacks that still refer to their own objects, rather than whatever random thing `this` is set to at the time they're called.
-
-The [fat arrow](https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/) `=>` is used in CoffeeScript, ES6, and TypeScript to accomplish this.
-
-[TODO: make these notes more slidey, and/or move Fat Arrow discussion to a different lesson]
-
- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
-
+        $('#hi').on('click', f)
+                .on('change', f);
 
 # Ready, Fire, Aim
 
