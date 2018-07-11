@@ -1,12 +1,12 @@
 # Introduction to LeafletJS
 
-* LeafletJS is a JavaScript **library** which allows for the creation of and interaction web maps.
+* LeafletJS is a JavaScript **library** which allows for the creation of and interaction with web maps.
 * It uses a simple API for building maps using **Layers**
-* It allows for styling of the map layers using standard CSS, and manipulation using JavaScript
+* It allows for styling of the map layers using standard CSS and manipulation with JavaScript
 
 # Simple Map Example
 
-* Let's make a simple map
+* Let's make a simple map!
 
 ![](./simple-map-leaflet.png)
 
@@ -36,9 +36,10 @@ Include the CSS and JavaScript in the Head of the HTML page
 
 **Then the JavaScript**
 
+> Make sure you put this AFTER Leaflet's CSS
+
 ```html
 @@@html
-<!-- Make sure you put this AFTER Leaflet's CSS -->
  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 ```
 
@@ -46,7 +47,6 @@ Include the CSS and JavaScript in the Head of the HTML page
 
 ```html
 @@@html
-
 <div id="mapid"></div>
 ```
 
@@ -55,12 +55,17 @@ Include the CSS and JavaScript in the Head of the HTML page
 ```css
 @@@css
 
-#mapid { height: 180px; }
+#mapid {
+  height: 400px;
+}
 ```
 
 # Using a Basemap
 
-* Basemaps are the **Tiles** that show the roads, features, and labels for the map
+* Basemaps are composed of **Tiles** that show:
+  - roads
+  - features
+  - labels
 * You add the basemap to the **map container**
 
 ### Mapbox Basemap Example
@@ -75,6 +80,17 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 
 Basemap providers for LeafletJS
 <https://leaflet-extras.github.io/leaflet-providers/preview/>
+
+# What the L ?
+
+* **L** is the **global** LeafletJS function.
+* You can access all the objects and functions within LeafletJS from **L**
+* There is extensive documentation <https://leafletjs.com/reference-1.3.0.html>
+
+```js
+@@@js
+L.map('map').setView([51.505, -0.09], 13)
+```
 
 # Adding Markers
 
