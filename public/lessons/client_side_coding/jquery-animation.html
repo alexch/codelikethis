@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <style>
+     body {
+       background-color: #f0f0f0
+     }
+     #container {
+       display: flex;
+       justify-content: space-around;
+     }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+     $(document).ready(function () {
+       $('#logo').click(function () {
+         $(this).animate({
+           backgroundColor: '#aa0000'
+         });
+       });
+     });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <p>Oh hi there!</p>
+      </div>
+      <div id="logo">
+        <p>This is my page logo</p>
+      </div>
+      <div>
+        <p>Doesn't it look nice?</p>
+      </div>
+    </div>
+  </body>
+</html>
