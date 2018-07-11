@@ -25,9 +25,7 @@ First, clone the starter project here:
 * the map does **not** support zoom out, or slippy click-and-drag-to-move -- all movements must be deliberate, by clicking one of the north / south / east / west buttons
 * every time the user clicks a movement button, the map moves a fixed amount in that direction, and the score is decreased by 1
 * when the player clicks "Guess!" they can choose a county from a popup menu
-  * if the guess is correct then the next time they click "Guess!" they can choose a town from a popup menu
-  * if the guess is incorrect then the score is decreased by 1
-* if they guess the correct town then 
+* if the guess is correct then:
   * the game displays "You win!" 
   * their final score is logged [how?] 
   * the Info box is filled in with the correct latitude and longitude
@@ -45,12 +43,15 @@ TODO
 
 * Sketch out wireframes for a page with the following page elements. 
 
-  * `map` - shows the current map (initally the entire state of Vermont)
-  * `nav` - top of page, placeholder for "about" and "high scores" and such
-  * `info` - side of page, contains fields for
-    * `latitude`, `long`, `county`, `town` - read-only text fields
-    * `score` - text field
-    * `start`, `guess`, `quit` - buttons labeled "Start a Game", "Guess the Spot", "I Give Up!" respectively - all disabled for now
+|Selector|Description|
+|---|---|
+|`map`| shows the current map (initally the entire state of Vermont) |
+|`nav`| top of page, placeholder for "about" and "high scores" and such |
+|`info`| contains fields for... |
+|  `latitude`, `long`, `county`, `town` | read-only text fields |
+| `north`, `south`, `east`, `west` | buttons for movement |
+|`start`, `guess`, `quit` | buttons labeled "Start a Game", "Guess the Spot", "I Give Up!" respectively - all disabled for now |
+|`score`| text field |
 
 * Then code the layout in HTML with placeholder information
 * Run the cypress tests:
@@ -63,11 +64,11 @@ TODO
 <!--box-->
 ### State of the State
 
-Using [leaflet.js](#TODO) place a map of the state of Vermont inside the `map` div.
+Using [leaflet.js](#TODO) place a map of the state of Vermont inside the `map` div. Use the [Isri.WorldImagery tileset](https://leaflet-extras.github.io/leaflet-providers/preview/) and make sure **not** to show any street or town info to the user -- only satellite images.
 
 The map should be at a *fixed* zoom level, enough to show just the boundaries of the state and not much more.
 
-The boundaries of Vermont are specified in `border.js`. Ask Josh for further instructions.
+The boundaries of Vermont are specified in [`border.js`](https://github.com/BurlingtonCodeAcademy/geo-vermonter/blob/master/border.js). Ask Josh for further instructions.
 
 <!--/box-->
 
@@ -92,11 +93,13 @@ The boundaries of Vermont are specified in `border.js`. Ask Josh for further ins
 
 **Then** the app chooses a random lat/long position *inside the boundaries of Vermont* 
 
-  * [ask Josh for help with finding a point inside a GeoJson boundary]
+  * [leaflet-pip](https://github.com/mapbox/leaflet-pip) is a library for finding out whether a point is inside a polygon
 
 **And** zooms and centers the map to that location, with a *different fixed zoom level* of 18
 
 **And** displays question marks inside the lat, long, county, and town fields
+
+*(optional)* **And** displays a small map of Vermont counties on the side, e.g. https://geology.com/county-map/vermont-county-map.gif
 
 <!--/box-->
 
@@ -107,7 +110,71 @@ The boundaries of Vermont are specified in `border.js`. Ask Josh for further ins
 
 **Then** the app displays the lat/long position inside the `info` panel
 
-**And** uses *geocoding* to look up the town and city, and displays those inside the `info` panel
+**And** uses *geocoding* to look up the town and county, and displays those inside the `info` panel
 
 <!--/box-->
 
+<!--box-->
+### Guess the County
+
+**When** the user clicks the Guess button
+
+**Then** the user sees a *modal dialog box* (or a *modeless dialog box*) asking "What county are we in?" with a [popup list of all Vermont counties](https://en.wikipedia.org/wiki/List_of_counties_in_Vermont)
+
+**And** two buttons ("Guess" and "Cancel")
+
+<hr>
+
+**When** the user selects the correct county and clicks "Guess"
+
+**Then** the game *fills in* that county name in the Info box (instead of a question mark) (as well as the other geocoded information)
+
+**And** informs the user "Correct!"
+
+<hr>
+
+**When** the user types in an incorrect county 
+
+**Then** The game *subtracts* 1 from score
+
+**And** informs the user "Wrong!"
+
+**And** the dialog box disappears
+
+<hr>
+
+**When** the user clicks "Cancel"
+
+**Then** the dialog box disappears with no change to score
+
+<!--/box-->
+
+<!--box-->
+### Return
+
+**When** the user clicks the "Return" button
+
+**Then** the game scrolls back to the original spot, with no change in score
+
+<!--/box-->
+
+<!--box-->
+### breadcrumbs
+
+When the user clicks a movement button
+
+Then the map draws a dotted line between the previous map center and the new map center
+
+And keeps showing the dotted line during the rest of game
+<!--/box-->
+
+# Backlog
+
+Ideas for future work:
+
+Invent some new game modes, and put links to the various modes inside the nav bar. For instance...
+
+  * Guess the town, not the county
+  * Daily Challenge - every user uses the same point
+  * Burlington Challenge - guess the neigborhood
+  * High Score - keep showing the high score
