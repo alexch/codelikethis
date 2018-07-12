@@ -20,13 +20,15 @@ class Track
 
     lesson name: "hello_node"
 
-    # should these all go into an HTTP or WWW lesson?
     lesson name: "http"
-    lesson name: "routing"
-    lesson name: "state", description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
+
     lesson name: "parameters", display_name: "CGI and Parameters"
     lesson name: "forms"
+
+    lesson name: "routing"
+    lesson name: "state", description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
     lesson name: "cookies", display_name: "State: Cookies"
+
     lesson name: "sessions", display_name: "State: Sessions"
     lesson name: "uploads", display_name: "State: Uploads" # forms, server store, cloud store, plugins  -- optional?
     lesson name: "/db/overview", display_name: "State: Databases",
