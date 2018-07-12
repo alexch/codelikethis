@@ -1,6 +1,7 @@
 # Routing
 
 *routing* in web apps is essentially a set of rules to decide...
+
   * given this request
   * what code do we run?
   
