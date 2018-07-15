@@ -166,6 +166,7 @@ When the user clicks a movement button
 Then the map draws a dotted line between the previous map center and the new map center
 
 And keeps showing the dotted line during the rest of game
+
 <!--/box-->
 
 # Backlog
@@ -177,4 +178,5 @@ Invent some new game modes, and put links to the various modes inside the nav ba
   * Guess the town, not the county
   * Daily Challenge - every user uses the same point
   * Burlington Challenge - guess the neigborhood
-  * High Score - keep showing the high score
+  * High Score - keep showing the best scores, and save the high score list using [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) so it persists across game sessions.  **BEWARE** that the values can only be strings, so you must use `JSON.stringify` on the way in and `JSON.parse` on the way out.
+
