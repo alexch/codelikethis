@@ -137,3 +137,8 @@ function sendSearchResults() {
   contentType = 'text/json';
 }
 ```
+
+# Routing in Express
+
+(fancy syntax, but same basic premise)
+
