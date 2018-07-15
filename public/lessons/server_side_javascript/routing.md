@@ -45,11 +45,13 @@ A more modern app will send *static* HTML/CSS/JS, then *that* code will run on t
 
 ### article.html 
 
+```html
 <div class='article'>
   <h2 id='title'></h2>
-  <span id='author'>
-  <div id='body'>
+  <i>by <span id='author'></span></i>
+  <p id='body'></p>
 </div>
+```
 
 ### article.js
 
@@ -113,7 +115,7 @@ function parsePath(path) {
 }
 ```
 
-(also scroll through simple_blog.js looking for interesting bits)
+[also scroll through simple_blog.js looking for interesting bits]
 
 # URL Query Parameters
 

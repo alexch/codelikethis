@@ -362,7 +362,6 @@ if (fs.statSync(file).isDirectory()) {
 } else {
   sendFile(file);
 }
-
 ```
 
 * Our logic is getting a bit more complex, so we're extracting some functions to make it more readable

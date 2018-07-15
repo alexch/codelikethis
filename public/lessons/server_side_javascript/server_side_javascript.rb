@@ -11,6 +11,7 @@ class Track
     goal "how to create a self-contained server-side web application using NodeJS"
     goal "how to deploy NodeJS applications to Heroku"
     goal "how to pass state from the client to the server and back again"
+
     # "how to deploy NodeJS applications to Amazon AWS Elastic Beanstalk", https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
     # "how to deploy NodeJS applications using Glitch",
     goal "how to use MongoDB to save state between user sessions"
@@ -22,15 +23,17 @@ class Track
 
     lesson name: "http"
 
-    lesson name: "parameters", display_name: "CGI and Parameters"
-    lesson name: "forms"
+    lesson name: "forms_and_parameters"
 
     lesson name: "routing"
-    lesson name: "state", description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
-    lesson name: "cookies", display_name: "State: Cookies"
 
+    lesson name: "state",
+           description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
+    lesson name: "cookies", display_name: "State: Cookies"
     lesson name: "sessions", display_name: "State: Sessions"
+
     lesson name: "uploads", display_name: "State: Uploads" # forms, server store, cloud store, plugins  -- optional?
+
     lesson name: "/db/overview", display_name: "State: Databases",
       description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."
 
@@ -41,7 +44,6 @@ class Track
     lesson name: "security_overview" # id vs auth, login/logout, XSS etc?
     lesson name: "login_and_logout"
     lesson name: "oauth"
-
 
     lesson name: "calling_apis"
     lesson name: "bots" do # todo: project: build a Slack Bot
