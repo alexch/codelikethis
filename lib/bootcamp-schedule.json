@@ -341,12 +341,15 @@
     {
       "track": "server_side_javascript",
       "lessons": [
+        "/client_side_coding/local_storage",
         "hello_node",
         "http",
         "http_server",
         "forms_and_parameters",
         "routing",
+        "simple_chat",
         "cookies",
+        "saving_state_in_files",
         "sessions",
         "sessions_with_mongo"
       ],

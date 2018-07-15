@@ -6,19 +6,33 @@ We are running a chat server; build and run the client
 
 Can be represented as a JSON object in a POST body or as a query string on GET requests
 
-* DateTime
-* Content
-* Author
+* when - a string in ISO8601 format
+* content - a string
+* author - a string
 
-## Features
+e.g.
+```
+{
+    "when": "2018-07-15T20:00:47.696Z",
+    "author": "alex",
+    "content": "my dog has fleas"
+}
+```
 
-### GET messages at /chat route
+## Step 1: Up and Running
 
-#### First visit responds with ALL messages
+* GET all messages at /chat route
+* POST a message to /chat
+* Use the Heroku instance we will deploy during class
 
-  * What about really a large message history?
+## Step 2: Recent Messages
 
-#### Return visits responds with messages since last visit
+* GET accepts a parameter `since`
+* Create a variable `lastMessageWhen`
+* When you receive a list of messages, set `lastMessageWhen` to the *most recent* message time
+* When you request a list of messages, add `since` to the request
+
+#### 
 
   * Implement in a `<button>` to fetch new messages
 

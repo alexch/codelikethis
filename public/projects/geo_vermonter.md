@@ -20,7 +20,7 @@ First, clone the starter project here:
 # Game Rules:
 
 * when the player starts a game, they are dropped into a random spot inside Vermont
-* initial score is 20
+* initial score is 100
 * the zoom level is pretty high (low to the ground) and there are no streets or markers, only satellite imagery
 * the map does **not** support zoom out, or slippy click-and-drag-to-move -- all movements must be deliberate, by clicking one of the north / south / east / west buttons
 * every time the user clicks a movement button, the map moves a fixed amount in that direction, and the score is decreased by 1
@@ -135,7 +135,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **When** the user types in an incorrect county 
 
-**Then** The game *subtracts* 1 from score
+**Then** The game *subtracts* 10 from score
 
 **And** informs the user "Wrong!"
 
@@ -146,6 +146,19 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 **When** the user clicks "Cancel"
 
 **Then** the dialog box disappears with no change to score
+
+<!--/box-->
+
+<!--box-->
+### Move
+
+**When** the user clicks the "North" button
+
+**Then** the map scrolls a fixed distance to the north
+
+**And** the score is reduced by 1 point
+
+(and same as above for East, South, West buttons)
 
 <!--/box-->
 
@@ -169,6 +182,59 @@ And keeps showing the dotted line during the rest of game
 
 <!--/box-->
 
+<!--box-->
+### save score (local)
+
+**When** the user wins a game
+
+**Then** the game asks the user for their name (or remembers from earlier)
+
+**And** saves the name and score to a list of games
+
+<hr>
+
+**When** the user selects "high scores" from the nav bar
+
+**Then** the app shows a list of all games, in score order (top to bottom)
+
+> For the first pass, use [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) so it persists across game sessions.  **BEWARE** that the values can only be strings, so you must use `JSON.stringify` on the way in and `JSON.parse` on the way out.
+
+<!--/box-->
+
+<!--box-->
+### save score (server)
+
+**When** the user wins a game
+
+**Then** the game saves the name and score to the server
+
+<hr>
+
+**When** the user selects "high scores" from the nav bar
+
+**Then** the app shows a list of all games, in score order (top to bottom), including scores from all other players
+
+#### Tech:
+
+Initially, implement your server code as simply as possible. Over the course of the week, we will learn more ways of saving state on a server or database.
+
+1. in RAM (a list of JS objects in an array) -- this will get erased when you restart the server but will be just fine for demos
+2. in a file -- this will work locally but will not work on Heroku
+3. in MongoDB
+
+<!--/box-->
+
+<!--box-->
+### replay game
+
+1. when the game is saved, don't just save the name and score: all the info, including spot and all moves taken, and any guesses, should be saved as well
+2. when viewing old games, the user can select one and see the above info
+3. a live replay at one move per second (this will likely be a whole new story)
+
+<!--/box-->
+
+
+
 # Backlog
 
 Ideas for future work:
@@ -178,5 +244,4 @@ Invent some new game modes, and put links to the various modes inside the nav ba
   * Guess the town, not the county
   * Daily Challenge - every user uses the same point
   * Burlington Challenge - guess the neigborhood
-  * High Score - keep showing the best scores, and save the high score list using [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) so it persists across game sessions.  **BEWARE** that the values can only be strings, so you must use `JSON.stringify` on the way in and `JSON.parse` on the way out.
 

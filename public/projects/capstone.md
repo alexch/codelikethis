@@ -32,7 +32,7 @@ Do you want to work with a client (or "project sponsor")? Here are some worthy p
 
 * Home Outside Flower Pot Planner
 
-  * https://github.com/openopps/openopps-platform - Open Opportunities is creating a network of federal employees that will lead to a more effective, efficient, responsive government by sharing skills and collaborating on projects that support the mission of an agency or the government as a whole.
+* https://github.com/openopps/openopps-platform - Open Opportunities is creating a network of federal employees that will lead to a more effective, efficient, responsive government by sharing skills and collaborating on projects that support the mission of an agency or the government as a whole.
 
 
 # Step 2: Proposal

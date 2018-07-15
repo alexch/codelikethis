@@ -2,6 +2,8 @@
 
 It'll be fun!
 
+Follow along with https://github.com/BurlingtonCodeAcademy/simple-server
+
 # Single File Server
 
 ```js
