@@ -48,7 +48,7 @@ end
 require 'awesome_print'
 desc "run app and keep building and running it"
 task :rerun do
-  cmd = %w{bundle exec rerun -- rake run}
+  cmd = %w{bundle exec rerun -- rackup}
   sh *cmd
 end
 

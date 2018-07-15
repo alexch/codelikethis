@@ -339,18 +339,20 @@
       ]
     },
     {
-      "track": "oo",
+      "track": "server_side_javascript",
       "lessons": [
-        "introduction"
+        "hello_node",
+        "http",
+        "http_server",
+        "forms_and_parameters",
+        "routing",
+        "cookies",
+        "sessions",
+        "sessions_with_mongo"
       ],
       "projects": [
-        "peer_code_review"
-      ]
-    },
-    {
-      "track": "server_side_javascript",
-      "projects": [
         "shortly",
+        "chat_client",
         "socket_chat",
         "resolve_an_issue",
         "capstone"
@@ -372,6 +374,15 @@
           "start": "Friday 4:00 pm",
           "name": "retrospective"
         }
+      ]
+    },
+    {
+      "track": "oo",
+      "lessons": [
+        "introduction"
+      ],
+      "projects": [
+        "peer_code_review"
       ]
     },
     {

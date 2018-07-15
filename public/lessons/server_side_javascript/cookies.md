@@ -50,14 +50,17 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
 the Fetch API [does not always send cookies](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials)
 
-(it's part of "same origin policy")
+(it's part of "same origin policy", enforcement of which is often draconian)
 
-to send them you need to set `credentials: 'include'` like this:
+to send them you may need to set `credentials: 'include'` like this
 
 ```
 fetch('/articles.json', {credentials: 'include'})
   .then(
 ```
+
+> WARNING: this is a **security hole** and you should only add `credentials: include` if you are having trouble getting it to work on `localhost`; don't do it in production unless you have a good reason.
+
 
 # Sample Code
 

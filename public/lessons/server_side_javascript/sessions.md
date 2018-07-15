@@ -25,7 +25,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
     * then add it to the session data
     * no need to change the cookie!
   * when the response is sent
-    * `Set-Cookie: sessionKey=xxx` 
+    * `Set-Cookie: sessionKey=xxx`
     * where `xxx` is the *key* for that session
 
 # Key Choice
@@ -62,11 +62,12 @@ console.log(hash);
 * probably don't want to store it in RAM, since your web server might be *scaled* (i.e. running on several different servers) so successive requests might go to different web server instances
 
 * your server needs to maintain the storage for an unknown number of users
-  * so you should figure out an *expiration* policy if you don't want your database to fill up
+  * so you should figure out an *expiration* strategy if you don't want your database to fill up
 
 
 # Sample Code
 
-todo
-
+* in RAM
+* in Files
+* in Mongo
 

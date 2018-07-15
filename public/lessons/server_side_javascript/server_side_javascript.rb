@@ -22,7 +22,9 @@ class Track
     lesson name: "hello_node"
 
     lesson name: "http"
+    lesson name: "http_server", description: "codealong walkthrough, building a simple file server in NodeJS"
 
+    lesson name: "/www/forms"
     lesson name: "forms_and_parameters"
 
     lesson name: "routing"
@@ -39,11 +41,7 @@ class Track
 
     lesson name: "uploads", display_name: "State: Uploads" # forms, server store, cloud store, plugins  -- optional?
 
-
-
-    lesson name: "NodeJS"
-    lesson name: "web_mvc"
-    lesson name: "Express"
+    lesson name: "express", description: "Express is a web framework for Node.js, adding features like middleware and routing to the barebones Node.js"
 
     lesson name: "security_overview" # id vs auth, login/logout, XSS etc?
     lesson name: "login_and_logout" # passport.js? http://www.passportjs.org/ https://github.com/jaredhanson/passport-local
