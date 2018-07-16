@@ -22,7 +22,7 @@ class Track
     lesson name: "hello_node"
 
     lesson name: "http"
-    lesson name: "http_server", description: "codealong walkthrough, building a simple file server in NodeJS"
+    lesson name: "serving_files", description: "codealong walkthrough, building a simple file server in NodeJS"
 
     lesson name: "/www/forms"
     lesson name: "forms_and_parameters"

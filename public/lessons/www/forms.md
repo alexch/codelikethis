@@ -37,7 +37,7 @@ The `<form>` tag means:
 
 # Form Methods: GET vs. POST
 
-todo
+See [server-side lesson](/lessons/server_side_javascript/forms_and_parameters)
 
 # Intercepting forms with JavaScript
 
@@ -46,10 +46,9 @@ todo
 * this function will be called after the user clicks "Submit"
   * but before the data is sent to the server
 * this lets you *modify* the data sent to the server, or execute code *before* sending the data to the server, or just *cancel* the server call altogether
-* if you intend a form to only be used by JavaScript, do this: <br>`<form href='#'>`
-
-
-todo: example code
+* if you intend a form to only be used by JavaScript, do one or both of these: 
+  * `<form href='#'>` in your HTML
+  * `event.preventDefault();` in your JS event handler
 
 # References
 

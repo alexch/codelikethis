@@ -17,6 +17,8 @@ and most of the fancy framework code is simply to build up a list of matching ru
 
 # Let's build a blog!
 
+Follow along here: <https://github.com/BurlingtonCodeAcademy/simple-server/blob/master/simple_blog.js>
+
 Endpoints:
 
 * `/` - home page

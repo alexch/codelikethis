@@ -1,8 +1,11 @@
+# Serving Files
+
 # Let's build a file server in NodeJS!
 
 It'll be fun!
 
-Follow along with https://github.com/BurlingtonCodeAcademy/simple-server
+Follow along by cloning <https://github.com/BurlingtonCodeAcademy/simple-server>
+
 
 # Single File Server
 
@@ -96,6 +99,8 @@ http.createServer(function (request, response) {
 `readFileSync` returns the object **immediately** (aka *synchronously* => *sync* suffix) 
 
 but the standard `readFile` function returns it **eventually** by calling a callback function
+
+(we'll keep using the *sync* versions because it makes the code easier to follow, but we could rewrite it to be asynchronous without too much effort)
 
 # Single File Server: Code Walkthrough 4
 
@@ -218,6 +223,7 @@ GET /../fancy/README.md
 3. Make sure that file path is *inside* this site's `public` directory
 
 ```js
+@@@js
 const $path = require('path');
 let file = '.' + decodeURIComponent(request.url);
 file = $path.resolve(file);
@@ -229,6 +235,8 @@ if (!file.startsWith(publicDir)) {
   file = null;
 }
 ```
+
+> This "public dir" algorithm is a *partial* solution; there are many other factors in configuring a secure web server that we can't get into now.
 
 # Simple Directory Server
 
@@ -259,11 +267,12 @@ if (fs.statSync(file).isDirectory()) {
         .join('\n');
     data = `<h1>${path}</h1> <ul> ${html} </ul>`; 
     contentType = 'text/html';
-    
+
   }
 } else {
   sendFile(file);
 }
+
 ```
 
 * Our logic is getting a bit more complex, so we're extracting some functions to make it more readable
