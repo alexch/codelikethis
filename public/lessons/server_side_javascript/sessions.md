@@ -64,10 +64,8 @@ console.log(hash);
 * your server needs to maintain the storage for an unknown number of users
   * so you should figure out an *expiration* strategy if you don't want your database to fill up
 
-
 # Sample Code
 
 * in RAM
 * in Files
 * in Mongo
-

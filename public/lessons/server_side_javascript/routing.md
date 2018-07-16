@@ -48,6 +48,7 @@ A more modern app will send *static* HTML/CSS/JS, then *that* code will run on t
 ### article.html 
 
 ```html
+@@@html
 <div class='article'>
   <h2 id='title'></h2>
   <i>by <span id='author'></span></i>
@@ -57,7 +58,8 @@ A more modern app will send *static* HTML/CSS/JS, then *that* code will run on t
 
 ### article.js
 
-```
+```js
+@@@js
 let articleId = document.location.pathname.split('/').splice(-1);
 
 fetch('/articles/' + articleId + '.json')
@@ -127,20 +129,72 @@ For instance, an actual search through the blog -- by keyword or by date or by a
 
 `/search?author=Julius+Caesar` would become `{author: "Julius Caesar"}`
 
-```
-function sendSearchResults() {
-  let results = allArticles().filter((article) => {
-    if (queryParams.get('author')) {
-      return article.author.toLowerCase() === 
-        queryParams.get('author').toLowerCase();
-    }
-  });
-  data = JSON.stringify(results);
-  contentType = 'text/json';
+# Parsing Parameters
+
+Your app server framework might convert query or post params into an object for you, but it's not hard to do yourself:
+
+```javascript
+@@@javascript
+function decodeParams(query) {
+  let fields = query.split('&');
+  let params = {};
+  for (let field of fields) {
+    let [ name, value ] = field.split('=');
+    value = value.replace(/\+/g,' ');
+    params[name] = decodeURIComponent(value);
+  }
+  return params;
 }
 ```
 
+# Search
+
+New endpoints:
+
+ * `/search.json` returns JSON results of a search
+ * `/search` returns `search.html`
+    * which calls `/search.json` on page load to perform the actual search
+
+The parameters to search are 
+
+| Name | Type | Description | 
+|---|---|---|
+| `author` | string | search for documents whose `author` contains the value |
+
+That's it for now! (We can add other fields later if we want.) 
+
+# Handling Search
+
+Since our database is so small, we will search through all documents in RAM. 
+
+```
+@@@javascript
+  function sendSearchResults() {
+    let results = allArticles().filter((article) => {
+      if (queryParams.get('author')) {
+        let articleAuthor = article.author.toLowerCase();
+        let targetAuthor = queryParams.get('author').toLowerCase();
+        return articleAuthor.includes(targetAuthor);
+      }
+    });
+    let data = JSON.stringify(results);
+    let contentType = 'text/json';
+    finishResponse(contentType, data);
+  }
+```
+
+See? Who needs a database? :-)
+
 # Routing in Express
 
-(fancy syntax, but same basic premise)
+<https://expressjs.com/en/guide/routing.html>
+
+Fancy syntax, but same basic premise:
+
+```
+app.get('/about', function (request, response) {
+  response.send('about')
+})
+
+```
 

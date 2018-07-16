@@ -27,15 +27,19 @@ class Track
     lesson name: "/www/forms"
     lesson name: "forms_and_parameters"
 
-    lesson name: "routing"
+    lesson name: "routing", description: "codealong walkthrough, building a blog server by adding routes and form submission to our core file server"
 
     # lesson name: "state",
     #        description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
 
     lesson name: "cookies", display_name: "State: Cookies"
-    lesson name: "sessions", display_name: "State: Sessions"
+    lesson name: "saving_state_in_files", display_name: "State: Files"
+
     lesson name: "/db/overview", display_name: "State: Databases",
            description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."
+
+    lesson name: "sessions", display_name: "State: Sessions"
+
     lesson name: "sessions_with_mongo"
 
 

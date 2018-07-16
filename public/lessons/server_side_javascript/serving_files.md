@@ -288,7 +288,35 @@ One final change to our file server...
 
 Let's make it so you can't serve server-only file and directories like *node_modules* and *README.md*.
 
+```javascript
+    let publicDir = $path.resolve('.');
+    if (!file.startsWith(publicDir)) {
+      console.log("User requested file '" + request.url + "' (not permitted)");
+      sendError(403, "Error: you are not permitted to access that file.");
+    }
+```
+
 run `node simple_dir.js` and visit <http://localhost:5000/images>
 
 note that these files are *inside* the `public` directory even though the *request path* did **not** include the word "public"
 
+# Prepare for extraction
+
+Now that we have a (mostly) working file server, let's extract it into a library. Look at `lib/assistant.js`.
+
+We took the functions `sendFile`, `sendError`, etc., and put them into a *class* named FileServer.
+
+Now the [core server](core_server.js) is tight:
+
+```
+const http = require('http');
+const Assistant = require('./lib/assistant');
+const port = process.env.PORT || 5000;
+
+http.createServer(function (request, response) {
+  console.log('Finding ' + request.url);
+  let assistant = new Assistant(request, response);
+  assistant.handleFileRequest();
+}).listen(port);
+console.log("Listening on port " + port);
+```

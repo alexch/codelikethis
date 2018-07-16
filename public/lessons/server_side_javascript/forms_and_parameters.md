@@ -82,7 +82,7 @@ GET requests
  - Query Parameters are in the URL, after the `?`
  - format: `name=value&othername=othervalue`
  - plus weird escaping rules (percent-encoding and space-to-plus)
- 
+
 POST requests
  - Post Parameters are in the *body* of the request
  - Usually in the same `name=value&` format

@@ -57,7 +57,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
 # Malware Vectors
 
-**Beware** the "same origin policy":
+**Beware** the "[same origin policy](https://www.w3.org/Security/wiki/Same_Origin_Policy)":
 
 ```
 Refused to display 'http://www.burlingtoncodeacademy.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.

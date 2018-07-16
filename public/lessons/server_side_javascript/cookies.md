@@ -50,7 +50,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
 the Fetch API [does not always send cookies](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials)
 
-(it's part of "same origin policy", enforcement of which is often draconian)
+(it's part of "[same origin policy](https://www.w3.org/Security/wiki/Same_Origin_Policy)", enforcement of which is often draconian)
 
 to send them you may need to set `credentials: 'include'` like this
 
@@ -64,5 +64,8 @@ fetch('/articles.json', {credentials: 'include'})
 
 # Sample Code
 
-`cookie_counter.js`
+[`cookie_counter.js`](https://github.com/BurlingtonCodeAcademy/simple-server/blob/master/cookie_counter.js
+) is based off our blog server, but adds a "hit counter" which it increments on every request.
+
+run `node cookie_counter.js` and then visit <http://localhost:5000/cookie.html> to see it in action. (Keep reloading the page!)
 
