@@ -24,13 +24,51 @@ Article Schema:
 
 Endpoints:
 
-`POST /articles` create a new article *or* update an existing one
+`POST /articles` create a new article
 
 # Tech
 
 NodeJS has a nice `fs` library built in that has some smooth ways of reading and writing files.
 
-# Code
+# Code - find id
 
-todo: add HTML and JS to `simple_blog.js`
+```
+  // find the highest id...
+  let id = articles.reduce((topId, article) => {
+    console.log(article.id);
+    return Math.max(topId, article.id);
+  }, 1);
+  // ...and pick a higher one
+  let newId = id + 1;
+```
 
+# Code - read params, write file
+
+```
+  assistant.parsePostParams((params) => {
+    let article = {
+      id: newId,
+      author: params.author,
+      title: params.title,
+      body: params.body
+    }
+    let articleDataFile = $path.join(articlesDir, newId + ".json");
+    fs.writeFile(articleDataFile, JSON.stringify(article), (err) => {
+      if (err) {
+        assistant.sendError(500, err);
+      } else {
+        assistant.sendRedirect('/articles');
+      }
+    })
+```
+
+# Code - redirect
+```javascript
+  sendRedirect(path) {
+    let message = `Redirecting to ${path}`;
+    console.log(message);
+    this.response.statusCode = 302;
+    this.response.setHeader('Location', path);
+    this.finishResponse('text/plain', message);
+  }
+```
