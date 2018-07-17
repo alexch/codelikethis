@@ -10,9 +10,12 @@ class Track < Thing
     # Programming
     lesson name: "modern_debugging" do
       link href: "https://m.xkcd.com/627/", name: "Tech Support Cheat Sheet (xkcd)"
-      link name: "on technical sophistication", 
+      link name: "on technical sophistication",
         href: "https://www.learnenough.com/command-line-tutorial#aside-technical_sophistication"
     end
+
+    lesson name: "code_debt"
+
     lesson name: "best_practices" do
       link href: "https://github.com/thoughtbot/guides/tree/master/best-practices"
     end
