@@ -268,7 +268,8 @@
         "geocoding",
         "geolocation",
         "interactive_mapping",
-        "jquery"
+        "jquery",
+        "local_storage"
       ],
       "side_tracks": [
         {
@@ -341,10 +342,9 @@
     {
       "track": "server_side_javascript",
       "lessons": [
-        "/client_side_coding/local_storage",
         "hello_node",
         "http",
-        "http_server",
+        "serving_files",
         "forms_and_parameters",
         "routing",
         "simple_chat",
