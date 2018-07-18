@@ -53,7 +53,7 @@ console.log("Listening on port " + port);
 
 * the server only serves a single file, `index.html`, no matter what the client requests
 * it uses the `Content-Type` header to tell the client that the file is in HTML format
-* if there is an error loading the file, it sends the correct *status code* 
+* if there is an error loading the file, it sends the correct *[status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)* 
   * (404 means "File not found" although other errors are possibly more correct)
   
 # Single File Server: Code Walkthrough

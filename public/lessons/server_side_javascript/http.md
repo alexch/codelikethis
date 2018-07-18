@@ -18,6 +18,7 @@ For a lighter overview of HTTP and DNS, see [this lesson in the www track](/less
 * **very** simple protocol, geared towards ease of use and implementation
 * **100%** ASCII characters in and out
 * Human readability was a goal
+* **stateless* meaning "one request, one response, and close"
 
 # HTTP 0.9 protocol
 
@@ -67,7 +68,7 @@ Date: Sat, 07 Jul 2018 19:50:23 GMT
 
 # LAB: Simple Server
 
-1. Launch your hello world server with `node index.js`
+1. Launch your hello world server with `node simple_file.js`
 2. *In a separate terminal window*, run `telnet localhost 5000`
 3. Type in `GET /` and hit the enter key *twice*
 4. Look at the output. Is it what you expect? Why or why not?
