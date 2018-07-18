@@ -21,11 +21,11 @@ For a lighter overview of HTTP and DNS, see [this lesson in the www track](/less
 
 # HTTP 0.9 protocol
 
-|Step|Client|Server|
-|---|---|---|
-|open connection  |`telnet example.com 80`|
-|request a resource |`GET /index.html` &#9166; |
-|return the resource | |`<html><body>...`
+| Step                | Client                    | Server            |
+|---------------------|---------------------------|-------------------|
+| open connection     | `telnet example.com 80`   |                   |
+| request a resource  | `GET /index.html` &#9166; |                   |
+| return the resource |                           | `<html><body>...` |
 
 # HTTP 0.9 example
 
@@ -38,7 +38,7 @@ $ telnet google.com 80
 ```
 
   * (on Windows 10 it's [a little complicated](https://social.technet.microsoft.com/wiki/contents/articles/38433.windows-10-enabling-telnet-client.aspx) to enable telnet but it does work eventually)
-  * similar with OS X High Sierra 
+  * similar with OS X High Sierra
   * if you can't get telnet to work, you can use Postman
 
 then you'll see this:
@@ -77,21 +77,21 @@ Date: Sat, 07 Jul 2018 19:50:23 GMT
 * same basic idea as HTTP 0.9, but with
   * a version identifier
   * request headers
-  * response status line 
+  * response status line
   * response headers
 
 # HTTP 1.0 protocol
 
-|Step|Client|Server|
-|---|---|---|
-|open connection  |`telnet example.com 80`|
-|request a resource |`GET /index.html HTTP/1.0`  &#9166; |
-|request headers | `User-Agent: Dogscape 1.0` &#9166; |
-|blank line |  &#9166; |
-|response status     | | `HTTP/1.0 200 OK` |
-|response headers    | | `Content-Type: text/html` <br> `Content-Length: 12340` |
-|blank line          | |  &#9166; |
-|response body      | |`<html><body>...` |
+| Step               | Client                              | Server                                                 |
+|--------------------|-------------------------------------|--------------------------------------------------------|
+| open connection    | `telnet example.com 80`             |                                                        |
+| request a resource | `GET /index.html HTTP/1.0`  &#9166; |                                                        |
+| request headers    | `User-Agent: Dogscape 1.0` &#9166;  |                                                        |
+| blank line         | &#9166;                             |                                                        |
+| response status    |                                     | `HTTP/1.0 200 OK`                                      |
+| response headers   |                                     | `Content-Type: text/html` <br> `Content-Length: 12340` |
+| blank line         |                                     | &#9166;                                                |
+| response body      |                                     | `<html><body>...`                                      |
 
 # HTTP 1.0 details
 
