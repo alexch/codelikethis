@@ -13,7 +13,7 @@ In this lesson you will create a trivial web application in NodeJS and deploy it
 
 - Inside this directory make a file named `index.js` and fill it with the following code:
 
-```ecmascript 6
+```
 @@@ js
 let http = require('http');
 const port = process.env.PORT || 5000;

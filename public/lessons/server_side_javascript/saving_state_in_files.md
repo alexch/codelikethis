@@ -63,6 +63,7 @@ NodeJS has a nice `fs` library built in that has some smooth ways of reading and
 ```
 
 # Code - redirect
+
 ```javascript
   sendRedirect(path) {
     let message = `Redirecting to ${path}`;

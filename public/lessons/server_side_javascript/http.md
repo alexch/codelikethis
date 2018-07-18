@@ -17,6 +17,7 @@ For a lighter overview of HTTP and DNS, see [this lesson in the www track](/less
 
 * **very** simple protocol, geared towards ease of use and implementation
 * **100%** ASCII characters in and out
+* Human readability was a goal
 
 # HTTP 0.9 protocol
 
@@ -37,6 +38,8 @@ $ telnet google.com 80
 ```
 
   * (on Windows 10 it's [a little complicated](https://social.technet.microsoft.com/wiki/contents/articles/38433.windows-10-enabling-telnet-client.aspx) to enable telnet but it does work eventually)
+  * similar with OS X High Sierra 
+  * if you can't get telnet to work, you can use Postman
 
 then you'll see this:
 
@@ -90,11 +93,10 @@ Date: Sat, 07 Jul 2018 19:50:23 GMT
 |blank line          | |  &#9166; |
 |response body      | |`<html><body>...` |
 
-# Main points
+# HTTP 1.0 details
 
 * Request and (part of) Response are still ASCII
 * `Content-Type` header allows different file types
   * reused **MIME**: (Multipurpose Internet Mail Extensions) spec for file type names
 * `Content-Length` header so the client knows how big a file to expect
 * ...and many more headers to help clients and servers work together
-

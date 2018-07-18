@@ -58,8 +58,7 @@ A more modern app will send *static* HTML/CSS/JS, then *that* code will run on t
 
 ### article.js
 
-```js
-@@@js
+```
 let articleId = document.location.pathname.split('/').splice(-1);
 
 fetch('/articles/' + articleId + '.json')
@@ -119,7 +118,7 @@ function parsePath(path) {
 }
 ```
 
-[also scroll through simple_blog.js looking for interesting bits]
+(also scroll through simple_blog.js looking for interesting bits)
 
 # URL Query Parameters
 
@@ -129,6 +128,32 @@ For instance, an actual search through the blog -- by keyword or by date or by a
 
 `/search?author=Julius+Caesar` would become `{author: "Julius Caesar"}`
 
+# URL Query Parameters in NodeJS
+
+NodeJS has a `URL` object that wraps `request.url` and exposes fields for all the various URL parts. It's got some weird names for those parts, though, so you may want to assign them to better-named variables.
+
+Instantiate it like this:
+
+```
+let url = new URL(request.url, 'http://localhost:5000/');
+let path = url.pathname;
+let queryParams = url.searchParams;
+```
+
+Use it like this:
+
+```
+function sendSearchResults() {
+  let results = allArticles().filter((article) => {
+    if (queryParams.get('author')) {
+      return article.author.toLowerCase() === 
+        queryParams.get('author').toLowerCase();
+    }
+  });
+  data = JSON.stringify(results);
+  contentType = 'text/json';
+}
+```
 # Parsing Parameters
 
 Your app server framework might convert query or post params into an object for you, but it's not hard to do yourself:
@@ -182,7 +207,6 @@ Since our database is so small, we will search through all documents in RAM.
     finishResponse(contentType, data);
   }
 ```
-
 See? Who needs a database? :-)
 
 # Routing in Express
@@ -190,11 +214,12 @@ See? Who needs a database? :-)
 <https://expressjs.com/en/guide/routing.html>
 
 Fancy syntax, but same basic premise:
++Use it like this:
+ 
+ ```
 
-```
 app.get('/about', function (request, response) {
   response.send('about')
 })
 
-```
 
