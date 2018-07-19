@@ -58,9 +58,9 @@ Tech:
 
 ## Step 5: Names
 
-Client: Add a `name` field to the "submit message" form. 
+Client: Add an `author` field to the "submit message" form.
 
-Server: Process this `name` parameter and use it in the message
+Server: Process this `author` parameter and save it in the message.
 
 More client: Make sure the client UI displays the name as well as the body of each message.
 
