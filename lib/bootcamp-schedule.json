@@ -355,8 +355,7 @@
       ],
       "projects": [
         "shortly",
-        "chat_client",
-        "socket_chat",
+        "chat",
         "resolve_an_issue",
         "capstone"
       ],
