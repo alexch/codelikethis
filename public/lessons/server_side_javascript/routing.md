@@ -223,3 +223,11 @@ app.get('/about', function (request, response) {
 })
 
 
+# REST area
+
+Some of these concepts of "path parameters" and "routing" are from a idea called REST.
+
+It argues that people designing web applications should consider their apps URLs to be an essential part of their app's design and functionality, and that those URL paths should follow a convention that exposes parts of the app as *resources* that can be identified and interacted with individually using a common set of *methods* (that happen to be more or less the same as the HTTP methods).
+
+todo: more on REST
+

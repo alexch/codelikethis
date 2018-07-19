@@ -27,26 +27,48 @@ e.g.
 
 ## Step 2: Recent Messages
 
+**Given** a set of messages in the recent past
+
+**When** a user requests all messages, if they add a `since` parameter to the GET request
+
+**Then** only messages that were sent since then are returned
+
+#### Tech:
+
+Server-side:
+
 * GET accepts a parameter `since`
-* Create a variable `lastMessageWhen`
-* When you receive a list of messages, set `lastMessageWhen` to the *most recent* message time
+
+Client-side:
+
+* Create a variable `mostRecentMessageAt`
+* When you receive a list of messages, set `mostRecentMessageAt` to the *most recent* message time
 * When you request a list of messages, add `since` to the request
 
-#### 
+## Step 3: Refresh Messages
 
-  * Implement in a `<button>` to fetch new messages
+* Implement a `<button>` to fetch new messages
+  * if you're using the source code template, this is already implemented
 
-#### Poll for new messages every 10 seconds
+## Step 4: Poll for new messages every 10 seconds
 
-  * Implement in a `<button>` to fetch new messages
+Tech:
 
-#### Large message list + paging messages
+* use `setInterval` or `setTimeout`
 
-  * Handle scrolling back through older messages
+## Step 5: Rooms
 
-### POST messages to /chat
+Change stuff around so `/chat/1` sends a message to room number 1.
+
+What is a room? Why is it number 1? TBD in a design session.
 
 #### Any message sent to /chat displays in the Main room
 
   * Message should be displayed with the `author` and `created_at`
   * Should there be a maximum message length/size?
+
+## Backlog
+
+  * Handle scrolling back through older messages
+  * Persistence (after server restart)
+

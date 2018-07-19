@@ -289,7 +289,7 @@ One final change to our file server...
 Let's make it so you can't serve server-only file and directories like *node_modules* and *README.md*.
 
 ```javascript
-    let publicDir = $path.resolve('.');
+    let publicDir = $path.resolve('./public');
     if (!file.startsWith(publicDir)) {
       console.log("User requested file '" + request.url + "' (not permitted)");
       sendError(403, "Error: you are not permitted to access that file.");
