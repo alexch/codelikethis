@@ -56,7 +56,17 @@ Tech:
 
 * use `setInterval` or `setTimeout`
 
-## Step 5: Rooms
+## Step 5: Names
+
+Client: Add a `name` field to the "submit message" form. 
+
+Server: Process this `name` parameter and use it in the message
+
+More client: Make sure the client UI displays the name as well as the body of each message.
+
+Extra credit: store the name in a cookie so the user doesn't have to keep typing it
+
+## Step 6: Rooms
 
 Change stuff around so `/chat/1` sends a message to room number 1.
 
