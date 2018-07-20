@@ -34,10 +34,7 @@ Do you want to work with a client (or "project sponsor")? Here are some worthy p
 
 * https://github.com/openopps/openopps-platform - Open Opportunities is creating a network of federal employees that will lead to a more effective, efficient, responsive government by sharing skills and collaborating on projects that support the mission of an agency or the government as a whole.
 
-
 # Step 2: Proposal
-
-[TODO: deadline for this step?]
 
 Write up a brief (500 words or less) project proposal. Include
 
@@ -50,6 +47,8 @@ Schedule a time to discuss the project with a teacher. We will evaluate it for f
 If it's acceptable, we'll assign you a coach, who will check in with your team as needed, and attend demos, retros and planning meetings for advice and counsel.
 
 If your project is sponsorless (i.e. your own idea), your coach (or maybe another student?) may agree to act as the sponsor, or help you find one. (In XP/Agile this role is called the "customer" or "business owner"; it's useful to have a person who's detached from the day-to-day coding to make decisions about priority and scope.)
+
+Deadline for proposal for Cohort Zero: July 27
 
 # Step 3: Inception
 
