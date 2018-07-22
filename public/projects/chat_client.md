@@ -7,7 +7,7 @@ We are running a chat server; build and run the client
 Can be represented as a JSON object in a POST body or as a query string on GET requests
 
 * when - a string in ISO8601 format
-* content - a string
+* body - a string
 * author - a string
 
 e.g.
@@ -15,7 +15,7 @@ e.g.
 {
     "when": "2018-07-15T20:00:47.696Z",
     "author": "alex",
-    "content": "my dog has fleas"
+    "body": "my dog has fleas"
 }
 ```
 
@@ -68,9 +68,12 @@ Extra credit: store the name in a cookie so the user doesn't have to keep typing
 
 ## Step 6: Rooms
 
-Change stuff around so `/chat/1` sends a message to room number 1.
+Change stuff around so 
 
-What is a room? Why is it number 1? TBD in a design session.
+  * `GET /chat/debugging` gets all messages from the room whose id is "debugging".
+  * `POST /chat/debugging` sends a message to that room
+
+Assume that the server will create a new room if it doesn't already have one with that id.
 
 #### Any message sent to /chat displays in the Main room
 
@@ -82,3 +85,4 @@ What is a room? Why is it number 1? TBD in a design session.
   * Handle scrolling back through older messages
   * Persistence (after server restart)
 
+Next: write a [chat_server](chat_server) using classes

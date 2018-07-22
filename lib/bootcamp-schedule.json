@@ -347,7 +347,6 @@
         "serving_files",
         "forms_and_parameters",
         "routing",
-        "simple_chat",
         "cookies",
         "saving_state_in_files",
         "sessions",
@@ -355,8 +354,7 @@
       ],
       "projects": [
         "shortly",
-        "chat",
-        "resolve_an_issue",
+        "chat_client",
         "capstone"
       ],
       "side_tracks": [
@@ -384,7 +382,7 @@
         "oo_js"
       ],
       "projects": [
-        "peer_code_review"
+        "chat_server"
       ]
     },
     {

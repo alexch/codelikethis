@@ -154,3 +154,29 @@ since it will make your code easier to read and more compatible with the rest of
 * this technique *cannot* be used with the `class` keyword
   * if someone's figured out a way to do it, please let me know :-)
 
+# Constructors are for Initialization
+
+the principle of *Complete Construction* says that after the constructor executes, the object is in a *valid* state
+
+in practice, this means "pass all initial values into the constructor"
+
+# Constructors are for Validation
+
+constructors are a great place to *validate* your values
+
+```
+class Circle {
+    constructor(radius) {
+        if (radius <= 0) {
+            throw('radius must be a positive number')
+        }
+        this.radius = radius;
+    }
+```
+
+* that `if` statement is known as a "guard clause"
+  * it guards against bad values
+  * also known as "asserting your arguments" or "design by contract"
+* validation is one of the most valuable features of object-oriented programming
+  * it lets you write less code in other methods, confident that you don't have to check for bad data or boundary conditions
+
