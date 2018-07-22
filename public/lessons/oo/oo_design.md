@@ -11,6 +11,8 @@ the [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter) (aka the Prin
 
 > "Only talk to your friends."
 
+# The Law of Demeter Explained
+
 Explanation [in plain English](http://wiki.c2.com/?LawOfDemeter):
 
 * Your method can call other methods in its class directly (via `this`)
@@ -24,18 +26,24 @@ but most everything else is disallowed, especially
 * "walking down" a nested object hierarchy
   * though "method chaining" can be fine, as long as the object returned is the original object, or a known friend of the caller
 
-
 # a LoD example
 
-Instead of this:
+If you see code like this:
 
-`if (course.students.reduce((maxAge, student) => Math.max(maxAge, student.age), 0) <= 18) {`
+```
+let maxAge = course.students.reduce(
+    (maxAge, student) => Math.max(maxAge, student.age)
+  , 0);
+if (maxAge < 18) {
+```
 
-design your program to do this instead:
+then redesign your program so you can do this instead:
 
 `if (course.hasOnlyMinorStudents()) {`
 
-which implies a design like this:
+# LoD example continued
+
+...which implies an object-oriented design like this:
 
 ```
 class Course {
@@ -43,7 +51,7 @@ class Course {
     this.students = [];
   }
   hasOnlyMinorStudents() {
-    return this.maxStudentAge() <= 18;
+    return this.maxStudentAge() < 18;
   }
   maxStudentAge() {
     return this.students.reduce((maxAge, student) => 
@@ -52,6 +60,8 @@ class Course {
 ```
 
 * the complexity of students and age
-   * (e.g. the fact that there is an array of students, and each student has an "age" property that represents "years old") 
+   * i.e. the fact that there is an array of students,
+   * and each student has an "age" property that represents "years old",
+   * and 18 is the age of majority in the USA
 * is *hidden* (or *encapsulated*) behind the simpler "course" interface
 

@@ -20,16 +20,6 @@ In JavaScript, the keyword `class`
 
 # OO Concept: `this`
 
-# JS Detail: Fat Arrow and Binding
-
-In most OO languages, the pointer *`this`* (sometimes named *`self`*) is managed automatically. Any time you're executing code inside class A, `this` is guaranteed to point to an instance of that class.
-
-In JavaScript, `this` needs to be managed more actively. 
-
-Specifically, during *callbacks* `this` still points to the *other* object, even inside a callback!
-
-Solution: the `=>` fat arrow *re-binds* `this` to point to the *current* object.
-
 # OO Concept: `constructor`
 
 # OO Concept: `static`

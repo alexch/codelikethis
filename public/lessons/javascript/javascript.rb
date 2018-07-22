@@ -34,7 +34,9 @@ class Track < Thing
     lesson name: "encapsulation",
            description: "Encapsulation is an important part of Object-Oriented programming, but we don't need objects to achieve it. This lesson covers using scope and IIFEs to make truly private variables in JavaScript without classes or prototypes."
     lesson name: 'oo_js', display_name: "Object-Oriented JavaScript"
-    lesson name: 'oo_design', display_name: "Object-Oriented Design Techniques"
+    lesson name: 'oo_js_creation', display_name: "Object-Oriented JavaScript: Creating Objects"
+    lesson name: 'oo_js_prototypes', display_name: "Object-Oriented JavaScript: Using Prototypes"
+    lesson name: '/oo/oo_design'
 
     # todo?: We'll also consider hoisting, this, bind/call/apply, fat and skinny arrows, and more.
 

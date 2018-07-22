@@ -32,7 +32,7 @@ but it's not the only part (there's also inheritance, polymorphism, interfaces, 
 
 and you can use encapsulation on its own
 
-# Example
+# Encapsulation Technique 1: closure scope
 
 ```js
 @@@ js
@@ -64,7 +64,7 @@ console.log("Radius is " + circle.radius); // THIS WILL FAIL
 
 > `radius` is **encapsulated** inside `circle`
 
-# Example 2: ivars
+# Encapsulation Technique 2: ivars
 
 *instance variables* are encapsulated inside an "instance" (a particular copy of the object)
 
@@ -87,21 +87,31 @@ let circle = createCircle(3);
 console.log("Area is " + circle.area());
 ```
 
-# Example 3: IIFE
+# Encapsulation Technique 3: IIFE
 
 * The following cryptic syntax is very common in JS
 * It's essentially the same as the previous code, but combining two steps into one
 * It's called an **IIFE** = Immediately Invoked Function Expression
 
- `(function(){ })();`
-
+```
+@@@js
+(function(){ })();
+```
 
 Expanded:
 
 ```
-(  function() {   }  ) ();
-   ^define             ^invoke
+( function() { ... }  ) ();
+   ↑           ↑         ↑
+  define       ↑       invoke
+              execute   
 ```
+
+The trick is, when you *invoke* the function, you generate a *new scope* for that invocation's closure.
+
+You then *preserve* that scope by returning a pointer to an object that you created *inside* that closure.
+
+# Encapsulation with IIFE Example
 
 Example:
 
@@ -124,8 +134,3 @@ console.log("Area is " + circle.area());
 
 <https://developer.mozilla.org/en-US/docs/Glossary/IIFE>
 
-# Example 4: private functions
-
-[TODO: exmaple]
-
-**Beware**: private functions are difficult to write unit tests for.

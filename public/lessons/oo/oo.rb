@@ -6,4 +6,5 @@ Track::Oo = Track.new(
   description: "The principles of designing programs using objects."
 ) do
   lesson name: "introduction_to_objects"
+  lesson name: "oo_design"
 end
