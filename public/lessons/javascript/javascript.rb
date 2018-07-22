@@ -34,6 +34,9 @@ class Track < Thing
     lesson name: "regexp", display_name: "Regular Expressions"
 
 
+    lesson name: 'hybrid'
+
+
     lesson name: "/agile/test_driven"
     lesson name: "tdd_in_js"
     lesson name: "no_frills_testing"

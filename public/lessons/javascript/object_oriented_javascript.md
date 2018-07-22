@@ -1,7 +1,5 @@
 # Object-Oriented JavaScript
 
-"I think if one wants to make real progress in JS one needs to drag one's class-based-OO self out back and beat him to death." - Steve Conover
-
 # Object vs. Object
 
 * In JS, an "object" is just a hash
@@ -24,9 +22,54 @@
 * In pure OO, a method only directly uses two sources of data
     * parameters of the method
     * properties of the method's own object
-    * cf. the Law Of Demeter
+    * cf. the Law Of Demeter (next slide)
 * All other data are manipulated via *messages* to other objects
     * i.e. methods
+
+# The Law of Demeter
+
+the [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter) (aka the Principle of Least Knowledge) is not a law, but a rule of thumb for designing object-oriented programs. 
+
+> "Only talk to your friends"
+
+Explanation [in plain English](http://wiki.c2.com/?LawOfDemeter):
+
+* Your method can call other methods in its class directly (via `this`)
+* Your method can call methods on its own fields directly, but not on the fields' fields
+* When your method takes parameters, your method can call methods on those parameters directly.
+* When your method creates local objects, that method can call methods on the local objects.
+
+so
+
+* One should not have a chain of messages `a.getB().getC().doSomething()` in some class other than a's class.
+
+# a LoD example
+
+Instead of this:
+
+`if (course.students.reduce((maxAge, student) => Math.max(maxAge, student.age), 0) <= 18) {`
+
+design your program to do this instead:
+
+`if (course.hasOnlyMinorStudents()) {`
+
+which implies a design like this:
+
+```
+class Course {
+  constructor() {
+    this.students = [];
+  }
+  hasOnlyMinorStudents() {
+    return this.maxStudentAge() <= 18;
+  }
+  maxStudentAge() {
+    return this.students.reduce((maxAge, student) => 
+            Math.max(maxAge, student.age), 0);
+  }
+```
+
+Note that stu
 
 # "this" is it
 
@@ -78,26 +121,6 @@ $('#someButton').click(function(event) {
     self.clickedButton = $(this).value();
 });
 ```
-
-# `apply` Yourself
-
-* `apply` is a function that calls a function
-* `apply` allows you to dynamically set `this` and `arguments`
-* `apply` is called on the function itself using "."
-
-        @@@ javascript
-        var add = function(x,y) { return x+y; }
-        add.apply(null, [2, 3]); // returns 5
-
-        var square = function() { return this.value * this.value; }
-        var x = {value: 10}
-        square.apply(x);  // returns 100
-        var y = {value: 20}
-        square.apply(y);  // returns 400
-
-        var increaseBy = function(amount) { return this.value + amount; }
-        increaseBy.apply(x, [4]); // returns 14
-        increaseBy.apply(y, [5]); // returns 25
 
 # A Million Ways To Make An Object
 
@@ -479,6 +502,26 @@ class Rectangle {
 
   * Q: What's actually doing the reversing?
   * Q: Why are we using "apply"?
+
+# `apply` Yourself
+
+* `apply` is a function that calls a function
+* `apply` allows you to dynamically set `this` and `arguments`
+* `apply` is called on the function itself using "."
+
+        @@@ javascript
+        var add = function(x,y) { return x+y; }
+        add.apply(null, [2, 3]); // returns 5
+
+        var square = function() { return this.value * this.value; }
+        var x = {value: 10}
+        square.apply(x);  // returns 100
+        var y = {value: 20}
+        square.apply(y);  // returns 400
+
+        var increaseBy = function(amount) { return this.value + amount; }
+        increaseBy.apply(x, [4]); // returns 14
+        increaseBy.apply(y, [5]); // returns 25
 
 # Prototypical Inheritance
 
