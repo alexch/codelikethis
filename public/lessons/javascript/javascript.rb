@@ -13,14 +13,6 @@ class Track < Thing
     lesson name: "javascript_for_programmers",
            description: "This lesson is a whirlwind tour of JavaScript features for people already fluent in another programming language. For a more measured and beginner-focused tutorial, check out the Learn to Code with JavaScript track instead."
 
-    lesson name: "scope",
-      description: "When can you access a JavaScript variable? It depends on its scope. Let's discuss the various scopes a variable can occupy, including global vs local, functional vs lexical, private vs public. We'll also consider hoisting, this, bind/call/apply, fat and skinny arrows, and more." do
-      link href: "https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/"
-      link href: "https://scotch.io/tutorials/understanding-scope-in-javascript"
-    end
-
-    lesson name: "encapsulation"
-
     lesson name: "json",
       description: "JSON is a coding language, but it's not a programming language. Its purpose is to represent data with no behavior attached. It's useful for saving state, transferring information across a network, writing config files or editing settings. And since it's a strict subset of the JavaScript language syntax, it's natural to use it in JavaScript programs and JavaScript-aware text editors."
 
@@ -33,9 +25,18 @@ class Track < Thing
 
     lesson name: "regexp", display_name: "Regular Expressions"
 
+    lesson name: "scope",
+           description: "When can you access a JavaScript variable? It depends on its scope. Let's discuss the various scopes a variable can occupy, including global vs local, functional vs lexical, private vs public." do
+      link href: "https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/"
+      link href: "https://scotch.io/tutorials/understanding-scope-in-javascript"
+    end
+    lesson name: 'hybrid', display_name: "Hybrid Styles"
+    lesson name: "encapsulation",
+           description: "Encapsulation is an important part of Object-Oriented programming, but we don't need objects to achieve it. This lesson covers using scope and IIFEs to make truly private variables in JavaScript without classes or prototypes."
+    lesson name: 'oo_js', display_name: "Object-Oriented JavaScript"
+    lesson name: 'oo_design', display_name: "Object-Oriented Design Techniques"
 
-    lesson name: 'hybrid'
-
+    # todo?: We'll also consider hoisting, this, bind/call/apply, fat and skinny arrows, and more.
 
     lesson name: "/agile/test_driven"
     lesson name: "tdd_in_js"

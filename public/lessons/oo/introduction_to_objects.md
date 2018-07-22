@@ -1,9 +1,5 @@
 # Introduction to Object-Oriented Programming in JavaScript
 
-# What is an Object?
-
-* an *encapsulation* of *state* with *behavior*
-
 # Codealong with Chat
 
 In the server-side lesson we wrote code to 
@@ -12,7 +8,7 @@ In this lesson we will introduce Object-Oriented concepts and illustrate them wi
 
 # OO Concept: `class`
 
-A *class* is a type.
+A *class* defines a type.
 
 An *instance* is an individual.
 

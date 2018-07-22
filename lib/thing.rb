@@ -148,6 +148,11 @@ class Thing
     Server-Side
   ]
 
+  ALIASES = {
+      "oo" => "Object-Oriented",
+      "js" => "JavaScript"
+  }
+
   # https://english.stackexchange.com/questions/14/which-words-in-a-title-should-be-capitalized
   SMALL_WORDS = lookup %w[
     a
@@ -189,6 +194,7 @@ class Thing
       (prefix, word) = word.scan(/^(["']*)(.*)$/).flatten
 
       word = WEIRD_WORDS[word.downcase] ||
+        ALIASES[word.downcase] ||     # todo: test ALIASES
         (!first_word && SMALL_WORDS[word.downcase]) ||
         word.capitalize
       first_word = false

@@ -379,9 +379,9 @@
       ]
     },
     {
-      "track": "oo",
+      "track": "javascript",
       "lessons": [
-        "introduction"
+        "oo_js"
       ],
       "projects": [
         "peer_code_review"

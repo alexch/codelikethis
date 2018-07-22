@@ -72,7 +72,7 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   lesson name: "logic"
   lesson name: "recursion"
-  lesson name: "closures"
+  lesson name: "scope"
   lesson name: "loops" do
     project name: 'guess'
   end

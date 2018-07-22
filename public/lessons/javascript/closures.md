@@ -10,6 +10,8 @@ PLUS
 
 [todo: diagram]
 
+<https://medium.com/@nickbalestra/javascripts-lexical-scope-hoisting-and-closures-without-mystery-c2324681d4be>
+
 # Scope
 
 ![scope](scope.jpg)
@@ -20,14 +22,24 @@ including:
 
   * local variables (`let` and `var`)
   * function parameters
+  * local variables and parameters of *nesting closures* of the current function
+  * global variables
 
 > scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
+
+# Lexical Scope
+
+Closures *add a layer* between global and local:
+
+  * local variables and parameters of *nesting closures* of the current function
+
+This is called "lexical scope" because a line of code can "see" all variables that are declared (= written = lexical) in the same code block, even if that code block is inside a different (nesting) function. 
 
 # Example
 
 ```js
 @@@js
-var x = 10;
+let x = 10;
 function f(y) {
     return x + y;
 }
@@ -42,8 +54,7 @@ that points to the *current* scope
 
 and so on recursively
 
-[todo: nested scope example]
-
+[todo: nested scope diagram]
 
 # Why? 1
 
@@ -71,7 +82,7 @@ and so on recursively
 
 # Why? 4
 
-* encapsulation (this is tricky)
+* encapsulation (this is tricky; for more detail, see the [encapsulation](/javascript/encapsulation) lesson)
 
         @@@js
         let count = (function() {

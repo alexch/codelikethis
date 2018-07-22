@@ -1,14 +1,20 @@
 # Object-Oriented JavaScript
 
-# Object vs. Object
+# Hybrid Style
 
-* In JS, an "object" is just a hash
-  * not very object-oriented
-* To be object-oriented you need to add a few things
-  * the "this" variable
-  * constructors
-  * prototypes
-  * privacy (aka *data hiding* or *encapsulation*)
+As context for this lesson, see the [hybrid styles](hybrid.md) lesson before, and come back to it after.
+
+Summary:
+
+JavaScript is a hybrid of (at least) three styles:
+
+  * procedural
+  * functional
+  * object-oriented
+
+# What is an Object?
+
+* an *encapsulation* of *state* with *behavior*
 
 # Definition of Object
 
@@ -22,54 +28,34 @@
 * In pure OO, a method only directly uses two sources of data
     * parameters of the method
     * properties of the method's own object
-    * cf. the Law Of Demeter (next slide)
+    * cf. the Law Of Demeter (more on this later)
 * All other data are manipulated via *messages* to other objects
     * i.e. methods
 
-# The Law of Demeter
+# Object vs. Object
 
-the [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter) (aka the Principle of Least Knowledge) is not a law, but a rule of thumb for designing object-oriented programs. 
+* In JS, an "object" is just a hash
+  * not very object-oriented
+* To be object-oriented you need to add a few things
+  * the "`this`" variable
+  * constructors and `new`
+  * prototypes (`__proto__`)
+  * privacy (aka *data hiding* or *encapsulation*)
+* More on all those concepts coming soon!
 
-> "Only talk to your friends"
+# The Linguistic Metaphor for Objects
 
-Explanation [in plain English](http://wiki.c2.com/?LawOfDemeter):
+One way to think about objects: 
 
-* Your method can call other methods in its class directly (via `this`)
-* Your method can call methods on its own fields directly, but not on the fields' fields
-* When your method takes parameters, your method can call methods on those parameters directly.
-* When your method creates local objects, that method can call methods on the local objects.
+Objects are *things* that can be *described* and can *do* things, or...
 
-so
+  * Objects are nouns (things)
+  * Methods are verbs (actions, behaviors, or imperative messages ("Sit! Good dog."))
+  * Attributes are adjectives (a property that describes a particular thing)
+  * Classes are categories (a noun that describes a *type* of thing, not a thing itself)
 
-* One should not have a chain of messages `a.getB().getC().doSomething()` in some class other than a's class.
 
-# a LoD example
 
-Instead of this:
-
-`if (course.students.reduce((maxAge, student) => Math.max(maxAge, student.age), 0) <= 18) {`
-
-design your program to do this instead:
-
-`if (course.hasOnlyMinorStudents()) {`
-
-which implies a design like this:
-
-```
-class Course {
-  constructor() {
-    this.students = [];
-  }
-  hasOnlyMinorStudents() {
-    return this.maxStudentAge() <= 18;
-  }
-  maxStudentAge() {
-    return this.students.reduce((maxAge, student) => 
-            Math.max(maxAge, student.age), 0);
-  }
-```
-
-Note that stu
 
 # "this" is it
 

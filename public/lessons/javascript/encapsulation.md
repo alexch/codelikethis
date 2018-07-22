@@ -1,6 +1,6 @@
 # Encapsulation in JavaScript
 
-[encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming) is an important principle of software design
+[encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)) is an important principle of software design
 
 essentially it means:
 
@@ -26,7 +26,7 @@ Remember, the computer doesn't care about your fancy design, but humans will, so
 
 # OO?
 
-Encapsulation is an important part of *[object-oriented design](/lessons/oo)*
+Encapsulation is an important part of *[object-oriented design](/lessons/oo_js)*
 
 but it's not the only part (there's also inheritance, polymorphism, interfaces, etc.)
 
