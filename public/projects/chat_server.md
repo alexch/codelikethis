@@ -57,6 +57,7 @@ Then run the tests and write code inside those files until all the tests pass.
 Something like this:
 
 before:
+
 ```
   function sendChatMessages(roomId, since) {
     let messages = rooms[roomId].messages;
@@ -69,6 +70,7 @@ before:
 ```
 
 after:
+
 ```
   function sendChatMessages(roomId, since) {
     let room = rooms[roomId];
