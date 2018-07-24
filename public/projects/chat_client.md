@@ -42,7 +42,7 @@ e.g.
 
 **Given** a set of messages in the recent past
 
-**When** a user requests all messages, if they add a `since` parameter to the GET request
+**When** a user requests all messages, if their client adds a `since` parameter to the GET request
 
 **Then** only messages that were sent since then are returned
 
@@ -95,7 +95,7 @@ Extra credit: store the name in a cookie so the user doesn't have to keep typing
 
 Change stuff around so 
 
-  * `GET /chat/debugging` gets all messages from the room whose id is "debugging".
+  * `GET /chat/debugging` gets all messages from the room whose id is "`debugging`".
   * `POST /chat/debugging` sends a message to that room
 
 Assume that the server will create a new room if it doesn't already have one with that id.

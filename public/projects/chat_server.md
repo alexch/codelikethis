@@ -30,12 +30,12 @@ npm install
 npx jasmine-node --verbose chat.spec.js
 ```
 
-
 ## Step 2: Make the tests pass
 
 First, create two files:
 
 `lib/message.js`:
+
 ```javascript
 class Message {
   
@@ -43,6 +43,7 @@ class Message {
 ```
 
 `lib/room.js`:
+
 ```javascript
 class Room {
   
@@ -76,3 +77,6 @@ after:
     assistant.finishResponse('text/json', data);
   }
 ```
+
+Note that you will need to declare a `rooms` variable in your server -- we should probably add tests for a new `House` class as well...
+
