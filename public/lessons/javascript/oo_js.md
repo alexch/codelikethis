@@ -206,9 +206,8 @@ Solution: the `=>` fat arrow *re-binds* `this` to point to the *current* object.
 
 ```js
 @@@js
-var self = this;
 $('#someButton').click((event) =>
-    self.clickedButton = $(this).value();
+    this.clickedButton = $(this).value();
 });
 ```
  
@@ -221,3 +220,10 @@ $('#someButton').click(function(event) {
     self.clickedButton = $(this).value();
 });
 ```
+
+
+
+
+
+
+

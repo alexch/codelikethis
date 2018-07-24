@@ -42,18 +42,17 @@ The following code is equivalent to the previous slide, but easier to read:
 * Note: remember the commas between elements
 * Note: remember to **omit** the comma on the last element
 
-
-
 # Constructors and "new"
 
 * A constructor is a **function** that's called with the **new** keyword
 * **new** says:
   * make a new empty object
-  * set the object's *prototype* to be the function's prototype (more later)
+  * set the object's *prototype* (more on this later)
   * set `this` to point to the object
   * invoke the function
   * return the object
-    * <small> (unless the function returns a different object) </small>
+      * <small> (unless the function returns a different object) </small>
+
 # the `class` keyword
 
 In 2015, JavaScript introduced a `class` keyword which is syntactic sugar on top of JavaScript's existing prototype-based inheritance. This new `class` syntax is much easier to understand than the previous system.

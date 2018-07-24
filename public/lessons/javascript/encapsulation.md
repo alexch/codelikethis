@@ -36,7 +36,7 @@ and you can use encapsulation on its own
 
 ```js
 @@@ js
-let createCircle = function(radius) {
+function createCircle(radius) {
     return {
         area: function() {
             return radius * radius * Math.PI;
@@ -70,7 +70,7 @@ console.log("Radius is " + circle.radius); // THIS WILL FAIL
 
 ```js
 @@@ js
-let createCircle = function(radius) {
+function createCircle(radius) {
     let diameter = radius * 2;
 
     return {
