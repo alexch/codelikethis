@@ -37,7 +37,7 @@ First, create two files:
 `lib/message.js`:
 
 ```javascript
-class Message {
+module.exports = class Message {
   
 }
 ```
@@ -45,12 +45,16 @@ class Message {
 `lib/room.js`:
 
 ```javascript
-class Room {
+module.exports = class Room {
   
 }
 ```
 
 Then run the tests and write code inside those files until all the tests pass.
+
+> This step will take a while! 
+
+If you don't understand the tests, ask a teacher to explain how to read tests in general, and what these tests are saying in particular.
 
 ## Step 3: Use your Message and Room objects from the server
 
