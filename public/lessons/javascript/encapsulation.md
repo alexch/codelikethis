@@ -34,6 +34,8 @@ and you can use encapsulation on its own
 
 # Encapsulation Technique 1: closure scope
 
+Here's a *factory method* that creates & returns a circle object:
+
 ```js
 @@@ js
 function createCircle(radius) {
@@ -64,9 +66,9 @@ console.log("Radius is " + circle.radius); // THIS WILL FAIL
 
 > `radius` is **encapsulated** inside `circle`
 
-# Encapsulation Technique 2: ivars
+# Encapsulation Technique 2: private variables
 
-*instance variables* are encapsulated inside an "instance" (a particular copy of the object)
+*private variables* are encapsulated inside a closure:
 
 ```js
 @@@ js
@@ -86,6 +88,8 @@ function createCircle(radius) {
 let circle = createCircle(3);
 console.log("Area is " + circle.area());
 ```
+
+Note that only `area` and `circumference` are exposed via a pointer to the circle; `diameter` and `radius` are private.
 
 # Encapsulation Technique 3: IIFE
 

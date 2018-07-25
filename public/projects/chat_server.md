@@ -32,7 +32,7 @@ npx jasmine-node --verbose chat.spec.js
 
 ## Step 2: Make the tests pass
 
-First, create two files:
+First, create three files:
 
 `lib/message.js`:
 
@@ -46,6 +46,14 @@ module.exports = class Message {
 
 ```javascript
 module.exports = class Room {
+  
+}
+```
+
+`lib/house.js`:
+
+```javascript
+module.exports = class House {
   
 }
 ```
@@ -77,12 +85,10 @@ after:
 
 ```
   function sendChatMessages(roomId, since) {
-    let room = rooms[roomId];
+    let room = house.roomWithId(roomId);
     let messages = room.messagesSince(since);
     let data = JSON.stringify(messages);
     assistant.finishResponse('text/json', data);
   }
 ```
-
-Note that you will need to declare a `rooms` variable in your server -- we should probably add tests for a new `House` class as well...
 
