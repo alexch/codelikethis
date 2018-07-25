@@ -3,22 +3,36 @@
 JavaScript is a *hybrid* language. It has some features from each of these three programming styles:
 
 * *procedural*
+
+* *functional*
+
+* *object-oriented*
+
+The overlap between these three can be messy :-(
+
+# procedural style
+
   - *functions* which may call each other
   - *parameters* and *return values* as the interface to functions
   - *local variables* for mutable state *inside a single function*
   - *global variables* for shared state between *all* functions
- 
-* *functional*
+
+# functional style
+
   - *first-class* functions which may be used *as parameters and values* by other functions
   - *closures* to let functions share state between *certain* functions
     - with strict *[lexical scoping](https://whatis.techtarget.com/definition/lexical-scoping-static-scoping)* rules (to avoid combinatorial complexity of globals)
- 
-* *object-oriented*
+  - *immutable* data structures, to minimize side effects and maximize concurrency
+  - *chaining* and *iterator functions*
+
+# object-oriented style
+
   - *instance variables* (aka *properties*) as mutable state that survives a single function call
   - *methods* to attach functions to an instance
   - *privacy* (aka *encapsulation*) so the instance variables are shared only among the instance methods)
 
-The overlap between these three can be messy :-(
+
+
 
 # Three Styles, Summarized
 
