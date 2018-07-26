@@ -91,6 +91,7 @@ class Lesson < Thing
       :videos, :videos?, :video?,
       :next_lesson, :previous_lesson,
       :next_labs,
+      :topics
     ].each do |method|
       define_method method do
         @target.send method
@@ -149,6 +150,16 @@ class Lesson < Thing
           h2 "Description"
           p description
         }
+        br
+      end
+
+      if !topics.empty?
+        div(class: 'topics') {
+          h2 "Topics"
+          topics.each do |topic|
+            widget topic.view
+          end
+          }
         br
       end
 

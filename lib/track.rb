@@ -198,6 +198,10 @@ class Track < Thing
 
       div.container {
         div.row {
+          h2 "Topics"
+          list_topics
+        }
+        div.row {
           div(class: 'col-sm-12 col-md-6 lessons') {
             h2 "Lessons"
             list_lessons
@@ -277,6 +281,10 @@ class Track < Thing
 
     def list_labs
       list_items target.labs
+    end
+
+    def list_topics
+      list_items target.topics
     end
 
   end

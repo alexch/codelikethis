@@ -6,11 +6,15 @@ class Track
     display_name: "Server-Side Coding with JavaScript",
     description: "Once you know the use of JavaScript as a command-line language, you can use it to create web application servers (aka \"web apps\"). First ",
     ) do
+
     # "the student will learn..."
     goal "the rules of the HTTP protocol"
     goal "how to create a self-contained server-side web application using NodeJS"
     goal "how to deploy NodeJS applications to Heroku"
     goal "how to pass state from the client to the server and back again"
+
+    topic name: 'http'
+
 
     # "how to deploy NodeJS applications to Amazon AWS Elastic Beanstalk", https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
     # "how to deploy NodeJS applications using Glitch",
@@ -38,7 +42,9 @@ class Track
     lesson name: "/db/overview", display_name: "State: Databases",
            description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."
 
-    lesson name: "sessions", display_name: "State: Sessions"
+    lesson name: "sessions", display_name: "State: Sessions" do
+      topic name: 'sessions'
+    end
 
     lesson name: "sessions_with_mongo"
 

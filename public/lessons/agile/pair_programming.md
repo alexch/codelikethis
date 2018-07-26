@@ -83,7 +83,7 @@ _Docendo discimus_ - "by teaching we learn"
 > Switch roles often!
 
 * at least once per hour, preferably more frequently
-* [pomodoro technique]() can help -- code for 25 min, then take a 5 min break, then switch drivers
+* [pomodoro technique](http://bootcamp.burlingtoncodeacademy.com/projects/pomodoro) can help -- code for 25 min, then take a 5 min break, then switch drivers
 
 # Ping Pong
 

@@ -65,3 +65,37 @@ class Course {
    * and 18 is the age of majority in the USA
 * is *hidden* (or *encapsulated*) behind the simpler "course" interface
 
+# The Single Responsibility Principle
+
+Each object should have limited, clearly defined responsibilities.
+
+> Do one thing, and do it well.
+
+This makes it easier to know *where* in the code to look when you want to add a feature or fix a bug.
+
+It helps to *increase cohesion* and *reduce coupling*... If there are two objects with related (but separate) responsibilities, you can change the implementation of one without affecting the other. 
+
+Objects can communicate through the same stable *interface* without regard for the *implementation*.
+
+# Shallow Hierarchies
+
+OO systems rely on pointers, so it's there's a risk of confusing designs, including:
+
+  * deep hierarchies
+  * parallel hierarchies
+  * cycles
+
+It's best if dependencies are *one-way* and hierarchies are *shallow*.
+
+# CRC Diagrams
+
+CRC = Classes, Reponsibilities, Collaborators
+
+![example CRC for Chat House](crc-chat.jpg)
+
+For each class (object type) in your system, make a box (or an index card). In this box, write the **Class name**, a list of its **Responsibilities**, and draw arrows to its **Collaborators**.
+
+This is a useful technique that has fallen out of favor because lots of people overused it. Don't overspecify, and don't fall in love with your design; as soon as you start to write code, your design will change. A diagram is a model of your system -- not the system itself! -- and remember:
+
+> "all models are wrong, but some are useful" - George E. P. Box (1919 – 2013)
+
