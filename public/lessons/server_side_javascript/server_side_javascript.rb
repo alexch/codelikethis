@@ -44,6 +44,7 @@ class Track
 
     lesson name: "sessions", display_name: "State: Sessions" do
       topic name: 'sessions'
+      topic name: 'state'
     end
 
     lesson name: "sessions_with_mongo"

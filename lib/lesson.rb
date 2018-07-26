@@ -158,6 +158,7 @@ class Lesson < Thing
           h2 "Topics"
           topics.each do |topic|
             widget topic.view
+            text raw(nbsp)
           end
           }
         br
