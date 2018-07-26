@@ -41,6 +41,7 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   lesson name: "intro" do
     video youtube_id: '-jRREn6ifEQ'
+    topic name: "text-editor"
   end
 
   lesson name: "the_command_line" do
@@ -48,19 +49,63 @@ Track::LearnToCodeWithJavascript = Track.new(
          name: "Terminal 101",
          description: "intro to unix command-line by a former Turing School student"
     link href: "https://www.learnenough.com/command-line-tutorial"
+    topic name: "terminal"
+    topic name: "command-line"
+    topic name: "node"
+    topic name: "text-editor"
+    topic name: "directories"
   end
 
-  lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
+  lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku." do
+    topic name: "node"
+    topic name: "servers"
+    topic name: "npm"
+    topic name: "package-json"
+    topic name: "git"
+    topic name: "github"
+    topic name: "git-push"
+    topic name: "heroku"
+  end
 
  
-  lesson name: "values"
+  lesson name: "values" do
+    topic name: "values"
+    topic name: "numbers"
+    topic name: "strings"
+    topic name: "booleans"
+    topic name: "operators"
+    topic name: "return-values"
+
+  end
+
+
   lesson name: "strings" do
     link href: "https://hackernoon.com/what-every-programmer-should-know-about-string-a6611537f84e"
+    topic name: "strings"
+    topic name: "comparisons"
+    topic name: "characters"
+    topic name: "string-methods"
   end
-  lesson name: "numbers"
 
-  lesson name: "variables"
-  lesson name: "null"
+  lesson name: "numbers" do
+    topic name: "numbers"
+    topic name: "type-coercion"
+
+  end
+
+  lesson name: "variables" do 
+    topic name: "values"
+    topic name: "operators"
+    topic name: "assignment"
+    topic name: "return-values"
+
+  end
+
+  lesson name: "null" do
+    topic name: "errors"
+    
+  end
+
   lesson name: "functions"
   lesson name: "/tricks_of_the_trade/modern_debugging" # should be taught after functions (since call stack traces don't make sense without 'call')
 
