@@ -13,8 +13,6 @@ class Track
     goal "how to deploy NodeJS applications to Heroku"
     goal "how to pass state from the client to the server and back again"
 
-    topic name: 'http'
-
 
     # "how to deploy NodeJS applications to Amazon AWS Elastic Beanstalk", https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
     # "how to deploy NodeJS applications using Glitch",
@@ -25,13 +23,71 @@ class Track
 
     lesson name: "hello_node"
 
-    lesson name: "http"
-    lesson name: "serving_files", description: "codealong walkthrough, building a simple file server in NodeJS"
+    lesson name: "http" do
+      topic name: "http"
+      topic name: "telnet"
+      topic name: "node"
+      topic name: "mime-types"
+      topic name: "http-methods"
+    end
+    
+    lesson name: "serving_files", description: "codealong walkthrough, building a simple file server in NodeJS" do
+      topic name: "require"
+      topic name: "http"
+      topic name: "servers"
+      topic name: "local-server"
+      topic name: "telnet"
+      topic name: "get-requests"
+      topic name: "headers"
+      topic name: "html"
+      topic name: "requests"
+      topic name: "ports"
+      topic name: "request-response-cycle"
+      topic name: "try-catch"
+      topic name: "url"
+      topic name: "path"
+      topic name: "mime-types"
+      topic name: ""
+    end
 
-    lesson name: "/www/forms"
-    lesson name: "forms_and_parameters"
+    lesson name: "/www/forms" do
+      topic name: "forms"
+      topic name: "html"
+      topic name: "event-handlers"
+      topic name: "get-request"
+      topic name: "post-request"
+    end
 
-    lesson name: "routing", description: "codealong walkthrough, building a blog server by adding routes and form submission to our core file server"
+
+    lesson name: "forms_and_parameters" do 
+      topic name: "html"
+      topic name: "requests"
+      topic name: "event-handlers"
+      topic name: "get-request"
+      topic name: "post-request"
+      topic name: "http-methods"
+      topic name: "query-parameters"
+    end
+
+    lesson name: "routing", description: "codealong walkthrough, building a blog server by adding routes and form submission to our core file server" do 
+      topic name: "routing"
+      topic name: "servers"
+      # topic name: "if-else"
+      topic name: "state"
+      topic name: "saving-state"
+      topic name: "apis"
+      topic name: "fetch"
+      topic name: "dom-manipulation"
+      topic name: "path"
+      topic name: "url"
+      topic name: "path-parameters"
+      topic name: "query-parameters"
+      topic name: "requests"
+      topic name: "request-response-cycle"
+      topic name: "parsing"
+      topic name: "http"
+      topic name: "http-methods"
+    end
 
     # lesson name: "state",
     #        description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
@@ -43,6 +99,8 @@ class Track
       topic name: "state"
       topic name: "fetch"
       topic name: "cookie-headers"
+      topic name: "client"
+      topic name: "client-side-javascript"
 
     end
 
