@@ -36,7 +36,17 @@ class Track
     # lesson name: "state",
     #        description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
 
-    lesson name: "cookies", display_name: "State: Cookies"
+    lesson name: "cookies", display_name: "State: Cookies" do
+      topic name: "cookies"
+      topic name: "requests"
+      topic name: "get-requests"
+      topic name: "state"
+      topic name: "fetch"
+      topic name: "cookie-headers"
+
+    end
+
+
     lesson name: "saving_state_in_files", display_name: "State: Files"
 
     lesson name: "/db/overview", display_name: "State: Databases",
