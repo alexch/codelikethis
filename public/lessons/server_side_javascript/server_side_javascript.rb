@@ -47,7 +47,6 @@ class Track
       topic name: "url"
       topic name: "path"
       topic name: "mime-types"
-      topic name: ""
     end
 
     lesson name: "/www/forms" do
@@ -104,8 +103,9 @@ class Track
 
     end
 
-
     lesson name: "saving_state_in_files", display_name: "State: Files"
+
+    lesson name: "client_vs_server_js"
 
     lesson name: "/db/overview", display_name: "State: Databases",
            description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."

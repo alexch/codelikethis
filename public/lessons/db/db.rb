@@ -12,8 +12,10 @@ class Track
     lesson name: 'overview'
     lesson name: 'tables' # in Mongo, "collections"
     lesson name: 'crud'
+
     lesson name: 'sql_and_relations'
     lesson name: 'nosql_and_documents'
+
     lesson name: 'indexes'
     lesson name: 'seeding_and_migration'
 
@@ -29,22 +31,22 @@ class Track
     end
 
     # SQL
-    lesson name: 'joins'
-    lesson name: 'transactions_and_acid'
-    lesson name: 'security_authentication_and_authorization'
-    lesson name: 'triggers_and_stored_procedures'
-
-    lesson name: 'replication'
-    lesson name: 'sharding'
-
-    lesson name: "SQL" do
+    lesson name: "sql" do
       link href: "https://node-postgres.com/"
       link href: "https://github.com/brianc/node-postgres"
-
       # link href: 'http://docs.sequelizejs.com/',
       #      name: 'Sequelize',
       #      description: 'a promise-based Object-Relational Mapper for Node.js'
     end
+
+    lesson name: 'joins'
+
+    # lesson name: 'transactions_and_acid'
+    # lesson name: 'security_authentication_and_authorization'
+    # lesson name: 'triggers_and_stored_procedures'
+    # lesson name: 'replication'
+    # lesson name: 'sharding'
+
 
 
   end

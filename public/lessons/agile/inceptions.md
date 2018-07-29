@@ -1,3 +1,8 @@
+# 
+
+<br><br><br><br>
+![inception](inception.jpg)
+
 # What is an Inception?
 
 * an exploratory workshop…
@@ -5,6 +10,22 @@
 * defines the goals and themes for a project…
 * and produces an initial backlog…
 * to kickstart an iterative process
+
+# Before the Inception
+
+Some research and development has happened, e.g.
+
+  * Business / Market / User Research
+  * some user experience design
+  * some user testing of mockups
+
+No code has been written
+
+  * (or, any code that has been written will be thrown away)
+
+Resources and time have been allocated for a short project 
+
+  * (inception + discovery + maybe one MVP)
 
 # Inception Goals
 
@@ -47,6 +68,7 @@
 ![sample schedule](http://payload.cargocollective.com/1/3/120632/1725392/dev_inception_1day_860.jpg)
 
 from [Pivotal Labs](http://cargocollective.com/pivotallabs/No-7-Dev-Inception)
+
 
 # Project Goals
 

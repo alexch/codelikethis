@@ -70,5 +70,5 @@ During each of the four weeks, schedule the following:
 
 The baseline expectation is that this code is free or open source and the product has no legal encumbrances, so any of the students can use it as a portfolio piece or as a basis for future work. Any additional encumbrance -- e.g. that the idea is proprietary to the client so students agree not to launch a competing business, or that the data set is already under a license -- will need to be discussed on a case-by-case basis.
 
-
+See <https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project> for more information about open source licenses.
 
