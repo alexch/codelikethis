@@ -1,15 +1,39 @@
 # MongoDB
 
-Let's analyze the source code of the TIL app to understand the steps involved in using MongoDB from NodeJS.
+# Concept: Database
 
-# Connect
+to connect to a database you need a Mongo URI (or URL) identifying the server, port, etc.:
 
-Connect to MongoDB with a URI:
-  
-    const url = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+Connection URL format:
 
-> if there's a shell environment variable named MONGODB_URI, use it; otherwise, connect to localhost
+```
+mongodb://username:password@host/database
+```
 
-# Read the Command Line Parameters
+for example
 
+```
+mongodb://mydatabasehost.com:27017/til
+```
+
+Note that the term "database" is overloaded: it refers to either:
+
+1. a single MongoDB *process* hosting many data sets
+2. a single MongoDB *data set* containing many related *collections*
+
+# Concept: Collection
+
+a *collection* holds documents
+
+this is analogous to a *table* in SQL
+
+# Concept: Document
+
+In MongoDB, a *document* is essentially a single JavaScript object
+
+Like in a relational database, a document can be created, read, updated, deleted, indexed, searched for, ...
+
+*Unlike* in a relational database, a document can contain *any* value for its fields, *including arrays and nested objects*.
+
+This nesting and type-flexibility makes it very appropriate to store whatever JavaScript objects your app uses, without needing to devise a *mapping* between nested objects and joined relational tables.
 

@@ -10,6 +10,7 @@ class Track
     goal 'the "NoSQL" document database model'
 
     lesson name: 'overview'
+
     lesson name: 'tables' # in Mongo, "collections"
     lesson name: 'crud'
 
@@ -29,6 +30,8 @@ class Track
       link href: "http://mongoosejs.com/", name: "mongoose",
            description: "mongodb object modeling for node.js"
     end
+
+    lesson name: "mongodb_example"
 
     # SQL
     lesson name: "sql" do
