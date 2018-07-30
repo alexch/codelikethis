@@ -11,20 +11,17 @@ class Track
 
     lesson name: 'overview'
 
-    lesson name: 'tables' # in Mongo, "collections"
-    lesson name: 'crud'
-
-    lesson name: 'sql_and_relations'
-    lesson name: 'nosql_and_documents'
-
-    lesson name: 'indexes'
-    lesson name: 'seeding_and_migration'
+    # lesson name: 'tables' # in Mongo, "collections"
+    # lesson name: 'crud'
+    #
+    # lesson name: 'sql_and_relations'
+    # lesson name: 'nosql_and_documents'
+    #
+    # lesson name: 'indexes'
+    # lesson name: 'seeding_and_migration'
 
     # NoSQL
-    lesson name: 'documents'
-    lesson name: 'map_reduce' do
-      link href: "https://docs.mongodb.com/manual/core/map-reduce/"
-    end
+    # lesson name: 'documents'
 
     lesson name: "mongodb" do
       link href: "http://mongoosejs.com/", name: "mongoose",
@@ -32,6 +29,10 @@ class Track
     end
 
     lesson name: "mongodb_example"
+
+    lesson name: 'map_reduce' do
+      link href: "https://docs.mongodb.com/manual/core/map-reduce/"
+    end
 
     # SQL
     lesson name: "sql" do
@@ -42,7 +43,7 @@ class Track
       #      description: 'a promise-based Object-Relational Mapper for Node.js'
     end
 
-    lesson name: 'joins'
+    # lesson name: 'joins'
 
     # lesson name: 'transactions_and_acid'
     # lesson name: 'security_authentication_and_authorization'
