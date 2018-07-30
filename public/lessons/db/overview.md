@@ -35,11 +35,11 @@
 
 There are at least *three* overlapping uses of the term "server":
 
-1. a *process* running on a computer that responds to queries
+1. a *databse process* running on a computer that responds to queries
 1. the *actual computer* running that process
 1. the application code that is *itself* a server but is a *client* of the database server
 
-So you could say "my Linux server is running a Mong server" without ambiguity.
+So you could say "my Linux server is running a Mongo server behind a Node server" without ambiguity.
 
 There is similar fuzziness around the term "database" -- e.g. a single MongoDB database *server* has many independent *databases*, each with its own users, permissions, collections, etc.
 
@@ -49,8 +49,8 @@ Usually the meaning is clear from context, but sometimes you need to clarify.
 
 Martin Fowler makes the following distinction:
 
-* an *[application database](https://martinfowler.com/bliki/ApplicationDatabase.html)* has only one client, a single application written and maintained by a single team of software engineers
-* an *[integration database](https://martinfowler.com/bliki/IntegrationDatabase.html)* has many clients, and may even support direct hand-crafted console queries by humans
+* an *[application database](https://martinfowler.com/bliki/ApplicationDatabase.html)* has only one kind of client, a single application written and maintained by a single team of software engineers
+* an *[integration database](https://martinfowler.com/bliki/IntegrationDatabase.html)* has many kind of client applications, and may even support direct hand-crafted console queries by humans
 
 The needs of the two scenarios are often very different, and people with experience in one style can have very different assumptions than people with experience in the other style; they often end up talking past each other.
  
@@ -70,16 +70,17 @@ In an organization with a history of using integration DBs, it can be difficult 
   * Query / Search
   * Transaction
   * Blob
-  * Replication
   * Join
 
 # Connection
 
 Most database protocols are *stateful*, which means the communication between client and server involves more than a single request and response.
 
-Generally the client connects to a server early on and *authenticates* itself (logs in), then *keeps the connection open* so it doesn't need to authenticate on later requests.
+Generally the client connects to a server early on and *authenticates* itself (logs in), then *keeps the connection open* so it doesn't need to authenticate on later requests. 
 
 (This can lead to trouble because servers have a limit on the number of simultaneous connections they can preserve, leading to client-side software solutions like *connection pooling*.)
+
+Stateful connections also enable other features like *transactions*, *caching*, and *load balancing*.
 
 # Collection
 
@@ -87,9 +88,13 @@ Data is stored in *collections*; each collection has a unique name.
 
 Example (SQL):
 
-`SELECT * FROM students`  -- "give me all the data from the collection named 'students'"
+`SELECT * FROM students`  -- "give me all the records from the collection named 'students'"
 
-(in SQL DBs, a collection is normally called a *table*)
+Example (Mongo):
+
+`db.collection('students').find({})`  -- "give me all the documents from the collection named 'students'"
+
+(in Relational (SQL) DBs, a collection is called a *table*)
 
 # Record
 
@@ -97,7 +102,8 @@ In a database, the data is stored in packets called *records*.
 
 Every record in a collection has the same *field names* but each record usually has different *values* in each field.
 
-(in SQL DBs, a record is also called a *row*)
+  * in SQL DBs, a record is also called a *row*
+  * in NoSQL DBs, a record is usually called a *document* 
 
 # Primary Key
 
@@ -107,7 +113,10 @@ usually the primary key is an *integer* but often it's a *string*
 
 also called an *id* (and often the name of the field itself is `id`)
 
-databases have ways to ensure uniqueness, usually by causing new records to automatically get the next id in sequence
+databases have various ways to ensure uniqueness, usually by causing new records to automatically get either 
+
+  * the next integer in a *sequence*, or
+  * a *UUID* (Universally Unique ID) which is a *huge random-ish* number
 
 # CRUD
 
@@ -174,4 +183,9 @@ in SQL the schema is *explicit* and must be defined before inserting any data
 
 in NoSQL, often, the schema is *implicit* and it's up to the application developer to ensure the data conforms to the application's needs
 
-
+<!--
+todo:
+replication
+sharding
+permissions / users / roles / authentication (new slide set)
+-->
