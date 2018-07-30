@@ -123,5 +123,31 @@ In addition to CRUD, the following features are also fairly standard:
 * maintain **T**ransactional integrity (like making sure multiple simultaneous actions don't corrupt the data)
 
 # Query / Search
+
+definitions:
+
+a *query* is any request to a database, *including requests to update records*
+
+a *search* is either
+
+1. any *find* operation that may return multiple results
+2. a *full-text search* or a *keyword search* that looks for bits of text *inside* certain fields
+
 # Transaction
+
+One thing database servers are good for is handling many different queries happening simultaneously.
+
+A *transaction* wraps up serveral operations so that they all happen together.
+
+For example, when making a transfer between two bank accounts, you want the withdrawal and the deposit to happen *as one transaction*.
+
+If any step in the transaction fails, the transaction is *rolled back* -- all its changes are reverted and no other connection will ever see the changes.
+
+If everything succeeds, the transaction is *committed* and other connections can see all the changes.
+
 # Blob
+
+Blob stands for "Binary Large Object" but it is also a good metaphor.
+
+A blob is *any piece of data* that the database treats like a blob -- it does not look inside it,  doesn't know its value, can't sort based on it, allows it to be arbitrarily small or large, etc.
+
