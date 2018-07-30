@@ -4,6 +4,14 @@ Let's analyze the source code of the TIL app to understand the steps involved in
 
 Follow along here: <https://github.com/BurlingtonCodeAcademy/til/blob/master/til.js>
 
+# Driver
+
+the MongoDB library is called a *driver*
+
+the metaphor is that it *drives* the underlying native interface, connecting a network protocol with NodeJS
+
+Here is its API docs: http://mongodb.github.io/node-mongodb-native/3.1/api/
+
 # Connect
 
 Connect to MongoDB with a URI:
@@ -133,3 +141,32 @@ function printEntries() {
   });
 }
 ```
+
+# `find`
+
+`collection.find` takes a parameter named `query` listing the *fields and values* to match on. 
+
+For instance, `collection.find({author: 'alex')` returns all entries whose `author` field is the string `alex`
+
+For more complicated queries, you can use operators like `$gte` (greater than or equal), e.g. this would find all items created on January 21, 2012:
+
+```
+collection.find({
+ when: {
+    '$gte': new Date(2012, 0, 21),
+    '$lt': new Date(2012, 0, 22)
+})
+```
+
+docs here: 
+  * <http://mongodb.github.io/node-mongodb-native/3.1/api/Collection.html#find>
+  * <https://docs.mongodb.com/manual/tutorial/query-documents/>
+  
+# Cursor
+
+a cursor is an iterator -- an object that keeps track of a position in a collection,, and keeps returning the next item until it's done
+
+`cursor.forEach` takes two parameters:
+
+1. a function to call on each item
+2. a function to call when done
