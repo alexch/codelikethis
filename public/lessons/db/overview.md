@@ -193,10 +193,10 @@ The syntax and usage of joins can get very complicated, but at heart it's straig
 In SQL:
 
 ```
-SELECT person.id,person.name,address.person_id,address.street,....
+SELECT person.id, person.name, address.person_id, address.street, ...
 FROM person
 JOIN address
-ON person.id = address.person_id;
+ON person.id = address.person_id
 ```
 
 In document DBs, joins are often not necessary because documents *contain their contents*; with SQL databases, the *contents point to their containers*.
@@ -221,8 +221,10 @@ a **very good idea** is to capture each of those changes in a *migration script*
 
 that way you can run -- **and test, and change** -- the migration on your development database *before* running it on your staging and production databases
 
-> Ruby on Rails has a great system for doing migrations; MongoDB would do well to develop a similar standard  --- there are a few libraries for doing it e.g. <https://www.npmjs.com/package/migrate-mongo>
-, see also <https://blog.coinbase.com/how-we-do-mongodb-migrations-at-coinbase-47f18110d17f>
+Ruby on Rails has a great system for doing migrations; there are a few libraries for doing it in MongoDB but none is standard; see
+
+  *  <https://www.npmjs.com/package/migrate-mongo>
+  * <https://blog.coinbase.com/how-we-do-mongodb-migrations-at-coinbase-47f18110d17f>
 
 <!--
 todo:
