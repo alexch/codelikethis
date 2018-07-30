@@ -37,3 +37,23 @@ Like in a relational database, a document can be created, read, updated, deleted
 
 This nesting and type-flexibility makes it very appropriate to store whatever JavaScript objects your app uses, without needing to devise a *mapping* between nested objects and joined relational tables.
 
+# Mongo Console
+
+MongoDB has a JavaScript REPL console, like `node`. 
+
+Launch it by typing `mongo dbname` on the command line -- e.g. for the `til` database, run `mongo til`
+
+In this console, run `help` to see what's possible. 
+
+```
+> db.entries.find({})
+{ "_id" : ObjectId("5b5d0e45114a7c1433296d71"), "when" : ISODate("2018-07-29T00:45:57.074Z"), "text" : "hello" }
+{ "_id" : ObjectId("5b5d1595e71e8e073c15b229"), "when" : ISODate("2018-07-29T01:17:09.191Z"), "text" : "hello there" }
+{ "_id" : ObjectId("5b5e143b203dd808f88d2548"), "when" : ISODate("2018-07-29T19:23:39.695Z"), "text" : "chickens like corn" }
+{ "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
+
+> db.entries.find({ when: {'$gte': new Date(2018, 6, 29) }})
+{ "_id" : ObjectId("5b5e143b203dd808f88d2548"), "when" : ISODate("2018-07-29T19:23:39.695Z"), "text" : "chickens like corn" }
+{ "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
+
+```

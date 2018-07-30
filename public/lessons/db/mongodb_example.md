@@ -148,7 +148,7 @@ function printEntries() {
 
 For instance, `collection.find({author: 'alex')` returns all entries whose `author` field is the string `alex`
 
-For more complicated queries, you can use operators like `$gte` (greater than or equal), e.g. this would find all items created on January 21, 2012:
+For more complicated queries, you can use operators like `$gte` (greater than or equal) and `$or`, e.g. this would find all items created on January 21, 2012:
 
 ```
 collection.find({
