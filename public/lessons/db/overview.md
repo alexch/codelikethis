@@ -86,15 +86,16 @@ Stateful connections also enable other features like *transactions*, *caching*, 
 
 Data is stored in *collections*; each collection has a unique name.
 
+(in Relational (SQL) DBs, a collection is called a *table*)
+
 Example (SQL):
 
-`SELECT * FROM students`  -- "give me all the records from the collection named 'students'"
+`SELECT * FROM students`  -- "give me all the fields of all the records from the table named 'students'"
 
 Example (Mongo):
 
 `db.collection('students').find({})`  -- "give me all the documents from the collection named 'students'"
 
-(in Relational (SQL) DBs, a collection is called a *table*)
 
 # Record
 
@@ -122,10 +123,16 @@ databases have various ways to ensure uniqueness, usually by causing new records
 
 The four basic database operations:
 
-* **C**reate
-* **R**ead
-* **U**pdate
-* **D**elete
+|Operation|SQL|Mongo|
+|---|---|---|
+|**C**reate| INSERT  | `insertOne`, `insertMany`, etc.  |
+|**R**ead| SELECT  | `findOne`, `find`  |
+|**U**pdate| UPDATE  | `updateOne`, `updateMany`  |
+|**D**elete| DROP  | `deleteOne`, `deleteMany`, `findOneAndDelete`, etc.  |
+
+> **Note**: some database experts advise "never delete any records"
+
+see http://mongodb.github.io/node-mongodb-native/3.1/tutorials/crud/
 
 # JIST
 
@@ -159,11 +166,19 @@ If any step in the transaction fails, the transaction is *rolled back* -- all it
 
 If everything succeeds, the transaction is *committed* and other connections can see all the changes.
 
+This is known as an *atomic* operation -- several actions behaving as one.
+
 # Blob
 
-Blob stands for "Binary Large Object" but it is also a good metaphor.
+BLOB stands for "Binary Large Object" but it is also a good metaphor.
 
-A blob is *any piece of data* that the database treats like a blob -- it does not look inside it,  doesn't know its value, can't sort based on it, allows it to be arbitrarily small or large, etc.
+A BLOB is *any piece of data* that the database treats like a blob -- it does not look inside it,  doesn't know its value, can't sort based on it, allows it to be arbitrarily small or large, etc.
+
+Example: an profile picture image file
+
+Storing BLOBs is often very convenient, and is useful for prototyping or for apps with low-to-middling performance requirements.
+
+But in high-performance web applications, it's often a better idea to store media files in a CDN like Amazon S3; in your database, instead of a blob, store a URL pointing to that file in the CDN.
 
 # Join
 
@@ -171,9 +186,21 @@ In relational databases, the data is organized in *tables* and different records
 
 So if a `Person` has an `Address`, and those are stored in separate tables, if you want to get a person *and* their address *in a single query*, you need to **join** those tables together.
 
-The syntax and usage of joins can get very complicated, but at heart it's straightforward
+The syntax and usage of joins can get very complicated, but at heart it's straightforward: 
 
-In document DBs, joins are often not necessary because documents *contain their contents*; with SQL databases, the contents *point to their containers*
+  * given A and B, return A+B together
+
+In SQL:
+```
+SELECT person.id,person.name,address.person_id,address.street,....
+FROM person
+JOIN address
+ON person.id = address.person_id;
+```
+
+In document DBs, joins are often not necessary because documents *contain their contents*; with SQL databases, the *contents point to their containers*.
+
+see https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/
 
 # Schema
 
@@ -185,7 +212,6 @@ in NoSQL, often, the schema is *implicit* and it's up to the application develop
 
 <!--
 todo:
-replication
-sharding
+replication / sharding
 permissions / users / roles / authentication (new slide set)
 -->
