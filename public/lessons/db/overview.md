@@ -191,6 +191,7 @@ The syntax and usage of joins can get very complicated, but at heart it's straig
   * given A and B, return A+B together
 
 In SQL:
+
 ```
 SELECT person.id,person.name,address.person_id,address.street,....
 FROM person
@@ -209,6 +210,19 @@ a *schema* defines the *types, names, valid values* of a database
 in SQL the schema is *explicit* and must be defined before inserting any data
 
 in NoSQL, often, the schema is *implicit* and it's up to the application developer to ensure the data conforms to the application's needs
+
+# Schema Migration
+
+a *migration* is a *script* that changes a schema
+
+usually during the lifetime of your app, your database schema will change many times
+
+a **very good idea** is to capture each of those changes in a *migration script* -- a program that, when run, updates a database from version N to version N + 1
+
+that way you can run -- **and test, and change** -- the migration on your development database *before* running it on your staging and production databases
+
+> Ruby on Rails has a great system for doing migrations; MongoDB would do well to develop a similar standard  --- there are a few libraries for doing it e.g. <https://www.npmjs.com/package/migrate-mongo>
+, see also <https://blog.coinbase.com/how-we-do-mongodb-migrations-at-coinbase-47f18110d17f>
 
 <!--
 todo:
