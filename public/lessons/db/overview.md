@@ -163,6 +163,8 @@ So if a `Person` has an `Address`, and those are stored in separate tables, if y
 
 The syntax and usage of joins can get very complicated, but at heart it's straightforward
 
+In document DBs, joins are often not necessary because documents *contain their contents*; with SQL databases, the contents *point to their containers*
+
 # Schema
 
 a *schema* defines the *types, names, valid values* of a database
