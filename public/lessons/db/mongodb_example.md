@@ -172,3 +172,17 @@ a cursor is an iterator -- an object that keeps track of a position in a collect
 
 1. a function to call on each item
 2. a function to call when done
+
+# `_id`
+
+Every time you insert a document into a MongoDB collection, Mongo adds a field named `_id` with a *unique* value.
+
+This id is *not* a normal integer! It's a long string with a hex code inside it. 
+
+Mongo has an algorithm for ensuring that this id is unique across *all other documents* in itself (and probably inside every other MongoDB database in the universe too).
+
+In JavaScript, Mongo defines a *class* named `ObjectId` that encapsulates this string and provides useful methods; that's why in the output of `find` you see the JS code: 
+
+```
+{ "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
+```
