@@ -37,6 +37,7 @@ There are at least *three* overlapping uses of the term "server":
 
 1. a *process* running on a computer that responds to queries
 1. the *actual computer* running that process
+1. the application code that is *itself* a server but is a *client* of the database server
 
 So you could say "my Linux server is running a Mong server" without ambiguity.
 
