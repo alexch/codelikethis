@@ -12,15 +12,18 @@
 
 # Database Examples
 
-* Relational DBs:
+* Relational DBs: (SQL)
   * Oracle
   * MySQL
   * PostgresQL
-* Document (NoSQL) DBs:
+  * Microsoft SQL Server
+* Document DBs: (NoSQL)
   * MongoDB
   * CouchDB
   * Google BigTable
   * Apache Cassandra
+* Object-Oriented DBs:
+  * Smalltalk/Gemstone, Prevayler
 * Graph DBs:
   * Neo4j
   * GraphQL (not a database *per se*, but a query language *for* graph DBs and APIs)
@@ -67,6 +70,7 @@ In an organization with a history of using integration DBs, it can be difficult 
   * Transaction
   * Blob
   * Replication
+  * Join
 
 # Connection
 
@@ -150,4 +154,21 @@ If everything succeeds, the transaction is *committed* and other connections can
 Blob stands for "Binary Large Object" but it is also a good metaphor.
 
 A blob is *any piece of data* that the database treats like a blob -- it does not look inside it,  doesn't know its value, can't sort based on it, allows it to be arbitrarily small or large, etc.
+
+# Join
+
+In relational databases, the data is organized in *tables* and different records are connected only indirectly, using *foreign keys*.
+
+So if a `Person` has an `Address`, and those are stored in separate tables, if you want to get a person *and* their address *in a single query*, you need to **join** those tables together.
+
+The syntax and usage of joins can get very complicated, but at heart it's straightforward
+
+# Schema
+
+a *schema* defines the *types, names, valid values* of a database
+
+in SQL the schema is *explicit* and must be defined before inserting any data
+
+in NoSQL, often, the schema is *implicit* and it's up to the application developer to ensure the data conforms to the application's needs
+
 

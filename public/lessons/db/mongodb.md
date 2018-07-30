@@ -1,5 +1,15 @@
 # MongoDB
 
+# MongoDB Overview
+
+* document database (NoSQL)
+* horizontal sharding => can theoretically serve *trillions* of records
+* uses JavaScript for data definition and manipulation
+* built-in map-reduce for dynamic collections
+* indexing on fields by value or free-text search 
+
+> "Mongo is not a toy, although it can be fun to play with." - Josh Burke
+
 # Concept: Database
 
 to connect to a database you need a Mongo URI (or URL) identifying the server, port, etc.:

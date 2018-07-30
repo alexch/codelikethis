@@ -10,7 +10,9 @@ the MongoDB library is called a *driver*
 
 the metaphor is that it *drives* the underlying native interface, connecting a network protocol with NodeJS
 
-Here is its API docs: http://mongodb.github.io/node-mongodb-native/3.1/api/
+Here are its API docs: 
+
+* http://mongodb.github.io/node-mongodb-native/3.1/api/
 
 # Connect
 
