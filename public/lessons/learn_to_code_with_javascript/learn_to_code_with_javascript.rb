@@ -103,25 +103,90 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   lesson name: "null" do
     topic name: "errors"
-    
+    topic name: "values"
   end
 
-  lesson name: "functions"
-  lesson name: "/tricks_of_the_trade/modern_debugging" # should be taught after functions (since call stack traces don't make sense without 'call')
+  lesson name: "functions" do
+    topic name: "functions"
+    topic name: "arguments"
+    topic name: "parameters"
+    topic name: "return-values"
+  end
+
+
+  lesson name: "/tricks_of_the_trade/modern_debugging" do # should be taught after functions (since call stack traces don't make sense without 'call') 
+    topic name: "debugging"
+    topic name: "errors"
+  end
 
   lesson name: "input_and_output" do
     video youtube_id: 'DKGZlaPlVLY'
+    topic name: "input-output"
+    topic name: "node"
+    topic name: "terminal"
+    topic name: "functions"
+    topic name: "methods"
+    topic name: "es6"
+    topic name: "ecmascript-six"
+    topic name: "variables"
+    topic name: "values"
+    topic name: "callbacks"
+    topic name: "command-line"
+    topic name: "strings"
   end
 
   lesson name: "intermission", description: "This is a good place for a break, maybe between the first and second week of class."
 
-  lesson name: "logic"
-  lesson name: "recursion"
-  lesson name: "scope"
+  lesson name: "logic" do
+    topic name: "comparisons"
+    topic name: "booleans"
+    topic name: "conditionals"
+    topic name: "if-then"
+    topic name: "if-else"
+    topic name: "truthiness"
+    topic name: "falsiness"
+    topic name: "assignment"
+    topic name: "operators"
+    topic name: "conjunctions"
+    topic name: "node"
+    topic name: "functions"
+    topic name: "values"
+
+  end
+
+  lesson name: "recursion" do
+    topic name: "recursion"
+    topic name: "function"
+    topic name: "conditionals"
+    topic name: "loops"
+  end
+  
+  lesson name: "scope" do
+    topic name: "scope"
+    topic name: "global-variables"
+    topic name: "local-variables"
+    topic name: "parameters"
+    topic name: "functions"
+    topic name: "closure-scope"
+  end
+
   lesson name: "loops" do
     project name: 'guess'
+    topic name: "conditionals"
+    topic name: "loops"
+    topic name: "variables"
+    topic name: "break"
+    topic name: "index"
   end
-  lesson name: "arrays"
+  
+  lesson name: "arrays" do
+    topic name: "arrays"
+    topic name: "values"
+    topic name: "index"
+    topic name: ""
+  end
+
+
   lesson name: "argv" do
     project name: "today_i_learned_cli"
   end
