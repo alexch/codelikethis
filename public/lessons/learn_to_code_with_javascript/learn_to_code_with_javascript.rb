@@ -183,15 +183,45 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "arrays"
     topic name: "values"
     topic name: "index"
-    topic name: ""
+    topic name: "methods"
+    topic name: "loops"
+    topic name: "refactoring"
   end
 
 
   lesson name: "argv" do
     project name: "today_i_learned_cli"
+    topic name: "command-line"
+    topic name: "arguments"
+    topic name: "node"
+    topic name: "strings"
+    topic name: "numbers"
+    topic name: "functions"
+    topic name: "arrays"
+    topic name: "loops"
   end
-  lesson name: "stacks"
-  lesson name: "hashes"
+
+  lesson name: "stacks" do
+    topic name: "stacks"
+    topic name: "arrays"
+    topic name: "functions"
+    topic name: "loops"
+    topic name: "methods"
+    topic name: "recursion"
+    topic name: "numbers"
+    topic name: "reverse-polish-notation"
+  end
+  
+  lesson name: "hashes" do
+    topic name: "hashes"
+    topic name: "objects"
+    topic name: "key-value-pairs"
+    topic name: "setting-getting"
+    topic name: "strings"
+    topic name: "values"
+    topic name: "methods"
+    topic name: "functions"
+  end
 
 
   # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
