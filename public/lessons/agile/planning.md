@@ -224,7 +224,7 @@ It’s up to the customer, BUT here are some guidelines:
 Flowchart:
 
 ```
-        _______________________       
+        ____________fix________       
        v                       \   /-> new feature
 in-progress -> done -> accept/reject? 
                           |        \-> new bug
