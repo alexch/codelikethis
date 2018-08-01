@@ -209,16 +209,28 @@ It’s up to the customer, BUT here are some guidelines:
 * by simplicity (technical merit first, e.g. code quality or UI consistency or system stability)
 * by theme (a bunch of similar features together)
 * by cost (but weigh dev hours against cash expenses or profit/loss/ROI)
-* randomly!
+* by external deadline (e.g. a conference, or a marketing season)
+* randomly! (any decision is better than indecision)
 
 # Acceptance Meetings
 
 * customer is presented with stories that have become "done" since the last acceptance meeting
-* problem stories can be Rejections, or become new Bugs or Features, or be deprioritized
+* problem stories can be *Rejections*, or become new *Bugs* or *Features*, or be deprioritized
 * be careful not to hastily prioritize or estimate new or split stories (including bugs) —
   * put them in the Icebox or Inbox for later examination and get back to accepting the rest of the Done stories
 * Acceptance doesn’t need to include the whole team, but if the right people aren’t in the room, invite them or wait until the next meeting
   * face-to-face is always better than high-latency channels like email or Tracker
+
+Flowchart:
+
+```
+        _______________________       
+       v                       \   /-> new feature
+in-progress -> done -> accept/reject? 
+                          |        \-> new bug
+                          v
+                          Done
+```
 
 # Acceptance Meetings: Coders Welcome!
 
@@ -255,6 +267,13 @@ It’s up to the customer, BUT here are some guidelines:
 * or just use the Happy/Sad/Confused Game
 * Great book: "Agile Retrospectives"  by Derby and Larsen
 
+# Agile Planning Tools
+
+* Pivotal Tracker
+* Trello
+* sprint.ly
+* Jira (if configured well!)
+* etc.
 
 # Project Planning with Pivotal Tracker
 
