@@ -240,24 +240,22 @@ in-progress -> done -> accept/reject?
      * watching the customer attempt to use their features
      * understanding why a story was rejected
      * understanding steps to reproduce bugs
-     * splitting stories along appropriate lines
-     * estimating new stories
      * maintaining continuity, esp. with coders who aren't there right now
 
 # Planning Meetings: Coders Welcome!
 
 * shy or impatient coders may want to skip Planning meetings
 * PMs will try to groom the backlog before a planning meeting
-* but coders are still needed during the meeting, for...
+* but coders are still needed **during** the meeting, for...
   * understanding user/customer requirements
-  * explaining technical details to the customer and each other
-  * thinking through technical steps and complications
-  * splitting stories along appropriate lines
+  * explaining technical details to the customer and to each other
+  * thinking through technical steps and complications with a story's implementation
+  * splitting stories along technically appropriate lines
   * estimating new stories
   * maintaining continuity, esp. with coders who aren't there right now
-  * thinking of related chores
+  * thinking of related chores and external blockers
 
-> The goal is for any coder to be able to work on any story (maybe with help from the right pair partner).
+> The goal is for **any** coder to be able to work on **any** story (with help, if needed, from the right pair partner).
 
 # Retrospectives
 
@@ -265,7 +263,7 @@ in-progress -> done -> accept/reject?
 * good/bad/weird is a common game, but doesn’t need to be the only one
 * see Agile Retros book for a good structure and lots of games
 * or just use the Happy/Sad/Confused Game
-* Great book: "Agile Retrospectives"  by Derby and Larsen
+* Great book: [Agile Retrospectives](https://smile.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649) by Derby and Larsen
 
 # Agile Planning Tools
 
