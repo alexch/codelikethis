@@ -124,13 +124,27 @@ Then I do not see the "Sign Out" button
 
 A backlog is a list of stories
 
-that have been **written**, 
+that have been 
 
-**estimated**, 
+☑ **written**, 
 
-and **prioritized** 
+☑ **estimated**, 
 
-in **linear** order
+☑ and **prioritized** 
+
+☑ in **linear** order
+
+# Backlog checklist
+
+When writing stories, it is very tempting to skip one of these steps
+
+e.g. : 
+
+* estimating a story based on its title alone
+* prioritizing into clusters but not into a linear list
+* a customer setting an estimate or a coder setting a priority
+
+so *please* try to treat the previous slide as a checklist, and push back if someone wants to skip a step, or do it out of order, or impatiently do several steps at once
 
 # Planning Meeting
 
