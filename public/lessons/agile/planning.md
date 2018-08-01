@@ -255,15 +255,24 @@ in-progress -> done -> accept/reject?
   * maintaining continuity, esp. with coders who aren't there right now
   * thinking of related chores and external blockers
 
+# The Veil of Ignorance
+
 > The goal is for **any** coder to be able to work on **any** story (with help, if needed, from the right pair partner).
 
 # Retrospectives
 
 * the more frequent they are, the shorter they can be
-* good/bad/weird is a common game, but doesn’t need to be the only one
-* see Agile Retros book for a good structure and lots of games
-* or just use the Happy/Sad/Confused Game
-* Great book: [Agile Retrospectives](https://smile.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649) by Derby and Larsen
+
+* Standard Burlington Code Academy Retro format: 
+
+  1. 5 minutes: intro and "take temperature"
+  2. 10 minutes to brainstorm Happy/Sad/Confused (aka Good/Bad/Weird) topics
+  3. 10 minutes to examine, cluster & vote on clustered topics
+  4. 10 minutes each to discuss top two topics
+  5. 5 minutes for wrapup and "appreciations"
+
+* Good/bad/weird is a common game, but doesn’t need to be the only one
+  * [Agile Retrospectives](https://smile.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649) by Derby and Larsen for a good structure and lots of games
 
 # Agile Planning Tools
 
