@@ -141,7 +141,7 @@ When writing stories, it is very tempting to skip one of these steps
 e.g. : 
 
 * estimating a story based on its title alone
-* prioritizing into clusters but not into a linear list
+* prioritizing into rough clusters but not into a precise linear list
 * a customer setting an estimate or a coder setting a priority
 
 so *please* try to treat the previous slide as a checklist, and push back if someone wants to skip a step, or do it out of order, or impatiently do several steps at once
@@ -263,21 +263,29 @@ It’s up to the customer, BUT here are some guidelines:
 * a feature story delivers VALUE to the customer
 * feature stories are ESTIMATED and TESTED by the developers
 * features are ACCEPTED by the customer
-* velocity is MEASURED by counting only the stories accepted in an iteration
-* iterations are BOUNDED by date and velocity
-  * not by scope or deadlines
-* velocity is an APPROXIMATION (prediction) of work per iteration
-* dependencies between stories are IGNORED
-  * but can be captured as LINKS to other stories
-* Project Planning with Pivotal Tracker (cont.)
-* ICEBOX is fluid and chaotic - unordered, unestimated, for possibilities or “cold storage”
-* an epic comprises MANY STORIES
-    * feature sets or themes, not releases
-* releases are GOALS not deadlines
-    * they can have a target date, but they might move past it and go red
-* labels are free text TAGS
-    * can be used to layer other workflows on top
+
+# Project Planning with Pivotal Tracker (2)
+
 * tasks live inside a story and do not deliver value on their own
 * stories can be SPLIT at any time as needed
 * chores and bugs are POINTLESS (unestimated) and do not deliver value
     * they pay off debt or increase knowledge
+* dependencies between stories are IGNORED
+  * but can be captured as LINKS to other stories
+
+# Project Planning with Pivotal Tracker (3)
+
+* velocity is MEASURED by counting only the stories accepted in an iteration
+* iterations are BOUNDED by date and velocity
+  * not by scope or deadlines
+* velocity is an APPROXIMATION (prediction) of work per iteration
+* releases are GOALS not deadlines
+    * they can have a target date, but they might move past it and go red
+
+# Project Planning with Pivotal Tracker (4)
+
+* ICEBOX is fluid and chaotic - unordered, unestimated, for possibilities or “cold storage”
+* an EPIC comprises MANY STORIES
+    * feature sets or themes, not releases
+* labels are free text TAGS
+    * can be used to layer other workflows on top
