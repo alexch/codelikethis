@@ -13,13 +13,14 @@ class Track
 
     lesson name: "css_layout",
            display_name: "Page Layout With CSS" do
-
+            topic name: "positioning"
       link href: "https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning1",
            name: "W3Schools Positioning Exercise"
     end
 
     lesson name: "flexbox_layout",
            display_name: "Page Layout With CSS Flexbox" do
+            topic name: "css-flexbox"
       link href: "https://flexboxfroggy.com",
            name: "Flexbox Froggy",
            description: "a step-by-step test-driven game that teaches you flexbox"
@@ -33,6 +34,8 @@ class Track
 
     lesson name: "responsive_intro",
            display_name: "Introduction to Responsive Development" do
+            topic name: "responsive-layout"
+            topic name: "media-queries"
       link href: "https://www.w3schools.com/html/html_responsive.asp",
            name: "W3Schools Responsive HTML Development"
       project name: 'mint_login',

@@ -142,7 +142,6 @@ class Track
       topic name: "html-elements"
       topic name: "iframes"
       topic name: "hacking"
-      topic name: ""
     end
 
     lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css",
