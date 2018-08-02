@@ -61,14 +61,21 @@ There are many more types of form elements (or "widgets") that let the user ente
   * including parameters like `q=apple&submit=Search`
   * (yes, the submit button's text label becomes the value)
 
+# Form submission in detail
+
 * Read more here: <https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data>
 * see also [Query String Escaping](https://en.wikipedia.org/wiki/Query_string) aka [URL encoding](https://en.wikipedia.org/wiki/Percent-encoding)
+* and [this lesson on parameters](parameters) goes into more detail on how the parameters are encoded/decoded in HTTP
 
-# Form reply
+# Form reply: body
 
 After the server receives and processes the request, it can return any HTTP response.
 
-Often that response is a **302 redirect** which helps keep your endpoints and address bar clean:
+Usually that request is a full HTML page (for display to the user) or a JSON document (for use by your client-side app).
+
+# Form reply: redirect
+
+Sometimes the response is a **302 redirect** which helps keep your endpoints and address bar clean:
 
   1. form page, visible *before* the user starts entering values
   2. form submit handler, which redirects to...
@@ -76,32 +83,16 @@ Often that response is a **302 redirect** which helps keep your endpoints and ad
 
 ...but many times it's an all-in-one handler which redraws the original page.
 
-# HTTP Method: GET vs POST
+# Form reply: error
 
-GET requests
- - Query Parameters are in the URL, after the `?`
- - format: `name=value&othername=othervalue`
- - plus weird escaping rules (percent-encoding and space-to-plus)
+Sometimes the response is an error. 
 
-POST requests
- - Post Parameters are in the *body* of the request
- - Usually in the same `name=value&` format
- - Can also be big file uploads, or a JSON format payload, or others
+Either the client 
 
-# Parsing Parameters
+It's important for you to design your app to be *robust*, meaning that if an error happens, it will *fail gracefully*. 
 
-Your app server framework might convert query or post params into an object for you, but it's not hard to do yourself:
+Usually this means informing the user that the request could not be completed, and giving them the option to try again immediately, or asking them to try again later.
 
-```javascript
-@@@javascript
-function decodeParams(query) {
-  let fields = query.split('&');
-  let params = {};
-  for (let field of fields) {
-    let [ name, value ] = field.split('=');
-    value = value.replace(/\+/g,' ');
-    params[name] = decodeURIComponent(value);
-  }
-  return params;
-}
-```
+In the Fetch API, you can provide an `catch` callback which will receive network errors if and when they happen; you can also check `if (!response.ok) {` inside your main `then` callback.
+
+see https://www.tjvantoll.com/2015/09/13/fetch-and-errors/

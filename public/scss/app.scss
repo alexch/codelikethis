@@ -246,6 +246,16 @@ span.svg-icon {
       border: none;
     }
   }
+
+  &.topic {
+    a, a:visited {
+      color: black;
+      background: lavender;
+      border: 1px solid purple;
+      border-radius: 4px;
+      padding: 3px 6px;
+    }
+  }
 }
 
 // for showing story boxes in Markdown projects

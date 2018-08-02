@@ -30,7 +30,7 @@ class Track
       topic name: "mime-types"
       topic name: "http-methods"
     end
-    
+
     lesson name: "serving_files", description: "codealong walkthrough, building a simple file server in NodeJS" do
       topic name: "require"
       topic name: "http"
@@ -57,11 +57,13 @@ class Track
       topic name: "post-request"
     end
 
-
-    lesson name: "forms_and_parameters" do 
+    lesson name: "forms_and_servers" do 
       topic name: "html"
       topic name: "requests"
       topic name: "event-handlers"
+    end
+
+    lesson name: "parameters" do 
       topic name: "get-request"
       topic name: "post-request"
       topic name: "http-methods"

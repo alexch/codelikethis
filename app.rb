@@ -144,6 +144,22 @@ class App < Sinatra::Base
          title: site.name).to_html
   end
 
+  class TopicView < Erector::Widget
+    def content
+      h1 @topic_name
+      p "coming soon!"
+    end
+  end
+
+  get "/topics/:topic_name" do
+    # todo: make this actually work
+    page(
+      title: "Topic: #{params[:topic_name]}",
+      widget: TopicView.new(topic_name: params[:topic_name])
+    ).to_html
+  end
+
+
   def track_dir
     track.dir
   end

@@ -45,7 +45,9 @@ class Link < Thing
     end
 
     def content
-      span(class: 'link') {
+      css_class = ['link']
+      css_class << target.class.name.split('::').last.downcase unless self.is_a? Link
+      span(class: css_class) {
         if target.respond_to? :icon and target.icon
           span(class: ['icon', (target.from.downcase if target.from)]) {
             img src: target.icon, alt: 'icon', title: 'icon'

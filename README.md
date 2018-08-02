@@ -29,7 +29,7 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`rake spec` | run all tests and verify setup |
 |`rake build` | compile CSS |
 |`rake run` | run local server on <http://localhost:9292>  |
-|` bundle exec rake rerun` |run with rebuild/restart on file changes, making sure to use the right version of rerun |
+|`bundle exec rerun rackup` |run with rebuild/restart on file changes, making sure to use the right version of rerun |
 
 ## Layout 
 

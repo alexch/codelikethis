@@ -5,4 +5,5 @@ class Topic < Link
   def href
     "/topics/#{name}"
   end
+
 end
