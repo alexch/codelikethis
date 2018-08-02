@@ -30,6 +30,8 @@ class Track
 
     lesson name: "mongodb_example"
 
+    lesson name: "mongodb_queries"
+
     lesson name: 'map_reduce' do
       link href: "https://docs.mongodb.com/manual/core/map-reduce/"
     end
