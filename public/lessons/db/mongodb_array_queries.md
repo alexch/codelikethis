@@ -125,6 +125,8 @@ db.inventory.find(
 )
 ```
 
+# Querying with Range Conditions on Arrays
+
 * `$elemMatch` can be used with range conditions
 
 ```javascript
@@ -140,6 +142,8 @@ db.inventory.find(
   }
 )
 ```
+
+# Querying with Many Range Conditions on Arrays
 
 * `$elemMatch` can also be used with multiple range conditions
 
