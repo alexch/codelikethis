@@ -14,6 +14,7 @@ class Track
     lesson name: "css_layout",
            display_name: "Page Layout With CSS" do
             topic name: "positioning"
+            
       link href: "https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning1",
            name: "W3Schools Positioning Exercise"
     end
