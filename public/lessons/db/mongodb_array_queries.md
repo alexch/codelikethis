@@ -33,7 +33,7 @@ db.inventory.find(
 { item: "journal", instock: [ { warehouse: "A", qty: 5 }, { warehouse: "C", qty: 15 } ] }
 ```
 
-# Querying Conditions on Nested Arrays
+# Querying Conditions on Nested Arrays 1
 
 * To query with relaxed conditions, use the property name "." sub-document property concatenation within quotes.
 
@@ -52,6 +52,8 @@ db.inventory.find(
   }
 )
 ```
+
+# Querying Conditions on Nested Arrays 2
 
 * Multiple range conditions are also supported
 * Is there a difference betweeen the two below queries?
