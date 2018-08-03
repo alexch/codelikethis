@@ -73,7 +73,7 @@ class Track
     lesson name: "routing", description: "codealong walkthrough, building a blog server by adding routes and form submission to our core file server" do 
       topic name: "routing"
       topic name: "servers"
-      # topic name: "if-else"
+      topic name: "if-else"
       topic name: "state"
       topic name: "saving-state"
       topic name: "apis"
@@ -105,7 +105,14 @@ class Track
 
     end
 
-    lesson name: "saving_state_in_files", display_name: "State: Files"
+    lesson name: "saving_state_in_files", display_name: "State: Files" do
+      topic name: "state"
+      topic name: "saving-state"
+      topic name: "apis"
+      topic name: "node"
+      topic name: "parameters"
+      topic name: "post-request"
+    end
 
     lesson name: "client_vs_server_js"
 
