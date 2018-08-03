@@ -19,16 +19,26 @@ class Track
 
     lesson name: "embedding",
            description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
-      link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
+            topic name: "embedding"
+            link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
     end
 
     lesson name: "jquery" do
+      topic name: "jquery"
+      topic name: "jquery-selectors"
+      topic name: "jquery-collections"
+      topic name: "jquery-binding"
       link href: "http://docs.railsbridge.org/frontend/jquery"
       link href: "https://www.codecademy.com/tracks/jquery",
                 name: "Codecademy Track for jQuery"
     end
 
     lesson name: "ajax" do
+      topic name: "ajax"
+      topic name: "json"
+      topic name: "parsing"
+      topic name: "promises"
+      topic name: "fetch"
       project name: "yelpington_app"
       project name: "github_emoji"
       project name: "github_repos"
@@ -38,6 +48,8 @@ class Track
     lesson name: "calling_apis",
       display_name: "Calling APIs from JavaScript",
       description: "jQuery.ajax(), XMLHttpRequest, Fetch" do
+        topic name: "postman"
+        topic name: "apis"
         link href: 'https://www.codecademy.com/tracks/parse'
         link href: 'https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data'
         link href: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API'
