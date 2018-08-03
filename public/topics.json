@@ -123,6 +123,7 @@
   "promises",
   "fetch",
   "cookie-headers",
+  "leaflet",
   "geolocation",
   "geocoding",
   "embedding",

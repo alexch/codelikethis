@@ -70,6 +70,11 @@ class Track
     end
 
     lesson name: "interactive_mapping" do
+      topic name: "leaflet"
+      topic name: "geocoding"
+      topic name: "geolocation"
+      topic name: "embedding"
+      topic name: "json"
       link href: "http://geojson.org/"
       project name: "geo_vermonter"
     end
