@@ -67,6 +67,10 @@ class Track
       topic name: "html"
       topic name: "requests"
       topic name: "event-handlers"
+      topic name: "http"
+      topic name: "requests"
+      topic name: "http-methods"
+      topic name: "servers"
     end
 
     lesson name: "parameters" do 
