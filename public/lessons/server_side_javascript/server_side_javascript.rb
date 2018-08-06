@@ -71,6 +71,7 @@ class Track
       topic name: "requests"
       topic name: "http-methods"
       topic name: "servers"
+      topic name: "post-request"
     end
 
     lesson name: "parameters" do 

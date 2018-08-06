@@ -30,13 +30,51 @@ class Track < Thing
       link href: "https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/"
       link href: "https://scotch.io/tutorials/understanding-scope-in-javascript"
     end
-    lesson name: 'hybrid', display_name: "Hybrid Styles"
+    lesson name: 'hybrid', display_name: "Hybrid Styles" do 
+    topic name: "procedural-programming"
+    topic name: "functional-programming"
+    topic name: "object-oriented-programming"
+    end
+
     lesson name: "encapsulation",
-           description: "Encapsulation is an important part of Object-Oriented programming, but we don't need objects to achieve it. This lesson covers using scope and IIFEs to make truly private variables in JavaScript without classes or prototypes."
-    lesson name: 'oo_js', display_name: "Object-Oriented JavaScript"
-    lesson name: 'oo_js_creation', display_name: "Object-Oriented JavaScript: Creating Objects"
-    lesson name: 'oo_js_prototypes', display_name: "Object-Oriented JavaScript: Using Prototypes"
-    lesson name: '/oo/oo_design'
+           description: "Encapsulation is an important part of Object-Oriented programming, but we don't need objects to achieve it. This lesson covers using scope and IIFEs to make truly private variables in JavaScript without classes or prototypes." do 
+            topic name: "encapsulation"
+            topic name: "closure-scope"
+            topic name: "private-variable"
+            topic name: "immediately-invoked-function-expressions"
+          end
+
+    lesson name: 'oo_js', display_name: "Object-Oriented JavaScript" do 
+      topic name: "objects"
+      topic name: "hashes"
+      topic name: "object-oriented-programming"
+      topic name: "prototypes"
+      topic name: "encapsulation"
+      topic name: "this"
+      topic name: "object-instantiation"
+      topic name: "fat-arrow"
+      topic name: "binding"
+      topic name: "callbacks"
+    end
+
+
+    lesson name: 'oo_js_creation', display_name: "Object-Oriented JavaScript: Creating Objects" do
+      topic name: "object-instantiation"
+      topic name: "new"
+      topic name: "constructors"
+      topic name: "classes"
+      topic name: "encapsulation"
+    end
+
+    lesson name: 'oo_js_prototypes', display_name: "Object-Oriented JavaScript: Using Prototypes" do
+      topic name: "prototypes"
+      topic name: "objects"
+    end
+
+    lesson name: '/oo/oo_design' do
+      topic name: ""
+    end
+
 
     # todo?: We'll also consider hoisting, this, bind/call/apply, fat and skinny arrows, and more.
 

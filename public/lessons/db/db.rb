@@ -9,7 +9,29 @@ class Track
     goal 'the relational database model'
     goal 'the "NoSQL" document database model'
 
-    lesson name: 'overview'
+    lesson name: 'overview' do
+      topic name: "databases"
+      topic name: "servers"
+      topic name: "application-vs-integration-databases"
+      topic name: "connection"
+      topic name: "collection"
+      topic name: "record"
+      topic name: "primary-key"
+      topic name: "index"
+      topic name: "crud"
+      topic name: "create"
+      topic name: "read"
+      topic name: "update"
+      topic name: "delete"
+      topic name: "collection"
+      topic name: "record"
+      topic name: "primary-key"
+      topic name: "query-search"
+      topic name: "transaction"
+      topic name: "blob"
+      topic name: "join"
+      topic name: "schema"
+    end
 
     # lesson name: 'tables' # in Mongo, "collections"
     # lesson name: 'crud'
@@ -24,15 +46,32 @@ class Track
     # lesson name: 'documents'
 
     lesson name: "mongodb" do
+      topic name: "document-database"
+      topic name: "sharding"
+      topic name: "mongodb"
+      topic name: "mongodb-shell"
+      topic name: "collection"
+      topic name: "document"
       link href: "http://mongoosejs.com/", name: "mongoose",
            description: "mongodb object modeling for node.js"
     end
 
-    lesson name: "mongodb_example"
+    lesson name: "mongodb_example" do
+      topic name: "mongodb"
+      topic name: "connection"
+      topic name: "callbacks"
+      topic name: "til-app"
+    end
 
-    lesson name: "mongodb_queries"
+    lesson name: "mongodb_queries" do
+      topic name: "mongodb-queries"
+      topic name: "mongodb-shell"
+    end
 
-    lesson name: "mongodb_array_queries"
+    lesson name: "mongodb_array_queries" do 
+      topic name: "mongodb-queries"
+      topic name: "mongodb-shell"
+    end
 
     lesson name: 'map_reduce' do
       link href: "https://docs.mongodb.com/manual/core/map-reduce/"
