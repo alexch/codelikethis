@@ -26,14 +26,95 @@ class Profile extends React.Component {
 }
 ```
 
+# Using Components
+
+* Typically the `index.js` initiates the components tree from the top level
+* Child components are rendered after their parents
+* Parents pass Props and State to children
+
+```javascript
+@@@javascript
+<html>
+  <body>
+    <div id="root"/>
+  </body>
+  <script>
+    ReactDom.render(<Profile />,
+      document.getElementById('root')
+    )
+  </script>
+</html>
+```
+
+# Using Arrays of Components
+
+* Many components can be rendered at once
+* Wrap the components in an array
+* React will iterate over and render each
+
+```javascript
+@@@javascript
+class ProfileList extends React.Component {
+  render() {
+    <Header>
+      [
+        <Profile userId="One"/>,
+        <Profile userId="Two"/>,
+        <Profile userId="Three"/>
+      ]
+    </Header>
+  }
+}
+```
+
+# Building components with Iteration
+
+* Iteration and Loops can be used just like in plain JavaScript
+* Many components can be built based on collections of data
+* Components can be **conditionally** rendered
+
+```
+class Comment extends React.Component {
+  render () {
+    return (
+      <li>
+        <p>User: {this.props.user}</p>
+        <p>Comment: {this.props.content}</p>
+      </li>
+    )
+  }
+}
+
+class CommentList extends React.Component {
+  render() {
+    const comments = [
+      { user: 'Joshua', content: 'Components are my fave!' },
+      { user: 'Ada', content: 'Yes they make life easy' },
+      { user: 'Alex', content: 'Loved them for years' }
+    ];
+    const commentComponents = forms.map((comment, index) => {
+      return <Comment user={ comment.user } content={ comment.content }/>
+    });
+
+    return (
+    <div className="comments">
+      <h2>Comment List</h2>
+      <ul>
+      { commentComponents }
+      </ul>
+    </div>
+    )
+  }
+}
+```
+
 # Immutable Components
 
 * Once components are rendered they cannot be updated
 * Re-rendering the component is how to update
 
-## Clock Example
-
-```javascript
+```html
+@@@html
 <html>
   <body>
     <div id="root"/>
@@ -55,67 +136,43 @@ class Profile extends React.Component {
 </html>
 ```
 
+
 # Ticking Clock Live
 
-<iframe height='265' scrolling='no' title='React Clock Example' src='//codepen.io/Dangeranger/embed/gjdNEB/?height=265&theme-id=light&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/Dangeranger/pen/gjdNEB/'>React Clock Example</a> by Joshua Burke (<a href='https://codepen.io/Dangeranger'>@Dangeranger</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+<p data-height="265" data-theme-id="light" data-slug-hash="gjdNEB" data-default-tab="js,result" data-user="Dangeranger" data-pen-title="React Clock Example" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/gjdNEB/">React Clock Example</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## Link <https://codepen.io/Dangeranger/pen/gjdNEB>
+<https://codepen.io/Dangeranger/pen/gjdNEB>
 
-# Using Components
+# Granular Render Updates
 
-* Typically the `index.js` initiates the components tree from the top level
-* Child components are rendered after their parents
-* Parents pass Props and State to children
+![render performance](granular-dom-updates.gif)
 
-```javascript
-@@@javascript
-<html>
-  <body>
-    <div id="root"/>
-  </body>
-  <script>
-    ReactDom.render(<Profile />, document.getElementById('root'))
-  </script>
-</html>
-```
+# Component Lifecycle
 
-# Building components with Iteration
+## Mounting
 
-* Iteration and Loops can be used just like in plain JavaScript
+  * constructor()
+  * static getDerivedStateFromProps()
+  * render()
+  * componentDidMount()
 
-```javascript
-@@@javascript
-class Comment extends React.Component {
-  render () {
-    return (
-      <li>
-        <p>User: {this.props.user}</p>
-        <p>Comment: {this.props.content}</p>
-      </li>
-    )
-  }
-}
+## Updating
 
-class CommentList extends React.Component {
-  render() {
-    const comments = [
-      { user: 'Joshua', content: 'Components are my favorite' },
-      { user: 'Ada', content: 'Yes they make life easy'},
-      { user: 'Alex', content: 'I know! I've loved them for years'}
-    ];
-    const commentComponents = forms.map((comment, index) => {
-      return <Comment user={ comment.user } content={ comment.content }/>
-    });
+  * static getDerivedStateFromProps()
+  * shouldComponentUpdate()
+  * render()
+  * getSnapshotBeforeUpdate()
+  * componentDidUpdate()
 
-    return (
-    <div className="comments">
-      <h2>Comment List</h2>
-      <ul>
-      { commentComponents }
-      </ul>
-    </div>
-    )
-  }
-}
-```
+## Unmounting
+
+  * componentWillUnmount()
+
+## Errors
+
+  * componentDidCatch()
+
+# Lifecycle Methods Diagram
+
+<http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/>
