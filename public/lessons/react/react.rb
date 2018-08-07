@@ -17,21 +17,15 @@ class Track
     lesson name: "props_and_state",
            description: "Props and State are the two methods available to React to deal with immutable and mutable data within the application. This lesson will explain their uses and differences."
 
-    lesson name: "nested_components"
-    lesson name: "using_the_context"
     lesson name: "responding_to_events"
     lesson name: "forms_in_react"
-    lesson name: "testing_react_components"
-    lesson name: "loading_server_data"
     lesson name: "routing_in_react"
-    lesson name: "the_flux_design_pattern",
-           description: "How a one way flow of state will make managing change easier"
-    lesson name: "managing_state_with_redux",
-           description: "The Redux library is a simple implementation of the 'Flux Design Pattern' and will be useful for managing change within your application."
+    lesson name: "loading_server_data"
+    lesson name: "using_the_context"
 
     link href: "https://reactjs.org/tutorial/tutorial.html",
          name: "Build a Tic-Tac-Toe game in the browser with React"
-    
+
     # TODO: Update the Railsbridge Project
     # This Raisbridge project is great, but uses a very old version of React.
     # We should either update the project, or use something more recent.
