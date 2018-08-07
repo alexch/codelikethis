@@ -175,4 +175,6 @@ class CommentList extends React.Component {
 
 # Lifecycle Methods Diagram
 
+![react-component-lifecycle](react-component-lifecycle.png)
+
 <http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/>
