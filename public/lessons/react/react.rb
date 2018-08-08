@@ -16,7 +16,8 @@ class Track
            description: "React applications are organized into components. This lesson will show how components can be built up out of smaller components and then reused in new contexts."
     lesson name: "props_and_state",
            description: "Props and State are the two methods available to React to deal with immutable and mutable data within the application. This lesson will explain their uses and differences."
-
+    lesson name: "stateless_functional_components",
+           description: "Some components will only accept data from their Props and don't need a State object themselves or from their parents. These kind of components can be built using only functions and are very simple to reason about."
     lesson name: "responding_to_events"
     lesson name: "forms_in_react"
     lesson name: "routing_in_react"
