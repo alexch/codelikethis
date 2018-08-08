@@ -1,8 +1,27 @@
 # Component Props and State
 
+* Dynamic data that Components use fall into one of two categories
+
+1. Props:
+  - Similar to arguments of a function
+  - Are immutable once passed in
+  - *Can* be passed down to children explicitely
+
+2. State:
+  - **Private** data held within the Component
+  - *Can* be updated using `setState({someNew: 'data'})`
+  - **Must** be updated from the object that owns it
+  - *Can* be passed down to children as Props
+  - *Can* be updated by children by passing functions
+
+
+
+# Stateless Functional Components
+
 * At their most basic form Components are a lot like functions
 * They accept input from their props and return HTML snippets as React Elements
 * Any function that accepts one argument as props and returns JSX is valid
+* Stateless functions have no State i.e. `state = {value: 'something'}`
 
 ```javascript
 @@@javascript
@@ -30,10 +49,9 @@
 </body>
 ```
 
-# Props are Immutable
+# All Props are Immutable
 
 * Neither Function nor Class components should mutate their Props
-* 'Pure' functions don't mutate inputs and always return the same output for the same inputs
 * React requires Components to be 'Pure' toward their Props
 
 ```javascript
@@ -53,6 +71,8 @@ const UserInfo = (props) => {
 ```
 
 # Pure and Impure Functions
+
+* 'Pure' functions don't mutate inputs and always return the same output for the same inputs
 
 ```javascript
 @@@javascript
@@ -74,3 +94,9 @@ function deduct (bankAccount, amount) {
   return bankAccount
 }
 ```
+
+# Component State
+
+* Is private data specific to a component
+* Cannot be changed by the Parent
+* Has a set default value, can be `Null`
