@@ -29,10 +29,8 @@
   <div id="root"/>
 </body>
 <script>
-
   /* This is a perfectly valid React Component*/
   const HelloThere = (props) => <h1>Hello, { props.name }</h1>;
-
   ReactDom.render(<HelloThere name="Grace Hopper"/>,
     document.getElementById('root')
   )
