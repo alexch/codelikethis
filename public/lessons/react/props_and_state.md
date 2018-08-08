@@ -142,9 +142,7 @@ setInterval(tick, 1000);
 
 # State - Extract Component
 
-* What is wrong with this?
-
-> Does it use component state?
+> Does this use component state?
 
 ```javascript
 @@@javascript
@@ -284,12 +282,12 @@ this.setState({comment: 'Hello'});
 * If you use a prior value to calculate the state, pass a callback function
 
 ```
-// Incorrect
+/* Incorrect */
 this.setState({
   counter: this.state.counter + this.props.increment,
 });
 
-// Super Great
+/* Super Great */
 this.setState((prevState, props) => ({
   counter: prevState.counter + props.increment
 }));
@@ -302,6 +300,7 @@ this.setState((prevState, props) => ({
 * The merge is shallow
 
 ```javascript
+@@@javascript
 constructor(props) {
   super(props);
   this.state = {
