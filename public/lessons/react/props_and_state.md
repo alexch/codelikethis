@@ -97,6 +97,19 @@ function deduct (bankAccount, amount) {
 
 # Component State
 
-* Is private data specific to a component
-* Cannot be changed by the Parent
-* Has a set default value, can be `Null`
+### Description
+
+  * Data managed by the component that changes over time
+  * Considered private data by default
+  * Cannot be changed by the Parent
+  * Has a set default value, can be `Null`
+  * Plain JavaScript Object
+
+### Rules
+
+  * Never mutate the State directly
+  * Always use `this.setState()`
+  * Limit access to State from children
+  * If building from a prior value, pass an update function to `this.setState()`
+
+[Props vs State](http://lucybain.com/blog/2016/react-state-vs-pros/)
