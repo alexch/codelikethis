@@ -3,7 +3,7 @@ require "track"
 class Track
   Db = Track.new(name: "db",
                  display_name: 'Databases',
-                 description: "In general terms, a database is a service running alongside your application software that allows your code to save, search, and modify information that will survive past a single run (or session, or instance, or application). This course provides a broad overview of concepts common to all databases, using two particular widely-used database engines -- PostgreSQL and MongoDB -- for illustration and practical examples of relational (SQL) and document (NoSQL) DBs."
+                 description: "In general terms, a database is a service running alongside your application software that allows your code to save, search, and modify information that will survive past a single run (or session, or instance, or application). This track provides a broad overview of concepts common to all databases, using two particular widely-used database engines -- PostgreSQL and MongoDB -- for illustration and practical examples of relational (SQL) and document (NoSQL) DBs."
   ) do
     goal 'the general history of databases'
     goal 'the relational database model'
