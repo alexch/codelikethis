@@ -41,8 +41,8 @@ ReactDOM.render(React.createElement(
 
 # What we learned
 
-- JSX feels like HTML
-- JSX renders to ReactDOM code
+- JSX feels like HTML (inside of JavaScript)
+- JSX compiles to ReactDOM code
 - JSX is a 'syntax extension' to JavaScript
 - ReactDOM builds the HTML from the virtual DOM
 
@@ -75,16 +75,49 @@ ReactDOM.render(
 );
 ```
 
+# After compiling JSX -> JS
+
+```
+const user = {
+  firstName: 'Ada',
+  lastName:  'Lovelace',
+  nickName:  'The queen of numbers'
+};
+
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const element = (
+  <div>
+    <h1>Welcome to React, {formatName(user)}!</h1>
+    <h2>{user.nickName}</h2>  
+  </div>
+  );
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
 # JSX results
 
 <p data-height="265" data-theme-id="dark" data-slug-hash="NMEdwm" data-default-tab="js,result" data-user="Dangeranger" data-embed-version="2" data-pen-title="Embedding with JSX " class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/NMEdwm/">Embedding with JSX </a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-
 # JSX is transformed into ReactDOM
 
 - Tools like [Babel](https://babeljs.io) convert JSX to ReactDOM
-- You can Babel as a script in your project HTML for development
+- You can use Babel as a script in your project HTML for development
+
+```
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+<script type="text/babel">
+console.log( <h1>yo</h1> );
+</script>
+```
+
 
 ## Example
 

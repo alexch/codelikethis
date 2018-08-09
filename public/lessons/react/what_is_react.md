@@ -155,9 +155,12 @@ ReactDOM.render(
 Given a `<root>` element exists the result is:
 
 ```
-<form id="my-form">
-  <input id="create" type="text" placeholder="something"/>
-</form>
+@@@html
+<div>
+  <form id="my-form">
+    <input id="create" type="text" placeholder="something"/>
+  </form>
+</div>
 ```
 
 But when the form initiates a `onSubmit` event React will handle the changes using the `handleSubmit` handler function.
@@ -193,8 +196,8 @@ React.createElement(
 )
 ```
 
-- `type` => A DOM element like `<div>`, `<form>` or `<h1>`.
-- `props` => The element properties like `id`, `class`, `placeholder`, `onChange`, or `onSubmit`.
+- `type` => A DOM element name like `div`, `form` or `h1`.
+- `props` => The element attributes like `id`, `class`, `placeholder`, `onChange`, or `onSubmit`.
 - `children` => Child elements to nest within the generated element.
 
 # Summary
