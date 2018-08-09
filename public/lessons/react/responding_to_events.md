@@ -46,22 +46,22 @@ function Link () {
 * They are captured by React and replaced with SyntheticEvent
 * SyntheticEvents behave the same accross all Browsers, unlike DOM Events
 
-| Return Type    | Propery                |
-|----------------|------------------------|
-| boolean        | bubbles                |
-| boolean        | cancelable             |
-| DOMEventTarget | currentTarget          |
-| boolean        | defaultPrevented       |
-| number         | eventPhase             |
-| boolean        | isTrusted              |
-| DOMEvent       | nativeEvent            |
-| void           | preventDefault()       |
-| boolean        | isDefaultPrevented()   |
-| void           | stopPropagation()      |
-| boolean        | isPropagationStopped() |
-| DOMEventTarget | target                 |
-| number         | timeStamp              |
-| string         | type                   |
+| Propery                | Return Type    |
+|------------------------|----------------|
+| bubbles                | boolean        |
+| cancelable             | boolean        |
+| currentTarget          | DOMEventTarget |
+| defaultPrevented       | boolean        |
+| eventPhase             | number         |
+| isTrusted              | boolean        |
+| nativeEvent            | DOMEvent       |
+| preventDefault()       | void           |
+| isDefaultPrevented()   | boolean        |
+| stopPropagation()      | void           |
+| isPropagationStopped() | boolean        |
+| target                 | DOMEventTarget |
+| timeStamp              | number         |
+| type                   | string         |
 
 # Events are Nullified after Handling
 
