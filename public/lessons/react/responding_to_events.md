@@ -7,7 +7,7 @@
 ```html
 @@@html
 <!-- HTML Event Handler -->
-<button onclick="handleData">
+<button onclick="handleData()">
   Submit Data
 </button>
 ```
