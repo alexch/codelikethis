@@ -91,3 +91,79 @@ function onClick(event) {
   this.setState({eventType: event.type});
 }
 ```
+
+[More on SyntheticEvents](https://reactjs.org/docs/events.html)
+
+# Binding Event Handlers
+
+* JavaScript classes do not by default `bind` the `this` in ES6 Classes
+* Binding is a normal JavaScript behavior and is very confusing
+* Either use `bind` in the constructor, or use an ES6 Arrow Function
+
+```javascript
+@@@javascript
+class Toggle extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    // Binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+[More about Binding Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+
+# Binding Event Handlers - Arrow Functions
+
+* Class constructor with `this.function = this.function.bind(this)` are verbose
+* Rewrite the Class property as an arrow function as below
+* Only availble when transformed via Babel using `create-react-app` or other
+
+```javascript
+@@@javascript
+class LoggingButton extends React.Component {
+  // This syntax ensures `this` is bound within handleClick.
+  // Warning: this is *experimental* syntax.
+  constructor (props) {
+    super(props)
+    this.state = { isToggleOn: true }
+  }
+
+  handleClick = () => {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+```
+
+[Arrow Functions as Class Properties](https://medium.com/quick-code/react-quick-tip-use-class-properties-and-arrow-functions-to-avoid-binding-this-to-methods-29628aca2e25)
