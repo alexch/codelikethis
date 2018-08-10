@@ -177,4 +177,4 @@ class Reservation extends React.Component {
 }
 ```
 
-[MDN Computed Property Name ES6 Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names)
+[MDN Computed Property Name ES6 Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
