@@ -19,6 +19,7 @@ class Track
     lesson name: "stateless_functional_components",
            description: "Some components will only accept data from their Props and don't need a State object themselves or from their parents. These kind of components can be built using only functions and are very simple to reason about."
     lesson name: "responding_to_events"
+    lesson name: "conditionally_rendering_components"
     lesson name: "forms_in_react"
     lesson name: "routing_in_react"
     lesson name: "loading_server_data"
