@@ -96,7 +96,8 @@ ReactDOM.render(
 * Keys live on the components
 * Keys do not live on the content of the component
 
-```
+```javascript
+@@@javascript
 ListItem = (props) => {
   const value = props.value;
   return (
@@ -129,7 +130,8 @@ ReactDOM.render(
 
 # Unique Component Keys
 
-```
+```javascript
+@@@javascript
 Blog = (props) => {
   const sidebar = (
     <ul>
