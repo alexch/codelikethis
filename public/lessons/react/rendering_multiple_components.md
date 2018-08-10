@@ -171,6 +171,7 @@ ReactDOM.render(
 
 * JSX can be escaped, and then embed JSX in the escaped JavaScript
 * Arrya.map() can then be included inline
+* Multiple nested embeddings signals that a Component might need extraction
 
 ```javascript
 @@@javascript
