@@ -8,7 +8,7 @@
 
 ```javascript
 @@@javascript
-class MyComponent extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,7 +45,7 @@ class MyComponent extends React.Component {
 
 ```javascript
 @@@javascript
-class MyComponent extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
