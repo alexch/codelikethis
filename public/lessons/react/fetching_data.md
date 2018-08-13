@@ -24,8 +24,9 @@ class MyComponent extends React.Component {
     return (
       <ul>
         {items.map(item => (
-          <li key={item.name}>
-            {item.name} {item.price}
+          <li key={item.id}>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
           </li>
         ))}
       </ul>
@@ -59,7 +60,7 @@ class MyComponent extends React.Component {
       .then(result => {
         this.setState({
           isLoaded: true,
-          items: result.items
+          items: result
         });
       });
   }
@@ -72,8 +73,9 @@ class MyComponent extends React.Component {
       return (
         <ul>
           {items.map(item => (
-            <li key={item.name}>
-              {item.name} {item.price}
+            <li key={item.id}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </li>
           ))}
         </ul>
@@ -93,7 +95,7 @@ class MyComponent extends React.Component {
 
 ```javascript
 @@@javascript
-class MyComponent extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -104,23 +106,22 @@ class MyComponent extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch("https://jsonplaceholder.typicode.com/posts")
       .then(res => res.json())
       .then(
-        (result) => {
+        result => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result
           });
         },
-        /* Handle errors here to show errors from the component */
-        (error) => {
+        error => {
           this.setState({
             isLoaded: true,
-            error
+            error: error
           });
         }
-      )
+      );
   }
 
   render() {
@@ -130,11 +131,13 @@ class MyComponent extends React.Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+      console.log(this.state.items);
       return (
         <ul>
           {items.map(item => (
-            <li key={item.name}>
-              {item.name} {item.price}
+            <li key={item.id}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </li>
           ))}
         </ul>
