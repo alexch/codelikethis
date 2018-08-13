@@ -22,6 +22,7 @@ class Track
     lesson name: "forms_in_react"
     lesson name: "conditionally_rendering_components"
     lesson name: "rendering_multiple_components"
+    lesson name: "fetching_data"
     lesson name: "routing_in_react"
     lesson name: "loading_server_data"
     lesson name: "using_the_context"
