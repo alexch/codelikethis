@@ -203,6 +203,19 @@
   "mongodb-shell",
   "til-app",
   "mongodb-queries",
+  "components",
+  "virtual-dom",
+  "declarative-intent",
+  "jsx",
+  "react-dom",
+  "react-components",
+  "react-component-lifecycle",
+  "react-component-props",
+  "react-component-state",
+  "react-events",
+  "react-forms",
+  "react-conditional-rendering",
+  "react-component-keys",
+  "react-multiple-component-rendering",
   ""
-
 ]
