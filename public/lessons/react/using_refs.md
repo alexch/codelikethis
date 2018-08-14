@@ -81,8 +81,9 @@ class CustomTextInput extends React.Component {
 
 # Refs - Functional Components
 
-* Remember that Refs require instances
+* Remember that Refs require class instance targets
 * Stateless Functional components don't have instances
+* Stateless Functional components can **use** refs however
 
 ```
 function MyFunctionalComponent() {
@@ -98,6 +99,99 @@ class Parent extends React.Component {
     // This will *not* work!
     return (
       <MyFunctionalComponent ref={this.textInput} />
+    );
+  }
+}
+```
+
+# Refs - Functional Component Usage
+
+```
+function CustomTextInput(props) {
+  // textInput must be declared here so the ref can refer to it
+  let textInput = React.createRef();
+
+  function handleClick() {
+    textInput.current.focus();
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        ref={textInput} />
+
+      <input
+        type="button"
+        value="Focus the text input"
+        onClick={handleClick}
+      />
+    </div>
+  );
+}
+```
+
+# Refs - Create with Callbacks
+
+```
+class CustomTextInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.textInput = null;
+
+    this.setTextInputRef = element => {
+      this.textInput = element;
+    };
+
+    this.focusTextInput = () => {
+      // Focus the text input using the raw DOM API
+      if (this.textInput) this.textInput.focus();
+    };
+  }
+
+  componentDidMount() {
+    // autofocus the input on mount
+    this.focusTextInput();
+  }
+
+  render() {
+    // Use the `ref` callback to store a reference to the text input DOM
+    // element in an instance field (for example, this.textInput).
+    return (
+      <div>
+        <input
+          type="text"
+          ref={this.setTextInputRef}
+        />
+        <input
+          type="button"
+          value="Focus the text input"
+          onClick={this.focusTextInput}
+        />
+      </div>
+    );
+  }
+}
+```
+
+# Refs - Passing Refs from Callbacks
+
+```
+function CustomTextInput(props) {
+  return (
+    <div>
+      <input ref={props.inputRef} />
+    </div>
+  );
+}
+
+class Parent extends React.Component {
+  render() {
+    return (
+      <CustomTextInput
+        inputRef={el => this.inputElement = el}
+      />
     );
   }
 }
