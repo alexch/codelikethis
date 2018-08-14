@@ -24,9 +24,9 @@ class Track
     lesson name: "rendering_multiple_components"
     lesson name: "fetching_data"
     lesson name: "lifting_state_to_parents"
-    lesson name: "routing_in_react"
-    lesson name: "loading_server_data"
+    lesson name: "composition_vs_inheritance"
     lesson name: "using_the_context"
+    lesson name: "routing_in_react"
 
     link href: "https://reactjs.org/tutorial/tutorial.html",
          name: "Build a Tic-Tac-Toe game in the browser with React"
