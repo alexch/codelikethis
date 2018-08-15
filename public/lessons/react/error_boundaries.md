@@ -75,6 +75,36 @@ componentDidCatch(error, info) {
 
 [CodePen](https://codepen.io/Dangeranger/pen/oMRpQg?editors=0010)
 
+# Error Boundaries - Within Event Handlers
+
+* Event handlers are just normal JavaScript
+* Use regular `try/catch` syntax
+
+```javascript
+@@@javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+
+  handleClick = () => {
+    try {
+      // Do something that could throw
+    } catch (error) {
+      this.setState({ error });
+    }
+  }
+
+  render() {
+    if (this.state.error) {
+      return <h1>Caught an error.</h1>
+    }
+    return <div onClick={this.handleClick}>Click Me</div>
+  }
+}
+```
+
 # Error Boundaries - Live Example
 
 <p data-height="500" data-theme-id="light" data-slug-hash="oMRpQg" data-default-tab="js,result" data-user="Dangeranger" data-pen-title="oMRpQg" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/oMRpQg/">oMRpQg</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
