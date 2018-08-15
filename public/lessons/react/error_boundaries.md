@@ -47,7 +47,8 @@ class ErrorBoundary extends React.Component {
 }
 ```
 
-```
+```javascript
+@@@javascript
 <ErrorBoundary>
   <MyWidget />
 </ErrorBoundary>
