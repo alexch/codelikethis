@@ -77,7 +77,7 @@ componentDidCatch(error, info) {
 
 # Error Boundaries - Live Example
 
-<p data-height="265" data-theme-id="light" data-slug-hash="oMRpQg" data-default-tab="js,result" data-user="Dangeranger" data-pen-title="oMRpQg" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/oMRpQg/">oMRpQg</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="500" data-theme-id="light" data-slug-hash="oMRpQg" data-default-tab="js,result" data-user="Dangeranger" data-pen-title="oMRpQg" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/oMRpQg/">oMRpQg</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 # Error Boundaries - Stack Traces
