@@ -13,10 +13,10 @@ class Track
       topic name: "virtual-dom"
       topic name: "declarative-intent"
     end
-    
+
     lesson name: "jsx_and_the_virtual_dom",
            description: "How to write JSX and convert it to runnable React using Babel-Standalone in the browser." do
-            topic name: "jsx" 
+            topic name: "jsx"
             topic name: "react-dom"
             topic name: "javascript"
           end
@@ -27,21 +27,21 @@ class Track
     lesson name: "component_oriented",
            description: "React applications are organized into components. This lesson will show how components can be built up out of smaller components and then reused in new contexts." do
             topic name: "react"
-            topic name: "react-dom" 
+            topic name: "react-dom"
             topic name: "react-components"
             topic name: "react-component-lifecycle"
           end
-          
+
     lesson name: "props_and_state",
            description: "Props and State are the two methods available to React to deal with immutable and mutable data within the application. This lesson will explain their uses and differences." do
             topic name: "react-component-props"
             topic name: "react-component-state"
           end
-    
+
     lesson name: "stateless_functional_components",
            description: "Some components will only accept data from their Props and don't need a State object themselves or from their parents. These kind of components can be built using only functions and are very simple to reason about."
-    
-    lesson name: "responding_to_events" do 
+
+    lesson name: "responding_to_events" do
       topic name: "react"
       topic name: "react-events"
       topic name: "binding"
@@ -70,6 +70,7 @@ class Track
     lesson name: "lifting_state_to_parents"
     lesson name: "composition_vs_inheritance"
     lesson name: "using_refs"
+    lesson name: "error_boudaries"
     lesson name: "using_the_context"
     lesson name: "routing_in_react"
 
