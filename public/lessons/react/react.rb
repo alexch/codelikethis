@@ -70,7 +70,7 @@ class Track
     lesson name: "lifting_state_to_parents"
     lesson name: "composition_vs_inheritance"
     lesson name: "using_refs"
-    lesson name: "error_boudaries"
+    lesson name: "error_boundaries"
     lesson name: "using_the_context"
     lesson name: "routing_in_react"
 
