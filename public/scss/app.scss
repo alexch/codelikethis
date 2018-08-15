@@ -249,11 +249,14 @@ span.svg-icon {
 
   &.topic {
     a, a:visited {
+      font-size: 80%;
       color: black;
       background: lavender;
       border: 1px solid purple;
       border-radius: 4px;
       padding: 3px 6px;
+      margin: 2px;
+      display: inline-block;
     }
   }
 }
