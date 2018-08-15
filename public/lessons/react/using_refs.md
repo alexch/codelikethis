@@ -131,7 +131,43 @@ function CustomTextInput(props) {
 }
 ```
 
+# Refs - Forwarding Refs
+
+* Parents can pass Refs to their children
+* Child refs act like they belong to the parent
+* Breaks component encapsulation
+* Useful in re-usable components (General vs Specific)
+
+```
+// Basic React function component
+function FancyButton(props) {
+  return (
+    <button className="FancyButton">
+      {props.children}
+    </button>
+  );
+}
+```
+
+```
+// React component that can receive a Ref
+const FancyButton = React.forwardRef((props, ref) => (
+  <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
+));
+
+// You can now get a ref directly to the DOM button:
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>;
+```
+
 # Refs - Create with Callbacks
+
+* Alternative to using `React.createRef()`
+* Allows for arbitrary JavaScript logic for Ref binding
+* React calls the callback on `componentDidMount` and `componentDidUpdate`
+* Ref is set to Null on `ComponentWillUnmount`
 
 ```
 class CustomTextInput extends React.Component {
@@ -177,6 +213,9 @@ class CustomTextInput extends React.Component {
 
 # Refs - Passing Refs from Callbacks
 
+* Parents can pass a ref to children inline
+* Note that inline callbacks are called twice
+
 ```
 function CustomTextInput(props) {
   return (
@@ -186,6 +225,8 @@ function CustomTextInput(props) {
   );
 }
 
+// Parent instance this.inputElement will be
+// equal to the CustomTextInput <input> element
 class Parent extends React.Component {
   render() {
     return (
