@@ -10,7 +10,7 @@ class Thing
   attr_reader :display_name
   # every Thing might have a description
   attr_reader :description
-  # every Thing might have topics
+  # # every Thing might have topics
   attr_reader :topics
 
   # todo: check keys against "contains" per-subclass attribute list
@@ -32,6 +32,10 @@ class Thing
   # todo: make these equality functions respect "contains" ivars
   def ==(other)
     other.class == self.class and other.name == name
+  end
+
+  def <=>(other)
+    self.name <=> other.name
   end
 
   # This should not be necessary -- the docs for object.c say
@@ -57,6 +61,12 @@ class Thing
 
   def description?
     !!@description
+  end
+
+  def all_things
+    @things.map do |child_thing|
+      [child_thing] + child_thing.all_things
+    end
   end
 
   def self.contains name, &arg_munger
@@ -89,8 +99,8 @@ class Thing
     @things << thing_class.new(**options, &block)
   end
 
-  def things_of_class(thing_class)
-    @things.select {|thing| thing.is_a? thing_class}
+  def things_of_class(thing_class, things = @things)
+    things.select {|thing| thing.is_a? thing_class}
   end
 
   def current= track_or_lesson

@@ -157,7 +157,7 @@ class Lesson < Thing
         div(class: 'topics') {
           h2 "Topics"
           topics.each do |topic|
-            widget topic.view
+            widget topic.link_view
             text raw(nbsp)
           end
           }

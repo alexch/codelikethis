@@ -79,6 +79,14 @@ class Track < Thing
     super + @things.map(&:links).flatten
   end
 
+  # todo: test
+  def topics
+    things_of_class(Topic, all_things)
+    (super || []) + (@things.map do |thing|
+      thing.respond_to?(:topics) ? thing.topics : nil
+    end.compact).flatten.sort.uniq
+  end
+
   def lesson_names
     lessons.map(&:name)
   end
@@ -199,7 +207,9 @@ class Track < Thing
       div.container {
         div.row {
           h2 "Topics"
-          list_topics
+          p do
+            list_topics
+          end
         }
         div.row {
           div(class: 'col-sm-12 col-md-6 lessons') {
@@ -228,7 +238,9 @@ class Track < Thing
       options = options.dup
       element_name = options.delete(:element) || 'li'
       items.each do |item|
-        div(class: ['list-group-item', 'border-0', ('active' if current_page? item)]) {
+        css_classes =['list-group-item', 'border-0', ('active' if current_page? item)]
+        div(class: css_classes) {
+
           item_name = item.display_name
           # item_name = "Lab: #{item_name}" if item.is_a? Lab
           href = if current_page? item
@@ -284,7 +296,9 @@ class Track < Thing
     end
 
     def list_topics
-      list_items target.topics
+      target.topics.each do |topic|
+        widget topic.link_view
+      end
     end
 
   end

@@ -59,6 +59,12 @@ class Site
     ProjectsView.new(projects: Project.all)
   end
 
+  def all_things
+    tracks.map do |track|
+      track.all_things
+    end.flatten.compact.uniq
+  end
+
   class ProjectsView < Erector::Widget
     include Views
 
