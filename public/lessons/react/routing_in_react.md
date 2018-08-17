@@ -36,25 +36,40 @@ app.get('/posts/:id/edit', handlePostEdit)
 app.listen()
 ```
 
-# React Routing - Dynamic Routing
+# React Routing - Most Basic
 
-* React routes are just **special** components
+* React-router **can** route to just a basic function
+* React-router routes are just **special** components that delegate to others
 * Routes are generated when your app runs
 
 ```
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <nav>
-        <Link to="/dashboard">Dashboard</Link>
-      </nav>
-    </div>
-  );
+    <BrowserRouter>
+      <Route path="/" render={() => <h1>Hello React-Router!</h1>} />
+    </BrowserRouter>
+  )
 }
+
+const root = document.getElementById('root');
+ReactDOM.render( <App />, root)
+```
+
+# React Routing - Dynamic Routing
+
+* React-router can delegate `render` to other components
+* JSX from those components will be rendered on a "match"
+* React-router uses Regex to match the "path" to the "route"
+
+```
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Link } from "react-router-dom";
+import App from './App';
 
 const Router = () => {
   return (
@@ -66,6 +81,23 @@ const Router = () => {
 
 const root = document.getElementById('root');
 ReactDOM.render( <Router />, root)
+```
+
+```
+// File: components/App.js
+import React from 'react';
+
+const App = () => {
+  return (
+    <div>
+      <nav>
+        <Link to="/dashboard">Dashboard</Link>
+      </nav>
+    </div>
+  );
+}
+
+export default App;
 ```
 
 [Code Sandbox Step 1](https://codesandbox.io/s/82wvknrzn8)
@@ -111,3 +143,72 @@ const Router = () => {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<Router />, rootElement);
 ```
+
+# React Routing - The Match Object
+
+```
+const App = () => {
+  return (
+    <div>
+      <Route path="/" exact component={Home} />
+      <Route
+        path="/dashboard"
+        children={({ match }) => match && <Dashboard />} />
+    </div>
+  );
+};
+
+const Home = () => {
+  return <h1>Hello! You are at Home!</h1>;
+};
+
+const Dashboard = (props) => {
+  console.log(props);
+  return <h1>Welcome to the Dashboard</h1>;
+};
+
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+};
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Router />, rootElement);
+```
+
+[Code Sandbox Match Object](https://codesandbox.io/s/ymqp7xnxjj)
+
+# React Routing - Match Object Details
+
+```
+# From <Dashboard />
+Object {props: Object}
+  match: Object
+    path: "/dashboard"
+    url: "/dashboard"
+    isExact: true
+    params: {}
+```
+
+```
+# From <Home />
+Object {props: Object}
+  props: Object
+    match: Object
+      path: "/"
+      url: "/"
+      isExact: true
+      params: Object
+    location: Object
+    pathname: "/"
+      search: ""
+      hash: ""
+      state: undefined
+    history: Object
+    staticContext: undefined
+```
+
+[Code Sandbox Match Object](https://codesandbox.io/s/ymqp7xnxjj)
