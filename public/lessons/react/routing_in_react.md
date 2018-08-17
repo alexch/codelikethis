@@ -260,3 +260,36 @@ Object {props: Object}
 ```
 
 [Code Sandbox Match Object](https://codesandbox.io/s/ymqp7xnxjj)
+
+# React Router - URL Parameters
+
+* A colon `:someRoute` denotes that a Route component should be a parameter
+* Parameters can be passed into components from the Route `path`
+* Parameters can be required or optional
+
+```javascript
+@@@javascript
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+
+const App = props => {
+  return (
+    <BrowserRouter>
+      <div>
+        <Route
+          path="/:post?"
+          render={({ match }) => (
+            <h1>Post equals: {match.params.post || "None"}</h1>
+          )}
+        />
+      </div>
+    </BrowserRouter>
+  );
+};
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+```
+
+[CodeSandbox - URL Params](https://codesandbox.io/s/31yvwl87p5)
