@@ -74,7 +74,7 @@ import App from './App';
 const Router = () => {
   return (
     <BrowserRouter>
-      <App/>
+      <Route path="/" component={App} />
     </BrowserRouter>
   )
 }
@@ -90,9 +90,7 @@ import React from 'react';
 const App = () => {
   return (
     <div>
-      <nav>
-        <Link to="/dashboard">Dashboard</Link>
-      </nav>
+      <h1>Welcome to the App!</h1>
     </div>
   );
 }
@@ -101,6 +99,56 @@ export default App;
 ```
 
 [Code Sandbox Step 1](https://codesandbox.io/s/82wvknrzn8)
+
+# React Routing - Links
+
+* The `<Link />` component acts like  `<a href="/somePath">Link</a>`
+* Browser URL is changed
+* Browser history is preserved
+
+```
+import { Link } from 'react-router-dom';
+
+const Nav = () => {
+  <nav>
+    <Link to='/'>Home</Link>
+    <Link to={{ pathname: '/dashboard' }}>Home</Link>
+    <Link to={{ pathname: '/contact }} replace>Home</Link>
+  </nav>
+}
+
+const App = () => {
+  return (
+    <Nav />
+    <h1>Hello! You are at Home!</h1>;
+  )
+};
+
+const Dashboard = () => {
+  return (
+    <Nav />
+    <h1>Welcome to the Dashboard</h1>;
+  )
+};
+
+const Contact = () => {
+  return (
+    <Nav />
+    <h1>Please email me!</h1>;
+  )
+};
+
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+};
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Router />, rootElement);
+```
 
 # React Routing - Matching Routes
 
