@@ -17,7 +17,10 @@ const Router = () => (
   </BrowserRouter>
 );
 
-render(<Router />, document.getElementById('root'));
+ReactDom.render(
+  <Router />,
+  document.getElementById('root')
+);
 ```
 
 # React Routing - Traditional
@@ -26,8 +29,8 @@ render(<Router />, document.getElementById('root'));
 * Most routing systems are pretty static
 
 ```javascript
-// Express example
 @@@javascript
+// Express example
 app.get('/', handleIndex)
 app.get('/posts, handlePosts)
 app.get('/posts/:id', handlePost)
@@ -42,7 +45,8 @@ app.listen()
 * React-router routes are just **special** components that delegate to others
 * Routes are generated when your app runs
 
-```
+```javascript
+@@@javascript
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -65,7 +69,8 @@ ReactDOM.render( <App />, root)
 * JSX from those components will be rendered on a "match"
 * React-router uses Regex to match the "path" to the "route"
 
-```
+```javascript
+@@@javascript
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Link } from "react-router-dom";
@@ -83,7 +88,8 @@ const root = document.getElementById('root');
 ReactDOM.render( <Router />, root)
 ```
 
-```
+```javascript
+@@@javascript
 // File: components/App.js
 import React from 'react';
 
@@ -106,7 +112,8 @@ export default App;
 * Browser URL is changed
 * Browser history is preserved
 
-```
+```javascript
+@@@javascript
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -159,7 +166,7 @@ const App = () => {
     <div>
       <nav>
         <Link to="/">Home</Link>
-        &nbsp;&gt;&nbsp;
+        <br/>
         <Link to="/dashboard">Dashboard</Link>
       </nav>
       <div>
@@ -194,7 +201,12 @@ ReactDOM.render(<Router />, rootElement);
 
 # React Routing - The Match Object
 
-```
+* Match is one of the Props passed from a Route
+* It is a JavaScript object
+* You can use the properties to do logic, or fill values
+
+```javascript
+@@@javascript
 const App = () => {
   return (
     <div>
@@ -232,17 +244,18 @@ ReactDOM.render(<Router />, rootElement);
 # React Routing - Match Object Details
 
 ```
-# From <Dashboard />
+// From <Dashboard />
 Object {props: Object}
   match: Object
     path: "/dashboard"
     url: "/dashboard"
     isExact: true
     params: {}
+
 ```
 
 ```
-# From <Home />
+// From <Home />
 Object {props: Object}
   props: Object
     match: Object
