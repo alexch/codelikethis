@@ -293,3 +293,34 @@ ReactDOM.render(<App />, rootElement);
 ```
 
 [CodeSandbox - URL Params](https://codesandbox.io/s/31yvwl87p5)
+
+# React Router - Sub-Parameters
+
+```
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+
+const App = props => {
+  return (
+    <BrowserRouter>
+      <div>
+        <Route
+          path="/:author?/:post?"
+          render={({ match }) => (
+          <div>
+            <h1>Author equals: {match.params.author || "None"}</h1>
+            <h2>Post equals: {match.params.post || "None"}</h2>
+          </div>
+          )}
+        />
+      </div>
+    </BrowserRouter>
+  );
+};
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+```
+
+[CodeSandbox - Subparams](https://codesandbox.io/s/k956r67znr)
