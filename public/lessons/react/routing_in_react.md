@@ -111,7 +111,7 @@ const App = () => {
     <div>
       <nav>
         <Link to="/">Home</Link>
-        &nbsp;>&nbsp;
+        &nbsp;&gt;&nbsp;
         <Link to="/dashboard">Dashboard</Link>
       </nav>
       <div>
