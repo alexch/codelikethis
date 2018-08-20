@@ -78,3 +78,33 @@ const Nav = props => {
 ```
 
 [CodePen](https://codesandbox.io/s/1o9o1wn5l3)
+
+
+# React Routing - Switch Component
+
+* Useful to avoid over matching
+* Switch renders only the first matching `<Route>` instead of all
+* Can be used to build a catch all route for 404 like pages
+
+### Example
+
+```javascript
+@@@javascript
+const App = props => {
+  return (
+    <BrowserRouter>
+      <React.Fragment>
+        <Nav />
+        <Switch>
+          <Route path="/posts" component={Posts} />
+          <Route path="/authors" component={Authors} />
+          <Route path="/:author/:post" component={AuthorPost} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </React.Fragment>
+    </BrowserRouter>
+  );
+};
+```
+
+[CodeSandbox](https://codesandbox.io/s/pl0wpn6q0)
