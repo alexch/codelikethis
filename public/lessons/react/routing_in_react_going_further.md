@@ -15,7 +15,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 * Almost all valid RegExs are acceptable, check [Path-to-Regexp](path-to-regexp)
 * Path parts can be validated separately
 
-### Examples
+### Example
 
 ```javascript
 @@@javascript
@@ -32,6 +32,8 @@ React Router offers a lot of power and flexibility, we will explore the followin
 ```
 
 # React Routing - RegEx Validation Parts
+
+### Example
 
 ```javascript
 @@@javascript
@@ -55,6 +57,8 @@ React Router offers a lot of power and flexibility, we will explore the followin
 * `<Link />` Components can pass URL Parameters to a Route
 * The `to` param works differently between strings and objects
 * Params can be parsed using `new URLSearchParams(params)`
+
+### Example
 
 ```javascript
 @@@javascript
