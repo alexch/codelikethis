@@ -48,3 +48,29 @@ React Router offers a lot of power and flexibility, we will explore the followin
 ```
 
 [CodeSandbox](https://codesandbox.io/s/vy83l33w15)
+
+# React Routing - Query Parameters
+
+* Query parameters are the `name=value` pairs afte a `?` in a URL
+* `<Link />` Components can pass URL Parameters to a Route
+* The `to` param works differently between strings and objects
+* Params can be parsed using `new URLSearchParams(params)`
+
+```javascript
+@@@javascript
+const Nav = props => {
+  return (
+    <div>
+      <Link to="/path?id=42">Params within 'to'</Link>
+      <br />
+      <Link to={{ pathname: "/path?id=9000" }}>Params within Pathname</Link>
+      <br />
+      <Link to={{ pathname: "/path", search: "id=789" }}>
+        Params 'Search' property
+      </Link>
+    </div>
+  );
+};
+```
+
+[CodePen](https://codesandbox.io/s/1o9o1wn5l3)
