@@ -108,3 +108,38 @@ const App = props => {
 ```
 
 [CodeSandbox](https://codesandbox.io/s/pl0wpn6q0)
+
+# React Routing - Catch All Route
+
+* Catch all routes can be useful to prevent 404 errors
+* Allow for a 'helpful' message, instead of a "Page Not Found" HTTP error
+* Are easy to create with the `<Switch>` and `<Route>` components
+
+### Example
+
+```javascript
+@@@javascript
+const NotFound = () => (
+  <div>
+    <h1>That page was not found</h1>
+  </div>
+);
+
+const App = props => {
+  return (
+    <BrowserRouter>
+      <React.Fragment>
+        <Nav />
+        <Switch>
+          <Route path="/posts" component={Posts} />
+          <Route path="/authors" component={Authors} />
+          <Route exact path="/" component={Home} />
+          <Route path="" component={NotFound} />
+        </Switch>
+      </React.Fragment>
+    </BrowserRouter>
+  );
+};
+```
+
+[CodeSandbox](https://codesandbox.io/s/m58vy8q99j)
