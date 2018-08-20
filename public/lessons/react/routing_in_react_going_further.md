@@ -143,3 +143,28 @@ const App = props => {
 ```
 
 [CodeSandbox](https://codesandbox.io/s/m58vy8q99j)
+
+# React Routing - Redirection
+
+### Examples
+
+```javascript
+@@@javascript
+const Home = () => <h1>You are Home</h1>;
+const Posts = () => <h1>All the Posts</h1>;
+
+const App = props => {
+  return (
+    <BrowserRouter>
+      <React.Fragment>
+        <Nav />
+          <Route path="/posts" component={Posts} />
+          <Route path="/willredirect" render={() => (
+            <Redirect to="/posts" />
+          )} />
+          <Route exact path="/" component={Home} />
+      </React.Fragment>
+    </BrowserRouter>
+  );
+};
+```
