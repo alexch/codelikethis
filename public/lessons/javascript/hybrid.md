@@ -20,10 +20,10 @@ The overlap between these three can be messy :-(
 # functional style
 
   - *first-class* functions which may be used *as parameters and values* by other functions
-  - *closures* to let functions share state between *certain* functions
+  - *closures* to share state between *certain* functions
     - with strict *[lexical scoping](https://whatis.techtarget.com/definition/lexical-scoping-static-scoping)* rules (to avoid combinatorial complexity of globals)
   - *immutable* data structures, to minimize side effects and maximize concurrency
-  - *chaining* and *iterator functions*
+  - *chaining* and *iterators* and *[collection pipelines](https://martinfowler.com/articles/collection-pipeline/)*
 
 # object-oriented style
 

@@ -33,7 +33,7 @@ function assert(value, why) {
   if (value) {
     console.log("Success: " + why);
   } else {
-    console.log(new Error(why).stack);
+    console.error(new Error("Failure: " + why).stack);
   }
 }
 ```
@@ -56,14 +56,15 @@ Test suite command: `F5` (Refresh)
 ```
 @@@js
 function fancyText(s) {
-    return s[0].toUpperCase() + s.slice(1,s.length).toLowerCase();
+    return s[0].toUpperCase() + 
+      s.slice(1,s.length).toLowerCase();
 }
 
 assert(fancyText('') === '');
 assert(fancyText('apple') === 'Apple');
 ```
 
-...and so on.
+...and so on (see https://fancy-form.herokuapp.com/ )
 
 # Self-Testing Web Sites
 

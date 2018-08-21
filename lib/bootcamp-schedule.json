@@ -418,6 +418,9 @@
     },
     {
       "track": "projects",
+      "projects": [
+        "interview_rotation"
+      ],
       "events": [
         {
           "start": "Friday 4:00 pm",
