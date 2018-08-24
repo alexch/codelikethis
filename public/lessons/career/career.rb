@@ -38,6 +38,7 @@ class Track
     link href: 'https://hackernoon.com/how-i-landed-my-post-bootcamp-software-developer-job-in-just-seven-weeks-7b213c1bb867'
 
     lesson name: 'freelancing_and_consulting'
+    lesson name: 'where_to_go_next'
 
   end
 end
