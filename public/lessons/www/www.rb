@@ -97,6 +97,7 @@ class Track
             topic name: "element-box-model"
             topic name: "style-overrides"
       link href: "https://meyerweb.com/eric/tools/css/reset/"
+      link href: "http://learnlayout.com/box-model.html"
     end
 
     lesson name: "layout_survey",

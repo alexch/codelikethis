@@ -8,7 +8,11 @@ class Track < Thing
   ) do
 
     link href: "https://en.wikipedia.org/wiki/Computer_science"
-
+    link href: "http://medium.com/basecs"
+    link href: "http://teachyourselfcs.com"
+    link href: "https://www.edx.org/course/cs50s-introduction-computer-science-harvardx-cs50x"
+    link name: "Crash Course Computer Science",
+         href: "https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a"
     lesson name: "unicode"
 
     lesson name: "turing_complete",
