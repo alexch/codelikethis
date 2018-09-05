@@ -1,6 +1,6 @@
 # Evented I/O: A Gentle Introduction
 
-(Prerequisite: [I/O lesson](/lessons/learn_to_code_with_javascript/input_and_output.md))
+(Prerequisite: [I/O lesson](/public/lessons/learn_to_code_with_javascript/input_and_output.md))
 
 This is a **very** big topic, but briefly...
 
@@ -55,27 +55,34 @@ A named callback is simply a function.
 
 Example:
 
-    console.log("what is your name?")
+    console.log("what is your name?");
     function sayHi(name) {
         console.log('Hi, ' + name + '!');
     }
     process.stdin.once('data', sayHi);
+    
+This means 
+
+1. ask the user their name
+2. define a function named `sayHi` that accepts a parameter named `name` 
+3. "hey standard input, once you receive a `data` chunk, pass it in to the `sayHi` function".
 
 # Anonymous Callbacks
 
-An anonymous callback is defined *inline*.
+An anonymous callback is also a function, but this time it's defined *inline*.
 
 Example:
 
-    console.log("what is your name?")
+    console.log("what is your name?");
     process.stdin.once('data', function (name) {
         console.log('Hi, ' + name + '!');
     });
     
-Note that the *second parameter* to the `once` method is the same as the *entire sayHi function* from the previous slide...
+Note that the *second argument* to the `once` method is the same as the *entire sayHi function* from the previous slide...
  
 * up to and including the close brace `}`... 
 * but not including the close paren and semicolon `);`
+* and (naturally) not including a function name
 
 # Anonymous Fat-Arrow Callbacks
 
@@ -84,11 +91,11 @@ You will often see the *fat arrow* variant syntax in anonymous callbacks.
 Example:
 
     console.log("what is your name?")
-    process.stdin.once('data', (name) => {
+    process.stdin.on('data', (name) => {
         console.log('Hi, ' + name + '!');
     });
     
-Note that the second parameter to the `once` method is the same as the the previous slide, but with `=>` *after* the parameter list, instead of the word `function` *before* the parameter list.
+Note that the second argument to the `once` method is the same as the the previous slide, but with `=>` *after* the parameter list, instead of the word `function` *before* the parameter list.
 
 # Nesting
 
@@ -108,15 +115,17 @@ To *force* events to happen *in order* you may need to *nest* your callbacks.
         });
     });
 
+Yes, nested callbacks are confusing. This is an example of *callback hell*.
+
 # Callback Hell
 
-![yo dawg callbacks](/images/yo-dawg-callbacks.png)
+![yo dawg callbacks](/public/images/yo-dawg-callbacks.png)
 
 # Async-Await and Promises
 
 Nested callbacks are horrible. There is a different way to do it that leads to cleaner code, but requires you to use (and understand!) Promises and Async/Await.
 
-Example:
+We will cover those topics in depth later, but for now, look at this example:
 
 ```ecmascript 6
 async function start() {
@@ -131,27 +140,29 @@ async function start() {
 
 > note: for this to work, the `ask` function must return a Promise
 
+Note that instead of passing the result in to a callback function, `await` returns the result *just like a normal function call* so you can assign it to a variable. 
+
 # Events: pros and cons
 
 Evented programs are often more flexible and high-performance than traditional sequenced programs, but they can be more confusing for humans to write and to read (and to debug!).
 
-Also, sequences naturally *end* when they are finished, but evented programs will just keep doing the same things over and over again, as long as the triggers keep happening. 
+Also, sequences naturally *end* when they are finished, but evented programs will just keep doing the same things over and over again, as long as the triggers keep happening.
 
-This means that you may need to explicitly call `process.exit()` in NodeJS programs.
+This means that you need to explicitly call `process.exit()` in NodeJS programs.
 
 # On vs Once
 
-If you have a simple sequence in mind, and want to emulate it using an evented system, you could use the following technique:
+`once` is a special case of a more common method named `on`. The difference is that 
 
-Set up your event responders to happen only once.
+* `on` sets up an event handler that is called back *any time* the event occurs
+* `once` sets up the same thing, but then *removes* it after the first call
 
-In NodeJS, this is accomplished by sending the `once` message in place of the `on` message.
+The following code will *keep saying hello* every time the user enters another line of text.
 
     @@@ js
     console.log("What is your name?");
-    process.stdin.once('data', (chunk) => {
+    process.stdin.on('data', (chunk) => {
         let name = chunk.toString().trim();
         console.log("Hello, " + name + "!");
-        process.exit();  // don't forget to stop!
     });
 

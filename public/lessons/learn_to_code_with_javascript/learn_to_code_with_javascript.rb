@@ -133,12 +133,6 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "strings"
   end
 
-  lesson name: "evented_io" do
-    topic name: "es6"
-    topic name: "promises"
-    topic name: "async-await"
-  end
-
   lesson name: "intermission", description: "This is a good place for a break, maybe between the first and second week of class."
 
   lesson name: "logic" do
