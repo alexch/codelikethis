@@ -1,6 +1,6 @@
 # Guess The Number
 
-Before starting to code this project, please find a partner and play this game together for a few rounds.
+Before starting to code this project, please find a partner and play this game together verbally for a few rounds.
 
 1. Alice thinks of a number
 2. Bob guesses a number
@@ -20,28 +20,16 @@ Think carefully about how the computer will guess a number. Start with it guessi
 $ node guess.js
 Please think of a number between 1 and 100 (inclusive).
 I will try to guess it.
-Press Enter to begin:
 
-Is it... 50?
-N
-Enter H if it's higher, L if it's lower: 
-H
-Is it... 75?
-N
-Enter H if it's higher, L if it's lower: 
-L
-Is it... 63?
-N
-Enter H if it's higher, L if it's lower: 
-H
-Is it... 69?
-N
-Enter H if it's higher, L if it's lower: 
-L
-Is it... 66?
-N
-Enter H if it's higher, L if it's lower: 
-Y
+Is it... 50? N
+Is it higher (H), or lower (L)? H
+Is it... 75? N
+Is it higher (H), or lower (L)? L
+Is it... 63? N
+Is it higher (H), or lower (L)? H
+Is it... 69? N
+Is it higher (H), or lower (L)? L
+Is it... 66? Y
 Your number was 66!
 I guessed it in 5 tries.
 ```
