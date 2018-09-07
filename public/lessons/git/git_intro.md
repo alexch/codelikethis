@@ -269,14 +269,17 @@ index 0000000..9f0ab0a
 
 # LAB: Shopping History (cont.)
 
-Now we can remember the ice cream flavor name... 
+Now we remember ... 
 
 ![chunky monkey](chunky-monkey-detail.png)
 
+Oh, Chunky Monkey, how could I ever forget you?
 
 # Diffs
 
-Reading diffs can be *diff*icult, but the most important part is that every line beginning with a `+` was *added* and every line beginning with `-` was *removed*.
+Reading diffs can be difficult.
+
+The most important thing is that every line beginning with a `+` was *added* and every line beginning with `-` was *removed*.
 
 Run `git show` on your *second* commit to see something like this:
 
@@ -301,3 +304,11 @@ index 9f0ab0a..5ae9411 100644
 
 It's saying "milk" and "chunky monkey ice cream" were *removed*, and "ketchup" was *added*, during that commit.
   
+# Summary
+
+* `git init` initializes a repo inside a directory
+* `git add .` stages all current local changes, including new files and edits inside existing files
+* `git commit -m 'message'` turns the *staged* changes into a new *commit* history entry
+* `git show` expands a single commit to show the *metadata* and *changes*
+* a git ID is a SHA-1 hash that uniquely identifies a single commit
+
