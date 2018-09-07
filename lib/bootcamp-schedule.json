@@ -21,35 +21,39 @@
       "orientation, Q & A, paired code review"
     ],
     [
-      " 9:30 am",
-      "first lecture"
+      " 9:00 am",
+      "first lecture: ~30min slides, ~30min labs, ~15min break"
     ],
     [
-      "11:00 am",
-      "second lecture"
+      "10:15 am",
+      "second lecture: ~30min slides, ~30min labs, ~15min break"
+    ],
+    [
+      "11:30 am",
+      "third lecture: ~30min slides or code review"
     ],
     [
       "12:00 pm",
-      "preview and pair up"
+      "afternoon project preview & pairing"
     ],
     [
-      "12:30 pm",
+      "12:15 pm",
       "lunch break"
     ],
     [
-      " 2:00 pm",
+      " 1:30 pm",
       "project/workshop time"
     ],
     [
-      " 3:45 pm",
+      " 3:00 pm",
       "afternoon break"
     ],
     [
-      " 4:00 pm",
+      " 3:15 pm",
       "project/workshop time"
     ],
     [
-      " 6:00 pm",
+      " 5:00 pm",
       "go home!"
     ]
   ],
@@ -76,7 +80,8 @@
         "variables",
         "null",
         "functions",
-        "input_and_output"
+        "input_and_output",
+        "logic"
       ],
       "projects": [
         "exercism",
@@ -91,7 +96,7 @@
             "git_basics"
           ],
           "projects": [
-            "yelpington_repo"
+            "shopping_list"
           ]
         },
         {
@@ -104,11 +109,7 @@
       "events": [
         {
           "start": "Thursday 1:30 pm",
-          "name": "escape workshop 1"
-        },
-        {
-          "start": "Thursday 3:30 pm",
-          "name": "escape workshop 2"
+          "name": "Escape Room"
         },
         {
           "start": "Friday 4:00 pm",
@@ -119,7 +120,6 @@
     {
       "track": "learn_to_code_with_javascript",
       "lessons": [
-        "logic",
         "loops",
         "arrays",
         "argv",

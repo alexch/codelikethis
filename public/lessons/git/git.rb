@@ -15,7 +15,8 @@ Track::Git = Track.new(
   link href: "https://vimeo.com/152746496", time: "10 min", name: "Git Demo",
        description: "screencast demo of basic git commands"
 
-  lesson name: "git_basics" # what is VC? and some command-line labs
+  lesson name: "git_intro"
+  lesson name: "git_basics" # todo: rewrite as followup to intro
 
   # one user, 'git flow' with deploys, OSS with issues and releases, feature & story branches
   lesson name: "git_workflows" do
