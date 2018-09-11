@@ -60,9 +60,8 @@ describe Project do
     end
   end
 
-  context 'extra styling' do
-    it 'puts boxes around stories' do
-      project = Project.new(content: <<-MARKDOWN)
+  let(:dragon) {
+    <<-MARKDOWN
 # Stories
 
 <!--box-->
@@ -74,11 +73,19 @@ describe Project do
 **Then** it should be dead
 
 <!--/box-->
-                                    zork
+                                  zork
+
 ## Tech
 
 * blah
-      MARKDOWN
+    MARKDOWN
+
+  }
+
+  context 'extra styling' do
+    it 'puts boxes around stories' do
+      project = Project.new(content: dragon)
+
       project.view.to_html.should include(<<-HTML)
 <section class="box">
 
@@ -92,6 +99,59 @@ describe Project do
       HTML
 
     end
+  end
+
+  context 'table of contents' do
+    it 'is built from H2 lines' do
+      project = Project.new(content: dragon)
+      expect(project.sections).to eq ([
+           {title: "Slay the Dragon", children: []},
+           {title: "Tech", children: []},
+      ])
+    end
+
+  end
+
+  let(:solar_system) {
+    <<-MARKDOWN
+# Solar System
+
+## Mercury
+
+## Venus
+
+## Earth
+
+### Luna
+
+## Mars
+
+### Phobos
+
+### Deimos
+
+#### Cerberos
+
+    MARKDOWN
+  }
+
+  it 'nests one level (H2 - H3 but not H1 or H4)' do
+    project = Project.new(content: solar_system)
+    expect(project.sections).to eq ([
+      {title: "Mercury", children: []},
+      {title: "Venus", children: []},
+      {title: "Earth",
+       children: [
+         {title: "Luna"}
+       ]
+      },
+      {title: "Mars",
+       children: [
+         {title: "Phobos"},
+         {title: "Deimos"}
+       ]
+      }
+    ])
   end
 
 end

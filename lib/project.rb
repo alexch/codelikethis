@@ -57,7 +57,7 @@ class Project < Thing
       if @href
         if @href =~ /^\// #  allow partial paths e.g. /basic-javascript/introduction-to-javascript
           "https://beta.freecodecamp.org/en/challenges#{@href}"
-        else  
+        else
           @href
         end
       else
@@ -88,6 +88,27 @@ class Project < Thing
     @content || File.read(content_file)
   end
 
+  def sections
+    pattern = /^(#+) (.*)$/
+    headers = content.split(/\n/).grep(pattern)
+    result = []
+    children = nil
+    headers.each do |line|
+      matches = (pattern.match(line))
+      hashes = matches[1]
+      title = matches[2].strip
+      if hashes == '##'
+        children = []
+        section = {title: title, children: children}
+        result << section
+      elsif hashes == '###'
+        section = {title: title}
+        children << section
+      end
+    end
+    result
+  end
+
   def view
     View.new(target: self)
   end
@@ -100,6 +121,28 @@ class Project < Thing
 
     def content
       text raw(from_markdown(target.content))
+    end
+
+    def outline
+      div.outline {
+        h3 "Outline"
+        ul(class: 'list-group') {
+          target.sections.each do |section|
+            li(class: 'list-group-item') {
+              text section[:title]
+              if section[:children] && !section[:children].empty?
+                ul(class: 'list-group') {
+                  section[:children].each do |child_section|
+                    li(class: 'list-group-item') {
+                      text child_section[:title]
+                    }
+                  end
+                }
+              end
+            }
+          end
+        }
+      }
     end
 
   end
