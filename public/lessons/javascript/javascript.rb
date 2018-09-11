@@ -71,10 +71,9 @@ class Track < Thing
       topic name: "objects"
     end
 
-    lesson name: '/oo/oo_design' do
-      topic name: ""
-    end
-
+    # lesson name: '/oo/oo_design' do
+    #   topic name: ""
+    # end
 
     # todo?: We'll also consider hoisting, this, bind/call/apply, fat and skinny arrows, and more.
 
@@ -85,6 +84,12 @@ class Track < Thing
     lesson name: "ES6" do
       link name: "Exploring ES6",
            href: "http://exploringjs.com/es6.html"
+    end
+
+    lesson name: "evented_io" do
+      topic name: "es6"
+      topic name: "promises"
+      topic name: "async-await"
     end
 
     lesson name: "ecosystem",

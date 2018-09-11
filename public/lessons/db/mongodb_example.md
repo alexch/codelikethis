@@ -68,7 +68,7 @@ see <http://callbackhell.com/>
 
 Additionally, sometimes your callback is passed  *yet another callback function* which you **must** call when your code is finished.  
 
-![yo dawg callbacks](yo-dawg-callbacks.png)
+![yo dawg callbacks](/images/yo-dawg-callbacks.png)
 
 # `connectAnd`
 

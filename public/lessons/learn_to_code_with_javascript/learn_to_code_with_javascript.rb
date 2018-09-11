@@ -15,7 +15,9 @@ Track::LearnToCodeWithJavascript = Track.new(
   goal "how to recognize and use certain abstract data structures (arrays, stacks, hashes)"
   goal "basic use of JavaScript"
 
-  link name: "VS Code", href: "https://code.visualstudio.com", description: "Installation instructions for the VS Code text editor"
+  link name: "VS Code",
+       href: "https://code.visualstudio.com",
+       description: "Installation instructions for the VS Code text editor"
 
   link href: "https://www.codecademy.com/tracks/javascript",
        name: "CodeCademy Intro to JavaScript course"
@@ -42,6 +44,8 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "intro" do
     video youtube_id: '-jRREn6ifEQ'
     topic name: "text-editor"
+    link name: 'How to Design Programs (preface)',
+         href: "https://htdp.org/2018-01-06/Book/part_preface.html"
   end
 
   lesson name: "the_command_line" do
@@ -67,7 +71,6 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "heroku"
   end
 
- 
   lesson name: "values" do
     topic name: "values"
     topic name: "numbers"
@@ -75,9 +78,7 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "booleans"
     topic name: "operators"
     topic name: "return-values"
-
   end
-
 
   lesson name: "strings" do
     link href: "https://hackernoon.com/what-every-programmer-should-know-about-string-a6611537f84e"
@@ -90,15 +91,13 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "numbers" do
     topic name: "numbers"
     topic name: "type-coercion"
-
   end
 
-  lesson name: "variables" do 
+  lesson name: "variables" do
     topic name: "values"
     topic name: "operators"
     topic name: "assignment"
     topic name: "return-values"
-
   end
 
   lesson name: "null" do
@@ -114,7 +113,7 @@ Track::LearnToCodeWithJavascript = Track.new(
   end
 
 
-  lesson name: "/tricks_of_the_trade/modern_debugging" do # should be taught after functions (since call stack traces don't make sense without 'call') 
+  lesson name: "/tricks_of_the_trade/modern_debugging" do # should be taught after functions (since call stack traces don't make sense without 'call')
     topic name: "debugging"
     topic name: "errors"
   end
@@ -127,7 +126,6 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "functions"
     topic name: "methods"
     topic name: "es6"
-    topic name: "ecmascript-six"
     topic name: "variables"
     topic name: "values"
     topic name: "callbacks"
@@ -159,7 +157,7 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "conditionals"
     topic name: "loops"
   end
-  
+
   lesson name: "scope" do
     topic name: "scope"
     topic name: "global-variables"
@@ -177,7 +175,7 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "break"
     topic name: "index"
   end
-  
+
   lesson name: "arrays" do
     topic name: "arrays"
     topic name: "values"
@@ -186,7 +184,6 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "loops"
     topic name: "refactoring"
   end
-
 
   lesson name: "argv" do
     project name: "today_i_learned_cli"
@@ -210,7 +207,7 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "numbers"
     topic name: "reverse-polish-notation"
   end
-  
+
   lesson name: "hashes" do
     topic name: "hashes"
     topic name: "objects"
@@ -230,5 +227,5 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   link href: "https://learnpythonthehardway.org/book/advice.html"
   link href: "http://jsforcats.com"
-  
+
 end

@@ -31,7 +31,7 @@ process.stdin.on('data', (chunk) => { console.log(chunk) })
 |phrase|meaning|
 |---|---|
 | `process.stdin`        | hey terminal input, |
-| `.on('data',` ... `)`  | when you get some data, |
+| `.once('data',` ... `)`  | when you get some data, |
 | `(chunk)`              | please name it `chunk` |
 | ` => `                 | and send it to |
 | ` { ` ... ` }`         | this block of code |
@@ -43,7 +43,7 @@ process.stdin.on('data', (chunk) => { console.log(chunk) })
 
 ```
 @@@ js
-process.stdin.on('data', function(chunk) { console.log(chunk) })
+process.stdin.once('data', function(chunk) { console.log(chunk) })
 ```
 
 and the block of code itself is called a *callback* (since you are asking `stdin` to *call you back* when it receives input).
@@ -55,7 +55,7 @@ and the block of code itself is called a *callback* (since you are asking `stdin
 
         @@@ js
         console.log("What is your name?");
-        process.stdin.on('data', (chunk) => {
+        process.stdin.once('data', (chunk) => {
             let name = chunk.toString(); 
             console.log("Hello, " + name + "!"); 
         });
@@ -82,6 +82,13 @@ What happens? Is this what you expected?
 * In through the nose...
 * Ahhhhhhhh.
 
+# Control-C to close
+
+* First things first: get back to the command line
+* This program doesn't *exit* yet, so you will need to *force* it to close
+* Do this by holding down CONTROL and pressing C
+    * abbreviated ⌃C or ^C or CTRL-C
+
 # Let's fix this
 
 * Have you figured out what the problem is?
@@ -107,118 +114,134 @@ What happens? Is this what you expected?
 
         @@@ js
         console.log("What is your name?");
-        process.stdin.on('data', (chunk) => {
+        process.stdin.once('data', (chunk) => {
             let name = chunk.toString().trim();
             console.log("Hello, " + name + "!");
         });
 
 * Run it and make sure it works OK
+* Press ⌃C to close it
+
+# LAB: exit
+
+* Change the program to look like this:
+
+        @@@ js
+        console.log("What is your name?");
+        process.stdin.once('data', (chunk) => {
+            let name = chunk.toString().trim();
+            console.log("Hello, " + name + "!");
+            process.exit();
+        });
+
+Note that:
+
+  * `process.exit` uses the same `process` object as `process.stdin`
+  * The call to `process.exit()` must be *inside* the callback
+    * Otherwise, what happens? Try it and see!
 
 # LAB: Capitalization
 
 * What happens if you type your name in all lowercase?
 * Make the program capitalize your name for you even if you forget.
 
-**Hint**: remember `slice` ?
+**Hint**: remember `slice` from the [Strings lesson](strings)?
 
-# LAB: Crazy Name
+# LAB: YELL YOUR NAME
 
-* Now go crazy and make it do all sorts of silly things to your name!
+* Now go crazy and make it YELL your name! 
+    * Hint: Use the [toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) method
 
-# Evented I/O: A Gentle Introduction
+---
 
-This is a very big topic, but briefly...
+# readline
 
-# Sequences 
+* NodeJS is more than a JavaScript *interpreter*
 
-Traditional programs are written using *sequences*, which are performed in order like a traditional recipe, performed by a single chef:
+* It's also a collection of JavaScript *libraries*
 
-0. preheat oven to 350&deg;
-1. roll out dough on baking sheet
-2. cut out cookies and remove excess dough
-3. put baking sheet in the oven
-4. wait 12 minutes and remove baking sheet from oven
-5. place cookies on a tray and wait 10 more minutes for cookies to cool
-6. decorate the cookies with icing and sprinkles
+* One of the libraries is called `readline` 
+    * `readline` makes it easier to read lines, naturally :-)
+    * the "books" in this library are functions 
+      * (and classes and other things too)
 
-# Sequences in Parallel
+# using readline
 
-Even though the recipe is written in a strict order, many of these steps can happen simultaneously or in parallel. 
+To use `readline`, include the following lines in the top of your source file:
 
-For instance, you don't have to wait for the oven to be preheated before rolling out the dough.
+```ecmascript 6
+const readline = require('readline');
 
-Or, you could have one cook rolling, cutting, and baking, and another cook removing and decorating. 
+const readlineInterface = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+    
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+```
 
-# Events
+# using readline - explanation
 
-NodeJS programs are written using *events*, which is like a bunch of cooks, each performing one part of the recipe.
+|code| explanation |
+|---|---|
+| `const readline = require('readline');` | load the `readline` package and name it `readline` |
+| `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings: |
+|`     input: process.stdin,` | for input, use the *standard input stream* (i.e. terminal keyboard input) |
+|`     output: process.stdout` | for output, use the *standard output stream* (i.e. terminal console output) 
+|`function ask(questionText) {...}` | create a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) |
 
-* when starting, preheat oven to 350&deg;
-* when dough is mixed, roll it out onto the baking sheet
-* when the dough is on the baking sheet, start cutting out cookies
-* when all cookies are cut out, remove excess dough
-* when excess dough is removed, put the baking sheet in the oven
-* when 12 minutes have elapsed, remove baking sheet from oven
-* when cookies are cool, decorate each cookie
+(We will cover the promises in much more detail later; for now, all you really need to know is that Promises allow us to use [async and await]() in the next slide.)
 
-# Events are not necessarily in order!
+# LAB: using readline and await
 
-The source code of the evented cookie baking program in the previous slide could *just as well* be written like this:
+Codealong time! Please follow along with the instructor and enter this code into a file named `quest.js`:
 
-* when cookies are cool, decorate each cookie
-* when the dough is on the baking sheet, start cutting out cookies
-* when all cookies are cut out, remove excess dough
-* when starting, preheat oven to 350&deg;
-* when dough is mixed, roll it out onto the baking sheet
-* when 12 minutes have elapsed, remove baking sheet from oven
-* when excess dough is removed, put the baking sheet in the oven
-* Start!
+```ecmascript 6
+const readline = require('readline');
 
-# Nesting
+const readlineInterface = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+    
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
 
-To *force* events to happen *in order* you may need to *nest* your callbacks.
+start();
 
-    console.log("what is your name?")
-    process.stdin.once('data', (name) => {
-        console.log("what is your quest?")
-        process.stdin.once('data', (quest) => {
-        console.log("what is your favorite color?")
-            process.stdin.once('data', (color) => {
-                console.log("Hello " + name + "! " + 
-                "Good luck with " + quest + 
-                "and here is a " + color + " flower for you.");
-                process.exit();
-            });
-        });
-    });
+async function start() {
+  let name = await ask('What is your name? ');
+  let quest = await ask('What is your quest? ');
+  let color = await ask('What is your favorite color? ');
+  console.log('Hello ' + name + '! ' + 
+    'Good luck with ' + quest + ', ' +
+    'and here is a ' + color + ' flower for you.');
+  process.exit();
+}
+```
 
+* run it from the command line using `node hello-readline.js`
 
-# Events: pros and cons
+# async and await
 
-Evented programs are often more flexible and high-performance than traditional sequenced programs, but they can be more confusing for humans to write and to read (and to debug!).
+* We will learn a lot more about callbacks, promises, and `async`/`await` later
+* For now, follow these two rules when using `async` and `await`:
 
-Also, sequences naturally *end* when they are finished, but evented programs will just keep doing the same things over and over again, as long as the triggers keep happening. 
+    1. `await` means "wait for the following thing to happen"
+    2. when you use `await` inside a function, you must use `async` to define that function
 
-This means that you may need to explicitly call `process.exit()` in NodeJS programs.
-
-# On vs Once
-
-If you have a simple sequence in mind, and want to emulate it using an evented system, you could use the following technique:
-
-Set up your event responders to happen only once.
-
-In NodeJS, this is accomplished by sending the `once` message in place of the `on` message.
-
-    @@@ js
-    console.log("What is your name?");
-    process.stdin.once('data', (chunk) => {
-        let name = chunk.toString().trim();
-        console.log("Hello, " + name + "!");
-        process.exit();  // don't forget to stop!
-    });
+> WARNING: `async` functions don't play nicely with `for` loops! (Fortunately, there are other ways to loop that do work well.)
 
 # LAB: Full Name
 
+* Now it's your turn to write a program from scratch.
 * Write a program named `name.js` that asks two things:
   1. Your first name
   2. Your last name
@@ -236,10 +259,7 @@ You are now officially a coder. HIGH FIVE!
 * Change `name.js` so it also prints the number of characters in the user's name.
 * For instance:
 
-        What is your first name?
-        Grace
-        What is your last name?
-        Hopper
-        Hello, Grace Hopper! 
+        What is your first name? Grace
+        What is your last name? Hopper
+        Hello, Grace Hopper!
         Your name is 11 characters long.
-
