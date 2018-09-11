@@ -14,6 +14,7 @@ Track::Git = Track.new(
   link href: "https://git-scm.com/book"
   link href: "https://vimeo.com/152746496", time: "10 min", name: "Git Demo",
        description: "screencast demo of basic git commands"
+  link href: "https://www.freecodecamp.org/news/beaucarnes/how-to-use-GitHub--7mdMGAPL"
 
   lesson name: "git_intro"
   lesson name: "git_basics" # todo: rewrite as followup to intro
