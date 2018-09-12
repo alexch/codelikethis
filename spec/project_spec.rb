@@ -89,6 +89,8 @@ describe Project do
       project.view.to_html.should include(<<-HTML)
 <section class="box">
 
+<p><a name='slay-the-dragon'></a></p>
+
 <h2>Slay the Dragon</h2>
 
 <p><strong>Given</strong> a dragon</p>

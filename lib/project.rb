@@ -120,7 +120,25 @@ class Project < Thing
     attr_reader :target
 
     def content
-      text raw(from_markdown(target.content))
+      text raw(from_markdown(process_content))
+    end
+
+    def process_content
+      pattern = /^(#+) (.*)$/
+
+      target.content.split(/\n/).map do |line|
+        if pattern.match(line)
+          matches = (pattern.match(line))
+          hashes = matches[1]
+          title = matches[2].strip
+          line = "<a name='#{anchor_name(title)}'></a>\n" + line
+        end
+        line
+      end.join("\n")
+    end
+
+    def anchor_name(title)
+      title.downcase.gsub(/\s+/, '-').gsub(/[^a-z0-9-_]/, '')
     end
 
     def outline
@@ -129,12 +147,16 @@ class Project < Thing
         ul(class: 'list-group') {
           target.sections.each do |section|
             li(class: 'list-group-item') {
-              text section[:title]
+              a(href: '#' + anchor_name(section[:title])) {
+                text section[:title]
+              }
               if section[:children] && !section[:children].empty?
                 ul(class: 'list-group') {
                   section[:children].each do |child_section|
                     li(class: 'list-group-item') {
-                      text child_section[:title]
+                      a(href: '#' + anchor_name(child_section[:title])) {
+                        text child_section[:title]
+                      }
                     }
                   end
                 }
