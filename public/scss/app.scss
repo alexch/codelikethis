@@ -19,7 +19,7 @@ body {
   padding-top: $topbar-height; // to skip the fixed nav bar
 }
 
-@media print { 
+@media print {
   nav.navbar, #sidebar, .twitter, div.notice, a[name=content] {
     display: none !important;
   }
@@ -381,6 +381,10 @@ span.svg-icon {
   }
 }
 
+.dropdown-menu a.track-name {
+  text-transform: none;
+}
+
 h1.lesson-name {
   border-bottom: 2px solid purple;
   span.track-name {
@@ -506,7 +510,7 @@ table {
 }
 
 span.video_link {
-  @media screen { 
+  @media screen {
     float: right;
   }
   border: 1px dotted black;

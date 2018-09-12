@@ -116,7 +116,7 @@ describe Project do
 
   let(:solar_system) {
     <<-MARKDOWN
-# Solar System
+# Inner Solar System
 
 ## Mercury
 
@@ -132,7 +132,9 @@ describe Project do
 
 ### Deimos
 
-#### Cerberos
+#### Death Star
+
+"That's no moon!"
 
     MARKDOWN
   }

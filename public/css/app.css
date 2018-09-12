@@ -339,45 +339,49 @@ span.svg-icon {
   background-color: white; }
 
 /* line 384, ../scss/app.scss */
+.dropdown-menu a.track-name {
+  text-transform: none; }
+
+/* line 388, ../scss/app.scss */
 h1.lesson-name {
   border-bottom: 2px solid purple; }
-  /* line 386, ../scss/app.scss */
+  /* line 390, ../scss/app.scss */
   h1.lesson-name span.track-name {
     font-size: 60%; }
 
-/* line 391, ../scss/app.scss */
+/* line 395, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 398, ../scss/app.scss */
+  /* line 402, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 404, ../scss/app.scss */
+  /* line 408, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 410, ../scss/app.scss */
+  /* line 414, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 415, ../scss/app.scss */
+/* line 419, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 420, ../scss/app.scss */
+/* line 424, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 424, ../scss/app.scss */
+/* line 428, ../scss/app.scss */
 .footer {
   clear: both;
   padding: 2rem;
   border-top: 1px solid #EEEEEE; }
 
-/* line 430, ../scss/app.scss */
+/* line 434, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -386,7 +390,7 @@ div.main_column img {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 439, ../scss/app.scss */
+  /* line 443, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;
@@ -394,12 +398,12 @@ div.main_column img {
     width: 100%;
     height: 100%; }
 
-/* line 448, ../scss/app.scss */
+/* line 452, ../scss/app.scss */
 table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 453, ../scss/app.scss */
+  /* line 457, ../scss/app.scss */
   table ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -407,57 +411,57 @@ table {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 461, ../scss/app.scss */
+  /* line 465, ../scss/app.scss */
   table td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 465, ../scss/app.scss */
+  /* line 469, ../scss/app.scss */
   table, table td, table th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 469, ../scss/app.scss */
+  /* line 473, ../scss/app.scss */
   table th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 475, ../scss/app.scss */
+  /* line 479, ../scss/app.scss */
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 478, ../scss/app.scss */
+  /* line 482, ../scss/app.scss */
   table tr:nth-child(odd) {
     background-color: #FFFFFF; }
-  /* line 481, ../scss/app.scss */
+  /* line 485, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 486, ../scss/app.scss */
+  /* line 490, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 490, ../scss/app.scss */
+  /* line 494, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 495, ../scss/app.scss */
+/* line 499, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 497, ../scss/app.scss */
+  /* line 501, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 500, ../scss/app.scss */
+  /* line 504, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 503, ../scss/app.scss */
+  /* line 507, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
 
-/* line 508, ../scss/app.scss */
+/* line 512, ../scss/app.scss */
 span.video_link {
   border: 1px dotted black;
   padding: 1px 2px;
   margin-left: 1em; }
   @media screen {
-    /* line 508, ../scss/app.scss */
+    /* line 512, ../scss/app.scss */
     span.video_link {
       float: right; } }
 

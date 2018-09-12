@@ -99,7 +99,6 @@ class TracksSidebar < Erector::Widget
           text nbsp
           text nbsp
           text track.display_name
-
         }
         # 'aria-expanded': false
         # 'aria-controls': '???'

@@ -33,6 +33,14 @@ class Site
     self.class.name
   end
 
+  def display_name
+    name
+  end
+
+  def href
+    "/lessons"
+  end
+
   def schedule
     Schedule.from_file path: File.join(__dir__, "#{self.class.name.underscore}-schedule.json"), site: self
   end
