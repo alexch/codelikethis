@@ -10,6 +10,10 @@ use Rack::ShowStatus
 
 # https://github.com/jtrupiano/rack-rewrite
 use Rack::Rewrite do
+  moved_permanently '/lessons/', '/lessons'
+  moved_permanently '/projects/', '/projects'
+  moved_permanently '/topics/', '/topics'
+
   moved_permanently '/lessons/learn_to_code/learn_to_code', '/lessons/learn_to_code/intro'
   moved_permanently '/lessons/ruby_advanced/intro', '/lessons/ruby/ruby_for_programmers'
   moved_permanently '/lessons/ruby/intro', '/lessons/ruby/ruby_for_programmers'
