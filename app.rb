@@ -46,11 +46,12 @@ class App < Sinatra::Base
   end
 
   def tracks_widget
-    TracksTable.new(:tracks => site.tracks)
+    # TracksTable.new(:tracks => site.tracks)
+    TracksSidebar.new(tracks: site.tracks, current: nil)
   end
 
-  def page(widget:, title:)
-    AppPage.new(site: site, warning: @warning, widget: widget, title: title)
+  def page(widget:, title:, sidebar: false)
+    AppPage.new(site: site, warning: @warning, widget: widget, title: title, sidebar: sidebar)
   end
 
   get '/host' do
@@ -70,6 +71,7 @@ class App < Sinatra::Base
   get '/' do
     page(
       widget: site.view,
+      sidebar: true,
       title: "Code Like This").to_html
   end
 

@@ -8,6 +8,7 @@ class AppPage < Erector::Widgets::Page
 
   needs :site, :widget, :title
   needs warning: nil
+  needs sidebar: nil
 
   include Views
 
@@ -166,13 +167,17 @@ $(function () {
     element('main', class: 'container-fluid') {
       div(class: "row") {
 
+        center_cols = 9
         # first the sidebar
-        div(class: "col-md-3", id: 'sidebar') {
-          widget TracksSidebar.new(tracks: all_tracks, current: (@widget.respond_to? :target and @widget.target))
-        }
+        if @sidebar
+          div(class: "col-md-3", id: 'sidebar') {
+            widget TracksSidebar.new(tracks: all_tracks, current: (@widget.respond_to? :target and @widget.target))
+          }
+          center_cols = 6
+        end
 
         # now the real body
-        div(class: "col-md-6") {
+        div(class: "col-md-#{center_cols}") {
           a name: 'content'
 
           if @warning
