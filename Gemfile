@@ -25,7 +25,7 @@ group :development, :test do
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?
   gem "rake", ">=10.0.1"
   gem "wrong", git: "https://github.com/alexch/wrong.git"
-  gem "files"
+  gem "files", ">=0.4.0"
 end
 
 group :test do

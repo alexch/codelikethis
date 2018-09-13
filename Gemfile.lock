@@ -53,7 +53,7 @@ GEM
     ffi (1.9.23)
     ffi (1.9.23-x64-mingw32)
     ffi (1.9.23-x86-mingw32)
-    files (0.3.1)
+    files (0.4.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     json (1.8.6)
@@ -139,7 +139,7 @@ DEPENDENCIES
   coderay
   deckrb!
   erector (>= 0.9.0)
-  files
+  files (>= 0.4.0)
   json (~> 1.8)
   listen
   nokogiri (~> 1.7)
