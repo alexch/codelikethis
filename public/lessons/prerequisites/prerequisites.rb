@@ -15,4 +15,16 @@ Track::Prerequisites = Track.new(
 
   project name: "what_the_regex",
           display_name: "What the RegEx"
+
+  # required
+  link href: "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript"
+  link href: "https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5"
+  link href: "https://learn.freecodecamp.org/responsive-web-design/basic-css"
+
+  # optional
+  link href: "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures"
+  link href: "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting"
+  link href: "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6"
+  link href: "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
+
 end

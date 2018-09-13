@@ -97,24 +97,17 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 # Technical requirements
 
-<!--
-* WIFI
-  * SSID: ______
-  * Username: ______
-  * Password: ______
--->
+See the [Installfest](/projects/installfest) project for more instructions.
 
 * a text editor
   * VS Code from Microsoft <https://code.visualstudio.com>
-  * Note: Microsoft Word is **not** a text editor
-  * [VS Code Overview](https://medium.freecodecamp.org/an-overview-of-visual-studio-code-for-front-end-developers-49a4aa0771fb)
 
 * JavaScript
   * a live node.js installation
   * visit <https://nodejs.org/> for more instructions
-  * version 9.2 is preferred
+  * version 10. is preferred
     * run `node -v` in terminal to check
-    * if you can't install v9.2, anything past 6.0 is probably okay
+    * if you can't install v10.2, anything past 6.0 is probably okay
 
 * Git
   * <https://git-scm.com/downloads>
@@ -131,3 +124,4 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 * Please stop right now and check
   * If you do not have these, RAISE YOUR HAND
+
