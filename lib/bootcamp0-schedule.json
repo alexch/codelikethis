@@ -18,7 +18,7 @@
   "typical_day": [
     [
       " 8:30 am",
-      "classroom open"
+      "orientation, Q & A, paired code review"
     ],
     [
       " 9:00 am",
@@ -26,11 +26,11 @@
     ],
     [
       "10:15 am",
-      "break"
+      "second lecture: ~30min slides, ~30min labs, ~15min break"
     ],
     [
-      "10:30am",
-      "second lecture: ~30min slides, ~30min labs, ~15min break"
+      "11:30 am",
+      "third lecture: ~30min slides or code review"
     ],
     [
       "12:00 pm",
@@ -50,10 +50,6 @@
     ],
     [
       " 3:15 pm",
-      "sync up"
-    ],
-    [
-      " 3:30 pm",
       "project/workshop time"
     ],
     [
@@ -63,7 +59,7 @@
   ],
   "weeks": [
     {
-      "start": "2018-09-01",
+      "start": "2018-04-01",
       "track": "prerequisites",
       "projects": [
         "fcc_basic_html",
@@ -72,7 +68,7 @@
       ]
     },
     {
-      "start": "2018-09-17",
+      "start": "2018-06-04",
       "track": "learn_to_code_with_javascript",
       "lessons": [
         "intro",
@@ -84,9 +80,11 @@
         "variables",
         "null",
         "functions",
-        "input_and_output"
+        "input_and_output",
+        "logic"
       ],
       "projects": [
+        "exercism",
         "portfolio_page",
         "guess",
         "escape_room"
@@ -122,13 +120,12 @@
     {
       "track": "learn_to_code_with_javascript",
       "lessons": [
-        "logic",
         "loops",
         "arrays",
         "argv",
         "stacks",
         "hashes",
-        "recursion",
+        "recursion"
       ],
       "projects": [
         "exercism",

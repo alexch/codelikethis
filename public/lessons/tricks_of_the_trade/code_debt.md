@@ -1,6 +1,6 @@
 # Code Debt
 
-* "Code Debt" is when a program becomes harder and harder to change over time
+* "Code Debt" (aka "Technical Debt") is when a program becomes harder and harder to change over time
 * It happens to all code and all programmers
 * If you do not correct it, your project and life will suffer
 * Be ruthless about removing Code Debt
@@ -22,3 +22,4 @@
 * Fix functions that depend on or produce global variables
 * Fix functions or lines which duplicate behavior
 * Separate functions that do many things into more functions
+* Read "Refactoring" by Martin Fowler

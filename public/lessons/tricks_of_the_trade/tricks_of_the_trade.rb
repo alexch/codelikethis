@@ -8,11 +8,13 @@ class Track < Thing
     link href: "https://hackernoon.com/how-i-landed-my-post-bootcamp-software-developer-job-in-just-seven-weeks-7b213c1bb867"
 
     # Programming
-    lesson name: "modern_debugging" do
+    lesson name: "debugging" do
       link href: "https://m.xkcd.com/627/", name: "Tech Support Cheat Sheet (xkcd)"
       link name: "on technical sophistication",
         href: "https://www.learnenough.com/command-line-tutorial#aside-technical_sophistication"
     end
+
+    lesson name: "modern_debugging"
 
     lesson name: "code_debt"
 
