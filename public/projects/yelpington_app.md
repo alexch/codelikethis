@@ -2,8 +2,6 @@
 
 In this project, you will pair up and work with other teams to create an online directory of restaurants in Burlington.
 
-This project builds on the [Yelpington Repo](yelpington_repo) project by turning a static set of markdown files into a dynamic web app.
-
 # Tech
 
 * JSON
