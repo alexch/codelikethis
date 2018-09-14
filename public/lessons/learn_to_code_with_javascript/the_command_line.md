@@ -74,7 +74,16 @@ From inside `node`, if you want to get back to the shell...
 
 * inside the Terminal, you are *always* inside a directory
 * it is very important not to get lost! You must try to remember which directory you are in.
-* If you forget, you can use a special command called `pwd`
+
+# Where am I?
+
+It is very easy to get lost in a maze of directories.
+
+To find out which directory you are in, type
+
+    pwd
+
+This stands for "print working directory" (not "password").
 
 # Home Directory
 
@@ -98,16 +107,6 @@ From inside `node`, if you want to get back to the shell...
 * For example, `cd code` would move you into a subdirectory named `code`
 * If you ever get lost, type `cd` all on its own and press the return key. This will send you back to your home directory.
   * (unix shell only, not Windows)
-
-# Where am I?
-
-It is very easy to get lost in a maze of directories.
-
-To find out which directory you are in, type
-
-    pwd
-
-This stands for "print working directory" (not "password").
 
 # Basic Command Review
 
