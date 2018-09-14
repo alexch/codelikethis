@@ -23,7 +23,43 @@ class Schedule
     needs :site, :schedule
 
     def outline
-      text "outline"
+      div.outline do
+        h3 "Outline"
+        ul(class: 'list-group') do
+          weeks.each do |week|
+            li(class: 'list-group-item') do
+              a week[:week_title], href: "#card-#{week[:week_start_ymd]}"
+            end
+          end
+        end
+      end
+    end
+
+    def weeks
+      week_start = nil
+      week_number = 0
+      @schedule['weeks'].map do |week|
+        if week['start']
+          week_start = Chronic.parse(week['start'])
+        else
+          week_start += 1.week
+        end
+        week_start_ymd = week_start.strftime("%Y-%m-%d")
+        week_title = if week_number == 0
+                       "Prerequisites"
+                     else
+                       "Week #{week_number}: #{week_start_ymd}"
+                     end
+
+        result = week + {week_number: week_number,
+                         week_start: week_start,
+                         week_title: week_title,
+                         week_start_ymd: week_start_ymd}
+
+        week_number += 1
+
+        result
+      end
     end
 
     def content
@@ -51,32 +87,32 @@ class Schedule
         }
       }
 
-      div.row {
-        h2 "A Typical Day"
-      }
-      div.row {
-        table {
-          tr {
-            th "time"
-            th "activity"
+      div.card {
+        div(class: 'card-header') {
+          h2(class: 'mb-0') {
+            text "A Typical Day"
           }
-          @schedule['typical_day'].each do |event|
+        }
+        div(class: 'card-body') {
+          table {
             tr {
-              td event[0]
-              td event[1]
+              th "time"
+              th "activity"
             }
-          end
+            @schedule['typical_day'].each do |event|
+              tr {
+                td event[0]
+                td event[1]
+              }
+            end
+          }
         }
       }
 
-      week_start = nil
-      @schedule['weeks'].each_with_index do |week, week_number|
-
-        if week['start']
-          week_start = Chronic.parse(week['start'])
-        else
-          week_start += 1.week
-        end
+      weeks.each do |week|
+        week_start = week[:week_start]
+        week_start_ymd = week[:week_start_ymd]
+        week_number = week[:week_number]
 
         track_name = week['track']
         track = @site.track_named(track_name) ||
@@ -84,43 +120,36 @@ class Schedule
 
         side_tracks = week['side_tracks']
 
-        div.row {
-          br
-          br
-        }
-        div.row {
-          div(class: 'col col-sm-12 card') {
-            div(class: 'card-body') {
-              h2(class: 'card-title') {
-                if week_number == 0
-                  text "Prerequisites"
-                else
-                  text "Week #{week_number} "
-                  text "("
-                  gcal_link = "https://calendar.google.com/calendar/b/1/r/week/#{week_start.strftime("%Y/%m/%d")}?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
-                  a week_start.strftime("%Y-%m-%d"), href: gcal_link
-                  text ")"
+        # this empty div is to bump an inner-anchor-link past the fixed top nav bar
+        div(id: "card-#{week_start_ymd}", style: 'height: 60px')
+
+        div(class: 'card') {
+          h2(class: 'card-header mb-0') {
+            if week_number == 0
+              text "Prerequisites"
+            else
+              text "Week #{week_number} "
+              text "("
+              gcal_link = "https://calendar.google.com/calendar/b/1/r/week/#{week_start.strftime("%Y/%m/%d")}?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+              a week_start_ymd, href: gcal_link
+              text ")"
+            end
+          }
+
+          div(class: 'card-body', id: "card-body-#{week_start_ymd}") {
+            div(class: 'card-text col') {
+              render_track(track, week)
+            }
+
+            div(class: 'card-text col') {
+              if side_tracks.present?
+                side_tracks.each do |side_track_info|
+                  side_track_name = side_track_info['track']
+                  side_track = @site.track_named(side_track_name) ||
+                    Track.new(name: track_name)
+                  render_track(side_track, side_track_info)
                 end
-              }
-
-              div(class: 'card-text col') {
-                render_track(track, week)
-              }
-
-              div(class: 'card-text col') {
-                if side_tracks.present?
-                  side_tracks.each do |side_track_info|
-                    side_track_name = side_track_info['track']
-                    
-                    # todo: unify with line 82
-                    side_track = @site.track_named(side_track_name)  ||
-                      Track.new(name: track_name)
-                      
-
-                    render_track(side_track, side_track_info)
-                  end
-                end
-              }
+              end
             }
           }
         }
