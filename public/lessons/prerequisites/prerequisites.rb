@@ -7,6 +7,8 @@ Track::Prerequisites = Track.new(
   display_name: "Prerequisites",
   description: "Lessons and exercises to complete before the first day of class.") do
 
+  project name: "installfest"
+
   project name: "fcc_basic_html",
           display_name: "FreeCodeCamp Basic HTML"
 

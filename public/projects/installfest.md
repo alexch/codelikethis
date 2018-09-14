@@ -10,7 +10,7 @@ Before the class starts, please install the following:
 * GitHub
 * Heroku
 
-> Are you on a recent model Macintosh? Skip to the [Mac Homebrew](#mac-homebrew) section.
+> Are you on a recent model Macintosh? Skip to the [Mac Homebrew](#mac-homebrew) section to install Node and Git, then come back here for GitHub and Heroku.
 
 ## VS Code Text Editor
 
@@ -19,7 +19,7 @@ Before the class starts, please install the following:
 
 ## Node.js (JavaScript)
 
-  * **Install*** Node.js from <https://nodejs.org/>
+  * **Install** Node.js from <https://nodejs.org/>
   * version 10.10.0 is preferred
     * run `node -v` in terminal to check
     * if you can't install v10, anything past 6.0 is probably okay
@@ -27,8 +27,8 @@ Before the class starts, please install the following:
 ## Git
 
 * **Install** git from...
-  * Mac and Linux: <https://git-scm.com/downloads>
-  * Windows: <https://gitforwindows.org/>
+  * for Mac and Linux: <https://git-scm.com/downloads>
+  * for Windows: <https://gitforwindows.org/>
 
 ## GitHub
 
@@ -46,9 +46,17 @@ Before the class starts, please install the following:
 
 # Mac Homebrew
 
+Homebrew is a package manager for MacOS that lets you install tools directly from the Terminal. Once it's installed, it's generally easier to use Homebrew than to use a web browser and graphical installer app.
+
 These instructions are for recent versions of MacOS. If these do not work for you, don't worry; cancel out and follow the instructions above instead.
 
-Homebrew is a package manager for MacOS that lets you install tools directly from the Terminal. Once it's installed, it's generally easier to use Homebrew than to use a web browser and graphical installer app.
+## XCode Command-Line Tools
+
+1. Open **Terminal** and type
+
+        xcode-select --install
+2. On the dialog box, click the **Install** button
+3. Wait several minutes for the download to complete
 
 ## Homebrew
 
