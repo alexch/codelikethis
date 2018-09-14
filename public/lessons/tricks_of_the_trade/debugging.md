@@ -3,11 +3,11 @@
 Overview:
 
   * Read the error
-      * stack traces
+      * including stack traces
   * Read the code
   * Add print statements (`console.log` in JavaScript)
+  * Use a [rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging) or a pair partner
   * Use an Interactive debuggers
-  * [rubber ducks](https://en.wikipedia.org/wiki/Rubber_duck_debugging)
 
 # What is debugging?
 
@@ -83,6 +83,16 @@ When a user reports a bug -- or when a coder notices one -- the first thing to d
 
 This assures that you have *actually* identified the cause of the bug, and that once you think it's fixed, it's *actually* fixed.
 
+# Rubber Duck Debugging
+
+Often, simply explaining your code reveals its flaws.
+
+This is one reason why *pair programming* is so effective.
+
+If you don't have a pair, try explaining your problem out loud to a pet, or a doll.
+
+![rubber duck](rubber-duck.jpg) 
+
 # Debugging Errors: Step 1
 
 > Step 1: Read the error... **carefully**.
@@ -107,6 +117,7 @@ Answer the following questions:
 **Where** in your code is the error occurring?
 
   * There will often (though not always!) be a *stack trace* including paths, file names, line numbers... even *column* numbers!
+  * A stack trace is basically a list of *functions* that have called each other, ordered from most to least recent
   * Once you mentally redact the stack trace, it becomes easier to understand the rest of the error.
 
 > Read the first section of this article, [JavaScript Errors and Stack Traces in Depth: How The Call Stack Works
@@ -155,9 +166,8 @@ Many text editors contain an *interactive debugger* (aka *visual debugger*) with
 
   * set a *breakpoint* to pause your program when it reaches a specific line
   * *inspect values* of variables and constants
-  * a *code console* which lets you execute expressions, call functions, or even change existing code during a pause
+  * a *code console* which lets you execute expressions, call functions, or even change existing code *during a pause*
   * set *watch expressions* which will enable breakpoints based on conditions (like `x < 2`)
 
-These features can help you understand what your code is doing in why, but can also be cumbersome and tedious; often print statements and unit tests are a more efficient path to identifying and fixing bugs.
-
+These features can help you understand what your code is doing in why, but can also be tedious or complicated or distracting; often print statements and unit tests are a more efficient path to identifying and fixing bugs.
 
