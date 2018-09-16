@@ -128,7 +128,7 @@
         "argv",
         "stacks",
         "hashes",
-        "recursion",
+        "recursion"
       ],
       "projects": [
         "exercism",
@@ -343,18 +343,16 @@
       ]
     },
     {
-      "track": "server_side_javascript",
+      "track": "javascript",
       "lessons": [
-        "hello_node",
-        "http",
-        "serving_files",
-        "forms_and_parameters",
-        "routing",
-        "cookies",
-        "saving_state_in_files",
-        "sessions",
-        "sessions_with_mongo"
+        "oo_js"
       ],
+      "projects": [
+        "chat_server"
+      ]
+    },
+    {
+      "track": "server_side_javascript",
       "projects": [
         "shortly",
         "chat_client",
@@ -377,15 +375,6 @@
           "start": "Friday 4:00 pm",
           "name": "retrospective"
         }
-      ]
-    },
-    {
-      "track": "javascript",
-      "lessons": [
-        "oo_js"
-      ],
-      "projects": [
-        "chat_server"
       ]
     },
     {
