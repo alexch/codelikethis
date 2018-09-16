@@ -28,7 +28,6 @@ body {
   }
 }
 
-
 nav.navbar {
   background: white;
 
@@ -59,7 +58,7 @@ nav.navbar {
     zoom: 1;
   }
 
-  min-height: $topbar-height;
+  height: $topbar-height;
 
   /* so the logo doesn't push the hamburger down on narrow screens */
   .col.navbar-left {
@@ -67,8 +66,10 @@ nav.navbar {
     a.navbar-brand {
       max-width: 100%;
       img.logo {
-        height: auto;
+        height: 74px;
+        width: auto;
         vertical-align: middle;
+        max-height: $topbar-height;
       }
     }
   }

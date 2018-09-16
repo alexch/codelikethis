@@ -15,7 +15,7 @@ First, make your own fork, and [install Ruby](http://installfest.railsbridge.org
 4. `bundle install`
 5. `rake spec` (to run all tests and verify setup)
 6. `rake build` (to compile CSS)
-7. `rake run` (or `rake rerun` to rebuild/restart on file changes) 
+7. `rake run` (or `rerun` to rebuild/restart on file changes) 
 8. open <http://localhost:9292>
 
 ## Usage
@@ -29,7 +29,10 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`rake spec` | run all tests and verify setup |
 |`rake build` | compile CSS |
 |`rake run` | run local server on <http://localhost:9292>  |
-|`bundle exec rerun rackup` |run with rebuild/restart on file changes, making sure to use the right version of rerun |
+|`rerun rackup` |run with rebuild/restart on file changes |
+|`rerun --pattern '*.scss' --exit -- rake build` | run this in a separate terminal to compile CSS when SCSS changes too |
+
+Note that any of the above may need to be preceded by `bundle exec` e.g. `bundle exec rerun rackup` (whether you need to do this or not depends on gnarly details of your Ruby installation).
 
 ## Layout 
 

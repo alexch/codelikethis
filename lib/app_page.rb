@@ -104,8 +104,10 @@ $(function () {
   end
 
   def footer_content
-    text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 "
-    a "Alex Chaffee.", href: "http://alexchaffee.com"
+    text "This curriculum was created by Alex Chaffee and Burlington Code Academy, with significant contributions from Joshua Burke, Robin Hrynyszyn, and Benjamin Boas."
+
+    # text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 "
+    # a "Alex Chaffee.", href: "http://alexchaffee.com"
     br
 
     rawtext <<-HTML

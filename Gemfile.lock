@@ -15,9 +15,9 @@ GIT
 
 GIT
   remote: https://github.com/alexch/rerun.git
-  revision: d9e3c160624be1b251dddf6156d7c95c752c60bf
+  revision: dfe1532982e880c391629f9877b699fe06991762
   specs:
-    rerun (0.13.0)
+    rerun (0.13.1)
       listen (~> 3.0)
 
 GIT
@@ -34,7 +34,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -50,11 +50,11 @@ GEM
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
     eventmachine (1.2.7-x86-mingw32)
-    ffi (1.9.23)
-    ffi (1.9.23-x64-mingw32)
-    ffi (1.9.23-x86-mingw32)
+    ffi (1.9.25)
+    ffi (1.9.25-x64-mingw32)
+    ffi (1.9.25-x86-mingw32)
     files (0.4.0)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     json (1.8.6)
     listen (3.1.5)
@@ -63,12 +63,12 @@ GEM
       ruby_dep (~> 1.2)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    mustermann (1.0.2)
-    nokogiri (1.8.2)
+    mustermann (1.0.3)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    nokogiri (1.8.2-x64-mingw32)
+    nokogiri (1.8.4-x64-mingw32)
       mini_portile2 (~> 2.3.0)
-    nokogiri (1.8.2-x86-mingw32)
+    nokogiri (1.8.4-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     polyglot (0.3.5)
     predicated (0.2.6)
@@ -76,7 +76,7 @@ GEM
     rack-codehighlighter (0.6.0)
       nokogiri (>= 1.4.1)
       rack (>= 2.0.0)
-    rack-protection (2.0.1)
+    rack-protection (2.0.4)
       rack
     rack-rewrite (1.5.1)
     rake (12.3.1)
@@ -84,35 +84,35 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redcarpet (2.3.0)
-    rspec (3.7.0)
-      rspec-core (~> 3.7.0)
-      rspec-expectations (~> 3.7.0)
-      rspec-mocks (~> 3.7.0)
-    rspec-core (3.7.1)
-      rspec-support (~> 3.7.0)
-    rspec-expectations (3.7.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.7.0)
-    rspec-mocks (3.7.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.7.0)
-    rspec-support (3.7.1)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
     ruby2ruby (2.4.1)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.6)
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
-    sass (3.5.6)
+    sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     sexp_processor (4.11.0)
-    sinatra (2.0.1)
+    sinatra (2.0.4)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.1)
+      rack-protection (= 2.0.4)
       tilt (~> 2.0)
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)
@@ -122,10 +122,9 @@ GEM
     tilt (2.0.8)
     treetop (1.6.10)
       polyglot (~> 0.3)
-    trollop (2.1.2)
+    trollop (2.9.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -152,8 +151,10 @@ DEPENDENCIES
   sass (~> 3.5.0)
   sinatra (~> 2.0.1)
   thin
-  wdm (>= 0.1.0)
   wrong!
+
+RUBY VERSION
+   ruby 2.4.4p296
 
 BUNDLED WITH
    1.16.4
