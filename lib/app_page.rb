@@ -104,7 +104,7 @@ $(function () {
   end
 
   def footer_content
-    text "This curriculum was created by Alex Chaffee and Burlington Code Academy, with significant contributions from Joshua Burke, Robin Hrynyszyn, and Benjamin Boas."
+    text "This curriculum was created by Alex Chaffee and Burlington Code Academy, with significant contributions from Joshua Burke, Robin Hrynyszyn, Robin Rainwalker, and Benjamin Boas."
 
     # text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 "
     # a "Alex Chaffee.", href: "http://alexchaffee.com"
