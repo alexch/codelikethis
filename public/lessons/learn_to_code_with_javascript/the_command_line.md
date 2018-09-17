@@ -166,7 +166,7 @@ mkdir code
         console.log("Hello, World!");
 
 5. Save the file
-6. Switch back to the terminal (using ALT-TAB or CMD-TAB or clicking)
+6. Switch back to the terminal (using <kbd>Alt</kbd>-<kbd>Tab</kbd> or <kbd>Cmd</kbd>-<kbd>Tab</kbd> or clicking)
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?
@@ -179,10 +179,10 @@ These work in `bash`:
 
 Also:
 
-* use ESC instead of ALT for the above
-* ESC-Backspace (delete previous word)
+* use <kbd>Esc</kbd> instead of <kbd>Alt</kbd> for the above
+* <kbd>Esc</kbd>-<kbd>Backspace</kbd> (delete previous word)
 * up/down arrow (scroll through history)
-* END and HOME (jump to end or beginning of line)
+* <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)
 
 # Next Steps
 
