@@ -50,7 +50,7 @@ Connected to google.com.
 Escape character is '^]'.
 ```
 
-then type this and hit enter:
+then type this and hit <kbd>Enter</kbd>:
 
 ```
 GET /
@@ -70,7 +70,7 @@ Date: Sat, 07 Jul 2018 19:50:23 GMT
 
 1. Launch your hello world server with `node simple_file.js`
 2. *In a separate terminal window*, run `telnet localhost 5000`
-3. Type in `GET /` and hit the enter key *twice*
+3. Type in `GET /` and hit the <kbd>Enter</kbd> key *twice*
 4. Look at the output. Is it what you expect? Why or why not?
 
 # HTTP 1.0 (1993-1996)

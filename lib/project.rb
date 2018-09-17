@@ -138,7 +138,7 @@ class Project < Thing
     end
 
     def anchor_name(title)
-      title.downcase.gsub(/\s+/, '-').gsub(/[^a-z0-9-_]/, '')
+      title.downcase.gsub(/\s+/, '-').gsub(/[^a-z0-9\-_]/, '')
     end
 
     def outline

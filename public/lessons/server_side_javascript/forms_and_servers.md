@@ -55,7 +55,7 @@ There are many more types of form elements (or "widgets") that let the user ente
 1. The user enters some values into the form elements
 2. **Either**...
   * the user clicks "Submit"
-  * or the user presses "Enter" in a text field
+  * or the user presses <kbd>Enter</kbd> in a text field
   * or JavaScript calls `form.submit()` on the form DOM element
 3. The client sends an HTTP request
   * including parameters like `q=apple&submit=Search`

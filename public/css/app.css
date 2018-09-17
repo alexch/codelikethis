@@ -151,7 +151,7 @@ section.slide {
   margin-top: .5em; }
 
 /* line 157, ../scss/app.scss */
-.slide pre, code, kbd, samp {
+.slide pre, code, samp {
   font-family: monospace, sans-serif;
   background: #f4f4f1; }
 
@@ -456,14 +456,27 @@ table {
   /* line 508, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
+  /* line 512, ../scss/app.scss */
+  .markdown kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #444d56;
+    vertical-align: middle;
+    background-color: #fafbfc;
+    border: solid 1px #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5; }
 
-/* line 513, ../scss/app.scss */
+/* line 528, ../scss/app.scss */
 span.video_link {
   border: 1px dotted black;
   padding: 1px 2px;
   margin-left: 1em; }
   @media screen {
-    /* line 513, ../scss/app.scss */
+    /* line 528, ../scss/app.scss */
     span.video_link {
       float: right; } }
 

@@ -46,7 +46,7 @@ console.log("Listening on port " + port);
 
 1. Type in the above server, and launch it with `node index.js`
 2. *In a separate terminal window*, run `telnet localhost 5000`
-3. Type in `GET /` and hit the enter key *twice*
+3. Type in `GET /` and hit the <kbd>Enter</kbd> key *twice*
 4. Look at the output. Is it what you expect? Why or why not?
 
 # Single File Server: important points
@@ -179,7 +179,7 @@ console.log("Listening on port " + port);
 
 1. Type in the above server, and launch it with `node index.js`
 2. *In a separate terminal window*, run `telnet localhost 5000`
-3. Type in `GET /index.js` and hit the enter key *twice*
+3. Type in `GET /index.js` and hit the <kbd>Enter</kbd> key *twice*
 4. Look at the output, especially the body and the `Content-Type` header. Is it what you expect? Why or why not?
 
 # Simple File Server: important points

@@ -37,6 +37,7 @@ In computers, code is a series of instructions that tell a computer what to do.
   * between you and a computer
   * between you and other coders
   * between you and future you
+  * between you and the client / the user / the business
 
 # What will we learn today?
 
@@ -49,35 +50,7 @@ In this class, you will learn about:
 
 Follow along at http://codelikethis.com/lessons/learn_to_code
 
-<!--# Go at your own pace
-
-* we will **definitely not** get through all the materials today
--->
-
-<!--# What if I know some of that already?
-
-* Pair up and fill in each other's gaps
-* Promote yourself to TA
--->
-
-<!--# And if you (and your pair) finish early...
-<!--* Let us know!
-* Look at [Next Steps](next_steps.md)
-* Start working on my Ruby For Programmers lessons
-  * http://testfirst.org
-  * http://codelikethis.com/lessons/
-* Build a Rails website
-  * http://docs.railsbridge.org/
--->
-
 # Technical requirements
-
-<!--
-* WIFI
-  * SSID: ______
-  * Username: ______
-  * Password: ______
--->
 
 * a text editor
   * VS Code from Microsoft <https://code.visualstudio.com>

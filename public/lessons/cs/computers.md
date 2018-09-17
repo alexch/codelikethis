@@ -30,7 +30,7 @@ from WarGames, (1983)
 
 * open a terminal
 * type `node`
-* press the `return` key (also called `enter`)
+* press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 * see the `>` prompt
 * type `1 + 1`
 * press the `return` key again

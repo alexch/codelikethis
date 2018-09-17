@@ -43,15 +43,18 @@ module Views
 
   # todo: test
   def munge html
-    html.split("\n").map do |line|
-      if line.strip == '<!--box-->'
-        '<section class="box">'
-      elsif line.strip == '<!--/box-->'
-        '</section>'
-      else
-        line
-      end
-    end.compact.join("\n")
+    lines = (["<div class='markdown-body'>"] +
+        html.split("\n").map do |line|
+          if line.strip == '<!--box-->'
+            '<section class="box">'
+          elsif line.strip == '<!--/box-->'
+            '</section>'
+          else
+            line
+          end
+        end.compact +
+        ["</div>"])
+    lines.join("\n")
   end
 
   def markdown text
@@ -61,10 +64,10 @@ module Views
   def with_tooltip(tooltip_text)
     # https://getbootstrap.com/docs/4.0/components/tooltips/
     tooltip_options = {
-      title: tooltip_text,
-      'data-html': true,
-      'data-toggle': "tooltip",
-      'data-placement': "right",
+        title: tooltip_text,
+        'data-html': true,
+        'data-toggle': "tooltip",
+        'data-placement': "right",
     }
   end
 

@@ -9,9 +9,11 @@ class Track < Thing
 
     # Programming
     lesson name: "debugging" do
+      link name: "What went wrong? [MDN]",
+           href: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong"
       link href: "https://m.xkcd.com/627/", name: "Tech Support Cheat Sheet (xkcd)"
       link name: "on technical sophistication",
-        href: "https://www.learnenough.com/command-line-tutorial#aside-technical_sophistication"
+           href: "https://www.learnenough.com/command-line-tutorial #aside-technical_sophistication"
     end
 
     lesson name: "modern_debugging"
@@ -37,8 +39,8 @@ class Track < Thing
     # Web design
     link href: "https://alistapart.com/article/aria-and-progressive-enhancement"
     lesson name: "building_character",
-        description: 'Learn about character encodings, Unicode, emoji, escaping, and why curly quotes are horrible.' do
-        link href: "https://imgs.xkcd.com/comics/the_history_of_unicode.png"
+           description: 'Learn about character encodings, Unicode, emoji, escaping, and why curly quotes are horrible.' do
+      link href: "https://imgs.xkcd.com/comics/the_history_of_unicode.png"
     end
     lesson name: "typography" do
       link href: "http://thinkingwithtype.com/"

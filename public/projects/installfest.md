@@ -63,7 +63,7 @@ These instructions are for recent versions of MacOS. If these do not work for yo
 1. Visit https://brew.sh
 2. Copy the *entire line* underneath "Install Homebrew"
 3. Open **Terminal** and paste
-4. Enter your password and hit RETURN as prompted
+4. Enter your password and hit <kbd>Return</kbd> as prompted
 
 ## NodeJS and Git
 

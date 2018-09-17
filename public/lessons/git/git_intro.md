@@ -95,7 +95,7 @@ After a commit, the staging area is cleared, and the cycle continues.
 
 3. Go **back to the command line** and type the following commands:
 
-  * `git add .`  -- that's "git space add space dot enter"
+  * `git add .`  -- that's "git <kbd>Space</kbd> add <kbd>Space</kbd> dot <kbd>Enter</kbd>"
   * `git status`
 
 # LAB: Make a shopping list (cont.)

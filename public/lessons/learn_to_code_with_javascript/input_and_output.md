@@ -62,7 +62,7 @@ and the block of code itself is called a *callback* (since you are asking `stdin
 
 3. Save the file and switch back to the terminal
 4. Run the program using `node hello.js`
-5. Type in your name and press the RETURN (or ENTER) key
+5. Type in your name and press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 
 What happens? Is this what you expected?
 

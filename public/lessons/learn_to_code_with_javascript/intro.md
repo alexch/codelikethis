@@ -99,29 +99,17 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 
 See the [Installfest](/projects/installfest) project for more instructions.
 
-* a text editor
-  * VS Code from Microsoft <https://code.visualstudio.com>
+Software:
 
-* JavaScript
-  * a live node.js installation
-  * visit <https://nodejs.org/> for more instructions
-  * version 10. is preferred
-    * run `node -v` in terminal to check
-    * if you can't install v10.2, anything past 6.0 is probably okay
-
-* Git
-  * <https://git-scm.com/downloads>
-  * <https://gitforwindows.org/>
-
-* GitHub
+* a text editor - VS Code from Microsoft <https://code.visualstudio.com>
+* JavaScript - a live node.js installation
+* Git - version 2.x
+* GitHub 
   * **Sign up** for an account at <https://github.com/>
-  * **Install** the GitHub Desktop app at <https://desktop.github.com/>
   * Add an SSH key to your GitHub account; follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
-
 * Heroku
   * **Sign up** for an account at <https://signup.heroku.com>
   * **Install** the Heroku Command Line Interface (CLI) at <https://devcenter.heroku.com/articles/heroku-cli>
 
 * Please stop right now and check
   * If you do not have these, RAISE YOUR HAND
-

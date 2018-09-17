@@ -32,7 +32,7 @@
 
 * open a terminal
 * type `irb`
-* press the `return` key (also called `enter`)
+* press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 * see the `>` prompt
 * type `1 + 1`
 * press the `return` key again
@@ -49,7 +49,7 @@
 
 * open a terminal
 * type `node`
-* press the `return` key (also called `enter`)
+* press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 * see the `>` prompt
 * type `1 + 1`
 * press the `return` key again
@@ -106,6 +106,8 @@ Every piece of software on your computer is a PROGRAM.
 * a program is a collection of *data* and *code*
 
 > When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
+
+* coding is more like America's Test Kitchen than like Top Chef -- you may run many test batches, but the goal is not cookies, but a recipe so someone else can make cookies later 
 
 (recipe from popcornpottery.com)
 
