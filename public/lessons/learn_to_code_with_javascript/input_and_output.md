@@ -187,13 +187,13 @@ function ask(questionText) {
 
 # using readline - explanation
 
-|code| explanation |
-|---|---|
-| `const readline = require('readline');` | load the `readline` package and name it `readline` |
-| `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings: |
-|`     input: process.stdin,` | for input, use the *standard input stream* (i.e. terminal keyboard input) |
-|`     output: process.stdout` | for output, use the *standard output stream* (i.e. terminal console output) 
-|`function ask(questionText) {...}` | create a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) |
+| code                                                        | explanation                                                                                                                             |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `const readline = require('readline');`                     | load the `readline` package and name it `readline`                                                                                      |
+| `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings:                                                                         |
+| `     input: process.stdin,`                                | for input, use the *standard input stream* (i.e. terminal keyboard input)                                                               |
+| `     output: process.stdout`                               | for output, use the *standard output stream* (i.e. terminal console output)                                                             |
+| `function ask(questionText) {...}`                          | create a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) |
 
 (We will cover the promises in much more detail later; for now, all you really need to know is that Promises allow us to use [async and await]() in the next slide.)
 
