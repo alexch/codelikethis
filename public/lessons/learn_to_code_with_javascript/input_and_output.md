@@ -229,7 +229,7 @@ async function start() {
 }
 ```
 
-* run it from the command line using `node hello-readline.js`
+* run it from the command line using `node quest.js`
 
 # async and await
 
