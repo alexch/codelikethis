@@ -169,7 +169,8 @@ Note that:
 
 To use `readline`, include the following lines in the top of your source file:
 
-```ecmascript 6
+```javascript
+@@@javascript
 const readline = require('readline');
 
 const readlineInterface = readline.createInterface({
@@ -200,7 +201,8 @@ function ask(questionText) {
 
 Codealong time! Please follow along with the instructor and enter this code into a file named `quest.js`:
 
-```ecmascript 6
+```javascript
+@@@javascript
 const readline = require('readline');
 
 const readlineInterface = readline.createInterface({
