@@ -53,12 +53,21 @@ this obeys Chaffee's Law of Titles: if a discipline's title includes a complimen
   * Computer Science is not a science
   * Agile is not agile
 
+# Agile Methodologies
+
+* Extreme Programming (XP)
+* Scrum
+* Kanban
+* SAFE
+* ...and several others
 
 # Extreme Programming (XP)
 
-Instead of saying "we should really do X..."
+Why is it called "extreme"? Mostly it's tongue-in-cheek, but beneath that is an honest experiment:
 
-what if we do X **all the time** ?
+> Instead of saying "we should really do X..." <br>
+> (and then not)<br>
+> ...what if we do X **all the time** ?
 
 (where X is testing, code review, incremental design, refactoring, ...)
 
@@ -71,37 +80,39 @@ what if we do X **all the time** ?
 
 # XP Practices
 
-##	Fine scale feedback
-*	Pair programming
-*	Planning game
-*	Release planning
-* Iteration planning
-
-##	Test driven development
-
-## 	Whole team
-* War Room
-*	Continuous integration
-*	Design improvement (Refactoring)
-*	Small releases
-
-## Shared understanding
-*	Coding standard
-*	Collective code ownership
-*	Simple design
-
-##	Programmer welfare
-*	Sustainable pace
-
 <https://en.wikipedia.org/wiki/Extreme_programming_practices>
 
+# XP Practices: Fine scale feedback
+* Pair programming
+* Planning game
+* Release planning
+* Iteration planning
+* Test driven development
 
-# iterations 
+# XP Practices: Whole team
+* War Room
+* Continuous integration
+* Design improvement (refactoring, domain modeling)
+* Small releases
 
-* Time box
+# XP Practices: Shared understanding
+* Coding standard
+* Collective code ownership
+* Simple design
+* Inceptions
+* Clear written acceptance criteria
+* Automated acceptance tests
+* User-centric design (e.g. personas)
+
+# XP Practices:	Programmer welfare
+* Sustainable pace
+* Continuous process improvement (via retrospectives)
+
+# XP Practices: Iterative development
+* Time boxed iterations
 * work, measure, plan, repeat
 
-# yesterday's weather
+# Yesterday's Weather
 
 The most efficient way to answer the question,
 
@@ -113,7 +124,7 @@ is with the question,
 
 ...sure it'll be wrong 20% of the time, but that's a **much** better rate than every other planning system 
 
-# continuous improvement
+# Continuous Improvement
 
 First learn the rules
 
@@ -123,7 +134,6 @@ then improve the rules
 
 (then repeat)
 
-# retrospectives
+# Retrospectives
 
 see [cadence](./cadence) and [retrospectives](./retrospectives) lessons
-
