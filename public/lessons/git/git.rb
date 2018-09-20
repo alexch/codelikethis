@@ -20,7 +20,7 @@ Track::Git = Track.new(
   lesson name: "git_basics" # todo: rewrite as followup to intro
 
   # one user, 'git flow' with deploys, OSS with issues and releases, feature & story branches
-  lesson name: "git_workflows" do
+  lesson name: "git_branches" do
     link href: "https://github.com/thoughtbot/guides/tree/master/protocol/git"
     link href: "https://twitter.com/jezhumble/status/982991911937036288"
     link href: "http://www.davefarley.net/?p=247"
