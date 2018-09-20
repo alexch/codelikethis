@@ -31,6 +31,14 @@ At regular intervals, the team meets to discuss
 
 <https://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649>
 
+# Retro Schedule
+
+* Setting the stage
+* Gathering data
+* Discover insights
+* Decide what to do
+* Close the retro
+
 # Retro Games
 
 * happy - sad - curious
