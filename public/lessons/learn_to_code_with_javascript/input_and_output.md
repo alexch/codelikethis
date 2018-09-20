@@ -8,12 +8,12 @@
 
 # Terminal I/O
 
-* In JavaScript, 
+* In JavaScript,
     * `console.log` means "print a line to the terminal"
-    
+
 * In NodeJS,
     * `process.stdin` means "input coming from the terminal"
-    
+
     * Reading a line in NodeJS is weird; here's one way to do it
 
 ```
@@ -56,8 +56,8 @@ and the block of code itself is called a *callback* (since you are asking `stdin
         @@@ js
         console.log("What is your name?");
         process.stdin.once('data', (chunk) => {
-            let name = chunk.toString(); 
-            console.log("Hello, " + name + "!"); 
+            let name = chunk.toString();
+            console.log("Hello, " + name + "!");
         });
 
 3. Save the file and switch back to the terminal
@@ -149,7 +149,7 @@ Note that:
 
 # LAB: YELL YOUR NAME
 
-* Now go crazy and make it YELL your name! 
+* Now go crazy and make it YELL your name!
     * Hint: Use the [toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) method
 
 ---
@@ -160,23 +160,24 @@ Note that:
 
 * It's also a collection of JavaScript *libraries*
 
-* One of the libraries is called `readline` 
+* One of the libraries is called `readline`
     * `readline` makes it easier to read lines, naturally :-)
-    * the "books" in this library are functions 
+    * the "books" in this library are functions
       * (and classes and other things too)
 
 # using readline
 
 To use `readline`, include the following lines in the top of your source file:
 
-```ecmascript 6
+```javascript
+@@@javascript
 const readline = require('readline');
 
 const readlineInterface = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-    
+
 function ask(questionText) {
   return new Promise((resolve, reject) => {
     readlineInterface.question(questionText, resolve);
@@ -186,13 +187,13 @@ function ask(questionText) {
 
 # using readline - explanation
 
-|code| explanation |
-|---|---|
-| `const readline = require('readline');` | load the `readline` package and name it `readline` |
-| `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings: |
-|`     input: process.stdin,` | for input, use the *standard input stream* (i.e. terminal keyboard input) |
-|`     output: process.stdout` | for output, use the *standard output stream* (i.e. terminal console output) 
-|`function ask(questionText) {...}` | create a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) |
+| code                                                        | explanation                                                                                                                             |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `const readline = require('readline');`                     | load the `readline` package and name it `readline`                                                                                      |
+| `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings:                                                                         |
+| `     input: process.stdin,`                                | for input, use the *standard input stream* (i.e. terminal keyboard input)                                                               |
+| `     output: process.stdout`                               | for output, use the *standard output stream* (i.e. terminal console output)                                                             |
+| `function ask(questionText) {...}`                          | create a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) |
 
 (We will cover the promises in much more detail later; for now, all you really need to know is that Promises allow us to use [async and await]() in the next slide.)
 
@@ -200,14 +201,15 @@ function ask(questionText) {
 
 Codealong time! Please follow along with the instructor and enter this code into a file named `quest.js`:
 
-```ecmascript 6
+```javascript
+@@@javascript
 const readline = require('readline');
 
 const readlineInterface = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-    
+
 function ask(questionText) {
   return new Promise((resolve, reject) => {
     readlineInterface.question(questionText, resolve);
@@ -220,14 +222,14 @@ async function start() {
   let name = await ask('What is your name? ');
   let quest = await ask('What is your quest? ');
   let color = await ask('What is your favorite color? ');
-  console.log('Hello ' + name + '! ' + 
+  console.log('Hello ' + name + '! ' +
     'Good luck with ' + quest + ', ' +
     'and here is a ' + color + ' flower for you.');
   process.exit();
 }
 ```
 
-* run it from the command line using `node hello-readline.js`
+* run it from the command line using `node quest.js`
 
 # async and await
 
