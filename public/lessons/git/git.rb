@@ -17,7 +17,6 @@ Track::Git = Track.new(
   link href: "https://www.freecodecamp.org/news/beaucarnes/how-to-use-GitHub--7mdMGAPL"
 
   lesson name: "git_intro"
-  lesson name: "git_basics" # todo: rewrite as followup to intro
 
   # one user, 'git flow' with deploys, OSS with issues and releases, feature & story branches
   lesson name: "git_branches" do
@@ -25,7 +24,9 @@ Track::Git = Track.new(
     link href: "https://twitter.com/jezhumble/status/982991911937036288"
     link href: "http://www.davefarley.net/?p=247"
   end
-  lesson name: "branches" # basics, feature branch workflow
+
+  lesson name: "git_basics" # todo: rewrite and distribute to the below lessons
+
   lesson name: "remotes" # basics, origin vs upstream
   lesson name: "merging" # basics, conflicts
   lesson name: "rebasing_and_squashing"
