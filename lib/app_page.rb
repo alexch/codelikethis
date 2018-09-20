@@ -62,7 +62,7 @@ class AppPage < Erector::Widgets::Page
     font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
 
     stylesheet name: "coderay"
-    stylesheet name: "github-markdown"
+    stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
 
     # load this application's CSS from /css/app.css
     stylesheet name: "app"
@@ -110,11 +110,14 @@ $(function () {
     # a "Alex Chaffee.", href: "http://alexchaffee.com"
     br
 
-    rawtext <<-HTML
+    p(rawtext <<-HTML)
     <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Code Like This"</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://codelikethis.com" property="cc:attributionName" rel="cc:attributionURL">Alex Chaffee</a> 
-    <br/>
     is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
-    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />
+    <br />
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
+    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
+    </a>
+    <br />
     HTML
     br style: "clear:both"
     br
@@ -153,11 +156,15 @@ $(function () {
   end
 
   def rightbar_content
-    if @widget and @widget.respond_to?(:outline)
+    if outline?
       widget @widget, {}, content_method_name: :outline
-    else
-      twitter
+      # else
+      #   twitter
     end
+  end
+
+  def outline?
+    @widget and @widget.respond_to?(:outline)
   end
 
   def body_content
@@ -169,14 +176,15 @@ $(function () {
     element('main', class: 'container-fluid') {
       div(class: "row") {
 
-        center_cols = 9
+        center_cols = 12
         # first the sidebar
         if @sidebar
           div(class: "col-md-3", id: 'sidebar') {
             widget TracksSidebar.new(tracks: all_tracks, current: (@widget.respond_to? :target and @widget.target))
           }
-          center_cols = 6
+          center_cols -= 3
         end
+        center_cols -= 3 if outline?
 
         # now the real body
         div(class: "col-md-#{center_cols}") {
@@ -205,14 +213,16 @@ $(function () {
         }
 
         # next the right-side (contents) sidebar
-        div(class: "col-md-3", id: 'right-sidebar') {
-          rightbar_content
-        }
+        if outline?
+          div(class: "col-md-3", id: 'right-sidebar') {
+            rightbar_content
+          }
+        end
 
       }
     }
 
-    center.footer(class: ['footer', 'navbar-light']) {
+    footer(class: ['footer', 'navbar-light']) {
       footer_content
     }
 

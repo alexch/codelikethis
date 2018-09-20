@@ -345,45 +345,51 @@ span.svg-icon {
   text-transform: none; }
 
 /* line 389, ../scss/app.scss */
-h1.lesson-name {
-  border-bottom: 2px solid purple; }
-  /* line 391, ../scss/app.scss */
-  h1.lesson-name span.track-name {
-    font-size: 60%; }
+.lesson-title {
+  background-color: #cccccc; }
+  /* line 392, ../scss/app.scss */
+  .lesson-title h1.lesson-name {
+    border-bottom: 2px solid purple; }
+    /* line 394, ../scss/app.scss */
+    .lesson-title h1.lesson-name span.track-name {
+      font-size: 60%; }
 
-/* line 396, ../scss/app.scss */
+/* line 400, ../scss/app.scss */
 div.next_and_previous {
   margin: 2px;
   display: block;
   font-size: 80%;
   font-weight: bold;
   font-style: italic; }
-  /* line 403, ../scss/app.scss */
+  /* line 407, ../scss/app.scss */
   div.next_and_previous a.next_lesson {
     float: right; }
-  /* line 409, ../scss/app.scss */
+  /* line 413, ../scss/app.scss */
   div.next_and_previous a.previous_lesson {
     float: left; }
-  /* line 415, ../scss/app.scss */
+  /* line 419, ../scss/app.scss */
   div.next_and_previous a {
     color: black; }
 
-/* line 420, ../scss/app.scss */
+/* line 424, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 425, ../scss/app.scss */
+/* line 429, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 429, ../scss/app.scss */
-.footer {
+/* line 433, ../scss/app.scss */
+footer {
   clear: both;
   padding: 2rem;
-  border-top: 1px solid #EEEEEE; }
+  border-top: 1px solid #EEEEEE;
+  text-align: center;
+  max-width: 60em;
+  margin: auto; }
 
-/* line 435, ../scss/app.scss */
+/* line 442, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -392,7 +398,7 @@ div.main_column img {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 444, ../scss/app.scss */
+  /* line 451, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;
@@ -400,12 +406,12 @@ div.main_column img {
     width: 100%;
     height: 100%; }
 
-/* line 453, ../scss/app.scss */
+/* line 460, ../scss/app.scss */
 table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 458, ../scss/app.scss */
+  /* line 465, ../scss/app.scss */
   table ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -413,50 +419,50 @@ table {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 466, ../scss/app.scss */
+  /* line 473, ../scss/app.scss */
   table td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 470, ../scss/app.scss */
+  /* line 477, ../scss/app.scss */
   table, table td, table th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 474, ../scss/app.scss */
+  /* line 481, ../scss/app.scss */
   table th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 480, ../scss/app.scss */
+  /* line 487, ../scss/app.scss */
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 483, ../scss/app.scss */
+  /* line 490, ../scss/app.scss */
   table tr:nth-child(odd) {
     background-color: #FFFFFF; }
-  /* line 486, ../scss/app.scss */
+  /* line 493, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 491, ../scss/app.scss */
+  /* line 498, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 495, ../scss/app.scss */
+  /* line 502, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 500, ../scss/app.scss */
+/* line 507, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 502, ../scss/app.scss */
+  /* line 509, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 505, ../scss/app.scss */
+  /* line 512, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 508, ../scss/app.scss */
+  /* line 515, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
-  /* line 512, ../scss/app.scss */
+  /* line 519, ../scss/app.scss */
   .markdown kbd {
     display: inline-block;
     padding: 3px 5px;
@@ -470,13 +476,13 @@ table {
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #959da5; }
 
-/* line 528, ../scss/app.scss */
+/* line 535, ../scss/app.scss */
 span.video_link {
   border: 1px dotted black;
   padding: 1px 2px;
   margin-left: 1em; }
   @media screen {
-    /* line 528, ../scss/app.scss */
+    /* line 535, ../scss/app.scss */
     span.video_link {
       float: right; } }
 

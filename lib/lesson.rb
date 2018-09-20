@@ -84,14 +84,14 @@ class Lesson < Thing
     # proxy readers to the target (model) object
     # todo: use DelegateClass?
     [
-      :labs, :track,
-      :name, :display_name,
-      :description, :description?,
-      :slides, :slides?,
-      :videos, :videos?, :video?,
-      :next_lesson, :previous_lesson,
-      :next_labs,
-      :topics
+        :labs, :track,
+        :name, :display_name,
+        :description, :description?,
+        :slides, :slides?,
+        :videos, :videos?, :video?,
+        :next_lesson, :previous_lesson,
+        :next_labs,
+        :topics
     ].each do |method|
       define_method method do
         @target.send method
@@ -130,19 +130,18 @@ class Lesson < Thing
     end
 
     def content
-      next_and_previous(show_track: false)
 
-      h1(class: 'lesson-name') {
-        span(class: 'track-name') {
+      div(class: 'lesson-title') {
+        div(class: 'track-name') {
           i(class: "fas fa-paw")
           text nbsp
           text track.display_name
           text ':'
         }
-        br
-        center {
-          text display_name
-        }
+
+        h1(display_name, class: 'lesson-name')
+
+        next_and_previous(show_track: false)
       }
 
       if description?
@@ -160,7 +159,7 @@ class Lesson < Thing
             widget topic.link_view
             text raw(nbsp)
           end
-          }
+        }
         br
       end
 
@@ -219,14 +218,15 @@ class Lesson < Thing
         next_and_previous(show_track: true)
         br
 
-        div(class: 'comments', id: 'comments') {
-          h2 "Comments"
-          widget Disqus,
-                 shortname: "codelikethis",
-                 developer: (@development_mode ? 1 : nil),
-                 identifier: "lesson_#{track.name}_#{name}",
-                 title: "#{track.display_name}: #{display_name}"
-        }
+        # todo: put comments back on codelikethis.com only
+        # div(class: 'comments', id: 'comments') {
+        #   h2 "Comments"
+        #   widget Disqus,
+        #          shortname: "codelikethis",
+        #          developer: (@development_mode ? 1 : nil),
+        #          identifier: "lesson_#{track.name}_#{name}",
+        #          title: "#{track.display_name}: #{display_name}"
+        # }
       }
 
     end
@@ -253,18 +253,18 @@ class Lesson < Thing
 
     def previous_lesson_button
       if previous_lesson
-        a.button.previous_lesson(with_tooltip("Previous Lesson") + {href: previous_lesson.name}) do
+        a.button.previous_lesson(with_tooltip(previous_lesson.display_name) + {href: previous_lesson.name}) do
           i(class: "fas fa-arrow-left")
           text nbsp
-          text previous_lesson.display_name
+          text "Previous Lesson"
         end
       end
     end
 
     def next_lesson_button
       if next_lesson
-        a.button.next_lesson(with_tooltip("Next Lesson") + {href: next_lesson.name}) do
-          text next_lesson.display_name
+        a.button.next_lesson(with_tooltip(next_lesson.display_name) + {href: next_lesson.name}) do
+          text "Next Lesson"
           text nbsp
           i(class: "fas fa-arrow-right")
         end
