@@ -8,7 +8,7 @@ At regular intervals, the team meets to discuss
    * Appreciations for teammates
    * Any last thoughts?
 
-# Retrospectives are
+# Retrospectives are...
 
 * facilitated by a coach or other team member
   * **not** by a manager or tech lead
@@ -18,6 +18,12 @@ At regular intervals, the team meets to discuss
   * **not** a status meeting 
   * **not** for management to make announcements or impose a new rule
   * **not** to discuss features or planning (though it might spawn other meetings about these items)
+
+# Retrospective Attitude
+
+* keep an open mind
+* be respectful
+* listen more than you speak
 
 # The Bible
 
