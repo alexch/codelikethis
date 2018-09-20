@@ -62,7 +62,7 @@ Now make a git repo for your app.
 pwd           # the response should end with "hello_node"
 git init
 git add .
-git commit -m 'first commit'
+git commit -m "first commit"
 ```
 
 # Hello, Heroku!

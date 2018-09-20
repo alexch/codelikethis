@@ -21,7 +21,7 @@
 
 |command|description|
 |---|---|
-|`git checkout -b` | create a new branch based off the current commit |
+|`git checkout -b x` | create a new branch named `x` based off the current commit |
 |`git checkout x` | switch to the branch named x |
 |`git branch` | list all known branches |
 |`git merge x` | *merge* branch x into the current branch |
@@ -36,10 +36,11 @@ We will now pretend to be planning a party. We want to think about the party fav
 2. create a new branch called `party`
 
         git checkout -b party
-3. in this branch, add a few party items (like cake or booze) to the list
+3. in this branch, add a few party items (like cake or booze) to the list using your text editor
 4. make a *commit* on this branch containing the party items
 
-        git commit -m 'party stuff'
+        git add .
+        git commit -m "party stuff"
 5. *switch back* to master. Notice that the party items are now **gone**.
 
         git checkout master
@@ -92,11 +93,18 @@ This example shows why git *cannot* automatically resolve intra-line conflicts. 
 
 > with merges, it's usually best to run `git commit` **without** *a message* since git fills in a good message for merges already. This will open the message in a console text editor, usually `vi`. If it looks good, exit `vi` by typing `:q!` 
 
+* finally, run `git log --graph` to see your commit history with a little ASCII art diagram of the branches diverging and converging
+
 # Branching Strategies
+
+* Different teams will choose different strategies for managing their branches.
+* A branching strategy is also called a "workflow"
+  * one popular strategy is named "Git Flow" but it's not the only git flow
 
 # Long Running Branches
 
-* This strategy uses two or more branches that are continuously **merged** into the **master** branch
+* This strategy uses two or more branches that are periodically **merged** into the **master** branch.
+* In this strategy, once you merge a change `master` you are saying "this change is ready for testing and deployment"
 
 ## Benefits
 
@@ -114,7 +122,7 @@ This example shows why git *cannot* automatically resolve intra-line conflicts. 
 * Using the **master** branch as **stable**
 * And using the **develop** branch as **experimental**
 
-Using this strategy, you would **merge** the **development** branch into **master** when you want the new features.
+Using this strategy, you would **merge** the **development** branch into **master** when you want to activate the new features.
 
 # Example: Long Running Diagram
 
@@ -133,7 +141,7 @@ Your branch is up-to-date with 'origin/master'.
 $ git branch develop
 $ git checkout develop
 $ git add files_that_changed
-$ git commit -m 'My awesome changes'
+$ git commit -m "My awesome changes"
 $ git checkout master
 $ git pull
 $ git merge develop
@@ -154,7 +162,7 @@ $ git push origin/master
 ## Problems
 
 * Can clutter the history
-* Need to be disciplined
+* Need to be disciplined about keeping feature branches *focused* and *short-lived*
 
 # Master <- Feature
 
@@ -168,3 +176,14 @@ $ git push origin/master
 # Example: Feature Branches Many
 
 ![Topic Branches Many](./topic-branches-git.png "Topic Branches Many")
+
+# Continuous Delivery
+
+* Some teams merge new features directly to master
+* After every commit, the code is automatically...
+  * tested
+  * deployed
+* This flow depends on a solid, stable set of automated tests
+* Benefits from *feature flags* which can switch new features on and off
+
+<https://martinfowler.com/bliki/ContinuousDelivery.html>

@@ -10,7 +10,7 @@ echo "hello" > hello.txt
 git diff
 git add .
 git status
-git commit -m 'said hello'
+git commit -m "said hello"
 git status
 
 git log
@@ -19,7 +19,7 @@ echo "friend" >> hello.txt
 git diff
 git add .
 git status
-git commit -m 'said friend'
+git commit -m "said friend"
 git status
 
 git log

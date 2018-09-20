@@ -103,8 +103,11 @@ After a commit, the staging area is cleared, and the cycle continues.
 
 3. Go **back to the command line** and type the following commands:
 
-  * `git add .`  -- that's "git <kbd>Space</kbd> add <kbd>Space</kbd> dot <kbd>Enter</kbd>"
   * `git status`
+  * `git add .`  -- that's "git <kbd>Space</kbd> add <kbd>Space</kbd> dot <kbd>Enter</kbd>"
+  * `git status` 
+  
+4. Now look at the the two `git status` results. What is different between them? Why?
 
 # LAB: Make a shopping list (cont.)
 
@@ -131,7 +134,7 @@ This message is saying that there is one file with staged changes, and it's a fi
 
 Now, *commit* your changes with the following command:
 
-    git commit -m 'shopping list'
+    git commit -m "shopping list"
     
 You should see something like this:
 
@@ -227,7 +230,7 @@ Finally, do the two-step:
 
 1. `git add .`
 2. `git status`
-3. `git commit -m 'oh no, out of condiments'`
+3. `git commit -m "oh no, out of condiments"`
 4. `git status`
 
 > It is a **very good habit** to run `git status` incessantly. Like, all the time, between every other `git` command.
@@ -316,7 +319,7 @@ It's saying "milk" and "chunky monkey ice cream" were *removed*, and "ketchup" w
 
 * `git init` initializes a repo inside a directory
 * `git add .` stages all current local changes, including new files and edits inside existing files
-* `git commit -m 'message'` turns the *staged* changes into a new *commit* history entry
+* `git commit -m "message"` turns the *staged* changes into a new *commit* history entry
 * `git show` expands a single commit to show the *metadata* and *changes*
 * a git ID is a SHA-1 hash that uniquely identifies a single commit
 

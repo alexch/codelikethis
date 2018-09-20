@@ -31,7 +31,7 @@ What would you like to do?
 # Hints
 
 * Make a git branch for your new program (`git checkout -b web-ui`)
-* Make lots of commits on this branch! Any time your program is stable, and especially once you add a feature, run `git add . ; git commit -m 'text displays in text box'` or whatever
+* Make lots of commits on this branch! Any time your program is stable, and especially once you add a feature, run `git add . ; git commit -m "text displays in text box"` or whatever
 * Feel free to "revert" (`git checkout .`) if you get lost or introduce a bug halfway through a feature; starting over from the last checkin is often easier than fixing the bug
 * You will want to *refactor* your program to separate the *input and output* from the *validation* and *logic*, then replace the I/O with web-UI-aware code. See below for example.
 
