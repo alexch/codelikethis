@@ -14,6 +14,8 @@ class Track
     lesson name: "cadence",
       description: "'Cadence' refers to the pace, rhythm, and recurring themes of a march or other piece of music. The cadence of an Agile team revolves around its schedule of meetings, large and small. Daily standups, weekly demos, monthly retrospectives... all contribute to (or detract from!) the team's communication, feedback, and cohesion."
 
+    lesson name: "retrospectives"
+
     link href: 'https://medium.freecodecamp.org/want-to-be-a-developer-you-should-probably-be-pair-programming-2c6ec12c4866'
 
     lesson name: "refactoring", description: "Refactoring is the process of restructuring existing computer code -- changing its factoring -- without changing its behavior. You probably knew that. But did you know it's also a meditation technique? Improve your practice of mindful coding with this light overview to the Zen of Refactoring."

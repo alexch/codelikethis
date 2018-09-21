@@ -133,6 +133,10 @@ class Bootcamp < Site
       nav_item name: "Curriculum", dropdown: true do
         a(@site.display_name, class: 'dropdown-item', href: @site.href)
         @site.tracks.each do |track|
+          if (track == ::Track::Separator)
+            hr
+          else
+
           a(class: ['dropdown-item', 'track-name'],
             href: track.href
           ) {
@@ -141,6 +145,7 @@ class Bootcamp < Site
             text nbsp
             text track.display_name
           }
+          end
         end
 
 
