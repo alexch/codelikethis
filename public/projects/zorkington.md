@@ -252,7 +252,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
     * buying and eating a slice of pizza at Mr. Mike's removes the status
 
-* [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing))
+* [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing\))
 
 Please *write stories* for each of these features *before* implementing them.
 
@@ -270,7 +270,7 @@ And during the day, take breaks, find other student teams and play each others' 
 ## Icebox
 
 * Status line (showing room name)
-* Web UI
-* if a [Yelpington](yelpington_app) entry exists for a business at the player's current location, display it somehow
+* Web User Interface for the game
+<!-- * if a [Yelpington](yelpington_app) entry exists for a business at the player's current location, display it somehow
 * write a *word wrapping* function and use it to format all output
-
+ -->
