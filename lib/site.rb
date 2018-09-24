@@ -92,4 +92,5 @@ class Site
 end
 
 require 'bootcamp'
+require 'javascript_nights'
 require 'code_like_this'

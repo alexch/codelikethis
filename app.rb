@@ -179,7 +179,7 @@ class App < Sinatra::Base
 
   def create_site
     sitename = params['site'] || request.host
-    site = [CodeLikeThis, Bootcamp].map(&:new).detect do |site|
+    site = [CodeLikeThis, Bootcamp, JavascriptNights].map(&:new).detect do |site|
       site.host? sitename
     end
     if site.nil?

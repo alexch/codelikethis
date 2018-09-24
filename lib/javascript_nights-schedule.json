@@ -1,0 +1,166 @@
+{
+  "description": "JavaScript Nights class schedule",
+  "typical_day": [
+    [
+      " 5:30 pm",
+      "classroom open"
+    ],
+    [
+      " 6:00 pm",
+      "lecture 1"
+    ],
+    [
+      " 7:00 pm",
+      "exercises"
+    ],
+    [
+      " 8:00 pm",
+      "lecture 2"
+    ],
+    [
+      " 9:00 pm",
+      "go home!"
+    ]
+  ],
+  "weeks": [
+    {
+      "start": "2018-09-22",
+      "track": "prerequisites",
+      "projects": [
+        "fcc_basic_html",
+        "fcc_basic_css",
+        "what_the_regex"
+      ]
+    },
+    {
+      "start": "2018-01-17",
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "intro",
+        "the_command_line",
+        "hello_node",
+        "values"
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "strings",
+        "numbers",
+        "variables",
+        "null"
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "functions",
+        "logic",
+        "input_and_output"
+      ],
+      "projects": [
+        "guess"
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "loops",
+        "arrays",
+        "argv"
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "stacks",
+        "hashes",
+        "recursion"
+      ],
+      "projects": [
+        "zorkington",
+        "tic_tac_toe",
+        {
+          "from": "FreeCodeCamp",
+          "name": "Debugging",
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/",
+          "optional": true
+        },
+        {
+          "from": "FreeCodeCamp",
+          "name": "Basic Data Structures",
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures"
+        },
+        {
+          "from": "FreeCodeCamp",
+          "name": "Basic Algorithm Scripting",
+          "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting"
+        }
+      ]
+    },
+    {
+      "track": "www",
+      "projects": [
+        {
+          "from": "FreeCodeCamp",
+          "name": "Basic HTML",
+          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5"
+        },
+        {
+          "from": "FreeCodeCamp",
+          "name": "Basic CSS",
+          "href": "https://learn.freecodecamp.org/responsive-web-design/basic-css"
+        },
+        {
+          "from": "FreeCodeCamp",
+          "name": "Applied Visual Design",
+          "href": "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
+        },
+        "markdown_preview",
+        "web_text_game"
+      ],
+      "lessons": [
+        "http",
+        "dom_debugging",
+        "dom_scripting"
+      ]
+    },
+    {
+      "track": "client_side_coding",
+      "projects": [
+        "yelpington_app",
+        "twitch_status",
+        "pomodoro"
+      ],
+      "lessons": [
+        "embedding",
+        "ajax",
+        "calling_apis"
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "geocoding",
+        "geolocation",
+        "interactive_mapping"
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "jquery",
+        "local_storage"
+      ]
+    },
+    {
+      "track": "javascript",
+      "lessons": [
+        "oo_js"
+      ],
+      "projects": [
+        "chat_server"
+      ]
+    }
+  ]
+}

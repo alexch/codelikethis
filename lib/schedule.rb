@@ -74,18 +74,20 @@ class Schedule
         }
       }
 
-      div.row {
-        h2 "Class Mottos"
-        ul {
-          @schedule['mottos'].each do |motto|
-            li motto
-          end
-          li {
-            text "See also "
-            a("Alexisms", href: "http://alexchaffee.com/alexisms")
+      if @schedule['mottos']
+        div.row {
+          h2 "Class Mottos"
+          ul {
+            @schedule['mottos'].each do |motto|
+              li motto
+            end
+            li {
+              text "See also "
+              a("Alexisms", href: "http://alexchaffee.com/alexisms")
+            }
           }
         }
-      }
+      end
 
       div.card {
         div(class: 'card-header') {

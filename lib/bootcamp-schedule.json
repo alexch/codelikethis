@@ -84,6 +84,7 @@
         "variables",
         "null",
         "functions",
+        "logic",
         "input_and_output"
       ],
       "projects": [
@@ -104,7 +105,9 @@
         {
           "track": "agile",
           "lessons": [
-            "what_is_agile"
+            "what_is_agile",
+            "cadence",
+            "retrospectives"
           ]
         }
       ],
@@ -122,7 +125,6 @@
     {
       "track": "learn_to_code_with_javascript",
       "lessons": [
-        "logic",
         "loops",
         "arrays",
         "argv",
@@ -132,8 +134,6 @@
       ],
       "projects": [
         "exercism",
-        "exercism_fork",
-        "rpn_calculator",
         "zorkington",
         "tic_tac_toe",
         {
