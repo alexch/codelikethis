@@ -19,104 +19,50 @@ While this may seem bizarre, there are some advantages to doing things this way.
 
 Another advantage is that you can represent any mathematical formula using a simple and elegant data structure, called a [stack](http://en.wikipedia.org/wiki/Stack_(data_structure)).
 
-# Spec
+# Template
+
+Clone this GitHub repo: https://github.com/BurlingtonCodeAcademy/rpn_calculator
+
+(If we are using GitHub Classroom, you will get your own personal repo to clone instead.)
 
 Start with this definition in `calculator.js`:
 
-```
-var Calculator = function() {
-    var stack = [];
-    return {
-        value: function() {
-        },
-        push: function(value) {
-        },
-        plus: function() {
-        }
-    }
+```ecmascript 6
+class Calculator {
+  constructor() {
+    this.stack = [];
+  }
+
+  value() {
+  }
+		
+  enter(value) {
+  }
+
+  plus() {
+  }
 }
 module.exports = Calculator;
 ```
 
-and use this Jasmine spec (in `calculator.spec.js`) to start:
-
-```
-let Calculator = require('./calculator.js');
-describe("Calculator", function() {
-
-    var calculator;
-
-    beforeEach(function() {
-      calculator = new Calculator();
-    });
-
-    it("starts empty", function() {
-        expect(calculator.value()).toEqual(null);
-    });
-
-    it("can have a value 'pushed' onto it", function() {
-        calculator.push(2);
-        expect(calculator.value()).toEqual(2);
-    });
-
-    it("adds two numbers", function() {
-        calculator.push(2);
-        calculator.push(3);
-        calculator.plus();
-    expect(calculator.value()).toEqual(5);
-    });
-
-    it("adds three numbers", function() {
-        calculator.push(2);
-        calculator.push(3);
-        calculator.push(4);
-        calculator.plus();
-        expect(calculator.value()).toEqual(7);
-        calculator.plus();
-        expect(calculator.value()).toEqual(9);
-    });
-
-    it("adds and subtracts", function() {
-        calculator.push(2);
-        calculator.push(3);
-        calculator.push(4);
-        calculator.minus();
-        expect(calculator.value()).toEqual(-1);
-        calculator.plus();
-        expect(calculator.value()).toEqual(1);
-    });
-
-    it("multiplies and divides", function() {
-        calculator.push(2);
-        calculator.push(3);
-        calculator.push(4);
-        calculator.divide();
-        expect(calculator.value()).toEqual(0.75);
-        calculator.times();
-        expect(calculator.value()).toEqual(1.5);
-    });
-
-    it("fails informatively when there's not enough values stashed away", function() {
-        expect(function() {
-            calculator.plus();
-        }).toThrow("calculator is empty");
-
-        expect(function() {
-            calculator.minus();
-        }).toThrow("calculator is empty");
-
-        expect(function() {
-            calculator.times();
-        }).toThrow("calculator is empty");
-
-        expect(function() {
-            calculator.divide();
-        }).toThrow("calculator is empty");
-    });
-});
-```
-
 # Backlog
+
+<!--box -->
+## Make the tests pass
+
+Run the tests (aka "Jasmine spec") in `calculator.spec.js` like this:
+
+    npm test
+
+Keep writing code until each and every spec is passing. 
+
+Add your own specs to this file...
+
+  * if you want more clarity on existing features
+  * when you add new features
+  * to find and fix bugs
+
+<!--/box -->
 
 <!--box-->
 
@@ -125,8 +71,7 @@ describe("Calculator", function() {
 Write a *read-eval-print-loop* that accepts input from the command line and feeds the input into your calculator, like this:
 
 ```
-$ node calculator.js
-I am a calculator!
+$ node calc.js
 []
 2               <<< user input
 [2]
@@ -145,7 +90,11 @@ I am a calculator!
 ERROR
 ```
 
-REMEMBER: you can use `(+value)` to turn a string into a number.
+**Important note:** `calc.js` must be a *separate file* from `calculator.js`, to allow the tests to run independently (without also launching the app). You can *import* your Calculator class into this new file like this:
+
+    let Calculator = require('./calculator.js');
+
+**Hint:** you can use `(+value)` to turn a string into a number.
 
 <--/box-->
 
@@ -154,7 +103,25 @@ REMEMBER: you can use `(+value)` to turn a string into a number.
 
 ## Pow
 
-Write *tests and code* for a "power of" operator
+Write *tests and code* for a "power of" operator: `^`
 
 <!--/box-->
 
+<!--box-->
+
+## CLI
+
+If command-line parameters are provided, use them instead of the REPL.
+
+Example:
+
+```
+$ node calculator.js 2 2 +
+[2, 2, '+']
+[4]
+4
+```  
+
+> Hint: you may have to alter the `value` method to do more than merely report what's on the top of the stack. 
+
+<!--/box-->
