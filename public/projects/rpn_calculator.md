@@ -27,7 +27,8 @@ Clone this GitHub repo: https://github.com/BurlingtonCodeAcademy/rpn_calculator
 
 Start with this definition in `calculator.js`:
 
-```ecmascript 6
+```
+@@@js
 class Calculator {
   constructor() {
     this.stack = [];
@@ -47,8 +48,9 @@ module.exports = Calculator;
 
 # Backlog
 
-<!--box -->
-## Make the tests pass
+<!--box-->
+
+## Red - Green - Refactor
 
 Run the tests (aka "Jasmine spec") in `calculator.spec.js` like this:
 
@@ -62,7 +64,9 @@ Add your own specs to this file...
   * when you add new features
   * to find and fix bugs
 
-<!--/box -->
+Remember to clean up your code between each test.
+
+<!--/box-->
 
 <!--box-->
 
@@ -94,14 +98,14 @@ ERROR
 
     let Calculator = require('./calculator.js');
 
-**Hint:** you can use `(+value)` to turn a string into a number.
+> **Hint:** you can use `(+value)` to turn a string into a number.
 
-<--/box-->
+<!--/box-->
 
 
 <!--box-->
 
-## Pow
+## Pow!
 
 Write *tests and code* for a "power of" operator: `^`
 
@@ -122,6 +126,6 @@ $ node calculator.js 2 2 +
 4
 ```  
 
-> Hint: you may have to alter the `value` method to do more than merely report what's on the top of the stack. 
+> **Hint:** you may have to alter the `value` method to do more than merely report what's on the top of the stack. 
 
 <!--/box-->
