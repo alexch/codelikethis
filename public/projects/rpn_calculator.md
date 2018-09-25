@@ -132,14 +132,14 @@ $ node calculator.js 2 2 +
 
 > **Warning:** the *bash* shell will interpret `*` as a "file glob", not as a literal asterisk. To pass an asterisk, prefix it with a backslash, like this:
 
-    node calc.js 5 \* 5
+    node calc.js 5 5 \* 
     
 > or put it in single quotes, like this:
 
-    node calc.js 5 '*' 5
+    node calc.js 5 5 '*' 
   
 > In Windows (cmd.exe or PowerShell) you may need to use double quotes instead, like this:
 
-    node calc.js 5 "*" 5
+    node calc.js 5 5 "*"
 
 <!--/box-->
