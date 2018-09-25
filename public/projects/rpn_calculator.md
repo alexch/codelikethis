@@ -25,6 +25,8 @@ Clone this GitHub repo: https://github.com/BurlingtonCodeAcademy/rpn_calculator
 
 (If we are using GitHub Classroom, you will get your own personal repo to clone instead.)
 
+Install the test runner (and any other required packages) with `npm install`
+
 Start with this definition in `calculator.js`:
 
 ```
