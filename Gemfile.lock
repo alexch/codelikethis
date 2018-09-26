@@ -125,6 +125,7 @@ GEM
     trollop (2.9.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -151,10 +152,8 @@ DEPENDENCIES
   sass (~> 3.5.0)
   sinatra (~> 2.0.1)
   thin
+  wdm (>= 0.1.0)
   wrong!
-
-RUBY VERSION
-   ruby 2.4.4p296
 
 BUNDLED WITH
    1.16.4
