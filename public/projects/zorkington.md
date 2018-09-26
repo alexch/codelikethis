@@ -41,6 +41,8 @@ Your code will need to represent (or *reify*) several distinct states, including
 
 Think about appropriate data structures for each of these. Note that you do not need to write code for these until you are actually implementing a story that requires them, but it is good to make a rough plan early on, to anticipate pitfalls and estimate how difficult upcoming stories will be.
 
+Remember to *refactor*. Sometimes a data structure that works well for the simple case will need to be altered to work for the general case. In this project, the app will grow (more rooms, more commands) from story to story and your data structures should change to accomodate.
+
 If you know about JavaScript classes and constructors, feel free to use them; otherwise you may save state in *global variables* like this:
 
 ```js
@@ -55,7 +57,18 @@ function moveToRoom(newRoom) {
 
 You may want to create a [State Machine](/lessons/cs/state_machines) to represent the rooms.
 
-## Stories
+## And Don't Forget to Demo!
+
+After implementing a story, *before* starting work on the next story...
+
+* Ask a teacher or fellow student if they have time to "play client" for a demo
+* Launch the program and let the client use it
+* The client should try to prove that the program does what the story says it's supposed to do
+* If the client rejects your story, keep coding until it works right, then do another demo
+
+And during the day, take breaks, find other student teams and play each others' games!
+
+## Backlog
 
 <!--box-->
 ### One Room
@@ -238,6 +251,8 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 <!--/box-->
 
+<!--box-->
+
 ### More rooms and more stories, e.g.
 
 * `read paper` or `read seven days`
@@ -256,16 +271,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 Please *write stories* for each of these features *before* implementing them.
 
-## And Don't Forget to Demo!
-
-After implementing a story, *before* starting work on the next story...
-
-* Ask a teacher or fellow student if they have time to "play client" for a demo
-* Launch the program and let the client use it
-* The client should try to prove that the program does what the story says it's supposed to do
-* If the client rejects your story, keep coding until it works right, then do another demo
-
-And during the day, take breaks, find other student teams and play each others' games!
+<!--/box-->
 
 ## Icebox
 
