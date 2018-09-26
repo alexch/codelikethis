@@ -277,7 +277,4 @@ Please *write stories* for each of these features *before* implementing them.
 
 * Status line (showing room name)
 * Web User Interface for the game
-
-<!-- * if a [Yelpington](yelpington_app) entry exists for a business at the player's current location, display it somehow
-* write a *word wrapping* function and use it to format all output -->
-
+* write a *word wrapping* function and use it to format all output
