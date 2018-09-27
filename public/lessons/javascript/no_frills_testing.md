@@ -10,7 +10,8 @@
 > "The best tests are the ones you actually write." - me
 
 * Friction is the enemy of flow
-* If you're in the zone, don't get distracted by setup; just code 
+* If you're in the zone, don't get distracted by setup...
+* ...code first, fiddle with your framework later
 
 # The Best Test Framework
 
@@ -40,6 +41,8 @@ function assert(value, why) {
 
 # Test As You Go - Step 1
 
+> Start with the null case.
+
 ```
 @@@js
 function fancyText(s) {
@@ -49,9 +52,11 @@ function fancyText(s) {
 assert(fancyText('') === '');
 ```
 
-Test suite command: `F5` (Refresh)
+"Run Test Suite" command: `F5` (Refresh)
 
 # Test As You Go - Step 2
+
+> Write code one test case at a time.
 
 ```
 @@@js
@@ -147,7 +152,7 @@ function doFormat() {
 * Testing is delicious, do it all the time
 * Don't get trapped by your tools
 * Do what works and fix it later (or don't)
-* Optional: use a standard format like TAP 
+* Optional: use a standard format like TAP
   * gives you an upgrade path from in-browser to command-line / continuous-integration / full suite
   * integrates with other tools (like [Browser-Tap](https://chrome.google.com/webstore/detail/browser-tap/ncfblaiipckncgeipgmpdioedcdmofei) and [tap-spec](https://www.npmjs.com/package/tap-spec))
   * might be more familiar to teammates 
