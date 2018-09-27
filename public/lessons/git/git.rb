@@ -27,12 +27,14 @@ Track::Git = Track.new(
 
   lesson name: "git_basics" # todo: rewrite and distribute to the below lessons
 
-  lesson name: "remotes" # basics, origin vs upstream
-  lesson name: "merging" # basics, conflicts
-  lesson name: "rebasing_and_squashing"
+  lesson name: "git_workflows"
+
+  # lesson name: "remotes" # basics, origin vs upstream
+  # lesson name: "merging" # basics, conflicts
+  # lesson name: "rebasing_and_squashing"
 
   # should this be a separate "GitHub" track?
-  lesson name: "github"
+  # lesson name: "github"
   lesson name: "github_forks_and_clones"
   lesson name: "github_pull_requests" do
     link href: "https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c"
