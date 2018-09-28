@@ -11,23 +11,56 @@ including:
   * global variables
   * top-level functions
 
-> scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
 
-# Functions Are One Way Mirrors
+# Scope is a One-Way Mirror
+
+> scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
 
 ![one way mirror functions](one-way-mirror.gif)
 
-# Variable Scope
 
-![variable visibility](javascript_scope_diagram.png)
+# Variable Visibility
 
-# Scope Example
+<!--box-->
+```
+let name = 'Alice';         // this name is global
+```
+
+<!--box-->
+```
+    function beta() {
+      let name = 'Bob';     // this name is local to beta
+      console.log(name);    // prints "Bob"
+    }
+```
+<!--/box-->
+
+```
+console.log(name);          // prints "Alice"
+```
+
+<!--box-->
+```
+    function alpha() {
+      console.log(name);    // alpha can see global var
+                            // prints "Alice"
+      beta();               // alpha can see global function named beta
+    }
+```
+<!--/box-->
+```
+alpha();
+```
+<!--/box-->
+
+
+# Scope Error
 
 ```javascript
 @@@javascript
-function exampleFunction() {
-    var x = "declared inside function";  // x can only be used in exampleFunction
-    console.log("Inside function");
+function gamma() {
+    var x = "declared inside gamma";  // x can only be used in gamma
+    console.log("Inside gamma");
     console.log(x);
 }
 
@@ -41,8 +74,10 @@ JavaScript also supports *lexical scope* which means that variables defined *abo
 ```
 function sing() {
   let numberOfBottles = 99;
-  function bottlesOfBeer() {
-    return "" + numberOfBottles + ' bottles of beer on the wall';
+
+  function bottlesOfBeer() {       // << nested inside sing()
+    return '' + numberOfBottles 
+      + ' bottles of beer on the wall';
   }
   ...
 
@@ -54,18 +89,7 @@ Closures *add a layer* between global and local:
 
   * local variables and parameters of *nesting closures* of the current function
 
-This is called "lexical scope" because a line of code can "see" all variables that are declared (= written = lexical) in the same code block, even if that code block is inside a different (nesting) function.
-
-# Closure Example
-
-```js
-@@@js
-let x = 10;
-function f(y) {
-    return x + y;
-}
-console.log(f(5));  // 15
-```
+This is called "lexical scope" because a line of code can "see" all variables that are declared (= written = _lexical_) in the same code block, even if that code block is inside a different (nesting) function.
 
 # Nested Scopes
 
@@ -87,9 +111,11 @@ and so on recursively
 
         @@@js
         function printGrid(grid) {
+
             function printRow(rowNum) {
                 console.log(grid[rowNum].join(","));
             }
+
             let i = 0;
             while (i<grid.length) {
                 printRow(i);
