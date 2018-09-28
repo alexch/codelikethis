@@ -23,6 +23,9 @@ Track::Git = Track.new(
     link href: "https://github.com/thoughtbot/guides/tree/master/protocol/git"
     link href: "https://twitter.com/jezhumble/status/982991911937036288"
     link href: "http://www.davefarley.net/?p=247"
+    link name: "a branch is a pointer to a commit",
+         href: "https://twitter.com/b0rk/status/1044403728336310273",
+         description: "cartoon Twitter thread on branches by Julia Evans"
   end
 
   lesson name: "git_basics" # todo: rewrite and distribute to the below lessons
