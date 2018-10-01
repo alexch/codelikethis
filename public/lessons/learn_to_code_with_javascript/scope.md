@@ -53,7 +53,6 @@ alpha();
 ```
 <!--/BOX-->
 
-
 # Scope Error
 
 ```javascript

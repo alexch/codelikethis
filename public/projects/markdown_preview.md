@@ -24,21 +24,26 @@ Input some markdown source on the left and see it rendered on the right.
 
 ## Setup
 
-* To clone the repo and install dependencies: (do this once)
+* Clone the repo: (do this once)
 
         git clone git@github.com:BurlingtonCodeAcademy/markdown_preview.git
+        
+* Install dependencies: (do this once)
+        
         cd markdown_preview
         npm install -y
 
-* To launch the app locally:
+* Launch the app locally:
 
         npm start
+        
+    * you can now visit <http://localhost:8080/> to see your app running on your own computer!
 
-* To launch the Cypress Runner window:
+* Launch the Cypress Runner window:
   * open a *different terminal window* and `cd` to your project dir
   * run `npx cypress open` <br><br>
 
-* To run the Cypress tests:
+* Run the Cypress tests:
  * in the Cypress Runner window, click the "Run All Tests" button, or click on a single test to run it alone
 
 
