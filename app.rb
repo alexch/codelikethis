@@ -22,9 +22,9 @@ require 'markdown_widget'
 module AppHelpers
   def page_title object, extra = nil
     [
-      (object.display_name rescue object.to_s),
-      extra,
-      "- Code Like This"
+        (object.display_name rescue object.to_s),
+        extra,
+        "- Code Like This"
     ].compact.join(' ')
   end
 end
@@ -57,22 +57,22 @@ class App < Sinatra::Base
   get '/host' do
     content_type "text/plain"
     {
-      SERVER_NAME: request.env["SERVER_NAME"],
-      host: request.host,
+        SERVER_NAME: request.env["SERVER_NAME"],
+        host: request.host,
     }.ai
   end
 
   get '/lessons' do
     page(
-      widget: tracks_widget,
-      title: page_title("Lessons")).to_html
+        widget: tracks_widget,
+        title: page_title("Lessons")).to_html
   end
 
   get '/' do
     page(
-      widget: site.view,
-      sidebar: true,
-      title: "Code Like This").to_html
+        widget: site.view,
+        sidebar: true,
+        title: "Code Like This").to_html
   end
 
   get "/lessons/:track" do
@@ -94,6 +94,8 @@ class App < Sinatra::Base
       end
 
       slides = Deck::Slide.from_file(file)
+
+      # final slide is nav
       slides << begin
         slide = Deck::Slide.new(slide_id: '_next')
 
@@ -110,7 +112,10 @@ class App < Sinatra::Base
 
     deck_page = Deck::SlideDeck.new(:slides => slides,
                                     :title => page_title(lesson, "Slides"),
-                                    # :stylesheets => ["/css/github-markdown.css"],
+                                    :stylesheets => [
+                                        # "/css/github-markdown.css",
+                                        "/css/slides.css",
+                                    ],
     )
     deck_page.to_html
   end
@@ -121,8 +126,8 @@ class App < Sinatra::Base
 
   get "/lessons/:track/:lesson" do
     page(
-      widget: lesson.view,
-      title: lesson.display_name + " - Code Like This").to_html
+        widget: lesson.view,
+        title: lesson.display_name + " - Code Like This").to_html
   end
 
   get "/projects" do
@@ -137,8 +142,8 @@ class App < Sinatra::Base
   get "/projects/:project_name" do
     project = Project.new(name: params[:project_name])
     page(
-      widget: project.view,
-      title: page_title("Project")).to_html
+        widget: project.view,
+        title: page_title("Project")).to_html
 
   end
 
@@ -152,8 +157,8 @@ class App < Sinatra::Base
     # todo: make this actually work
     topic = Topic.new(name: params[:topic_name])
     page(
-      title: "Topic: #{topic.display_name}",
-      widget: Topic::View.new(site: site, target: topic)
+        title: "Topic: #{topic.display_name}",
+        widget: Topic::View.new(site: site, target: topic)
     ).to_html
   end
 

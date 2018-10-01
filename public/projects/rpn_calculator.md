@@ -50,7 +50,7 @@ module.exports = Calculator;
 
 # Backlog
 
-<!--box-->
+<!--BOX-->
 
 ## Red - Green - Refactor
 
@@ -68,9 +68,9 @@ Add your own specs to this file...
 
 Remember to clean up your code between each test.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ## REPL
 
@@ -102,18 +102,18 @@ ERROR
 
 > **Hint:** you can use `(+value)` to turn a string into a number.
 
-<!--/box-->
+<!--/BOX-->
 
 
-<!--box-->
+<!--BOX-->
 
 ## Pow!
 
 Write *tests and code* for a "power of" operator: `^`
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ## CLI
 
@@ -142,4 +142,4 @@ $ node calculator.js 2 2 +
 
     node calc.js 5 5 "*"
 
-<!--/box-->
+<!--/BOX-->

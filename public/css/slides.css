@@ -1,0 +1,35 @@
+section.box {
+    border: 2px solid black;
+    background-color: #f6f8fd;
+    padding: 1em;
+    margin: 1em;
+}
+section.box > section.box {
+    background-color: #f6fdfd;
+}
+h2.slide-title {
+    font-size: 2.25em;
+    font-weight: bold;
+    padding-top: .5em;
+    margin: 0 0 .66666em 0;
+    border-bottom: 3px solid #888;
+    padding-bottom: 0;
+}
+section.slide img {
+    width: 100%;
+}
+
+.markdown-body kbd
+{
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}

@@ -64,7 +64,7 @@ describe Project do
     <<-MARKDOWN
 # Stories
 
-<!--box-->
+<!--BOX-->
 
 ## Slay the Dragon 
 
@@ -72,7 +72,7 @@ describe Project do
 
 **Then** it should be dead
 
-<!--/box-->
+<!--/BOX-->
                                   zork
 
 ## Tech

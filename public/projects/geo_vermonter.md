@@ -38,7 +38,7 @@ TODO
  
 # User Stories
 
-<!--box-->
+<!--BOX-->
 ### Basic Layout
 
 * Sketch out wireframes for a page with the following page elements. 
@@ -58,10 +58,10 @@ TODO
   * use `npm test` to run them immediately on the console - find screenshots under `cypress/screenshots/geo_vermonter_tests`
   * use `npx cypress open` to run them interactively in the browser GUI
 
-<!--/box-->
+<!--/BOX-->
 
 
-<!--box-->
+<!--BOX-->
 ### State of the State
 
 Using [leaflet.js](#TODO) place a map of the state of Vermont inside the `map` div. Use the [Isri.WorldImagery tileset](https://leaflet-extras.github.io/leaflet-providers/preview/) and make sure **not** to show any street or town info to the user -- only satellite images.
@@ -70,9 +70,9 @@ The map should be at a *fixed* zoom level, enough to show just the boundaries of
 
 The boundaries of Vermont are specified in [`border.js`](https://github.com/BurlingtonCodeAcademy/geo-vermonter/blob/master/border.js). Ask Josh for further instructions.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Game On
 
 **When** the user clicks *Start a Game*
@@ -83,10 +83,10 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **And** the Quit button is enabled
 
-<!--/box-->
+<!--/BOX-->
 
 
-<!--box-->
+<!--BOX-->
 ### Random Spot
 
 **When** the user clicks *Start a Game*
@@ -101,9 +101,9 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 *(optional)* **And** displays a small map of Vermont counties on the side, e.g. https://geology.com/county-map/vermont-county-map.gif
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### I Give Up!
 
 **When** the user clicks the "I Give Up" button
@@ -112,9 +112,9 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **And** uses *geocoding* to look up the town and county, and displays those inside the `info` panel
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Guess the County
 
 **When** the user clicks the Guess button
@@ -147,9 +147,9 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **Then** the dialog box disappears with no change to score
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Move
 
 **When** the user clicks the "North" button
@@ -160,18 +160,18 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 (and same as above for East, South, West buttons)
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Return
 
 **When** the user clicks the "Return" button
 
 **Then** the game scrolls back to the original spot, with no change in score
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### breadcrumbs
 
 When the user clicks a movement button
@@ -180,9 +180,9 @@ Then the map draws a dotted line between the previous map center and the new map
 
 And keeps showing the dotted line during the rest of game
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### save score (local)
 
 **When** the user wins a game
@@ -199,9 +199,9 @@ And keeps showing the dotted line during the rest of game
 
 > For the first pass, use [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) so it persists across game sessions.  **BEWARE** that the values can only be strings, so you must use `JSON.stringify` on the way in and `JSON.parse` on the way out.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### save score (server)
 
 **When** the user wins a game
@@ -222,16 +222,16 @@ Initially, implement your server code as simply as possible. Over the course of 
 2. in a file -- this will work locally but will not work on Heroku
 3. in MongoDB
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### replay game
 
 1. when the game is saved, don't just save the name and score: all the info, including spot and all moves taken, and any guesses, should be saved as well
 2. when viewing old games, the user can select one and see the above info
 3. a live replay at one move per second (this will likely be a whole new story)
 
-<!--/box-->
+<!--/BOX-->
 
 
 

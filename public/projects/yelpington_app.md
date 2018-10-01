@@ -60,15 +60,15 @@ we will need this JSON:
 
 > TODO: move the git stories into a new intermediate project `yelpington_json`
 
-<!--box-->
+<!--BOX-->
 
 ### Zero Pull Requests
 
 Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and getthe PRs accepted or closed.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### Convert Data
 
@@ -80,9 +80,9 @@ Your commit should *remove* the `.md` markdown file and *add* a `.json` file wit
 
 > We might deploy one or more student projects for regular classroom lunchtime use!
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Show Restaurant
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
@@ -105,9 +105,9 @@ let name = document.location.pathname.slice(1)
 
 (`slice(1)` removes the `/` from the `pathname` field of the `document.location` URL object.)
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Show Restaurant Map
 
 **Given** the id of a restaurant (e.g. `joes-diner`)
@@ -124,18 +124,18 @@ let name = document.location.pathname.slice(1)
 > `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
 
 
-<!--/box-->
+<!--/BOX-->
 
 
-<!--box-->
+<!--BOX-->
 ### Show All Restaurants (list)
 
 **When** the user visits `/`
 
 **Then** the user sees all restaurants as a list with links to the respective restaurant pages
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 ### Show All Restaurants (map)
 
 **When** the user visits `http://localhost:5000/` with no query string
@@ -144,8 +144,8 @@ let name = document.location.pathname.slice(1)
 
 **And** clicking on a pin visits that restaurant's page
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Formatted Notes
 
@@ -164,5 +164,5 @@ HTML:
 
 The pizza is **awesome** here!
 
-<!--/box-->
+<!--/BOX-->
 

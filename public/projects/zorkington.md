@@ -70,7 +70,7 @@ And during the day, take breaks, find other student teams and play each others' 
 
 ## Backlog
 
-<!--box-->
+<!--BOX-->
 ### One Room
 
 **When** the user launches the program
@@ -97,8 +97,8 @@ On the door is a handwritten sign.
 Sorry, I don't know how to gargle.
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 ### Read the sign
 
 **Given** the player is in the room "182 Main St."
@@ -115,8 +115,8 @@ up to the second floor. If the door is locked, use the code
 
 **And** returns to the command prompt
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 ### Don't take the sign
 
 **Given** the player is in the room `182 Main St.`
@@ -131,10 +131,10 @@ That would be selfish. How will other students find their way?
 
 (assume " **And** returns to the command prompt" after this and all future stories)
 
-<!--/box-->
+<!--/BOX-->
 
 
-<!--box-->
+<!--BOX-->
 ### Blocked
 
 **Given** the player is in the room `182 Main St.`
@@ -148,8 +148,8 @@ The door is locked. There is a keypad on the door handle.
 ```
 </span>
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 ### Speak friend and enter
 
 **Given** the player is in the room `182 Main St.`
@@ -165,9 +165,9 @@ shuts behind you.
 
 **And** the player enters room `182 Main St. - Foyer`
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Unauthorized Access
 
 **Given** the player is in the room `182 Main St.`
@@ -182,9 +182,9 @@ Bzzzzt! The door is still locked.
 
 **And** the player remains in room `182 Main St.`
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Foyer
 
 **Given** the player is in `182 Main St. - Foyer`
@@ -200,8 +200,8 @@ and just call it a foyer. In Vermont, this is pronounced
 A copy of Seven Days lies in a corner.
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Inventory
 
@@ -220,8 +220,8 @@ and ignoring the articles, just like everybody else does.
 
 **And** the paper is added to the player's inventory
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Display Inventory
 
@@ -236,8 +236,8 @@ You are carrying:
 A copy of Seven Days, Vermont's Alt-Weekly
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Drop Inventory
 
@@ -249,9 +249,9 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 **And** the copy of Seven Days is added to the current room's inventory
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### More rooms and more stories, e.g.
 
@@ -271,7 +271,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 Please *write stories* for each of these features *before* implementing them.
 
-<!--/box-->
+<!--/BOX-->
 
 ## Icebox
 

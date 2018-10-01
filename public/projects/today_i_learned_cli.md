@@ -12,7 +12,7 @@ Your task for this project is to build a command line program which you can use 
 
 ## Stories
 
-<!--box-->
+<!--BOX-->
 
 ### Creating a new TIL entry
 
@@ -36,8 +36,8 @@ The TIL entry.content equals:
 To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Listing existing TIL entries
 
@@ -67,8 +67,8 @@ Then the command prompt will contain
 0 2018-01-01T12:15:00+0400 To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Display a TIL entry
 
@@ -97,8 +97,8 @@ CREATED: 2018-01-01T12:15:00+0400
 CONTENT: To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Listing multiple TIL entries
 
@@ -133,8 +133,8 @@ Then the command prompt will contain
 1 2018-03-02T18:30:00+0400 To get the length of a JavaScript Array, ['some', 'array'].length
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Editing an existing TIL entry
 
@@ -180,8 +180,8 @@ The contents of the TIL entry will contain:
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Delete a TIL entry
 
@@ -209,7 +209,7 @@ There are zero entries when the user inputs
 til --list
 ```
 
-<!--/box-->
+<!--/BOX-->
 
 ## Tech
 

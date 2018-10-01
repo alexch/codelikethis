@@ -21,25 +21,25 @@ including:
 
 # Variable Visibility
 
-<!--box-->
+<!--BOX-->
 ```
 let name = 'Alice';         // this name is global
 ```
 
-<!--box-->
+<!--BOX-->
 ```
     function beta() {
       let name = 'Bob';     // this name is local to beta
       console.log(name);    // prints "Bob"
     }
 ```
-<!--/box-->
+<!--/BOX-->
 
 ```
 console.log(name);          // prints "Alice"
 ```
 
-<!--box-->
+<!--BOX-->
 ```
     function alpha() {
       console.log(name);    // alpha can see global var
@@ -47,11 +47,11 @@ console.log(name);          // prints "Alice"
       beta();               // alpha can see global function named beta
     }
 ```
-<!--/box-->
+<!--/BOX-->
 ```
 alpha();
 ```
-<!--/box-->
+<!--/BOX-->
 
 
 # Scope Error
@@ -72,6 +72,7 @@ console.log(x);  // Causes error
 JavaScript also supports *lexical scope* which means that variables defined *above* the current function may also be visible...
 
 ```
+@@@javascript
 function sing() {
   let numberOfBottles = 99;
 

@@ -6,40 +6,40 @@ Huy Fong Foods makes a very popular hot sauce. In this project you will do your 
 
 ## Stories
 
-<!--box-->
+<!--BOX-->
 ### Grid
 
 Use empty boxes of different colors to replicate the grid layout of the label. 
 
 Use whatever layout system makes most sense to you (Grid, Flexbox, Absolute, Float...)
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### Horizontal English Text
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### Horizontal Chinese Text
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### Curved Thai and Chinese Text
 
 see https://css-tricks.com/set-text-on-a-circle/ 
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### The Rooster
 
-<!--/box-->
+<!--/BOX-->
 
 ### Finishing Touches
 

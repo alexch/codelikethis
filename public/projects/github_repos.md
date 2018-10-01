@@ -30,7 +30,7 @@ codelikethis    Code Like This web site
 
 ## Stories
 
-<!--box-->
+<!--BOX-->
 
 ### Big List
 
@@ -46,8 +46,8 @@ codelikethis    Code Like This web site
 
 **Then** the user should see a descriptive error message instead of the list
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Recent First
 
@@ -57,7 +57,7 @@ codelikethis    Code Like This web site
 
 **Hint:** there is a way to make GitHub perform this sort for you -- check the documentation for the "repos" endpoint here: https://developer.github.com/v3/repos/#list-user-repositories 
 
-<!--/box-->
+<!--/BOX-->
 
 ### v2 Ideas
 

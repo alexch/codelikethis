@@ -46,7 +46,7 @@ Input some markdown source on the left and see it rendered on the right.
 
 We have provided Cypress tests that run through the first few features. Please make sure to keep running the tests, to ensure later changes don't break earlier features.
 
-<!--box-->
+<!--BOX-->
 ## Page Elements
 
 **Given** a running app
@@ -58,9 +58,9 @@ We have provided Cypress tests that run through the first few features. Please m
 * *preview*: a `div` element with the id `preview`
 * *render*: a `button` element  with the id `render`
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ## Render Text
 
 **Given** the user has entered text in the *source* text field
@@ -69,9 +69,9 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **Then** the text is copied into the *preview* area
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ## Render Markdown
 
 **Given** the user has entered *markdown format* text in the *source* text field
@@ -82,9 +82,9 @@ We have provided Cypress tests that run through the first few features. Please m
 
 > Hint: You can use the `marked` library to convert markdown source into styled HTML. You can load it like this: `<script src='marked.js'>` since we added `marked.js` to the repository already. Alternately, you can use a CDN -- check the [Usage section of Marked's GitHub repo](https://github.com/markedjs/marked) for instructions.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ## Auto-Render
 
 **Given** the user types into the *source* text field
@@ -95,25 +95,25 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **And** the text is rendered as styled HTML into the *preview* area
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ## Pretty Page
 
 Make the app look pretty.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ## Pretty Preview
 
 Make the *formatted text* in the *preview* area look pretty. 
 
 Maybe make different elements different colors, or improve margins and padding, or whatever you like.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ## Refactoring
 
@@ -124,7 +124,7 @@ Ideas:
   * if you used  `<button onclick=...>` or  `element.onclick=...` you may want to try using `element.addEventListener('click', ...)` instead -- [here's an example](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Example)
   * if you used an inline `<script>` you may want to try using an external `<script src=...>` instead
 
-<!--/box-->
+<!--/BOX-->
 
 ## More Information
 

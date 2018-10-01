@@ -22,7 +22,7 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 ## Stories
 
-<!--box-->
+<!--BOX-->
 
 ### Countdown
 
@@ -34,8 +34,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **And** the Start button should be disabled
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Zero!
 
@@ -51,8 +51,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **And** the Reset button should be enabled
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Reset
 
@@ -64,8 +64,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **And** the Start button should be enabled
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Ding!
 
@@ -75,8 +75,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** it should [play a sound](https://stackoverflow.com/a/18628124/190135)
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Pause
 
@@ -90,8 +90,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **And** the Start button should be enabled
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Flash!
 
@@ -107,7 +107,7 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** the flashing should stop
 
-<!--/box-->
+<!--/BOX-->
 
 ## Tech
 

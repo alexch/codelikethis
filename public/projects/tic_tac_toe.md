@@ -34,7 +34,7 @@ Move to? _
 
 ## Stories
 
-<!--box-->
+<!--BOX-->
 
 ### No Rules
 
@@ -62,9 +62,9 @@ Move to? _
 
 **And** the turn ends, and the current player changes from O to X
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### Rules
 
@@ -74,8 +74,8 @@ Move to? _
 
 **And** the current player does not change
  
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Win Condition
 
@@ -91,15 +91,15 @@ Move to? _
  
 (and the same for Player O)
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Names
 
 - when starting a game, choose the names of the players (not just X and O)
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Artificial Stupidity
 
@@ -107,8 +107,8 @@ Move to? _
 - simple AI that picks a random empty cell
 - human is always X and computer is always O
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### New Game UI (HTML VERSION ONLY)
 
@@ -116,8 +116,8 @@ Move to? _
 - consider a modal dialog box
 - consider button placement and visibility
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Artificial Intelligence
 
@@ -125,4 +125,4 @@ Move to? _
 - This will require R&D 
 - See <https://www.youtube.com/watch?v=P2TcQ3h0ipQ> for inspiration
 
-<!--/box-->
+<!--/BOX-->

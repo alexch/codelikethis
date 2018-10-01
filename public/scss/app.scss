@@ -165,7 +165,7 @@ section.slide {
   word-wrap: break-word;
   padding: 1em;
   border: 1px solid #ccc;
-  display: inline-block; /* so it's only as wide as its contents */
+  /* display: inline-block; /* so it's only as wide as its contents */
 }
 
 .slide code {

@@ -26,28 +26,33 @@ module Views
   end
 
   def from_markdown text
-    @@markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-                                           :tables => true,
-                                           :fenced_code_blocks => true,
-                                           :no_intra_emphasis => true,
-                                           :autolink => true,
-                                           :strikethrough => true,
-                                           :lax_html_blocks => false,
-                                           :space_after_headers => true,
-                                           :superscript => false,
-                                           :with_toc_data => true
-    )
+    @@markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, {
+        tables: true,
+        fenced_code_blocks: true,
+        no_intra_emphasis: true,
+        autolink: true,
+        strikethrough: true,
+        lax_html_blocks: false,
+        space_after_headers: true,
+        superscript: false,
+        with_toc_data: true
+    })
 
-    munge(@@markdown.render(text))
+    munge_html(@@markdown.render(munge_md(text)))
+  end
+
+  def munge_md text
+    text.gsub('<!--BOX-->', "<!--BOX-->\n" )
   end
 
   # todo: test
-  def munge html
+  # todo: unify with Deck::Slide's markdown munging
+  def munge_html html
     lines = (["<div class='markdown-body'>"] +
         html.split("\n").map do |line|
-          if line.strip == '<!--box-->'
+          if line.strip == '<!--BOX-->'
             '<section class="box">'
-          elsif line.strip == '<!--/box-->'
+          elsif line.strip == '<!--/BOX-->'
             '</section>'
           else
             line

@@ -19,16 +19,16 @@ In this project you will recreate a complicated web page.
 
 ## Stories
 
-<!--box-->
+<!--BOX-->
 ### Make it work
 
 Create a page layout with empty `div`s and other page elements. Don't worry about making all the content correct; focus on the layout.
 
 > After this phase, do a git commit and a demo.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Make it right
 
 * Fill in the page content.
@@ -36,9 +36,9 @@ Create a page layout with empty `div`s and other page elements. Don't worry abou
 
 > After this phase, do a git commit and a demo.
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### Make it better
 
 Experiment with design improvements. For example:
@@ -48,7 +48,7 @@ Experiment with design improvements. For example:
 * navigation reorganization
 * clearer separation between functional page elements
 
-<!--/box-->
+<!--/BOX-->
 
 ## Screenshots
 

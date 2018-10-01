@@ -27,7 +27,7 @@ e.g.
 |`GET /chat` | since= (optional) | JSON: list of messages |
 |`POST /chat`| body= <br> author= (optional) | JSON: list of messages |
 
-<!--box-->
+<!--BOX-->
 
 ## Step 1: Up and Running
 
@@ -35,8 +35,8 @@ e.g.
 * POST a message to /chat
 * Use the Heroku instance we will deploy during class
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ## Step 2: Recent Messages
 
@@ -58,16 +58,16 @@ Client-side:
 * When you receive a list of messages, set `mostRecentMessageAt` to the *most recent* message time
 * When you request a list of messages, add `since` to the request
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ## Step 3: Refresh Messages
 
 * Implement a `<button>` to fetch new messages
   * if you're using the source code template, this is already implemented
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ## Step 4: Poll for new messages every 10 seconds
 
@@ -75,8 +75,8 @@ Tech:
 
 * use `setInterval` or `setTimeout`
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ## Step 5: Names
 
@@ -88,8 +88,8 @@ More client: Make sure the client UI displays the name as well as the body of ea
 
 Extra credit: store the name in a cookie so the user doesn't have to keep typing it
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ## Step 6: Rooms
 
@@ -105,7 +105,7 @@ Assume that the server will create a new room if it doesn't already have one wit
   * Message should be displayed with the `author` and `created_at`
   * Should there be a maximum message length/size?
 
-<!--/box-->
+<!--/BOX-->
 
 ## Routes (with rooms)
 

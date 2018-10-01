@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/alexch/deck.rb.git
-  revision: 7e651c8b4f0c60f0972733848c1d6a4baa669178
+  revision: 5062ad0fe3d968d028611ab6e48b5f1ff39f5156
   specs:
-    deckrb (0.5.2)
+    deckrb (0.6.0)
       coderay
       erector (>= 0.9.0)
       json
@@ -157,4 +157,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.4
+   1.16.5
