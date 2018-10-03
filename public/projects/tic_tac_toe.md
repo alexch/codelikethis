@@ -72,7 +72,7 @@ Move to? _
 
 **And** the current player does not change
 
-<!--/box-->
+<!--/BOX-->
 <!--box-->
 
 ### Win Condition
