@@ -12,7 +12,7 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 ## Stories
 
-<!--box-->
+<!--BOX-->
 
 ### No Rules
 
@@ -40,9 +40,9 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 **And** the turn ends, and the current player changes from O to X
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 
 ### Rules
 
@@ -52,8 +52,8 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 **And** the current player does not change
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Win Condition
 
@@ -69,15 +69,15 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 (and the same for Player O)
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Names
 
 - when starting a game, choose the names of the players (not just X and O)
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Artificial Stupidity
 
@@ -85,8 +85,8 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 - simple AI that picks a random empty cell
 - human is always X and computer is always O
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### New Game UI
 
@@ -94,8 +94,8 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 - consider a modal dialog box
 - consider button placement and visibility
 
-<!--/box-->
-<!--box-->
+<!--/BOX-->
+<!--BOX-->
 
 ### Artificial Intelligence
 
@@ -103,9 +103,9 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 - This will require R&D
 - See <https://www.youtube.com/watch?v=P2TcQ3h0ipQ> for inspiration
 
-<!--/box-->
+<!--/BOX-->
 
-<!--box-->
+<!--BOX-->
 ### EXTRA BONUS: Play Nine Games at Once
 
 - Change the rules of the game so that nine 3x3 boards are played at once by two players.
@@ -115,4 +115,4 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 ![tic-tac-toe-9x9](tic-tac-toe-9x9.png)
 
-<!--box-->
+<!--/BOX-->
