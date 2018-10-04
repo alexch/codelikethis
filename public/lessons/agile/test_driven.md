@@ -340,29 +340,57 @@ Step two:
 * how about `SetTest.testShouldHaveSizeZeroWhenEmpty`
 * or `EmptySetTest.testHasSizeZero`
 
-BDD can help...
-
-    describe Set do
-      context "when newly created" do
-        subject { Set.new }
-        it { should be_empty }
-      end
-    end
+nested "describe" blocks can help too...(see later slide)
 
 # Should Statements
 
-* Optional first parameter to JUnit asserts is "message"
 * Assertion messages can be confusing
+  * (double negatives are not uncomplicated)
 
-* Example: `assertEquals("set is empty", set.isEmpty());`
-  * Does it mean "the set must be empty" or "the test is failing because the set is empty"?
+* Example: `assertTrue("set is empty", set.isEmpty());`
+  * Does `FAILURE: set is empty` mean 
+    * "the set **must** be empty, and it's not" or 
+    * "the set **is** empty, and that's a problem"
+    * ?
 
 * Solution: should statements
-  * `assertEquals("set should be empty", set.isEmpty())`
+  * `assertTrue("set should be empty", set.isEmpty())`
 
 *   or even better:
-  * `assertEquals("a newly-created set should be empty", set.isEmpty())`
+  * `assertTrue("a newly-created set should be empty", set.isEmpty())`
 
+# Nested Describe Blocks
+
+```
+@@@javascript
+describe('Set', ()=> {
+  let set;
+  describe('when first created', ()=> {
+    beforeEach(()=> {
+      set = new Set();
+    });
+
+    it('should exist', ()=>{
+      expect(set).toBeTruthy();
+    })
+  
+    it('should be empty', ()=> {
+      expect(set.size()).toBe(0);
+    });
+  });
+});
+```
+
+---
+
+Output:
+
+```
+  Set
+    when first created
+      ✓ should exist
+      ✓ should be empty
+```
 
 # Test-Only Methods
 
