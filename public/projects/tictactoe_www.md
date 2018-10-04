@@ -1,34 +1,14 @@
-# Tic Tac Toe
+# Tic Tac Toe Web
 
 Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two players on a 3x3 grid.
 
 ![tic tac toe completed](tic_tac_toe.svg)
 
-In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) and a web-based UI.
+In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) in a web-based UI.
 
 ## Wireframes
 
-```
- 1 | 2 | 3
---- --- ---
- 4 | 5 | 6
---- --- ---
- 7 | 8 | 9
-
-Ready Player X
-Move to? 2
-```
-
-```
- 1 | X | 3
---- --- ---
- 4 | 5 | 6
---- --- ---
- 7 | 8 | 9
-
-Ready Player O
-Move to? _
-```
+![tic-tac-toe-web](tic-tac-toe-web.png)
 
 ## Stories
 
@@ -73,7 +53,7 @@ Move to? _
 **And** the current player does not change
 
 <!--/BOX-->
-<!--box-->
+<!--BOX-->
 
 ### Win Condition
 
@@ -108,7 +88,7 @@ Move to? _
 <!--/BOX-->
 <!--BOX-->
 
-### New Game UI (HTML VERSION ONLY)
+### New Game UI
 
 - design a clean "New Game" UI allowing choice of human or computer, name, and symbol
 - consider a modal dialog box
@@ -122,5 +102,17 @@ Move to? _
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D
 - See <https://www.youtube.com/watch?v=P2TcQ3h0ipQ> for inspiration
+
+<!--/BOX-->
+
+<!--BOX-->
+### EXTRA BONUS: Play Nine Games at Once
+
+- Change the rules of the game so that nine 3x3 boards are played at once by two players.
+- A win can be achieved on any of the nine boards by placing three X's or three O's in a row.
+- Winning on any board will award the player a win for the entire game.
+- See this description for more information: http://www.stratigery.com/gen9.html
+
+![tic-tac-toe-9x9](tic-tac-toe-9x9.png)
 
 <!--/BOX-->
