@@ -55,6 +55,7 @@ alexch @ gmail.com
         assertTrue(set.contains("ice cream"));
 
 * In RSpec, "assert" is called "should" or "expect"
+* In Jasmine/Jest, "assert" is called "expect...to"
 
 # One Step At A Time
 
@@ -224,19 +225,32 @@ alexch @ gmail.com
   * for feature velocity, stabilty > early oomph
 * Famous Graph
 
-<!-- # TDD vs TDD
+# TDD vs TDD
 
 * Test-Driven Development
   * Good old-fashioned coding, now with tests!
+  * Much of the design is already specified before you start
 * Test-Driven Design
   * Free your mind and the code will follow
+  * Refactor at will, listen to what the tests are telling you
 
-Quite a lot of overlap, but worth keeping difference in mind  -->
+Quite a lot of overlap, but worth keeping difference in mind
 
 # Test for "essential complexity"
 
 * Not too big, not too small
 * Same concept as high coherence, low coupling
+
+# Tests Are An Extension of Code
+
+* Every time you write code, you write tests that exercise it
+* That means that if you change the code, and the tests break, you must either
+  * Change the tests to match the new spec
+  * Change the code to meet the old spec
+* Do not remove the failing tests
+  * Unless they no longer apply to the new code's design or API
+  * Do not work around the failing tests
+* Test code is not "wasted" or "extra" -- tests are first-class citizens
 
 # Meszaros' Principles of Test Automation
 
@@ -253,17 +267,6 @@ Quite a lot of overlap, but worth keeping difference in mind  -->
 * Verify one condition per test
 * Test separate concerns separately
 * Ensure commensurate effort and responsibility
-
-# Tests Are An Extension of Code
-
-* Every time you write code, you write tests that exercise it
-* That means that if you change the code, and the tests break, you must either
-  * Change the tests to match the new spec
-  * Change the code to meet the old spec
-* Do not remove the failing tests
-  * Unless they no longer apply to the new code's design or API
-  * Do not work around the failing tests
-* Test code is not "wasted" or "extra" -- tests are first-class citizens
 
 
 # Part III: Advanced Techniques
@@ -295,20 +298,22 @@ Quite a lot of overlap, but worth keeping difference in mind  -->
 
 Step one:
 
-    public void testSum() {
+    @@@javascript
+    function testSum() {
       assertEquals(4, plus(3,1));
     }
-    int plus(int x, y) {
+    plus(x, y) {
       return 4;
     }
 
 Step two:
 
-    public void testSum() {
+    @@@javascript
+    function testSum() {
       assertEquals(4, plus(3,1));
       assertEquals(5, plus(3,2));
     }
-    int plus(int x, y) {
+    function plus(x, y) {
       return x + y;
     }
 
@@ -360,6 +365,7 @@ BDD can help...
 
 
 # Test-Only Methods
+
 * Philosophy: a test is a valid client of an object
 * Therefore don't be ashamed of adding a method to an object for the sake of making a test easier to write
 * Used -> Useful
@@ -367,6 +373,7 @@ BDD can help...
 
 
 # Refactoring Test Code
+
 * Do spend time refactoring your tests
 * It'll pay off later, when writing new tests or extending/debugging old ones
 * Refactor for readability, not necessarily for removing all duplication
@@ -374,6 +381,7 @@ BDD can help...
   * MOIST not DRY
 
 # Refactoring Test Code - How?
+
 * Extract methods
 * Shorter lines
 * Break up long tests (scenario tests) into several short tests (feature tests)
@@ -403,12 +411,12 @@ vs.
 
 * Problem: several axes of variability, combinatorial explosion
 * Solution: Loop through a matrix of data in your test, call a "check" function on each row
-* In Ruby you can loop *outside* a function definition, producing one actual test per iteration
+* In dynamic languages like Ruby and JavaScript you can loop *outside* a function definition, producing one actual test per iteration
 
         @@@ruby
         %w(a e i o u).each do |letter|
           it "#{letter} is a vowel" do
-            assert { letter.vowel? }
+            assertTrue(letter.vowel?)
           end
         end
 
@@ -432,6 +440,12 @@ vs.
     }
 
 The empty `catch` block is fine here, since here an exception is a success, not a failure to be handled.
+
+Jasmine has a built-in way to test exceptions:
+
+    @@@javascript
+    expect( function(){ parser.parse(bogus); } )
+        .toThrow(new Error("Parsing is not possible"));
 
 # Characterization Tests
 
@@ -561,14 +575,34 @@ A very useful test double
 In ruby:
 
 ```
+@@@ruby
 @fake_time = Time.now
 Time.stub(:now) { @fake_time }
+```
+
+In Jasmine (built in, see [the docs](https://jasmine.github.io/2.0/introduction.html#section-Mocking_the_JavaScript_Timeout_Functions) for more details):
+
+```javascript
+@@@javascript
+  it("causes a timeout to be called synchronously", function() {
+    let timerCallback = jasmine.createSpy("timerCallback");
+
+    setTimeout(function() {
+      timerCallback();
+    }, 100);
+
+    expect(timerCallback).not.toHaveBeenCalled();
+
+    jasmine.clock().tick(101);
+
+    expect(timerCallback).toHaveBeenCalled();
+  });
 ```
 
 # Complete Construction
 
 * a way of designing your objects to be more isolated and more testable
-  * (a form of Dependency Injection)
+  * (a form of Dependency Injection aka Inversion of Control)
 
 * Pass in dependencies to the constructor
   * (or, if necessary, to setters)
