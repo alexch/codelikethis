@@ -9,7 +9,7 @@
 ![URL diagram](url_path.png)
 (via [usabilla](https://support.usabilla.com/hc/en-us/articles/115000046145-Target-visitors-on-a-particular-page-URL-vs-Path))
 
-Read https://doepud.co.uk/blog/anatomy-of-a-url
+Read <https://doepud.co.uk/blog/anatomy-of-a-url>
 
 # Protocol
 
@@ -63,3 +63,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 `#profile` is a hint to the *browser*
 
 to scroll to a location *inside* the document
+
+it is also used by Single-Page Apps (SPAs) 
+  * usually to determine which pseudo-page to display
+  * this is sometimes called "routing"
+
