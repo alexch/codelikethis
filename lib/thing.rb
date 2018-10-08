@@ -59,6 +59,10 @@ class Thing
     @display_name || titleized(name)
   end
 
+  def type_name
+    @type_name || self.class.name.split('::').last
+  end
+
   def description?
     !!@description
   end

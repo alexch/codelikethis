@@ -1,11 +1,13 @@
 require 'json'
 require 'chronic'
 require 'views'
+require 'thing'
 
-class Schedule
+class Schedule < Thing
 
   def self.from_file site:, path:
-    new site: site, data: JSON.parse(File.read(path)) if File.exist?(path)
+    new site: site,
+        data: JSON.parse(File.read(path)) if File.exist?(path)
   end
 
   def initialize(site:, data:)
@@ -63,11 +65,11 @@ class Schedule
     end
 
     def content
-      div.row {
+      div {
         h1 "Schedule"
       }
 
-      div.row {
+      div {
         h2 "Description"
         p {
           markdown(@schedule['description'])
@@ -75,15 +77,17 @@ class Schedule
       }
 
       if @schedule['mottos']
-        div.row {
+        div {
           h2 "Class Mottos"
-          ul {
-            @schedule['mottos'].each do |motto|
-              li motto
-            end
-            li {
-              text "See also "
-              a("Alexisms", href: "http://alexchaffee.com/alexisms")
+          p {
+            ul {
+              @schedule['mottos'].each do |motto|
+                li motto
+              end
+              li {
+                text "See also "
+                a("Alexisms", href: "http://alexchaffee.com/alexisms")
+              }
             }
           }
         }
@@ -118,7 +122,7 @@ class Schedule
 
         track_name = week['track']
         track = @site.track_named(track_name) ||
-          Track.new(name: track_name)
+            Track.new(name: track_name)
 
         side_tracks = week['side_tracks']
 
@@ -148,7 +152,7 @@ class Schedule
                 side_tracks.each do |side_track_info|
                   side_track_name = side_track_info['track']
                   side_track = @site.track_named(side_track_name) ||
-                    Track.new(name: track_name)
+                      Track.new(name: track_name)
                   render_track(side_track, side_track_info)
                 end
               end

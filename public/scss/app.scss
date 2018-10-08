@@ -282,7 +282,8 @@ span.svg-icon {
 @include media-breakpoint-up(md) {
   #sidebar, #right-sidebar {
     display: block;
-    max-height: calc(100vh - #{$topbar-height}); // using SassScript interpolation so the math happens at runtime
+    // 100% viewport height minus nav plus (button + bottom breadcrumbs height)
+    max-height: calc(100vh - #{$topbar-height} + 160px); // using SassScript interpolation so the math happens at runtime
     overflow-y: auto;
     position: sticky;
     top: $topbar-height;
@@ -386,34 +387,27 @@ span.svg-icon {
   text-transform: none;
 }
 
-.lesson-title {
-  background-color: #EEEEF2;
+section.breadcrumbs {
+  background-color: #f7f7f7;
+  border-top: 1px solid #e6e0e6;
+  border-bottom: 1px solid #e6e0e6;
+  padding: .5em;
+
+  > .row {
+    max-width: 100em;
+    margin: auto;
+  }
 
   h1.lesson-name {
-    border-bottom: 2px solid purple;
-    span.track-name {
-      font-size: 60%;
-    }
-  }
-}
-
-div.next_and_previous {
-  margin: 2px;
-  display: block;
-  font-size: 80%;
-  font-weight: bold;
-  font-style: italic;
-
-  a.next_lesson {
-    float: right;
-    //   margin-right: -1em;
-    // text-align: right;
+    font-family: $title-font;
+    margin-bottom: 0;
+    line-height: 1.0;
   }
 
-  a.previous_lesson {
-    float: left;
-    // text-align: left;
-    //   margin-left: -1em;
+  a.next_lesson, a.previous_lesson {
+    font-size: 80%;
+    font-weight: bold;
+    font-style: italic;
   }
 
   a {

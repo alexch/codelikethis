@@ -59,6 +59,14 @@ describe Thing do
     expect(Thing.new(name: "ice_cream").display_name).to eq("Ice Cream")
   end
 
+  it "has a type_name based on its class" do
+    subject.type_name.should == "Thing"
+
+    class Dog < Thing
+    end
+    Dog.new.type_name.should == "Dog"
+  end
+
   it "instance_evals a block in its constructor" do
     whoami = nil
     ice_cream = Thing.new(name: "ice_cream") do

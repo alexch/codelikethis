@@ -6,9 +6,15 @@ require 'nav_bar'
 
 class AppPage < Erector::Widgets::Page
 
-  needs :site, :widget, :title
+end
+
+class ThingPage < AppPage
+
+  needs :site
+  needs :thing
   needs warning: nil
   needs sidebar: nil
+  needs breadcrumbs: nil
 
   include Views
 
@@ -21,7 +27,11 @@ class AppPage < Erector::Widgets::Page
   end
 
   def page_title
-    @title or super
+    @page_title ||
+    [
+        (@thing and @thing.display_name),
+        (@site and @site.display_name)
+    ].compact.uniq.join(' - ')
   end
 
   # todo: promote into Page
@@ -155,22 +165,31 @@ $(function () {
     @site.tracks
   end
 
+  def outline?
+    @thing and @thing.view.respond_to?(:outline)
+  end
+
   def rightbar_content
     if outline?
-      widget @widget, {}, content_method_name: :outline
-      # else
-      #   twitter
+      widget @thing.view, {}, content_method_name: :outline
     end
   end
 
-  def outline?
-    @widget and @widget.respond_to?(:outline)
+
+  def breadcrumbs
+    if @thing.view.respond_to? :breadcrumbs
+      section(class: 'breadcrumbs container-fluid') do
+        widget @thing.view, {}, content_method_name: :breadcrumbs
+      end
+    end
   end
 
   def body_content
 
     # top nav
     widget @site.navbar
+
+    breadcrumbs
 
     #todo: add 'main' element type to Erector
     element('main', class: 'container-fluid') {
@@ -205,7 +224,10 @@ $(function () {
           end
 
           call_block
+
           widget @widget if @widget
+
+          widget @thing.view if @thing
 
           div.pre_footer {
 
@@ -218,6 +240,8 @@ $(function () {
             rightbar_content
           }
         end
+
+        breadcrumbs
 
       }
     }

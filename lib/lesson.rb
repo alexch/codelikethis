@@ -69,8 +69,6 @@ class Lesson < Thing
     !slides.empty?
   end
 
-  public
-
   def view
     View.new(target: self, development_mode: Thread.current[:development_mode])
   end
@@ -131,18 +129,6 @@ class Lesson < Thing
 
     def content
 
-      div(class: 'lesson-title') {
-        div(class: 'track-name') {
-          i(class: "fas fa-paw")
-          text nbsp
-          text track.display_name
-          text ':'
-        }
-
-        h1(display_name, class: 'lesson-name')
-
-        next_and_previous(show_track: false)
-      }
 
       if description?
         div(class: 'description') {
@@ -215,7 +201,6 @@ class Lesson < Thing
           end
         end
 
-        next_and_previous(show_track: true)
         br
 
         # todo: put comments back on codelikethis.com only
@@ -231,29 +216,35 @@ class Lesson < Thing
 
     end
 
-    def next_and_previous(show_track: true)
-      div.next_and_previous {
-        previous_lesson_button
-        next_lesson_button
-        if show_track
-          center {
-            a(with_tooltip("This Track") + {href: track.href}) {
-              i(class: "fas fa-paw")
-              text nbsp
-              text track.display_name
-              text nbsp
-              i(class: "fas fa-paw")
-            }
-          }
+    def breadcrumbs
+      div(class: 'row') do
+        div(class: 'col-3') do
+          previous_lesson_button
         end
-      }
-      br clear: 'both'
-    end
 
+        div(class: 'col-6 text-center') do
+          a(with_tooltip("This Track") + {href: track.href}) {
+            i(class: "fas fa-paw")
+            text nbsp
+            text track.display_name
+            text nbsp
+            i(class: "fas fa-paw")
+          }
+          br
+          h1(display_name, class: 'lesson-name')
+
+        end
+
+        div(class: 'col-3') do
+          next_lesson_button
+        end
+      end
+    end
 
     def previous_lesson_button
       if previous_lesson
-        a.button.previous_lesson(with_tooltip(previous_lesson.display_name) + {href: previous_lesson.name}) do
+        a.button.previous_lesson(with_tooltip(previous_lesson.display_name) +
+                                     {href: previous_lesson.name}) do
           i(class: "fas fa-arrow-left")
           text nbsp
           text "Previous Lesson"
@@ -263,7 +254,10 @@ class Lesson < Thing
 
     def next_lesson_button
       if next_lesson
-        a.button.next_lesson(with_tooltip(next_lesson.display_name) + {href: next_lesson.name}) do
+        a(with_tooltip(next_lesson.display_name) +
+              {href: next_lesson.name,
+               class: ['button', 'next_lesson', 'float-right']
+              }) do
           text "Next Lesson"
           text nbsp
           i(class: "fas fa-arrow-right")

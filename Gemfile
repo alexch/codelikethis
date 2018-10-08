@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.4'
 
 gem "sinatra", "~> 2.0.1"
+gem "sinatra-contrib"
 gem "erector", ">=0.9.0"
 gem "thin"
 gem "activesupport"

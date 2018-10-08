@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require "sinatra/cookies"
+
 require 'erector'
 require 'deck/slide'
 require 'deck/slide_deck'
@@ -30,6 +32,8 @@ module AppHelpers
 end
 
 class App < Sinatra::Base
+  helpers Sinatra::Cookies
+
   include Erector::Mixin
   include AppHelpers
 
@@ -45,13 +49,8 @@ class App < Sinatra::Base
     @site ||= create_site
   end
 
-  def tracks_widget
-    # TracksTable.new(:tracks => site.tracks)
-    TracksSidebar.new(tracks: site.tracks, current: nil)
-  end
-
-  def page(widget:, title:, sidebar: false)
-    AppPage.new(site: site, warning: @warning, widget: widget, title: title, sidebar: sidebar)
+  def page(thing: , sidebar: false, breadcrumbs: false)
+    ThingPage.new(thing: thing, site: site, warning: @warning, sidebar: sidebar, breadcrumbs: breadcrumbs)
   end
 
   get '/host' do
@@ -62,22 +61,25 @@ class App < Sinatra::Base
     }.ai
   end
 
+  class Tracks < Thing
+    def view
+      TracksSidebar.new(tracks: @site.tracks, current: nil)
+    end
+  end
+
   get '/lessons' do
-    page(
-        widget: tracks_widget,
-        title: page_title("Lessons")).to_html
+    page(thing: Tracks.new(site: site)).to_html
   end
 
   get '/' do
     page(
-        widget: site.view,
-        sidebar: true,
-        title: "Code Like This").to_html
+        thing: site,
+        sidebar: true
+        ).to_html
   end
 
   get "/lessons/:track" do
-    page(widget: track.view,
-         title: page_title(track)).to_html
+    page(thing: track).to_html
   end
 
   get "/lessons/:track/:lesson.slides" do
@@ -125,13 +127,11 @@ class App < Sinatra::Base
   end
 
   get "/lessons/:track/:lesson" do
-    page(
-        widget: lesson.view,
-        title: lesson.display_name + " - Code Like This").to_html
+    page(thing: lesson).to_html
   end
 
   get "/projects" do
-    page(widget: site.projects_view, title: 'Projects - Code Like This').to_html
+    page(thing: site.projects).to_html
   end
 
   get "/projects/:file.:ext" do
@@ -141,16 +141,15 @@ class App < Sinatra::Base
 
   get "/projects/:project_name" do
     project = Project.new(name: params[:project_name])
-    page(
-        widget: project.view,
-        title: page_title("Project")).to_html
-
+    page(thing: project).to_html
   end
 
   get "/schedule" do
-    widget = site.schedule_view if (site && site.schedule)
-    page(widget: widget,
-         title: site.name).to_html
+    if (site && site.schedule)
+      page(thing: site.schedule).to_html
+    else
+      not_found
+    end
   end
 
   get "/topics/:topic_name" do
@@ -183,7 +182,16 @@ class App < Sinatra::Base
   private
 
   def create_site
-    sitename = params['site'] || request.host
+    if params['site']
+      sitename = params['site']
+      response.set_cookie(:site, :value => sitename,
+                          :expires => Time.now + 3600*12)
+    elsif cookies['site']
+      sitename = cookies['site']
+    else
+      sitename = request.host
+    end
+
     site = [CodeLikeThis, Bootcamp, JavascriptNights].map(&:new).detect do |site|
       site.host? sitename
     end

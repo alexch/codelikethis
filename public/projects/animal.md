@@ -26,10 +26,10 @@ Here is a diagram:
 ```
             [Does it fly?]
              YES       NO
-              🡓        🡓 
+              /        \ 
 [Does it tweet?]      [Does it bark?]
  YES       NO          YES       NO      
-  🡓        🡓            🡓        🡓
+  |        |            |        |
 [Bird]   [Bat]       [Dog]     [Cat]
 ```
 

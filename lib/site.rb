@@ -22,7 +22,7 @@ lesson_dirs.each do |path|
   end
 end
 
-class Site
+class Site < Thing
   def host? hostname
     [self.hostname].flatten.detect do |possible_hostname|
       hostname.end_with? possible_hostname
@@ -33,24 +33,17 @@ class Site
     self.class.name
   end
 
-  def display_name
-    name
-  end
-
   def href
     "/lessons"
   end
 
   def schedule
-    Schedule.from_file path: File.join(__dir__, "#{self.class.name.underscore}-schedule.json"), site: self
+    schedule_file = "#{self.class.name.underscore}-schedule.json"
+    Schedule.from_file path: File.join(__dir__, schedule_file), site: self
   end
 
   def track_named name
     tracks.detect {|track| track.name == name}
-  end
-
-  def schedule_view
-    schedule.view
   end
 
   def navbar
@@ -62,9 +55,10 @@ class Site
   end
 
   # todo: Test
-  def projects_view
+  def projects
+    require 'projects'
     # for now, just get all projects ever
-    ProjectsView.new(projects: Project.all)
+    Projects.new(projects: Project.all)
   end
 
   def all_things
@@ -73,22 +67,6 @@ class Site
     end.flatten.compact.uniq
   end
 
-  class ProjectsView < Erector::Widget
-    include Views
-
-    # todo: show which track(s) each project is in
-    # todo: sort by schedule
-    def content
-      h1 "Projects"
-      ul do
-        @projects.each do |project|
-          li do
-            widget project.link_view(show_description: true)
-          end
-        end
-      end
-    end
-  end
 end
 
 require 'bootcamp'

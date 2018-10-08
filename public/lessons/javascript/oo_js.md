@@ -159,13 +159,15 @@ The above is fine as far as it goes, but it's not really object-oriented since `
 
 Even *inside* an object, you **must** remember to use `this.`, otherwise `radius` becomes a *global variable*, not a property.
 
-        @@@ javascript
-        var circle = {radius: 2};
-        circle.circumference = function() {
-            return Math.PI * 2 * radius;  // Oops! Forgot to say this.
-        }
-        circle.circumference() // returns NaN
-        // (or says 'radius is not defined' if you're lucky)
+```
+@@@ javascript
+var circle = {radius: 2};
+circle.circumference = function() {
+    return Math.PI * 2 * radius;  // Oops! Forgot "this."
+}
+circle.circumference() // returns NaN
+// (or says 'radius is not defined' if you're lucky)
+```
 
 This is a **terrible** mistake in the language design; it undercuts one of the core principles of computer language design, which is to make the *best* way to do something also the *easiest* way to do that thing. 
 
