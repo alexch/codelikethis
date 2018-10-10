@@ -5,7 +5,7 @@
 
 # Anchors aweigh!
 
-  * Navigation relies on [Anchors](/lessons/www/anchors) (aka `<a>` tags)
+  * Navigation relies on [Anchors](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) (aka `<a>` tags)
 
 [Internal Navigation Example](/lessons/responsive_layout/navigation-anchors-internal.html)
 
@@ -20,41 +20,14 @@
 
 # Navigation Bars Example - Floats
 
-todo
+<p data-height="450" data-theme-id="0" data-slug-hash="KGmPVZ" data-default-tab="css,result" data-user="Dangeranger" data-pen-title="topnav-example" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/KGmPVZ/">topnav-example</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 # Navigation Bars Example - List
 
 <iframe height="50" width="575" src="./navigation-bars-example-better.html" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="100%"></iframe>
 
 [Better Nav Bar Example](./navigation-bars-example-better.html)
-
-```html
-@@@html
-    <style>
-      nav ul {
-        list-style: none;
-      }
-
-      nav ul li {
-        display: inline-block;
-        border-right: 1px solid #ccc;
-      }
-      nav ul li:nth-child(1) {
-        border-left: 1px solid #ccc;
-      }
-
-      nav ul li a {
-        display: inline-block;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <ul>
-	      <li><a href="#about-us">About Us</a></li>
-	      <li><a href="#our-products">Our Products</a></li>
-```
 
 # Navigation Bars Example Complete
 
