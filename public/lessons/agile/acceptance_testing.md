@@ -78,8 +78,33 @@ from http://www.extremeprogramming.org/rules/functionaltests.html
 
 vs. General Purpose Language
 
+* tries to capture the essence of the business domain
+* tries to reduce technical jargon and increase business jargon
+* depends on willingness to have many deep conversations between customer(s) and coder(s)
+* best when it's also a [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html) to reduce cognitive friction between layers
+
+  * e.g. if your "students" are stored in a "classmates" table, that's a mismatch -- pick one and use it in the database, code, UI, docs, marketing, etc.
+
+
 # Cucumber
 
+Tries to be a general-purpose DSL :-)
+
+Here's what the *actual source code* of a Cucmber test looks like:
+
+```
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday
+    Given today is Sunday
+    When I ask whether it's Friday yet
+    Then I should be told "Nope"
+``` 
+
+Programmers have to write hooks for phrases like `When("^I ask whether it's Friday yet$")` but once those are coded, the QA or product team can write more tests.
+
+When Cucumber works it's amazing, but most teams find it slows them down.
 
 # Web Testing Frameworks
 
@@ -87,10 +112,13 @@ Selenium
   * runs inside a browser
   * communicates with tests using network protocol
   * inconsistent behavior between different browsers
+  * written before NodeJS and ES6 and HTML5 so many bugs and weird behaviors
 
 Cypress
   * runs its own browser using Electron
-  * has more low-level control of browser features, so it's possible to mock and stub DOM APIs
+  * has more low-level control of browser features, 
+  * allows mocking and stubbing DOM APIs
+  * saves page snapshots during test run
   
 # Cypress
 
@@ -100,7 +128,8 @@ it's an automation library that supports testing
  
 but it doesn't do its own assertions! it just manipulates and query the DOM
 
-actual tests are written in Mocha / Chai / Jasmine / Jest
+actual tests are written in [Mocha + Chai](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) 
+    (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) 
 
 # Good Ideas
 
@@ -120,15 +149,15 @@ What makes a good acceptance test?
 
 * Click-and-Record
 * Temporally Dependent Tests
-* 
+* Overspecified fixture data
 
-## Bad Idea: Click-and-Record
+# Bad Idea: Click-and-Record
 
 * tedious to create
 * brittle -- will break if e.g. the name of a button changes
 * always running behind the code
 
-## Bad Idea: Temporally Dependent Tests
+# Bad Idea: Temporally Dependent Tests
 
 * e.g.
     * Test A: "sign up as John Doe"
@@ -139,14 +168,14 @@ What makes a good acceptance test?
   
 > **BUT** some tests might be okay with sharing setup or startup; be open to that especially if your system takes a long time to start or to populate with data
 
-# Bad Idea: Blindly Importing Production Data
+# Bad Idea: Overspecified Fixture Data
 
 Using production data can be useful for getting tests up and running quickly, but it is not a replacement for *thoughtful* tests
 
 Bad:
 
 ```
-createAccount(name: 'John Doe', age: 42, balance: 40, city: 'Dallas', ...)
+createAccount('John Doe', 42, 40, 'Dallas', ...)
 deposit(10)
 expect(account.balance).toBe(50);
 ```
@@ -154,7 +183,7 @@ expect(account.balance).toBe(50);
 Better:
 
 ```
-let account = createAccount(balance: 40)
+createAccountWithBalance(40)
 deposit(10)
 expect(account.balance).toBe(50);
 ```
