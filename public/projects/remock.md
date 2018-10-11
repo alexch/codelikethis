@@ -1,21 +1,21 @@
 # Remock
 
 
-In this project you will recreate a complicated web page.
-
-247Moms Egg-Stravagant-Easter Page
+In this project you will re-create a complicated blog style web page.
 
 ## Image Assets
 
-[Images for use in mocking the website](https://drive.google.com/drive/folders/1UIxpu7l27G6JSxfxNjJcaNxrZiYenlJT?usp=sharing)
+[Use these HTML Mock Screen-shots for use in building the web-site.](https://drive.google.com/drive/folders/1Y5G571wVANV62R0D_6vPe8YFQe9gAD6O?usp=sharing)
+
+[Video Walk-though of the web-site with interactions](https://drive.google.com/open?id=1XIVPNTcvcjIio1SaC2npyetsqlCvANN9)
 
 ## Goals
 
-  * Using float or flexbox layout
+  * Using display, position, and float for layout
   * Spacing of elements
   * Color matching
   * Matching typography
-  * Hover menu display
+  * Hover-ability highlighting
 
 ## Stories
 
@@ -32,7 +32,7 @@ Create a page layout with empty `div`s and other page elements. Don't worry abou
 ### Make it right
 
 * Fill in the page content.
-* Make interactive elements work correctly (esp. hover menus).
+* Make interactive elements work correctly.
 
 > After this phase, do a git commit and a demo.
 
@@ -50,10 +50,26 @@ Experiment with design improvements. For example:
 
 <!--/BOX-->
 
-## Screenshots
+## Screen-shots
 
-![](247Moms-3.png)
----------------
-![](247Moms-2.png)
----------------
-![](247Moms-1.png)
+### Home Page
+
+![](mock_screenshots/home-1.png)
+![](mock_screenshots/home-2.png)
+![](mock_screenshots/home-3.png)
+![](mock_screenshots/home-4.png)
+
+====================
+
+### Continue Page
+
+![](mock_screenshots/right-1.png)
+![](mock_screenshots/right-2.png)
+![](mock_screenshots/right-3.png)
+
+====================
+
+### Blog Post Page
+
+![](mock_screenshots/none-1.png)
+![](mock_screenshots/none-2.png)
