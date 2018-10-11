@@ -3,76 +3,93 @@
 Where does Acceptance Testing fit in with other tests?
 
 * Unit Tests - low level, interact directly with code
-* Integration Tests - higher level, to test the entire system working together
-* Acceptance Tests - to verify system is meeting ultimate goals
+* Integration Tests - higher level, to test the entire system (or a few parts) working together
+* Acceptance Tests - to verify system is meeting its ultimate goals
+* End-to-end (E2E) Tests - high level, tests UI *and* logic *and* database *and* API calls 
+  * often, Integration and Acceptance tests are E2E
 * Smoke Tests - very small suite of tests, quick to run, to prove system isn't completely broken
 * Stress Tests - simulates real-world behavior under load 
- 
+
 the point of all automated testing is feedback
 
-> if a test fails in the woods, does anyone hear it?
+> If a test fails in the woods, does anyone hear it fail?
 
 # Acceptance Tests
 
-should be *automated* (or at least *automatable*) 
+* should be *automated* (or at least *automatable*) 
+* are "executable specifications" of the system
+* test cases correspond with product goals and requirements
+* linked to user stories but not necessarily one-to-one
+    * A story can have one or many acceptance tests -- whatever it takes to ensure the feature works
 
-correspond with product goals 
+# Acceptance Test Templates
 
-should be "executable specifications" of the system
+* There are two popular human-readable "mad libs" templates for acceptance criteria
+  * As a ___, I want to ___ So that ___.
+  * Given ___, when ___ then ___.
+* Once you've written requirements in "given - when - then" form, translating them into code is more straightforward
+
+# Acceptance Tests in Extreme Programming
+
+* Acceptance tests are created from user stories. 
+* During an iteration the user stories selected during the iteration planning meeting will be translated into acceptance tests.
+* The customer specifies rules and scenarios that will become true once a user story has been correctly implemented. 
+* In *continuous integration*, acceptance tests are run as often as possible, at least once before and once after a *merge to master* and before a *release*
+* A user story is not considered complete until it has passed its acceptance tests, and work should not proceed to a new story until the first story passes.
+* Acceptance tests should be automated; if a particular test can't be automated then it should be specified in enough detail that a human can do it reliably.
+* The name acceptance tests was changed from "functional tests" to make it more clear that they are customer- and user-driven.
+
+<http://www.extremeprogramming.org/rules/functionaltests.html>
 
 # Who owns the tests?
 
-Acceptance Tests are "*owned*" and often *created* by the customer / product manager, not by the developers
+Acceptance Tests are *"owned"* and often *created* by the customer / product manager, not by the developers
 
 **but** if the developer breaks an acceptance test, it must be their responsibility for fixing it -- **not** a separate QA team
 
 > "The developers are the people who will make changes that will break tests. Therefore, they have to be the people who are responsible for making the tests pass when that happens." - Dave Farley  https://youtu.be/SBhgteA2szg?t=556
 
+**but also!** Customers are responsible for verifying the correctness of the acceptance tests. 
+
+> If a customer protests that they are "not technical" and can't write or maintain tests, then the developers must support them in translating between human language and code.
 
 # Black Box Testing
 
-Assumes the system is a "black box" -- we can't see inside
+Acceptance Tests assume the system is a "black box" -- we can't see inside
 
   * deals with input and output, not implementation
   * harder to mock and stub behaviors
   * harder to precisely specify what you're testing
     * in a black box web test, if "search" fails, was it the button, the search itself, or the results display that failed?
-  * often harder to set up and tear down databases to test a specific scenario for a single test
+  * often harder to set up and tear down databases (fixtures) to test a specific scenario for a single test
 
 # Is Acceptance Testing the same as Web Testing?
 
-not all web testing is acceptance testing
-    
-not all acceptance tests are web tests
+not all UI testing is acceptance testing
 
-* with developer help, customer can get access to deeper units and write tests against them
+not all acceptance tests go through the UI
+
+* you *can* write acceptance tests without the UI
+  * if your app exposes a "service layer" or API
+  * with developer help, customer can get access to deeper units and write acceptance tests against them
+
+* you *can* write isolated unit tests for UI components 
+  * e.g. Jest/React 
+
+* you *can* write end-to-end tests that are not acceptance tests
 
 # Testing Pyramid
 
 Base: lots of unit tests
 
-Middle: fewer integration tests
+Middle: fewer service-layer and integration tests
 
 Apex: small number of UI acceptance tests
 
-https://martinfowler.com/bliki/TestPyramid.html
+![test pyramid](https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png) 
+<https://martinfowler.com/bliki/TestPyramid.html>
 
-
-# Acceptance Tests in Extreme Programming
-
-from http://www.extremeprogramming.org/rules/functionaltests.html
-
-> Acceptance tests are created from user stories. During an iteration the user stories selected during the iteration planning meeting will be translated into acceptance tests. The customer specifies scenarios to test when a user story has been correctly implemented. A story can have one or many acceptance tests -- whatever it takes to ensure the functionality works.
-
-> Acceptance tests are black box system tests. Each acceptance test represents some expected result from the system. Customers are responsible for verifying the correctness of the acceptance tests and reviewing test scores to decide which failed tests are of highest priority. Acceptance tests are also used as regression tests prior to a production release. 
-
-> A user story is not considered complete until it has passed its acceptance tests. This means that new acceptance tests must be created each iteration or the development team will report zero progress. 
-
-> Quality assurance (QA) is an essential part of the XP process. On some projects QA is done by a separate group, while on others QA will be an integrated  into  the  development  team itself. In either case XP requires development to have much closer relationship with QA.
- 
-> Acceptance tests should be automated so they can be run often. The acceptance test score is published to the team. It is the team's responsibility to schedule time each iteration to fix any failed tests. 
- 
-> The name acceptance tests was changed from functional tests. This better reflects the intent, which is to guarantee that a customers requirements have been met and the system is acceptable. XP Rules!
+> BEWARE of doing too much testing through the UI
 
 # Domain-Specific Language
 
@@ -129,7 +146,9 @@ it's an automation library that supports testing
 but it doesn't do its own assertions! it just manipulates and query the DOM
 
 actual tests are written in [Mocha + Chai](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) 
-    (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) 
+    (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) )
+
+see more at the [Cypress Lesson](/lessons/javascript/cypress)
 
 # Good Ideas
 
@@ -168,27 +187,45 @@ What makes a good acceptance test?
   
 > **BUT** some tests might be okay with sharing setup or startup; be open to that especially if your system takes a long time to start or to populate with data
 
-# Bad Idea: Overspecified Fixture Data
+# Bad Idea: Overspecified Test Data
 
-Using production data can be useful for getting tests up and running quickly, but it is not a replacement for *thoughtful* tests
-
-Bad:
+Bad: too much data obscures the test's meaning
 
 ```
-createAccount('John Doe', 42, 40, 'Dallas', ...)
+createAccount('John Doe', 42, 40, '12 Main St.', 'Dallas', 'TX', ...)
 deposit(10)
 expect(account.balance).toBe(50);
 ```
 
-Better:
+> ...is that "age 42, balance $40" or "age 40, balance $42" ?
+
+Better: hide all details except the ones relevant to the test 
 
 ```
-createAccountWithBalance(40)
+createAccountWith({balance: 40}) 
 deposit(10)
 expect(account.balance).toBe(50);
 ```
 
-# Good Idea: Refactor code that's hard to test
+# Good Idea: Fixture Data
 
+* in hardware testing, a *fixture* is a pre-made *testing device* that you plug your device into that helps you test it
 
- 
+  * called a fixture because it's in a *fixed state* 
+  * used as a baseline for running a series of tests
+
+* in software testing, a *fixture* is a pre-made set of *test data* that you run your tests *with* 
+
+  * often comprises a particular named scenario
+  * usually initialized in `beforeEach` or `beforeAll` hook
+  * fixed environment ensures that results are repeatable
+  * usually used in systems with many *interdependent* objects
+    * impossible for a test to create just a single record; app doesn't work without all related records
+
+# Bad Idea: Too Much Fixture Data
+  
+  * too much reliance on fixtures is a *bad idea* 
+  * state must be *reset* between tests which can be time-consuming
+  * innocent changes in unrelated objects can make your tests fail
+  * if your objects are too interdependent then you should refactor until they're less so
+  
