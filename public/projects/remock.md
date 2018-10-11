@@ -3,9 +3,11 @@
 
 In this project you will re-create a complicated blog style web page.
 
-## Image Assets
+## Example Web Page Screenshots
 
 [Use these HTML Mock Screen-shots for use in building the web-site.](https://drive.google.com/drive/folders/1Y5G571wVANV62R0D_6vPe8YFQe9gAD6O?usp=sharing)
+
+## Example Web Page Video Walkthough
 
 [Video Walk-though of the web-site with interactions](https://drive.google.com/open?id=1XIVPNTcvcjIio1SaC2npyetsqlCvANN9)
 
@@ -49,6 +51,32 @@ Experiment with design improvements. For example:
 * clearer separation between functional page elements
 
 <!--/BOX-->
+
+<!--BOX-->
+### Links
+
+- Clicking on "Continue Reading" navigates to the `continue-reading.html` page
+- Clicking on "Learn More" navigates to the `learn-more.html` page
+- Clicking on "Just Another Post" navigates to the `blog-post.html` page
+- Clicking on **Any Page's Title Header** navigates to the `index.html` page
+
+<!--/BOX-->
+
+<!--BOX-->
+### Hightlighting Links
+
+- Hovering over "Button Style" links **lightens** the color of the link.
+- Hovering over "Text Style" links **changes** the color of the link from **grey to red**.
+
+<!--/BOX-->
+
+<!--BOX-->
+### Form Inputs
+
+- Entering a form input with an "input device" such as a *cursor* or a *focus* **changes the color from light grey to white**
+
+<!--/BOX-->
+
 
 ## Screen-shots
 
