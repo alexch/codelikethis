@@ -25,8 +25,8 @@ the point of all automated testing is feedback
 # Acceptance Test Templates
 
 * There are two popular human-readable "mad libs" templates for acceptance criteria
-  * As a ___, I want to ___ So that ___.
-  * Given ___, when ___ then ___.
+  * As a \___, I want to ___ So that ___.
+  * Given \___, when ___ then ___.
 * Once you've written requirements in "given - when - then" form, translating them into code is more straightforward
 
 # Acceptance Tests in Extreme Programming
@@ -126,12 +126,14 @@ When Cucumber works it's amazing, but most teams find it slows them down.
 # Web Testing Frameworks
 
 Selenium
+
   * runs inside a browser
   * communicates with tests using network protocol
   * inconsistent behavior between different browsers
   * written before NodeJS and ES6 and HTML5 so many bugs and weird behaviors
 
 Cypress
+
   * runs its own browser using Electron
   * has more low-level control of browser features, 
   * allows mocking and stubbing DOM APIs

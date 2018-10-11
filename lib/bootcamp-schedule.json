@@ -203,6 +203,12 @@
       "side_tracks": [
         {
           "track": "qa"
+        },
+        { "track": "agile",
+          "lessons": [
+            "acceptance_testing",
+            "/javascript/cypress"
+          ]
         }
       ],
       "events": [
