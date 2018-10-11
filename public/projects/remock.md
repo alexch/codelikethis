@@ -63,7 +63,7 @@ Experiment with design improvements. For example:
 <!--/BOX-->
 
 <!--BOX-->
-### Hightlighting Links
+### Highlighting Links
 
 - Hovering over "Button Style" links **lightens** the color of the link.
 - Hovering over "Text Style" links **changes** the color of the link from **grey to red**.

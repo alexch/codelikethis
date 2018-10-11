@@ -56,9 +56,9 @@ describe('Post Resource', function() {
 ```
 
 1. Visit the page at /posts/new.
-1. Find the <input> with class post-title.
+1. Find the \<input> with class post-title.
 1. Type “My First Post” into it.
-1. Find the <input> with class post-body.
+1. Find the \<input> with class post-body.
 1. Type “Hello, world!” into it.
 1. Find the element containing the text Submit.
 1. Click it.
@@ -204,3 +204,42 @@ cy.get('button').debug().click()
 debugger
 cy.get('button').click()
 ```
+
+# LAB: Tic Tac Test
+
+* on GitHub, find a [Tic Tac Toe](/projects/tictactoe_www) app that was written by *someone else* and copy its git URL
+* locally clone that repo, e.g.
+```
+git clone git@github.com:BurlingtonCodeAcademy/tic-tac-toe-jon-and-bob.git
+```
+* enter that directory and install *Cypress* and *Static*:
+```
+cd tic-tac-toe-jon-and-bob
+npm install cypress
+npm install node-static
+```
+* create a directory named `cypress` and a subdirectory named `integration`
+```
+mkdir -p cypress/integration
+```
+* inside `cypress/integration` create a file named `ticTacToe.spec.js` and put this code inside it:
+```
+describe('Cypress', function () {
+  it('successfully visits the home page', function () {
+    cy.visit('/');
+  });
+});
+```
+* in one console window, run a static web server:
+```
+npx static .
+```
+* in a *different* console window, run Cypress:
+```
+npx cypress open
+```
+* switch to the Cypress runner window and run the tests
+* High five!
+* Now go back to the [Tic Tac Toe](/projects/tictactoe_www#stories) project and read the stories in the backlog. For each story, write one or more acceptance tests.
+* If you find any bugs in your classmate's code, let them know! They will definitely thank you for helping :-) 
+
