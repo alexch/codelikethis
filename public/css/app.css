@@ -258,7 +258,7 @@ span.svg-icon {
   /* line 283, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block;
-    max-height: calc(100vh - 75px + 160px);
+    max-height: calc(100vh - 75px);
     overflow-y: auto;
     position: sticky;
     top: 75px;
@@ -367,16 +367,16 @@ section.breadcrumbs {
   section.breadcrumbs a {
     color: black; }
 
-/* line 427, ../scss/app.scss */
+/* line 418, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 432, ../scss/app.scss */
+/* line 423, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 436, ../scss/app.scss */
+/* line 427, ../scss/app.scss */
 footer {
   clear: both;
   padding: 2rem;
@@ -385,7 +385,7 @@ footer {
   max-width: 60em;
   margin: auto; }
 
-/* line 445, ../scss/app.scss */
+/* line 436, ../scss/app.scss */
 .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -394,7 +394,7 @@ footer {
   height: 0;
   margin: 1em;
   border: 6px solid gray; }
-  /* line 454, ../scss/app.scss */
+  /* line 445, ../scss/app.scss */
   .video iframe {
     position: absolute;
     top: 0;
@@ -402,12 +402,12 @@ footer {
     width: 100%;
     height: 100%; }
 
-/* line 463, ../scss/app.scss */
+/* line 454, ../scss/app.scss */
 table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 468, ../scss/app.scss */
+  /* line 459, ../scss/app.scss */
   table ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -415,50 +415,50 @@ table {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 476, ../scss/app.scss */
+  /* line 467, ../scss/app.scss */
   table td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 480, ../scss/app.scss */
+  /* line 471, ../scss/app.scss */
   table, table td, table th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 484, ../scss/app.scss */
+  /* line 475, ../scss/app.scss */
   table th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 490, ../scss/app.scss */
+  /* line 481, ../scss/app.scss */
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 493, ../scss/app.scss */
+  /* line 484, ../scss/app.scss */
   table tr:nth-child(odd) {
     background-color: #FFFFFF; }
-  /* line 496, ../scss/app.scss */
+  /* line 487, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 501, ../scss/app.scss */
+  /* line 492, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 505, ../scss/app.scss */
+  /* line 496, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 510, ../scss/app.scss */
+/* line 501, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 512, ../scss/app.scss */
+  /* line 503, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 515, ../scss/app.scss */
+  /* line 506, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 518, ../scss/app.scss */
+  /* line 509, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
-  /* line 522, ../scss/app.scss */
+  /* line 513, ../scss/app.scss */
   .markdown kbd {
     display: inline-block;
     padding: 3px 5px;
@@ -472,13 +472,13 @@ table {
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #959da5; }
 
-/* line 538, ../scss/app.scss */
+/* line 529, ../scss/app.scss */
 span.video_link {
   border: 1px dotted black;
   padding: 1px 2px;
   margin-left: 1em; }
   @media screen {
-    /* line 538, ../scss/app.scss */
+    /* line 529, ../scss/app.scss */
     span.video_link {
       float: right; } }
 

@@ -283,7 +283,7 @@ span.svg-icon {
   #sidebar, #right-sidebar {
     display: block;
     // 100% viewport height minus nav plus (button + bottom breadcrumbs height)
-    max-height: calc(100vh - #{$topbar-height} + 160px); // using SassScript interpolation so the math happens at runtime
+    max-height: calc(100vh - #{$topbar-height}); // using SassScript interpolation so the math happens at runtime
     overflow-y: auto;
     position: sticky;
     top: $topbar-height;

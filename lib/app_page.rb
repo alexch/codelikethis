@@ -240,11 +240,10 @@ $(function () {
             rightbar_content
           }
         end
-
-        breadcrumbs
-
       }
     }
+
+    breadcrumbs
 
     footer(class: ['footer', 'navbar-light']) {
       footer_content
