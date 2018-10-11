@@ -27,6 +27,8 @@ class Track
       video youtube_id: "mzcBfUu15RU"
     end
 
+    lesson name: "acceptance_testing"
+
     lesson name: "inceptions" do
       link href: "https://martinfowler.com/articles/lean-inception/"
     end

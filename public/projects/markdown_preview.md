@@ -39,6 +39,7 @@ Input some markdown source on the left and see it rendered on the right.
         npm start
         
     * you can now visit <http://localhost:8080/> to see your app running on your own computer!
+    * (in this project, `npm start` launches a *static file server* so everything under the project directory is now a live website running on your own machine!)
 
 * Launch the Cypress Runner window:
   * open a *different terminal window* and `cd` to your project dir
@@ -91,7 +92,7 @@ We have provided Cypress tests that run through the first few features. Please m
 <!--/BOX-->
 
 <!--BOX-->
-## Auto-Render
+## Automatically Render Markdown 
 
 **Given** the user types into the *source* text field
 

@@ -117,5 +117,6 @@ class Track < Thing
     end
     lesson name: "iterators"
 
+    lesson name: "cypress"
   end
 end
