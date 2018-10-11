@@ -6,6 +6,10 @@ class Topic < Thing
     "/topics/#{name}"
   end
 
+  def view
+    View.new(target: self, site: @site)
+  end
+
   def link_view
     Link::View.new(target: self)
   end

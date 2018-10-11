@@ -154,11 +154,8 @@ class App < Sinatra::Base
 
   get "/topics/:topic_name" do
     # todo: make this actually work
-    topic = Topic.new(name: params[:topic_name])
-    page(
-        title: "Topic: #{topic.display_name}",
-        widget: Topic::View.new(site: site, target: topic)
-    ).to_html
+    topic = Topic.new(name: params[:topic_name], site: site)
+    page(thing: topic).to_html
   end
 
   def track_dir
