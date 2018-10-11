@@ -67,6 +67,12 @@ Experiment with design improvements. For example:
 ![](mock_screenshots/right-2.png)
 ![](mock_screenshots/right-3.png)
 
+### Learn More Page
+
+![](mock_screenshots/left-1.png)
+![](mock_screenshots/left-2.png)
+![](mock_screenshots/left-3.png)
+
 ====================
 
 ### Blog Post Page
