@@ -95,8 +95,8 @@ cy.get('input[name="firstName"]')
 the command keeps checking many times a second, waiting for the assertion to become true
 
 For instance:
+
 * `cy.visit()` expects the page to send text/html content with a 200 status code.
-* `cy.request()` expects the remote server to exist and provide a response.
 * `cy.contains()` expects the element with content to eventually exist in the DOM.
 * `cy.get()` expects the element to eventually exist in the DOM.
 * `.find() `also expects the element to eventually exist in the DOM.
@@ -124,13 +124,13 @@ Cypress commands don’t do anything at the moment they are invoked, but rather 
 
 ... **after** the entire test function has *already finished executing*!
 
-at the time `cy.get` returns a wrapper, a wrapper, and at the time it is returned, *nothing has happened yet*, so you can't simply store the result in a variable or print it
+`cy.get` returns a wrapper, and at the time it is returned, *nothing has happened yet*, so you can't simply store the result in a variable or print it
 
 This is *by design*. Commands are enqueued and managed by Cypress to reduce timing issues and general test flakiness.
 
 # then
 
-`then` turns a wrapper into a value for further use inside a callback (which only gets called later on, after the promise resolves)
+`then` turns a wrapper into a value for further use inside a callback (which only gets called later on, once the `get` chainer succeeds)
 
 ```
 cy.get('div#preview').then((el) => {
@@ -151,7 +151,7 @@ Any timeout can be overridden with an option, e.g.:
 * `.clear()` - Clear the value of an input or textarea.
 * `.check()` - Check checkbox(es) or radio(s).
 * `.uncheck()` - Uncheck checkbox(es).
-* `.select()` - Select an <option> within a <select>.
+* `.select()` - Select an \<option> within a \<select>.
 * `.blur()` - Make a focused DOM element blur.
 * `.focus()` - Focus on a DOM element.
 
@@ -241,7 +241,7 @@ describe('Cypress', function () {
 * in one console window, run a static web server:
 
 ```
-npx static .
+npx node-static .
 ```
 
 * in a *different* console window, run Cypress:
