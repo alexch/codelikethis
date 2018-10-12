@@ -116,7 +116,7 @@ cy.get('input[name="firstName"]')
   .should('have.value', 'Homer')
 ```
 
-https://docs.cypress.io/guides/references/assertions.html#Chai
+Here’s a list of commonly used Cypress assertions, with sample code: https://docs.cypress.io/guides/references/assertions.html#Common-Assertions
 
 # nothing happens immediately
 
