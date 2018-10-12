@@ -122,7 +122,7 @@ https://docs.cypress.io/guides/references/assertions.html#Chai
 
 Cypress commands don’t do anything at the moment they are invoked, but rather enqueue themselves to be run later...
 
-...**after** the entire test function has *already finished executing*!
+... **after** the entire test function has *already finished executing*!
 
 at the time `cy.get` returns a wrapper, a wrapper, and at the time it is returned, *nothing has happened yet*, so you can't simply store the result in a variable or print it
 
@@ -214,18 +214,20 @@ cy.get('button').click()
 git clone git@github.com:BurlingtonCodeAcademy/tic-tac-toe-jon-and-bob.git
 ```
 
-* enter that directory and install *Cypress* and *Static*:
+* enter that directory and install *Cypress* and *Node-Static*:
 
 ```
 cd tic-tac-toe-jon-and-bob
 npm install cypress
 npm install node-static
 ```
+
 * create a directory named `cypress` and a subdirectory named `integration`
 
 ```
 mkdir -p cypress/integration
 ```
+
 * inside `cypress/integration` create a file named `ticTacToe.spec.js` and put this code inside it:
 
 ```
