@@ -4,25 +4,33 @@ Where does Acceptance Testing fit in with other tests?
 
 * Unit Tests - low level, interact directly with code
 * Integration Tests - higher level, to test the entire system (or a few parts) working together
-* Acceptance Tests - to verify system is meeting its ultimate goals
-* End-to-end (E2E) Tests - high level, tests UI *and* logic *and* database *and* API calls 
-  * often, Integration and Acceptance tests are E2E
+* End-to-end (E2E) Tests - high level, test UI *and* logic *and* database *and* API calls 
 * Smoke Tests - very small suite of tests, quick to run, to prove system isn't completely broken
-* Stress Tests - simulates real-world behavior under load 
+* Stress Tests - simulate real-world behavior under load 
+
+---
+
+* Acceptance Tests - verify that the system is meeting its ultimate goals for functionality / performance / usability / profit
+  * often, acceptance tests are E2E
+  * often, smoke tests are a subset of acceptance tests
+
+# Why test?
 
 the point of all automated testing is feedback
 
 > If a test fails in the woods, does anyone hear it fail?
 
+Can you think of some examples of when acceptance tests might be useful?
+
 # Acceptance Tests
 
 * should be *automated* (or at least *automatable*) 
 * are "executable specifications" of the system
-* test cases correspond with product goals and requirements
-* linked to user stories but not necessarily one-to-one
-    * A story can have one or many acceptance tests -- whatever it takes to ensure the feature works
+* correspond with product goals and requirements
+* are linked to user stories but not necessarily one-to-one
+    * One story can have many acceptance tests -- whatever it takes to ensure the feature works
 
-# Acceptance Test Templates
+# Acceptance Criteria Templates
 
 * There are two popular human-readable "mad libs" templates for acceptance criteria
   * As a \___, I want to ___ So that ___.
@@ -47,27 +55,33 @@ Acceptance Tests are *"owned"* and often *created* by the customer / product man
 
 **but** if the developer breaks an acceptance test, it must be their responsibility for fixing it -- **not** a separate QA team
 
-> "The developers are the people who will make changes that will break tests. Therefore, they have to be the people who are responsible for making the tests pass when that happens." - Dave Farley  https://youtu.be/SBhgteA2szg?t=556
+> "The developers are the people who will make changes that will break tests. Therefore, they have to be the people who are responsible for making the tests pass when that happens." - [Dave Farley](https://youtu.be/SBhgteA2szg?t=556)  
 
-**but also!** Customers are responsible for verifying the correctness of the acceptance tests. 
+**but also!** product owners are responsible for verifying the correctness of the acceptance tests. 
 
-> If a customer protests that they are "not technical" and can't write or maintain tests, then the developers must support them in translating between human language and code.
+> If a product owner protests that they are "not technical" and can't write or maintain tests, then the developers must support them in translating between human language and code.
 
 # Black Box Testing
 
-Acceptance Tests assume the system is a "black box" -- we can't see inside
+In theory, Acceptance Tests assume the system is a "black box" -- we can't see inside.
 
-  * deals with input and output, not implementation
+  * deal with input and output, not implementation
+
+Compared to Unit Tests, Acceptance Tests are usually...
+
+  * slower to set up and to execute
   * harder to mock and stub behaviors
   * harder to precisely specify what you're testing
-    * in a black box web test, if "search" fails, was it the button, the search itself, or the results display that failed?
-  * often harder to set up and tear down databases (fixtures) to test a specific scenario for a single test
+
+    * in a black box web test, if a search fails, was it the search button, the network connection, the search itself, or the results display that failed?
+
+(In practice, the black box is translucent -- tests often rely on some knowledge or manipulation of internals -- but opacity is a good goal.)
 
 # Is Acceptance Testing the same as Web Testing?
 
-not all UI testing is acceptance testing
+* not all UI testing is acceptance testing
 
-not all acceptance tests go through the UI
+* not all acceptance tests go through the UI
 
 * you *can* write acceptance tests without the UI
   * if your app exposes a "service layer" or API
@@ -82,7 +96,7 @@ not all acceptance tests go through the UI
 
 Base: lots of unit tests
 
-Middle: fewer service-layer and integration tests
+Middle: fewer service and integration tests
 
 Apex: small number of UI acceptance tests
 
@@ -100,7 +114,7 @@ vs. General Purpose Language
 * depends on willingness to have many deep conversations between customer(s) and coder(s)
 * best when it's also a [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html) to reduce cognitive friction between layers
 
-  * e.g. if your "students" are stored in a "classmates" table, that's a mismatch -- pick one and use it in the database, code, UI, docs, marketing, etc.
+  * e.g. if your "students" are stored in a "classmates" table, that's a mismatch -- pick one term and use it in the database, code, UI, docs, marketing, etc.
 
 
 # Cucumber
@@ -125,19 +139,21 @@ When Cucumber works it's amazing, but most teams find it slows them down.
 
 # Web Testing Frameworks
 
-Selenium
+[Selenium](https://www.seleniumhq.org/)
 
   * runs inside a browser
   * communicates with tests using network protocol
   * inconsistent behavior between different browsers
-  * written before NodeJS and ES6 and HTML5 so many bugs and weird behaviors
+  * written before NodeJS and ES6 and HTML5; has many bugs and weird limitations
 
-Cypress
+[Cypress](http://cypress.io)
 
-  * runs its own browser using Electron
-  * has more low-level control of browser features, 
+  * runs its own browser using Electron, and its own server using NodeJS
+  * has more low-level control of browser features
   * allows mocking and stubbing DOM APIs
   * saves page snapshots during test run
+    * as screenshots for later viewing
+    * as DOM copies for later debugging (!!)
   
 # Cypress
 
@@ -147,7 +163,7 @@ it's an automation library that supports testing
  
 but it doesn't do its own assertions! it just manipulates and query the DOM
 
-actual tests are written in [Mocha + Chai](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) 
+actual tests are written in [Mocha](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) + [Chai](https://www.chaijs.com/api/bdd/)
     (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) )
 
 see more at the [Cypress Lesson](/lessons/javascript/cypress)
@@ -165,7 +181,6 @@ What makes a good acceptance test?
 * test both "happy path" and "rainy day" scenarios
 * always write a failing acceptance test when a bug is reported
 
-    
 # Bad Ideas
 
 * Click-and-Record
@@ -222,7 +237,8 @@ expect(account.balance).toBe(50);
   * usually initialized in `beforeEach` or `beforeAll` hook
   * fixed environment ensures that results are repeatable
   * usually used in systems with many *interdependent* objects
-    * impossible for a test to create just a single record; app doesn't work without all related records
+    * an exam needs a student, which needs an address, which needs a ... 
+    * when it's impossible for a test to create just a single record, you need a way to create a bunch of records at once
 
 # Bad Idea: Too Much Fixture Data
   

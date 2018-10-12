@@ -128,16 +128,6 @@ Cypress commands don’t do anything at the moment they are invoked, but rather 
 
 This is *by design*. Commands are enqueued and managed by Cypress to reduce timing issues and general test flakiness.
 
-# then
-
-`then` turns a wrapper into a value for further use inside a callback (which only gets called later on, once the `get` chainer succeeds)
-
-```
-cy.get('div#preview').then((el) => {
-  assert.include(el.text().toLowerCase(), 'hello');
-});
-```
-
 # timeout
 
 Most commands expire after 4 seconds. This "timeout" causes the command and test to fail.
@@ -156,6 +146,40 @@ Any timeout can be overridden with an option, e.g.:
 * `.focus()` - Focus on a DOM element.
 
 see <https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html> for more info -- there are many details here
+
+# then
+
+`then` turns a wrapper into a value for further use inside a callback (which only gets called later on, once the `get` chainer succeeds)
+
+```
+cy.get('div#preview').then((el) => {
+  assert.include(el.text().toLowerCase(), 'hello');
+});
+```
+
+# each
+
+* if `cy.get()` matches more than one element, then things might get weird
+    * `should('have.text'` matches against the *full combined text* of *all* matched elements
+* to check if *any* of the elements have the target text as a *substring*, use `contains`
+* to check each element separately, use `each`
+
+# multiple matches
+
+Example:
+
+```
+<h2>New York</h2>
+<h2>Los Angeles</h2>
+```
+
+| cypress code | result |
+|---|---|
+|`cy.get('h2')` | |
+|`.contains('New York')` | OK: ![one success](./cypress-ny.png) |
+|`.should('have.text', 'New York')` | Failure: ![YorkLos](./cypress-yorklos.png) |
+|`.each((element) => { element.text().should.equal('New York'); });` | One failure, one OK: ![one success, one failure](./cypress-ny-la.png) |
+|`.then((element) => {         expect(element.text()) .to.equal('New York') });` | Failure: ![YorkLos](./cypress-yorklos-then.png) |
 
 # project structure
 
