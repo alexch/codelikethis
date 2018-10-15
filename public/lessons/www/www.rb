@@ -157,5 +157,6 @@ class Track
     project name: "portfolio_prettification",
       description: "now that you know how to use styles and layouts, gussy up your profile page"
 
+    link name:"The Font Game", href: "http://ilovetypography.com/ifontgame/"
   end
 end

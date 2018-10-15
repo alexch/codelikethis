@@ -22,15 +22,25 @@ class Track
     lesson name: "flexbox_layout",
            display_name: "Page Layout With CSS Flexbox" do
             topic name: "css-flexbox"
+
       link href: "https://flexboxfroggy.com",
            name: "Flexbox Froggy",
            description: "a step-by-step test-driven game that teaches you flexbox"
+
+      link name: "Flexbox Defense", href: "http://www.flexboxdefense.com/"
+
       link href: "https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35",
            name: "How Flexbox Works With Animated Images"
+
       link href: "https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34",
            name: "Learn CSS Flexbox in 5 Minutes"
+
       link href: "https://css-tricks.com/snippets/css/a-guide-to-flexbox"
+
       link href: "https://yoksel.github.io/flex-cheatsheet/#align-items"
+
+      link href: "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox"
+      link href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout"
     end
 
     lesson name: "responsive_intro",
@@ -41,7 +51,7 @@ class Track
            name: "W3Schools Responsive HTML Development"
       project name: 'mint_login',
               href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms",
-              description: "this is actually a fairly advanced lab that asks you to create and style a login form like Mint.com's. It should be moved to a project, and we should have a lesson on basic FORM element creation and use."
+              description: "this is a fairly advanced lab that asks you to create and style a login form like Mint.com's"
     end
 
     lab name: 'FreeCodeCamp "Responsive Web Design"'
