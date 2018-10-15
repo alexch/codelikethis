@@ -74,6 +74,21 @@ nav.navbar {
     }
   }
 
+  .navbar-collapse.collapse.show {
+    position: fixed;
+    overflow: scroll;
+    top: $topbar-height;
+    left: 0;
+    right: 0;
+
+    background-color: white;
+    border: 1px solid gray;
+
+    .dropdown.show {
+      padding-left: 3.5em; // so the curriculum sub-sub-menu doesn't lose its left edge (?!?)
+    }
+  }
+
   li.nav-item {
     &.bordered {
       border: 1px solid black;
