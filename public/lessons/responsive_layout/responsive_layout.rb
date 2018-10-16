@@ -56,6 +56,7 @@ class Track
 
     lesson name: "css_grid",
            display_name: "Page Layout with CSS Grid" do
+            topic name: "css-grid"
       video youtube_id: 'FEnRpy9Xfes'
       link href: "https://mozilladevelopers.github.io/playground/css-grid/",
            name: "Mozilla CSS Grid Tutorial",
