@@ -63,6 +63,12 @@ class Track
       link href: "https://cssgridgarden.com",
            name: "Grid Garden",
            description: "a step-by-step game that teaches you CSS Grid"
+      link href: "https://www.youtube.com/watch?v=tFKrK4eAiUQ",
+           name: "Incredibly Easy Layouts with CSS Grid",
+           description: "Jen Simmons shows you how to do a common responsive image gallery in just two lines of code."
+      link href: "https://www.youtube.com/watch?v=dQHtT47eH0M&vl=en",
+           name: "Using Flexbox + CSS Grid Together: Easy Gallery Layout",
+           description: "Jen Simmons explains how to nest Flexbox and Grid together to make common layouts easy."
     end
 
     lesson name: "navigation",
