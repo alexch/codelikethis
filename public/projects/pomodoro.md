@@ -6,7 +6,7 @@ The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a 
 
 Build a single-page app that counts down from 25 minutes and makes an audible and/or visual alert when the time elapses.
 
-Template repo with Cypress tests here: <https://github.com/BurlingtonCodeAcademy/pomodoro>
+Template repo with Cypress acceptance tests here: <https://github.com/BurlingtonCodeAcademy/pomodoro> . They use the [Cypress Mock Clock](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock) to control time during test runs.
 
 ## Wireframes
 
