@@ -51,8 +51,6 @@ Template repo with Cypress tests here: <https://github.com/BurlingtonCodeAcademy
 
 **And** the Pause button should be *disabled*
 
-**And** the Reset button should be **enabled**
-
 <!--/BOX-->
 <!--BOX-->
 
@@ -60,7 +58,7 @@ Template repo with Cypress tests here: <https://github.com/BurlingtonCodeAcademy
 
 **When** the user clicks Reset
 
-**Then** the timer should reset to 25 min 0 sec
+**Then** the timer should reset to 25 min 00 sec
 
 **And** the countdown should stop (if was in progress)
 
