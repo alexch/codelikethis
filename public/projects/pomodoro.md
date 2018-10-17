@@ -6,6 +6,8 @@ The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a 
 
 Build a single-page app that counts down from 25 minutes and makes an audible and/or visual alert when the time elapses.
 
+Template repo with Cypress tests here: <https://github.com/BurlingtonCodeAcademy/pomodoro>
+
 ## Wireframes
 
 ```
@@ -17,7 +19,7 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 ## Considerations
 
 * the buttons should be *enabled* and *disabled* based on the system's state; e.g. if the timer is not running, the Pause button should be disabled
-* JavaScript timing events are not guaranteed to be precise. That means that even if you ask for a callback once a second, you might actually get a callback every 1.1 seconds or every 0.8 seconds. That means that you cannot simply decrement a "seconds" variable once per callback if you want accurate wall-clock time synchronization.
+* JavaScript timing events are not guaranteed to be precise. That means that even if you ask for a callback once a second, you might actually get a callback after 1.1 seconds... or even later if your app is running in the background, or if there are other sources of lag. That means that you cannot simply decrement a "seconds" variable once per callback if you want accurate wall-clock time synchronization.
 * seconds should be 0-padded e.g. `1:03` not `1:3`
 
 ## Stories
@@ -32,7 +34,7 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** the timer should begin counting down once per second, following the sequence: `24:59`, `24:58`, `24:57`, ... `24:00`, `23:59`, ... and so on
 
-**And** the Start button should be disabled
+**And** the Start button should be *disabled*
 
 <!--/BOX-->
 <!--BOX-->
@@ -45,11 +47,11 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** the timer should stop counting down
 
-**And** the Start button should be disabled
+**And** the Start button should be *disabled*
 
-**And** the Pause button should be disabled
+**And** the Pause button should be *disabled*
 
-**And** the Reset button should be enabled
+**And** the Reset button should be **enabled**
 
 <!--/BOX-->
 <!--BOX-->
@@ -62,7 +64,7 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **And** the countdown should stop (if was in progress)
 
-**And** the Start button should be enabled
+**And** the Start button should be **enabled**
 
 <!--/BOX-->
 <!--BOX-->
@@ -86,9 +88,9 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 **Then** the countdown should stop
 
-**And** the Pause button should be disabled
+**And** the Pause button should be *disabled*
 
-**And** the Start button should be enabled
+**And** the Start button should be **enabled**
 
 <!--/BOX-->
 <!--BOX-->
