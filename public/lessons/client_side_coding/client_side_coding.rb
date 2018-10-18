@@ -42,7 +42,8 @@ class Track
       project name: "yelpington_app"
       project name: "github_emoji"
       project name: "github_repos"
-      video youtube_id: "https://www.youtube.com/watch?v=rJesac0_Ftw"
+      link href: "https://www.youtube.com/watch?v=rJesac0_Ftw",
+             name: "JSON and AJAX Tutorial: With Real Examples"
     end
 
     lesson name: "calling_apis",
