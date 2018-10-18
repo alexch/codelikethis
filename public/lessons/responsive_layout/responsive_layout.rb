@@ -23,6 +23,8 @@ class Track
       topic name: "media-queries"
       link href: "https://www.w3schools.com/html/html_responsive.asp",
            name: "W3Schools Responsive HTML Development"
+      link href: "https://www.youtube.com/watch?v=h3IdEqpjMvQ&feature=youtu.be",
+           name: "Responsive Website Basics (in 3 simple steps)"
       project name: 'mint_login',
               href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/html-forms",
               description: "this is actually a fairly advanced lab that asks you to create and style a login form like Mint.com's. It should be moved to a project, and we should have a lesson on basic FORM element creation and use."
