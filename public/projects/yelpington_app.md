@@ -18,28 +18,12 @@ learn how to...
 
 ## Design
 
-We will need to transform the data set by hand. Instead of this markdown:
-
-```markdown
-# Joe's Diner
-
-**Address:** 123 King St. (at St. Paul)
-
-**Phone number:** 555-1221
-
-**Hours:** 7:00 am - 3:00 pm
-
-Their sriracha breakfast sandwich is quite good. 
-
-Every Thursday is meatloaf day.
-```
-
-we will need this JSON:
+As specified in the [Yelpington Repo](./yelpington_repo) project, we will need JSON formatted like this:
 
 ```json
 @@@json
 {
-  "id": "joes-diner"
+  "id": "joes-diner",
   "name": "Joe's Diner",
   "address": "123 King St.",
   "phone number": "555-1221",
@@ -56,29 +40,25 @@ we will need this JSON:
 > This is *not* the same as an HTML element id; it's a *primary key* for our 
 > database. (Yes, in this context, the filesystem is a database.)
 
-## Stories
+We will also need a file named `all.json` which contains a list of all the ids, e.g.:
 
-> TODO: move the git stories into a new intermediate project `yelpington_json`
+```
+[
+    "joes-diner",
+    "burger-queen",
+    "pizza-shack"
+]
+```
+
+To launch a file server, first run `npm install` (once), then run `npm start` and visit e.g. <http://localhost:8080/all.json> 
+
+## Stories
 
 <!--BOX-->
 
 ### Zero Pull Requests
 
 Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and getthe PRs accepted or closed.
-
-<!--/BOX-->
-
-<!--BOX-->
-
-### Convert Data
-
-In pairs, split up and convert one restaurant at a time. Make a PR for each restaurant file. 
-
-Your commit should *remove* the `.md` markdown file and *add* a `.json` file with the same base name. (In `git status`, this may show up as a single "rename", or it may show as an add and a delete.)
-
-*Many hands make light work!* Once this step is done, make *your own fork* of the repo and do the rest of the project in there. 
-
-> We might deploy one or more student projects for regular classroom lunchtime use!
 
 <!--/BOX-->
 
@@ -162,7 +142,10 @@ JSON:
 
 HTML:
 
+<!--BOX-->
 The pizza is **awesome** here!
+
+<!--/BOX-->
 
 <!--/BOX-->
 

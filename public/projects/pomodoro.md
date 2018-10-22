@@ -21,9 +21,18 @@ After implementing the basic features, feel free to implement your own ideas of 
 ## Considerations
 
 * the buttons should be *enabled* and *disabled* based on the system's state; e.g. if the timer is not running, the Pause button should be disabled
-* JavaScript timing events are not guaranteed to be precise. That means that even if you ask for a callback once a second, you might actually get a callback after 1.1 seconds... or even later if your app is running in the background, or if there are other sources of lag. That means that you cannot simply decrement a "seconds" variable once per callback if you want accurate wall-clock time synchronization.
+* JavaScript timing events are not guaranteed to be precise. That means that even if you ask for a callback once a second, you might actually get a callback after 1.1 seconds... or even later if your app is running in the background, or if there are [other sources of lag](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout#Late_timeouts). That means that you cannot simply decrement a "seconds" variable once per callback if you want accurate wall-clock time synchronization.
 * seconds should be 0-padded e.g. `1:03` not `1:3`
 
+## Tech
+
+* JavaScript [timing events](https://www.w3schools.com/js/js_timing.asp) like [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) and [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
+* HTML5 [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement)
+* [Date.now()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now) function
+* Cypress Mock Clock:  
+  * Guide: https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock
+  * API doc: https://docs.cypress.io/api/commands/clock.html
+  
 ## Backlog
 
 > Please implement these user stories in order. There are Cypress acceptance tests for most of them in the repo. Feel free to add your own unit tests and/or acceptance tests too!
@@ -112,12 +121,6 @@ After implementing the basic features, feel free to implement your own ideas of 
 **Then** the flashing should stop
 
 <!--/BOX-->
-
-## Tech
-
-* JavaScript [timing events](https://www.w3schools.com/js/js_timing.asp) like [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
-* HTML5 [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement)
-* [Date.now()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now) function
 
 ## Icebox
 

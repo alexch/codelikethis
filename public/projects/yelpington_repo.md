@@ -2,7 +2,7 @@
 
 In this project, you will pair up and work with other teams to create an online directory of restaurants in Burlington.
 
-For this project we will *not* use a database, or a webapp, or even a programming language. Our entire directory will be inside a single GitHub repository, with each restaurant represented by a single file in Markdown format.
+For this project we will *not* use a database, or a webapp, or even a programming language. Our entire directory will be inside a single GitHub repository, with each restaurant represented by a single file in JSON format.
 
 # Tech
 
@@ -16,7 +16,7 @@ For the next 12 weeks, we will all eat lunch every day. This app can realistical
 
 ## Goals
 
-* learn [Markdown](https://www.gitbook.com/book/gitbookio/markdown/details)
+* use JSON
 * learn about Git and GitHub workflow
 * submit Pull Requests
 * review Pull Requests
@@ -29,27 +29,39 @@ For the next 12 weeks, we will all eat lunch every day. This app can realistical
   * The file extension will be `.md` which stands for Markdown. This hint causes GitHub to render the file with style.
   * The contents of the file must contain the name, address, hours, and meal recommendations
 
-**Example:** Let's say there's a restaurant called "Joe's Diner" on King Street. At the top level of the repository will be a file named `joes-diner.md`, containing:
+**Example:** Let's say there's a restaurant called "Joe's Diner" on King Street. At the top level of the repository will be a file named `joes-diner.json`, containing:
 
 ```markdown
 # Joe's Diner
 
-**Address:** 123 King St. (at St. Paul)
+{
+    "id": "joes-diner",
+    "name": "Joe's Diner",
+    "address": "123 King St. (at St. Paul)",
+    "phone": "(802) 867-5309",
+    "hours": "7:00 am - 3:00 pm",
+    "notes": [
+        "Their sriracha breakfast sandwich is quite good.",
+        "Every Thursday is meatloaf day."
+    ]
+}
+```
 
-**Phone number:** 555-1221
+We will also need a file named `all.json` which contains a list of all the ids, e.g.:
 
-**Hours:** 7:00 am - 3:00 pm
-
-Their sriracha breakfast sandwich is quite good. 
-
-Every Thursday is meatloaf day.
+```
+[
+    "joes-diner",
+    "burger-queen",
+    "pizza-shack"
+]
 ```
 
 ## Steps
 
 1. pair up
 2. If you have not added an SSH key to your GitHub account, follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
-2. visit the main repo <https://github.com/BurlingtonCodeAcademy/yelpington>
+2. visit the main Yelpington repo <https://github.com/BurlingtonCodeAcademy/yelpington>
 2. fork the repo (click the word "Fork" in the button in the top left)
 2. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link. Use `git clone git@XXXX` (where XXX is the rest of the git URL you just copied).
 2. connect your local repo to the main repo like this:
@@ -58,7 +70,10 @@ Every Thursday is meatloaf day.
 
 3. Think of a restaurant. *Do not* coordinate with other students (one of the goals of this lesson is to experience conflicts).
 4. Create a local branch named after that restaurant. For example, `git checkout -b joes-diner`
-5. Create the menu file (`joes-diner.md`) including its name and address **but *not* its hours** and when you're satisfied, add it to git (using `git add`, `git commit`).
+5. Create the menu file (`joes-diner.json`) including its name and address **but *not* its hours**.
+5. Add a line to `all.json` with the new restaurant's id.
+5. **Run the sanity checker** with `npm run test` 
+5. When you're satisfied, add it to git (using `git add .`, `git commit`).
 6. Push your local branch to GitHub using `git push origin joes-diner`
 7. Using a web browser, visit GitHub and create a Pull Request (PR).
 8. In the description of the PR, put the names of both pair partners.
@@ -89,9 +104,9 @@ As a more realistic example of a conflict:
 
 ```
 <<<<<<<<<<<<<<<<
-M-F open at 9, closed weekends
+"hours": "M-F open at 9, closed weekends"
 ----------------
-9:00 am to 5:00 pm
+"hours": "9:00 am to 5:00 pm"
 >>>>>>>>>>>>>>>>
 ```
 
