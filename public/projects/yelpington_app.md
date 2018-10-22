@@ -58,7 +58,7 @@ To launch a file server, first run `npm install` (once), then run `npm start` an
 
 ### Zero Pull Requests
 
-Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and getthe PRs accepted or closed.
+Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and get the PRs accepted or closed.
 
 <!--/BOX-->
 
@@ -75,9 +75,10 @@ Use AJAX or Fetch to load the data.
 
 > Note: the Fetch API [does not work well with the `file:///` URL scheme](https://github.com/github/fetch/pull/92). 
 > We've added a simple `node` app that serves files from a local server.
-> Launch it with `node .` and access it with `http://localhost:5000`
+> Install it with `npm install` and run it with `npm start`
 
-To access *the path* -- from `/name` into `name` -- use this incantation:
+<!--BOX-->
+**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/name` into `name` -- use this incantation:
 
 ```
 let name = document.location.pathname.slice(1)
@@ -115,6 +116,7 @@ let name = document.location.pathname.slice(1)
 **Then** the user sees all restaurants as a list with links to the respective restaurant pages
 
 <!--/BOX-->
+
 <!--BOX-->
 ### Show All Restaurants (map)
 
