@@ -14,6 +14,8 @@ Here are some topics (some delivered by past cohorts) to inspire you:
 * What is Impostor Syndrome and how can you avoid it?
 * when to use vector vs raster images 
 * Going serverless with Amazon S3
+* Ergonomics
+* Emmit Snippets in VS Code
 * Pair Programming Pitfalls
 * So You've Been Breached: how to react to being hacked
 

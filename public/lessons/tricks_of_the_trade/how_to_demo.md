@@ -58,3 +58,10 @@ Relax. Make a self-deprecating joke. Take a deep breath. Remember that the audie
 * Clear handoff from one speaker to the next
 * One person speaks; another drives
 * Don't let one team member hog all the speech time or answer all the questions
+
+# Some Good Demos
+
+iPhone Launch by Steve Jobs: https://www.youtube.com/watch?v=x7qPAY9JqE4
+
+
+

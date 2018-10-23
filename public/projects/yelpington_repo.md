@@ -8,7 +8,7 @@ For this project we will *not* use a database, or a webapp, or even a programmin
 
 * Git
 * Github
-* Markdown
+* JSON
 
 ## Usage
 
@@ -26,14 +26,12 @@ For the next 12 weeks, we will all eat lunch every day. This app can realistical
 
   * Every restaurant is represented by one file in the top level of the repository.
   * The file name will be in `kabob-case`: all lowercase letters, no spaces or symbols, hyphens between words.
-  * The file extension will be `.md` which stands for Markdown. This hint causes GitHub to render the file with style.
+  * The file extension will be `.json`
   * The contents of the file must contain the name, address, hours, and meal recommendations
 
 **Example:** Let's say there's a restaurant called "Joe's Diner" on King Street. At the top level of the repository will be a file named `joes-diner.json`, containing:
 
-```markdown
-# Joe's Diner
-
+```json
 {
     "id": "joes-diner",
     "name": "Joe's Diner",
@@ -49,7 +47,7 @@ For the next 12 weeks, we will all eat lunch every day. This app can realistical
 
 We will also need a file named `all.json` which contains a list of all the ids, e.g.:
 
-```
+```json
 [
     "joes-diner",
     "burger-queen",
