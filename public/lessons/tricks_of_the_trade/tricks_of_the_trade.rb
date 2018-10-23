@@ -16,6 +16,8 @@ class Track < Thing
            href: "https://www.learnenough.com/command-line-tutorial #aside-technical_sophistication"
     end
 
+    lesson name: "how_to_demo"
+
     lesson name: "modern_debugging"
 
     lesson name: "code_debt"
