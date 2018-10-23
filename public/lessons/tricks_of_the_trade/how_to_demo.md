@@ -19,8 +19,32 @@ Good: "So after I click the submit button, you'll see a spinny animation for a s
 
 # Answering Questions
 
+* Let the questioner finish
+    * Don't cut them off! Keep nodding and let them finish their thought.
 * Repeat the question 
     * or at least acknowledge its claims
 * Thank the questioner
 * Don't be defensive!
+
+# Macro to Micro
+
+* Start with a high-level description
+* *What* is the goal? *What* is the problem? *Why* do we care?
+* Recall the user story:
+    * "As a \___, I want to \___, so that \___."
+* Then dive in to *how* to accomplish the goal
+
+# Silence is Golden
+
+> "Better to remain silent and be thought a fool than to speak and to remove all doubt."
+
+* Sometimes people don't really *start* listening until there is silence.
+* Let your point sink in. Silently count to three (while making eye contact) before moving on.
+* When asking the audience a question, silently count to five before answering it yourself. 
+
+> Awkward silences are **great** for eliciting feedback and gathering information. The audience members will feel awkward too, and will want to fill the void.
+
+# It's not a demo until something goes wrong
+
+Relax. Make a self-deprecating joke. The audience is on your side.
 
