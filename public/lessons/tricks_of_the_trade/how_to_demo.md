@@ -37,9 +37,11 @@ Bad: "\<click> Did you see that spinny?"
 
 > Awkward silences are **great** for eliciting feedback and gathering information. The audience members will feel awkward too, and will want to fill the void.
 
-# It's not a demo unless something goes wrong
+# It's not a party until something gets broken
 
-Relax. Make a self-deprecating joke. Remember that the audience is on your side.
+>...and it's not a demo unless something goes wrong
+
+Relax. Make a self-deprecating joke. Take a deep breath. Remember that the audience is on your side.
 
 # Answering Questions
 
