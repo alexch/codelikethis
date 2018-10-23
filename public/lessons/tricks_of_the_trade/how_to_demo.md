@@ -5,7 +5,7 @@
 3. take your hands off the keyboard when answering a question
 3. don’t assume the user can see the cursor
 4. make eye contact
-5. practice
+5. practice!
 
 # Say what you see
 
@@ -16,6 +16,8 @@
 So try to be clear about describing what you see.
 
 Good: "So after I click the submit button, you'll see a spinny animation for a second... \<click> There it is! \<click> ... and now the next page is loaded."
+
+Bad: "\<click> Did you see that spinny?"
 
 # Answering Questions
 
@@ -44,7 +46,13 @@ Good: "So after I click the submit button, you'll see a spinny animation for a s
 
 > Awkward silences are **great** for eliciting feedback and gathering information. The audience members will feel awkward too, and will want to fill the void.
 
-# It's not a demo until something goes wrong
+# It's not a demo unless something goes wrong
 
 Relax. Make a self-deprecating joke. The audience is on your side.
 
+# Team Demos
+
+* Only one person speaks at a time
+* Clear handoff from one speaker to the next
+* One person speaks; another drives
+* Don't let one team member hog all the speech time or answer all the questions

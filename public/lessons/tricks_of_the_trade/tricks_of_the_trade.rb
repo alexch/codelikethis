@@ -16,7 +16,9 @@ class Track < Thing
            href: "https://www.learnenough.com/command-line-tutorial #aside-technical_sophistication"
     end
 
-    lesson name: "how_to_demo"
+    lesson name: "how_to_demo" do
+      link href: "https://firstround.com/review/Your-Product-Demos-Suck-Because-Theyre-Focused-on-Your-Product/"
+    end
 
     lesson name: "modern_debugging"
 
