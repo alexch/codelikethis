@@ -130,12 +130,14 @@
         "argv",
         "stacks",
         "hashes",
-        "recursion"
+        "recursion",
+        "logic",
+        "scope",
+        "modern_debugging"
       ],
       "projects": [
         "exercism",
         "zorkington",
-        "tic_tac_toe",
         {
           "from": "FreeCodeCamp",
           "name": "Debugging",
@@ -158,6 +160,12 @@
           "track": "career",
           "projects": [
             "portfolio_page"
+          ]
+        },
+        {
+          "track": "agile",
+          "lessons": [
+            "test_driven"
           ]
         }
       ],
@@ -191,14 +199,18 @@
           "href": "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
         },
         "markdown_preview",
-        "web_text_game"
+        "web_text_game",
+        "tic_tac_toe"
       ],
       "lessons": [
         "http",
         "html",
         "css",
         "dom_debugging",
-        "dom_scripting"
+        "dom_scripting",
+        "hello_world",
+        "html_structure",
+        "forms"
       ],
       "side_tracks": [
         {
@@ -208,6 +220,11 @@
           "lessons": [
             "acceptance_testing",
             "/javascript/cypress"
+          ]
+        },
+        {"track": "javascript",
+          "lessons": [
+            "cypress"
           ]
         }
       ],
