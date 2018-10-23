@@ -117,6 +117,8 @@ class Track < Thing
     end 
     lesson name: "async_and_await" do
       link href: "https://javascript.info/async-await"
+      link name: "Async/Await Fun Fun Function", href:
+      "https://www.youtube.com/watch?v=568g8hxJJp4"
     end
     lesson name: "iterators"
 
