@@ -39,13 +39,18 @@ Your task is to build a JavaScript based front-end for a Blog API back-end.
 ## Steps:
 
 
-### One
+### Review Fake Blog Docs
 
 Read the fake blog API documentation located at:
 
 * "https://jsonplaceholder.typicode.com/"
 
-### Two
+### Request with Postman
+
+Read the Postman API client documentation to learn how to send your first request.
+- https://www.getpostman.com/docs/v6/postman/launching_postman/sending_the_first_request
+
+### Play with the API
 
 Use the API client Postman to query the api at the following routes and inspect the output.
 
@@ -65,7 +70,7 @@ Use the API client Postman to query the api at the following routes and inspect 
 
 What are the differences between the URL resources listed above? Talk about them with your partner
 
-### Three
+### Starter HTML
 
 Create a basic HTML page with the following sections:
 
@@ -101,7 +106,42 @@ Create a basic HTML page with the following sections:
 </html>
 ```
 
-### Four
+### Append Data to Page
+
+Experiment with adding content to the page based on an API response.
+
+```javascript
+@@@javascript
+let allUsers = [];
+
+let getAllUsers = () => {
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => allUsers = users)
+}
+
+let buildParts = (elem) => {
+  let result = '';
+  for (let prop of elem) {
+    let part = `<span>${prop}:</span> `
+    result += part;
+  }
+  return `<p>${result}</p>`
+}
+
+let render = (target, data, properties) => {
+  let elements = data.map(item => {
+    let obj = {};
+    for (let prop of properties) {
+      obj[prop] = item[prop];
+    }
+    return obj;
+  })
+
+  let parts = elements.map(elem => buildParts(elem))
+  root.innerHTML += `<div class="response-data">${parts}</div>`;
+}
+```
 
 
 ### Five
