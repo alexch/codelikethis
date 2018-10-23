@@ -111,7 +111,10 @@ class Track < Thing
       link href: "https://hackernoon.com/two-years-of-functional-programming-in-javascript-lessons-learned-1851667c726"
     end
 
-    lesson name: "promises"
+    lesson name: "promises" do
+     link name: "Promises - Fun Fun Function", href: 
+     "https://www.youtube.com/watch?v=2d7s3spWAzo"
+    end 
     lesson name: "async_and_await" do
       link href: "https://javascript.info/async-await"
     end
