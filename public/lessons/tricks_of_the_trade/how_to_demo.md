@@ -19,15 +19,6 @@ Good: "So after I click the submit button, you'll see a spinny animation for a s
 
 Bad: "\<click> Did you see that spinny?"
 
-# Answering Questions
-
-* Let the questioner finish
-    * Don't cut them off! Keep nodding and let them finish their thought.
-* Repeat the question 
-    * or at least acknowledge its claims
-* Thank the questioner
-* Don't be defensive!
-
 # Macro to Micro
 
 * Start with a high-level description
@@ -48,7 +39,16 @@ Bad: "\<click> Did you see that spinny?"
 
 # It's not a demo unless something goes wrong
 
-Relax. Make a self-deprecating joke. The audience is on your side.
+Relax. Make a self-deprecating joke. Remember that the audience is on your side.
+
+# Answering Questions
+
+* Let the questioner finish
+    * Don't cut them off! Keep nodding and let them finish their thought.
+* Repeat the question 
+    * or at least acknowledge its claims
+* Thank the questioner
+* Don't be defensive!
 
 # Team Demos
 

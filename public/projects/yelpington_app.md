@@ -52,7 +52,7 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 
 To launch a file server, first run `npm install` (once), then run `npm start` and visit e.g. <http://localhost:8080/all.json> 
 
-## Stories
+## Backlog
 
 <!--BOX-->
 
@@ -101,7 +101,7 @@ let name = document.location.pathname.slice(1)
 > whether to do it automatically or manually. 
 > Note that the browser [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 > will **not** work here, since that provides the location of the *current user*.
-> [Nominatum](https://nominatim.openstreetmap.org/) is a good option. Try
+> [Nominatim](https://nominatim.openstreetmap.org/) is a good option. Try
 > `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
 
 
@@ -127,6 +127,7 @@ let name = document.location.pathname.slice(1)
 **And** clicking on a pin visits that restaurant's page
 
 <!--/BOX-->
+
 <!--BOX-->
 
 ### Formatted Notes
