@@ -12,7 +12,7 @@ For this project we will *not* use a database, or a webapp, or even a programmin
 
 ## Usage
 
-For the next 12 weeks, we will all eat lunch every day. This app can realistically help each of us find a place to eat downtown. This is *not* a toy problem. :-)
+We all eat lunch every day. This app can realistically help each of us find a place to eat downtown. This is *not* a toy problem. :-)
 
 ## Goals
 
@@ -30,6 +30,8 @@ For the next 12 weeks, we will all eat lunch every day. This app can realistical
   * The contents of the file must contain the name, address, hours, and meal recommendations
 
 **Example:** Let's say there's a restaurant called "Joe's Diner" on King Street. At the top level of the repository will be a file named `joes-diner.json`, containing:
+
+#### Joes's Diner
 
 ```json
 {
@@ -57,32 +59,49 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 
 ## Steps
 
-1. pair up
-2. If you have not added an SSH key to your GitHub account, follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
-2. visit the main Yelpington repo <https://github.com/BurlingtonCodeAcademy/yelpington>
-2. fork the repo (click the word "Fork" in the button in the top left)
-2. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link. Use `git clone git@XXXX` (where XXX is the rest of the git URL you just copied).
-2. connect your local repo to the main repo like this:
+1. Choose a pair partner to work with.
+1. visit the main Yelpington repo. <https://github.com/BurlingtonCodeAcademy/yelpington>
+1. fork the repo (click the word "Fork" in the button in the top left).
+1. clone *your* repo locally by clicking the green "Clone" button and then *using the `git:` URL* (not the `https:` URL). If you can't see the `git:` URL then look for and click the 'use SSH' link. Use `git clone git@XXXX` (where XXX is the rest of the git URL you just copied).
+1. connect your local repo to the main repo like this:
 
-        git remote add upstream https://github.com/BurlingtonCodeAcademy/yelpington.git
+        $ git remote add upstream https://github.com/BurlingtonCodeAcademy/yelpington.git
 
-3. Think of a restaurant. *Do not* coordinate with other students (one of the goals of this lesson is to experience conflicts).
-4. Create a local branch named after that restaurant. For example, `git checkout -b joes-diner`
-5. Create the menu file (`joes-diner.json`) including its name and address **but *not* its hours**.
-5. Add a line to `all.json` with the new restaurant's id.
-5. **Run the sanity checker** with `npm run test` 
-5. When you're satisfied, add it to git (using `git add .`, `git commit`).
-6. Push your local branch to GitHub using `git push origin joes-diner`
-7. Using a web browser, visit GitHub and create a Pull Request (PR).
-8. In the description of the PR, put the names of both pair partners.
-9. Submit the PR.
-10. Ask another pair to review your PR, and raise your hand to signal that you are free to review someone else's PR. Visit <https://github.com/BurlingtonCodeAcademy/yelpington/pulls> to find PRs to review.
-11. Once the reviews are done, go back to your command line or GitHub GUI and switch back to your local master branch with `git checkout master`. 
-12. Pull the latest changes -- you want to see several pairs' entries, including your own -- using
+1. Think of a restaurant. *Do not* coordinate with other students (one of the goals of this lesson is to experience conflicts).
+1. Create a local branch named after that restaurant. For example:
 
-        git pull upstream master  
-13. Choose *someone else's* restaurant and find out their hours. Maybe they have a web site; maybe you need to call them and ask. Make a change to that restaurant file with the new information.
-14. Make a new branch (e.g. `joes-diner-hours`) and submit a new PR, repeating the steps above and asking another pair to review your changes.
+        $ git checkout -b joes-diner
+
+1. Create the menu file (`joes-diner.json`) including its name and address **but *not* its hours**.
+1. Add a line to `all.json` with the new restaurant's id.
+1. **Run the sanity checker** with:
+
+        $ npm run test
+
+1. When you're satisfied, add it to git:
+
+        $ git add .
+        $ git commit -m 'Commit message here'
+
+1. Push your local branch to GitHub using:
+
+        $ git push origin joes-diner
+
+1. Using a web browser, visit GitHub and create a Pull Request (PR).
+1. In the description of the PR, put the names of both pair partners.
+1. Submit the PR.
+1. Ask another pair to review your PR, and raise your hand to signal that you are free to review someone else's PR. 
+    - Visit <https://github.com/BurlingtonCodeAcademy/yelpington/pulls> to find PRs to review.
+1. Once the reviews are done, go back to your command line or GitHub GUI and switch back to your local master branch with:
+
+        $ git checkout master
+
+1. Pull the latest changes -- you want to see several pairs' entries, including your own -- using:
+
+        $ git pull upstream master  
+
+1. Choose *someone else's* restaurant and find out their hours. Maybe they have a web site; maybe you need to call them and ask. Make a change to that restaurant file with the new information.
+1. Make a new branch (e.g. `joes-diner-hours`) and submit a new PR, repeating the steps above and asking another pair to review your changes.
 
 ## Merge Conflicts
 
