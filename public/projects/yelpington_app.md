@@ -67,24 +67,24 @@ Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open 
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
 
-**When** the user visits `http://localhost:5000/joes-diner`
+**When** the user visits `http://localhost:8080/restaurant.html#joes-diner`
 
 **Then** they should see all the restaurant information, formatted and styled nicely 
 
-Use AJAX or Fetch to load the data.
+**NOTE: Use AJAX or Fetch to load the data.**
 
 > Note: the Fetch API [does not work well with the `file:///` URL scheme](https://github.com/github/fetch/pull/92). 
 > We've added a simple `node` app that serves files from a local server.
 > Install it with `npm install` and run it with `npm start`
 
 <!--BOX-->
-**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/name` into `name` -- use this incantation:
+**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant.html#name` into `name` -- use this incantation:
 
 ```
-let name = document.location.pathname.slice(1)
+let name = document.location.hash.slice(1)
 ```
 
-(`slice(1)` removes the `/` from the `pathname` field of the `document.location` URL object.)
+(`slice(1)` removes the `/` from the `hash` field of the `document.location` URL object.)
 
 <!--/BOX-->
 
@@ -95,15 +95,17 @@ let name = document.location.pathname.slice(1)
 
 **When** the user sees the restaurant's page (e.g. `/joes-diner`)
 
-**Then** they see an [embedded map](/lessons/www/embedding_media.md), centered at that restaurant's location
+**Then** they see a [Leaflet web map](http://bootcamp.burlingtoncodeacademy.com/lessons/client_side_coding/interactive_mapping), centered at that restaurant's location
 
-> You must decide *how* and *when* to look up the restaurant's geolocation, and 
+> You must decide *how* and *when* to look up the restaurant's `Latitude/Longitude`, and 
 > whether to do it automatically or manually. 
-> Note that the browser [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
-> will **not** work here, since that provides the location of the *current user*.
+
 > [Nominatim](https://nominatim.openstreetmap.org/) is a good option. Try
 > `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
 
+> Read more about the Nominatum API here: 
+> https://nominatim.openstreetmap.org/
+> https://wiki.openstreetmap.org/wiki/Nominatim
 
 <!--/BOX-->
 
@@ -111,7 +113,7 @@ let name = document.location.pathname.slice(1)
 <!--BOX-->
 ### Show All Restaurants (list)
 
-**When** the user visits `/`
+**When** the user visits `http://localhost:8080/`
 
 **Then** the user sees all restaurants as a list with links to the respective restaurant pages
 
@@ -120,7 +122,7 @@ let name = document.location.pathname.slice(1)
 <!--BOX-->
 ### Show All Restaurants (map)
 
-**When** the user visits `http://localhost:5000/` with no query string
+**When** the user visits `http://localhost:8080/` with no query string
 
 **Then** the user sees all restaurants as "pins" on the embedded map
 
@@ -140,12 +142,21 @@ let name = document.location.pathname.slice(1)
 
 JSON:
 ```
-"notes": ["The pizza is **awesome** here!"]
+"notes": ["##Mr Mikes\nThe pizza is **awesome** here!"]
 ```
 
 HTML:
 
 <!--BOX-->
+```
+<h2>Mr Mikes</h2>
+<p>The pizza is <strong>awesome</strong> here!</p>
+```
+
+Result:
+
+## Mr Mikes
+
 The pizza is **awesome** here!
 
 <!--/BOX-->
