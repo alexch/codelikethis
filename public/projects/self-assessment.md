@@ -8,7 +8,7 @@ This is to show both the teachers and yourself areas that you could use support 
 
 After you complete this, you will pair up with another student and disuss each other's self-assessment in each category. Take the opportunity to dig in to your partner's answers and find the reasons and examples behind their rating (high or low) and encourage them to change the rating up or down accordingly.
 
-Later (during the capstone weeks), you will also meet with at least two instructors for a half hour to talk about your self assessment and figure out how we can best support you in the areas you'd like to improve on throughout the second half of the course. 
+Later (likely next week), you will also meet with at least two instructors for a half hour to talk about your self assessment and figure out how we can best support you in the areas you'd like to improve on throughout the second half of the course. 
 
 You have final say over your own scores throughout this process.
 
