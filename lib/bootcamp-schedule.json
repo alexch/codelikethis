@@ -264,7 +264,7 @@
         {
           "track": "agile",
           "lessons": [
-            "pair_programming"
+            "acceptance_testing"
           ]
         }
       ],
@@ -276,11 +276,39 @@
       ]
     },
     {
+      "track": "responsive_layout",
+      "lessons": [
+        "css_layout",
+        "flexbox_layout",
+        "responsive_intro",
+        "css_grid",
+        "css_frameworks"
+      ],
+      "projects": [
+        {
+          "from": "FreeCodeCamp",
+          "name": "Bootstrap",
+          "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
+        },
+        "pomodoro"
+      ],
+      "events": [
+        {
+          "start": "Wednesday 12:30 pm",
+          "name": "L&L: Code for BTV"
+        },
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
+        }
+      ]
+    },
+    {
       "track": "client_side_coding",
       "projects": [
         "yelpington_app",
         "twitch_status",
-        "pomodoro",
+
         {
           "name": "lightning_talk",
           "description": "choose a topic for a lightning talk, and sign up for a slot",
@@ -297,68 +325,7 @@
         "jquery",
         "local_storage"
       ],
-      "side_tracks": [
-        {
-          "track": "ux",
-          "lessons": [
-            "navigation"
-          ]
-        }
-      ],
       "events": [
-        {
-          "start": "all day Wednesday",
-          "name": "Holiday: Independence Day"
-        },
-        {
-          "start": "Friday 10:00 am",
-          "name": "lightning talks (round 1)"
-        },
-        {
-          "start": "Friday 4:00 pm",
-          "name": "retrospective"
-        }
-      ]
-    },
-    {
-      "track": "bootstrap",
-      "lessons": [
-        "bootstrap_development",
-        "bootstrap_webpage",
-        "css_frameworks",
-        "/client_side_coding/jquery",
-        "bootstrap_components"
-      ],
-      "projects": [
-        {
-          "from": "FreeCodeCamp",
-          "name": "Bootstrap",
-          "href": "https://learn.freecodecamp.org/front-end-libraries/bootstrap"
-        },
-        "geo_vermonter"
-      ],
-      "side_tracks": [
-      {
-        "track": "career",
-        "lessons": [
-          "lightning_talks"
-        ],
-          "projects": [
-            "lightning_talk"
-          ],
-          "events": [
-            {
-              "start": "Friday 10:00 am",
-              "name": "lightning talks (round 1)"
-            }
-          ]
-        }
-      ],
-      "events": [
-        {
-          "start": "Wednesday 12:30 pm",
-          "name": "L&L: Code for BTV"
-        },
         {
           "start": "Friday 4:00 pm",
           "name": "retrospective"
@@ -368,10 +335,33 @@
     {
       "track": "javascript",
       "lessons": [
-        "oo_js"
+        "oo_js",
+        "scope",
+        "encapsulation"
       ],
+
       "projects": [
-        "chat_server"
+        "geo_vermonter"
+      ],
+      "events": [
+        {
+          "start": "Friday 4:00 pm",
+          "name": "retrospective"
+        }
+      ],
+      "side_tracks": [
+        {
+          "track": "career",
+            "projects": [
+              "lightning_talk"
+            ],
+            "events": [
+              {
+                "start": "Friday 9:00 am",
+                "name": "lightning talks (round 1)"
+              }
+            ]
+          }
       ]
     },
     {
