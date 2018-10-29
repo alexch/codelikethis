@@ -173,7 +173,9 @@ A medium-length comment can often be replaced with a variable / function / metho
 // 11 days at 24 hours per day times 60 minutes per hour
 let duration = 11 * 24 * 60 
 ```
+
 =>
+
 ```
 let hoursPerDay = 24
 let minutesPerHour = 60
