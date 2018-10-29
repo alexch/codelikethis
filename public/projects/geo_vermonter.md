@@ -39,7 +39,7 @@ TODO
 # User Stories
 
 <!--BOX-->
-### Basic Layout
+## Basic Layout
 
 * Sketch out wireframes for a page with the following page elements. 
 
@@ -62,7 +62,7 @@ TODO
 
 
 <!--BOX-->
-### State of the State
+## State of the State
 
 Using [leaflet.js](#TODO) place a map of the state of Vermont inside the `map` div. Use the [Isri.WorldImagery tileset](https://leaflet-extras.github.io/leaflet-providers/preview/) and make sure **not** to show any street or town info to the user -- only satellite images.
 
@@ -73,7 +73,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--/BOX-->
 
 <!--BOX-->
-### Game On
+## Game On
 
 **When** the user clicks *Start a Game*
 
@@ -87,7 +87,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 
 <!--BOX-->
-### Random Spot
+## Random Spot
 
 **When** the user clicks *Start a Game*
 
@@ -104,7 +104,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--/BOX-->
 
 <!--BOX-->
-### I Give Up!
+## I Give Up!
 
 **When** the user clicks the "I Give Up" button
 
@@ -115,7 +115,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--/BOX-->
 
 <!--BOX-->
-### Guess the County
+## Guess the County
 
 **When** the user clicks the Guess button
 
@@ -150,7 +150,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--/BOX-->
 
 <!--BOX-->
-### Move
+## Move
 
 **When** the user clicks the "North" button
 
@@ -163,7 +163,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--/BOX-->
 
 <!--BOX-->
-### Return
+## Return
 
 **When** the user clicks the "Return" button
 
@@ -172,7 +172,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--/BOX-->
 
 <!--BOX-->
-### breadcrumbs
+## breadcrumbs
 
 When the user clicks a movement button
 
@@ -183,7 +183,7 @@ And keeps showing the dotted line during the rest of game
 <!--/BOX-->
 
 <!--BOX-->
-### save score (local)
+## save score (local)
 
 **When** the user wins a game
 
@@ -202,7 +202,7 @@ And keeps showing the dotted line during the rest of game
 <!--/BOX-->
 
 <!--BOX-->
-### save score (server)
+## save score (server)
 
 **When** the user wins a game
 
@@ -214,7 +214,7 @@ And keeps showing the dotted line during the rest of game
 
 **Then** the app shows a list of all games, in score order (top to bottom), including scores from all other players
 
-#### Tech:
+### Tech:
 
 Initially, implement your server code as simply as possible. Over the course of the week, we will learn more ways of saving state on a server or database.
 
@@ -225,7 +225,7 @@ Initially, implement your server code as simply as possible. Over the course of 
 <!--/BOX-->
 
 <!--BOX-->
-### replay game
+### Replay game:
 
 1. when the game is saved, don't just save the name and score: all the info, including spot and all moves taken, and any guesses, should be saved as well
 2. when viewing old games, the user can select one and see the above info
