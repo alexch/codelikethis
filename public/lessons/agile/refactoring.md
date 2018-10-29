@@ -2,10 +2,9 @@
 
 ![buddha](./zen/buddha-statue.jpg)
 
-Refactoring is the process of restructuring existing computer code -- changing its *factoring* -- without changing its behavior. You probably knew that. But did you know it’s also a meditation technique? Come improve your practice of mindful coding.
+Refactoring is the process of restructuring existing computer code -- changing its *factors* -- without changing its behavior. You probably knew that. But did you know it’s also a meditation technique? Come improve your practice of mindful coding.
 
 After these slides, we’ll start with some actual production code, make sure its unit tests work ok, then collaboratively, consciously contemplate the many forking paths that twine and wind through the Garden of Abstract Delights.
-
 
 # What is refactoring?
 
@@ -25,9 +24,10 @@ After these slides, we’ll start with some actual production code, make sure it
 
 ![zen](./zen/don-zen.gif)
 
-> disclaimer: I apologize for
-> appropriating and trivializing
-> anyone's cultural heritage
+> disclaimer: This presentation uses some
+> spiritual imagery but is not intended to
+> parody any religion or culture
+> (except American New Age Hippies)
 
 # What is Refactoring?
 
@@ -57,11 +57,13 @@ porting
 
 upgradging
 
+debugging
+
 # Why refactor?
 
 ![yoda](zen/yoda-clear-your-mind.gif)
 
-(Yoda ~= Buddha)
+(Yoda ≈ Buddha)
 
 # Refactor to understand
 
@@ -91,14 +93,15 @@ Clear code is:
 * ready for teamwork
 * ready for change
 
-# rereading
+# rereading and rewriting
 
 > “Curiously enough, one cannot read a book; one can only reread it. A good reader, a major reader, an active and creative reader is a rereader.” - Nabokov
 
-— applies to refactoring too, not just rereading
+- applies to refactoring code too, not just rereading books
+- your second solution will usually be better than your first
+- code is a communication medium
 
 https://www.goodreads.com/quotes/34497-curiously-enough-one-cannot-read-a-book-one-can-only
-
 
 # "Zen Refactoring"
 
@@ -143,7 +146,7 @@ or at least made of many short, reversible steps
 
 # Automated
 
-I choose my text editor based on how well it refactors
+I choose my text editor based on how well it refactors my code
 
 ![real programmers use](./real_programmers.png)
 <https://xkcd.com/378/>
@@ -162,7 +165,26 @@ Introduce duplication, increase clarity
 
 # Refactoring: Replace Comment With Name
 
+A medium-length comment can often be replaced with a variable / function / method / class whose name is the comment
+
+> "A comment is a lie waiting to happen." - Alex
+
+```
+// 11 days at 24 hours per day times 60 minutes per hour
+let duration = 11 * 24 * 60 
+```
+=>
+```
+let hoursPerDay = 24
+let minutesPerHour = 60
+let durationInMinutes = 11 * hoursPerDay * minutesPerHour
+```
+
 # Refactoring: Introduce Parameter
+
+* to remove global variables -- pass them in as parameters instead
+* to take literals and make them variables, so the function is more useful
+* good followup to "extract method" 
 
 # Code Smells
 
@@ -175,12 +197,17 @@ Introduce duplication, increase clarity
 
 * Short Lines
 * Short Methods
-* Fewer Dots
 * Meaningful Names
+* Fewer Dots-in-a-row
+  * (but don't confuse *method chaining* (often good) with *feature envy* (usually bad))
 
 # The Book
 
 ![refactoring-fowler](./zen/refactoring-book.jpg)
+
+<https://martinfowler.com/books/refactoring.html>
+
+...coming soon in JavaScript!
 
 # References
 
