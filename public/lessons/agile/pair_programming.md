@@ -31,7 +31,7 @@ Listen to how engaged the navigator is. They are focused on what's coming next, 
 
 # Pair Programming finds the Maximum of Two Minds
 
-[insert graph of maxima]
+[show graph of maxima]
 
 Every person thinks a little differently, has different expertise / experience / energy / perspective.
 
@@ -48,7 +48,6 @@ MYTH: pairing reduces productivity by 50%
 FACT: pairing (when done well) *increases* productivity, especially when the problem requires creativity to solve
 
 (pairing also increases communication, satisfaction, and the rate of high-fives per minute)
-
 
 # Pairing is teaching
 
@@ -111,13 +110,43 @@ _Docendo discimus_ - "by teaching we learn"
 
 ![mentos](mentos.jpg)
 
+# Do...
+
+* Talk. A lot.
+* Ask questions.
+* Listen.
+* Say something if you don't understand or disagree. 
+* Be patient.
+* Swap roles *often*. 
+    * at least every 30 minutes
+* Take breaks *regularly*.
+    * at least once an hour
+* High five!
+* Enjoy it!
+
+# Don't...
+
+* get too frustrated
+* be a keyboard hog
+* be a backseat driver (instead, ask to take the wheel!)
+* be bossy
+* be intimidated by partner's knowledge
+* be shy
+* be silent 
+  * about your ideas / questions
+  * about your partner being rude
+
 # References
 
-https://www.youtube.com/watch?v=vgkahOzFH2Q
+## Videos:
 
+* Fiona and Semira from Generation Code: https://www.youtube.com/watch?v=vgkahOzFH2Q
+* Steven Nunez from Flatiron School: 
 https://www.youtube.com/watch?v=YhV4TaZaB84
+* Laurie Williams from North Carolina State University:
+ https://www.youtube.com/watch?v=rG_U12uqRhE
 
-https://www.youtube.com/watch?v=rG_U12uqRhE
+## Articles:
 
 https://www.wikihow.com/Pair-Program
 
