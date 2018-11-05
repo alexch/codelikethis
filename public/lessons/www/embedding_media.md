@@ -1,4 +1,4 @@
-# Embedding
+# Embedding Media
 
 [Embedding](/lessons/www/embedding_media) is the process of including *media* from other sources into your web sites.
 
