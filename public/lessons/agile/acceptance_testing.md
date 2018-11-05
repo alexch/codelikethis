@@ -1,12 +1,12 @@
 # Acceptance Testing
 
-Where does Acceptance Testing fit in with other tests?
+Where does Acceptance Testing fit in with other forms of automated tests?
 
 * Unit Tests - low level, interact directly with code
 * Integration Tests - higher level, to test the entire system (or a few parts) working together
 * End-to-end (E2E) Tests - high level, test UI *and* logic *and* database *and* API calls 
 * Smoke Tests - very small suite of tests, quick to run, to prove system isn't completely broken
-* Stress Tests - simulate real-world behavior under load 
+* Stress Tests - simulate real-world behavior under load
 
 ---
 
@@ -24,17 +24,18 @@ Can you think of some examples of when acceptance tests might be useful?
 
 # Acceptance Tests
 
-* should be *automated* (or at least *automatable*) 
+* should be *automated* (or at least *automatable*)
+  * (if a particular test can't be automated then it should be specified in enough detail that a human can do it reliably)
 * are "executable specifications" of the system
 * correspond with product goals and requirements
-* are linked to user stories but not necessarily one-to-one
+* are linked to user stories (feature specifications) but not necessarily one-to-one
     * One story can have many acceptance tests -- whatever it takes to ensure the feature works
 
 # Acceptance Criteria Templates
 
 * There are two popular human-readable "mad libs" templates for acceptance criteria
-  * As a \___, I want to ___ So that ___.
-  * Given \___, when ___ then ___.
+  * As a \___, I want to \___ So that \___.
+  * Given \___, when \___ then \___.
 * Once you've written requirements in "given - when - then" form, translating them into code is more straightforward
 
 # Acceptance Tests in Extreme Programming
@@ -42,9 +43,8 @@ Can you think of some examples of when acceptance tests might be useful?
 * Acceptance tests are created from user stories. 
 * During an iteration the user stories selected during the iteration planning meeting will be translated into acceptance tests.
 * The customer specifies rules and scenarios that will become true once a user story has been correctly implemented. 
-* In *continuous integration*, acceptance tests are run as often as possible, at least once before and once after a *merge to master* and before a *release*
+* In *continuous integration*, all acceptance tests are run as often as possible, at least once before and once after a *merge to master* and before a *release*
 * A user story is not considered complete until it has passed its acceptance tests, and work should not proceed to a new story until the first story passes.
-* Acceptance tests should be automated; if a particular test can't be automated then it should be specified in enough detail that a human can do it reliably.
 * The name acceptance tests was changed from "functional tests" to make it more clear that they are customer- and user-driven.
 
 <http://www.extremeprogramming.org/rules/functionaltests.html>
@@ -103,7 +103,7 @@ Apex: small number of UI acceptance tests
 ![test pyramid](https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png) 
 <https://martinfowler.com/bliki/TestPyramid.html>
 
-> BEWARE of doing too much testing through the UI
+> **BEWARE** of testing core code (aka "business rules" or "domain logic") through the UI
 
 # Domain-Specific Language
 
@@ -135,7 +135,7 @@ Feature: Is it Friday yet?
 
 Programmers have to write hooks for phrases like `When("^I ask whether it's Friday yet$")` but once those are coded, the QA or product team can write more tests.
 
-When Cucumber works it's amazing, but most teams find it slows them down.
+When Cucumber works it's amazingly great, but most teams find it slows them down.
 
 # Web Testing Frameworks
 
@@ -152,19 +152,16 @@ When Cucumber works it's amazing, but most teams find it slows them down.
   * has more low-level control of browser features
   * allows mocking and stubbing DOM APIs
   * saves page snapshots during test run
-    * as screenshots for later viewing
+    * as screenshots & videos for later viewing
     * as DOM copies for later debugging (!!)
   
 # Cypress
 
-not actually a testing framework!
-
-it's an automation library that supports testing
- 
-but it doesn't do its own assertions! it just manipulates and query the DOM
-
-actual tests are written in [Mocha](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) + [Chai](https://www.chaijs.com/api/bdd/)
-    (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) )
+* [Cypress](http://cypress.io) is a web browser automation library that's built for automated testing
+* it manipulates and queries the DOM in a controlled browser instance
+* when a cypress command fails, the test fails immediately
+* more detailed assertions are written in [Mocha](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) + [Chai](https://www.chaijs.com/api/bdd/)
+  * (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) )
 
 see more at the [Cypress Lesson](/lessons/javascript/cypress)
 
@@ -177,7 +174,7 @@ What makes a good acceptance test?
     * allows running a single test a time
     * allows running many tests in parallel
     * shows more precisely what failed
-* use common *domain langauge* wherever possible
+* use common *domain language* wherever possible
 * test both "happy path" and "rainy day" scenarios
 * always write a failing acceptance test when a bug is reported
 
@@ -191,18 +188,19 @@ What makes a good acceptance test?
 
 * tedious to create
 * brittle -- will break if e.g. the name of a button changes
-* always running behind the code
+* always running behind the code, trying to catch up
 
 # Bad Idea: Temporally Dependent Tests
 
 * e.g.
-    * Test A: "sign up as John Doe"
-    * Test B: "sign in as John Doe"
+    * Test A: "sign **up** as John Doe"
+    * Test B: "sign **in** as John Doe" (using the account we created in Test A)
     * B is *temporally dependent* on A
 * tempting but flawed - not isolated
 * failures cascade, causing noise and imprecision in output
+* difficult to focus on a single failing test
   
-> **BUT** some tests might be okay with sharing setup or startup; be open to that especially if your system takes a long time to start or to populate with data
+> **BUT** some tests might be okay with sharing setup or startup; be open to that especially if your system takes a long time to start or to populate with data, or if you're doing manual testing, which is inherently slow
 
 # Bad Idea: Overspecified Test Data
 
@@ -246,4 +244,4 @@ expect(account.balance).toBe(50);
   * state must be *reset* between tests which can be time-consuming
   * innocent changes in unrelated objects can make your tests fail
   * if your objects are too interdependent then you should refactor until they're less so
-  
+    * (same advice applies in unit testing with mock objects)  
