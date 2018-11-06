@@ -56,13 +56,13 @@ describe('Post Resource', function() {
 ```
 
 1. Visit the page at /posts/new.
-1. Find the \<input> with class post-title.
-1. Type “My First Post” into it.
-1. Find the \<input> with class post-body.
-1. Type “Hello, world!” into it.
-1. Find the element containing the text Submit.
+1. Find the \<input> with class `post-title`.
+1. Type "My First Post" into it.
+1. Find the \<input> with class `post-body`.
+1. Type "Hello, world!" into it.
+1. Find the element containing the text "Submit".
 1. Click it.
-1. Grab the browser URL, ensure it includes /posts/my-first-post.
+1. Grab the browser URL, ensure it includes `/posts/my-first-post`.
 1. Find the h1 tag, ensure it contains the text “My First Post”.
 
 from <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Cypress-Is-Simple>
@@ -89,7 +89,7 @@ if you specify `baseUrl` in your `cypress.json` file it will go a little quicker
 @@@javascript
 cy.get('form#login input[name="username"]')
   .type('HomerSimpson1989')
-cy.get('form#login"]')
+cy.get('form#login')
   .submit()
 ```
 
@@ -104,7 +104,7 @@ DOM element collection wrappers that support method chaining.
 * `.uncheck()` - Uncheck checkbox(es)
 * `.select()` - Select an \<option> within a \<select>
 * `.focus()` - Focus on a DOM element
-* `.blur()` - Make a focused DOM element lose focus
+* `.blur()` - Make a DOM element lose focus
 
 see <https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html> for more info -- there are many details here
 
