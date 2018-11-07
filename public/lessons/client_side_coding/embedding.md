@@ -15,8 +15,11 @@ Or, if the user moves their location on an embedded Google Map, your app could b
 > The [Embedding Media](/lessons/www/embedding_media) lesson covers *static* embedding:
 > displaying media and allowing the user to interact with it directly.
 
-# Maps
+# Interactive Mapping
 
+[Interactive Mapping](./interactive_mapping)
+
+<!--
 https://wiki.openstreetmap.org/wiki/Frameworks#Displaying_interactive_maps
 https://wiki.openstreetmap.org/wiki/Slippy_Map
 https://wiki.openstreetmap.org/wiki/Leaflet
@@ -29,6 +32,7 @@ bbox = min Longitude , min Latitude , max Longitude , max Latitude
 Burlington: 44.47606/-73.21167
 
 Main St.: -73.2130900,44.4749000,-73.2102500,44.4772200
+-->
 
 
 
