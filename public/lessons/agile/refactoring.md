@@ -188,9 +188,86 @@ let durationInMinutes = 11 * hoursPerDay * minutesPerHour
 * to take literals and make them variables, so the function is more useful
 * good followup to "extract method" 
 
+# Refactoring: Introduce Object (Struct)
+
+* objects are great for keeping related data together
+* also good for keeping your code readable, since fields are named by the caller, not just the receiver
+
+Example:
+
+```
+function distanceBetween(x1, y1, x2, y2) {
+    let deltaX = x2 - x1;
+    let deltaY = y2 - y1;
+    return Math.sqrt(deltaX * deltaX + deltaY * deltaY)
+}
+let distance = distanceBetween(41.12, -72.22, 42.18, -72.34)
+```
+
+=>
+
+```
+function distanceBetween(point1, point2) {
+    let deltaX = point2.x - point1.x;
+    let deltaY = point2.y - point1.y;
+    return Math.sqrt(deltaX * deltaX + deltaY * deltaY)
+}
+
+let distance = distanceBetween( { x: 41.12, y: -72.22 },
+                                { x: 42.18, y: -72.34 })
+```
+
+> This type of object -- with fields but no methods -- is sometimes called a `struct`.
+
+# Refactoring: Introduce Class
+
+* a class is for sharing methods between all related object instances
+
+```
+class Point {
+    distanceFrom(otherPoint) {
+        let deltaLat = otherPoint.x - this.x;
+        let deltaLon = otherPoint.y - this.y;
+        return Math.sqrt(deltaLat * deltaLat + deltaLon * deltaLon)
+    }
+}
+
+let point1 = new Point();
+point1.x = 41.12
+point1.y = -72.22
+let point2 = new Point();
+point2.x = 42.18
+point2.y = -72.34
+
+let distance = point1.distanceFrom(point2)
+```
+
+# Refactoring: Introduce Constructor
+
+* a constructor is used to initialize your object
+* helps ensure that all the instance data is in a valid state
+* streamlines your initialization code
+
+```
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    //... 
+}
+let point1 = new Point(41.12, -72.22)
+let point2 = new Point(42.18, -72.34)
+let distance = point1.distanceFrom(point2)
+
+```
+
 # Code Smells
 
+a "code smell" means "something might be wrong here"
+
 * [Code Smells](https://sourcemaking.com/refactoring/smells)
+
 * *[Feature Envy](https://sourcemaking.com/refactoring/smells/feature-envy)*
   * when a method accesses the data of another object more than its own
   * can be cured by **Refactoring: Move Method**
