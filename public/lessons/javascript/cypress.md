@@ -55,29 +55,31 @@ describe('Post Resource', function() {
 })
 ```
 
-1. Visit the page at /posts/new.
+1. Visit the page at `/posts/new`.
 1. Find the \<input> with class `post-title`.
 1. Type "My First Post" into it.
 1. Find the \<input> with class `post-body`.
 1. Type "Hello, world!" into it.
 1. Find the element containing the text "Submit".
 1. Click it.
-1. Grab the browser URL, ensure it includes `/posts/my-first-post`.
-1. Find the h1 tag, ensure it contains the text “My First Post”.
+1. Grab the browser URL & ensure it includes `/posts/my-first-post`.
+1. Find the `h1` tag & ensure it contains the text "My First Post".
 
 from <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Cypress-Is-Simple>
 
 # visit
 
-`cy.visit('/cart')` attempts to load the path `/cart` from the local server
+`cy.visit('/cart')` 
 
-waits for the page to fire its `load` event (which happens *just after* the page is fully loaded)
+* attempts to load the path `/cart` from the local server
 
-if you specify `baseUrl` in your `cypress.json` file it will go a little quicker
+* waits up to 60 seconds for the page to fire its `load` event (which happens *just after* the page is fully loaded)
+
+* if you specify `baseUrl` in your `cypress.json` file it will go a little quicker
 
 # get
 
-`cy.get()`
+`cy.get('#someId')`
 
 * takes a *CSS selector*
 * *waits up to 10 seconds* for the selector to match an element on the page
@@ -110,7 +112,7 @@ see <https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html
 
 # contains
 
-* `cy.get(selector).contains(` 
+* `cy.get(selector).contains('some text')`
   * checks each individual element that `cy.get` matched
   * succeeds if *any* contain the given text
   * fails if the given text is not found after 10 seconds
@@ -127,18 +129,18 @@ cy.get('h2')
 
 # built-in assertions
 
-*every* Cypress command has a built-in assertion related to its purpose
+every Cypress command has a built-in assertion related to its purpose
 
 the command keeps checking many times a second, waiting for the assertion to become true
 
 For instance:
 
-* `cy.visit()` expects the page to send text/html content with a 200 status code.
+* `cy.visit()` expects the page to send `text/html` content with a 200 status code.
 * `cy.contains()` expects the element with content to eventually exist in the DOM.
 * `cy.get()` expects the element to eventually exist in the DOM.
 * `.find() `also expects the element to eventually exist in the DOM.
 * `.type() `expects the element to eventually be in a typeable state.
-* `.click() `expects the element to eventually be in an actionable state.
+* `.click() `expects the element to eventually be in a clickable state.
 
 <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Default-Assertions>
 
@@ -148,7 +150,7 @@ Sometimes the built-in assertions are enough, but often you need to test the pag
 
 Cypress's [`should`](https://docs.cypress.io/api/commands/should.html) method lets you use *Chai assertions* on the element(s) matched by `get`.
 
-> Note: Chai assertions are slightly different from *Jest assertions*, so beware of small syntax differences. 
+> Note: Chai assertions are slightly different from *Jest assertions*, so beware of small syntax differences.
 
 Using `should` on a chainer, you specify the Chai assertion *as a string*; `should` will execute that assertion repeatedly *on the target element* until it becomes true.
 
@@ -167,9 +169,11 @@ Cypress commands don’t do anything at the moment they are invoked, but rather 
 
 ... **after** the entire test function has *already finished executing*!
 
-`cy.get` returns a wrapper object called a "chainer", and at the time it is returned, *nothing in the web page has happened yet*, so you can't simply store the result in a variable or print it; for that level of control you must [pass callbacks into](https://docs.cypress.io/api/commands/should.html#Function) other methods like `should` and `each` and `and` and `then`.
+`cy.get` returns a wrapper object called a "chainer", and at the time it is returned, *nothing in the web page has happened yet*, so you can't simply store the result in a variable or print it
 
-This is *by design*. Commands are enqueued and managed by Cypress to reduce timing issues and general test flakiness.
+(For that level of control you must [pass callbacks into](https://docs.cypress.io/api/commands/should.html#Function) other methods like `should` and `each` and `and` and `then`.)
+
+This may seem overcomplicated, but it is *by design*. Commands are enqueued and managed by Cypress to reduce timing issues and general test flakiness.
 
 # timeout
 
