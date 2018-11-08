@@ -155,13 +155,36 @@ I choose my text editor based on how well it refactors my code
 
 The simplest and most powerful
 
+* in VS Code: <kbd>F2</kbd>
+
 # Refactoring: Extract
 
-Extract variable, extract method, extract class
+Extract Variable, Extract Function, Extract Method
+
+# Example: Extract Function
+
+```
+@@@javascript
+console.log('' + new Date() + ' - error: too many notes') 
+console.log('' + new Date() + ' - error: not enough cowbell')
+```
+
+=>
+
+```
+@@@javascript
+function logError(message) {
+    console.log('' + new Date() + ' - error: ' + message)
+}
+logError('too many notes')
+logError('not enough cowbell')
+```
 
 # Refactoring: Inline
 
-Introduce duplication, increase clarity
+"Inline" is the reverse of "Extract"
+
+Introduces duplication to increase clarity
 
 # Refactoring: Replace Comment With Name
 
@@ -169,7 +192,10 @@ A medium-length comment can often be replaced with a variable / function / metho
 
 > "A comment is a lie waiting to happen." - Alex
 
+# Example: Replace Comment With Name
+
 ```
+@@@javascript
 // 11 days at 24 hours per day times 60 minutes per hour
 let duration = 11 * 24 * 60 
 ```
@@ -177,6 +203,7 @@ let duration = 11 * 24 * 60
 =>
 
 ```
+@@@javascript
 let hoursPerDay = 24
 let minutesPerHour = 60
 let durationInMinutes = 11 * hoursPerDay * minutesPerHour
@@ -184,18 +211,29 @@ let durationInMinutes = 11 * hoursPerDay * minutesPerHour
 
 # Refactoring: Introduce Parameter
 
-* to remove global variables -- pass them in as parameters instead
 * to take literals and make them variables, so the function is more useful
-* good followup to "extract method" 
+* to remove global variables -- pass them in as parameters instead
+* good followup to "extract method"
+* good when used with default parameters (ES2015)
 
-# Refactoring: Introduce Object (Struct)
+```
+@@@javascript
+function logError(message, severity = 'error') {
+    console.log('' + new Date() + ' - ' + severity + ': ' + message)
+}
+logError('too many notes')
+logError('volume too low', 'warning')
+```
+
+# Refactoring: Extract Object (Struct)
 
 * objects are great for keeping related data together
 * also good for keeping your code readable, since fields are named by the caller, not just the receiver
 
-Example:
+# Example: Extract Object (Struct)
 
 ```
+@@@javascript
 function distanceBetween(x1, y1, x2, y2) {
     let deltaX = x2 - x1;
     let deltaY = y2 - y1;
@@ -207,6 +245,7 @@ let distance = distanceBetween(41.12, -72.22, 42.18, -72.34)
 =>
 
 ```
+@@@javascript
 function distanceBetween(point1, point2) {
     let deltaX = point2.x - point1.x;
     let deltaY = point2.y - point1.y;
@@ -219,11 +258,12 @@ let distance = distanceBetween( { x: 41.12, y: -72.22 },
 
 > This type of object -- with fields but no methods -- is sometimes called a `struct`.
 
-# Refactoring: Introduce Class
+# Refactoring: Extract Class
 
 * a class is for sharing methods between all related object instances
 
 ```
+@@@javascript
 class Point {
     distanceFrom(otherPoint) {
         let deltaLat = otherPoint.x - this.x;
@@ -249,6 +289,7 @@ let distance = point1.distanceFrom(point2)
 * streamlines your initialization code
 
 ```
+@@@javascript
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -266,11 +307,16 @@ let distance = point1.distanceFrom(point2)
 
 a "code smell" means "something might be wrong here"
 
-* [Code Smells](https://sourcemaking.com/refactoring/smells)
-
+* Long Method
+* Long Line
+* Nested `if`s
+* Duplicated code
+  * can be cured by Extract Method and Introduce Parameter
 * *[Feature Envy](https://sourcemaking.com/refactoring/smells/feature-envy)*
   * when a method accesses the data of another object more than its own
   * can be cured by **Refactoring: Move Method**
+
+more at [Code Smells](https://sourcemaking.com/refactoring/smells)
 
 # Some Guidelines
 

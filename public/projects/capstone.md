@@ -53,7 +53,7 @@ Deadline for proposal for Cohort One: Tuesday, November 27
 
 # Step 3: Inception
 
-Schedule a time during the first week in August for a project inception. Invite all team members and stakeholders (the project sponsor if you have one) and your coach. Allow at least 4 hours, intending to come out of the meeting with some rough wireframes, a story grid, a system architecture, and a work plan for each of four weeks. If you need to do more planning, schedule another 2-hour planning meeting for later in the week.
+Schedule a time for a project inception. Invite all team members and stakeholders (the project sponsor if you have one) and your coach. Allow at least 4 hours, intending to come out of the meeting with some rough wireframes, a story grid, a system architecture, and a work plan for each of four weeks. If you need to do more planning, schedule another 2-hour planning meeting for later in the week.
 
 # Step 4: Iteration
 
