@@ -324,7 +324,28 @@ more at [Code Smells](https://sourcemaking.com/refactoring/smells)
 * Short Methods
 * Meaningful Names
 * Fewer Dots-in-a-row
-  * (but don't confuse *method chaining* (often good) with *feature envy* (usually bad))
+  * (but see next slide)
+
+# Dots In A Row
+
+don't confuse *method chaining* (often good) with *feature envy* (usually bad))
+
+## Method Chaining
+
+```
+string.split(' ').map((s)=>s.toUpperCase()).join(' ')
+```
+
+## Feature Envy
+
+```
+course.students[0].phone.sendText('hi')
+```
+
+| style | dots | collaborators |
+|---|---|---|
+| method chaining | 4 | **2** (String, Array) |
+| feature envy | 3 | **5** (Course, Array, Student, Phone, String)
 
 # The Book
 
