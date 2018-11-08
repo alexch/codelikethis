@@ -17,7 +17,7 @@ Here are some constraints for you when you're thinking of an appropriate project
   * the source code must be published under an acceptable *open source license* (e.g. MIT or ISC) and must not include any confidential or proprietary intellectual property... see below for more details.
   * if you are a *current bootcamp student* and want to sponsor a project of your own, you may *not* be a coder on that team. You will be the client, and learn about how to communicate your ideas and priorities to a team of developers who have their own ideas about how things should be implemented.
 
-# Step 1: Discovery
+## Step 1: Discovery
 
 Spend this time exploring ideas and building a team. 
 
@@ -35,7 +35,7 @@ Do you want to work with a client (or "project sponsor")? Here are some worthy p
 
 * https://github.com/openopps/openopps-platform - Open Opportunities is creating a network of federal employees that will lead to a more effective, efficient, responsive government by sharing skills and collaborating on projects that support the mission of an agency or the government as a whole.
 
-# Step 2: Proposal
+## Step 2: Proposal
 
 Write up a brief (500 words or less) project proposal. Include
 
@@ -51,11 +51,11 @@ If your project is sponsorless (i.e. your own idea), your coach (or maybe anothe
 
 Deadline for proposal for Cohort One: Tuesday, November 27
 
-# Step 3: Inception
+## Step 3: Inception
 
 Schedule a time for a project inception. Invite all team members and stakeholders (the project sponsor if you have one) and your coach. Allow at least 4 hours, intending to come out of the meeting with some rough wireframes, a story grid, a system architecture, and a work plan for each of four weeks. If you need to do more planning, schedule another 2-hour planning meeting for later in the week.
 
-# Step 4: Iteration
+## Step 4: Iteration
 
 During each of the four weeks, schedule the following:
 
@@ -65,9 +65,9 @@ During each of the four weeks, schedule the following:
  * Acceptance meeting / sponsor demo (weekly, or more frequently if possible) -- to get the client to sign off on the features, report bugs, and adjust priorities
  * In-class demo (show and tell!) -- we will set up Friday morning slots during weeks 2 and 3 for you to demo your app to the class; consider this a dress rehearsal for Hiring Partner Demo Day
 
-# FAQ
+## FAQ
 
-## What about licensing?
+### What about licensing?
 
 The baseline expectation is that this code is free or open source and the product has no legal encumbrances, so any of the students can use it as a portfolio piece or as a basis for future work. Any additional encumbrance -- e.g. that the idea is proprietary to the client so students agree not to launch a competing business, or that the data set is already under a license -- will need to be discussed on a case-by-case basis.
 
