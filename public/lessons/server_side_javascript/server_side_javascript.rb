@@ -22,7 +22,6 @@ class Track
     goal "how to streamline and codify your application with an API of its own"
 
     lesson name: "hello_node" do
-      topic name: "code-along"
       topic name: "node"
       topic name: "servers"
       topic name: "git"

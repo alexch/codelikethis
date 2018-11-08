@@ -80,6 +80,10 @@ class Track
       project name: "geo_vermonter"
     end
 
+    lesson name: "urls_and_javascript" do
+      topic name: "url"
+    end
+
     lesson name: "local_storage" do
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Storage"
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
