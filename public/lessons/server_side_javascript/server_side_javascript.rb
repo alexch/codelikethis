@@ -28,7 +28,15 @@ class Track
       topic name: "heroku"
     end
 
-    lesson name: "http" do
+    lesson name: "hello_express" do
+      topic name: "node"
+      topic name: "express"
+      topic name: "servers"
+      topic name: "git"
+      topic name: "heroku"
+    end
+
+    lesson name: "/www/http" do
       topic name: "http"
       topic name: "telnet"
       topic name: "node"

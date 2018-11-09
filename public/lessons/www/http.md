@@ -15,21 +15,21 @@
 
 HTTP is a protocol that allows clients to communicate with web servers, and is a primary underlying infrastructure of the Internet. The two most common HTTP methods are:
 
-* GET
-* POST
+* `GET`
+* `POST`
 
-When a URL is inputted, the browser sends a GET request to a web server. When a form is submitted on a website, a POST request is submitted, and the browser hands off the form data to be handled by the web server. 
+When a URL is inputted, the browser sends a `GET` request to a web server. When a form is submitted on a website, a `POST` request is submitted, and the browser hands off the form data to be handled by the web server. 
 
-# DNS - How it works!
+# DNS
 
-* DNS stands for Domain Name System
+* DNS stands for Domain Name Service
 * This is a standardized way for a browser to know **where** your website lives. 
 * Your browser communicates with a **nameserver**, which tells your browser the IP address of where the files for your website are located. 
 * Information on your nameservers are known as **DNS Records**. 
 
 ![DNS illustration](https://s.hswstatic.com/gif/dns-rev-1.gif "DNS Illustration")
 
-Remember, websites live at an **IP Address**. This is a string of numbers, (ex. 70.42.251.42). A URL is simply a translation that provides humans with an easy way to remember where a website lives. It is important to remember however, not all websites can be accessed by their IP address. This can be due to security, or other reasons. 
+Remember, websites live at an **IP Address**. This is a string of numbers, (ex. 70.42.251.42). A URL is simply a translation that provides humans with an easy way to remember where a website lives.
 
 # Other DNS Info
 
@@ -86,6 +86,7 @@ For now, we are going to focus on **HTML and CSS**. This is the most common code
   * request headers
   * response status line
   * response headers
+* still *stateless* but some headers (notably `Cookie:`) pass state back and forth
 
 # HTTP 1.0 protocol
 
