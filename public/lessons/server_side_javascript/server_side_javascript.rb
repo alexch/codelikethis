@@ -44,7 +44,12 @@ class Track
       topic name: "http-methods"
     end
 
-    lesson name: "serving_files", description: "codealong walkthrough, building a simple file server in NodeJS" do
+    lesson name: '/www/urls' do
+      topic name: "url"
+      topic name: "query-parameters"
+    end
+
+    lesson name: "serving_files", description: "building a simple file server in Express/NodeJS" do
       topic name: "require"
       topic name: "http"
       topic name: "servers"
@@ -55,7 +60,6 @@ class Track
       topic name: "html"
       topic name: "requests"
       topic name: "ports"
-      topic name: "request-response-cycle"
       topic name: "try-catch"
       topic name: "url"
       topic name: "path"
