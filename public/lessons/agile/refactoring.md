@@ -214,7 +214,7 @@ let durationInMinutes = 11 * hoursPerDay * minutesPerHour
 * to take literals and make them variables, so the function is more useful
 * to remove global variables -- pass them in as parameters instead
 * good followup to "extract method"
-* good when used with default parameters (ES2015)
+* good when used with [default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) (ES2015)
 
 ```
 @@@javascript
