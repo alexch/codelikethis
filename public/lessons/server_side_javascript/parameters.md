@@ -77,7 +77,7 @@ POST requests
 
 # Parsing Parameters
 
-Your app server framework might convert query or post params into an object for you, but it's not hard to do yourself.
+Your app server framework (Express) might convert query or post params into an object for you, but it's not hard to do yourself.
 
 Here's a small function that parses any string in "query parameter" (aka "URI Encoded") format, either from the `?` part of the URL, or the body of a request:
 
@@ -94,3 +94,5 @@ function decodeParams(query) {
   return params;
 }
 ```
+
+(Note that the above function assumes each parameter can only have one value; in HTTP it's possible for the client to pass several parameters with the same name, causing headaches for server API designers.)

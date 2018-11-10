@@ -69,28 +69,20 @@ class Track
     lesson name: "/www/forms" do
       topic name: "forms"
       topic name: "html"
+      topic name: "http"
       topic name: "event-handlers"
       topic name: "get-request"
       topic name: "post-request"
     end
 
-    lesson name: "forms_and_servers" do 
-      topic name: "html"
-      topic name: "requests"
-      topic name: "event-handlers"
-      topic name: "http"
-      topic name: "requests"
-      topic name: "http-methods"
-      topic name: "servers"
-      topic name: "post-request"
-    end
-
-    lesson name: "parameters" do 
+    lesson name: "parameters" do
       topic name: "get-request"
       topic name: "post-request"
       topic name: "http-methods"
       topic name: "query-parameters"
     end
+
+    ####
 
     lesson name: "routing", description: "codealong walkthrough, building a blog server by adding routes and form submission to our core file server" do 
       topic name: "routing"
