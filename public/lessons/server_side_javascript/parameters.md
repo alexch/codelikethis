@@ -11,14 +11,17 @@ in HTTP
 * in a POST request in JSON format
   * (inside the request body)
 
-e.g. when viewing a single file on github: 
+# For Example...
+
+Let's imagine four different ways to send the same information to GitHub.com:
+
 ```
 {
-  user: 'BurlingtonCodeAcademy',
-  repo: 'til',
-  section: 'blob',
-  branch: 'master',
-  filepath: '/README.md'
+  user: "BurlingtonCodeAcademy",
+  repo: "til",
+  section: "blob",
+  branch: "master",
+  filepath: "/README.md"
 }
 ```
 
@@ -27,7 +30,6 @@ e.g. when viewing a single file on github:
 `http://github.com/BurlingtonCodeAcademy/til/blob/master/README.md`
 
 path parameters are part of REST, which basically says "your URL is part of your UI; treat it like the address of a resource, not as a call to a function"
-
 
 # Query Parameters
 
@@ -39,6 +41,7 @@ path parameters are part of REST, which basically says "your URL is part of your
 # Post Parameters
 
 POST params:
+
 ```
 POST /file HTTP/1.1
 Host: localhost
