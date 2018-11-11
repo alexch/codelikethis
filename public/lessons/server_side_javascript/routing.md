@@ -23,6 +23,12 @@ they also give you an *interface* that will make **your** calling code easier to
 
 as well as a shared context of documentation and tutorials so other coders don't have as much to learn before understanding your code
 
+# Express Routing
+
+* supports handling all HTTP methods with the pattern `app.method(path, handler)`
+
+* whenever an incoming request of the given *method* matches the *path* parameter, Express will invoke the *handler* callback function
+
 # Express Routing Example
 
 In the [Hello, Express](./hello_express) lesson we saw the following route:
@@ -41,32 +47,36 @@ This means,
 | `response.send` | send a response |
 | `('Hello, World')` | with this string as its body | 
 
-# Express Routing Details
-
-* supports handling all HTTP methods with the pattern `app.METHOD(PATH, HANDLER)`
-
-* whenever an incoming request matches the *path* parameter, Express will invoke the *handler* callback function
+# Express Route Matching Rules
 
 * paths can include special characters that are *like* regular expressions
 
   * `?` "zero or one of these"
   * `+` "one of more of these"
   * `*` "zero or more of these"
-  * `()` "this is a single thing"
+  * `()` "these go together"
 
 * ...but are *not* regular expressions
 
   * `.` and `-` are interpreted literally
   * `:` means "this is a parameter" (see next slide)
-  
+  * `*` means "zero or more characters" (which is `.*` in real regexes)
+
 * ...or you can use *actual* regular expressions
 
         app.get(/.*fly$/, function (request, response) {
             response.send('I am some sort of fly')
         })
 
+* for more info, see the full [Express Routing Guide](https://expressjs.com/en/guide/routing.html) on their web site
 
-* full [Express Routing Guide](https://expressjs.com/en/guide/routing.html) on their web site
+# Parameters in Express
+
+Express provides several different "parameters" objects:
+
+* `req.params` for *path parameters* (aka *route parameters*) signified with a `:` in the route matcher
+* `req.query` for *query parameters* which appear after the `?` in the URL
+* `req.body` for *post parameters* which appear inside the request body
 
 # Path Parameters in Express
 
@@ -74,7 +84,7 @@ The special character `:` means "this is a [path parameter](./parameters#path_pa
 
 Express will grab the *value* from the path itself, and put it into the `request.params` object for you to use later
 
-# LAB: Hello, Friend!
+# LAB: Hello, Path Friend!
 
 Change your "Hello, Express" server to have the following route:
 
@@ -84,204 +94,43 @@ app.get('/hello/:friend', (request, response)=> {
 });
 ```
 
-Prove that it works by visiting <http://localhost:5000/hello/Gandalf> (use or your own name)
+Prove that it works by visiting <http://localhost:5000/hello/Gandalf> (or use your own name)
 
+# Query Parameters in Express
 
-# Blog Codealong
+For query parameters like `?season=winter&weather=cold`
 
-todo: separate lesson
+Express will grab the *name* and *value* from the query string, and put it into the `request.query` object for you to use later
 
-# Let's build a blog in Express!
+# LAB: Hello, Query Friend!
 
-Follow along here: <https://github.com/BurlingtonCodeAcademy/simple-server/blob/master/simple_blog.js>
-
-Endpoints:
-
-* `/` - home page
-* `/articles` - list of all articles
-* `/articles/1` - article with id 1
-
-* `/articles.json` - list of all articles in JSON format
-* `/articles/1.json` - article with id 1 in JSON format
-
-We haven't learned about databases yet, which is fine:
-
-> the filesystem is a database 😮
-
-
-# Home page is just a file
-
-Our existing server code will handle a default home page; if we name it `index.html` then we're good.
-
-# Article page is a file plus an API call
-
-Traditionally, a web server generates HTML "on the fly" in response to a web request.
-
-A more modern app will send *static* HTML/CSS/JS, then *that* code will run on the client and make a *new* request for JSON data to fill itself in.
-
-# Blog Client
-
-### article.html 
-
-```html
-@@@html
-<div class='article'>
-  <h2 id='title'></h2>
-  <i>by <span id='author'></span></i>
-  <p id='body'></p>
-</div>
-```
-
-### article.js
+Now change your "Hello, Express" server to have the following route:
 
 ```
-let articleId = document.location.pathname.split('/').splice(-1);
-
-fetch('/articles/' + articleId + '.json')
-  .then((response) => response.json())
-  .then(fillArticle)
-
-function fillArticle(article) {
-  document.getElementById('title').textContent = article.title;
-  document.getElementById('author').textContent = article.author;
-  document.getElementById('body').textContent = article.body;
-}
+app.get('/hello', (request, response)=> {
+    response.send('Hello, ' + request.query.friend + '!')
+});
 ```
 
-# Blog Server
+Prove that it works by visiting <http://localhost:5000/hello?friend=Gandalf> (or use your own name)
 
-In addition to serving *static files*, the server needs to respond to some routes *dynamically*.
+# Body Parameters in Express
 
-For example, `/articles/1.json` will be served statically, but `/articles.json` will be created on the fly based on the contents of the `public/articles` directory.
+Since request bodies can appear in several different formats, you need to use the correct *middleware* to extract them.
 
-```
-@@@js
-function allArticles() {
-  let articlesDir = $path.join(publicDir, "articles");
-  return fs.readdirSync(articlesDir)
-    .filter(file => file.endsWith('.json'))
-    .map(file => JSON.parse(fs.readFileSync($path.join(articlesDir, file))));
-}
+* [`express.json`](https://expressjs.com/en/4x/api.html#express.json) parses incoming requests with JSON payloads
+* [`express.urlencoded`](https://expressjs.com/en/4x/api.html#express.urlencoded) parses incoming requests with URL-encoded payloads
 
-function sendArticleList() {
-  data = JSON.stringify(allArticles());
-  contentType = 'text/json';
-}
-```
-
-* There's probably a more efficient way to read all the files, using `readFile` instead of `readFileSync`.
-* `$path.join` creates a path with OS-specific slash symbols (forward slash on Unix, backslash on Windows)
-
-# URL Path Parameters
-
-One thing a routing system can do is treat the path not as a series of *directories and files*, but as a series of *named parameters*
-
-* `/articles/1.json` becomes `{resource: 'articles', id: '1', format: 'json'}`
-
-```
-@@@js
-function parsePath(path) {
-  let format;
-  if (path.endsWith('.json')) {
-    path = path.substring(0, path.length - 5);
-    format = 'json';
-  }
-  let pathParts = path.slice(1).split('/');
-  let action = pathParts.shift();
-  let id = pathParts.shift();
-  let pathParams = { action: action, id: id, format: format };
-  return pathParams;
-}
-```
-
-(also scroll through simple_blog.js looking for interesting bits)
-
-# URL Query Parameters
-
-Path parameters are all the rage, but some scenarios need traditional `?`-style query parameters. 
-
-For instance, an actual search through the blog -- by keyword or by date or by author -- will be best expressed as a series of `name=value` pairs at the end of the URL.
-
-`/search?author=Julius+Caesar` would become `{author: "Julius Caesar"}`
-
-# URL Query Parameters in NodeJS
-
-NodeJS has a `URL` object that wraps `request.url` and exposes fields for all the various URL parts. It's got some weird names for those parts, though, so you may want to assign them to better-named variables.
-
-Instantiate it like this:
-
-```
-let url = new URL(request.url, 'http://localhost:5000/');
-let path = url.pathname;
-let queryParams = url.searchParams;
-```
-
-Use it like this:
-
-```
-function sendSearchResults() {
-  let results = allArticles().filter((article) => {
-    if (queryParams.get('author')) {
-      return article.author.toLowerCase() === 
-        queryParams.get('author').toLowerCase();
-    }
-  });
-  data = JSON.stringify(results);
-  contentType = 'text/json';
-}
-```
-# Parsing Parameters
-
-Your app server framework might convert query or post params into an object for you, but it's not hard to do yourself:
+Example (from [the express guide](http://expressjs.com/en/resources/middleware/body-parser.html)):
 
 ```javascript
-@@@javascript
-function decodeParams(query) {
-  let fields = query.split('&');
-  let params = {};
-  for (let field of fields) {
-    let [ name, value ] = field.split('=');
-    value = value.replace(/\+/g,' ');
-    params[name] = decodeURIComponent(value);
-  }
-  return params;
-}
+// POST /login gets urlencoded bodies
+app.post('/login', express.urlencoded(), function (req, res) {
+  res.send('welcome, ' + req.body.username)
+})
+
+// POST /api/users gets JSON bodies
+app.post('/api/users', express.json(), function (req, res) {
+  // create user in req.body
+})
 ```
-
-# Search
-
-New endpoints:
-
- * `/search.json` returns JSON results of a search
- * `/search` returns `search.html`
-    * which calls `/search.json` on page load to perform the actual search
-
-The parameters to search are 
-
-| Name | Type | Description | 
-|---|---|---|
-| `author` | string | search for documents whose `author` contains the value |
-
-That's it for now! (We can add other fields later if we want.) 
-
-# Handling Search
-
-Since our database is so small, we will search through all documents in RAM. 
-
-```
-@@@javascript
-  function sendSearchResults() {
-    let results = allArticles().filter((article) => {
-      if (queryParams.get('author')) {
-        let articleAuthor = article.author.toLowerCase();
-        let targetAuthor = queryParams.get('author').toLowerCase();
-        return articleAuthor.includes(targetAuthor);
-      }
-    });
-    let data = JSON.stringify(results);
-    let contentType = 'text/json';
-    finishResponse(contentType, data);
-  }
-```
-See? Who needs a database? :-)
-

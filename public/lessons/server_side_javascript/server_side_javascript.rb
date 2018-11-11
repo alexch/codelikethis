@@ -96,7 +96,8 @@ class Track
       topic name: "http-methods"
     end
 
-    lesson name: "blog", description: "codealong walkthrough, building a blog server by adding routes and form submission to the core Express server" do
+    lesson name: "blog",
+           description: "codealong walkthrough, building a blog server by adding routes and form submission to the core Express server" do
       topic name: "servers"
       topic name: "state"
       topic name: "saving-state"
@@ -116,53 +117,53 @@ class Track
     # lesson name: "state",
     #        description: "An overview of state in web applications" #definitions: transient vs persistent, local vs remote, etc. .. plus a definition/diagram of each of the following half-dozen state types
 
-    lesson name: "cookies", display_name: "State: Cookies" do
-      topic name: "cookies"
-      topic name: "requests"
-      topic name: "get-requests"
-      topic name: "state"
-      topic name: "fetch"
-      topic name: "cookie-headers"
-      topic name: "client"
-      topic name: "client-side-javascript"
-
-    end
-
-    lesson name: "saving_state_in_files", display_name: "State: Files" do
-      topic name: "state"
-      topic name: "saving-state"
-      topic name: "apis"
-      topic name: "node"
-      topic name: "parameters"
-      topic name: "post-request"
-    end
-
-    lesson name: "client_vs_server_js"
-
-    lesson name: "/db/overview", display_name: "State: Databases",
-           description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."
-
-    lesson name: "sessions", display_name: "State: Sessions" do
-      topic name: 'sessions'
-      topic name: 'state'
-    end
-
-    lesson name: "sessions_with_mongo"
-
-
-    lesson name: "uploads", display_name: "State: Uploads" # forms, server store, cloud store, plugins  -- optional?
-
-    lesson name: "express", description: "Express is a web framework for Node.js, adding features like middleware and routing to the barebones Node.js"
-
-    lesson name: "security_overview" # id vs auth, login/logout, XSS etc?
-    lesson name: "login_and_logout" # passport.js? http://www.passportjs.org/ https://github.com/jaredhanson/passport-local
-    lesson name: "oauth"
-
-    lesson name: "calling_apis"
-    lesson name: "bots" do # todo: project: build a Slack Bot
-      link href: "https://medium.com/glitch/when-good-bots-go-bad-4007a2b2f41e"
-    end
-    lesson name: "building_apis"
+    # lesson name: "cookies", display_name: "State: Cookies" do
+    #   topic name: "cookies"
+    #   topic name: "requests"
+    #   topic name: "get-requests"
+    #   topic name: "state"
+    #   topic name: "fetch"
+    #   topic name: "cookie-headers"
+    #   topic name: "client"
+    #   topic name: "client-side-javascript"
+    #
+    # end
+    #
+    # lesson name: "saving_state_in_files", display_name: "State: Files" do
+    #   topic name: "state"
+    #   topic name: "saving-state"
+    #   topic name: "apis"
+    #   topic name: "node"
+    #   topic name: "parameters"
+    #   topic name: "post-request"
+    # end
+    #
+    # lesson name: "client_vs_server_js"
+    #
+    # lesson name: "/db/overview", display_name: "State: Databases",
+    #        description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."
+    #
+    # lesson name: "sessions", display_name: "State: Sessions" do
+    #   topic name: 'sessions'
+    #   topic name: 'state'
+    # end
+    #
+    # lesson name: "sessions_with_mongo"
+    #
+    #
+    # lesson name: "uploads", display_name: "State: Uploads" # forms, server store, cloud store, plugins  -- optional?
+    #
+    # lesson name: "express", description: "Express is a web framework for Node.js, adding features like middleware and routing to the barebones Node.js"
+    #
+    # lesson name: "security_overview" # id vs auth, login/logout, XSS etc?
+    # lesson name: "login_and_logout" # passport.js? http://www.passportjs.org/ https://github.com/jaredhanson/passport-local
+    # lesson name: "oauth"
+    #
+    # lesson name: "calling_apis"
+    # lesson name: "bots" do # todo: project: build a Slack Bot
+    #   link href: "https://medium.com/glitch/when-good-bots-go-bad-4007a2b2f41e"
+    # end
+    # lesson name: "building_apis"
 
   end
 end
