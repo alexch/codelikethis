@@ -154,13 +154,13 @@ Add the following code to the server:
 
 ### app.js
 
-```
+```javascript
 function articleFilePath(articleId) {
   return $path.join(articlesDir, articleId + ".json");
 }
 
 app.get('/articles/:articleId', (request, response) => {
-  let filePath = articleFilePath(articleId)
+  let filePath = articleFilePath(articleId);
   if (fs.existsSync(filePath)) {
     let htmlFile = $path.join(publicDir, "article.html");
     response.sendFile(htmlFile);
@@ -168,12 +168,12 @@ app.get('/articles/:articleId', (request, response) => {
   else {
     response.sendError(404, `Article ${params.id} not found`);
   }
-}
+});
 
 app.get('/articles/:articleId.json', (request, response) => {
   let filePath = articleFilePath(request.params.articleId);
   response.sendFile(filePath);
-})
+});
 ```
 
 > Now try it out! Visit the "Featured Article" from the home page and see if it works.
@@ -182,7 +182,7 @@ app.get('/articles/:articleId.json', (request, response) => {
 
 ### public/articles.html
 
-``` javascript
+``` html
 <h2>Articles:</h2>
 <div id='articles'>
   <ul>
@@ -315,14 +315,12 @@ attempt to create new articles simultaneously!
 
 ```javascript
 function createArticle(articleId, params, response) {
-  let articles = allArticles();
-
   let article = {
     id: articleId,
     author: params.author.trim(),
     title: params.title.trim(),
     body: params.body.trim()
-  }
+  };
 
   let articleDataFile = $path.join(articlesDir, articleId + ".json");
   console.log('Writing article: ' + JSON.stringify(article));
@@ -332,19 +330,19 @@ function createArticle(articleId, params, response) {
     } else {
       response.redirect('/articles');
     }
-  })
+  });
 }
 ```
 
 ## Notes:
 
-* it is tempting to pass "params" directly in to the database, but it's best to have a separate processing step
+* it is tempting to pass "params" directly in to the database layer from the route, but it's best to have a separate processing step that lets your application handle security and data integrity issues, including:
 
-* this lets your application handle security and data integrity issues, including:
-
-  * normalize
-  * validate
-  * anonymize
+  * escaping
+  * normalizing
+  * validating
+  * anonymizing
+  * logging
 
 # Search
 
@@ -372,19 +370,17 @@ That's it for now! (We can add other fields later if we want.)
 </form>
 
 <h2>Search Results:</h2>
-<div id='articles'>
-  <ul>
-    
-  </ul>
-</div>
+<ul id='results'>
+  Loading...
+</ul>
 
 <script>
 fetch('/search.json' + document.location.search)
   .then((response) => response.json())
-  .then(fillArticles)
+  .then(fillArticles);
 
 function fillArticles(articles) {
-  let list = document.querySelector('#articles > ul');
+  let list = document.querySelector('#results > ul');
 
   if (articles.length === 0) {
     list.innerHTML = 'none';
@@ -392,9 +388,9 @@ function fillArticles(articles) {
   
   else for (let article of articles) {
     let item = document.createElement('li');
-    let html = '<a href="/articles/' + article.id + '">' + article.title + '</a>'
+    let html = '<a href="/articles/' + article.id + '">' + article.title + '</a>';
     if (article.author) {
-      html += ' (by ' + article.author + ')'
+      html += ' (by ' + article.author + ')';
     }
     item.innerHTML = html;
     list.appendChild(item);
@@ -404,9 +400,13 @@ function fillArticles(articles) {
 </script>
 ```
 
+## Notes:
+
+This code depends on `document.location.search` (the `?` portion of the URL) still containing the parameters that were passed from the form when the page was fetched. 
+
 # Search (server-side)
 
-Since our database is so small, we will load all articles into memory and search through them using a JavaScript iterator. 
+Since our database is so small, we will load all articles into memory and search through them using a JavaScript iterator (`filter`).
 
 ```
 @@@javascript
