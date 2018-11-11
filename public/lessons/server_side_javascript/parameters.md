@@ -29,7 +29,11 @@ Let's imagine four different ways to send the same information to GitHub.com:
 
 `http://github.com/BurlingtonCodeAcademy/til/blob/master/README.md`
 
-path parameters are part of REST, which basically says "your URL is part of your UI; treat it like the address of a resource, not as a call to a function"
+path parameters are great for making *legible URLs*
+
+your URL is part of your user interface; treat it like the address of a resource, not as a call to a function
+
+(this concept is sometimes called "REST")
 
 # Query Parameters
 
@@ -80,20 +84,26 @@ POST requests
 
 # Parsing Parameters
 
-Your app server framework (Express) might convert query or post params into an object for you, but it's not hard to do yourself.
+Your app server framework (Express) will convert query or post params into an object for you, but it's not hard to do yourself.
 
 Here's a small function that parses any string in "query parameter" (aka "URI Encoded") format, either from the `?` part of the URL, or the body of a request:
 
 ```javascript
 @@@javascript
 function decodeParams(query) {
+  if (query.startsWith('?')) {
+    query = query.slice(1);
+  }
+
   let fields = query.split('&');
+
   let params = {};
   for (let field of fields) {
     let [ name, value ] = field.split('=');
-    value = value.replace(/\+/g,' ');
+    value = value.replace(/\+/g, ' ');
     params[name] = decodeURIComponent(value);
   }
+
   return params;
 }
 ```

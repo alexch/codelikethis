@@ -1,3 +1,7 @@
+# HTTP
+
+Let's lift the hood and check out the engine that makes the World Wide Web run.
+
 # Browsers - what do they do?
 
 * A web browser is a computer application that reads files. When entering a **domain** (ex. https://www.facebook.com) into the URL bar in a browser, the browser requests information in the form of a file associated with the URL input. 
@@ -29,11 +33,11 @@ When a URL is inputted, the browser sends a `GET` request to a web server. When 
 
 ![DNS illustration](https://s.hswstatic.com/gif/dns-rev-1.gif "DNS Illustration")
 
-Remember, websites live at an **IP Address**. This is a string of numbers, (ex. 70.42.251.42). A URL is simply a translation that provides humans with an easy way to remember where a website lives.
+Remember, websites live at an **IP Address**. This is a string of numbers, (ex. 70.42.251.42) that locates a specific computer (or "host") on the Internet. A domain name is simply a translation that provides humans with an easy way to remember where a website lives.
 
 # Other DNS Info
 
-Your nameservers may also contain other information about your domain, such as where your email server lives. For example, if I try to send an email to mark@facebook.com, your email server is going to communicate with the nameserver for facebook.com and say, "Where does this email server live?". 
+Your nameservers may also contain other information about your domain, such as where your email server lives. For example, if I try to send an email to mark@facebook.com, your email server is going to communicate with the nameserver for `facebook.com` and say, "Where does this email server live?". 
 
 # HTTP: File Transfer for the Web
 
@@ -64,23 +68,17 @@ The above languages run *inside* the web browser (aka "the client side"). On the
 
 For now, we are going to focus on **HTML and CSS**. This is the most common codebase used for creating webpages, and what is used for virtually all websites. 
 
-# HTTP 0.9 (1991)
+# HTTP 0.9 Goals (1991)
 
 * **very** simple protocol, geared towards ease of use and implementation
 * **100%** ASCII characters in and out
 * Human readability was a goal
 * **stateless* meaning "one request, one response, and close"
 
-# HTTP 0.9 protocol
-
-| Step                | Client                    | Server            |
-|---------------------|---------------------------|-------------------|
-| open connection     | `telnet example.com 80`   |                   |
-| request a resource  | `GET /index.html` &#9166; |                   |
-| return the resource |                           | `<html><body>...` |
-
 # HTTP 1.0 (1993-1996)
 
+* developed *ad hoc* as the early WWW exploded
+  * many early decisions were odd, but we are now stuck with them
 * same basic idea as HTTP 0.9, but with
   * a version identifier
   * request headers

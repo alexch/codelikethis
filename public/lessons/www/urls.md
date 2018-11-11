@@ -68,7 +68,10 @@ the query is `?heart`
 
 Query Parameters use the same URL slot as normal queries, but use a particular format to encode multiple parameters into a single string
 
-*inside* the query string, URLs use *delimiters* are `&` to separate parameters, and `=` to separate individual parameter names from values
+*Inside* the query string, URLs use *delimiters*:
+
+  * `&` to separate parameters from each other 
+  * `=` to separate individual parameter names from values
 
 in `http://musical-notes.com/bands/search?category=folk&date=1977`
 
