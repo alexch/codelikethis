@@ -33,7 +33,14 @@ path parameters are great for making *legible URLs*
 
 your URL is part of your user interface; treat it like the address of a resource, not as a call to a function
 
-(this concept is sometimes called "REST")
+
+# REST area
+
+The concept of "path parameters" is central to an idea called REST.
+
+It argues that people designing web applications should consider their apps URLs to be an essential part of their app's design and functionality, and that those URL paths should follow a convention that exposes parts of the app as *resources* that can be identified and interacted with individually using a common set of *methods* (that happen to be more or less the same as the HTTP methods).
+
+(There is a lot more to learn about REST but at least now you know roughly what it means.) 
 
 # Query Parameters
 

@@ -82,12 +82,22 @@ class Track
       topic name: "query-parameters"
     end
 
-    ####
 
-    lesson name: "routing", description: "codealong walkthrough, building a blog server by adding routes and form submission to our core file server" do 
+    lesson name: "routing" do
       topic name: "routing"
       topic name: "servers"
-      topic name: "if-else"
+      topic name: "state"
+      topic name: "saving-state"
+      topic name: "url"
+      topic name: "path-parameters"
+      topic name: "requests"
+      topic name: "parsing"
+      topic name: "http"
+      topic name: "http-methods"
+    end
+
+    lesson name: "blog", description: "codealong walkthrough, building a blog server by adding routes and form submission to the core Express server" do
+      topic name: "servers"
       topic name: "state"
       topic name: "saving-state"
       topic name: "apis"
@@ -99,7 +109,6 @@ class Track
       topic name: "query-parameters"
       topic name: "requests"
       topic name: "request-response-cycle"
-      topic name: "parsing"
       topic name: "http"
       topic name: "http-methods"
     end
