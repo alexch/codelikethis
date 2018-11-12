@@ -369,9 +369,10 @@ That's it for now! (We can add other fields later if we want.)
 </form>
 
 <h2>Search Results:</h2>
-<ul id='results'>
-  Loading...
-</ul>
+<div id='results'>
+    <ul>
+    </ul>
+</div>
 
 <script>
 fetch('/search.json' + document.location.search)
