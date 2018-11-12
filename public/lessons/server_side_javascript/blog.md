@@ -157,20 +157,20 @@ function articleFilePath(articleId) {
   return $path.join(articlesDir, articleId + ".json");
 }
 
+app.get('/articles/:articleId.json', (request, response) => {
+  let filePath = articleFilePath(request.params.articleId);
+  response.sendFile(filePath);
+});
+
 app.get('/articles/:articleId', (request, response) => {
-  let filePath = articleFilePath(articleId);
+  let filePath = articleFilePath(request.params.articleId);
   if (fs.existsSync(filePath)) {
     let htmlFile = $path.join(publicDir, "article.html");
     response.sendFile(htmlFile);
   }
   else {
-    response.sendError(404, `Article ${params.id} not found`);
+    response.status(404).send(`Article ${request.params.articleId} not found`);
   }
-});
-
-app.get('/articles/:articleId.json', (request, response) => {
-  let filePath = articleFilePath(request.params.articleId);
-  response.sendFile(filePath);
 });
 ```
 
