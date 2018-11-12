@@ -9,7 +9,6 @@ Components need:
   - Bootstrap CSS, jQuery, Popper.js, Bootstrap.js
 
 ```html
-@@@html
 
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -26,7 +25,6 @@ Components need:
 * Navigations get much more in depth with various classes, controls, and styles. For more information, visit: https://getbootstrap.com/docs/4.0/components/navbar/
 
 ```html
-@@@html
 <nav class="nav nav-pills nav-fill">
   <a class="nav-item nav-link active" href="#">Active</a>
   <a class="nav-item nav-link" href="#">Link</a>
@@ -59,7 +57,6 @@ Components need:
 * Note that the `alert` is in addition to `alert-primary`
 
 ```html
-@@@html
 <div class="alert alert-primary" role="alert">
   This is a primary alert—check it out!
 </div>
@@ -83,7 +80,6 @@ Components need:
 * Similarly, buttons can be added with the same colors. The classes for buttons are similar to the alert classes for continuity. The following code will add a button to your web page:
 
 ```html
-@@@html
 <button type="button" class="btn btn-primary">Primary</button>
 ```
 
@@ -101,7 +97,6 @@ Components need:
 * You can also modify the class so the button is 'hollow', or rather, has a transparent background, with a colored border and text. This is done simply by changing `btn-primary` to `btn-outline-primary`.
 
 ```html
-@@@html
 <button type="button" class="btn btn-outline-primary">Primary</button>
 ```
 
@@ -152,7 +147,6 @@ Components need:
 * The jumbotron component adds a hero image to the top of your website. This markup is relatively simple, but very useful, as a majority of websites today use hero images on their homepage.
 
 ```html
-@@@html
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Fluid jumbotron</h1>
@@ -175,7 +169,6 @@ Components need:
 
 
 ```html
-@@@html
 <div class="card">
   <div class="card-header">
     Featured
@@ -189,7 +182,6 @@ Components need:
 ```
 
 ```html
-@@@html
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>

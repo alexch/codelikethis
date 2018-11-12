@@ -23,7 +23,6 @@
 * Only React Class components can be Boundaries
 
 ```javascript
-@@@javascript
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +47,6 @@ class ErrorBoundary extends React.Component {
 ```
 
 ```javascript
-@@@javascript
 <ErrorBoundary>
   <MyWidget />
 </ErrorBoundary>
@@ -82,7 +80,6 @@ componentDidCatch(error, info) {
 * Use regular `try/catch` syntax
 
 ```javascript
-@@@javascript
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);

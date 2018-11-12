@@ -37,7 +37,6 @@ and you can use encapsulation on its own
 Here's a *factory method* that creates & returns a circle object:
 
 ```js
-@@@ js
 function createCircle(radius) {
     return {
         area: function() {
@@ -71,7 +70,6 @@ console.log("Radius is " + circle.radius); // THIS WILL FAIL
 *private variables* are encapsulated inside a closure:
 
 ```js
-@@@ js
 function createCircle(radius) {
     let diameter = radius * 2;
 
@@ -97,8 +95,7 @@ Note that only `area` and `circumference` are exposed via a pointer to the circl
 * It's essentially the same as the previous code, but combining two steps into one
 * It's called an **IIFE** = Immediately Invoked Function Expression
 
-```
-@@@js
+```js
 (function(){ })();
 ```
 
@@ -120,7 +117,6 @@ You then *preserve* that scope by returning a pointer to an object that you crea
 Example:
 
 ```js
-@@@ js
 let circle = (function(radius) {
     let diameter = radius * 2;
 

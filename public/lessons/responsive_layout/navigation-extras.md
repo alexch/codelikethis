@@ -34,7 +34,6 @@ Google: [Google Webmasters Site Map Guide](https://support.google.com/webmasters
 Located at `www.my-amazing-website.com/sitemap.txt`
 
 ```txt
-@@@txt
 
 http://www.my-amazing-website.com/
 http://www.my-amazing-website.com/index.html
@@ -49,7 +48,6 @@ http://www.my-amazing-website.com/portfolio.html
 Located at `www.my-amazing-website.com/sitemap.xml`
 
 ```xml
-@@@xml
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset

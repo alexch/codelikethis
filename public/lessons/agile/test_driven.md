@@ -298,24 +298,26 @@ Quite a lot of overlap, but worth keeping difference in mind
 
 Step one:
 
-    @@@javascript
-    function testSum() {
-      assertEquals(4, plus(3,1));
-    }
-    plus(x, y) {
-      return 4;
-    }
+```javascript
+function testSum() {
+  assertEquals(4, plus(3,1));
+}
+plus(x, y) {
+  return 4;
+}
+```
 
 Step two:
 
-    @@@javascript
-    function testSum() {
-      assertEquals(4, plus(3,1));
-      assertEquals(5, plus(3,2));
-    }
-    function plus(x, y) {
-      return x + y;
-    }
+```javascript
+function testSum() {
+  assertEquals(4, plus(3,1));
+  assertEquals(5, plus(3,2));
+}
+function plus(x, y) {
+  return x + y;
+}
+```
 
 # Full Range Testing
 
@@ -361,8 +363,7 @@ nested "describe" blocks can help too...(see later slide)
 
 # Nested Describe Blocks
 
-```
-@@@javascript
+```javascript
 describe('Set', ()=> {
   let set;
   describe('when first created', ()=> {
@@ -441,12 +442,13 @@ vs.
 * Solution: Loop through a matrix of data in your test, call a "check" function on each row
 * In dynamic languages like Ruby and JavaScript you can loop *outside* a function definition, producing one actual test per iteration
 
-        @@@ruby
-        %w(a e i o u).each do |letter|
-          it "#{letter} is a vowel" do
-            assertTrue(letter.vowel?)
-          end
-        end
+```ruby
+%w(a e i o u).each do |letter|
+  it "#{letter} is a vowel" do
+    assertTrue(letter.vowel?)
+  end
+end
+```
 
 # Characterization Tests
 *  aka "Golden Data Tests"
@@ -457,23 +459,25 @@ vs.
 
 # How to Test Exceptions?
 
-    @@@java
-    public void testUnknownCountry() {
-      try {
-        currencyConverter.getRate("Snozistan");
-        fail("Should have thrown an exception for unknown country");
-      } catch (UnknownCountryException e) {
-        // ok
-      }
-    }
+```java
+public void testUnknownCountry() {
+  try {
+    currencyConverter.getRate("Snozistan");
+    fail("Should have thrown an exception for unknown country");
+  } catch (UnknownCountryException e) {
+    // ok
+  }
+}
+```
 
 The empty `catch` block is fine here, since here an exception is a success, not a failure to be handled.
 
 Jasmine has a built-in way to test exceptions:
 
-    @@@javascript
-    expect( function(){ parser.parse(bogus); } )
-        .toThrow(new Error("Parsing is not possible"));
+```javascript
+expect( function(){ parser.parse(bogus); } )
+    .toThrow(new Error("Parsing is not possible"));
+```
 
 # Characterization Tests
 
@@ -602,8 +606,7 @@ A very useful test double
 
 In ruby:
 
-```
-@@@ruby
+```ruby
 @fake_time = Time.now
 Time.stub(:now) { @fake_time }
 ```
@@ -611,7 +614,6 @@ Time.stub(:now) { @fake_time }
 In Jasmine (built in, see [the docs](https://jasmine.github.io/2.0/introduction.html#section-Mocking_the_JavaScript_Timeout_Functions) for more details):
 
 ```javascript
-@@@javascript
   it("causes a timeout to be called synchronously", function() {
     let timerCallback = jasmine.createSpy("timerCallback");
 

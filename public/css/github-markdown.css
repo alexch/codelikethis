@@ -632,25 +632,26 @@
 
 .markdown-body .highlight pre,
 .markdown-body pre {
-  padding: 16px;
+  /*padding: 16px;*/
   overflow: auto;
-  font-size: 85%;
+  font-size: 95%;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  /*background-color: #f6f8fa;*/
   border-radius: 3px;
 }
 
 .markdown-body pre code {
-  display: inline;
+  /*display: inline;*/
   max-width: auto;
   padding: 0;
   margin: 0;
   overflow: visible;
   line-height: inherit;
   word-wrap: normal;
-  background-color: transparent;
+  /*background-color: transparent;*/
   border: 0;
 }
+
 
 .markdown-body .full-commit .btn-outline:not(:disabled):hover {
   color: #005cc5;

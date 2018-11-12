@@ -118,6 +118,7 @@ class App < Sinatra::Base
                                         # "/css/github-markdown.css",
                                         "/css/slides.css",
                                     ],
+                                    :theme => 'swiss',
     )
     deck_page.to_html
   end

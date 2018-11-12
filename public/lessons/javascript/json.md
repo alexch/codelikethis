@@ -21,7 +21,6 @@ JavaScript Object Notation
 # Example JSON object
 
 ```javascript
-@@@javascript
   {
     "Image": {
         "Width":  800,
@@ -46,7 +45,6 @@ whose IDs member is an array of numbers.
 # Example JSON array
 
 ```javascript
-@@@javascript
 [
     {
        "precision": "zip",
@@ -89,7 +87,6 @@ whose IDs member is an array of numbers.
 * it will look like this:
 
 ```javascript
-@@@javascript
 
 $ node
 > { "Image": { "Width":  800, "Height": 600, "Title":  "View from 15th Floor", "Thumbnail": { "Url":    "http://www.example.com/image/481989943", "Height": 125, "Width":  100 }, "Animated" : false, "IDs": [116, 943, 234, 38793] } }
@@ -112,22 +109,19 @@ $ node
 
 * Assume the following is in a string named `text` :
 
-```
-@@@ js
+```js
 let text = '{ "name": "Ada Lovelace", "id": 1, "title": "The Queen of Numbers" }'
 ```
 
 The following code converts the String data into a JavaScript object:
 
-```
-@@@ js
+```js
 let data = JSON.parse(text)
 ```
 
 And this converts a JavaScript object back into a String:
 
-```javascript
-@@@ js
+```js
 let newText = JSON.stringify(data)
 ```
 # Using POSTMAN

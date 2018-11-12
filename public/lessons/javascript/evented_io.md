@@ -159,10 +159,10 @@ This means that you need to explicitly call `process.exit()` in NodeJS programs.
 
 The following code will *keep saying hello* every time the user enters another line of text.
 
-    @@@ js
-    console.log("What is your name?");
-    process.stdin.on('data', (chunk) => {
-        let name = chunk.toString().trim();
-        console.log("Hello, " + name + "!");
-    });
-
+```js
+console.log("What is your name?");
+process.stdin.on('data', (chunk) => {
+    let name = chunk.toString().trim();
+    console.log("Hello, " + name + "!");
+});
+```

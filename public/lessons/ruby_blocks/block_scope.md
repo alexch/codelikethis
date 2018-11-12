@@ -7,37 +7,39 @@
 
 # Example of Block Scope
 
-    @@@ruby
-    def twice
-      yield
-      yield
-    end
+```ruby
+def twice
+  yield
+  yield
+end
 
-    def flatter
-      message = "you are great"
-      twice do
-        puts "#{message}!"
-      end
-    end
+def flatter
+  message = "you are great"
+  twice do
+    puts "#{message}!"
+  end
+end
+```
 
 `message` is in the scope of `flatter`, not `twice`
 
 # locals, function parameters, block parameters
 
-    @@@ruby
-    def twice_with word
-      yield word
-      yield word.upcase
-    end
+```ruby
+def twice_with word
+  yield word
+  yield word.upcase
+end
 
-    def flatter person
-      message = "you are great"
-      twice_with(person) do |name|
-        puts "#{message}, #{name}!"
-      end
-    end
-    
-    flatter "Alex"
+def flatter person
+  message = "you are great"
+  twice_with(person) do |name|
+    puts "#{message}, #{name}!"
+  end
+end
+
+flatter "Alex"
+```
 
 * `person` is a parameter of `flatter`
 * `message` is a local variable of `flatter`

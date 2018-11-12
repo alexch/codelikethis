@@ -38,9 +38,10 @@ Q: What is 1 plus 2 times 3?
 
 A: *It depends!*
 
-    @@@ js
-    (1 + 2) * 3 == 9
-    1 + (2 * 3) == 7
+```js
+(1 + 2) * 3 == 9
+1 + (2 * 3) == 7
+```
 
 # Parentheses Are Free
 
@@ -83,9 +84,10 @@ The clearest answer is that you, the programmer, explicitly declare which type y
 
 # Converting a Number to a String
 
-    @@@ js
-    (12).toString() // "12"
-   
+```js
+(12).toString() // "12"
+```
+
 # Converting a String to a Number
 
 There are [many ways to convert a string to a number in JavaScript](https://coderwall.com/p/5tlhmw/converting-strings-to-number-in-javascript-pitfalls).
@@ -127,7 +129,7 @@ Calling `Math.random()` returns a random *decimal* number between 0 and 1.
 
 If you want a random *integer* you can multiply that decimal by a range, like this: 
 
-``` js
+```js
 function randomInteger(min, max) {
   let range = max - min + 1; 
   return min + Math.floor(Math.random() * range);
@@ -164,8 +166,7 @@ Some rational numbers *cannot be represented* in floating-point, which means tha
 
 For instance, you can't go higher than about 9 quadrillion without glitching...
 
-```
-@@@ js
+```js
 > 2**53 == 2**53+1
 true
 ```

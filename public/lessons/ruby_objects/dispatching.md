@@ -30,15 +30,16 @@ Check out the `ancestors` class method
 
 Schematically:
 
-    @@@ ruby
-    class BasicObject
-    end
-    class Object < BasicObject
-      include Kernel
-    end
-    class String < Object
-      include Comparable
-    end
+```ruby
+class BasicObject
+end
+class Object < BasicObject
+  include Kernel
+end
+class String < Object
+  include Comparable
+end
+```
 
 
 <!SLIDE incremental>
@@ -63,19 +64,20 @@ Useful for "builder pattern" objects
 
 *Ref. WGR Section 4.3. The method_missing method*
 
-    @@@ ruby
-    class Thing
-      def method_missing method_name, *args
-        puts method_name.to_s.reverse
-        args.reverse
-      end
-    end
+```ruby
+class Thing
+  def method_missing method_name, *args
+    puts method_name.to_s.reverse
+    args.reverse
+  end
+end
 
-    t = Thing.new
-    t.whatever "hee", "haw"
+t = Thing.new
+t.whatever "hee", "haw"
 
-    revetahw
-    => ["haw", "hee"]
+revetahw
+=> ["haw", "hee"]
+```
 
 # `method_missing` + `super`
 
@@ -83,7 +85,7 @@ From inside `method_missing`, `super` looks up the chain for another `method_mis
 
 Allows chaining/overriding of `method_missing` calls, or fallback to `NoMethodError`
 
-
+```ruby
     def x.method_missing(name)
       if (name == :hee)
         puts "HAW!"
@@ -91,4 +93,5 @@ Allows chaining/overriding of `method_missing` calls, or fallback to `NoMethodEr
         super
       end
     end
+```
 

@@ -66,7 +66,7 @@ Objects are *things* that can be *described* and can *do* things, or...
 
 ```
 let dog = {color: "brown"}
-``` 
+```
 
 # References and Instances
 
@@ -87,7 +87,7 @@ let dog = {color: "brown"}
 ```
 let abby = {color: "brown"}
 let lula = {color: "brown"}
-``` 
+```
 
 * `abby` refers to a new object *instance*
 * `lula` refers to a *different*, new object instance with the same *value*
@@ -139,19 +139,21 @@ The above is fine as far as it goes, but it's not really object-oriented since `
 
 * "this" is a magic variable that always points to the current object
 
-        @@@ javascript
-        var circle = {radius: 2};
-        circle.circumference = function() {
-            return Math.PI * 2 * this.radius;
-        }
-        console.log(circle.circumference()); // 12.566370614359172
+```javascript
+var circle = {radius: 2};
+circle.circumference = function() {
+    return Math.PI * 2 * this.radius;
+}
+console.log(circle.circumference()); // 12.566370614359172
+```
 
 * "this" allows one function (method) to operate on many states (instances)
 
-        @@@ javascript
-        var biggerCircle = {radius: 4};
-        biggerCircle.circumference = circle.circumference;
-        console.log(biggerCircle.circumference()); // 25.132741228718345
+```javascript
+var biggerCircle = {radius: 4};
+biggerCircle.circumference = circle.circumference;
+console.log(biggerCircle.circumference()); // 25.132741228718345
+```
 
 ### ...but "this" isn't always it!
 
@@ -159,8 +161,7 @@ The above is fine as far as it goes, but it's not really object-oriented since `
 
 Even *inside* an object, you **must** remember to use `this.`, otherwise `radius` becomes a *global variable*, not a property.
 
-```
-@@@ javascript
+```javascript
 var circle = {radius: 2};
 circle.circumference = function() {
     return Math.PI * 2 * radius;  // Oops! Forgot "this."
@@ -185,16 +186,17 @@ Specifically, during *callbacks* `this` still points to the *other* object -- **
 
 * "this" is only set when you call a function *via* an object
 
-        @@@ javascript
-        circle1.circumference()      // OK -- this = circle1
-        circle2['circumference']()   // OK -- this = circle2
+```javascript
+circle1.circumference()      // OK -- this = circle1
+circle2['circumference']()   // OK -- this = circle2
+```
 
 * when called *sans* object, `this` points to the **global object** (usually `window`)
 
-        @@@ javascript
-        var g = circle.circumference;
-        g();                        // BAD -- this = window, so this.radius = undefined, so result is NaN
-
+```javascript
+var g = circle.circumference;
+g();                        // BAD -- this = window, so this.radius = undefined, so result is NaN
+```
 
 # `this` and callbacks
 
@@ -206,7 +208,6 @@ Specifically, during *callbacks* `this` still points to the *other* object -- **
 * to switch the `this` pointer back to your object, use the `=>` fat arrow
 
 ```js
-@@@js
 $('#someButton').click((event) =>
     this.clickedButton = $(this).value();
 });
@@ -215,7 +216,6 @@ $('#someButton').click((event) =>
 * earlier versions of JavaScript didn't have a fat arrow, but you can stash it in a closure-scoped variable, often named `self` by convention
 
 ```js
-@@@js
 var self = this;
 $('#someButton').click(function(event) {
     self.clickedButton = $(this).value();

@@ -33,11 +33,12 @@
 * `window` is the stuff around the page
 * Kinda the same, but kinda different
 
-        @@@ javascript
-        window === document
-        // => false
-        window.location === document.location
-        // => true
+```javascript
+window === document
+// => false
+window.location === document.location
+// => true
+```
 
 # `window` is magic
 
@@ -45,17 +46,19 @@
   * makes the browser load a new page
 * global JS functions are properties of `window`
 
-        @@@ javascript
-        window.x = 7;
-        x === 7; // true
-        y = 9;
-        window.y === 9 // works in reverse too
+```javascript
+window.x = 7;
+x === 7; // true
+y = 9;
+window.y === 9 // works in reverse too
+```
 
 * core JS functions are methods of `window`
 
-        @@@ javascript
-        parseInt('123')         // same
-        window.parseInt('123')  // thing
+```javascript
+parseInt('123')         // same
+window.parseInt('123')  // thing
+```
 
 # Locating HTML Elements
 * the hard way
@@ -78,11 +81,12 @@
 # Adding HTML
 * brute force (raw HTML strings)
 
-        @@@ javascript
-        document.write("<p id='message'>hi</p>");  // :-( this freaks out Firebug Console
+```javascript
+document.write("<p id='message'>hi</p>");  // :-( this freaks out Firebug Console
 
-        var message = document.getElementById('message');
-        message.innerHTML = "<b>bye</b>!";
+var message = document.getElementById('message');
+message.innerHTML = "<b>bye</b>!";
+```
 
 # Altering HTML Elements
 
@@ -106,19 +110,21 @@
 
 * here's a handy helper method
 
-        @@@ javascript
-        Number.prototype.px = function() {
-            return "" + this + "px";
-        }
+```javascript
+Number.prototype.px = function() {
+    return "" + this + "px";
+}
 
-        (5).px(); // "5px"
-        x = 10;
-        x.px();   // "10px"
+(5).px(); // "5px"
+x = 10;
+x.px();   // "10px"
+```
 
 * here's a trick for reading "px" values
 
-        @@@ javascript
-        parseInt(h1.style.width)
+```javascript
+parseInt(h1.style.width)
+```
 
 
 # setTimeout
@@ -136,23 +142,24 @@
 
 * Animating HTML is very exciting
 
-        @@@ javascript
-        function slide(element) {
-            element.style.position = "fixed";
-            var x = 0;
-            function step() {
-                if (x > 1000) {
-                    // stop the animation
-                    return;
-                } else {
-                    element.style.left = x.px();
-                    x += 10;
-                    // schedule the next animation
-                    setTimeout(step, 100);
-                }
-            }
-            step();  // start animation
+```javascript
+function slide(element) {
+    element.style.position = "fixed";
+    var x = 0;
+    function step() {
+        if (x > 1000) {
+            // stop the animation
+            return;
+        } else {
+            element.style.left = x.px();
+            x += 10;
+            // schedule the next animation
+            setTimeout(step, 100);
         }
+    }
+    step();  // start animation
+}
+```
 
 Scoping note: `step` is available inside the function itself because we defined it with a name, not anonymously.
 
@@ -163,10 +170,11 @@ see [animate.html](../javascript/animate.html) for a live example
 * jQuery has some fun methods to animate CSS attributes
 * <http://api.jquery.com/animate>
 
-        @@@ javascript
-        $("#logo").animate({
-            backgroundColor: "#aa0000"
-        }, 1000 );
+```javascript
+$("#logo").animate({
+    backgroundColor: "#aa0000"
+}, 1000 );
+```
 
   * You choose the attribute(s) and their final value, plus the duration of the entire effect
   * jQuery calculates and interpolates the details
@@ -182,12 +190,13 @@ see [animate.html](../javascript/animate.html) for a live example
   * you can simulate speeding up and slowing down time
 * In Jasmine:
 
-        @@@ javascript
-        beforeEach(function() {
-          jasmine.Clock.useMock();
-        });
-        //... call the code that calls setTimeout
-        jasmine.Clock.tick(500); // advance 500 msec
+```javascript
+beforeEach(function() {
+  jasmine.Clock.useMock();
+});
+//... call the code that calls setTimeout
+jasmine.Clock.tick(500); // advance 500 msec
+```
 
   * see thread [How to test timers?](http://groups.google.com/group/jasmine-js/browse_thread/thread/f987956c624840d1/73b3ff5391244b19)
 

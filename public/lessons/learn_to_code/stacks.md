@@ -42,7 +42,6 @@ In fact, every array *already knows* how to `push` and `pop`.
 Try this in IRB:
 
 ```ruby
-@@@ ruby
 fruitStack = []
 fruitStack.push("apple")
 fruitStack.push("banana")
@@ -79,7 +78,6 @@ Now you know why a stack trace is upside down! It's because a stack is LIFO.
 Using a stack, put the following program into a file called `fib.rb`...
 
 ```ruby
-@@@ ruby
 series = [0, 1];
 while (series.length < 10) do
 
@@ -92,7 +90,6 @@ p series
 ...and complete it so that running `ruby fib.rb` prints 
 
 ```ruby
-@@@ ruby
 [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 ```
 
@@ -105,7 +102,6 @@ Please split into pairs and do this right now. A solution is on the next slide.
 # Solution: Fibonacci Stack
 
 ```ruby
-@@@ ruby
 series = [0, 1]
 while (series.length < 10) do
     b = series.pop

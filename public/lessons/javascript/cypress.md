@@ -87,8 +87,7 @@ from <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#
 * returns a *cypress wrapper* (aka *Chainer*) for the matching element(s)
 * that accepts further commands (like `type` and `submit` below)
 
-```
-@@@javascript
+```javascript
 cy.get('form#login input[name="username"]')
   .type('HomerSimpson1989')
 cy.get('form#login')
@@ -119,8 +118,7 @@ see <https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html
 
 e.g.:
 
-```
-@@@javascript
+```javascript
 cy.get('h2')
   .contains('New York')
 ```
@@ -246,8 +244,7 @@ Fortunately, there is `each`
     * `expect` or `should` or `assert.` according to taste
     * `beforeEach` (or `before` if you must)
 
-```  
-@@@javascript  
+```javascript  
     describe('Unit test our math functions', function() {
       context('math', function() {
         it('can add numbers', function() {

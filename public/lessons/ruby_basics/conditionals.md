@@ -103,21 +103,25 @@ it's spelled `elsif` **not** `elseif` or `else if`
 
 The bang operator binds very tightly
 
-    @@@ruby
-    not x == 2  #=> not (x == 2)
-    !x == 2     #=> (!x) == 2
+```ruby
+not x == 2  #=> not (x == 2)
+!x == 2     #=> (!x) == 2
+```
 
 so that actually means
+```ruby
+if (!x) == 2
+```
 
-    if (!x) == 2
-    
 and assuming `x` is a number, `!x` will always be `false`
 
 # `!` gotcha solved
 
+```ruby
     if !(x == 2)
       puts "not two"
     end
+```
 
 * Moral: use `not` in conditions
   * or use `unless` 
@@ -194,7 +198,6 @@ and assuming `x` is a number, `!x` will always be `false`
   * it still looks funny
   * it can be useful, e.g.
 
-            @@@ ruby
             if (last_name = person.family_name)
               # person.family_name is not nil, so...
               puts last_name
@@ -202,32 +205,34 @@ and assuming `x` is a number, `!x` will always be `false`
 
 # `case`
 
-    @@@ruby
-    case var
-    when value1
-      puts "var is sorta value1"
-    when value2, value3
-      puts "var is sorta value2 or maybe value3"
-    else
-      puts "var is weird"
-    end
+```ruby
+case var
+when value1
+  puts "var is sorta value1"
+when value2, value3
+  puts "var is sorta value2 or maybe value3"
+else
+  puts "var is weird"
+end
+```
 
 # threequal
 
 * case comparison uses the `===` operator
   * aka "threequal"
 * it's normally the same as `==` but can be overridden
-  * e.g. for Class, `===` also means `is_a?`, so you can do
+  * e.g. for Class, `===` also means `is_a?`, so you can do this:
 
-            @@@ ruby
-            case input
-            when Fixnum
-              input
-            when String
-              input.to_i
-            when Array
-              input.first.to_i
-            end
+```ruby
+case input
+when Fixnum
+  input
+when String
+  input.to_i
+when Array
+  input.first.to_i
+end
+```
 
 # threequal transitivity gotcha
 
@@ -269,17 +274,18 @@ Only `TrueClass` and `FalseClass`
 
 These are equivalent:
 
-    @@@ruby
-    # with or-equals
-    @name ||= "Alex"
+```ruby
+# with or-equals
+@name ||= "Alex"
 
-    # as a boolean expression
-    @name || (@name = "Alex")
+# as a boolean expression
+@name || (@name = "Alex")
 
-    # with an if statement
-    if (@name != nil)
-      @name
-    else
-      @name = "Alex"
-    end
-      
+# with an if statement
+if (@name != nil)
+  @name
+else
+  @name = "Alex"
+end
+  
+```

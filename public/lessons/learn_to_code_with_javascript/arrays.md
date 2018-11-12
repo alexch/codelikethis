@@ -13,8 +13,9 @@
 
 # Creating an array
 
-    @@@ js
-    ["apple", "banana", "cherry"]
+```js
+["apple", "banana", "cherry"]
+```
 
 square brackets on their own mean "please go *create* an array now"
 
@@ -32,9 +33,10 @@ and put these 3 other values inside it
 
 Try this in node:
 
-    @@@ js
-    let fruits = ["apple", "banana", "cherry"]
-    fruits[1]
+```js
+let fruits = ["apple", "banana", "cherry"]
+fruits[1]
+```
 
 Did you get the result you expected?
 
@@ -54,8 +56,9 @@ So the first item in an array is number zero, not number one.
 
 Try this:
 
-    @@@ js
-    fruits[99]
+```js
+fruits[99]
+```
 
 Did you get the result you expected?
 
@@ -77,26 +80,29 @@ with the answer
 
 # Reversing an array
 
-    @@@ js
-    let fruits = ["apple", "banana", "cherry"]
-    fruits.reverse()
+```js
+let fruits = ["apple", "banana", "cherry"]
+fruits.reverse()
+```
 
 # Turning an array into a string
 
-    @@@ js
-    fruits.join()           // apple,banana,cherry
-    fruits.join(" and ")    // apple and banana and cherry
-    fruits.toString()       // apple,banana,cherry
-    fruits.toSource()       // [ 'apple', 'banana', 'cherry' ]
+```js
+fruits.join()           // apple,banana,cherry
+fruits.join(" and ")    // apple and banana and cherry
+fruits.toString()       // apple,banana,cherry
+fruits.toSource()       // [ 'apple', 'banana', 'cherry' ]
+```
 
 Note that `console.log` uses `toSource()`, which is usually better for debugging than `toString`
 
 # Looping through an array with forEach
 
-    @@@ js
-    fruits.forEach( (fruit) => {
-      console.log("I like " + fruit + "!")
-    });
+```js
+fruits.forEach( (fruit) => {
+  console.log("I like " + fruit + "!")
+});
+```
 
 |phrase|meaning|
 |---|---|
@@ -112,10 +118,11 @@ Note that `console.log` uses `toSource()`, which is usually better for debugging
 
 Recently, JavaScript added `for..of`, which does for arrays what `for..in` does for hashes (JS objects).
 
-    @@@ js
-    for (var fruit of fruits) { 
-      console.log("I like " + fruit + "!")
-    }
+```js
+for (var fruit of fruits) { 
+  console.log("I like " + fruit + "!")
+}
+```
 
 |phrase|meaning|
 |---|---|
@@ -128,10 +135,11 @@ Recently, JavaScript added `for..of`, which does for arrays what `for..in` does 
 
 JavaScript inherited `for(;;)` from C; it's cumbersome but you should learn to recognize it.
 
-    @@@ js
-    for (var i=0; i < fruits.length; i++) { 
-      console.log(fruits[i]);
-    }
+```js
+for (var i=0; i < fruits.length; i++) { 
+  console.log(fruits[i]);
+}
+```
 
 |phrase|meaning|
 |---|---|
@@ -149,8 +157,9 @@ See? Cumbersome.
 
 Given this array:
 
-    @@@ js
-    let fruits = ["apple", "banana", "cherry"]
+```js
+let fruits = ["apple", "banana", "cherry"]
+```
 
 write a program that prints:
 
@@ -162,20 +171,22 @@ write a program that prints:
 
 The `[]` operator works for assignment as well.
 
-    @@@ js
-    fruits[0] = "Apricot"
-    fruits[1] = "Blueberry"
+```js
+fruits[0] = "Apricot"
+fruits[1] = "Blueberry"
 
-    console.log(fruits[0])
+console.log(fruits[0])
+```
 
 # Checking an array
 
 The `includes` method checks if an object is inside an array or not.
 
-    @@@ js
-    fruits.includes("apple")    // true
+```js
+fruits.includes("apple")    // true
 
-    fruits.include("pizza")     // false
+fruits.include("pizza")     // false
+```
 
 Remember, here we are sending a message *to an array*, asking if it includes a certain *string*.
 
@@ -185,8 +196,9 @@ Refactoring is changing existing code so that it *works* the same, but is cleane
 
 In your old `hello.js` program you had an `if` statement to check if someone is your enemy. Something like:
 
-    @@@ js
-    if (name === "darth" || name === "voldemort" || name === "sauron")
+```js
+if (name === "darth" || name === "voldemort" || name === "sauron")
+```
 
 I'd like you to **refactor** your old `hello.js` program to use the `includes` method to check if someone is your enemy. Is it possible to make that `if` statement more concise?
 

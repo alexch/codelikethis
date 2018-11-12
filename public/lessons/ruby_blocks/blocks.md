@@ -23,15 +23,17 @@ the term "block" overlaps with the terms...
 
 * Anywhere you see "do" in Ruby, it's the start of a *block*
 
-        @@@ruby
-        3.times do
-          puts "Hip! Hip! Hooray!"
-        end
+```ruby
+3.times do
+  puts "Hip! Hip! Hooray!"
+end
+```
 
 * Blocks can also be wrapped in curly braces
 
-        @@@ruby
-        3.times { puts "Hip! Hip! Hooray!" }
+```ruby
+3.times { puts "Hip! Hip! Hooray!" }
+```
 
 * braces are for a single line, `do...end` for multiple lines
 
@@ -67,16 +69,14 @@ So you use blocks for...
 * You can store that block into a variable
 * You can call that block with the `call` method
 
-```
-@@@ruby
+```ruby
 say_hi = proc { puts "hi" }
 say_hi.call  # prints "hi\n"
 ```
 
 ## procs can take parameters too
 
-```
-@@@ruby
+```ruby
 capitalize_it = proc { |word| word.capitalize }
 capitalize_it.call("banana")   #=> "Banana"
 capitalize_it.call("cherry")   #=> "Cherry"
@@ -86,25 +86,29 @@ capitalize_it.call("cherry")   #=> "Cherry"
 
 `twice` is a less cool version of `times` that takes a proc parameter
 
-    @@@ ruby
-    def twice(action)
-      action.call
-      action.call
-    end
+```ruby
+def twice(action)
+  action.call
+  action.call
+end
+```
 
 You can assign a proc to a variable and pass it as a parameter
 
-    say_hi = proc do
-      puts "hi!"
-    end
-    twice(say_hi)  # prints "hi!\n" twice
+```ruby
+say_hi = proc do
+  puts "hi!"
+end
+twice(say_hi)  # prints "hi!\n" twice
+```
 
 You can also define proc *inline* rather than assigning it to a variable
 
-    twice(proc do
-      puts "hi!"
-    end)  # prints "hi!\n" twice
-
+```ruby
+twice(proc do
+  puts "hi!"
+end)  # prints "hi!\n" twice
+```
 
 # The Default Block
 
@@ -117,15 +121,16 @@ You can also define proc *inline* rather than assigning it to a variable
 
 `twice` is a less cool version of `times` that takes a default block (invisible parameter)
 
-    @@@ ruby
-    def twice
-       yield
-       yield
-    end
+```ruby
+def twice
+   yield
+   yield
+end
 
-    twice do
-      puts "hi!"
-    end
+twice do
+  puts "hi!"
+end
+```
 
 "twice do" kind of almost resembles English a little, right?
 
@@ -135,36 +140,39 @@ Which is more beautiful?
 
 Using procs:
 
-    @@@ ruby
-    def twice block
-      block.call
-      block.call
-    end
+```ruby
+def twice block
+  block.call
+  block.call
+end
 
-    twice(proc { puts "hi" })
+twice(proc { puts "hi" })
+```
 
 Using the default block:
 
-    @@@ ruby
-    def twice
-      yield
-      yield
-    end
+```ruby
+def twice
+  yield
+  yield
+end
 
-    twice { puts "hi" }
+twice { puts "hi" }
+```
 
 
 # The default block can accept parameters
 
-    @@@ ruby
-    def twice
-      yield 0
-      yield 1
-    end
+```ruby
+def twice
+  yield 0
+  yield 1
+end
 
-    twice do |i|
-      puts "#{i+1} Mississippi"
-    end
+twice do |i|
+  puts "#{i+1} Mississippi"
+end
+```
 
 prints
 
@@ -175,20 +183,21 @@ prints
 
 `for_each` is a less cool version of `Array.each`
 
-    @@@ ruby
-    def for_each(array)
-      i = 0
-      while i < array.size
-        yield array[i]
-        i += 1
-      end
-      array
-    end
+```ruby
+def for_each(array)
+  i = 0
+  while i < array.size
+    yield array[i]
+    i += 1
+  end
+  array
+end
 
-    names = ["alice", "bob", "charlie"]
-    for_each(names) do |item|
-      puts "hi, #{item}"
-    end
+names = ["alice", "bob", "charlie"]
+for_each(names) do |item|
+  puts "hi, #{item}"
+end
+```
 
 * `array` is a parameter to the `for_each` function
 * `item` is a parameter to the block
@@ -197,22 +206,23 @@ prints
 
 `map_it` is a less cool version of `Array.map`
 
-    @@@ ruby
-    def map_it(array)
-      i = 0
-      out = []
-      while i < array.size
-        out << yield(array[i])
-        i += 1
-      end
-      out
-    end
+```ruby
+def map_it(array)
+  i = 0
+  out = []
+  while i < array.size
+    out << yield(array[i])
+    i += 1
+  end
+  out
+end
 
-    names = ["alice", "bob", "charlie"]
-    map_it(names) do |item|
-      item.reverse
-    end
-    #=> ["ecila", "bob", "eilrahc"]
+names = ["alice", "bob", "charlie"]
+map_it(names) do |item|
+  item.reverse
+end
+#=> ["ecila", "bob", "eilrahc"]
+```
 
 # block_given?
 * `block_given?` is true if a block was passed
@@ -224,20 +234,21 @@ prints
 
 `&` turns the default block into a proc
 
-    @@@ ruby
-    def for_each(array, &p)
-      i = 0
-      while i < array.size
-        p.call(array[i])
-        i += 1
-      end
-      array
-    end
+```ruby
+def for_each(array, &p)
+  i = 0
+  while i < array.size
+    p.call(array[i])
+    i += 1
+  end
+  array
+end
 
-    a = ["alice", "bob", "charlie"]
-    for_each(a) do |item|
-      puts "hi, #{item}"
-    end
+a = ["alice", "bob", "charlie"]
+for_each(a) do |item|
+  puts "hi, #{item}"
+end
+```
 
 # You can also use & in the caller
 

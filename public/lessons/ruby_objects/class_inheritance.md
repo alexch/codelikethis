@@ -11,22 +11,23 @@ of both class A and class B
 <!SLIDE>
 # Inheritance Example
 
-    @@@ ruby
-    class Publication
-      attr_accessor :publisher
-    end
-    
-    class Magazine < Publication
-      attr_accessor :editor
-    end
+```ruby
+class Publication
+  attr_accessor :publisher
+end
 
-    m = Magazine.new
-    m.publisher = "Time Inc."
+class Magazine < Publication
+  attr_accessor :editor
+end
 
-    m.is_a? Magazine #=> true
-    m.is_a? Publication #=> true
-    m.class == Publication #=> false
-    
+m = Magazine.new
+m.publisher = "Time Inc."
+
+m.is_a? Magazine #=> true
+m.is_a? Publication #=> true
+m.class == Publication #=> false
+```
+
 <!SLIDE>
 * `<` is pronounced "inherits from"
 * not to be confused with "extends" which is for modules
@@ -39,28 +40,26 @@ of both class A and class B
 * Ruby can simulate *multiple inheritance* using Modules
   * more later
 
-<!SLIDE>
 # A More Realistic Inheritance Example
 
-    @@@ ruby
-    class Rectangle
-      def initialize(width, height)
-        @width, @height = width, height
-      end
-      def area
-        @width * @height
-      end
-    end
-    
-    class Square < Rectangle
-      def initialize(width)
-        super(width, width)
-      end
-    end
+```ruby
+class Rectangle
+  def initialize(width, height)
+    @width, @height = width, height
+  end
+  def area
+    @width * @height
+  end
+end
 
-    Square.new(10).area #=> 100
+class Square < Rectangle
+  def initialize(width)
+    super(width, width)
+  end
+end
 
-<!SLIDE>
+Square.new(10).area #=> 100
+```
 
 # A Design Note
 

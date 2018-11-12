@@ -30,15 +30,16 @@
 
 # Rule #3: `def` breaks scope; `do` doesn't
 
-    @@@ruby
-    x = 7
+```ruby
+x = 7
 
-    proc { puts x }.call #=> 7
+proc { puts x }.call #=> 7
 
-    def foo
-      puts x
-    end
-    foo #=> NameError: undefined local variable or method `x'
+def foo
+  puts x
+end
+foo #=> NameError: undefined local variable or method `x'
+```
 
 # Rule #4: don't worry about it
 

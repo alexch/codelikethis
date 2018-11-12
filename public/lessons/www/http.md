@@ -113,7 +113,7 @@ For now, we are going to focus on **HTML and CSS**. This is the most common code
 
 > Unfortunately, many modern OSs don't ship with a working version of `telnet`, so you should watch your instructor's terminal, or skip ahead to the next slide.
 
-```
+```bash
 $ telnet google.com 80
 ```
 

@@ -16,8 +16,7 @@ For instance, if a user has an account, but doesn't (yet) have a profile picture
 
 Then you can test for that case, e.g.
 
-```
-@@@js
+```js
 if (user.profilePic === null) {
     showDefaultPicture();
 } else {
@@ -27,10 +26,11 @@ if (user.profilePic === null) {
 
 # Null is dangerous
 
-    @@@ js
-    let fruit = "apple"
-    fruit = null
-    fruit.toUpperCase()
+```js
+let fruit = "apple"
+fruit = null
+fruit.toUpperCase()
+```
 
 *Read the error!*
 
@@ -44,9 +44,10 @@ They tell you
 
 Interpret this error:
 
-    @@@ js
-    fruit.toUpperCase()
-    TypeError: Cannot read property 'toUpperCase' of null
+```js
+fruit.toUpperCase()
+TypeError: Cannot read property 'toUpperCase' of null
+```
 
 # null pointer errors
 

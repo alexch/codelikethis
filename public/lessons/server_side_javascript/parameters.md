@@ -96,7 +96,7 @@ Your app server framework (Express) will convert query or post params into an ob
 Here's a small function that parses any string in "query parameter" (aka "URI Encoded") format, either from the `?` part of the URL, or the body of a request:
 
 ```javascript
-@@@javascript
+```javascript
 function decodeParams(query) {
   if (query.startsWith('?')) {
     query = query.slice(1);

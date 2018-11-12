@@ -49,7 +49,7 @@ Or, if the user moves their location on an embedded Google Map, your app could b
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
-```
+```html
 <iframe height='300' width='400' src='example.com'></iframe>
 ```
 
@@ -114,7 +114,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
     src="https://www.openstreetmap.org/export/embed.html?bbox=-73.2130900,44.4749000,-73.2102500,44.4772200&layer=mapnik">
 </iframe>
 
-```
+```html
 <iframe id="inlineFrameExample"
     title="Inline Frame Example"
     width="300"

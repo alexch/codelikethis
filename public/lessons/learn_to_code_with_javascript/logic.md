@@ -38,10 +38,11 @@ The magic word `if` is a CONDITIONAL.
 
 The phrase immediately after `if` is a CONDITION.
 
-    @@@ js
-    if (age < 18) {
-      console.log("Sorry, you can't vote yet.");
-    }
+```js
+if (age < 18) {
+  console.log("Sorry, you can't vote yet.");
+}
+```
 
 |phrase|meaning|
 |---|---|
@@ -74,12 +75,13 @@ Unfortunately, the string `"false"` is truthy, and the string `"0"` is truthy, e
 
 The magic word `else` allows **BRANCHING**.
 
-    @@@ js
-    if (age >= 18) {
-      console.log("allowed");
-    } else {
-      console.log("denied");
-    }
+```js
+if (age >= 18) {
+  console.log("allowed");
+} else {
+  console.log("denied");
+}
+```
 
 Like a fork in the road, the program chooses one path or the other.
 
@@ -145,7 +147,6 @@ You can make more complicated logical expressions using conjunctions:
 For example:
 
 ```js
-@@@ js
 if (age >= 18 || parent.gavePermissionSlip()) {
   console.log("allowed");
 } else {
@@ -159,12 +160,13 @@ if (age >= 18 || parent.gavePermissionSlip()) {
 
 * Your `hello.js` program should currently look something like this:
 
-        @@@ js
-        console.log("What is your name?");
-        process.stdin.on('data', (chunk) => {
-            let name = chunk.toString(); 
-            console.log("Hello, " + name + "!"); 
-        });
+```js
+console.log("What is your name?");
+process.stdin.on('data', (chunk) => {
+    let name = chunk.toString(); 
+    console.log("Hello, " + name + "!"); 
+});
+```
 
 * Now change `hello.js` so that it doesn't always say hello!
   * If the user's name is "Darth" then say "Noooooo! Go away, Darth!"

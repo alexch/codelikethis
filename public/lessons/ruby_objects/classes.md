@@ -14,8 +14,7 @@ Ref. WGR Chapter 3, Organizing objects with classes
 
 # Example Class
 
-```
-@@@ruby
+```ruby
 class Cookie
   def sweeten(more_chips = 10)
     @chips ||= 0    # lazy initialization
@@ -45,14 +44,15 @@ end
 * To *instantiate* an object, call the *new* method on its class
 * The *new* method then calls *initialize*
 
-        @@@ ruby
-        class Cookie
-          def initialize
-            @chips = 0
-          end
-        end
+```ruby
+class Cookie
+  def initialize
+    @chips = 0
+  end
+end
 
-        cookie = Cookie.new  # *not* Cookie.initialize!
+cookie = Cookie.new  # *not* Cookie.initialize!
+```
 
 # Active vs. Lazy Initialization
 
@@ -60,35 +60,37 @@ Active initialization (inside the constructor) leads to simpler code elsewhere i
 
 # Active Initialization
 
-    @@@ ruby
-    class Cookie
-      def initialize
-        @chips = 0    # active initialization
-      end
+```ruby
+class Cookie
+  def initialize
+    @chips = 0    # active initialization
+  end
 
-      def sweeten(more_chips = 10)
-        @chips += more_chips
-      end
+  def sweeten(more_chips = 10)
+    @chips += more_chips
+  end
 
-      def yummy?
-        @chips >= 20
-      end
-    end
+  def yummy?
+    @chips >= 20
+  end
+end
+```
 
 # Lazy Initialization
 
-    @@@ruby
-    class Cookie
-      def sweeten(more_chips = 10)
-        @chips ||= 0    # lazy initialization
-        @chips += more_chips
-      end
+```ruby
+class Cookie
+  def sweeten(more_chips = 10)
+    @chips ||= 0    # lazy initialization
+    @chips += more_chips
+  end
 
-      def yummy?
-        @chips and      # defensive coding
-          @chips >= 20
-      end
-    end
+  def yummy?
+    @chips and      # defensive coding
+      @chips >= 20
+  end
+end
+```
 
 # What does `new` do?
 
@@ -106,8 +108,7 @@ So a constructor is your **one big chance** to initialize everything before anyo
 * instance methods are shared among all instances
 * same behavior, but different data
 
-```
-@@@ruby
+```ruby
 class Cookie
   def bake
     @temp = 350
@@ -124,21 +125,22 @@ end
 
 # Getter and setter methods
 
-    @@@ ruby
-    class Person
-      def age=(years_old)
-        @age = years_old
-      end
-      def age
-        @age
-      end
-    end
+```ruby
+class Person
+  def age=(years_old)
+    @age = years_old
+  end
+  def age
+    @age
+  end
+end
 
-    alice = Person.new
-    alice.age= 17
-    alice.age #=> 17
+alice = Person.new
+alice.age= 17
+alice.age #=> 17
 
-    alice.@age #=> SyntaxError
+alice.@age #=> SyntaxError
+```
 
 # Ruby's setter sugar
 
@@ -156,8 +158,7 @@ is the same as
 
 * Inside an object, you can't call that object's setter methods directly
 
-```
-@@@ruby
+```ruby
 class Person
   def age=(years_old)
     @age = years_old
@@ -180,8 +181,7 @@ end
 * or `@age`
   * that's a direct instance variable reference
 
-```
-@@@ruby
+```ruby
 class Person
   def age=(years_old)
     @age = years_old
@@ -204,38 +204,41 @@ end
 
 aka "macros"
 
-    @@@ ruby
-    class Thing
-      attr_reader :age    #  def age; @age; end
-      attr_writer :age    #  def age=(x); @age = x; end
-      attr_accessor :age  # both of the above
-    end
+```ruby
+class Thing
+  attr_reader :age    #  def age; @age; end
+  attr_writer :age    #  def age=(x); @age = x; end
+  attr_accessor :age  # both of the above
+end
+```
 
 # Constructor plus Attributes
 
-    @@@ruby
-    class Person
-      attr_accessor :age
-      def initialize
-        @age = 20
-      end
-    end
+```ruby
+class Person
+  attr_accessor :age
+  def initialize
+    @age = 20
+  end
+end
 
-    alice = Person.new
-    alice.age #=> 20
+alice = Person.new
+alice.age #=> 20
+```
 
 # Attribute Shortcuts (cont.)
 * Can also take multiple arguments
 
-        @@@ ruby
-        class Thing
-          attr_accessor :foo, :bar
-        end
+```ruby
+class Thing
+  attr_accessor :foo, :bar
+end
 
-        thing = Thing.new
-        => #<Thing:0x007fe008897278>
-        >> thing.methods
-        => [:foo, :foo=, :bar, :bar=,
+thing = Thing.new
+=> #<Thing:0x007fe008897278>
+>> thing.methods
+=> [:foo, :foo=, :bar, :bar=,
+```
 
 # Attribute Shortcuts (cont.)
 
@@ -252,8 +255,7 @@ aka "macros"
 
 # Lazy Initialization with Or-Equals
 
-```
-@@@ruby
+```ruby
 class Cookie
   def chips
     @chips ||= 10
@@ -263,26 +265,28 @@ end
 
 # Query methods
 
-    @@@ ruby
-    class Person
-      def child?
-        @age < 18
-      end
-    end
+```ruby
+class Person
+  def child?
+    @age < 18
+  end
+end
 
-    alice.age = 16
-    alice.child? #=> true
+alice.age = 16
+alice.child? #=> true
+```
 
 Note: query methods return a boolean by *convention* only
 
 # Bang methods
 
-    @@@ ruby
-    class Person
-      def birthday!
-        @age = @age + 1
-      end
-    end
+```ruby
+class Person
+  def birthday!
+    @age = @age + 1
+  end
+end
+```
 
 * "`!`" is pronounced "bang"
 * usually means "watch out" or "destructive" or "side effect"
@@ -293,32 +297,34 @@ Note: query methods return a boolean by *convention* only
 
 # A Poorly-Encapsulated Object
 
-    @@@ruby
-    class BadStudent
-      attr_accessor :first_name, :last_name
-    end
+```ruby
+class BadStudent
+  attr_accessor :first_name, :last_name
+end
 
-    joe = BadStudent.new
-    joe.first_name = "Joe"
-    joe.last_name = "Blow"
-    puts joe.first_name + " " + joe.last_name
+joe = BadStudent.new
+joe.first_name = "Joe"
+joe.last_name = "Blow"
+puts joe.first_name + " " + joe.last_name
+```
 
 
 # A Well-Encapsulated Object
 
-    @@@ruby
-    class GoodStudent
-      def initialize first_name, last_name
-        @first_name, @last_name = first_name, last_name
-      end
+```ruby
+class GoodStudent
+  def initialize first_name, last_name
+    @first_name, @last_name = first_name, last_name
+  end
 
-      def full_name
-        "#{@first_name} #{@last_name}"
-      end
-    end
+  def full_name
+    "#{@first_name} #{@last_name}"
+  end
+end
 
-    jane = GoodStudent.new("Jane", "Brain")
-    puts jane.full_name
+jane = GoodStudent.new("Jane", "Brain")
+puts jane.full_name
+```
 
 # A Well-Encapsulated Object (cont)
 

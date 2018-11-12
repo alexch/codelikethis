@@ -24,32 +24,34 @@ Ref.: WGR Ch. 5, The default object (self), scope, and visibility
 * When the interpreter hits a `def`, it *defines* the method immediately but doesn't *execute* it until later
 * When it's executed, `self` is pointing to the *instance* the method was called on
 
-        @@@ ruby
-        class C
-          def x
-            puts self
-          end
-        end
+```ruby
+class C
+  def x
+    puts self
+  end
+end
 
-        >> C.new.x
-        #<C:0x0000010087e898>
+>> C.new.x
+#<C:0x0000010087e898>
+```
 
 # `self` as the default message receiver
 
 If Ruby can't find a variable or function with the right name, it tries to dispatch it to self.
 
-    @@@ ruby
-    class C
-      def x
-        puts "x"
-      end
-      
-      def y
-        puts "y"
-        self.x   # << same
-        x        # << thing
-      end
-    end
+```ruby
+class C
+  def x
+    puts "x"
+  end
+  
+  def y
+    puts "y"
+    self.x   # << same
+    x        # << thing
+  end
+end
+```
 
 # `main`, the magic self
 
@@ -60,14 +62,15 @@ Methods defined inside main become *private* methods of *`Object`*
 
 # `self` in class and module definitions
 
-    @@@ ruby
-    class C
-      puts self    # "C"
-      module M
-        puts self  # "C::M"
-      end
-      puts self    # "C"
-    end
+```ruby
+class C
+  puts self    # "C"
+  module M
+    puts self  # "C::M"
+  end
+  puts self    # "C"
+end
+```
 
 # `self` during class method definitions
 
@@ -85,31 +88,33 @@ Methods defined inside main become *private* methods of *`Object`*
 
 # An Elegant Object, using implicit self
 
-    @@@ruby
-    class Student
-      attr_accessor :first_name, :middle_name, :last_name
+```ruby
+class Student
+  attr_accessor :first_name, :middle_name, :last_name
 
-      def initialize first_name, middle_name, last_name
-        @first_name, @middle_name, @last_name = 
-          first_name, middle_name, last_name
-      end
-  
-      def name        
-        name = "" 
-        name << first_name
-        name << " #{middle_name}" if middle_name
-        name << " #{last_name}"   # returns name
-      end
-    end
+  def initialize first_name, middle_name, last_name
+    @first_name, @middle_name, @last_name = 
+      first_name, middle_name, last_name
+  end
+
+  def name        
+    name = "" 
+    name << first_name
+    name << " #{middle_name}" if middle_name
+    name << " #{last_name}"   # returns name
+  end
+end
+```
 
 # Digging into the name method
 
-    @@@ruby
-    >> Student.new("alex", "day", "chaffee").name
-    => "alex day chaffee"
-    
-    >> Student.new("alex", "", "chaffee").name
-    => "alex  chaffee"
-    
-    >> Student.new("alex", nil, "chaffee").name
-    => "alex chaffee"
+```ruby
+>> Student.new("alex", "day", "chaffee").name
+=> "alex day chaffee"
+
+>> Student.new("alex", "", "chaffee").name
+=> "alex  chaffee"
+
+>> Student.new("alex", nil, "chaffee").name
+=> "alex chaffee"
+```

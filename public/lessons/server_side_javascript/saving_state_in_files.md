@@ -20,7 +20,7 @@ Article Schema:
  "author": "Julius Caesar",
  "body": "Lorem ipsum dolor..."
 }
-``` 
+```
 
 Endpoints:
 

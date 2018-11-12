@@ -107,7 +107,6 @@ AJAX enables
 <https://jsonplaceholder.typicode.com/posts/1>
 
 ```javascript
-@@@javascript
 let postNumber = 1;
 fetch('https://jsonplaceholder.typicode.com/posts/' + postNumber)
   .then(function(response) {
@@ -129,7 +128,6 @@ fetch('https://jsonplaceholder.typicode.com/posts/' + postNumber)
 If you want to request data from a **local** webserver
 
 ```javascript
-@@@javascript
 
 fetch('city-market.md')
   .then(function(response) {
@@ -150,7 +148,6 @@ fetch('city-market.md')
 * Use `.catch(function(error) { do_something_here })`
 
 ```javascript
-@@@javascript
 
 fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(function(response) {
@@ -170,8 +167,7 @@ See a more comprehensive JSON lesson here: [JSON lesson](/lessons/javascript/jso
 
 ### Example
 
-```json
-@@@js
+```js
 {"userId": 1,
   "id": 1,
   "title": "My most amazing post",
@@ -194,20 +190,17 @@ but if you want to do it yourself...
 * Assume textual JSON is in a string named `text`:
 
 ```javascript
-@@@javascript
 let text = '{ "name": "Ada Lovelace", "id": 1, "title": "The Queen of Numbers" }'
 ```
 
 This converts the String data into a JavaScript object:
 
 ```javascript
-@@@javascript
 let data = JSON.parse(text)
 ```
 
 And this converts the JavaScript object back into a String:
 
 ```javascript
-@@@javascript
 let newText = JSON.stringify(data)
 ```

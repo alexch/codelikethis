@@ -9,8 +9,7 @@
 
 - This is JSX Code
 
-```js
-@@@javascript
+```javascript
 ReactDOM.render(
   <h1>Hello, React!</h1>,
   document.getElementById('root')
@@ -21,8 +20,7 @@ ReactDOM.render(
 
 - This is the ReactDOM code the JSX creates
 
-```js
-@@@javascript
+```javascript
 ReactDOM.render(React.createElement(
   'h1',
   null,
@@ -33,7 +31,6 @@ ReactDOM.render(React.createElement(
 # Resulting HTML in the DOM
 
 ```html
-@@@html
 <div id="root">
   <h1>Hello, React!</h1>
 </div>
@@ -50,8 +47,7 @@ ReactDOM.render(React.createElement(
 
 Building a greeter
 
-```js
-@@@javascript
+```javascript
 const user = {
   firstName: 'Ada',
   lastName:  'Lovelace',
@@ -122,7 +118,6 @@ console.log( <h1>yo</h1> );
 ## Example
 
 ```html
-@@@html
 <html lang="en">
   <head>
     <meta charset="UTF-8">

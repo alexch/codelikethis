@@ -4,7 +4,6 @@
 * Escape the JavaScript within JSX using `{}`
 
 ```javascript
-@@@javascript
 NumberList (props) => {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
@@ -28,7 +27,6 @@ ReactDOM.render(
 # Multiple Components with Keys
 
 ```javascript
-@@@javascript
 
 NumberList = (props) => {
   const numbers = props.numbers;
@@ -59,7 +57,6 @@ ReactDOM.render(
 * Indexes of the Components are a good backup
 
 ```javascript
-@@@javascript
 ListItem = (props) => {
   // Correct! There is no need to specify the key here:
   return <li>{props.value}</li>;
@@ -97,7 +94,6 @@ ReactDOM.render(
 * Keys do not live on the content of the component
 
 ```javascript
-@@@javascript
 ListItem = (props) => {
   const value = props.value;
   return (
@@ -131,7 +127,6 @@ ReactDOM.render(
 # Unique Component Keys
 
 ```javascript
-@@@javascript
 Blog = (props) => {
   const sidebar = (
     <ul>
@@ -176,7 +171,6 @@ ReactDOM.render(
 * Multiple nested embeddings signals that a Component might need extraction
 
 ```javascript
-@@@javascript
 NumberList = (props) => {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
@@ -193,7 +187,6 @@ NumberList = (props) => {
 ```
 
 ```javascript
-@@@javascript
 NumberList = (props) => {
   const numbers = props.numbers;
   return (

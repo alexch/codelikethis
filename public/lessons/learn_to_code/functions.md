@@ -9,10 +9,11 @@
 
 Here's a not very useful function:
 
-    @@@ ruby
-    def add x, y
-      x + y
-    end
+```ruby
+def add x, y
+  x + y
+end
+```
 
 * `def` means "define a function"
 * `add` is the *name* of the function
@@ -24,41 +25,45 @@ Here's a not very useful function:
 
 You call a function by its name
 
-    @@@ ruby
-    def add x, y
-      x + y
-    end
+```ruby
+def add x, y
+  x + y
+end
 
-    add 2, 3  # returns 5
+add 2, 3  # returns 5
 
-    add 12, 30  # returns 42
+add 12, 30  # returns 42
+```
 
 # Rant!!!
 
-    @@@ ruby
-    def rant s
-      s.upcase.gsub(" ", "") + "!!!"
-    end
+```ruby
+def rant s
+  s.upcase.gsub(" ", "") + "!!!"
+end
 
-    puts rant "i like pizza"
+puts rant "i like pizza"
+```
 
 # Capitalize Just The First Character
 
-    @@@ ruby
-    def initial_cap s
-      s[0] + s[1,s.length].downcase
-    end
+```ruby
+def initial_cap s
+  s[0] + s[1,s.length].downcase
+end
 
-    puts initial_cap("McElaney")
+puts initial_cap("McElaney")
+```
 
 this program prints `Mcelaney`
 
 # Titleize
 
-    @@@ ruby
-    def titleize string
-      string.split(' ').map(&:capitalize).join(' ')
-    end
+```ruby
+def titleize string
+  string.split(' ').map(&:capitalize).join(' ')
+end
+```
 
 * The funny `&:` means "send this message"
 * `map(&:capitalize)` means "send the message `capitalize` to every item in the array"

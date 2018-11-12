@@ -19,27 +19,30 @@ Ref. WGR Chapter 8, Section 8.1, Working with strings
 
 # substrings
 
-    @@@ruby
-    s = "Ruby rocks"
-    s[5]    #=> "r"
-    s[5,3]  #=> "roc"
-    s[5,100]  #=> "rocks"
-    s[-3]   #=> "c"
-    s[2..6] #=> "by ro"
+```ruby
+s = "Ruby rocks"
+s[5]    #=> "r"
+s[5,3]  #=> "roc"
+s[5,100]  #=> "rocks"
+s[-3]   #=> "c"
+s[2..6] #=> "by ro"
+```
 
 # substring matching
 
-    @@@ruby
-    s = "Ruby rocks"
-    s[/r../] #=> "roc"
-    s[/r../i] #=> "Rub"
+```ruby
+s = "Ruby rocks"
+s[/r../] #=> "roc"
+s[/r../i] #=> "Rub"
+```
 
 # substring setting
 
-    @@@ruby
-    s = "Ruby rocks"
-    s["rock"] = "rule"
-    s #=> "Ruby rules"
+```ruby
+s = "Ruby rocks"
+s["rock"] = "rule"
+s #=> "Ruby rules"
+```
 
 # adding strings
 
@@ -177,14 +180,16 @@ some of these have `!` versions which modify the string in place
 
 # Multiline strings
 
-* newlines do *not* end a string
+newlines do *not* end a string
 
-        "Now is the winter of our discontent
-        made glorious summer by this son of York."
-
+```ruby
+"Now is the winter of our discontent
+made glorious summer by this son of York."
+```
 =>
-
-        "now is the winter of our discontent\nmade glorious summer by this son of York."
+```ruby
+"now is the winter of our discontent\nmade glorious summer by this son of York."
+```
 
 # Here Docs
 
@@ -209,14 +214,13 @@ some of these have `!` versions which modify the string in place
       x
     end
 
-<!--# Here docs don't have to end the expression
+# Here docs don't have to end the expression
 
-    @@@ruby
-    x = <<-NUM.to_i * 10
-    5
-    NUM
-    x  # => 50
+```ruby
+x = <<-NUM.to_i * 10
+5
+NUM
+x  # => 50
+```
 
 Weird, huh?
--->
-

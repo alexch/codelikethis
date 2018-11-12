@@ -19,7 +19,6 @@ HTML is a coding language composed of various types of *tags*, also known as *el
 # Standard Page Structure
 
 ```html
-@@@html
 <!DOCTYPE html>
 <html>
   <head>
@@ -71,8 +70,7 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 
 Attributes further define HTML elements and their purpose. For example, an image tag may have the following attributes:
 
-```
-@@@ html
+```html
 <img src="/images/cat-pic.jpg" title="Cat Picture" alt="Picture of a fuzzy cat">
 ```
 

@@ -12,8 +12,7 @@ unfortunately, you need to parse the string into parameters, decoding the
 
 fortunately, there is a standard JS API object to help you, named [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
 
-```
-@@@js
+```js
 let params = new URLSearchParams(document.location.search);
 let name = params.get('name');
 ```

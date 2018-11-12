@@ -16,7 +16,6 @@
 # The Best Test Framework
 
 ```js
-@@@js
 function assert(value) {
   if (!value) {
     console.log("Failure");
@@ -29,7 +28,6 @@ All you need is <del>love</del>assert.
 # Even better
 
 ```js
-@@@js
 function assert(value, why) {
   if (value) {
     console.log("Success: " + why);
@@ -43,8 +41,7 @@ function assert(value, why) {
 
 > Start with the null case.
 
-```
-@@@js
+```js
 function fancyText(s) {
     return '';
 }
@@ -58,8 +55,7 @@ assert(fancyText('') === '');
 
 > Write code one test case at a time.
 
-```
-@@@js
+```js
 function fancyText(s) {
     return s[0].toUpperCase() + 
       s.slice(1,s.length).toLowerCase();
@@ -95,7 +91,6 @@ assert(fancyText('apple') === 'Apple');
 # Tapped Source: fancy.js
 
 ```js
-@@@js
 var test = require('tape');
 if (window.tapExtension) {
   test = window.tapExtension(test);
@@ -119,8 +114,7 @@ test('fancy formatter', function(t) {
 
 shell:
 
-```
-@@@sh
+```sh
 npm install --save-dev browserify tape
 browserify -o fancy-bundle.js --standalone fancyText fancy.js
 ```
@@ -131,7 +125,6 @@ browserify -o fancy-bundle.js --standalone fancyText fancy.js
 # Tapped Source: index.html
 
 ```html
-@@@html
 <button id="format" onclick="doFormat()">
 >> Format >>
 </button>

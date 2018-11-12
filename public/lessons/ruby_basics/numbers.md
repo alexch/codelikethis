@@ -15,21 +15,22 @@ floating point literals
 
 conversion only happens when it needs to
 
-    @@@ruby
-    >> 2/3 == 0
-    => true
+```ruby
+>> 2/3 == 0
+=> true
 
-    >> 2.0/3 == 0.6666666666666666
-    => true
+>> 2.0/3 == 0.6666666666666666
+=> true
 
-    >> 2.0/3 == 0.666666666666666
-    => false
+>> 2.0/3 == 0.666666666666666
+=> false
 
-    >> 2.0/3 == 0.6666666666666667
-    => false
+>> 2.0/3 == 0.6666666666666667
+=> false
 
-    >> 2.to_f/3
-    => 0.6666666666666666
+>> 2.to_f/3
+=> 0.6666666666666666
+```
 
 # IEEE Rounding Error Is Awesome
 

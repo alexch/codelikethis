@@ -5,15 +5,16 @@ This section is a continuation of "ruby intro", covering more advanced topics. I
 
 # Reopening classes
 
-    @@@ ruby
-    class Fixnum
-      def divisible_by? n
-        self % n == 0
-      end
-    end
+```ruby
+class Fixnum
+  def divisible_by? n
+    self % n == 0
+  end
+end
 
-    4.divisible_by? 2 #=> true
-    4.divisible_by? 3 #=> false
+4.divisible_by? 2 #=> true
+4.divisible_by? 3 #=> false
+```
 
 # Duck Typing
 
@@ -35,14 +36,15 @@ This section is a continuation of "ruby intro", covering more advanced topics. I
 
 # Array Assignment
 
-    @@@ ruby
-    @width, @height = width, height
-    @width, @height = [width, height]
+```ruby
+@width, @height = width, height
+@width, @height = [width, height]
 
-    def dimensions
-      [10, 20]
-    end
-    @width, @height = dimensions
+def dimensions
+  [10, 20]
+end
+@width, @height = dimensions
+```
 
 
 # Metaprogramming
@@ -76,10 +78,11 @@ This section is a continuation of "ruby intro", covering more advanced topics. I
 
 Equivalent:
 
-    @@@ ruby
-    1 + 2
-    1.+(2)
-    1.send "+", 2
+```ruby
+1 + 2
+1.+(2)
+1.send "+", 2
+```
 
 > send the object `1` the message `+` with the parameter `2`
 
@@ -89,7 +92,9 @@ Equivalent:
 * so they can be overridden like any method
 * `String` has some great ones
 
-        "abc" * 3           #=> "abcabcabc"
-        "abc" << "def"      #=> "abcdef"
-        "%d live crew" % 2  #=> "2 live crew"
+```ruby
+"abc" * 3           #=> "abcabcabc"
+"abc" << "def"      #=> "abcdef"
+"%d live crew" % 2  #=> "2 live crew"
+```
 

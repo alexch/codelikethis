@@ -77,8 +77,7 @@ This lets you as the **programmer**:
 
 React lets you to **declare** what you want the page to be.
 
-```js
-@@@javascript
+```javascript
 ReactDOM.render(React.createElement(
   'h1',
   null,
@@ -107,8 +106,7 @@ Declarative is different than **Imperative** code which:
 
 An imperative example would be manipulating the DOM like this:
 
-```js
-@@@javascript
+```javascript
 window.onLoad function () {
   var heading = document.createElement('h1');
   var text = document.createTextNode('Hello DOM!');
@@ -126,8 +124,7 @@ window.onLoad function () {
 
 Something a little more complicated
 
-```js
-@@@javascript
+```javascript
 ReactDOM.render(
   React.createElement(
     "div",
@@ -154,8 +151,7 @@ ReactDOM.render(
 
 Given a `<root>` element exists the result is:
 
-```
-@@@html
+```html
 <div>
   <form id="my-form">
     <input id="create" type="text" placeholder="something"/>
@@ -169,8 +165,7 @@ But when the form initiates a `onSubmit` event React will handle the changes usi
 
 Accepts a description of the components that make up the page, and what DOM node to **render** the results to.
 
-```js
-@@@javascript
+```javascript
 ReactDOM.render()
 // API signature
 ReactDOM.render(element, container[, callback])
@@ -185,8 +180,7 @@ ReactDOM.render(element, container[, callback])
 
 Accepts an element type, props of the element, and child elements.
 
-```js
-@@@javascript
+```javascript
 React.createElement()
 // API signature
 React.createElement(

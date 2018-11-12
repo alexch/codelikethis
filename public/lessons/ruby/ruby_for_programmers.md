@@ -73,41 +73,44 @@ Ruby is...
 
 # IRB: Interactive RuBy
 
-    @@@ ruby
-    $ irb
-    >> 4
-    => 4
-    >> 4+4
-    => 8
+```ruby
+$ irb
+>> 4
+=> 4
+>> 4+4
+=> 8
+```
 
 Please fire up `irb` on your computer and **try this out** right now!
 
 # Everything's an Object
 
-    @@@ ruby
-    >> 2.class
-    => Fixnum
+```ruby
+>> 2.class
+=> Fixnum
 
-    >> 2.to_s
-    => "2"
+>> 2.to_s
+=> "2"
 
-    >> 2.to_s.class
-    => String
+>> 2.to_s.class
+=> String
+```
 
 # Everything Has a Value
 
-    @@@ ruby
-    >> 2 + 2
-    => 4
+```ruby
+>> 2 + 2
+=> 4
 
-    >> (2+2).zero?
-    => false
+>> (2+2).zero?
+=> false
 
-    >> if true then "yes" end
-    => "yes"
+>> if true then "yes" end
+=> "yes"
 
-    >> if false then "yes" end
-    => nil
+>> if false then "yes" end
+=> nil
+```
 
 # Output vs Value
 
@@ -142,13 +145,14 @@ The *output* is `foo\n` but the *value* is `nil`.
 
 # Functions
 
-    @@@ ruby
-    def add a, b
-      a + b
-    end
+```ruby
+def add a, b
+  a + b
+end
 
-    add 2, 2
-    #=> 4
+add 2, 2
+#=> 4
+```
 
 * Note: no 'return' required
 * `def add(a, b)` is also legal
@@ -159,30 +163,33 @@ The *output* is `foo\n` but the *value* is `nil`.
 
 * These are equivalent:
 
-        @@@ ruby
-        def increment(x)
-          return x + 1;
-        end
+```ruby
+def increment(x)
+  return x + 1;
+end
 
-        def increment x
-          x + 1
-        end
+def increment x
+  x + 1
+end
+```
 
 * Also these:
 
-        @@@ ruby
-        def increment x; x + 1; end
+```ruby
+def increment x; x + 1; end
 
-        def increment(x) x + 1; end
+def increment(x) x + 1; end
+```
 
 # Blocks are like mini-functions
 
 * Blocks can also take parameters or return a value
 * e.g. the `map` iterator translates each item in an array into a new array
 
-        @@@ ruby
-        >> ["hello", "world"].map {|string| string.upcase}
-        => ["HELLO", "WORLD"]
+```ruby
+>> ["hello", "world"].map {|string| string.upcase}
+=> ["HELLO", "WORLD"]
+```
 
 * `{|string| string.upcase}` defines a block
 
@@ -215,71 +222,78 @@ With chaining:
 
 Other languages are prose:
 
-    @@@ Java
-    public String titleize(s) {
-      String words = s.split(" ");
-      String titleized = "";
-      for(int i =0; i < words.length ; i++) {
-        char capLetter = Character.toUpperCase(words[i].charAt(0));
-        String capWord =  capLetter + words[i].substring(1, words[i].length());
-        titleized += capWord + " ";
-      }
-      return titleized.trim();
-    }
+```java
+public String titleize(s) {
+  String words = s.split(" ");
+  String titleized = "";
+  for(int i =0; i < words.length ; i++) {
+    char capLetter = Character.toUpperCase(words[i].charAt(0));
+    String capWord =  capLetter + words[i].substring(1, words[i].length());
+    titleized += capWord + " ";
+  }
+  return titleized.trim();
+}
+```
 
 Ruby is poetry:
 
-    @@@ Ruby
-    def titleize s
-      s.split.map(&:capitalize).join(" ")
-    end
+```Ruby
+def titleize s
+  s.split.map(&:capitalize).join(" ")
+end
+```
 
 Cf. **declarative** vs. **algorithmic**
 
 # Ruby has hash comments, like perl
 
-    @@@ ruby
-    # is a comment
-    2 + 2 # is a comment
+```ruby
+# is a comment
+2 + 2 # is a comment
+```
 
 Ruby has a syntax for multiline comments too, but it's silly and nobody uses it.
 
 # Line Break Gotcha
 
-    @@@ ruby
-    x = 1 + 2
-    x #=> 3
+```ruby
+x = 1 + 2
+x #=> 3
 
-    x = 1
-      + 2
-    x #=> 1
+x = 1
+  + 2
+x #=> 1
+```
 
 Solution: always put operators on top line
 
-    @@@ ruby
-    x = 1 +
-        2
-    x #=> 3
+```ruby
+x = 1 +
+    2
+x #=> 3
+```
 
 # Use parens when you need them
 
-    @@@ ruby
-    >> "Hello".gsub "H", "h"
-    => "hello"
+```ruby
+>> "Hello".gsub "H", "h"
+=> "hello"
 
-    >> "Hello".gsub "H", "h".reverse
-    => "hello"
+>> "Hello".gsub "H", "h".reverse
+=> "hello"
 
-    >> "Hello".gsub("H", "h").reverse
-    => "olleh"
+>> "Hello".gsub("H", "h").reverse
+=> "olleh"
+```
 
 # Variables are declared implicitly
 
-    @@@ ruby
-    first_name = "Santa"
-    last_name = "Claus"
-    full_name = first_name + last_name
-    #=> "SantaClaus"
+```ruby
+first_name = "Santa"
+last_name = "Claus"
+full_name = first_name + last_name
+#=> "SantaClaus"
+```
 
 # Built-in Types
 
@@ -309,9 +323,10 @@ Solution: always put operators on top line
 
 # String interpolation
 
-    @@@ ruby
-    "boyz #{1 + 1} men"
-    => "boyz 2 men"
+```ruby
+"boyz #{1 + 1} men"
+=> "boyz 2 men"
+```
 
 * Any Ruby code can go inside the braces
 * It gets evaluated and stuck inside the string
@@ -337,11 +352,12 @@ If so, do a lab: 01_temperature is right up your alley.
 
 # Iterators
 
-    @@@ ruby
-    my_array = ["cat", "dog", "world"]
-    my_array.each do |item|
-      puts "hello " + item
-    end
+```ruby
+my_array = ["cat", "dog", "world"]
+my_array.each do |item|
+  puts "hello " + item
+end
+```
 
 * `do...end` defines a *block*
 * calls the block with `item = "cat"`
@@ -350,16 +366,17 @@ If so, do a lab: 01_temperature is right up your alley.
 
 # Classes and methods
 
-    @@@ ruby
-    class Calculator
-      def add(a,b)
-        a + b
-      end
-    end
+```ruby
+class Calculator
+  def add(a,b)
+    a + b
+  end
+end
 
-    calc = Calculator.new
-    calc.add(2, 2)
-    #=> 4
+calc = Calculator.new
+calc.add(2, 2)
+#=> 4
+```
 
 * a *function* inside a *class* is called a *method*
 
@@ -407,12 +424,13 @@ constants are in `ALL_CAPS`
 
 # Variable Scopes
 
-    @@@ ruby
-    var   # local variable (or method call)
-    @var  # instance variable
-    @@var # class variable
-    $var  # global variable
-    VAR   # constant
+```ruby
+var   # local variable (or method call)
+@var  # instance variable
+@@var # class variable
+$var  # global variable
+VAR   # constant
+```
 
 # `load` and `require`
 

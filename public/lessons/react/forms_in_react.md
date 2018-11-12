@@ -5,7 +5,6 @@
 * This ensures that React always 'owns' the state of the Form
 
 ```javascript
-@@@javascript
 class NameForm extends React.Component {
   constructor(props) {
     super(props);

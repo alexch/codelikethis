@@ -11,13 +11,11 @@
   * Answer: it's the value of the property named `prototype` on that function object
   * Every function has one
 
-            @@@ javascript
             function add(x,y) { return x+y; }
             add.prototype;    // some weird object with a "constructor" property pointing to add
 
 * So, we can either replace the prototype
 
-        @@@ javascript
         var Bat = function() {
             this.legs = 2;
         }
@@ -27,7 +25,6 @@
 
 * Or we can add properties to the prototype
 
-        @@@ javascript
         var Whale = function() {
             this.legs = 0;
         }
@@ -37,8 +34,6 @@
         whale.lactates;     // true
 
 * And some of those properties can be functions
-
-        @@@ javascript
 
         var Circle = function(radius) {
             this.radius = radius;
@@ -74,12 +69,10 @@
               function Cat() {}
 * We want every cat to contain all properties of Mammal
 
-        @@@ javascript
         Cat.prototype = Mammal.prototype; // BAD
   * now setting properties on Cat.prototype will **also** set them on Mammal.prototype
 * We want the cat's prototype to be a **new object** whose prototype is Mammal's prototype
 
-        @@@ javascript
         Cat.prototype = new Mammal(); // GOOD
   * Each cat has its own properties
   * All cats share a single prototype
@@ -88,78 +81,80 @@
 * Yes, it's weird that the cat's prototype *is* a mammal, but so it goes
 * Note: we probably want to clean up the "constructor" property so `instanceof` works
 
-        @@@ javascript
         Cat.prototype.constructor = Cat; // sigh
 
 # Calling superclass methods
 
 * One class can call its parent class' methods using `apply`
 
-        @@@ javascript
-        var Rectangle = function(height, width) {
-            this.height = height;
-            this.width = width;
-        }
-        Rectangle.prototype.area = function() {
-            return this.height * this.width;
-        }
+```javascript
+var Rectangle = function(height, width) {
+    this.height = height;
+    this.width = width;
+}
+Rectangle.prototype.area = function() {
+    return this.height * this.width;
+}
 
-        var Square = function(side) {
-            Rectangle.apply(this, [side, side]);
-        }
-        Square.prototype = new Rectangle();
-        Square.prototype.constructor = Square;
+var Square = function(side) {
+    Rectangle.apply(this, [side, side]);
+}
+Square.prototype = new Rectangle();
+Square.prototype.constructor = Square;
 
-        s = new Square(10);
-        s.area(); // 100
+s = new Square(10);
+s.area(); // 100
 
-        var Cube = function(side) {
-            Square.apply(this, [side]);
-        }
-        Cube.prototype = new Square();
-        Cube.prototype.constructor = Cube;
-        Cube.prototype.area = function() {
-            return Square.prototype.area.apply(this) * 6;
-        }
-        Cube.prototype.volume = function() {
-            return Rectangle.prototype.area.apply(this) * this.height;
-        }
+var Cube = function(side) {
+    Square.apply(this, [side]);
+}
+Cube.prototype = new Square();
+Cube.prototype.constructor = Cube;
+Cube.prototype.area = function() {
+    return Square.prototype.area.apply(this) * 6;
+}
+Cube.prototype.volume = function() {
+    return Rectangle.prototype.area.apply(this) * this.height;
+}
 
-        c = new Cube(10);
-        c.area();     // 600
-        c.volume();   // 1000
+c = new Cube(10);
+c.area();     // 600
+c.volume();   // 1000
+```
 
 * You can set a "superclass" (aka "_super" or "uber") property so you don't have to name the superclass every time
 
-        @@@ javascript
-        Cube.prototype._super = Square.prototype;
-        Cube.prototype.area = function() {
-            return this._super.area.apply(this) * 6;
-        }
+```javascript
+Cube.prototype._super = Square.prototype;
+Cube.prototype.area = function() {
+    return this._super.area.apply(this) * 6;
+}
+```
 
 # Disposable Function
 
 * If you don't want to "waste" an instance of the superclass, you can make a new disposable function and steal its prototype
 
-        @@@ javascript
-        function Square(){};
-        var F = function(){};
-        F.prototype = Rectangle.prototype;
-        Square.prototype = new F();
-
+```javascript
+function Square(){};
+var F = function(){};
+F.prototype = Rectangle.prototype;
+Square.prototype = new F();
+```
 
 # extend
 
 * Write a function that does all these bothersome steps in one
 
-        @@@ javascript
-        function extend(Child, Parent) {
-            var F = function(){};
-            F.prototype = Parent.prototype;
-            Child.prototype = new F();
-            Child.prototype.constructor = Child;
-            Child.prototype._super = Parent.prototype;
-        }
+```javascript
+function extend(Child, Parent) {
+    var F = function(){};
+    F.prototype = Parent.prototype;
+    Child.prototype = new F();
+    Child.prototype.constructor = Child;
+    Child.prototype._super = Parent.prototype;
+}
+```
 
 * Several libraries have done it, in slightly different ways
   * prototype.js

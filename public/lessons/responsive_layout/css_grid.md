@@ -15,7 +15,6 @@
 # Basic Grid Example
 
 ```html
-@@@html
 
 <div class="wrapper">
   <div>One</div>
@@ -27,7 +26,6 @@
 ```
 
 ```css
-@@@css
 .wrapper {
   display: grid;
   grid-template-columns: 200px 200px 200px;

@@ -1,7 +1,6 @@
 # Git Typealong
 
-```
-@@@ sh
+```sh
 mkdir project
 cd project
 git init .

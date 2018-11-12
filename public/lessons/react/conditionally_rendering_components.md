@@ -4,7 +4,6 @@
 * State within the Class or Function can be used in the conditions
 
 ```javascript
-@@@javascript
 UserGreeting = (props) => {
   return <h1>Welcome back!</h1>;
 }
@@ -32,7 +31,6 @@ ReactDOM.render(
 # React Elements as Variables - Components
 
 ```javascript
-@@@javascript
 function LoginButton(props) {
   return (
     <button onClick={props.onClick}>
@@ -53,7 +51,6 @@ function LogoutButton(props) {
 # React Elements as Variables - Usage
 
 ```javascript
-@@@javascript
 class LoginControl extends React.Component {
   constructor (props) {
     super (props);
@@ -97,7 +94,6 @@ class LoginControl extends React.Component {
 * `false && expression` is always false and evaluates `false`
 
 ```javascript
-@@@javascript
 function Mailbox(props) {
   const unreadMessages = props.unreadMessages;
   return (
@@ -131,7 +127,6 @@ ReactDOM.render(
 ### Simple
 
 ```javascript
-@@@javascript
 class Greeting extends React.Component {
   constructor (props) {
     super (props)
@@ -155,7 +150,6 @@ class Greeting extends React.Component {
 ### Complex
 
 ```javascript
-@@@javascript
 render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
@@ -173,7 +167,6 @@ render() {
 # Preventing Component Rendering
 
 ```javascript
-@@@javascript
 function WarningBanner(props) {
   if (!props.warn) {
     return null;

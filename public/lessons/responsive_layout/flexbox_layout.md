@@ -29,16 +29,15 @@
  * Remember, Flexbox is one dimensional. `display:flex` arranges your items in a row. This can be changed with `flex-direction: column`
 
 ## Example
- ```css
-@@@css
+
+```css
  .container {
   display: flex;
   flex-direction: row;
 }
- ```
+```
 
 ![Illustration of Flex Container](https://cdn-images-1.medium.com/max/1600/1*4yKnG2-vuPF5XA-BmXADLQ.gif "Flex Container")
-
 
 # Reversing the Order
 
@@ -50,7 +49,6 @@
 
 ## Example
 ```css
-@@@css
 #container {
   display: flex;
   flex-direction: column-reverse;
@@ -73,7 +71,6 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 
 ## Example For Centering Content
 ```css
-@@@css
 #container {
   display: flex;
   justify-content: center;
@@ -99,7 +96,6 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 
 ## Example
 ```css
-@@@css
 #container {
   display: flex;
   align-items: stretch;
@@ -116,7 +112,6 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 
 ## Example
 ```css
-@@@css
 #container {
   display: flex;
   flex-direction: row;
@@ -143,7 +138,6 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 
 ## Example
 ```css
-@@@css
 .firstItem {
   display: flex;
   order: 1;
@@ -169,7 +163,6 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 
 ## Example
 ```css
-@@@css
 .navigationBarItem0 {
   display: flex;
   align-self: flex-start;
@@ -187,7 +180,6 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 [flex-grid](./flex-grid.html)
 
 ```html
-@@@html
 <div class='two-columns'>
   <div class='column'>
     <h2>Meats</h2>

@@ -75,7 +75,6 @@ What are the differences between the URL resources listed above? Talk about them
 Create a basic HTML page with the following sections:
 
 ```html
-@@@html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,7 +110,6 @@ Create a basic HTML page with the following sections:
 Experiment with adding content to the page based on an API response.
 
 ```javascript
-@@@javascript
 let allUsers = [];
 
 let getAllUsers = () => {

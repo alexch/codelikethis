@@ -21,7 +21,6 @@ learn how to...
 As specified in the [Yelpington Repo](./yelpington_repo) project, we will need JSON formatted like this:
 
 ```json
-@@@json
 {
   "id": "joes-diner",
   "name": "Joe's Diner",

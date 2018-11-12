@@ -5,7 +5,7 @@
 
 # Example Table structure:
 
-```
+```html
 <h1>Grocery List</h1>
 <table>
   <tr>
@@ -56,7 +56,7 @@
   1. this list
   2. is ordered
 
-```
+```html
 <ul>
   <li>Pizza</li>
   <li>Pasta</li>
@@ -84,7 +84,7 @@ Comments in HTML are not read by browsers. They use the following syntax:
 
 * Note that no closing tag is necessary. Comments can also be used to temporarily disable a block of code. For example:
 
-```
+```html
 <!-- I don't want this to be shown because it is silly
 <body>
 	<div>

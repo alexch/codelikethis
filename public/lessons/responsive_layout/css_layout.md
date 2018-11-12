@@ -87,8 +87,7 @@ For example, if you have an image with its own caption, and you want them to app
 
 * [cow html](./cow-raw.html) - raw
 
-```
-@@@ html
+```html
 <img src='cow.jpg'>
 <p class='caption'>This is a cow.</p>
 ```
@@ -97,8 +96,7 @@ Into this:
 
 * [cow html](./cow.html) - styled
 
-```
-@@@ html
+```html
 <div class='image-wrapper'>
   <img src='cow.jpg'>
   <p class='caption'>This is a cow.</p>
@@ -127,8 +125,7 @@ Into this:
 
 # Floating Cow
 
-```
-@@@ html
+```html
 <style>
   .image-wrapper {
     position: relative;

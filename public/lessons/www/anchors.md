@@ -7,8 +7,7 @@
 * *inner anchors* are also defined by `id` in modern browsers
 * when linking to an *inner anchor*, use the # character to distinguish *files* from *inner anchors*)
 
-```
-@@@html
+```html
 <a href='#stuff'>here is my stuff</a>
 <a href='#things'>here are my things</a>
 ...
@@ -25,8 +24,6 @@
     * Other page withn the site, using relative `href="/somePage.html"`
 
 ```html
-@@@html
-
 <a href="#about-me">About Me</a>
 ```
 

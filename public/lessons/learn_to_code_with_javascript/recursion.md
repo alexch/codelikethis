@@ -10,11 +10,12 @@
 
 Here's a not very useful recursive function:
 
-    @@@ js
-    function go() {
-      console.log("Go!");
-      go();                // do it all again
-    }
+```js
+function go() {
+  console.log("Go!");
+  go();                // do it all again
+}
+```
 
 To stop this function, press CTRL-C.
 
@@ -28,12 +29,13 @@ The standard way to stop is called a *guard clause*.
 
 Also called a *base case* or a *terminator*.
 
-    @@@ js
-    function countdown(seconds) {
-      if (seconds === 0) {
-        console.log("Blastoff!");
-      }
-    }
+```js
+function countdown(seconds) {
+  if (seconds === 0) {
+    console.log("Blastoff!");
+  }
+}
+```
 
 
 # Recursion is Reduction
@@ -52,18 +54,19 @@ In this way, recursion is an example of the *divide and conquer* approach to pro
 
 The simplest form of recursion uses a counter; in this example we are counting down the seconds until a rocket launches.
 
-    @@@ js
-    function countdown(seconds) {
-      if (seconds == 0) {
-        console.log("Blastoff!");
-      } else {
-        console.log("" + seconds + "...");
-        let nextCount = seconds - 1;
-        countdown(nextCount);
-      }
-    }
+```js
+function countdown(seconds) {
+  if (seconds == 0) {
+    console.log("Blastoff!");
+  } else {
+    console.log("" + seconds + "...");
+    let nextCount = seconds - 1;
+    countdown(nextCount);
+  }
+}
 
-    countdown(10);
+countdown(10);
+```
 
 Put the above in a source file called `countdown.js` and try it now. 
 
@@ -92,27 +95,29 @@ Write a function called `factorial` that takes a number and returns its factoria
 
 Remember to start with the base case!
 
-    @@@ js
-    factorial(1)    // 1
-    factorial(2)    // 2
-    factorial(3)    // 6
-    factorial(10)   // 3628800
-   
-   
+```js
+factorial(1)    // 1
+factorial(2)    // 2
+factorial(3)    // 6
+factorial(10)   // 3628800
+
+```
+
 # Solution: Factorial
 
-    @@@ js
-    function factorial(n) {
-        if (n == 1) {
-            return 1;
-        } else {
-            return n * factorial(n - 1);
-        }
+```js
+function factorial(n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
     }
+}
+```
 
 # Exercise: Draw It Out
 
-Please dive into the above `factorial` function in excruiciating detail.
+Please dive into the above `factorial` function in excruciating detail.
 
 Fill out the cells of the following table for the call `factorial(5)`:
 
@@ -132,19 +137,20 @@ In fact, most recursive functions can be "unrolled" and rewritten using a loop a
 
 For example, here is `factorial` using a stack instead of recursion:
 
-    @@@ js
-    function factorial(n) {
-        let stack = [];
-        while (n >= 1) {
-            stack.push(n);
-            n = n - 1;
-        }
-        let f = 1;
-        while (stack.length > 0) {
-            f = f * stack.pop();
-        }
-        return f;
-    } 
+```js
+function factorial(n) {
+    let stack = [];
+    while (n >= 1) {
+        stack.push(n);
+        n = n - 1;
+    }
+    let f = 1;
+    while (stack.length > 0) {
+        f = f * stack.pop();
+    }
+    return f;
+} 
+```
 
 What do you think about this implementation compared to the previous one? What are the advantages and disadvantages of recursion vs. loops?
 
@@ -153,7 +159,6 @@ What do you think about this implementation compared to the previous one? What a
 Using recursion, write a program called `fib.js` so that running `node fib.js 10` prints
 
 ```js
-@@@ js
 [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 ```
 

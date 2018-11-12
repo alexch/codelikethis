@@ -20,7 +20,7 @@ Your task for this project is to build a command line program which you can use 
 
 **When** a user inputs:
 
-``` sh
+```sh
 til To convert JSON to a JavaScript object use JSON.parse(myObject)
 ```
 
@@ -55,7 +55,7 @@ And the Date-Time:
 
 A user inputs:
 
-``` sh
+```sh
 til --list
 ```
 
@@ -63,7 +63,7 @@ til --list
 
 Then the command prompt will contain
 
-``` sh
+```sh
 0 2018-01-01T12:15:00+0400 To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
 
@@ -84,7 +84,7 @@ And the Date-Time:
 
 A user inputs:
 
-``` sh
+```sh
 til --show 0
 ```
 
@@ -92,7 +92,7 @@ til --show 0
 
 Then the terminal will output
 
-``` sh
+```sh
 CREATED: 2018-01-01T12:15:00+0400
 CONTENT: To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
@@ -120,7 +120,7 @@ And the Date-Time:
 
 A user inputs:
 
-``` sh
+```sh
 til --list
 ```
 
@@ -128,7 +128,7 @@ til --list
 
 Then the command prompt will contain
 
-``` sh
+```sh
 0 2018-01-01T12:15:00+0400 To convert JSON to a JavaScript object, use JSON.parse(myObject)
 1 2018-03-02T18:30:00+0400 To get the length of a JavaScript Array, ['some', 'array'].length
 ```
@@ -148,7 +148,7 @@ An existing TIL entry with the content:
 
 A user inputs:
 
-``` sh
+```sh
 til --edit 0
 ```
 
@@ -158,13 +158,13 @@ The user changes the contents:
 
 From:
 
-``` text
+```text
 To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
 
 To:
 
-``` text
+```text
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
 
@@ -176,7 +176,7 @@ The TIL entry is saved
 
 The contents of the TIL entry will contain:
 
-``` text
+```text
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
 
@@ -188,13 +188,13 @@ To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}
 **Given**
 
 An existing TIL entry with the content:
-``` text
+```text
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
 
 **When** a user inputs:
 
-``` sh
+```sh
 til --delete 0
 ```
 
@@ -205,7 +205,7 @@ til --delete 0
 **And**
 There are zero entries when the user inputs
 
-``` sh
+```sh
 til --list
 ```
 

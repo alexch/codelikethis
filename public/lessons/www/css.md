@@ -22,7 +22,6 @@
   * Declarations go within the `style` attribute value
 
 ```html
-@@@html
 <h1 style="color: red; font-size: 32px;">
 ```
 
@@ -31,7 +30,6 @@
 Let's say we have the following HTML:
 
 ```html
-@@@html
 
 <!DOCTYPE html>
 <html>
@@ -48,8 +46,6 @@ Let's say we have the following HTML:
 Here is an example of CSS:
 
 ```css
-@@@css
-
 h1 {
   color:red;
   font-size:24px;
@@ -60,6 +56,7 @@ p {
   font-size: 12px;
 }
 ```
+
 What is the CSS doing here?
 
 # Selectors and Properties
@@ -94,8 +91,6 @@ What is the CSS doing here?
 Selectors can target elements nested within other elements
 
 ```css
-@@@css
-
 p img {
   max-width: 320px;
   height: auto;
@@ -107,8 +102,6 @@ p img {
 Selectors can target specific elements with a class
 
 ```css
-@@@css
-
 h1 .title {
   display: block;
   margin: 0, auto;
@@ -121,8 +114,6 @@ h1 .title {
 Selectors can target specific elements with several layers of nesting
 
 ```css
-@@@css
-
 main .introduction > p {
   background-color: lightgray;
   margin: 10px auto;
@@ -146,7 +137,6 @@ You can target the state of an element using `psuedo-class` selectors
 [MDN Psuedo-Class Tutorial](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements "MDN Psuedo-Class Tutorial")
 
 ```css
-@@@css
 a:hover {
   background-color: red;
 }
@@ -173,7 +163,6 @@ There are several ways to add style to an HTML page
 # CSS Style Tags
 
 ```html
-@@@html
 <!DOCTYPE html>
 <html>
   <head>
@@ -202,7 +191,6 @@ There are several ways to add style to an HTML page
 # Linking to CSS
 
 ```html
-@@@html
 <!DOCTYPE html>
 <html>
   <head>
@@ -224,7 +212,6 @@ There are several ways to add style to an HTML page
 ## Example
 
 ```html
-@@@html
 <style type="text/css" media="screen">
   @import 'my_special_css_file.css';
 </style>
@@ -248,7 +235,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/%40import
 # Cascading Syles
 
 ```css
-@@@css
 
 h1 {
   color: red;
@@ -264,7 +250,6 @@ h1 {
 ```
 
 ```html
-@@@html
 <h1>Hi there, I am RED</h1>
 <h1 class="title">Hi there, I am YELLOW</h1>
 <h1 class="title" id="introduction">Hi there, I am BLUE</h1>
@@ -277,7 +262,6 @@ Using `!important` in a declaration overrides all other declarations
 ## Example
 
 ```css
-@@@css
 
 h1 {
   color: red;
@@ -305,7 +289,6 @@ h1 {
 * More specific selectors will override less specific
 
 ```css
-@@@css
 .main p {
   // Least specific
   background-color: yellow;

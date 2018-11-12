@@ -11,7 +11,6 @@
 ![](./simple-map-leaflet.png)
 
 ```js
-@@@js
 var map = L.map('map').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -30,7 +29,6 @@ Include the CSS and JavaScript in the Head of the HTML page
 **Add the CSS First**
 
 ```html
-@@@html
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
 ```
 
@@ -39,21 +37,18 @@ Include the CSS and JavaScript in the Head of the HTML page
 > Make sure you put this AFTER Leaflet's CSS
 
 ```html
-@@@html
  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 ```
 
 **Then create the map container**
 
 ```html
-@@@html
 <div id="mapid"></div>
 ```
 
 **Then use CSS to create a height for the container**
 
 ```css
-@@@css
 
 #mapid {
   height: 400px;
@@ -71,7 +66,6 @@ Include the CSS and JavaScript in the Head of the HTML page
 ### Mapbox Basemap Example
 
 ```js
-@@@js
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   {
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -89,7 +83,6 @@ Basemap providers for LeafletJS
   * <https://leafletjs.com/reference-1.3.0.html>
 
 ```js
-@@@js
 L.map('map').setView([51.505, -0.09], 13)
 ```
 
@@ -99,7 +92,6 @@ L.map('map').setView([51.505, -0.09], 13)
 * The text of a marker can be set using a string of HTML
 
 ```js
-@@@js
 let marker = L.marker([51.5, -0.09]).addTo(mymap);
 marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 ```
@@ -109,7 +101,6 @@ marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 * Markers can be removed by calling `remove()` on the marker object
 
 ```js
-@@@js
 let marker = L.marker([51.5, -0.09]).addTo(mymap);
 marker.remove();
 ```
@@ -120,7 +111,6 @@ marker.remove();
 * They can be created and added to the map
 
 ```js
-@@@js
 let polygon = L.polygon([
       [51.509, -0.08],
       [51.503, -0.06],
@@ -151,7 +141,6 @@ Several other map shapes exist:
 * Alternative to .shp files and the variants; .shx, .prj, .dbf, ect...
 
 ```js
-@@@js
 {
   "type": "Feature",
   "properties": {
@@ -175,7 +164,6 @@ Several other map shapes exist:
 ```
 
 ```js
-@@@js
 let someLayer = L.geoJSON(geoJsonData);
 someLayer.addTo(mymap);
 
@@ -189,14 +177,12 @@ someLayer.addTo(mymap);
 ### Installation
 
 ```html
-@@@html
 <script src="https://unpkg.com/@mapbox/leaflet-pip@latest/leaflet-pip.js"></script>
 ```
 
 ### Usage
 
 ```js
-@@@js
 
 let layer = L.geoJson(statesData);
 let results = leafletPip.pointInLayer([-88, 38], layer);

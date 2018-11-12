@@ -46,7 +46,6 @@ Remember to *refactor*. Sometimes a data structure that works well for the simpl
 If you know about JavaScript classes and constructors, feel free to use them; otherwise you may save state in *global variables* like this:
 
 ```js
-@@@js
 let currentRoom = null;
 function moveToRoom(newRoom) {
   if (canMoveToRoom(newRoom)) {

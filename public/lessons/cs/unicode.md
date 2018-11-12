@@ -47,7 +47,6 @@ That means you can use emoji in your JavaScript programs!
 Like this:
 
 ```js
-@@@js
 "😂".repeat(20)
 ```
 
@@ -57,8 +56,7 @@ Like this:
 
 (sadly this doesn't work in Windows PowerShell, but it does work in Atom+node, like this:)
 
-```
-@@@js
+```js
   response.setHeader('content-type', 'text/html');
   response.write('<meta charset="UTF-8">')
   response.write("😂".repeat(20));

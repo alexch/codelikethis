@@ -71,7 +71,6 @@ class ThingPage < AppPage
     font name: "fonts/Museo500"
     font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
 
-    stylesheet name: "coderay"
     stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
 
     # load this application's CSS from /css/app.css
@@ -99,6 +98,12 @@ class ThingPage < AppPage
     # fontawesome is now SVGs
     script defer: 'defer',
            src: '/js/fontawesome-all.js'
+
+    # client-side code highlighting from https://highlightjs.org
+    stylesheet name: "highlight/xcode"
+    # stylesheet name: "highlight/kimbie.light"
+    script src: "/highlight.min.js"
+    script "hljs.initHighlightingOnLoad();"
 
     script raw(<<-JS)
 $(function () {

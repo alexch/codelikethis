@@ -41,7 +41,6 @@
 This will make our `.nav` element position relative when the media type is `print`
 
 ```css
-@@@css
 
 // Default position layout
 
@@ -82,7 +81,6 @@ Only change the layout to `position: relative;` when
   * The screen width is greater than or equal to 768 pixels
 
 ```css
-@@@css
 
 @media screen and (min-width:768px) {
   .nav {
@@ -102,7 +100,6 @@ Only change the layout to `position: relative;` when
   * The screen width is greater than or equal to 768 pixels
 
 ```css
-@@@css
 
 @media screen, (min-width:768px) {
   .nav {

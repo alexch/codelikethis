@@ -42,8 +42,9 @@ Objects are *things* that can be *described* and can *do* things, or...
 
 # Creating an object
 
-    @@@ ruby
-    cookie = Object.new
+```ruby
+cookie = Object.new
+```
 
 * now `cookie` refers to an object *instance*
   * unique storage location in memory
@@ -51,8 +52,9 @@ Objects are *things* that can be *described* and can *do* things, or...
 
 # Creating an object *literally*
 
-    @@@ ruby
-    fruit = "apple"
+```ruby
+fruit = "apple"
+```
 
 * `"apple"` is a *string literal*
 * `fruit` now refers to a new object *instance*
@@ -72,9 +74,10 @@ Objects are *things* that can be *described* and can *do* things, or...
 
 # Literals create instances
 
-    @@@ ruby
-    fruit = "apple"
-    dessert = "apple"
+```ruby
+fruit = "apple"
+dessert = "apple"
+```
 
 * `fruit` refers to a new object *instance*
 * `dessert` refers to a *different*, new object instance
@@ -86,11 +89,12 @@ Objects are *things* that can be *described* and can *do* things, or...
 
 # References are independent of instances
 
-    @@@ ruby
-    fruit = "apple"
-    dessert = fruit
-    fruit = "banana"
-    dessert = fruit
+```ruby
+fruit = "apple"
+dessert = fruit
+fruit = "banana"
+dessert = fruit
+```
 
 What are the values of `fruit` and `dessert` after each line?
 
@@ -98,13 +102,14 @@ What are the values of `fruit` and `dessert` after each line?
 
 How can you tell if two references point to the same instance?
 
-    @@@ ruby
-    fruit = "apple"
-    dessert = "apple"
-    >> fruit.object_id
-    => 2165091560
-    >> dessert.object_id
-    => 2165084200
+```ruby
+fruit = "apple"
+dessert = "apple"
+>> fruit.object_id
+=> 2165091560
+>> dessert.object_id
+=> 2165084200
+```
 
 Ref. WGR Ch.2, Section 2.3.1
 
@@ -120,9 +125,10 @@ Note that `.equal?` is not guaranteed since bizarrely, some objects override `.e
 
 # Garbage Collection
 
-    @@@ ruby
-    fruit = "apple"
-    fruit = "banana"
+```ruby
+fruit = "apple"
+fruit = "banana"
+```
 
 * Now the instance containing "apple" is *unreferenced*
 * So it can (and eventually will) be *garbage collected*
@@ -132,24 +138,26 @@ Note that `.equal?` is not guaranteed since bizarrely, some objects override `.e
 * a variable is a *reference* to an *instance* (persistent location in memory)
 * if you have several references to the same instance, odd things can happen
 
-        @@@ ruby
-        friend = "Alice"
-        teacher = friend
-        friend.upcase!
-        teacher
-        => "ALICE"
+```ruby
+friend = "Alice"
+teacher = friend
+friend.upcase!
+teacher
+=> "ALICE"
+```
 
 !SLIDE subsection
 # Behavior
 
 # Defining methods
 
-    @@@ ruby
-    cookie = Object.new
+```ruby
+cookie = Object.new
 
-    def cookie.bake
-      puts "the oven is nice and warm"
-    end
+def cookie.bake
+  puts "the oven is nice and warm"
+end
+```
 
 * bake is a *method*
   * aka function, procedure, subroutine
@@ -159,8 +167,9 @@ Note that `.equal?` is not guaranteed since bizarrely, some objects override `.e
 
 Behavior comes from *messages* and *methods*.
 
-    @@@ ruby
-    cookie.bake
+```ruby
+cookie.bake
+```
 
 prints `I'm a cookie` to the console
 
@@ -175,11 +184,12 @@ Ref. _The Well-Grounded Rubyist_ PDF, Fig. 2.1
 
 # The `methods` method
 
-    @@@ ruby
-    >> cookie.methods
-    => [:nil?, :===, :=~, :!~, :eql?, ...]
-    >> cookie.methods(false)
-    => [:bake]
+```ruby
+>> cookie.methods
+=> [:nil?, :===, :=~, :!~, :eql?, ...]
+>> cookie.methods(false)
+=> [:bake]
+```
 
 also useful: `cookie.methods.sort`, `cookie.methods.grep(/age/)`
 
@@ -197,13 +207,14 @@ also useful: `cookie.methods.sort`, `cookie.methods.grep(/age/)`
 
 # The `respond_to?` method
 
-    @@@ ruby
-    if cookie.respond_to? :bake
-      cookie.bake
-    else
-      puts "cookie is unbakable"
-    end
-    
+```ruby
+if cookie.respond_to? :bake
+  cookie.bake
+else
+  puts "cookie is unbakable"
+end
+```
+
 Note: Usually you don't use `respond_to` because of *duck typing*.
 
 !SLIDE subsection
@@ -211,6 +222,7 @@ Note: Usually you don't use `respond_to` because of *duck typing*.
 
 # Instance variables are stored in the object
 
+```ruby
     def cookie.add_chips(num_chips)
       @chips = num_chips
     end
@@ -221,6 +233,8 @@ Note: Usually you don't use `respond_to` because of *duck typing*.
 
     cookie.add_chips(500)
     cookie.yummy?   #=> true
+```
+
 
 # Self
 
@@ -230,8 +244,7 @@ Note: Usually you don't use `respond_to` because of *duck typing*.
 
 # Self Example
 
-```
-@@@ruby
+```ruby
 def cookie.yummy?
   @chips > 100
 end

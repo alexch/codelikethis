@@ -27,7 +27,6 @@ Add the following links to the `<head>` of the HTML file.
 # Example HTML File Head
 
 ```html
-@@@html
   <head>
     <meta charset="UTF-8" />
     <title>Hello World</title>
@@ -52,7 +51,7 @@ We will start with installing React using NPM
 ```sh
 
 
-@@@sh
+```sh
 npm init -y
 npm install --save react react-dom
 ```
@@ -74,8 +73,7 @@ Download the React, ReactDOM, and Babel Scripts from the Content Delivery Networ
 
 Put the content of the scripts into a directory called `src` in the project root
 
-```sh
-@@@shell
+```shell
 mkdir js
 mv path/to/downloads/react.development.js ./src/
 mv path/to/downloads/react-dom.development.js ./src/
@@ -87,7 +85,6 @@ mv path/to/downloads/babel.min.js ./src/
 Create an `index.html` file and source all three files in the head
 
 ```html
-@@@html
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -122,7 +119,6 @@ Example:
 ### Finished simple index.html
 
 ```html
-@@@html
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

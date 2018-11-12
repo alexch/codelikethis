@@ -29,8 +29,7 @@ Install the test runner (and any other required packages) with `npm install`
 
 Start with this definition in `calculator.js`:
 
-```
-@@@js
+```js
 class Calculator {
   constructor() {
     this.stack = [];
@@ -126,7 +125,7 @@ $ node calculator.js 2 2 +
 [2, 2, '+']
 [4]
 4
-```  
+```
 
 > **Hint:** you may have to alter the `value` method to do more than merely report what's on the top of the stack. 
 

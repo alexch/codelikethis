@@ -131,7 +131,7 @@ Feature: Is it Friday yet?
     Given today is Sunday
     When I ask whether it's Friday yet
     Then I should be told "Nope"
-``` 
+```
 
 Programmers have to write hooks for phrases like `When("^I ask whether it's Friday yet$")` but once those are coded, the QA or product team can write more tests.
 
@@ -206,7 +206,7 @@ What makes a good acceptance test?
 
 Bad: too much data obscures the test's meaning
 
-```
+```js
 createAccount('John Doe', 42, 40, '12 Main St.', 'Dallas', 'TX', ...)
 deposit(10)
 expect(account.balance).toBe(50);
