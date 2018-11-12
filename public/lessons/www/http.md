@@ -4,13 +4,15 @@ Let's lift the hood and check out the engine that makes the World Wide Web run.
 
 # Browsers - what do they do?
 
-* A web browser is a computer application that reads files. When entering a **domain** (ex. https://www.facebook.com) into the URL bar in a browser, the browser requests information in the form of a file associated with the URL input. 
-* Your browser renders code in the form of a website. 
+* A web browser is a computer application that reads files. 
+* When entering a **URL** (ex. https://www.facebook.com) into the address bar in a browser, the browser requests information in the form of a file associated with that specific URL.
+* Your browser renders code in the form of a website.
 
 # Request - Response
 
 * HTTP stands for **Hypertext Transfer Protocol**. 
-* In a nutshell, an HTTP request is sent by the **client** (a browser), which is used to locate information in the form of a file. * This file contains code, which tells your browser how, and what, to render. 
+* In a nutshell, an HTTP request is sent by the **client** (a browser), which is used to locate information in the form of a file. 
+* This file contains code, which tells your browser how, and what, to render. 
 * A web server responds to this request, by telling the browser where the file lives. 
 
 ![HTTP Request](/lessons/www/http_request.png "HTTP Request") (via <https://betterexplained.com/>)
@@ -22,7 +24,9 @@ HTTP is a protocol that allows clients to communicate with web servers, and is a
 * `GET`
 * `POST`
 
-When a URL is inputted, the browser sends a `GET` request to a web server. When a form is submitted on a website, a `POST` request is submitted, and the browser hands off the form data to be handled by the web server. 
+When a URL is inputted, the browser sends a `GET` request to a web server. When a form is submitted on a website, a `POST` request is submitted, and the browser hands off the form data to be handled by the web server.
+
+(There are several more [HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) but GET and POST are used for 99.99%+ of Web traffic.)
 
 # DNS
 
@@ -43,12 +47,10 @@ Your nameservers may also contain other information about your domain, such as w
 
 * HTTP: HyperText Transfer Protocol
     * Invented in ~1991 by Tim Berners-Lee as part of the World Wide Web
-    
     * Uses TCP/IP: Internet Protocol
-    
     * see [A Brief History of HTTP](https://hpbn.co/brief-history-of-http/)
 
-* Essentially, HTTP is a file transfer protocol
+* Essentially, HTTP is a *file transfer* protocol
   * every HTTP response contains a *body* which is often the raw, complete contents of a file
   * these files can be images, sounds, data, or code
 
@@ -65,15 +67,15 @@ The above languages run *inside* the web browser (aka "the client side"). On the
 * PHP
 * Ruby
 * Python
-
-For now, we are going to focus on **HTML and CSS**. This is the most common codebase used for creating webpages, and what is used for virtually all websites. 
+* Java
+* JavaScript
 
 # HTTP 0.9 Goals (1991)
 
 * **very** simple protocol, geared towards ease of use and implementation
 * **100%** ASCII characters in and out
 * Human readability was a goal
-* **stateless* meaning "one request, one response, and close"
+* **stateless** meaning "one request, one response, and close"
 
 # HTTP 1.0 (1993-1996)
 
@@ -101,6 +103,9 @@ For now, we are going to focus on **HTML and CSS**. This is the most common code
 
 # HTTP 1.0 details
 
+* *port* is a TCP/IP concept that lets a single *host* run several *services*
+  * the default port for HTTP is 80
+  * the default port for [HTTPS](https://en.wikipedia.org/wiki/HTTPS) is 443
 * Request and (part of) Response are still ASCII
 * `Content-Type` header allows different file types
   * reused **MIME**: (Multipurpose Internet Mail Extensions) spec for file type names
@@ -126,6 +131,8 @@ GET /
 ```
 
 then the server replies with an HTTP response!
+
+If you have a working `telnet`, try this yourself. Also try `telnet towel.blinkenlights.nl` .
 
 # Telnet Screenshot
 

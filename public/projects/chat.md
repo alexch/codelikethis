@@ -121,9 +121,11 @@ then it could look like this after:
 
 **Given** a set of messages in the recent past
 
-**When** a user requests all messages, if their client adds a `since` parameter to the GET request
+**When** a user clicks the Refresh button
 
-**Then** only messages that were sent since then are returned
+**Then** their client adds a `since` parameter to the GET request
+
+**And** only messages that were sent since then are returned
 
 #### Tech:
 
@@ -145,10 +147,6 @@ Client-side:
 <!--BOX-->
 
 ## Refresh Messages
-
-When the user clicks the **Refresh** button
-
-Then the client fetches and displays all recent messages
 
 <!--/BOX-->
 
