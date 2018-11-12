@@ -18,11 +18,12 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
 
 **Given** seed data mapping names to URLs in the following format,
 
-    @@@json
-    {
-        "btvca": "http://www.burlingtoncodeacademy.com/",
-        "iccrm": "http://www.benjerry.com/"
-    }
+```json
+{
+    "btvca": "http://www.burlingtoncodeacademy.com/",
+    "iccrm": "http://www.benjerry.com/"
+}
+```
 
 **When** a web browser requests the URL path `/icecream`
 
@@ -65,10 +66,11 @@ There are [many problems with URL shorteners](https://en.wikipedia.org/wiki/URL_
 
 **Then** they see a new URL, of the form:
 
-    @@@html
-    <a id="shortlink" href="http://myapp.herokuapp.com/xyzzy">
-      http://myapp.herokuapp.com/xyzzy
-    </a>
+```html
+<a id="shortlink" href="http://myapp.herokuapp.com/xyzzy">
+  http://myapp.herokuapp.com/xyzzy
+</a>
+```
 
 where `xyzzy` is a pseudorandom 5-character alphanumeric string
 

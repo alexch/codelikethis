@@ -5,7 +5,6 @@
 * Event names are camelCased i.e. `onClick`, `onSubmit`, `onHover`
 
 ```html
-@@@html
 <!-- HTML Event Handler -->
 <button onclick="handleData()">
   Submit Data
@@ -13,7 +12,6 @@
 ```
 
 ```javascript
-@@@javascript
 /* React Event Handler */
 <button onClick={handleData}>
   Submit Data
@@ -25,7 +23,6 @@
 * Calling `event.preventDefault()` must be done in the handler
 
 ```javascript
-@@@javascript
 function Link () {
   function handleClick(event) {
     event.preventDefault();
@@ -72,7 +69,6 @@ function Link () {
 ### Usual Behavior
 
 ```javascript
-@@@javascript
 function onClick(event) {
   console.log(event); // => nullified object.
   console.log(event.type); // => "click"
@@ -101,7 +97,6 @@ function onClick(event) {
 * Either use `bind` in the constructor, or use an ES6 Arrow Function
 
 ```javascript
-@@@javascript
 class Toggle extends React.Component {
   constructor (props) {
     super(props);
@@ -141,7 +136,6 @@ ReactDOM.render(
 * Only availble when transformed via Babel using `create-react-app` or other
 
 ```javascript
-@@@javascript
 class LoggingButton extends React.Component {
   // This syntax ensures `this` is bound within handleClick.
   // Warning: this is *experimental* syntax.

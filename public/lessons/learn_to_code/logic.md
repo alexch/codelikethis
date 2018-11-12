@@ -22,17 +22,19 @@ Try the following in irb:
 
 The magic word `if` is called a CONDITIONAL.
 
-    @@@ ruby
-    if age < 18 then
-      puts "Sorry, adults only."
-    end
-    
+```ruby
+if age < 18 then
+  puts "Sorry, adults only."
+end
+```
+
 # One-Line Condition
 
 Ruby has a compact way of putting an entire `if` expression on one line:
 
-    @@@ ruby
-    puts "Sorry, adults only." if age < 18
+```ruby
+puts "Sorry, adults only." if age < 18
+```
   
 Note that:
 
@@ -44,12 +46,13 @@ Note that:
 
 The magic word `else` allows BRANCHING.
 
-    @@@ ruby
-    if age >= 18 then
-      puts "allowed"
-    else
-      puts "denied"
-    end
+```ruby
+if age >= 18 then
+  puts "allowed"
+else
+  puts "denied"
+end
+```
 
 Like a fork in the road, the program chooses one path or the other.
 
@@ -82,10 +85,11 @@ instead. Why?
 
 * Your `hello.rb` program should currently look something like this:
 
-        @@@ ruby
-        puts "What is your name?"
-        name = gets.strip
-        puts "Hello, " + name + "!"
+```ruby
+puts "What is your name?"
+name = gets.strip
+puts "Hello, " + name + "!"
+```
 
 * Now change `hello.rb` so that it doesn't always say hello!
   * If the user's name is "Darth" then say "Go away!"
@@ -99,15 +103,15 @@ instead. Why?
 
 * For example:
 
-        if age >= 18 or parent.gave_permission? then
-          puts "allowed"
-        else
-          puts "denied"
-        end
+```ruby
+    if age >= 18 or parent.gave_permission? then
+      puts "allowed"
+    else
+      puts "denied"
+    end
+```
 
 # LAB: Enemies List
 
 * Change `hello.rb` so that it says "Go away!" if the user's name is any one of a number of evil names
 * For instance, Voldemort, Satan, Lex Luthor...
-
-

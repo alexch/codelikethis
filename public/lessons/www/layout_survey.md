@@ -8,23 +8,23 @@ TODO: sample source code and screenshots for each of these techniques to lay out
 
 # HTML 1.0
 
-```
+```html
 <table>
 ```
 
-```
+```html
 <img align='right'>
 ```
 
 # CSS 1.0
 
-```
+```html
 <div style='float: right'>
 ```
 
 # HTML5+CSS3
 
-```
+```html
 <nav>
  <ul style='.....'>
   <li style='......'>

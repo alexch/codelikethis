@@ -20,10 +20,11 @@ In English this reads, "While some condition is true, do some action".
 
 If you want something to keep going forever, set condition to `true`:
 
-    @@@ js
-    while (true) {
-      console.log("Hello")
-    }
+```js
+while (true) {
+  console.log("Hello")
+}
+```
 
 This means "While true is true, say 'Hello'". Obviously `true` will always be true, so it goes forever.
 
@@ -48,12 +49,13 @@ This is called an *infinite loop*.
 
 Let's write a program that counts from 0 to infinity. Put this in a file called `count.js`.
 
-    @@@ js
-    let number = 0
-    while (true) {
-        console.log(number);   
-        number = number + 1;
-    }
+```js
+let number = 0
+while (true) {
+    console.log(number);   
+    number = number + 1;
+}
+```
 
 Run the program with `node count.js`.
 
@@ -67,12 +69,13 @@ Please try this yourself! But it's kind of tricky, so on the next slide I'll sho
 
 # while for a while
 
-    @@@ js
-    let count = 0
-    while (count <= 100) {
-        console.log(count);   
-        count = count + 1;
-    }
+```js
+let count = 0
+while (count <= 100) {
+    console.log(count);   
+    count = count + 1;
+}
+```
 
 Did you find a solution? Did your program stop at 100 or 99?
 
@@ -127,15 +130,16 @@ The magic word `break` stops a loop immediately.
 
 Here's a more verbose way of counting to 100:
 
-    @@@ js
-    let count = 0;
-    while (true) {
-        console.log(count);   
-        count = count + 1;
-        if (count > 100) {
-            break;
-        }
+```js
+let count = 0;
+while (true) {
+    console.log(count);   
+    count = count + 1;
+    if (count > 100) {
+        break;
     }
+}
+```
 
 # LAB: One Potato
 
@@ -181,7 +185,6 @@ Using a *function* is the most straightforward way to capture a smaller task.
 # counting potatoes
 
 ```js
-@@@ js
 function potato(count) {
     if (count === 8) {
         return "More!"
@@ -191,13 +194,12 @@ function potato(count) {
         return "" + count + ","
     }
 }
-``` 
+```
 
 
 # `while true`
 
 ```js
-@@@ js
 let i = 1;
 while (true) {
     console.log(potato(i));
@@ -211,7 +213,6 @@ while (true) {
 # `while`
 
 ```js
-@@@ js
 let i = 1;
 while (i <= 8) {
     console.log(potato(i));
@@ -224,7 +225,6 @@ while (i <= 8) {
 `do` is like `while`, but the condition is checked at the end of the loop, not the beginning.
 
 ```js
-@@@ js
 let i = 0;
 do {
     i = i + 1;
@@ -236,10 +236,11 @@ do {
 
 JavaScript inherited `for(;;)` from C; it's cumbersome but you should learn to recognize it.
 
-    @@@ js
-    for (var i=0; i <= 8; i++) { 
-      console.log(potato(i+1));
-    }
+```js
+for (var i=0; i <= 8; i++) { 
+  console.log(potato(i+1));
+}
+```
 
 |phrase|meaning|
 |---|---|

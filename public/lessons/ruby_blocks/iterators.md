@@ -14,14 +14,15 @@ Ref. WGR Section 6.3, "Iterators and code blocks"
 
 # `times` is on your side
 
-    @@@ruby
-    potatoes = nil
-    3.times do |i|
-      potatoes = i+1
-      puts "#{potatoes} potato"
-    end
-    puts potatoes + 1
-    
+```ruby
+potatoes = nil
+3.times do |i|
+  potatoes = i+1
+  puts "#{potatoes} potato"
+end
+puts potatoes + 1
+```
+
 prints
 
     1 potato
@@ -31,49 +32,53 @@ prints
 
 # implementing `times` using `until`
 
-    @@@ruby
-    def times x
-      i = 0
-      until i == x
-        yield i
-        i += 1
-      end
-      x
-    end
+```ruby
+def times x
+  i = 0
+  until i == x
+    yield i
+    i += 1
+  end
+  x
+end
+```
 
 (`times` returns the number itself)
 
 # to `each` his own
-
+```ruby
     ["apple", "banana", "cherry"].each do |fruit|
       puts "I love #{fruit}!"
     end
+```
 
 # warning: each returns the *collection*, not the *value*
 
-    @@@ruby
-    def count_chars a
-      c = 0
-      a.each do |s|
-        c += s.length   # this returns c
-      end               # but this returns a
-      c                 # so this returns c (again)
-    end
+```ruby
+def count_chars a
+  c = 0
+  a.each do |s|
+    c += s.length   # this returns c
+  end               # but this returns a
+  c                 # so this returns c (again)
+end
 
-    count_chars ["apple", "banana", "cherry"]
-    => 17
+count_chars ["apple", "banana", "cherry"]
+=> 17
+```
 
 # implementing `each` using `until`
 
-    @@@ruby
-    def each a
-      i = 0
-      until i == a.size
-        yield a[i]
-        i += 1
-      end
-      a
-    end
+```ruby
+def each a
+  i = 0
+  until i == a.size
+    yield a[i]
+    i += 1
+  end
+  a
+end
+```
 
 # the `map` is not the territory
 
@@ -84,14 +89,15 @@ prints
 
 # implementing `map` using `each`
 
-    @@@ruby
-    def map input
-      a = []
-      input.each do |item|
-        a << yield(item)
-      end
-      a
-    end
+```ruby
+def map input
+  a = []
+  input.each do |item|
+    a << yield(item)
+  end
+  a
+end
+```
 
 # Other Awesome Iterators
 
@@ -120,16 +126,17 @@ Ref. [Using Select Etc.](http://matthewcarriere.com/2008/06/23/using-select-reje
   
 # `inject` example
 
-    @@@ruby
-      class Array
-        def sum
-          self.inject(0) do |total, current| 
-            total + current
-          end
-        end
+```ruby
+  class Array
+    def sum
+      self.inject(0) do |total, current| 
+        total + current
       end
+    end
+  end
 
-      [1,2,3].sum #=> 6
+  [1,2,3].sum #=> 6
+```
 
 * To help understand this, write out a table with the values of total, current, and the return value for each iteration.
 
@@ -137,14 +144,15 @@ Ref. [Using Select Etc.](http://matthewcarriere.com/2008/06/23/using-select-reje
 
 You can also send `inject` (or `reduce`) the name of a method only:
 
-    @@@ruby
-    class Array
-      def sum
-        self.reduce(:+)
-      end
-    end
+```ruby
+class Array
+  def sum
+    self.reduce(:+)
+  end
+end
 
-    [1,2,3].sum #=> 6
+[1,2,3].sum #=> 6
+```
 
 Here we are "reducing" the array by calling `+` on all its elements in succession.
 

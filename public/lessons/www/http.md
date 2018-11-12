@@ -118,7 +118,7 @@ The above languages run *inside* the web browser (aka "the client side"). On the
 
 > Unfortunately, many modern OSs don't ship with a working version of `telnet`, so you should watch your instructor's terminal, or skip ahead to the next slide.
 
-```
+```bash
 $ telnet google.com 80
 ```
 

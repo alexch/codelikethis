@@ -8,37 +8,38 @@
 
 # Making an object from scratch
 
-    @@@ javascript
-    var circle = {};
-    circle.radius = 2;
-    circle.circumference = function() {
-        return Math.PI * 2 * this.radius;
-    }
-    circle.area = function() {
-        return Math.PI * this.radius * this.radius;
-    }
-    circle.radius; // 2
-    circle.area;   // function () { ...
-    circle.area(); // 12.566370614359172
+```javascript
+var circle = {};
+circle.radius = 2;
+circle.circumference = function() {
+    return Math.PI * 2 * this.radius;
+}
+circle.area = function() {
+    return Math.PI * this.radius * this.radius;
+}
+circle.radius; // 2
+circle.area;   // function () { ...
+circle.area(); // 12.566370614359172
+```
 
 # Making an object from scratch, literally
 
 The following code is equivalent to the previous slide, but easier to read:
 
-    @@@ javascript
-    var circle = {
-        radius: 2,
-        circumference: function() {
-            return Math.PI * 2 * this.radius;
-        },
-        area: function() {
-            return Math.PI * this.radius * this.radius;
-        }
+```javascript
+var circle = {
+    radius: 2,
+    circumference: function() {
+        return Math.PI * 2 * this.radius;
+    },
+    area: function() {
+        return Math.PI * this.radius * this.radius;
     }
-    circle.radius; // 2
-    circle.area;   // function () { ...
-    circle.area(); // 12.566370614359172
-
+}
+circle.radius; // 2
+circle.area;   // function () { ...
+circle.area(); // 12.566370614359172
+```
 * Note: remember the commas between elements
 * Note: remember to **omit** the comma on the last element
 
@@ -58,7 +59,6 @@ The following code is equivalent to the previous slide, but easier to read:
 In 2015, JavaScript introduced a `class` keyword which is syntactic sugar on top of JavaScript's existing prototype-based inheritance. This new `class` syntax is much easier to understand than the previous system.
 
 ```js
-@@@js
 class Circle {
   constructor(radius) {
     this.radius = radius;
@@ -99,7 +99,7 @@ Use it like this:
 
 Prior to 2015, and still today under the hood, a class *is* a pointer to a constructor function:
 
-    @@@ javascript
+    ```javascript
     var Circle = function(radius) {
         this.radius = radius;
         this.diameter = radius * 2;
@@ -131,20 +131,21 @@ since it will make your code easier to read and more compatible with the rest of
   * comprising its parameters and local variables
   * pointing to its enclosing scope(s)
 
-        @@@ javascript
-        var Circle = function(radius) {
-            let diameter = radius * 2;
-            this.circumference = function() {
-                return Math.PI * diameter;
-            }
-            this.area = function() {
-                return Math.PI * radius * radius;
-            }
-        };
+```javascript
+var Circle = function(radius) {
+    let diameter = radius * 2;
+    this.circumference = function() {
+        return Math.PI * diameter;
+    }
+    this.area = function() {
+        return Math.PI * radius * radius;
+    }
+};
 
-        var circle = new Circle(2);
-        circle.radius; // undefined!
-        circle.area(); // 12.566370614359172
+var circle = new Circle(2);
+circle.radius; // undefined!
+circle.area(); // 12.566370614359172
+```
 
 * "radius" and "diameter" are private to the scope of the `Circle` function's closure
 * "circumference" and "area" are public (exposed) on each circle object

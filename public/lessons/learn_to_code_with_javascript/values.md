@@ -10,19 +10,21 @@ There are many kinds of values, including String, Number, Array, Date, ...
 
 A **number** is what it sounds like -- any integer or decimal.
 
-    @@@ js
-    10
-    -12
-    3.14
+```js
+10
+-12
+3.14
+```
 
 # Strings
 
 A **string** is an object that's a collection of characters, like a word or a sentence.
 
-    @@@ js
-    "apple"
-    "banana"
-    "Cherry Pie"
+```js
+"apple"
+"banana"
+"Cherry Pie"
+```
 
 # Booleans
 
@@ -47,14 +49,15 @@ Every time a value receives a message, it returns a response.
 
 You can think of it as the answer to a question. 
 
-    @@@ js
-    2 + 2    // Question: What is 2 + 2?
-    4        // Answer: 4
+```js
+2 + 2    // Question: What is 2 + 2?
+4        // Answer: 4
 
-    // Q: What is the all-caps version of the string "apple"?
-    "apple".toUpperCase()  
-    // A: the string "APPLE"
-    "APPLE"
+// Q: What is the all-caps version of the string "apple"?
+"apple".toUpperCase()  
+// A: the string "APPLE"
+"APPLE"
+```
 
 The response is often called the **return value**; 
 you can also say that a statement **evaluates to** a value, as in
@@ -64,24 +67,28 @@ you can also say that a statement **evaluates to** a value, as in
 
 Sometimes the return value is the same as the original value.
 
-    @@@ js
-    4 * 1    // return value: 4
-    
+```js
+4 * 1    // return value: 4
+```
+
 Sometimes the return value is a different value.
 
-    @@@ js
-    2 + 3    // return value: 5
-    
+```js
+2 + 3    // return value: 5
+```
+
 Sometimes the return value is a different value *and* a different type.
 
-    @@@ js
-    "banana".length  // return value: 6
+```js
+"banana".length  // return value: 6
+```
 
 Sometimes the return value is a magic value!
 
-    @@@ js
-    (5).shape      // return value: undefined
-    5 / 0          // return value: Infinity
-    "cookie" * 10  // return value: NaN
+```js
+(5).shape      // return value: undefined
+5 / 0          // return value: Infinity
+"cookie" * 10  // return value: NaN
+```
 
 

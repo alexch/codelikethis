@@ -16,7 +16,6 @@ Bootstrap employs a *12 column layout* to help easily establish a styles for a r
 ![Bootstrap 12 column grid](https://mobomo.s3.amazonaws.com/uploads/2017/09/BlogArticle-BootstrapGrid.png "Bootstrap Grid System")
 
 ```css
-@@@css
 
 col-xl-12 // class used for extra large devices ~ 1200px
 col-lg-12 // class used for large devices like laptops ~ 992px
@@ -34,7 +33,6 @@ col-sm-12// class used for small devices like mobile phones ~ 768px
 * To achieve this I would assign it the class `col-sm-3`. This would add the following code:
 
 ```html
-@@@html
 <div class="sidebar col-sm-3">
   <ul>
     <li>My</li>
@@ -45,7 +43,6 @@ col-sm-12// class used for small devices like mobile phones ~ 768px
 ```
 
 ```css
-@@@css
 
 .sidebar {
   width: 25%;
@@ -61,7 +58,6 @@ col-sm-12// class used for small devices like mobile phones ~ 768px
 * You may want your sidebar to be full width on a mobile device, but change to a quarter width on desktop. In this instance you would add the following two classes: `col-sm-12 col-md-3`. This applies the following CSS:
 
 ```css
-@@@css
 
 .sidebar {
   width: 100%;
@@ -94,7 +90,6 @@ Since websites are not newspapers, content is not exclusively broken out into co
 # The Bootstrap Grid Examples
 
 ```html
-@@@html
 <!-- this could also be "container-fluid" -->
 <div class="container">
   <div class="row">
@@ -122,7 +117,6 @@ Since websites are not newspapers, content is not exclusively broken out into co
 # Bootstrap Grid Example 2
 
 ```html
-@@@html
 <div class="container">
   <div class="row">
     <div class="col">
@@ -173,7 +167,6 @@ Since websites are not newspapers, content is not exclusively broken out into co
 * Bootstrap has media query breakpoints for small, medium, large, and x-large device screens
 
 ```css
-@@@css
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }

@@ -24,7 +24,6 @@
 * Stateless functions have no State i.e. `state = {value: 'something'}`
 
 ```javascript
-@@@javascript
 <body>
   <div id="root"/>
 </body>
@@ -38,7 +37,6 @@
 ```
 
 ```html
-@@@html
 <body>
   <div id="root">
     <!-- This is what the code would result in -->
@@ -53,7 +51,6 @@
 * React requires Components to be 'Pure' toward their Props
 
 ```javascript
-@@@javascript
 /* Always returns the same JSX for given inputs */
 
 const UserInfo = (props) => {
@@ -73,7 +70,6 @@ const UserInfo = (props) => {
 * 'Pure' functions don't mutate inputs and always return the same output for the same inputs
 
 ```javascript
-@@@javascript
 /* This is a 'Pure' function */
 /* It always returns the same output for given inputs */
 
@@ -83,7 +79,6 @@ function sum (first, second) {
 ```
 
 ```javascript
-@@@javascript
 /* This is an 'Impure' function */
 /* It can return different things based on the balance */
 
@@ -123,7 +118,6 @@ function deduct (bankAccount, amount) {
 # State - Tick Code
 
 ```javascript
-@@@javascript
 function tick() {
   const element = (
     <div>
@@ -145,7 +139,6 @@ setInterval(tick, 1000);
 > Does this use component state?
 
 ```javascript
-@@@javascript
 /* Now we have a component */
 function Clock(props) {
   return (
@@ -172,7 +165,6 @@ setInterval(tick, 1000);
 * Convert the stateless function to a Class
 
 ```javascript
-@@@javascript
 /* From this */
 function Clock(props) {
   return (
@@ -199,7 +191,6 @@ class Clock extends React.Component {
 # State - Start the Clock
 
 ```javascript
-@@@javascript
 class Clock extends React.Component {
   constructor(props) {
     /* Make sure to call super in a constructor */
@@ -223,7 +214,6 @@ class Clock extends React.Component {
 # State - Manage the Clock
 
 ```javascript
-@@@javascript
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -300,7 +290,6 @@ this.setState((prevState, props) => ({
 * The merge is shallow
 
 ```javascript
-@@@javascript
 constructor(props) {
   super(props);
   this.state = {

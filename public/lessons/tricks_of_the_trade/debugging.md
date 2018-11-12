@@ -38,8 +38,7 @@ Debugging is an art, not a science. But its principles are scientific:
 
 The most fundamental way to debug is to *print* the values of variables at various points in your code.
 
-```
-@@@js
+```js
 function factorial(x) {
     console.log("in factorial: x=" + x);
     if (x < 1) {

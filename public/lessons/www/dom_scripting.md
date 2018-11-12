@@ -8,8 +8,7 @@
 
 This is the simplest way to execute JavaScript inside a Web page.
 
-```
-@@@html
+```html
 <button name="button" onclick="alert('Abracadabra!')">
     Magic
 </button>
@@ -25,8 +24,7 @@ Try it out here: <button name="button" onclick="alert('Abracadabra!')">Magic</bu
 
 Without a `src` attribute, it defines a script and *immediately executes* its code:
 
-```
-@@@html
+```html
 <script>
 var message = "Shazam!"
 alert(message)
@@ -37,8 +35,7 @@ alert(message)
 
 With a `src` attribute, it *loads code from a separate file*, and and *immediately executes* it:
 
-```
-@@@html
+```html
 <script src="tictactoe.js"></script>
 ```
 
@@ -66,20 +63,21 @@ In addition to providing many useful *functions*, it also provides some *propert
 
 If an element has an `id` attribute, you can get a *pointer* to that element with a single line of code:
 
-    @@@js
-    var element = document.getElementById(id);
+```js
+var element = document.getElementById(id);
+```
 
 Once you have a pointer to that element, you can manipulate it further. You can also log it to the console for further inspection using:
 
-    @@@js
-    console.log(element)
+```js
+console.log(element)
+```
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById>
 
 # Finding an Element by CSS Selector
 
-```
-@@@ js
+```js
 var element = document.querySelector('main div.preview > p')
 ```
 
@@ -92,9 +90,10 @@ This returns the first Element within the document that matches the specified se
 
 Once you find an element (using `getElementById` or any other way), you can start using it.
 
-    @@@ js
-    var header = document.getElementById('header')
-    var text = header.textContent
+```js
+var header = document.getElementById('header')
+var text = header.textContent
+```
 
 There is also a property called `innerText` but it's confusing and implemented differently in different browsers.
 
@@ -143,11 +142,9 @@ To attach an event handler,
 
 1. Find the element, e.g. 
 
-        @@@ js
         var button = document.getElementById('magic');
 2. Attach the callback, like this:
 
-        @@@ js
         button.addEventListener('click', 
           ()=>{alert('Abracadabra!')}
         );
@@ -160,19 +157,21 @@ To attach an event handler,
 
 If you have already defined an event handler function, you can attach it by reference, like this:
 
-    @@@ html
-    <script>
-    function sayMagicWord() {
-        alert('Presto!');
-    }
-    var button = document.getElementById('magic');
-    button.addEventListener('click', sayMagicWord)
-    </script>
+```html
+<script>
+function sayMagicWord() {
+    alert('Presto!');
+}
+var button = document.getElementById('magic');
+button.addEventListener('click', sayMagicWord)
+</script>
+```
 
 > NOTE: if you attach a listener by reference, pass the *name* of the function only! Do not immediately *invoke* the function, like this:
 
-    @@@ js
-    button.addEventListener('click', sayMagicWord())  // BAD CODE, DO NOT USE
+```js
+button.addEventListener('click', sayMagicWord())  // BAD CODE, DO NOT USE
+```
 
 This calls sayMagicWord when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).
 

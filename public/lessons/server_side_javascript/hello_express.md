@@ -64,7 +64,7 @@ Now make a git repo for your app.
 
 > Make sure you are in the correct directory with `pwd`
 
-```sh
+```bash
 pwd           # the response should end with "hello-node"
 git init
 git add .

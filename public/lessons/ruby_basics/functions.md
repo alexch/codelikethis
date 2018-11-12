@@ -11,13 +11,14 @@ Ref: WGR Chapter 2, Section 2.4, "A close look at method arguments"
 
 In Ruby, every expression evaluates to some value
 
-    @@@ ruby
-    >> 2 + 2
-    => 4
-    >> (2+2).zero?
-    => false
-    >> "zero" if (2+2).zero?
-    => nil
+```ruby
+>> 2 + 2
+=> 4
+>> (2+2).zero?
+=> false
+>> "zero" if (2+2).zero?
+=> nil
+```
 
 # Function values
 
@@ -27,10 +28,11 @@ The value of a function is the value of the final statement
 
 # Parameters and return values
 
-    @@@ ruby
-    def to_fahrenheit(celsius)
-      celsius * 9.0 / 5 + 32
-    end
+```ruby
+def to_fahrenheit(celsius)
+  celsius * 9.0 / 5 + 32
+end
+```
 
 * `celsius` is a parameter
 * the value of a function is the value of the final statement
@@ -39,12 +41,13 @@ The value of a function is the value of the final statement
 
 # Arguments vs. Parameters
 
-    @@@ ruby
-    def to_fahrenheit(celsius)
-      celsius * 9.0 / 5 + 32
-    end
-    boiling = 100
-    to_fahrenheit(boiling)
+```ruby
+def to_fahrenheit(celsius)
+  celsius * 9.0 / 5 + 32
+end
+boiling = 100
+to_fahrenheit(boiling)
+```
 
 * Technically speaking, *arguments* are passed and *parameters* are declared
 * Note that the variable names don't have to match!
@@ -53,65 +56,69 @@ The value of a function is the value of the final statement
 
 # Splat arguments
 
-    @@@ ruby
-    def greet(greeting, *names)
-      names.each do |name|
-        puts "#{greeting}, #{name}!"
-      end
-    end
+```ruby
+def greet(greeting, *names)
+  names.each do |name|
+    puts "#{greeting}, #{name}!"
+  end
+end
 
-    >> greet("Hello", "Alice", "Bob", "Charlie")
-    Hello, Alice!
-    Hello, Bob!
-    Hello, Charlie!
+>> greet("Hello", "Alice", "Bob", "Charlie")
+Hello, Alice!
+Hello, Bob!
+Hello, Charlie!
+```
 
 # Default values
 
-    @@@ ruby
-    def eat(food = "chicken")
-      puts "Yum, #{food}!"
-    end
+```ruby
+def eat(food = "chicken")
+  puts "Yum, #{food}!"
+end
 
-    >> eat
-    Yum, chicken!
+>> eat
+Yum, chicken!
 
-    >> eat "arugula"
-    Yum, arugula!
+>> eat "arugula"
+Yum, arugula!
+```
 
 # The default hash parameter
 
 When calling a method, if the final argument is a hash, you can **leave off** the curly braces
 
-    @@@ ruby
-    def add_to_x_and_y(amount, vals)
-      x = vals[:x]
-      y = vals[:y]
-      x + y + amount
-    end
+```ruby
+def add_to_x_and_y(amount, vals)
+  x = vals[:x]
+  y = vals[:y]
+  x + y + amount
+end
 
-    add_to_x_and_y(2, {:x => 1, :y => 2})
+add_to_x_and_y(2, {:x => 1, :y => 2})
 
-    # same as...
-    add_to_x_and_y 2, :x => 1, :y => 2
+# same as...
+add_to_x_and_y 2, :x => 1, :y => 2
 
-    # same as...
-    add_to_x_and_y 2, x: 1, y: 2
+# same as...
+add_to_x_and_y 2, x: 1, y: 2
 
-    # same as...
-    add_to_x_and_y 2, y: 2, x: 1
+# same as...
+add_to_x_and_y 2, y: 2, x: 1
+```
 
 # the "options hash" pattern
 
 To pass *variable* parameters, or to pass *named* parameters, you can use an *options hash*:
 
-    @@@ruby
-    bake("Wheat")
-    bake("Sourdough", :flour => "sour")
-    bake("Pumpernickel", :creamer => "butter")
+```ruby
+bake("Wheat")
+bake("Sourdough", :flour => "sour")
+bake("Pumpernickel", :creamer => "butter")
 
-    def bake(name, options = {})
-      flour = options[:flour] || "rye"
-      creamer = options[:creamer] || "cream"
-      puts "baking a nice #{flour} loaf with #{creamer}"
-    end
+def bake(name, options = {})
+  flour = options[:flour] || "rye"
+  creamer = options[:creamer] || "cream"
+  puts "baking a nice #{flour} loaf with #{creamer}"
+end
+```
 

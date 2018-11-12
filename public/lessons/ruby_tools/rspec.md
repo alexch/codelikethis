@@ -3,20 +3,22 @@
 
 # describe
 
-    @@@ruby
+```ruby
     describe Cookie do
     end
+```
 
 * defines a *context*
 * takes a class or a string as its name
 
 # it
 
-    @@@ruby
-    describe Cookie do
-      it "tastes yummy" do
-      end
-    end
+```ruby
+describe Cookie do
+  it "tastes yummy" do
+  end
+end
+```
 
 * defines an *example*
   * (aka *spec* or *test*)
@@ -24,13 +26,14 @@
 
 # should
 
-    @@@ruby
-    describe Cookie do
-      it "tastes yummy" do
-        cookie = Cookie.new
-        cookie.chips.should == 72
-      end
-    end
+```ruby
+describe Cookie do
+  it "tastes yummy" do
+    cookie = Cookie.new
+    cookie.chips.should == 72
+  end
+end
+```
 
 * defines an *assertion*
 * every test needs at least one assertion
@@ -38,13 +41,14 @@
 
 # matchers
 
-    @@@ruby
-    describe Cookie do
-      it "has approximately 70 chips" do
-        cookie = Cookie.new
-        cookie.chips.should be_within(5).of(70)
-      end
-    end
+```ruby
+describe Cookie do
+  it "has approximately 70 chips" do
+    cookie = Cookie.new
+    cookie.chips.should be_within(5).of(70)
+  end
+end
+```
 
 * weirdo argument to `should`
 * performs a test on the object that `should` is called on
@@ -52,8 +56,9 @@
 
 # be matchers
 
-    @@@ ruby
-    [].should be_empty
+```ruby
+[].should be_empty
+```
 
 * uses `method_missing` magic
 * `be_empty` invokes `empty?` on its target
@@ -62,18 +67,19 @@
 
 # before and after
 
-    @@@ruby
-    describe Counter do
-      before do
-        @data = [0,1,2,3]
-      end
-      it "counts data" do
-        Counter.new(@data).count.should == 4
-      end
-      it "adds data too" do
-        Counter.new(@data).sum.should == 6
-      end
-    end
+```ruby
+describe Counter do
+  before do
+    @data = [0,1,2,3]
+  end
+  it "counts data" do
+    Counter.new(@data).count.should == 4
+  end
+  it "adds data too" do
+    Counter.new(@data).sum.should == 6
+  end
+end
+```
 
 * `before` blocks will be executed before *each* of the specs in that `describe` block
 * there's also `before :all do..end` which executes only once
@@ -81,40 +87,42 @@
 
 # let
 
-    @@@ruby
-    describe Counter do
+```ruby
+describe Counter do
 
-      let(:data) { [0,1,2,3] }
+  let(:data) { [0,1,2,3] }
 
-      it "counts data" do
-        Counter.new(data).count.should == 4
-      end
-      it "adds data too" do
-        Counter.new(data).sum.should == 6
-      end
-    end
+  it "counts data" do
+    Counter.new(data).count.should == 4
+  end
+  it "adds data too" do
+    Counter.new(data).sum.should == 6
+  end
+end
+```
 
 # subject
 
-    @@@ruby
-    describe Counter do
-      let(:data) { [0,1,2,3] }
+```ruby
+describe Counter do
+  let(:data) { [0,1,2,3] }
 
-      subject { Counter.new(data) }
+  subject { Counter.new(data) }
 
-      it { should be_a(Counter) }
+  it { should be_a(Counter) }
 
-      it { should_not be_nil }
+  it { should_not be_nil }
 
-      it "counts data" do
-        subject.count.should == 4
-      end
+  it "counts data" do
+    subject.count.should == 4
+  end
 
-      it "adds data"do
-        subject.sum.should == 6
-      end
+  it "adds data"do
+    subject.sum.should == 6
+  end
 
-    end
+end
+```
 
 # more
 

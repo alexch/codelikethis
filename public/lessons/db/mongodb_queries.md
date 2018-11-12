@@ -3,7 +3,6 @@
 * The queries below assume the following documents have been inserted
 
 ```javascript
-@@@javascript
 db.inventory.insertMany([
    { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
    { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "A" },
@@ -21,7 +20,6 @@ db.inventory.insertMany([
 * With all the fields from the document
 
 ```javascript
-@@@javascript
 db.inventory.find( {} )
 ```
 
@@ -32,7 +30,6 @@ db.inventory.find( {} )
 * The `db.some-collection.findOne()` method can be used with any of the queries shown in this lesson to limit the results to the first found document.
 
 ```javascript
-@@@javascript
 db.inventory.findOne()
 ```
 
@@ -41,14 +38,12 @@ db.inventory.findOne()
 * Simple conditions can be added like below:
 
 ```javascript
-@@@javascript
 db.inventory.find( { status: "D" } )
 ```
 
 * Multple conditions imply an AND between the constraints
 
 ```javascript
-@@@javascript
 db.inventory.find( { status: "D", item: "planner" } )
 ```
 
@@ -57,7 +52,6 @@ db.inventory.find( { status: "D", item: "planner" } )
 * Can be used with the same properties
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { $or: [
           { type: "Planner" },
@@ -70,7 +64,6 @@ db.inventory.find(
 * Can be used with the different properties
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { $or: [
           { status: "A" },
@@ -85,14 +78,12 @@ db.inventory.find(
 * Simple ranges have the general form syntax of the below template:
 
 ```javascript
-@@@javascript
 db.collection.find( { <field>: { $gt: <value1>, $lt: <value2> } } );
 ```
 
 * Multple conditions imply an AND between the constraints
 
 ```javascript
-@@@javascript
 db.inventory.find( { status: "A", qty: { $lt: 30 } } )
 ```
 
@@ -101,14 +92,12 @@ db.inventory.find( { status: "A", qty: { $lt: 30 } } )
 * Example one
 
 ```javascript
-@@@javascript
 db.inventory.find( { status: { $in ["A", "B", "C"] } } )
 ```
 
 * Example two
 
 ```javascript
-@@@javascript
 db.inventory.find( { type: { $in ["Journal", "Notebook", "Paper"] } } )
 ```
 
@@ -117,21 +106,18 @@ db.inventory.find( { type: { $in ["Journal", "Notebook", "Paper"] } } )
 * Matches can be made using exact nested fields like below:
 
 ```javascript
-@@@javascript
 db.inventory.find({ status: "A", size: { h: 14, w: 21, uom: "cm" } })
 ```
 
 * Matches can also be made using more relaxed nested conditions:
 
 ```javascript
-@@@javascript
 db.inventory.find({ "size.h": 14 });
 ```
 
 * OR using a combination of an EXACT property and a relaxed nested condition
 
 ```javascript
-@@@javascript
 db.inventory.find({ status: "A", "size.h": 14 })
 ```
 
@@ -140,7 +126,6 @@ db.inventory.find({ status: "A", "size.h": 14 })
 * Reminder of document shape and properties
 
 ```javsscript
-@@@javsscript
 {
 	"_id" : ObjectId("5b631aff2f6ff13721a2e38b"),
 	"item" : "journal",
@@ -156,21 +141,18 @@ db.inventory.find({ status: "A", "size.h": 14 })
 * Single Range in a nested document
 
 ```javascript
-@@@javascript
 db.inventory.find({ "size.h":  { $gt: 10 } })
 ```
 
 * Multiple ranges in a nested document
 
 ```javascript
-@@@javascript
 db.inventory.find({ "size.h":  { $gt: 10, $lt: 100 } })
 ```
 
 # Range Queries in Nested Documents using OR
 
 ```javascript
-@@@javascript
 db.inventory.find( {
      status: "A",
      $or: [

@@ -57,7 +57,6 @@ https://getbootstrap.com/docs/4.0/getting-started/introduction/
 * The following markup may seem a bit complicated, however there are fairly simple classes and styles being applied here. Lets break this down
 
 ```html
-@@@html
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

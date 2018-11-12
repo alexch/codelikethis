@@ -38,7 +38,6 @@ This is called "lexical scope" because a line of code can "see" all variables th
 # Example
 
 ```js
-@@@js
 let x = 10;
 function f(y) {
     return x + y;
@@ -64,17 +63,18 @@ and so on recursively
 
 * nested functions, e.g.
 
-        @@@js
-        function printGrid(grid) {
-            function printRow(rowNum) {
-                console.log(grid[rowNum].join(","));
-            }
-            let i = 0;
-            while (i<grid.length) {
-                printRow(i);
-                i = i + 1;
-            }
-        }
+```js
+function printGrid(grid) {
+    function printRow(rowNum) {
+        console.log(grid[rowNum].join(","));
+    }
+    let i = 0;
+    while (i<grid.length) {
+        printRow(i);
+        i = i + 1;
+    }
+}
+```
 
 # Why? 3
 
@@ -84,17 +84,17 @@ and so on recursively
 
 * encapsulation (this is tricky; for more detail, see the [encapsulation](/javascript/encapsulation) lesson)
 
-        @@@js
-        let count = (function() {
-            let value = 0;  // private variable
-            let increment = function() {
-                value = value + 1;
-                console.log(value);
-                return value;
-            };
-            return increment;
-        })();
+```js
+let count = (function() {
+    let value = 0;  // private variable
+    let increment = function() {
+        value = value + 1;
+        console.log(value);
+        return value;
+    };
+    return increment;
+})();
 
-        count() // prints and returns 1
-        count() // prints and returns 2
-        
+count() // prints and returns 1
+count() // prints and returns 2
+```

@@ -31,7 +31,7 @@ We haven't learned about databases yet, which is fine, because...
 
 Create a new project named "blog" and run
 
-```
+```bash
 npm init -y
 npm install express
 ```
@@ -58,7 +58,6 @@ app.listen(port, () => console.log(`Blog app listening on port ${port}!`));
 
 * `fs` and `path` are NodeJS libraries for dealing with the filesystem. We will use them later.
 * we made `$path` start with a $ so that later we can use a local variable named `path` without namespace collision
-
 
 # Home page
 
@@ -181,7 +180,7 @@ app.get('/articles/:articleId.json', (request, response) => {
 
 ### public/articles.html
 
-``` html
+```html
 <h2>Articles:</h2>
 <div id='articles'>
   <ul>
@@ -224,7 +223,6 @@ app.get('/articles', (request, response) => {
 
 app.get('/articles.json', (request, response) => {
   let articles = allArticles();
-  console.log(articles)
   let data = JSON.stringify(articles);
   response.type('text/json');
   response.send(data);
@@ -322,7 +320,6 @@ function createArticle(articleId, params, response) {
   };
 
   let articleDataFile = $path.join(articlesDir, articleId + ".json");
-  console.log('Writing article: ' + JSON.stringify(article));
   fs.writeFile(articleDataFile, JSON.stringify(article), (err) => {
     if (err) {
       response.status(500).send(err);
@@ -420,7 +417,6 @@ app.get('/search.json', (request, response) => {
 });
 
 function searchArticles(params) {
-  console.log("Searching for " + JSON.stringify(params))
   let results = allArticles().filter((article) => {
     if (params.author) {
       let articleAuthor = article.author || '';
@@ -431,5 +427,6 @@ function searchArticles(params) {
   return results;
 }
 ```
+
 See? Who needs a database? :-)
 

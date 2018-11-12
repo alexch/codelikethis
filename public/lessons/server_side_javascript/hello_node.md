@@ -13,7 +13,7 @@ In this lesson you will create a trivial web application in NodeJS and deploy it
 
 - Inside this directory make a file named `index.js` and fill it with the following code:
 
-``` js
+```js
 let http = require('http');
 const port = process.env.PORT || 5000;
 http.createServer(function(request, response){
@@ -56,7 +56,7 @@ Now make a git repo for your app.
 
 > Make sure you are in the correct directory with `pwd`
 
-```sh
+```bash
 pwd           # the response should end with "hello_node"
 git init
 git add .

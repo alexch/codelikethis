@@ -13,8 +13,9 @@
 
 # Creating an array
 
-    @@@ ruby
-    ["apple", "banana", "cherry"]
+```ruby
+["apple", "banana", "cherry"]
+```
 
 (square brackets mean "please go *create* an array *object* now")
 
@@ -31,9 +32,10 @@
 
 Try this in IRB:
 
-    @@@ ruby
-    fruits = ["apple", "banana", "cherry"]
-    fruits[1]
+```ruby
+fruits = ["apple", "banana", "cherry"]
+fruits[1]
+```
 
 Did you get the result you expected?
 
@@ -53,8 +55,9 @@ So the first item in an array is number zero, not number one.
 
 Try this:
 
-    @@@ ruby
-    fruits[99]
+```ruby
+fruits[99]
+```
 
 Did you get the result you expected?
 
@@ -72,30 +75,34 @@ with the answer
 
 # Array Methods
 
-    @@@ ruby
-    fruits.last
-    fruits.first
-    fruits.reverse
-    fruits.shuffle
+```ruby
+fruits.last
+fruits.first
+fruits.reverse
+fruits.shuffle
+```
 
 # Turning an array into a string
 
-    @@@ ruby
-    fruits.join
-    fruits.join(" and ")
+```ruby
+fruits.join
+fruits.join(" and ")
+```
 
 Note that `to_s` doesn't work right on arrays:
 
-    @@@ ruby
-    fruits.to_s
-    puts fruits.to_s
+```ruby
+fruits.to_s
+puts fruits.to_s
+```
 
 # Looping through an array
 
-    @@@ ruby
-    fruits.each do |fruit|
-      puts fruit
-    end
+```ruby
+fruits.each do |fruit|
+  puts fruit
+end
+```
 
 * `each` is like `while` for arrays
 * `fruits.each do` means "for each item inside this array, do this"
@@ -107,8 +114,9 @@ Note that `to_s` doesn't work right on arrays:
 
 Given this array:
 
-    @@@ ruby
-    fruits = ["apple", "banana", "cherry"]
+```ruby
+fruits = ["apple", "banana", "cherry"]
+```
 
 write a program that prints:
 
@@ -120,22 +128,24 @@ write a program that prints:
 
 The `[]` operator works for assignment as well.
 
-    @@@ ruby
-    fruits[0] = "Apricot"
-    fruits[1] = "Blueberry"
+```ruby
+fruits[0] = "Apricot"
+fruits[1] = "Blueberry"
 
-    puts fruits.first
+puts fruits.first
+```
 
 # Checking an array
 
 The `include?` method checks if an object is inside an array or not.
 
-    @@@ ruby
-    fruits.include? "apple"
-    true
+```ruby
+fruits.include? "apple"
+true
 
-    fruits.include? "pizza"
-    false
+fruits.include? "pizza"
+false
+```
 
 Remember, here we are sending a message *to an array*, asking if it includes a certain *string*.
 
@@ -145,8 +155,9 @@ Refactoring is changing existing code so that it *works* the same, but is cleane
 
 In your old `hello.rb` program you had an `if` statement to check if someone is your enemy. Something like:
 
-    @@@ ruby
-    if name == "darth" or name == "voldemort" or name == "sauron" then
+```ruby
+if name == "darth" or name == "voldemort" or name == "sauron" then
+```
 
 I'd like you to **refactor** your old `hello.rb` program to use the `include?` method to check if someone is your enemy. Is it possible to make that `if` statement cleaner and easier to read?
 

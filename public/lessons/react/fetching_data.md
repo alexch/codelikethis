@@ -7,7 +7,6 @@
 ### Basic Component
 
 ```javascript
-@@@javascript
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +43,6 @@ class App extends React.Component {
 ### Component with Data
 
 ```javascript
-@@@javascript
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -94,7 +92,6 @@ class App extends React.Component {
 ### Component with Error Handling
 
 ```javascript
-@@@javascript
 class App extends React.Component {
   constructor(props) {
     super(props);

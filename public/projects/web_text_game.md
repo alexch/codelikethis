@@ -40,8 +40,7 @@ What would you like to do?
 
 For example, if your code looks like this:
 
-```
-@@@ js
+```js
 process.stdin.on('data', (chunk) => {
     let input = chunk.toString();
     if (input === 'open door') {
@@ -52,8 +51,7 @@ process.stdin.on('data', (chunk) => {
 
 Then first change it to this:
 
-```
-@@@ js
+```js
 
 listenForCommand();
 

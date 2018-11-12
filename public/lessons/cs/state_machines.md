@@ -103,7 +103,6 @@ We may also need a state transition *action*: "when the button enters the 'activ
 Easiest way is with something like this:
 
 ```js
-@@@js
 let states = {
   "green": {canChangeTo: ["yellow"]},
   "yellow": {canChangeTo: ["red"]},

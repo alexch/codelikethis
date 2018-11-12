@@ -41,17 +41,18 @@ In fact, every array *already knows* how to `push` and `pop`.
 
 Try this in node:
 
-    @@@ js
-    let fruitStack = []
-    fruitStack.push("apple")
-    fruitStack.push("banana")
-    fruitStack                    // [ 'apple', 'banana' ]
-    fruitStack.push("cherry")
-    fruitStack                    // [ 'apple', 'banana', 'cherry' ]
-    let fruit = fruitStack.pop()
-    fruit                         // 'cherry'
-    fruitStack                    // [ 'apple', 'banana' ]
-    
+```js
+let fruitStack = []
+fruitStack.push("apple")
+fruitStack.push("banana")
+fruitStack                    // [ 'apple', 'banana' ]
+fruitStack.push("cherry")
+fruitStack                    // [ 'apple', 'banana', 'cherry' ]
+let fruit = fruitStack.pop()
+fruit                         // 'cherry'
+fruitStack                    // [ 'apple', 'banana' ]
+```
+
 Note that after a `pop`, the stack's contents are *changed*. Pop *removes and returns* the final value from the array.
 
 # Stack Trace
@@ -84,7 +85,6 @@ See [Understanding the JavaScript Call Stack](https://medium.freecodecamp.org/un
 Using a stack, put the following program into a file called `fib.js`...
 
 ```js
-@@@ js
 let series = [0, 1];
 while (series.length < 10) {
 
@@ -97,7 +97,6 @@ console.log(series);
 ...and complete it so that running `node fib.js` prints 
 
 ```js
-@@@ js
 [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 ```
 
@@ -110,7 +109,6 @@ Please split into pairs and do this right now. A solution is on the next slide.
 # Solution: Fibonacci Stack
 
 ```js
-@@@ js
 let series = [0, 1];
 while (series.length < 10) {
     let b = series.pop();

@@ -6,7 +6,6 @@
     * often preceded by `let` as in "Let there be light" or "Let X equal 10".
 
 ```js
-@@@ js
 let color = "blue"
 let fruit = "berry"
 ```
@@ -14,7 +13,6 @@ let fruit = "berry"
 * Anywhere you would use a literal value, you can use a variable instead.
 
 ```js
-@@@ js
 color + fruit       // "blueberry"
 fruit.toUpperCase() // "BERRY"
 ```
@@ -37,7 +35,6 @@ Identifier 'x' has already been declared
 That means that when you're in the node console, if you see this error then try again without the `let`
 
 ```js
-@@@js
 > let x = 1
 undefined
 > let x = x + 2
@@ -104,7 +101,6 @@ Think of a variable as an arrow **pointing** to a value.
 You can assign and reassign variables at will.
 
 ```js
-@@@ js
 color = "blue"
 fruit = "berry"
 color + fruit           // 'blueberry'
@@ -121,9 +117,10 @@ This is analogous to removing a label from one box and placing it on a different
 
 # Many pointers can point to the same thing
 
-    @@@ js
-    let fruit = "Apple"
-    let snack = fruit
+```js
+let fruit = "Apple"
+let snack = fruit
+```
 
 ![snack-fruit](snack-fruit.svg)
 
@@ -138,9 +135,10 @@ This is analogous to placing two labels on the same box.
 
 most messages return *new* values
 
-    @@@ js
-    let fruit = "banana"
-    let snack = fruit.toUpperCase()
+```js
+let fruit = "banana"
+let snack = fruit.toUpperCase()
+```
 
 ![fruit-banana-snack-banana](fruit-banana-snack-banana.svg)
 
@@ -150,9 +148,11 @@ most messages return *new* values
 
 Most messages do not change the data inside the object.
 
+```javascript
     let color = "blue"
     color.toUpperCase()     // "BLUE"
     color                   // "blue"
+```
 
 This is true for all strings, since strings in JavaScript are *immutable*. Any message that transforms a string will return you an entirely new string.
 
@@ -163,7 +163,6 @@ But some messages to some objects **do** change the contents!
 Let's say we have a friend named Joe and his birthday is Independence Day, 1990.
 
 ```js
-@@@ js
 let independence_day_1990 = new Date(1990, 6, 4)
 independence_day_1990.toDateString()    // 'Wed Jul 04 1990'
 let joes_birthday = independence_day_1990
@@ -172,7 +171,6 @@ let joes_birthday = independence_day_1990
 Then we learn that Joe's birthday is actually Bastille Day. No problem, we'll just tweak the variable.
 
 ```js
-@@@ js
 joes_birthday.setDate(14)
 joes_birthday.toDateString()            // 'Sat Jul 14 1990'
 ```
@@ -180,7 +178,6 @@ joes_birthday.toDateString()            // 'Sat Jul 14 1990'
 But what happened to the original date?
 
 ```js
-@@@ js
 independence_day_1990.toDateString()    // 'Sat Jul 14 1990'
 ```
 

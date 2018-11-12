@@ -15,18 +15,21 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 * all of jQuery lives inside a single global function
 * that function is named `jQuery`
 
-        @@@ javascript
-        jQuery('#foo').hide();
+```javascript
+jQuery('#foo').hide();
+```
 
 * it's also named dollar sign
 
-        @@@ javascript
-        $('#foo').hide();
+```javascript
+$('#foo').hide();
+```
 
 * it's a function, but it's also an object, with properties and methods of its own
 
-        @@@ javascript
-        $.now(); // returns the current time in msec
+```javascript
+$.now(); // returns the current time in msec
+```
 
 # Core concept: Selectors
 
@@ -74,7 +77,6 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 * <http://docs.jquery.com/Downloading_jQuery>
 
 ```html
-@@@html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 </script>
 ```
@@ -90,14 +92,13 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 # Animation
 
 * jQuery has some fun methods to animate CSS attributes
+
+```javascript
+$("#logo").animate({
+    backgroundColor: "#aa0000"
+}, 1000 );
+```
 * <http://api.jquery.com/animate>
-
-        @@@ javascript
-
-        $("#logo").animate({
-            backgroundColor: "#aa0000"
-        }, 1000 );
-
   * You choose the attribute(s) and their final value, plus the duration of the entire effect
   * jQuery calculates and interpolates the details
 * jQuery UI has lots more
@@ -107,19 +108,21 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 
 * jQuery's `on` method
 
-        @@@ javascript
-        $('#hi').on('click', function() {
-            alert("hi");
-        });
+```javascript
+$('#hi').on('click', function() {
+    alert("hi");
+});
+```
 
 * jQuery's convenience method for standard event types
 
-        @@@ javascript
-        $('#hi').click(function() {
-            alert("hi");
-        });
+```javascript
+$('#hi').click(function() {
+    alert("hi");
+});
+```
 
-    * gotcha: if you call `click()` with no parameters, it *triggers* a click
+* Warning: if you call `click()` with no parameters, it *triggers* a click
 
 # `return false`
 
@@ -128,54 +131,55 @@ For more info and some great tutorials, see the [jQuery site](http://jquery.com/
 
 # More about jQuery Event Listening
 
-    @@@ javascript
-    var f = function(event) {....}
+```javascript
+var f = function(event) {....}
+```
 
 * convenience methods for standard event types
 
-        @@@ javascript
+```javascript
 
-        $('#hi').click(f);
-        $('#hi').change(f);
+$('#hi').click(f);
+$('#hi').change(f);
+```
 
 * using `on` directly
 
-        @@@ javascript
-
-        $('#hi').on('click', f);
-        $('#ho').on('change', f);
+```javascript
+$('#hi').on('click', f);
+$('#ho').on('change', f);
+```
 
 * `on` can hook many events at once
 
-        @@@ javascript
-
-        $('#hi').on('click change', f);
-
+```javascript
+$('#hi').on('click change', f);
+```
 * or you can use chaining for the same effect
 
-        @@@ javascript
-
-        $('#hi').on('click', f)
-                .on('change', f);
+```javascript
+$('#hi').on('click', f)
+        .on('change', f);
+```
 
 # Ready, Fire, Aim
 
 jQuery has a special event that is fired when the page is "ready", i.e. the DOM hierarchy has been fully constructed.
 
-    @@@ javascript
-
-    $(document).ready(function() {
-        // set up your page
-    });
+```javascript
+$(document).ready(function() {
+    // set up your page
+});
+```
 
 It's best to put setup code in a "ready" handler rather than directly inside a `<script>` tag since the document might not be ready yet.
 
 This can be abbreviated, but this might be unclear:
 
-    @@@ javascript
-
-    $(function() {
-        // set up your page
-    });
+```javascript
+$(function() {
+    // set up your page
+});
+```
 
 "In cases where code relies on loaded assets (for example, if the dimensions of an image are required), the code should be placed in a handler for the load event instead." - <http://api.jquery.com/ready/>

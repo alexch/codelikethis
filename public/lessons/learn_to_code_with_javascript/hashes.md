@@ -43,55 +43,59 @@ and in JavaScript, a hash is officially called an
 
 # Setting and Getting Hash Values with square brackets
 
-    @@@ js
-    let states = {}
+```js
+let states = {}
 
-    states['CA'] = 'California'
-    states['MA'] = 'Massachusetts'
-    states['NY'] = 'New York'
+states['CA'] = 'California'
+states['MA'] = 'Massachusetts'
+states['NY'] = 'New York'
 
-    states['MA']                // 'Massachusetts'
-    states['MA'].toUpperCase()  // 'MASSACHUSETTS'
+states['MA']                // 'Massachusetts'
+states['MA'].toUpperCase()  // 'MASSACHUSETTS'
+```
 
 # Setting and Getting Hash Values with dots
 
-    @@@ js
-    let states = {}
+```js
+let states = {}
 
-    states.CA = 'California'
-    states.MA = 'Massachusetts'
-    states.NY = 'New York'
+states.CA = 'California'
+states.MA = 'Massachusetts'
+states.NY = 'New York'
 
-    states.MA                // 'Massachusetts'
-    states.MA.toUpperCase()  // 'MASSACHUSETTS'
+states.MA                // 'Massachusetts'
+states.MA.toUpperCase()  // 'MASSACHUSETTS'
+```
 
 # Dots vs. Brackets
 
 Dots are prettier than square brackets, but less versatile:
 
-    @@@ js
-    > capitals = {}
-    {}
-    
-    > capitals.New York = 'Albany'
-    capitals.New York = 'Albany'
-                 ^^^^
-    SyntaxError: Unexpected identifier
-    
-    > capitals.'New York' = 'Albany'
-    capitals.'New York' = 'Albany'
-             ^^^^^^^^^^
-    SyntaxError: Unexpected string
-    
-    > capitals['New York'] = 'Albany'
-    'Albany'
-    > capitals
-    { 'New York': 'Albany' }
+```js
+> capitals = {}
+{}
+
+> capitals.New York = 'Albany'
+capitals.New York = 'Albany'
+             ^^^^
+SyntaxError: Unexpected identifier
+
+> capitals.'New York' = 'Albany'
+capitals.'New York' = 'Albany'
+         ^^^^^^^^^^
+SyntaxError: Unexpected string
+
+> capitals['New York'] = 'Albany'
+'Albany'
+> capitals
+{ 'New York': 'Albany' }
+```
 
 # Dots vs. Brackets vs. Variables
 
 Given this code:
-```
+
+```js
 var items = {
     brick: 'red'
 }
@@ -112,20 +116,20 @@ items[item]     // "red"
 
 a Hash can be defined *literally* (inline) with curly braces, like this:
 
-    @@@ js
-    states = {
-               CA: 'California',
-               MA: 'Massachusetts',
-               NY: 'New York'
-             }
+```js
+states = {
+           CA: 'California',
+           MA: 'Massachusetts',
+           NY: 'New York'
+         }
 
-    states['MA']  // 'Massachusetts'
-    states.MA     // also 'Massachusetts'
+states['MA']  // 'Massachusetts'
+states.MA     // also 'Massachusetts'
+```
 
 # Looping through a hash with for...in
 
-```
-@@@ js
+```js
 for (let state in states) {
     console.log(state);
 }
@@ -161,36 +165,38 @@ Also, *hash* is a funny word, and programmers love jokes.
 
 To remove a key-value pair from a hash, use the keyword `delete`.
 
-    @@@js
-    states = {
-                CA: 'California',
-                MA: 'Massachusetts',
-                NY: 'New York'
-             }
-    { CA: 'California', MA: 'Massachusetts', NY: 'New York' }
-    > delete states.MA
-    true
-    > states
-    { CA: 'California', NY: 'New York' }
+```js
+states = {
+            CA: 'California',
+            MA: 'Massachusetts',
+            NY: 'New York'
+         }
+{ CA: 'California', MA: 'Massachusetts', NY: 'New York' }
+> delete states.MA
+true
+> states
+{ CA: 'California', NY: 'New York' }
+```
 
 # fake delete
 
 You can get a similar effect by setting the value to `null` or `undefined`, but beware: the key remains!
 
-    @@@js
-    > states.CA = null
-    null
-    > states.NY = undefined
-    undefined
-    > states
-    { CA: null, NY: undefined }
-    > for (state of states) { console.log(state) }
+```js
+> states.CA = null
+null
+> states.NY = undefined
+undefined
+> states
+{ CA: null, NY: undefined }
+> for (state of states) { console.log(state) }
+```
 
 > You probably shouldn't do this.
 
 # Hash methods
 
-```
+```js
 let rectangle = {
     height: 10,
     width: 8,

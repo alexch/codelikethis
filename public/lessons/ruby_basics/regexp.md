@@ -9,19 +9,23 @@ Ref. WGR Chapter 11, Regular expressions and regexp-based string operations
 
 **slashes** define a regular expression literally (inline)
 
-    @@@ ruby
-    foo_matcher = /foo/
-    
+```ruby
+foo_matcher = /foo/
+```
+
 The above regexp will match a string containing "foo" anywhere inside it
 
-    @@@ ruby
-    ooo_matcher = /oo*/
+```ruby
+ooo_matcher = /oo*/
+```
 
 The above regexp will match a string containing "o" or "oo" or "ooo" (and so on) anywhere inside it
 
 # a more complicated regexp
 
+```ruby
     word_exp = /\b[a-z]*\b/i
+```
 
 * **slashes** delineate the pattern
 * **backslash b** means "match a word boundary"
@@ -36,16 +40,18 @@ So the above expression will match any word containing only normal English lette
 
 **equal tilde** returns the position in the string that matches, or `nil` if no match
 
-    @@@ ruby
-    >> "abcde" =~ /bcd/
-    => 1
-    
+```ruby
+>> "abcde" =~ /bcd/
+=> 1
+```
+
 Note that the return value is *truthy* if the string is a match, and *falsey* if it's not, which lets you use it inside conditionals:
 
-    @@@ ruby
-    if ("abcde" =~ /bcd/)
-      puts "yay! it matches!"
-    end
+```ruby
+if ("abcde" =~ /bcd/)
+  puts "yay! it matches!"
+end
+```
 
 # regexp globals
 
@@ -56,8 +62,7 @@ Note that the return value is *truthy* if the string is a match, and *falsey* if
   * etc.
   * substrings are defined with parentheses in the regexp
 
-```
-@@@ruby
+```ruby
 if "the quick brown fox" =~ /(quick).*(f..)/ then
   puts "The matching string was #{$~}"
   puts "The first substring was #{$1}"
@@ -82,11 +87,12 @@ The second substring was fox
     
 **bang tilde** returns `false` if the string matches, or `true` if it doesn't
 
-    @@@ ruby
-    >> "abcde" !~ /xyz/
-    => true
-    >> "abcde" !~ /bcd/
-    => false
+```ruby
+>> "abcde" !~ /xyz/
+=> true
+>> "abcde" !~ /bcd/
+=> false
+```
 
 # some methods that can use regexes
 

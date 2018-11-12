@@ -10,7 +10,7 @@ a `<form>` is an HTTP element that contains input elements
 
 # Form Example
 
-``` html
+```html
 <form method='post'>
   Name: <input type='text' name='name' value='Alice'>
   <br>
@@ -41,8 +41,7 @@ a `<form>` is an HTTP element that contains input elements
 
 # Form attributes
 
-```
-@@@html
+```html
 <form method='get' action='/login'>
 ```
 

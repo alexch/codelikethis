@@ -10,27 +10,31 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 * zero-indexed
 * can be defined *literally* (inline) e.g.
 
-        @@@ ruby
-        fruits = ["apple", "banana"]
+```ruby
+fruits = ["apple", "banana"]
+```
 
 !SLIDE
 
 # Arrays act like stacks
 
-    @@@ rubys
-    a = [1, 2, 3]
-    a.push "four" #=> [1, 2, 3, "four"]
-    a.pop         #=> "four"
-    a             #=> [1, 2, 3]
+```ruby
+a = [1, 2, 3]
+a.push "four" #=> [1, 2, 3, "four"]
+a.pop         #=> "four"
+a             #=> [1, 2, 3]
+```
 
 ## or like queues
 
-    a = [1, 2, 3]
-    a.push(4)        #=> [1, 2, 3, 4]
-    a.shift          #=> 1
-    a                #=> [1, 2, 3]
+```ruby
+a = [1, 2, 3]
+a.push(4)        #=> [1, 2, 3, 4]
+a.shift          #=> 1
+a                #=> [1, 2, 3]
 
-    a.unshift "zero" #=> ["zero", 1, 2, 3]
+a.unshift "zero" #=> ["zero", 1, 2, 3]
+```
 
 * `push` means "enqueue"; `shift` means "dequeue"
 
@@ -51,15 +55,17 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 
 # Adding to an array
 
-    @@@ ruby
-    a = []
-    a << "x"       #=> ["x"]
+```ruby
+a = []
+a << "x"       #=> ["x"]
+```
 
 `<<` (pronounced "shovel") does a `push` -- adds an item to the end of an array -- DESTRUCTIVE!
 
-    @@@ ruby
-    a = []
-    a + ["x"]       #=> ["x"]
+```ruby
+a = []
+a + ["x"]       #=> ["x"]
+```
 
 `+` does a `concat` -- adds two arrays together and makes a new array -- safe!
 
@@ -70,17 +76,18 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 * so it feels destructive, but isn't
 
 
-        @@@ ruby
-        a = ["x", "y"]
+```ruby
+a = ["x", "y"]
 
-        a + "z"        #=> can't convert String into Array
-        a + ["z"]      #=> ["x", "y", "z"] (but a is unchanged)
-        a += ["z"]     #=> ["x", "y", "z"] (and a is changed)
+a + "z"        #=> can't convert String into Array
+a + ["z"]      #=> ["x", "y", "z"] (but a is unchanged)
+a += ["z"]     #=> ["x", "y", "z"] (and a is changed)
 
-        a = b = ["x"]
-        a += ["y"]
-        a #=> ["x", "y"]
-        b #=> ["x"]
+a = b = ["x"]
+a += ["y"]
+a #=> ["x", "y"]
+b #=> ["x"]
+```
 
 # `size` isn't everything
 
@@ -91,11 +98,12 @@ Ref. WGR Chapter 9, Section 9.2, Collection handling with arrays
 
 Arrays are zero-indexed
 
-    @@@ ruby
-    fruit = ["apple", "banana", "cherry"]
-    fruit[0] #=> "apple"
-    fruit[2] #=> "cherry"
-    fruit[3] #=> nil
+```ruby
+fruit = ["apple", "banana", "cherry"]
+fruit[0] #=> "apple"
+fruit[2] #=> "cherry"
+fruit[3] #=> nil
+```
 
 ## Question: which is better?
 
@@ -121,49 +129,54 @@ Arrays are zero-indexed
 
 # Fun with Array Indexes
 
-    @@@ ruby
-    fruit = ["apple", "banana", "cherry", "date"]
+```ruby
+fruit = ["apple", "banana", "cherry", "date"]
+```
 
 negative indexes count from the back
 
-    @@@ ruby
-    fruit[-1] #=> "date"
-    fruit[-3] #=> "banana"
+```ruby
+fruit[-1] #=> "date"
+fruit[-3] #=> "banana"
+```
 
 range indexes
 
-    @@@ ruby
-    fruit[1..3]  #=> ["banana", "cherry", "date"]
-    fruit[1...3] #=> ["banana", "cherry"]
+```ruby
+fruit[1..3]  #=> ["banana", "cherry", "date"]
+fruit[1...3] #=> ["banana", "cherry"]
+```
 
 # getting out of bounds
 
-    @@@ ruby
-    >> a = ["apple", "banana", "cherry"]
-    => ["apple", "banana", "cherry"]
-    >> a.length
-    => 3
-    >> a[5]
-    => nil
-    >> a.size
-    => 3
-    >> a
-    => ["apple", "banana", "cherry"]
+```ruby
+>> a = ["apple", "banana", "cherry"]
+=> ["apple", "banana", "cherry"]
+>> a.length
+=> 3
+>> a[5]
+=> nil
+>> a.size
+=> 3
+>> a
+=> ["apple", "banana", "cherry"]
+```
 
 moral: getting past the end returns `nil`, not error
 
 # setting out of bounds
 
-    @@@ ruby
-    >> a
-    => ["apple", "banana", "cherry"]
-    >> a[9] = "jicama"
-    => "jicama"
-    >> a.size
-    => 10
-    >> a
-    => ["apple", "banana", "cherry", nil, nil,
-        nil, nil, nil, nil, "jicama"]
+```ruby
+>> a
+=> ["apple", "banana", "cherry"]
+>> a[9] = "jicama"
+=> "jicama"
+>> a.size
+=> 10
+>> a
+=> ["apple", "banana", "cherry", nil, nil,
+    nil, nil, nil, nil, "jicama"]
+```
 
 moral: setting past the end autofills with `nil`
 
@@ -172,19 +185,20 @@ moral: setting past the end autofills with `nil`
 * No special matrix syntax
 * Have to be built up "by hand" as arrays of arrays
 
-        @@@ ruby
-        times_table = []
-        4.times do |x|
-          times_table[x] = []
-          4.times do |y|
-            times_table[x][y] = x * y
-          end
-        end
+```ruby
+times_table = []
+4.times do |x|
+  times_table[x] = []
+  4.times do |y|
+    times_table[x][y] = x * y
+  end
+end
 
-        >> times_table
-        => [[0, 0, 0, 0], [0, 1, 2, 3], [0, 2, 4, 6], [0, 3, 6, 9]]
-        >> times_table[2][3]
-        => 6
-        >> times_table[2]
-        => [0, 2, 4, 6]
+>> times_table
+=> [[0, 0, 0, 0], [0, 1, 2, 3], [0, 2, 4, 6], [0, 3, 6, 9]]
+>> times_table[2][3]
+=> 6
+>> times_table[2]
+=> [0, 2, 4, 6]
 
+```

@@ -5,11 +5,10 @@
 * JavaScript string literals are surrounded with either single quotes (`'`) or double quotes (`"`)
   * but not both!
 
-```
-@@@ js
+```js
 "My dog has fleas."
 'Vermonters have a hundred words for "snow".'
-``` 
+```
 
 # String Escapes
 
@@ -18,8 +17,7 @@
 * backslash means "the next character means something special"
   * for instance backslash-n means "newline"
   
-```
-@@@ js
+```js
 console.log("Roses are red,\nViolets are blue;\nCandy is sweet,\nAnd so are you.")
 ```
 
@@ -27,8 +25,7 @@ console.log("Roses are red,\nViolets are blue;\nCandy is sweet,\nAnd so are you.
 
 A string understands lots of messages. Here are a few:
 
-```
-@@@ js
+```js
 "drive" + "way"
 'Java' + "Script"
 
@@ -61,12 +58,13 @@ Every string is made of lots of other strings.
 
 You can pull out parts of a string with the `slice` message.
 
-    @@@ js
-    // this means "slice from character 0 to character 4"
-    "blueberry".slice(0, 4) 
+```js
+// this means "slice from character 0 to character 4"
+"blueberry".slice(0, 4) 
 
-    // this means "slice from character 4 to the end
-    "blueberry".slice(4)
+// this means "slice from character 4 to the end
+"blueberry".slice(4)
+```
 
 These start and end numbers are called *indexes* (or *indices* if you're feeling fancy).
 
@@ -137,7 +135,6 @@ JavaScript strings are Unicode
 Like this:
 
 ```js
-@@@js
 "😂".repeat(20)
 ```
 
@@ -149,12 +146,11 @@ Like this:
 JavaScript strings respond to the `<` and `>` operators.
 
 ```js
-@@@js
 > "apple" > "cherry"
 false
 > "banana" < "cherry"
 true
-``` 
+```
 
 Strings are compared *one character at a time* using the *Unicode values* of each character.
 
@@ -163,7 +159,6 @@ Strings are compared *one character at a time* using the *Unicode values* of eac
 So if you say `"apple" < "apricot"`...
 
 ```js
-@@@js
 > "apple".charCodeAt(0)
 97
 > "apricot".charCodeAt(0)
@@ -189,12 +184,11 @@ In ASCII and Unicode, all the uppercase letters are together (codes 65 to 90), t
 > That means that **all** uppercase strings are less than **all** lowercase strings.
 
 ```js
-@@@js
 > "apple" < "banana"
 true
 > "apple" < "BANANA"
 false
-``` 
+```
 
 The standard left-to-right code-to-code comparison algorithm is simplistic but very fast.
 
@@ -205,10 +199,9 @@ It works fine for many applications, but if you're dealing with user input or mu
 ...use [localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) instead, which understands case and diacriticals and dialects.
 
 ```js
-@@@js
 > "banana".localeCompare("CHERRY")
 -1
-``` 
+```
 
 Here `-1` means "the left side is less than the right side". Try other comparisons and see what you get!
 

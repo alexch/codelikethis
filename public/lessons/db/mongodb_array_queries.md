@@ -3,7 +3,6 @@
 * Assume the following slides operate on a collection with the following documents
 
 ```javascript
-@@@javascript
 db.inventory.insertMany( [
    { item: "journal", instock: [ { warehouse: "A", qty: 5 }, { warehouse: "C", qty: 15 } ] },
    { item: "notebook", instock: [ { warehouse: "C", qty: 5 } ] },
@@ -19,7 +18,6 @@ db.inventory.insertMany( [
 * Order of the properties matters in the query
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { "instock":
     { warehouse: "A", qty: 5 }
@@ -28,7 +26,6 @@ db.inventory.find(
 ```
 
 ```javascript
-@@@javascript
 // Matching document
 { item: "journal", instock: [ { warehouse: "A", qty: 5 }, { warehouse: "C", qty: 15 } ] }
 ```
@@ -38,14 +35,12 @@ db.inventory.find(
 * To query with relaxed conditions, use the property name "." sub-document property concatenation within quotes.
 
 ```javascript
-@@@javascript
 db.inventory.find( { 'instock.qty': 5 } )
 ```
 
 * Range conditions are also supported
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { 'instock.qty':
     { $lte: 20 }
@@ -59,7 +54,6 @@ db.inventory.find(
 * Is there a difference betweeen the two below queries?
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { 'instock.qty':
     { $lte: 20, $gte: 5 }
@@ -68,7 +62,6 @@ db.inventory.find(
 ```
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { 'instock.qty':
     { $lte: 20 },
@@ -83,7 +76,6 @@ db.inventory.find(
 * Syntax is: `'<property>.<index>.<subProperty>'`
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { 'instock.0.qty':
     { $lte: 20 }
@@ -97,7 +89,6 @@ db.inventory.find(
 * This makes the conditions act like OR condtions
 
 ```javascript
-@@@javascript
 db.inventory.find(
   {
     "instock.qty": 5,
@@ -112,7 +103,6 @@ db.inventory.find(
 * This acts like an AND between the two conditions
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { "instock":
     { $elemMatch:
@@ -130,7 +120,6 @@ db.inventory.find(
 * `$elemMatch` can be used with range conditions
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { "instock":
     { $elemMatch:
@@ -148,7 +137,6 @@ db.inventory.find(
 * `$elemMatch` can also be used with multiple range conditions
 
 ```javascript
-@@@javascript
 db.inventory.find(
   { "instock":
     {

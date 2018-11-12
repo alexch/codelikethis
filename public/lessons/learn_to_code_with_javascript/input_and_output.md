@@ -16,15 +16,13 @@
 
     * Reading a line in NodeJS is weird; here's one way to do it
 
-```
-@@@ js
+```js
 process.stdin.on('data', (chunk) => { console.log(chunk) })
 ```
 
 # node load code, decoded
 
-```
-@@@ js
+```js
 process.stdin.on('data', (chunk) => { console.log(chunk) })
 ```
 
@@ -41,8 +39,7 @@ process.stdin.on('data', (chunk) => { console.log(chunk) })
 
 `=>` is called "fat arrow" and is equivalent to this:
 
-```
-@@@ js
+```js
 process.stdin.once('data', function(chunk) { console.log(chunk) })
 ```
 
@@ -53,7 +50,6 @@ and the block of code itself is called a *callback* (since you are asking `stdin
 1. Open `hello.js` in your text editor
 2. Change it to contain the following code:
 
-        @@@ js
         console.log("What is your name?");
         process.stdin.once('data', (chunk) => {
             let name = chunk.toString();
@@ -112,12 +108,13 @@ What happens? Is this what you expected?
 
 * Change the program to look like this:
 
-        @@@ js
+```js
         console.log("What is your name?");
         process.stdin.once('data', (chunk) => {
             let name = chunk.toString().trim();
             console.log("Hello, " + name + "!");
         });
+```
 
 * Run it and make sure it works OK
 * Press ⌃C to close it
@@ -126,13 +123,14 @@ What happens? Is this what you expected?
 
 * Change the program to look like this:
 
-        @@@ js
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString().trim();
-            console.log("Hello, " + name + "!");
-            process.exit();
-        });
+```js
+console.log("What is your name?");
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString().trim();
+    console.log("Hello, " + name + "!");
+    process.exit();
+});
+```
 
 Note that:
 
@@ -170,7 +168,6 @@ Note that:
 To use `readline`, include the following lines in the top of your source file:
 
 ```javascript
-@@@javascript
 const readline = require('readline');
 
 const readlineInterface = readline.createInterface({
@@ -202,7 +199,6 @@ function ask(questionText) {
 Codealong time! Please follow along with the instructor and enter this code into a file named `quest.js`:
 
 ```javascript
-@@@javascript
 const readline = require('readline');
 
 const readlineInterface = readline.createInterface({

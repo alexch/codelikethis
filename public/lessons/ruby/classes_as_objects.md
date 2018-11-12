@@ -3,37 +3,41 @@
 
 <!SLIDE>
 
-    @@@ ruby
-    class Person
+```ruby
+class Person
+```
 
 is syntactic sugar
 
 same as
 
-    @@@ ruby
-    Person = Class.new
+```ruby
+Person = Class.new
+```
 
 Note that `Person` is just a regular constant!
 
 
-<!SLIDE>
+# defining a class with class_eval
 
-    @@@ ruby
-    class Person
-      def name
-        "Alice"
-      end
-    end
+```ruby
+class Person
+  def name
+    "Alice"
+  end
+end
+```
 
 same as...
 
-    @@@ ruby
-    Person = Class.new
-    Person.class_eval do
-      def name
-        "Alice"
-      end
-    end
+```ruby
+Person = Class.new
+Person.class_eval do
+  def name
+    "Alice"
+  end
+end
+```
 
 
 # the singleton class

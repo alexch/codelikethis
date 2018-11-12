@@ -163,16 +163,14 @@ Extract Variable, Extract Function, Extract Method
 
 # Example: Extract Function
 
-```
-@@@javascript
+```javascript
 console.log('' + new Date() + ' - error: too many notes') 
 console.log('' + new Date() + ' - error: not enough cowbell')
 ```
 
 =>
 
-```
-@@@javascript
+```javascript
 function logError(message) {
     console.log('' + new Date() + ' - error: ' + message)
 }
@@ -194,16 +192,14 @@ A medium-length comment can often be replaced with a variable / function / metho
 
 # Example: Replace Comment With Name
 
-```
-@@@javascript
+```javascript
 // 11 days at 24 hours per day times 60 minutes per hour
 let duration = 11 * 24 * 60 
 ```
 
 =>
 
-```
-@@@javascript
+```javascript
 let hoursPerDay = 24
 let minutesPerHour = 60
 let durationInMinutes = 11 * hoursPerDay * minutesPerHour
@@ -216,8 +212,7 @@ let durationInMinutes = 11 * hoursPerDay * minutesPerHour
 * good followup to "extract method"
 * good when used with [default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) (ES2015)
 
-```
-@@@javascript
+```javascript
 function logError(message, severity = 'error') {
     console.log('' + new Date() + ' - ' + severity + ': ' + message)
 }
@@ -232,8 +227,7 @@ logError('volume too low', 'warning')
 
 # Example: Extract Object (Struct)
 
-```
-@@@javascript
+```javascript
 function distanceBetween(x1, y1, x2, y2) {
     let deltaX = x2 - x1;
     let deltaY = y2 - y1;
@@ -244,8 +238,7 @@ let distance = distanceBetween(41.12, -72.22, 42.18, -72.34)
 
 =>
 
-```
-@@@javascript
+```javascript
 function distanceBetween(point1, point2) {
     let deltaX = point2.x - point1.x;
     let deltaY = point2.y - point1.y;
@@ -262,8 +255,7 @@ let distance = distanceBetween( { x: 41.12, y: -72.22 },
 
 * a class is for sharing methods between all related object instances
 
-```
-@@@javascript
+```javascript
 class Point {
     distanceFrom(otherPoint) {
         let deltaLat = otherPoint.x - this.x;
@@ -288,8 +280,7 @@ let distance = point1.distanceFrom(point2)
 * helps ensure that all the instance data is in a valid state
 * streamlines your initialization code
 
-```
-@@@javascript
+```javascript
 class Point {
     constructor(x, y) {
         this.x = x;

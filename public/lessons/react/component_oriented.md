@@ -6,7 +6,6 @@
 * Generate child compoents with `render()`
 
 ```javascript
-@@@javascript
 class Profile extends React.Component {
   userData = () => {
     return data || fetchDataFromDatabase();
@@ -33,7 +32,6 @@ class Profile extends React.Component {
 * Parents pass Props and State to children
 
 ```javascript
-@@@javascript
 <html>
   <body>
     <div id="root"/>
@@ -53,7 +51,6 @@ class Profile extends React.Component {
 * React will iterate over and render each
 
 ```javascript
-@@@javascript
 class ProfileList extends React.Component {
   render() {
     <Header>
@@ -114,7 +111,6 @@ class CommentList extends React.Component {
 * Re-rendering the component is how to update
 
 ```html
-@@@html
 <html>
   <body>
     <div id="root"/>

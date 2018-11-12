@@ -35,8 +35,7 @@ Using this strategy, you would **merge** the **development** branch into **maste
 
 # Example: Long Running Code
 
-```sh
-@@@shell
+```shell
 $ git checkout master
 $ git status
 

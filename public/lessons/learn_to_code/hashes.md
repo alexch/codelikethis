@@ -23,36 +23,39 @@ a *hash* is an *abstract data type*
 
 # Setting and Getting Hash Values
 
-    @@@ ruby
-    states = Hash.new
+```ruby
+states = Hash.new
 
-    states["CA"] = "California"
-    states["MA"] = "Massachusetts"
-    states["NY"] = "New York"
+states["CA"] = "California"
+states["MA"] = "Massachusetts"
+states["NY"] = "New York"
 
-    states["MA"].reverse #=> "sttesuhcassaM"
+states["MA"].reverse #=> "sttesuhcassaM"
+```
 
 # Hash literals
 
 a Hash can be defined *literally* (inline) with braces e.g.
 
-    @@@ ruby
-    states = {
-               "CA" => "California",
-               "MA" => "Massachusetts",
-               "NY" => "New York"
-             }
+```ruby
+states = {
+           "CA" => "California",
+           "MA" => "Massachusetts",
+           "NY" => "New York"
+         }
 
-    states["MA"] #=> "Massachusetts"
+states["MA"] #=> "Massachusetts"
+```
 
 The little `=>` arrow is called a **hash rocket**.
 
 # Remember, strings are not symbols!
 
-    @@@ruby
-    states = {:MA => "Massachusets"}
-    states["MA"] #=> nil
-    states[:MA]  #=> "Massachusets"
+```ruby
+states = {:MA => "Massachusets"}
+states["MA"] #=> nil
+states[:MA]  #=> "Massachusets"
+```
 
 This is such an annoying problem that Rails invented a new version of Hash named `HashWithIndifferentAccess`
 that converts string keys into symbol keys.
@@ -63,13 +66,15 @@ that converts string keys into symbol keys.
 
 Ruby 1.8 or 1.9:
 
-    @@@ ruby
-    {:foo => "bar", :baz => "baf"}
+```ruby
+{:foo => "bar", :baz => "baf"}
+```
 
 Ruby 1.9 only:
 
-    @@@ ruby
-    {foo: "bar", baz: "baf"}
+```ruby
+{foo: "bar", baz: "baf"}
+```
 
 # Hash arguments
 
@@ -81,10 +86,11 @@ When passing a hash to a method,
 
 ...**and** the hash is the final argument
 
-    @@@ruby
-    play_with({:name => "Alice", :age => 18})
+```ruby
+invite({:name => "Alice", :age => 18})
 
-    play_with :name => "Alice", :age => 18
+invite :name => "Alice", :age => 18
+```
 
 This is called "the default hash" (which is a silly name for it).
 
@@ -92,16 +98,17 @@ This is called "the default hash" (which is a silly name for it).
 
 These are all equivalent:
 
-    @@@ruby
-    User.new({:name => "Alex", :email => "alex@stinky.com"})
+```ruby
+User.new({:name => "Alex", :email => "alex@stinky.com"})
 
-    User.new(:name => "Alex", :email => "alex@stinky.com")
+User.new(:name => "Alex", :email => "alex@stinky.com")
 
-    User.new :name => "Alex", :email => "alex@stinky.com"
+User.new :name => "Alex", :email => "alex@stinky.com"
 
-    User.new name: "Alex", email: "alex@stinky.com"
+User.new name: "Alex", email: "alex@stinky.com"
 
-    User.new email:"alex@stinky.com", name:"Alex"
+User.new email:"alex@stinky.com", name:"Alex"
+```
 
 ...so passing a hash literal *kinda sorta almost* looks like named parameters.
 
@@ -119,16 +126,15 @@ These are all equivalent:
 
 Here's a handy trick:
 
-    @@@ ruby
-    class Hash
-      alias_method :<<, :merge!
-      alias_method :+, :merge
-    end
+```ruby
+class Hash
+  alias_method :<<, :merge!
+  alias_method :+, :merge
+end
 
-    {foo: 1} << {bar: 2}
-    => {:foo=>1, :bar=>2}   # destructive
+{foo: 1} << {bar: 2}
+=> {:foo=>1, :bar=>2}   # destructive
 
-    {foo: 1} + {bar: 2}
-    => {:foo=>1, :bar=>2}   # constructive
-
-
+{foo: 1} + {bar: 2}
+=> {:foo=>1, :bar=>2}   # constructive
+```

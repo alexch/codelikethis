@@ -6,7 +6,6 @@
 * React-Router is a tool for declarative routing using components
 
 ```javascript
-@@@javascript
 const Router = () => (
   <BrowserRouter>
     <Switch>
@@ -29,7 +28,6 @@ ReactDom.render(
 * Most routing systems are pretty static
 
 ```javascript
-@@@javascript
 // Express example
 app.get('/', handleIndex)
 app.get('/posts, handlePosts)
@@ -46,7 +44,6 @@ app.listen()
 * Routes are generated when your app runs
 
 ```javascript
-@@@javascript
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -70,7 +67,6 @@ ReactDOM.render( <App />, root)
 * React-router uses Regex to match the "path" to the "route"
 
 ```javascript
-@@@javascript
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Link } from "react-router-dom";
@@ -89,7 +85,6 @@ ReactDOM.render( <Router />, root)
 ```
 
 ```javascript
-@@@javascript
 // File: components/App.js
 import React from 'react';
 
@@ -113,7 +108,6 @@ export default App;
 * Browser history is preserved
 
 ```javascript
-@@@javascript
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -160,7 +154,6 @@ ReactDOM.render(<Router />, rootElement);
 # React Routing - Matching Routes
 
 ```javascript
-@@@javascript
 const App = () => {
   return (
     <div>
@@ -206,7 +199,6 @@ ReactDOM.render(<Router />, rootElement);
 * You can use the properties to do logic, or fill values
 
 ```javascript
-@@@javascript
 const App = () => {
   return (
     <div>
@@ -281,7 +273,6 @@ Object {props: Object}
 * Parameters can be required or optional
 
 ```javascript
-@@@javascript
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";

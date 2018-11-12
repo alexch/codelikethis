@@ -1,8 +1,9 @@
 # Chaining: A Ruby Idiom
 
-    @@@ ruby
-    s.split.map{|w|w.capitalize}.join(' ')
-    
+```ruby
+s.split.map{|w|w.capitalize}.join(' ')
+```
+
 * this technique is called *method chaining*
 * each operation changes the result of the previous operation
 * in this case, it
@@ -17,29 +18,33 @@
 
 ### Solution A: use `map` and chaining
 
-    @@@ ruby
-    s.split.map{|w|w.capitalize}.join(' ')
+```ruby
+s.split.map{|w|w.capitalize}.join(' ')
+```
 
 ### Solution B: use `each` and `!`
 
-    @@@ ruby
-    s.split.each{|w|w.capitalize!}.join(' ')
+```ruby
+s.split.each{|w|w.capitalize!}.join(' ')
+```
 
 ### Solution C: use `each` and an accumulator
 
-    @@@ruby
-    capitalized = []
-    s.split.each{|w|
-      capitalized << w.capitalize
-    }
-    capitalized.join(' ')
+```ruby
+capitalized = []
+s.split.each{|w|
+  capitalized << w.capitalize
+}
+capitalized.join(' ')
+```
 
 # delving into map
 
-    @@@ruby
-    s                   # "foo_bar"
-      .split("_")       # ["foo", "bar"]
-      .map {|w|         # "foo", then "bar"
-        w.capitalize    # "Foo", then "Bar"
-      }                 # ["Foo", "Bar"]
-      .join(" ")        # "Foo Bar"
+```ruby
+s                   # "foo_bar"
+  .split("_")       # ["foo", "bar"]
+  .map {|w|         # "foo", then "bar"
+    w.capitalize    # "Foo", then "Bar"
+  }                 # ["Foo", "Bar"]
+  .join(" ")        # "Foo Bar"
+```

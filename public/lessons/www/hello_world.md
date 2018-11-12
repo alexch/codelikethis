@@ -3,7 +3,7 @@
 * Create a file named index.html and open it in your text editor
 * All HTML documents should begin with a DOCTYPE declaration.  This does not require a **closing tag**.
 
-```
+```html
 <!DOCTYPE html>
 ```
 
@@ -11,7 +11,7 @@
 
 * The most basic HTML structure includes a DOCTYPE declaration, an HTML tag, a head tag, and a body tag. This looks like the following:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,7 +35,7 @@ Hello, world!
 ```
 
 So it looks like this:
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>

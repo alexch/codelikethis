@@ -9,10 +9,11 @@
 
 Here's a not very useful function:
 
-    @@@ js
-    function add(x, y) {
-      return x + y;
-    }
+```js
+function add(x, y) {
+  return x + y;
+}
+```
 
 * `function` means "define a function"
 * `add` is the *name* of the function
@@ -24,13 +25,15 @@ Here's a not very useful function:
 
 You call a function by its name, plus parentheses:
 
-    function add(x, y) {
-      return x + y;
-    }
+```js
+function add(x, y) {
+  return x + y;
+}
 
-    add(2, 3)   // returns 5
-    add(12, 30) // returns 42
-    
+add(2, 3)   // returns 5
+add(12, 30) // returns 42
+```
+
 # Lab: isDivisible
 
 One number is *divisible* by another if you divide them and the *remainder* is 0.

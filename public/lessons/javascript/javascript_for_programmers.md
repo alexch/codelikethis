@@ -43,14 +43,12 @@ Object (sometimes called "hash") comprises all other types, including
 The normal way:
 
 ```js
-@@@js
 for (var i = 0; i<a.length; ++i) { ... }
 ```
 
 In old JavaScript implementations, the above suffers from a performance problem, so you may see the following recommended instead:
 
 ```js
-@@@js
     for (var i = 0, n = a.length; i<n; ++i) { ... }
 ```
 
@@ -60,14 +58,12 @@ In old JavaScript implementations, the above suffers from a performance problem,
 * this leads to some improbable results
 
 ```js
-@@@js
 2 == [2] // true
 ```
 
 The above evaluates as if it were expanded thus:
 
 ```js
-@@@js
 2 === Number([2].valueOf().toString())
 ```
 
@@ -77,7 +73,6 @@ see also [Why does 2 == [2] in JavaScript?
 # More equality madness
 
 ```js
-@@@js
 ""           ==   "0"           // false
 0            ==   ""            // true
 0            ==   "0"           // true

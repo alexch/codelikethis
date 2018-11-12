@@ -41,7 +41,6 @@ Follow the link to see a fairly complete navigation bar with internally linked c
 ## New CSS
 
 ```css
-@@@css
 
 #nav {
   position: fixed;

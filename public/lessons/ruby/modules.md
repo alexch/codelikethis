@@ -6,8 +6,7 @@ Ref. WGR Chapter 4, Modules and program organization
 <!SLIDE>
 # Modules as namespaces
 
-```
-@@@ ruby
+```ruby
 module Food
   FRUITS = ["Apple", "Banana", "Cherry"]
 end
@@ -23,8 +22,7 @@ end
 
 # Modules as namespaces for classes
 
-```
-@@@ ruby
+```ruby
 module Speakers
   class Hello
     def say_hello
@@ -43,8 +41,7 @@ x.say_hello
 
 # Modules as mixins
 
-```
-@@@ ruby
+```ruby
 module Greetings
   def greet
     puts "Hello!"
@@ -60,13 +57,14 @@ end
 
 # Module usage
     
-    @@@ ruby
-    class Person
-      include Greetings
-    end
-    
-    alice = Person.new
-    alice.greet
+```ruby
+class Person
+  include Greetings
+end
+
+alice = Person.new
+alice.greet
+```
 
 
 # Multiple modules
@@ -81,18 +79,19 @@ end
 # Modules have no state
 ## but they can fake it pretty well
 
-    @@@ ruby
-    module Stacky
-      def stack
-        @stack ||= []
-      end
-      def push obj
-        stack.push obj
-      end
-      def pop
-        stack.pop
-      end
-    end
+```ruby
+module Stacky
+  def stack
+    @stack ||= []
+  end
+  def push obj
+    stack.push obj
+  end
+  def pop
+    stack.pop
+  end
+end
+```
 
 `@stack` will become an instance variable on the includer
 
@@ -121,8 +120,7 @@ end
 * If two modules define the same method, then the *last* one to be included wins
 * If you include a module twice, then the second inclusion is *ignored*, so it's still further back on the lookup chain
 
-```
-@@@ ruby
+```ruby
 class Foo
   include A
   include B
@@ -144,33 +142,36 @@ end
 
 ## `whiz.rb`:
 
-    @@@ ruby
-    module Whiz
-      VERSION = "1.0.2"
-      class GeeGaw
-        # ...
-      end
-    end
+```ruby
+module Whiz
+  VERSION = "1.0.2"
+  class GeeGaw
+    # ...
+  end
+end
+```
 
 ## `whiz/bang.rb`:
 
-    @@@ ruby
-    module Whiz
-      class Bang
-        def geegaw
-          # inside the module, its members are in scope
-          @geegaw ||= GeeGaw.new
-        end
-      end
+```ruby
+module Whiz
+  class Bang
+    def geegaw
+      # inside the module, its members are in scope
+      @geegaw ||= GeeGaw.new
     end
+  end
+end
+```
 
 ## `client.rb`:
 
-    @@@ ruby
-    require "whiz"
-    require "whiz/bang"
+```ruby
+require "whiz"
+require "whiz/bang"
 
-    # outside the module, its members are not in scope
-    # you need to name it explicitly
-    puts Whiz::VERSION
-    bang = Whiz::Bang.new
+# outside the module, its members are not in scope
+# you need to name it explicitly
+puts Whiz::VERSION
+bang = Whiz::Bang.new
+```
