@@ -95,7 +95,7 @@ This is one major difference between *static sites* and *web apps* -- since some
 
 Now you can put HTML, CSS, PNG, and `.js` files inside `/public` where your clients can fetch them as needed
 
-* *move* index.html` from your top-level project dir (`static-server`) to your `public` dir
+* *move* `index.html` from your top-level project dir (`static-server`) to your `public` dir
     * either use VS Code's GUI
     * or run `mv index.html public` from the terminal 
 

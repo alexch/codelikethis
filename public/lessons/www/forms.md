@@ -57,9 +57,10 @@ a `<form>` is an HTTP element that contains input elements
 
 Basically, `GET` is for *reading* and `POST` is for *writing*
 
-but the distinction is often blurry
+but that distinction is often blurry
 
-Also
+Also,
+
   * `GET` sends all parameters via the *request URL*
   * `POST` sends some or all parameters via the request body* 
 
