@@ -47,7 +47,7 @@ serving "." at http://127.0.0.1:8080
         const app = express()
         const port = process.env.PORT || 5000
         
-        app.use(express.static('public'))
+        app.use(express.static('.'))
         
         app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
