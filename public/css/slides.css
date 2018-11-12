@@ -1,4 +1,5 @@
 /* overrides for deckrb theme CSS */
+/* todo: switch to scss and add to the build */
 
 section.box {
     border: 2px solid black;
@@ -40,4 +41,9 @@ section.slide img {
 
 pre {
     padding: inherit;
+}
+
+blockquote {
+    font-size: 120%;
+    background-color: wheat;
 }
