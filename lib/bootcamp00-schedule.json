@@ -354,7 +354,7 @@
       ],
       "projects": [
         "shortly",
-        "chat_client",
+        "chat",
         "capstone"
       ],
       "side_tracks": [
@@ -382,7 +382,7 @@
         "oo_js"
       ],
       "projects": [
-        "chat_server"
+        "chat"
       ]
     },
     {

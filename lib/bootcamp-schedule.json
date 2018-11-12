@@ -368,7 +368,7 @@
       "track": "server_side_javascript",
       "projects": [
         "shortly",
-        "chat_client",
+        "chat",
         "capstone"
       ],
       "side_tracks": [
