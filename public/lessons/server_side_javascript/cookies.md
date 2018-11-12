@@ -8,15 +8,14 @@ but is *stored* by the web client
 
 which *sends it back* to the server on *every request*
 
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+* Docs: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+* Spec: https://tools.ietf.org/html/rfc6265
 
 # Cookie Uses
 
 * tracking users (of the same browser) across time
 * storing data without allocating server space
-* usually used as a *key* to a larger per-user server-side storage
-  * aka "session" (yet another meaning)
-* an early version of LocalStorage
+* an early version of LocalStorage for storing arbitrary objects on the client
 
 # Cookie Limitations
 
@@ -28,6 +27,22 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
   * the server specifies which other domains/hosts/sites to share this cookie with
   * but the client can restrict it further
 * user can erase them at any time
+
+# Cookie Sessions
+
+* cookie data on the client is 
+      1. not very secure
+      2. limited in size and format
+      3. unstable (it might be deleted, or edited, at any moment)
+    
+* so a cookie is often used not to store data directly, but as a *key* to a larger, long-term server-side database or 
+
+    * this is called a "session cookie" (yet another meaning of the term "session")
+
+* often that key identifies a *currently logged-in user* with a lot of related long-lived database records
+
+    * this is how web sites implement "Remember Me" login checkboxes
+
 
 # Cookie Headers
 
@@ -59,13 +74,46 @@ fetch('/articles.json', {credentials: 'include'})
   .then(
 ```
 
-> WARNING: this is a **security hole** and you should only add `credentials: include` if you are having trouble getting it to work on `localhost`; don't do it in production unless you have a good reason.
+> WARNING: this is a **security hole** and you should only add `credentials: include` if you are having trouble getting cookies to work on `localhost`; don't do it in production unless you have a good reason.
 
+# Express Cookie Code
 
-# Sample Code
+In Express, the incoming request's `Cookie` header is available (via `request.headers.cookie`), but it isn't pretty. Like URL-encoded parameters, it has to be parsed before it's useful.
 
-[`cookie_counter.js`](https://github.com/BurlingtonCodeAcademy/simple-server/blob/master/cookie_counter.js
-) is based off our blog server, but adds a "hit counter" which it increments on every request.
+Fortunately, Express has a middleware component called [cookie-parser](https://www.npmjs.com/package/cookie-parser) that parses the `Cookie` header and puts all available cookies into an object at `request.cookies`.
 
-run `node cookie_counter.js` and then visit <http://localhost:5000/cookie.html> to see it in action. (Keep reloading the page!)
+```javascript
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
+app.use(cookieParser());
+app.get('/', function(request, response) {
+  console.log('Cookies: ', request.cookies)
+})
+```
 
+To set a cookie, use the method [response.cookie()](https://expressjs.com/en/4x/api.html#res.cookie):
+
+```javascript
+response.cookie('cart', ['milk', 'cheese', 'dog food'])
+```
+
+Express will take care of encoding the value into JSON, and then URI-encoding that, to satisfy the arcane demands of the Cookie spec.
+
+# Cookie Counter
+
+For a more detailed example, 
+[`cookie_counter.js`](https://github.com/BurlingtonCodeAcademy/cookie-counter
+) is a simple one-route Express "hit counter" which increments a hit count 
+on every request.
+
+Run this...
+
+```bash
+git clone https://github.com/BurlingtonCodeAcademy/cookie-counter.git 
+cd cookie-counter
+npm install
+npm start
+```
+
+...then visit <http://localhost:5000/cookie.html> to see it in action. (Keep reloading the page!)
