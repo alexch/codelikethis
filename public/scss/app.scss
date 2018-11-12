@@ -154,6 +154,12 @@ section.slide {
     }
   }
 
+  h1 code, h2 code {
+    color: inherit;
+    padding: inherit;
+    background-color: inherit;
+  }
+
   blockquote {
     font-style: italic;
     border-left: 2px solid #ddd;
