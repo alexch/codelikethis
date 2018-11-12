@@ -123,7 +123,6 @@ So to make our modern blog app show an article, we need *two*
 ### public/article.html 
 
 ```html
-@@@html
 <div class='article'>
   <h2 id='title'></h2>
   <i>by <span id='author'></span></i>
@@ -408,8 +407,7 @@ This code depends on `document.location.search` (the `?` portion of the URL) sti
 
 Since our database is so small, we will load all articles into memory and search through them using a JavaScript iterator (`filter`).
 
-```
-@@@javascript
+```javascript
 app.get('/search', (request, response) => {
   response.sendFile($path.join(publicDir, 'search.html'))
 })

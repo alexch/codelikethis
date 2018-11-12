@@ -147,7 +147,8 @@ open a web browser and visit <http://localhost:5000/oops.html>
 
 if there is an error loading the file (in this case, there is simply no file by that name),
  
-the server must send the correct *[status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)* 
+the server must send the correct *[status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)*
+
   * (404 means "not found")
   
 Note: even though there is an error, the server *still returns a body and content-type* for display to the user.

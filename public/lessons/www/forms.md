@@ -10,7 +10,7 @@ a `<form>` is an HTTP element that contains input elements
 
 # Form Example
 
-```
+``` html
 <form method='post'>
   Name: <input type='text' name='name' value='Alice'>
   <br>
@@ -20,6 +20,7 @@ a `<form>` is an HTTP element that contains input elements
 </form>
 ```
 
+<!--BOX-->
 <form method='post'>
   Name: <input type='text' name='name' value='Alice'>
   <br>
@@ -27,6 +28,7 @@ a `<form>` is an HTTP element that contains input elements
   <br>
   <input type='submit'>
 </form>
+<!--/BOX-->
 
 # Forms are semantic
 

@@ -6,7 +6,7 @@
 
 # URL Diagram
 
-![complex url](complex_url.png) (via [DoePud](https://doepud.co.uk/blog/anatomy-of-a-url))
+![complex url](/lessons/www/complex_url.png) (via [DoePud](https://doepud.co.uk/blog/anatomy-of-a-url))
 
 # URL Breakdown
 

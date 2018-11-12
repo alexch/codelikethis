@@ -13,7 +13,7 @@ Let's lift the hood and check out the engine that makes the World Wide Web run.
 * In a nutshell, an HTTP request is sent by the **client** (a browser), which is used to locate information in the form of a file. * This file contains code, which tells your browser how, and what, to render. 
 * A web server responds to this request, by telling the browser where the file lives. 
 
-![HTTP Request](./http_request.png "HTTP Request") (via <https://betterexplained.com/>)
+![HTTP Request](/lessons/www/http_request.png "HTTP Request") (via <https://betterexplained.com/>)
 
 # HTTP Methods
 
@@ -129,5 +129,5 @@ then the server replies with an HTTP response!
 
 # Telnet Screenshot
 
-![telnet screenshot](./telnet-google.png)
+![telnet screenshot](/lessons/www/telnet-google.png)
 
