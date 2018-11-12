@@ -95,6 +95,10 @@ class Track
       topic name: "http-methods"
     end
 
+    lesson name: "redirects" do
+      topic name: "http-redirect"
+    end
+
     lesson name: "blog",
            description: "codealong walkthrough, building a blog server by adding routes and form submission to the core Express server" do
       topic name: "servers"
@@ -128,16 +132,16 @@ class Track
       topic name: "client-side-javascript"
 
     end
-    #
-    # lesson name: "saving_state_in_files", display_name: "State: Files" do
-    #   topic name: "state"
-    #   topic name: "saving-state"
-    #   topic name: "apis"
-    #   topic name: "node"
-    #   topic name: "parameters"
-    #   topic name: "post-request"
-    # end
-    #
+
+    lesson name: "saving_state_in_files", display_name: "State: Files" do
+      topic name: "state"
+      topic name: "saving-state"
+      topic name: "apis"
+      topic name: "node"
+      topic name: "parameters"
+      topic name: "post-request"
+    end
+
     # lesson name: "client_vs_server_js"
     #
     # lesson name: "/db/overview", display_name: "State: Databases",

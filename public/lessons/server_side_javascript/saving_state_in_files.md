@@ -1,75 +1,25 @@
-# Server-Side JavaScript: Files
+# State: Files
 
-Let's add a 'publish article' form to the blog.
+Files on disk are the original database.
 
-# API Design
 
-Article Schema:
+# File Tech
 
-|field|type|description|
-|---|---|---|
-|id|integer| unique among all articles; corresponds to file name e.g. `1.json` |
-|author|string|
-|title|string|
-|body|string| someday we'll make this Markdown | 
+NodeJS is good at files.
 
-```
-{
- "id": 1,
- "title": "How to Cross a Rubicon",
- "author": "Julius Caesar",
- "body": "Lorem ipsum dolor..."
-}
-```
+The built-in `fs` and `path` libraries have some slick and efficient ways of reading and writing files.
 
-Endpoints:
+Rather than go through the full API, it's best to look at sample code like that inside the [Blog project](/projects/blog)
 
-`POST /articles` create a new article
+> Remember that most of Node's I/O functions are asynchronous, so you may need to use callbacks, Promises, and/or async-await.
 
-# Tech
+# Heroku's Ephemeral Filesystem
 
-NodeJS has a nice `fs` library built in that has some smooth ways of reading and writing files.
+you can write files to the `/tmp` and `process.env.HOME` directories
 
-# Code - find id
+they will stay there for a while, but will disappear when your server restarts
 
-```
-  // find the highest id...
-  let id = articles.reduce((topId, article) => {
-    console.log(article.id);
-    return Math.max(topId, article.id);
-  }, 1);
-  // ...and pick a higher one
-  let newId = id + 1;
-```
+see https://stackoverflow.com/questions/12416738/how-to-use-herokus-ephemeral-filesystem
 
-# Code - read params, write file
+...so for apps on Heroku at least, we need a better solution for storing data long-term  
 
-```
-  assistant.parsePostParams((params) => {
-    let article = {
-      id: newId,
-      author: params.author,
-      title: params.title,
-      body: params.body
-    }
-    let articleDataFile = $path.join(articlesDir, newId + ".json");
-    fs.writeFile(articleDataFile, JSON.stringify(article), (err) => {
-      if (err) {
-        assistant.sendError(500, err);
-      } else {
-        assistant.sendRedirect('/articles');
-      }
-    })
-```
-
-# Code - redirect
-
-```javascript
-  sendRedirect(path) {
-    let message = `Redirecting to ${path}`;
-    console.log(message);
-    this.response.statusCode = 302;
-    this.response.setHeader('Location', path);
-    this.finishResponse('text/plain', message);
-  }
-```
