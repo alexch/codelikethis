@@ -100,8 +100,9 @@ class ThingPage < AppPage
            src: '/js/fontawesome-all.js'
 
     # client-side code highlighting from https://highlightjs.org
-    stylesheet name: "highlight/xcode"
-    # stylesheet name: "highlight/kimbie.light"
+    # stylesheet name: "highlight/xcode"
+    stylesheet name: "highlight/solarized-light"
+
     script src: "/highlight.min.js"
     script "hljs.initHighlightingOnLoad();"
 
