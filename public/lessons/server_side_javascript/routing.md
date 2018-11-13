@@ -53,7 +53,7 @@ This means,
 
   * `?` "zero or one of these"
   * `+` "one of more of these"
-  * `*` "zero or more of these"
+  * `*` "zero or more" (but see below)
   * `()` "these go together"
 
 * ...but are *not* regular expressions
@@ -64,8 +64,10 @@ This means,
 
 * ...or you can use *actual* regular expressions
 
+        // This route path will match butterfly 
+        // and dragonfly, but not butterflyman
         app.get(/.*fly$/, function (request, response) {
-            response.send('I am some sort of fly')
+            response.send('I am a fly')
         })
 
 * for more info, see the full [Express Routing Guide](https://expressjs.com/en/guide/routing.html) on their web site
@@ -82,7 +84,15 @@ Express provides several different "parameters" objects:
 
 The special character `:` means "this is a [path parameter](./parameters#path_parameters)"
 
-Express will grab the *value* from the path itself, and put it into the `request.params` object for you to use later
+Example:
+
+```
+Path: /hello/Gandalf
+Route: /hello/:name
+Params: {name: 'Gandalf'}
+```
+
+Express will grab the *value* from the path itself, and put it into the `request.params` object for you to use later.
 
 # LAB: Hello, Path Friend!
 
@@ -95,6 +105,38 @@ app.get('/hello/:friend', (request, response)=> {
 ```
 
 Prove that it works by visiting <http://localhost:5000/hello/Gandalf> (or use your own name)
+
+# LAB: Hello, You!
+
+Now add a new route
+
+```
+app.get('/hello/:you/from/:me', (request, response)=> {
+    response.send(`${request.params.me} says, "Hello, ${request.params.you}!')
+});
+```
+
+Does <http://localhost:5000/hello/Gandalf/from/Sauron> work? If not, why not?
+
+(Answer on next slide.) 
+
+# Route Matching is Top-Down
+
+Remember, Express routes are a list of matching rules which the server then walks through in first-to-last order.
+
+So if an early route matches, it wins... even if there's a more specific rule that also matches later in the list.
+
+## Solution:
+
+Put more specific rules above more general rules.
+
+```javascript
+app.get('/hello/:you/from/:me', (request, response)=> { ... 
+});
+
+app.get('/hello/:friend', (request, response)=> { ... 
+});
+```
 
 # Query Parameters in Express
 
