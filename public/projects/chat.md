@@ -27,9 +27,11 @@ Hi, alex!
 
 Can be represented as a JSON object in a POST body or as a query string on GET requests
 
-* when - a DateString<ISO8601> format
-* body - a String<Max500Char> format
-* author - a String<Unique> format
+| name | format | details |
+|--------|--------|---------|
+| when   | Date (in [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) format) | the moment the message was sent |
+| body   | String (max 500 characters)  | the content of the message |
+| author | String (max 100 characters)  | the username of the message sender |
 
 e.g.
 ```json
@@ -42,11 +44,11 @@ e.g.
 
 ## Routes (with a single default room)
 
-| Route        | Input                                  | Output                 |
-|--------------|----------------------------------------|------------------------|
-| `GET /`      | nothing                                | HTML: main page        |
-| `GET /chat`  | since=[optional]                       | JSON: list of messages |
-| `POST /chat` | body=[required] <br> author=[optional] | JSON: list of messages |
+| Route        | Input                                    | Output                 |
+|--------------|------------------------------------------|------------------------|
+| `GET /`      | nothing                                  | HTML: main page        |
+| `GET /chat`  | since= [optional]                        | JSON: list of messages |
+| `POST /chat` | body= [required] <br> author= [optional] | JSON: list of messages |
 
 ## Object Model
 
@@ -57,24 +59,27 @@ First, create three files:
 `lib/message.js`:
 
 ```javascript
+// a message has a sender, a time, and a body
 module.exports = class Message {
-  someCodeHere() {}
+
 }
 ```
 
 `lib/room.js`:
 
 ```javascript
+// a room contains messages, in chronological order
 module.exports = class Room {
-  moreCodeHere() {}
+
 }
 ```
 
 `lib/house.js`:
 
 ```javascript
+// a chat house contains chat rooms
 module.exports = class House {
-  evenMoreCodeHere() {}
+
 }
 ```
 
@@ -85,22 +90,22 @@ For example, the responsibility of listing all rooms *should* be on the house, n
 Remember that it's possible to refactor to classes. If your code looks like this:
 
 ```javascript
-function sendChatMessages(roomId, since) {
+function sendChatMessages(roomId, since, response) {
   let messages = rooms[roomId].messages;
   messages = messagesSince(messages, since);
   let data = JSON.stringify(messages);
-  someMiddleware.finishResponse('text/json', data);
+  response.type('application/json').send(data);
 }
 ```
 
 then it could look like this after:
 
 ```javascript
-function sendChatMessages(roomId, since) {
+function sendChatMessages(roomId, since, response) {
   let room = house.roomWithId(roomId);
   let messages = room.messagesSince(since);
   let data = JSON.stringify(messages);
-  someMiddleware.finishResponse('text/json', data);
+  response.type('application/json').send(data);
 }
 ```
 
@@ -136,8 +141,8 @@ Server-side:
 
 Client-side:
 
-* Create a variable named something like `mostRecentMessageAt`
-* When you receive a list of messages, set `mostRecentMessageAt` to the *most recent* message time
+* Create a variable named something like `latestMessageAt`
+* When you receive a list of messages, set `latestMessageAt` to the *most recent* message time
 * When you request a list of messages, add `since` to the request
 
 > Q: should you log the time the message was *sent* or the time you *received* it? Does it matter?
@@ -154,7 +159,7 @@ Then the client will see it in less than 10 seconds (without clicking Refresh)
 
 ### Tech:
 
-* use `setInterval` or `setTimeout`
+* use [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval) or [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
 
 <!--/BOX-->
 
@@ -194,8 +199,8 @@ And the user sees an error message
 
 Instead of the single Main room, enable a few different rooms that are always available, so
 
-  * `GET /chat/rooms/debugging` gets all messages from the room whose id is "`debugging`".
-  * `POST /chat/rooms/debugging` sends a message to that room
+  * `GET /chat/rooms/dogs` gets all messages from the room whose id is "`dogs`".
+  * `POST /chat/rooms/dogs` sends a message to that room
 
 Any message sent to /chat will still work, displayed in the Main room.
 
@@ -208,7 +213,7 @@ The client should show a list of all available rooms, either in a popup menu or 
 
   * Build a beautiful, usable, responsive front end
     * possibly in React
-  * Handle scrolling back through older messages
+  * Handle scrolling back through older messages (like Slack)
   * Persistence (after server restart)
   * [Socket.io](https://socket.io/) is a Node library that provides real-time asynchronous publish-and-subscribe messaging using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
     * Implement a Web Sockets API instead of polling.

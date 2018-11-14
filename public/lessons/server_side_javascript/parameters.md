@@ -68,7 +68,7 @@ this is the simplest way to understand, but it's not standard, so you may have t
 ```
 POST /file HTTP/1.1
 Host: localhost
-Content-Type: text/json
+Content-Type: application/json
 
 {"user":"BurlingtonCodeAcademy","repo":"til","section":"blob","branch":"master","filepath":"/README.md"}
 ```

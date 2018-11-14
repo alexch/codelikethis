@@ -224,7 +224,7 @@ app.get('/articles', (request, response) => {
 app.get('/articles.json', (request, response) => {
   let articles = allArticles();
   let data = JSON.stringify(articles);
-  response.type('text/json');
+  response.type('application/json');
   response.send(data);
 })
 
@@ -412,7 +412,7 @@ app.get('/search', (request, response) => {
 
 app.get('/search.json', (request, response) => {
   let results = searchArticles(request.query)
-  response.type('text/json');
+  response.type('application/json');
   response.send(JSON.stringify(results));
 });
 
