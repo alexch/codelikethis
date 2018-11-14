@@ -224,8 +224,7 @@ app.get('/articles', (request, response) => {
 app.get('/articles.json', (request, response) => {
   let articles = allArticles();
   let data = JSON.stringify(articles);
-  response.type('application/json');
-  response.send(data);
+  response.type('application/json').send(data);
 })
 
 function allArticles() {
@@ -238,7 +237,8 @@ function allArticles() {
 
 ## Notes:
 
-* There's probably a more efficient way to read all the files, using `readFile` instead of `readFileSync`, but this works for now
+* There's probably a more efficient way to read all the files, using `readFile` instead of `readFileSync`, but this works for now.
+* Although they look very similar to human eyes, the routes `/articles` and `/articles.json` will *not* overlap with each other, since they are both exact matches. So you can put them in any order.
 
 # Publish an Article (Client-side)
 
