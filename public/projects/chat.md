@@ -1,22 +1,22 @@
 # Chat
 
-The goal is to write the *client and server* for a simple web chat application.
+The goal is to write the *client and server* for a simple web based chat application.
 
-Use the [Blog lesson](/lessons/server_side_javascript/blog) for inspiration and sample code (but please keep the copypasta to a minimum).
+Use the [Blog lesson](/lessons/server_side_javascript/blog) for inspiration and sample code (but please keep the *copypasta* to a minimum).
 
 ## Wireframe
 
-This wireframe is meant to give you a rough idea of the necessary user interace elements. Use your own imagination to design the placement and look of panels and buttons. 
+This wireframe is meant to give you a rough idea of the necessary user interace elements. Use your own imagination to design the placement and look of panels and buttons.
 
 ```
 Hi, alex!
 
         Main Room               All Rooms
-/--------------------------\  /----------\
-|                          |  | Main     |
-|                          |  | Dogs     |
-| alex: hi                 |  | Debugging|
-| abby: woof               |  \----------/
+/--------------------------\  /-----------------\
+|                          |  | Main            |
+|                          |  | Dogs            |
+| alex: hi                 |  | Debugging       |
+| abby: woof               |  \-----------------/
 \--------------------------/
 /------------------------\  /------\  /---------\
 | good mor|              |  | Send |  | Refresh |
@@ -27,26 +27,26 @@ Hi, alex!
 
 Can be represented as a JSON object in a POST body or as a query string on GET requests
 
-* when - a string in ISO8601 format
-* body - a string
-* author - a string
+* when - a DateString<ISO8601> format
+* body - a String<Max500Char> format
+* author - a String<Unique> format
 
 e.g.
 ```json
 {
-    "when": "2018-07-15T20:00:47.696Z",
-    "author": "alex",
-    "body": "my dog has fleas"
+  "when": "2018-07-15T20:00:47.696Z",
+  "author": "alex",
+  "body": "my dog has fleas"
 }
 ```
 
 ## Routes (with a single default room)
 
-|Route|Input|Output|
-|---|---|---|
-|`GET /`     | nothing | HTML: main page |
-|`GET /chat` | since= (optional) | JSON: list of messages |
-|`POST /chat`| body= <br> author= (optional) | JSON: list of messages |
+| Route        | Input                                  | Output                 |
+|--------------|----------------------------------------|------------------------|
+| `GET /`      | nothing                                | HTML: main page        |
+| `GET /chat`  | since=[optional]                       | JSON: list of messages |
+| `POST /chat` | body=[required] <br> author=[optional] | JSON: list of messages |
 
 ## Object Model
 
@@ -58,7 +58,7 @@ First, create three files:
 
 ```javascript
 module.exports = class Message {
-  
+  someCodeHere() {}
 }
 ```
 
@@ -66,7 +66,7 @@ module.exports = class Message {
 
 ```javascript
 module.exports = class Room {
-  
+  moreCodeHere() {}
 }
 ```
 
@@ -74,34 +74,34 @@ module.exports = class Room {
 
 ```javascript
 module.exports = class House {
-  
+  evenMoreCodeHere() {}
 }
 ```
 
 When implementing a feature, consider which object should have that responsibility.
 
-For example, the responsibility of listing all rooms should be on the house, not on an individual room.
+For example, the responsibility of listing all rooms *should* be on the house, not on an individual room.
 
-Remember that it's possible to refactor to classes. If your code looks like this before:
+Remember that it's possible to refactor to classes. If your code looks like this:
 
-```
-  function sendChatMessages(roomId, since) {
-    let messages = rooms[roomId].messages;
-    messages = messagesSince(messages, since);
-    let data = JSON.stringify(messages);
-    assistant.finishResponse('text/json', data);
-  }
+```javascript
+function sendChatMessages(roomId, since) {
+  let messages = rooms[roomId].messages;
+  messages = messagesSince(messages, since);
+  let data = JSON.stringify(messages);
+  someMiddleware.finishResponse('text/json', data);
+}
 ```
 
 then it could look like this after:
 
-```
-  function sendChatMessages(roomId, since) {
-    let room = house.roomWithId(roomId);
-    let messages = room.messagesSince(since);
-    let data = JSON.stringify(messages);
-    assistant.finishResponse('text/json', data);
-  }
+```javascript
+function sendChatMessages(roomId, since) {
+  let room = house.roomWithId(roomId);
+  let messages = room.messagesSince(since);
+  let data = JSON.stringify(messages);
+  someMiddleware.finishResponse('text/json', data);
+}
 ```
 
 ## Backlog
@@ -146,12 +146,6 @@ Client-side:
 
 <!--BOX-->
 
-## Refresh Messages
-
-<!--/BOX-->
-
-<!--BOX-->
-
 ## Poll for new messages every 10 seconds
 
 Given a new message is sent
@@ -180,7 +174,7 @@ Message should be displayed with the `author` and `created_at`
 
 <!--/BOX-->
 
-<!--/BOX-->
+<!--BOX-->
 
 ## Validation
 
@@ -188,7 +182,7 @@ Given an incoming message
 
 When the message body is more than 500 characters long
 
-Then the message is rejected 
+Then the message is rejected
 
 And the user sees an error message
 
@@ -216,7 +210,6 @@ The client should show a list of all available rooms, either in a popup menu or 
     * possibly in React
   * Handle scrolling back through older messages
   * Persistence (after server restart)
-  * [Socket.io](https://socket.io/) is a Node library that provides real-time asynchronous publish-and-subscribe messaging using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). 
+  * [Socket.io](https://socket.io/) is a Node library that provides real-time asynchronous publish-and-subscribe messaging using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
     * Implement a Web Sockets API instead of polling.
-    * with Web Sockets, add "Someone is typing..." transient notifications 
-
+    * with Web Sockets, add "Someone is typing..." transient notifications
