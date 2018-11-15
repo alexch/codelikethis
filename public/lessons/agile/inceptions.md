@@ -119,11 +119,19 @@ How do we want to work?
 * Customer availability? (in-room, on-site, etc.)
 * Deployment environment? (stability, automation, scripting, other hassles)
 * Desired test coverage?
-* Customer :: Project Manager :: Developer :: Designer :: QA Tester :: Support ratios
+* Desired role ratios? 
+    * Customer :: Project Manager :: Developer :: Designer :: QA Tester :: Support :: Ops :: Coach
 
 # Elevator Pitch
 
-*  mad-libs game
+Play the ![Mad Libs](./mad-libs.jpg) Pitch Game!
+
+Fill in the following template:
+
+For ______ who need ______, the ______ is a ______ that ______.
+Unlike ______, our product ______.
+
+# Elevator Pitch Example
 
 ![elevator pitch](elevator-pitch.png)
 
