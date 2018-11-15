@@ -131,37 +131,60 @@ How do we want to work?
 
 # Mission Statement Game
 
-* everyone writes a mission statement
-* pass them around and highlight important/recurring words
-* collaborate to write and reach consensus on a final statement
+* everyone writes a draft mission statement
+* pass them around the group and highlight important/recurring words
+* write those words on a whiteboard
+    * then dot-vote on them, and use **at most** the top three or four
+* collaborate to write and reach consensus on a final mission statement
   * hopefully without a lot of run-on "and" clauses
+  * example (bad): _"focusing on birds, other wildlife, and their habitats"_
+
+> Consensus is hard; concise consensus is a miracle.
+
+Here are some [mission statements from 50 non-profit organizations](https://topnonprofits.com/examples/nonprofit-mission-statements/), sorted from shortest to longest. See how much more poignant the short ones are!
 
 # Personas
 
-*  traditionally: personas map to types of users
-*  practically: you can/should make personas for any human in the system
+![example persona](https://blog.alexa.com/wp-content/uploads/2017/10/Buyer-Persona-Examples-B2C-Retail.jpg)
+
+## Sections:
+ * picture
+ * motto (quote)
+ * demographics
+ * bio / personality
+ * goals
+ * frustrations
+
+
+Links:
+
+* https://venngage.com/blog/user-persona-examples/
+* https://blog.alexa.com/10-buyer-persona-examples-help-create/
+
+# Persona Details
+
+*  persona design comes from user research, so traditionally, personas represent types of *end users*
+*  but practically, don't limit yourself to end users
+    *  you can/should make personas for any human in the system
     *  developers, clients, admins, customer support reps, QA testers, apps, spammers…
-*  one persona per card/sheet
+*  only one persona per sheet
+* pick a real name (not a cute pun) and invent details that have nothing to do with your product
+  * this facade will help activate the creative, narrative, storytelling part of your brain
+  * often you will discover new use cases or scenarios *via* these ostensibly irrelevant details
 
-# Roles and Activities
+# Persona Sections
 
-*  for each persona, ask what they can do (and can’t)
-*  one card for each activity
-*  one card for each role
-*  diagram relationships among personae and activities and roles
+After creating the personas, you can start applying them to the system you're designing, e.g...
 
-# Advice for Facilitators
+## Marketing Plan
 
-(for Story Mapping or any planning or retrospective workshop)
+* for each persona, list ways to reach them
 
-*  Stay impartial
-*  Assign a Timekeeper and a Scribe (so you can focus on the meeting, not the logistics)
-*  Try to ask questions, not make statements
-*  After asking a question, count to ten! someone else will fill the silence
-*  Ask clarifying questions, even if you know the answer
-*  If the conversation veers, steer it back to the original topic (or ask for consensus to change topics)
-  * Use a Parking Lot (or IOU) list for items to deal with immediately after the meeting
-*  If the conversation ebbs, ask if anyone sees a pattern… or has a suggestion… or if it’s time for a break
+## Roles and Activities
+
+* for each persona, ask what they can do (and can’t)
+* start to diagram relationships among personae and activities and roles
+* start to make timelines and sequence diagrams showing communication and workflow between roles and documents
 
 # Story Mapping
 
@@ -207,6 +230,35 @@ e.g.
 |---|
 |As a customer, I want to sort the matching cars by price, so that I can see the best deal.|
 
+# Acceptance Criteria Template
+
+Generally a single *story* has several *acceptance criteria*, which are often written following this pattern:
+
+```
+GIVEN ____    [precondition or scenario]
+WHEN ____     [the user does something, or something interesting happens]
+THEN ____     [the system is in this state, or responds in this way]
+```
+
+* The "then" part must be something observable, ideally by an automated test.
+* Use present tense for WHEN and subjunctive mood ("should") for THEN
+* During the Inception, don't worry too much about filling in acceptance criteria for all stories, but it can be useful to do so for important or mysterious stories.
+
+## Example:
+
+<!--BOX-->
+
+**GIVEN** I have $100 in my bank account, <br>
+**WHEN** I attempt to withdraw $200, <br>
+**THEN** the bank should reject the transaction <br>
+**AND** I should still have $100 in my account
+
+<!--/BOX-->
+
+## Links:
+
+* https://martinfowler.com/bliki/GivenWhenThen.html
+
 # Epics
 
 * An Epic is a series of Stories
@@ -223,6 +275,19 @@ e.g.
 4. Write Stories
 5. Estimate Stories
 6. Prioritize Stories into a Backlog (across Epics)
+
+# Advice for Facilitators
+
+(for Story Mapping or any planning or retrospective workshop)
+
+*  Stay impartial
+*  Assign a Timekeeper and a Scribe (so you can focus on the meeting, not the logistics)
+*  Try to ask questions, not make statements
+*  After asking a question, count to ten! someone else will fill the silence
+*  Ask clarifying questions, even if you know the answer
+*  If the conversation veers, steer it back to the original topic (or ask for consensus to change topics)
+  * Use a Parking Lot (or IOU) list for items to deal with immediately after the meeting
+*  If the conversation ebbs, ask if anyone sees a pattern… or has a suggestion… or if it’s time for a break
 
 # Iteration Zero
 
