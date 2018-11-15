@@ -94,19 +94,23 @@ from [Pivotal Labs](http://cargocollective.com/pivotallabs/No-7-Dev-Inception)
 
 # Project Risks
 
-*	Business risks
+* Business risks
   * Does the market want this?  
   * Will an emerging technology disrupt this product? 
   * Can the client support success?
-*	Technical risks
+* Technical risks
   * Are there 3rd party integrations?
   * Are there unknown technologies or libraries to learn?
-  * Does the product rely on platforms that are changing, e.g. Android or Apple Watch?
-*	Schedule risks
-  * Must we satisfy other parties, e.g. developers on another team?  
-  * Is there a near term, immovable milestone like a festival launch?
-*	Budget risks
-  * Will we run out of money before beta? Before launch? Before handoff?
+  * Does the product rely on platforms that are changing, e.g. Android or Apple Watch?
+* Schedule risks
+  * Is there a near term, immovable milestone like a festival or holiday?
+  * Are there bottlenecks or signoffs, e.g. developers on another team?  
+* Budget risks
+  * Will we run out of money (aka "runway") before beta? Before launch? Before handoff?
+* Other risks?
+  * Legal or regulatory?
+  * Safety?
+  * Specialized knowledge (e.g. human language fluency)?
 
 Based off <http://pivotallabs.com/agile-inception_knowing-what-to-build-and-where-to-start/>
 
@@ -126,7 +130,7 @@ How do we want to work?
 
 Play the ![Mad Libs](./mad-libs.jpg) Pitch Game!
 
-Fill in the following template:
+Split into small groups and in each group, fill in the following template:
 
 For ______ who need ______, the ______ is a ______ that ______.
 Unlike ______, our product ______.
