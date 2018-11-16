@@ -27,10 +27,12 @@ class Track
       video youtube_id: "mzcBfUu15RU"
     end
 
-    lesson name: "acceptance_testing" do 
+    lesson name: "acceptance_testing" do
       link href: "https://www.youtube.com/watch?v=URSWYvyc42M&feature=youtu.be",
            name: "Rails Conf 2013 The Magic Tricks of Testing by Sandi Metz"
     end
+
+    lesson href: "/javascript/cypress"
 
     lesson name: "inceptions" do
       link href: "https://martinfowler.com/articles/lean-inception/"

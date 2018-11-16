@@ -113,10 +113,26 @@ function sendChatMessages(roomId, since, response) {
 
 <!--BOX-->
 
-## Up and Running
+## Send And Receive
 
-* GET all messages at /chat route
-* POST a message to /chat
+**Given** an empty chat room
+
+**When** a user types their name into the `username` field
+
+**And** types a message into the `message` field
+
+**And** clicks the "Send" button
+
+**Then** the message appears in the chat room (including the username, e.g. `alex: good morning`
+
+### Tech:
+
+* on the server, write code for the `POST` route
+* on the client, write code to 
+  * grab the data from the form
+  * send it to the server
+  * receive a list of messages in the response
+  * put the messages in the chat room text area 
 
 <!--/BOX-->
 
