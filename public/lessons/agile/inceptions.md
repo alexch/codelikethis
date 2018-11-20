@@ -130,10 +130,14 @@ How do we want to work?
 
 Play the ![Mad Libs](./mad-libs.jpg) Pitch Game!
 
-Split into small groups and in each group, fill in the following template:
+> An elevator pitch is a concise, clear, persuasive explanation of a product that can be told in the time it would take to ride an elevator.
+
+Split into small groups and within each group, brainstorm to fill in the following template:
 
 For ______ who need ______, the ______ is a ______ that ______.
 Unlike ______, our product ______.
+
+Then select a spokesperson to share your result with the group. If time allows, collaborate to create a consensus pitch statement.
 
 # Elevator Pitch Example
 
@@ -167,23 +171,24 @@ Here are some [mission statements from 50 non-profit organizations](https://topn
  * goals
  * frustrations
 
-
 Links:
 
-* https://venngage.com/blog/user-persona-examples/
-* https://blog.alexa.com/10-buyer-persona-examples-help-create/
 
 # Persona Details
 
 *  persona design comes from user research, so traditionally, personas represent types of *end users*
-*  but practically, don't limit yourself to end users
-    *  you can/should make personas for any human in the system
+*  but practically, don't limit yourself to end users -- you can and should make personas for any human in the system
     *  developers, clients, admins, customer support reps, QA testers, apps, spammers…
 *  only one persona per sheet
-* pick a real name (not a cute pun) and invent details that have nothing to do with your product
+* pick a real-sounding name (not a cute pun) and invent details that have nothing to do with your product
   * this facade will help activate the creative, narrative, storytelling part of your brain
   * often you will discover new use cases or scenarios *via* these ostensibly irrelevant details
-
+* there are many online persona tutorials and even *persona generators*:
+    * https://venngage.com/blog/user-persona-examples/
+    * https://blog.alexa.com/10-buyer-persona-examples-help-create/
+    * https://www.hubspot.com/make-my-persona
+    * https://www.google.com/search?q=persona+generator
+    
 # Persona Sections
 
 After creating the personas, you can start applying them to the system you're designing, e.g...
