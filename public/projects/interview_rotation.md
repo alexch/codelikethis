@@ -33,8 +33,45 @@ From now until you get a job, you should add "coding interview prep" to your pra
 
 Here are some resources to help you on your path:
 
-  * https://www.topcoder.com/blog/learning-understanding-big-o-notation/ ("Big O" measures the efficiency of a particular algorithm; many coding interview problems have a clever solution that will greatly reduce its Big O value.)
-  * https://hackerrank.com
-  * https://30secondsofinterviews.org/
-  * https://learn.freecodecamp.org/coding-interview-prep/rosetta-code
-  * https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95 -- if you like this first article by Eric Elliott then you will probably enjoy his deeper dives into other topics in his series on Medium titled "Master the JavaScript Interview"
+### General Resources:
+  * [TopCoder Understanding BigO Notation](https://www.topcoder.com/blog/learning-understanding-big-o-notation/) "Big O" measures the efficiency of a particular algorithm; many coding interview problems have a clever solution that will greatly reduce its Big O value.
+
+  * [BigO Cheat Sheet](http://bigocheatsheet.com/) - Graph and matrix of data structures and algorithms for use in calculating BigO of a solution.
+
+  * [TopCoder Algorithm Tutorials](https://www.topcoder.com/community/competitive-programming/tutorials/) - Explanation of general algorithm approaches to interview problems.
+
+  * [30Seconds Of Interviews](https://30secondsofinterviews.org/) - Quick and short interview questions in a verbal format, similar to flash cards.
+  
+  * [10 Questions Every JavaScript Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95) -- if you like this first article by Eric Elliott then you will probably enjoy his deeper dives into other topics in his series on Medium titled "Master the JavaScript Interview"
+
+### Exercises:
+
+  * [HackerRank](https://hackerrank.com) - Interview practice problems and articles for developers
+  * [CodeSignal](https://codesignal.com/interview-practice/) - Progression of programming interview questions
+  * [LeetCode](https://leetcode.com/subscribe/) - Collection of programmer interview questions
+  * [CodeWars](https://www.codewars.com/) - Community powered programmer problems
+  * [Advent of Code](https://adventofcode.com/) - Yearly set of challenges, starting on Dec. 1st.
+  * [Rosetta Code](https://learn.freecodecamp.org/coding-interview-prep/rosetta-code) - Programming challenges from FreeCodeCamp.
+  * [Project Euler](https://projecteuler.net/) - Large list of math oriented programming questions and community of solvers.
+
+### Videos:
+
+* [Khan Academy - Computer Science Algorithms Course](https://www.khanacademy.org/computing/computer-science/algorithms)
+
+* [CS Dojo - Data Structures Overview Playlist](https://www.youtube.com/playlist?list=PLBZBJbE_rGRV8D7XZ08LK6z-4zPoWzu5H)
+* [CS Dojo - Interview Question Playlist](https://www.youtube.com/playlist?list=PLBZBJbE_rGRVnpitdvpdY9952IsKMDuev)
+
+* [HackerRank - Data Structures Playlist](https://www.youtube.com/playlist?list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX)
+* [HackerRank - Algorithm Playlist](https://www.youtube.com/playlist?list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL)
+
+
+### Readings:
+
+* [BaseCS - Data Structures (Start at the bottom and work up)](https://medium.com/basecs/tagged/data-structures)
+* [BaseCS - Algorithms (Start at the bottom and work up)](https://medium.com/basecs/tagged/algorithms)
+
+* [Bradfield CS - Practical Data Structures and Algorithms](https://bradfieldcs.com/algos/)
+
+* [Algorithm Examples - JavaScript](https://github.com/TheAlgorithms/Javascript)
+
+* [Open Source Data Structures Book](http://opendatastructures.org/ods-python/)
