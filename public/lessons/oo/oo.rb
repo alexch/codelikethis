@@ -7,7 +7,9 @@ Track::Oo = Track.new(
 ) do
   lesson name: "introduction_to_objects"
   lesson name: "oo_design" do
-    link name:"Boundaries by Gary Bernhardt 2012", href:
-    "https://www.destroyallsoftware.com/talks/boundaries"
+    link name:"Boundaries by Gary Bernhardt 2012",
+         href: "https://www.destroyallsoftware.com/talks/boundaries"
+    link href: "https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f",
+         name: "The Forgotten History of OOP by Eric Elliott"
   end
 end

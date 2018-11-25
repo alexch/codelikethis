@@ -21,7 +21,7 @@ Your task for this project is to build a command line program which you can use 
 **When** a user inputs:
 
 ```sh
-til To convert JSON to a JavaScript object use JSON.parse(myObject)
+til To convert JSON to a JavaScript object use JSON.parse
 ```
 
 **Then**
@@ -33,7 +33,7 @@ A new TIL entry is created
 The TIL entry.content equals:
 
 ```
-To convert JSON to a JavaScript object, use JSON.parse(myObject)
+To convert JSON to a JavaScript object, use JSON.parse
 ```
 
 <!--/BOX-->

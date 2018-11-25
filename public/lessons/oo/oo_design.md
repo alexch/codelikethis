@@ -2,8 +2,23 @@
 
 Topics:
 
-* the Linguistic Metaphor (for now, see [these slides]())
+* the Linguistic Metaphor
 * the Law of Demeter
+
+# The Linguistic Metaphor
+
+One way to think about objects: 
+
+Objects are *things* that can be *described* and can *do* things, or...
+
+  * Objects are nouns
+    * (things)
+  * Methods are verbs
+    * (actions, behaviors, or imperative messages ("Sit! Good dog."))
+  * Attributes are adjectives
+    * (a property that describes a particular thing)
+  * Classes are categories
+    * (a noun that describes a *type* of thing, not a thing itself)
 
 # The Law of Demeter
 
@@ -24,7 +39,7 @@ but most everything else is disallowed, especially
 
 * sharing state using globals
 * "walking down" a nested object hierarchy
-  * though "method chaining" can be fine, as long as the object returned is the original object, or a known friend of the caller
+  * though "method chaining" is fine, as long as the object returned is the original object, or a known friend of the caller
 
 # a LoD example
 
@@ -65,6 +80,31 @@ class Course {
    * and 18 is the age of majority in the USA
 * is *hidden* (or *encapsulated*) behind the simpler "course" interface
 
+# Dots In A Row
+
+don't confuse *method chaining* (often good) with *feature envy* (usually bad)
+
+## Method Chaining
+
+With method chaining, you are usually calling the same object -- or at least the same *type* of object -- again and again, so the number of collaborators is limited:
+
+```javascript
+string.split(' ').map((s)=>s.toUpperCase()).join(' ')
+```
+
+## Feature Envy
+
+With feature envy (a LoD violation), you are traversing a graph of collaborators until you find the one with the data or method you want: 
+
+```javascript
+course.students[0].phone.sendText('hi')
+```
+
+| style | dots | collaborators |
+|---|---|---|
+| method chaining | 4 | **2** (String, Array) |
+| feature envy | 3 | **5** (Course, Array, Student, Phone, String)
+
 # The Single Responsibility Principle
 
 Each object should have limited, clearly defined responsibilities.
@@ -91,7 +131,7 @@ It's best if dependencies are *one-way* and hierarchies are *shallow*.
 
 CRC = Classes, Reponsibilities, Collaborators
 
-![example CRC for Chat House](crc-chat.jpg)
+![example CRC for Chat House](./crc-chat.jpg)
 
 For each class (object type) in your system, make a box (or an index card). In this box, write the **Class name**, a list of its **Responsibilities**, and draw arrows to its **Collaborators**.
 

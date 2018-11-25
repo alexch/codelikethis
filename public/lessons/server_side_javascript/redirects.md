@@ -4,7 +4,7 @@ MDN has [a good lesson on redirects](https://developer.mozilla.org/en-US/docs/We
 
 # Code - redirect
 
-NodeJS:
+## NodeJS:
 
 ```javascript
 let path = '/some/resource';
@@ -14,7 +14,7 @@ response.write('Redirecting to ' + path);
 response.end();
 ```
 
-[Express](https://expressjs.com/en/4x/api.html#res.redirect):
+## [Express](https://expressjs.com/en/4x/api.html#res.redirect):
 
 ```javascript
 response.redirect('/some/resource')

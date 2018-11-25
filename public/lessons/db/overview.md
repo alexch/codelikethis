@@ -1,5 +1,7 @@
 # Databases Overview
 
+This lesson gives an overview of the terms and concepts involved in databases.
+
 * Database definition
 * Server vs. Server vs. Server
 * Database concepts
@@ -58,6 +60,11 @@ In an organization with a history of using integration DBs, it can be difficult 
 
 > One the great advantages of an application database is that it is easier to change since all its use is **encapsulated** by a single application. Evolutionary database design and database refactoring can be used to make significant changes to an application database's design even after the database is put into production.
  
+# Relational Database vs Document Database
+
+a *relational database* (aka SQL) stores information in *tables*; every record in this table has the same flat structure, and this structure (the "schema") must be defined beforehand 
+
+a *document database* (aka NoSQL) stores information in *documents*; records can contain any fields, can include collections and child records directly, and don't require an explicit schema
 
 # Database concepts
 
@@ -136,7 +143,7 @@ see http://mongodb.github.io/node-mongodb-native/3.1/tutorials/crud/
 
 # JIST
 
-In addition to CRUD, the following features are also fairly standard: 
+In addition to CRUD, the following database features are also fairly standard: 
 
 * **J**oin several documents (records) into one in response to a single query
 * **I**ndex by field for fast lookup and search
@@ -145,7 +152,7 @@ In addition to CRUD, the following features are also fairly standard:
 
 # Query / Search
 
-definitions:
+Definitions:
 
 a *query* is any request to a database, *including requests to update records*
 
@@ -153,6 +160,14 @@ a *search* is either
 
 1. any *find* operation that may return multiple results
 2. a *full-text search* or a *keyword search* that looks for bits of text *inside* certain fields
+
+# Cursor
+
+Sometimes a query would return many results -- maybe more than can fit in memory!
+
+To solve this problem, most databases provide an object called a *Cursor* which fetches some of the results but not necessarily all of them at once.
+
+When you ask a cursor for the next result, it will automatically go back to the database to fetch the next page if needed. 
 
 # Transaction
 
@@ -172,13 +187,13 @@ This is known as an *atomic* operation -- several actions behaving as one.
 
 BLOB stands for "Binary Large Object" but it is also a good metaphor.
 
-A BLOB is *any piece of data* that the database treats like a blob -- it does not look inside it,  doesn't know its value, can't sort based on it, allows it to be arbitrarily small or large, etc.
+A BLOB is *any piece of data* that the database treats like a blob -- it does not look inside it, doesn't know its value, can't sort based on it, allows it to be arbitrarily small or large, etc.
 
 Example: an profile picture image file
 
 Storing BLOBs is often very convenient, and is useful for prototyping or for apps with low-to-middling performance requirements.
 
-But in high-performance web applications, it's often a better idea to store media files in a CDN like Amazon S3; in your database, instead of a blob, store a URL pointing to that file in the CDN.
+But in high-performance web applications, it's often a better idea to store media files in a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) like Amazon S3; in your database, instead of a blob, store a URL or id pointing to that file in the CDN.
 
 # Join
 
@@ -199,7 +214,11 @@ JOIN address
 ON person.id = address.person_id
 ```
 
-In document DBs, joins are often not necessary because documents *contain their contents*; with SQL databases, the *contents point to their containers*.
+In document DBs, joins are often not necessary because...
+ 
+> In NoSQL databases, documents *contain their contents*
+ 
+> In SQL databases, the *contents point to their containers*.
 
 see https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/
 

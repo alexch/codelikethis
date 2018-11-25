@@ -53,7 +53,7 @@ MongoDB has a JavaScript REPL console, like `node`.
 
 Launch it by typing `mongo dbname` on the command line -- e.g. for the `til` database, run `mongo til`
 
-In this console, run `help` to see what's possible. 
+In this console, run `help` to see what's possible.
 
 ```
 > db.entries.find({})
@@ -67,3 +67,11 @@ In this console, run `help` to see what's possible.
 { "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
 
 ```
+
+# Concept: ObjectId
+
+- `_id` is assigned by Mongo when a document is inserted
+- `ObjectId` is a factory function that either generates a new id, or 
+
+# Lab: Connect and Collect
+
