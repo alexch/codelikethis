@@ -15,7 +15,7 @@ db.inventory.insertMany([
 
 # Finding ALL documents in a Collection
 
-* The most basic query is "Get all the docuements in a collection"
+* The most basic query is "Get all the documents in a collection"
 * With no conditions
 * With all the fields from the document
 

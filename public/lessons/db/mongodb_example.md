@@ -1,6 +1,6 @@
 # MongoDB Example
 
-Let's analyze the source code of the TIL app to understand the steps involved in using MongoDB from NodeJS.
+Let's analyze the source code of the TIL command-line app to understand the steps involved in using MongoDB from NodeJS.
 
 Follow along here: <https://github.com/BurlingtonCodeAcademy/til/blob/master/til.js>
 

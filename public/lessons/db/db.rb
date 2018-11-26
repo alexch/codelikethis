@@ -66,9 +66,12 @@ class Track
     lesson name: "mongodb_queries" do
       topic name: "mongodb-queries"
       topic name: "mongodb-shell"
+
+      link href: "https://docs.mongodb.com/manual/tutorial/query-documents/",
+           name: "MongoDB 'Query Documents' tutorial"
     end
 
-    lesson name: "mongodb_array_queries" do 
+    lesson name: "mongodb_array_queries" do
       topic name: "mongodb-queries"
       topic name: "mongodb-shell"
     end
