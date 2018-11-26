@@ -14,24 +14,19 @@ This lesson gives an overview of the terms and concepts involved in databases.
 
 # Database Examples
 
-* Relational DBs: (SQL)
-  * Oracle
-  * MySQL
-  * PostgresQL
-  * Microsoft SQL Server
-* Document DBs: (NoSQL)
-  * MongoDB
-  * CouchDB
-  * Google BigTable
-  * Apache Cassandra
-* Object-Oriented DBs:
-  * Smalltalk/Gemstone, Prevayler
-* Graph DBs:
-  * Neo4j
-  * GraphQL (not a database *per se*, but a query language *for* graph DBs and APIs)
-* File Systems: 
-  * any Unix or DOS filesystem
-  * IPFS
+|Relational (SQL)|Document (NoSql)|Object-Oriented|Graph|Filesystem|
+|---|---|---|---|---|
+|  |
+
+|Style|Examples|
+|---|---|
+|Relational (SQL) | Oracle, MySQL, PostgresQL, Microsoft SQL Server |
+| Document DBs (NoSQL) |  MongoDB,  CouchDB,  Google BigTable,  Apache Cassandra |
+| Object-Oriented (OODB) |  Smalltalk/Gemstone, Prevayler |
+| Graph DBs | Neo4j,  GraphQL (*) |
+| File Systems |  any Unix or DOS filesystem,  IPFS |
+
+(*) GraphQL not a database *per se*, but a query language *for* graph DBs and APIs
 
 # Server vs. Server vs. Server
 
@@ -55,7 +50,9 @@ Martin Fowler makes the following distinction:
 * an *[integration database](https://martinfowler.com/bliki/IntegrationDatabase.html)* has many kind of client applications, and may even support direct hand-crafted console queries by humans
 
 The needs of the two scenarios are often very different, and people with experience in one style can have very different assumptions than people with experience in the other style; they often end up talking past each other.
- 
+
+# Application Database vs Integration Database (cont.)
+
 In an organization with a history of using integration DBs, it can be difficult to write applications, since common operations (like adding a table or renaming a field) must go through a process to make sure they don't break *other apps* or use cases.
 
 > One the great advantages of an application database is that it is easier to change since all its use is **encapsulated** by a single application. Evolutionary database design and database refactoring can be used to make significant changes to an application database's design even after the database is put into production.
