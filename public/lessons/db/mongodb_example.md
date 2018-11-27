@@ -166,6 +166,7 @@ collection.find({
  when: {
     '$gte': new Date(2012, 0, 21),
     '$lt': new Date(2012, 0, 22)
+ }
 })
 ```
 
