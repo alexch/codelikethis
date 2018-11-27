@@ -92,13 +92,13 @@ db.inventory.find( { status: "A", qty: { $lt: 30 } } )
 * Example one
 
 ```javascript
-db.inventory.find( { status: { $in ["A", "B", "C"] } } )
+db.inventory.find( { status: { $in: ["A", "B", "C"] } } )
 ```
 
 * Example two
 
 ```javascript
-db.inventory.find( { type: { $in ["Journal", "Notebook", "Paper"] } } )
+db.inventory.find( { type: { $in: ["Journal", "Notebook", "Paper"] } } )
 ```
 
 # Querying Nested Documents
