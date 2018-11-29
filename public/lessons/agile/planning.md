@@ -6,7 +6,7 @@
 
 # Project Phases
 
-* Scoping => SOW
+* Scoping => SOW (Statement/Scope of Work)
 
 * Discovery
   * Research
@@ -98,12 +98,12 @@ THEN ____  [postcondition/assertion]
 
 **Title**: Sign Out
 
-**Body**: As a user, I want to sign out of the application, so that my other family members can't use my account
+**Body**: As a logged-in user at home, I want to sign out of the application, so that my other family members can't use my account
 
 **Acceptance Criteria**:
 
 ```
-Given I am signed in as a normal user
+Given I am signed in as a normal (non-admin) user
 When I look at the nav bar
 Then I see the "Sign Out" button
 
