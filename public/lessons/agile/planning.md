@@ -53,9 +53,22 @@ This is not waterfall! These phases often overlap and recur.
   
 * (*) chores and spikes do not directly provide business value, but improve knowledge or reduce debt or increase simplicty
   
-# Story Types
+# Stories vs Features
 
-* Usually one story per feature, bug, spike, or chore
+Usually a given *feature* has one or more *stories*.
+
+There are other types of stories and tasks...
+
+* bug
+* spike
+* chore
+* research
+
+# Story Lifecycle
+
+![tracker story lifecycle](./tracker-workflow.png)
+
+(this diagram is from Pivotal Tracker but the workflow applies to most Agile processes and tools)
 
 # Story Independence
 

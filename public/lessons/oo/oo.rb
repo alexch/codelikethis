@@ -12,4 +12,6 @@ Track::Oo = Track.new(
     link href: "https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f",
          name: "The Forgotten History of OOP by Eric Elliott"
   end
+  link href: "https://www.infoq.com/presentations/Simple-Made-Easy",
+        name: "Simple Made Easy by Rich Hickey"
 end
