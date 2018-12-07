@@ -235,10 +235,6 @@ $(function () {
 
           widget @thing.view if @thing
 
-          div(class: "help", style: 'border: 10px solid #ddddee') {
-            img(src: "/images/tracks-lessons-slides.png")
-          }
-
           div.pre_footer {
 
           }

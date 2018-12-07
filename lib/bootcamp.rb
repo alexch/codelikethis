@@ -96,6 +96,11 @@ class Bootcamp < Site
               }
             }
           }
+          div.card do
+            div(class: "help", style: 'border: 10px solid #ddddee') {
+              img(src: "/images/tracks-lessons-slides.png")
+            }
+          end
         }
       }
 
