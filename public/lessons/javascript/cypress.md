@@ -16,6 +16,20 @@ API doc: <https://docs.cypress.io/api>
 * *network stubs* with `cy.route()` for canned scenarios involving server failures or edge cases
 * *screenshots* for each failure; *videos* of entire test run (optionally)
 * tests are paused immediately on failure, for *debugging* live app state with DevTools
+* tests are written in *modern JavaScript* using a Jasmine/Jest-like interface and Mocha assertions
+
+# Cypress Anti-Features
+
+Cypress is *not* an after-the-fact click-and-record QA automation tool for so-called "non-technical" testers.
+
+ * tests are written in *modern JavaScript* so your testers need to understand callbacks, method chaining, jQuery, Mocha and Chai, and fat arrows, as well as CSS selectors and DOM lifecycle events
+ 
+ * tests use an *enqueued linear control flow* so some familiar techniques like `if..then` and `let` variables don't work as expected 
+   * fortunately the docs are **amazing** and cover these scenarios very well
+
+ * tests use CSS selectors to find page elements, so your app needs to be written with sensible `id`s and `classes` and `data-*` values in its DOM
+ 
+> "Yes, this may require server side updates, but you have to make an untestable app testable if you want to test it!" - [Cypress Conditional Testing Guide](https://docs.cypress.io/guides/core-concepts/conditional-testing.html)
 
 # Cypress Runner UI
 
@@ -75,7 +89,13 @@ from <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#
 
 * waits up to 60 seconds for the page to fire its `load` event (which happens *just after* the page is fully loaded)
 
-* if you specify `baseUrl` in your `cypress.json` file it will go a little quicker
+* if you specify `baseUrl` in your `cypress.json` file it will go a little quicker, e.g.:
+
+```json
+{
+    "baseUrl": "http://localhost:5000/"
+}
+```
 
 # get
 
@@ -314,6 +334,15 @@ npm install cypress
 npm install node-static
 ```
 
+* inside the project root directory, create a file named `cypress.json` and put this code inside it:
+
+```
+{
+    "baseUrl": "http://localhost:5000/"
+}
+
+```
+
 * create a directory named `cypress` and a subdirectory named `integration`
 
 ```
@@ -348,3 +377,58 @@ npx cypress open
 * High five!
 * Now go back to the [Tic Tac Toe](/projects/tictactoe_www#stories) project and read the stories in the backlog. For each story, write one or more acceptance tests.
 * If you find any bugs in your classmate's code, let them know! They will definitely thank you for helping assure the quality of their code :-)
+
+# Even More Cypress Stuff
+
+* alias
+* stubs
+* fixtures
+* routes
+* well-written documentation
+
+# alias
+
+[alias](https://docs.cypress.io/guides/core-concepts/variables-and-aliases.html) a selection with `as` for later use (since local variables are awkward to use in an async world)
+
+```javascript
+cy.get('table').find('tr').as('rows');
+cy.get('@rows').first().click();
+```
+
+# stubs
+
+[stubs and spies, mocks and clocks](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Capabilities) for when you want to deceive your app
+
+```javascript
+cy.clock()
+cy.get('#timer').contains('00:00.00')
+cy.get('#start').click()
+cy.tick(10 * 60 * 1000)
+cy.get('#timer').contains('10:00.00')
+```
+
+# fixtures and routes
+
+* [JSON fixtures](https://docs.cypress.io/api/commands/fixture.html) for canned data
+
+* [routes](https://docs.cypress.io/guides/guides/network-requests.html) for stubbing network requests
+
+```javascript
+cy.server()           // enable response stubbing
+cy.route({
+  method: 'GET',      // Route all GET requests
+  url: '/users/*',    // that have a URL that matches '/users/*'
+  response: []        // and force the response to be: []
+})
+```
+
+* fixtures and routes go together like peanut butter and jelly
+
+```javascript
+cy.fixture('activities.json').as('activitiesJSON')
+cy.route('GET', 'activities/*', '@activitiesJSON')
+```
+
+# docs
+ 
+Great docs! Including a [Recipies cheatsheet](https://docs.cypress.io/examples/examples/recipes.html) and clearly written [guides](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
