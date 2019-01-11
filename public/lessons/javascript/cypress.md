@@ -27,7 +27,7 @@ Cypress is *not* an after-the-fact click-and-record QA automation tool for so-ca
  * tests use an *enqueued linear control flow* so some familiar techniques like `if..then` and `let` variables don't work as expected 
    * fortunately the docs are **amazing** and cover these scenarios very well
 
- * tests use CSS selectors to find page elements, so your app needs to be written with sensible `id`s and `classes` and `data-*` values in its DOM
+ * tests use CSS selectors to find page elements, so your app needs to be written with sensible `id`s and `class`es and `data-*` values in its DOM
  
 > "Yes, this may require server side updates, but you have to make an untestable app testable if you want to test it!" - [Cypress Conditional Testing Guide](https://docs.cypress.io/guides/core-concepts/conditional-testing.html)
 
@@ -380,11 +380,24 @@ npx cypress open
 
 # Even More Cypress Stuff
 
+* code editor integration
 * alias
 * stubs
 * fixtures
 * routes
 * well-written documentation
+
+# code editor integration
+
+At the top of your Cypress test file, if you include the following line...
+
+    /// <reference types="cypress" />
+
+...then your text editor will become aware of the types and interfaces of the Cypress library, and enable code completion and inline help.
+
+<!-- todo: screenshot -->
+
+This trick works in Visual Studio Code (and probably other editors too)
 
 # alias
 
