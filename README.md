@@ -67,18 +67,25 @@ a Site is
   * a home page
   * a schedule
   
-Currently there are two Sites:
+Currently there are three Sites:
 
 1. CodeLikeThis <http://codelikethis.com> - the main site, containing all Tracks (listed in alphabetical order)
 2. Bootcamp <http://bootcamp.burlingtoncodeacademy.com> - the site for *Burlington Code Academy's 2018 Web Development Bootcamp*, which runs from June through August in (where else?) Burlington, Vermont 
+3. JavaScript After Hours
 
 Both sites are served from the same web application instance, running on Heroku (<http://codelikethis.herokuapp.com>). The app looks at `request.host` and serves a different Site to each hostname.
 
 To add a Site, follow the example of [Bootcamp](lib/bootcamp.rb).
 
-To point DNS at a new Site, add a CNAME pointing to `wildcard.burlingtoncodeacademy.com.herokudns.com` . You can verify this by running `heroku domains --app codelikethis` and hopefully see this line: <br>`*.burlingtoncodeacademy.com  CNAME            wildcard.burlingtoncodeacademy.com.herokudns.com`
+To point DNS at a new Site:
+1. run `heroku domains:add newsite --app codelikethis`
+2. run `heroku domains --app codelikethis` and note the "DNS Target" for your new site
+3. in your DNS manager, add a CNAME record pointing the subdomain name (e.g. `newsite`) to the DNS target (e.g. `salty-hyena-j9awwxxx123.herokudns.com`)
 
-To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?site=bootcamp>. This parameter is *not* propagated to new pages so you'll have to keep adding it explicitly to test different pages.
+(Note that [Heroku SSL ACM](https://devcenter.heroku.com/articles/automated-certificate-management) does not support wildcard domains, so each CNAME 
+subdomain will need a separate heroku DNS Target.)
+
+To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?site=bootcamp>. This parameter *sets a cookie* so future page requests will stay on that site; this is a convenience for localhost development and should not be used in a production environment (and if it is used, it may override the *real* site as specified by the subdomain).
 
 ## Adding a Track
 

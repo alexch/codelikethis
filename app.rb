@@ -184,6 +184,7 @@ class App < Sinatra::Base
       sitename = params['site']
       response.set_cookie(:site, :value => sitename,
                           :expires => Time.now + 3600*12)
+      @warning = "Setting site cookie to #{sitename}."
     elsif cookies['site']
       sitename = cookies['site']
     else
@@ -205,4 +206,3 @@ class App < Sinatra::Base
   end
 
 end
-

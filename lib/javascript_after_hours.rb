@@ -12,7 +12,12 @@ class JavascriptAfterHours < Site
 
   # base site has all tracks
   def hostname
-    %w(javascript_after_hours.burlingtoncodeacademy.com javascript_after_hours js-after-hours)
+    %w(
+      javascript-after-hours.burlingtoncodeacademy.com
+      javascript-after-hours
+      js-intro.burlingtoncodeacademy.com
+      js-intro
+    )
   end
 
   def tracks
