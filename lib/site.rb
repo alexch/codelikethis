@@ -67,6 +67,9 @@ class Site < Thing
     end.flatten.compact.uniq
   end
 
+  def google_calendar_id
+    "M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+  end
 end
 
 require 'bootcamp'

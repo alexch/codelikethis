@@ -134,11 +134,15 @@ class Schedule < Thing
             if week_number == 0
               text "Prerequisites"
             else
+              gcal_link = "https://calendar.google.com/calendar/b/1/r/week/#{week_start.strftime("%Y/%m/%d")}?cid=#{@site.google_calendar_id}"
               text "Week #{week_number} "
-              text "("
-              gcal_link = "https://calendar.google.com/calendar/b/1/r/week/#{week_start.strftime("%Y/%m/%d")}?cid=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
-              a week_start_ymd, href: gcal_link
-              text ")"
+              div({class: 'date float-right', style: 'font-size: 80%'} + with_tooltip("Click here to view calendar for this week")) {
+                a(href: gcal_link, ) {
+                  span week_start_ymd
+                  text raw(nbsp)
+                  i(class: 'fas fa-calendar-alt')
+                }
+              }
             end
           }
 
