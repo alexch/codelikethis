@@ -70,5 +70,5 @@ class Site < Thing
 end
 
 require 'bootcamp'
-require 'javascript_nights'
+require 'javascript_after_hours'
 require 'code_like_this'

@@ -8,21 +8,21 @@ require 'tracks_table'
 require 'site'
 require 'nav_bar'
 
-class JavascriptNights < Site
+class JavascriptAfterHours < Site
 
   # base site has all tracks
   def hostname
-    ["javascript_nights.burlingtoncodeacademy.com", "javascript_nights"]
+    %w(javascript_after_hours.burlingtoncodeacademy.com javascript_after_hours js-after-hours)
   end
 
   def tracks
     [
-      ::Track::LearnToCodeWithJavascript,
-      ::Track::Www,
-      ::Track::ClientSideCoding,
-      ::Track::Javascript, # "JavaScript Topics"
-      ::Track::Oo,
-      ::Track::Git,
+        ::Track::LearnToCodeWithJavascript,
+        ::Track::Www,
+        ::Track::ClientSideCoding,
+        ::Track::Javascript, # "JavaScript Topics"
+        ::Track::Oo,
+        ::Track::Git,
     ]
   end
 
@@ -42,7 +42,8 @@ class JavascriptNights < Site
               }
               p(class: 'card-text') {
                 text "This site contains the curriculum for our "
-                a "2019 JavaScript Nights class", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
+                a "2019 JavaScript After Hours class",
+                  href: "https://www.burlingtoncodeacademy.com/javascript-after-hours/"
                 text "."
               }
             }
@@ -122,14 +123,14 @@ class JavascriptNights < Site
             hr
           else
 
-          a(class: ['dropdown-item', 'track-name'],
-            href: track.href
-          ) {
-            i(class: "fas fa-paw")
-            text nbsp
-            text nbsp
-            text track.display_name
-          }
+            a(class: ['dropdown-item', 'track-name'],
+              href: track.href
+            ) {
+              i(class: "fas fa-paw")
+              text nbsp
+              text nbsp
+              text track.display_name
+            }
           end
         end
 
