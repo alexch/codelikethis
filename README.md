@@ -76,6 +76,8 @@ Both sites are served from the same web application instance, running on Heroku 
 
 To add a Site, follow the example of [Bootcamp](lib/bootcamp.rb).
 
+To point DNS at a new Site, add a CNAME pointing to `wildcard.burlingtoncodeacademy.com.herokudns.com` . You can verify this by running `heroku domains --app codelikethis` and hopefully see this line: <br>`*.burlingtoncodeacademy.com  CNAME            wildcard.burlingtoncodeacademy.com.herokudns.com`
+
 To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?site=bootcamp>. This parameter is *not* propagated to new pages so you'll have to keep adding it explicitly to test different pages.
 
 ## Adding a Track
