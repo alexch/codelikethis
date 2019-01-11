@@ -2,23 +2,23 @@
   "description": "JavaScript After Hours class schedule",
   "typical_day": [
     [
-      " 5:30 pm",
+      " 6:00 pm",
       "classroom open"
     ],
     [
-      " 6:00 pm",
+      " 6:30 pm",
       "lecture 1"
     ],
     [
-      " 7:00 pm",
+      " 7:30 pm",
       "exercises"
     ],
     [
-      " 8:00 pm",
+      " 8:30 pm",
       "lecture 2"
     ],
     [
-      " 9:00 pm",
+      " 9:30 pm",
       "go home!"
     ]
   ],
