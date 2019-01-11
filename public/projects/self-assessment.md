@@ -12,9 +12,15 @@ Later (likely next week), you will also meet with at least two instructors for a
 
 You have final say over your own scores throughout this process. Remember that the numbers are just a starting point for a few conversations, and the numbers may change during each conversation.
 
+# Schedule
+
+* 10 min - solo self-assessment
+* 10 min - pair assessment (A helps B)
+* 10 min - pair assessment (B helps A)
+
 # Rubrics
 
-Please assign yourself a score between 1-4 for the following:
+Please assign yourself a score between 1-4 for the following:
 
 ## Technical Skill
 
@@ -27,7 +33,7 @@ Please assign yourself a score between 1-4 for the following:
 
 - **4**: You push yourself to learn more beyond the concepts covered by each lecture
 - **3**: You learn most of each concept covered by each lecture
-- **2**: You struggle to keep up with many of the lecture
+- **2**: You struggle to keep up with many of the lectures
 - **1**: You feel lost during most lectures
 
 ## Pair Programming
