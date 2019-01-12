@@ -23,11 +23,10 @@ class Video < Thing
       # see https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
       #
       div(class: "video") {
-        s = %Q(<iframe class="youtube" type="text/html" width="560" height="349" src="http://www.youtube.com/embed/#{@youtube_id}" frameborder="0" allowfullscreen></iframe>\n)
+        s = %Q(<iframe class="youtube" type="text/html" width="560" height="349" src="https://www.youtube.com/embed/#{@youtube_id}" frameborder="0" allowfullscreen></iframe>\n)
         rawtext s
       }
     end
   end
 
 end
-
