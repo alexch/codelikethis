@@ -92,7 +92,7 @@ If you don't have a pair, try explaining your problem out loud to a pet, or a do
 
 ![rubber duck](rubber-duck.jpg) 
 
-# Debugging Errors: Step 1
+# Read the Error
 
 > Step 1: Read the error... **carefully**.
 

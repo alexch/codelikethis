@@ -51,19 +51,19 @@ from https://xkcd.com/627/
 * Then once you find the docs, read the whole page.
   * **Don't** just skim for code snippets!
 
-# How to Read
-
-[demo describing how to read MDN, man pages, etc.. Also, always skip W3Schools.]
-
-# Google to Debug
+# Google is not a Debugger
 
 If you get an error that you don't understand...
 
 ...the first thing to do is **not** to Google it.
 
-See [Anatomy of an Error](./debugging#anatomy-of-an-error) to learn *how to read an error*.
+# Modern Debugging: Step 1
 
-Often reading the error reveals enough information to give you an idea for a solution.
+> Step 1: read the error
+
+See [Read the Error](../tricks_of_the_trade/debugging#anchor/read-the-error) to learn *how to read an error*.
+
+Often, reading the error reveals enough information to give you an idea for a solution.
 
 # Modern Debugging: Step 2
 
@@ -87,7 +87,9 @@ You may find a relevant tutorial, blog post, or [StackOverflow](http://stackover
 
 After googling, you will probably find your question answered on [StackOverflow.com](http://StackOverflow.com "Stack Overflow web site").
 
-Remember, though: *not all answers are correct*. You shouldn't just copy and paste code from the first result.
+Remember, though: *not all answers are correct*. You shouldn't just copy and paste code from the first result. 
+
+**Read the words**, not just the code, in the answer, to make sure the author really is solving a problem that is similar to yours. 
 
 # SOOP: StackOverflow Oriented Programming
 
@@ -97,7 +99,7 @@ This workflow is far from ideal, but it is acceptable...
 
 ... **with these caveats:**
 
-  * you must have unit tests, to prove that the code
+  * you must write unit tests, to prove that the code
     * (a) does what you want
     * (b) doesn't do anything you *don't* want
   * you should refactor the code after you get it to work
