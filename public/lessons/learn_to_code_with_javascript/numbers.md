@@ -218,3 +218,9 @@ Infinity
 
 # Okay, that's enough math for now!
  
+# LAB: exercises about numbers
+
+* [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
+    - start with the challenge [Add Two Numbers](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript)
+    - continue through the challenge [Compound Assignment With Augmented Division](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-division)
+

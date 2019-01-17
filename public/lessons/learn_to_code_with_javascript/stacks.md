@@ -138,4 +138,3 @@ Stacks are useful in many scenarios
 
 <a href='/projects/rpn_calculator'>RPN Calculator</a>
 
-

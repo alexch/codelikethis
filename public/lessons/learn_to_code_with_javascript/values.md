@@ -91,4 +91,14 @@ Sometimes the return value is a magic value!
 "cookie" * 10  // return value: NaN
 ```
 
+# LAB: Values: readings and exercises
+
+* Eloquent JavaScript
+    - read [Introduction](https://eloquentjavascript.net/00_intro.html) 
+    - read [Values](https://eloquentjavascript.net/01_values.html)
+
+* FreeCodeCamp [Basic JavaScript](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript) challenges
+    - Start with the challenge [Comment Your JavaScript Code](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code)
+    - Work up to the exercise [Add Two Numbers](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript) ... and feel free to continue on if you like. 
+    - You can complete these exercises with or without a FreeCodeCamp account, but if you create one your progress will be recorded.
 

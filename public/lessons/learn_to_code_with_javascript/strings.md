@@ -205,3 +205,9 @@ It works fine for many applications, but if you're dealing with user input or mu
 
 Here `-1` means "the left side is less than the right side". Try other comparisons and see what you get!
 
+# LAB: Strings: Exercises
+
+* [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
+    - start with the challenge [Declare String Variables](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables)
+    - continue through the challenge [Word Blanks](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/word-blanks)
+

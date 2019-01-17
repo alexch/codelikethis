@@ -10,15 +10,15 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 # What is coding?
 
-* coding (aka programming or software development) is a *human* activity
-* it's called *code* because what we write is *not* what the computer reads
-* to a computer, it's all ones and zeros; to us, it's words (and numerals and punctuation)
+* coding (aka programming or software development) is a *creative, human* activity
+* *coding* does not mean "cracking the code" or "deciphering" -- it's not a mystery or a secret, it's a language
+* the words (and numerals and punctuation) we write are translated into long strings of ones and zeros
 
 # What is coding NOT?
 
 * coding is **not** mathematical
-  * some logic
-  * mostly just counting
+  * some logic (if / then / and / or / etc.)
+  * mostly just counting ("do this 10 times")
 * coding is **not** solitary
   * most coding happens in a team
   * pair programming is awesome
@@ -26,7 +26,9 @@ In computers, code is a series of instructions that tell a computer what to do.
   * there's always more than one way to do it
   * every solution has tradeoffs
   * there is always a better way, and never a perfect way
-  * "The only perfect program is an empty file." - Alex
+  * often the hardest part of coding is *defining* the problem, not solving it
+
+> "The only perfect program is an empty file." - Alex
 
 # What is coding?
 
@@ -75,7 +77,7 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong) from MDN
 
-# What will we learn today?
+# What will we learn?
 
 In this class, you will learn about:
 
