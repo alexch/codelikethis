@@ -98,11 +98,13 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "operators"
     topic name: "assignment"
     topic name: "return-values"
+    # needs homework
   end
 
   lesson name: "null" do
     topic name: "errors"
     topic name: "values"
+    # needs homework
   end
 
   lesson name: "functions" do
@@ -111,7 +113,6 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "parameters"
     topic name: "return-values"
   end
-
 
   lesson name: "/tricks_of_the_trade/modern_debugging" do # should be taught after functions (since call stack traces don't make sense without 'call')
     topic name: "debugging"

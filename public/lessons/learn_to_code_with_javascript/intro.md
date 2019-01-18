@@ -21,6 +21,7 @@ In computers, code is a series of instructions that tell a computer what to do.
   * mostly just counting ("do this 10 times")
 * coding is **not** solitary
   * most coding happens in a team
+  * all professional coding happens with clients / users / designers / managers etc.
   * pair programming is awesome
 * coding is **not** about finding the right answer
   * there's always more than one way to do it

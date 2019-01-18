@@ -89,3 +89,10 @@ function add(x,y) { return x + y; }
 
 var add = function(x,y) { return x + y; };
 ```
+
+# LAB: exercises about functions
+
+* [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
+    - start with the challenge [Write Reusable JavaScript with Functions](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions)
+    - continue through the challenge [Assignment with a Returned Value](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/assignment-with-a-returned-value)
+

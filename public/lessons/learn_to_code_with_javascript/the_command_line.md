@@ -24,10 +24,11 @@ the Terminal app is a direct descendant of a TeleType printer or TTY.
 
 * to open your Terminal:
   * Mac OS: launch the "Terminal" application
-  * Windows: launch "Windows PowerShell"
+  * Windows: launch the "Cmdr" application (pronounced "Commander") and select "git bash" [TODO: verify on windows] 
 * **Important:** make your terminal as **tall** as possible
-  * errors are often long and you want to start reading at the very top without scrolling
-  * make it look like this:
+  * when reading a program's output you want to start reading *at the top*...
+  * ...and if your window is too short then the top lines will *scroll away* and you will miss them
+  * Make it look like this:
 
 ![terminal next to browser](../images/terminal-and-browser.png)
 
@@ -60,7 +61,7 @@ the Terminal app is a direct descendant of a TeleType printer or TTY.
 
 From inside `node`, if you want to get back to the shell...
 
-  * type CONTROL-C twice
+  * type <kbd>CONTROL</kbd>-<kbd>C</kbd> twice
   * or type `.exit` and <kbd>Enter</kbd>
 
 # Directories
@@ -83,23 +84,28 @@ To find out which directory you are in, type
 
     pwd
 
-This stands for "print working directory" (not "password").
+This stands for "print working directory" or "present working directory" (not "password").
 
 # Home Directory
 
 * when you first open the Terminal you are in your HOME DIRECTORY
 * usually you don't want to store files directly in here
+* for this class, we recommend:
+  * create a `code` directory inside your home directory
+  * create a new directory inside `code` for each lesson or project
 
 # Listing Directory Contents
 
 * when you type `ls` ("list") it shows the contents of the current directory
   * **On Windows** you might need to type `dir` instead
+  
+* if you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
 
 # Making a directory
 
 * when you type `mkdir` ("make directory") it creates a new SUBDIRECTORY inside the current directory
 
-```
+```bash
 mkdir code
 ```
 
@@ -150,16 +156,21 @@ mkdir code
 * source files are text files that contain source code
 * to **RUN** a JavaScript program you type `node` and then the name of the source file
 
+```bash
+$ node hello.js
+Hello, World!
+```
+
 * The Recipe Metaphor
-  * source file =~= recipe
-  * run a program =~= cooking
+  * source file ≈ recipe
+  * running a program ≈ cooking
 
 # LAB: Hello, World
 
 1. Make sure you are in your `code` subdirectory using `pwd`
 2. Open this directory in your text editor
-  * for VSCode, use `code .` ("code dot")
-  * for Atom, use `atom .` ("atom dot")
+    * for VSCode, use `code .` ("code dot")
+    * for Atom, use `atom .` ("atom dot")
 3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
 
@@ -184,9 +195,14 @@ Also:
 * up/down arrow (scroll through history)
 * <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)
 
-# Next Steps
+# LAB: Next Steps
 
 Want to learn enough command line to be dangerous?
 Check out <https://www.learnenough.com/command-line-tutorial> by Michael Hartl (founder of [Tau Day](https://tauday.com/) and all around solid geek).
 
-Want to be a command-line hacker like in War Games? Start with this game: http://overthewire.org/wargames/bandit/ where you use *your real command line* `ssh` tool to connect to sandboxed hosts and infiltrate them.
+Want to be a command-line hacker like in War Games?
+Play this game: <http://overthewire.org/wargames/bandit/> where you use *your real command line* `ssh` tool to connect to sandboxed hosts and infiltrate them.
+
+Want to learn the history of software user interfaces and operating systems? 
+Read [In The Beginning Was The Command Line](http://cristal.inria.fr/~weis/info/commandline.html) by Neal Stephenson
+
