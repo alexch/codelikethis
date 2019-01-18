@@ -194,6 +194,7 @@ Also:
 * <kbd>Esc</kbd>-<kbd>Backspace</kbd> (delete previous word)
 * up/down arrow (scroll through history)
 * <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)
+* <kbd>Tab</kbd> for auto-completion of filenames (e.g. typing `node h`<kbd>Tab</kbd> will emit `node hello.js`)
 
 # LAB: Next Steps
 
