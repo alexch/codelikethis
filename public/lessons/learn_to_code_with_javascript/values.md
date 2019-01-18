@@ -33,21 +33,28 @@ A **boolean** is a value that is either `true` or `false`.
 (It's named after *[George Boole](https://en.wikipedia.org/wiki/George_Boole)*, 
 a 19th-century mathematician who invented [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra).)
 
-# Messages and Operators
+# Operators
 
-<!-- todo: rewrite this replacing "messages" since not all JS statements are messages -->
-
-All values respond to **messages**. 
-
-You send messages using **operators**, like PLUS (`+`) and TIMES (`*`) and DOT (`.`)
+Values can be combined or manipulated using **operators**, like...
+ 
+ * PLUS (`+`) 
+ * TIMES (`*`)
+ * POWER (`**`)
+ * DOT (`.`)
 
 (Dot is a special operator; we will learn more about her later.)
 
-# Return Values
+# Expression Evaluation
 
-Every time a value receives a message, it returns a response.
+A snippet of JavaScript code is called an *expression*.
 
-You can think of it as the answer to a question. 
+Whenever JavaScript encounters an expression, it tries to *evaluate* it, which means to convert it into a *value*.
+
+A simple expression (like a plain number or a string) evaluates to just that value.
+
+A more complicated expression with operators keeps applying those operators until it gets down to a single value. 
+
+> You can think of evaluation as *asking and answering* a question.
 
 ```js
 2 + 2    // Question: What is 2 + 2?
@@ -59,9 +66,8 @@ You can think of it as the answer to a question.
 "APPLE"
 ```
 
-The response is often called the **return value**; 
-you can also say that a statement **evaluates to** a value, as in
-"2 plus 2 evaluates to 4".
+We say that a statement **evaluates to** a value, as in
+"2 plus 2 *evaluates to* 4". You can also say "the value of 2 + 2 is 4" or "the return value of 2 + 2 is 4". 
 
 # Return Values (cont.)
 
@@ -91,6 +97,34 @@ Sometimes the return value is a magic value!
 "cookie" * 10  // return value: NaN
 ```
 
+# Sidebar: Expressions vs. Statements
+
+JavaScript (like most languages derived from C) makes a distinction between *expressions* and *statements*.
+
+*expression* means "code that can be evaluated" or "code that has a value", e.g.:
+
+    1 + 1
+
+*statement* means "code that does something", e.g.:
+
+    console.log("hello");
+
+Some statements have values, so `node` will *evaluate* them and *print* those values...
+
+```javascript
+> 1 + 1
+2
+```
+
+...but *some statements have no value* (even though they contain expressions that *do* have value), and this can cause some surprising effects, e.g.:
+
+```javascript
+> let x = 10
+undefined
+> x = 20
+20
+```
+    
 # LAB: Values: readings and exercises
 
 * Eloquent JavaScript

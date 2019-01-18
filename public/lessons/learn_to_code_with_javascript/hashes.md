@@ -210,3 +210,10 @@ rectangle.area()   //=> 80
 ```
 
 `this` is a magic word that means "this object I'm in *right now*"
+
+# LAB: Exercises about JS Objects
+
+* FreeCodeCamp:
+  * From [Build JavaScript Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects)
+  * to [Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects)
+

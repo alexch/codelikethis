@@ -183,3 +183,9 @@ process.stdin.on('data', (chunk) => {
 * For instance, Voldemort, Satan, Lex Luthor...
 * Bonus: don't let enemies sneak in even if they spell their names with capital letters, like `VolDeMort`
 
+# Lab: exercises about logic
+
+* FreeCodeCamp:
+  * From [Understanding Boolean Values](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-boolean-values)
+  * up to [Chaining if-else statements](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/chaining-if-else-statements)
+

@@ -170,3 +170,8 @@ Many text editors contain an *interactive debugger* (aka *visual debugger*) with
 
 These features can help you understand what your code is doing in why, but can also be tedious or complicated or distracting; often print statements and unit tests are a more efficient path to identifying and fixing bugs.
 
+# LAB: exercises about debugging
+
+* FreeCodeCamp:
+  * do **all** of the [Debugging](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging) challenges
+
