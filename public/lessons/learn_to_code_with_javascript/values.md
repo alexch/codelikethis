@@ -37,12 +37,16 @@ a 19th-century mathematician who invented [Boolean algebra](https://en.wikipedia
 
 Values can be combined or manipulated using **operators**, like...
  
- * PLUS (`+`) 
+ * PLUS (`+`)
  * TIMES (`*`)
  * POWER (`**`)
  * DOT (`.`)
 
-(Dot is a special operator; we will learn more about her later.)
+An operator *sends a message* to the value
+
+  * e.g. `1 + 2` sends the number `1` the message `please add 2 to yourself`.
+
+Dot is a special operator that *sends arbitrary messages*; we will learn more about her later.
 
 # Expression Evaluation
 
@@ -56,7 +60,7 @@ A more complicated expression with operators keeps applying those operators unti
 
 > You can think of evaluation as *asking and answering* a question.
 
-```js
+```javascript
 2 + 2    // Question: What is 2 + 2?
 4        // Answer: 4
 
@@ -92,7 +96,7 @@ Sometimes the return value is a different value *and* a different type.
 Sometimes the return value is a magic value!
 
 ```js
-(5).shape      // return value: undefined
+(5).length     // return value: undefined
 5 / 0          // return value: Infinity
 "cookie" * 10  // return value: NaN
 ```
@@ -119,11 +123,13 @@ Some statements have values, so `node` will *evaluate* them and *print* those va
 ...but *some statements have no value* (even though they contain expressions that *do* have value), and this can cause some surprising effects, e.g.:
 
 ```javascript
-> let x = 10
+> x = 10
+10
+> let x = 20
 undefined
-> x = 20
-20
 ```
+
+Read more here: (https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74)
     
 # LAB: Values: readings and exercises
 

@@ -70,7 +70,7 @@ Please try this yourself! But it's kind of tricky, so on the next slide I'll sho
 # while for a while
 
 ```js
-let count = 0
+let count = 1
 while (count <= 100) {
     console.log(count);   
     count = count + 1;

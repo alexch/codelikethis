@@ -58,6 +58,8 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "node"
     topic name: "text-editor"
     topic name: "directories"
+    link href: "https://www.macworld.co.uk/how-to/mac-software/mac-terminal-projects-tutorial-3613813/",
+         name: "30 Terminal tips, tricks and projects for Mac"
   end
 
   lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku." do

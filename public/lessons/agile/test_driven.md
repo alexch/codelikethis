@@ -207,6 +207,16 @@ alexch @ gmail.com
 > "If you can't write a test, then you don't know what the code should do. And what business do you have writing code in the first place when you can't say what it's supposed to do?"
 > - Rob Mee
 
+# Spike to Learn
+
+If you don't know what test to write, then start with a spike.
+
+A "spike" is an experiment, a proof of concept, a playground. 
+
+Code until you feel confident that you understand the general shape of the solution.
+
+Then put your spike aside and *write it again* test-first.
+
 # Unit Testing Is Hard...
 
 * It forces you to really understand the requirements

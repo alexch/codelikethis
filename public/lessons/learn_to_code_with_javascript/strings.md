@@ -13,10 +13,10 @@
 # String Escapes
 
 * some characters can't be typed literally, so you need to use *string escapes*
-* backslash is the *escape character* in JavaScript strings
+* backslash (<kbd>\\</kbd>) is the *escape character* in JavaScript strings
 * backslash means "the next character means something special"
-  * for instance backslash-n means "newline"
-  
+  * for instance backslash-n (`\n`) means "newline"
+
 ```js
 console.log("Roses are red,\nViolets are blue;\nCandy is sweet,\nAnd so are you.")
 ```
@@ -211,3 +211,10 @@ Here `-1` means "the left side is less than the right side". Try other compariso
     - start with the challenge [Declare String Variables](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables)
     - continue through the challenge [Word Blanks](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/word-blanks)
 
+* Exercism:
+  * Sign up on [exercism.io](http://exercism.io) (using your GitHub id)
+  * Join the [JavaScript Track](https://exercism.io/my/tracks/javascript)
+  * Follow the "Get started" instructions behind the "Begin walk-through" button on the right-hand side
+  * Do the following exercises:
+    * [Reverse String](https://exercism.io/my/solutions?exercise_id=reverse-string&track_id=javascript) -- this is possible to do using only [built-in String methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2) ...but if you can't figure it out, don't worry too much; we'll come back to it when we learn about loops
+    
