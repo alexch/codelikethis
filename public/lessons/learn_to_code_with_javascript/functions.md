@@ -40,12 +40,14 @@ One number is *divisible* by another if you divide them and the *remainder* is 0
 
 Write a function called `isDivisibleBy` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
 
-    isDivisibleBy(100, 10)    // true
-    isDivisibleBy(100, 7)     // false
-    isDivisibleBy(3333, 11)   // true
-    isDivisibleBy(99, 12)     // false
+    isDivisibleBy(100, 10)    //=> true
+    isDivisibleBy(100, 7)     //=> false
+    isDivisibleBy(3333, 11)   //=> true
+    isDivisibleBy(99, 12)     //=> false
     
 # Rant!!!
+
+Here is a function that takes an "opinion" as input, and as output returns a VERY FORCEFUL statement of that opinion.
 
     function rant(opinion) {
       return opinion.toUpperCase().replace(/ /g, "") + "!!!"
@@ -67,10 +69,6 @@ Write a function called `isDivisibleBy` that takes two numbers, and returns `tru
 
 <!-- TODO: move this to either arrays or closures lesson, or a separate map-reduce lesson
 # Titleize
-
-    function capitalize(s) {
-      return s[0].toUpperCase() + s.slice(1).toLowerCase()
-    }
 
     function titlecase(s) {
       return s.split(' ').map((word) => capitalize(word)).join(' ');

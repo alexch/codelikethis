@@ -8,7 +8,7 @@
 
 * You can put any values inside it
 * In any order
-* They stay in order
+* They stay in order (unless you move them later)
 * Duplicates are fine
 
 # Creating an array
@@ -29,7 +29,7 @@ and put these 3 other values inside it
   * actually to the size of the array
 * square brackets after an array mean "the whatever-th item in this array"
 
-# Array Indexes Exercise
+# LAB: Array Indexes Exercise
 
 Try this in node:
 
@@ -76,7 +76,9 @@ with the answer
 
 # Array Methods
 
-[MDN: Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+[MDN: Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) lists the array API interface -- containing all the methods and properties that are common to all array values. 
+
+There are many methods here and you should not try to memorize them all. But skim them and remember how to get back to this documentation page later. 
 
 # Reversing an array
 
@@ -84,6 +86,8 @@ with the answer
 let fruits = ["apple", "banana", "cherry"]
 fruits.reverse()
 ```
+
+Try this now in a console. Do you see what you expect?
 
 # Turning an array into a string
 
@@ -95,6 +99,14 @@ fruits.toSource()       // [ 'apple', 'banana', 'cherry' ]
 ```
 
 Note that `console.log` uses `toSource()`, which is usually better for debugging than `toString`
+
+# Loops and Iterators
+
+There are many ways to "iterate" through an array.
+
+This means to go through the entire array, one item at a time, usually in order, and then *do something* with each individual item.
+
+In the next 3 slides we will illustrate 3 ways to iterate... they are roughly equivalent but there are interesting differences between them.
 
 # Looping through an array with forEach
 
@@ -153,7 +165,7 @@ for (var i=0; i < fruits.length; i++) {
 
 See? Cumbersome.
 
-# Lab: loud backwards fruit
+# LAB: loud backwards fruit
 
 Given this array:
 

@@ -23,7 +23,7 @@ then `process.argv` contains:
 
 ARGV is a historical name. It means "Argument Vector" and has been around since the early 1970s.
 
-# Command-Line Hello
+# LAB: Command-Line Hello
 
 Write a new program called `hi.js` that contains:
 

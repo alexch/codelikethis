@@ -200,9 +200,11 @@ alexch @ gmail.com
 
 # How can you write tests for code that doesn't exist?
 
-* Think of tests as examples or specs
-* Test the null case (constructor)
-* One trick: write code in test class, then extract to production
+Some tricks to get started:
+
+* Think of tests as examples or specs. Think of a thing the program should do, then write a test for *just that one thing*.
+* Test the null case -- what should happen when you call the function or construct the object with no parameters?
+* Write functioning code inside the test suite, then extract that code to a function or class, then move that function (or class) into the production codebase
 
 > "If you can't write a test, then you don't know what the code should do. And what business do you have writing code in the first place when you can't say what it's supposed to do?"
 > - Rob Mee

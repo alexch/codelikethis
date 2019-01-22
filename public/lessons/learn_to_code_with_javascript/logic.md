@@ -106,7 +106,7 @@ instead. Why?
 * two equal signs means COMPARISON
   * `name == "Alice"` -- "does the variable 'name' contain the string 'Alice'?"
 
-> This is confusing, and you should feel confused.
+> This is confusing! (More about it on the next slide.)
 
 # A Notorious Bad Idea
 
@@ -130,7 +130,7 @@ That's three equal signs in a row.
 
 `==` means "does X equal Y, or if not, can Y be *converted* into something that equals X?"
 
-Since the rules for type conversion are confusing, most JavaScript experts recommend the following:
+Since the rules for type conversion are confusing, most JavaScript experts recommend:
 
 > always use `===`, never use `==`
 

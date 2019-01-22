@@ -6,12 +6,15 @@ a *hash* is an *abstract data type*
 
 # Hash Example
 
-```
-let hashMenu = {
+```javascript
+const hashMenu = {
     'corned beef hash': 3.69,
     'roast beef hash': 3.89,
     'homestyle hash': 4.47,
 }
+
+console.log('The price of homestyle hash is $' + 
+  hashMenu['homestyle hash'])
 ```
 
 # What makes a hash a hash?
