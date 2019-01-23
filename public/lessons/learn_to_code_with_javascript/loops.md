@@ -50,10 +50,10 @@ This is called an *infinite loop*.
 Let's write a program that counts from 0 to infinity. Put this in a file called `count.js`.
 
 ```js
-let number = 0
+let count = 0;
 while (true) {
-    console.log(number);   
-    number = number + 1;
+    console.log(count);   
+    count = count + 1;
 }
 ```
 
@@ -61,7 +61,7 @@ Run the program with `node count.js`.
 
 > Remember, CONTROL-C means "Stop everything!!!"
 
-# Who wants to loop forever?
+# LAB: Who wants to loop forever?
 
 Next, we will change your `count.js` program so that it only counts to 100.
 
@@ -70,7 +70,7 @@ Please try this yourself! But it's kind of tricky, so on the next slide I'll sho
 # while for a while
 
 ```js
-let count = 1
+let count = 1;
 while (count <= 100) {
     console.log(count);   
     count = count + 1;

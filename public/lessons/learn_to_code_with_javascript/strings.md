@@ -152,11 +152,11 @@ false
 true
 ```
 
-Strings are compared *one character at a time* using the *Unicode values* of each character.
+> Strings are compared *one character at a time* using the *Unicode values* of each character.
 
 # Comparing Strings: Example
 
-So if you say `"apple" < "apricot"`...
+So if you say `"apple" < "apricot"`, JavaScript does something like this behind the scenes:
 
 ```js
 > "apple".charCodeAt(0)
