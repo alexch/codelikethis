@@ -14,6 +14,32 @@ class Lesson < Thing
   contains :links
   contains :projects
   contains :topics
+  contains :goals
+
+  def initialize **options, &block
+    super **options, &block
+    scan_content
+  end
+
+  attr_reader :content
+
+  def scan_content
+    begin
+      content = File.read(content_file)
+      content_lines = content.split("\n")
+      headers = []
+      while (content_lines.first =~ /^(    |\t)/)
+        header_line = content_lines.shift
+        headers.push header_line
+      end
+      instance_eval headers.join("\n")
+
+      @content = content_lines.join("\n")
+    rescue Errno::ENOENT, Errno::EINVAL, Errno::ENOTDIR => e
+      # ap e
+      @content = ""
+    end
+  end
 
   def href
     @track.href + "/" + name
@@ -28,7 +54,7 @@ class Lesson < Thing
   end
 
   def dir
-    @dir || @track.dir
+    @dir || (@track && @track.dir) || "/dev/null"
   end
 
   def content_file
@@ -36,9 +62,7 @@ class Lesson < Thing
   end
 
   def slides
-    ::Deck::Slide.from_file content_file
-  rescue Errno::ENOENT, Errno::EINVAL
-    []
+    ::Deck::Slide.split content
   end
 
   def next_lesson
@@ -89,7 +113,7 @@ class Lesson < Thing
         :videos, :videos?, :video?,
         :next_lesson, :previous_lesson,
         :next_labs,
-        :topics
+        :topics, :goals
     ].each do |method|
       define_method method do
         @target.send method
@@ -150,6 +174,19 @@ class Lesson < Thing
         br
       end
 
+      if !goals.empty?
+        div(class: 'goals') do
+          h2 "Goals"
+          p "The student will learn..."
+          ul do
+            goals.each do |goal|
+              li goal.view
+            end
+          end
+        end
+        br
+      end
+
       if videos?
         div(class: 'videos', id: 'videos') {
           h2 {
@@ -157,7 +194,7 @@ class Lesson < Thing
             text nbsp
             text "Videos"
           }
-          videos.each {|video| widget video.view}
+          videos.each { |video| widget video.view }
         }
       end
 
@@ -188,7 +225,7 @@ class Lesson < Thing
           h2 "Links"
           ul(class: 'links') do
             target.links.each do |link|
-              li {widget link.view}
+              li { widget link.view }
             end
           end
         end
@@ -197,7 +234,7 @@ class Lesson < Thing
           h2 "Suggested Projects"
           ul(class: 'links') do
             target.projects.each do |project|
-              li {widget project.link_view}
+              li { widget project.link_view }
             end
           end
         end

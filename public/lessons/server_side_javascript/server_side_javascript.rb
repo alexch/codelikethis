@@ -8,33 +8,22 @@ class Track
     ) do
 
     # "the student will learn..."
-    goal "the rules of the HTTP protocol"
-    goal "how to create a self-contained server-side web application using NodeJS"
-    goal "how to deploy NodeJS applications to Heroku"
-    goal "how to pass state from the client to the server and back again"
+    goal name: "the rules of the HTTP protocol"
+    goal name: "how to create a self-contained server-side web application using NodeJS"
+    goal name: "how to deploy NodeJS applications to Heroku"
+    goal name: "how to pass state from the client to the server and back again"
 
 
     # "how to deploy NodeJS applications to Amazon AWS Elastic Beanstalk", https://aws.amazon.com/getting-started/projects/deploy-nodejs-web-app/
     # "how to deploy NodeJS applications using Glitch",
-    goal "how to use MongoDB to save state between user sessions"
-    goal "the basics of authentication and web security"
-    goal "how to extend your application's functionality by calling APIs"
-    goal "how to streamline and codify your application with an API of its own"
+    goal name: "how to use MongoDB to save state between user sessions"
+    goal name: "the basics of authentication and web security"
+    goal name: "how to extend your application's functionality by calling APIs"
+    goal name: "how to streamline and codify your application with an API of its own"
 
-    lesson name: "hello_node" do
-      topic name: "node"
-      topic name: "servers"
-      topic name: "git"
-      topic name: "heroku"
-    end
+    lesson name: "hello_node"
 
-    lesson name: "hello_express" do
-      topic name: "node"
-      topic name: "express"
-      topic name: "servers"
-      topic name: "git"
-      topic name: "heroku"
-    end
+    lesson name: "hello_express"
 
     lesson name: "/www/http" do
       topic name: "http"

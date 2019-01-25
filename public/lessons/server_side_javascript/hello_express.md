@@ -1,3 +1,9 @@
+    topic name: "node"
+    topic name: "express"
+    topic name: "servers"
+    topic name: "git"
+    topic name: "heroku"
+
 # Hello, Express!
 
 In this lesson you will create a trivial web application in Express and deploy it to Heroku, where it will be visible to everyone on the Internet. (Since Express is built on top of NodeJS, this lesson is very similar to the [Hello, Node!](./hello_node) lesson.)
@@ -14,9 +20,9 @@ In this lesson you will create a trivial web application in Express and deploy i
 
 - Launch the Visual Studio Code text editor in this directory with `code .` (pronounced "Code Dot")
   - if `code .` fails, launch VS Code, then type 
-    * MacOs: <kbd>CMD</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
+    * MacOS: <kbd>CMD</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
     * Windows: <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
-  - then type "install" and select **Install 'code' Command In Path**
+  - then type "install" and select " **Install 'code' Command In Path** "
   - then go back to the terminal and try `code .` again
 
 - Inside this directory make a file named `app.js` and fill it with the following code:

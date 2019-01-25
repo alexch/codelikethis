@@ -69,13 +69,24 @@ describe Track do
   describe 'with markdown lesson files' do
 
     subject {
+      track_dir = files.dir "how_to_cook" do
+        file "scramble_eggs.md"
+        file "boil_water.md", <<-MD
+# water
+water is a molecule
+# LAB: using faucets
+fill a glass of water at the sink
+        MD
+      end
+
 
       track = Track.new(name: "how_to_cook",
                           description: "learn how to cook with these great tips",
                           ) do
+        self.dir = track_dir
 
-        goal "boil water"
-        goal "scramble eggs"
+        goal name: "boil water"
+        goal name: "scramble eggs"
         link href: "http://cooking.com"
         project name: "bake a cake"
 
@@ -86,15 +97,6 @@ describe Track do
         lab name: "boiling"
       end
 
-      track.dir = files.dir "how_to_cook" do
-        file "scramble_eggs.md"
-        file "boil_water.md", <<-MD
-# water
-water is a molecule
-# LAB: using faucets
-fill a glass of water at the sink
-        MD
-      end
 
       track
     }
@@ -104,7 +106,7 @@ fill a glass of water at the sink
     end
 
     it "can have a list of goals" do
-      subject.goals.should == [
+      subject.goals.map(&:name).should == [
           "boil water",
           "scramble eggs",
           ]
@@ -189,9 +191,11 @@ fill a glass of water at the sink
 
     describe 'labs' do
       it 'should include labs declared inside nested lessons'
+
       it 'should include labs defined as slides titled LAB:xxx inside nested lessons' do
         subject.labs.map(&:name).should include("using faucets")
       end
+
       it 'should include declared labs (next_labs)' do
         subject.labs.map(&:name).should include("turn_on_stove", "boiling")
       end

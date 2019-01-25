@@ -8,10 +8,10 @@ class Track
       ) do
 
     # "the student will learn..."
-    goal "the Document Object Model (DOM), a data structure that represents all the elements that describe how a web page looks and behaves"
-    goal "how to use the jQuery library for event-driven actions and animations"
-    goal "AJAX, the system for asynchronously transmitting data between client-side and server-side applications"
-    goal "Web APIs such as Google Maps and Google Analytics which add sophisticated features to simple Web sites"
+    goal name: "the Document Object Model (DOM), a data structure that represents all the elements that describe how a web page looks and behaves"
+    goal name: "how to use the jQuery library for event-driven actions and animations"
+    goal name: "AJAX, the system for asynchronously transmitting data between client-side and server-side applications"
+    goal name: "Web APIs such as Google Maps and Google Analytics which add sophisticated features to simple Web sites"
 
     project name: "pomodoro"
     project name: "tic_tac_toe"
