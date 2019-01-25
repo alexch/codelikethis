@@ -13,7 +13,19 @@ Track::LearnToCodeWithJavascript = Track.new(
   goal "how to edit and execute code on their own computer using a text editor and a terminal (command line)"
   goal "fundamental coding concepts, including variables, types, functions, loops, I/O, logic, recursion"
   goal "how to recognize and use certain abstract data structures (arrays, stacks, hashes)"
-  goal "basic use of JavaScript"
+  goal "Creating and modifying source code using a text editor"
+  goal "Using the Chrome Developer Tools console to write and debug Javascript code"
+  goal "Combining HTML and JavaScript in a single file"
+  goal "Importing a JavaScript (.js) file into an HTML file using the SCRIPT SRC tag"
+  goal "Using JavaScript to access and manipulate values inside an HTML web page"
+  goal "Declaring variables and assigning primitive values (strings, numbers, booleans)"
+  goal "Declaring, passing parameters to, and returning values from functions"
+  goal "Basic mathematical operations (addition, subtraction, multiplication, etc.)"
+  goal "String manipulation (literal declarations, concatenation, length, substring extraction)"
+  goal "Usage of simple data structures (arrays, dictionaries (aka “JavaScript Objects”), stacks"
+  goal "Boolean logic and comparisons (equality, less than / greater than, and / or / not)"
+  goal "Conditional control flow (if / then / else)"
+  goal "Loops and iterators (while loops, for loops, map and each)"
 
   link name: "VS Code",
        href: "https://code.visualstudio.com",
@@ -118,9 +130,19 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "return-values"
   end
 
-  lesson name: "/tricks_of_the_trade/modern_debugging" do # should be taught after functions (since call stack traces don't make sense without 'call')
+  lesson name: "/tricks_of_the_trade/debugging" do
     topic name: "debugging"
     topic name: "errors"
+    link name: "Bugs and Errors",
+         href: "http://eloquentjavascript.net/08_error.html",
+         from: "EloquentJavaScript"
+  end
+
+  lesson name: "/tricks_of_the_trade/modern_debugging" do
+    topic name: "debugging"
+    topic name: "errors"
+    link name: "Bugs and Errors", href: "http://eloquentjavascript.net/08_error.html",
+         from: "EloquentJavaScript"
   end
 
   lesson name: "input_and_output" do
@@ -138,8 +160,6 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "strings"
   # todo: homework
   end
-
-  lesson name: "intermission", description: "This is a good place for a break, maybe between the first and second week of class."
 
   lesson name: "logic" do
     topic name: "comparisons"
@@ -222,13 +242,29 @@ Track::LearnToCodeWithJavascript = Track.new(
     topic name: "values"
     topic name: "methods"
     topic name: "functions"
+    link from: "EloquentJavaScript",
+         href: "http://eloquentjavascript.net/04_data.html",
+         name: "Eloquent JavaScript Chapter 4: Data Structures: Objects and Arrays"
   end
 
-
   # lesson name: "exceptions" -- take the concept of "guard clause" from recursion and extend it to DBC and maybe node's assert (but warn that console.assert doesn't stop)
-  # lesson name: "function pointers" -- and callbacks?
-  # lesson name: "methods" -- hash-as-object and `this`
 
+  lesson name: "functions_as_values" do
+    topic name: "callbacks"
+    topic name: "each"
+    topic name: "map"
+    topic name: "filter"
+    topic name: "reduce"
+    link name: "Higher-order Functions",
+         href: "http://eloquentjavascript.net/05_higher_order.html",
+         from: "EloquentJavaScript"
+  end
+
+  lesson name: "methods" do
+    link name: "The Secret Life of Objects",
+         href: "http://eloquentjavascript.net/06_object.html",
+         from: "EloquentJavaScript"
+  end
 
   link href: "https://learnpythonthehardway.org/book/advice.html"
   link href: "http://jsforcats.com"

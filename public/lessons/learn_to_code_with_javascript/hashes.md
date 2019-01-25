@@ -142,13 +142,13 @@ for (let state in states) {
 
 **WARNING:** remember the `let` or you will be defining a *global variable* named `state`
 
-# Why is it called a hash?
+# Sidebar: Why is it called a hash?
 
 The most common and useful implementation of this data structure uses something called a *hashing function* to make the lookup efficient. A hashing function allows you to have **huge** amounts of data and still access a single item very quickly. Think of the Dewey Decimal System: when you look up a book in the index, it tells you what aisle and shelf to visit to find that book. You don't need to search through the entire library; you just need to search a single shelf.
 
 Because programmers are humans, and humans can be very literal-minded, people named it based on *how* it works, rather than *what* it does or *why* it does it.
 
-*Map* and *dictionary* are much better names (and in fact there is a recently-introduced JavaScript type called [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) which behaves better than the built-in "object" hash; for instance, its keys are not limited to being strings).
+*Map* and *Dictionary* are much better metaphors (and in fact there is a recently-introduced JavaScript type called [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) which behaves better than the built-in "object" hash; for instance, its keys are not limited to being strings).
 
 Also, *hash* is a funny word, and programmers love jokes.
 
@@ -192,7 +192,7 @@ null
 undefined
 > states
 { CA: null, NY: undefined }
-> for (state of states) { console.log(state) }
+> for (let state of states) { console.log(state) }
 ```
 
 > You probably shouldn't do this.
@@ -214,7 +214,7 @@ rectangle.area()   //=> 80
 
 `this` is a magic word that means "this object I'm in *right now*"
 
-# LAB: Exercises about JS Objects
+# LAB: more about JS Objects
 
 * FreeCodeCamp:
   * From [Build JavaScript Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects)

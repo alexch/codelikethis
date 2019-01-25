@@ -214,3 +214,6 @@ if (name === "darth" || name === "voldemort" || name === "sauron")
 
 I'd like you to **refactor** your old `hello.js` program to use the `includes` method to check if someone is your enemy. Is it possible to make that `if` statement more concise?
 
+# LAB: more about arrays
+
+* [Eloquent JavaScript Chapter 4](http://eloquentjavascript.net/04_data.html)

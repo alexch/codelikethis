@@ -73,7 +73,7 @@ A more complicated expression with operators keeps applying those operators unti
 We say that a statement **evaluates to** a value, as in
 "2 plus 2 *evaluates to* 4". You can also say "the value of 2 + 2 is 4" or "the return value of 2 + 2 is 4". 
 
-# Return Values (cont.)
+# Return Values
 
 Sometimes the return value is the same as the original value.
 

@@ -287,9 +287,12 @@ When you reach a step that you don't know how to do, or just don't want to think
 
 Then later on -- only *after* the parent function is written -- go back and write the faked-out function.
 
-# LAB: More exercises about loops
+# LAB: More about loops
 
 Exercisms: 
 
   * [Collatz Conjecture](https://exercism.io/my/solutions?exercise_id=collatz-conjecture&track_id=javascript)
   * [Pangram](https://exercism.io/my/solutions?exercise_id=pangram&track_id=javascript)
+
+* [An overview of JavaScript iterators
+](https://medium.freecodecamp.org/javascript-iterators-17ab32c3cae7) - The difference between for, for…in and for…of loops
