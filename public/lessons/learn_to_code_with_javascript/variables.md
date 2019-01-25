@@ -34,7 +34,7 @@ Unfortunately, in JavaScript you can only use `let` once per variable name (in a
 Identifier 'x' has already been declared
 ```
 
-That means that when you're in the node console, if you see this error then try again without the `let`
+That means that when you're in the JavaScript console, if you see this error then try again without the `let`
 
 ```js
 > let x = 1
@@ -79,16 +79,17 @@ or this:
 
 ?
 
-# Lab: Play In node
+# Lab: Play In Console
 
-Let's spend a few minutes just playing around in node. Some things to try:
+Let's spend a few minutes just playing around with variables in the JavaScript console.
 
-* assign your birth year to a variable, then calculate your current age
-* write a poem and put it in a variable
-* YELL THE POEM
-* assign your best friend to a variable
-* yell your best friend's name
-* get a new best friend and yell her name too
+Some things to try:
+
+* assign your birth year to a variable, then calculate your current age in years
+* assign your best friend's name to a variable
+* YELL YOUR BEST FRIEND'S NAME
+* get a new best friend
+* and YELL HER NAME TOO
 
 # The Pointer Metaphor
 
@@ -103,19 +104,19 @@ Think of a variable as an arrow **pointing** to a value.
 You can assign and reassign variables at will.
 
 ```js
-color = "blue"
-fruit = "berry"
-color + fruit           // 'blueberry'
+color = "blue"     // assign 'blue' to color
+fruit = "berry"    // assign 'berry' to fruit
+color + fruit      // 'blueberry'
 
-color = "black"         // 'black'
-color + fruit           // 'blackberry'
+color = "black"    // 'black'
+color + fruit      // 'blackberry'
 ```
 
-Changing a variable (using *assignment*) only changes the name of an object. It does *not* change the data inside the object.
+*Reaassignment* only changes the name of an object. It does *not* change the data inside the object.
 
 This is analogous to removing a label from one box and placing it on a different box.
 
-**Tip:** Did you get an `Identifier 'color' has already been declared` error? Try again without the `let`, or exit and relaunch `node`.
+**Tip:** Did you get an `Identifier 'color' has already been declared` error? Try again without the `let`, or restart your JavaScript console (in a Browser, Reload the page; in a Terminal, quit and relaunch `node`).
 
 # Many pointers can point to the same thing
 
@@ -135,7 +136,7 @@ This is analogous to placing two labels on the same box.
 
 # Return values are new
 
-most messages return *new* values
+Most messages return *new* values:
 
 ```js
 let fruit = "banana"
@@ -144,16 +145,16 @@ let snack = fruit.toUpperCase()
 
 ![fruit-banana-snack-banana](fruit-banana-snack-banana.svg)
 
-`"banana"` and `"BANANA"` are two *different objects* in memory
+`"banana"` and `"BANANA"` are two *different objects* in memory. The original value is still sitting around and still pointed to by `fruit`.
 
 # Changing Values
 
 Most messages do not change the data inside the object.
 
 ```javascript
-    let color = "blue"
-    color.toUpperCase()     // "BLUE"
-    color                   // "blue"
+let color = "blue"
+color.toUpperCase()     // "BLUE"
+color                   // "blue"
 ```
 
 This is true for all strings, since strings in JavaScript are *immutable*. Any message that transforms a string will return you an entirely new string.
@@ -164,23 +165,25 @@ But some messages to some objects **do** change the contents!
 
 Let's say we have a friend named Joe and his birthday is Independence Day, 1990.
 
+We will use the built-in JavaScript `Date` type to represent a year+month+day.
+
 ```js
-let independence_day_1990 = new Date(1990, 6, 4)
-independence_day_1990.toDateString()    // 'Wed Jul 04 1990'
-let joes_birthday = independence_day_1990
+let independenceDay1990 = new Date(1990, 6, 4)
+independenceDay1990.toDateString()    // 'Wed Jul 04 1990'
+let joesBirthday = independenceDay1990
 ```
 
 Then we learn that Joe's birthday is actually Bastille Day. No problem, we'll just tweak the variable.
 
 ```js
-joes_birthday.setDate(14)
-joes_birthday.toDateString()            // 'Sat Jul 14 1990'
+joesBirthday.setDate(14)
+joesBirthday.toDateString()            // 'Sat Jul 14 1990'
 ```
 
 But what happened to the original date?
 
 ```js
-independence_day_1990.toDateString()    // 'Sat Jul 14 1990'
+independenceDay1990.toDateString()    // 'Sat Jul 14 1990'
 ```
 
 Oops! Our program now thinks Independence Day 1990 was on July 14.
