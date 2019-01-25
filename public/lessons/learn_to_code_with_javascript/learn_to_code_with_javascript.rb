@@ -93,6 +93,7 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "numbers" do
     topic name: "numbers"
     topic name: "type-coercion"
+    link href: "https://floating-point-gui.de/"
   end
 
   lesson name: "variables" do
@@ -230,5 +231,5 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   link href: "https://learnpythonthehardway.org/book/advice.html"
   link href: "http://jsforcats.com"
-
+  link href: "https://www.destroyallsoftware.com/talks/wat"
 end

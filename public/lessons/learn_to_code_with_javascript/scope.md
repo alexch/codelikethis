@@ -11,13 +11,11 @@ including:
   * global variables
   * top-level functions
 
-
 # Scope is a One-Way Mirror
 
 > scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
 
 ![one way mirror functions](one-way-mirror.gif)
-
 
 # Variable Visibility
 

@@ -152,7 +152,7 @@ In elementary school, we learned
 
 In high school, we learned *irrational*, *complex*, and *imaginary* numbers.
 
-JavaScript numbers are different from all of those!
+> JavaScript numbers are different from all of those!
 
 # Floating-Point Numbers
 

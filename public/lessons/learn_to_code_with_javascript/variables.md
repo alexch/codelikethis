@@ -1,6 +1,6 @@
 # Variables
 
-* A **variable** is a **name** for a value. 
+* A **variable** is a **name** for a value.
 * You give a value a name using the **assignment** operator 
     * It looks like an equal sign but is *not* a comparison.
     * often preceded by `let` as in "Let there be light" or "Let X equal 10".
@@ -17,6 +17,8 @@ color + fruit       // "blueberry"
 fruit.toUpperCase() // "BERRY"
 ```
 
+* ...so pick good names :-)
+
 # Let there be confusion
 
 * `let` is just one way to declare a variable in JavaScript
@@ -26,7 +28,7 @@ fruit.toUpperCase() // "BERRY"
 
 # Don't let me down 
 
-Unfortunately, in JavaScript you can only use `let` once per variable name (in a given *scope*), otherwise you will get a syntax error:
+Unfortunately, in JavaScript you can only use `let` once per variable name (in a given *scope*), otherwise you will get an error:
 
 ```js
 Identifier 'x' has already been declared
@@ -70,10 +72,10 @@ Which is clearer, this:
 
 or this:
 
-    let seconds_per_minute = 60
-    let minutes_per_hour = 60
-    let hours_per_day = 24
-    let seconds_per_day = seconds_per_minute * minutes_per_hour * hours_per_day
+    let secondsPerMinute = 60
+    let minutesPerHour = 60
+    let hoursPerDay = 24
+    let secondsPerDay = secondsPerMinute * minutesPerHour * hoursPerDay
 
 ?
 
@@ -109,7 +111,7 @@ color = "black"         // 'black'
 color + fruit           // 'blackberry'
 ```
 
-Changing a variable (using ASSIGNMENT) just changes the name of an object. It does *not* change the data inside the object.
+Changing a variable (using *assignment*) only changes the name of an object. It does *not* change the data inside the object.
 
 This is analogous to removing a label from one box and placing it on a different box.
 
@@ -182,6 +184,24 @@ independence_day_1990.toDateString()    // 'Sat Jul 14 1990'
 ```
 
 Oops! Our program now thinks Independence Day 1990 was on July 14.
+
+# Constants: Variables that Aren't Variable
+
+* the keyword `const` is just like `let`, but also *prevents reassignment*
+
+```javascript
+const pi = 3.14159;
+```
+
+* the value of a `const` is *constant* after it's been set once
+  * if you try to change it, you get an error
+
+```javascript
+pi = 7;
+TypeError: Assignment to constant variable.
+```
+
+> WARNING: `const` prevents *reassignment* but does not prevent changing the *insides* of objects (like the dates in the previous slide).
 
 # Summary: Variables
 
