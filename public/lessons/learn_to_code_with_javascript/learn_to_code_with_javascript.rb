@@ -107,6 +107,7 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "null" do
     topic name: "errors"
     topic name: "values"
+    topic name: "null"
     # needs homework
   end
 

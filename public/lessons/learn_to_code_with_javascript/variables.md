@@ -129,10 +129,7 @@ let snack = fruit
 
 ![snack-fruit](snack-fruit.svg)
 
-After this both `snack` and `fruit`...
-
-  * are *pointing* to the same *object*
-  * have the same *value*
+After this both `snack` and `fruit` are *pointing* to the same *value*
 
 This is analogous to placing two labels on the same box.
 
@@ -147,7 +144,7 @@ let snack = fruit.toUpperCase()
 
 ![fruit-banana-snack-banana](fruit-banana-snack-banana.svg)
 
-`"banana"` and `"BANANA"` are two *different objects* in memory. The original value is still sitting around and still pointed to by `fruit`.
+`"banana"` and `"BANANA"` are two *different values* in memory. The original value is still sitting around and still pointed to by `fruit`.
 
 # Changing Values
 
@@ -161,7 +158,7 @@ color                   // "blue"
 
 This is true for all strings, since strings in JavaScript are *immutable*. Any message that transforms a string will return you an entirely new string.
 
-But some messages to some objects **do** change the contents!
+But some messages **do** change the contents!
 
 # Changing Values Example
 
@@ -179,7 +176,7 @@ Then we learn that Joe's birthday is actually Bastille Day. No problem, we'll ju
 
 ```js
 joesBirthday.setDate(14)
-joesBirthday.toDateString()            // 'Sat Jul 14 1990'
+joesBirthday.toDateString()           // 'Sat Jul 14 1990'
 ```
 
 But what happened to the original date?
@@ -188,7 +185,8 @@ But what happened to the original date?
 independenceDay1990.toDateString()    // 'Sat Jul 14 1990'
 ```
 
-Oops! Our program now thinks Independence Day 1990 was on July 14.
+**Oops!** Our program now thinks Independence Day 1990 was on July 14.
+This is a problem. What's the solution?
 
 # Constants: Variables that Aren't Variable
 
@@ -215,3 +213,4 @@ TypeError: Assignment to constant variable.
 * *assigning* a variable changes which location it points to
 * you can have many names for the same location
 * sometimes values can change on the inside of a location
+  * (which is useful but could cause bugs)

@@ -1,12 +1,12 @@
 # Null
 
-*null* is a magic pointer
+*null* is a magic value
 
 # There Is No Spoon
 
 ![Neo With Spoon](../images/spoon.jpg)
 
-*null* is the pointer to an object that means "there is no object"
+*null* is the value that means "there is no value"
 
 # Null is useful
 
@@ -76,6 +76,7 @@ Sadly, it is your job as a programmer to translate "TypeError: Cannot read prope
     3. *why* it was null
 * often once you know *which*, knowing *why* is obvious
     * but sometimes it's a puzzle and you have to trace back
+    * e.g. the original problem was when *fruit was set to `null`*, but the error happened later, when the program tried to *use* `null` as if it were a string
 
 # If You're Going To Fail...
 
@@ -105,7 +106,7 @@ Why or why not?
 # JavaScript has several nulls
 
 * `null` means "nothing"
-* `undefined` means "i don't know (yet)"
+* `undefined` means "i don't know"
 * `NaN` means "not a number"
 * `''` means "an empty string"
 
