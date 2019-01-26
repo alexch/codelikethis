@@ -14,6 +14,7 @@ describe Lesson do
       file "boil_water.md", <<-MD
     goal name: "apply heat to liquid"     
     topic name: "boil"
+    link href: "http://example.com"
 
 # water
 water is a molecule
@@ -77,6 +78,9 @@ fill a glass of water at the sink
       expect(lesson.goals.map(&:name)).to include("apply heat to liquid")
     end
 
+    it "has links" do
+      expect(lesson.links.map(&:href)).to include("http://example.com")
+    end
   end
 
   it "capitalizes lesson names correctly" do

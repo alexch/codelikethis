@@ -1,3 +1,11 @@
+    topic name: "html"
+    topic name: "element-structure"
+    topic name: "element-tags"
+    topic name: "html-elements"
+    link href: "https://www.thoughtco.com/whats-new-in-html5-3467974",
+           name: "What's new in HTML5?"
+    link href: "http://diveintohtml5.info/"
+
 # Proper HTML5 Web Page Structure
 
 Let's build a web page! Remember how we discussed semantic HTML? Well in modern day HTML, there are a number of elements that help to semantically structure and lay out the content on your website. Lets begin with looking at the graphic below.

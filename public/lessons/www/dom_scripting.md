@@ -1,3 +1,14 @@
+    topic name: "document-object-model"
+    topic name: "dom-manipulation"
+    topic name: "script-tags"
+    topic name: "document"
+    topic name: "finding-elements"
+    topic name: "dom-nodes"
+    topic name: "html-elements"
+    topic name: "events"
+    topic name: "event-handlers"
+    topic name: "callbacks"
+
 # DOM Scripting
 
 "Scripting" is a term used when you're writing programs that don't do much *on their own*; instead scripts usually use other, more advanced programs, or are embedded within them.

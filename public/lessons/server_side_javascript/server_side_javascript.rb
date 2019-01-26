@@ -25,18 +25,9 @@ class Track
 
     lesson name: "hello_express"
 
-    lesson name: "/www/http" do
-      topic name: "http"
-      topic name: "telnet"
-      topic name: "node"
-      topic name: "mime-types"
-      topic name: "http-methods"
-    end
+    lesson name: "/www/http"
 
-    lesson name: '/www/urls' do
-      topic name: "url"
-      topic name: "query-parameters"
-    end
+    lesson name: '/www/urls'
 
     lesson name: "serving_files", description: "building a simple file server in Express/NodeJS" do
       topic name: "require"

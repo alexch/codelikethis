@@ -1,3 +1,8 @@
+    topic name: "browsers"
+    topic name: "debugging"
+    topic name: "document-object-model"
+    topic name: "dom-manipulation"
+
 # What is the DOM?
 
 * DOM stands for **Document Object Model** 
