@@ -1,3 +1,16 @@
+    video youtube_id: 'DKGZlaPlVLY'
+    topic name: "input-output"
+    topic name: "node"
+    topic name: "terminal"
+    topic name: "functions"
+    topic name: "methods"
+    topic name: "es6"
+    topic name: "variables"
+    topic name: "values"
+    topic name: "callbacks"
+    topic name: "command-line"
+    topic name: "strings"
+
 # Input and Output
 
 * Computers have many senses -- keyboard, mouse, network card, camera, joystick, etc. Collectively, these are called INPUT.

@@ -1,3 +1,12 @@
+    topic name: "stacks"
+    topic name: "arrays"
+    topic name: "functions"
+    topic name: "loops"
+    topic name: "methods"
+    topic name: "recursion"
+    topic name: "numbers"
+    topic name: "reverse-polish-notation"
+
 # Stack
 
 * a *stack* is a *metaphor* for a physical stack

@@ -1,3 +1,7 @@
+    topic name: "numbers"
+    topic name: "type-coercion"
+    link href: "https://floating-point-gui.de/"
+
 # Number
 
 * JavaScript has a built-in type called `Number`.

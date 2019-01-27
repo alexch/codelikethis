@@ -11,9 +11,8 @@
     topic name: "style-overrides"
     link href: "https://meyerweb.com/eric/tools/css/reset/"
     link href: "http://learnlayout.com/box-model.html"
-    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css",
-        name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"'
-
+    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css", from: "FreeCodeCamp",
+        name: 'Basic CSS'
 
 # CSS
 

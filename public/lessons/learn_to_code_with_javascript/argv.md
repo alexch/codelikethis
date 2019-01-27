@@ -1,3 +1,13 @@
+    project name: "today_i_learned_cli"
+    topic name: "command-line"
+    topic name: "arguments"
+    topic name: "node"
+    topic name: "strings"
+    topic name: "numbers"
+    topic name: "functions"
+    topic name: "arrays"
+    topic name: "loops"
+
 # ARGV
 
 In every NodeJS program, there is a magic array named `argv`. 

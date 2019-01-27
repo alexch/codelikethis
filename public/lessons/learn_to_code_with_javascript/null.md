@@ -1,3 +1,7 @@
+    topic name: "errors"
+    topic name: "values"
+    topic name: "null"
+
 # Null
 
 *null* is a magic value

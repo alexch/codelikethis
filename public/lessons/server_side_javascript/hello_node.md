@@ -1,7 +1,11 @@
-      topic name: "node"
-      topic name: "servers"
-      topic name: "git"
-      topic name: "heroku"
+    topic name: "node"
+    topic name: "servers"
+    topic name: "git"
+    topic name: "heroku"
+    topic name: "npm"
+    topic name: "package-json"
+    topic name: "github"
+    topic name: "git-push"
 
 # Hello, Node!
 

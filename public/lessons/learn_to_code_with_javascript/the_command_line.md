@@ -1,3 +1,15 @@
+    link href: "https://vimeo.com/152746852",
+         name: "Terminal 101",
+         description: "intro to unix command-line by a former Turing School student"
+    link href: "https://www.learnenough.com/command-line-tutorial"
+    topic name: "terminal"
+    topic name: "command-line"
+    topic name: "node"
+    topic name: "text-editor"
+    topic name: "directories"
+    link href: "https://www.macworld.co.uk/how-to/mac-software/mac-terminal-projects-tutorial-3613813/",
+         name: "30 Terminal tips, tricks and projects for Mac"
+
 # The Command Line
 
 * the **TERMINAL** is a window into which you can talk directly to your computer

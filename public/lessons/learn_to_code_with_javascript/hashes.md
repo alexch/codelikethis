@@ -1,3 +1,15 @@
+    topic name: "hashes"
+    topic name: "objects"
+    topic name: "key-value-pairs"
+    topic name: "setting-getting"
+    topic name: "strings"
+    topic name: "values"
+    topic name: "methods"
+    topic name: "functions"
+    link from: "EloquentJavaScript",
+         href: "http://eloquentjavascript.net/04_data.html",
+         name: "Eloquent JavaScript Chapter 4: Data Structures: Objects and Arrays"
+
 # Hash
 
 a *hash* is an *abstract data type*

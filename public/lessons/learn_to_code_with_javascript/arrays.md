@@ -1,3 +1,10 @@
+    topic name: "arrays"
+    topic name: "values"
+    topic name: "index"
+    topic name: "methods"
+    topic name: "loops"
+    topic name: "refactoring"
+
 # Arrays
 
 * An ARRAY is a CONTAINER

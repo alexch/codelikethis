@@ -1,3 +1,8 @@
+    topic name: "values"
+    topic name: "operators"
+    topic name: "assignment"
+    topic name: "return-values"
+
 # Variables
 
 * A **variable** is a **name** for a value.

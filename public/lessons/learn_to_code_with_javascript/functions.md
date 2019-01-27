@@ -1,3 +1,8 @@
+    topic name: "functions"
+    topic name: "arguments"
+    topic name: "parameters"
+    topic name: "return-values"
+
 # Functions
 
 * just like a VARIABLE is a name for a chunk of data

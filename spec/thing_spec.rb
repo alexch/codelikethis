@@ -46,6 +46,13 @@ describe Thing do
       expect(Thing.new(name: "the \"good\" place").display_name).to eq("The \"Good\" Place")
       expect(Thing.new(name: "the 'good' place").display_name).to eq("The 'Good' Place")
     end
+
+    xit "knows weird words even when inside a long phrase with quotes" do
+      expect(Thing.new(name: 'FreeCodeCamp "Responsive Web Design - Basic CSS"').
+          display_name).
+          to eq("FreeCodeCamp \"Responsive Web Design - Basic CSS\"")
+
+    end
   end
 
   it "has a default name" do
@@ -90,35 +97,35 @@ describe Thing do
     class Dog < Thing
     end
 
-    let(:rover1) {Dog.new(name: "rover")}
-    let(:rover2) {Dog.new(name: "rover")}
-    let(:fido) {Dog.new(name: "fido")}
+    let(:rover1) { Dog.new(name: "rover") }
+    let(:rover2) { Dog.new(name: "rover") }
+    let(:fido) { Dog.new(name: "fido") }
 
     describe "things of the same subclass with the same name" do
-      let(:rover1) {Dog.new(name: "rover")}
-      let(:rover2) {Dog.new(name: "rover")}
-      let(:fido) {Dog.new(name: "fido")}
+      let(:rover1) { Dog.new(name: "rover") }
+      let(:rover2) { Dog.new(name: "rover") }
+      let(:fido) { Dog.new(name: "fido") }
 
       specify "are equal" do
-        assert {rover1 == rover2}
-        assert {rover1 != fido}
+        assert { rover1 == rover2 }
+        assert { rover1 != fido }
       end
 
       specify "have the same hash" do
-        assert {rover1.hash == rover2.hash}
-        assert {rover1.hash != fido.hash}
+        assert { rover1.hash == rover2.hash }
+        assert { rover1.hash != fido.hash }
       end
 
       specify "work with set operators - and uniq" do
-        assert {[rover1, fido] - [rover2] == [fido]}
-        assert {[rover1, rover2, fido].uniq == [rover1, fido]}
+        assert { [rover1, fido] - [rover2] == [fido] }
+        assert { [rover1, rover2, fido].uniq == [rover1, fido] }
       end
     end
 
     describe "things of different subclasses with the same name" do
       class Cat < Thing
       end
-      let(:fido_the_cat) {Cat.new(name: "fido")}
+      let(:fido_the_cat) { Cat.new(name: "fido") }
 
       specify "are unequal" do
         assert { fido != fido_the_cat }

@@ -15,6 +15,7 @@ class Lesson < Thing
   contains :projects
   contains :topics
   contains :goals
+  contains :labs
 
   def initialize **options, &block
     super **options, &block
@@ -32,7 +33,15 @@ class Lesson < Thing
         header_line = content_lines.shift
         headers.push header_line
       end
-      instance_eval headers.join("\n")
+      headers_joined = headers.join("\n")
+      begin
+        instance_eval headers_joined
+      rescue => e
+        $stderr.print "Error scanning file #{content_file.path.split('/')[-4..-1].join('/')}:"
+        $stderr.puts e
+        $stderr.puts headers_joined
+        raise e
+      end
 
       @content = content_lines.join("\n")
     rescue Errno::ENOENT, Errno::EINVAL, Errno::ENOTDIR => e
@@ -50,7 +59,8 @@ class Lesson < Thing
   end
 
   def labs
-    slide_labs + next_labs
+    things_of_class(Lab) +
+        slide_labs + next_labs
   end
 
   def dir
@@ -213,8 +223,8 @@ class Lesson < Thing
           br
         end
 
-        unless next_labs.empty?
-          div(class: 'next-labs') {
+        unless labs.empty?
+          div(class: 'labs') {
             h2 "Labs"
             labs_list
           }

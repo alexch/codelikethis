@@ -1,3 +1,10 @@
+    project name: 'guess'
+    topic name: "conditionals"
+    topic name: "loops"
+    topic name: "variables"
+    topic name: "break"
+    topic name: "index"
+
 # Loops
 
 Computers are like robots. They are good at doing things over and over and over and over again.

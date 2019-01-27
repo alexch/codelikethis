@@ -1,3 +1,8 @@
+    topic name: "recursion"
+    topic name: "functions"
+    topic name: "conditionals"
+    topic name: "loops"
+
 # Recursion
 
 *recursion* is when a function *calls itself*
