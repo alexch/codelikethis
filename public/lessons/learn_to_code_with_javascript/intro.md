@@ -1,3 +1,8 @@
+    video youtube_id: '-jRREn6ifEQ'
+    topic name: "text-editor"
+    link name: 'How to Design Programs (preface)',
+         href: "https://htdp.org/2018-01-06/Book/part_preface.html"
+
 # Intro
 
 You may have never programmed before. Now you will.

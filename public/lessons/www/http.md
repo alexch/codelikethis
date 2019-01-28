@@ -1,3 +1,13 @@
+    topic name: "browsers"
+    topic name: "dns"
+    topic name: "http"
+    topic name: "http-methods"
+    topic name: "mime-types"
+    topic name: "node"
+    topic name: "request-response-cycle"
+    topic name: "telnet"
+    video youtube_id: 'guvsH5OFizE'
+
 # HTTP
 
 Let's lift the hood and check out the engine that makes the World Wide Web run.

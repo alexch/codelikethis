@@ -1,3 +1,7 @@
+            topic name: "html"
+            topic name: "element-structure"
+            topic name: "developer-tools"
+
 # Lets write our first HTML document!
 
 * Create a file named index.html and open it in your text editor

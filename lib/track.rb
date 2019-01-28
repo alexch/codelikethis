@@ -49,22 +49,14 @@ class Track < Thing
   contains :links
   contains :projects
   contains :topics
-
-  def initialize **options, &block
-    @goals = []
-    super
-  end
-
-  def goal text
-    @goals << text
-  end
+  contains :goals
 
   # current page (for sidebar highlighting)
   def current= track_or_lesson
     @current = track_or_lesson
   end
 
-  attr_reader :description, :goals
+  attr_reader :description
 
   def description?
     !!description
@@ -189,7 +181,7 @@ class Track < Thing
           p "The student will learn..."
           ul do
             target.goals.each do |goal|
-              li goal
+              li goal.view
             end
           end
         end

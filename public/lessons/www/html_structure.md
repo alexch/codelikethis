@@ -1,3 +1,8 @@
+    topic name: "html"
+    topic name: "element-tags"
+    topic name: "commenting"
+    topic name: "html-elements"
+
 # Tables
 
 * Tables are comprised 4 elements: `<table>`, `<tr>`, `<th>`, and `<td>`

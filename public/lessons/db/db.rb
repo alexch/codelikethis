@@ -5,9 +5,9 @@ class Track
                  display_name: 'Databases',
                  description: "In general terms, a database is a service running alongside your application software that allows your code to save, search, and modify information that will survive past a single run (or session, or instance, or application). This track provides a broad overview of concepts common to all databases, using two particular widely-used database engines -- PostgreSQL and MongoDB -- for illustration and practical examples of relational (SQL) and document (NoSQL) DBs."
   ) do
-    goal 'the general history of databases'
-    goal 'the relational database model'
-    goal 'the "NoSQL" document database model'
+    goal name: "the general history of databases"
+    goal name: "the relational database model"
+    goal name: "the \"NoSQL\" document database model"
 
     lesson name: 'overview' do
       topic name: "databases"

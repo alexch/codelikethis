@@ -1,3 +1,8 @@
+    topic name: "debugging"
+    topic name: "errors"
+    link name: "Bugs and Errors", href: "http://eloquentjavascript.net/08_error.html",
+         from: "EloquentJavaScript"
+
 # Modern Debugging
 
 Traditional debugging:

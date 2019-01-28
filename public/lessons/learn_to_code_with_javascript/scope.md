@@ -1,3 +1,10 @@
+    topic name: "scope"
+    topic name: "global-variables"
+    topic name: "local-variables"
+    topic name: "parameters"
+    topic name: "functions"
+    topic name: "closure-scope"
+
 # Scope
 
 ![scope](scope.jpg)

@@ -1,3 +1,12 @@
+    topic name: "url"
+    topic name: "query-parameters"
+    topic name: "protocols"
+    topic name: "host"
+    topic name: "path"
+    topic name: "query-parameters"
+    link href: "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL",
+        name: "MDN - URL components overview"
+
 # URLs
 
 * **U**niform

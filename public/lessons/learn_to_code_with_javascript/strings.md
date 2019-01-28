@@ -1,3 +1,9 @@
+    topic name: "strings"
+    topic name: "comparisons"
+    topic name: "characters"
+    topic name: "string-methods"
+    link href: "https://hackernoon.com/what-every-programmer-should-know-about-string-a6611537f84e"
+
 # String Literals
 
 * *"literal"* means "exactly as it's written" 

@@ -1,3 +1,19 @@
+    topic name: "css"
+    topic name: "styling"
+    topic name: "inline-styling"
+    topic name: "properties"
+    topic name: "selectors"
+    topic name: "compound-selectors"
+    topic name: "pseudo-class-selectors"
+    topic name: "html-linking"
+    topic name: "html-elements"
+    topic name: "element-box-model"
+    topic name: "style-overrides"
+    link href: "https://meyerweb.com/eric/tools/css/reset/"
+    link href: "http://learnlayout.com/box-model.html"
+    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css", from: "FreeCodeCamp",
+        name: 'Basic CSS'
+
 # CSS
 
   * Cascading Style Sheets (CSS)

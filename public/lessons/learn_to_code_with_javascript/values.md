@@ -1,3 +1,10 @@
+    topic name: "values"
+    topic name: "numbers"
+    topic name: "strings"
+    topic name: "booleans"
+    topic name: "operators"
+    topic name: "return-values"
+
 # Values
 
 A VALUE is a location in computer memory that stores DATA.

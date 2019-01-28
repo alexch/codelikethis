@@ -1,3 +1,16 @@
+    topic name: "comparisons"
+    topic name: "booleans"
+    topic name: "conditionals"
+    topic name: "if-then"
+    topic name: "if-else"
+    topic name: "truthy-falsy"
+    topic name: "assignment"
+    topic name: "operators"
+    topic name: "conjunctions"
+    topic name: "node"
+    topic name: "functions"
+    topic name: "values"
+
 # Truthiness
 
 Computers have a very particular idea of when things are *true* and *false*.

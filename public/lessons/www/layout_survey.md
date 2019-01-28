@@ -1,3 +1,9 @@
+    topic name: "css-alignment"
+    topic name: "css-flexbox"
+    topic name: "css-grid"
+    topic name: "bootstrap"
+    topic name: "bootstrap-layout"
+
 # Layout Survey
 
 > "CSS is a series of failed attempts to center elements on a page." - Alex

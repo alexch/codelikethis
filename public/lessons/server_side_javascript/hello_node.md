@@ -1,3 +1,12 @@
+    topic name: "node"
+    topic name: "servers"
+    topic name: "git"
+    topic name: "heroku"
+    topic name: "npm"
+    topic name: "package-json"
+    topic name: "github"
+    topic name: "git-push"
+
 # Hello, Node!
 
 In this lesson you will create a trivial web application in NodeJS and deploy it to Heroku, where it will be visible to everyone on the Internet.
