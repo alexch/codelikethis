@@ -49,7 +49,10 @@ run(host='0.0.0.0', port=os.getenv('PORT', 5000)))
 
 # Hello, Localhost!
 
-- Go back to the Terminal and run the app with `python3 hello.py`
+- Go back to the Terminal and run the app with one of these (depending on your installation details):
+
+    * `python hello.py`
+    * `python3 hello.py`
 
 - Visit <http://localhost:5000/> to see it running on your own computer.
 

@@ -20,8 +20,25 @@ Before the class starts, please install the following:
 ## Python
 
 * **Install** Python 3 from python.org - the latest version at this writing is 3.7.2
-    * Windows: https://www.python.org/downloads/windows/
-    * MacOS: https://www.python.org/downloads/mac-osx/
+
+### MacOS
+
+* Download and install from https://www.python.org/downloads/mac-osx/ (or see below if you use Homebrew)
+
+### Windows
+
+* Download and install from: https://www.python.org/downloads/windows/ 
+        * make sure to check "Add Python 3.7 to PATH"
+
+For ease of use and compatibility with Unix, you may want to make a `python3` script as follows:
+
+1. open a terminal and run `where python` to find the python installation directory
+2. inside that directory make a file named `python3.bat` containing the lines:
+    
+```
+@ECHO OFF
+%~dp0python %*
+```
 
 ## Git
 
@@ -88,3 +105,4 @@ brew reinstall python3
 ```
 
 If all goes well, sign up for GitHub and Heroku using the instructions above.
+
