@@ -3,6 +3,9 @@
     topic name: "null"
     topic name: "undefined"
     topic name: "falsy"
+    link  from: "Mozilla Developer Network",
+          name: "Null Reference",
+          href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null"
 
 # Null
 
@@ -35,7 +38,7 @@ let fruit = null
 fruit.toUpperCase()
 ```
 
-Please watch the instructor type this (or type it yourself) and then... 
+Please watch the instructor type this (or type it yourself) and then...
 
 > *Read the error!*
 
@@ -86,7 +89,7 @@ Sadly, it is your job as a programmer to translate "TypeError: Cannot read prope
 
 Two failure recovery philosophies:
 
-* fail fast, fail hard 
+* fail fast, fail hard
 * keep calm and carry on
 
 Which idea is better?
@@ -97,7 +100,11 @@ Why or why not?
 
 *graceful* - generally good for users
 
+<<<<<<< variant A
   * provide information and context in non-technical language
+>>>>>>> variant B
+  * provide information and context
+======= end
   * help user accomplish their goal
   * allow user to try again immediately
 

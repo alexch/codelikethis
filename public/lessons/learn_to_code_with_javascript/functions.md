@@ -2,6 +2,14 @@
     topic name: "arguments"
     topic name: "parameters"
     topic name: "return-values"
+    link href: "https://eloquentjavascript.net/03_functions.html",
+         name: "Eloquent JavaScript: Functions"
+    link href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions",
+         name: "Mozilla Developer Network: Functions"
+    link href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures",
+         name: "Mozilla Developer Network: Closures and Scope"
+    link href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions",
+         name: "Mozilla Developer Network: Arrow Functions"
 
 # Functions
 
@@ -53,11 +61,11 @@ One number is *divisible* by another if you divide them and the *remainder* is 0
 
 Write a function called `divisible` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
 
-    divisible(100, 10)    //=> true
-    divisible(100, 7)     //=> false
-    divisible(3333, 11)   //=> true
-    divisible(99, 12)     //=> false
-    
+    isDivisibleBy(100, 10)    //=> true
+    isDivisibleBy(100, 7)     //=> false
+    isDivisibleBy(3333, 11)   //=> true
+    isDivisibleBy(99, 12)     //=> false
+
 # Rant!!!
 
 Here is a function that takes an "opinion" as input, and as output returns a VERY FORCEFUL statement of that opinion.
@@ -75,11 +83,11 @@ The variable `strongOpinion` is called a *local variable* and can only be used *
 
 Please write a function that *capitalizes* a word.
 
-For instance, 
+For instance,
 
 `capitalize('tomato')` returns `'Tomato'`
 
-A solution is on the next slide, but try to solve it on your own. 
+A solution is on the next slide, but try to solve it on your own.
 Remember that there are many [string operations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2) available to you...
 
 # Capitalize
@@ -93,7 +101,7 @@ Remember that there are many [string operations](https://developer.mozilla.org/e
     console.log(capitalize('smith'));
     console.log(capitalize('MACGUYVER'));
 
-The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function. 
+The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function.
 
 # Passing Variables to Functions
 
@@ -125,7 +133,7 @@ This is the standard, original, retro function syntax:
 ```js
 function add(x,y) { return x + y; }
 ```
- 
+
 The following are all roughly equivalent to the above:
 
 ```js
