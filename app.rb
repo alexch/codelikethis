@@ -95,7 +95,8 @@ class App < Sinatra::Base
         return
       end
 
-      slides = Deck::Slide.from_file(file)
+      lesson = track.lesson_named(params[:lesson])
+      slides = lesson.slides.dup
 
       # final slide is nav
       slides << begin
@@ -104,8 +105,8 @@ class App < Sinatra::Base
         lesson = track.lesson_named(params[:lesson])
 
         slide << lesson.view.to_html(content_method_name: :labs)
-        slide << lesson.view.to_html(content_method_name: :next_lesson_button)
         slide << lesson.view.to_html(content_method_name: :previous_lesson_button)
+        slide << lesson.view.to_html(content_method_name: :next_lesson_button)
 
         slide << "<p><a href='#{lesson.href}'>Outline</a></p>"
         slide
