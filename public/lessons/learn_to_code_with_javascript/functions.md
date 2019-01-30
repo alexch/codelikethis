@@ -16,15 +16,16 @@ Here's a not very useful function:
 
 ```js
 function add(x, y) {
-  return x + y;
+  let sum = x + y;
+  return sum;
 }
 ```
 
 * `function` means "define a function"
 * `add` is the *name* of the function
-* `x, y` are the *parameters* of the function
-* `return x + y` is the *body* of the function
-  * also the *return value* because of the magic word *return*
+* `x, y` are the *parameters* of the function (also called *arguments*)
+* `sum` is a *local variable* of the function
+* `sum` is also the function's *return value* because of the magic word *return*
 
 # Call Me, Maybe
 
@@ -32,33 +33,34 @@ You call a function by its name, plus parentheses:
 
 ```js
 function add(x, y) {
-  return x + y;
+  let sum = x + y;
+  return sum;
 }
 
 add(2, 3)   // returns 5
 add(12, 30) // returns 42
 ```
 
-# Lab: isDivisible
+# Lab: One Nation, Divisible
 
 One number is *divisible* by another if you divide them and the *remainder* is 0.
 
-Write a function called `isDivisibleBy` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
+Write a function called `divisible` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
 
-    isDivisibleBy(100, 10)    //=> true
-    isDivisibleBy(100, 7)     //=> false
-    isDivisibleBy(3333, 11)   //=> true
-    isDivisibleBy(99, 12)     //=> false
+    divisible(100, 10)    //=> true
+    divisible(100, 7)     //=> false
+    divisible(3333, 11)   //=> true
+    divisible(99, 12)     //=> false
     
 # Rant!!!
 
 Here is a function that takes an "opinion" as input, and as output returns a VERY FORCEFUL statement of that opinion.
 
     function rant(opinion) {
-      return opinion.toUpperCase().replace(/ /g, "") + "!!!"
+      return opinion.toUpperCase().replace(/ /g, '') + '!!!'
     }
 
-    console.log(rant("i like pizza"));
+    console.log(rant('i like pizza'));
 
 `/ /g` is a *regular expression*; for now just think of it like a weird string. It defines the substring to replace, and the `g` at the end stands for "global" and means "replace them all, not just the first one".
 
@@ -75,11 +77,13 @@ For instance,
 # Capitalize
 
     function capitalize(s) {
-      return s[0].toUpperCase() + s.slice(1).toLowerCase()
+      let firstLetter = s[0];
+      let restOfWord = s.slice(1);
+      return firstLetter.toUpperCase() + restOfWord.toLowerCase();
     }
 
-    console.log(capitalize("smith"));
-    console.log(capitalize("MACGUYVER"));
+    console.log(capitalize('smith'));
+    console.log(capitalize('MACGUYVER'));
 
 # Function names can be variable names
 
@@ -90,6 +94,8 @@ function add(x,y) { return x + y; }
 
 var add = function(x,y) { return x + y; };
 ```
+
+> Note that in the second form, there is **no name** between `function` and `(x,y)`
 
 # LAB: more about functions
 

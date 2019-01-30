@@ -1,30 +1,30 @@
     topic name: "errors"
     topic name: "values"
     topic name: "null"
+    topic name: "undefined"
+    topic name: "falsy"
 
 # Null
 
-*null* is a magic value
-
-# There Is No Spoon
-
-![Neo With Spoon](../images/spoon.jpg)
-
 *null* is the value that means "there is no value"
+
+> Q: What is the sound of one hand clapping?
+
+> A: `null`
 
 # Null is useful
 
 Null is used in cases where "nothing yet" is a valid scenario.
 
-For instance, if a user has an account, but doesn't (yet) have a profile picture, `user.profilePic` may be `null`.
+For instance, if a user has an account, but doesn't (yet) have a profile picture, `account.profilePic` may be `null`.
 
 Then you can test for that case, e.g.
 
 ```js
-if (user.profilePic === null) {
+if (account.profilePic === null) {
     showDefaultPicture();
 } else {
-    showPicture(user.profilePic);
+    showPicture(account.profilePic);
 }
 ```
 
