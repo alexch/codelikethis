@@ -97,15 +97,15 @@ Why or why not?
 
 *graceful* - generally good for users
 
-  * provide information and context 
+  * provide information and context in non-technical language
   * help user accomplish their goal
-  * allows user to try again immediately
+  * allow user to try again immediately
 
 *fail-fast* - generally good for coders
 
   * exposes errors early
   * forces you to think through "rainy day" scenarios
-  * provides information about the state of the program at the moment
+  * provides information about the state of the program at the moment the error happened
 
 # JavaScript has several nulls
 

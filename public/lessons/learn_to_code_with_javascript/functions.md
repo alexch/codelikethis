@@ -71,18 +71,6 @@ Here is a function that takes an "opinion" as input, and as output returns a VER
     console.log(capitalize("smith"));
     console.log(capitalize("MACGUYVER"));
 
-
-<!-- TODO: move this to either arrays or closures lesson, or a separate map-reduce lesson
-# Titleize
-
-    function titlecase(s) {
-      return s.split(' ').map((word) => capitalize(word)).join(' ');
-    }
-
-    console.log(titlecase("the rain in spain falls MAINLY on the PLAIN"));
-
--->
-
 # Function names can be variable names
 
 The following two are roughly equivalent:
