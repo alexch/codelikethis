@@ -62,6 +62,16 @@ Here is a function that takes an "opinion" as input, and as output returns a VER
 
 `/ /g` is a *regular expression*; for now just think of it like a weird string. It defines the substring to replace, and the `g` at the end stands for "global" and means "replace them all, not just the first one".
 
+# Lab: Capitalize
+
+Try to write a program that *capitalizes* a word.
+
+For instance, 
+
+`capitalize('tomato')` returns `'Tomato'`
+
+(A solution is on the next slide, but try to solve it on your own. Remember that there are many [string operations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2) available to you...)
+
 # Capitalize
 
     function capitalize(s) {
