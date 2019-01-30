@@ -64,7 +64,7 @@ Here is a function that takes an "opinion" as input, and as output returns a VER
 
 # Lab: Capitalize
 
-Try to write a program that *capitalizes* a word.
+Try to write a function that *capitalizes* a word.
 
 For instance, 
 
