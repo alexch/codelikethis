@@ -1,3 +1,3 @@
---pattern **/*.{rb,js,scss,sass,erb,html}
+--pattern **/*.{rb,js,scss,sass,erb,html,md}
 --no-notify
 --verbose
