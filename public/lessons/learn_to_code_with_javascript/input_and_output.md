@@ -11,6 +11,18 @@
     topic name: "command-line"
     topic name: "strings"
     project name: "guess"
+    link name: "Mozilla Developer Network: Callbacks",
+         href: "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
+    link name: "Wikipedia: Callbacks",
+         href: "https://en.wikipedia.org/wiki/Callback_(computer_programming)#JavaScript"
+    link name: "Mozilla Developer Network: Async Functions",
+         href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+    link name: "Mozilla Developer Network: Await async functions",
+         href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await"
+    link name: "Kyle Simpson: Input & Output",
+         href: "https://frontendmasters.com/courses/javascript-basics/input-output/"
+    link name: "You Don't Know JS: Input & Output",
+         href: "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#output"
 
 # Input and Output
 
@@ -28,7 +40,7 @@
     * it takes *seconds* or *milliseconds* vs *nanoseconds*
 * so every time you ask JavaScript to do an I/O operation, it *pauses your program*
   * this allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed
-* you have to write a function for JavaScript to run once it *resumes* 
+* you have to write a function for JavaScript to run once it *resumes*
     * this function is named an *asynchronous callback*
     * *asynchronous* is Greek for "out of time" or "not together in time"
 
