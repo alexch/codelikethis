@@ -5,10 +5,16 @@
 
 # Functions
 
-* just like a VARIABLE is a name for a chunk of data
-* a FUNCTION is a name for a chunk of code
-* if you have some code you want to run again and again
-  * or just run once, but keep it organized
+* a **variable** is a name for a chunk of data
+* a **function** is a name for a chunk of code
+
+## Why would you want to name a chunk of code?
+
+Perhaps...
+
+* you have some code you want to run again and again
+* you want to do the same operation on different values
+* you want to keep your code organized
 
 # Function example
 
@@ -57,45 +63,86 @@ Write a function called `divisible` that takes two numbers, and returns `true` i
 Here is a function that takes an "opinion" as input, and as output returns a VERY FORCEFUL statement of that opinion.
 
     function rant(opinion) {
-      return opinion.toUpperCase().replace(/ /g, '') + '!!!'
+      let strongOpinion = opinion.toUpperCase();
+      return strongOpinion + '!!!';
     }
 
-    console.log(rant('i like pizza'));
+    rant('i like pizza');  #=> 'I LIKE PIZZA!!!'
 
-`/ /g` is a *regular expression*; for now just think of it like a weird string. It defines the substring to replace, and the `g` at the end stands for "global" and means "replace them all, not just the first one".
+The variable `strongOpinion` is called a *local variable* and can only be used *inside* the function.
 
 # Lab: Capitalize
 
-Try to write a function that *capitalizes* a word.
+Please write a function that *capitalizes* a word.
 
 For instance, 
 
 `capitalize('tomato')` returns `'Tomato'`
 
-(A solution is on the next slide, but try to solve it on your own. Remember that there are many [string operations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2) available to you...)
+A solution is on the next slide, but try to solve it on your own. 
+Remember that there are many [string operations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2) available to you...
 
 # Capitalize
 
-    function capitalize(s) {
-      let firstLetter = s[0];
-      let restOfWord = s.slice(1);
+    function capitalize(word) {
+      let firstLetter = word[0];
+      let restOfWord = word.slice(1);
       return firstLetter.toUpperCase() + restOfWord.toLowerCase();
     }
 
     console.log(capitalize('smith'));
     console.log(capitalize('MACGUYVER'));
 
-# Function names can be variable names
+The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function. 
 
-The following two are roughly equivalent:
+# Passing Variables to Functions
+
+When you pass a *variable* to a function, that variable's *value* is assigned to a *parameter*.
+
+> The variable and parameter names **do not** need to match!
+
+```js
+function rant(opinion) {
+  let strongOpinion = opinion.toUpperCase();
+  return strongOpinion + '!!!';
+}
+
+let feeling = "I feel great";
+let strongFeeling = rant(feeling);
+```
+
+| Outside the function | Inside the function | Value |
+|---|---|---|
+| `feeling` | `opinion` | `"I feel great"` |
+| `strongFeeling` | `strongOpinion` | `"I FEEL GREAT!!!"` |
+
+# Four Function Syntaxes
+
+> **WARNING**: JavaScript has many ways to define a function.
+
+This is the standard, original, retro function syntax:
 
 ```js
 function add(x,y) { return x + y; }
+```
+ 
+The following are all roughly equivalent to the above:
 
-var add = function(x,y) { return x + y; };
+```js
+let add = function(x,y) { return x + y; };
 ```
 
-> Note that in the second form, there is **no name** between `function` and `(x,y)`
+```js
+let add = (x,y) => { return x + y; };
+```
+
+```js
+let add = (x,y) => x + y;
+```
+
+* Note that these new forms are *anonymous*:
+    * there is **no name** between `function` and `(x,y)`
+    * the name of the function **is** the name of the variable that points to it
 
 # LAB: more about functions
 
