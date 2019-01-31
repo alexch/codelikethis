@@ -50,7 +50,6 @@ Track::LearnToCodeWithJavascript = Track.new(
        name: "JavaScript Glossary"
 
   project name: "exercism"
-
   project name: "exercism_fork"
 
   lesson name: "intro"
@@ -60,26 +59,18 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "/server_side_javascript/hello_node", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
   lesson name: "values"
-
   lesson name: "strings"
-
   lesson name: "numbers"
-
   lesson name: "variables"
-
   lesson name: "null"
-
   lesson name: "functions"
 
-  lesson name: "/tricks_of_the_trade/debugging"
-
-  lesson name: "/tricks_of_the_trade/modern_debugging"
-
   lesson name: "input_and_output"
-
   lesson name: "logic"
 
   lesson name: "recursion"
+  lesson name: "/tricks_of_the_trade/debugging"
+  lesson name: "/tricks_of_the_trade/modern_debugging"
 
   lesson name: "scope"
 

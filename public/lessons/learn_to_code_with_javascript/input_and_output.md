@@ -10,6 +10,7 @@
     topic name: "callbacks"
     topic name: "command-line"
     topic name: "strings"
+    project name: "guess"
 
 # Input and Output
 
@@ -167,16 +168,16 @@ Note that:
 
 # readline
 
-* NodeJS is more than a JavaScript *interpreter*
-
-* It's also a collection of JavaScript *libraries*
-
+* NodeJS is more than a *JavaScript interpreter*
+* It's also a collection of *JavaScript libraries*
 * One of the libraries is called `readline`
     * `readline` makes it easier to read lines, naturally :-)
     * the "books" in this library are functions
       * (and classes and other things too)
 
 # using readline
+
+> Warning: this code uses features we have not yet covered! Copy and paste it verbatim during the codealong below, and don't worry if it doesn't make much sense yet.
 
 To use `readline`, include the following lines in the top of your source file:
 
