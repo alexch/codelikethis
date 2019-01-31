@@ -89,7 +89,7 @@ What happens? Is this what you expected?
 * Write a program named `name.rb` that asks two things:
   1. Your first name
   2. Your last name
-* Then it says hello to the user by her *full name*.
+* Then it says hello to the user by their *full name*.
 * Run the program by typing `ruby name.rb` on the command line.
 
 # CONGRATULATIONS!

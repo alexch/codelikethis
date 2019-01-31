@@ -20,6 +20,18 @@
 
 * Input and Output together are called **I/O**.
 
+# Memory vs I/O
+
+* Performing *calculations* and accessing *memory* is very fast
+* but reading and writing to I/O devices is very slow
+    * at least as far as the CPU is concerned
+    * it takes *seconds* or *milliseconds* vs *nanoseconds*
+* so every time you ask JavaScript to do an I/O operation, it *pauses your program*
+  * this allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed
+* you have to write a function for JavaScript to run once it *resumes* 
+    * this function is named an *asynchronous callback*
+    * *asynchronous* is Greek for "out of time" or "not together in time"
+
 # Terminal I/O
 
 * In JavaScript,
@@ -37,7 +49,7 @@ process.stdin.on('data', (chunk) => { console.log(chunk) })
 # node load code, decoded
 
 ```js
-process.stdin.on('data', (chunk) => { console.log(chunk) })
+process.stdin.once('data', (chunk) => { console.log(chunk) })
 ```
 
 |phrase|meaning|
@@ -84,13 +96,6 @@ What happens? Is this what you expected?
 * You are *totally* going to figure this out.
 * And even if you don't, you haven't actually broken anything.
 * In fact, it's really hard to break a computer just by typing, so stay calm.
-
-# Breathe
-
-* [In through the nose](http://qr.ae/TUp1vd)...
-* Out through the mouth...
-* In through the nose...
-* Ahhhhhhhh.
 
 # Control-C to close
 
@@ -163,8 +168,6 @@ Note that:
 
 * Now go crazy and make it YELL your name!
     * Hint: Use the [toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) method
-
----
 
 # readline
 
@@ -257,7 +260,8 @@ async function start() {
 * Write a program named `name.js` that asks two things:
   1. Your first name
   2. Your last name
-* Then it says hello to the user by her *full name*.
+* Then it says hello to the user by their *full name*.
+
 * Run the program by typing `node name.js` on the command line.
 
 # CONGRATULATIONS!
@@ -275,3 +279,9 @@ You are now officially a coder. HIGH FIVE!
         What is your last name? Hopper
         Hello, Grace Hopper!
         Your name is 11 characters long.
+
+# Project: Guess the Number
+
+You may now start on the [Guess the Number](/projects/guess) project.
+
+(You will probably also need to learn about [logic](logic.md) and [loops](loops.md) to get it working, so don't be afraid to read ahead and to ask for help.)

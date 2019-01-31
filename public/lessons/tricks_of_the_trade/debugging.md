@@ -39,6 +39,14 @@ Debugging is an art, not a science. But its principles are scientific:
 * Make observations to confirm or reject those hypotheses
 * Focus on anomalies
 * Change one thing at a time and observe the results
+* Remember to breathe!
+
+# Breathe
+
+* [In through the nose](http://qr.ae/TUp1vd)...
+* Out through the mouth...
+* In through the nose...
+* Ahhhhhhhh.
 
 # Debugging with Print Statements
 

@@ -96,7 +96,7 @@ Some things to try:
 * assign your best friend's name to a variable
 * YELL YOUR BEST FRIEND'S NAME
 * get a new best friend
-* and YELL HER NAME TOO
+* and YELL THEIR NAME TOO
 
 # The Pointer Metaphor
 

@@ -50,7 +50,7 @@ Let's spend a few minutes just playing around in IRB. Some things to try:
 * calculate 2 + 2 and more complicated things
 * assign your best friend to a variable
 * reverse your best friend's name
-* get a new best friend and reverse her too
+* get a new best friend and reverse their name too
 
 # The Pointer Metaphor
 
