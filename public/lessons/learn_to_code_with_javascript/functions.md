@@ -121,8 +121,9 @@ let strongFeeling = rant(feeling);
 
 | Outside the function | Inside the function | Value |
 |---|---|---|
-| `feeling` | `opinion` | `"I feel great"` |
-| `strongFeeling` | `strongOpinion` | `"I FEEL GREAT!!!"` |
+| `feeling`       | `opinion`       | `"I feel great"`    |
+|                 | `strongOpinion` | `"I FEEL GREAT"`    |
+| `strongFeeling` |                 | `"I FEEL GREAT!!!"` |
 
 # Four Function Syntaxes
 
