@@ -61,10 +61,10 @@ One number is *divisible* by another if you divide them and the *remainder* is 0
 
 Write a function called `divisible` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
 
-    isDivisibleBy(100, 10)    //=> true
-    isDivisibleBy(100, 7)     //=> false
-    isDivisibleBy(3333, 11)   //=> true
-    isDivisibleBy(99, 12)     //=> false
+    divisible(100, 10)    //=> true
+    divisible(100, 7)     //=> false
+    divisible(3333, 11)   //=> true
+    divisible(99, 12)     //=> false
 
 # Rant!!!
 
