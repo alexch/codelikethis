@@ -29,10 +29,8 @@ The overlap between these three can be messy :-(
 
   - *instance variables* (aka *properties*) as mutable state that survives a single function call
   - *methods* to attach functions to an instance
-  - *privacy* (aka *encapsulation*) so the instance variables are shared only among the instance methods)
-
-
-
+  - a *constructor* to initialize your instance with valid values
+  - *privacy* (aka *encapsulation* or *data hiding*) so the instance variables are shared only among the instance methods
 
 # Three Styles, Summarized
 
@@ -49,7 +47,7 @@ Note that:
   * methods use state *inside an object* as properties
   * closures use state in *nested scopes* of enclosing functions
 
-# The CPU Don't Care
+# The Honey Badger Don't Care
 
 All of these styles exist to make code more readable / maintainable / debuggable *for humans*...
 

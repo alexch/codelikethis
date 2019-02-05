@@ -26,21 +26,23 @@
 
 # Input and Output
 
-* Computers have many senses -- keyboard, mouse, network card, camera, joystick, etc. Collectively, these are called INPUT.
+* Computers have many senses -- keyboard, mouse, network card, camera, joystick, etc. Collectively, these are called **INPUT**.
 
-* Computers can also express themselves in many ways -- text, graphics, sound, networking, printing, etc. Collectively, these are called OUTPUT.
+* Computers can also express themselves in many ways -- text, graphics, sound, networking, printing, etc. Collectively, these are called **OUTPUT**.
 
 * Input and Output together are called **I/O**.
 
+* the only part of your laptop that is *really* a computer is the CPU and the RAM; all the other parts (keyboard, trackpad, display, disk drive, etc.) are technically I/O devices 
+
 # Memory vs I/O
 
-* Performing *calculations* and accessing *memory* is very fast
-* but reading and writing to I/O devices is very slow
-    * at least as far as the CPU is concerned
-    * it takes *seconds* or *milliseconds* vs *nanoseconds*
-* so every time you ask JavaScript to do an I/O operation, it *pauses your program*
-  * this allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed
-* you have to write a function for JavaScript to run once it *resumes*
+* Performing *calculations* and accessing *memory* is **very fast**
+* ...but reading and writing to I/O devices is **slow**
+    * (at least as far as the CPU is concerned)
+    * I/O operations can take *seconds* or *milliseconds*; CPU operations take *nanoseconds*
+* Every time you ask JavaScript to do an I/O operation, it *pauses your program*
+  * this allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed or a file to be written
+* In NodeJS, you have to write a function for JavaScript to run once it *resumes*
     * this function is named an *asynchronous callback*
     * *asynchronous* is Greek for "out of time" or "not together in time"
 
@@ -52,17 +54,24 @@
 * In NodeJS,
     * `process.stdin` means "input coming from the terminal"
 
-    * Reading a line in NodeJS is weird; here's one way to do it
+    * Reading a line in NodeJS is **weird**; here's one way to do it
 
 ```js
-process.stdin.on('data', (chunk) => { console.log(chunk) })
+process.stdin.once('data', (chunk) => { console.log(chunk.toString()) } )
 ```
+
+> The weirdness is explained on the next slide!
 
 # node load code, decoded
 
 ```js
-process.stdin.once('data', (chunk) => { console.log(chunk) })
+process.stdin.once('data',
+    (chunk) => { console.log(chunk.toString()) }
+)
 ```
+
+> `once` is a function that takes two parameters,
+> and its second parameter is **another function**
 
 |phrase|meaning|
 |---|---|
@@ -71,17 +80,21 @@ process.stdin.once('data', (chunk) => { console.log(chunk) })
 | `(chunk)`              | please name it `chunk` |
 | ` => `                 | and send it to |
 | ` { ` ... ` }`         | this block of code |
-| `console.log(chunk)`   | print `chunk` to the terminal |
+| `console.log(chunk.toString())`   | convert it to a string and print it to the terminal |
 
----
+# Welcome to Callback City!
 
-`=>` is called "fat arrow" and is equivalent to this:
+The previous one-liner code is equivalent to this:
 
 ```js
-process.stdin.once('data', function(chunk) { console.log(chunk) })
+function printLine(chunk) { 
+    console.log(chunk) 
+}
+process.stdin.once('data', printLine);
 ```
 
-and the block of code itself is called a *callback* (since you are asking `stdin` to *call you back* when it receives input).
+The `printLine` function itself is called a *callback* 
+(since you are asking the I/O device to *call you back* when it receives input).
 
 # LAB: Hello, friend!
 
@@ -150,7 +163,7 @@ What happens? Is this what you expected?
 * Run it and make sure it works OK
 * Press ⌃C to close it
 
-# LAB: exit
+# LAB: This Way To The Exit
 
 * Change the program to look like this:
 
@@ -174,7 +187,7 @@ Note that:
 * What happens if you type your name in all lowercase?
 * Make the program capitalize your name for you even if you forget.
 
-**Hint**: remember `slice` from the [Strings lesson](strings)?
+**Hint**: remember `slice` from the [Strings lesson](strings#/anchor/slicing_and_dicing)?
 
 # LAB: YELL YOUR NAME
 
@@ -210,6 +223,8 @@ function ask(questionText) {
   });
 }
 ```
+
+> This is called "boilerplate code" -- you don't need to understand it before using it.
 
 # using readline - explanation
 

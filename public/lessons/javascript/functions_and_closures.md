@@ -78,8 +78,8 @@ bob.fullName(); //=> "Bob Jones"
 
 "lexical scope" vs. "[compiled?] scope"
 
-# Map Filter Reduce
+# Map Filter Reduce in Emoji
 
-![](../images/map-filter-reduce-in-emoji.png)
+![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
 
 (source unknown)

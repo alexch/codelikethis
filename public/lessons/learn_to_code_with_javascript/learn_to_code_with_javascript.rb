@@ -67,37 +67,22 @@ Track::LearnToCodeWithJavascript = Track.new(
 
   lesson name: "input_and_output"
   lesson name: "logic"
-
-  lesson name: "recursion"
-  lesson name: "/tricks_of_the_trade/debugging"
-  lesson name: "/tricks_of_the_trade/modern_debugging"
-
-  lesson name: "scope"
-
   lesson name: "loops"
 
   lesson name: "arrays"
-
   lesson name: "argv"
-
   lesson name: "stacks"
-
   lesson name: "hashes"
+  lesson name: "filter_functions"
+  lesson name: "scope"
+  lesson name: "recursion"
+
+  lesson name: "/tricks_of_the_trade/debugging"
+  lesson name: "/tricks_of_the_trade/modern_debugging"
+
 
   # todo: write slides
-  lesson name: "functions_as_values" do
-    topic name: "callbacks"
-    topic name: "each"
-    topic name: "map"
-    topic name: "filter"
-    topic name: "reduce"
-    link name: "Higher-order Functions",
-         href: "http://eloquentjavascript.net/05_higher_order.html",
-         from: "EloquentJavaScript"
-  end
-
-  # todo: write slides
-  lesson name: "methods", display_name: "Methods and Object Encapsulation" do
+  lesson name: "objects", display_name: "Methods and Object Encapsulation" do
     link name: "The Secret Life of Objects",
          href: "http://eloquentjavascript.net/06_object.html",
          from: "EloquentJavaScript"

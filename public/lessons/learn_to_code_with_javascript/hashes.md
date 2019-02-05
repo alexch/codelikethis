@@ -49,14 +49,18 @@ In other words, a hash defines a *mapping* from one group of things to another, 
   * key/value store
 
 # hash or object?
-  
-and in JavaScript, a hash is officially called an
 
-  * object
+In JavaScript, a hash is officially called an object.
 
 > This is confusing since in every other computer language, "hash" and "object" are quite different things.
 
-# Setting and Getting Hash Values with square brackets
+## Object-Oriented Programming
+
+* Just using an object as a key-value store does not make your code *object-oriented*.
+* For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
+* We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
+
+# Setting and Getting Object Values with square brackets
 
 ```js
 let states = {}
@@ -69,7 +73,7 @@ states['MA']                // 'Massachusetts'
 states['MA'].toUpperCase()  // 'MASSACHUSETTS'
 ```
 
-# Setting and Getting Hash Values with dots
+# Setting and Getting Object Values with dots
 
 ```js
 let states = {}
@@ -127,9 +131,9 @@ items[item]     // "red"
 
 > This is confusing!
 
-# Hash literals
+# Object literals
 
-a Hash can be defined *literally* (inline) with curly braces, like this:
+an object can be defined *literally* (inline) with curly braces, like this:
 
 ```js
 states = {
@@ -142,7 +146,7 @@ states['MA']  // 'Massachusetts'
 states.MA     // also 'Massachusetts'
 ```
 
-# Looping through a hash with for...in
+# Looping through an object with for...in
 
 ```js
 for (let state in states) {
@@ -150,7 +154,7 @@ for (let state in states) {
 }
 ```
 
-**Note:** use "for...of" for arrays, use "for...in" for hashes -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail.
+**Note:** use "for...of" for arrays, use "for...in" for objectes -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail.
 
 **WARNING:** remember the `let` or you will be defining a *global variable* named `state`
 
@@ -178,7 +182,7 @@ Also, *hash* is a funny word, and programmers love jokes.
 
 # `delete`
 
-To remove a key-value pair from a hash, use the keyword `delete`.
+To remove a key-value pair from an object, use the keyword `delete`:
 
 ```js
 states = {
@@ -192,6 +196,8 @@ true
 > states
 { CA: 'California', NY: 'New York' }
 ```
+
+> note that `delete` is **not** a method; it's a standalone keyword, like a global function
 
 # fake delete
 
@@ -207,9 +213,9 @@ undefined
 > for (let state of states) { console.log(state) }
 ```
 
-> You probably shouldn't do this.
+> You probably shouldn't do this, since it only removes the *value*, but not the *key*, from the property list.
 
-# Hash methods
+# Object Instance Methods
 
 ```js
 let rectangle = {

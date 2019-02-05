@@ -168,5 +168,3 @@ Using recursion, write a program called `fib.js` so that running `node fib.js 10
 ```
 
 which are the first 10 elements of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
-
-

@@ -47,9 +47,9 @@ a 19th-century mathematician who invented [Boolean algebra](https://en.wikipedia
 
 # Conditions
 
-The magic word `if` is a CONDITIONAL.
+The magic word `if` is a *conditional*.
 
-The phrase immediately after `if` is a CONDITION.
+The phrase immediately after `if` is a *condition*.
 
 ```js
 if (age < 18) {
@@ -70,11 +70,13 @@ Wait a second. "Truthy?"
 
 ![Truthiness](../images/truthiness.png)
 
-All values are truthy unless they are defined as falsy.
+* in the Colbert Report, [truthiness](https://en.wikipedia.org/wiki/Truthiness) means things we *feel* to be true, even though we know they're probably not
 
-[MDN: Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+* In JavaScript, **all** values have truthiness **unless** they are defined as falsy.
 
-# What is falsiness? 
+* [MDN: Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+
+# What is falsiness?
 
 `false`, `null`, `undefined`, `0`, `NaN`, and the empty string (`""`) are all falsy.
 
@@ -160,7 +162,7 @@ You can make more complicated logical expressions using conjunctions:
 For example:
 
 ```js
-if (age >= 18 || parent.gavePermissionSlip()) {
+if (age >= 18 || hasPermissionSlip()) {
   console.log("allowed");
 } else {
   console.log("denied");
@@ -171,7 +173,7 @@ if (age >= 18 || parent.gavePermissionSlip()) {
 
 # LAB: Good Friend, Bad Friend
 
-* Your `hello.js` program should currently look something like this:
+* Your [`hello.js` program](./input_and_output) should currently look something like this:
 
 ```js
 console.log("What is your name?");

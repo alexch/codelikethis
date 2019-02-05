@@ -241,7 +241,7 @@ do {
 
 # `for`
 
-JavaScript inherited `for(;;)` from C; it's cumbersome but you should learn to recognize it.
+JavaScript inherited `for(;;)` from C; it's cumbersome and confusing but you should learn to recognize it.
 
 ```js
 for (var i=0; i <= 8; i++) { 
@@ -256,10 +256,10 @@ for (var i=0; i <= 8; i++) {
 | `i=0`                    | and initially set it to `0` |
 | `i < 8`                  | then, as long as `i` is less than `8` |
 | `{` ... `}`              | execute this block of code |
-| `console.log(potato(i))` | print the `i+1`th potato message |
+| `console.log(potato(i))` | (which prints the `i+1`th potato message) |
 | `i++`                    | and then *increment* `i` before the next time through |
 
-See? Cumbersome.
+> Note that `i++` is executed **after** the `console.log` (the "body") and **before** the second `i<8` (the "condition").
 
 # LAB: Prime Numbers
 
@@ -293,6 +293,13 @@ Functional decomposition is also a great way to write a program that you haven't
 When you reach a step that you don't know how to do, or just don't want to think about right now, call a function *that you haven't written yet*.
 
 Then later on -- only *after* the parent function is written -- go back and write the faked-out function.
+
+# Even more loops!
+
+* JavaScript also has two more, different `for` loops, for use with *objects* and *collections*, which we will discuss later, or which you can read about here: 
+
+  * [An overview of JavaScript iterators
+](https://medium.freecodecamp.org/javascript-iterators-17ab32c3cae7) - The difference between for, for…in and for…of loops
 
 # LAB: More about loops
 
