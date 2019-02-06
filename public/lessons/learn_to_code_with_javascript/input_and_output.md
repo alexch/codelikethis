@@ -211,11 +211,7 @@ To use `readline`, include the following lines in the top of your source file:
 
 ```javascript
 const readline = require('readline');
-
-const readlineInterface = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
 function ask(questionText) {
   return new Promise((resolve, reject) => {
@@ -232,9 +228,9 @@ function ask(questionText) {
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | `const readline = require('readline');`                     | load the `readline` package and name it `readline`                                                                                      |
 | `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings:                                                                         |
-| `     input: process.stdin,`                                | for input, use the *standard input stream* (i.e. terminal keyboard input)                                                               |
-| `     output: process.stdout`                               | for output, use the *standard output stream* (i.e. terminal console output)                                                             |
-| `function ask(questionText) {...}`                          | create a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) |
+| `  process.stdin,`                                | for input, use the *standard input stream* (i.e. terminal keyboard input)                                                               |
+| `  process.stdout`                               | for output, use the *standard output stream* (i.e. terminal console output)                                                             |
+| `function ask(questionText) {...}`                          | a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) to asynchronously ask a question and wait for a reply |
 
 (We will cover the promises in much more detail later; for now, all you really need to know is that Promises allow us to use [async and await]() in the next slide.)
 
@@ -244,11 +240,7 @@ Codealong time! Please follow along with the instructor and enter this code into
 
 ```javascript
 const readline = require('readline');
-
-const readlineInterface = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
 function ask(questionText) {
   return new Promise((resolve, reject) => {
