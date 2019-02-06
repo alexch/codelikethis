@@ -15,10 +15,10 @@ that let you *apply a function* to its contents.
 | method | description | returns |
 |---|---|---|
 | [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)  | do something to each item | `undefined`|
-| [`find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)  | find the first item that matches | one item |
+| [`find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)  | find the first item that matches | one matching item (or `undefined` if no match) |
 | [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | accept or reject each item | a new collection, possibly smaller |
 | [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)  | change each item into a new item | a new collection of the same size |
-| [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)  | scan the entire collection and "reduce" it | one thing |
+| [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)  | scan the entire collection and "reduce" it to... | ...a single result, e.g. a total |
 
 We call this group of methods "filter functions" or "iterator methods".
 
@@ -26,13 +26,13 @@ We call this group of methods "filter functions" or "iterator methods".
 
 `forEach` works a lot like `for..of`
 
-Given:
+Given an array of names:
 
 ```javascript
 let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
 ```
 
-this:
+this code:
 
 ```javascript
 for (let name of names) {
@@ -40,7 +40,7 @@ for (let name of names) {
 }
 ```
 
-and this:
+and this code:
 
 ```javascript
 let printUpper = function(word) {
@@ -50,6 +50,7 @@ names.forEach(printUpper);
 ```
 
 both print:
+
 ```
 ALICE
 BOB
@@ -138,6 +139,7 @@ function titleize(phrase) {
 ```
 
 And another:
+
 ```javascript
 function titleize(phrase) {
     let words = [];
@@ -145,6 +147,20 @@ function titleize(phrase) {
     return words.join(' ');
 }
 ```
+
+# Reduce
+
+The `reduce` method keeps track of a *running total* (aka *accumulator*); whatever value the function returns is used as the accumulator for the next pass.
+
+Here's some code that counts the total number of letters across all words in an array:
+
+```javascript
+let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David'];
+const reducer = (accumulator, word) => accumulator + word.length;
+let totalCount = names.reduce(reducer, 0); //=> 25
+```
+
+The first time through, the accumulator is 0. Next time, it's 5. Then 8, then 15, etc.
 
 # Map Filter Reduce in Emoji
 

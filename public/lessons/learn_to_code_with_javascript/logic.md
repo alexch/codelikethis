@@ -42,7 +42,7 @@ Try the following in node:
 
 [MDN: comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 
-These are also called "Boolean operators" after *[George Boole](https://en.wikipedia.org/wiki/George_Boole)*, 
+These are also called "Boolean operators" after *[George Boole](https://en.wikipedia.org/wiki/George_Boole)*,
 a 19th-century mathematician who invented [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra).)
 
 # Conditions
@@ -80,12 +80,12 @@ Wait a second. "Truthy?"
 
 `false`, `null`, `undefined`, `0`, `NaN`, and the empty string (`""`) are all falsy.
 
-Fortunately, `true` is truthy and `false` is falsy.  
+Fortunately, `true` is truthy and `false` is falsy.
 
 Unfortunately, the string `"false"` is truthy, and the string `"0"` is truthy, even though the number `0` is falsy.
-    
+
 [MDN: Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
-    
+
 # if... then... else...
 
 The magic word `else` allows **BRANCHING**.
@@ -107,7 +107,7 @@ It takes the first path if the condition is truthy, and takes the second path if
 Sadly, this mathematical expression:
 
     2 + 2 = 4
-    
+
 causes an error. You need to do
 
     2 + 2 == 4
@@ -130,6 +130,17 @@ instead. Why?
 > — [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth), Good Ideas, Through the Looking Glass (2005)
 
 see also http://en.wikipedia.org/wiki/Assignment_%28computer_science%29#Assignment_versus_equality
+
+# Condition or Assignment?
+
+> BEWARE of using a single equal sign inside an `if` condition!
+
+* the value of a comparison is either `true` or `false`
+  * so `if (x == 2)` means `if x is 2` which changes based on `x`
+
+* the value of an assignment is the *value being assigned*
+  * so `if (x = 2)` means `if 2` which is *always truthy*
+  * also, the value of `x` will be 2 afterwards, no matter what it was before
 
 # The Tragedy of the Threequal Sign
 
@@ -178,17 +189,17 @@ if (age >= 18 || hasPermissionSlip()) {
 ```js
 console.log("What is your name?");
 process.stdin.on('data', (chunk) => {
-    let name = chunk.toString(); 
-    console.log("Hello, " + name + "!"); 
+    let name = chunk.toString();
+    console.log("Hello, " + name + "!");
 });
 ```
 
 * Now change `hello.js` so that it doesn't always say hello!
-  * If the user's name is "Darth" then say "Noooooo! Go away, Darth!"
+  * If the user's name is "Darth" then say "Noooooo! That's impossible!"
 
 # Lab: Infinite Names
 
-* Change `name.js` so it keeps asking for names forever...
+* Change `hello.js` so it keeps asking for names forever...
   * ...unless and until someone says their name is "bye!"
   * then it stops and exits back to the terminal
 

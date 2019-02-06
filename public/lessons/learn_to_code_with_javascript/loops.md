@@ -13,7 +13,7 @@ A LOOP is when we ask a program to do something many times.
 
 # while
 
-The simplest loop in JavaScript is `while`. 
+The simplest loop in JavaScript is `while`.
 
 ```js
 while (someCondition) {
@@ -37,7 +37,7 @@ This means "While true is true, say 'Hello'". Obviously `true` will always be tr
 
 To stop it, hold down the CONTROL key and press the C key.
 
-This is called an *infinite loop*. 
+This is called an *infinite loop*.
 
 **Note well!** The lines between `{` and `}` are INDENTED. Indentation is very important to you and other humans. It lets our eyes follow the patterns and helps us quickly see what parts of the program go with each other.
 
@@ -59,7 +59,7 @@ Let's write a program that counts from 0 to infinity. Put this in a file called 
 ```js
 let count = 0;
 while (true) {
-    console.log(count);   
+    console.log(count);
     count = count + 1;
 }
 ```
@@ -79,7 +79,7 @@ Please try this yourself! But it's kind of tricky, so on the next slide I'll sho
 ```js
 let count = 1;
 while (count <= 100) {
-    console.log(count);   
+    console.log(count);
     count = count + 1;
 }
 ```
@@ -101,8 +101,8 @@ This is fairly complicated, so let's stop here and make sure to understand every
 
 creates a *variable* named `count` and sets its value to `1`.
 
-    while (count <= 100) 
-    
+    while (count <= 100)
+
 starts a loop and immediately compares `count` to `100`.
 
 `1` is less than `100`, so the expression is `true`, so we continue with the block of code starting with the `{`.
@@ -140,7 +140,7 @@ Here's a more verbose way of counting to 100:
 ```js
 let count = 0;
 while (true) {
-    console.log(count);   
+    console.log(count);
     count = count + 1;
     if (count > 100) {
         break;
@@ -161,11 +161,11 @@ Remember this poem?
     7 potato,
     More!
 
-Write a program called `potato.js` that prints that poem, using loops.
+Please write a program called `potato.js` that prints that poem, using loops.
 
 (No, you can't just print the entire poem as a single string; that would be cheating.)
 
-# Many Potatoes
+# Many Potatoes, Many Solutions
 
 Remember, there's always more than one solution to any problem! Don't get fixated on finding the One Right Answer.
 
@@ -174,42 +174,57 @@ Remember, there's always more than one solution to any problem! Don't get fixate
 
 In the next slides we will examine several different ways to write the One Potato program.
 
+> Note: changing the design of a program that's already working correctly is called **refactoring**
+
 # functional decomposition
 
 The first thing we'll do is *decompose* the problem into two smaller problems:
 
 1. counting from 1 to 8
-2. printing the correct message for any value
+2. printing the correct message for each line
 
-*Decomposition* is one of the most important skills in programming. It lets you focus. 
+*Decomposition* is one of the most important skills in programming. It lets you focus.
 
 Also known as "*divide and conquer*".
 
-Using a *function* is the most straightforward way to capture a smaller task.
+Introducing a *function* is the most straightforward way to embody a smaller task.
 
 [Modular Decomposition](http://www.cs.columbia.edu/~evs/songs/Modular_20Decomposition.mp3) song by Eric Siegel, Ph.D.
 
+# Fake it till you make it
+
+Functional decomposition is also a great way to write a program that you haven't quite figured out yet.
+
+When you reach a step that you don't know how to do, or just don't want to think about right now, call a function *that you haven't written yet*.
+
+Then later on -- only *after* the parent function is written -- go back and make the faked-out function work.
+
 # counting potatoes
 
+Let's separate *formatting* from *counting*.
+
+This function does one thing only: create the correct string for a given line number.
+
 ```js
-function potato(count) {
-    if (count === 8) {
+function poemLine(lineNumber) {
+    if (lineNumber === 8) {
         return "More!"
-    } else if (count === 4) {
+    } else if (lineNumber === 4) {
         return "4!"
     } else {
-        return "" + count + ","
+        return "" + lineNumber + ","
     }
 }
 ```
 
+Now that we have an isolated formatting function, let's look at different ways to do looping.
 
 # `while true`
 
 ```js
 let i = 1;
 while (true) {
-    console.log(potato(i));
+    console.log(poemLine(i));
     i = i + 1;
     if (i > 8) {
         break;
@@ -222,7 +237,7 @@ while (true) {
 ```js
 let i = 1;
 while (i <= 8) {
-    console.log(potato(i));
+    console.log(poemLine(i));
     i = i + 1;
 }
 ```
@@ -235,7 +250,7 @@ while (i <= 8) {
 let i = 0;
 do {
     i = i + 1;
-    console.log(potato(i));
+    console.log(poemLine(i));
 } while (i < 8);
 ```
 
@@ -244,8 +259,8 @@ do {
 JavaScript inherited `for(;;)` from C; it's cumbersome and confusing but you should learn to recognize it.
 
 ```js
-for (var i=0; i <= 8; i++) { 
-  console.log(potato(i+1));
+for (var i=0; i < 8; i++) {
+  console.log(poemLine(i));
 }
 ```
 
@@ -256,10 +271,21 @@ for (var i=0; i <= 8; i++) {
 | `i=0`                    | and initially set it to `0` |
 | `i < 8`                  | then, as long as `i` is less than `8` |
 | `{` ... `}`              | execute this block of code |
-| `console.log(potato(i))` | (which prints the `i+1`th potato message) |
+| `console.log(poemLine(i))` | (which prints the `i+1`th potato message) |
 | `i++`                    | and then *increment* `i` before the next time through |
 
 > Note that `i++` is executed **after** the `console.log` (the "body") and **before** the second `i<8` (the "condition").
+
+# `for..of`
+
+The `for..of` loop was added to JavaScript fairly recently. It loops over an [array](./arrays) and hides the messy details of initializing and incrementing a counter:
+
+```javascript
+const lineNumbers = [1, 2, 3, 4, 5, 6, 7, 8];
+for (let lineNumber of lineNumbers) {
+  console.log(poemLine(lineNumber));
+}
+```
 
 # LAB: Prime Numbers
 
@@ -280,30 +306,28 @@ use the `isDivisible` function you wrote back in the [functions](functions) less
 
 # TIP: Prime Numbers: Tip 2
 
-write a function named `isPrime` that takes one parameter, and returns `true` if that number is prime
+## Fake it till you make it
+
+Write a function named `isPrime` that takes one parameter, and returns `true` if that number is prime.
+
+This function pretends that every number is prime:
+
+```
+function isPrime(number) {
+    return true;
+}
+```
+
+First write your code assuming that `isPrime` works correctly...then once the rest of the program is working, come back and focus on the smaller problem of finding out if a given number is prime.
+
 
 # TIP: Prime Numbers: Tip 3
 
 write a main loop that counts from 2 to 100; inside that loop, call `isPrime` and print the number if `isPrime` is true
 
-# Fake it 'til you make it
-
-Functional decomposition is also a great way to write a program that you haven't quite figured out yet.
-
-When you reach a step that you don't know how to do, or just don't want to think about right now, call a function *that you haven't written yet*.
-
-Then later on -- only *after* the parent function is written -- go back and write the faked-out function.
-
-# Even more loops!
-
-* JavaScript also has two more, different `for` loops, for use with *objects* and *collections*, which we will discuss later, or which you can read about here: 
-
-  * [An overview of JavaScript iterators
-](https://medium.freecodecamp.org/javascript-iterators-17ab32c3cae7) - The difference between for, for…in and for…of loops
-
 # LAB: More about loops
 
-Exercisms: 
+Exercisms:
 
   * [Collatz Conjecture](https://exercism.io/my/solutions?exercise_id=collatz-conjecture&track_id=javascript)
   * [Pangram](https://exercism.io/my/solutions?exercise_id=pangram&track_id=javascript)
