@@ -6,6 +6,9 @@
     link name: "Higher-order Functions",
          href: "http://eloquentjavascript.net/05_higher_order.html",
          from: "EloquentJavaScript"
+    link name: "Array Iteration Methods",
+         href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods",
+         from: "Mozilla Developer Network"
 
 # Filter Functions
 
