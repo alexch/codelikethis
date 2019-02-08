@@ -137,6 +137,47 @@ fruits.reverse()
 
 Try this now in a console. Do you see what you expect?
 
+# Slicing and Dicing
+
+you can `slice` an array to cut it into smaller arrays
+
+```js
+let fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry']
+
+// this means "slice from item 1 to item 3"
+fruits.slice(1, 3) //=> [ 'banana', 'cherry' ]
+
+// this means "slice from item 2 to the end"
+fruits.slice(2) //=> [ 'cherry', 'date', 'elderberry' ]
+```
+
+These start and end numbers are called *indexes* (or *indices* if you're feeling fancy).
+
+[MDN: slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+
+# Array Indexing Explained
+
+Humans like to start counting at 1, but computers like to start counting at 0.
+
+This can be confusing, so here's a visualization to help explain it.
+
+Think of the indexes as pointing at the *spaces between* items, as in this diagram:
+
+    ['B', 'L', 'U', 'E']
+
+    | B | L | U | E |
+    0   1   2   3   4
+
+So with this picture in your mind, imagine that `slice`...
+
+   * includes the item to the *right* of the start index
+   * includes the item to the *left* of the end index...
+   * ...but *excludes* the item to the *right* of the end index
+
+```javascript
+['B', 'L', 'U', 'E'].slice(1, 3) //=> [ 'L', 'U' ]
+```
+
 # Array to String
 
 There are a few easy ways to turn an array into a string.

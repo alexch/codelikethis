@@ -76,13 +76,11 @@
       "track": "learn_to_code_with_javascript",
       "lessons": [
         "stacks",
-        "hashes",
-        "iteration_methods",
-        "recursion"
+        "objects",
+        "methods"
       ],
       "projects": [
         "zorkington",
-        "tic_tac_toe",
         {
           "from": "FreeCodeCamp",
           "name": "Debugging",
@@ -99,6 +97,19 @@
           "name": "Basic Algorithm Scripting",
           "href": "https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting"
         }
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
+        "iteration_methods",
+        "scope",
+        "recursion",
+        "/tricks_of_the_trade/debugging",
+        "/tricks_of_the_trade/modern_debugging"
+      ],
+      "projects": [
+        "zorkington"
       ]
     },
     {
@@ -120,7 +131,7 @@
           "href": "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
         },
         "markdown_preview",
-        "web_text_game"
+        "tic_tac_toe"
       ],
       "lessons": [
         "http",
@@ -129,40 +140,40 @@
       ]
     },
     {
+      "track": "javascript",
+      "lessons": [
+        "oo_js",
+        "oo_js_creation",
+        "oo_js_inheritance",
+        "oo_js_prototypes",
+        "/oo/oo_design"
+      ],
+      "projects": [
+        "chat"
+      ]
+    },
+    {
       "track": "client_side_coding",
       "projects": [
-        "yelpington_app",
         "twitch_status",
         "pomodoro"
       ],
       "lessons": [
         "embedding",
         "ajax",
-        "calling_apis"
-      ]
-    },
-    {
-      "track": "learn_to_code_with_javascript",
-      "lessons": [
-        "geocoding",
-        "geolocation",
-        "interactive_mapping"
-      ]
-    },
-    {
-      "track": "learn_to_code_with_javascript",
-      "lessons": [
-        "jquery",
+        "calling_apis",
         "local_storage"
       ]
     },
     {
-      "track": "javascript",
-      "lessons": [
-        "oo_js"
-      ],
+      "track": "client_side_coding",
       "projects": [
-        "chat"
+        "yelpington_app"
+      ],
+      "lessons": [
+        "geocoding",
+        "geolocation",
+        "interactive_mapping"
       ]
     }
   ]

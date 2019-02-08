@@ -58,7 +58,6 @@ class Track < Thing
       topic name: "callbacks"
     end
 
-
     lesson name: 'oo_js_creation', display_name: "Object-Oriented JavaScript: Creating Objects" do
       topic name: "object-instantiation"
       topic name: "new"
@@ -72,11 +71,9 @@ class Track < Thing
       topic name: "objects"
     end
 
-    # lesson name: '/oo/oo_design' do
-    #   topic name: ""
-    # end
+    lesson name: '/oo/oo_design'
 
-    # todo?: We'll also consider hoisting, this, bind/call/apply, fat and skinny arrows, and more.
+    # todo: this, bind/call/apply, fat arrows
 
     lesson name: "/agile/test_driven"
     lesson name: "tdd_in_js"

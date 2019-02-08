@@ -65,28 +65,23 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "null"
   lesson name: "functions"
 
-  lesson name: "input_and_output"
   lesson name: "logic"
+  lesson name: "input_and_output"
   lesson name: "loops"
 
   lesson name: "arrays"
   lesson name: "argv"
+
   lesson name: "stacks"
-  lesson name: "hashes"
+  lesson name: "objects"
+  lesson name: "methods"
+
   lesson name: "iteration_methods"
   lesson name: "scope"
   lesson name: "recursion"
 
   lesson name: "/tricks_of_the_trade/debugging"
   lesson name: "/tricks_of_the_trade/modern_debugging"
-
-
-  # todo: write slides
-  lesson name: "objects", display_name: "Methods and Object Encapsulation" do
-    link name: "The Secret Life of Objects",
-         href: "http://eloquentjavascript.net/06_object.html",
-         from: "EloquentJavaScript"
-  end
 
   link href: "https://learnpythonthehardway.org/book/advice.html"
   link href: "http://jsforcats.com"

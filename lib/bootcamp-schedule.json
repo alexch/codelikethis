@@ -129,7 +129,6 @@
         "arrays",
         "argv",
         "stacks",
-        "hashes",
         "recursion",
         "logic",
         "scope",

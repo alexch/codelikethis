@@ -6,9 +6,11 @@
     topic name: "values"
     topic name: "methods"
     topic name: "functions"
+    topic name: "data-structures"
     link from: "EloquentJavaScript",
          href: "http://eloquentjavascript.net/04_data.html",
          name: "Eloquent JavaScript Chapter 4: Data Structures: Objects and Arrays"
+    project name: "zorkington"
 
 # Hash
 
@@ -26,9 +28,12 @@ const hashMenu = {
     'homestyle': 4.47,
 }
 
-console.log('The price of homestyle hash is $' + 
-  hashMenu['homestyle'])
+console.log('The price of homestyle hash is $' + hashMenu.homestyle)
 ```
+
+### New term: *property*
+
+`'corned beef'`, `'roast beef'`, and `'homestyle'` are all *properties* of the `hashMenu` *object*
 
 # What makes a hash a hash?
 
@@ -55,42 +60,63 @@ In JavaScript, a **hash** is officially called an **object**.
 
 > This is confusing since in every other computer language, "hash" and "object" are quite different things.
 
-## Object-Oriented Programming
+## Object != Object-Oriented
 
 * Just using an object as a key-value store does not make your code *object-oriented*.
     * For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
     * We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
 * In the rest of this lesson we use "hash" and "object" interchangeably
 
-# Setting and Getting Object Values with Square Brackets
+# An Object is a Lookup Table
 
-```js
-let states = {}
+An object is useful for putting many similar things together.
 
-states['CA'] = 'California'
-states['MA'] = 'Massachusetts'
-states['NY'] = 'New York'
+an object can be defined *literally* (inline) with curly braces, like this:
 
-states['MA']                // 'Massachusetts'
-states['MA'].toUpperCase()  // 'MASSACHUSETTS'
+Let's make an object that maps a state's *abbreviation* to its *full name*:
+
+```javascript
+let states = {
+  'VT': 'Vermont',
+  'CA': 'California',
+  'MA': 'Massachusetts',
+  'NY': 'New York'
+}
 ```
 
-# Setting and Getting Object Values with Dots
+> This is called an *object literal* since it defines the object exactly as it's written.
+
+(If the key has no spaces in it, you can omit the quotations; object keys are always strings.)
+
+# Accessing Object Properties
+
+You can get the properties of an object with either *dots* or *brackets*:
+
+|   |   | value  |
+|---|---|---|
+| `states.VT` | `states['VT']` | `'Vermont'` |
+| `states.CA` | `states['CA']` | `'California'` |
+| `states.MA` | `states['MA']` | `'Massachusetts'` |
+| `states.NY` | `states['NY']` | `'New York'` |
+
+Both syntaxes are useful in different situations.
+
+```javascript
+states['VT'].toUpperCase()  // 'VERMONT'
+```
+
+# Setting Object Properties
+
+You can also set the properties of an object with either *dots* or *brackets*:
 
 ```js
-let states = {}
-
-states.CA = 'California'
-states.MA = 'Massachusetts'
-states.NY = 'New York'
-
-states.MA                // 'Massachusetts'
-states.MA.toUpperCase()  // 'MASSACHUSETTS'
+states.WY = 'Wyoming'
+states['FL'] = 'Florida'
 ```
 
 # Dots vs. Brackets
 
-Dots are prettier than square brackets, but less versatile:
+Dots are prettier than square brackets, but less versatile, since some keys simply cannot be represented using dot notation, and trying to use them causes syntax errors.
 
 ```js
 > capitals = {}
@@ -105,7 +131,11 @@ SyntaxError: Unexpected identifier
 capitals.'New York' = 'Albany'
          ^^^^^^^^^^
 SyntaxError: Unexpected string
+```
 
+If you get those errors, revert to brackets, which is more reliable:
+
+```javascript
 > capitals['New York'] = 'Albany'
 'Albany'
 > capitals
@@ -113,6 +143,8 @@ SyntaxError: Unexpected string
 ```
 
 # Dots vs. Brackets vs. Variables
+
+You can use variables instead of literals to get and set properties.
 
 Given this code:
 
@@ -123,32 +155,42 @@ let items = {
 let item = 'brick'
 ```
 
-Two of the following expressions look for *a key named `item`* but only one looks for a key named *the contents of the variable named item*
+Two of the following expressions look for *a key named `item`*, but only one looks for a key named *the value of the variable named item*:
 
+| code | value | explanation |
+|---|---|---| 
+|`items.item   ` |  `undefined` | "get me the property named 'item'" |
+|`items['item']` |  `undefined` | "get me the property named 'item'" |
+|`items[item]  ` |  `'red'`     | "get me the property named 'brick'"
+
+> This can be confusing!
+
+# An Object is a Data Structure
+
+Objects are good for a lot more than mere one-to-one maps. They allow you to design *data structures* that are as complicated as you can imagine...
+
+```javascript
+let alice = {
+  name: 'Alice Abrams',
+  age: 36,
+  married: false,
+  homeAddress: {
+    street: '12 Maple St.',
+    city: 'Burlington',
+    state: 'VT',
+    zipCode: '05401',
+    location: {
+      latitude: 44.4759,
+      longitude: -73.2121
+   },
+   pets: ['Mittens', 'Fido']
+  }
+}
 ```
-items.item      // undefined
-items['item']   // undefined
-items[item]     // "red"
-```
 
-> This is confusing!
-
-# Object literals
-
-an object can be defined *literally* (inline) with curly braces, like this:
-
-```js
-states = {
-           CA: 'California',
-           MA: 'Massachusetts',
-           NY: 'New York'
-         }
-
-states['MA']  // 'Massachusetts'
-states.MA     // also 'Massachusetts'
-```
-
-(If the key has no spaces in it, you can omit the quotations; object keys are always strings)
+> Note: The above shows the essence of [JSON](../javascript/json):
+> a syntax for representing data structures containing primitive values,
+> including nested objects and arrays.
 
 # Looping through an object with for...in
 
@@ -158,7 +200,7 @@ for (let state in states) {
 }
 ```
 
-**Note:** use "for...of" for arrays, use "for...in" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail.
+**Note:** use "`for...of`" for arrays, use "`for...in`" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
 
 **WARNING:** remember the `let` or you will be defining a *global variable* named `state`
 
@@ -172,9 +214,9 @@ Because programmers are humans, and humans can be very literal-minded, people na
 
 Also, *hash* is a funny word, and programmers love jokes.
 
-# JS Object Hash Rules
+# All keys are strings
 
-* All keys are strings
+* In a JavaScript object, keys must be strings
 
 * **Beware** of using these as keys, since they get converted to strings in unexpected ways:
 
@@ -224,21 +266,20 @@ undefined
 Here's a taste of [object instance methods](./methods).
 
 A method is a *function* attached to an *object* as a *property*.
- 
+
 ```js
-let rectangle = {
-    height: 10,
-    width: 8,
-    area: function() {
-        return this.height * this.width;
-    }
+let stringUtils = {
+  capitalize: function(word) {
+    return word.charAt(0).toUpperCase() +
+      word.slice(1).toLowerCase();
+  },
+  rant: function(opinion) {
+    return option.toUpperCase() + '!!!';
+  }
 }
 
-rectangle.height   //=> 10
-rectangle.area()   //=> 80
+stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
-
-`this` is a magic word that means "this object I'm in *right now*"
 
 # LAB: more about JS Objects
 
