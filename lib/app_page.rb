@@ -104,7 +104,10 @@ class ThingPage < AppPage
     stylesheet name: "highlight/solarized-light"
 
     script src: "/highlight.min.js"
-    script "hljs.initHighlightingOnLoad();"
+    script raw(<<-JS)
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+JS
 
     script raw(<<-JS)
 $(function () {
