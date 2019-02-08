@@ -1,10 +1,11 @@
+    link name: "The Secret Life of Objects",
+         href: "http://eloquentjavascript.net/06_object.html",
+         from: "EloquentJavaScript",
+         description: "Though no one really agrees on its precise definition, object-oriented programming has shaped the design of many programming languages, including JavaScript."
+
 # Object-Oriented JavaScript
 
-# Hybrid Style
-
-As context for this lesson, see the [hybrid styles](hybrid.md) lesson before, and come back to it after.
-
-Summary:
+This lesson assumes you are familiar with the usage of JavaScript [Objects](../learn_to_code_with_javascript/objects) and [Methods](../learn_to_code_with_javascript/methods) and the fact that JavaScript is a [hybrid language](hybrid.md).
 
 JavaScript is a hybrid of (at least) three styles:
 
@@ -12,9 +13,13 @@ JavaScript is a hybrid of (at least) three styles:
   * functional
   * object-oriented
 
+In this lesson we explore how JavaScript implements *object-oriented* language features.
+
 # What is an Object?
 
-* an *encapsulation* of *state* with *behavior*
+* an object is an *encapsulation* of *state* with *behavior*
+
+> This is a simple definition, but many programmers either don't know it, don't understand it, or don't agree with it.
 
 # Definition of Object
 
@@ -23,18 +28,33 @@ An object...
 * *encapsulates* state and behavior
     * *state* aka data, properties, variables
     * *behavior* aka functions, methods, messages
-    * *encapsulation* = put similar things together; keep dissimilar things apart
+    * *encapsulation* means "put similar things together; keep dissimilar things apart"
 * responds to *messages* through an *interface*
-  * a *message* usually corresponds to a *method*
+  * a *message* corresponds to a *method* (mostly)
 
-# True Object-Oriented Programming
+# Pure Object-Oriented Programming
 
-* In pure OO, a method only directly uses two sources of data
+* In pure OO, a method only directly uses two sources of non-local data
     * parameters of the method
     * properties of the method's own object
     * cf. the Law Of Demeter (more on this later)
-* All other data are manipulated via *messages* to other objects
-    * i.e. methods
+* All other data are manipulated via *messages* sent to other objects (aka *method calls*)
+
+# Pure Object-Oriented Example
+
+```javascript
+let rectangle = {
+    height: 10,
+    width: 8,
+    area: function() {
+        return this.height * this.width;
+    }
+}
+```
+
+`let a = rectangle.area()` is a pure OO method since it only accesses data held inside `rectangle`, via the magic pointer `this`, and returns a new value
+
+`let perimeter = rectangle.height * 2 + rectangle.width * 2` is not pure OO since `height` and `width` are owned by `rectangle`, not by whatever object is running that code
 
 # Object vs. Object
 
@@ -43,7 +63,7 @@ An object...
 * To be object-oriented you need to add a few things
   * the "`this`" variable
   * constructors and `new`
-  * inheritance (via prototypes (`__proto__`))
+  * inheritance (via prototypes (`__proto__` or `Type.prototype`))
   * privacy (aka *data hiding* or *encapsulation*)
 * More on all those concepts coming soon!
 
@@ -172,21 +192,21 @@ circle.circumference() // returns NaN
 // (or says 'radius is not defined' if you're lucky)
 ```
 
-This is a **terrible** mistake in the language design; it undercuts one of the core principles of computer language design, which is to make the *best* way to do something also the *easiest* way to do that thing. 
+This is a **terrible** mistake in the language design; it undercuts one of the core principles of computer language design, which is to make the *simplest* way to do something also the *easiest* way to do that thing.
 
 # JS Gotcha: Fat Arrow and Binding
 
-In most OO languages, the pointer `this` (sometimes named `self`) is managed automatically. Any time you're executing code inside class A, `this` is guaranteed to point to an instance of that class.
+In most OO languages, the pointer `this` is managed automatically. Any time you're executing code inside class A, `this` is guaranteed to point to an instance of that class.
 
 In JavaScript, `this` needs to be managed more actively. 
 
-Specifically, during *callbacks* `this` still points to the *other* object -- **not** the object where the function is defined!
+Specifically, during *callbacks* `this` still points to the *other* object -- the one that is *calling you back* -- **not** the object where the function is defined!
 
-**Solution**: the `=>` fat arrow *re-binds* `this` to point to the *current* object.
+**Solution**: the `=>` fat arrow *re-binds* `this` to point to the *current* object immediately before executing the function.
 
 # More on "this" and binding
 
-* "this" is only set when you call a function *via* an object
+* `this` is only set when you call a function *via* an object
 
 ```javascript
 circle1.circumference()      // OK -- this = circle1
@@ -223,10 +243,3 @@ $('#someButton').click(function(event) {
     self.clickedButton = $(this).value();
 });
 ```
-
-
-
-
-
-
-

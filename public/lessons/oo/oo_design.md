@@ -4,6 +4,8 @@ Topics:
 
 * the Linguistic Metaphor
 * the Law of Demeter
+* Feature Envy and the Single Responsibility Principle
+* CRC Diagrams
 
 # The Linguistic Metaphor
 
@@ -135,7 +137,9 @@ CRC = Classes, Reponsibilities, Collaborators
 
 For each class (object type) in your system, make a box (or an index card). In this box, write the **Class name**, a list of its **Responsibilities**, and draw arrows to its **Collaborators**.
 
-This is a useful technique that has fallen out of favor because lots of people overused it. Don't overspecify, and don't fall in love with your design; as soon as you start to write code, your design will change. A diagram is a model of your system -- not the system itself! -- and remember:
+This is a useful technique that has fallen out of favor because lots of people overused it.
 
-> "all models are wrong, but some are useful" - George E. P. Box (1919 – 2013)
+Don't overspecify, and don't fall in love with your design; as soon as you start to write code, your design will change. A diagram is a model of your system -- not the system itself! -- and remember:
+
+> "All models are wrong, but some are useful" - George E. P. Box (1919 – 2013)
 
