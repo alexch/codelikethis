@@ -6,10 +6,13 @@
     link name: "Higher-order Functions",
          href: "http://eloquentjavascript.net/05_higher_order.html",
          from: "EloquentJavaScript"
+    link name: "Iteration Methods",
+        href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods",
+        from: "MDN"
 
-# Filter Functions
+# Iteration Methods
 
-a JavaScript array has a few very handy methods
+every JavaScript array has a few very handy methods
 that let you *apply a function* to its contents.
 
 | method | description | returns |
@@ -20,7 +23,7 @@ that let you *apply a function* to its contents.
 | [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)  | change each item into a new item | a new collection of the same size |
 | [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)  | scan the entire collection and "reduce" it to... | ...a single result, e.g. a total |
 
-We call this group of methods "filter functions" or "iterator methods".
+We call this group of methods "[iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)".
 
 # forEach
 

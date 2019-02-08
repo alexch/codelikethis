@@ -220,7 +220,7 @@ function ask(questionText) {
 }
 ```
 
-> This is called "boilerplate code" -- you don't need to understand it before using it.
+> This is called "boilerplate code" -- you don't need to fully understand it before using it.
 
 # using readline - explanation
 
@@ -232,7 +232,7 @@ function ask(questionText) {
 | `  process.stdout`                               | for output, use the *standard output stream* (i.e. terminal console output)                                                             |
 | `function ask(questionText) {...}`                          | a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) to asynchronously ask a question and wait for a reply |
 
-(We will cover the promises in much more detail later; for now, all you really need to know is that Promises allow us to use [async and await]() in the next slide.)
+(We will cover the Promise API in much more detail later; for now, all you really need to know is that Promises allow us to use `async` and `await` in the next slide.)
 
 # LAB: using readline and await
 

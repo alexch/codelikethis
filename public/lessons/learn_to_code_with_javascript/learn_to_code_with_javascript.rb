@@ -73,7 +73,7 @@ Track::LearnToCodeWithJavascript = Track.new(
   lesson name: "argv"
   lesson name: "stacks"
   lesson name: "hashes"
-  lesson name: "filter_functions"
+  lesson name: "iteration_methods"
   lesson name: "scope"
   lesson name: "recursion"
 

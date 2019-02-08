@@ -242,18 +242,6 @@ while (i <= 8) {
 }
 ```
 
-# `do`
-
-`do` is like `while`, but the condition is checked at the end of the loop, not the beginning.
-
-```js
-let i = 0;
-do {
-    i = i + 1;
-    console.log(poemLine(i));
-} while (i < 8);
-```
-
 # `for`
 
 JavaScript inherited `for(;;)` from C; it's cumbersome and confusing but you should learn to recognize it.

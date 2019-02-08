@@ -12,21 +12,22 @@
 
 # Hash
 
-a *hash* is an *abstract data type*
-
 ![corned beef hash](../images/cornedbeefhash.jpeg)
+
+* during breakfast, *hash* is a *delicious processed meat product*
+* during coding, a *hash* is an *abstract data type*
 
 # Hash Example
 
 ```javascript
 const hashMenu = {
-    'corned beef hash': 3.69,
-    'roast beef hash': 3.89,
-    'homestyle hash': 4.47,
+    'corned beef': 3.69,
+    'roast beef': 3.89,
+    'homestyle': 4.47,
 }
 
 console.log('The price of homestyle hash is $' + 
-  hashMenu['homestyle hash'])
+  hashMenu['homestyle'])
 ```
 
 # What makes a hash a hash?
@@ -50,17 +51,18 @@ In other words, a hash defines a *mapping* from one group of things to another, 
 
 # hash or object?
 
-In JavaScript, a hash is officially called an object.
+In JavaScript, a **hash** is officially called an **object**.
 
 > This is confusing since in every other computer language, "hash" and "object" are quite different things.
 
 ## Object-Oriented Programming
 
 * Just using an object as a key-value store does not make your code *object-oriented*.
-* For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
-* We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
+    * For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
+    * We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
+* In the rest of this lesson we use "hash" and "object" interchangeably
 
-# Setting and Getting Object Values with square brackets
+# Setting and Getting Object Values with Square Brackets
 
 ```js
 let states = {}
@@ -73,7 +75,7 @@ states['MA']                // 'Massachusetts'
 states['MA'].toUpperCase()  // 'MASSACHUSETTS'
 ```
 
-# Setting and Getting Object Values with dots
+# Setting and Getting Object Values with Dots
 
 ```js
 let states = {}
@@ -115,13 +117,13 @@ SyntaxError: Unexpected string
 Given this code:
 
 ```js
-var items = {
+let items = {
     brick: 'red'
 }
-var item = 'brick'
+let item = 'brick'
 ```
 
-Two of these expressions look for *a key named `item`* but only one looks for a key named *the contents of the variable named item*
+Two of the following expressions look for *a key named `item`* but only one looks for a key named *the contents of the variable named item*
 
 ```
 items.item      // undefined
@@ -146,6 +148,8 @@ states['MA']  // 'Massachusetts'
 states.MA     // also 'Massachusetts'
 ```
 
+(If the key has no spaces in it, you can omit the quotations; object keys are always strings)
+
 # Looping through an object with for...in
 
 ```js
@@ -154,7 +158,7 @@ for (let state in states) {
 }
 ```
 
-**Note:** use "for...of" for arrays, use "for...in" for objectes -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail.
+**Note:** use "for...of" for arrays, use "for...in" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail.
 
 **WARNING:** remember the `let` or you will be defining a *global variable* named `state`
 
@@ -217,6 +221,10 @@ undefined
 
 # Object Instance Methods
 
+Here's a taste of [object instance methods](./methods).
+
+A method is a *function* attached to an *object* as a *property*.
+ 
 ```js
 let rectangle = {
     height: 10,

@@ -113,7 +113,7 @@ dog.color // now the generic dog is golden too
 
 # Encapsulating State
 
-Instance variables are properties of the object:
+Instance variables are *properties* of the object:
 
 ```
 if (abby.color === 'brown') {
@@ -121,9 +121,11 @@ if (abby.color === 'brown') {
 }
 ```
 
+the DOT operator here says "get me the `color` that is attached to `abby`"
+
 # Encapsulating Behavior
 
-Instance methods are also properties of the object:
+Instance *methods* are also *properties* of the object:
 
 ```
 let abby = {color: "brown"};

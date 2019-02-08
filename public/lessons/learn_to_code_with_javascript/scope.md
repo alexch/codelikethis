@@ -58,6 +58,12 @@ alpha();
 ```
 <!--/BOX-->
 
+# Another scope diagram
+
+![javascript scope diagram](javascript_scope_diagram.png)
+
+What does this program print?
+
 # Scope Error
 
 ```javascript
