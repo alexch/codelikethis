@@ -14,13 +14,13 @@ In every NodeJS program, there is a magic array named `argv`.
 
 It contains the *command line arguments* to the program.
 
-If the user types:
+If the user types this in the Terminal:
 
     node hello.js Alice Bob
 
 then `process.argv` contains:
 
-```js
+```javascript
 [ 
     '/usr/local/bin/node',
     '/Users/alex/code/hello.js',
@@ -43,8 +43,9 @@ console.log("Hi, " + process.argv[2])
 
 and run it a few times, e.g.
 
-    node hi.js Alice
-    node hi.js Bob
+    node hi Alice
+    node hi Bob
+    node hi "good buddy"
 
 # LAB: Hello, Everyone!
 
@@ -52,7 +53,7 @@ Change `hi.js` to say hi to *every one* of its command line arguments.
 
 For instance:
 
-    node hi.js Alice Bob Charlie
+    node hi Alice Bob Charlie
     Hi, Alice!
     Hi, Bob!
     Hi, Charlie!
@@ -63,7 +64,7 @@ Write a program named `add.js` that adds all of its command line arguments toget
 
 e.g.
 
-    node add.js 1 2 3 4
+    node add 1 2 3 4
     10
 
 > Hint: Do you remember how to cleanly convert a string to a number?
