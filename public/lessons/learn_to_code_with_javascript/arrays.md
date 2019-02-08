@@ -268,7 +268,10 @@ In your old `hello.js` program you had an `if` statement to check if someone is 
 if (name === "darth" || name === "voldemort" || name === "sauron")
 ```
 
-Please take a few minutes to **refactor** your old `hello.js` program to use arrays to check if someone is your enemy. Is it possible to make that `if` statement more concise?
+Please take a few minutes to **refactor** your old `hello.js` program to use arrays to check if someone is your enemy.
+* Put the list of enemies in an array
+* How can you use array methods to check if a name is in the enemies list?
+* BEWARE: your new code might need more curly braces than the old code; make sure the `{`s and `}`s properly match
 
 # LAB: more about arrays
 

@@ -7,6 +7,7 @@
     topic name: "functions"
     topic name: "arrays"
     topic name: "loops"
+    link href: "https://code-maven.com/argv-raw-command-line-arguments-in-nodejs"
 
 # ARGV
 
@@ -38,16 +39,16 @@ ARGV is a historical name. It means "Argument Vector" and has been around since 
 Write a new program called `hi.js` that contains:
 
 ```js
-console.log("Hi, " + process.argv[2])
+console.log("Hi, " + process.argv[2] + "!")
 ```
 
-and run it a few times, e.g.
+and run it a few times from the Terminal, e.g.
 
     node hi Alice
     node hi Bob
     node hi "good buddy"
 
-# LAB: Hello, Everyone!
+# LAB: Hi, Everybody!
 
 Change `hi.js` to say hi to *every one* of its command line arguments.
 
@@ -67,8 +68,4 @@ e.g.
     node add 1 2 3 4
     10
 
-> Hint: Do you remember how to cleanly convert a string to a number?
-
-# Links
-
-* <https://code-maven.com/argv-raw-command-line-arguments-in-nodejs>
+> Hint: Do you remember how to [convert a string to a number](./numbers#anchor/converting_a_string_to_a_number)?
