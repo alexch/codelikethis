@@ -249,7 +249,7 @@ for (let fruit of fruits) {
 
 # Fancy: Looping through an array with forEach
 
-`forEach` is an [iteration method](./iteration_methods) that behaves a lot like `for..of` but in a *[functional style](../javascript/hybrid)* :
+`forEach` is an [iteration method](./iteration-methods) that behaves a lot like `for..of` but in a *[functional style](../javascript/hybrid)* :
 
 ```js
 fruits.forEach( (fruit) => {

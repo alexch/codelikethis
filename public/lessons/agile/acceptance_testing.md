@@ -94,16 +94,16 @@ Compared to Unit Tests, Acceptance Tests are usually...
 
 # Testing Pyramid
 
-Base: lots of unit tests
+Base: lots of unit tests (fast and cheap)
 
 Middle: fewer service and integration tests
 
-Apex: small number of UI acceptance tests
+Apex: small number of UI acceptance tests (slow and expensive)
 
 ![test pyramid](https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png) 
 <https://martinfowler.com/bliki/TestPyramid.html>
 
-> **BEWARE** of testing core code (aka "business rules" or "domain logic") through the UI
+> **BEWARE** of testing core code (aka "business rules" or "domain logic") through the UI; better to isolate your logic in a domain layer and unit test the heck out of it
 
 # Domain-Specific Language
 
@@ -154,6 +154,8 @@ When Cucumber works it's amazingly great, but most teams find it slows them down
   * saves page snapshots during test run
     * as screenshots & videos for later viewing
     * as DOM copies for later debugging (!!)
+
+see more at the [Cypress Lesson](/lessons/javascript/cypress)
   
 # Cypress
 

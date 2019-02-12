@@ -12,7 +12,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 # React Routing - RegEx Validation
 
 * Routes can use Regular Expressions to determine a match
-* Almost all valid RegExs are acceptable, check [Path-to-Regexp](path-to-regexp)
+* Almost all valid RegExs are acceptable, check [Path-to-Regexp](https://github.com/pillarjs/path-to-regexp) / [Express Route Tester](http://forbeslindesay.github.io/express-route-tester/)
 * Path parts can be validated separately
 
 ### Example

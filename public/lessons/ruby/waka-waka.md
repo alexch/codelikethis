@@ -10,9 +10,9 @@
 * `^` *caret*
 * `#` *hash*
 * `!` *bang*
-* " *quote* or *double quote*
-* ' *tick* or *single quote*
-* ` *backtick*
+* `"` *quote* or *double quote*
+* `'` *tick* or *single quote*
+* \` *backtick*
 * `_` *underscore* (not underline)
 * `*` *splat* or *star* or *asterisk*
 * `.` *dot* (not period)

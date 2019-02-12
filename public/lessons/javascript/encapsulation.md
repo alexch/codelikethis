@@ -26,7 +26,7 @@ Remember, the computer doesn't care about your fancy design, but humans will, so
 
 # OO?
 
-Encapsulation is an important part of *[object-oriented design](/lessons/oo_js)*
+Encapsulation is an important part of *[object-oriented design](oo_js)*
 
 but it's not the only part (there's also inheritance, polymorphism, interfaces, etc.)
 

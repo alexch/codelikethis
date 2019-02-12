@@ -320,7 +320,7 @@ cy.get('button').click()
 
 # LAB: Tic Tac Test (part 1)
 
-* on GitHub, find a [Tic Tac Toe](/projects/tictactoe_www) app that was written by *someone else* and copy its git URL
+* on GitHub, find a [Tic Tac Toe](/projects/tic_tac_toe_www) app that was written by *someone else* and copy its git URL
 * locally clone that repo, e.g.
 
 ```
@@ -376,7 +376,7 @@ npx cypress open
 
 * switch to the Cypress runner window and run the tests
 * High five!
-* Now go back to the [Tic Tac Toe](/projects/tictactoe_www#stories) project and read the stories in the backlog. For each story, write one or more acceptance tests.
+* Now go back to the [Tic Tac Toe](/projects/tic-tac-toe-www#stories) project and read the stories in the backlog. For each story, write one or more acceptance tests.
 * If you find any bugs in your classmate's code, let them know! They will definitely thank you for helping assure the quality of their code :-)
 
 # Even More Cypress Stuff

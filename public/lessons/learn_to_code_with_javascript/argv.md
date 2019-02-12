@@ -1,4 +1,4 @@
-    project name: "today_i_learned_cli"
+    project name: "today-i_learned-cli"
     topic name: "command-line"
     topic name: "arguments"
     topic name: "node"
@@ -68,4 +68,4 @@ e.g.
     node add 1 2 3 4
     10
 
-> Hint: Do you remember how to [convert a string to a number](./numbers#anchor/converting_a_string_to_a_number)?
+> Hint: Do you remember how to [convert a string to a number](./numbers#anchor/converting-a_string_to_a_number)?

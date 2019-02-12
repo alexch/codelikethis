@@ -44,8 +44,9 @@ function countdown(seconds) {
   if (seconds === 0) {
     console.log("Blastoff!");
   }
-
 ```
+
+This means, "When seconds reaches 0, **stop recursing**."
 
 # Countdown
 

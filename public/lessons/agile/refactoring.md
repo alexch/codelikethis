@@ -148,8 +148,11 @@ or at least made of many short, reversible steps
 
 I choose my text editor based on how well it refactors my code
 
-![real programmers use](./real_programmers.png)
+(Other programmers may have different criteria.)
+
+![real programmers use](zen/real-programmers.png)
 <https://xkcd.com/378/>
+
 
 # Refactoring: Rename
 

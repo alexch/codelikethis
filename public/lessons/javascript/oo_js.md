@@ -82,7 +82,7 @@ let p = rectangle.perimeter()
 
 # Object vs. Object
 
-* In JS, an "object" is just a [hash](/learn_to_code_with_javascript/hashes)
+* In JS, an "object" is just a [hash](/lessons/learn_to_code_with_javascript/hashes)
   * not very object-oriented
 * To be object-oriented you need to add a few things
   * the "`this`" variable
