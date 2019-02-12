@@ -8,6 +8,8 @@ Build a single-page app that counts down from 25 minutes and makes an audible an
 
 Template repo with Cypress acceptance tests here: <https://github.com/BurlingtonCodeAcademy/pomodoro> . They use the [Cypress Mock Clock](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock) to control time during test runs.
 
+[image credit: Marco Verch](https://www.flickr.com/photos/149561324@N03/37941061684) ([CC-BY](https://creativecommons.org/licenses/by/2.0/))
+
 ## Wireframes
 
 ```
@@ -132,4 +134,5 @@ After implementing the basic features, feel free to implement your own ideas of 
 * look at <https://tomato-timer.com/> for inspiration
 * use [Notifications](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
 * keyboard shortcuts
+
 
