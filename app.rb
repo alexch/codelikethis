@@ -38,7 +38,7 @@ class App < Sinatra::Base
   include AppHelpers
 
   before do
-    Thread.current[:development_mode] = (request.host =~ /^localhost$/)
+    Thread.current[:development_mode] = (request.host =~ /^(localhost|127\.0\.0\.1)$/)
   end
 
   after do

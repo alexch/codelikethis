@@ -6,3 +6,4 @@
 spec/results.txt
 *__
 .dropbox.attr
+.node_modules
