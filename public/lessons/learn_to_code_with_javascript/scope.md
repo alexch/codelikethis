@@ -7,8 +7,6 @@
 
 # Scope
 
-![scope](scope.jpg)
-
 *scope* = all the variables that are *visible* from a given location in your code
 
 including:
@@ -92,6 +90,8 @@ function sing() {
 
 ```
 
+`numberOfBottles` is visible to **both** `sing()` **and** `bottlesOfBeer()`
+
 # Lexical Scope
 
 Closures *add a layer* between global and local:
@@ -108,13 +108,11 @@ that points to the *current* scope
 
 and so on recursively
 
-[todo: nested scope diagram]
-
-# Why? 1
+# Why Nested Scopes? 1
 
 * so callbacks can access local variables just like their neighboring code can
 
-# Why? 2
+# Why Nested Scopes? 2
 
 * nested functions, e.g.
 
@@ -133,13 +131,25 @@ function printGrid(grid) {
 }
 ```
 
-# Why? 3
+# Why Nested Scopes? 3
 
 * higher-order functions (functions that use other functions, like `map` or `forEach`)
 
-# Why? 4
+```javascript
+function countLetters(words) {
+  let total = 0;
+  words.forEach(function(word) {
+    total += word.length;
+  });
+  return total;
+}
+```
 
-* encapsulation (this is tricky; for more detail, see the [encapsulation](/lessons/javascript/encapsulation) lesson)
+`total` is visible inside the *inner* function as well as the outer, so `forEach` can behave like other loops
+
+# Why Nested Scopes? 4
+
+* private state encapsulation with [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)'s (this is tricky; for more detail, see the [encapsulation](/lessons/javascript/encapsulation) lesson)
 
 ```js
 let count = (function() {
@@ -154,4 +164,5 @@ let count = (function() {
 
 count() // prints and returns 1
 count() // prints and returns 2
+count() // prints and returns 3
 ```

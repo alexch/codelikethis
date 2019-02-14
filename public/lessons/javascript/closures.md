@@ -14,8 +14,6 @@ PLUS
 
 # Scope
 
-![scope](scope.jpg)
-
 *scope* = all the variables that are *visible* from a given location in your code
 
 including:

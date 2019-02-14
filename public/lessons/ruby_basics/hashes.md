@@ -11,6 +11,8 @@ Ref. WGR Chapter 9, Section 9.3, Hashes
 * keys must be unique
 * values can be anything
 
+<small>(image credit: [Jeffrey W](https://www.flickr.com/photos/jeffreyww/26139552220), [CC-BY](https://creativecommons.org/licenses/by/2.0/) )</small>
+
 # Hash is also known as...
 
   * Map

@@ -52,7 +52,6 @@ describe Project do
       expect(project.from).to eq('FreeCodeCamp')
     end
     it "uses a foreign URL" do
-      # TODO: fix FreeCodeCamp itself to allow links to challenges/lessons
       expect(project.href).to eq('https://beta.freecodecamp.org/en/challenges/basic-javascript/introduction-to-javascript')
     end
     xit "renders an icon" do

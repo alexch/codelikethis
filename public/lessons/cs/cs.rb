@@ -35,9 +35,9 @@ class Track < Thing
     lesson name: "oo",
            display_name: "Object-Oriented Design"
 
-    lesson name: "Multitasking and Multithreading"
-    lesson name: "Dependency Injection"
-    lesson name: "recursion_and_re-entry"
+    lesson name: "multitasking-and-multithreading"
+    lesson name: "dependency-injection"
+    lesson name: "recursion", description: "Recursion and Re-Entry"
 
     lesson name: "abstraction_and_abstractions" do
       link href: "http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Abstraction_(computer_science).html"

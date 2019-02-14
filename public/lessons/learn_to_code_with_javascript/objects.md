@@ -19,6 +19,8 @@
 * during breakfast, *hash* is a *delicious processed meat product*
 * during coding, a *hash* is an *abstract data type*
 
+<small>(image credit: [Jeffrey W](https://www.flickr.com/photos/jeffreyww/26139552220), [CC-BY](https://creativecommons.org/licenses/by/2.0/) )</small>
+
 # Hash Example
 
 ```javascript
@@ -46,7 +48,7 @@ a hash is an
 
 In other words, a hash defines a *mapping* from one group of things to another, like a phone book or a dictionary.
 
-# a hash is also known as a...
+## a hash is also known as a...
 
   * map or mapping
   * dictionary
@@ -65,13 +67,11 @@ In JavaScript, a **hash** is officially called an **object**.
 * Just using an object as a key-value store does not make your code *object-oriented*.
     * For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
     * We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
-* In the rest of this lesson we use "hash" and "object" interchangeably
+* In the rest of this lesson we use "object", but elsewhere, you may see "hash" and "object" used interchangeably
 
 # An Object is a Lookup Table
 
 An object is useful for putting many similar things together.
-
-an object can be defined *literally* (inline) with curly braces, like this:
 
 Let's make an object that maps a state's *abbreviation* to its *full name*:
 
@@ -84,9 +84,12 @@ let states = {
 }
 ```
 
-> This is called an *object literal* since it defines the object exactly as it's written.
+Notes:
 
-(If the key has no spaces in it, you can omit the quotations; object keys are always strings.)
+* This is called **literal** syntax since it defines the object exactly as it's **written**.
+* The string on the left is called the *key*; the string on the right is called a *value*; the two together are called an *entry* or a *property*.
+* JavaScript object keys are always strings.
+* If the key has no spaces in it, you can omit the quotations.
 
 # Accessing Object Properties
 
@@ -102,12 +105,13 @@ You can get the properties of an object with either *dots* or *brackets*:
 Both syntaxes are useful in different situations.
 
 ```javascript
-states['VT'].toUpperCase()  // 'VERMONT'
+states['VT']  // 'Vermont'
+states.VT     // also 'Vermont'
 ```
 
 # Setting Object Properties
 
-You can also set the properties of an object with either *dots* or *brackets*:
+You can also set the properties of an object with either *dots* or *brackets* followed by a single `=`:
 
 ```js
 states.WY = 'Wyoming'
@@ -117,6 +121,8 @@ states['FL'] = 'Florida'
 # Dots vs. Brackets
 
 Dots are prettier than square brackets, but less versatile, since some keys simply cannot be represented using dot notation, and trying to use them causes syntax errors.
+
+The bracket `[]` syntax is less common but covers more uses (e.g., if the key contains spaces, or is inside a variable).
 
 ```js
 > capitals = {}
@@ -188,6 +194,8 @@ let alice = {
 }
 ```
 
+Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
+
 > Note: The above shows the essence of [JSON](../javascript/json):
 > a syntax for representing data structures containing primitive values,
 > including nested objects and arrays.
@@ -203,16 +211,6 @@ for (let state in states) {
 **Note:** use "`for...of`" for arrays, use "`for...in`" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
 
 **WARNING:** remember the `let` or you will be defining a *global variable* named `state`
-
-# Sidebar: Why is it called a hash?
-
-The most common and useful implementation of this data structure uses something called a *hashing function* to make the lookup efficient. A hashing function allows you to have **huge** amounts of data and still access a single item very quickly. Think of the Dewey Decimal System: when you look up a book in the index, it tells you what aisle and shelf to visit to find that book. You don't need to search through the entire library; you just need to search a single shelf.
-
-Because programmers are humans, and humans can be very literal-minded, people named it based on *how* it works, rather than *what* it does or *why* it does it.
-
-*Map* and *Dictionary* are much better metaphors (and in fact there is a recently-introduced JavaScript type called [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) which behaves better than the built-in "object" hash; for instance, its keys are not limited to being strings).
-
-Also, *hash* is a funny word, and programmers love jokes.
 
 # All keys are strings
 
@@ -280,6 +278,20 @@ let stringUtils = {
 
 stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
+
+# Sidebar: Why is it called a hash?
+
+The most common and useful implementation of this data structure uses something called a *hashing function* to make the lookup efficient. A hashing function allows you to have **huge** amounts of data and still access a single item very quickly.
+
+Think of the Dewey Decimal System: when you look up a book in the card index, it tells you what aisle and shelf to visit to find that book. You don't need to search through the entire library; you just need to search a single shelf. 
+
+An hash contains many shelves (usually called "bins"), and a hashing function tells the computer which shelf ("bin") to look in before it starts comparing each entry's name to the given key.
+
+Because programmers are humans, and humans can be very literal-minded, people named it based on *how* it works, rather than *what* it does or *why* it does it.
+
+*Map* and *Dictionary* are much better metaphors (and in fact there is a recently-introduced JavaScript type called [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) which behaves better than the built-in "object" hash; for instance, its keys are not limited to being strings).
+
+Also, *hash* is a funny word, and programmers love jokes.
 
 # LAB: more about JS Objects
 
