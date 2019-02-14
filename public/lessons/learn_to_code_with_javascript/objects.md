@@ -12,68 +12,41 @@
          name: "Eloquent JavaScript Chapter 4: Data Structures: Objects and Arrays"
     project name: "zorkington"
 
-# Hash
+# Software Models the World
 
-![corned beef hash](../images/cornedbeefhash.jpeg)
+* Data Structures allow for programmers to make models of the world in code.
+* People naturally think of the world as made up of things.
+* Programming languages have ways to represent things.
+* JavaScript's primary way of representing a thing is an "Object".
+* JavaScript objects let you describe things in any way you can imagine.
+  * As long as your description is valid JavaScript :)
 
-* during breakfast, *hash* is a *delicious processed meat product*
-* during coding, a *hash* is an *abstract data type*
+> All models are wrong, but some are useful. -- [George Box](https://en.wikipedia.org/wiki/All_models_are_wrong)
 
-<small>(image credit: [Jeffrey W](https://www.flickr.com/photos/jeffreyww/26139552220), [CC-BY](https://creativecommons.org/licenses/by/2.0/) )</small>
-
-# Hash Example
+# An Object Contains Properties
 
 ```javascript
-const hashMenu = {
-    'corned beef': 3.69,
-    'roast beef': 3.89,
-    'homestyle': 4.47,
+let abby = {
+  'color': 'brown',
+  'breed': 'mutt',
+  'species': 'dog',
+  'weight': 40
 }
-
-console.log('The price of homestyle hash is $' + hashMenu.homestyle)
 ```
 
-### New term: *property*
+* This is called **object literal** syntax since it defines the object exactly as it's **written**.
+* The string on the left is called the *key*; the string on the right is called a *value*; the two together are called an *entry* or a *property*.
+* JavaScript object keys are always strings.
+* If the key has no spaces in it, you can omit the quotations.
 
-`'corned beef'`, `'roast beef'`, and `'homestyle'` are all *properties* of the `hashMenu` *object*
-
-# What makes a hash a hash?
-
-a hash is an
-
-* unordered 
-* indexed (by strings, not numbers)
-* collection
-* of key/value pairs
-
-In other words, a hash defines a *mapping* from one group of things to another, like a phone book or a dictionary.
-
-## a hash is also known as a...
-
-  * map or mapping
-  * dictionary
-  * associative array
-  * lookup table
-  * key/value store
-
-# hash or object?
-
-In JavaScript, a **hash** is officially called an **object**.
-
-> This is confusing since in every other computer language, "hash" and "object" are quite different things.
-
-## Object != Object-Oriented
-
-* Just using an object as a key-value store does not make your code *object-oriented*.
-    * For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
-    * We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
-* In the rest of this lesson we use "object", but elsewhere, you may see "hash" and "object" used interchangeably
 
 # An Object is a Lookup Table
 
 An object is useful for putting many similar things together.
 
-Let's make an object that maps a state's *abbreviation* to its *full name*:
+Let's make an object that maps a state's *abbreviation* to its *full name*
+
+*Type this in a NodeJS console*:
 
 ```javascript
 let states = {
@@ -84,23 +57,16 @@ let states = {
 }
 ```
 
-Notes:
-
-* This is called **literal** syntax since it defines the object exactly as it's **written**.
-* The string on the left is called the *key*; the string on the right is called a *value*; the two together are called an *entry* or a *property*.
-* JavaScript object keys are always strings.
-* If the key has no spaces in it, you can omit the quotations.
-
-# Accessing Object Properties
+# Getting Object Properties
 
 You can get the properties of an object with either *dots* or *brackets*:
 
-|   |   | value  |
-|---|---|---|
-| `states.VT` | `states['VT']` | `'Vermont'` |
-| `states.CA` | `states['CA']` | `'California'` |
+| With Dots   | With Brackets  | The Value         |
+|-------------|----------------|-------------------|
+| `states.VT` | `states['VT']` | `'Vermont'`       |
+| `states.CA` | `states['CA']` | `'California'`    |
 | `states.MA` | `states['MA']` | `'Massachusetts'` |
-| `states.NY` | `states['NY']` | `'New York'` |
+| `states.NY` | `states['NY']` | `'New York'`      |
 
 Both syntaxes are useful in different situations.
 
@@ -111,12 +77,17 @@ states.VT     // also 'Vermont'
 
 # Setting Object Properties
 
-You can also set the properties of an object with either *dots* or *brackets* followed by a single `=`:
+* You can also set the properties of an object with either *dots* or *brackets* followed by a single `=`:
+* Adding properties works even after the object has been created.
 
-```js
+```javascript
 states.WY = 'Wyoming'
+
 states['FL'] = 'Florida'
+
+states.VT = 'The Green Mountain State'
 ```
+
 
 # Dots vs. Brackets
 
@@ -124,8 +95,8 @@ Dots are prettier than square brackets, but less versatile, since some keys simp
 
 The bracket `[]` syntax is less common but covers more uses (e.g., if the key contains spaces, or is inside a variable).
 
-```js
-> capitals = {}
+```javascript
+> let capitals = {}
 {}
 
 > capitals.New York = 'Albany'
@@ -152,7 +123,7 @@ If you get those errors, revert to brackets, which is more reliable:
 
 You can use variables instead of literals to get and set properties.
 
-Given this code:
+Given this code ...
 
 ```js
 let items = {
@@ -161,19 +132,19 @@ let items = {
 let item = 'brick'
 ```
 
-Two of the following expressions look for *a key named `item`*, but only one looks for a key named *the value of the variable named item*:
+... two of the following expressions look for *a key named `item`*, but only one looks for a key named *the value of the variable named item*:
 
-| code | value | explanation |
-|---|---|---| 
-|`items.item   ` |  `undefined` | "get me the property named 'item'" |
-|`items['item']` |  `undefined` | "get me the property named 'item'" |
-|`items[item]  ` |  `'red'`     | "get me the property named 'brick'"
+| code            | value       | explanation                         |
+|-----------------|-------------|-------------------------------------|
+| `items.item   ` | `undefined` | "get me the property named 'item'"  |
+| `items['item']` | `undefined` | "get me the property named 'item'"  |
+| `items[item]  ` | `'red'`     | "get me the property named 'brick'" |
 
 > This can be confusing!
 
 # An Object is a Data Structure
 
-Objects are good for a lot more than mere one-to-one maps. They allow you to design *data structures* that are as complicated as you can imagine...
+Objects are good for a lot more than mere one-to-one maps. They allow you to design *data structures* that are as complicated and as deeply nested as you can imagine...
 
 ```javascript
 let alice = {
@@ -212,6 +183,22 @@ for (let state in states) {
 
 **WARNING:** remember the `let` or you will be defining a *global variable* named `state`
 
+# LAB: Class GPA
+
+* Given the following `grades` object.
+* All grades carry equal weight toward the GPA.
+* Write a function that calculates the GPA for the student.
+
+```javascript
+let grades = {
+  'midterm': 3.3,
+  'project': 4.0,
+  'final': 3.2
+}
+```
+
+> The answer is 3.5 ... but show your work.
+
 # All keys are strings
 
 * In a JavaScript object, keys must be strings
@@ -230,14 +217,19 @@ To remove a key-value pair from an object, use the keyword `delete`:
 
 ```js
 states = {
-            CA: 'California',
-            MA: 'Massachusetts',
-            NY: 'New York'
-         }
+  CA: 'California',
+  MA: 'Massachusetts',
+  NY: 'New York'
+}
+
 { CA: 'California', MA: 'Massachusetts', NY: 'New York' }
+
 > delete states.MA
+
 true
+
 > states
+
 { CA: 'California', NY: 'New York' }
 ```
 
@@ -259,6 +251,34 @@ undefined
 
 > You probably shouldn't do this, since it only removes the *value*, but not the *key*, from the property list.
 
+# LAB: A Menu Order
+
+* Write a program that accepts a food order based on a menu.
+  * Name your program `order.js`.
+  * Create an object to store all the item names and their prices.
+  * Accept an order on the command line and calculate the total for all items.
+  * Print the total order price and exit.
+
+| Item   | Price |
+| :--    | :--   |
+| Burger | $5.00 |
+| Fries  | $3.50 |
+| Shake  | $1.11 |
+| Salad  | $4.25 |
+|        |       |
+
+## Example Program Usage
+
+```
+$ node order burger fries
+
+Your order total is $8.50
+
+$ node order burger burger shake fries burger
+
+Your order total is $19.61
+```
+
 # Object Instance Methods
 
 Here's a taste of [object instance methods](./methods).
@@ -279,13 +299,52 @@ let stringUtils = {
 stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
 
+# Hash
+
+![corned beef hash](../images/cornedbeefhash.jpeg)
+
+* during breakfast, *hash* is a *delicious processed meat product*
+* during coding, a *hash* is an *abstract data type*
+
+<small>(image credit: [Jeffrey W](https://www.flickr.com/photos/jeffreyww/26139552220), [CC-BY](https://creativecommons.org/licenses/by/2.0/) )</small>
+
+# What makes a hash a hash?
+
+a hash is an
+
+* unordered
+* indexed (by strings, not numbers)
+* collection
+* of key/value pairs
+
+In other words, a hash defines a *mapping* from one group of things to another, like a phone book or a dictionary.
+
+## a hash is also known as a...
+
+  * map or mapping
+  * dictionary
+  * associative array
+  * lookup table
+  * key/value store
+
+# hash or object?
+
+In JavaScript, a **hash** is officially called an **object**.
+
+> This is confusing since in every other computer language, "hash" and "object" are quite different things.
+
+## Object != Object-Oriented
+
+* Just using an object as a key-value store does not make your code *object-oriented*.
+    * For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
+    * We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
+* In the rest of this lesson we use "object", but elsewhere, you may see "hash" and "object" used interchangeably
+
 # Sidebar: Why is it called a hash?
 
 The most common and useful implementation of this data structure uses something called a *hashing function* to make the lookup efficient. A hashing function allows you to have **huge** amounts of data and still access a single item very quickly.
 
-Think of the Dewey Decimal System: when you look up a book in the card index, it tells you what aisle and shelf to visit to find that book. You don't need to search through the entire library; you just need to search a single shelf. 
-
-An hash contains many shelves (usually called "bins"), and a hashing function tells the computer which shelf ("bin") to look in before it starts comparing each entry's name to the given key.
+Think of the Dewey Decimal System: when you look up a book in the card index, it tells you what aisle and shelf to visit to find that book. You don't need to search through the entire library; you just need to search a single shelf.
 
 Because programmers are humans, and humans can be very literal-minded, people named it based on *how* it works, rather than *what* it does or *why* it does it.
 
@@ -298,4 +357,3 @@ Also, *hash* is a funny word, and programmers love jokes.
 * FreeCodeCamp:
   * From [Build JavaScript Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects)
   * to [Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects)
-
