@@ -174,7 +174,7 @@ Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 > a syntax for representing data structures containing primitive values,
 > including nested objects and arrays.
 
-# Looping through an object with for...in
+# LAB: Looping through an object with for...in
 
 Here's a way to loop through every property in an object.
 
@@ -212,9 +212,8 @@ for (let state in states) {
 
 # LAB: Class GPA
 
-* Given the following `grades` object.
-* All grades carry equal weight toward the GPA.
-* Write a function that calculates the GPA for the student.
+Please create a new file called `gpa.js`, and type in the following code
+(which defines a `grades` object and calls a `gpa` function):
 
 ```javascript
 let grades = {
@@ -222,11 +221,17 @@ let grades = {
   'project': 4.0,
   'final': 3.2
 }
+
+console.log('The GPA is ' + gpa(grades));
 ```
 
-> The answer is 3.5 ... but show your work.
+* Now write the `gpa` function, and run `node gpa`!
+* Assume that all grades carry equal weight toward the GPA.
+* The answer is 3.5 ... but don't just return 3.5, make it work for real.
 
-# All keys are strings
+> Hint: There's more than one way to solve this!
+
+# All keys are strings, even nulls
 
 * In a JavaScript object, keys must be strings
 
