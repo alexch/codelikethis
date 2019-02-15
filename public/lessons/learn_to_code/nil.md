@@ -4,9 +4,11 @@
 
 # There Is No Spoon
 
-![Neo with Spoon](../images/spoon.jpg)
-
 *nil* is the object that means "there is no object"
+
+> Q: What is the sound of one hand clapping?
+
+> A: `nil` 
 
 # Experiment
 

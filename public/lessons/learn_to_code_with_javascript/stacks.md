@@ -27,7 +27,7 @@
 
 ![stack](../images/stack.png) 
 
-<https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>
+<small>(image source: <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>, public domain)</small>
 
 # The Freedom of Constraints
 

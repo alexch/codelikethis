@@ -54,9 +54,13 @@ SyntaxError: Identifier 'x' has already been declared
 
 # The Warehouse Metaphor
 
+Think of memory as a giant warehouse.
+
 ![Warehouse from Raiders of the Lost Ark](../images/warehouse.jpg)
 
-Think of memory as a giant warehouse.
+Like this warehouse from the movie Raiders of the Lost Ark, 
+computer memory is vast and filled with boxes of various sizes.
+
 
 # The Warehouse Metaphor Explained
 

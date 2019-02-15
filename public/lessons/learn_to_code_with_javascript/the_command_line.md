@@ -208,6 +208,8 @@ Also:
 * <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)
 * <kbd>Tab</kbd> for auto-completion of filenames (e.g. typing `node h`<kbd>Tab</kbd> will emit `node hello.js`)
 
+<small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/)</small>
+
 # LAB: Next Steps
 
 Want to learn enough command line to be dangerous?

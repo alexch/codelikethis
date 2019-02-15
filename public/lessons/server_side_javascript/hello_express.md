@@ -104,11 +104,11 @@ If you are working with a partner, give them a high five.
 
 If you are alone, give yourself a high five.
 
-![high five](../images/high-five.gif)
+![high five](../images/high-five.svg)
 
 You deserve it!
 
-<small>photo: <https://dribbble.com/shots/3702481-High-Five-s-for-15Five>
+<small>image by [Pandark](https://www.deviantart.com/pandark/art/High-Five-350078391) ([CC-BY-SA](http://creativecommons.org/licenses/by-sa/3.0/))
 </small>
 
 # Hello, You!

@@ -2,6 +2,8 @@
 
 ![css is awesome](../images/css-is-awesome.jpg)
 
+<small>([CSS is Awesome mug](https://www.zazzle.com/css_is_awesome_mug-168113658720373401) created by Steven Frank, still available for purchase on Zazzle)</small>
+
 # Inline vs. Block Level Elements
 
 This is where things start to get a little bit tricky - positioning HTML elements using CSS.
