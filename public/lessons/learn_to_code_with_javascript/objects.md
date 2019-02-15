@@ -176,11 +176,35 @@ Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 
 # Looping through an object with for...in
 
+Here's a way to loop through every property in an object.
+
+This `for..in` loop grabs every property in the `states` object, 
+one at a time,
+and inside the loop,
+sets the `state` value to that property's *key*
+
 ```js
 for (let state in states) {
-    console.log(state);
+    
 }
 ```
+
+In your NodeJS console, try to write code that outputs:
+
+```
+CA is short for California
+MA is short for Massachusetts
+NY is short for New York
+```
+
+<details>
+<summary>Solution:</summary>
+<pre>
+for (let state in states) {
+    console.log(state + ' is short for ' + states[state]);
+}
+</pre>
+</details>
 
 **Note:** use "`for...of`" for arrays, use "`for...in`" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
 
