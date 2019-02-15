@@ -153,13 +153,15 @@ class Lesson < Thing
         }
       }
       br
-      div(class: 'row text-center') {
-        div(class: 'col') {
-          a("Show Slides", href: @target.slides_href, class: 'slides btn btn-primary')
-          br
+      unless slides.empty?
+        div(class: 'row text-center') {
+          div(class: 'col') {
+            a("Show Slides", href: @target.slides_href, class: 'slides btn btn-primary')
+            br
+          }
         }
-      }
-      br
+        br
+      end
     end
 
     def content
