@@ -162,7 +162,7 @@ let alice = {
     location: {
       latitude: 44.4759,
       longitude: -73.2121
-    },
+    }
   },
   pets: ['Mittens', 'Fido']
 }
