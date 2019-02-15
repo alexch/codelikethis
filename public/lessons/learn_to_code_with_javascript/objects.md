@@ -27,18 +27,19 @@
 
 ```javascript
 let abby = {
-  'color': 'brown',
-  'breed': 'mutt',
   'species': 'dog',
-  'weight': 40
+  'color': 'brown',
+  spayed: true,
+  breed: 'mutt',
+  weight: 40,
+  'favorite activity': 'chasing squirrels'
 }
 ```
 
 * This is called **object literal** syntax since it defines the object exactly as it's **written**.
 * The string on the left is called the *key*; the string on the right is called a *value*; the two together are called an *entry* or a *property*.
-* JavaScript object keys are always strings.
-* If the key has no spaces in it, you can omit the quotations.
-
+* JavaScript object keys are always strings, but if the key has no spaces in it, you can omit the quotations
+* `let abby = {...}` is an assignment, setting the variable `abby` to point to the object we just defined
 
 # An Object is a Lookup Table
 
@@ -77,17 +78,19 @@ states.VT     // also 'Vermont'
 
 # Setting Object Properties
 
-* You can also set the properties of an object with either *dots* or *brackets* followed by a single `=`:
+* You can set the properties of an object with either *dots* or *brackets* followed by a `=` (single equal sign)
 * Adding properties works even after the object has been created.
 
 ```javascript
 states.WY = 'Wyoming'
 
 states['FL'] = 'Florida'
-
-states.VT = 'The Green Mountain State'
 ```
 
+* Setting a property with a key that already exists *removes* the original value first
+```javascript
+states.VT = 'The Green Mountain State'
+```
 
 # Dots vs. Brackets
 
@@ -159,9 +162,9 @@ let alice = {
     location: {
       latitude: 44.4759,
       longitude: -73.2121
-   },
-   pets: ['Mittens', 'Fido']
-  }
+    },
+  },
+  pets: ['Mittens', 'Fido']
 }
 ```
 
@@ -260,12 +263,11 @@ undefined
   * Print the total order price and exit.
 
 | Item   | Price |
-| :--    | :--   |
+|--------|-------|
 | Burger | $5.00 |
 | Fries  | $3.50 |
 | Shake  | $1.11 |
 | Salad  | $4.25 |
-|        |       |
 
 ## Example Program Usage
 
