@@ -174,6 +174,20 @@ Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 > a syntax for representing data structures containing primitive values,
 > including nested objects and arrays.
 
+# `Object.keys`
+
+`Object.keys` is a special function that:
+
+  * takes any object
+  * returns an array
+  * containing that object's keys
+
+Example:
+
+```javascript
+Object.keys(states)  //=> [ 'CA', 'MA', 'NY' ]
+```
+
 # LAB: Looping through an object with for...in
 
 Here's a way to loop through every property in an object.
@@ -265,7 +279,7 @@ true
 { CA: 'California', NY: 'New York' }
 ```
 
-> note that `delete` is **not** a method; it's a standalone keyword, like a global function
+> note that `delete` is **not** a function; it's a keyword
 
 # fake delete
 
@@ -281,7 +295,8 @@ undefined
 > for (let state of states) { console.log(state) }
 ```
 
-> You probably shouldn't do this, since it only removes the *value*, but not the *key*, from the property list.
+> Remember, this only removes the *value*, but not the *key*, from the property list.
+> This can be dangerous!
 
 # LAB: A Menu Order
 
