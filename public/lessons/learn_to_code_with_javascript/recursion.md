@@ -7,9 +7,11 @@
 
 *recursion* is when a function *calls itself*
 
-![escher-drawing-hands](../images/escher-drawing-hands.jpg)
+![ouroboros](../images/ouroboros.jpg)
 
-(like this pair of hands drawing themselves)
+(like Ouroboros, a mythical serpent who eats its own tail)
+
+<small>(image source: [wikipedia, public domain](https://en.wikipedia.org/wiki/Ouroboros#/media/File:Serpiente_alquimica.jpg))</small>
 
 # Infinite Recursion
 
@@ -28,7 +30,6 @@ To stop this function, press CTRL-C.
 
 For recursion to be useful, it needs to (eventually) stop.
 
-![ouroboros](../images/ouroboros.jpg)
 
 The standard way to stop is called a *guard clause*.
 
@@ -54,6 +55,9 @@ You can think of a recursive function as starting with a large problem, and grad
 Since the base case has a known solution, every other step can then be built back up on top of it -- which is why it's called the *base*.
 
 In this way, recursion is an example of the *divide and conquer* approach to problem-solving.
+
+<small>(image source: [wikipedia, public domain](https://en.wikipedia.org/wiki/Matryoshka_doll#/media/File:First_matryoshka_museum_doll_open.jpg))</small>
+
 
 # Countdown
 
