@@ -58,6 +58,29 @@ rectangle.area = function() {
 rectangle.area()   //=> 80
 ```
 
+# Lab: Speak
+
+Using the following definition:
+
+```javascript
+let dog = {
+    name: 'Abby',
+    paws: 4
+}
+```
+
+Please *add a method* to `dog` called `speak` so the following code:
+
+```javascript
+console.log(dog.speak())
+```
+
+prints the following line:
+
+```
+My name is Abby and I have 4 paws!
+```
+
 # A Clever Trick: Extending System Classes
 
 You can add methods to *all objects of the same type* like this:

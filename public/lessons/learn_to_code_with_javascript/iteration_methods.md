@@ -100,6 +100,16 @@ names.find((word) => word.charAt(0).toUpperCase() === 'C')
 
 Q: Is this more or less clear than the previous slide?
 
+# Lab: Find a Berry
+
+Given the following array:
+
+```javascript
+let fruits = ['Apple', 'Blueberry', 'Cherry']
+```
+
+write some code that uses `find` to return the first item that ends with the string `'berry'`
+
 # Filter
 
 ```javascript
@@ -109,6 +119,16 @@ let beginsWithC = function(word) {
 }
 names.filter(beginsWithC) //=> [ 'Charlie', 'Carol' ]
 ```
+
+# Lab: Find all Berries
+
+Given the following array:
+
+```javascript
+let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry']
+```
+
+write some code that uses `filter` to return a new array containing all the fruits that end with the string `'berry'`
 
 # Map
 
@@ -121,7 +141,7 @@ names.map(upper) //=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
 ```
 # Lab: Titleize with Map
 
-Remember capitalize? It only capitalizes the first letter of the whole string.
+Remember capitalize? It capitalizes the first letter of a string and makes the whole rest of the string lowercase.
 
 ```javascript
 function capitalize(word) {
@@ -130,6 +150,7 @@ function capitalize(word) {
   return firstLetter.toUpperCase() + restOfWord.toLowerCase();
 }
 ```
+
 Now please try to write a function that capitalizes *each word* in a string.
 
 ```javascript
@@ -138,6 +159,8 @@ titleize("the rain in spain falls MAINLY on the PLAIN")
 ```
 
 There is a solution on the next slide, but please try on your own first.
+
+> Hint: inside your titleize function, you should use the existing capitalize function
 
 # Solution: Titleize
 
@@ -179,7 +202,17 @@ const reducer = (accumulator, word) => accumulator + word.length;
 let totalCount = names.reduce(reducer, 0); //=> 25
 ```
 
-The first time through, the accumulator is 0. Next time, it's 5. Then 8, then 15, etc.
+The `reduce` algorithm can be difficult; here's a walkthrough:
+
+| Iteration | Accumulator In | Word | Length | Accumulator Out |
+|---|---|---|---|---|
+| 1 |  0 | 'Alice'   | 5 | 0 + 5 = 5 |
+| 2 |  5 | 'Bob'     | 3 | 5 + 3 = 8 |
+| 3 |  8 | 'Charlie' | 7 | 8 + 7 = 15 |
+| 4 | 15 | 'Carol'   | 5 | 15 + 5 = 20 |
+| 5 | 20 | 'David'   | 5 | 20 + 5 = 25 |
+
+See how the accumulator is used to pass information from one iteration to the next?
 
 # Map Filter Reduce in Emoji
 
