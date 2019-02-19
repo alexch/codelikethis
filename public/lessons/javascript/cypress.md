@@ -135,6 +135,7 @@ see <https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html
   * checks each individual element that `cy.get` matched
   * succeeds if *any* contain the given text
   * fails if the given text is not found after 10 seconds
+  * returns a "chainer" for all matching elements, so you can do further assertions or refinements
 
 e.g.:
 
