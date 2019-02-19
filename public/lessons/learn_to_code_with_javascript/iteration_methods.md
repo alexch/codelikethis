@@ -10,9 +10,24 @@
          href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods",
          from: "Mozilla Developer Network"
 
+# Arrays are Objects
+
+Surprise! 
+
+Every JavaScript *array* is also a JavaScript *object*
+
+That means that arrays have *properties* and *methods* like any other object.
+
+Examples:
+
+  * `array.length` is a *read-only property* that always contains the number of elements in the array
+  * `array.reverse()` is a *method* that reverses the ordering of all elements in the array 
+
+See [MDN: Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) to see a lot more array methods
+
 # Iteration Methods
 
-every JavaScript array has a few very handy methods
+Every JavaScript array has a few [very handy methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
 that let you *apply a function* to its contents.
 
 | method | description | returns |
@@ -23,7 +38,8 @@ that let you *apply a function* to its contents.
 | [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)  | change each item into a new item | a new collection of the same size |
 | [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)  | scan the entire collection and "reduce" it to... | ...a single result, e.g. a total |
 
-We call this group of methods "[iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)".
+* We call this group of methods "[iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)"
+* There are about a dozen built-in iteration methods, plus lots more added by libraries like [lodash](https://lodash.com/). 
 
 # forEach
 

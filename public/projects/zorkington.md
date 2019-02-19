@@ -84,7 +84,7 @@ On the door is a handwritten sign.
 >_
 ```
 
-(the chevron-and-underscore represents a command prompt; the user should be able to type into it...)
+(The chevron-and-underscore represents a prompt; the user should be able to type into it.)
 
 **And** waits for input
 
@@ -108,11 +108,11 @@ Sorry, I don't know how to gargle.
 
 ```
 The sign says "Welcome to Burlington Code Academy! Come on 
-up to the second floor. If the door is locked, use the code
+up to the third floor. If the door is locked, use the code
 12345."
 ```
 
-**And** returns to the command prompt
+**And** returns to the prompt
 
 <!--/BOX-->
 <!--BOX-->
@@ -128,7 +128,7 @@ up to the second floor. If the door is locked, use the code
 That would be selfish. How will other students find their way?
 ```
 
-(assume " **And** returns to the command prompt" after this and all future stories)
+(assume " **And** returns to the prompt" after this and all future stories)
 
 <!--/BOX-->
 
@@ -262,7 +262,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
     * then you can `attend lecture` or `sit down` or `pair up` or something
     
-* After class you are `hungry` (status) which makes your stomach growl before every command prompt
+* After class you are `hungry` (status) which makes your stomach growl before every prompt
 
     * buying and eating a slice of pizza at Mr. Mike's removes the status
 
