@@ -115,14 +115,9 @@ Given a person object, like this:
 ```javascript
 let alice = {
     firstName: 'Alice',
+    middleName: 'April',
     lastName: 'Adams'
 }
 ```
 
-add a `fullName` method, such that
-
-```javascript
-alice.fullName()
-```
-
-returns the value `'Alice Adams'`
+Add a `fullName` method, so that `alice.fullName()` returns the value `'Alice A. Adams'`
