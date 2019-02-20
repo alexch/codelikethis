@@ -207,17 +207,19 @@ function titleize(phrase) {
 
 # Reduce
 
-The `reduce` method keeps track of a *running total* (aka *accumulator*); whatever value the function returns is used as the accumulator for the next pass.
+The `reduce` method keeps track of a *running total* (aka *accumulator* or *memo*); whatever value the function returns is used as the accumulator for the next pass.
 
 Here's some code that counts the total number of letters across all words in an array:
 
 ```javascript
 let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David'];
-const reducer = (accumulator, word) => accumulator + word.length;
+const reducer = function(accumulator, word) {
+    return accumulator + word.length;
+};
 let totalCount = names.reduce(reducer, 0); //=> 25
 ```
 
-The `reduce` algorithm can be difficult; here's a walkthrough:
+The `reduce` algorithm can be difficult to follow at first; here's a walkthrough:
 
 | Iteration | Accumulator In | Word | Length | Accumulator Out |
 |---|---|---|---|---|
@@ -233,4 +235,5 @@ See how the accumulator is used to pass information from one iteration to the ne
 
 ![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
 
-(source: [Joey deVilla, aka @AccordionGuy](https://twitter.com/AccordionGuy/status/1098031540725051399) -- with a [working implementation](http://www.globalnerdy.com/2016/06/26/demonstrating-map-filter-and-reduce-in-swift-using-food-emoji/) 😲 in Swift)
+<small>(image used with [permission](https://twitter.com/AccordionGuy/status/1098031540725051399) by [@AccordionGuy](https://twitter.com/AccordionGuy) based on [a tweet by @steveluscher](https://twitter.com/steveluscher/status/741089564329054208) -- with a [working implementation](http://www.globalnerdy.com/2016/06/26/demonstrating-map-filter-and-reduce-in-swift-using-food-emoji/) 😲 in Swift)
+</small>
