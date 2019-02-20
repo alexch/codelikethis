@@ -43,21 +43,21 @@ that let you *apply a function* to its contents.
 
 # forEach
 
-`forEach` works a lot like `for..of`
+`forEach` works a lot like `for..of`, but using a callback function
 
-Given an array of names:
+Given this array of names...
 
 ```javascript
 let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David']
 ```
 
-|this code| and this code |
+|this code... | and this code... |
 |---|---|
-|<pre class="javascript">for (let name of names) {<br>&nbsp;&nbsp;console.log(name.toUpperCase());<br>}<br></pre>|<pre>let printUpper = function(word) { <br> &nbsp;&nbsp;console.log(word.toUpperCase()); <br>}<br>names.forEach(printUpper);</pre>|
+|<pre><code class="javascript">for (let name of names) {<br>&nbsp;&nbsp;console.log(name.toUpperCase())<br>}<br></code></pre>|<pre><code class="javascript">let printUpper = function(name) { <br>&nbsp;&nbsp;console.log(name.toUpperCase())<br>}<br>names.forEach(printUpper)</code></pre>|
 
 both print the same thing:
 
-```
+```text
 ALICE
 BOB
 CAROL
@@ -146,7 +146,7 @@ It's called "map" because in a mathematical sense, it defines a *mapping* from o
 
 # Lab: Titleize with Map
 
-Remember capitalize? It capitalizes the first letter of a string and makes the whole rest of the string lowercase.
+Remember the [capitalize function](./functions#anchor/capitalize)? It capitalizes the first letter of a string and makes the whole rest of the string lowercase.
 
 ```javascript
 function capitalize(word) {
@@ -165,7 +165,7 @@ titleize("the rain in spain falls MAINLY on the PLAIN")
 
 There is a solution on the next slide, but please try on your own first.
 
-> Hint: inside your titleize function, you could use the existing capitalize function. Or you could "inline" the capitalization function.
+> Hint: Inside your titleize function, you could call the existing capitalize function. Or you could "inline" the capitalization code. Or you could do something else! 
 
 # Solution: Titleize
 
