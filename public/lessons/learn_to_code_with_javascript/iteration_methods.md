@@ -73,8 +73,8 @@ to find the first item that matches the condition...
 let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David']
 let beginsWithC = function(word) {
     return word.charAt(0).toUpperCase() === 'C';
-}
-names.find(beginsWithC) //=> 'Carol'
+};
+let cName = names.find(beginsWithC) //=> 'Carol'
 ```
 
 Note that:
@@ -113,7 +113,7 @@ let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
 let beginsWithC = function(word) {
     return word.charAt(0).toUpperCase() === 'C';
 }
-names.filter(beginsWithC) //=> [ 'Charlie', 'Carol' ]
+let cNames = names.filter(beginsWithC) //=> [ 'Charlie', 'Carol' ]
 ```
 
 # Lab: Find all Berries
@@ -124,7 +124,11 @@ Given the following array:
 let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry']
 ```
 
-write some code that uses `filter` to return a new array containing all the fruits that end with the string `'berry'`
+Now go find your code from the previous lab ("Find a Berry")
+and change it to use `filter` to return a new array 
+containing **all** the fruits that end with the string `'berry'`
+
+> Hint: all you need to do is change `find` to `filter` -- the matching function itself is the same. 
 
 # Map
 
@@ -135,7 +139,7 @@ let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
 let upper = function(word) {
     return word.toUpperCase();
 }
-names.map(upper) //=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
+let bigNames = names.map(upper) //=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
 ```
 
 It's called "map" because in a mathematical sense, it defines a *mapping* from one collection to another
@@ -161,7 +165,7 @@ titleize("the rain in spain falls MAINLY on the PLAIN")
 
 There is a solution on the next slide, but please try on your own first.
 
-> Hint: inside your titleize function, you should use the existing capitalize function
+> Hint: inside your titleize function, you could use the existing capitalize function. Or you could "inline" the capitalization function.
 
 # Solution: Titleize
 
@@ -191,6 +195,8 @@ function titleize(phrase) {
 }
 ```
 
+> These solutions all use **method chaining** -- taking the **result** of one method, and immediately calling a method on that result **without assigning it to a variable**, again and again until you get a final result
+
 # Reduce
 
 The `reduce` method keeps track of a *running total* (aka *accumulator*); whatever value the function returns is used as the accumulator for the next pass.
@@ -215,7 +221,7 @@ The `reduce` algorithm can be difficult; here's a walkthrough:
 
 See how the accumulator is used to pass information from one iteration to the next?
 
-# Map Filter Reduce in Emoji
+# Iteration Methods in Emoji
 
 ![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
 
