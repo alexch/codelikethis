@@ -48,33 +48,20 @@ that let you *apply a function* to its contents.
 Given an array of names:
 
 ```javascript
-let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
+let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David']
 ```
 
-this code:
+|this code| and this code |
+|---|---|
+|<pre class="javascript">for (let name of names) {<br>&nbsp;&nbsp;console.log(name.toUpperCase());<br>}<br></pre>|<pre>let printUpper = function(word) { <br> &nbsp;&nbsp;console.log(word.toUpperCase()); <br>}<br>names.forEach(printUpper);</pre>|
 
-```javascript
-for (let name of names) {
-    console.log(name.toUpperCase());
-}
-```
-
-and this code:
-
-```javascript
-let printUpper = function(word) {
-  console.log(word.toUpperCase());
-}
-names.forEach(printUpper);
-```
-
-both print:
+both print the same thing:
 
 ```
 ALICE
 BOB
-CHARLIE
 CAROL
+CHARLIE
 DAVID
 ```
 
@@ -83,12 +70,17 @@ DAVID
 to find the first item that matches the condition...
 
 ```javascript
-let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
+let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David']
 let beginsWithC = function(word) {
     return word.charAt(0).toUpperCase() === 'C';
 }
-names.find(beginsWithC) //=> 'Charlie'
+names.find(beginsWithC) //=> 'Carol'
 ```
+
+Note that:
+
+* the `beginsWithC` function returns `true` or `false`
+* the `find` method returns an item (from the array)
 
 # Find Inline
 
@@ -105,12 +97,16 @@ Q: Is this more or less clear than the previous slide?
 Given the following array:
 
 ```javascript
-let fruits = ['Apple', 'Blueberry', 'Cherry']
+let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry']
 ```
 
 write some code that uses `find` to return the first item that ends with the string `'berry'`
 
+(in this case, `'Blueberry'`)
+
 # Filter
+
+the `filter` iteration method returns *all* matching values, in a *new array*
 
 ```javascript
 let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
@@ -132,6 +128,8 @@ write some code that uses `filter` to return a new array containing all the frui
 
 # Map
 
+the `map` iteration method returns a *new array* whose elements correspond to the elements of the original array
+
 ```javascript
 let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
 let upper = function(word) {
@@ -139,6 +137,9 @@ let upper = function(word) {
 }
 names.map(upper) //=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
 ```
+
+It's called "map" because in a mathematical sense, it defines a *mapping* from one collection to another
+
 # Lab: Titleize with Map
 
 Remember capitalize? It capitalizes the first letter of a string and makes the whole rest of the string lowercase.
@@ -218,4 +219,4 @@ See how the accumulator is used to pass information from one iteration to the ne
 
 ![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
 
-(source: [Addy Osmani](https://www.facebook.com/addyosmaniofficial/photos/a.10152007383089601/10155472676169601/))
+(source: [Joey deVilla aka @AccordionGuy](https://twitter.com/AccordionGuy/status/1098031540725051399))

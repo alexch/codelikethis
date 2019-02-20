@@ -13,7 +13,7 @@ let stringUtils = {
       word.slice(1).toLowerCase();
   },
   rant: function(opinion) {
-    return opinion.toUpperCase() + '!!!';
+    return option.toUpperCase() + '!!!';
   }
 }
 
@@ -57,6 +57,9 @@ rectangle.area = function() {
 
 rectangle.area()   //=> 80
 ```
+
+* remember, `this` means "this object I'm in *right now*" which in this case is the rectangle
+* `this.height` on the *inside* of the object means the same as `rectangle.height` on the *outside*
 
 # Lab: Speak
 
@@ -108,16 +111,3 @@ Specifically, if you change the definition of basic types, you might introduce b
 
 That's why extending system classes is sometimes called by the derogatory term "monkey patching".
 
-# Lab: Full Name Method
-
-Given a person object, like this:
-
-```javascript
-let alice = {
-    firstName: 'Alice',
-    middleName: 'April',
-    lastName: 'Adams'
-}
-```
-
-Add a `fullName` method, so that `alice.fullName()` returns the value `'Alice A. Adams'`
