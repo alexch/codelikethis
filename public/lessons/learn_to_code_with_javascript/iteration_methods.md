@@ -219,4 +219,4 @@ See how the accumulator is used to pass information from one iteration to the ne
 
 ![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
 
-(source: [Joey deVilla aka @AccordionGuy](https://twitter.com/AccordionGuy/status/1098031540725051399))
+(source: [Joey deVilla, aka @AccordionGuy](https://twitter.com/AccordionGuy/status/1098031540725051399) -- with a [working implementation](http://www.globalnerdy.com/2016/06/26/demonstrating-map-filter-and-reduce-in-swift-using-food-emoji/) 😲 in Swift)
