@@ -13,7 +13,7 @@ let stringUtils = {
       word.slice(1).toLowerCase();
   },
   rant: function(opinion) {
-    return option.toUpperCase() + '!!!';
+    return opinion.toUpperCase() + '!!!';
   }
 }
 
@@ -108,3 +108,21 @@ Specifically, if you change the definition of basic types, you might introduce b
 
 That's why extending system classes is sometimes called by the derogatory term "monkey patching".
 
+# Lab: Full Name Method
+
+Given a person object, like this:
+
+```javascript
+let alice = {
+    firstName: 'Alice',
+    lastName: 'Adams'
+}
+```
+
+add a `fullName` method, such that
+
+```javascript
+alice.fullName()
+```
+
+returns the value `'Alice Adams'`

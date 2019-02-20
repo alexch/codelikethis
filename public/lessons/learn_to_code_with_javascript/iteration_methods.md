@@ -218,4 +218,4 @@ See how the accumulator is used to pass information from one iteration to the ne
 
 ![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
 
-(source unknown)
+(source: [Addy Osmani](https://www.facebook.com/addyosmaniofficial/photos/a.10152007383089601/10155472676169601/))
