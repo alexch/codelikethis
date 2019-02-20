@@ -6,12 +6,18 @@
     topic name: "recursion"
     topic name: "numbers"
     topic name: "reverse-polish-notation"
+    topic name: "stack-trace"
+    project name: "rpn_calculator"
+    link name: "Stack Visualization", href: "https://www.cs.usfca.edu/~galles/visualization/StackArray.html"
+    link name: "Understanding the JavaScript Call Stack", href: "https://medium.freecodecamp.org/understanding-the-javascript-call-stack-861e41ae61d4"
 
 # Stack
 
 * a *stack* is a *metaphor* for a physical stack
 
 ![pancakes](../images/pancakes.jpg)
+
+(like this yummy stack of pancakes)
 
 [photo by Michael Stern](https://www.flickr.com/photos/68711844@N07/15638298618)
 [CC-BY-SA](https://creativecommons.org/licenses/by-sa/2.0/)
@@ -22,12 +28,18 @@
     * **push** adds an item to the top
     * **pop** removes an item from the top
 * a stack is a LIFO (last in, first out) structure
+    * you take things off the top of the stack in the **reverse** order from which you put them on
+    * contrast with a *queue*, which is FIFO (first in, first out)
+    
+# Pushing and Popping Visualized
 
-# Pushing and Popping
+Imagine a stack that starts with a single pancake ("1")
 
 ![stack](../images/stack.png) 
 
 <small>(image source: <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>, public domain)</small>
+
+Try playing around with this [stack visualization tool](https://www.cs.usfca.edu/~galles/visualization/StackArray.html) (from David Galles at University of San Francisco) to get a feel for it.
 
 # The Freedom of Constraints
 
@@ -46,20 +58,20 @@ The theme of "Freedom of Constraints" is important in software design.
 
 In JavaScript, the easiest way to *implement* a stack is by using an *array*.
 
-In fact, every array *already knows* how to `push` and `pop`.
+In fact, every array already knows how to `push` and `pop`.
 
-Try this in node:
+Try this in a JavaScript console:
 
 ```js
-let fruitStack = []
-fruitStack.push("apple")
-fruitStack.push("banana")
-fruitStack                    // [ 'apple', 'banana' ]
-fruitStack.push("cherry")
-fruitStack                    // [ 'apple', 'banana', 'cherry' ]
-let fruit = fruitStack.pop()
-fruit                         // 'cherry'
-fruitStack                    // [ 'apple', 'banana' ]
+let fruits = []
+fruits.push("apple")
+fruits.push("banana")
+fruits                    // [ 'apple', 'banana' ]
+fruits.push("cherry")
+fruits                    // [ 'apple', 'banana', 'cherry' ]
+let fruit = fruits.pop()
+fruit                     // 'cherry'
+fruits                    // [ 'apple', 'banana' ]
 ```
 
 Note that after a `pop`, the stack's contents are *changed*. Pop *removes and returns* the final value from the array.
@@ -85,7 +97,7 @@ The JavaScript interpreter is a program, and that program uses a stack internall
 
 For instance, in the above stack trace, you can see that the function `TTY.onread` called the function `ReadStream.Readable.push`, which called the function `readableAddChunk`, and so on.
 
-Now you know why a stack trace is upside down! It's because a stack is LIFO.
+> Now you know why a stack trace is upside down!
 
 See [Understanding the JavaScript Call Stack](https://medium.freecodecamp.org/understanding-the-javascript-call-stack-861e41ae61d4)
 
@@ -139,11 +151,6 @@ Note also that we had to push `a` and `b` back on to the stack after adding them
 Stacks are useful in many scenarios
 
 * function call stack
-* reverse-polish calculator
-* backtracking, e.g. chess AI
+* [RPN calculator](/projects/rpn_calculator)
+* backtracking, e.g. chess or [tic-tac-toe](/projects/tic-tac-toe) AI
 * recursion
-    
-# Project: reverse-polish calculator
-
-<a href='/projects/rpn_calculator'>RPN Calculator</a>
-

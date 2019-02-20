@@ -6,9 +6,12 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) in a web-based UI.
 
+We recommend that before you start this project, you complete the [Tic Tac Toe (CLI)](tic_tac_toe) project (at least up to the "Artificial Stupidity" story). This will help you keep the *game rules* separate from the *user interface*, both in your mind and in your code. You may even be able to reuse many of the functions you wrote earlier.
+
+Template repository: https://github.com/BurlingtonCodeAcademy/tic-tac-toe-www
+
 ## Wireframes
 
-![tic-tac-toe-web](tic-tac-toe-web.png)
 
 ## Stories
 
@@ -48,7 +51,7 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 **When** the user selects a cell that is not empty
 
-**Then** the game says "Impossible! That cell is already full." and does not put an X or O in the cell
+**Then** the game says "Please select an empty cell." and does not put an X or O in the cell
 
 **And** the current player does not change
 
@@ -67,23 +70,24 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 **And** the game ends
 
-(and the same for Player O)
+(and likewise for Player O)
 
 <!--/BOX-->
 <!--BOX-->
 
 ### Names
 
-- when starting a game, choose the names of the players (not just X and O)
+When starting a game, allow the user(s) to choose the names of the players (not just X and O).
 
 <!--/BOX-->
 <!--BOX-->
 
 ### Artificial Stupidity
 
-- choose "Player vs Player" or "Player vs AI" to start new game
-- simple AI that picks a random empty cell
-- human is always X and computer is always O
+- When starting a new game, choose "Player vs Player" or "Player vs Computer"
+- If "Player vs Computer" is chosen, then do not ask for a name
+- The computer player always picks an empty cell *at random*
+- The human is always X and the computer is always O
 
 <!--/BOX-->
 <!--BOX-->
@@ -91,7 +95,7 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 ### New Game UI
 
 - design a clean "New Game" UI allowing choice of human or computer, name, and symbol
-- consider a modal dialog box
+- consider using a modal dialog box
 - consider button placement and visibility
 
 <!--/BOX-->
