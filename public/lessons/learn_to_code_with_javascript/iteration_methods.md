@@ -177,7 +177,7 @@ function titleize(phrase) {
 }
 ```
 
-Here's another:
+Here's another, where the existing `capitalize` method is used *as is* as a mapping function:
 
 ```javascript
 function titleize(phrase) {
@@ -190,12 +190,20 @@ And another:
 ```javascript
 function titleize(phrase) {
     let words = [];
-    phrase.split(' ').forEach((word) => {words.push(capitalize(word))});
+    let originalWords = phrase.split(' ')
+    originalWords.forEach((word) => {
+        words.push(capitalize(word))
+    });
     return words.join(' ');
 }
 ```
 
-> These solutions all use **method chaining** -- taking the **result** of one method, and immediately calling a method on that result **without assigning it to a variable**, again and again until you get a final result
+* The first two solutions use **method chaining** -- taking the **result** of one method, and immediately calling a method on that result **without assigning it to a variable**, again and again until you get a final result.
+* Method chaining can be very elegant, but it can also be very dense, making the code harder to understand, test, and debug.
+* "Unspooling" a method chain into intermediate variables (like example 3) can make the code easier to follow, but it can also make it cluttered and obscure the algorithm.
+
+> Whether to use method chaining is a very subjective aesthetic judgement. YMMV!
+
 
 # Reduce
 
