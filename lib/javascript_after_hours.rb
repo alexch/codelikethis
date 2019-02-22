@@ -28,6 +28,7 @@ class JavascriptAfterHours < Site
         ::Track::Javascript, # "JavaScript Topics"
         ::Track::Oo,
         ::Track::Git,
+        ::Track::TricksOfTheTrade,
     ]
   end
 

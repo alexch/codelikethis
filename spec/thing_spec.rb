@@ -56,8 +56,7 @@ describe Thing do
   end
 
   it "has a default name" do
-    subject.name.should == "Thing"
-
+    subject.name.should == "thing"
     expect(Thing.new(name: "ice_cream").name).to eq("ice_cream")
   end
 

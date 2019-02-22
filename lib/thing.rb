@@ -52,7 +52,7 @@ class Thing
   end
 
   def name # if no name, use class name
-    @name || self.class.name
+    @name || self.class.name.underscore
   end
 
   def display_name # if no display name, use name

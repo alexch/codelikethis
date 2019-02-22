@@ -1,5 +1,6 @@
 require 'json'
 require 'chronic'
+require 'erector'
 require 'views'
 require 'thing'
 
@@ -137,7 +138,7 @@ class Schedule < Thing
               gcal_link = "https://calendar.google.com/calendar/b/1/r/week/#{week_start.strftime("%Y/%m/%d")}?cid=#{@site.google_calendar_id}"
               text "Week #{week_number} "
               div({class: 'date float-right', style: 'font-size: 80%'} + with_tooltip("Click here to view calendar for this week")) {
-                a(href: gcal_link, ) {
+                a(href: gcal_link,) {
                   span week_start_ymd
                   text raw(nbsp)
                   i(class: 'fas fa-calendar-alt')
@@ -203,7 +204,15 @@ class Schedule < Thing
           p {
             b "Lessons: "
             lessons = lesson_names.map do |name|
-              (track.lesson_named(name) rescue nil) || name
+              begin
+                if (name =~ %r{^/})
+                  @site.lesson_named(name)
+                else
+                  track.lesson_named(name)
+                end
+              rescue
+                name
+              end
             end
             things_with_commas(lessons) do |lesson|
               # todo: unify with track.rb

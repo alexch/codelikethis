@@ -2,7 +2,7 @@ require 'json'
 require 'chronic'
 require 'views'
 require 'schedule'
-
+require 'util'
 require 'track'
 # add "public/lessons" dir to Ruby load path
 $: << Track.tracks_dir
@@ -29,12 +29,12 @@ class Site < Thing
     end
   end
 
-  def name
-    self.class.name
-  end
-
   def href
     "/lessons"
+  end
+
+  def tracks
+    raise("You must override the tracks method in your Site subclass")
   end
 
   def schedule
@@ -44,6 +44,12 @@ class Site < Thing
 
   def track_named name
     tracks.detect {|track| track.name == name}
+  end
+
+  def lesson_named path
+    path = path.sub(/^\//, '')
+    track_name, lesson_name = path.split('/')
+    track_named(track_name).lesson_named(lesson_name)
   end
 
   def navbar

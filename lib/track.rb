@@ -29,6 +29,7 @@ class Track < Thing
     args ||= {}
     args + {track: object}
   end
+
   contains :lessons do |track, args|
     args ||= {}
     extra = {track: track}
@@ -46,6 +47,7 @@ class Track < Thing
 
     args + extra
   end
+
   contains :links
   contains :projects
   contains :topics
@@ -110,7 +112,7 @@ class Track < Thing
   end
 
   def name
-    (@name || "track").underscore
+    (@name || super).underscore
   end
 
   def href anchor: nil
