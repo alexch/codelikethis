@@ -16,6 +16,28 @@ including:
   * global variables
   * top-level functions
 
+# Global Scope
+
+If you declare a variable without a keyword (`var`, `let`, `const`) then it is a **global variable** and can be seen and used by *any line of code in your entire program*
+
+Global variables are very useful but also very dangerous. A mistake in *any part* of your program using a global variable could introduce a bug in *any other part* of your program using that global variable.
+
+# Implicit vs. Explicit globals
+
+If you really want to use a global variable, you should do so explicitly, so other readers of your code will know that you did it intentionally. 
+
+JavaScript programs have a *global object* whose properties are available as global variables. In web browsers, the global object is named `window`; in NodeJS, the global object is named `global`.
+
+```javascript
+// implicitly global
+sendAnalytics = function(message) { ... }
+
+// explicitly global
+window.sendAnalytics = function(message) { ... }
+```
+
+Either of the above lines (in an HTML JS app) will allow any line in the entire rest of your program to call `sendAnalytics('user clicked "unsubscribe" button')` 
+
 # Scope is a One-Way Mirror
 
 > scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
@@ -76,29 +98,34 @@ console.log(x);  // Causes error
 
 # Closure Scope
 
-JavaScript also supports *lexical scope* which means that variables defined *above* the current function may also be visible...
+JavaScript also supports *lexical scope* (aka "closure scope" or "nested scope") which means that variables defined *above* the current function may also be visible...
 
 ```javascript
-function sing() {
-  let numberOfBottles = 99;
+function sing() {               // outer function
+  let numberOfBottles = 99
 
-  function bottlesOfBeer() {       // << nested inside sing()
+  function bottlesOfBeer() {    // inner function
     return '' + numberOfBottles 
-      + ' bottles of beer on the wall';
+      + ' bottles of beer on the wall'
   }
-  ...
-
+    
+  while (numberOfBottles > 0) {
+      console.log(bottlesOfBeer())
+      numberOfBottles -= 1
+  }
+    
+}
 ```
 
-`numberOfBottles` is visible to **both** `sing()` **and** `bottlesOfBeer()`
+`numberOfBottles` is visible inside **both** `sing()` **and** `bottlesOfBeer()`
 
 # Lexical Scope
 
 Closures *add a layer* between global and local:
 
-  * local variables and parameters of *nesting closures* of the current function
+* local variables and parameters of *nesting closures* of the current function
 
-This is called "lexical scope" because a line of code can "see" all variables that are declared (= written = _lexical_) in the same code block, even if that code block is inside a different (nesting) function.
+This is called "lexical scope" because a given line of code can see all variables that are declared (= written = _lexical_) in the same code block, even if that code block is inside a different (nesting) function.
 
 # Nested Scopes
 
@@ -145,7 +172,7 @@ function countLetters(words) {
 }
 ```
 
-`total` is visible inside the *inner* function as well as the outer, so `forEach` can behave like other loops
+`total` is visible inside the *inner* (callback) function as well as the outer (`countLetters`), so `forEach` can behave like other loops
 
 # Why Nested Scopes? 4
 
@@ -164,5 +191,10 @@ let count = (function() {
 
 count() // prints and returns 1
 count() // prints and returns 2
-count() // prints and returns 3
+value   // ReferenceError: value is not defined
 ```
+
+# Module Scope
+
+* NodeJS introduced the concept of *module scope* to the JavaScript world.
+* A variable defined at the "top" (left margin) of a file is visible to all other code in that file 

@@ -5,7 +5,7 @@
 
 # Object-Oriented JavaScript
 
-This lesson assumes you are familiar with the usage of JavaScript [Objects](../learn_to_code_with_javascript/objects) and [Methods](../learn_to_code_with_javascript/methods) and the fact that JavaScript is a [hybrid language](hybrid.md).
+This lesson assumes you are familiar with the usage of JavaScript [Objects](../learn_to_code_with_javascript/objects) and [Methods](../learn_to_code_with_javascript/methods) and the fact that JavaScript is a [hybrid language](hybrid).
 
 JavaScript is a hybrid of (at least) three styles:
 
@@ -50,20 +50,44 @@ let rectangle = {
         return this.height * this.width;
     }
 }
+
+let a = rectangle.area()
 ```
 
-`let a = rectangle.area()` is a pure OO method since it only accesses data held inside `rectangle`, via the magic pointer `this`, and returns a new value
+the above code follows OO rules since it only accesses data held inside `rectangle` via the magic pointer `this`, and returns a new value, not a live reference to internal state
 
-`let perimeter = rectangle.height * 2 + rectangle.width * 2` is not pure OO since `height` and `width` are owned by `rectangle`, not by whatever object is running that code
+---
+
+The following code is **not** object-oriented...
+
+```javascript
+let perimeter = rectangle.height * 2 + rectangle.width * 2
+```
+
+...since `height` and `width` are owned by `rectangle`, not by whatever outside object or function contains that code
+
+Q: How would an OO design calculate the rectangle's perimeter? (Anwser on next slide.)
+
+# Pure Object-Oriented Example (Cont.)
+
+instead, an OO design would add `perimeter` as a *method*, so `rectangle.perimiter()` would access properties with `this`, perform the calculation, and return the correct value:
+
+```javascript
+rectangle.perimeter = function() {
+  return this.height * 2 + this.width * 2
+}
+
+let p = rectangle.perimeter()
+```
 
 # Object vs. Object
 
-* In JS, an "object" is just a hash
+* In JS, an "object" is just a [hash](/learn_to_code_with_javascript/hashes)
   * not very object-oriented
 * To be object-oriented you need to add a few things
   * the "`this`" variable
   * constructors and `new`
-  * inheritance (via prototypes (`__proto__` or `Type.prototype`))
+  * inheritance (via prototypes (`__proto__` or `Type.prototype` or `class`))
   * privacy (aka *data hiding* or *encapsulation*)
 * More on all those concepts coming soon!
 
@@ -84,9 +108,15 @@ Objects are *things* that can be *described* and can *do* things, or...
 
 # Creating an object literally
 
+This code 
+
 ```
 let dog = {color: "brown"}
 ```
+
+1. creates a new object
+2. gives that object a property named `'color'` whose value is `'brown'`
+3. assigns the variable `dog` to point to that object
 
 # References and Instances
 
@@ -123,12 +153,13 @@ let lula = {color: "brown"}
 * if you have several references to the same instance, odd things can happen
 
 ```
-let dog = {color: "brown"}
+let abby = {color: "brown"}
+let abby = dog
 let lula = dog
 
 lula.color = "gold"
 
-dog.color // now the generic dog is golden too
+abby.color // now we think that abby is gold too :-(
 ```
 
 # Encapsulating State

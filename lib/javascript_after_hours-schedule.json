@@ -112,6 +112,7 @@
         "zorkington"
       ]
     },
+
     {
       "track": "www",
       "projects": [
@@ -140,29 +141,15 @@
       ]
     },
     {
-      "track": "javascript",
-      "lessons": [
-        "oo_js",
-        "oo_js_creation",
-        "oo_js_inheritance",
-        "oo_js_prototypes",
-        "/oo/oo_design"
-      ],
-      "projects": [
-        "chat"
-      ]
-    },
-    {
       "track": "client_side_coding",
       "projects": [
-        "twitch_status",
-        "pomodoro"
+        "pomodoro",
+        "twitch_status"
       ],
       "lessons": [
         "embedding",
         "ajax",
-        "calling_apis",
-        "local_storage"
+        "calling_apis"
       ]
     },
     {
@@ -174,6 +161,17 @@
         "geocoding",
         "geolocation",
         "interactive_mapping"
+      ]
+    },
+    {
+      "track": "javascript",
+      "lessons": [
+        "/oo/oo_design",
+        "oo_js",
+        "oo_js_creation"
+      ],
+      "projects": [
+        "chat"
       ]
     }
   ]

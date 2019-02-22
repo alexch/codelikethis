@@ -99,17 +99,18 @@ Use it like this:
 
 Prior to 2015, and still today under the hood, a class *is* a pointer to a constructor function:
 
-    ```javascript
-    var Circle = function(radius) {
-        this.radius = radius;
-        this.diameter = radius * 2;
-        this.circumference = function() {
-            return Math.PI * 2 * this.radius;
-        }
-        this.area = function() {
-            return Math.PI * this.radius * this.radius;
-        }
-    };
+```javascript
+var Circle = function(radius) {
+    this.radius = radius;
+    this.diameter = radius * 2;
+    this.circumference = function() {
+        return Math.PI * 2 * this.radius;
+    }
+    this.area = function() {
+        return Math.PI * this.radius * this.radius;
+    }
+};
+```
 
 You shouldn't need to write code like this anymore, but you should be able to recognize it if you see it.
 
@@ -123,7 +124,7 @@ One way to make truly private variables is below, however...
 
 > you probably should use public instance variables for a while 
 
-since it will make your code easier to read and more compatible with the rest of your codebase, even if you lose some protection from information leakage
+since it will make your code easier to read and more compatible with the rest of your codebase, even if you lose some protection from data leakage
 
 # Sidebar: private instance data using closures
 
@@ -164,7 +165,7 @@ in practice, this means "pass all initial values into the constructor"
 
 constructors are a great place to *validate* your values
 
-```
+```javascript
 class Circle {
     constructor(radius) {
         if (radius <= 0) {
@@ -175,8 +176,8 @@ class Circle {
 ```
 
 * that `if` statement is known as a "guard clause"
-  * it guards against bad values
+  * it guards against bad values entering your algorithm
   * also known as "asserting your arguments" or "design by contract"
 * validation is one of the most valuable features of object-oriented programming
-  * it lets you write less code in other methods, confident that you don't have to check for bad data or boundary conditions
+  * it lets you *write less code* in other methods, confident that you don't have to check for bad data or boundary conditions
 

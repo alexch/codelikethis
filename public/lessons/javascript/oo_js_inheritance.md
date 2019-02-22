@@ -17,6 +17,7 @@ Inheritance works best when:
 
 # The Upstairs-Downstairs Problem
 
+```
 class Dialog {
   render() {
     return 
@@ -28,3 +29,4 @@ class Dialog {
 class LoginDialog extends Dialog {
 
 }
+```
