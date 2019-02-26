@@ -9,7 +9,7 @@
 
 *scope* = all the variables and functions that are *visible* from a given location in your code
 
-The two primary forms of scope are *Global* and *Local* 
+The two primary forms of scope are *Global* and *Local*
 
 **Globally scoped** variables can be seen from *anywhere* in the program
 
@@ -23,9 +23,9 @@ Global variables are very useful but also very dangerous. A mistake in *any part
 
 # Implicit vs. Explicit globals
 
-Globals are usually bad, but they are good for when you want to call a particular function from *literally anywhere* in your code... for instance, when you want to tell your analytics server that something interesting just happened. 
+Globals are usually bad, but they are good for when you want to call a particular function from *literally anywhere* in your code... for instance, when you want to tell your analytics server that something interesting just happened.
 
-If you really want to use a global variable, you should do so explicitly, so other readers of your code will know that you did it intentionally. 
+If you really want to use a global variable, you should do so explicitly, so other readers of your code will know that you did it intentionally.
 
 JavaScript programs have a *global object* whose properties are available as global variables. In web browsers, the global object is named `window`; in NodeJS, the global object is named `global`.
 
@@ -40,7 +40,7 @@ window.sendAnalytics = function(message) { ... }
 global.sendAnalytics = function(message) { ... }
 ```
 
-Either of the above lines (in an HTML JS app) will allow any line in the entire rest of your program to call `sendAnalytics('user clicked "unsubscribe" button')` 
+Either of the above lines (in an HTML JS app) will allow any line in the entire rest of your program to call `sendAnalytics('user clicked "unsubscribe" button')`
 
 # Scope is a One-Way Mirror
 
@@ -59,6 +59,21 @@ let name = 'Alice';
     console.log(name);
 }
 console.log(name);
+```
+
+# Exercise: Guess the Variable
+
+* Which fruit would be logged below?
+
+```javascript
+let fruit = 'Apple';
+{
+    let fruit ='Blueberry';
+    {
+        let name = 'Cantaloupe';
+    }
+    console.log(name); // What is this fruit?
+}
 ```
 
 # Variable Visibility
@@ -112,6 +127,29 @@ the above `rant` function has *two* locally scoped variables:
 * the local variable `loudMessage`
 * the parameter `message`
 
+# Exercise: Guess the Variable with Functions
+
+```javascript
+let poet = 'Robert Frost';
+
+function famousPoem(poet) {
+
+  let poemAuthors = {
+   'Robert Frost': 'Stopping by Woods on a Snowy Evening',
+   'Walt Whitman': 'Leaves of Grass',
+   'undefined': 'The Lanyard' // Billy Collins
+  };
+  return poemAuthors[poet];
+}
+
+famousPoem('Walt Whitman'); // Which Poem?
+famousPoem(poet);           // Which Poem?
+
+poet = 'Maya Angelou';
+famousPoem();               // Which Poem?
+
+```
+
 # Scope Error
 
 * when you try to use a variable that is out of scope, you will get an error
@@ -134,22 +172,22 @@ function sing() {               // outer function
   let numberOfBottles = 99
 
   function bottlesOfBeer() {    // inner function
-      let message = '' + numberOfBottles 
+      let message = '' + numberOfBottles
         + ' bottles of beer on the wall';
       return message;
   }
-    
+
   while (numberOfBottles > 0) {
       console.log(bottlesOfBeer())
       numberOfBottles -= 1
   }
-    
+
 }
 ```
 
 `bottlesOfBeer` is **enclosed** within `sing`, so it *inherits* `sing`'s scope
 
-`numberOfBottles` is visible inside **both** `sing()` **and** `bottlesOfBeer()` -- so when either 
+`numberOfBottles` is visible inside **both** `sing()` **and** `bottlesOfBeer()` -- so when either
 
 # Nested Scopes
 
@@ -183,7 +221,7 @@ function countLetters(words) {
 function addLetterCount(word) {
     letterCount += word.length;
 }
-    
+
 function countLetters(words) {
     let letterCount = 0;
     words.forEach(addLetterCount)
@@ -191,7 +229,7 @@ function countLetters(words) {
 }
 ```
 ...because `addLetterCount` is *not* nested inside `countLetters`
- 
+
 # Why Nested Scopes? 2
 
 * nested functions, e.g. the following function accepts a *two-dimensional array* and prints each row
