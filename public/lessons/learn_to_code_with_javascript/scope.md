@@ -175,6 +175,23 @@ function countLetters(words) {
 }
 ```
 
+`total` is visible inside the *inner* (callback) function as well as the outer (`countLetters`), so `forEach` can behave like other loops
+
+### This doesn't work:
+
+```javascript
+function addLetterCount(word) {
+    letterCount += word.length;
+}
+    
+function countLetters(words) {
+    let letterCount = 0;
+    words.forEach(addLetterCount)
+    return letterCount;
+}
+```
+...because `addLetterCount` is *not* nested inside `countLetters`
+ 
 # Why Nested Scopes? 2
 
 * nested functions, e.g.
@@ -195,22 +212,6 @@ function printGrid(grid) {
 ```
 
 # Why Nested Scopes? 3
-
-* higher-order functions (functions that use other functions, like `map` or `forEach`)
-
-```javascript
-function countLetters(words) {
-  let total = 0;
-  words.forEach(function(word) {
-    total += word.length;
-  });
-  return total;
-}
-```
-
-`total` is visible inside the *inner* (callback) function as well as the outer (`countLetters`), so `forEach` can behave like other loops
-
-# Why Nested Scopes? 4
 
 * private state encapsulation with [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)'s (this is tricky; for more detail, see the [encapsulation](/lessons/javascript/encapsulation) lesson)
 
