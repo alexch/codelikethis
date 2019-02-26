@@ -213,7 +213,7 @@ function printGrid(grid) {
 
 # Why Nested Scopes? 3
 
-* private state encapsulation with [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)'s (this is tricky; for more detail, see the [encapsulation](/lessons/javascript/encapsulation) lesson)
+* private state encapsulation with [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)'s (this is **very tricky**; for more detail, see the [encapsulation](/lessons/javascript/encapsulation) lesson)
 
 ```js
 let count = (function() {
@@ -230,8 +230,3 @@ count() // prints and returns 1
 count() // prints and returns 2
 value   // ReferenceError: value is not defined
 ```
-
-# Module Scope
-
-* NodeJS introduced the concept of *module scope* to the JavaScript world.
-* A variable defined at the "top" (left margin) of a file is visible to all other code in that file 
