@@ -7,14 +7,13 @@
 
 # Scope
 
-*scope* = all the variables that are *visible* from a given location in your code
+*scope* = all the variables and functions that are *visible* from a given location in your code
 
-including:
+The two primary forms of scope are *Global* and *Local* 
 
-  * local variables (`let` and `var`)
-  * function parameters
-  * global variables
-  * top-level functions
+**Globally scoped** variables can be seen from *anywhere* in the program
+
+**Locally scoped** variables can be seen only *nearby* where they are defined -- usually inside the same *function*
 
 # Global Scope
 
@@ -24,6 +23,8 @@ Global variables are very useful but also very dangerous. A mistake in *any part
 
 # Implicit vs. Explicit globals
 
+Globals are usually bad, but they are good for when you want to call a particular function from *literally anywhere* in your code... for instance, when you want to tell your analytics server that something interesting just happened. 
+
 If you really want to use a global variable, you should do so explicitly, so other readers of your code will know that you did it intentionally. 
 
 JavaScript programs have a *global object* whose properties are available as global variables. In web browsers, the global object is named `window`; in NodeJS, the global object is named `global`.
@@ -32,8 +33,11 @@ JavaScript programs have a *global object* whose properties are available as glo
 // implicitly global
 sendAnalytics = function(message) { ... }
 
-// explicitly global
+// explicitly global (Browser)
 window.sendAnalytics = function(message) { ... }
+
+// explicitly global (NodeJS)
+global.sendAnalytics = function(message) { ... }
 ```
 
 Either of the above lines (in an HTML JS app) will allow any line in the entire rest of your program to call `sendAnalytics('user clicked "unsubscribe" button')` 
@@ -43,6 +47,19 @@ Either of the above lines (in an HTML JS app) will allow any line in the entire 
 > scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
 
 ![one way mirror functions](one-way-mirror.gif)
+
+```javascript
+let name = 'Alice';
+{
+    let name ='Bob';
+    {
+        let name = 'Charlie';
+        console.log(name);
+    }
+    console.log(name);
+}
+console.log(name);
+```
 
 # Variable Visibility
 
@@ -78,22 +95,34 @@ alpha();
 ```
 <!--/BOX-->
 
-# Another scope diagram
+# Parameters are local to their function
 
-![javascript scope diagram](javascript_scope_diagram.png)
+```javascript
+let opinion = 'i love cheese';
+console.log(rant(opinion));
 
-What does this program print?
+function rant(message) {
+    let loudMessage = message.toUpperCase() + '!!';
+    return loudMessage;
+}
+```
+
+the above `rant` function has *two* locally scoped variables:
+
+* the local variable `loudMessage`
+* the parameter `message`
 
 # Scope Error
 
+* when you try to use a variable that is out of scope, you will get an error
+
 ```javascript
 function gamma() {
-    var x = "declared inside gamma";  // x can only be used in gamma
-    console.log("Inside gamma");
-    console.log(x);
+    let x = "declared inside gamma";
+    console.log("Inside gamma: x is " + x);
 }
 
-console.log(x);  // Causes error
+console.log(x);  // ReferenceError: x is not defined
 ```
 
 # Closure Scope
@@ -105,8 +134,9 @@ function sing() {               // outer function
   let numberOfBottles = 99
 
   function bottlesOfBeer() {    // inner function
-    return '' + numberOfBottles 
-      + ' bottles of beer on the wall'
+      let message = '' + numberOfBottles 
+        + ' bottles of beer on the wall';
+      return message;
   }
     
   while (numberOfBottles > 0) {
@@ -117,15 +147,9 @@ function sing() {               // outer function
 }
 ```
 
-`numberOfBottles` is visible inside **both** `sing()` **and** `bottlesOfBeer()`
+`bottlesOfBeer` is **enclosed** within `sing`, so it *inherits* `sing`'s scope
 
-# Lexical Scope
-
-Closures *add a layer* between global and local:
-
-* local variables and parameters of *nesting closures* of the current function
-
-This is called "lexical scope" because a given line of code can see all variables that are declared (= written = _lexical_) in the same code block, even if that code block is inside a different (nesting) function.
+`numberOfBottles` is visible inside **both** `sing()` **and** `bottlesOfBeer()` -- so when either 
 
 # Nested Scopes
 
@@ -135,9 +159,21 @@ that points to the *current* scope
 
 and so on recursively
 
+and -- strangely enough -- variables that are defined inside a nested function are *still alive* after that function returns (?!?!?!)
+
 # Why Nested Scopes? 1
 
 * so callbacks can access local variables just like their neighboring code can
+
+```javascript
+function countLetters(words) {
+    let letterCount = 0;
+    words.forEach(function(word) {
+        letterCount += word.length;
+    })
+    return letterCount;
+}
+```
 
 # Why Nested Scopes? 2
 
