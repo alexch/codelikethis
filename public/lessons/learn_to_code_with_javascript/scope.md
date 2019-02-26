@@ -159,7 +159,7 @@ that points to the *current* scope
 
 and so on recursively
 
-and -- strangely enough -- variables that are defined inside a nested function are *still alive* after that function returns (?!?!?!)
+(and -- strangely enough -- variables that are defined inside a nested function are *still alive* after that function returns (?!?!?!) -- more on this at the very end of this lesson)
 
 # Why Nested Scopes? 1
 
@@ -194,7 +194,7 @@ function countLetters(words) {
  
 # Why Nested Scopes? 2
 
-* nested functions, e.g.
+* nested functions, e.g. the following function accepts a *two-dimensional array* and prints each row
 
 ```js
 function printGrid(grid) {
