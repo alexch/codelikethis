@@ -75,7 +75,6 @@
     {
       "track": "learn_to_code_with_javascript",
       "lessons": [
-        "stacks",
         "objects",
         "methods"
       ],
@@ -102,7 +101,16 @@
     {
       "track": "learn_to_code_with_javascript",
       "lessons": [
-        "iteration_methods",
+        "stacks",
+        "iteration_methods"
+      ],
+      "projects": [
+        "zorkington"
+      ]
+    },
+    {
+      "track": "learn_to_code_with_javascript",
+      "lessons": [
         "scope",
         "recursion",
         "/tricks_of_the_trade/debugging"
@@ -160,7 +168,14 @@
         "embedding",
         "ajax",
         "calling_apis"
-      ]
+      ],
+      "side_tracks": [{
+        "track": "javascript",
+        "lessons": [
+          "/oo/oo_design",
+          "no_frills_testing"
+        ]
+      }]
     },
     {
       "track": "client_side_coding",
@@ -171,17 +186,6 @@
         "geocoding",
         "geolocation",
         "interactive_mapping"
-      ]
-    },
-    {
-      "track": "javascript",
-      "lessons": [
-        "/oo/oo_design",
-        "oo_js",
-        "oo_js_creation"
-      ],
-      "projects": [
-        "chat"
       ]
     }
   ]
