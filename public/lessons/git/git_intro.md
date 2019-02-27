@@ -338,6 +338,17 @@ git push origin master
 
 Now reload the page and see your changes!
 
+# LAB: Pull Your Weight
+
+> Git does not automatically push and pull changes!
+
+1. **On GitHub.com**, find your `shopping` repo and click on `groceries.txt`
+2. Find the **pencil icon** on the upper right and click it -- this opens a text editor **inside your browser** ![github pencil](github-pencil.png)
+3. Make some changes and save them as a new commit
+4. Go back to your terminal and text editor. **Notice that you still have the old version.**
+5. On your terminal, run the command `git pull` 
+6. Go back to your text editor. Do you see the changes?
+
 # Summary
 
 * `git init` initializes a repo inside a directory
@@ -345,4 +356,5 @@ Now reload the page and see your changes!
 * `git commit -m "message"` turns the *staged* changes into a new *commit* history entry
 * `git show` expands a single commit to show the *metadata* and *changes*
 * a git ID is a SHA-1 hash that uniquely identifies a single commit
-
+* `git push` sends your change history to a remote repository
+* `git pull` gets new changes from a remote repository
