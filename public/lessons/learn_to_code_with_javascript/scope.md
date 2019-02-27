@@ -13,13 +13,15 @@ The two primary forms of scope are *Global* and *Local*
 
 **Globally scoped** variables can be seen from *anywhere* in the program
 
-**Locally scoped** variables can be seen only *nearby* where they are defined -- usually inside the same *function*
+**Locally scoped** variables can be seen only *nearby* where they are defined -- usually inside the same *function* or *code block*
 
 # Global Scope
 
 If you declare a variable without a keyword (`var`, `let`, `const`) then it is a **global variable** and can be seen and used by *any line of code in your entire program*
 
 Global variables are very useful but also very dangerous. A mistake in *any part* of your program using a global variable could introduce a bug in *any other part* of your program using that global variable.
+
+(ES5 introduced [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) which can reduce this risk -- though not eliminate it entirely)
 
 # Implicit vs. Explicit globals
 
@@ -48,18 +50,25 @@ Either of the above lines (in an HTML JS app) will allow any line in the entire 
 
 ![one way mirror functions](one-way-mirror.gif)
 
+Mr. Bean -- in the interrogation room scope -- can't see the cops in the observation room scope.
+
+# Block Scope
+
+`let` and `const` are *block*-scoped: any block of code surrounded by `{` curly braces `}` can have its own set of local `let` variables
+
 ```javascript
-let name = 'Alice';
+let name = 'Mr. Bean';
 {
-    let name ='Bob';
+    let name ='Detective Bob';
     {
-        let name = 'Charlie';
         console.log(name);
     }
     console.log(name);
 }
 console.log(name);
 ```
+
+If a variable name can't be found in the *current* scope, then JavaScript looks in the *next outer scope*, and so on
 
 # Exercise: Guess the Variable
 
@@ -76,39 +85,31 @@ let fruit = 'Apple';
 }
 ```
 
-# Variable Visibility
+# Top Level Functions are Global
 
-<!--BOX-->
-```
-let name = 'Alice';         // this name is global
-```
+A function defined with the term `function` at the left margin is [hoisted](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting), meaning it
 
-<!--BOX-->
-```
-    function beta() {
-      let name = 'Bob';     // this name is local to beta
-      console.log(name);    // prints "Bob"
-    }
-```
-<!--/BOX-->
+* is placed into the correct scope *before* any other code is executed
+* can be called "before" it is defined (above in the source file)
 
-```
-console.log(name);          // prints "Alice"
-```
+```javascript
+let name = 'Alice';     // this name is global
 
-<!--BOX-->
-```
-    function alpha() {
-      console.log(name);    // alpha can see global var
-                            // prints "Alice"
-      beta();               // alpha can see global function named beta
-    }
-```
-<!--/BOX-->
-```
+let alpha = function() {
+  console.log(name);    // alpha can see global var
+  beta();               // alpha can see global function named beta
+}
+
+// alpha() uses let so must be called after it is defined
 alpha();
+
+function beta() {     // beta is hoisted!
+  let name = 'Bob';     // this name is local to beta
+  console.log(name);    // prints "Bob"
+}
+
+console.log(name);      // prints "Alice"
 ```
-<!--/BOX-->
 
 # Parameters are local to their function
 
@@ -187,13 +188,13 @@ function sing() {               // outer function
 
 `bottlesOfBeer` is **enclosed** within `sing`, so it *inherits* `sing`'s scope
 
-`numberOfBottles` is visible inside **both** `sing()` **and** `bottlesOfBeer()` -- so when either
+`numberOfBottles` is visible inside **both** `sing()` **and** `bottlesOfBeer()`
 
 # Nested Scopes
 
-Every time you invoke a function, JS creates a new *scope* for that function
+Every time you call a function, JS creates a *new scope*
 
-that points to the *current* scope
+that scope *points to* the current scope
 
 and so on recursively
 
@@ -208,7 +209,7 @@ function countLetters(words) {
     let letterCount = 0;
     words.forEach(function(word) {
         letterCount += word.length;
-    })
+    });
     return letterCount;
 }
 ```
@@ -224,7 +225,7 @@ function addLetterCount(word) {
 
 function countLetters(words) {
     let letterCount = 0;
-    words.forEach(addLetterCount)
+    words.forEach(addLetterCount);
     return letterCount;
 }
 ```
@@ -235,19 +236,24 @@ function countLetters(words) {
 * nested functions, e.g. the following function accepts a *two-dimensional array* and prints each row
 
 ```js
-function printGrid(grid) {
+function printGrid(grid, delimiter) {
 
-    function printRow(rowNum) {
-        console.log(grid[rowNum].join(","));
+    function printRow(row) {
+        console.log(row.join(delimiter));
     }
 
     let i = 0;
-    while (i<grid.length) {
-        printRow(i);
+    while (i < grid.length) {
+        printRow(grid[i]);
         i = i + 1;
     }
 }
 ```
+
+this is a contrived example, but the idea is that
+
+* you don't have to pass `delimiter` in to `printRow`, making your code a bit cleaner
+* you can *descriptively name* chunks of code as inner functions without "polluting the global namespace"
 
 # Why Nested Scopes? 3
 
@@ -258,13 +264,19 @@ let count = (function() {
     let value = 0;  // private variable
     let increment = function() {
         value = value + 1;
-        console.log(value);
         return value;
     };
     return increment;
 })();
 
-count() // prints and returns 1
-count() // prints and returns 2
+count() // returns 1
+count() // returns 2
+count() // returns 3
+
 value   // ReferenceError: value is not defined
 ```
+
+* we now have a *function* that contains its own persistent state
+  * sometimes called a *generator* or an *iterator*
+  * **this is weird** since a normal function always returns the same value given the same input
+* the private variable `value` is *still alive* after the IIFE returns 😲

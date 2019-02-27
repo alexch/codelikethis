@@ -2,6 +2,9 @@
     topic name: "functions"
     topic name: "conditionals"
     topic name: "loops"
+    link href: "https://javascript.info/recursion"
+    link href: "https://www.youtube.com/watch?v=k7-N8R0-KY4"
+    link href: "http://2ality.com/2015/06/tail-call-optimization.html"
 
 # Recursion
 
@@ -24,12 +27,13 @@ function go() {
 }
 ```
 
-To stop this function, press CTRL-C.
+Call this function with `go()`, then either wait a few seconds, or stop it by pressing <kbd>CTRL</kbd>-<kbd>C</kbd>.
+
+`RangeError: Maximum call stack size exceeded` means that `go` has called itself too many times.
 
 # Recursion Requires Termination
 
 For recursion to be useful, it needs to (eventually) stop.
-
 
 The standard way to stop is called a *guard clause*.
 
@@ -40,24 +44,8 @@ function countdown(seconds) {
   if (seconds === 0) {
     console.log("Blastoff!");
   }
-}
+
 ```
-
-
-# Recursion is Reduction
-
-In addition to the base case, a recursive function needs to define at least one other case; this case *wraps around* the base case like a Russian doll.
-
-![matryoshka](../images/matryoshka.jpg)
-
-You can think of a recursive function as starting with a large problem, and gradually reducing the problem until it reaches the base case.
-
-Since the base case has a known solution, every other step can then be built back up on top of it -- which is why it's called the *base*.
-
-In this way, recursion is an example of the *divide and conquer* approach to problem-solving.
-
-<small>(image source: [wikipedia, public domain](https://en.wikipedia.org/wiki/Matryoshka_doll#/media/File:First_matryoshka_museum_doll_open.jpg))</small>
-
 
 # Countdown
 
@@ -79,7 +67,7 @@ countdown(10);
 
 Put the above in a source file called `countdown.js` and try it now. 
 
-Note that when recursing, you *must change* the value of the counter, else recurse forever.
+Note that you *must change* the value; otherwise you will recurse forever.
 
 # Exercise: Draw It Out
 
@@ -95,12 +83,25 @@ Fill out the cells of the following table for the call `countdown(5)`:
 | 3 |   |   |
 | 4 |   |   |
 
+# Recursion is Reduction
+
+In addition to the base case, a recursive function needs to define at least one other case; this case *wraps around* the base case like a Russian doll.
+
+![matryoshka](../images/matryoshka.jpg)
+
+You can think of a recursive function as starting with a large problem, and gradually reducing the problem until it reaches the base case.
+
+Since the base case has a known solution, every other step can then be built back up on top of it -- which is why it's called the *base*.
+
+In this way, recursion is an example of the *divide and conquer* approach to problem-solving.
+
+<small>(image source: [wikipedia, public domain](https://en.wikipedia.org/wiki/Matryoshka_doll#/media/File:First_matryoshka_museum_doll_open.jpg))</small>
 
 # Lab: Recursive Factorial
 
-To find the *factorial* of a number N, you take all the counting numbers between 1 and N and multiply them together. 
+To find the *factorial* of a number N, take all the counting numbers between 1 and N and multiply them together.
 
-Write a function called `factorial` that takes a number and returns its factorial.
+Write a recursive function called `factorial` that takes a number and returns its factorial.
 
 Remember to start with the base case!
 
@@ -109,12 +110,13 @@ factorial(1)    // 1
 factorial(2)    // 2
 factorial(3)    // 6
 factorial(10)   // 3628800
-
 ```
 
 # Solution: Factorial
 
-```js
+<details>
+<summary>Click Here for Solution</summary>
+<pre>
 function factorial(n) {
     if (n == 1) {
         return 1;
@@ -122,7 +124,7 @@ function factorial(n) {
         return n * factorial(n - 1);
     }
 }
-```
+</pre>
 
 # Exercise: Draw It Out
 
