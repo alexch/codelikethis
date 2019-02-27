@@ -148,6 +148,12 @@ class Schedule < Thing
           }
 
           div(class: 'card-body', id: "card-body-#{week_start_ymd}") {
+            if week['description']
+              div(class: 'card-text col') {
+                text week['description']
+              }
+            end
+
             div(class: 'card-text col') {
               render_track(track, week)
             }
