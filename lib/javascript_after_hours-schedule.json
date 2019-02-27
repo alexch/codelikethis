@@ -105,14 +105,24 @@
         "iteration_methods",
         "scope",
         "recursion",
-        "/tricks_of_the_trade/debugging",
-        "/tricks_of_the_trade/modern_debugging"
+        "/tricks_of_the_trade/debugging"
       ],
       "projects": [
-        "zorkington"
+        "zorkington",
+        "tic_tac_toe"
+      ],
+      "side_tracks": [
+        {
+          "track": "git",
+          "lessons": [
+            "git_intro"
+          ],
+          "projects": [
+            "shopping_list"
+          ]
+        }
       ]
     },
-
     {
       "track": "www",
       "projects": [

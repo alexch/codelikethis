@@ -32,7 +32,7 @@ It's like a filesystem, plus:
 
 [git](https://git-scm.com/book/) is a *distributed version control tool* that was built by Linus Torvalds in 2005 to help him manage the Linux Kernel project
 
-[GitHub](https://github.com/) is a *centralized collaboration website* that was [started in 2007](https://www.inc.com/30under30/christine-lagorio/github-pj-hyett-chris-wanstrath-2013.html) by Tom Preston-Werner, Chris Wanstrath and P.J. Hyett
+[GitHub](https://github.com/) is a *centralized collaboration website* that was [started in 2007](https://www.inc.com/30under30/christine-lagorio/github-pj-hyett-chris-wanstrath-2013.html) by Tom Preston-Werner, Chris Wanstrath and P.J. Hyett, and was acquired by Microsoft in 2018
 
 > Does Linus use GitHub? Not much: <https://www.wired.com/2012/05/torvalds-github/>
 
@@ -314,7 +314,30 @@ index 9f0ab0a..5ae9411 100644
 ```
 
 It's saying "milk" and "chunky monkey ice cream" were *removed*, and "ketchup" was *added*, during that commit.
-  
+
+# Pushing the Envelope
+
+* Git allows you to *share your code* with other developers.
+* If you have a change you want to share, you use the command `git push` 
+* If someone else has made a change you want to incorporate into your own repository, you use the command `git pull`
+* GitHub.com is a *web site* that allows anyone to create and share git repositories
+
+# LAB: Push It To The Limit
+
+1. Sign in to [GitHub.com](https://github.com) and create a repository
+2. Name it the same as your local repo directory (`shopping`)
+3. **Don't** initialize it with a README
+4. Follow the "if you have a repo already" instructions
+5. Find and copy the **GIT URL** for your new repository
+6. Next go back to your local terminal and type the following commands (paste in your GIT URL after the word "`origin`"):
+
+```bash
+git remote add origin GITURL
+git push origin master
+```
+
+Now reload the page and see your changes!
+
 # Summary
 
 * `git init` initializes a repo inside a directory

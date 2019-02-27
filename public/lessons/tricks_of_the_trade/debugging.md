@@ -92,6 +92,8 @@ x<1
 
 # Debugging with Unit Tests
 
+A unit test is a little side program that executes your main program and makes sure its behavior is correct.
+
 When a user reports a bug -- or when a coder notices one -- the first thing to do is to write a test that exposes the bug, then run it and watch it fail.
 
 This assures that you have *actually* identified the cause of the bug, and that once you think it's fixed, it's *actually* fixed.
@@ -104,7 +106,7 @@ This is one reason why *pair programming* is so effective.
 
 If you don't have a pair, try explaining your problem out loud to a pet, or a doll.
 
-![rubber duck](rubber-duck.jpg) 
+![rubber duck](rubber-duck.jpg)
 
 # Read the Error
 
@@ -184,8 +186,9 @@ Many text editors contain an *interactive debugger* (aka *visual debugger*) with
 
 These features can help you understand what your code is doing in why, but can also be tedious or complicated or distracting; often print statements and unit tests are a more efficient path to identifying and fixing bugs.
 
+> Visual Studio Code has a great interactive debugger -- watch this [video overview](https://www.youtube.com/watch?v=2oFKNL7vYV8) to learn more
+
 # LAB: exercises about debugging
 
 * FreeCodeCamp:
-  * do **all** of the [Debugging](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging) challenges
-
+  * If there's time in class, do all of the [Debugging challenges](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging)
