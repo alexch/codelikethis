@@ -142,7 +142,7 @@
           "href": "https://learn.freecodecamp.org/responsive-web-design/applied-visual-design"
         },
         "markdown_preview",
-        "tic_tac_toe"
+        "tic_tac_toe_www"
       ],
       "lessons": [
         "http",
@@ -153,8 +153,8 @@
     {
       "track": "client_side_coding",
       "projects": [
-        "pomodoro",
-        "twitch_status"
+        "tic_tac_toe_www",
+        "pomodoro"
       ],
       "lessons": [
         "embedding",

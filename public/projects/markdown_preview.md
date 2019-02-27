@@ -133,6 +133,55 @@ Ideas:
 
 <!--/BOX-->
 
+<!--BOX-->
+
+## Bold Button
+
+**Given** the user has selected some text in the *source* panel
+
+**When** the user clicks the "Bold" button
+
+**Then** the selected text is surrounded with double asterisks
+
+**And** the preview text is displayed in boldface
+
+---
+
+**Given** the user has selected some text in the *source* panel that begins with double asterisks
+
+**When** the user clicks the "Bold" button
+
+**Then** the selected text is replaced without double asterisks
+
+**And** the preview text is displayed in normal
+
+<!--/BOX-->
+
+
+<!--BOX-->
+
+## Italic Button
+
+**Given** the user has selected some text in the *source* panel
+
+**When** the user clicks the "Italic" button
+
+**Then** the selected text is surrounded with double asterisks
+
+**And** the preview text is displayed in italics
+
+---
+
+**Given** the user has selected some text in the *source* panel that begins with double asterisks
+
+**When** the user clicks the "Italic" button
+
+**Then** the selected text is replaced without double asterisks
+
+**And** the preview text is displayed in normal
+
+<!--/BOX-->
+
 ## More Information
 
 * info on the Cypress test suite 

@@ -185,5 +185,3 @@ button.addEventListener('click', sayMagicWord())  // BAD CODE, DO NOT USE
 ```
 
 This calls sayMagicWord when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).
-
-

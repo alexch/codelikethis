@@ -8,7 +8,7 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 We recommend that you implement this command-line, terminal UI project before starting the [Tic Tac Toe (WWW)](tic_tac_toe_www) project.
 
-Template repository: https://github.com/BurlingtonCodeAcademy/tic-tac-toe
+Template repository: <https://github.com/BurlingtonCodeAcademy/tic-tac-toe>
 
 <small>(image source: [Public Domain](https://en.wikipedia.org/wiki/Tic-tac-toe#/media/File:Tic_tac_toe.svg))</small>
 
@@ -142,7 +142,7 @@ When displaying the name of a player, use their name and also say which symbol t
 
 <!--BOX-->
 
-### Artificial Intelligence
+### Artificial Intelligence (Optional)
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D
