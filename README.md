@@ -35,6 +35,15 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 
 Note that any of the above may need to be preceded by `bundle exec` e.g. `bundle exec rerun rackup` (whether you need to do this or not depends on gnarly details of your Ruby installation).
 
+## Deploying
+
+Local -> Github -> CircleCI -> Heroku
+
+ * https://dashboard.heroku.com/apps/codelikethis/deploy/github
+ * https://circleci.com/gh/BurlingtonCodeAcademy/codelikethis
+ * https://github.com/settings/applications
+ * https://github.com/BurlingtonCodeAcademy/codelikethis/settings/hooks/90661849
+ 
 ## Layout 
 
 |Path|Description|
