@@ -31,6 +31,7 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 |`rake run` | run local server on <http://localhost:9292>  |
 |`rerun rackup` |run with rebuild/restart on file changes |
 |`rerun --pattern '*.scss' --exit -- rake build` | run this in a separate terminal to compile CSS when SCSS changes too |
+|`./check-links.sh` | check entire site for broken links |
 
 Note that any of the above may need to be preceded by `bundle exec` e.g. `bundle exec rerun rackup` (whether you need to do this or not depends on gnarly details of your Ruby installation).
 

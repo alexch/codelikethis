@@ -128,10 +128,11 @@
         "loops",
         "arrays",
         "argv",
+        "objects",
         "stacks",
         "recursion",
-        "logic",
         "scope",
+        "debugging",
         "modern_debugging"
       ],
       "projects": [

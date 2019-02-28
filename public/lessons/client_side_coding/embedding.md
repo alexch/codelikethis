@@ -12,12 +12,12 @@ Or, if the user moves their location on an embedded Google Map, your app could b
 
 > This lesson focuses on *interactive* embedding: 
 > using JavaScript to pass messages between your page's scripts and the embedded media.
-> The [Embedding Media](/lessons/www/embedding_media) lesson covers *static* embedding:
+> The [Embedding Media](/lessons/www/embedding-media) lesson covers *static* embedding:
 > displaying media and allowing the user to interact with it directly.
 
 # Interactive Mapping
 
-[Interactive Mapping](./interactive_mapping)
+[Interactive Mapping](./interactive-mapping)
 
 <!--
 https://wiki.openstreetmap.org/wiki/Frameworks#Displaying_interactive_maps

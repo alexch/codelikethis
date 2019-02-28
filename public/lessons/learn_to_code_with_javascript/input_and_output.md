@@ -303,4 +303,4 @@ You are now officially a coder. HIGH FIVE!
 
 You may now start on the [Guess the Number](/projects/guess) project.
 
-(You will probably also need to learn about [logic](logic.md) and [loops](loops.md) to get it working, so don't be afraid to read ahead and to ask for help.)
+(You will probably also need to learn about [logic](logic) and [loops](loops) to get it working, so don't be afraid to read ahead and to ask for help.)

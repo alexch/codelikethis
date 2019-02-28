@@ -115,7 +115,7 @@ There are many more types of form elements (or "widgets") that let the user ente
 
 * Read more here: <https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data>
 * see also [Query String Escaping](https://en.wikipedia.org/wiki/Query_string) aka [URL encoding](https://en.wikipedia.org/wiki/Percent-encoding)
-* and [this lesson on parameters](parameters) goes into more detail on how the parameters are encoded/decoded in HTTP
+* and [this lesson on parameters](/lessons/server_side_javascript/parameters) goes into more detail on how the parameters are encoded/decoded in HTTP
 
 # Form reply: body
 

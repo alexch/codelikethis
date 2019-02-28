@@ -161,8 +161,12 @@ fill a glass of water at the sink
       subject.lessons.map(&:name).should == ["scramble_eggs", "boil_water"]
     end
 
-    it "can find a lesson by name" do
+    it "can find a lesson by name (with underscores)" do
       subject.lesson_named("boil_water").name.should == "boil_water"
+    end
+
+    it "can find a lesson by name (with dashes)" do
+      subject.lesson_named("boil-water").name.should == "boil_water"
     end
 
     describe 'next and previous lesson' do
@@ -258,4 +262,16 @@ fill a glass of water at the sink
 
   end
 
+  describe 'using the Track.named factory' do
+    class MegaTrack < Track
+    end
+
+    it 'finds a track subclass based on a snake_case name' do
+      expect(Track.named('mega_track')).to eq(MegaTrack)
+    end
+
+    it 'finds a track subclass based on a kebab-case name' do
+      expect(Track.named('mega-track')).to eq(MegaTrack)
+    end
+  end
 end

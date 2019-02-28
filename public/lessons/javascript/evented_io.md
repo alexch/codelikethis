@@ -1,6 +1,6 @@
 # Evented I/O: A Gentle Introduction
 
-(Prerequisite: [I/O lesson](/public/lessons/learn_to_code_with_javascript/input_and_output.md))
+(Prerequisite: [I/O lesson](/lessons/learn_to_code_with_javascript/input_and_output))
 
 This is a **very** big topic, but briefly...
 
@@ -119,7 +119,7 @@ Yes, nested callbacks are confusing. This is an example of *callback hell*.
 
 # Callback Hell
 
-![yo dawg callbacks](/public/images/yo-dawg-callbacks.png)
+![yo dawg callbacks](/images/yo-dawg-callbacks.png)
 
 # Async-Await and Promises
 

@@ -1,6 +1,6 @@
 # portfolio prettification
 
-Now that you know how to use styles and layouts, gussy up your [portfolio page](portfolio_page.md)
+Now that you know how to use styles and layouts, gussy up your [portfolio page](portfolio_page)
 
 ## Goals
 

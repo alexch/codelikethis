@@ -49,7 +49,7 @@ class App < Sinatra::Base
     @site ||= create_site
   end
 
-  def page(thing: , sidebar: false, breadcrumbs: false)
+  def page(thing:, sidebar: false, breadcrumbs: false)
     ThingPage.new(thing: thing, site: site, warning: @warning, sidebar: sidebar, breadcrumbs: breadcrumbs)
   end
 
@@ -75,11 +75,24 @@ class App < Sinatra::Base
     page(
         thing: site,
         sidebar: true
-        ).to_html
+    ).to_html
   end
 
   get "/lessons/:track" do
     page(thing: track).to_html
+  end
+
+  def find_file_in_tracks first_dir, filename
+    dirs = ([first_dir] + site.tracks.map { |track| track.dir })
+    dirs.each do |dir|
+      [
+          File.join(dir, filename),
+          File.join(dir, filename.gsub('-', '_')),
+          File.join(dir, filename.gsub('_', '-'))
+      ].each do |path|
+        return path if File.exist?(path)
+      end
+    end
   end
 
   get "/lessons/:track/:lesson.slides" do
@@ -88,9 +101,8 @@ class App < Sinatra::Base
     track = site.track_named(params[:track])
 
     if track
-      file = File.join(lesson.dir, "#{params[:lesson]}.md")
-
-      if not File.exist?(file)
+      file = find_file_in_tracks(lesson.dir, "#{params[:lesson]}.md")
+      if file.nil?
         not_found
         return
       end
@@ -124,8 +136,21 @@ class App < Sinatra::Base
     deck_page.to_html
   end
 
+  get "/lessons/images/:file.:ext" do
+    path = File.join(here, "public", "images", "#{params[:file]}.#{params[:ext]}")
+    ap path
+    send_file(path)
+  end
+
   get "/lessons/:track/:file.:ext" do
-    send_file(File.join(track_dir, "#{params[:file]}.#{params[:ext]}"))
+    found_path = find_file_in_tracks(track_dir, "#{params[:file]}.#{params[:ext]}")
+    if found_path.nil?
+      not_found
+    else
+      puts "Sending #{found_path}"
+      send_file(found_path)
+    end
+
   end
 
   get "/lessons/:track/:lesson" do
@@ -184,7 +209,7 @@ class App < Sinatra::Base
     if params['site']
       sitename = params['site']
       response.set_cookie(:site, :value => sitename,
-                          :expires => Time.now + 3600*12)
+                          :expires => Time.now + 3600 * 12)
       @warning = "Setting site cookie to #{sitename}."
     elsif cookies['site']
       sitename = cookies['site']

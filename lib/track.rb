@@ -10,6 +10,7 @@ require 'lesson'
 require 'lab'
 require 'breadcrumbs'
 require 'tracks_table'
+require 'util'
 
 class Track < Thing
 
@@ -19,8 +20,10 @@ class Track < Thing
     # first load every track in the filesystem
     require_all(tracks_dir)
 
-    track_constant_name = track_name.split('_').map(&:capitalize).join
+    track_constant_name = track_name.split(/[_-]/).map(&:capitalize).join
     Track.const_get(track_constant_name)
+  rescue => e
+    raise "Could not find track named '#{track_name}'"
   end
 
   attr_writer :dir
@@ -304,7 +307,12 @@ class Track < Thing
   end
 
   def this_item_index(lesson_name)
-    (@things.map(&:name).index {|name| name == lesson_name}) or raise "No lesson named #{lesson_name}"
+    # handle both URL-friendly dashes and filename-friendly underscores
+    snake_case_lesson_name = lesson_name.gsub('-', '_')
+    kebab_case_lesson_name = lesson_name.gsub('_', '-')
+    (@things.map(&:name).index do |name|
+      [lesson_name, snake_case_lesson_name, kebab_case_lesson_name].include? name
+    end) or raise "No lesson named #{lesson_name}"
   end
 
 end

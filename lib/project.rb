@@ -42,7 +42,15 @@ class Project < Thing
   end
 
   def content_file
-    File.new(File.join(projects_dir, "#{@name}.md"))
+    path = [@name, @name.gsub('-', '_'), @name.gsub('_', '-')].map do |possible_name|
+      File.join(projects_dir, "#{possible_name}.md")
+    end.find do |path|
+      File.exist? path
+    end
+    if path.nil?
+      raise Errno::ENOENT.new("#{@name}.md in #{projects_dir}")
+    end
+    File.new(path)
   end
 
   # todo: use OO, not switch statement, for 'From' href and icon

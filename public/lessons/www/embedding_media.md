@@ -5,7 +5,7 @@
 
 # Embedding Media
 
-[Embedding](/lessons/www/embedding_media) is the process of including *media* from other sources into your web sites.
+[Embedding](/lessons/www/embedding-media) is the process of including *media* from other sources into your web sites.
 
 "other documents" can include: 
 
@@ -28,7 +28,7 @@ Or, if the user moves their location on an embedded Google Map, your app could b
 
 > This lesson focuses on *static* embedding: 
 > displaying media and allowing the user to interact with it directly.
-> The [Interactive Embedding](/lessons/client_side_coding/embedding) lesson focuses on *interactive* embedding: 
+> The [Interactive Embedding](/lessons/client-side-coding/embedding) lesson focuses on *interactive* embedding: 
 > using JavaScript to pass messages between your page's 
 > scripts and the embedded media.
 
@@ -134,4 +134,4 @@ You can find the bounding box for a given map on https://www.openstreetmap.org/ 
 
 # Scripting Maps
 
-It is possible to use JavaScript to interact with an embedded map. See [the client-side coding lesson on embedding](/lessons/client_side_coding/embedding)
+It is possible to use JavaScript to interact with an embedded map. See [the client-side coding lesson on embedding](/lessons/client-side-coding/embedding)

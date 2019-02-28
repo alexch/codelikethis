@@ -32,8 +32,6 @@ class Track
            name: "Rails Conf 2013 The Magic Tricks of Testing by Sandi Metz"
     end
 
-    lesson name: "/javascript/cypress"
-
     lesson name: "inceptions" do
       link href: "https://martinfowler.com/articles/lean-inception/"
     end

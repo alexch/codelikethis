@@ -1,6 +1,6 @@
 # Portfolio Pages with Nav
 
-Now that you've learned about navigation, add some nav to your [portfolio page](portfolio_page.md)
+Now that you've learned about navigation, add some nav to your [portfolio page](portfolio_page)
 
 ## Goals
 
