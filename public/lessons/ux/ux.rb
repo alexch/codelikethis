@@ -2,12 +2,12 @@ require "track"
 
 class Track
   Ux = Track.new(
-    name: "ux",
-    display_name: "User Experience"
+      name: "ux",
+      display_name: "User Experience"
   ) do
 
     lesson name: "what_is_user_experience",
-      display_name:"What is User Experience (UX)?" do
+           display_name: "What is User Experience (UX)?" do
       video youtube_id: "Ovj4hFxko7c"
     end
 
@@ -34,12 +34,12 @@ class Track
 
     lesson name: "accessibility_and_aria" do
       link href: 'https://github.com/turingschool/front-end-curriculum/blob/gh-pages/lessons/module-1/aria-accessibility.md'
-        link href: 'https://alistapart.com/article/aria-and-progressive-enhancement'
+      link href: 'https://alistapart.com/article/aria-and-progressive-enhancement'
     end
     lab name: 'FreeCodeCamp "Responsive Web Design - Applied Accessibility"'
 
     link href: 'http://www.christopherswantz.com/guilt-trip', description: 'what a UX portfolio piece looks like, here is an example'
-
+    link href: "https://www.hillelwayne.com/post/formally-specifying-uis/"
   end
 end
 
