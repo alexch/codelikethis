@@ -20,6 +20,6 @@ jobs:
       - run:
           name: Unit Tests
           command: bundle exec rake spec
-#      - run:
-#          name: Link Checker
-#          command: ./check-links.sh
+      - run:
+          name: Link Checker
+          command: ./check-links.sh
