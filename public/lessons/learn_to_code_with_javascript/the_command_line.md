@@ -26,11 +26,15 @@
 
 # Historical Terminal
 
-Computers used to not have screens! They looked like this:
+Computers used to not have screens! They were connected to devices like this:
 
 ![tty](tty.jpg)
 
 the Terminal app is a direct descendant of a TeleType printer or TTY.
+
+See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) for more history [and TTY pix](https://twitter.com/pdutta/status/980855463343476737).
+
+<small>picture of Teletype Corporation ASR-33 on display at the Computer History Museum by ArnoldReinhold [[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)] via [Wikimedia](https://commons.wikimedia.org/wiki/File:ASR-33_at_CHM.agr.jpg)</small>
 
 # Opening the Terminal
 
