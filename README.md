@@ -72,7 +72,7 @@ Currently there are three Sites:
 
 1. CodeLikeThis <http://codelikethis.com> - the main site, containing all Tracks (listed in alphabetical order)
 2. Bootcamp <http://bootcamp.burlingtoncodeacademy.com> - the site for *Burlington Code Academy's 2018 Web Development Bootcamp*, which runs from June through August in (where else?) Burlington, Vermont 
-3. JavaScript After Hours
+3. JavaScript After Hours <http://js-intro.burlingtoncodeacademy.com>
 
 Both sites are served from the same web application instance, running on Heroku (<http://codelikethis.herokuapp.com>). The app looks at `request.host` and serves a different Site to each hostname.
 
@@ -109,4 +109,10 @@ To declare a project is a bit scattershot. It can be referenced in several place
 4. in a Track file, nested under a Lesson
 
 We should clean this up, so we don't have duplication/omission of e.g. project descriptions depending on where they're defined/referenced.
+
+## URL Rewriting
+
+If you rename a track or lesson, add an entry to `config.ru` so external links to the old name do not become dead links.
+
+`config.ru` also rewrites incoming URLs containing underscores, converting from snake_case to kebab-case for lessons, projects, etc. -- but **NOT** for image files and other media -- and the app can find lesson etc. files in either snake_case or kebab-case format. 
 
