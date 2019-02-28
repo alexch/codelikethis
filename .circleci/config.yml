@@ -1,3 +1,4 @@
+# https://circleci.com/docs/2.0/sample-config/#section=configuration
 version: 2
 jobs:
   build:
@@ -20,9 +21,9 @@ jobs:
       - run:
           name: Unit Tests
           command: bundle exec rake spec
-      - run:
-          name: Install Link Checker
-          command: npm install blc
-      - run:
-          name: Link Checker
-          command: ./check-links.sh
+#      - run:
+#          name: Install Link Checker
+#          command: npm install blc
+#      - run:
+#          name: Link Checker
+#          command: ./check-links.sh
