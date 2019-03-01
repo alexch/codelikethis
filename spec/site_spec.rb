@@ -31,13 +31,13 @@ describe Site do
   describe "as a specific site subclass" do
 
     class Track
-      Puppy = Track.new(name: 'puppy')
+      PuppyLove = Track.new(name: 'puppy_love')
     end
 
     class DogSite < Site
       def tracks
         [
-            ::Track::Puppy,
+            ::Track::PuppyLove,
             ::Track::Www # todo: make a test track, don't reuse a real track
         ]
       end
@@ -46,7 +46,11 @@ describe Site do
     subject { DogSite.new }
 
     it "can find a track" do
-      expect(subject.track_named('puppy')).to eq(::Track::Puppy)
+      expect(subject.track_named('puppy_love')).to eq(::Track::PuppyLove)
+    end
+
+    it "can find a track with dashes" do
+      expect(subject.track_named('puppy-love')).to eq(::Track::PuppyLove)
     end
 
     it "can find a lesson by path" do

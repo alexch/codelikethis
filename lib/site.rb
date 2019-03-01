@@ -42,7 +42,6 @@ class Site < Thing
     Schedule.from_file path: File.join(__dir__, schedule_file), site: self
   end
 
-  # todo: test - to _
   def track_named name
     tracks.detect {|track| track.name == name || track.name == name.gsub('-', '_')}
   end
