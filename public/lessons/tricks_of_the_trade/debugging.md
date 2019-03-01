@@ -67,7 +67,7 @@ function factorial(x) {
 
 Keep adding print statements until you find an anomaly; repeat until you find the source.
 
-> Don't forget to *remove* the tests after you've fixed the bug!
+> Don't forget to *remove* the print statements after you've fixed the bug!
 
 # Debugging with Print Statements
 

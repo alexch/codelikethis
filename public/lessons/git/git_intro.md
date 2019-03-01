@@ -87,7 +87,7 @@ git has a two-step process for tracking changes to files.
 
 After a commit, the staging area is cleared, and the cycle continues.
 
-> Confusingly, the term "commit" is both a noun and a verb -- you run "git commit" on the command line to create a "git commit" in the history :-(
+Think of the staging area as a loading dock for a warehouse. Boxes (changes) are put there a few at a time, then moved into the warehouse *en masse*.
 
 # LAB: Make a shopping list
 
@@ -104,9 +104,9 @@ After a commit, the staging area is cleared, and the cycle continues.
 3. Go **back to the command line** and type the following commands:
 
   * `git status`
-  * `git add .`  -- that's "git <kbd>Space</kbd> add <kbd>Space</kbd> dot <kbd>Enter</kbd>"
+  * `git add .`  *(that's "git <kbd>Space</kbd> add <kbd>Space</kbd> dot <kbd>Enter</kbd>")*
   * `git status` 
-  
+
 4. Now look at the the two `git status` results. What is different between them? Why?
 
 # LAB: Make a shopping list (cont.)
@@ -129,6 +129,20 @@ Changes to be committed:
 This message is saying that there is one file with staged changes, and it's a file git has never seen before, and its name is `groceries.txt`. It's also trying to be helpful by telling you how to *unstage* this change if you want. 
 
 (But you *don't* want to do this now, so that message isn't actually very helpful, and in fact is adding to the confusing by cluttering the output.)
+
+# Core Concept: Commit
+
+After *adding* changes to the staging area, you *commit* them to history.
+
+Confusingly, the term "commit" is both a noun and a verb -- you run "git commit" on the command line to create a "git commit" in the history :-(
+
+When you create a commit, you always provide a *message* describing the nature of the changes:
+
+```
+git commit -m 'allow users to change their profile picture'
+```
+
+Commit messages are important. Think of them as journal entries -- without them you will be tracking *what* you changed, but not *why* you made the changes.
 
 # LAB: Make a shopping list (cont.)
 
@@ -189,7 +203,7 @@ Fortunately, git allows you to *abbreviate* a hash by using its first few digits
 
 Look carefully at the digits inside the brackets -- **`d8b9565`**. They are the *same digits* as the beginning of the full hash above.
 
-> The commit id is generated using a cryptographic algorithm known as "SHA-1 hash", which assures that no two commits will ever have the exact same sequence of digits in their ids.
+> The commit id is generated using a cryptographic algorithm known as "SHA-1 hash", which assures that no two commits will ever have the exact same sequence of digits in their ids. <small><br>(unless someone [tries really hard to force a collision](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html))</small>
 
 # LAB: More shopping
 
@@ -233,7 +247,7 @@ Finally, do the two-step:
 3. `git commit -m "oh no, out of condiments"`
 4. `git status`
 
-> It is a **very good habit** to run `git status` incessantly. Like, all the time, between every other `git` command.
+> It is a **very good habit** to run `git status` incessantly. Like, **all the time**, between every other `git` command.
 
 # LAB: Shopping History
 
@@ -241,7 +255,7 @@ Now let's pretend that a few days have passed... (or a few hours...) and you ate
 
 But Ben & Jerry's has such weird ice cream names, and you can't remember whether you bought Chunky Monkey or Chubby Hubby or Cherry Garcia!
 
-> oh no, it's an **ICE CREAM-ERGENCY!!!**
+> oh no, it's an **ice creaMERGENCY!!!**
 
 Fortunately, git is a time machine. You can view *any point* in history and see the changes made at that point in history.
 
@@ -288,7 +302,7 @@ Oh, Chunky Monkey, how could I ever forget you?
 
 # Diffs
 
-Reading diffs can be difficult.
+Diffs (also known as *patches*) can be **diff**icult to understand at first.
 
 The most important thing is that every line beginning with a `+` was *added* and every line beginning with `-` was *removed*.
 
