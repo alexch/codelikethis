@@ -119,6 +119,21 @@ Move to?
 (and likewise for Player O)
 
 <!--/BOX-->
+
+<!--BOX-->
+
+### Stalemate
+
+**Given** the turn ends
+
+**When** all cells are full and nobody has won
+
+**Then** the app says "Stalemate!"
+
+**And** the game ends
+
+<!--/BOX-->
+
 <!--BOX-->
 
 ### Names
