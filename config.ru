@@ -9,6 +9,10 @@ use Rack::Rewrite do
 
   moved_permanently %r{^/(.*)/+$}, '/$1' # always remove trailing /
 
+  moved_permanently %r{^(/lessons/learn[_-]to[_-]code[_-]with[_-]javascript)(/.*)?$}, (lambda do |match, env|
+    "/lessons/javascript#{match[2] && match[2].gsub(/_+/, '-')}"
+  end)
+
   # replace underscores with dashes...
   moved_permanently %r{^.*_.*$}, (lambda do |match, env|
     match[0].gsub(/_+/, '-')
@@ -26,7 +30,6 @@ use Rack::Rewrite do
 
   moved_permanently '/lessons/test_driven/test_driven',
                     '/lessons/agile_development/test_driven'
-
   # renamed tracks
   {
       ruby_advanced: 'ruby',
