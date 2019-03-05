@@ -49,7 +49,9 @@ Tic Tac Toe
 Player O's turn
 ```
 
-## Stories
+## Backlog
+
+The backlog is an ordered list of *user stories* (aka *features*). Make sure to implement them *in order*, and don't move on to the next one until you're confident that your current story meets all the requirements. Some features already have *acceptance tests* written in Cypress; make sure these work and also feel free to add your own tests in the `cypress/integration` directory.
 
 <!--BOX-->
 
