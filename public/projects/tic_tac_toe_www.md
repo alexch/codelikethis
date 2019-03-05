@@ -8,12 +8,63 @@ In this project you will implement the [game rules](https://en.wikipedia.org/wik
 
 We recommend that before you start this project, you complete the [Tic Tac Toe (CLI)](tic_tac_toe) project (at least up to the "Artificial Stupidity" story). This will help you keep the *game rules* separate from the *user interface*, both in your mind and in your code. You may even be able to reuse many of the functions you wrote earlier.
 
-Template repository: https://github.com/BurlingtonCodeAcademy/tic-tac-toe-www
+Template repository: https://github.com/BurlingtonCodeAcademy/tic-tac-toe-www -- either clone this directly, or use your own GitHub Classroom repo.
 
 ## Wireframes
 
+```
+Tic Tac Toe
+
+   |   |  
+--- --- ---
+   |   |  
+--- --- ---
+   |   |  
+
+[Start Game]
+```
+---
+
+```
+Tic Tac Toe
+
+   |   |  
+--- --- ---
+   |   |  
+--- --- ---
+   |   |  
+
+Player X's turn
+```
+---
+```
+Tic Tac Toe
+
+   | X |  
+--- --- ---
+   |   |  
+--- --- ---
+   |   |  
+
+Player O's turn
+```
 
 ## Stories
+
+<!--BOX-->
+
+### Start Game
+
+**Given** an empty board
+
+**When** the user clicks 'Start Game'
+
+**Then** the 'Start Game' button is disabled ("grayed out")
+
+**And** the status area contains "Player X's turn"
+
+<!--/BOX-->
+
 
 <!--BOX-->
 
