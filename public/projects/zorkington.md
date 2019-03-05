@@ -11,6 +11,7 @@ In this project, you will create a version of Zork that takes place in the faraw
 * https://en.wikipedia.org/wiki/Zork
 * https://classicreload.com/zork-i.html - Play Zork here!
 * http://mentalfloss.com/article/29885/eaten-grue-brief-history-zork
+* [Zork running in a web browser on an IBM 5050 PC emulator written in JavaScript.](https://www.pcjs.org/disks/pcx86/games/infocom/zork1/)
 
 ## Tech
 

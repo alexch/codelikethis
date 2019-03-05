@@ -13,8 +13,9 @@ class Track
     goal name: "AJAX, the system for asynchronously transmitting data between client-side and server-side applications"
     goal name: "Web APIs such as Google Maps and Google Analytics which add sophisticated features to simple Web sites"
 
+    project name: "markdown_preview"
     project name: "pomodoro"
-    project name: "tic_tac_toe"
+    project name: "tic_tac_toe_www"
     project name: "hangman"
 
     lesson name: "embedding",

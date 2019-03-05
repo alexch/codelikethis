@@ -124,9 +124,9 @@ Move to?
 
 ### Stalemate
 
-**Given** the turn ends
+**Given** all cells are full and neither player has three in a row
 
-**When** all cells are full and nobody has won
+**When** the turn ends
 
 **Then** the app says "Stalemate!"
 

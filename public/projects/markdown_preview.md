@@ -19,25 +19,26 @@ Input some markdown source on the left and see it rendered on the right.
 * Native DOM (or jQuery or React) for user events
 * HTML forms and layout
 * a Markdown rendering library
-  * https://github.com/chjj/marked
-* Cypress
-  * https://cypress.io
+  * We recommend [Marked](https://github.com/chjj/marked)
+* Cypress Tests
+  * Visit [cypress.io](https://cypress.io) for docs
+  * Visit [our lesson on Cypress](/lessons/javascript/cypress) for a tutorial overview
 
 ## Setup
 
-* Clone the repo: (do this once)
+* Clone the repo: (do this once only -- and use the Github Classroom URL instead if one is provided)
 
         git clone git@github.com:BurlingtonCodeAcademy/markdown_preview.git
-        
+
 * Install dependencies: (do this once)
-        
+
         cd markdown_preview
         npm install -y
 
 * Launch the app locally:
 
         npm start
-        
+
     * you can now visit <http://localhost:8080/> to see your app running on your own computer!
     * (in this project, `npm start` launches a *static file server* so everything under the project directory is now a live website running on your own machine!)
 
@@ -92,11 +93,11 @@ We have provided Cypress tests that run through the first few features. Please m
 <!--/BOX-->
 
 <!--BOX-->
-## Automatically Render Markdown 
+## Automatically Render Markdown
 
 **Given** the user types into the *source* text field
 
-**And** one second has elapsed since the user's last keypress
+**And** at least one second has elapsed since the user's last keypress
 
 **Then** the *render* button should activate automatically
 
@@ -109,12 +110,14 @@ We have provided Cypress tests that run through the first few features. Please m
 
 Make the app look pretty.
 
+(Remember not to change any of the CSS ids used by the Cypress tests!)
+
 <!--/BOX-->
 
 <!--BOX-->
 ## Pretty Preview
 
-Make the *formatted text* in the *preview* area look pretty. 
+Make the *formatted text* in the *preview* area look pretty.
 
 Maybe make different elements different colors, or improve margins and padding, or whatever you like.
 
@@ -184,9 +187,9 @@ Ideas:
 
 ## More Information
 
-* info on the Cypress test suite 
-  * <http://docs.cypress.io/guides> 
-  * <http://docs.cypress.io/api> 
+* info on the Cypress test suite
+  * <http://docs.cypress.io/guides>
+  * <http://docs.cypress.io/api>
 * how to write event listeners and attach them to DOM elements
   * <https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick>
   * <https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers>

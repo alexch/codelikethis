@@ -8,7 +8,7 @@ This brief lesson builds on the [URLs](/lessons/www/urls) lesson, discussing how
 
 yes, "**search**" is the wrong name for this field `:-(`, but "search" and "query" are pretty synonymous, so it's not so bad
 
-unfortunately, you need to parse the string into parameters, decoding the 
+unfortunately, you need to parse the string into parameters, decoding `?x=1&y=2` into the object `{x: 1, y: 2}`
 
 fortunately, there is a standard JS API object to help you, named [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
 

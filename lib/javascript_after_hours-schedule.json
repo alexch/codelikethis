@@ -134,6 +134,7 @@
     },
     {
       "track": "www",
+      "description": "Returning to JavaScript's roots, we now learn how to 'script' a web page, adding interactivity to an otherwise static site. The FreeCodeCamp challenges will remind you how HTML+CSS work; Markdown Preview is a simple interactive tool; and and Tic Tac Toe (WWW) builds on Tic Tac Toe (CLI) to make a full-fledged game run inside a web page.",
       "projects": [
         {
           "from": "FreeCodeCamp",
@@ -155,8 +156,10 @@
       ],
       "lessons": [
         "http",
+        "urls",
         "dom_debugging",
-        "dom_scripting"
+        "dom_scripting",
+        "/javascript/cypress"
       ]
     },
     {
@@ -167,6 +170,8 @@
         "pomodoro"
       ],
       "lessons": [
+        "dom",
+        "urls_and_javascript",
         "embedding",
         "ajax",
         "calling_apis"
