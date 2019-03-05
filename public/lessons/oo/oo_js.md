@@ -5,7 +5,7 @@
 
 # Object-Oriented JavaScript
 
-This lesson assumes you are familiar with the usage of JavaScript [Objects](../learn_to_code_with_javascript/objects) and [Methods](../learn_to_code_with_javascript/methods) and the fact that JavaScript is a [hybrid language](hybrid).
+This lesson assumes you are familiar with the usage of JavaScript [Objects](../javascript/objects) and [Methods](../javascript/methods) and the fact that JavaScript is a [hybrid language](hybrid_styles).
 
 JavaScript is a hybrid of (at least) three styles:
 
@@ -56,17 +56,21 @@ let a = rectangle.area()
 
 the above code follows OO rules since it only accesses data held inside `rectangle` via the magic pointer `this`, and returns a new value, not a live reference to internal state
 
----
+# Using an Object, But Not Object-Oriented
 
-The following code is **not** object-oriented...
+Using the `rectangle` object from the previous slide, the following code is **not** object-oriented...
 
 ```javascript
-let perimeter = rectangle.height * 2 + rectangle.width * 2
+let p = calculatePerimeter(rectangle);
+
+function calculatePerimeter(rectangle) {
+  return rectangle.height * 2 + rectangle.width * 2;
+}
 ```
 
-...since `height` and `width` are owned by `rectangle`, not by whatever outside object or function contains that code
+...since `height` and `width` are owned by `rectangle`, not by the `calculatePerimeter` function
 
-Q: How would an OO design calculate the rectangle's perimeter? (Anwser on next slide.)
+Q: How would an OO design calculate the rectangle's perimeter? (Answer on next slide.)
 
 # Pure Object-Oriented Example (Cont.)
 
@@ -82,7 +86,7 @@ let p = rectangle.perimeter()
 
 # Object vs. Object
 
-* In JS, an "object" is just a [hash](/lessons/learn_to_code_with_javascript/hashes)
+* In JS, an "object" is just a [hash](/lessons/javascript/hashes)
   * not very object-oriented
 * To be object-oriented you need to add a few things
   * the "`this`" variable

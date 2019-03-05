@@ -22,7 +22,7 @@ class JavascriptAfterHours < Site
 
   def tracks
     [
-        ::Track::LearnToCodeWithJavascript,
+        ::Track::Javascript,
         ::Track::Www,
         ::Track::ClientSideCoding,
         ::Track::Javascript, # "JavaScript Topics"

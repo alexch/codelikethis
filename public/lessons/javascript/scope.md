@@ -4,6 +4,10 @@
     topic name: "parameters"
     topic name: "functions"
     topic name: "closure-scope"
+    #todo: make a cleaner protocol than @description=
+    @description = "When can you access a JavaScript variable? It depends on its scope. In this lesson we discuss the various scopes a variable can occupy, including global vs local, functional vs lexical, private vs public."
+    link href: "https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/"
+    link href: "https://scotch.io/tutorials/understanding-scope-in-javascript"
 
 # Scope
 
@@ -257,7 +261,7 @@ this is a contrived example, but the idea is that
 
 # Why Nested Scopes? 3
 
-* private state encapsulation with [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)'s (this is **very tricky**; for more detail, see the [encapsulation](/lessons/javascript/encapsulation) lesson)
+* private state encapsulation with [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)'s (this is **very tricky**; for more detail, see the [encapsulation](encapsulation) lesson)
 
 ```js
 let count = (function() {

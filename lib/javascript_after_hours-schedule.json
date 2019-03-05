@@ -33,7 +33,7 @@
     },
     {
       "start": "2019-01-15",
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "lessons": [
         "intro",
         "the_command_line",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "lessons": [
         "strings",
         "numbers",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "lessons": [
         "functions",
         "logic",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "lessons": [
         "loops",
         "arrays",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "description": "Feb. 12th class was canceled due to winter storm",
       "lessons": [
         "objects",
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "lessons": [
         "stacks",
         "iteration_methods"
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "description": "Here we are finishing with the foundations of the JavaScript language, touching on git before launching into client-side coding and larger projects next week",
       "lessons": [
         "scope",

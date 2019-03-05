@@ -2,7 +2,7 @@
 
 Computers have a very strict idea of when things are *true* and *false*.
 
-![Truthiness](../learn_to_code_with_javascript/truthiness.png)
+![Truthiness](../javascript/truthiness.png)
 
 (Unlike Stephen Colbert...)
 

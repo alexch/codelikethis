@@ -1,4 +1,7 @@
-# JavaScript Basics
+  @description = "This lesson is a whirlwind tour of JavaScript features for people already fluent in another programming language. For a more measured and beginner-focused tutorial, start at the top of this Learn to Code with JavaScript track instead."
+
+
+# JavaScript for Programmers
 
 "In JavaScript, there is a beautiful, elegant, highly expressive language that is buried under a steaming pile of good intentions and blunders." - Douglas Crockford, *JavaScript: The Good Parts*
 

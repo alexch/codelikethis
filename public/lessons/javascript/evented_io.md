@@ -1,6 +1,6 @@
 # Evented I/O: A Gentle Introduction
 
-(Prerequisite: [I/O lesson](/lessons/learn_to_code_with_javascript/input_and_output))
+(Prerequisite: [I/O lesson](/lessons/javascript/input_and_output))
 
 This is a **very** big topic, but briefly...
 

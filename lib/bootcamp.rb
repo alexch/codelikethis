@@ -17,7 +17,7 @@ class Bootcamp < Site
 
   def tracks
     [
-      ::Track::LearnToCodeWithJavascript,
+      ::Track::Javascript,
       ::Track::Www,
       ::Track::ResponsiveLayout,
       ::Track::ClientSideCoding,
