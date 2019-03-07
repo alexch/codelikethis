@@ -171,9 +171,10 @@ To attach an event handler,
 If you have already defined an event handler function, you can attach it by reference, like this:
 
 ```html
+<button type="button" id="magic">Magic</button>
 <script>
 function sayMagicWord() {
-    alert('Presto!');
+    alert('Shazam!');
 }
 var button = document.getElementById('magic');
 button.addEventListener('click', sayMagicWord)
@@ -187,3 +188,35 @@ button.addEventListener('click', sayMagicWord())  // BAD CODE, DO NOT USE
 ```
 
 This **calls the function** `sayMagicWord` when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).
+
+# Event Parameters
+
+An event handler function can optionally accept a parameter -- usually called `event` (or just `e`) -- that contains [lots of information about the thing that just happened].
+
+An [event object](https://developer.mozilla.org/en-US/docs/Web/API/Event) has many properties but the most important one is `event.target`, which points to the element where the action took place.
+
+For instance, for a **click** event, `event.target` contains a pointer to the *button* that was clicked.
+
+```html
+<button type="button" id="presto">Presto...</button>
+<button type="button" id="abra">Abra...</button>
+<script>
+var prestoButton = document.getElementById('presto');
+var abraButton = document.getElementById('abra');
+
+function sayMagicWord(event) {
+  if (event.target === prestoButton) {
+    alert('Change-o!');
+  } else if (event.target === abraButton) {
+    alert('Cadabra!');
+  } else {
+    alert('Shazam!')
+  }
+}
+
+prestoButton.addEventListener('click', sayMagicWord)
+abraButton.addEventListener('click', sayMagicWord)
+</script>
+```
+
+(See the above script in action [here](magic.html))

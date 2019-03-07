@@ -1,0 +1,22 @@
+<button type="button" id="magic">Magic</button>
+<button id="presto" type="button">Presto...</button>
+<button id="abra" type="button">Abra...</button>
+<script>
+  var magicButton = document.getElementById("magic");
+  var prestoButton = document.getElementById("presto");
+  var abraButton = document.getElementById("abra");
+
+  function sayMagicWord(event) {
+    if (event.target === prestoButton) {
+      alert('Change-o!');
+    } else if (event.target === abraButton) {
+      alert('Cadabra!');
+    } else {
+      alert('Shazam!');
+    }
+  }
+
+  prestoButton.addEventListener("click", sayMagicWord);
+  abraButton.addEventListener("click", sayMagicWord);
+  magicButton.addEventListener("click", sayMagicWord);
+</script>

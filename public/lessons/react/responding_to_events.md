@@ -15,7 +15,7 @@
 /* React Event Handler */
 <button onClick={handleData}>
   Submit Data
-</button>p
+</button>
 ```
 
 # Preventing Default Behavior
