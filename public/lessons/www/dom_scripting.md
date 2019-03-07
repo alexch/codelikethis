@@ -50,6 +50,8 @@ With a `src` attribute, it *loads code from a separate file*, and and *immediate
 <script src="tictactoe.js"></script>
 ```
 
+This code expects a file named `tictactoe.js` to *exist on the server* in the same directory as the HTML file.
+
 The `script` tag may appear in the `head` or in the `body`. Scripts are executed in top-to-bottom order.
 
 > HINT: to be sure that your code executes after the page has been fully loaded, put your `<script>` tags at the *bottom* of the `<body>` section.
@@ -184,4 +186,4 @@ button.addEventListener('click', sayMagicWord)
 button.addEventListener('click', sayMagicWord())  // BAD CODE, DO NOT USE
 ```
 
-This calls sayMagicWord when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).
+This **calls the function** `sayMagicWord` when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).

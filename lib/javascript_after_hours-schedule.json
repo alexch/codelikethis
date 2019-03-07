@@ -158,8 +158,7 @@
         "http",
         "urls",
         "dom_debugging",
-        "dom_scripting",
-        "/javascript/cypress"
+        "dom_scripting"
       ]
     },
     {
@@ -180,7 +179,8 @@
         "track": "javascript",
         "lessons": [
           "/oo/oo_design",
-          "no_frills_testing"
+          "no_frills_testing",
+          "/javascript/cypress"
         ]
       }]
     },

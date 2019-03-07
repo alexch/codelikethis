@@ -5,10 +5,10 @@
 
 # What is the DOM?
 
-* DOM stands for **Document Object Model** 
-* can be a bit tricky to wrap your head around. It is essentially an API that defines how your HTML document is accessed and manipulated. 
-* In the strict definition of a DOM, your HTML file is the document, and the HTML elements are objects (or nodes). 
-* A visual representation of the DOM can be seen by using the 'Inspect' feature of your browser. 
+* DOM stands for **Document Object Model**
+* can be a bit tricky to wrap your head around. It is essentially a set of objects and methods that defines how your HTML document is accessed and manipulated.
+* A central metaphor of the DOM is that your HTML file is a tree, and HTML elements are branches and leaves on that tree.
+* A visual representation of the DOM can be seen by using the 'Inspect' feature of your browser.
 
 Please try this out right now, on this web page!
 
@@ -21,7 +21,7 @@ Please try this out right now, on this web page!
 
 # Unbreaking Your Code (Using the DOM)
 
-With both HTML and CSS, it can be easy to forget a semi-colon or a closing tag, which can lead to unwanted display issues on your website. There are a few tools that can help prevent and/or fix this going forward. 
+With both HTML and CSS, it can be easy to forget a semi-colon or a closing tag, which can lead to unwanted display issues on your website. There are a few tools that can help prevent and/or fix this going forward.
 
 * Your Browser
 * A Friend
@@ -33,18 +33,18 @@ Chrome can be one of the most useful tools for debugging HTML and CSS.
 
 * Right clicking on an element in Chrome. You will see an option labeled 'Inspect'.
 * An easy-to-read visual representation of your DOM will open, which can be modified and analyzed to track down any code that may be of issue.
-* Both CSS properties and HTML elements can also be added, removed, or modified to determine their impact on specific elements of your web page. 
+* Both CSS properties and HTML elements can also be added, removed, or modified to determine their impact on specific elements of your web page.
 
 ![Image of the chrome web inspection tool](https://developer.chrome.com/devtools/images/devtools-window.png "Chrome Web Inspector")
 
 # Grab a Second Set of Eyes
 
-Often staring at thousands of semi-colons and angle brackets can be overwhelming and mind-numbing. A second set of trained eyes can help to find that pesky character that is breaking your code. 
+Often staring at thousands of semi-colons and angle brackets can be overwhelming and mind-numbing. A second set of trained eyes can help to find that pesky character that is breaking your code.
 
 # What is a Linter?
 
 * A program that assesses code in order to locate any possible errors
 
-There are endless options for both HTML and CSS linters. A quick Google search will yield a number of potential websites and plugins to help debug your code. 
+There are endless options for both HTML and CSS linters. A quick Google search will yield a number of potential websites and plugins to help debug your code.
 
 E.g. <https://validator.w3.org/>
