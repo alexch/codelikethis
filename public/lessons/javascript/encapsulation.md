@@ -1,3 +1,10 @@
+    @description = "Encapsulation is an important part of Object-Oriented programming, but we don't need objects to achieve it. This lesson covers using scope and IIFEs to make truly private variables in JavaScript without classes or prototypes."
+    link href: "https://www.youtube.com/watch?v=HcW5-P2SNec"
+    topic name: "encapsulation"
+    topic name: "closure-scope"
+    topic name: "private-variable"
+    topic name: "immediately-invoked-function-expressions"
+
 # Encapsulation in JavaScript
 
 [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)) is an important principle of software design
@@ -26,7 +33,7 @@ Remember, the computer doesn't care about your fancy design, but humans will, so
 
 # OO?
 
-Encapsulation is an important part of *[object-oriented design](oo_js)*
+Encapsulation is an important part of *[object-oriented design](../oo)*
 
 but it's not the only part (there's also inheritance, polymorphism, interfaces, etc.)
 

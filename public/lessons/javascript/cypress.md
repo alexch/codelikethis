@@ -237,10 +237,10 @@ For example, given this HTML:
 | cypress code | result |
 |---|---|
 |`cy.get('h2')` | |
-|`.contains('New York')` | OK: ![one success](./cypress-ny.png) |
-|`.contains('York')` | OK: ![one success](./cypress-york.png) |
-|`.should('have.text', 'New York')` | Failure: ![YorkLos](./cypress-yorklos.png) |
-|`.then((element) => {` <br>&nbsp;&nbsp; `expect(element.text()).to.equal('New York')` <br> `});` | Failure: ![YorkLos](./cypress-yorklos-then.png) |
+|`.contains('New York')` | OK: ![one success](cypress-ny.png) |
+|`.contains('York')` | OK: ![one success](cypress-york.png) |
+|`.should('have.text', 'New York')` | Failure: ![YorkLos](cypress-yorklos.png) |
+|`.then((element) => {` <br>&nbsp;&nbsp; `expect(element.text()).to.equal('New York')` <br> `});` | Failure: ![YorkLos](cypress-yorklos-then.png) |
 
 # checking multiple matching elements with `each`
 
@@ -253,7 +253,7 @@ Fortunately, there is `each`
 | cypress code | result |
 |---|---|
 |`cy.get('h2')` | |
-| &nbsp;&nbsp;`.each((element) => {` <br>&nbsp;&nbsp;&nbsp;&nbsp; ` element.text()` <br>&nbsp;&nbsp;&nbsp;&nbsp; `.should.equal('New York');` <br> ` });` | One failure, one OK: ![one success, one failure](./cypress-ny-la.png) |
+| &nbsp;&nbsp;`.each((element) => {` <br>&nbsp;&nbsp;&nbsp;&nbsp; ` element.text()` <br>&nbsp;&nbsp;&nbsp;&nbsp; `.should.equal('New York');` <br> ` });` | One failure, one OK: ![one success, one failure](cypress-ny-la.png) |
 
 # project structure
 

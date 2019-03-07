@@ -73,7 +73,7 @@
     },
     {
       "start": "2018-09-17",
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "lessons": [
         "intro",
         "the_command_line",
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "track": "learn_to_code_with_javascript",
+      "track": "javascript",
       "lessons": [
         "loops",
         "arrays",

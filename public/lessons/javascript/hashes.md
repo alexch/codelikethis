@@ -46,7 +46,7 @@ In JavaScript, a **hash** is officially called an **object**.
 
 * Just using an object as a key-value store does not make your code *object-oriented*.
     * For OOP you need a few extra features, especially the keywords `new` and `this` and `class`
-    * We discuss OOP in a separate [OO_JS](../javascript/oo_js) lesson
+    * We discuss OOP in a separate [OO_JS](../oo) track
 * In the rest of this lesson we use "object", but elsewhere, you may see "hash" and "object" used interchangeably
 
 # Sidebar: Why is it called a hash?
