@@ -25,7 +25,7 @@ class JavascriptAfterHours < Site
         ::Track::Javascript,
         ::Track::Www,
         ::Track::ClientSideCoding,
-        ::Track::Javascript, # "JavaScript Topics"
+        ::Track::Separator,
         ::Track::Oo,
         ::Track::Git,
         ::Track::TricksOfTheTrade,
