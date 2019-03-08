@@ -16,8 +16,9 @@ Input some markdown source on the left and see it rendered on the right.
 
 ## Tech
 
-* Native DOM (or jQuery or React) for user events
-* HTML forms and layout
+* Native DOM for user events
+  * (or jQuery or React if you prefer)
+* HTML forms and CSS layout & styling
 * a Markdown rendering library
   * We recommend [Marked](https://github.com/chjj/marked)
 * Cypress Tests
@@ -187,6 +188,8 @@ Ideas:
 
 ## More Information
 
+* Here's a functioning version of this app (written by [@tanabe](https://twitter.com/tanabe)):
+  * <http://markdownlivepreview.com>
 * info on the Cypress test suite
   * <http://docs.cypress.io/guides>
   * <http://docs.cypress.io/api>
@@ -195,7 +198,7 @@ Ideas:
   * <https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers>
   * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
   * <https://developer.mozilla.org/en-US/docs/Web/Events/click>
-* the Markdown language
+* a Markdown language "cheatsheet":
   * <https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf>
 * the Marked JavaScript library
   * <https://marked.js.org/>

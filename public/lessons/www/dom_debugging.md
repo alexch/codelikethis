@@ -17,7 +17,7 @@ Please try this out right now, on this web page!
 * No, it isn't. :-)
 * The DOM can appear similar or identical to the HTML that makes up your website. However, browsers can fix small syntax errors in your HTML automatically (such as inserting a missing close tag).
 * The DOM is also kept up to date with the current state of the page, even if it is modified using JavaScript.
-* Javascript **isn't actually _editing_ your document**. It is simply modifying the DOM. You can think of the DOM as an editable copy of your read-only website, which stays pristine on your server or filesystem.
+* JavaScript **isn't actually _editing_ your document**. It is simply modifying the DOM. You can think of the DOM as an editable copy of your read-only website, which stays pristine on your server or filesystem.
 
 # Unbreaking Your Code (Using the DOM)
 

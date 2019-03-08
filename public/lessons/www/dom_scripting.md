@@ -212,6 +212,7 @@ function sayMagicWord(event) {
   } else {
     alert('Shazam!')
   }
+  console.log({event}); // for debugging
 }
 
 prestoButton.addEventListener('click', sayMagicWord)
