@@ -52,30 +52,47 @@ console.assert(pageNumber >= 0 && pageNumber < numPages,
 > Start with the null case.
 
 ```js
+assert(fancyText('') === '');
+
 function fancyText(s) {
     return '';
 }
-
-assert(fancyText('') === '');
 ```
 
 "Run Test Suite" command: `F5` (Refresh)
 
 # Test As You Go - Step 2
 
-> Write code one test case at a time.
+> Write one more test case...
 
-```js
-function fancyText(s) {
-    return s[0].toUpperCase() + 
-      s.slice(1,s.length).toLowerCase();
-}
-
+```javascript
 assert(fancyText('') === '');
 assert(fancyText('apple') === 'Apple');
 ```
 
-...and so on (see https://fancy-form.herokuapp.com/ )
+...and enough code to make it pass
+
+```javascript
+function fancyText(s) {
+    return s[0].toUpperCase() + 
+      s.slice(1).toLowerCase();
+}
+```
+
+# Test As You Go - Step 3
+
+> There is no step 3! 
+
+Just keep writing tests, and code that satisfies them.
+
+```javascript
+assert(fancyText('pad thai') === 'Pad Thai');
+assert(fancyText('state of the union') === 'State of the Union');
+```
+
+* see https://fancy-form.herokuapp.com/ and https://github.com/alexch/fancy for a live example
+* eventually you may want to move your tests into a `test()` function, then to a separate file, then to use a framework like Jest or Jasmine... 
+  * or maybe not!
 
 # Self-Testing Web Sites
 
