@@ -23,7 +23,7 @@ function assert(value) {
 }
 ```
 
-All you need is <del>love</del>assert.
+All you need is <del>love</del>[assert](https://en.wikipedia.org/wiki/Assertion_(software_development).
 
 # Even better
 
@@ -36,6 +36,16 @@ function assert(value, why) {
   }
 }
 ```
+
+# console keeps calm and carries on
+
+```javascript
+console.assert(pageNumber >= 0 && pageNumber < numPages,
+               'page number should be in range');
+```
+
+* This [built-in console.assert](https://developer.mozilla.org/en-US/docs/Web/API/console/assert) function works fine, but failures do not stop execution
+* a custom `assert` function lets you "fail fast" which is usually a better idea for unit tests since a failure is more obvious and immediate
 
 # Test As You Go - Step 1
 
@@ -90,6 +100,8 @@ assert(fancyText('apple') === 'Apple');
 
 # Tapped Source: fancy.js
 
+`t.equal` is tap's `assert` :
+
 ```js
 var test = require('tape');
 if (window.tapExtension) {
@@ -119,8 +131,9 @@ npm install --save-dev browserify tape
 browserify -o fancy-bundle.js --standalone fancyText fancy.js
 ```
 
-* `-o fancy-bundle.js` means "bundle up all the JS into this file"
-* `--standalone fancyText` means "make the `fancyText` function available globally"
+* browserify rewrites & smooshes server-side JS files and libraries into a single file
+* `-o fancy-bundle.js` means "output all the JS into this one file"
+* `--standalone fancyText` means "make the `fancyText` function available to other scripts on the page"
 
 # Tapped Source: index.html
 
@@ -145,7 +158,7 @@ function doFormat() {
 * Testing is delicious, do it all the time
 * Don't get trapped by your tools
 * Do what works and fix it later (or don't)
-* Optional: use a standard format like TAP
+* **Optional**: use a standard format like TAP
   * gives you an upgrade path from in-browser to command-line / continuous-integration / full suite
   * integrates with other tools (like [Browser-Tap](https://chrome.google.com/webstore/detail/browser-tap/ncfblaiipckncgeipgmpdioedcdmofei) and [tap-spec](https://www.npmjs.com/package/tap-spec))
   * might be more familiar to teammates 
@@ -155,3 +168,4 @@ function doFormat() {
 * https://fancy-form.herokuapp.com/
 * http://codelikethis.com/lessons/javascript/no_frills_testing
 * [Browser-Tap](https://chrome.google.com/webstore/detail/browser-tap/ncfblaiipckncgeipgmpdioedcdmofei) Chrome Extension
+* the [built-in console.assert](https://developer.mozilla.org/en-US/docs/Web/API/console/assert) function works fine, but failures do not stop execution; a custom `assert` function lets you "fail fast"
