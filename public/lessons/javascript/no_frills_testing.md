@@ -131,7 +131,7 @@ npm install --save-dev browserify tape
 browserify -o fancy-bundle.js --standalone fancyText fancy.js
 ```
 
-* browserify rewrites & smooshes server-side JS files and libraries into a single file
+* [browserify](http://browserify.org) rewrites & smooshes server-side JS files and libraries into a single file
 * `-o fancy-bundle.js` means "output all the JS into this one file"
 * `--standalone fancyText` means "make the `fancyText` function available to other scripts on the page"
 
