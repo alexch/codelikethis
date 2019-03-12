@@ -5,7 +5,7 @@
 
 # Object-Oriented JavaScript
 
-This lesson assumes you are familiar with the usage of JavaScript [Objects](../javascript/objects) and [Methods](../javascript/methods) and the fact that JavaScript is a [hybrid language](hybrid_styles).
+This lesson assumes you are familiar with the usage of JavaScript [Objects](../javascript/objects) and [Methods](../javascript/methods) and the fact that JavaScript is a [hybrid language](../javascript/hybrid_styles).
 
 JavaScript is a hybrid of (at least) three styles:
 
