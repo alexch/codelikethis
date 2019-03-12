@@ -178,9 +178,15 @@
       "side_tracks": [{
         "track": "javascript",
         "lessons": [
-          "/oo/oo_design",
           "no_frills_testing",
-          "/javascript/cypress"
+          "cypress"
+        ]
+      },{
+        "track": "oo",
+        "lessons": [
+          "/javascript/hybrid_styles",
+          "oo_js",
+          "oo_js_creation"
         ]
       }]
     },
