@@ -1,4 +1,3 @@
-
 # The DOM
 
 * stands for Document Object Model

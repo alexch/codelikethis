@@ -237,7 +237,7 @@ In JavaScript, `this` needs to be managed more actively.
 
 Specifically, during *callbacks* `this` still points to the *other* object -- the one that is *calling you back* -- **not** the object where the function is defined!
 
-**Solution**: the `=>` fat arrow *re-binds* `this` to point to the *current* object immediately before executing the function.
+**One Solution**: the `=>` fat arrow *re-binds* `this` to point to the *current* object immediately before executing the function.
 
 # More on "this" and binding
 
@@ -255,26 +255,25 @@ var g = circle.circumference;
 g();                        // BAD -- this = window, so this.radius = undefined, so result is NaN
 ```
 
-# `this` and callbacks
+# re-binding
 
-* some JS frameworks set `this` before calling your code via a callback function
+* so if you want to use a *method* as a *callback*, you must *bind* it like this:
 
-  * e.g. before calling an event callback, JQuery sets `this` to point to the DOM element that originated the event
-  * this means that callback code that appears inside an object might be executed in the context of a *different* object
+```javascript
+var module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+}
 
-* to switch the `this` pointer back to your object, use the `=>` fat arrow
+var unboundGetX = module.getX;
+console.log(unboundGetX());
+// expected output: undefined
 
-```js
-$('#someButton').click((event) =>
-    this.clickedButton = $(this).value();
-});
+var boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// expected output: 42
 ```
- 
-* earlier versions of JavaScript didn't have a fat arrow, but you can stash it in a closure-scoped variable, often named `self` by convention
 
-```js
-var self = this;
-$('#someButton').click(function(event) {
-    self.clickedButton = $(this).value();
-});
-```
+see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind

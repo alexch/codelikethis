@@ -165,13 +165,11 @@
       "track": "client_side_coding",
       "description": "Makeup Class on Monday 2/11",
       "projects": [
-        "tic_tac_toe_www",
-        "pomodoro"
+        "tic_tac_toe_www"
       ],
       "lessons": [
-        "dom",
-        "urls_and_javascript",
-        "embedding"
+        "/www/urls",
+        "urls_and_javascript"
       ],
       "side_tracks": [{
         "track": "javascript",
@@ -182,9 +180,9 @@
       },{
         "track": "oo",
         "lessons": [
-          "/javascript/hybrid_styles",
           "oo_js",
-          "oo_js_creation"
+          "oo_js_creation",
+          "oo_design"
         ]
       }]
     },

@@ -210,7 +210,7 @@ function sayMagicWord(event) {
   } else if (event.target === abraButton) {
     alert('Cadabra!');
   } else {
-    alert('Shazam!')
+    alert('Shazam!');
   }
   console.log({event}); // for debugging
 }

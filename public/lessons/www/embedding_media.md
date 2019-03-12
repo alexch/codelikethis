@@ -110,6 +110,15 @@ HTML5 defines a standard `<video>` tag
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 
+### Playing Audio from JavaScript
+
+Playing sounds directly from JavaScript is pretty easy:
+
+```javascript
+let audio = new Audio('audio_file.mp3');
+audio.play();
+```
+
 # Embedding Maps
 
 <iframe id="inlineFrameExample"
