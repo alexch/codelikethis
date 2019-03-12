@@ -171,9 +171,7 @@
       "lessons": [
         "dom",
         "urls_and_javascript",
-        "embedding",
-        "ajax",
-        "calling_apis"
+        "embedding"
       ],
       "side_tracks": [{
         "track": "javascript",
@@ -196,6 +194,8 @@
         "yelpington_app"
       ],
       "lessons": [
+        "ajax",
+        "calling_apis",
         "geocoding",
         "geolocation",
         "interactive_mapping"
