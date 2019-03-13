@@ -213,12 +213,16 @@ let circle = Circle.fromDiameter(4)
 
 # Classes and Constructors (old way)
 
-Prior to 2015 -- and still today under the hood -- a class is really a pointer to a constructor function:
+Prior to 2015 -- and still today under the hood -- a class is really a pointer to a constructor function.
+
+Defining a class required writing code like this:
 
 ```javascript
 var Circle = function(radius) {
     this.radius = radius;
-    this.diameter = radius * 2;
+    this.diameter = function() {
+      return this.radius * 2;
+    }
     this.circumference = function() {
         return Math.PI * 2 * this.radius;
     }
