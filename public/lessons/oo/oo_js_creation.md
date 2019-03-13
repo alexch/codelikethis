@@ -105,9 +105,11 @@ An *instance* is an **individual** object of that type.
 
 * A constructor is a **function** that's called when you use the **new** keyword
 * It's the very first method that's ever called on that particular instance
-* **new** says:
+
+## What `new` does, in detail:
+
   * make a new empty object
-  * set the object's *prototype* (more about this [later](oo_js_inheritance))
+  * set the object's class
   * set `this` to point to the object
   * call the constructor function
   * set `this` back to whatever it was before
@@ -142,6 +144,10 @@ Use it like this:
     circle.area();              // call the area method, which
                                 // returns 12.566370614359172 
 
+## Q: Why is this better?
+
+A: because it preserves *encapsulation* -- the idea that an object should be responsible for setting its own properties
+
 # Constructors are for Validation
 
 constructors are a great place to *validate* your values
@@ -166,6 +172,8 @@ class Circle {
 
 Sometimes one constructor just isn't enough.
 
+When the constructor accepts different parameters from the ones that you have on hand, you could define a *factory function* like this:
+
 ```javascript
 function circleFromDiameter(diameter) {
     return new Circle(diameter / 2);
@@ -174,9 +182,20 @@ function circleFromDiameter(diameter) {
 
 The above is called a "factory function" since it constructs objects for you, based on your specifications. 
 
-# Static Factory Methods
+# Factory Methods
 
 For convenience and code organization, factory functions are often attached to the *class* -- **not the instance** -- of the objects they create.
+
+| Factory Function | Factory Method |
+|---|---|
+| `let c = circleFromDiameter(2)` | `let c = Circle.fromDiameter(2)` |
+
+The factory method works *exactly the same way* as the factory function, but
+
+* the factory function is in the *global namespace*
+* the factory method is in the *class namespace* so it's more clear that it is meant to create one of *this class* of objects
+ 
+ # Static Factory Methods 
 
 To make a *factory method* in JavaScript, use the [`static`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static) keyword:
 

@@ -10,6 +10,8 @@
 
 # `extends`
 
+<!-- NOTE: this slide is probably way too dense and should be broken up into a few slides -->
+
 In geometry, a square is a rectangle whose sides are equal. We can model this in code like this:
 
 ```

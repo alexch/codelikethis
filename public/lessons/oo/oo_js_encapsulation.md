@@ -1,12 +1,9 @@
 
-
-
-
 # Encapsulation?
 
 Unfortunately, in JavaScript, *any* code with a pointer to an object can see *all properties* of that object.
 
-This means that true encapsulation is difficult, since all instance variables are public, not private.
+This means that true encapsulation is difficult, since all properties are public, and none are private.
 
 One way to make truly private variables is below, however...
 
