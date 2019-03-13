@@ -1,5 +1,7 @@
 # OOJS: Prototypes
-  
+
+(this lesson is very technical; [inheritance](oo_js_inheritance) is a better place to start)
+
 # Prototypes
 
 * Every JS object has a prototype

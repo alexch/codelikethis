@@ -1,4 +1,4 @@
-[old slides, should probably delete]
+[old slides, should probably delete, or revise to use ES6 getter syntax]
 
 # A digression: Getters and Setters
 
@@ -25,7 +25,8 @@ circle.setRadius = function(newRadius) {
 circle.getRadius = function() {
     return this.radius;
 };
-// then later...
+// then later, after changing the design
+// to store "diameter" instead of "radius"...
 circle.getRadius = function() {
     return this.diameter / 2;
 };

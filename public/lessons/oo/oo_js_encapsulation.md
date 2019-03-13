@@ -1,29 +1,9 @@
 
-
-# Classes and Constructors (old way)
-
-Prior to 2015, and still today under the hood, a class *is* a pointer to a constructor function:
-
-```javascript
-var Circle = function(radius) {
-    this.radius = radius;
-    this.diameter = radius * 2;
-    this.circumference = function() {
-        return Math.PI * 2 * this.radius;
-    }
-    this.area = function() {
-        return Math.PI * this.radius * this.radius;
-    }
-};
-```
-
-You shouldn't need to write code like this anymore, but you should be able to recognize it if you see it.
-
 # Encapsulation?
 
 Unfortunately, in JavaScript, *any* code with a pointer to an object can see *all properties* of that object.
 
-This means that true encapsulation is difficult, since all instance variables are public, not private.
+This means that true encapsulation is difficult, since all properties are public, and none are private.
 
 One way to make truly private variables is below, however...
 
