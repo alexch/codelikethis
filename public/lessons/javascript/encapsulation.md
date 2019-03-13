@@ -41,7 +41,7 @@ and you can use encapsulation on its own
 
 # Encapsulation Technique 1: closure scope
 
-Here's a *factory method* that creates & returns a circle object:
+Here's a *factory function* that creates & returns a circle object:
 
 ```js
 function createCircle(radius) {

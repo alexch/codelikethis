@@ -15,7 +15,6 @@ Track::Oo = Track.new(
          name: "The Forgotten History of OOP by Eric Elliott"
   end
 
-  lesson name: "/javascript/encapsulation"
 
   lesson name: 'oo_js', display_name: "Object-Oriented JavaScript" do
     topic name: "objects"
@@ -24,7 +23,7 @@ Track::Oo = Track.new(
     topic name: "prototypes"
     topic name: "encapsulation"
     topic name: "this"
-    topic name: "object-instantiation"
+    topic name: "object-creation"
     topic name: "fat-arrow"
     topic name: "binding"
     topic name: "callbacks"
@@ -32,20 +31,21 @@ Track::Oo = Track.new(
 
 
   lesson name: 'oo_js_creation', display_name: "Creating Objects" do
-    topic name: "object-instantiation"
+    topic name: "object-creation"
     topic name: "new"
     topic name: "constructors"
     topic name: "classes"
     topic name: "encapsulation"
   end
 
+  lesson name: 'oo_js_inheritance'
+
   lesson name: 'oo_js_prototypes', display_name: "Using Prototypes" do
     topic name: "prototypes"
     topic name: "objects"
   end
 
-  lesson name: 'oo_js_classes', display_name: "Classes"
-
+  lesson name: "/javascript/encapsulation"
 
   link href: "https://www.infoq.com/presentations/Simple-Made-Easy",
         name: "Simple Made Easy by Rich Hickey"
