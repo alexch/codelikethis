@@ -135,6 +135,38 @@ When starting a game, allow the user(s) to choose the names of the players (not 
 <!--/BOX-->
 <!--BOX-->
 
+### Game Time
+
+After starting a game, a game clock timer is present in the lower region of the web page.
+
+The timer should show the time in the format:
+- `Time Elapsed 32 seconds`
+
+(See example below)
+
+Every second during game play, until a player has won, the clock should proceed by one second.
+
+Example:
+- 32 seconds
+- 33 seconds
+- 34 seconds
+
+```
+Tic Tac Toe
+
+   | X | O
+--- --- ---
+   | O |  
+--- --- ---
+   | X |  
+
+Player O's turn
+
+Time Elapsed 32 seconds
+```
+<!--/BOX-->
+<!--BOX-->
+
 ### Artificial Stupidity
 
 - When starting a new game, choose "Player vs Player" or "Player vs Computer"
@@ -154,7 +186,44 @@ When starting a game, allow the user(s) to choose the names of the players (not 
 <!--/BOX-->
 <!--BOX-->
 
-### Artificial Intelligence
+### Game Time Formatted (OPTIONAL)
+
+After starting a game, a game clock timer is present in the lower region of the web page.
+
+The timer should show the time in the format:
+- Hours : Minutes : Seconds
+- HH:MM:SS
+
+(See example below)
+
+Every second during game play, until a player has won, the clock should proceed by one second, incrementing the minutes, and hours as necessary.
+
+Example:
+- 00:59:57
+- 00:59:58
+- 00:59:59
+- 01:00:00
+- 01:00:01
+
+```
+Tic Tac Toe
+
+   | X | O
+--- --- ---
+   | O |  
+--- --- ---
+   | X |  
+
+Player O's turn
+
+Time Elapsed 00:01:25
+```
+
+<!--/BOX-->
+
+<!--BOX-->
+
+### Artificial Intelligence (OPTIONAL)
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D
@@ -163,7 +232,8 @@ When starting a game, allow the user(s) to choose the names of the players (not 
 <!--/BOX-->
 
 <!--BOX-->
-### EXTRA BONUS: Play Nine Games at Once
+
+### EXTRA BONUS: Play Nine Games at Once (OPTIONAL)
 
 - Change the rules of the game so that nine 3x3 boards are played at once by two players.
 - A win can be achieved on any of the nine boards by placing three X's or three O's in a row.
