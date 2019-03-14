@@ -90,6 +90,7 @@ Track::Javascript = Track.new(
   lesson name: "regexp", display_name: "Regular Expressions"
   lesson name: "json",
          description: "JSON is a coding language, but it's not a programming language. Its purpose is to represent data with no behavior attached. It's useful for saving state, transferring information across a network, writing config files or editing settings. And since it's a strict subset of the JavaScript language syntax, it's natural to use it in JavaScript programs and JavaScript-aware text editors."
+  lesson name: "timing", display_name: "Timing in JavaScript"
 
   # lessons on testing in JavaScript
   # todo: move to new testing_in_javascript track
