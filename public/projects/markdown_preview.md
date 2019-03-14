@@ -104,6 +104,8 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **And** the text is rendered as styled HTML into the *preview* area
 
+> Hint: the "at least one second" feature will need to keep track of [/lessons/javascript/timing](elapsed time) somehow...
+
 <!--/BOX-->
 
 <!--BOX-->
@@ -111,7 +113,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 Make the app look pretty.
 
-(Remember not to change any of the CSS ids used by the Cypress tests!)
+(Remember not to change any of the CSS `id`s used by the Cypress tests!)
 
 <!--/BOX-->
 
@@ -130,10 +132,12 @@ Maybe make different elements different colors, or improve margins and padding, 
 
 This isn't a user story, but an invitation for you to clean your code and experiment with new techniques.
 
-Ideas:
+### Refactoring Ideas:
 
-  * if you used  `<button onclick=...>` or  `element.onclick=...` you may want to try using `element.addEventListener('click', ...)` instead -- [here's an example](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Example)
-  * if you used an inline `<script>` you may want to try using an external `<script src=...>` instead
+  * If you used  `<button onclick=...>` or  `element.onclick=...` you may want to try using `element.addEventListener('click', ...)` instead -- [here's an example](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Example)
+  * If you used an inline `<script>` you may want to try using an external `<script src=...>` instead
+
+> Don't be afraid to experiment! If you're using git you can easily revert back to the most recent committed version by using `git checkout .` (that's a single dot after "checkout", meaning "check out this entire directory)"
 
 <!--/BOX-->
 
@@ -158,6 +162,8 @@ Ideas:
 **Then** the selected text is replaced without double asterisks
 
 **And** the preview text is displayed in normal
+
+> **Hint**: the [TextArea Element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement) has [many properties](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement#Properties) -- including `value` (to return the user's text) and `selectionStart` and `selectionEnd` (to show which text the user has selected). It also has a method [`setRangeText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setRangeText) which replaces the current selection's text with a string you specify.
 
 <!--/BOX-->
 
