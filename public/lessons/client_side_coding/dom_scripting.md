@@ -114,14 +114,20 @@ There is also a property called `innerText` but it's confusing and implemented d
 
 # Nodes vs Elements
 
-In the DOM, the term "node" means *almost any* item that you can find in the document tree.
+In the DOM, the term "node" means *almost* any item that you can find in the document tree. Some nodes are Elements, some are Attributes, some are Text, etc.
 
-When you're hunting for a function or property, sometimes it's on Node, and sometimes it's on Element. Make sure to check *both* of these documentation pages:
+```html
+<element attribute="value">text</element>
+```
+
+When you're hunting for documentation of a common element method or property, sometimes it's on Node, and sometimes it's on Element. Make sure to check *both* of these documentation pages:
 
   * <https://developer.mozilla.org/en-US/docs/Web/API/Node>
   * <https://developer.mozilla.org/en-US/docs/Web/API/Element>
 
 For instance, `attributes` is a property of Element, but `childNodes` is a property of Node.
+
+> Also, this sense of "node" is **completely different** from the "node" in NodeJS. :-(
 
 # Other Node Types
 
@@ -130,8 +136,6 @@ An element is a particular type of node, and it's the most common, but beware, t
 * Document, Element, Text, Comment, CDATASection, ProcessingInstruction, DocumentFragment, DocumentType, Notation, Entity, EntityReference
 
 ...and all of them have their own properties that are *not* part of the basic Node set.
-
-> Also, this sense of "node" is **completely different** from the "node" in NodeJS. :-(
 
 # Finding many elements
 
@@ -191,7 +195,7 @@ This **calls the function** `sayMagicWord` when the listener is *attached* and t
 
 # Event Parameters
 
-An event handler function can optionally accept a parameter -- usually called `event` (or just `e`) -- that contains [lots of information about the thing that just happened].
+An event handler function can optionally accept a parameter -- usually called `event` (or just `e`) -- that contains [lots of information about the thing that just happened](https://developer.mozilla.org/en-US/docs/Web/API/Event).
 
 An [event object](https://developer.mozilla.org/en-US/docs/Web/API/Event) has many properties but the most important one is `event.target`, which points to the element where the action took place.
 
@@ -220,4 +224,18 @@ abraButton.addEventListener('click', sayMagicWord)
 </script>
 ```
 
-(See the above script in action [here](magic.html))
+(See the above script in action [here](../www/magic.html))
+
+# Event Bubbling
+
+This is an advanced topic, but briefly:
+
+Since the DOM is a hierarchy of nesting and overlapping elements, a given X,Y position on the screen may fall inside multiple elements. This leads to an important question: which element gets first crack at handling the event? And when it's done, do any other elements' event handlers also get a chance to handle the same event?
+
+The answer is very complicated but this diagram gives part of the answer:
+
+![DOM event flow diagram](https://www.w3.org/TR/DOM-Level-3-Events/images/eventflow.svg)
+
+Read https://www.w3.org/TR/DOM-Level-3-Events/#event-flow for more gory details.
+
+# 

@@ -32,7 +32,7 @@ NodeJS programs are written using *events*, which is like a bunch of cooks, each
 * when dough is mixed, roll it out onto the baking sheet
 * when the dough is on the baking sheet, start cutting out cookies
 * when all cookies are cut out, remove excess dough
-* when excess dough is removed, put the baking sheet in the oven
+* when excess dough is removed, put the baking sheet in the oven and set a timer for 12 minutes
 * when 12 minutes have elapsed, remove baking sheet from oven
 * when cookies are cool, decorate each cookie
 
@@ -46,7 +46,7 @@ The source code of the evented cookie baking program in the previous slide could
 * when starting, preheat oven to 350&deg;
 * when dough is mixed, roll it out onto the baking sheet
 * when 12 minutes have elapsed, remove baking sheet from oven
-* when excess dough is removed, put the baking sheet in the oven
+* when excess dough is removed, put the baking sheet in the oven and set a timer for 12 minutes
 * Start!
 
 # Named Callbacks

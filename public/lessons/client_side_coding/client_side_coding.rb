@@ -18,7 +18,12 @@ class Track
     project name: "tic_tac_toe_www"
     project name: "hangman"
 
-    # lesson name: "dom"
+    lesson name: "dom"
+    lesson name: "/www/dom_debugging"
+    lesson name: "dom_scripting"
+    lesson name: "dom_events"
+
+    lesson name: "/www/embedding_media"
 
     lesson name: "embedding",
            description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do

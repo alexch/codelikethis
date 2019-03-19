@@ -2,11 +2,10 @@
 
 * stands for Document Object Model
     * "Document" = HTML page
-        * also works for XML
-    * "Object Model" = way of describing page elements
-        * tags, attributes, styles, text, etc.
-* Mostly standard
-  * but there are some browser differences
+    * "Object Model" = a way of describing page elements as JavaScript objects with properties and methods
+        * elements (aka tags), attributes, styles, text, etc.
+* "The DOM" is mostly standardized, but there are some browser differences
+
 * Core DOM objects
     * Node, Element, Text, Comment, Attr
 
@@ -19,8 +18,7 @@
     * `window.history`
     * `window.screen`
     * `window.frames`
-    * `window.document` -- hey, look! it's the DOM
-* methods too
+    * `window.document` -- hey, look! it's got some DOM properties too
     * `open()`, `close()`
     * `moveTo()`, `sizeTo()`
     * `alert()`, `prompt()`, `confirm()`
@@ -33,10 +31,8 @@
 * Kinda the same, but kinda different
 
 ```javascript
-window === document
-// => false
-window.location === document.location
-// => true
+window === document   // => false
+window.location === document.location // => true
 ```
 
 # `window` is magic
@@ -59,33 +55,35 @@ parseInt('123')         // same
 window.parseInt('123')  // thing
 ```
 
-# Locating HTML Elements
-* the hard way
-  * traverse the document tree using DOM Node methods
-* the somewhat easier way
-  * `document.getElementsByTagName('p')[0]`
-* the easy way
+# Locating HTML Elements on the Page
+
+## the easy way
+
   * `document.getElementById('article')`
-* the awesome way
-    * `$('#article')`
-    * jQuery + CSS Selectors FTW!
+  * this only works on elements that have a unique `id` attribute
 
-# $?
+## the CSS selector way
 
-* dollar sign, like underscore, is a valid symbol name
-* jQuery (and some other libraries) define `$` as a function that's like a souped-up `getElementById`
-  * unfortunately, the object `$` returns is not an Element, but a wrapper
-  * somewhat different API
+  * `document.querySelector('p.articles')` gets the *first* element that matches the given CSS selector
+  * `document.querySelectorAll('p.articles')` gets *all* elements that match the given CSS selector
+    * the returned item is a `NodeList` but you can treat it like an array
 
-# Adding HTML
-* brute force (raw HTML strings)
+## the jQuery way
+
+* `$('#article')` gets all elements that match the given CSS selector
+* the returned item is a "jQuery Collection" which is a bit odd -- calling methods on it will affect *all* the contained elements
+* jQuery is mostly considered obsolete these days, but it is still very popular and you should learn that `$(` usually means `jQuery(`
+
+# Adding HTML with JavaScript
+
+Here is a way to use "brute force" to insert raw HTML strings into your web page.
 
 ```javascript
-document.write("<p id='message'>hi</p>");  // :-( this freaks out Firebug Console
-
 var message = document.getElementById('message');
-message.innerHTML = "<b>bye</b>!";
+message.innerHTML = "Welcome to <b>Vermont</b>!";
 ```
+
+> **However**, inserting HTML can be a security risk, and there are [better alternatives](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent), especially if you are inserting plain text. 
 
 # Altering HTML Elements
 
@@ -124,7 +122,6 @@ x.px();   // "10px"
 ```javascript
 parseInt(h1.style.width)
 ```
-
 
 # setTimeout
 
@@ -199,97 +196,6 @@ jasmine.Clock.tick(500); // advance 500 msec
 
   * see thread [How to test timers?](http://groups.google.com/group/jasmine-js/browse_thread/thread/f987956c624840d1/73b3ff5391244b19)
 
-# Events
-
-* When a user does something, it generates an *event*
-  * e.g. click on a button
-  * the *target* is the element that was affected
-  * the *event* is an object describing the details
-  * the *listener* is a function you wrote
-* "listener" is just another name for "callback" (for events)
-  * also called "handler"
-
-# How do I hook thee up? Let me count the ways.
-
-> How do I love thee? Let me count the ways.
-
-> I love thee to the depth and breadth and height
-
-> My soul can reach, when feeling out of sight
-
-> For the ends of Being and ideal Grace.
-
->  - Elizabeth Barrett Browning (1806-1861)
-
-## Event Name Gotcha
-
-* the name of the property is **not** camelCase
-* the property name starts with "on" but the event name does **not** include "on"
-
-## Event Binding
-
-1. assign a *string* to the onwhatever property in HTML
-
-        <div onclick='alert("hi")'>hi</div>
-
-2. assign a function to the onwhatever property in JS
-
-        <div id='hi'>hi</div>
-        <script>
-        div = document.getElementById('hi');
-        div.onclick = function() {
-            alert("hi");
-            return false;
-        }
-        </script>
-
-    * gotcha: can only attach a single listener
-
-3. call the `addEventListener` method in JS
-
-        div.addEventListener('click', function() {
-            alert("hi");
-        });
-
-    * gotcha: in IE, you must use `attachEvent` instead
-
-4. use jQuery's `bind` method
-
-        $('#hi').bind('click', function() {
-            alert("hi");
-        });
-
-4. use jQuery's convenience method for standard event types
-
-        $('#hi').click(function() {
-            alert("hi");
-        });
-
-    * gotcha: if you call `click()` with no parameters, it *triggers* a click
-
-# `return false`
-
-* if the event listener returns false, all further processing stops
-* usually used to stop a form from actually submitting after a handled `submit` event
-
-# Many event types
-
-* Mouse
-    * mousedown, mouseup, click
-    * mouseover
-* Keyboard
-    * keydown, keypress, keyup
-* Window
-    * load, unload, beforeunload
-    * ready (jQuery only)
-    * abort, error
-    * resize, scroll, contextmenu
-* Form
-    * focus, blur
-      * blur is the stupidest name ever in the history of stupid
-      * should have been "unfocus" or "losefocus"
-    * change, select
-    * submit, reset
 
 # Headless DOM
 

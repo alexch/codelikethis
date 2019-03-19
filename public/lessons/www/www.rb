@@ -53,7 +53,7 @@ class Track
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
 
-    lesson name: "dom_scripting"
+    lesson name: "/client_side_coding/dom_scripting"
 
     lesson name: "forms"
 
