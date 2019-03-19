@@ -16,7 +16,7 @@ In this lesson we discuss
 
 Ironically, the normal way to tell the *time* in JavaScript is to use an object called *Date*.
 
-Calling `Date.now()` returns a **very** big number... try it now.
+Calling `Date.now()` returns a very big number... try it now.
 
 That number represents the number of *milliseconds* that have elapsed since *January 1, 1970*.
 
@@ -55,7 +55,7 @@ You call it with two parameters:
   1. a callback function (let's call it F)
   2. a number of milliseconds (let's call it N)
 
-`setTimeout` returns *immediately*, but also sets up an invisible timer
+`setTimeout` returns *immediately*, but also sets up a hidden timer
 
 after approximately N milliseconds, F gets *called back*
 
@@ -72,12 +72,11 @@ function alligator() {
 later();
 ```
 
-https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
+[MDN: setTimeout documentation](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
 
 # setTimeout with inline callback
 
 This "later alligator" program could be rewritten to use an *anonymous inline function* instead of a named top-level function.
-
 
 ```javascript
 function later() {
@@ -185,3 +184,22 @@ countDownFrom(10);
 
 This design decision comes down to personal style and preference; the two solutions have about the same complexity and number of lines of code.
 
+# Testing Asynchronous Code
+
+* Use a "Mock Clock"
+  * the mock clock temporarily replaces `setTimeout` with a different function during tests
+  * this function keeps track of what would be called when
+  * then "ticks" forward when asked
+  * so your tests can simulate speeding up and slowing down time
+  
+* In Jasmine:
+
+```javascript
+beforeEach(function() {
+  jasmine.Clock.useMock();
+});
+//... call the code that calls setTimeout
+jasmine.Clock.tick(500); // advance 500 msec
+```
+
+  * see thread [How to test timers?](http://groups.google.com/group/jasmine-js/browse_thread/thread/f987956c624840d1/73b3ff5391244b19)
