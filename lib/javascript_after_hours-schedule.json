@@ -194,8 +194,6 @@
       "lessons": [
         "ajax",
         "calling_apis",
-        "geocoding",
-        "geolocation",
         "interactive_mapping"
       ]
     }
