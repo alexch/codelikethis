@@ -1,9 +1,14 @@
+    link href: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch", from: "MDN"
+    topic name: "promises"
+    topic name: "callbacks"
+
 # AJAX
 
 AJAX enables
 
   * loading data into your web page from a web server...
-  * ...**after** the page initially loads!
+  * ... **after** the page initially loads!
+
 
 # AJAX Examples
 
@@ -12,6 +17,7 @@ AJAX enables
   * Load today's weather forecast from DarkSky.net, and update it every hour
   * Load an ad from a *different web server* and switch ads every few minutes
   * Dynamically display *search results* as the user types their query
+  * Infinite scrolling like Pinterest or Twitter
 
 # AJAX Definition
 
@@ -21,8 +27,9 @@ AJAX enables
 2.  Parse the data returned by the request
 3.  Load that data into the page **without a refresh**
 4.  Data can be any formats, most common:
+    * XML
     * JSON
-    * HTML
+    * HTML fragment (not an entire page)
 
 # AJAX Advantages/Disadvantages
 
@@ -30,14 +37,18 @@ AJAX enables
 
 * Page components can be loaded individually
 * New data can be loaded asynchronously
-* User interacts with the page and sees results immediately
+* User interacts with the page and sees results almost immediately
+  * or at least more quickly than a full page reload
 
 ## Disadvantages
 
 * JavaScript must be enabled
 * Adds complexity to JavaScript applications
 * Without refreshes the page state can get bloated
-* Screen-readers cannot read the whole page at once
+  * Memory leaks become a bigger problem in longer-lived apps
+* Screen-readers cannot read the whole page at once #a11y
+* Reloading the page can show completely different content
+  * Bookmarking and link sharing no longer "just work"
 
 # AJAX History
 
@@ -50,15 +61,17 @@ AJAX enables
 
 # Jesse James Garrett Quote
 
+(corrected for modern use)
+
 > Ajax isn’t a technology. It’s really several technologies, each flourishing in its own right, coming together in powerful new ways. Ajax incorporates:
 
-> * standards-based presentation using ~~XHTML~~ HTML and CSS
+> * standards-based presentation using ~~XHTML~~ **HTML and CSS**
 >
 > * dynamic display and interaction using the Document Object Model
 >
-> * data interchange and manipulation using ~~XML and XSLT~~ JSON
+> * data interchange and manipulation using ~~XML and XSLT~~ **JSON**
 >
-> * asynchronous data retrieval using XMLHttpRequest
+> * asynchronous data retrieval using ~~XMLHttpRequest~~ **Fetch**
 >
 > * and JavaScript binding everything together.
 
@@ -66,45 +79,69 @@ AJAX enables
 
 # XMLHttpRequest (Old Way)
 
-## WARNING: DO NOT READ
+* The XHR interface is quite complicated
+* You must construct an XHR object, set some properties, then call `open()`, then call `send()`
+* Your response handler must track the `readyState` property of the request and error checking is cumbersome
+ 
+## WARNING: DO NOT READ THIS CODE CAREFULLY
 
-```
-<button id="fire-away" type="button">Fire the request</button>
+```javascript
+var httpRequest;
 
-<script>
-(function() {
-  var httpRequest;
-  document.getElementById("fire-away").addEventListener('click', runAjax);
+function sendRequest() {
+  httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = printResponse;
+  httpRequest.open('GET', 'https://jsonplaceholder.typicode.com/posts/1');
+  httpRequest.send();
+}
 
-  function runAjax() {
-    httpRequest = new XMLHttpRequest();
-
-    if (!httpRequest) {
-      alert('Giving up :( Cannot create an XMLHTTP instance');
-      return false;
-    }
-    httpRequest.onreadystatechange = alertContents;
-    httpRequest.open('GET', response.json);
-    httpRequest.send();
-  }
-
-  function alertResponse() {
-    if (httpRequest.readyState === XMLHttpRequest.DONE &&
-        httpRequest.status === 200) {
-        alert(httpRequest.responseText);
+function printResponse() {
+  if (httpRequest.readyState === XMLHttpRequest.DONE) {
+    if (httpRequest.status === 200) {
+      console.log(httpRequest.responseText);
     } else {
-        alert('There was a problem with the request.');
+      console.log('There was a problem: ' + httpRequest.status);
+      console.log({httpRequest})
     }
   }
-})();
-</script>
+}
 ```
 
-# Browser Fetch API - Remote
+# Browser Fetch API - Plain Text
+
+> The Fetch interface is concise
 
 * Please type this URL into the address bar of your browser
 
 <https://jsonplaceholder.typicode.com/posts/1>
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(function(response) {
+    console.log(response.status);
+    return response.text();       // body is not quite ready yet
+  })
+  .then(function(text) {
+    console.log(text);            // now the body is ready
+  });
+```
+
+* `fetch()` takes at least one argument, the URL of the resource to fetch
+* `fetch` returns a [Promise](https://developer.mozilla.org/en-US/docs/Glossary/Promise), to which you add a series of *callbacks* using the `then` method
+* `fetch` then calls the server, *just like you did* in the address bar above
+* Later on, after the response is received, `fetch` calls your callbacks in order
+* The server passes the [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) into the **first** callback function
+
+# Why Two Thens?
+
+* The first `then` gets called once the *HTTP headers* of the response are available
+* but the body might not be ready yet
+* so from the first response, you call `response.text()`, which returns **another promise**
+  * you immediately return that new promise from the callback
+* the second `then` gets called after the entire body has been received
+  * its parameter is a string containing the full text
+
+# Browse Fetch API - JSON
 
 ```javascript
 let postNumber = 1;
@@ -117,19 +154,18 @@ fetch('https://jsonplaceholder.typicode.com/posts/' + postNumber)
   });
 ```
 
-* `fetch()` takes at least one argument, the URL of the resource to fetch
-* `fetch` then calls the server, *just like you did* in the address bar above
-* The server passes the Response from the server into the first callback function
-* `response.json` parses the body of the response as JSON
-* The body of the response is then logged to the console
+* `response.json()` is an alternative to `response.text()`
+* The server passes the Response from the server into the **first** callback function
+    * `response.json` parses the body of the response as JSON and returns real JavaScript objects
+* it returns a *promise to parse* the body as JSON
+* the second `then` receives a *proper JavaScript Object* which is the result of calling `JSON.parse()` on the body
 
 # Browser Fetch API - Local
 
-If you want to request data from a **local** webserver
+If you want to request data from a **local** webserver, use a partial URL 
 
 ```javascript
-
-fetch('city-market.md')
+fetch('/city-market.md')
   .then(function(response) {
     return response.text();
   })
@@ -138,26 +174,31 @@ fetch('city-market.md')
   });
 ```
 
-* This happens to be `response.text` because it is a Markdown file
-* If it were JSON then `response.json` would be used
+* The first `then` function happens to return `response.text()` because it is a Markdown file
+* If it were JSON then we'd use `response.json()`
 
 # Browser Fetch API - Errors
 
 * The system will raise errors as exceptions by default
 * If you want to handle errors catch them like shown below
 * Use `.catch(function(error) { do_something_here })`
+* Server responses like "404 Not Found" are **not** considered errors by Fetch; only network errors trigger a `catch`
 
 ```javascript
 
 fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(function(response) {
-    return response.json();
+    if (!response.ok) {
+      console.log('HTTP error: ' + response.status);
+    } else {
+      return response.json();
+    }
   })
-  .then(function(myJson) {
-    console.log(myJson);
+  .then(function(json) {
+    console.log(json);
   })
   .catch(function(error) {
-    console.error('Yikes! I should handle this better:\n', error);
+    console.error('Network error:\n', error);
   });
 ```
 
@@ -187,20 +228,21 @@ The Fetch API converts text into JSON for you if you call `response.json()`
 
 but if you want to do it yourself...
 
-* Assume textual JSON is in a string named `text`:
+`JSON.parse` converts a string into an object:
 
 ```javascript
-let text = '{ "name": "Ada Lovelace", "id": 1, "title": "The Queen of Numbers" }'
+let data = JSON.parse(string)
 ```
 
-This converts the String data into a JavaScript object:
+So this would work fine:
 
 ```javascript
-let data = JSON.parse(text)
-```
-
-And this converts the JavaScript object back into a String:
-
-```javascript
-let newText = JSON.stringify(data)
+fetch('/city-market.json')
+  .then(function(response) {
+    return response.text();
+  })
+  .then(function(myText) {
+    let myObject = JSON.parse(myText);
+    console.log(myObject);
+  });
 ```
