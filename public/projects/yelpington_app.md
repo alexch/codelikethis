@@ -89,7 +89,7 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 > Install it with `npm install` and run it with `npm start`
 
 <!--BOX-->
-**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant.html#joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-javascript/urls_and_javascript) lesson.
+**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant.html#joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-coding/urls_and_javascript) lesson.
 <details>
 <summary>
 Click here for a more detailed hint
