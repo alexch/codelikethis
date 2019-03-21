@@ -135,8 +135,10 @@ let name = document.location.hash.slice(1)
 > `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
 
 > Read more about the Nominatum API here:
-> https://nominatim.openstreetmap.org/
-> https://wiki.openstreetmap.org/wiki/Nominatim
+
+> 1. https://nominatim.openstreetmap.org/
+
+> 2. https://wiki.openstreetmap.org/wiki/Nominatim
 
 <!--/BOX-->
 
