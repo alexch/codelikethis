@@ -131,7 +131,8 @@ let name = document.location.hash.slice(1)
 > You must decide *how* and *when* to look up the restaurant's `Latitude/Longitude`, and
 > whether to do it automatically or manually.
 
-> [Nominatim](https://nominatim.openstreetmap.org/) is a good option. Try
+> [Nominatim](https://nominatim.openstreetmap.org/) is a good option. Try the following:
+
 > `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
 
 > Read more about the Nominatum API here:
