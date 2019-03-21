@@ -93,11 +93,45 @@ Using *inline callbacks* is a very common idiom in JavaScript, especially with `
 The syntax can be confusing because of all the parentheses and curly braces, but it's essentially the same pattern as above:
 
 * call `setTimeout` with two parameters
-* the first parameter is a function that prints "Alligator!"
-* the second parameter is a number of milliseconds
-* `setTimeout` will *return immediately*, then wait 1000 milliseconds, then call the function
+* the first parameter *is a function* that prints "Alligator!"
+* the second parameter is a *number* of milliseconds
+* `setTimeout` will *return immediately*, then wait 1000 msec, then call the function
 
 > Note that even though "See you later" appears **lower** in the code than "Alligator", it happens **first** because `setTimeout` returns **immediately**.
+
+# Inline Function Parameter
+
+Let's zoom in on the call to `setTimeout`.
+
+```javascript
+  setTimeout( function() {
+    console.log("Alligator!")
+  }, 1000 );
+```
+
+* This code looks weird! It will probably take you a while before inline function arguments look and feel natural to you.
+* The key to understanding this code is to remember that this is a normal function call with two parameters, just like `add(2, 2)`.
+* The weirdness comes from the fact that the first argument is **not** a function call. It's an *entire function* defined *inline*:
+
+```javascript
+function() { console.log("Alligator!") }
+```
+
+The comma separating the parameters comes immediately after the inline function's closing brace:
+
+```
+"Alligator!") } , 1000
+--------------/ | \---/
+        |       |   |
+  first arg     |  second arg
+              comma   
+```
+
+Fat arrows can make inline function code more concise, and (to some) clearer. YMMV!
+
+```javascript
+setTimeout( () => console.log("Alligator!") , 1000 );
+```
 
 # Lab: measuring setTimeout's accuracy
 
