@@ -67,7 +67,21 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 * Otherwise, **clone** the Yelpington repository, either [from GitHub directly](https://github.com/BurlingtonCodeAcademy/yelpington), or from the GitHub Classroom link provided by your instructor.
 * Make sure your local setup is working. First run `npm install`, then run `npm start` and visit <http://localhost:8080/all.json> You should see something like this:
 
-![yelpington all.json](yelpington-all.png)
+```javascript
+[
+  "kountry-kart-deli",
+  "american-flatbread",
+  "august-first",
+  "farmhouse-grill",
+  "pascolo-ristorante",
+  "el-cortijo",
+  "mr-mikes",
+  "ahli-babas-kabob",
+  "city-market",
+  "honey-road",
+  "hen-of-the-wood"
+]
+```
 
 **Hint**: you may want to install a [JSON Viewer Browser Extension](/lessons/javascript/json#anchor/viewing_json_in_browser) so the JSON is easier to read.
 
