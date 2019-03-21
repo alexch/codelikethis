@@ -29,7 +29,7 @@ As specified in the [Yelpington Repo](./yelpington_repo) project, we will need J
   "phone number": "555-1221",
   "hours": "7:00 am - 3:00 pm",
   "notes": [
-    "Their sriracha breakfast sandwich is quite good.", 
+    "Their sriracha breakfast sandwich is quite good.",
     "Every Thursday is meatloaf day."
   ]
 }
@@ -37,12 +37,12 @@ As specified in the [Yelpington Repo](./yelpington_repo) project, we will need J
 
 **Note** that we are defining our own *id* format; its rules are:
 
-* contents are the same as the base file name, except: 
+* contents are the same as the base file name, except:
 * all lowercase
 * no spaces or symbols
 * kebab-case
 
-This *id* is **not** the same as an HTML element id; instead, it's a *primary key* for our 
+This *id* is **not** the same as an HTML element id; instead, it's a *primary key* for our
 database. (Yes, in this context, the filesystem is a database. Really.) Every record (restaurant)
 needs a unique identifier.
 
@@ -80,11 +80,11 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 
 **When** the user visits `http://localhost:8080/restaurant.html#joes-diner`
 
-**Then** they should see all the restaurant information, formatted and styled nicely 
+**Then** they should see all the restaurant information, formatted and styled nicely
 
 **NOTE: Use AJAX or Fetch to load the data.**
 
-> Note: the Fetch API [does not work well with the `file:///` URL scheme](https://github.com/github/fetch/pull/92). 
+> Note: the Fetch API [does not work well with the `file:///` URL scheme](https://github.com/github/fetch/pull/92).
 > That's why we've added a simple `node` static server to this repository.
 > Install it with `npm install` and run it with `npm start`
 
@@ -114,13 +114,13 @@ let name = document.location.hash.slice(1)
 
 **Then** they see a [Leaflet web map](/lessons/client_side_coding/interactive_mapping), centered at that restaurant's location
 
-> You must decide *how* and *when* to look up the restaurant's `Latitude/Longitude`, and 
-> whether to do it automatically or manually. 
+> You must decide *how* and *when* to look up the restaurant's `Latitude/Longitude`, and
+> whether to do it automatically or manually.
 
 > [Nominatim](https://nominatim.openstreetmap.org/) is a good option. Try
 > `https://nominatim.openstreetmap.org/search/?q=182 Main St.,Burlington,VT&format=json`
 
-> Read more about the Nominatum API here: 
+> Read more about the Nominatum API here:
 > https://nominatim.openstreetmap.org/
 > https://wiki.openstreetmap.org/wiki/Nominatim
 
@@ -189,5 +189,3 @@ The pizza is **awesome** here!
 <!--/BOX-->
 
 <!--/BOX-->
-
-
