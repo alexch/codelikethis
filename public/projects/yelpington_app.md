@@ -7,6 +7,7 @@ In this project, you will pair up and work with other teams to create an online 
 * JSON
 * AJAX
 * Maps
+* Accessing and parsing URLs from JavaScript
 
 ## Goals
 
@@ -34,10 +35,16 @@ As specified in the [Yelpington Repo](./yelpington_repo) project, we will need J
 }
 ```
 
-> **Note** that we are defining our own *id* format: all lowercase, no spaces 
-> or symbols, kebab-case, same as the base file name. 
-> This is *not* the same as an HTML element id; it's a *primary key* for our 
-> database. (Yes, in this context, the filesystem is a database.)
+**Note** that we are defining our own *id* format; its rules are:
+
+* contents are the same as the base file name, except: 
+* all lowercase
+* no spaces or symbols
+* kebab-case
+
+This *id* is **not** the same as an HTML element id; instead, it's a *primary key* for our 
+database. (Yes, in this context, the filesystem is a database. Really.) Every record (restaurant)
+needs a unique identifier.
 
 We will also need a file named `all.json` which contains a list of all the ids, e.g.:
 
@@ -49,7 +56,6 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 ]
 ```
 
-To launch a file server, first run `npm install` (once), then run `npm start` and visit e.g. <http://localhost:8080/all.json> 
 
 ## Backlog
 
@@ -57,7 +63,13 @@ To launch a file server, first run `npm install` (once), then run `npm start` an
 
 ### Zero Pull Requests
 
-Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open PRs have your name on them, finish them up and get the PRs accepted or closed.
+* If you previously did the [Yelpington Repo](yelpington_repo) project, please check <https://github.com/BurlingtonCodeAcademy/yelpington/pulls> and if any open PRs have your name on them, finish them up and get the PRs accepted or closed.
+* Otherwise, **clone** the Yelpington repository, either [from GitHub directly](https://github.com/BurlingtonCodeAcademy/yelpington), or from the GitHub Classroom link provided by your instructor.
+* Make sure your local setup is working. First run `npm install`, then run `npm start` and visit <http://localhost:8080/all.json> You should see something like this:
+
+![yelpington all.json](yelpington-all.png)
+
+**Hint**: you may want to install a [JSON Viewer Browser Extension](/lessons/javascript/json#anchor/viewing_json_in_browser) so the JSON is easier to read.
 
 <!--/BOX-->
 
@@ -73,18 +85,24 @@ Check https://github.com/BurlingtonCodeAcademy/yelpington/pulls and if any open 
 **NOTE: Use AJAX or Fetch to load the data.**
 
 > Note: the Fetch API [does not work well with the `file:///` URL scheme](https://github.com/github/fetch/pull/92). 
-> We've added a simple `node` app that serves files from a local server.
+> That's why we've added a simple `node` static server to this repository.
 > Install it with `npm install` and run it with `npm start`
 
 <!--BOX-->
-**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant.html#name` into `name` -- use this incantation:
+**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant.html#joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-javascript/urls_and_javascript) lesson.
+<details>
+<summary>
+Click here for a more detailed hint
+</summary>
 
 ```
 let name = document.location.hash.slice(1)
 ```
 
-(`slice(1)` removes the `/` from the `hash` field of the `document.location` URL object.)
+(`slice(1)` removes the `#` from the `hash` field of the `document.location` URL object.)
+</details>
 
+<!--/BOX-->
 <!--/BOX-->
 
 <!--BOX-->
@@ -94,7 +112,7 @@ let name = document.location.hash.slice(1)
 
 **When** the user sees the restaurant's page (e.g. `/joes-diner`)
 
-**Then** they see a [Leaflet web map](http://bootcamp.burlingtoncodeacademy.com/lessons/client_side_coding/interactive_mapping), centered at that restaurant's location
+**Then** they see a [Leaflet web map](/lessons/client_side_coding/interactive_mapping), centered at that restaurant's location
 
 > You must decide *how* and *when* to look up the restaurant's `Latitude/Longitude`, and 
 > whether to do it automatically or manually. 
@@ -140,19 +158,29 @@ let name = document.location.hash.slice(1)
 #### Example:
 
 JSON:
+
+<!--BOX-->
+
 ```
 "notes": ["##Mr Mikes\nThe pizza is **awesome** here!"]
 ```
 
+<!--/BOX-->
+
 HTML:
 
 <!--BOX-->
+
 ```
 <h2>Mr Mikes</h2>
 <p>The pizza is <strong>awesome</strong> here!</p>
 ```
 
+<!--/BOX-->
+
 Result:
+
+<!--BOX-->
 
 ## Mr Mikes
 
@@ -161,4 +189,5 @@ The pizza is **awesome** here!
 <!--/BOX-->
 
 <!--/BOX-->
+
 
