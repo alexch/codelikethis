@@ -2,6 +2,10 @@
 
 In this project, you will pair up and work with other teams to create an online directory of restaurants in Burlington.
 
+# Screenshot
+
+![bob's yelpington screenshot](yelpington-screenshot.png)
+
 # Tech
 
 * JSON
@@ -142,7 +146,6 @@ let name = document.location.hash.slice(1)
 > 2. https://wiki.openstreetmap.org/wiki/Nominatim
 
 <!--/BOX-->
-
 
 <!--BOX-->
 ### Show All Restaurants (list)
