@@ -27,8 +27,8 @@ Before the class starts, please install the following:
 
 ### Windows
 
-* Download and install from: https://www.python.org/downloads/windows/ 
-        * make sure to check "Add Python 3.7 to PATH"
+* Download and install from: https://www.python.org/downloads/windows/
+  * make sure to check the "Add Python 3.7 to PATH" checkbox
 
 For ease of use and compatibility with Unix, you may want to make a `python3` script as follows:
 

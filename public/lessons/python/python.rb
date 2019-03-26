@@ -3,11 +3,11 @@ require "track"
 require_relative '../../../lib/link.rb' # :-(
 
 
-Track::LearnToCodeWithPython = Track.new(
-  name: "learn_to_code_with_python",
-  display_name: "Learn to Code with Python",
-  description: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn Python from the ground up... then this track is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and intermediate computer science concepts like closures and recursion. On the first day we making a small (but functional) web application and send it forth into the world.",
-  ) do
+Track::Python = Track.new(
+    name: "python",
+    display_name: "Learn to Code with Python",
+    description: "If you've never coded before... if you're a self-taught coder who wants to fill in the gaps in your foundation... or if you want to learn Python from the ground up... then this track is for you. We start with the very basics -- what is a computer? what is a terminal? what is a variable? -- and work up to command-line input/output, basic data structures like stacks and hashes, and intermediate computer science concepts like closures and recursion. On the first day we making a small (but functional) web application and send it forth into the world.",
+) do
 
   # "the student will learn..."
   goal name: "how to edit and execute code on their own computer using a text editor and a terminal (command line)"
@@ -28,14 +28,20 @@ Track::LearnToCodeWithPython = Track.new(
        description: "Installation instructions for the VS Code text editor"
 
   link href: "http://introtopython.org/"
+
   link href: "https://learntocodewith.me/programming/python/python-2-vs-python-3/",
        name: "Should I learn Python 2 or Python 3?",
        description: "(TL;DR: Python 3)"
   link href: "https://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html",
        name: "The key differences between Python 2.7.x and Python 3.x with examples"
 
-  link name: "Exercism [online]",
-    href: "http://exercism.io/languages/python"
+  link href: "https://python.swaroopch.com/",
+       name: "A Byte of Python",
+       description: "a free book on programming using the Python language."
+
+  link name: "Exercism",
+       href: "http://exercism.io/languages/python",
+       description: "Exercism contains challenges you download and complete on your own computer, guided by automated tests"
 
   lesson name: "intro"
   lesson name: "the_command_line"

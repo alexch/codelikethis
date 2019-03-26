@@ -79,6 +79,7 @@ class Site < Thing
 end
 
 require 'bootcamp'
-require 'javascript_after_hours'
 require 'code_like_this'
 require 'curriculum'
+require 'devops_with_python'
+require 'javascript_after_hours'

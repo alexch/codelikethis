@@ -103,16 +103,6 @@ class JavascriptAfterHours < Site
   end
 
   class NavBar < ::NavBar
-    def logo klass: nil, style: nil
-      a(href: 'http://www.burlingtoncodeacademy.com',
-        class: 'navbar-brand') {
-        img.logo(src: '/images/burlingtoncodeacademy-logo.png',
-                 width: 265, height: 36,
-                 alt: "Burlington Code Academy",
-                 class: ['logo', klass].compact,
-                 style: [style].compact)
-      }
-    end
 
     def nav_items
       nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"

@@ -129,6 +129,7 @@ class Thing
     CLI
     CSS
     CGI
+    DevOps
     DOM
     ECMAScript
     FreeCodeCamp

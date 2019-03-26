@@ -34,6 +34,21 @@ class NavBar < Erector::Widget
     }
   end
 
+  def logo klass: nil, style: nil
+    a(href: 'http://www.burlingtoncodeacademy.com',
+      class: 'navbar-brand') {
+      img.logo(src: '/images/burlingtoncodeacademy-logo.png',
+               width: 265, height: 36,
+               alt: "Burlington Code Academy",
+               class: ['logo', klass].compact,
+               style: [style].compact)
+    }
+  end
+
+  def nav_items
+
+  end
+
   # render a single nav item (an `li` with class `nav-item`)
   def nav_item name: 'Item', href: '#',
                active: false, disabled: false, bordered: false, button: false, dropdown: false
