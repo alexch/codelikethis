@@ -138,7 +138,6 @@ class App < Sinatra::Base
 
   get "/lessons/images/:file.:ext" do
     path = File.join(here, "public", "images", "#{params[:file]}.#{params[:ext]}")
-    ap path
     send_file(path)
   end
 
@@ -217,7 +216,12 @@ class App < Sinatra::Base
       sitename = request.host
     end
 
-    site = [CodeLikeThis, Bootcamp, JavascriptAfterHours].map(&:new).detect do |site|
+    site = [
+        CodeLikeThis,
+        Bootcamp,
+        JavascriptAfterHours,
+        Curriculum
+    ].map(&:new).detect do |site|
       site.host? sitename
     end
     if site.nil?

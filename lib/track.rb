@@ -196,24 +196,28 @@ class Track < Thing
         h2 "Suggested Projects"
         ul(class: 'projects') do
           target.projects.each do |project|
-            li {widget project.link_view}
+            li { widget project.link_view }
           end
         end
       end
 
       div.container {
-        div.row {
-          h2 "Topics"
-          p do
-            list_topics
-          end
-        }
-        div.row {
-          div(class: 'col-sm-12 col-md-6 lessons') {
-            h2 "Lessons"
-            list_lessons
+        if target.topics?
+          div.row {
+            h2 "Topics"
+            p do
+              list_topics
+            end
           }
-          unless target.labs.empty?
+        end
+        div.row {
+          if target.lessons?
+            div(class: 'col-sm-12 col-md-6 lessons') {
+              h2 "Lessons"
+              list_lessons
+            }
+          end
+          if target.labs?
             div(class: 'col-sm-12 col-md-6 lessons') {
               h2 "Labs"
               list_labs
@@ -225,7 +229,7 @@ class Track < Thing
         h2 "Links"
         ul(class: 'links') do
           target.links.each do |link|
-            li {widget link.view}
+            li { widget link.view }
           end
         end
       end
@@ -235,7 +239,7 @@ class Track < Thing
       options = options.dup
       element_name = options.delete(:element) || 'li'
       items.each do |item|
-        css_classes =['list-group-item', 'border-0', ('active' if current_page? item)]
+        css_classes = ['list-group-item', 'border-0', ('active' if current_page? item)]
         div(class: css_classes) {
 
           item_name = item.display_name
@@ -249,11 +253,11 @@ class Track < Thing
 
           tooltip = if item.description?
                       {
-                        # https://getbootstrap.com/docs/4.0/components/tooltips/
-                        title: item.description,
-                        'data-html': true,
-                        'data-toggle': "tooltip",
-                        'data-placement': "right",
+                          # https://getbootstrap.com/docs/4.0/components/tooltips/
+                          title: item.description,
+                          'data-html': true,
+                          'data-toggle': "tooltip",
+                          'data-placement': "right",
                       }
                     else
                       {}
@@ -303,7 +307,7 @@ class Track < Thing
   Separator = new(name: "---")
 
   def this_lesson_index(lesson_name)
-    lesson_names.index {|name| name == lesson_name}
+    lesson_names.index { |name| name == lesson_name }
   end
 
   def this_item_index(lesson_name)
