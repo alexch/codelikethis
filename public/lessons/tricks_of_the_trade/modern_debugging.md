@@ -92,9 +92,9 @@ You may find a relevant tutorial, blog post, or [StackOverflow](http://stackover
 
 After googling, you will probably find your question answered on [StackOverflow.com](http://StackOverflow.com "Stack Overflow web site").
 
-Remember, though: *not all answers are correct*. You shouldn't just copy and paste code from the first result. 
+Remember, though: *not all answers are correct*. You shouldn't just copy and paste code from the first result.
 
-**Read the words**, not just the code, in the answer, to make sure the author really is solving a problem that is similar to yours. 
+**Read the words**, not just the code, in the answer, to make sure the author really is solving a problem that is fundamentally similar to yours.
 
 # SOOP: StackOverflow Oriented Programming
 
@@ -110,6 +110,13 @@ This workflow is far from ideal, but it is acceptable...
   * you should refactor the code after you get it to work
   * you must at least try to understand it, then mark (with a code comment or commit message) what parts of the code you don't understand
   * you should put a code comment with a link to the StackOverflow answer, so future coders (including you!) can learn more about how it works and why it was needed
+  
+# Ask for Help
+
+* If you ever get stuck, feel free to ask on the appropriate chat channel
+  * Don't be embarrassed -- there are no stupid questions!
+* If you can't formulate your question -- or even if you can -- post your source code and say, "What am I doing wrong?"
+* Slack supports *code snippets*; you can also post a link to a github repo or a [gist](http://gist.github.com)
 
 # Write a Failing Test
 
