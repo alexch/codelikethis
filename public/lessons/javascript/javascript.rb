@@ -50,7 +50,7 @@ Track::Javascript = Track.new(
        name: "JavaScript Glossary"
 
   project name: "exercism"
-  project name: "exercism_fork"
+  # project name: "exercism_fork"
 
   lesson name: "intro"
 

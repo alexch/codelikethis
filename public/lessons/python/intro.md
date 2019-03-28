@@ -110,7 +110,7 @@ There is one very important difference between Python and most other C-style lan
 > **Whitespace matters** in Python
 
 Indenting a line is like an opening curly brace, and un-indenting a line is like a closing curly brace.
-Å
+
 ```python
 def main():
      print("we are inside main")

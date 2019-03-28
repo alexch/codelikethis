@@ -90,7 +90,7 @@ fill a glass of water at the sink
         link href: "http://cooking.com"
         project name: "bake a cake"
 
-        lesson name: "scramble_eggs"
+        lesson name: "scramble_eggs", lang: 'chickenese'
         lab name: "egg_lab"
         lesson name: "boil_water"
         lab name: "turn_on_stove"
@@ -167,6 +167,10 @@ fill a glass of water at the sink
 
     it "can find a lesson by name (with dashes)" do
       subject.lesson_named("boil-water").name.should == "boil_water"
+    end
+
+    it 'includes options' do
+      expect(subject.lesson_named('scramble_eggs').lang).to eq('chickenese')
     end
 
     describe 'next and previous lesson' do
@@ -260,6 +264,10 @@ fill a glass of water at the sink
       expect(foreign_lesson.dir).to eq("#{files.root}/chickens")
     end
 
+    it 'includes options' do
+      subject.lesson name: '/chickens/build_a_coop', lang: 'javascript'
+      expect(subject.lesson_named('build_a_coop').lang).to eq('javascript')
+    end
   end
 
   describe 'using the Track.named factory' do

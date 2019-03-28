@@ -4,11 +4,15 @@
     link href: "https://www.learnenough.com/command-line-tutorial"
     topic name: "terminal"
     topic name: "command-line"
-    topic name: "node"
     topic name: "text-editor"
     topic name: "directories"
     link href: "https://www.macworld.co.uk/how-to/mac-software/mac-terminal-projects-tutorial-3613813/",
          name: "30 Terminal tips, tricks and projects for Mac"
+    <!IF lang=python>
+    topic name: "python-cli"
+    <!ELSE>
+    topic name: "node"
+    <!/IF>
 
 # The Command Line
 
@@ -48,11 +52,14 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 ![terminal next to browser](../images/terminal-and-browser.png)
 
-
 # Lab: Interactive Calculator
 
 1. open a terminal
+<!IF lang=python>
+2. type `python3` -- that's you *commanding* the computer to launch *python3*
+<!ELSE>
 2. type `node` -- that's you *commanding* the computer to launch *node*
+<!/IF>
 1. press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 1. see the `>` prompt
 1. type `1 + 1`
@@ -62,9 +69,13 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 * Yay! Your computer is an expensive calculator!
 * **Bonus**: what other math can you do?
 
-## node is an interactive JavaScript interpreter
+<!IF lang=python>
+## `python3` is an interactive Python interpreter
+<!ELSE>
+## `node` is an interactive JavaScript interpreter
+<!/IF>
 
-* From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens!
+* From now on, whenever you see text in the `code font`, try launching your interpreter and typing it into the terminal and see what happens!
 
 # A Tale of Two Prompts
 
@@ -72,6 +83,15 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 * *the shell* is the command line that the terminal starts with
   * its prompt is usually `$` (Mac / Linux) or `C:\Users\alice>` (Windows)
+<!IF lang=python>
+* *python3* is a command line that is launched *from the shell*
+  * its prompt is usually `>>>`
+
+From inside `python3`, if you want to get back to the shell...
+
+  * type <kbd>CONTROL</kbd>-<kbd>D</kbd> once
+  * or type `quit()` and <kbd>Enter</kbd>
+<!ELSE>
 * *node* is a command line that is launched *from the shell*
   * its prompt is usually `>`
 
@@ -79,6 +99,7 @@ From inside `node`, if you want to get back to the shell...
 
   * type <kbd>CONTROL</kbd>-<kbd>C</kbd> twice
   * or type `.exit` and <kbd>Enter</kbd>
+<!/IF>
 
 # Directories
 
@@ -170,6 +191,18 @@ mkdir code
 
 * source code is the essence of a program
 * source files are text files that contain source code
+
+<!IF lang=python>
+
+* to **RUN** a Python program you type `python3` and then the name of the source file
+
+```bash
+$ python3 hello.py
+Hello, World!
+```
+
+<!ELSE>
+
 * to **RUN** a JavaScript program you type `node` and then the name of the source file
 
 ```bash
@@ -177,9 +210,28 @@ $ node hello.js
 Hello, World!
 ```
 
+<!/IF>
+
 * The Recipe Metaphor
   * source file ≈ recipe
   * running a program ≈ cooking
+
+<!IF lang=python>
+# A Tale of Two Versions
+
+Python has two different versions that are in widespread use.
+
+They are *mostly* compatible with each other but there are some [important differences](https://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html). It's a headache.
+
+Often both versions are installed on the same computer, so they need different names.
+
+* `python` launches Python 2
+* `python3` launches Python 3
+
+In this class we will be using Python 3, which is the recommended version (unless a particular tool or use case requires Python 2) but you should be aware of the potential confusion.
+
+If you are using Windows, you may want to make a `python3` script; see the [Python Installfest](/projects/installfest_python) for instructions.
+<!/IF>
 
 # LAB: Hello, World
 
@@ -187,6 +239,16 @@ Hello, World!
 2. Open this directory in your text editor
     * for VSCode, use `code .` ("code dot")
     * for Atom, use `atom .` ("atom dot")
+<!IF lang=python>
+3. Create a file named `hello.py` using the *File > New* menu
+4. Inside this file, put the following source code:
+
+        print("Hello, World!")
+
+5. Save the file
+6. Switch back to the terminal (using <kbd>Alt</kbd>-<kbd>Tab</kbd> or <kbd>Cmd</kbd>-<kbd>Tab</kbd> or clicking)
+7. Run this file using `python3 hello.py`
+<!ELSE>
 3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
 
@@ -195,6 +257,7 @@ Hello, World!
 5. Save the file
 6. Switch back to the terminal (using <kbd>Alt</kbd>-<kbd>Tab</kbd> or <kbd>Cmd</kbd>-<kbd>Tab</kbd> or clicking)
 7. Run this file using `node hello.js`
+<!/IF>
 
 What happens? Is this what you expected?
 
@@ -210,7 +273,12 @@ Also:
 * <kbd>Esc</kbd>-<kbd>Backspace</kbd> (delete previous word)
 * up/down arrow (scroll through history)
 * <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)
-* <kbd>Tab</kbd> for auto-completion of filenames (e.g. typing `node h`<kbd>Tab</kbd> will emit `node hello.js`)
+* <kbd>Tab</kbd> for auto-completion of filenames 
+<!IF lang=python>
+  * (e.g. typing `python3 h`<kbd>Tab</kbd> will emit `python3 hello.py`)
+<!ELSE>
+  * (e.g. typing `node h`<kbd>Tab</kbd> will emit `node hello.js`)
+<!/IF>
 
 <small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/)</small>
 

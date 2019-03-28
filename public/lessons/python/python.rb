@@ -44,7 +44,7 @@ Track::Python = Track.new(
        description: "Exercism contains challenges you download and complete on your own computer, guided by automated tests"
 
   lesson name: "intro"
-  lesson name: "the_command_line"
+  lesson name: "/javascript/the_command_line", lang: "python"
   lesson name: "hello_bottle"
 
   # lesson name: "values"

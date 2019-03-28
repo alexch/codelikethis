@@ -68,6 +68,19 @@ Local -> Github -> CircleCI -> Heroku
 |`public/lessons/trackname/baking.md` | markdown slides for a single lesson named `baking` (served from `/lessons/trackname/bake_cookies` URL path) |
 |`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/projects/bake_cookies` URL path) |
 
+## Lessons
+
+Lessons are defined in two places:
+1. inside the track's `.rb` file, as a `lesson name: 'something'` line
+2. inside the track's directory, as a markdown `.md` file
+
+The markdown file has some extra semantics:
+
+* indented headers, to set extra options like topics and links
+* H1's (a single `#` mark) declare new slides & their titles
+* <!IF option=value>..<!ELSE>..<!/IF>
+* <!BOX>...<!/BOX> to open and close a div whose CSS paints its boundaries as a simple box
+
 ## Sites
 
 a Site is

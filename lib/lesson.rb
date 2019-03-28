@@ -9,6 +9,7 @@ require 'views'
 class Lesson < Thing
 
   attr_reader :track, :description
+  attr_reader :lang
 
   contains :videos
   contains :links
@@ -19,15 +20,19 @@ class Lesson < Thing
 
   def initialize **options, &block
     super **options, &block
-    scan_content
+    munge_content
   end
 
   attr_reader :content
 
-  def scan_content
+  def munge_content(content = nil)
     begin
-      content = File.read(content_file)
+      content ||= File.read(content_file)
       content_lines = content.split("\n")
+
+      content_lines = munge_ifs(content_lines)
+
+      # indented headers => instance_eval for settings
       headers = []
       while (content_lines.first =~ /^(    |\t)/)
         header_line = content_lines.shift
@@ -314,6 +319,59 @@ class Lesson < Thing
         end
       end
     end
+  end
+
+  private
+
+  def munge_ifs(content_lines)
+    state = nil
+    content_lines = content_lines.reduce([]) do |output, line|
+      case state
+      when nil
+        if line =~ %r{(<!-*IF) ([^>]*)\s*-*>$}
+          match = $~
+          option = match[2]
+          key, value = option.split('=')
+          if self.send(key) == value
+            state = :positive_if
+          else
+            state = :negative_if
+          end
+        else
+          output.push(line)
+        end
+      when :positive_if
+        if line =~ %r{(<!-*/IF) *([^>]*)\s*-*>$}
+          state = nil
+        elsif line =~ %r{(<!-*ELSE)\s*-*>$}
+          state = :negative_else
+        else
+          output.push(line)
+        end
+      when :negative_if
+        if line =~ %r{(<!-*/IF) *([^>]*)\s*-*>$}
+          state = nil
+        elsif line =~ %r{(<!-*ELSE)\s*-*>$}
+          state = :positive_else
+        end
+      when :positive_else
+        if line =~ %r{(<!-*/IF) *([^>]*)\s*-*>$}
+          state = nil
+        else
+          output.push(line)
+        end
+      when :negative_else
+        if line =~ %r{(<!-*/IF) *([^>]*)\s*-*>$}
+          state = nil
+        end
+      else
+        raise "unknown state #{state}"
+      end
+
+      output
+    end
+
+    content_lines
   end
 
 end

@@ -127,4 +127,80 @@ fill a glass of water at the sink
       expect(subject.topics).to eq([Topic.new(name: 'cooking')])
     end
   end
+
+  describe "when initialized with a language option" do
+
+    subject { Lesson.new(name: 'stuff', lang: 'python') }
+
+    it "knows" do
+      expect(subject.lang).to eq('python')
+    end
+
+    describe "munge_content" do
+      let(:content) {
+        <<-TEXT
+<!IF lang=python>
+    topic name: 'python3'
+<!ELSE>
+    topic name: 'node'
+<!/IF>
+        
+# here is a slide
+
+<!IF lang=python>
+python stuff
+<!ELSE>
+javascript stuff
+<!/IF>
+
+more stuff
+
+        TEXT
+      }
+
+      it "respects <!IF directives" do
+        munged = subject.munge_content(content)
+        expect(munged).to include("python stuff")
+        expect(munged).not_to include("javascript stuff")
+        expect(munged).to include("more stuff")
+
+        expect(subject.topics.map(&:name)).to include("python3")
+        expect(subject.topics.map(&:name)).not_to include("node")
+
+        expect(munged).not_to include("<!IF")
+        expect(munged).not_to include("<!ELSE>")
+        expect(munged).not_to include("<!/IF>")
+      end
+
+      it "respects <!ELSE directives when no language is set" do
+        subject = Lesson.new(name: 'stuff')
+
+        munged = subject.munge_content(content)
+        expect(munged).not_to include("python stuff")
+        expect(munged).to include("javascript stuff")
+        expect(munged).to include("more stuff")
+
+        expect(subject.topics.map(&:name)).not_to include("python3")
+        expect(subject.topics.map(&:name)).to include("node")
+
+        expect(munged).not_to include("<!IF")
+        expect(munged).not_to include("<!ELSE>")
+        expect(munged).not_to include("<!/IF>")
+      end
+
+      it "respects <!ELSE directives when a different language is set" do
+        subject = Lesson.new(name: 'stuff', lang: "javascript")
+
+        munged = subject.munge_content(content)
+        expect(munged).not_to include("python stuff")
+        expect(munged).to include("javascript stuff")
+        expect(munged).to include("more stuff")
+
+        expect(munged).not_to include("<!IF")
+        expect(munged).not_to include("<!ELSE>")
+        expect(munged).not_to include("<!/IF>")
+      end
+    end
+  end
+
 end
