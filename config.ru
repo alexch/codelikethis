@@ -27,7 +27,7 @@ use Rack::Rewrite do
   moved_permanently '/lessons/javascript/dom', '/lessons/client_side_coding/dom'
   moved_permanently '/lessons/javascript/jquery', '/lessons/client_side_coding/jquery'
   moved_permanently '/lessons/javascript/ajax', '/lessons/client_side_coding/ajax'
-
+  moved_permanently '/lessons/javascript/filter-functions', '/lessons/javascript/iteration-methods'
   moved_permanently '/lessons/test_driven/test_driven',
                     '/lessons/agile_development/test_driven'
   # renamed tracks
