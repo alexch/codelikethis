@@ -24,6 +24,15 @@ fruit.toUpperCase() // "BERRY"
 
 * ...so pick good names :-)
 
+# What's in a name?
+
+JavaScript variable names must follow these rules:
+
+* they can only contain letters, numbers, `_`, or `$`
+* they can't start with a number
+
+> This means that `_` on its own, and `$` on its own, are *valid variable names*... but it's bad form to use them because traditionally, `$` means jQuery and `_` means Lodash, which are two very popular JavaScript libraries.
+
 # Let there be confusion
 
 * `let` is just one way to declare a variable in JavaScript

@@ -17,7 +17,7 @@ There are many kinds of values, including String, Number, Array, Date, ...
 
 A **number** is what it sounds like -- any integer or decimal.
 
-```js
+```javascript
 10
 -12
 3.14
@@ -27,7 +27,7 @@ A **number** is what it sounds like -- any integer or decimal.
 
 A **string** is an object that's a collection of characters, like a word or a sentence.
 
-```js
+```javascript
 "apple"
 "banana"
 "Cherry Pie"
@@ -84,31 +84,31 @@ We say that a statement **evaluates to** a value, as in
 
 Sometimes the return value is the same as the original value.
 
-```js
+```javascript
 4 * 1    // return value: 4
 ```
 
 Sometimes the return value is a different value.
 
-```js
+```javascript
 2 + 3    // return value: 5
 ```
 
 Sometimes the return value is a different value *and* a different type.
 
-```js
+```javascript
 "banana".length  // return value: 6
 ```
 
 Sometimes the return value is a magic value!
 
-```js
+```javascript
 (5).length     // return value: undefined
 5 / 0          // return value: Infinity
 "cookie" * 10  // return value: NaN
 ```
 
-# Sidebar: Expressions vs. Statements
+# Expressions vs. Statements
 
 JavaScript (like most languages derived from C) makes a distinction between *expressions* and *statements*.
 
@@ -120,6 +120,10 @@ JavaScript (like most languages derived from C) makes a distinction between *exp
 
     console.log("hello");
 
+Every expression is also a statement, but not every statement is an expression. 
+
+# Statement Values
+
 Some statements have values, so `node` will *evaluate* them and *print* those values...
 
 ```javascript
@@ -130,14 +134,14 @@ Some statements have values, so `node` will *evaluate* them and *print* those va
 ...but *some statements have no value* (even though they contain expressions that *do* have value), and this can cause some surprising effects, e.g.:
 
 ```javascript
-> x = 10
+> x = 10      // assignment statements have value
 10
-> let x = 20
+> let x = 20  // "let" statements are valueless
 undefined
 ```
 
 Read more here: (https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74)
-    
+
 # LAB: Values: readings and exercises
 
 * Eloquent JavaScript

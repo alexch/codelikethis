@@ -47,8 +47,8 @@ Track::Python = Track.new(
   lesson name: "/javascript/the_command_line", lang: "python"
   lesson name: "hello_bottle"
 
-  # lesson name: "values"
-  #
+  lesson name: "values"
+
   # lesson name: "strings"
   #
   # lesson name: "numbers"
@@ -58,6 +58,13 @@ Track::Python = Track.new(
   # lesson name: "null"
   #
   # lesson name: "functions"
+
+  # todo:
+  # docstrings (""" at top of function)
+  # ranges and iterators
+  # lambdas https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
+
+
   #
   # lesson name: "/tricks_of_the_trade/debugging"
   #
