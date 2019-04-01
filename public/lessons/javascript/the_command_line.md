@@ -237,8 +237,7 @@ If you are using Windows, you may want to make a `python3` script; see the [Pyth
 
 1. Make sure you are in your `code` subdirectory using `pwd`
 2. Open this directory in your text editor
-    * for VSCode, use `code .` ("code dot")
-    * for Atom, use `atom .` ("atom dot")
+    * for VSCode, use `code .` ("code dot") to open the current directory
 <!IF lang=python>
 3. Create a file named `hello.py` using the *File > New* menu
 4. Inside this file, put the following source code:
