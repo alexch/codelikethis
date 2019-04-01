@@ -7,7 +7,7 @@
 https://12factor.net/
 https://github.com/heroku/12factor
 
-(diagrams in this lesson are from <https://12factor.net/>  )
+(diagrams in this lesson are from <https://12factor.net/>, License: MIT)
 
 # Goals
 
@@ -105,13 +105,13 @@ An app should run the desired protocol on a port (e.g. http://localhost:5000 ) a
 # Factor VIII. Concurrency
 Scale out via the process model
 
- * processes are lightweight and reliable
- * stateless processes are scalable on one or more hosts 
+ * Unix processes are lightweight and reliable
+ * Unix has well-defined process [termination signals](https://www.gnu.org/software/libc/manual/html_node/Termination-Signals.html) (esp. [SIGTERM and SIGKILL](https://www.quora.com/What-is-the-difference-between-the-SIGINT-and-SIGTERM-signals-in-Linux-What%E2%80%99s-the-difference-between-the-SIGKILL-and-SIGSTOP-signals))
+ * Stateless processes are scalable on one or more hosts
 
 ![process types](process-types.png)
 
 > If you want more workers, launch more workers
-
 
 # Factor IX. Disposability
 Maximize robustness with fast startup and graceful shutdown

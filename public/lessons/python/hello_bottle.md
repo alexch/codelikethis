@@ -47,6 +47,11 @@ def index():
 run(host='0.0.0.0', port=os.getenv('PORT', 5000)))
 ```
 
+- If you're curious about this code, here are some details:
+    - `@route('/')` is a *python decorator*; Bottle uses it to route the HTTP path '/' to the `index` function
+    - `0.0.0.0` tells the server to listen on the default *TCP/IP network interface*
+    - `os.getenv('PORT'` gets the value of an *environment variable* named `PORT`, and `, 5000)` means "if that environment variable is missing, use port 5000 instead"
+
 # Hello, Localhost!
 
 - Go back to the Terminal and run the app with one of these (depending on your installation details):

@@ -65,6 +65,22 @@ An operator *sends a message* to the value
 
 Dot is a special operator that *sends arbitrary messages*; we will learn more about her later.
 
+# Comments
+
+When reading Python code, if you ever see a hash mark (`#`), that means "everything after this is a comment".
+
+```python
+2 + 2    # makes four
+```
+
+A comment is a message for humans. Python ignores everything to the right of the hash, so you can explain what the nearby code does, or why it does it.
+
+In these lessons, we often use comments to explain the *result* of executing the nearby code. To be even clearer, we also add an arrow:
+
+```python
+2 + 2  #=> 4
+```
+
 # Expression Evaluation
 
 A snippet of code is called an *expression*.

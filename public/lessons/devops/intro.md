@@ -5,6 +5,10 @@
 * a reaction to overspecialization in large software engineering orgs
 * meant to give developers control of their work, while also respecting ops experts and policies
 
+# DevOps High Points
+
+
+
 # DevOps is an Agile practice
 
 * based in Agile 
