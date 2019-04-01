@@ -55,6 +55,24 @@ An operator *sends a message* to the value
 
 Dot is a special operator that *sends arbitrary messages*; we will learn more about her later.
 
+# Comments
+
+When reading JavaScript code, if you ever see two slashes in a row, that means "everything after these slashes is a comment".
+
+```javascript
+2 + 2    // makes four
+```
+
+A comment is a message for humans. JavaScript ignores everything to the right of the slashes, so you can explain what the nearby code does, or why it does it.
+
+In these lessons, we often use comments to explain the *result* of executing the nearby code. In this case, we sometimes add an arrow to the comment:
+
+```javascript
+2 + 2  //=> 4
+```
+
+> JavaScript also has multi-line comments via `/* ... */` but those are less common.
+
 # Expression Evaluation
 
 A snippet of JavaScript code is called an *expression*.
