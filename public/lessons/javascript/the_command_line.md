@@ -40,13 +40,14 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 * to open your Terminal:
   * Mac OS: launch the "Terminal" application
-  * Windows: launch the "Cmdr" application (pronounced "Commander") and select "git bash" [TODO: verify on windows] 
+  * Windows: Starting in Windows Vista, there are two command shells: Windows Powershell, and Command Prompt. Launch Command Prompt (cmd).
 * **Important:** make your terminal as **tall** as possible
   * when reading a program's output you want to start reading *at the top*...
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
 
 ![terminal next to browser](../images/terminal-and-browser.png)
+![terminal next to browser](../images/terminal-and-browser-win.png)
 
 
 # Lab: Interactive Calculator
@@ -70,8 +71,11 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 > WARNING: Before you start typing, look at the prompt!
 
-* *the shell* is the command line that the terminal starts with
-  * its prompt is usually `$` (Mac / Linux) or `C:\Users\alice>` (Windows)
+* *the shell* is the command line interpreter that the terminal starts with
+  * its prompt is usually
+    *  `Davids-Macbook-Pro:~ David$` (Mac)
+    *  `jessee@jesseews:~$` (Ubuntu Linux)
+    *   `C:\Users\alice>` (Windows)
 * *node* is a command line that is launched *from the shell*
   * its prompt is usually `>`
 
@@ -109,13 +113,15 @@ This stands for "print working directory" or "present working directory" (not "p
 * for this class, we recommend:
   * create a `code` directory inside your home directory
   * create a new directory inside `code` for each lesson or project
+> WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`
 
 # Listing Directory Contents
 
 * when you type `ls` ("list") it shows the contents of the current directory
-  * **On Windows** you might need to type `dir` instead
+  * **On Windows** you need to type `dir` instead
   
 * if you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
+  * **On Windows** you need to type `dir /A:SH` instead 
 
 # Making a directory
 
@@ -139,17 +145,21 @@ mkdir code
 * `mkdir` ("make dir") -- creates a new SUBDIRECTORY inside the current directory
 * `cd` ("change dir") -- move into a different directory
 
-> These apply to Mac & Unix shells, but most work in Windows too
+> These apply to Mac & Unix shells, Windows equivalents are below.
+* `cd` ("change dir") -- With no directory, it lists the current directory. Otherwise, it changes to the specified directory
+* `dir` ("directory") -- shows the contents of the current directory
+* `mkdir` ("make dir") `` creates a new SUBDIRECTORY inside the current directory
+
 
 # LAB: make a subdirectory and then enter it
 
-1. open Terminal
+1. open **Terminal** or **Command Prompt**
 2. make a new subdirectory using `mkdir code`
 3. change into that directory using `cd code`
 4. make sure you're really there using `pwd`
-4. list its contents using `ls` (and note that it's empty)
-  * **On Windows** you might need to type `dir` instead of `ls`
-
+   * **On Windows** use `cd`
+5. list its contents using `ls` (and note that it's empty)
+   * **On Windows** use `dir`
 # Files
 
 * a file is a place on disk for storing stuff
@@ -164,7 +174,7 @@ mkdir code
 * but a text editor is **not** a word processor
 * You probably have *VS Code* <https://code.visualstudio.com/>
   * others include *TextMate*, *Notepad++*, *Sublime Text*, *Vim*, *Emacs*, *Atom*
-  * but **NOT** *TextEdit* or *Notepad* or *Microsoft Word*
+  * but **NOT** *TextEdit* or *Wordpad* or *Microsoft Word*
 
 # Source File
 
@@ -183,7 +193,7 @@ Hello, World!
 
 # LAB: Hello, World
 
-1. Make sure you are in your `code` subdirectory using `pwd`
+1. Make sure you are in your `code` subdirectory using `pwd` or `cd`
 2. Open this directory in your text editor
     * for VSCode, use `code .` ("code dot")
 3. Create a file named `hello.js` using the *File > New* menu
@@ -193,6 +203,7 @@ Hello, World!
 
 5. Save the file
 6. Switch back to the terminal (using <kbd>Alt</kbd>-<kbd>Tab</kbd> or <kbd>Cmd</kbd>-<kbd>Tab</kbd> or clicking)
+  * If you are using VS Code, you can click **Terminal &rarr; New Terminal**
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?
@@ -211,7 +222,7 @@ Also:
 * <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)
 * <kbd>Tab</kbd> for auto-completion of filenames (e.g. typing `node h`<kbd>Tab</kbd> will emit `node hello.js`)
 
-<small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/)</small>
+<small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/))</small>
 
 # LAB: Next Steps
 

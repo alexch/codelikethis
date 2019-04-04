@@ -10,7 +10,7 @@ Before the class starts, please install the following:
 * GitHub
 * Heroku
 
-> Are you on a recent model Macintosh? Skip to the [Mac Homebrew](#mac-homebrew) section to install Node and Git, then come back here for GitHub and Heroku.
+> Are you on a recent model Mac? Skip to the [Mac Homebrew](#mac-homebrew) section to install Node and Git, then come back here for GitHub and Heroku.
 
 ## VS Code Text Editor
 
@@ -20,15 +20,13 @@ Before the class starts, please install the following:
 ## Node.js (JavaScript)
 
   * **Install** Node.js from <https://nodejs.org/>
-  * version 10.10.0 is preferred
+  * version 10.X.X LTS is preferred
     * run `node -v` in terminal to check
     * if you can't install v10, anything past 6.0 is probably okay
 
 ## Git
 
-* **Install** git from...
-  * for Mac and Linux: <https://git-scm.com/downloads>
-  * for Windows: <https://gitforwindows.org/>
+* **Install** git from  <https://git-scm.com/downloads>
 
 ## GitHub
 
