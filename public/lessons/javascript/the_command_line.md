@@ -39,8 +39,10 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 # Opening the Terminal
 
 * to open your Terminal:
-  * Mac OS: launch the "Terminal" application
-  * Windows: launch the "Cmdr" application (pronounced "Commander") and select "git bash" [TODO: verify on windows] 
+  * **Mac OS**: launch the "Terminal" application
+  * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
+    * Startup command: `{bash::bash}`
+    * Startup directory: `C:\Users\yourname`
 * **Important:** make your terminal as **tall** as possible
   * when reading a program's output you want to start reading *at the top*...
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
