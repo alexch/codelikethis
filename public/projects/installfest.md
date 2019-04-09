@@ -42,7 +42,25 @@ Before the class starts, please install the following:
 
 ---
 
-# Mac Homebrew
+# Windows Only
+
+## Cmder
+
+1. Visit <https://cmder.net>
+2. Click "Download Full"
+3. Save the ZIP file and unzip it into your *home directory*
+  * if your username is `Alice` you should now have `C:\Users\Alice\cmder\Cmder.exe`
+4. **Right**-click `Cmder` and select "Create Shortcut"
+5. **Click and Drag** that shortcut to the desktop
+6. **Double-click** the shortcut to open the terminal
+7. Press <kbd>Win</kbd>-<kbd>Alt</kbd>-<kbd>P</kbd> (or select "Settings..." from the window's menu) and change the "startup task" to `{bash::bash}`
+cmder
+
+---
+
+# MacOS Only
+
+## Mac Homebrew
 
 Homebrew is a package manager for MacOS that lets you install tools directly from the Terminal. Once it's installed, it's generally easier to use Homebrew than to use a web browser and graphical installer app.
 
