@@ -32,7 +32,7 @@ that let you *apply a function* to its contents.
 
 | method | description | returns |
 |---|---|---|
-| [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)  | do something to each item | `undefined`|
+| [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)  | do something to each item | `undefined`|
 | [`find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)  | find the first item that matches | one matching item (or `undefined` if no match) |
 | [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | accept or reject each item | a new collection, possibly smaller |
 | [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)  | change each item into a new item | a new collection of the same size |
@@ -70,7 +70,7 @@ DAVID
 to find the first item that matches the condition...
 
 ```javascript
-let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David']
+let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David'];
 let beginsWithC = function(word) {
     return word.charAt(0).toUpperCase() === 'C';
 };
@@ -109,7 +109,7 @@ write some code that uses `find` to return the first item that ends with the str
 the `filter` iteration method returns *all* matching values, in a *new array*
 
 ```javascript
-let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
+let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David'];
 let beginsWithC = function(word) {
     return word.charAt(0).toUpperCase() === 'C';
 }
@@ -132,17 +132,25 @@ containing **all** the fruits that end with the string `'berry'`
 
 # Map
 
-the `map` iteration method returns a *new array* whose elements correspond to the elements of the original array
+The `map` iteration method returns a *new array* whose elements correspond to the elements of the original array.
 
 ```javascript
-let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David']
+let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David'];
 let upper = function(word) {
     return word.toUpperCase();
 }
 let bigNames = names.map(upper) //=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
 ```
 
-It's called "map" because in a mathematical sense, it defines a *mapping* from one collection to another
+It's called "map" because in a mathematical sense, it defines a *mapping* from one collection to another.
+
+| from | to |
+|---|---|
+| 'Alice'| 'ALICE' | 
+| 'Bob'| 'BOB' |
+| 'Charlie' | 'CHARLIE' |
+| 'Carol' | 'CAROL' |
+| 'David' | 'DAVID' |
 
 # Lab: Titleize with Map
 
@@ -190,7 +198,7 @@ And another:
 ```javascript
 function titleize(phrase) {
     let words = [];
-    let originalWords = phrase.split(' ')
+    let originalWords = phrase.split(' ');
     originalWords.forEach((word) => {
         words.push(capitalize(word))
     });
