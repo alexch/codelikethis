@@ -447,16 +447,16 @@ footer {
   margin: auto;
 }
 
-.video {
+.video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
-
+  overflow: hidden;
   margin: 1em;
   border: 6px solid gray;
 
-  iframe {
+  iframe, object, embed {
     position: absolute;
     top: 0;
     left: 0;

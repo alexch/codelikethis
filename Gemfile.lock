@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/alexch/deck.rb.git
-  revision: 20ed94cdb8ea0ce5fe2f702cdfd813c13a183df1
+  revision: 31fa8aa44a96f14398765882a1c00e0e35036add
   specs:
     deckrb (0.6.0)
       erector (>= 0.9.0)

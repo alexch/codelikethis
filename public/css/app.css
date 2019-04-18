@@ -200,7 +200,7 @@ div.blog .rssHeader > a:after {
     /* line 211, ../scss/app.scss */
     .tracks-toggler {
       display: none; } }
-  /* line 24, /Users/alex/Dropbox/dev/codelikethis/public/scss/bootstrap-4.0.0-beta.2/scss/mixins/_hover.scss */
+  /* line 24, /Volumes/Mead/Dropbox/dev/codelikethis/public/scss/bootstrap-4.0.0-beta.2/scss/mixins/_hover.scss */
   .tracks-toggler:focus, .tracks-toggler:hover {
     text-decoration: none; }
 
@@ -393,16 +393,17 @@ footer {
   margin: auto; }
 
 /* line 450, ../scss/app.scss */
-.video {
+.video-container {
   position: relative;
   padding-bottom: 56.25%;
   /* 16:9 */
   padding-top: 25px;
   height: 0;
+  overflow: hidden;
   margin: 1em;
   border: 6px solid gray; }
   /* line 459, ../scss/app.scss */
-  .video iframe {
+  .video-container iframe, .video-container object, .video-container embed {
     position: absolute;
     top: 0;
     left: 0;

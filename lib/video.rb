@@ -22,7 +22,7 @@ class Video < Thing
       # see https://developers.google.com/youtube/player_parameters
       # see https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
       #
-      div(class: "video") {
+      div(class: "video-container") {
         s = %Q(<iframe class="youtube" type="text/html" width="560" height="349" src="https://www.youtube.com/embed/#{@youtube_id}" frameborder="0" allowfullscreen></iframe>\n)
         rawtext s
       }

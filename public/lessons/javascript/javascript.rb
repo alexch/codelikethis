@@ -155,4 +155,6 @@ Track::Javascript = Track.new(
 
   link href: "http://news.codecademy.com/your-guide-to-semicolons-in-javascript/"
 
+
+  lesson name: "take_a_minute_to_refactor_winner"
 end
