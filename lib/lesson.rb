@@ -150,10 +150,25 @@ class Lesson < Thing
               a slide.title, href: "#anchor/#{slide.slide_id}"
             }
           end
+          if target.labs?
+            li(class: 'list-group-item') {
+              a 'Labs', href: '#labs'
+            }
+          end
+          if target.links?
+            li(class: 'list-group-item') {
+              a 'Links', href: '#links'
+            }
+          end
+          if target.projects?
+            li(class: 'list-group-item') {
+              a 'Projects', href: '#projects'
+            }
+          end
         }
       }
       br
-      unless slides.empty?
+      if slides?
         div(class: 'row text-center') {
           div(class: 'col') {
             a("Show Slides", href: @target.slides_href, class: 'slides btn btn-primary')
@@ -162,13 +177,13 @@ class Lesson < Thing
         }
         br
       end
+
     end
 
     def content
 
-
       if description?
-        div(class: 'description') {
+        div(class: 'description', id: 'description') {
           h2 "Description"
           p description
         }
@@ -176,7 +191,7 @@ class Lesson < Thing
       end
 
       if !topics.empty?
-        div(class: 'topics') {
+        div(class: 'topics', id: 'topics') {
           h2 "Topics"
           topics.each do |topic|
             widget topic.link_view
@@ -187,7 +202,7 @@ class Lesson < Thing
       end
 
       if !goals.empty?
-        div(class: 'goals') do
+        div(class: 'goals', id: 'goals') do
           h2 "Goals"
           p "The student will learn..."
           ul do
@@ -214,19 +229,21 @@ class Lesson < Thing
 
       div.main_column {
         if slides?
-          h2 {
-            i(class: "fas fa-clone")
-            text nbsp
-            text "Slides"
+          div(class: 'slides', id: 'slides') {
+            h2 {
+              i(class: "fas fa-clone")
+              text nbsp
+              text "Slides"
+            }
+            slides.each do |slide|
+              widget slide
+            end
+            br
           }
-          slides.each do |slide|
-            widget slide
-          end
-          br
         end
 
         unless labs.empty?
-          div(class: 'labs') {
+          div(class: 'labs', id: 'labs') {
             h2 "Labs"
             labs_list
           }
@@ -234,21 +251,25 @@ class Lesson < Thing
         end
 
         if target.links?
-          h2 "Links"
-          ul(class: 'links') do
-            target.links.each do |link|
-              li { widget link.view }
+          div(class: 'links', id: 'links') {
+            h2 "Links"
+            ul(class: 'links') do
+              target.links.each do |link|
+                li { widget link.view }
+              end
             end
-          end
+          }
         end
 
         if target.projects?
-          h2 "Suggested Projects"
-          ul(class: 'links') do
-            target.projects.each do |project|
-              li { widget project.link_view }
+          div(class: 'projects', id: 'projects') {
+            h2 "Suggested Projects"
+            ul(class: 'links') do
+              target.projects.each do |project|
+                li { widget project.link_view }
+              end
             end
-          end
+          }
         end
 
         br
