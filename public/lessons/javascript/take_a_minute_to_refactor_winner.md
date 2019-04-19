@@ -1,8 +1,21 @@
+    link name: "What do programmers mean by 'elegant' code?",
+        href: "https://www.quora.com/What-do-programmers-mean-by-elegant-code"
+    link name: "Refactoring", href: "https://refactoring.com/",
+        description: "Martin Fowler literally wrote the book on refactoring"
+    link name: "Refactoring Lesson", href: "/lessons/agile/refactoring", 
+        description: "on this site"
+
 # Take a Minute to Refactor: Winner
 
 This lesson follows a series of one-minute screencast videos to teach refactoring by example.
 
  * [YouTube Playlist](https://www.youtube.com/playlist?list=PLLdA7yJIWF1oKzxrRIqJU8MQ3qblY9HFH)
+
+## What is Refactoring?
+
+noun: a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior
+
+verb: to restructure software by applying a series of refactorings without changing its observable behavior.
 
 # Winner Part 1
 
