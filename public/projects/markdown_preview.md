@@ -104,7 +104,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **And** the text is rendered as styled HTML into the *preview* area
 
-> Hint: the "at least one second" feature will need to keep track of [/lessons/javascript/timing](elapsed time) somehow...
+> Hint: the "at least one second" feature will need to keep track of [elapsed time](/lessons/javascript/timing) somehow...
 
 <!--/BOX-->
 
