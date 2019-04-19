@@ -4,6 +4,7 @@
         description: "Martin Fowler literally wrote the book on refactoring"
     link name: "Refactoring Lesson", href: "/lessons/agile/refactoring", 
         description: "on this site"
+    link name: "The Wrong Abstraction", href: "https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction", description: "by Sandi Metz"
 
 # Take a Minute to Refactor: Winner
 
@@ -98,7 +99,7 @@ if (board[0] === board[1] && board[1] === board[2]) {
 This first condition is checking the top row
 so let's put it in a function named "check top row".
 
-In VS Code you do this by typing <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>R</kbd> and selecting "Extract to inner function" (which allows the `board` parameter to remain in scope).
+In [VS Code](https://code.visualstudio.com/) you do this by typing <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>R</kbd> and selecting "Extract to inner function" (which allows the `board` parameter to remain in scope).
 
 
 ```javascript
@@ -113,9 +114,9 @@ In VS Code you do this by typing <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>R</kbd> a
 
 And let's do the same with the second condition, and the third.
 
-So now your code is LONGER but SKINNIER --
+So now your code is *longer* but *skinnier* --
  (more lines but each line is shorter)
-and more SELF-DOCUMENTING
+and more *self-documenting*
  (because each line is inside a function whose name is meaningful).
 
 ```javascript
@@ -186,7 +187,7 @@ So now the duplication is a little more apparent,
 
 So let's name those values by using the **extract variable** refactoring.
 
-In VS Code you do this by typing <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>R</kbd> and selecting "Extract to constant in enclosing scope".
+In [VS Code](https://code.visualstudio.com/) you do this by typing <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>R</kbd> and selecting "Extract to constant in enclosing scope".
 
 They're all cells, so let's name them `cell1`, `cell2`, and `cell3`.
 
@@ -216,15 +217,14 @@ And now that we've named the variables, we can extract *another* function...
 
 <!VIDEO WqSTBVgrxKY>
 
-so now that we have a generalized checkCells function
+So now that we have a generalized `checkCells` function,
+we want to start using that new `checkCells` function from all the other check functions.
 
-we want to start using that new checkCells function from all the other check functions
-
-Our editor doesn't have a way to instantly replace similar code with a call to our new function, but that's okay, we can do it by hand.
+Our editor doesn't have a way to instantly replace similar code with a call to our new function, but that's okay; we can do it by hand.
 
 If I was inspired, I could use a regular expression and search-and-replace, but it's usually faster to do it manually.
 
-And doing it manually is actually a good way to find bugs! like this one I had inside checkLeftColumn... the original code "accidentally" compared 4 cells, not 3, but it was hard to see.
+And doing it manually is actually a good way to find bugs! Like this bug I had inside `checkLeftColumn`... the original code "accidentally" compared 4 cells, not 3, but it was hard to see.
 
 ```javascript
   function checkCells(cell1, cell2, cell3) {
@@ -238,6 +238,8 @@ And doing it manually is actually a good way to find bugs! like this one I had i
   function checkMiddleColumn() {
     return checkCells(1, 4, 7);
   }
+  
+  // etc.
 ```
 
 After this, it's now quite clear that "right column" means "cells 2, 5, and 8" and so forth.
@@ -253,6 +255,7 @@ It's easier to understand but it's still kind of messy.
 
 We've "abstracted out" (aka *reified*) the concept of *checking* for a winner,
 but we still need to do the same for the concept of figuring out *which* player has won.
+(This is currently embodied in the `winner` variable; assigning a value to `winner` and then returning it is the main purpose of the original function.)
 
 ```javascript
   if (checkTopRow()) {
@@ -261,7 +264,6 @@ but we still need to do the same for the concept of figuring out *which* player 
     winner = board[3];
   } //etc.
 ```
-(This is currently embodied in the `winner` variable; assigning a value to `winner` and then returning it is the main purpose of the original function.)
 
 The other big problem is that this outer code still refers to individual cells by number -- we want to hide that detail, to put it near the other code that knows what cells correspond to what lines.
 
@@ -269,7 +271,7 @@ Fortunately, JavaScript lets us cheat a little.
 
 Currently our `checkCells` function returns `true` or `false`. But if we want, we can use the *actual value* of the cells instead of `true`.
 
-That's going to be either 'X' or 'O' depending on which symbol is in all those cells.
+That's going to be either `'X'` or `'O'` depending on which symbol is in all those cells -- or `undefined` if there's no winner yet.
 
 Then the outer function can use that return value
 instead of looking into the board directly.
@@ -303,7 +305,7 @@ function winner(board) {
   }
 ```
 
-There's still a lot of duplication in this code, but it's important to note that we haven't introduced any new duplication; instead we made explicit the duplication that was already there, in the repeated `winner = board[x]` lines.
+There's still a lot of duplication in this code, but it's important to note that we haven't introduced any new duplication during this step. Instead, we made explicit the duplication that was already there, in the repeated `winner = board[x]` lines.
 
 # Winner Part 5
 
@@ -311,15 +313,15 @@ There's still a lot of duplication in this code, but it's important to note that
 
 So now we've replaced some very specific, very duplicative code with a series of well-named function calls. We're finally able to see clearly what the original function was doing.
 
-Essentially, we made our code into pseudocode.
+Essentially, we made our code into [pseudocode](https://en.wikipedia.org/wiki/Pseudocode).
 
 So where do we go from here?
 
-Well, one possibility is to just leave it alone. It's still got a lot of duplication, but as Sandi Metz says, "The cost of duplication is lower than the cost of the wrong abstraction."
+Well, one possibility is to just leave it alone. It's still got a lot of duplication, but as Sandi Metz says, ["The cost of duplication is lower than the cost of the wrong abstraction."](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
 
 Another possibility is to delete the code and start from scratch. Now that we have an idea of the concepts and terms and algorithms, we could treat our first attempt as a "spike" and build it again.
 
-> "Build one to throw away." - Fred Brooks, the Mythical Man Month
+> ["Build one to throw away."](http://wiki.c2.com/?PlanToThrowOneAway) - Fred Brooks, the Mythical Man Month
 
 # Winner Part 6
 
@@ -329,9 +331,9 @@ When I read this code, I can see a pattern:
 
  * if top row then winner = top row
  * else if middle row then winner = middle row
- * and so on
+ * and so on, following the pattern "if X then winner = X"
 
-Essentially we are walking through a series of win conditions, and bailing out when we find one that's true.
+Essentially, we are walking through a series of win conditions, and bailing out when we find one that's true.
 
 That sounds a lot like an [iteration method](/lessons/javascript/iteration_methods) to me. Specifically "find".. but I don't think "find" will quite work here...
 
@@ -427,7 +429,7 @@ function winner(board) {
 }
 ```
 
-Now, you might ask, "Why didn't we just put the triplets into a hash in the first place?" That's a fine idea, and maybe next time we see similar code, we will. But a major point of refactoring is to help you see things that are not immediately obvious, or are apparent only in hindsight.
+Now, you might ask, "Why didn't we just put the triplets into a hash in the first place?" That's a fine idea, and maybe next time we see similar code, we will. But a major point of refactoring is to help you see things that are not immediately obvious, or are apparent only in hindsight. Also, tiny refactorings are more difficult to mess up than large ones -- and easier to revert -- so even if you think you know where you are going, it's often better to go the long way, rather than try to jump directly there.
 
-You might also ask, "Where are the unit tests?" **Good question!** In fact, in this very video series, I made a stupid mistake in each of the last two steps -- using `for..in` instead of `for..of`, and then forgetting to use `Object.values` to get the triplets. If I had been running my tests, they would have told me, "Whoa, Nelly!" And if I'm using version control, I can easily revert to a recent known good version (or "green build") and try again.
+You might also ask, "Where are the unit tests?" **Good question!** In fact, in this very video series, I made a stupid mistake in each of the last two steps -- using `for..in` instead of `for..of`, and then forgetting to use `Object.values` to get the triplets. If I had been running my tests, they would have told me, "Whoa, Nelly!" And if I'm using version control -- and making a commit after each successful refactoring step -- I can easily revert to a recent known good version (aka "green build") and try again.
 
