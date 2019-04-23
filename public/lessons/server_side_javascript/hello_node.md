@@ -20,7 +20,7 @@ In this lesson you will create a trivial web application in NodeJS and deploy it
 - Launch the Visual Studio Code text editor in this directory with `code .` (pronounced "Code Dot")
   - if `code .` fails, launch Code, type CMD-SHIFT-P, then type "install" and select **Install 'code' Command In Path**
 
-- Inside this directory make a file named `index.js` and fill it with the following code:
+- Inside this directory make a file named `server.js` and fill it with the following code:
 
 ```js
 let http = require('http');
@@ -34,7 +34,7 @@ console.log("Listening on port " + port);
 
 # Hello, Localhost!
 
-- Go back to the Terminal and run the app with `node index.js`
+- Go back to the Terminal and run the app with `node server.js`
 
 - Visit <http://localhost:5000/> to see it running on your own computer.
 
@@ -48,7 +48,7 @@ In Code, create a file named `package.json` and fill it with this:
 {
   "name": "hello-node",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   }
 }
 ```
