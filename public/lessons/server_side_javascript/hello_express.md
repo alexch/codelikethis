@@ -6,7 +6,7 @@
 
 # Hello, Express!
 
-In this lesson you will create a trivial web application in Express and deploy it to Heroku, where it will be visible to everyone on the Internet. (Since Express is built on top of NodeJS, this lesson is very similar to the [Hello, Node!](./hello_node) lesson.)
+In this lesson you will create a trivial web application in [Express](https://expressjs.com/) and deploy it to Heroku, where it will be visible to everyone on the Internet. (Since Express is built on top of NodeJS, this lesson is very similar to the [Hello, Node!](./hello_node) lesson.)
 
 # Hello, File!
 
@@ -157,4 +157,5 @@ Some other Node/Express tutorials:
 
 * <https://devcenter.heroku.com/articles/getting-started-with-nodejs>
 
+* <https://expressjs.com/>
 

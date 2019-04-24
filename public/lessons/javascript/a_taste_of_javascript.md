@@ -1,22 +1,47 @@
     topic name: "text-editor"
     link name: 'How to Design Programs (preface)',
          href: "https://htdp.org/2018-01-06/Book/part_preface.html"
+    link name: "Khan Academy: How Computers Work",
+            href: "https://www.khanacademy.org/computing/computer-science/how-computers-work2/v/khan-academy-and-codeorg-what-makes-a-computer-a-computer"
 
 # Part 1: Intro
 
-You may have never programmed before. Today you will.
+You may never have coded before. Today you will.
+
+# What will we learn?
+
+In this class, you will learn about:
+
+*  Code and coding
+*  The command line and why we use it
+*  How to run your code interactively or from a file
+*  How to make a very simple website run on your own computer
+*  How to deploy your website to the cloud, where anyone in the world can visit
+
+Follow along online! Put a browser pointed at this site on one side of your screen, and Terminal on the other.
+
+# What if I know some of this already?
+
+* Pair up
+* Help your partner, help your neighbor
+* Docendo discimus ("By Teaching We Learn")
+* Promote yourself to TA
+
+> The best way to learn is to teach. <br>- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
 
 # What is code?
 
-In general, code is something that stands for something else.
+Generally, *code* is something that stands for something else.
 
-In computers, code is a series of instructions that tell a computer what to do.
+Specifically, *source code* is a series of instructions that tell a computer what to do.
+
+> With computers, "code" is not about **secrets** -- it's about **symbols**.
 
 # What is coding?
 
 * coding (aka programming or software development) is a *creative, human* activity
 * *coding* does not mean "cracking the code" or "deciphering" -- it's not a mystery or a secret, it's a language
-* the words (and numerals and punctuation) we write are translated into long strings of ones and zeros
+* the words (and numerals and punctuation) we write are then translated (*encoded*) into long strings of ones and zeros
 
 # What is coding NOT?
 
@@ -53,16 +78,16 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 * a program is a collection of *data* and *code*
 
-> When you are writing code, you are not baking cookies, you are writing a recipe for how to make cookies.
+> When you are coding, you are not baking cookies; you are writing a recipe for how to make cookies.
 
 (recipe from popcornpottery.com)
 
 # Languages
 
-* every program is written in a LANGUAGE
+* every program is written in a **language**
   * like Java or Python or C or Fortran
   * even HTML and CSS and SQL are languages
-  * every computer language has a silly name
+  * computer languages all have very silly names
 * computer languages are very **specific** compared to natural languages
 * different languages are useful in different areas, but there is a lot of overlap
 * today we will learn the JavaScript programming language
@@ -81,26 +106,6 @@ In computers, code is a series of instructions that tell a computer what to do.
 * Try to read it -- really try! -- and pull out the pearls from the pig slop
 
 See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong) from MDN
-
-# What will we learn?
-
-In this class, you will learn about:
-
-*  The command line and why we use it
-*  How to run your code interactively or from a file
-*  How to make a very simple website run on your own computer
-*  How to deploy your website to the cloud, where anyone in the world can visit
-
-Follow along online! Put a browser pointed at this site on one side of your screen, and Terminal on the other.
-
-# What if I know some of this already?
-
-* Pair up
-* Help your partner, help your neighbor
-* Docendo discimus ("By Teaching We Learn")
-* Promote yourself to TA
-
-> The best way to learn is to teach. <br>- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
 
 # Technical requirements
 
@@ -125,11 +130,15 @@ Software:
 
 # Parts of a Computer
 
-(diagram)
+* Input (keyboard, mouse, network)
+* Storage (disk drive aka *filesystem*)
+* Memory (RAM)
+* Processor (CPU)
+* Output (screen, sound, network)
 
 # Parts of a Command-Line Program
 
-(diagram)
+![Diagram: Node Train](https://docs.google.com/drawings/d/e/2PACX-1vSuQt_9GMBucCZl21aJSCDOhv-TIWF6W2ZomUQn268w59aUUUXWjao5y_KDCMwLtMwWoypKZYXhDWZK/pub?w=960&amp;h=720)
 
 * source file
 * command line
