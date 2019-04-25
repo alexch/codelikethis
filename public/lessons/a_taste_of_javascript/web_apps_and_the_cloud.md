@@ -1,6 +1,6 @@
 # Web Applications
 
-* a web application ("web app") is a program that is split into two parts:
+A web application ("web app") is a program that is split into two parts:
 
 1. the *server side*, aka the "back end", whose job it is to "talk" with a web browser across the internet, as well as other services like databases
 2. the *client side*, aka the "front end", which runs *inside* each user's web browser
@@ -13,7 +13,10 @@
 
 * web developers write and test code on their own computers...
 * ...then they *deploy* the same code to a different computer
+  * "deploy" means "upload" or "transfer" or "push"
 * "in the cloud" means "running on someone else's computer"
+  * AWS, Azure, Google Cloud, Heroku, etc.
+  * it's like renting a safety deposit box in a huge vault
 
 # Using Git to Deploy to the Cloud
 

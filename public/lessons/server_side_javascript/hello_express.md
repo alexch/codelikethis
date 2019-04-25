@@ -18,23 +18,18 @@ In this lesson you will create a trivial web application in [Express](https://ex
 
 - run `npm install express` to load the *express* package into this project
 
-- Launch the Visual Studio Code text editor in this directory with `code .` (pronounced "Code Dot")
-  - if `code .` fails, launch VS Code, then type 
-    * MacOS: <kbd>CMD</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
-    * Windows: <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
-  - then type "install" and select " **Install 'code' Command In Path** "
-  - then go back to the terminal and try `code .` again
+- Launch the Visual Studio Code text editor and open this `code` directory
 
 - Inside this directory make a file named `server.js` and fill it with the following code:
 
-``` js
+```javascript
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000
 
 app.get('/', (request, response) => response.send('Hello, World!'))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Listening on port ${port}!`))
 ```
 
 # Hello, Localhost!
@@ -159,3 +154,4 @@ Some other Node/Express tutorials:
 
 * <https://expressjs.com/>
 
+'

@@ -18,6 +18,11 @@ and sign up for accounts on:
 
   * **Install** VS Code from Microsoft <https://code.visualstudio.com>
   * Here's a [VS Code Overview](https://medium.freecodecamp.org/an-overview-of-visual-studio-code-for-front-end-developers-49a4aa0771fb) for you to read later
+  * **OPTIONAL:** Launch VS Code, then type
+      * MacOS: <kbd>CMD</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
+      * Windows: <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
+   * then type "install" and select " **Install 'code' Command In Path** "
+   * Now you can type `code .` from the terminal to open the current dir!
 
 ## Node.js (JavaScript)
 
