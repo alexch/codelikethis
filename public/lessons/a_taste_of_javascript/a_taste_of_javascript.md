@@ -1,9 +1,30 @@
     topic name: "text-editor"
-    topic name: "text-editor"
+    topic name: "console"
     link name: 'How to Design Programs (preface)',
          href: "https://htdp.org/2018-01-06/Book/part_preface.html"
     link name: "Khan Academy: How Computers Work",
             href: "https://www.khanacademy.org/computing/computer-science/how-computers-work2/v/khan-academy-and-codeorg-what-makes-a-computer-a-computer"
+
+# Technical requirements
+
+See the [Installfest](/projects/installfest) project for more instructions.
+
+Software:
+
+* a text editor (VS Code from Microsoft)
+* a JavaScript engine (NodeJS)
+* Git
+
+Accounts:
+
+* GitHub
+  * **Sign up** for an account at <https://github.com/>
+  * Add an SSH key to your GitHub account; follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
+* Heroku
+  * **Sign up** for an account at <https://signup.heroku.com>
+  * **Install** the Heroku Command Line Interface (CLI) at <https://devcenter.heroku.com/articles/heroku-cli>
+
+> If you do not have these, RAISE YOUR HAND!
 
 # A Taste of JavaScript Part 1: Intro
 
@@ -40,9 +61,13 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 # What is coding?
 
-* coding (aka programming or software development) is a *creative, human* activity
-* *coding* does not mean "cracking the code" or "deciphering" -- it's not a mystery or a secret, it's a language
-* the words (and numerals and punctuation) we write are then translated (*encoded*) into long strings of ones and zeros
+* coding is fun!
+* coding is frustrating!
+* coding is creative!
+* coding is communication
+  * between you and a computer
+  * between you and other coders
+  * between you and future you
 
 # What is coding NOT?
 
@@ -61,15 +86,6 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 > "The only perfect program is an empty file." - Alex
 
-# What is coding?
-
-* coding is fun!
-* coding is frustrating!
-* coding is creative!
-* coding is communication
-  * between you and a computer
-  * between you and other coders
-  * between you and future you
 
 # A Program Is Like A Recipe
 
@@ -77,7 +93,7 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 ![Grandma's Cookie Recipe](../images/cookie-recipe.gif)
 
-* a program is a collection of *data* and *code*
+* a program is a collection of *data* (ingredients) and *code* (instructions)
 
 > When you are coding, you are not baking cookies; you are writing a recipe for how to make cookies.
 
@@ -108,27 +124,118 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong) from MDN
 
-# Technical requirements
 
-See the [Installfest](/projects/installfest) project for more instructions.
+# The Command Line
 
-Software:
+* the **TERMINAL** is a window into which you can talk directly to your computer
+  * aka *console* or *command line* or *command prompt* or *shell*
 
-* a text editor (VS Code from Microsoft)
-* a JavaScript engine (NodeJS)
-* Git
+![Shall we play a game?](../images/wargames-terminal.jpg)
 
-Accounts:
+<small>from WarGames, (1983)</small>
 
-* GitHub 
-  * **Sign up** for an account at <https://github.com/>
-  * Add an SSH key to your GitHub account; follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
-* Heroku
-  * **Sign up** for an account at <https://signup.heroku.com>
-  * **Install** the Heroku Command Line Interface (CLI) at <https://devcenter.heroku.com/articles/heroku-cli>
+* when you type into the terminal, you are issuing **COMMANDS** to the computer
+* a *CLI* (Command Line Interface) is different from the *GUI* (Graphical User Interface) you are used to
+* a command-line interface is more primitive **and more powerful** than a graphical interface
 
-> If you do not have these, RAISE YOUR HAND!
+# Historical Terminal
 
-# Next Lesson: The Command Line
+Computers used to not have screens! They were connected to devices like this:
 
-click the "Next Lesson" button to continue
+![tty](../images/tty.jpg)
+
+The Terminal app is a direct descendant of a TeleType printer or TTY.
+
+When you type into the console and hit <kbd>Enter</kbd> you are pretending to type a line onto a TTY; the scrolling terminal is like a roll of printer paper.
+
+See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) for more history [and TTY pix](https://twitter.com/pdutta/status/980855463343476737).
+
+<small>picture of Teletype Corporation ASR-33 on display at the Computer History Museum by ArnoldReinhold [[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)] via [Wikimedia](https://commons.wikimedia.org/wiki/File:ASR-33_at_CHM.agr.jpg)</small>
+
+# Opening the Terminal
+
+* to open your Terminal:
+  * **Mac OS**: launch the "Terminal" application
+  * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
+    * Startup command: `{bash::bash}`
+    * Startup directory: `C:\Users\yourname`
+  * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `Powershell`)
+* **Important:** make your terminal as **tall** as possible
+  * when reading a program's output you want to start reading *at the top*...
+  * ...and if your window is too short then the top lines will *scroll away* and you will miss them
+  * Make it look like this:
+
+![terminal next to browser](../images/terminal-and-browser.png)
+
+# Lab: Interactive Calculator
+
+1. open a terminal
+1. Look at the prompt -- it should end with `$` or `>`
+1. type `node` -- that's you *commanding* the computer to launch *node*
+1. press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
+1. see the `>` prompt
+1. type `1 + 1`
+1. press the `return` key again
+1. see the `2`
+
+* Yay! Your computer is an expensive calculator!
+* **Bonus**: what other math can you do?
+
+# Node is a JavaScript Engine
+
+![Diagram: Node Train: Command Line](https://docs.google.com/drawings/d/e/2PACX-1vSKCgLe4wp1JroIot-SsVP-TKqHsySU-06oOGe3zYWBZ4jOc77quoRH2XhyNKBBuLx4IgbLim2NZLqK/pub?w=953&amp;h=522)
+
+An "engine" is a type of program that either [*executes* or *empowers*](https://en.wikipedia.org/wiki/Software_engine) other programs.
+
+NodeJS (aka `node`) is an engine that runs JavaScript programs -- either from files, or interactively from the command line.
+
+# A Tale of Two Prompts
+
+> WARNING: Before you start typing, look at the prompt!
+
+* *the shell* is the command line that the terminal starts with
+  * its prompt usually looks like this:
+    *  `Davids-Macbook-Pro:~ David$` (Mac)
+    *  `david@davidspc:~$` (Ubuntu Linux)
+    *   `C:\Users\david>` (Windows)
+* *node* is a command line program that is launched *from the shell*
+  * its prompt is usually `>`
+
+From inside `node`, if you want to get back to the shell...
+
+  * type <kbd>Ctrl</kbd>-<kbd>C</kbd> twice
+  * or type `.exit` and <kbd>Enter</kbd>
+
+# Where am I?
+
+It is very easy to get lost in a maze of directories.
+
+To find out which directory you are in, type
+
+    pwd
+
+This stands for "print working directory" (not "password").
+
+> Most of the time you can also look at the prompt to see what the current directory is.
+
+# Home Directory
+
+* when you first open the Terminal you are in your HOME DIRECTORY
+* usually you don't want to store files directly in here
+* for this class, we recommend:
+  * create a `code` directory inside your home directory
+  * create a new directory inside `code` for each lesson or project
+
+> WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`
+
+# Listing Directory Contents
+
+* when you type `ls` ("list") it shows the contents of the current directory
+* if you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
+
+# Lab: Home Decor
+
+1. Using your desktop, navigate to your home directory and open it in a desktop window.
+<br>(Your desktop is called "Finder" in MacOS, or "Explorer" in Windows)
+2. Using your terminal, list your home directory's contents.
+3. Look carefully at them both. What's the same? What's different?
