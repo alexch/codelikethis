@@ -10,7 +10,7 @@ Before the class starts, please install the following:
 * GitHub
 * Heroku
 
-> Are you on a recent model Macintosh? Skip to the [Mac Homebrew](#mac-homebrew) section to install Node and Git, then come back here for GitHub and Heroku.
+> Are you on a recent model Mac? Skip to the [Mac Homebrew](#mac-homebrew) section to install Node and Git, then come back here for GitHub and Heroku.
 
 ## VS Code Text Editor
 
@@ -20,15 +20,13 @@ Before the class starts, please install the following:
 ## Node.js (JavaScript)
 
   * **Install** Node.js from <https://nodejs.org/>
-  * version 10.10.0 is preferred
+  * version 10.X.X LTS is preferred
     * run `node -v` in terminal to check
     * if you can't install v10, anything past 6.0 is probably okay
 
 ## Git
 
-* **Install** git from...
-  * for Mac and Linux: <https://git-scm.com/downloads>
-  * for Windows: <https://gitforwindows.org/>
+* **Install** git from  <https://git-scm.com/downloads>
 
 ## GitHub
 
@@ -44,7 +42,25 @@ Before the class starts, please install the following:
 
 ---
 
-# Mac Homebrew
+# Windows Only
+
+## Cmder
+
+1. Visit <https://cmder.net>
+2. Click "Download Full"
+3. Save the ZIP file and unzip it into your *home directory*
+  * if your username is `Alice` you should now have `C:\Users\Alice\cmder\Cmder.exe`
+4. **Right**-click `Cmder` and select "Create Shortcut"
+5. **Click and Drag** that shortcut to the desktop
+6. **Double-click** the shortcut to open the terminal
+7. Press <kbd>Win</kbd>-<kbd>Alt</kbd>-<kbd>P</kbd> (or select "Settings..." from the window's menu) and change the "startup task" to `{bash::bash}`
+cmder
+
+---
+
+# MacOS Only
+
+## Mac Homebrew
 
 Homebrew is a package manager for MacOS that lets you install tools directly from the Terminal. Once it's installed, it's generally easier to use Homebrew than to use a web browser and graphical installer app.
 
