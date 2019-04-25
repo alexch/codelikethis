@@ -8,36 +8,15 @@ require 'tracks_table'
 require 'site'
 require 'nav_bar'
 
-class Curriculum < Site
+class Taste < Site
 
-  # base site has all tracks
   def hostname
-    ["curriculum.burlingtoncodeacademy.com", "curriculum"]
+    ["taste-of-js.burlingtoncodeacademy.com", "taste-of-js", "taste"]
   end
 
-  # or should this be "all tracks" like CodeLikeThis
   def tracks
     [
-      ::Track::Javascript,
-      ::Track::Www,
-      ::Track::ResponsiveLayout,
-      ::Track::ClientSideCoding,
-      ::Track::Bootstrap,
-      ::Track::ServerSideJavascript,
-      ::Track::Oo,
-      ::Track::Db,
-      ::Track::React,
-
-      ::Track::Separator,
-
-      ::Track::Agile,
-      ::Track::Git,
-      ::Track::Cs,
-      ::Track::Ux,
-      ::Track::TricksOfTheTrade, # or "trade secrets" ?
-      ::Track::Career,
-      ::Track::Qa,
-
+      ::Track::ATasteOfJavascript,
     ]
   end
 
@@ -57,7 +36,7 @@ class Curriculum < Site
               }
               p(class: 'card-text') {
                 text "This site contains the curriculum for our "
-                a "2018 Web Development Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
+                text "'A Taste Of JavaScript' workshop"
                 text "."
               }
             }
@@ -125,29 +104,26 @@ class Curriculum < Site
       # nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
       # nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
 
-      nav_item name: "Schedule", href: "/schedule"
-      nav_item name: "Projects", href: "/projects"
-
-      nav_item name: "Curriculum", dropdown: true do
-        a(@site.display_name, class: 'dropdown-item', href: @site.href)
-        @site.tracks.each do |track|
-          if (track == ::Track::Separator)
-            hr
-          else
-
-          a(class: ['dropdown-item', 'track-name'],
-            href: track.href
-          ) {
-            i(class: "fas fa-paw")
-            text nbsp
-            text nbsp
-            text track.display_name
-          }
-          end
-        end
-
-
-      end
+      # nav_item name: "Schedule", href: "/schedule"
+      # nav_item name: "Schedule", href: "/projects"
+      # nav_item name: "Curriculum", dropdown: true do
+      #   a(@site.display_name, class: 'dropdown-item', href: @site.href)
+      #   @site.tracks.each do |track|
+      #     if (track == ::Track::Separator)
+      #       hr
+      #     else
+      #
+      #     a(class: ['dropdown-item', 'track-name'],
+      #       href: track.href
+      #     ) {
+      #       i(class: "fas fa-paw")
+      #       text nbsp
+      #       text nbsp
+      #       text track.display_name
+      #     }
+      #     end
+      #   end
+      # end
 
       nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
     end

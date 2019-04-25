@@ -7,6 +7,8 @@ Before the class starts, please install the following:
 * VS Code text editor
 * Node.js
 * Git
+
+and sign up for accounts on:
 * GitHub
 * Heroku
 

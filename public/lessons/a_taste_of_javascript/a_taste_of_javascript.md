@@ -1,10 +1,11 @@
     topic name: "text-editor"
+    topic name: "text-editor"
     link name: 'How to Design Programs (preface)',
          href: "https://htdp.org/2018-01-06/Book/part_preface.html"
     link name: "Khan Academy: How Computers Work",
             href: "https://www.khanacademy.org/computing/computer-science/how-computers-work2/v/khan-academy-and-codeorg-what-makes-a-computer-a-computer"
 
-# Part 1: Intro
+# A Taste of JavaScript Part 1: Intro
 
 You may never have coded before. Today you will.
 
@@ -113,9 +114,12 @@ See the [Installfest](/projects/installfest) project for more instructions.
 
 Software:
 
-* a text editor - VS Code from Microsoft <https://code.visualstudio.com>
-* JavaScript - a live node.js installation
-* Git - version 2.x
+* a text editor (VS Code from Microsoft)
+* a JavaScript engine (NodeJS)
+* Git
+
+Accounts:
+
 * GitHub 
   * **Sign up** for an account at <https://github.com/>
   * Add an SSH key to your GitHub account; follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
@@ -123,72 +127,8 @@ Software:
   * **Sign up** for an account at <https://signup.heroku.com>
   * **Install** the Heroku Command Line Interface (CLI) at <https://devcenter.heroku.com/articles/heroku-cli>
 
-* Please stop right now and check
-  * If you do not have these, RAISE YOUR HAND
+> If you do not have these, RAISE YOUR HAND!
 
-# Part 2: Meet Your Computer
+# Next Lesson: The Command Line
 
-# Parts of a Computer
-
-* Input (keyboard, mouse, network)
-* Storage (disk drive aka *filesystem*)
-* Memory (RAM)
-* Processor (CPU)
-* Output (screen, sound, network)
-
-# Parts of a Command-Line Program
-
-![Diagram: Node Train](https://docs.google.com/drawings/d/e/2PACX-1vSuQt_9GMBucCZl21aJSCDOhv-TIWF6W2ZomUQn268w59aUUUXWjao5y_KDCMwLtMwWoypKZYXhDWZK/pub?w=960&amp;h=720)
-
-* source file
-* command line
-* "node" engine (it "runs" your code)
-  * [train pulling a file]
-
-# Parts of a Web Applicaton
-
-![Diagram: Web App: Single Computer](https://docs.google.com/drawings/d/e/2PACX-1vS_ynFk13JkNn4nBpxKqZqboIqUnxGdzPfRLpDUuCUeeyBHon6y6VGE9GjIYp6xLqPhY9YoMyirB_x_/pub?w=960&h=720)
-
-# The Command Line
-
-# Moving around the file system
-
-# Node, The JavaScript Console
-
-# Using Git to Deploy to the Cloud
-
-![Diagram: Web App: Cloud Deploy with Git](<img src="https://docs.google.com/drawings/d/e/2PACX-1vQOYHxD2JkWaphIIv10Ek7WgYU1sbV-1aq9wWP2kN4d1uE6q8GkbQER_2pvFSYsAxYxVS-2H6RDWXCV/pub?w=687&amp;h=564">)
-
-# Lab: Hello, Express
-
-Now it's time to write and deploy an app!
-
-Click here for instructions: [Hello, Express](/lessons/server_side_javascript/hello_express)
-
-This lab will teach you these concepts:
-
- * writing and saving source code in a file
- * launching an application server on your own computer
- * deploying code to the cloud
- * passing parameters from a client to a server
-
-# What else is there to learn?
-
- * Values, Variables, Functions, Objects, etc.
- * Web Style and Layout with HTML and CSS
- * Web Interactivity with JavaScript
-   * how do you make a web site interactive?
-   * how do the parts of a site all fit together?
- * Databases
- * Desgining data models and algorithms 
- * Testing
-    * manual QA
-    * automated testing and test-driven development
-    * Cypress (demo!)
- * How does software get built by teams?
-   * the Agile Creative Process
-   * keeping people happy and productive
-   * iterative and incremental development
-
-> What are you interested in? Any questions?
-
+click the "Next Lesson" button to continue

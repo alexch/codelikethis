@@ -157,5 +157,5 @@ Track::Javascript = Track.new(
   # One-offs
   # TODO: make a new track for these
   lesson name: "take_a_minute_to_refactor_winner"
-  lesson name: "a_taste_of_javascript"
+
 end

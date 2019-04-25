@@ -10,6 +10,14 @@
     link href: "https://www.macworld.co.uk/how-to/mac-software/mac-terminal-projects-tutorial-3613813/",
          name: "30 Terminal tips, tricks and projects for Mac"
 
+# Parts of a Computer
+
+* Input (keyboard, mouse, network)
+* Storage (disk drive aka *filesystem*)
+* Memory (RAM)
+* Processor (CPU)
+* Output (screen, sound, network)
+
 # The Command Line
 
 * the **TERMINAL** is a window into which you can talk directly to your computer
@@ -21,16 +29,17 @@
 
 * when you type into the terminal, you are issuing **COMMANDS** to the computer
 * a *CLI* (Command Line Interface) is different from the *GUI* (Graphical User Interface) you are used to
-  * more primitive
-  * more powerful
+* a command-line interface is more primitive **and more powerful** than a graphical interface
 
 # Historical Terminal
 
 Computers used to not have screens! They were connected to devices like this:
 
-![tty](tty.jpg)
+![tty](../images/tty.jpg)
 
-the Terminal app is a direct descendant of a TeleType printer or TTY.
+The Terminal app is a direct descendant of a TeleType printer or TTY.
+
+When you type into the console and hit <kbd>Enter</kbd> you are pretending to type a line onto a TTY; the scrolling terminal is like a roll of printer paper.
 
 See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) for more history [and TTY pix](https://twitter.com/pdutta/status/980855463343476737).
 
@@ -43,20 +52,19 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
   * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
     * Startup command: `{bash::bash}`
     * Startup directory: `C:\Users\yourname`
-  * *Windows (alternate)*: Launch the Windows Command Promt (cmd)
+  * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `Powershell`)
 * **Important:** make your terminal as **tall** as possible
   * when reading a program's output you want to start reading *at the top*...
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
 
 ![terminal next to browser](../images/terminal-and-browser.png)
-![terminal next to browser](../images/terminal-and-browser-win.png)
-
 
 # Lab: Interactive Calculator
 
 1. open a terminal
-2. type `node` -- that's you *commanding* the computer to launch *node*
+1. Look at the prompt -- it should end with `$` or `>`
+1. type `node` -- that's you *commanding* the computer to launch *node*
 1. press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 1. see the `>` prompt
 1. type `1 + 1`
@@ -66,33 +74,47 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 * Yay! Your computer is an expensive calculator!
 * **Bonus**: what other math can you do?
 
-## node is an interactive JavaScript interpreter
+# Node is a JavaScript Engine
 
-* From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens!
+![Diagram: Node Train: Command Line](https://docs.google.com/drawings/d/e/2PACX-1vSKCgLe4wp1JroIot-SsVP-TKqHsySU-06oOGe3zYWBZ4jOc77quoRH2XhyNKBBuLx4IgbLim2NZLqK/pub?w=953&amp;h=522)
+
+An "engine" is a type of program that either [*executes* or *empowers*](https://en.wikipedia.org/wiki/Software_engine) other programs.
+
+NodeJS (aka `node`) is an engine that runs JavaScript programs -- either from files, or interactively from the command line.
 
 # A Tale of Two Prompts
 
 > WARNING: Before you start typing, look at the prompt!
 
-* *the shell* is the command line interpreter that the terminal starts with
-  * its prompt is usually
+* *the shell* is the command line that the terminal starts with
+  * its prompt usually looks like this:
     *  `Davids-Macbook-Pro:~ David$` (Mac)
-    *  `jessee@jesseews:~$` (Ubuntu Linux)
-    *   `C:\Users\alice>` (Windows)
-* *node* is a command line that is launched *from the shell*
+    *  `david@davidspc:~$` (Ubuntu Linux)
+    *   `C:\Users\david>` (Windows)
+* *node* is a command line program that is launched *from the shell*
   * its prompt is usually `>`
 
 From inside `node`, if you want to get back to the shell...
 
-  * type <kbd>CONTROL</kbd>-<kbd>C</kbd> twice
+  * type <kbd>Ctrl</kbd>-<kbd>C</kbd> twice
   * or type `.exit` and <kbd>Enter</kbd>
+
+# When in doubt, try it out!
+
+From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens! For example:
+
+```javascript
+'pod' + 'cast'
+```
+
+If that doesn't print `'podcast'`, look at the prompt; you may be inside your shell instead of inside node.
 
 # Directories
 
-* a DIRECTORY is a location on your hard disk
-  * also called a FOLDER
-* directories can contain FILES
-* directories can also contain other directories (called SUBDIRECTORIES)
+* a *directory* is a location on your hard disk
+  * also called a *folder*
+* directories can contain *files*
+* directories can also contain other directories (called *subdirectories*)
 
 # The Current Directory
 
@@ -107,7 +129,9 @@ To find out which directory you are in, type
 
     pwd
 
-This stands for "print working directory" or "present working directory" (not "password").
+This stands for "print working directory" (not "password").
+
+> Most of the time you can also look at the prompt to see what the current directory is.
 
 # Home Directory
 
@@ -121,14 +145,21 @@ This stands for "print working directory" or "present working directory" (not "p
 # Listing Directory Contents
 
 * when you type `ls` ("list") it shows the contents of the current directory
-  * **On Windows** you need to type `dir` instead
+  * **On Windows** you may need to type `dir` instead
   
 * if you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
-  * **On Windows** you need to type `dir /A:SH` instead 
+  * **On Windows** you may need to type `dir /A:SH` instead
+  
+# Lab: Home Decor
+
+1. Using your desktop, navigate to your home directory and open it in a desktop window. 
+<br>(Your desktop is called "Finder" in MacOS, or "Explorer" in Windows)
+2. Using your terminal, list your home directory's contents.
+3. Look carefully at them both. What's the same? What's different?
 
 # Making a directory
 
-* when you type `mkdir` ("make directory") it creates a new SUBDIRECTORY inside the current directory
+* when you type `mkdir` ("make directory") it creates a new *subdirectory* inside the current directory
 
 ```bash
 mkdir code
@@ -141,28 +172,34 @@ mkdir code
 * If you ever get lost, type `cd` all on its own and press the return key. This will send you back to your home directory.
   * (unix shell only, not Windows)
 
-# Basic Command Review
+# Basic Command Review (Unix)
 
 * `pwd` ("print working dir") -- shows the name of the current directory
 * `ls` ("list") -- shows the contents of the current directory
-* `mkdir` ("make dir") -- creates a new SUBDIRECTORY inside the current directory
+* `mkdir` ("make dir") -- creates a new subdirectory inside the current directory
 * `cd` ("change dir") -- move into a different directory
 
-> These apply to Mac & Unix shells, Windows equivalents are below.
+> These apply to Mac / Unix / Linux / bash
+
+# Basic Command Review (DOS)
+
 * `cd` ("change dir") -- With no directory, it lists the current directory. Otherwise, it changes to the specified directory
 * `dir` ("directory") -- shows the contents of the current directory
-* `mkdir` ("make dir") `` creates a new SUBDIRECTORY inside the current directory
+* `mkdir` ("make dir") `` creates a new subdirectory inside the current directory
 
+> These apply to Windows / DOS / PowerShell
 
 # LAB: make a subdirectory and then enter it
 
 1. open **Terminal** or **Command Prompt**
+1. Confirm that you are in your home directory
 2. make a new subdirectory using `mkdir code`
 3. change into that directory using `cd code`
 4. make sure you're really there using `pwd`
    * **On Windows** use `cd`
 5. list its contents using `ls` (and note that it's empty)
    * **On Windows** use `dir`
+
 # Files
 
 * a file is a place on disk for storing stuff
@@ -183,7 +220,7 @@ mkdir code
 
 * source code is the essence of a program
 * source files are text files that contain source code
-* to **RUN** a JavaScript program you type `node` and then the name of the source file
+* to **RUN** a JavaScript program you type `node` and then the name of the source file, like this:
 
 ```bash
 $ node hello.js
@@ -206,7 +243,7 @@ Hello, World!
 
 5. Save the file
 6. Switch back to the terminal (using <kbd>Alt</kbd>-<kbd>Tab</kbd> or <kbd>Cmd</kbd>-<kbd>Tab</kbd> or clicking)
-  * If you are using VS Code, you can click **Terminal &rarr; New Terminal**
+  <br>(If you are using VS Code, you can click **Terminal &rarr; New Terminal** for the built-in terminal panel)
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?

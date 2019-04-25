@@ -220,7 +220,8 @@ class App < Sinatra::Base
         CodeLikeThis,
         Bootcamp,
         JavascriptAfterHours,
-        Curriculum
+        Curriculum,
+        Taste
     ].map(&:new).detect do |site|
       site.host? sitename
     end
