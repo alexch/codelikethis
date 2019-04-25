@@ -3,7 +3,7 @@
 * a web application ("web app") is a program that is split into two parts:
 
 1. the *server side*, aka the "back end", whose job it is to "talk" with a web browser across the internet, as well as other services like databases
-2. the *client side*, aka the "front end", which runs *inside* every user's web browser
+2. the *client side*, aka the "front end", which runs *inside* each user's web browser
 
 # Parts of a Web Application
 

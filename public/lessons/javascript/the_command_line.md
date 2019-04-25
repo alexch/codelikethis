@@ -50,8 +50,8 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 * to open your Terminal:
   * **Mac OS**: launch the "Terminal" application
   * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
-    * Startup command: `{bash::bash}`
-    * Startup directory: `C:\Users\yourname`
+     * Startup command: `{bash::bash}`
+     * Startup directory: `C:\Users\yourname`
   * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `Powershell`)
 * **Important:** make your terminal as **tall** as possible
   * when reading a program's output you want to start reading *at the top*...
@@ -140,7 +140,8 @@ This stands for "print working directory" (not "password").
 * for this class, we recommend:
   * create a `code` directory inside your home directory
   * create a new directory inside `code` for each lesson or project
-> WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`
+
+> WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`. You can get back to your home directory by typing `cd %HOME%`
 
 # Listing Directory Contents
 
@@ -185,7 +186,7 @@ mkdir code
 
 * `cd` ("change dir") -- With no directory, it lists the current directory. Otherwise, it changes to the specified directory
 * `dir` ("directory") -- shows the contents of the current directory
-* `mkdir` ("make dir") `` creates a new subdirectory inside the current directory
+* `mkdir` ("make dir") -- creates a new subdirectory inside the current directory
 
 > These apply to Windows / DOS / PowerShell
 

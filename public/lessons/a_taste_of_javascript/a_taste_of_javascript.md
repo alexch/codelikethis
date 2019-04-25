@@ -97,6 +97,8 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 > When you are coding, you are not baking cookies; you are writing a recipe for how to make cookies.
 
+Writing a recipe involves trying out the recipe (baking a test batch), then tweaking the recipe and trying again and again until you get it right.
+
 (recipe from popcornpottery.com)
 
 # Languages

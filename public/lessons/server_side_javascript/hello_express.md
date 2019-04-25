@@ -137,7 +137,7 @@ Example:
 
 Express will grab the *value* from the path itself, and put it into the `request.params` object for you to use later.
 
-# LAB: Hello, Query Friend!
+# Hello, Query Friend!
 
 Now change your "Hello, Express" server to also have the following route:
 
