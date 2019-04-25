@@ -258,9 +258,8 @@ Hello, World!
 
 # LAB: Hello, World
 
-1. Make sure you are in your `code` subdirectory using `pwd` or `cd`
+1. Make sure you are in your `code` subdirectory using `pwd` and/or `cd`
 2. Open this directory in your text editor
-    * for VSCode, use `code .` ("code dot")
 3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
 
