@@ -19,7 +19,7 @@
 
 ![Diagram: Web App: Cloud Deploy with Git](https://docs.google.com/drawings/d/e/2PACX-1vQOYHxD2JkWaphIIv10Ek7WgYU1sbV-1aq9wWP2kN4d1uE6q8GkbQER_2pvFSYsAxYxVS-2H6RDWXCV/pub?w=687&amp;h=564)
 
-# Lab: Hello, Express
+# Hello, Express
 
 Now it's time to write and deploy an app!
 

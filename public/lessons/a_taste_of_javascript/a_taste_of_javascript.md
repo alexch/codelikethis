@@ -228,14 +228,45 @@ This stands for "print working directory" (not "password").
 
 > WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`
 
-# Listing Directory Contents
+# LAB: make a subdirectory and then enter it
 
-* when you type `ls` ("list") it shows the contents of the current directory
-* if you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
+1. open **Terminal** or **Command Prompt**
+1. Confirm that you are in your home directory
+2. make a new subdirectory using `mkdir code`
+3. change into that directory using `cd code`
+4. make sure you're really there using `pwd`
+   * **On Windows** use `cd`
+5. list its contents using `ls` (and note that it's empty)
+   * **On Windows** use `dir`
 
-# Lab: Home Decor
+# Source File
 
-1. Using your desktop, navigate to your home directory and open it in a desktop window.
-<br>(Your desktop is called "Finder" in MacOS, or "Explorer" in Windows)
-2. Using your terminal, list your home directory's contents.
-3. Look carefully at them both. What's the same? What's different?
+* source code is the essence of a program
+* source files are text files that contain source code
+* to **RUN** a JavaScript program you type `node` and then the name of the source file, like this:
+
+```bash
+$ node hello.js
+Hello, World!
+```
+
+* The Recipe Metaphor
+  * source file ≈ recipe
+  * running a program ≈ cooking
+
+# LAB: Hello, World
+
+1. Make sure you are in your `code` subdirectory using `pwd` or `cd`
+2. Open this directory in your text editor
+    * for VSCode, use `code .` ("code dot")
+3. Create a file named `hello.js` using the *File > New* menu
+4. Inside this file, put the following source code:
+
+        console.log("Hello, World!");
+
+5. Save the file
+6. Switch back to the terminal (using <kbd>Alt</kbd>-<kbd>Tab</kbd> or <kbd>Cmd</kbd>-<kbd>Tab</kbd> or clicking)
+  <br>(If you are using VS Code, you can click **Terminal &rarr; New Terminal** for the built-in terminal panel)
+7. Run this file using `node hello.js`
+
+What happens? Is this what you expected?
