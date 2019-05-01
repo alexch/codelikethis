@@ -78,7 +78,7 @@ class Track < Thing
 
   # todo: test
   def topics
-    things_of_class(Topic, all_things)
+    things_of_class(Topic, all_things) # is this line useful? might have a side effect?
     (super || []) + (@things.map do |thing|
       thing.respond_to?(:topics) ? thing.topics : nil
     end.compact).flatten.sort.uniq
@@ -119,7 +119,11 @@ class Track < Thing
   end
 
   def href anchor: nil
-    anchor ? "/lessons/#{name}" + '#' + anchor.to_s : "/lessons/#{name}"
+    if anchor
+      "/lessons/#{name}" + '#' + anchor.to_s
+    else
+      "/lessons/#{name}"
+    end
   end
 
   def lesson_named lesson_name
@@ -128,7 +132,11 @@ class Track < Thing
 
   def previous_lesson lesson_name
     this_lesson_index = this_lesson_index(lesson_name)
-    this_lesson_index == 0 ? nil : lessons[this_lesson_index - 1]
+    if this_lesson_index == 0
+      nil
+    else
+      lessons[this_lesson_index - 1]
+    end
   end
 
   def next_lesson lesson_name
@@ -181,6 +189,7 @@ class Track < Thing
             p target.description # todo: markdown?
           end
         end
+
         if target.goals?
           div(class: 'goals') do
             h2 "Goals"
@@ -193,23 +202,15 @@ class Track < Thing
           end
         end
 
-        if target.projects?
-          h2 "Suggested Projects"
-          ul(class: 'projects') do
-            target.projects.each do |project|
-              li { widget project.link_view }
-            end
-          end
-        end
-
         if target.topics?
-          div.row {
+          div(class: 'topics') {
             h2 "Topics"
             p do
               list_topics
             end
           }
         end
+
         div.row {
           if target.lessons?
             div(class: 'col-sm-12 col-md-6 lessons') {
@@ -224,6 +225,15 @@ class Track < Thing
             }
           end
         }
+
+        if target.projects?
+          h2 "Projects"
+          ul(class: 'projects') do
+            target.projects.each do |project|
+              li { widget project.link_view }
+            end
+          end
+        end
 
         if target.links?
           h2 "Links"
