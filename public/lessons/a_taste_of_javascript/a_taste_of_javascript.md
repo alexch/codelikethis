@@ -12,6 +12,7 @@
          href: "https://htdp.org/2018-01-06/Book/part_preface.html"
     link name: "Khan Academy: How Computers Work",
             href: "https://www.khanacademy.org/computing/computer-science/how-computers-work2/v/khan-academy-and-codeorg-what-makes-a-computer-a-computer"
+    @description = "JavaScript is the language of the web and is growing ever more important in the world of software. In this introductory workshop you will use JavaScript, HTML, and CSS to deploy a small application from your laptop to the cloud using the command line, Node.js, Heroku, and Github."
 
 # Technical requirements
 
