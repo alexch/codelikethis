@@ -119,7 +119,7 @@ class Track < Thing
   end
 
   def href anchor: nil
-    "/lessons/#{name}#{"##{anchor}" if anchor}"
+    anchor ? "/lessons/#{name}" + '#' + anchor.to_s : "/lessons/#{name}"
   end
 
   def lesson_named lesson_name
@@ -174,34 +174,34 @@ class Track < Thing
 
     def content
       widget Breadcrumbs, parents: [TracksTable.new], display_name: target.display_name
-      if target.description?
-        div(class: 'description') do
-          h2 "Description"
-          p target.description # todo: markdown?
+      div(class: 'container no-gutters') do
+        if target.description?
+          div(class: 'description') do
+            h2 "Description"
+            p target.description # todo: markdown?
+          end
         end
-      end
-      if target.goals?
-        div(class: 'goals') do
-          h2 "Goals"
-          p "The student will learn..."
-          ul do
-            target.goals.each do |goal|
-              li goal.view
+        if target.goals?
+          div(class: 'goals') do
+            h2 "Goals"
+            p "The student will learn..."
+            ul do
+              target.goals.each do |goal|
+                li goal.view
+              end
             end
           end
         end
-      end
 
-      if target.projects?
-        h2 "Suggested Projects"
-        ul(class: 'projects') do
-          target.projects.each do |project|
-            li { widget project.link_view }
+        if target.projects?
+          h2 "Suggested Projects"
+          ul(class: 'projects') do
+            target.projects.each do |project|
+              li { widget project.link_view }
+            end
           end
         end
-      end
 
-      div.container {
         if target.topics?
           div.row {
             h2 "Topics"
@@ -224,12 +224,13 @@ class Track < Thing
             }
           end
         }
-      }
-      if target.links?
-        h2 "Links"
-        ul(class: 'links') do
-          target.links.each do |link|
-            li { widget link.view }
+
+        if target.links?
+          h2 "Links"
+          ul(class: 'links') do
+            target.links.each do |link|
+              li { widget link.view }
+            end
           end
         end
       end
