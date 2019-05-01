@@ -61,6 +61,12 @@ class ThingPage < AppPage
 
     meta charset: "utf-8"
     meta name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no"
+    if (@thing and @thing.description)
+      meta name: 'description', content: @thing.description
+    end
+    if (@thing and @thing.topics and @thing.topics?)
+      meta name: 'keywords', content: @thing.topics.map(&:name).join(',')
+    end
 
     # todo: parameterize bootstrap version
     # todo: parameterize using CDN vs local file

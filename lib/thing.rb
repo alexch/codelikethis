@@ -123,6 +123,7 @@ class Thing
     AJAX
     API
     APIs
+    ARGV
     ARIA
     CI
     CodeCademy
@@ -154,6 +155,7 @@ class Thing
     SQL
     TDD
     XP
+    WWW
   ]
 
   HYPHENATES = %w[

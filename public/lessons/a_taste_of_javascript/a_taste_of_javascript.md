@@ -1,5 +1,13 @@
     topic name: "text-editor"
     topic name: "console"
+    topic name: "terminal"
+    topic name: "javascript"
+    topic name: "coding"
+    topic name: "code"
+    topic name: "languages"
+    topic name: "www"
+    topic name: "nodejs"
+    topic name: "argv"
     link name: 'How to Design Programs (preface)',
          href: "https://htdp.org/2018-01-06/Book/part_preface.html"
     link name: "Khan Academy: How Computers Work",
