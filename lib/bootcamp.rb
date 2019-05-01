@@ -29,6 +29,7 @@ class Bootcamp < Site
 
       ::Track::Separator,
 
+      ::Track::Prerequisites,
       ::Track::Agile,
       ::Track::Git,
       ::Track::Cs,
@@ -36,7 +37,6 @@ class Bootcamp < Site
       ::Track::TricksOfTheTrade, # or "trade secrets" ?
       ::Track::Career,
       ::Track::Qa,
-
     ]
   end
 
