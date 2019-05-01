@@ -6,7 +6,7 @@
 
 # Hello, Express!
 
-In this lesson you will create a trivial web application in [Express](https://expressjs.com/) and deploy it to Heroku, where it will be visible to everyone on the Internet. (Since Express is built on top of NodeJS, this lesson is very similar to the [Hello, Node!](./hello_node) lesson.)
+In this lesson you will create a trivial web application in [Express](https://expressjs.com/) and deploy it to Heroku, where it will be visible to everyone on the Internet.
 
 # Hello, File!
 
@@ -18,7 +18,7 @@ In this lesson you will create a trivial web application in [Express](https://ex
 
 - run `npm install express` to load the *express* package into this project
 
-- Launch the Visual Studio Code text editor and open this `code` directory
+- Launch the Visual Studio Code text editor and open this `hello-express` directory
 
 - Inside this directory make a file named `server.js` and fill it with the following code:
 
@@ -27,7 +27,9 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000
 
-app.get('/', (request, response) => response.send('Hello, World!'))
+app.get('/', (request, response) => {
+  response.send('Hello, World!');
+})
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
 ```

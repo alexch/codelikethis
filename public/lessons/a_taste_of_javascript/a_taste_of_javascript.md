@@ -26,7 +26,7 @@ Accounts:
 
 > If you do not have these, RAISE YOUR HAND!
 
-# A Taste of JavaScript Part 1: Intro
+# A Taste of JavaScript
 
 You may never have coded before. Today you will.
 
@@ -71,7 +71,7 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 # What is coding NOT?
 
-* coding is **not** mathematical
+* coding is **not** advanced mathematics
   * some logic (if / then / and / or / etc.)
   * mostly just counting ("do this 10 times")
 * coding is **not** solitary
@@ -99,7 +99,7 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 Writing a recipe involves trying out the recipe (baking a test batch), then tweaking the recipe and trying again and again until you get it right.
 
-(recipe from popcornpottery.com)
+<small>(recipe from popcornpottery.com)</small>
 
 # Languages
 
@@ -107,9 +107,9 @@ Writing a recipe involves trying out the recipe (baking a test batch), then twea
   * like Java or Python or C or Fortran
   * even HTML and CSS and SQL are languages
   * computer languages all have very silly names
-* computer languages are very **specific** compared to natural languages
+* computer languages are **very specific** compared to natural languages
 * different languages are useful in different areas, but there is a lot of overlap
-* today we will learn the JavaScript programming language
+* today we will play with the JavaScript programming language
 
 # Errors Are Awesome
 
@@ -126,6 +126,33 @@ Writing a recipe involves trying out the recipe (baking a test batch), then twea
 
 See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong) from MDN
 
+# JavaScript, child of the World Wide Web
+
+* JavaScript was invented (in 1995) to allow "scripting" on web pages
+* Prior to JavaScript, any input was sent to a *web server* via a *form*, and the user had to wait for a *new web page* to download before seeing any results or changes
+* JavaScript allows a web page to respond immediately and interactively
+
+For example:
+
+```html
+<button onclick='clicked()'>Click Me!</button>
+<script>
+let clicks = 0;
+function clicked() {
+  clicks = clicks + 1;
+  event.target.textContent = clicks;
+}
+</script>
+```
+
+<button onclick='clicked()'>Click Me!</button>
+<script>
+let clicks = 0;
+function clicked() {
+  clicks = clicks + 1;
+  event.target.textContent = clicks;
+}
+</script>
 
 # The Command Line
 
@@ -201,7 +228,7 @@ NodeJS (aka `node`) is an engine that runs JavaScript programs -- either from fi
     *  `david@davidspc:~$` (Ubuntu Linux)
     *   `C:\Users\david>` (Windows)
 * *node* is a command line program that is launched *from the shell*
-  * its prompt is usually `>`
+  * its prompt is usually a greater-than `>` character
 
 From inside `node`, if you want to get back to the shell...
 
@@ -228,7 +255,7 @@ This stands for "print working directory" (not "password").
   * create a `code` directory inside your home directory
   * create a new directory inside `code` for each lesson or project
 
-> WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`
+> WARNING: On some windows systems, the terminal will open to `C:\Windows\System32`
 
 # LAB: make a subdirectory and then enter it
 
@@ -271,3 +298,50 @@ Hello, World!
 7. Run this file using `node hello.js`
 
 What happens? Is this what you expected?
+
+# LAB: Countdown
+
+1. Inside your `code` directory, create a file named `countdown.js`
+2. Inside this file, put the following source code:
+
+        let count = 10;
+        
+        while (count > 0) {
+          console.log(count + '...');
+          count = count - 1;
+        }
+        
+        console.log('Blastoff!');
+
+3. Save the file
+4. In your terminal, run `node countdown.js`
+
+# Analyzing Countdown
+
+![Countdown Breakdown](https://docs.google.com/drawings/d/e/2PACX-1vT5Z2Po-THntSfzUutbzDljBAxqCEE9gh7HTzRAalMMqpSol8BTqUnjsD6vexS-EFrO5FCNBKHqwbxQ/pub?w=960&amp;h=720)
+
+# LAB: Changing Ingredients
+
+* Remember the cooking analogy? The code is the instructions; now let's allow the user (you!) to change the ingredients
+* Change line 1 to the following:
+
+        let count = parseInt(process.argv[2])
+
+* run the program with new inputs from the command line like this:
+
+        node countdown 5
+        node countdown 100
+
+# ARGV
+
+* `process` is a built-in *library object* provided by NodeJS
+* `process.argv` is an *array* containing the *command-line arguments*
+* For example, on my system, if I type `node countdown 99`, `argv` contains...
+
+| index | meaning | value |
+|---|---|---|
+| 0 | location of the NodeJS engine | `'/usr/local/Cellar/node/11.10.0/bin/node'` |
+| 1 | location of the current program | `'/Users/alex/code/countdown'` |
+| 2 | "first" command-line argument | `'99'` |
+
+* Computers (usually) start counting at zero, so `process.argv[2]` gets the third item from the array `process.argv`
