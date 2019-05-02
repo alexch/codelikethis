@@ -20,16 +20,16 @@
 
 # The Command Line
 
-* the **TERMINAL** is a window into which you can talk directly to your computer
+* the **terminal** is a window into which you can talk directly to your computer
   * aka *console* or *command line* or *command prompt* or *shell*
 
 ![Shall we play a game?](../images/wargames-terminal.jpg)
 
 <small>from WarGames, (1983)</small>
 
-* when you type into the terminal, you are issuing **COMMANDS** to the computer
+* when you type into the terminal, you are issuing **commands** to the computer
 * a *CLI* (Command Line Interface) is different from the *GUI* (Graphical User Interface) you are used to
-* a command-line interface is more primitive **and more powerful** than a graphical interface
+  * a CLI is more primitive **and more powerful** than a GUI
 
 # Historical Terminal
 
@@ -45,15 +45,16 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 <small>picture of Teletype Corporation ASR-33 on display at the Computer History Museum by ArnoldReinhold [[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)] via [Wikimedia](https://commons.wikimedia.org/wiki/File:ASR-33_at_CHM.agr.jpg)</small>
 
-# Opening the Terminal
+# Lab: Opening the Terminal
 
 * to open your Terminal:
   * **Mac OS**: launch the "Terminal" application
   * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
-     * Startup command: `{bash::bash}`
-     * Startup directory: `C:\Users\yourname`
-  * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `Powershell`)
-* **Important:** make your terminal as **tall** as possible
+    * Startup command: `{bash::bash}`
+    * Startup directory: `C:\Users\yourname`
+  * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `PowerShell`) -- but beware, the commands are slightly different than in bash
+
+* **Important:** make your terminal as **tall** as possible and *don't overlap windows*
   * when reading a program's output you want to start reading *at the top*...
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
@@ -63,12 +64,12 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 # Lab: Interactive Calculator
 
 1. open a terminal
-1. Look at the prompt -- it should end with `$` or `>`
+1. look at the prompt -- it should end with a `$` or `>` symbol
 1. type `node` -- that's you *commanding* the computer to launch *node*
 1. press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 1. see the `>` prompt
 1. type `1 + 1`
-1. press the `return` key again
+1. press the <kbd>Return</kbd> key again
 1. see the `2`
 
 * Yay! Your computer is an expensive calculator!
@@ -116,27 +117,18 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 * directories can contain *files*
 * directories can also contain other directories (called *subdirectories*)
 
-# The Current Directory
-
-* inside the Terminal, you are *always* inside a directory
-* it is very important not to get lost! You must try to remember which directory you are in.
-
 # Where am I?
 
-It is very easy to get lost in a maze of directories.
-
-To find out which directory you are in, type
-
-    pwd
-
-This stands for "print working directory" (not "password").
-
-> Most of the time you can also look at the prompt to see what the current directory is.
+* Inside the Terminal, you are always "inside" a directory.
+* It is very easy to get lost in a maze of directories.
+* To find out which directory you are in, type: <kbd>p</kbd><kbd>w</kbd><kbd>d</kbd><kbd>Return</kbd>
+  * This stands for "print working directory" (not "password").
+  * Most of the time you can also look at the prompt to see what the current directory is.
 
 # Home Directory
 
 * when you first open the Terminal you are in your HOME DIRECTORY
-* usually you don't want to store files directly in here
+* if you store files directly in your home directory, it will soon get cluttered
 * for this class, we recommend:
   * create a `code` directory inside your home directory
   * create a new directory inside `code` for each lesson or project
@@ -153,7 +145,7 @@ This stands for "print working directory" (not "password").
   
 # Lab: Home Decor
 
-1. Using your desktop, navigate to your home directory and open it in a desktop window. 
+1. Using your GUI desktop, navigate to your home directory and open it in a desktop window. 
 <br>(Your desktop is called "Finder" in MacOS, or "Explorer" in Windows)
 2. Using your terminal, list your home directory's contents.
 3. Look carefully at them both. What's the same? What's different?
@@ -249,6 +241,29 @@ Hello, World!
 
 What happens? Is this what you expected?
 
+# LAB: Countdown
+
+1. Inside your `code` directory, create a file named `countdown.js`
+2. Inside this file, put the following source code:
+
+        let count = 10;
+        
+        while (count > 0) {
+          console.log(count + '...');
+          count = count - 1;
+        }
+        
+        console.log('Blastoff!');
+
+3. Save the file
+4. In your terminal, run `node countdown.js`
+
+# Analyzing Countdown
+
+![Countdown Breakdown](https://docs.google.com/drawings/d/e/2PACX-1vT5Z2Po-THntSfzUutbzDljBAxqCEE9gh7HTzRAalMMqpSol8BTqUnjsD6vexS-EFrO5FCNBKHqwbxQ/pub?w=960&amp;h=720)
+
+> Consider this a sneak peek; we will cover all of these concepts in later lessons
+
 # Command-Line Shortcuts
 
 These work in `bash`:
@@ -257,7 +272,7 @@ These work in `bash`:
 
 Also:
 
-* use <kbd>Esc</kbd> instead of <kbd>Alt</kbd> for the above
+* you can use <kbd>Esc</kbd> instead of <kbd>Alt</kbd> for the above
 * <kbd>Esc</kbd>-<kbd>Backspace</kbd> (delete previous word)
 * up/down arrow (scroll through history)
 * <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)

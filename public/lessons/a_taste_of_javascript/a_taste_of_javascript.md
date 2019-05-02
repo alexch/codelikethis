@@ -95,7 +95,6 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 > "The only perfect program is an empty file." - Alex
 
-
 # A Program Is Like A Recipe
 
 * a recipe is a collection of *ingredients* and *instructions*
@@ -165,16 +164,11 @@ function clicked() {
 
 # The Command Line
 
-* the **TERMINAL** is a window into which you can talk directly to your computer
+* the **terminal** is a window into which you can talk directly to your computer
   * aka *console* or *command line* or *command prompt* or *shell*
-
-![Shall we play a game?](../images/wargames-terminal.jpg)
-
-<small>from WarGames, (1983)</small>
-
-* when you type into the terminal, you are issuing **COMMANDS** to the computer
+* when you type into the terminal, you are issuing **commands** to the computer
 * a *CLI* (Command Line Interface) is different from the *GUI* (Graphical User Interface) you are used to
-* a command-line interface is more primitive **and more powerful** than a graphical interface
+  * a CLI is more primitive **and more powerful** than a GUI
 
 # Historical Terminal
 
@@ -190,15 +184,16 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 <small>picture of Teletype Corporation ASR-33 on display at the Computer History Museum by ArnoldReinhold [[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)] via [Wikimedia](https://commons.wikimedia.org/wiki/File:ASR-33_at_CHM.agr.jpg)</small>
 
-# Opening the Terminal
+# Lab: Opening the Terminal
 
 * to open your Terminal:
   * **Mac OS**: launch the "Terminal" application
   * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
     * Startup command: `{bash::bash}`
     * Startup directory: `C:\Users\yourname`
-  * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `Powershell`)
-* **Important:** make your terminal as **tall** as possible
+  * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `PowerShell`) -- but beware, the commands are slightly different than in bash
+
+* **Important:** make your terminal as **tall** as possible and *don't overlap windows*
   * when reading a program's output you want to start reading *at the top*...
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
@@ -208,12 +203,12 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 # Lab: Interactive Calculator
 
 1. open a terminal
-1. Look at the prompt -- it should end with `$` or `>`
+1. look at the prompt -- it should end with a `$` or `>` symbol
 1. type `node` -- that's you *commanding* the computer to launch *node*
 1. press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 1. see the `>` prompt
 1. type `1 + 1`
-1. press the `return` key again
+1. press the <kbd>Return</kbd> key again
 1. see the `2`
 
 * Yay! Your computer is an expensive calculator!
@@ -231,57 +226,56 @@ NodeJS (aka `node`) is an engine that runs JavaScript programs -- either from fi
 
 > WARNING: Before you start typing, look at the prompt!
 
-* *the shell* is the command line that the terminal starts with
+* *the shell* is the lowest level command line
   * its prompt usually looks like this:
     *  `Davids-Macbook-Pro:~ David$` (Mac)
     *  `david@davidspc:~$` (Ubuntu Linux)
     *   `C:\Users\david>` (Windows)
-* *node* is a command line program that is launched *from the shell*
-  * its prompt is usually a greater-than `>` character
+* *node* is a command-line program that is launched *from the shell*
+  * its prompt is usually just a greater-than `>` character
 
 From inside `node`, if you want to get back to the shell...
 
   * type <kbd>Ctrl</kbd>-<kbd>C</kbd> twice
   * or type `.exit` and <kbd>Enter</kbd>
 
-# Where am I?
+# Basic Commands (Mac / Unix / Bash)
 
-It is very easy to get lost in a maze of directories.
+* `pwd` ("print working dir") -- shows the name of the current directory
+* `ls` ("list") -- shows the contents of the current directory
+* `mkdir` ("make dir") -- creates a new subdirectory inside the current directory
+* `cd` ("change dir") -- move into a different directory
 
-To find out which directory you are in, type
-
-    pwd
-
-This stands for "print working directory" (not "password").
-
-> Most of the time you can also look at the prompt to see what the current directory is.
+> Windows shells have slightly different commands; if these commands don't work for you, ask a TA how to use "bash" instead.
 
 # Home Directory
 
-* when you first open the Terminal you are in your HOME DIRECTORY
-* usually you don't want to store files directly in here
+* the shell is always "inside" a directory
+    * To find out which directory you are in, type `pwd`
+    * This stands for "print working directory"
+    * Most of the time the prompt also shows the current directory
+* when you first open the Terminal you are in your **home directory**
+* if you store files directly in your home directory, it will soon get cluttered
 * for this class, we recommend:
   * create a `code` directory inside your home directory
-  * create a new directory inside `code` for each lesson or project
-
-> WARNING: On some windows systems, the terminal will open to `C:\Windows\System32`
+  * create a new directory inside `code` for each project
 
 # LAB: make a subdirectory and then enter it
 
-1. open **Terminal** or **Command Prompt**
+1. Open **Terminal** or **Command Prompt**
 1. Confirm that you are in your home directory
-2. make a new subdirectory using `mkdir code`
-3. change into that directory using `cd code`
-4. make sure you're really there using `pwd`
+2. Make a new subdirectory using `mkdir code`
+3. Change into that directory using `cd code`
+4. Make sure you're really there using `pwd`
    * **On Windows** use `cd`
-5. list its contents using `ls` (and note that it's empty)
+5. List its contents using `ls` (and note that it's empty)
    * **On Windows** use `dir`
 
 # Source File
 
 * source code is the essence of a program
 * source files are text files that contain source code
-* to **RUN** a JavaScript program you type `node` and then the name of the source file, like this:
+* to **run** a JavaScript program you type `node` and then the name of the source file, like this:
 
 ```bash
 $ node hello.js
