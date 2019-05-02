@@ -154,6 +154,16 @@ Some statements have values, so `node` will *evaluate* them and *print* those va
 undefined
 ```
 
+## expression vs statement
+
+|Expression | Statement |
+|---|---|
+|has a value	| does something |
+|can be assigned to a var|	has a semicolon (optionally) |
+|		|		contains expressions |
+
+
+
 Read more here: (https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74)
     
 # LAB: Values: readings and exercises
