@@ -15,6 +15,10 @@ class Bootcamp < Site
     ["bootcamp.burlingtoncodeacademy.com", "bootcamp"]
   end
 
+  def google_calendar_id
+    'YnVybGluZ3RvbmNvZGVhY2FkZW15LmNvbV9hazFxMDRvNzBwYXBqODJkb2ZsYXVnMGM1c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t'
+  end
+
   def tracks
     [
       ::Track::Javascript,

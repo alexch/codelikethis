@@ -158,7 +158,8 @@ class Schedule < Thing
                   + '%40group.calendar.google.com' # %40 means @
                 week_start_gcal = week_start.strftime("%Y%m%d")
                 week_end_gcal = week[:week_end].strftime("%Y%m%d")
-                text raw('<iframe src="https://calendar.google.com/calendar/b/1/embed?showTitle=0&amp;showNav=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=' + gcal_id + '&amp;color=%23B1440E&amp;ctz=America%2FNew_York&amp;dates=' + week_start_gcal + '%2f' + week_end_gcal + '" style="border-width:0" width="800" height="400" frameborder="0" scrolling="no"></iframe>')
+                text raw('<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=' + gcal_id + '&amp;color=%23B1440E&amp;ctz=America%2FNew_York&amp;dates=' + week_start_gcal + '%2f' + week_end_gcal + '" style="border-width:0" width="800" height="400" frameborder="0" scrolling="no"></iframe>')
+
               }
             end
 
