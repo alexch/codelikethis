@@ -9,6 +9,7 @@ Before the class starts, please install the following:
 * Git
 
 and sign up for accounts on:
+
 * GitHub
 * Heroku
 
