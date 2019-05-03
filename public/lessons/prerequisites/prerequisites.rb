@@ -12,12 +12,9 @@ Track::Prerequisites = Track.new(
 
   project name: 'installfest'
 
-  # required
   link href: 'https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5'
   link href: 'https://learn.freecodecamp.org/responsive-web-design/basic-css'
   link href: 'https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript'
-
-  # optional
   link href: 'https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6'
   link href: 'https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures'
   link href: 'https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting'
