@@ -3,6 +3,9 @@ require 'rack/rewrite'
 
 use Rack::ShowExceptions
 use Rack::ShowStatus
+use Rack::Deflater
+use Rack::ETag
+use Rack::ConditionalGet
 
 # https://github.com/jtrupiano/rack-rewrite
 use Rack::Rewrite do
