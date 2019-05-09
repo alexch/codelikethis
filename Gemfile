@@ -11,6 +11,7 @@ gem "sass", "~> 3.5.0"
 gem "awesome_print"
 gem "chronic"
 gem "redcarpet" # todo: , "~> 3.4"
+gem "rack-ssl", "~> 1.4"
 
 # gem "deckrb", path: "../deck.rb"  # uncomment for local development
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
