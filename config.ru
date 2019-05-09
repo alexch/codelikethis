@@ -1,10 +1,6 @@
 require './app'
 require 'rack/rewrite'
 
-if ENV['RACK_ENV'] == 'production'
-  require 'rack/ssl'
-  use Rack::SSL
-end
 use Rack::ShowExceptions
 use Rack::ShowStatus
 use Rack::Deflater
