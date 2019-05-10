@@ -4,8 +4,6 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4.1-node
-        environment:
-          BUNDLER_VERSION: 2.0.1
     steps:
       - checkout
       # Restore bundle cache
@@ -13,6 +11,13 @@ jobs:
 #          keys:
 #            - rails-demo-{{ checksum "Gemfile.lock" }}
 #            - rails-demo-
+      - run:
+          name: Configure Bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+
       - run:
           name: Install dependencies
           command: bundle check || bundle install --jobs 4 --retry 3
