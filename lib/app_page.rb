@@ -129,15 +129,10 @@ $(function () {
   end
 
   def footer_content
-    text "This curriculum was created by Alex Chaffee and Burlington Code Academy, with significant contributions from Joshua Burke, Robin Hrynyszyn, Robin Rainwalker, and Benjamin Boas."
-
-    # text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 "
-    # a "Alex Chaffee.", href: "http://alexchaffee.com"
-    br
-
     p(rawtext <<-HTML)
-    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Code Like This"</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="http://codelikethis.com" property="cc:attributionName" rel="cc:attributionURL">Alex Chaffee</a>
-    is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Burlington Code Academy Curriculum"</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="http://burlingtoncodeacademy.com" property="cc:attributionName" rel="cc:attributionURL">Burlington Code Academy</a>
+    is licensed under:
+    <br /><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
     <br />
     <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
     <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
@@ -145,18 +140,6 @@ $(function () {
     <br />
     HTML
     br style: "clear:both"
-    br
-    p do
-      text "This site built on "
-      a "Sinatra", href: "http://sinatrarb.com"
-      text ", "
-      a "Erector", href: "http://erector.rubyforge.org"
-      text ", "
-      a "Deck", href: "https://github.com/alexch/deck.rb"
-      text ", "
-      a "Bootstrap", href: "https://getbootstrap.com"
-      text ", and so on."
-    end
   end
 
   def self.google_analytics_code account_id
