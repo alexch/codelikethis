@@ -1,9 +1,52 @@
-codelikethis
-============
+<p align="center"><img src="./public/images/burlingtoncodeacademy-logo.png" height="120"></p>
 
-source for [Code Like This](http://www.codelikethis.com) web site
+<h2 align="center"><a href="http://bootcamp.burlingtoncodeacademy.com">Source for Burlington Code Academy Curriculum</a></h2>
 
-see [todo.md](todo.md) for some todo items
+<p align="center">
+  <a href="https://circleci.com/gh/BurlingtonCodeAcademy/codelikethis">
+    <img src="https://circleci.com/gh/BurlingtonCodeAcademy/codelikethis.svg?style=svg" alt="CircleCI Test Status" />
+  </a>
+  <a href="https://circleci.com/gh/BurlingtonCodeAcademy/codelikethis">
+    <img src="https://img.shields.io/circleci/project/github/BurlingtonCodeAcademy/codelikethis/master.svg" alt="CircleCI Tests for Master Branch" />
+  </a>
+  <a href="https://github.com/BurlingtonCodeAcademy/codelikethis/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/badge/Content%20License-CC--BY--NC--3.0-green.svg" alt="Content License" />
+  </a>
+  <a href="https://github.com/BurlingtonCodeAcademy/codelikethis/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/badge/Code%20License-MIT-green.svg" alt="Code License" />
+  </a>
+  <a href="https://github.com/BurlingtonCodeAcademy/codelikethis/issues">
+    <img src="https://img.shields.io/github/issues-raw/burlingtoncodeacademy/codelikethis.svg" alt="Github Issues" />
+  </a>
+  <a href="https://github.com/BurlingtonCodeAcademy/codelikethis/graphs/commit-activity">
+    <img src="https://img.shields.io/github/commit-activity/w/BurlingtonCodeAcademy/codelikethis.svg" alt="GitHub commit activity" />
+  </a>
+  <a href="https://github.com/BurlingtonCodeAcademy/codelikethis/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/BurlingtonCodeAcademy/codelikethis.svg" alt="GitHub contributors" />
+  </a>
+  <a href="https://github.com/BurlingtonCodeAcademy/codelikethis/commits/master">
+    <img src="https://img.shields.io/github/contributors/BurlingtonCodeAcademy/codelikethis.svg" alt="GitHub last commit" />
+  </a>
+  <a href="https://github.com/BurlingtonCodeAcademy/codelikethis/pulls">
+    <img src="https://img.shields.io/github/issues-pr/BurlingtonCodeAcademy/codelikethis.svg" alt="GitHub pull requests" />
+  </a>
+  <a href="https://snyk.io/test/github/BurlingtonCodeAcademy/codelikethis">
+    <img src="https://snyk.io/test/github/BurlingtonCodeAcademy/codelikethis/badge.svg" alt="Known Vulnerabilities" />
+  </a>
+  <a href="https://bootcamp.burlingtoncodeacademy.com">
+    <img src="https://img.shields.io/website/https/bootcamp.burlingtoncodeacademy.com.svg" alt="Bootcamp Website Up or Down" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/uptimerobot/ratio/m782680534-6d51f70c7e70dc5d1bdeeedf.svg" alt="Uptime Robot ratio (30 days)"/>
+  </a>
+  <a href="https://observatory.mozilla.org/analyze/bootcamp.burlingtoncodeacademy.com">
+    <img src="https://img.shields.io/mozilla-observatory/grade/bootcamp.burlingtoncodeacademy.com.svg?publish" alt="Mozilla HTTP Observatory Grade"/>
+  </a>
+</p>
+
+<p align="center">
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+</p>
 
 ## Setup
 
