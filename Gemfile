@@ -1,34 +1,31 @@
 source 'https://rubygems.org'
 
 gem "sinatra", "~> 2.0.1"
-gem "sinatra-contrib"
+gem "sinatra-contrib", "~> 2.0"
 gem "erector", ">=0.9.0"
-gem "puma"
-gem "activesupport"
+gem "puma", "~> 3.12"
+gem "activesupport", "~> 5.2"
 gem "json", "~>1.8"
 gem "rack-rewrite", "~>1.5"
 gem "sass", "~> 3.5.0"
-gem "awesome_print"
-gem "chronic"
-gem "redcarpet" # todo: , "~> 3.4"
+gem "awesome_print", "~> 1.8"
+gem "chronic", "~> 0.10.2"
+gem "redcarpet", "~> 2.3"
 gem "rack-ssl", "~> 1.4"
-
-# gem "deckrb", path: "../deck.rb"  # uncomment for local development
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
-  # gem "rerun", path: "../rerun"  # uncomment for local development
-  gem "rerun", git: "https://github.com/alexch/rerun.git"
 
-  gem "listen"
-  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-  gem "rake", ">=10.0.1"
+  gem "listen", "~> 3.1"
+  gem 'wdm', '~> 0.1.0' if Gem.win_platform?
+  gem "rake", "~> 12.3"
+  gem "files", "~> 0.4.0"
   gem "wrong", git: "https://github.com/alexch/wrong.git"
-  gem "files", ">=0.4.0"
+  gem "rerun", git: "https://github.com/alexch/rerun.git"
 end
 
 group :test do
-  gem "rspec"
+  gem "rspec", "~> 3.8"
 end
 
 
