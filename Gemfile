@@ -12,6 +12,7 @@ gem "awesome_print", "~> 1.8"
 gem "chronic", "~> 0.10.2"
 gem "redcarpet", "~> 2.3"
 gem "rack-ssl", "~> 1.4"
+gem "barnes", "~> 0.0.7"
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
