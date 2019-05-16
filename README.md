@@ -144,7 +144,7 @@ To view a Site locally, use a `site` parameter, e.g. <http://localhost:9292/?sit
 
 1. Decide on its name. Its name is a `camelcase_word` that will automatically turn into titlecase when displayed. (e.g.  `cook_food` => `Cook Food`)
 2. create a new subdir inside `public/lessons` (e.g. `public/lessons/cook_food/`)
-3. define a `Track` subclass in a new file inside that dir (e.g. `public/lessons/cook_food/cook_food.rb`) and 
+3. define a `Track` subclass in a new file inside that dir (e.g. `public/lessons/cook_food/cook_food.rb`) and
 4. declare your lessons inside the track file. Look at the existing `.rb` files inside `public/lessons` for examples.
 5. for each Lesson, put its slides in a markdown file with its name in the lessons directory (e.g. `public/lessons/cook_food/stirfry.md`)
 6. add the Track to your Site by following the example of [Bootcamp](lib/bootcamp.rb)
@@ -166,5 +166,4 @@ We should clean this up, so we don't have duplication/omission of e.g. project d
 
 If you rename a track or lesson, add an entry to `config.ru` so external links to the old name do not become dead links.
 
-`config.ru` also rewrites incoming URLs containing underscores, converting from snake_case to kebab-case for lessons, projects, etc. -- but **NOT** for image files and other media -- and the app can find lesson etc. files in either snake_case or kebab-case format. 
-
+`config.ru` also rewrites incoming URLs containing underscores, converting from snake_case to kebab-case for lessons, projects, etc. -- but **NOT** for image files and other media -- and the app can find lesson etc. files in either snake_case or kebab-case format.
