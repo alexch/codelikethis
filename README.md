@@ -67,14 +67,14 @@ SCSS is currently built using Sass. Run this all the time in development, or at 
 
     rake build
 
-|Command|Description|
-|---|---|
-|`rake spec` | run all tests and verify setup |
-|`rake build` | compile CSS |
-|`rake run` | run local server on <http://localhost:9292>  |
-|`rerun rackup` |run with rebuild/restart on file changes |
-|`rerun --pattern '*.scss' --exit -- rake build` | run this in a separate terminal to compile CSS when SCSS changes too |
-|`./check-links.sh` | check entire site for broken links |
+| Command                                         | Description                                                          |
+|-------------------------------------------------|----------------------------------------------------------------------|
+| `rake spec`                                     | run all tests and verify setup                                       |
+| `rake build`                                    | compile CSS                                                          |
+| `rake run`                                      | run local server on <http://localhost:9292>                          |
+| `rerun rackup`                                  | run with rebuild/restart on file changes                             |
+| `rerun --pattern '*.scss' --exit -- rake build` | run this in a separate terminal to compile CSS when SCSS changes too |
+| `./check-links.sh`                              | check entire site for broken links                                   |
 
 Note that any of the above may need to be preceded by `bundle exec` e.g. `bundle exec rerun rackup` (whether you need to do this or not depends on gnarly details of your Ruby installation).
 
@@ -86,30 +86,30 @@ Local -> Github -> CircleCI -> Heroku
  * https://circleci.com/gh/BurlingtonCodeAcademy/codelikethis
  * https://github.com/settings/applications
  * https://github.com/BurlingtonCodeAcademy/codelikethis/settings/hooks/90661849
- 
-## Layout 
 
-|Path|Description|
-|---|---|
-|`./app.rb` | main app |
-|`./config.ru` | app config |
-|`lib` | ruby source code |
-|`lib/thing.rb::WEIRD_WORDS` | list of oddly-capitalized words (e.g. CSS, JavaScript) |
-|`lib/bootcamp.rb` | ruby Site describing the Bootcamp course(s) |
-|`lib/bootcamp-schedule.json` | JSON describing the Bootcamp course schedule |
-|`spec` | ruby test source code |
-|`public` | web-visible files |
-|`public/images` | web site images |
-|`public/lessons/images` | images used by some lessons |
-|`public/lessons/foo/bar.jpg` | an image used by only a single lesson |
-|`public/js`     | web site scripts |
-|`public/css`    | web site css files -- **do not edit** these directly! |
-|`public/scss`    | web site sass source files, compiled into public/css |
-|`public/lessons` | course files (markdown and images), organized by track |
-|`public/lessons/trackname/` | track files (markdown and images), organized by track |
-|`public/lessons/trackname/trackname.rb`  | track description files; names match public/lessons subdirs |
-|`public/lessons/trackname/baking.md` | markdown slides for a single lesson named `baking` (served from `/lessons/trackname/bake_cookies` URL path) |
-|`public/projects/bake_cookies.md` | markdown slides for a single project named `bake_cookies` (served from `/projects/bake_cookies` URL path) |
+## Layout
+
+| Path                                    | Description                                                                                                 |
+|-----------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| `./app.rb`                              | main app                                                                                                    |
+| `./config.ru`                           | app config                                                                                                  |
+| `lib`                                   | ruby source code                                                                                            |
+| `lib/thing.rb::WEIRD_WORDS`             | list of oddly-capitalized words (e.g. CSS, JavaScript)                                                      |
+| `lib/bootcamp.rb`                       | ruby Site describing the Bootcamp course(s)                                                                 |
+| `lib/bootcamp-schedule.json`            | JSON describing the Bootcamp course schedule                                                                |
+| `spec`                                  | ruby test source code                                                                                       |
+| `public`                                | web-visible files                                                                                           |
+| `public/images`                         | web site images                                                                                             |
+| `public/lessons/images`                 | images used by some lessons                                                                                 |
+| `public/lessons/foo/bar.jpg`            | an image used by only a single lesson                                                                       |
+| `public/js`                             | web site scripts                                                                                            |
+| `public/css`                            | web site css files -- **do not edit** these directly!                                                       |
+| `public/scss`                           | web site sass source files, compiled into public/css                                                        |
+| `public/lessons`                        | course files (markdown and images), organized by track                                                      |
+| `public/lessons/trackname/`             | track files (markdown and images), organized by track                                                       |
+| `public/lessons/trackname/trackname.rb` | track description files; names match public/lessons subdirs                                                 |
+| `public/lessons/trackname/baking.md`    | markdown slides for a single lesson named `baking` (served from `/lessons/trackname/bake_cookies` URL path) |
+| `public/projects/bake_cookies.md`       | markdown slides for a single project named `bake_cookies` (served from `/projects/bake_cookies` URL path)   |
 
 ## Sites
 
