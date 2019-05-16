@@ -71,6 +71,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     polyglot (0.3.5)
     predicated (0.2.6)
+    puma (3.12.1)
     rack (2.0.6)
     rack-protection (2.0.4)
       rack
@@ -147,6 +148,7 @@ DEPENDENCIES
   json (~> 1.8)
   listen
   nokogiri (~> 1.7)
+  puma
   rack-rewrite (~> 1.5)
   rack-ssl (~> 1.4)
   rake (>= 10.0.1)
@@ -156,7 +158,6 @@ DEPENDENCIES
   sass (~> 3.5.0)
   sinatra (~> 2.0.1)
   sinatra-contrib
-  thin
   wrong!
 
 BUNDLED WITH

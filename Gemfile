@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem "sinatra", "~> 2.0.1"
 gem "sinatra-contrib"
 gem "erector", ">=0.9.0"
-gem "thin"
+gem "puma"
 gem "activesupport"
 gem "json", "~>1.8"
 gem "rack-rewrite", "~>1.5"
@@ -30,6 +30,7 @@ end
 group :test do
   gem "rspec"
 end
+
 
 # odd fixed versions, for Windows
 gem "nokogiri", "~>1.7"
