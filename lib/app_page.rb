@@ -102,8 +102,10 @@ class ThingPage < AppPage
            crossorigin: "anonymous"
 
     # fontawesome is now SVGs
-    script defer: 'defer',
-           src: '/js/fontawesome-all.js'
+    script defer: "defer",
+           src: "https://use.fontawesome.com/releases/v5.8.2/js/all.js",
+           integrity: "sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH",
+           crossorigin: "anonymous"
 
     # client-side code highlighting from https://highlightjs.org
     # stylesheet name: "highlight/xcode"
