@@ -214,7 +214,7 @@ class Schedule < Thing
       div(class: 'box') {
 
         p {
-          i(class: "fas fa-paw")
+          i(class: "fas fa-angle-right")
           text nbsp
           b " Track: "
           widget track.link_view

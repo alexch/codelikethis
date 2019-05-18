@@ -31,7 +31,7 @@ class Topic < Thing
       tracks.each do |track|
         p {
           span(class: 'track-name') {
-            i(class: "fas fa-paw")
+            i(class: "fas fa-angle-right")
             text nbsp
             widget track.link_view
             text ':'

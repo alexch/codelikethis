@@ -95,7 +95,7 @@ class TracksSidebar < Erector::Widget
           'data-toggle': 'collapse',
           'data-target': "##{lessons_id}",
           'data-parent': "##{html_id}-tracks") {
-          i(class: "fas fa-paw")
+          i(class: "fas fa-angle-right")
           text nbsp
           text nbsp
           text track.display_name

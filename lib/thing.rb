@@ -218,5 +218,4 @@ class Thing
       prefix + word
     end.join(" ")
   end
-
 end

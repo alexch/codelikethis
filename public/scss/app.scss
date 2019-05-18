@@ -5,18 +5,33 @@
 @import "tables";
 
 $topbar-height: 75px;
-
-$title-font: 'Museo500Regular', 'Open Sans', Helvetica, Arial, sans-serif;
-$navbar-font: 'Raleway', Helvetica, Arial, sans-serif;
-$body-font: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-family-sans-serif:
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for macOS (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$body-color: #131516;
+$btvca-blue: #48a2bf;
 
 body {
-  font-family: $body-font;
+  font-family: $font-family-sans-serif;
   font-weight: normal;
   font-size: 1rem;
   text-rendering: optimizelegibility;
+  color: $body-color;
 
   padding-top: $topbar-height; // to skip the fixed nav bar
+  a {
+    color: $btvca-blue;
+  }
 }
 
 @media print {
@@ -31,7 +46,7 @@ body {
 nav.navbar {
   background: white;
 
-  font-family: $navbar-font;
+  font-family: $font-family-sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 13px;
@@ -112,7 +127,7 @@ main {
     padding: 1rem;
   }
   h1, h2, h3, h4, h5 {
-    font-family: $title-font;
+    font-family: $font-family-sans-serif;
   }
   img {
     max-width: 100%;
@@ -129,9 +144,8 @@ main {
 
 section.slide {
   padding: 1em;
-  margin-bottom: 2em;
-  margin-top: 3em;
-  border: 1px solid black;
+  margin-bottom: 2.5em;
+  border: 1px solid rgba(0,0,0,.125);
 
   h1, > h2:first-child {
     text-decoration: lightblue underline;
@@ -284,7 +298,7 @@ span.svg-icon {
 
   h2, h3, h4 {
     text-decoration: underline;
-    font-family: $body-font;
+    font-family: $font-family-sans-serif;
   }
 
   pre {
@@ -403,7 +417,7 @@ span.svg-icon {
 
 section.breadcrumbs {
   background-color: #f7f7f7;
-  border-top: 1px solid #e6e0e6;
+  border: 1px solid #e6e0e6;
   border-bottom: 1px solid #e6e0e6;
   padding: .5em;
 
@@ -413,7 +427,7 @@ section.breadcrumbs {
   }
 
   h1.lesson-name {
-    font-family: $title-font;
+    font-family: $font-family-sans-serif;
     margin-bottom: 0;
     line-height: 1.0;
   }
@@ -453,8 +467,6 @@ footer {
   padding-top: 25px;
   height: 0;
   overflow: hidden;
-  margin: 1em;
-  border: 6px solid gray;
 
   iframe, object, embed {
     position: absolute;
@@ -547,4 +559,9 @@ span.video_link {
   border: 1px dotted black;
   padding: 1px 2px;
   margin-left: 1em;
+}
+
+.slides.btn.btn-primary {
+  background-color: #f0921a;;
+  border-color: #f0921a;
 }

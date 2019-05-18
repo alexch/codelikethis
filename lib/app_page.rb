@@ -19,7 +19,7 @@ class ThingPage < AppPage
   include Views
 
   def doctype
-    '<!doctype html>'
+    '<!DOCTYPE html>'
   end
 
   def html_attributes
@@ -74,8 +74,8 @@ class ThingPage < AppPage
                integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
                crossorigin: "anonymous"
 
-    font name: "fonts/Museo500"
-    font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
+    # font name: "fonts/Museo500"
+    # font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
 
     stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
 
@@ -178,7 +178,7 @@ $(function () {
 
   def breadcrumbs
     if @thing.view.respond_to? :breadcrumbs
-      section(class: 'breadcrumbs container-fluid') do
+      section(class: 'breadcrumbs container') do
         widget @thing.view, {}, content_method_name: :breadcrumbs
       end
     end
@@ -189,12 +189,11 @@ $(function () {
     # top nav
     widget @site.navbar
 
-    breadcrumbs
-
-    #todo: add 'main' element type to Erector
-    element('main', class: 'container-fluid') {
-      div(class: "row") {
-
+    element('main', class: 'container') {
+      div(class: "bc-back-forthl") do
+        breadcrumbs
+      end
+      div(class: "row first") {
         center_cols = 12
         # first the sidebar
         if @sidebar
@@ -207,8 +206,6 @@ $(function () {
 
         # now the real body
         div(class: "col-md-#{center_cols}") {
-          a name: 'content'
-
           if @warning
             div(class: 'row') {
               div(@warning, class: "warning alert alert-warning")
@@ -242,8 +239,6 @@ $(function () {
         end
       }
     }
-
-    breadcrumbs
 
     footer(class: ['footer', 'navbar-light']) {
       footer_content

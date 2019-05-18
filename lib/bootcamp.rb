@@ -148,7 +148,7 @@ class Bootcamp < Site
           a(class: ['dropdown-item', 'track-name'],
             href: track.href
           ) {
-            i(class: "fas fa-paw")
+            i(class: "fas fa-angle-right")
             text nbsp
             text nbsp
             text track.display_name
@@ -159,7 +159,7 @@ class Bootcamp < Site
 
       end
 
-      nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
+      nav_item name: "Apply", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
     end
   end
 

@@ -24,36 +24,40 @@
 .slide table tr:nth-child(2n) {
   background-color: #F8F8F8; }
 
-/* line 13, ../scss/app.scss */
+/* line 24, ../scss/app.scss */
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: normal;
   font-size: 1rem;
   text-rendering: optimizelegibility;
+  color: #131516;
   padding-top: 75px; }
+  /* line 32, ../scss/app.scss */
+  body a {
+    color: #48a2bf; }
 
 @media print {
-  /* line 23, ../scss/app.scss */
+  /* line 38, ../scss/app.scss */
   nav.navbar, #sidebar, .twitter, div.notice, a[name=content] {
     display: none !important; }
 
-  /* line 26, ../scss/app.scss */
+  /* line 41, ../scss/app.scss */
   body {
     padding-top: 0; } }
-/* line 31, ../scss/app.scss */
+/* line 46, ../scss/app.scss */
 nav.navbar {
   background: white;
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
   font-weight: 600;
   font-size: 13px;
   font-style: normal;
   height: 75px;
   /* so the logo doesn't push the hamburger down on narrow screens */ }
-  /* line 40, ../scss/app.scss */
+  /* line 55, ../scss/app.scss */
   nav.navbar.navbar-light .navbar-nav .nav-link {
     color: #333333; }
-    /* line 42, ../scss/app.scss */
+    /* line 57, ../scss/app.scss */
     nav.navbar.navbar-light .navbar-nav .nav-link.btn-sm {
       font-weight: 600;
       font-size: 13px;
@@ -61,27 +65,27 @@ nav.navbar {
       background-color: #f7931e;
       border-color: #f7931e;
       padding: 1em 1.5em; }
-  /* line 52, ../scss/app.scss */
+  /* line 67, ../scss/app.scss */
   nav.navbar li {
     padding-left: 7px;
     padding-right: 7px; }
-  /* line 56, ../scss/app.scss */
+  /* line 71, ../scss/app.scss */
   nav.navbar a {
     letter-spacing: 1px;
     zoom: 1; }
-  /* line 64, ../scss/app.scss */
+  /* line 79, ../scss/app.scss */
   nav.navbar .col.navbar-left {
     max-width: 75%; }
-    /* line 66, ../scss/app.scss */
+    /* line 81, ../scss/app.scss */
     nav.navbar .col.navbar-left a.navbar-brand {
       max-width: 100%; }
-      /* line 68, ../scss/app.scss */
+      /* line 83, ../scss/app.scss */
       nav.navbar .col.navbar-left a.navbar-brand img.logo {
         height: 74px;
         width: auto;
         vertical-align: middle;
         max-height: 75px; }
-  /* line 77, ../scss/app.scss */
+  /* line 92, ../scss/app.scss */
   nav.navbar .navbar-collapse.collapse.show {
     position: fixed;
     overflow: scroll;
@@ -90,33 +94,33 @@ nav.navbar {
     right: 0;
     background-color: white;
     border: 1px solid gray; }
-    /* line 87, ../scss/app.scss */
+    /* line 102, ../scss/app.scss */
     nav.navbar .navbar-collapse.collapse.show .dropdown.show {
       padding-left: 3.5em; }
-  /* line 93, ../scss/app.scss */
+  /* line 108, ../scss/app.scss */
   nav.navbar li.nav-item.bordered {
     border: 1px solid black;
     border-radius: .25rem; }
-  @media (max-width: 767px) {
-    /* line 99, ../scss/app.scss */
+  @media (max-width: 767.98px) {
+    /* line 114, ../scss/app.scss */
     nav.navbar #pageNavbar {
       padding-bottom: 1rem;
       border-bottom: 1px solid lightgray; } }
 
-/* line 108, ../scss/app.scss */
+/* line 123, ../scss/app.scss */
 main {
   background-color: white;
   max-width: 80em; }
-  /* line 111, ../scss/app.scss */
+  /* line 126, ../scss/app.scss */
   main center.logo {
     padding: 1rem; }
-  /* line 114, ../scss/app.scss */
+  /* line 129, ../scss/app.scss */
   main h1, main h2, main h3, main h4, main h5 {
-    font-family: "Museo500Regular", "Open Sans", Helvetica, Arial, sans-serif; }
-  /* line 117, ../scss/app.scss */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  /* line 132, ../scss/app.scss */
   main img {
     max-width: 100%; }
-  /* line 120, ../scss/app.scss */
+  /* line 135, ../scss/app.scss */
   main blockquote {
     background: #f9f9f9;
     border-left: 10px solid #ccc;
@@ -125,35 +129,34 @@ main {
     font-style: italic;
     font-size: 110%; }
 
-/* line 130, ../scss/app.scss */
+/* line 145, ../scss/app.scss */
 section.slide {
   padding: 1em;
-  margin-bottom: 2em;
-  margin-top: 3em;
-  border: 1px solid black; }
-  /* line 136, ../scss/app.scss */
+  margin-bottom: 2.5em;
+  border: 1px solid rgba(0, 0, 0, 0.125); }
+  /* line 150, ../scss/app.scss */
   section.slide h1, section.slide > h2:first-child {
     text-decoration: lightblue underline; }
-  /* line 139, ../scss/app.scss */
+  /* line 153, ../scss/app.scss */
   section.slide > h2:first-child {
     margin: 2px 0 8px -4px;
     font-size: 2rem; }
-  /* line 143, ../scss/app.scss */
+  /* line 157, ../scss/app.scss */
   section.slide > h1 {
     font-size: 3em; }
-  /* line 148, ../scss/app.scss */
+  /* line 162, ../scss/app.scss */
   section.slide.subsection > h1 {
     background-color: #e8e8fc;
     text-align: center; }
-  /* line 152, ../scss/app.scss */
+  /* line 166, ../scss/app.scss */
   section.slide.subsection > h2:first-child {
     font-size: 3em; }
-  /* line 157, ../scss/app.scss */
+  /* line 171, ../scss/app.scss */
   section.slide h1 code, section.slide h2 code {
     color: inherit;
     padding: inherit;
     background-color: inherit; }
-  /* line 163, ../scss/app.scss */
+  /* line 177, ../scss/app.scss */
   section.slide blockquote {
     font-style: italic;
     border-left: 2px solid #ddd;
@@ -161,13 +164,13 @@ section.slide {
     font-size: 110%;
     background-color: wheat;
     color: black; }
-  /* line 172, ../scss/app.scss */
+  /* line 186, ../scss/app.scss */
   section.slide li {
     margin-bottom: .5em; }
-  /* line 176, ../scss/app.scss */
+  /* line 190, ../scss/app.scss */
   section.slide li:first-child {
     margin-top: .5em; }
-  /* line 180, ../scss/app.scss */
+  /* line 194, ../scss/app.scss */
   section.slide pre {
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -176,42 +179,42 @@ section.slide {
     padding: .5em;
     /* display: inline-block; /* so it's only as wide as its contents */ }
 
-/* line 190, ../scss/app.scss */
+/* line 204, ../scss/app.scss */
 div.right_side {
   float: right;
   max-width: 24em; }
 
-/* line 195, ../scss/app.scss */
+/* line 209, ../scss/app.scss */
 div.twitter {
   padding-left: 1em; }
 
-/* line 199, ../scss/app.scss */
+/* line 213, ../scss/app.scss */
 div.blog .rssHeader > a:after {
   content: " - Recent Blog Entries"; }
 
 /* left sidebar ("Tracks") */
-/* line 211, ../scss/app.scss */
+/* line 225, ../scss/app.scss */
 .tracks-toggler {
   padding: .25rem .75rem;
   font-size: 1.25rem;
   line-height: 1;
   background: 0 0; }
   @media (min-width: 768px) {
-    /* line 211, ../scss/app.scss */
+    /* line 225, ../scss/app.scss */
     .tracks-toggler {
       display: none; } }
-  /* line 24, /Volumes/Mead/Dropbox/dev/codelikethis/public/scss/bootstrap-4.0.0-beta.2/scss/mixins/_hover.scss */
-  .tracks-toggler:focus, .tracks-toggler:hover {
+  /* line 17, /Users/mansfield/Dev/burlington-code-academy/codelikethis/public/scss/bootstrap-4.3.1/scss/mixins/_hover.scss */
+  .tracks-toggler:hover, .tracks-toggler:focus {
     text-decoration: none; }
 
-/* line 226, ../scss/app.scss */
+/* line 240, ../scss/app.scss */
 .tracks-toggler span.svg-icon, .toggler span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 30,1 15,30 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
-/* line 229, ../scss/app.scss */
+/* line 243, ../scss/app.scss */
 .tracks-toggler.collapsed span.svg-icon, .toggler.collapsed span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 1,30 30,15 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
 
-/* line 234, ../scss/app.scss */
+/* line 248, ../scss/app.scss */
 span.svg-icon {
   display: inline-block;
   width: 0.75em;
@@ -223,20 +226,20 @@ span.svg-icon {
   background-position-x: center;
   background-position-y: center; }
 
-/* line 248, ../scss/app.scss */
+/* line 262, ../scss/app.scss */
 .link .icon.freecodecamp img {
   width: 30px;
   height: 24px;
   margin: 2px 4px;
   background: green;
   border: 2px solid green; }
-/* line 257, ../scss/app.scss */
+/* line 271, ../scss/app.scss */
 .link .icon.codecademy img {
   width: 40px;
   height: 40px;
   margin: 2px 2px;
   border: none; }
-/* line 266, ../scss/app.scss */
+/* line 280, ../scss/app.scss */
 .link.topic a, .link.topic a:visited {
   font-size: 80%;
   color: black;
@@ -247,22 +250,22 @@ span.svg-icon {
   margin: 2px;
   display: inline-block; }
 
-/* line 280, ../scss/app.scss */
+/* line 294, ../scss/app.scss */
 .box {
   border: 1px solid black;
   padding: 1em;
   margin: 1em 0; }
-  /* line 285, ../scss/app.scss */
+  /* line 299, ../scss/app.scss */
   .box h2, .box h3, .box h4 {
     text-decoration: underline;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif; }
-  /* line 290, ../scss/app.scss */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+  /* line 304, ../scss/app.scss */
   .box pre {
     background: #ededfc; }
 
 /* make the sidebars scrolly and fixed on bigger screens */
 @media (min-width: 768px) {
-  /* line 297, ../scss/app.scss */
+  /* line 311, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block;
     max-height: calc(100vh - 75px);
@@ -272,13 +275,13 @@ span.svg-icon {
     z-index: 1000;
     padding-top: 1rem; }
 
-  /* line 309, ../scss/app.scss */
+  /* line 323, ../scss/app.scss */
   a[name=content] {
     display: block;
     position: relative;
     height: 75px; }
 
-  /* line 314, ../scss/app.scss */
+  /* line 328, ../scss/app.scss */
   a.slide-anchor {
     display: block;
     position: relative;
@@ -286,30 +289,30 @@ span.svg-icon {
     height: 0;
     top: -75px; } }
 @media (min-width: 768px) {
-  /* line 323, ../scss/app.scss */
+  /* line 337, ../scss/app.scss */
   #sidebar-tracks {
     display: block; } }
 
-@media (max-width: 767px) {
-  /* line 332, ../scss/app.scss */
+@media (max-width: 767.98px) {
+  /* line 346, ../scss/app.scss */
   #sidebar {
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray; }
-    /* line 335, ../scss/app.scss */
+    /* line 349, ../scss/app.scss */
     #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
       margin: 2px 0; } }
-/* line 341, ../scss/app.scss */
+/* line 355, ../scss/app.scss */
 #sidebar-tracks, #right-sidebar > .outline > .list-group {
   font-size: 85%; }
-  /* line 344, ../scss/app.scss */
+  /* line 358, ../scss/app.scss */
   #sidebar-tracks .list-group.lesson-names, #right-sidebar > .outline > .list-group .list-group.lesson-names {
     margin-top: .5rem;
     border-radius: 0; }
-    /* line 347, ../scss/app.scss */
+    /* line 361, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .list-group-item, #right-sidebar > .outline > .list-group .list-group.lesson-names .list-group-item {
       padding: .4rem 0 .4rem 1.8rem;
       margin: 0 -1rem; }
-    /* line 353, ../scss/app.scss */
+    /* line 367, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .loading_image, #right-sidebar > .outline > .list-group .list-group.lesson-names .loading_image {
       background-image: url(/images/loading.gif);
       background-repeat: no-repeat;
@@ -320,16 +323,16 @@ span.svg-icon {
       float: right;
       margin: 0 2px;
       display: none; }
-  /* line 368, ../scss/app.scss */
+  /* line 382, ../scss/app.scss */
   #sidebar-tracks .active, #right-sidebar > .outline > .list-group .active {
     background-color: #EEF; }
-  /* line 371, ../scss/app.scss */
+  /* line 385, ../scss/app.scss */
   #sidebar-tracks a, #right-sidebar > .outline > .list-group a {
     color: black;
     display: inline-block;
     width: 100%; }
 
-/* line 379, ../scss/app.scss */
+/* line 393, ../scss/app.scss */
 #sidebar-tracks a.track-info-link {
   display: inline;
   position: absolute;
@@ -341,49 +344,49 @@ span.svg-icon {
   font-size: 150%;
   right: 2px;
   visibility: hidden; }
-/* line 394, ../scss/app.scss */
+/* line 408, ../scss/app.scss */
 #sidebar-tracks div.track-name:hover a.track-info-link {
   visibility: visible;
   background-color: white; }
 
-/* line 400, ../scss/app.scss */
+/* line 414, ../scss/app.scss */
 .dropdown-menu a.track-name {
   text-transform: none; }
 
-/* line 404, ../scss/app.scss */
+/* line 418, ../scss/app.scss */
 section.breadcrumbs {
   background-color: #f7f7f7;
-  border-top: 1px solid #e6e0e6;
+  border: 1px solid #e6e0e6;
   border-bottom: 1px solid #e6e0e6;
   padding: .5em; }
-  /* line 410, ../scss/app.scss */
+  /* line 424, ../scss/app.scss */
   section.breadcrumbs > .row {
     max-width: 100em;
     margin: auto; }
-  /* line 415, ../scss/app.scss */
+  /* line 429, ../scss/app.scss */
   section.breadcrumbs h1.lesson-name {
-    font-family: "Museo500Regular", "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin-bottom: 0;
     line-height: 1.0; }
-  /* line 421, ../scss/app.scss */
+  /* line 435, ../scss/app.scss */
   section.breadcrumbs a.next_lesson, section.breadcrumbs a.previous_lesson {
     font-size: 80%;
     font-weight: bold;
     font-style: italic; }
-  /* line 427, ../scss/app.scss */
+  /* line 441, ../scss/app.scss */
   section.breadcrumbs a {
     color: black; }
 
-/* line 432, ../scss/app.scss */
+/* line 446, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 437, ../scss/app.scss */
+/* line 451, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 441, ../scss/app.scss */
+/* line 455, ../scss/app.scss */
 footer {
   clear: both;
   padding: 2rem;
@@ -392,17 +395,15 @@ footer {
   max-width: 60em;
   margin: auto; }
 
-/* line 450, ../scss/app.scss */
+/* line 464, ../scss/app.scss */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
   /* 16:9 */
   padding-top: 25px;
   height: 0;
-  overflow: hidden;
-  margin: 1em;
-  border: 6px solid gray; }
-  /* line 459, ../scss/app.scss */
+  overflow: hidden; }
+  /* line 471, ../scss/app.scss */
   .video-container iframe, .video-container object, .video-container embed {
     position: absolute;
     top: 0;
@@ -410,12 +411,12 @@ footer {
     width: 100%;
     height: 100%; }
 
-/* line 468, ../scss/app.scss */
+/* line 480, ../scss/app.scss */
 table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 473, ../scss/app.scss */
+  /* line 485, ../scss/app.scss */
   table ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -423,50 +424,50 @@ table {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 481, ../scss/app.scss */
+  /* line 493, ../scss/app.scss */
   table td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 485, ../scss/app.scss */
+  /* line 497, ../scss/app.scss */
   table, table td, table th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 489, ../scss/app.scss */
+  /* line 501, ../scss/app.scss */
   table th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 495, ../scss/app.scss */
+  /* line 507, ../scss/app.scss */
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 498, ../scss/app.scss */
+  /* line 510, ../scss/app.scss */
   table tr:nth-child(odd) {
     background-color: #FFFFFF; }
-  /* line 501, ../scss/app.scss */
+  /* line 513, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 506, ../scss/app.scss */
+  /* line 518, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 510, ../scss/app.scss */
+  /* line 522, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 515, ../scss/app.scss */
+/* line 527, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 517, ../scss/app.scss */
+  /* line 529, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 520, ../scss/app.scss */
+  /* line 532, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 523, ../scss/app.scss */
+  /* line 535, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
-  /* line 527, ../scss/app.scss */
+  /* line 539, ../scss/app.scss */
   .markdown kbd {
     display: inline-block;
     padding: 3px 5px;
@@ -480,14 +481,19 @@ table {
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #959da5; }
 
-/* line 543, ../scss/app.scss */
+/* line 555, ../scss/app.scss */
 span.video_link {
   border: 1px dotted black;
   padding: 1px 2px;
   margin-left: 1em; }
   @media screen {
-    /* line 543, ../scss/app.scss */
+    /* line 555, ../scss/app.scss */
     span.video_link {
       float: right; } }
+
+/* line 564, ../scss/app.scss */
+.slides.btn.btn-primary {
+  background-color: #f0921a;
+  border-color: #f0921a; }
 
 /*# sourceMappingURL=app.css.map */
