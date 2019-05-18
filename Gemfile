@@ -21,6 +21,7 @@ group :development, :test do
   gem 'wdm', '~> 0.1.0' if Gem.win_platform?
   gem "rake", "~> 12.3"
   gem "files", "~> 0.4.0"
+  gem "pry", "~> 0.12.2"
   gem "wrong", git: "https://github.com/alexch/wrong.git"
   gem "rerun", git: "https://github.com/alexch/rerun.git"
 end
