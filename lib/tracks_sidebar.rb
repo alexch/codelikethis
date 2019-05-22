@@ -6,12 +6,14 @@ class TracksSidebar < Erector::Widget
   needs :tracks, :current
 
   external :script, (<<-JS)
-  $(document).ready(function() {
-    $('#sidebar a').click(function(eventObject) {
-      console.log($(this));
-      console.log($(this).find('.loading_image'));
-      $(this).find('.loading_image').css('display', 'inline-block');
-      return true; // propagate event
+  window.addEventListener('DOMContentLoaded', (e) => {
+    $(document).ready(function() {
+      $('#sidebar a').click(function(eventObject) {
+        console.log($(this));
+        console.log($(this).find('.loading_image'));
+        $(this).find('.loading_image').css('display', 'inline-block');
+        return true; // propagate event
+      });
     });
   });
   JS
@@ -92,9 +94,6 @@ class TracksSidebar < Erector::Widget
           text nbsp
           text track.display_name
         }
-        # 'aria-expanded': false
-        # 'aria-controls': '???'
-
       }
 
       div(class: ['collapse', ('show' if track == current_track)],
