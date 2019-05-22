@@ -68,8 +68,6 @@ class ThingPage < AppPage
       meta name: 'keywords', content: @thing.topics.map(&:name).join(',')
     end
 
-    # todo: parameterize bootstrap version
-    # todo: parameterize using CDN vs local file
     stylesheet href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
                integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
                crossorigin: "anonymous"
@@ -88,7 +86,6 @@ class ThingPage < AppPage
            integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
            crossorigin: "anonymous"
 
-    # fontawesome is now SVGs
     script defer: "defer",
            src: "https://use.fontawesome.com/releases/v5.8.2/js/all.js",
            integrity: "sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH",
@@ -130,7 +127,6 @@ class ThingPage < AppPage
     })();
     JAVASCRIPT
   end
-
 
   def all_tracks
     @site.tracks

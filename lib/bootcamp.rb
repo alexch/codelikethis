@@ -108,14 +108,6 @@ class Bootcamp < Site
       }
 
     end
-
-    # def notice
-    #   p.notice {
-    #     text "This site contains the curriculum for our "
-    #     a "Summer 2018 bootcamp", href: "http://burlingtoncodeacademy.com/bootcamp"
-    #     text " in Burlington, Vermont. "
-    #   }
-    # end
   end
 
   class NavBar < ::NavBar
