@@ -1,0 +1,51 @@
+{
+  "addons": [
+    "librato",
+    "papertrail",
+    "rollbar"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/metrics"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "description": "Burlington Code Academy curriculum content",
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "LIBRATO_PASSWORD": {
+      "required": true
+    },
+    "LIBRATO_TOKEN": {
+      "required": true
+    },
+    "LIBRATO_USER": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "ROLLBAR_ACCESS_TOKEN": {
+      "required": true
+    },
+    "ROLLBAR_ENDPOINT": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "codelikethis",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
