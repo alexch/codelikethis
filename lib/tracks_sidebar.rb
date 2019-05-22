@@ -77,18 +77,10 @@ class TracksSidebar < Erector::Widget
       lessons_id = "sidebar-#{track.name}-lessons"
 
       div(class: 'lesson-name') {
-
         unless @current == track
-          tooltip_text = "Track: <u>#{track.display_name}</u><br>"
-          if track.description?
-            tooltip_text += "<p><small>#{track.description}</small><p>"
-          end
-          tooltip_text += "Click for More Info"
-          a(**({href: track.href,
-            class: 'track-info-link'} +
-            with_tooltip(tooltip_text))) {
+          a(href: track.href, class: 'track-info-link') do
             i(class: 'fas fa-info-circle')
-          }
+          end
         end
 
         a(href: "##{lessons_id}",

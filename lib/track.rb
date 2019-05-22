@@ -291,7 +291,7 @@ class Track < Thing
 
             if item.respond_to?(:slides)
               text ' '
-              span("(#{item.slides.length} slides)", class: 'slide_count')
+              span("*", class: 'slide_count') if item.slides.none?
             end
 
           }

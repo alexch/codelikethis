@@ -73,31 +73,18 @@ class ThingPage < AppPage
     stylesheet href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
                integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
                crossorigin: "anonymous"
+    stylesheet name: 'app'
 
-    # font name: "fonts/Museo500"
-    # font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
+  end
 
-    stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
-
-    # load this application's CSS from /css/app.css
-    stylesheet name: "app"
-
-    # todo: parameterize using CDN vs local file for jQuery
-    script src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
-           integrity: "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",
+  def body_scripts
+    script defer: "defer",
+           src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
+           integrity: "sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=",
            crossorigin: "anonymous"
 
-    # todo: use local file for jQuery if CDN failed
-    # todo: parameterize location of local file
-    # script raw("window.jQuery || document.write('<script src=\"../../../../assets/js/vendor/jquery.min.js\"><\/script>');")
-
-    # todo: parameterize using CDN vs local file for Popper
-    script src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
-           integrity: "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1",
-           crossorigin: "anonymous"
-
-    # todo: parameterize using CDN vs local file for Bootstrap
-    script src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+    script defer: "defer",
+           src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
            integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
            crossorigin: "anonymous"
 
@@ -107,27 +94,11 @@ class ThingPage < AppPage
            integrity: "sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH",
            crossorigin: "anonymous"
 
-    # client-side code highlighting from https://highlightjs.org
-    # stylesheet name: "highlight/xcode"
-    stylesheet name: "highlight/solarized-light"
+    script defer: "defer",
+           src: "/highlight.min.js"
 
-    script src: "/highlight.min.js"
-    script raw(<<-JS)
-hljs.configure({languages: []});
-hljs.initHighlightingOnLoad();
-JS
-
-    script raw(<<-JS)
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-    JS
-
-  end
-
-  def body_scripts
-    # load this application's JS from /js/app.js
-    script src: "/js/app.js"
+    script defer: "defer",
+           src: "/js/app.js"
   end
 
   def footer_content
@@ -244,23 +215,10 @@ $(function () {
       footer_content
     }
 
+    stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
+    stylesheet name: "highlight/solarized-light"
+
     body_scripts
-  end
-
-  def self.google_analytics_code account_id
-    <<-JAVASCRIPT
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '#{account_id}']);
-    _gaq.push(['_setDomainName', 'none']);
-    _gaq.push(['_setAllowLinker', true]);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    JAVASCRIPT
   end
 
   external :script, google_analytics_code('UA-23417120-3')

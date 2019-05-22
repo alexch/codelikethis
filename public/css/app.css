@@ -24,7 +24,7 @@
 .slide table tr:nth-child(2n) {
   background-color: #F8F8F8; }
 
-/* line 24, ../scss/app.scss */
+/* line 25, ../scss/app.scss */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: normal;
@@ -32,19 +32,19 @@ body {
   text-rendering: optimizelegibility;
   color: #131516;
   padding-top: 75px; }
-  /* line 32, ../scss/app.scss */
+  /* line 33, ../scss/app.scss */
   body a {
     color: #48a2bf; }
 
 @media print {
-  /* line 38, ../scss/app.scss */
+  /* line 39, ../scss/app.scss */
   nav.navbar, #sidebar, .twitter, div.notice, a[name=content] {
     display: none !important; }
 
-  /* line 41, ../scss/app.scss */
+  /* line 42, ../scss/app.scss */
   body {
     padding-top: 0; } }
-/* line 46, ../scss/app.scss */
+/* line 47, ../scss/app.scss */
 nav.navbar {
   background: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -54,38 +54,38 @@ nav.navbar {
   font-style: normal;
   height: 75px;
   /* so the logo doesn't push the hamburger down on narrow screens */ }
-  /* line 55, ../scss/app.scss */
+  /* line 56, ../scss/app.scss */
   nav.navbar.navbar-light .navbar-nav .nav-link {
     color: #333333; }
-    /* line 57, ../scss/app.scss */
+    /* line 58, ../scss/app.scss */
     nav.navbar.navbar-light .navbar-nav .nav-link.btn-sm {
       font-weight: 600;
       font-size: 13px;
       color: white;
-      background-color: #f7931e;
-      border-color: #f7931e;
+      background-color: #f0921a;
+      border-color: #f0921a;
       padding: 1em 1.5em; }
-  /* line 67, ../scss/app.scss */
+  /* line 68, ../scss/app.scss */
   nav.navbar li {
     padding-left: 7px;
     padding-right: 7px; }
-  /* line 71, ../scss/app.scss */
+  /* line 72, ../scss/app.scss */
   nav.navbar a {
     letter-spacing: 1px;
     zoom: 1; }
-  /* line 79, ../scss/app.scss */
+  /* line 80, ../scss/app.scss */
   nav.navbar .col.navbar-left {
     max-width: 75%; }
-    /* line 81, ../scss/app.scss */
+    /* line 82, ../scss/app.scss */
     nav.navbar .col.navbar-left a.navbar-brand {
       max-width: 100%; }
-      /* line 83, ../scss/app.scss */
+      /* line 84, ../scss/app.scss */
       nav.navbar .col.navbar-left a.navbar-brand img.logo {
         height: 74px;
         width: auto;
         vertical-align: middle;
         max-height: 75px; }
-  /* line 92, ../scss/app.scss */
+  /* line 93, ../scss/app.scss */
   nav.navbar .navbar-collapse.collapse.show {
     position: fixed;
     overflow: scroll;
@@ -94,33 +94,33 @@ nav.navbar {
     right: 0;
     background-color: white;
     border: 1px solid gray; }
-    /* line 102, ../scss/app.scss */
+    /* line 103, ../scss/app.scss */
     nav.navbar .navbar-collapse.collapse.show .dropdown.show {
       padding-left: 3.5em; }
-  /* line 108, ../scss/app.scss */
+  /* line 109, ../scss/app.scss */
   nav.navbar li.nav-item.bordered {
     border: 1px solid black;
     border-radius: .25rem; }
   @media (max-width: 767.98px) {
-    /* line 114, ../scss/app.scss */
+    /* line 115, ../scss/app.scss */
     nav.navbar #pageNavbar {
       padding-bottom: 1rem;
       border-bottom: 1px solid lightgray; } }
 
-/* line 123, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 main {
   background-color: white;
   max-width: 80em; }
-  /* line 126, ../scss/app.scss */
+  /* line 127, ../scss/app.scss */
   main center.logo {
     padding: 1rem; }
-  /* line 129, ../scss/app.scss */
+  /* line 130, ../scss/app.scss */
   main h1, main h2, main h3, main h4, main h5 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
-  /* line 132, ../scss/app.scss */
+  /* line 133, ../scss/app.scss */
   main img {
     max-width: 100%; }
-  /* line 135, ../scss/app.scss */
+  /* line 136, ../scss/app.scss */
   main blockquote {
     background: #f9f9f9;
     border-left: 10px solid #ccc;
@@ -129,34 +129,34 @@ main {
     font-style: italic;
     font-size: 110%; }
 
-/* line 145, ../scss/app.scss */
+/* line 146, ../scss/app.scss */
 section.slide {
   padding: 1em;
   margin-bottom: 2.5em;
   border: 1px solid rgba(0, 0, 0, 0.125); }
-  /* line 150, ../scss/app.scss */
+  /* line 151, ../scss/app.scss */
   section.slide h1, section.slide > h2:first-child {
     text-decoration: lightblue underline; }
-  /* line 153, ../scss/app.scss */
+  /* line 154, ../scss/app.scss */
   section.slide > h2:first-child {
     margin: 2px 0 8px -4px;
     font-size: 2rem; }
-  /* line 157, ../scss/app.scss */
+  /* line 158, ../scss/app.scss */
   section.slide > h1 {
     font-size: 3em; }
-  /* line 162, ../scss/app.scss */
+  /* line 163, ../scss/app.scss */
   section.slide.subsection > h1 {
     background-color: #e8e8fc;
     text-align: center; }
-  /* line 166, ../scss/app.scss */
+  /* line 167, ../scss/app.scss */
   section.slide.subsection > h2:first-child {
     font-size: 3em; }
-  /* line 171, ../scss/app.scss */
+  /* line 172, ../scss/app.scss */
   section.slide h1 code, section.slide h2 code {
     color: inherit;
     padding: inherit;
     background-color: inherit; }
-  /* line 177, ../scss/app.scss */
+  /* line 178, ../scss/app.scss */
   section.slide blockquote {
     font-style: italic;
     border-left: 2px solid #ddd;
@@ -164,13 +164,13 @@ section.slide {
     font-size: 110%;
     background-color: wheat;
     color: black; }
-  /* line 186, ../scss/app.scss */
+  /* line 187, ../scss/app.scss */
   section.slide li {
     margin-bottom: .5em; }
-  /* line 190, ../scss/app.scss */
+  /* line 191, ../scss/app.scss */
   section.slide li:first-child {
     margin-top: .5em; }
-  /* line 194, ../scss/app.scss */
+  /* line 195, ../scss/app.scss */
   section.slide pre {
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -179,42 +179,42 @@ section.slide {
     padding: .5em;
     /* display: inline-block; /* so it's only as wide as its contents */ }
 
-/* line 204, ../scss/app.scss */
+/* line 205, ../scss/app.scss */
 div.right_side {
   float: right;
   max-width: 24em; }
 
-/* line 209, ../scss/app.scss */
+/* line 210, ../scss/app.scss */
 div.twitter {
   padding-left: 1em; }
 
-/* line 213, ../scss/app.scss */
+/* line 214, ../scss/app.scss */
 div.blog .rssHeader > a:after {
   content: " - Recent Blog Entries"; }
 
 /* left sidebar ("Tracks") */
-/* line 225, ../scss/app.scss */
+/* line 226, ../scss/app.scss */
 .tracks-toggler {
   padding: .25rem .75rem;
   font-size: 1.25rem;
   line-height: 1;
   background: 0 0; }
   @media (min-width: 768px) {
-    /* line 225, ../scss/app.scss */
+    /* line 226, ../scss/app.scss */
     .tracks-toggler {
       display: none; } }
   /* line 17, /Users/mansfield/Dev/burlington-code-academy/codelikethis/public/scss/bootstrap-4.3.1/scss/mixins/_hover.scss */
   .tracks-toggler:hover, .tracks-toggler:focus {
     text-decoration: none; }
 
-/* line 240, ../scss/app.scss */
+/* line 241, ../scss/app.scss */
 .tracks-toggler span.svg-icon, .toggler span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 30,1 15,30 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
-/* line 243, ../scss/app.scss */
+/* line 244, ../scss/app.scss */
 .tracks-toggler.collapsed span.svg-icon, .toggler.collapsed span.svg-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpolygon points='1,1 1,30 30,15 1,1' style='fill:gray;stroke:black;stroke-width:1' /%3E%3C/svg%3E"); }
 
-/* line 248, ../scss/app.scss */
+/* line 249, ../scss/app.scss */
 span.svg-icon {
   display: inline-block;
   width: 0.75em;
@@ -226,20 +226,20 @@ span.svg-icon {
   background-position-x: center;
   background-position-y: center; }
 
-/* line 262, ../scss/app.scss */
+/* line 263, ../scss/app.scss */
 .link .icon.freecodecamp img {
   width: 30px;
   height: 24px;
   margin: 2px 4px;
   background: green;
   border: 2px solid green; }
-/* line 271, ../scss/app.scss */
+/* line 272, ../scss/app.scss */
 .link .icon.codecademy img {
   width: 40px;
   height: 40px;
   margin: 2px 2px;
   border: none; }
-/* line 280, ../scss/app.scss */
+/* line 281, ../scss/app.scss */
 .link.topic a, .link.topic a:visited {
   font-size: 80%;
   color: black;
@@ -250,22 +250,22 @@ span.svg-icon {
   margin: 2px;
   display: inline-block; }
 
-/* line 294, ../scss/app.scss */
+/* line 295, ../scss/app.scss */
 .box {
   border: 1px solid black;
   padding: 1em;
   margin: 1em 0; }
-  /* line 299, ../scss/app.scss */
+  /* line 300, ../scss/app.scss */
   .box h2, .box h3, .box h4 {
     text-decoration: underline;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
-  /* line 304, ../scss/app.scss */
+  /* line 305, ../scss/app.scss */
   .box pre {
     background: #ededfc; }
 
 /* make the sidebars scrolly and fixed on bigger screens */
 @media (min-width: 768px) {
-  /* line 311, ../scss/app.scss */
+  /* line 312, ../scss/app.scss */
   #sidebar, #right-sidebar {
     display: block;
     max-height: calc(100vh - 75px);
@@ -275,13 +275,13 @@ span.svg-icon {
     z-index: 1000;
     padding-top: 1rem; }
 
-  /* line 323, ../scss/app.scss */
+  /* line 324, ../scss/app.scss */
   a[name=content] {
     display: block;
     position: relative;
     height: 75px; }
 
-  /* line 328, ../scss/app.scss */
+  /* line 329, ../scss/app.scss */
   a.slide-anchor {
     display: block;
     position: relative;
@@ -289,30 +289,30 @@ span.svg-icon {
     height: 0;
     top: -75px; } }
 @media (min-width: 768px) {
-  /* line 337, ../scss/app.scss */
+  /* line 338, ../scss/app.scss */
   #sidebar-tracks {
     display: block; } }
 
 @media (max-width: 767.98px) {
-  /* line 346, ../scss/app.scss */
+  /* line 347, ../scss/app.scss */
   #sidebar {
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray; }
-    /* line 349, ../scss/app.scss */
+    /* line 350, ../scss/app.scss */
     #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
       margin: 2px 0; } }
-/* line 355, ../scss/app.scss */
+/* line 356, ../scss/app.scss */
 #sidebar-tracks, #right-sidebar > .outline > .list-group {
   font-size: 85%; }
-  /* line 358, ../scss/app.scss */
+  /* line 359, ../scss/app.scss */
   #sidebar-tracks .list-group.lesson-names, #right-sidebar > .outline > .list-group .list-group.lesson-names {
     margin-top: .5rem;
     border-radius: 0; }
-    /* line 361, ../scss/app.scss */
+    /* line 362, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .list-group-item, #right-sidebar > .outline > .list-group .list-group.lesson-names .list-group-item {
       padding: .4rem 0 .4rem 1.8rem;
       margin: 0 -1rem; }
-    /* line 367, ../scss/app.scss */
+    /* line 368, ../scss/app.scss */
     #sidebar-tracks .list-group.lesson-names .loading_image, #right-sidebar > .outline > .list-group .list-group.lesson-names .loading_image {
       background-image: url(/images/loading.gif);
       background-repeat: no-repeat;
@@ -323,16 +323,16 @@ span.svg-icon {
       float: right;
       margin: 0 2px;
       display: none; }
-  /* line 382, ../scss/app.scss */
+  /* line 383, ../scss/app.scss */
   #sidebar-tracks .active, #right-sidebar > .outline > .list-group .active {
     background-color: #EEF; }
-  /* line 385, ../scss/app.scss */
+  /* line 386, ../scss/app.scss */
   #sidebar-tracks a, #right-sidebar > .outline > .list-group a {
     color: black;
     display: inline-block;
     width: 100%; }
 
-/* line 393, ../scss/app.scss */
+/* line 394, ../scss/app.scss */
 #sidebar-tracks a.track-info-link {
   display: inline;
   position: absolute;
@@ -344,49 +344,49 @@ span.svg-icon {
   font-size: 150%;
   right: 2px;
   visibility: hidden; }
-/* line 408, ../scss/app.scss */
+/* line 409, ../scss/app.scss */
 #sidebar-tracks div.track-name:hover a.track-info-link {
   visibility: visible;
   background-color: white; }
 
-/* line 414, ../scss/app.scss */
+/* line 415, ../scss/app.scss */
 .dropdown-menu a.track-name {
   text-transform: none; }
 
-/* line 418, ../scss/app.scss */
+/* line 419, ../scss/app.scss */
 section.breadcrumbs {
   background-color: #f7f7f7;
   border: 1px solid #e6e0e6;
   border-bottom: 1px solid #e6e0e6;
   padding: .5em; }
-  /* line 424, ../scss/app.scss */
+  /* line 425, ../scss/app.scss */
   section.breadcrumbs > .row {
     max-width: 100em;
     margin: auto; }
-  /* line 429, ../scss/app.scss */
+  /* line 430, ../scss/app.scss */
   section.breadcrumbs h1.lesson-name {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin-bottom: 0;
     line-height: 1.0; }
-  /* line 435, ../scss/app.scss */
+  /* line 436, ../scss/app.scss */
   section.breadcrumbs a.next_lesson, section.breadcrumbs a.previous_lesson {
     font-size: 80%;
     font-weight: bold;
     font-style: italic; }
-  /* line 441, ../scss/app.scss */
+  /* line 442, ../scss/app.scss */
   section.breadcrumbs a {
     color: black; }
 
-/* line 446, ../scss/app.scss */
+/* line 447, ../scss/app.scss */
 div#disqus_thread {
   border: 1px solid gray;
   padding: 1em; }
 
-/* line 451, ../scss/app.scss */
+/* line 452, ../scss/app.scss */
 div.main_column img {
   max-width: 100%; }
 
-/* line 455, ../scss/app.scss */
+/* line 456, ../scss/app.scss */
 footer {
   clear: both;
   padding: 2rem;
@@ -395,7 +395,7 @@ footer {
   max-width: 60em;
   margin: auto; }
 
-/* line 464, ../scss/app.scss */
+/* line 465, ../scss/app.scss */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -403,7 +403,7 @@ footer {
   padding-top: 25px;
   height: 0;
   overflow: hidden; }
-  /* line 471, ../scss/app.scss */
+  /* line 472, ../scss/app.scss */
   .video-container iframe, .video-container object, .video-container embed {
     position: absolute;
     top: 0;
@@ -411,12 +411,12 @@ footer {
     width: 100%;
     height: 100%; }
 
-/* line 480, ../scss/app.scss */
+/* line 481, ../scss/app.scss */
 table {
   border: 2px solid gray;
   border-collapse: collapse;
   box-shadow: #c8c8f1 2px 2px 4px; }
-  /* line 485, ../scss/app.scss */
+  /* line 486, ../scss/app.scss */
   table ul {
     list-style: none;
     -webkit-margin-before: 0;
@@ -424,50 +424,50 @@ table {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0; }
-  /* line 493, ../scss/app.scss */
+  /* line 494, ../scss/app.scss */
   table td.lessons {
     font-size: 90%;
     padding-top: .5em; }
-  /* line 497, ../scss/app.scss */
+  /* line 498, ../scss/app.scss */
   table, table td, table th {
     border: 1px solid black;
     padding: 4px 8px 8px; }
-  /* line 501, ../scss/app.scss */
+  /* line 502, ../scss/app.scss */
   table th {
     text-shadow: 1px 1px #ededed;
     background-color: #B3C8E8; }
-  /* line 507, ../scss/app.scss */
+  /* line 508, ../scss/app.scss */
   table tr:nth-child(even) {
     background-color: #EEEEF2; }
-  /* line 510, ../scss/app.scss */
+  /* line 511, ../scss/app.scss */
   table tr:nth-child(odd) {
     background-color: #FFFFFF; }
-  /* line 513, ../scss/app.scss */
+  /* line 514, ../scss/app.scss */
   table a {
     text-decoration: none;
     display: block;
     padding: 2px; }
-  /* line 518, ../scss/app.scss */
+  /* line 519, ../scss/app.scss */
   table a:hover {
     text-decoration: underline;
     background-color: #B3C8E8; }
-  /* line 522, ../scss/app.scss */
+  /* line 523, ../scss/app.scss */
   table a:visited {
     color: black; }
 
-/* line 527, ../scss/app.scss */
+/* line 528, ../scss/app.scss */
 .markdown {
   padding-left: 4em; }
-  /* line 529, ../scss/app.scss */
+  /* line 530, ../scss/app.scss */
   .markdown h1 {
     margin-left: -2em; }
-  /* line 532, ../scss/app.scss */
+  /* line 533, ../scss/app.scss */
   .markdown h2 {
     margin-left: -2em; }
-  /* line 535, ../scss/app.scss */
+  /* line 536, ../scss/app.scss */
   .markdown h3 {
     margin-left: -1em; }
-  /* line 539, ../scss/app.scss */
+  /* line 540, ../scss/app.scss */
   .markdown kbd {
     display: inline-block;
     padding: 3px 5px;
@@ -481,19 +481,23 @@ table {
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #959da5; }
 
-/* line 555, ../scss/app.scss */
+/* line 556, ../scss/app.scss */
 span.video_link {
   border: 1px dotted black;
   padding: 1px 2px;
   margin-left: 1em; }
   @media screen {
-    /* line 555, ../scss/app.scss */
+    /* line 556, ../scss/app.scss */
     span.video_link {
       float: right; } }
 
-/* line 564, ../scss/app.scss */
+/* line 565, ../scss/app.scss */
 .slides.btn.btn-primary {
   background-color: #f0921a;
   border-color: #f0921a; }
+
+/* line 570, ../scss/app.scss */
+svg.fa-info-circle {
+  color: #48a2bf; }
 
 /*# sourceMappingURL=app.css.map */

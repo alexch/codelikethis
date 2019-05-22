@@ -67,6 +67,10 @@ class App < Sinatra::Base
     end
   end
 
+  get '/favicon.ico' do
+    send_file(File.join(here, "public", "images", "favicon.ico"))
+  end
+
   get '/lessons' do
     page(thing: Tracks.new(site: site)).to_html
   end

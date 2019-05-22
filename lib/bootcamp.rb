@@ -120,7 +120,7 @@ class Bootcamp < Site
 
   class NavBar < ::NavBar
     def logo klass: nil, style: nil
-      a(href: 'http://www.burlingtoncodeacademy.com',
+      a(href: '/',
         class: 'navbar-brand') {
         img.logo(src: '/images/burlingtoncodeacademy-logo.png',
                  width: 265, height: 36,
@@ -133,32 +133,9 @@ class Bootcamp < Site
     def nav_items
       nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
       nav_item name: "Hire Our Grads", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
-      # nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
-      # nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
-
+      nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
+      nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
       nav_item name: "Schedule", href: "/schedule"
-
-      nav_item name: "Curriculum", dropdown: true do
-        a(@site.display_name, class: 'dropdown-item', href: @site.href)
-        @site.tracks.each do |track|
-          if (track == ::Track::Separator)
-            hr
-          else
-
-          a(class: ['dropdown-item', 'track-name'],
-            href: track.href
-          ) {
-            i(class: "fas fa-angle-right")
-            text nbsp
-            text nbsp
-            text track.display_name
-          }
-          end
-        end
-
-
-      end
-
       nav_item name: "Apply", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
     end
   end

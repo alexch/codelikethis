@@ -20,6 +20,7 @@ $font-family-sans-serif:
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $body-color: #131516;
 $btvca-blue: #48a2bf;
+$btvca-orange: #f0921a;
 
 body {
   font-family: $font-family-sans-serif;
@@ -58,8 +59,8 @@ nav.navbar {
       font-weight: 600;
       font-size: 13px;
       color: white;
-      background-color: rgb(247, 147, 30); // orangeish
-      border-color: rgb(247, 147, 30); // orangeish
+      background-color: $btvca-orange; // orangeish
+      border-color: $btvca-orange; // orangeish
       padding: 1em 1.5em;
     }
   }
@@ -562,6 +563,10 @@ span.video_link {
 }
 
 .slides.btn.btn-primary {
-  background-color: #f0921a;;
-  border-color: #f0921a;
+  background-color: $btvca-orange;
+  border-color: $btvca-orange;
+}
+
+svg.fa-info-circle {
+  color: $btvca-blue;
 }
