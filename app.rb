@@ -221,17 +221,17 @@ class App < Sinatra::Base
     end
 
     site = [
-        CodeLikeThis,
         Bootcamp,
         JavascriptAfterHours,
         Curriculum,
-        Taste
+        Taste,
+        CodeLikeThis,
     ].map(&:new).detect do |site|
       site.host? sitename
     end
     if site.nil?
-      @warning = "No site found for #{sitename}; using CodeLikeThis content."
-      site = CodeLikeThis.new
+      @warning = "No site found for #{sitename}; using Bootcamp content."
+      site = Bootcamp.new
     end
     site
   end

@@ -12,7 +12,7 @@ class Bootcamp < Site
 
   # base site has all tracks
   def hostname
-    ["bootcamp.burlingtoncodeacademy.com", "bootcamp"]
+    ["bootcamp.burlingtoncodeacademy.com", "bootcamp", "localhost"]
   end
 
   def google_calendar_id
