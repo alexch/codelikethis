@@ -1,15 +1,17 @@
 require './app'
 require 'rack/rewrite'
+require 'rack/cache'
 
 if ENV['RACK_ENV'] == 'production'
   require 'rack/ssl'
   use Rack::SSL
 end
+use Rack::Cache
+use Rack::ConditionalGet
+use Rack::ETag
+use Rack::Deflater
 use Rack::ShowExceptions
 use Rack::ShowStatus
-use Rack::Deflater
-use Rack::ETag
-use Rack::ConditionalGet
 
 # https://github.com/jtrupiano/rack-rewrite
 use Rack::Rewrite do

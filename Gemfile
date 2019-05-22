@@ -13,13 +13,14 @@ gem "chronic", "~> 0.10.2"
 gem "redcarpet", "~> 2.3"
 gem "rack-ssl", "~> 1.4"
 gem "barnes", "~> 0.0.7"
+gem "nokogiri", "~> 1.7" # fixed versions, for Windows
+gem "rack-cache", "~> 1.9.0"
+gem "rake", "~> 12.3"
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
-
   gem "listen", "~> 3.1"
   gem 'wdm', '~> 0.1.0' if Gem.win_platform?
-  gem "rake", "~> 12.3"
   gem "files", "~> 0.4.0"
   gem "pry", "~> 0.12.2"
   gem "wrong", git: "https://github.com/alexch/wrong.git"
@@ -29,7 +30,3 @@ end
 group :test do
   gem "rspec", "~> 3.8"
 end
-
-
-# odd fixed versions, for Windows
-gem "nokogiri", "~>1.7"

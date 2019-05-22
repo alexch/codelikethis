@@ -37,7 +37,10 @@ class App < Sinatra::Base
   include Erector::Mixin
   include AppHelpers
 
+  set :static_cache_control, [:public, :max_age => 300]
+
   before do
+    cache_control :public, max_age: 300
     Thread.current[:development_mode] = (request.host =~ /^(localhost|127\.0\.0\.1)$/)
   end
 
