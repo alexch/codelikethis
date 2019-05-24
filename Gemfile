@@ -16,6 +16,7 @@ gem "barnes", "~> 0.0.7"
 gem "nokogiri", "~> 1.7" # fixed versions, for Windows
 gem "rack-cache", "~> 1.9.0"
 gem "rake", "~> 12.3"
+gem "rspec", "~> 3.8"
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
@@ -25,8 +26,4 @@ group :development, :test do
   gem "pry", "~> 0.12.2"
   gem "wrong", git: "https://github.com/alexch/wrong.git"
   gem "rerun", git: "https://github.com/alexch/rerun.git"
-end
-
-group :test do
-  gem "rspec", "~> 3.8"
 end
