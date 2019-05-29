@@ -25,7 +25,7 @@ task :build_css do
   css_file = File.join(css_dir, "app.css")
 
   if File.mtime(scss_file) > File.mtime(css_file)
-    sh(["sass",
+    sh(["bin/sass",
       "--load-path #{bootstrap_dir}",
       "--style compressed",
       "--line-comments",
