@@ -45,7 +45,6 @@ task :build => [
   puts "Built."
 end
 
-require 'awesome_print'
 desc "run app and keep building and running it"
 task :rerun do
   cmd = %w{bundle exec rerun -- rackup}
@@ -54,5 +53,5 @@ end
 
 desc "run app"
 task :run => :build do
-  sh "rackup"
+  sh "bundle exec rackup"
 end
