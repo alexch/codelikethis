@@ -87,12 +87,8 @@ class ThingPage < AppPage
            crossorigin: "anonymous"
 
     script defer: "defer",
-           src: "https://use.fontawesome.com/releases/v5.8.2/js/all.js",
-           integrity: "sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH",
+           src: "https://cdn.jsdelivr.net/combine/npm/@fortawesome/fontawesome-free@5.8.2,npm/@fortawesome/fontawesome-free@5.8.2/js/solid.min.js",
            crossorigin: "anonymous"
-
-    script defer: "defer",
-           src: "/highlight.min.js"
 
     script defer: "defer",
            src: "/js/app.js"
