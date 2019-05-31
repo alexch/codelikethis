@@ -31,7 +31,7 @@ module Views
       # https://twitter.com/settings/widgets
       # https://dev.twitter.com/docs/embedded-timelines
       rawtext <<-HTML
-<a class="twitter-timeline" href="https://twitter.com/codelikethis">Tweets by codelikethis</a> 
+<a class="twitter-timeline" href="https://twitter.com/burlingtoncodeacademy">Tweets by Burlington Code Academy</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       HTML
     end
