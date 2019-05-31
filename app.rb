@@ -1,20 +1,18 @@
-require 'sinatra/base'
-require "sinatra/cookies"
-
-require 'erector'
-require 'deck/slide'
-require 'deck/slide_deck'
-require 'deck/rack_app'
+# frozen_string_literal:  true
 
 # add "lib" dir to Ruby load path
 here = ::File.expand_path(File.dirname(__FILE__))
 lib = "#{here}/lib"
-$: << lib
+$LOAD_PATH << lib
 
+require 'sinatra/base'
+require 'sinatra/cookies'
+require 'erector'
+require 'deck/slide'
+require 'deck/slide_deck'
+require 'deck/rack_app'
 require 'util'
-require "hash_extensions"
-# require_all(lib)
-
+require 'hash_extensions'
 require 'site'
 require 'app_page'
 require 'tracks_table'
@@ -25,8 +23,7 @@ module AppHelpers
   def page_title object, extra = nil
     [
         (object.display_name rescue object.to_s),
-        extra,
-        "- Code Like This"
+        extra
     ].compact.join(' ')
   end
 end
