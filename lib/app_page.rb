@@ -83,7 +83,7 @@ class ThingPage < AppPage
 
   def footer_content
     p(rawtext <<-HTML)
-    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Burlington Code Academy Curriculum"</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="http://burlingtoncodeacademy.com" property="cc:attributionName" rel="cc:attributionURL">Burlington Code Academy</a>
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Burlington Code Academy Curriculum"</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://burlingtoncodeacademy.com" property="cc:attributionName" rel="cc:attributionURL">Burlington Code Academy</a>
     is licensed under:
     <br /><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
     <br />
