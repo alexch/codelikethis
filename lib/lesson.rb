@@ -265,6 +265,11 @@ class Lesson < Thing
 
         br
       }
+
+      stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
+      stylesheet name: "highlight/solarized-light"
+      script defer: "defer",
+             src: "/highlight.min.js"
     end
 
     def breadcrumbs

@@ -194,9 +194,6 @@ class ThingPage < AppPage
       footer_content
     }
 
-    stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
-    stylesheet name: "highlight/solarized-light"
-
     body_scripts
   end
 
