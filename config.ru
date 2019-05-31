@@ -24,7 +24,7 @@ use Rack::Rewrite do
     match[0].gsub(/_+/, '-')
   end), :if => (lambda do |rack_env|
     # ...except for media file requests
-    rack_env["REQUEST_PATH"] !~ /\.(jpg|jpeg|gif|png|svg|js|css|html|mp4|wav|mp3)$/
+    rack_env["REQUEST_PATH"] !~ /\.(jpg|jpeg|gif|png|svg|js|css|scss|html|mp4|wav|mp3)$/
   end)
 
   moved_permanently '/lessons/learn_to_code/learn_to_code',
