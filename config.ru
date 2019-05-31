@@ -10,7 +10,6 @@ use Rack::Cache
 use Rack::ConditionalGet
 use Rack::ETag
 use Rack::Deflater
-use Rack::ShowExceptions
 use Rack::ShowStatus
 
 # https://github.com/jtrupiano/rack-rewrite
