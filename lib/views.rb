@@ -5,6 +5,18 @@
 
 module Views
 
+  def stylesheet attributes = {}
+    href = if attributes[:href]
+             href
+           elsif attributes[:name]
+             "/css/#{attributes[:name]}.css"
+           else
+             raise "requires either a name or an href"
+           end
+    link_attributes = {rel: "stylesheet", href: href}.merge(attributes)
+    link(link_attributes)
+  end
+
   def centered_codelikethis_logo
     center class: 'logo ml-auto mr-auto' do
       img.logo(src: '/images/codelikethis-logo.png',

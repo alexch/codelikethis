@@ -43,19 +43,6 @@ class ThingPage < AppPage
     link rel: "stylesheet", href: href, type: "text/css", charset: "utf-8"
   end
 
-  # todo: promote into Page
-  def stylesheet attributes = {}
-    href = if attributes[:href]
-             href
-           elsif attributes[:name]
-             "/css/#{attributes[:name]}.css"
-           else
-             raise "requires either a name or an href"
-           end
-    link_attributes = {rel: "stylesheet", href: href}.merge(attributes)
-    link(link_attributes)
-  end
-
   def head_content
     super
 
