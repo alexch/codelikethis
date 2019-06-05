@@ -61,22 +61,24 @@ One number is *divisible* by another if you divide them and the *remainder* is 0
 
 Write a function called `divisible` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
 
-    divisible(100, 10)    //=> true
-    divisible(100, 7)     //=> false
-    divisible(3333, 11)   //=> true
-    divisible(99, 12)     //=> false
-
+```js
+divisible(100, 10)    //=> true
+divisible(100, 7)     //=> false
+divisible(3333, 11)   //=> true
+divisible(99, 12)     //=> false
+```
 # Rant!!!
 
 Here is a function that takes an "opinion" as input, and as output returns a VERY FORCEFUL statement of that opinion.
 
-    function rant(opinion) {
-      let strongOpinion = opinion.toUpperCase();
-      return strongOpinion + '!!!';
-    }
+```js
+function rant(opinion) {
+  let strongOpinion = opinion.toUpperCase();
+  return strongOpinion + '!!!';
+}
 
-    rant('i like pizza');  #=> 'I LIKE PIZZA!!!'
-
+rant('i like pizza');  #=> 'I LIKE PIZZA!!!'
+```
 The variable `strongOpinion` is called a *local variable* and can only be used *inside* the function.
 
 # Lab: Capitalize
@@ -92,15 +94,17 @@ Remember that there are many [string operations](https://developer.mozilla.org/e
 
 # Capitalize
 
-    function capitalize(word) {
-      let firstLetter = word[0];
-      let restOfWord = word.slice(1);
-      return firstLetter.toUpperCase() + restOfWord.toLowerCase();
-    }
+```js
+function capitalize(word) {
+  let firstLetter = word[0];
+  let restOfWord = word.slice(1);
+  return firstLetter.toUpperCase() + restOfWord.toLowerCase();
+}
 
-    console.log(capitalize('smith'));
-    console.log(capitalize('MACGUYVER'));
+console.log(capitalize('smith'));
+console.log(capitalize('MACGUYVER'));
 
+```
 The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function.
 
 # Passing Variables to Functions
