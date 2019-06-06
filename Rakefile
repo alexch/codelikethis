@@ -24,7 +24,7 @@ task :build_css do
   scss_file = File.join(sass_dir, "app.scss")
   css_file = File.join(css_dir, "app.css")
 
-  if File.mtime(scss_file) > File.mtime(css_file)
+  if not File.exists?(css_file) or File.mtime(scss_file) > File.mtime(css_file)
     sh(["bin/sass",
       "--load-path #{bootstrap_dir}",
       "--style compressed",
@@ -54,4 +54,14 @@ end
 desc "run app"
 task :run => :build do
   sh "bundle exec rackup"
+end
+
+desc "clean"
+task :clean do
+  public_dir = "public"
+  css_dir = File.join public_dir, "css"
+  css_file = File.join(css_dir, "app.css")
+  map_file = File.join(css_dir,"app.css.map")
+  File.delete(css_file)
+  File.delete(map_file)
 end
