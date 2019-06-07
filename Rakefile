@@ -28,7 +28,6 @@ task :build_css do
     sh(["bin/sass",
       "--load-path #{bootstrap_dir}",
       "--style compressed",
-      "--line-comments",
       scss_file,
       css_file,
      ].join(" "))
