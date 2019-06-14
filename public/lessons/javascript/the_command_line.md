@@ -145,8 +145,8 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
   
 # Lab: Home Decor
 
-1. Using your GUI desktop, navigate to your home directory and open it in a desktop window. 
-<br>(Your desktop is called "Finder" in MacOS, or "Explorer" in Windows)
+1. Using your GUI, navigate to your home directory and open it in a file manager window. 
+<br>(Your file manager is called "Finder" in MacOS, or "Explorer" in Windows. There are various ones on linux.)
 2. Using your terminal, list your home directory's contents.
 3. Look carefully at them both. What's the same? What's different?
 
