@@ -212,7 +212,7 @@ function poemLine(lineNumber) {
     } else if (lineNumber === 4) {
         return "4!"
     } else {
-        return "" + lineNumber + ","
+        return " " + lineNumber + " potato,"
     }
 }
 ```
