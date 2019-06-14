@@ -44,16 +44,21 @@ app.listen(port, () => console.log(`Listening on port ${port}!`))
 
 A *package file* contains information about how to build and run your app.
 
-In Code, open the file named `package.json` and add the `start` script line like this:
+In Code, open the file named `package.json`, it will have a section like this:
 
 ```json
-{
-  "name": "hello-express",
-  "scripts": {
-    "start": "node server.js"
-  }
-}
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
 ```
+
+Change it to look like this:
+```json
+"scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  ```
 
 > Note that the code after `start` is *exactly* what you typed in the shell to run the app locally.
 

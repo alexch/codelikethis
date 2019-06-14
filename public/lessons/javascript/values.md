@@ -65,13 +65,22 @@ When reading JavaScript code, if you ever see two slashes in a row, that means "
 
 A comment is a message for humans. JavaScript ignores everything to the right of the slashes, so you can explain what the nearby code does, or why it does it.
 
-In these lessons, we often use comments to explain the *result* of executing the nearby code. In this case, we sometimes add an arrow to the comment:
+In these lessons, we often use comments to explain the *result* of executing the nearby code. In this case, we sometimes add an arrow to the comment:  
 
 ```javascript
 2 + 2  //=> 4
+3 + 5 // -> 8
 ```
 
-> JavaScript also has multi-line comments via `/* ... */` but those are less common.
+> JavaScript also has multi-line comments via `/* ... */` but those are less common. They can also be used to comment out a section within a line:  
+
+```javascript
+/* This is
+ * a multiline
+ * comment! */
+
+ console.log(x /*some variable from earlier*/);
+ ```
 
 # Expression Evaluation
 
