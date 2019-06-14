@@ -82,7 +82,7 @@ Wait a second. "Truthy?"
 
 Fortunately, `true` is truthy and `false` is falsy.
 
-Unfortunately, the string `"false"` is truthy, and the string `"0"` is truthy, even though the number `0` is falsy.
+Unfortunately, the string `"false"` is truthy, and the string `"0"` is truthy, even though the number `0` is falsy. This is because the string contains a character, and, even though the character is `0`, any string with at least one character is truthy.
 
 [MDN: Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
 
@@ -159,6 +159,8 @@ That's three equal signs in a row.
 Since the rules for type conversion are confusing, most JavaScript experts recommend:
 
 > always use `===`, never use `==`
+
+> Using `==` can have some very interesting side effects, see [Stackoverflow](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons)
 
 # Conjunction Junction
 
