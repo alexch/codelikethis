@@ -5,7 +5,7 @@
 main site: <http://cypress.io>
 
 guides: <https://docs.cypress.io/guides>
- 
+
 API doc: <https://docs.cypress.io/api>
 
 # Cypress Features
@@ -23,12 +23,12 @@ API doc: <https://docs.cypress.io/api>
 Cypress is *not* an after-the-fact click-and-record QA automation tool for so-called "non-technical" testers.
 
  * tests are written in *modern JavaScript* so your testers need to understand callbacks, method chaining, jQuery, Mocha and Chai, and fat arrows, as well as CSS selectors and DOM lifecycle events
- 
- * tests use an *enqueued linear control flow* so some familiar techniques like `if..then` and `let` variables don't work as expected 
+
+ * tests use an *enqueued linear control flow* so some familiar techniques like `if..then` and `let` variables don't work as expected
    * fortunately the docs are **amazing** and cover these scenarios very well
 
  * tests use CSS selectors to find page elements, so your app needs to be written with sensible `id`s and `class`es and `data-*` values in its DOM
- 
+
 > "Yes, this may require server side updates, but you have to make an untestable app testable if you want to test it!" - [Cypress Conditional Testing Guide](https://docs.cypress.io/guides/core-concepts/conditional-testing.html)
 
 # Cypress Runner UI
@@ -46,7 +46,7 @@ Cypress is also runnable "headless" with `cypress run`
 
 # Simple Example
 
-```
+```js
 describe('Post Resource', function() {
   it('Creating a New Post', function() {
     cy.visit('/posts/new')     // 1.
@@ -83,7 +83,9 @@ from <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#
 
 # visit
 
-`cy.visit('/cart')` 
+```js
+cy.visit('/cart')
+```
 
 * attempts to load the path `/cart` from the local server
 
@@ -99,7 +101,9 @@ from <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#
 
 # get
 
-`cy.get('#someId')`
+```
+cy.get('#someId')
+```
 
 * takes a *CSS selector*
 * *waits up to 10 seconds* for the selector to match an element on the page
@@ -107,14 +111,14 @@ from <https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#
 * returns a *cypress wrapper* (aka *Chainer*) for the matching element(s)
 * that accepts further commands (like `type` and `submit` below)
 
-```javascript
+```js
 cy.get('form#login input[name="username"]')
   .type('HomerSimpson1989')
 cy.get('form#login')
   .submit()
 ```
 
-> Note: cypress Chainers are quite similar to jQuery wrapper objects. Both are 
+> Note: cypress Chainers are quite similar to jQuery wrapper objects. Both are
 DOM element collection wrappers that support method chaining.
 
 # some commands for interacting with the DOM
@@ -139,7 +143,7 @@ see <https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html
 
 e.g.:
 
-```javascript
+```js
 cy.get('h2')
   .contains('New York')
 ```
@@ -173,7 +177,7 @@ Cypress's [`should`](https://docs.cypress.io/api/commands/should.html) method le
 
 Using `should` on a chainer, you specify the Chai assertion *as a string*; `should` will execute that assertion repeatedly *on the target element* until it becomes true.
 
-```
+```js
 cy.get('input[name="firstName"]')
   .should('have.value', 'Homer')
 ```
@@ -202,9 +206,9 @@ Some commands have longer default timeouts -- e.g. `visit`'s is 60 seconds, to a
 
 Any timeout can be overridden temporarily with an option, e.g.:
 
-```
-cy
-  .get('.mobile-nav', { timeout: 10000 }) // 10 seconds
+```js
+// 10 seconds
+cy.get('.mobile-nav', { timeout: 10000 })
   .should('be.visible')
 ```
 
@@ -212,7 +216,7 @@ cy
 
 * `then` lets you access matching elements in a callback
 
-```
+```js
 cy.get('div#preview').then((element) => {
   assert.include(element.text().toLowerCase(), 'hello');
 });
@@ -229,7 +233,7 @@ cy.get('div#preview').then((element) => {
 
 For example, given this HTML:
 
-```
+```html
 <h2>New York</h2>
 <h2>Los Angeles</h2>
 ```
@@ -258,42 +262,42 @@ Fortunately, there is `each`
 # project structure
 
 * all cypress files are under `./cypress`
-* most tests go under `./cypress/integration` 
+* most tests go under `./cypress/integration`
 * inside a test file you use familiar Jasmine functions:
     * `describe` (aka `context`)
     * `it` (aka `specify`)
     * `expect` or `should` or `assert.` according to taste
     * `beforeEach` (or `before` if you must)
 
-```javascript  
-    describe('Unit test our math functions', function() {
-      context('math', function() {
-        it('can add numbers', function() {
-          expect(add(1, 2)).to.eq(3)
-        })
-      })
-     })
+```js
+describe('Unit test our math functions', function() {
+  context('math', function() {
+    it('can add numbers', function() {
+      expect(add(1, 2)).to.eq(3)
+    })
+  })
+})
 ```
 
 see <https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Folder-Structure>
 
 # only
 
-If you want to temporarily enable or disable tests, you can use `only` or `skip`, e.g. 
+If you want to temporarily enable or disable tests, you can use `only` or `skip`, e.g.
 
 when these tests are run, all will be skipped except this one:
 
-```
-it.only('returns "fizz" when number is multiple of 3', function () {
+```js
+it.only('returns "fizz" when number is multiple of 3', function () {})_
 ```
 
 `skip` is the inverse of `only`, temporarily removing a single test case from the running suite so it doesn't clutter your logs.
 
-```
-it.skip('does something interesting that is not coded yet', function () {
+```js
+it.skip('does something interesting that is not coded yet', function () {})
 ```
 
-> Remember to delete your `skip`s and `only`s before making a commit! 
+> Remember to delete your `skip`s and `only`s before making a commit!
 
 # debug
 
@@ -305,31 +309,30 @@ If you want more fine-grained breakpoints...
 
 Use `debugger` or `.debug()` just BEFORE the action:
 
-```
+```js
 // break on a debugger before the click command
 cy.get('button').debug().click()
 ```
 
-```
-// break on a debugger before the get command
-debugger
+```js
+// break on a debugger before the get command debugger
 cy.get('button').click()
 ```
 
-> Remember to delete your `debug`s before making a commit! 
+> Remember to delete your `debug`s before making a commit!
 
 # LAB: Tic Tac Test (part 1)
 
 * on GitHub, find a [Tic Tac Toe](/projects/tic_tac_toe_www) app that was written by *someone else* and copy its git URL
 * locally clone that repo, e.g.
 
-```
+```sh
 git clone git@github.com:BurlingtonCodeAcademy/tic-tac-toe-jon-and-bob.git
 ```
 
 * enter that directory and install *Cypress* and *Node-Static*:
 
-```
+```sh
 cd tic-tac-toe-jon-and-bob
 npm install cypress
 npm install node-static
@@ -337,7 +340,7 @@ npm install node-static
 
 * inside the project root directory, create a file named `cypress.json` and put this code inside it:
 
-```
+```json
 {
     "baseUrl": "http://localhost:5000/"
 }
@@ -346,13 +349,13 @@ npm install node-static
 
 * create a directory named `cypress` and a subdirectory named `integration`
 
-```
+```sh
 mkdir -p cypress/integration
 ```
 
 * inside `cypress/integration` create a file named `ticTacToe.spec.js` and put this code inside it:
 
-```
+```js
 describe('Cypress', function () {
   it('successfully visits the home page', function () {
     cy.visit('/');
@@ -364,13 +367,13 @@ describe('Cypress', function () {
 
 * in one console window, run a static web server:
 
-```
+```sh
 npx node-static .
 ```
 
 * in a *different* console window, run Cypress:
 
-```
+```sh
 npx cypress open
 ```
 
@@ -404,7 +407,7 @@ This trick works in Visual Studio Code (and probably other editors too)
 
 [alias](https://docs.cypress.io/guides/core-concepts/variables-and-aliases.html) a selection with `as` for later use (since local variables are awkward to use in an async world)
 
-```javascript
+```js
 cy.get('table').find('tr').as('rows');
 cy.get('@rows').first().click();
 ```
@@ -413,7 +416,7 @@ cy.get('@rows').first().click();
 
 [stubs and spies, mocks and clocks](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Capabilities) for when you want to deceive your app
 
-```javascript
+```js
 cy.clock()
 cy.get('#timer').contains('00:00.00')
 cy.get('#start').click()
@@ -427,7 +430,7 @@ cy.get('#timer').contains('10:00.00')
 
 * [routes](https://docs.cypress.io/guides/guides/network-requests.html) for stubbing network requests
 
-```javascript
+```js
 cy.server()           // enable response stubbing
 cy.route({
   method: 'GET',      // Route all GET requests
@@ -438,11 +441,11 @@ cy.route({
 
 * fixtures and routes go together like peanut butter and jelly
 
-```javascript
+```js
 cy.fixture('activities.json').as('activitiesJSON')
 cy.route('GET', 'activities/*', '@activitiesJSON')
 ```
 
 # docs
- 
+
 Great docs! Including a [Recipies cheatsheet](https://docs.cypress.io/examples/examples/recipes.html) and clearly written [guides](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
