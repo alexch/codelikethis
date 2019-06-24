@@ -85,22 +85,28 @@ What is the CSS doing here?
 
 # Examples of Selectors
 
-| selector     | meaning          |
-|--------------|------------------|
+| selector         | meaning          |
+|------------------|------------------|
 | `p`, `div`, etc. | element selector |
-| `.class`     | class selector   |
-| `#id`        | ID selector      |
-| `*`          | Wildcard ("any") |
+| `.class`         | class selector   |
+| `#id`            | ID selector      |
+| `*`              | Wildcard ("any") |
 
 # Examples of Properties
 
-| property    | meaning                                |
-|-------------|----------------------------------------|
+| property      | meaning                                |
+|---------------|----------------------------------------|
 | `color`       | text color                             |
 | `border`      | Defines border width, style, and color |
 | `text-align`  | justifies text                         |
 | `font-size`   | size of font                           |
 | `font-family` | defines font                           |
+
+# LAB: Basic Selectors
+
+* Complete the following exercise on Mozilla Developer Network
+
+  * [Selecting Different Elements](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors#Active_learning_Selecting_different_elements)
 
 # Compound Selectors 1
 
@@ -124,6 +130,12 @@ h1 .title {
   padding-top: 1em;
 }
 ```
+
+# LAB: Multiple Class Selectors
+
+* Complete the following exercise on Mozilla Developer Network
+
+  * [CSS Selectors for Multiple Classes](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors#Active_learning_Handling_multiple_classes)
 
 # Compound Selectors 3
 
@@ -165,6 +177,12 @@ a:active {
   background-color: green;
 }
 ```
+
+# LAB: CSS Diner
+
+* Complete the following CSS selector game
+
+  * https://flukeout.github.io/
 
 # Including CSS into HTML
 
@@ -320,16 +338,3 @@ h1 {
   background-color: blue;
 }
 ```
-
-# TODO
-
-- `px` and `pt` and `em` and `rem`
-- fonts: which fonts are always available? what are web fonts?
-- fontawesome (inline icons as font glyphs)
-- space vs. greater-than (descendant vs. child) in css selectors
-
-- "every config file eventually becomes Turing-complete" see also <http://beza1e1.tuxen.de/articles/accidentally_turing_complete.html> and
-<https://stackoverflow.com/questions/648246/at-what-point-does-a-config-file-become-a-programming-language>
-
-- reset.css
-- print.css
