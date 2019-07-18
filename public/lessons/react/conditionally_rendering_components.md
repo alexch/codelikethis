@@ -4,15 +4,15 @@
 * State within the Class or Function can be used in the conditions
 
 ```javascript
-UserGreeting = (props) => {
+const UserGreeting = (props) => {
   return <h1>Welcome back!</h1>;
 }
 
-GuestGreeting = (props) => {
+const GuestGreeting = (props) => {
   return <h1>Please sign up.</h1>;
 }
 
-Greeting = (props) =>  {
+const Greeting = (props) =>  {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
     return <UserGreeting />;
@@ -25,13 +25,12 @@ ReactDOM.render(
   <Greeting isLoggedIn={false} />,
   document.getElementById('root')
 );
-
 ```
 
 # React Elements as Variables - Components
 
 ```javascript
-function LoginButton(props) {
+const LoginButton = (props) => {
   return (
     <button onClick={props.onClick}>
       Login
@@ -39,7 +38,7 @@ function LoginButton(props) {
   );
 }
 
-function LogoutButton(props) {
+const LogoutButton = (props) => {
   return (
     <button onClick={props.onClick}>
       Logout
@@ -94,7 +93,7 @@ class LoginControl extends React.Component {
 * `false && expression` is always false and evaluates `false`
 
 ```javascript
-function Mailbox(props) {
+const Mailbox = (props) => {
   const unreadMessages = props.unreadMessages;
   return (
     <div>
@@ -167,7 +166,7 @@ render() {
 # Preventing Component Rendering
 
 ```javascript
-function WarningBanner(props) {
+const WarningBanner = (props) => {
   if (!props.warn) {
     return null;
   }
