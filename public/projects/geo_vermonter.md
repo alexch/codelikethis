@@ -6,7 +6,7 @@ In this project we will build our own version of the game using locations inside
 
 First, clone the starter project here: 
 
-  http://github.com/BurlingtonCodeAcademy/geo-vermonter
+  http://github.com/BurlingtonCodeAcademy/geo-vermonter-react
 
 `cd` into the repo directory and then run `npm install`
 
