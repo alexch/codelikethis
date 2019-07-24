@@ -96,7 +96,6 @@ window.onLoad function () {
 # Simple Example
 
 <p data-height="228" data-theme-id="dark" data-slug-hash="mLqoGK" data-default-tab="babel" data-user="Dangeranger" data-embed-version="2" data-pen-title="mLqoGK" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/mLqoGK/">mLqoGK</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
 # React Form
@@ -112,6 +111,14 @@ Given a `<root>` element exists the result is:
 ```
 
 But when the form initiates a `onSubmit` event React will handle the changes using the `handleSubmit` handler function.
+
+# React Form CodePen
+
+<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="Dangeranger" data-slug-hash="BXzKQM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="React Form Example">
+  <span>See the Pen <a href="https://codepen.io/Dangeranger/pen/BXzKQM/">
+  React Form Example</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
 
 # ReactDOM Code
 
@@ -181,3 +188,5 @@ React allows you to:
 - Write functions that update the HTML when state changes
 - Delegate responsibility over the DOM to a library
 - Be confident that the desired application state will be achieved
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
