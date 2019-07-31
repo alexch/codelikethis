@@ -268,12 +268,10 @@ The user should be receive an HTTP response code of `200` and **then be redirect
 ## Extra Feature Ideas
 
 - Tagging entries with a category
-- List entries after or before some date
-- List between two dates
+- Filtering entries by category
+- Enter details containing Markdown and display the output of the Markdown as HTML.
+- Search entries by the text they contain, such as 'Javascript', 'React', 'NodeJS', or 'Mongo'.
 - Reports of TIL entry activity:
-  - Heat-map with:
-    - entries with days of week descending on Y axis and weeks of year on the X axis
-    - X for a day with an entry and an O for a day without an entry
-    - Could you use colors in the terminal instead of an X or O?
+  - Bar Chart with number of entries over the last seven days.
 
 <!--/BOX-->
