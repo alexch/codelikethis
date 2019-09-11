@@ -22,13 +22,7 @@ class JavascriptAfterHours < Site
 
   def tracks
     [
-        ::Track::Javascript,
-        ::Track::Www,
-        ::Track::ClientSideCoding,
-        ::Track::Separator,
-        ::Track::Oo,
-        ::Track::Git,
-        ::Track::TricksOfTheTrade,
+        ::Track::JavascriptIntro,
     ]
   end
 
