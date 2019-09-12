@@ -54,8 +54,8 @@ db.inventory.find( { status: "D", item: "planner" } )
 ```javascript
 db.inventory.find(
   { $or: [
-          { type: "Planner" },
-          { type: "Notebook" }
+          { item: "Planner" },
+          { item: "Notebook" }
          ]
   }
 )
@@ -67,7 +67,7 @@ db.inventory.find(
 db.inventory.find(
   { $or: [
           { status: "A" },
-          { type: "Notebook" }
+          { item: "Notebook" }
          ]
   }
 )
@@ -98,7 +98,7 @@ db.inventory.find( { status: { $in: ["A", "B", "C"] } } )
 * Example two
 
 ```javascript
-db.inventory.find( { type: { $in: ["Journal", "Notebook", "Paper"] } } )
+db.inventory.find( { item: { $in: ["Journal", "Notebook", "Paper"] } } )
 ```
 
 # Querying Nested Documents
