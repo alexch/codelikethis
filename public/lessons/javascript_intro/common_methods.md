@@ -59,7 +59,7 @@ x.toString() // => '10'
 (42).toString() // => '42'
 ```
 
->Note that you will need to assign to value of the number to a variable (or wrap it in parentheses) and then call `.toString()` on it otherwise you'll get a syntax error.
+>Note that you will need to assign to value of the number to a variable (or wrap it in parentheses) and then call `.toString()` on it otherwise you'll get `SyntaxError: Invalid or unexpected token`.
 
 # .toPrecision(num)
 

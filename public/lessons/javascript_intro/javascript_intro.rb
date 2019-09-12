@@ -9,6 +9,7 @@ class Track
       
       lesson name: "terminal_basics"
       lesson name: "types_intro"
+      lesson name: "/javascript/stacks"
       lesson name: "/javascript/null"
       lesson name: "common_operators"
       lesson name: "/javascript/logic"
@@ -42,6 +43,5 @@ class Track
       lesson name: "whats_next"
       lesson name: "common_methods"
       lesson name: "/javascript/recursion"
-      lesson name: "/javascript/stacks"
       end
     end

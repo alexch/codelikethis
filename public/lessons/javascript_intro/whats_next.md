@@ -26,6 +26,8 @@ Where can you go from here?
 
 * [/r/javascript](https://www.reddit.com/r/javascript/) - Reddit
 
+* [/r/frontend](https://www.reddit.com/r/frontend) - Reddit
+
 * [Eloquent JavaScript](https://eloquentjavascript.net/)
 
 * [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
