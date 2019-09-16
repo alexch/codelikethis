@@ -155,7 +155,7 @@ class ThingPage < AppPage
         center_cols -= 3 if outline?
 
         # now the real body
-        div(class: "col-md-#{center_cols}") {
+        div(class: "col-md-#{center_cols}", id: "welcome") {
           if @warning
             div(class: 'row') {
               div(@warning, class: "warning alert alert-warning")
