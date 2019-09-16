@@ -32,9 +32,7 @@ class TracksSidebar < Erector::Widget
 
   def content
     div(class: 'row justify-content-between') {
-      div(class: 'col-8') {
-        h3 "Tracks"
-      }
+      div(class: 'col-8') {}
       div(class: 'col-4') {
         # expando button for tracks
         button(:class => 'tracks-toggler btn border-0 collapsed',
