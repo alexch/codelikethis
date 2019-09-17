@@ -50,50 +50,19 @@ class JavascriptAfterHours < Site
           }
           br
           div.card {
-            div(class: 'card-body') {
-              p(class: 'card-text') {
-                h2 "What next?"
-                ul {
-                  li {
-                    text "Peruse the "
-                    i(class: 'fas fa-angle-double-left')
-                    b "Tracks"
-                    i(class: 'fas fa-angle-double-left')
-                    text " in the sidebar to see what we are teaching."
-                  }
-                  li {
-                    text "Look at the "
-                    a "class schedule", href: "/schedule"
-                    text " or a "
-                    a "list of possible projects", href: "/projects"
-                    text " the students will work on during the course."
-                  }
-                  li {
-                    text "Browse the "
-                    a "GitHub repository", href: "http://github.com/alexch/codelikethis"
-                    text "."
-                  }
-                  li {
-                    text "Visit the central "
-                    a "Code Like This", href: "http://codelikethis.com/"
-                    text " site, with even more lessons."
-                  }
-                }
-              }
-            }
+            iframe(
+              src: "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F09300&showTitle=1&title=JavaScript%20Part%20Time%20Fall%202019&showNav=1&showDate=1&showPrint=1&showTabs=1&showCalendars=0&mode=WEEK",
+              style: 'border-width:0',
+              width: '800',
+              height: '600',
+              frameborder: '0',
+              scrolling: 'no'
+            )
           }
         }
       }
 
     end
-
-    # def notice
-    #   p.notice {
-    #     text "This site contains the curriculum for our "
-    #     a "Summer 2018 bootcamp", href: "http://burlingtoncodeacademy.com/bootcamp"
-    #     text " in Burlington, Vermont. "
-    #   }
-    # end
   end
 
   class NavBar < ::NavBar
