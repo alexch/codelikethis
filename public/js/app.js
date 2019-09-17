@@ -1,4 +1,8 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
+  if (window.hljs) {
+    hljs.configure({
+      languages: []
+    });
+    hljs.initHighlightingOnLoad();
+  }
 });

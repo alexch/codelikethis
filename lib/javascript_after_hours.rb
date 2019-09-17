@@ -31,6 +31,16 @@ class JavascriptAfterHours < Site
   end
 
   class View < Erector::Widget
+
+    external :script, (<<-JS)
+      window.addEventListener('DOMContentLoaded', (e) => {
+        $(document).ready(function() {
+          console.log('Hi from the collapse toggle!');
+          $('#sidebar-javascript_intro-lessons').collapse('show');
+        })
+      })
+    JS
+
     def content
       div.row {
         div(class: 'col-sm') {
