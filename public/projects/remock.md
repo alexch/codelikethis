@@ -82,28 +82,28 @@ Experiment with design improvements. For example:
 
 ### Home Page
 
-![](mock_screenshots/home-1.png)
-![](mock_screenshots/home-2.png)
-![](mock_screenshots/home-3.png)
-![](mock_screenshots/home-4.png)
+![](/images/home-1.png)
+![](/images/home-2.png)
+![](/images/home-3.png)
+![](/images/home-4.png)
 
 ====================
 
 ### Continue Page
 
-![](mock_screenshots/right-1.png)
-![](mock_screenshots/right-2.png)
-![](mock_screenshots/right-3.png)
+![](/images/right-1.png)
+![](/images/right-2.png)
+![](/images/right-3.png)
 
 ### Learn More Page
 
-![](mock_screenshots/left-1.png)
-![](mock_screenshots/left-2.png)
-![](mock_screenshots/left-3.png)
+![](/images/left-1.png)
+![](/images/left-2.png)
+![](/images/left-3.png)
 
 ====================
 
 ### Blog Post Page
 
-![](mock_screenshots/none-1.png)
-![](mock_screenshots/none-2.png)
+![](/images/none-1.png)
+![](/images/none-2.png)

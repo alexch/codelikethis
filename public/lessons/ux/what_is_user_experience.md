@@ -11,7 +11,7 @@ It encompasses all aspects of a person’s attitudes, emotions and behavior when
 
 # UX is everywhere
 
-![norman door pull](norman-door-pull-728x410.jpg)
+![norman door pull](/images/norman-door-pull-728x410.jpg)
 
 * Street Signs
 * Household Appliances
@@ -57,7 +57,7 @@ On a product development team, the UX Designer collaborates with:
 * Visual Designers
 * Developers
 
-![ux process](user-experience-design-process.png)
+![ux process](/images/user-experience-design-process.png)
 
 
 # Information Architecture

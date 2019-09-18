@@ -26,7 +26,7 @@ git log
 
 # Distributed Git Diagram
 
-![git conceptual model](git.png)
+![git conceptual model](/images/git.png)
 
 # Basic Git Commands
 
@@ -61,7 +61,7 @@ git log
 
 > "Git was written by very smart aliens." -Alex
 
-![here be dragons](here-be-dragons.png)
+![here be dragons](/images/here-be-dragons.png)
 
 Git has an elegant data model, but a clunky command-line interface.
 
@@ -107,7 +107,7 @@ Here are some examples of how some of git's commands are counterintuitive and in
 
 # Simple Git Workflow
 
-![simple git workflow](simplest-workflow.jpg)
+![simple git workflow](/images/simplest-workflow.jpg)
 
 http://www.slideshare.net/GoAtlassian/superpowered-ci-with-git-sarah-goffdupont
 

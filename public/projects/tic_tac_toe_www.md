@@ -2,7 +2,7 @@
 
 Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two players on a 3x3 grid.
 
-![tic tac toe completed](tic_tac_toe.svg)
+![tic tac toe completed](/images/tic_tac_toe.svg)
 
 In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) in a web-based UI.
 
@@ -240,6 +240,6 @@ Time Elapsed 00:01:25
 - Winning on any board will award the player a win for the entire game.
 - See this description for more information: http://www.stratigery.com/gen9.html
 
-![tic-tac-toe-9x9](tic-tac-toe-9x9.png)
+![tic-tac-toe-9x9](/images/tic-tac-toe-9x9.png)
 
 <!--/BOX-->

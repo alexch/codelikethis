@@ -6,7 +6,7 @@
 
 # State Machine Example: Traffic Light
 
-![traffic light](traffic-light.jpg)
+![traffic light](/images/traffic-light.jpg)
 
 1. How many states? What are their names?
 2. Can it be in more than one state at a time?
@@ -27,7 +27,7 @@ Q: What if there was a "left turn ok" green light as well?
 
 # State Machine Example: Simon
 
-![simon game](simon.jpg)
+![simon game](/images/simon.jpg)
 
 1. How many states? What are their names?
 2. Can it be in more than one state at a time?

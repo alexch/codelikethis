@@ -2,7 +2,7 @@
 
 Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two players on a 3x3 grid.
 
-![tic tac toe completed](tic_tac_toe.svg)
+![tic tac toe completed](/images/tic_tac_toe.svg)
 
 In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) and a terminal-based UI.
 

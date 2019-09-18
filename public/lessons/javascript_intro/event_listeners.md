@@ -79,7 +79,7 @@ And many, many more...
 
 # The Structure of the Event Listener in JavaScript
 
-I'm making an image for here, slight technical snag, but we'll get it sorted
+![event-listener-breakdown](/images/event-listener.png)
 
 # Adding Event Listeners using the DOM
 

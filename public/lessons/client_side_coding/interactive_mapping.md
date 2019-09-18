@@ -8,7 +8,7 @@
 
 * Let's make a simple map!
 
-![](./simple-map-leaflet.png)
+![Leaflet Map](/images/simple-map-leaflet.png)
 
 ```js
 var map = L.map('map').setView([51.505, -0.09], 13);

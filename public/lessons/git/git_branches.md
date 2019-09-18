@@ -15,7 +15,7 @@
 
 # Example: Branch Basics Diagram
 
-![Branch Basics Diagram](./git-branch-basics.png "Branch Basics Diagram")
+![Branch Basics Diagram](/images/git-branch-basics.png "Branch Basics Diagram")
 
 # Branching Commands
 

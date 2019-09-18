@@ -1,6 +1,6 @@
 # CSS Layout
 
-![css is awesome](../images/css-is-awesome.jpg)
+![css is awesome](/images/css-is-awesome.jpg)
 
 <small>([CSS is Awesome mug](https://www.zazzle.com/css_is_awesome_mug-168113658720373401) created by Steven Frank, still available for purchase on Zazzle)</small>
 

@@ -43,7 +43,7 @@ This is called an *infinite loop*.
 
 # One Infinite Loop
 
-![One Infinite Loop](../images/one-infinite-loop.jpg)
+![One Infinite Loop](/images/one-infinite-loop.jpg)
 
 *Fun Fact:* The address of Apple HQ is
 

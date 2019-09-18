@@ -296,7 +296,7 @@ index 0000000..9f0ab0a
 
 Now we remember ... 
 
-![chunky monkey](chunky-monkey-detail.png)
+![chunky monkey](/images/chunky-monkey-detail.png)
 
 Oh, Chunky Monkey, how could I ever forget you?
 
@@ -357,7 +357,7 @@ Now reload the page and see your changes!
 > Git does not automatically push and pull changes!
 
 1. **On GitHub.com**, find your `shopping` repo and click on `groceries.txt`
-2. Find the **pencil icon** on the upper right and click it -- this opens a text editor **inside your browser** ![github pencil](github-pencil.png)
+2. Find the **pencil icon** on the upper right and click it -- this opens a text editor **inside your browser** ![github pencil](/images/github-pencil.png)
 3. Make some changes and save them as a new commit
 4. Go back to your terminal and text editor. **Notice that you still have the old version.**
 5. On your terminal, run the command `git pull` 

@@ -80,6 +80,6 @@ bob.fullName(); //=> "Bob Jones"
 
 # Map Filter Reduce in Emoji
 
-![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
+![map filter reduce in emoji](/images/map-filter-reduce-in-emoji.png)
 
 (source unknown)

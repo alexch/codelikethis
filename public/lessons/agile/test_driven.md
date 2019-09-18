@@ -27,7 +27,7 @@ alexch @ gmail.com
 
 # Make it green, then make it clean
 
-![Make it green](make-it-green.png)
+![Make it green](/images/make-it-green.png)
 
 # Addicted to green
 

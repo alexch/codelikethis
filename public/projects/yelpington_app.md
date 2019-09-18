@@ -4,7 +4,7 @@ In this project, you will pair up and work with other teams to create an online 
 
 # Screenshot
 
-![bob's yelpington screenshot](yelpington-screenshot.png)
+![bob's yelpington screenshot](/images/yelpington-screenshot.png)
 
 # Tech
 

@@ -1,6 +1,6 @@
 # The Zen of Refactoring
 
-![buddha](./zen/buddha-statue.jpg)
+![buddha](/images/buddha-statue.jpg)
 
 Refactoring is the process of restructuring existing computer code -- changing its *factors* -- without changing its behavior. You probably knew that. But did you know it’s also a meditation technique? Come improve your practice of mindful coding.
 
@@ -22,7 +22,7 @@ After these slides, we’ll start with some actual production code, make sure it
 
 > mostly an excuse for pretty pictures and hippie jokes
 
-![zen](./zen/don-zen.gif)
+![zen](/images/don-zen.gif)
 
 > disclaimer: This presentation uses some
 > spiritual imagery but is not intended to
@@ -61,7 +61,7 @@ debugging
 
 # Why refactor?
 
-![yoda](zen/yoda-clear-your-mind.gif)
+![yoda](/images/yoda-clear-your-mind.gif)
 
 (Yoda ≈ Buddha)
 
@@ -69,7 +69,7 @@ debugging
 
 clarity calm insight knowledge understanding
 
-![pool](zen/hand-pool.gif)
+![pool](/images/hand-pool.gif)
 
 See the code for what it is, not what you think it is, or what you want it to be
 
@@ -77,7 +77,7 @@ See the code for what it is, not what you think it is, or what you want it to be
 
 DRY
 
-![sand](zen/stone-sand.png)
+![sand](/images/stone-sand.png)
 
 # Refactor to increase code clarity
 
@@ -134,11 +134,11 @@ tests are an extension of code
 
 # Reversible
 
-![reversible](./zen/spinning-yin-yang.gif)
+![reversible](/images/spinning-yin-yang.gif)
 
 # Mechanical
 
-![grievous.gif](./zen/grievous.gif)
+![grievous.gif](/images/grievous.gif)
 
 # Brief
 
@@ -150,7 +150,7 @@ I choose my text editor based on how well it refactors my code
 
 (Other programmers may have different criteria.)
 
-![real programmers use](zen/real-programmers.png)
+![real programmers use](/images/real-programmers.png)
 <https://xkcd.com/378/>
 
 
@@ -343,7 +343,7 @@ course.students[0].phone.sendText('hi')
 
 # The Book
 
-![refactoring-fowler](./zen/refactoring-book.jpg)
+![refactoring-fowler](/images/refactoring-book.jpg)
 
 <https://martinfowler.com/books/refactoring.html>
 

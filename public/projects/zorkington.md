@@ -1,6 +1,6 @@
 # Zorkington
 
-![zork west of house](./zork-west-of-house.jpg)
+![zork west of house](/images/zork-west-of-house.jpg)
 
 [Zork](https://en.wikipedia.org/wiki/Zork) was not the first text adventure game, but it was the first to achieve commercial success.
 

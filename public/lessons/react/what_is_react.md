@@ -73,7 +73,7 @@ Declarative means that you do not instruct the computer about what steps to take
 - You must describe something that is possible.
 - The computer figures out how to make it so.
 
-!["make it so"](./make-it-so.jpg)
+!["make it so"](/images/make-it-so.jpg)
 
 # Declarative vs Imperative
 
