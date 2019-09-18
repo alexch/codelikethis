@@ -6,4 +6,4 @@ There are detailed steps and additional explanations for the project on the free
 
 Please see the link above for complete instructions.
 
-![Mint Login Screen](Mint-Login-Screen.png "Mint Login Screen")
+![Mint Login Screen](/images/Mint-Login-Screen.png "Mint Login Screen")

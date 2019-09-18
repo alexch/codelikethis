@@ -25,7 +25,7 @@
 
 # Mobile Device Simulator
 
-![Mobile Device Simulation Screenshot](mobile-device-simulation.png "Mobile Device Simulation Screeenshot")
+![Mobile Device Simulation Screenshot](/images/mobile-device-simulation.png "Mobile Device Simulation Screeenshot")
 
 [Link: Firefox Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode "Firefox Responsive Design Mode")
 

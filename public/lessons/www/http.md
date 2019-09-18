@@ -146,5 +146,5 @@ If you have a working `telnet`, try this yourself. Also try `telnet towel.blinke
 
 # Telnet Screenshot
 
-![telnet screenshot](/lessons/www/telnet-google.png)
+![telnet screenshot](/images/telnet-google.png)
 

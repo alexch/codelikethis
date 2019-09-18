@@ -23,7 +23,7 @@
 * the **terminal** is a window into which you can talk directly to your computer
   * aka *console* or *command line* or *command prompt* or *shell*
 
-![Shall we play a game?](../images/wargames-terminal.jpg)
+![Shall we play a game?](/images/wargames-terminal.jpg)
 
 <small>from WarGames, (1983)</small>
 
@@ -35,7 +35,7 @@
 
 Computers used to not have screens! They were connected to devices like this:
 
-![tty](../images/tty.jpg)
+![tty](/images/tty.jpg)
 
 The Terminal app is a direct descendant of a TeleType printer or TTY.
 
@@ -59,8 +59,8 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
 
-![terminal next to browser](../images/terminal-and-browser.png)
-![terminal next to browser](../images/terminal-and-browser-win.png)
+![terminal next to browser](/images/terminal-and-browser.png)
+![terminal next to browser](/images/terminal-and-browser-win.png)
 
 # Lab: Interactive Calculator
 
@@ -78,7 +78,7 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 # Node is a JavaScript Engine
 
-![Diagram: Node Train: Command Line](https://docs.google.com/drawings/d/e/2PACX-1vSKCgLe4wp1JroIot-SsVP-TKqHsySU-06oOGe3zYWBZ4jOc77quoRH2XhyNKBBuLx4IgbLim2NZLqK/pub?w=953&amp;h=522)
+![Diagram: Node Train: Command Line](/images/train.png)
 
 An "engine" is a type of program that either [*executes* or *empowers*](https://en.wikipedia.org/wiki/Software_engine) other programs.
 
@@ -270,7 +270,7 @@ What happens? Is this what you expected?
 
 These work in `bash`:
 
-![bash shortcuts](../images/bash-cursor-shortcuts.jpg)
+![bash shortcuts](/images/bash-cursor-shortcuts.jpg)
 
 Also:
 

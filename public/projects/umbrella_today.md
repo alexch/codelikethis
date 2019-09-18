@@ -4,7 +4,7 @@ Once upon a time, there was a real live app called [Umbrella Today](https://robo
 
 Every morning at 7:00 am, if it was going to rain that day, it sent you a text message saying "Umbrella today!"
 
-![umbrella today 1](umbrella-today-1.png)
+![umbrella today 1](/images/umbrella-today-1.png)
 
 Sadly, the app has now gone the way of all bits. But we can rebuild it!
 
@@ -42,5 +42,5 @@ To learn about Slack Apps you might want to walk through [this tutorial on slash
 
 **SMS Server** Write a server-side web app that stores a list of phone numbers (along with associated zip code and time info). Provide a web-based form to sign up (like the screenshot below), and an SMS-reply based way to delete your account.
 
-![umbrella today 2](umbrella-today-2.png)
+![umbrella today 2](/images/umbrella-today-2.png)
 

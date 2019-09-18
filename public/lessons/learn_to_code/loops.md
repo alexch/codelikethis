@@ -18,7 +18,7 @@ To stop it, hold down the CONTROL key and press the C key.
 
 # One Infinite Loop
 
-![One Infinite Loop](one-infinite-loop.jpg)
+![One Infinite Loop](/images/one-infinite-loop.jpg)
 
 *Fun Fact:* The address of Apple HQ is
 

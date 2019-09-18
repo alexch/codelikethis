@@ -20,7 +20,7 @@ A: a character is a *number* (or *character code*) that stands for a *symbol*.
 * ASCII: American Standard Code for Information Interchange
 * Invented in 1963
 
-![ASCII Table](../images/ASCII-Table-wide.svg)
+![ASCII Table](/images/ASCII-Table-wide.svg)
 
 <small>(image from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg))</small>
 

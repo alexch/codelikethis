@@ -15,7 +15,7 @@
 
 * a *stack* is a *metaphor* for a physical stack
 
-![pancakes](../images/pancakes.jpg)
+![pancakes](/images/pancakes.jpg)
 
 (like this yummy stack of pancakes)
 
@@ -35,7 +35,7 @@
 
 Imagine a stack that starts with a single pancake ("1")
 
-![stack](../images/stack.png) 
+![stack](/images/stack.png) 
 
 <small>(image source: <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>, public domain)</small>
 
