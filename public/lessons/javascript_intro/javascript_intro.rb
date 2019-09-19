@@ -10,7 +10,7 @@ class Track
       lesson name: "terminal_basics"
       lesson name: "types_intro"
       lesson name: "/javascript/stacks"
-      lesson name: "/javascript/null"
+      lesson name: "empty_values"
       lesson name: "common_operators"
       lesson name: "/javascript/logic"
       lesson name: "/javascript/arrays"
