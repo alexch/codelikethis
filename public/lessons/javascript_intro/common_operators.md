@@ -4,13 +4,95 @@ A character or group of characters that represent an action to be taken on one o
 
 # Types of Operators
 
-* Arithmetic Operators
+* Unary Operators
 
-* Logical Operators
+  * `+`
 
-* Comparison Operators
+  * `delete`
 
-* Assignment Operators
+  * `typeof`
+
+  * `void`
+
+  * Incrementers/Decrementers
+
+* Binary Operators
+
+  * Arithmetic Operators
+
+  * Logical Operators
+
+  * Comparison Operators
+
+  * Assignment Operators
+
+  * Bitwise Operators
+
+* Trinary Operators
+
+  * The Ternary Operator
+
+# The Unary `+`
+
+The `+` operator can be used on an operand to convert that operand into a number.
+
+```js
++"33" // => 33
++"0" // => 0
++"" // => 0
++" "// => 0
++"cheese" // => NaN
+```
+
+# Delete
+
+The keyword `delete` is an operator that deletes whatever object, property, or element that's passed to it as an operand.
+
+```js
+delete objectName // deletes the object named `objectName`
+delete objectName.prop // deletes the property `prop` off of the object `objectName`
+delete arrayName[3] // deletes the element at index three of the array `arrayName`
+```
+
+# typeof
+
+The keyword `typeof` is a unary operator that returns the type of the operand it's called on as a string.
+
+```js
+typeof function() {...} // => 'function'
+typeof "Hello, world!" // => 'string'
+typeof [1, 2, 3, "red"] // => 'object'
+typeof unassignedVariable // => 'undefined'
+typeof false // => 'boolean'
+typeof null // => 'object'
+```
+
+# Void
+
+The `void` keyword takes an expression as its operand and causes it to return `undefined` rather than the normal return value of the expression.
+
+```js
+void (1+1) // => undefined
+
+function sayHello() {return "Hello, world!"}
+
+void sayHello() // => undefined
+```
+
+# Incrementers/Decrementers
+
+Incrementers and decrementers are not officially classified in JavaScript as unary operators since they behave slightly diferently than other operators, they are instead given their own special classification. However since they only accept one operand they are, by definition, unary operators.
+
+* `++` increments the value to its left by one
+
+* `--` decrements the value to its left by one
+
+```js
+3++ // => 4
+7-- // => 6
+"cheese"++ // => NaN
+```
+> Note: the incrementer and decrementer only work on the number type.
 
 # Arithmetic Operators
 
@@ -78,8 +160,8 @@ Evaluates two values or expressions and returns a boolean
 ```javascript
 'dog' && 'cat' // => 'cat'
 null && 'cat' // => false
-'dog' || 'cat' // => true
-undefined || 'cat' // => true
+'dog' || 'cat' // => 'dog'
+undefined || 'cat' // => 'cat'
 !true // => false
 !(7 < 5) // => true
 ```
@@ -115,6 +197,10 @@ Compares two values and returns a boolean
 'cat' !== 'cat' // => false
 ```
 
+# Equals vs REALLY Equals
+
+It is worth noting the descrepency between the double equals `==` and triple equals `===`. The double equals will try and coerce the operands so that they match if possible, while the triple equals will perform a comparison on the values as they are.  When comparing two values you should **always** use the triple equals.
+
 # Lab: Compare and Contrast
 
 Open up a node environment in your terminal, and let's play around with some comparison operators.
@@ -144,9 +230,10 @@ MUTATES the value
 let x = 7
 let y = 3
 
+1 += 2 // => 3
 x = y // x => 3
-x += y // x => 6
-x -= y // x => 3
+x += y // x => 10
+x -= y // x => 4
 ```
 
 # Lab: Assignments
@@ -164,4 +251,34 @@ Let's take a few minutes to play around with assignment operators, so go ahead o
 
   * add a value to `string` using `+=`, what is the value of `string`?
 
-  * What is the value of string if you use `-=` instead?
+  * What is the value of `string` if you use `-=` instead?
+
+# Bitwise Operators
+
+Bitwise Operators treat their operands as a set of 32 bits(binary), rather than as decimal, or hexadecimal operators, but they return standard JavaScript numbers. These operators are very fast and powerful, but can be rather confusing as they are directly manipulating binary values.
+
+* `&` "and", returns a 1 in the bit position where the bits in both operands are 1
+
+* `|` "or", returns a 0 in the bit position where the bits in both operands are 0
+
+* `^` "xor", returns a 0 in the bit position where the bits in both operands are the same
+
+* `~` "not", inverts the bits of its operand
+
+```js
+15 & 9 // => 9; binary 1111 & 1001 evaluates to 1001 (9)
+15 | 9 // => 15; binary 1111 | 1001 evaluates to 1111 (15)
+15 ^ 9 // => 6; binary 1111 ^ 1001 evaluates to 0110 (6)
+~15 // => -16; binary ~0000...001111 evaluates to 1111..110000 (-16)
+```
+
+# The Turnary Operator
+
+The turnary operator, also called the conditional operator, is the only trinary operator in JavaScript, and is a way of handeling control flow.
+
+```js
+expression ? valueOne : valueTwo // If the expresion evaluates to true returns valueOne, otherwise returns valueTwo
+```
+
+# Documentation
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Unary)
