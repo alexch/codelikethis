@@ -180,7 +180,7 @@ Compares two values and returns a boolean
 
 * `==` equal to
 
-* `===` REALLY equal to
+* `===` identity
 
 * `!=` not equal
 
@@ -197,9 +197,9 @@ Compares two values and returns a boolean
 'cat' !== 'cat' // => false
 ```
 
-# Equals vs REALLY Equals
+# Equals vs Identity
 
-It is worth noting the descrepency between the double equals `==` and triple equals `===`. The double equals will try and coerce the operands so that they match if possible, while the triple equals will perform a comparison on the values as they are.  When comparing two values you should **always** use the triple equals.
+It is worth noting the descrepency between the double equals `==` and triple equals `===`.The double equals will try and coerce the operands so that they match if possible, while the triple equals will perform a comparison on the values as they are.  When comparing two values you should **always** use the triple equals.
 
 # Lab: Compare and Contrast
 
@@ -272,9 +272,9 @@ Bitwise Operators treat their operands as a set of 32 bits(binary), rather than 
 ~15 // => -16; binary ~0000...001111 evaluates to 1111..110000 (-16)
 ```
 
-# The Turnary Operator
+# The Ternary Operator
 
-The turnary operator, also called the conditional operator, is the only trinary operator in JavaScript, and is a way of handeling control flow.
+The ternary operator, also called the conditional operator, is the only trinary operator in JavaScript, and is a way of handeling control flow.
 
 ```js
 expression ? valueOne : valueTwo // If the expresion evaluates to true returns valueOne, otherwise returns valueTwo
