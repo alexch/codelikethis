@@ -30,6 +30,7 @@ Callback functions are a native part of JavaScript, and the original way of hand
 ## Callback Hell
 
 Callback Hell aka the Christmas Tree of Doom can be easily recognized by the shape of your code. If you start getting something like this:
+
 ```javascript
 function callbackHell(event) {
   function(result, function() {
@@ -49,6 +50,7 @@ function callbackHell(event) {
   })
 }
 ```
+
 You're propably in callback hell
 
 ## event handler callbacks
