@@ -55,12 +55,14 @@ A named callback is simply a function.
 
 Example:
 
-    console.log("what is your name?");
-    function sayHi(name) {
-        console.log('Hi, ' + name + '!');
-    }
-    process.stdin.once('data', sayHi);
-    
+```js
+console.log("what is your name?");
+function sayHi(name) {
+    console.log('Hi, ' + name + '!');
+}
+process.stdin.once('data', sayHi);
+```
+
 This means 
 
 1. ask the user their name
@@ -73,10 +75,12 @@ An anonymous callback is also a function, but this time it's defined *inline*.
 
 Example:
 
-    console.log("what is your name?");
-    process.stdin.once('data', function (name) {
-        console.log('Hi, ' + name + '!');
-    });
+```js
+console.log("what is your name?");
+process.stdin.once('data', function (name) {
+    console.log('Hi, ' + name + '!');
+});
+```
     
 Note that the *second argument* to the `once` method is the same as the *entire sayHi function* from the previous slide...
  
@@ -90,10 +94,12 @@ You will often see the *fat arrow* variant syntax in anonymous callbacks.
 
 Example:
 
-    console.log("what is your name?")
-    process.stdin.on('data', (name) => {
-        console.log('Hi, ' + name + '!');
-    });
+```js
+console.log("what is your name?")
+process.stdin.on('data', (name) => {
+    console.log('Hi, ' + name + '!');
+});
+```
     
 Note that the second argument to the `once` method is the same as the the previous slide, but with `=>` *after* the parameter list, instead of the word `function` *before* the parameter list.
 
@@ -101,6 +107,7 @@ Note that the second argument to the `once` method is the same as the the previo
 
 To *force* events to happen *in order* you may need to *nest* your callbacks.
 
+```js
     console.log('what is your name?')
     process.stdin.once('data', (name) => {
         console.log('what is your quest?')
@@ -114,6 +121,7 @@ To *force* events to happen *in order* you may need to *nest* your callbacks.
             });
         });
     });
+```
 
 Yes, nested callbacks are confusing. This is an example of *callback hell*.
 
@@ -127,7 +135,7 @@ Nested callbacks are horrible. There is a different way to do it that leads to c
 
 We will cover those topics in depth later, but for now, look at this example:
 
-```ecmascript 6
+```js
 async function start() {
   let name = await ask('What is your name? ');
   let quest = await ask('What is your quest? ');

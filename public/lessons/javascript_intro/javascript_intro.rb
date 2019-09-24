@@ -14,6 +14,8 @@ class Track
       lesson name: "common_operators"
       lesson name: "/javascript/functions"
       lesson name: "arguments"
+      lesson name: "input_output",
+        display_name: "I/O"
       lesson name: "age_calculator"
       lesson name: "/javascript/scope"
       lesson name: "/javascript/logic"
@@ -43,5 +45,6 @@ class Track
       lesson name: "whats_next"
       lesson name: "common_methods"
       lesson name: "/javascript/recursion"
+      lesson name: "asynchronous_js"
       end
     end
