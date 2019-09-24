@@ -14,7 +14,7 @@ ageCalc(age) // should print "You are 852055200 seconds old." to the console
 
 How could we use ARGV to make this more modular?
 
-# Flip it!
+# Flip it around!
 
 Can you write the inverse function; one that takes a number of seconds and tells you the exact age?
 
@@ -28,6 +28,10 @@ You can get the current date by calling `Date.now()` which will give you a time 
 # Solution
 
 Here's one solution for the age calculator:
+
+<details>
+<summary>Answer</summary>
+<div>
 
 ```js
 let age = 27
@@ -46,9 +50,15 @@ function ageCalc(num) {
 }
 
 console.log(ageCalc(age))
+
 ```
 
 To flip it you could simply divide the `num` variable by `secInYr` rather than multiplying to get years in a number of seconds.
+
+</div>
+</details>
+
+
 
 
 # More Functional Labs
