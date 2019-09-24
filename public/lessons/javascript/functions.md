@@ -75,7 +75,7 @@ Here is a function that takes some String as input, and as output returns a shou
 
 ```js
 function shouter(someString) {
-  let loudString = loudString.toUpperCase();
+  let loudString = someString.toUpperCase();
   return loudString + '!!!';
 }
 
@@ -156,7 +156,7 @@ When you pass a *variable* to a function, that variable's *value* is assigned to
 
 ```js
 function shouter(someString) {
-  let loudString = loudString.toUpperCase();
+  let loudString = someString.toUpperCase();
   return loudString + '!!!';
 }
 
