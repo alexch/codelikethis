@@ -286,32 +286,91 @@ To do this, your code will probably need to use one or the other, or both, of th
   * *nested functions* - functions that call other functions
   * *nested loops* - loops that contain other loops
 
-Please try this now; if you get stuck, the next few slides have some tips.
+# Prime Numbers solution
 
-# TIP: Prime Numbers: Tip 1
+<details>
+<summary>Hint 1</summary>
+<div>
+You may want to use the logic in the `isDivisible` function you made during the functional labs.
 
-use the `isDivisible` function you wrote back in the [functions](functions) lesson
-
-# TIP: Prime Numbers: Tip 2
-
-## Fake it till you make it
-
-Write a function named `isPrime` that takes one parameter, and returns `true` if that number is prime.
-
-This function pretends that every number is prime:
-
-```
-function isPrime(number) {
-    return true;
+```js
+function divisible(divisor, dividend) {
+    if (!(divisor % dividend)) {
+        return true
+    } else {
+        return false
+    }
 }
 ```
 
-First write your code assuming that `isPrime` works correctly...then once the rest of the program is working, come back and focus on the smaller problem of finding out if a given number is prime.
+</div>
+</details>
 
+<details>
+<summary>Hint 2</summary>
+<div>
+Fake it till you make it!
 
-# TIP: Prime Numbers: Tip 3
+```js
+function isPrime(number) {
+    return true
+}
+```
 
-write a main loop that counts from 2 to 100; inside that loop, call `isPrime` and print the number if `isPrime` is true
+</div>
+</details>
+
+<details>
+<summary>Hint 3</summary>
+<div>
+Use a while loop to iterate through all the integers between your number and 2
+
+```js
+let count = 2
+
+while (count < number) {
+    //Your code goes here
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+function isPrime(number) {
+    let count = 2
+    let primeArray = []
+    
+    while (count < number) {
+        if (!(number % count)) {
+            return false
+        } else {
+            count++
+        }
+    }
+
+    return true
+}
+
+let currentNumber = 100
+
+while (currentNumber > 2) {
+    if(isPrime(currentNumber)) {
+        console.log(currentNumber)
+        currentNumber--
+    } else {
+        currentNumber--
+    }
+}
+
+```
+
+</div>
+</details>
 
 # LAB: More about loops
 

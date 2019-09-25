@@ -162,6 +162,7 @@ function waitASecond() {
   1000)
 }
 </code></pre>
+</details>
 
 # setInterval
 

@@ -104,6 +104,23 @@ write some code that uses `find` to return the first item that ends with the str
 
 (in this case, `'Blueberry'`)
 
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry'];
+
+function endBerry(word) {
+  return word.endsWith("berry")
+}
+
+fruits.find(endBerry)
+```
+
+</div>
+</details>
+
 # Filter
 
 the `filter` iteration method returns *all* matching values, in a *new array*
@@ -128,7 +145,22 @@ Now go find your code from the previous lab ("Find a Berry")
 and change it to use `filter` to return a new array 
 containing **all** the fruits that end with the string `'berry'`
 
-> Hint: all you need to do is change `find` to `filter` -- the matching function itself is the same. 
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry'];
+
+function endBerry(word) {
+  return word.endsWith("berry")
+}
+
+fruits.filter(endBerry)
+```
+
+</div>
+</details>
 
 # Map
 

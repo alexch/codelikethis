@@ -129,6 +129,27 @@ Please split into pairs and do this right now. A solution is on the next slide.
 
 # Solution: Fibonacci Stack
 
+<details>
+<summary>Hint</summary>
+<div>
+You will need to push the first two numbers you popped off in the opisite order you poped them
+
+```js
+let a = series.pop()
+let b = series.pop()
+//......
+
+series.push(b)
+series.push(a)
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
 ```js
 let series = [0, 1];
 while (series.length < 10) {
@@ -142,9 +163,8 @@ while (series.length < 10) {
 console.log(series);
 ```
 
-Note that we had to pop `a` and `b` in *reverse* order because it's a stack.
-
-Note also that we had to push `a` and `b` back on to the stack after adding them to get `c`.
+</div>
+</details>
 
 # Uses for stacks
 

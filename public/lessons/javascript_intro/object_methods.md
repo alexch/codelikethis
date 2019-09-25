@@ -91,7 +91,7 @@ You can append a method to an object literally
 let dog = {
   name: "Abby"
   paws: 4
-  speak() {/*code goes here*/}
+  speak: function() {/*code goes here*/}
 }
 ```
 
