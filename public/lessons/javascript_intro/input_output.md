@@ -164,6 +164,7 @@ async function start() {
 <details>
 <summary>Hint</summary>
 <div>
+You may want to use `readline` and the `ask()` function.
 
 ```js
 const readline = require('readline');

@@ -27,7 +27,7 @@ Perhaps...
 
 # Function example
 
-Here's a not very useful function:
+Here's an example function:
 
 ```js
 function add(x, y) {
@@ -68,6 +68,53 @@ divisible(100, 7)     //=> false
 divisible(3333, 11)   //=> true
 divisible(99, 12)     //=> false
 ```
+
+# Divisible solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+The modulus operator `%` returns either an integer or zero.  Integers are truthy, while 0 is falsey
+
+</div>
+</details>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+
+You may need to use some logic. You can create a simple control flow with an `if ...else` statement
+
+```js
+if(/*this expression evaluates true*/) {
+  //do this
+} else {
+  //otherwise do this
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+function divisible(operator, operand) {
+  if(operator % operand) {
+    return true
+  } else {
+    return false
+  }
+}
+
+divisible(100, 10) // => true
+```
+
+</div>
+</details>
 
 # Shouter
 

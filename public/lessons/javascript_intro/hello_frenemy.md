@@ -53,11 +53,13 @@ The `printLine` function itself is called a *callback*
 1. Open `hello.js` in your text editor
 2. Change it to contain the following code:
 
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString();
-            console.log("Hello, " + name + "!");
-        });
+```js
+console.log("What is your name?");
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString();
+    console.log("Hello, " + name + "!");
+});
+```
 
 3. Save the file and switch back to the terminal
 4. Run the program using `node hello.js`
@@ -105,11 +107,11 @@ What happens? Is this what you expected?
 * Change the program to look like this:
 
 ```js
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString().trim();
-            console.log("Hello, " + name + "!");
-        });
+console.log("What is your name?");
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString().trim();
+    console.log("Hello, " + name + "!");
+});
 ```
 
 * Run it and make sure it works OK

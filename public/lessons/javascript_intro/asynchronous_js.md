@@ -104,7 +104,7 @@ Write an async function that asks:
 <details>
 <summary>Hint</summary>
 <div>
-You may want to use the `ask()` function
+You may want to use readline and the `ask()` function
 
 ```js
 const readline = require('readline');

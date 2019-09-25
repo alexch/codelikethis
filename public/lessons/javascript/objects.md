@@ -245,6 +245,43 @@ console.log('The GPA is ' + gpa(grades));
 
 > Hint: There's more than one way to solve this!
 
+# Class GPA solution
+
+# Speak solution
+
+<details>
+<summary>Hint</summary>
+<div>
+You can use dot notation to access properties on an object
+
+```js
+grades.midterm // => 3.3
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let grades = {
+  'midterm': 3.3,
+  'project': 4.0,
+  'final': 3.2
+}
+
+function gpa(object) {
+  return (object.midterm + object.project + object.final) / 3
+}
+
+console.log('The GPA is ' + gpa(grades));
+```
+
+</div>
+</details>
+
 # All keys are strings, even nulls
 
 * In a JavaScript object, keys must be strings
@@ -324,6 +361,71 @@ $ node order burger burger shake fries burger
 
 Your order total is $19.61
 ```
+
+# Menu Order solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+You can get an array of arguments form the command line by using `process.argv.slice(2)`
+
+</div>
+</details>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+Create an object that represents your menu
+
+```js
+menu = {
+  burger: 5,
+  fries: 3.5,
+  //etc.
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Hint 3</summary>
+<div>
+You can access the value of a key using a string with square bracket notation
+
+```js
+menu["burger"] // => 5
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let order = process.argv.slice(2)
+
+let menu = {
+  burger: 5,
+  fries: 3.5,
+  shake: 1.11,
+  salad: 4.25
+}
+
+let orderPrice = 0
+
+order.forEach((item) => {
+  orderPrice += menu[item]
+})
+
+console.log("Your order total is $" + orderPrice)
+```
+
+</div>
+</details>
 
 # Object Instance Methods
 

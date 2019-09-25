@@ -69,3 +69,49 @@ e.g.
     10
 
 > Hint: Do you remember how to [convert a string to a number](./numbers#anchor/converting-a_string_to_a_number)?
+
+# Add solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+```js
+let numberArray = process.argv.slice(2).map(number => parseInt(number))
+```
+
+</div>
+</summary>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+
+```js
+let sum = 0
+```
+
+</div>
+</summary>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let numbers = process.argv.slice(2);
+
+funtion add(array){
+    let sum = 0
+    let intArray = numbers.map(number => parseInt(number))
+
+    intArray.forEach(int => sum += int)
+
+    return sum
+}
+
+console.log(add(numbers))
+```
+
+</div>
+</summary>

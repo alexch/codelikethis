@@ -314,6 +314,29 @@ Please take a few minutes to **refactor** your old `hello.js` program to use arr
 * How can you use array methods to check if a name is in the enemies list?
 * BEWARE: your new code might need more curly braces than the old code; make sure the `{`s and `}`s properly match
 
+# Enemies List solution
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let enemiesArray = ["Darth", "Voldemort", "Sauron"]
+
+console.log("What is your name?");
+process.stdin.on('data', (chunk) => {
+    let name = chunk.toString().trim();
+    if (enemiesArray.includes(name)) {
+      console.log("NOOOOOO! Go away " + name + "!")
+    } else {
+      console.log("Hello, " + name + "!");
+    }
+});
+```
+
+</div>
+</details>
+
 # LAB: more about arrays
 
 * [Eloquent JavaScript Chapter 4](http://eloquentjavascript.net/04_data.html): Data Structures: Objects and Arrays

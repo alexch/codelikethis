@@ -101,11 +101,13 @@ The `printLine` function itself is called a *callback*
 1. Open `hello.js` in your text editor
 2. Change it to contain the following code:
 
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString();
-            console.log("Hello, " + name + "!");
-        });
+```js
+console.log("What is your name?");
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString();
+    console.log("Hello, " + name + "!");
+});
+```
 
 3. Save the file and switch back to the terminal
 4. Run the program using `node hello.js`
@@ -153,11 +155,11 @@ What happens? Is this what you expected?
 * Change the program to look like this:
 
 ```js
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString().trim();
-            console.log("Hello, " + name + "!");
-        });
+console.log("What is your name?");
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString().trim();
+    console.log("Hello, " + name + "!");
+});
 ```
 
 * Run it and make sure it works OK
@@ -282,6 +284,52 @@ async function start() {
 * Then it says hello to the user by their *full name*.
 
 * Run the program by typing `node name.js` on the command line.
+
+# Full Name solution
+
+<details>
+<summary>Hint</summary>
+You may want to use readline to accept user input asynchronously
+<div>
+
+```js
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary></summary>
+<div>
+
+```js
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+
+async function fullName() {
+  let prenomen = await ask("What is your first name? ")
+  let cognomen = await ask("What is your last name? ")
+
+  console.log("Hello, " + prenomen + " " + cognomen + "!")
+}
+```
+
+</div>
+</details>
 
 # CONGRATULATIONS!
 
