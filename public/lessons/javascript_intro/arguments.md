@@ -71,7 +71,7 @@ let namesArray = process.argv.slice(2)
 ```
 
 </div>
-</summary>
+</details>
 
 <details>
 <summary>Solution</summary>
@@ -112,7 +112,7 @@ let numberArray = process.argv.slice(2).map(number => parseInt(number))
 ```
 
 </div>
-</summary>
+</details>
 
 <details>
 <summary>Hint 2</summary>
@@ -123,7 +123,7 @@ let sum = 0
 ```
 
 </div>
-</summary>
+</details>
 
 <details>
 <summary>Solution</summary>
@@ -145,4 +145,4 @@ console.log(add(numbers))
 ```
 
 </div>
-</summary>
+</details>
