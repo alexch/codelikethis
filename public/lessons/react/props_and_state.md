@@ -257,7 +257,7 @@ class Clock extends React.Component {
 
 * Never update state directly, use `setState({some: 'state'})`
 
-```
+```js
 /* Not good */
 this.state.comment = 'Hello';
 
@@ -271,7 +271,7 @@ this.setState({comment: 'Hello'});
 * React **may** batch those updates together for performance
 * If you use a prior value to calculate the state, pass a callback function
 
-```
+```js
 /* Incorrect */
 this.setState({
   counter: this.state.counter + this.props.increment,

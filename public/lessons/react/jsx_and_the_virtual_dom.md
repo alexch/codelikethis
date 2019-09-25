@@ -73,7 +73,7 @@ ReactDOM.render(
 
 # After compiling JSX -> JS
 
-```
+```js
 const user = {
   firstName: 'Ada',
   lastName:  'Lovelace',

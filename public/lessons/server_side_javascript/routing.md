@@ -33,7 +33,7 @@ as well as a shared context of documentation and tutorials so other coders don't
 
 In the [Hello, Express](./hello_express) lesson we saw the following route:
 
-```
+```js
 app.get('/', (request, response) => response.send('Hello World!'))
 ```
 
@@ -90,7 +90,7 @@ Express will grab the *value* from the path itself, and put it into the `request
 
 Change your "Hello, Express" server to have the following route:
 
-```
+```js
 app.get('/hello/:friend', (request, response)=> {
     response.send('Hello, ' + request.params.friend + '!')
 });
@@ -102,7 +102,7 @@ Prove that it works by visiting <http://localhost:5000/hello/Gandalf> (or use yo
 
 Now add a new route
 
-```
+```js
 app.get('/hello/:you/from/:me', (request, response)=> {
     response.send(`${request.params.me} says, "Hello, ${request.params.you}!')
 });

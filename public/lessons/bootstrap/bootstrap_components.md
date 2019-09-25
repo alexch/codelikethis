@@ -111,7 +111,7 @@ Components need:
 
 * Carousels tend to me a more intricate and complicated Bootstrap component, so lets break down the relatively simple markup below:
 
-```
+```html
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

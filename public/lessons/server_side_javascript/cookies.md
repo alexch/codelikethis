@@ -69,7 +69,7 @@ the Fetch API [does not always send cookies](https://developer.mozilla.org/en-US
 
 to send them you may need to set `credentials: 'include'` like this
 
-```
+```js
 fetch('/articles.json', {credentials: 'include'})
   .then(
 ```

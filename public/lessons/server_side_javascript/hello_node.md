@@ -89,7 +89,7 @@ remote: https://damp-retreat-99529.herokuapp.com/ deployed to Heroku
 
 Visit this URL in a web browser using copy-and-paste, or use this handy shortcut from the console:
 
-```js
+```
 heroku open
 ```
 

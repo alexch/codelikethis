@@ -49,9 +49,6 @@ You will need to have the following to include React as a local package in your 
 We will start with installing React using NPM
 
 ```sh
-
-
-```sh
 npm init -y
 npm install --save react react-dom
 ```
@@ -105,7 +102,7 @@ Now simply write some react in a `<script></script>` tag
 
 Example:
 
-```
+```js
 <script type="text/babel">
   ReactDOM.render(
   <h1>Hello, local React!</h1>,

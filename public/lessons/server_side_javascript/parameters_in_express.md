@@ -30,7 +30,7 @@ Express will grab the *name* and *value* from the query string, and put it into 
 
 Now change your "Hello, Express" server to have the following route:
 
-```
+```js
 app.get('/hello', (request, response)=> {
     response.send('Hello, ' + request.query.friend + '!')
 });

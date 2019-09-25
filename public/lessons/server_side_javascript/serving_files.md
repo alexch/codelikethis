@@ -53,15 +53,19 @@ serving "." at http://127.0.0.1:8080
 
 * create a file called `index.html` containing
 
-        <h1>Hello in HTML</h1>
+```html
+ <h1>Hello in HTML</h1>
+```
 
 * in `package.json`, add
 
-        {
-          "scripts": {
-            "start": "node app.js"
-          }
-        }
+```json
+{
+  "scripts": {
+    "start": "node app.js"
+  }
+}
+```
 
 * launch the web server using `npm start`
 
