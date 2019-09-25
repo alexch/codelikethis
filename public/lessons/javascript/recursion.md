@@ -125,6 +125,7 @@ if (number === 1) {
   return 1
 }
 ```
+</details>
 
 <details>
 <summary>Solution</summary>
