@@ -89,3 +89,54 @@ async function askName() {
   console.log(`Hello, ${name}!`)
 }
 ```
+
+# Lab: Quest.js
+
+Write an async function that asks:
+
+* Your name
+* Your quest
+* Your favorite color
+* and then prints out the line "Hello, **name**! Good Luck **quest**, here's a **color** flower."
+
+# Quest Solution
+
+<details>
+<summary>Hint</summary>
+<div>
+You may want to use the `ask()` function
+
+```js
+const readline = require('readline');
+
+const readlineInterface = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {//'ask' is a normal function that returns a promise
+    readlineInterface.question(questionText, resolve);
+  });
+};
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+async function quest() {
+  let name = await ask("What is your name?")
+  let quest = await ask("what is your quest?")
+  let color = await ask("What is your favorite color?")
+
+  console.log("Hello, " + name + "! Good Luck " + quest + ", here's a " +  color + "flower")
+}
+```
+
+</div>
+</details>
