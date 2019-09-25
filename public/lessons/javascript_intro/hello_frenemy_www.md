@@ -53,6 +53,13 @@ Your `index.html` file should now look something like this
 
 To get your code into your web page you will need to add a `<script>` tag to the bottom of the `<body>` section of your HTML and give it a property of `src="hello.js"`
 
+```html
+<body>
+
+  <script src="hello.js"></script>
+</body>
+```
+
 Congratulations! Your code will now run in the browser
 
 # Changing Input/Output

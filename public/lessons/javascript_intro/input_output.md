@@ -158,3 +158,48 @@ async function start() {
 * Then it says hello to the user by their *full name*.
 
 * Run the program by typing `node name.js` on the command line.
+
+# Full Name solution
+
+<details>
+<summary>Hint</summary>
+<div>
+
+```js
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+
+async function fullName() {
+  let firstName = await ask("What is your first name? ")
+  let lastName = await ask("What is your last name? ")
+
+  console.log("Hello, " + firstName + " " + lastName + "!")
+}
+```
+
+</div>
+</details>

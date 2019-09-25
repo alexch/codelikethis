@@ -101,7 +101,7 @@ fruit.toUpperCase() // "BERRY"
 
 Think of memory as a giant warehouse.
 
-![Warehouse from Raiders of the Lost Ark](../images/warehouse.jpg)
+![Warehouse from Raiders of the Lost Ark](/images/warehouse.jpg)
 
 Like this warehouse from the movie Raiders of the Lost Ark, 
 computer memory is vast and filled with boxes of various sizes.

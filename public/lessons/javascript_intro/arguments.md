@@ -56,10 +56,41 @@ Change `hello.js` to respond to *every one* of its command line arguments.
 
 For instance:
 
-    node hi Alice Bob Voldemort
+    node hi Alice Bob
     Hello, Alice!
     Hello, Bob!
-    NOOOOO, go away Voldemort!
+
+# Hi, Everybody! solution
+
+<details>
+<summary>Hint</summary>
+<div>
+
+```js
+let namesArray = process.argv.slice(2)
+```
+
+</div>
+</summary>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let namesArray = process.argv.slice(2);
+
+function hello(array) {
+    array.forEach(function(name){
+        console.log("Hello, " + name + "!")
+    })
+}
+
+hello(namesArray)
+```
+
+</div>
+</details>
 
 # LAB: Add
 
@@ -69,3 +100,49 @@ e.g.
 
     node add 1 2 3 4
     10
+
+# Add solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+```js
+let numberArray = process.argv.slice(2).map(number => parseInt(number))
+```
+
+</div>
+</summary>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+
+```js
+let sum = 0
+```
+
+</div>
+</summary>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let numbers = process.argv.slice(2);
+
+funtion add(array){
+    let sum = 0
+    let intArray = numbers.map(number => parseInt(number))
+
+    intArray.forEach(int => sum += int)
+
+    return sum
+}
+
+console.log(add(numbers))
+```
+
+</div>
+</summary>

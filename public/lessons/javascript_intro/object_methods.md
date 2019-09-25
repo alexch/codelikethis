@@ -79,3 +79,45 @@ prints the following line:
 ```
 My name is Abby and I have 4 paws!
 ```
+
+# Speak solution
+
+<details>
+<summary>Hint</summary>
+<div>
+You can append a method to an object literally
+
+```js
+let dog = {
+  name: "Abby"
+  paws: 4
+  speak() {/*code goes here*/}
+}
+```
+
+or you can append it using dot notation
+
+```js
+dog.speak = function(){/*code goes here*/}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let dog = {
+    name: 'Abby',
+    paws: 4
+}
+
+dog.speak = function() {
+  return "My name is " + this.name + " and I have " + this.paws + "paws"
+}
+```
+
+</div>
+</details>

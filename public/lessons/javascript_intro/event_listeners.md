@@ -1,6 +1,6 @@
 # Event Listeners
 
-Event Listeners are a special type of function in javascript that what's for a specified event, and then calls a function after that event has been triggered
+Event Listeners are a special type of function in javascript that waits for a specified event, and then calls a function after that event has been triggered
 
 # Common Usage
 
