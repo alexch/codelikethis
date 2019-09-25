@@ -161,7 +161,7 @@ For instance, `collection.find({author: 'alex')` returns all entries whose `auth
 
 For more complicated queries, you can use operators like `$gte` (greater than or equal) and `$or`, e.g. this would find all items created on January 21, 2012:
 
-```
+```js
 collection.find({
  when: {
     '$gte': new Date(2012, 0, 21),
@@ -237,7 +237,7 @@ Mongo has an algorithm for ensuring that this id is unique across *all other doc
 
 In JavaScript, Mongo defines a *class* named `ObjectId` that encapsulates this string and provides useful methods; that's why in the output of `find` you see the JS code: 
 
-```
+```js
 { "_id" : ObjectId("5b5e27ba44c44608f97083f3"),
  "when" : ISODate("2018-07-29T20:46:50.749Z"), 
  "text" : "dogs like to bark" }

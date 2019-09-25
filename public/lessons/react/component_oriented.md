@@ -70,7 +70,7 @@ class ProfileList extends React.Component {
 * Many components can be built based on collections of data
 * Components can be **conditionally** rendered
 
-```
+```js
 class Comment extends React.Component {
   render () {
     return (

@@ -45,7 +45,7 @@ class NameForm extends React.Component {
 * Textarea input elements usually derive their state from the child text
 * React has Textarea inputs use a `value` attribute instead to be more like `input` and `select` inputs
 
-```
+```js
 class EssayForm extends React.Component {
   constructor(props) {
     super(props);
@@ -85,7 +85,7 @@ class EssayForm extends React.Component {
 * React uses `value` instead of `selected` to determine the selected item
 * This makes select forms more conformant to other form input types
 
-```
+```js
 class FlavorForm extends React.Component {
   constructor(props) {
     super(props);
@@ -128,7 +128,7 @@ class FlavorForm extends React.Component {
 * Handling input from many input elements can be done using the `name` attribute
 * Use an `if(); else if (); else` or a `switch` statement to change behavior based on the type or name of the input element
 
-```
+```js
 class Reservation extends React.Component {
   constructor(props) {
     super(props);

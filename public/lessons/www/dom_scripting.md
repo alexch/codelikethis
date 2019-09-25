@@ -77,7 +77,7 @@ In addition to providing many useful *functions*, it also provides some *propert
 If an element has an `id` attribute, you can get a *pointer* to that element with a single line of code:
 
 ```js
-var element = document.getElementById(id);
+let element = document.getElementById(id);
 ```
 
 Once you have a pointer to that element, you can manipulate it further. You can also log it to the console for further inspection using:
@@ -91,7 +91,7 @@ console.log(element)
 # Finding an Element by CSS Selector
 
 ```js
-var element = document.querySelector('main div.preview > p')
+let element = document.querySelector('main div.preview > p')
 ```
 
 This returns the first Element within the document that matches the specified selector (in this case, the first `<p>` that is a direct child of any `<div class='preview'>` that is in the `main` section).
@@ -104,8 +104,8 @@ This returns the first Element within the document that matches the specified se
 Once you find an element (using `getElementById` or any other way), you can start using it.
 
 ```js
-var header = document.getElementById('header')
-var text = header.textContent
+let header = document.getElementById('header')
+let text = header.textContent
 ```
 
 There is also a property called `innerText` but it's confusing and implemented differently in different browsers.
@@ -138,19 +138,19 @@ An element is a particular type of node, and it's the most common, but beware, t
 In addition to getting a *single* element by its `id` or a CSS selector, you can also ask the document to give *all* elements that match a certain criterion.
 
 ```js
-var elements = document.getElementsByClassName('profile-picture')
+let elements = document.getElementsByClassName('profile-picture')
 ```
 
 > by *CSS Class* name
 
 ```js
-var elements = document.getElementsByTagName('h2')
+let elements = document.getElementsByTagName('h2')
 ```
 
 > by *Element* name
 
 ```js
-var elements = document.querySelectorAll('h2.preview > p')
+let elements = document.querySelectorAll('h2.preview > p')
 ```
 
 > by *CSS Selector* expression
@@ -191,7 +191,7 @@ If you have already defined an event handler function, you can attach it by refe
 function sayMagicWord() {
     alert('Shazam!');
 }
-var button = document.getElementById('magic');
+let button = document.getElementById('magic');
 button.addEventListener('click', sayMagicWord)
 </script>
 ```

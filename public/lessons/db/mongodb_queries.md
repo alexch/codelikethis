@@ -125,7 +125,7 @@ db.inventory.find({ status: "A", "size.h": 14 })
 
 * Reminder of document shape and properties
 
-```javsscript
+```javascript
 {
 	"_id" : ObjectId("5b631aff2f6ff13721a2e38b"),
 	"item" : "journal",

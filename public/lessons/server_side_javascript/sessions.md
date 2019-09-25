@@ -45,7 +45,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 
 https://nodejs.org/api/crypto.html#crypto_crypto
 
-```
+```js
 const crypto = require('crypto');
 const secret = 'abcdefg';
 let hash = crypto.createHmac('sha256', secret)

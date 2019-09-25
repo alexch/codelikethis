@@ -235,7 +235,7 @@ ReactDOM.render(<Router />, rootElement);
 
 # React Routing - Match Object Details
 
-```
+```js
 // From <Dashboard />
 Object {props: Object}
   match: Object
@@ -246,7 +246,7 @@ Object {props: Object}
 
 ```
 
-```
+```js
 // From <Home />
 Object {props: Object}
   props: Object
@@ -300,7 +300,7 @@ ReactDOM.render(<App />, rootElement);
 
 # React Router - Sub-Parameters
 
-```
+```js
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
