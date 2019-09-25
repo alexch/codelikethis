@@ -82,7 +82,7 @@ addOne(-43) // => -42
 Write a function that:
 
 * accepts three arguments, a starting age, an amount per day, and an item name
-* calculates the amount of items used over the course fo the rest of your life
+* calculates the amount of items used over the course of the rest of your life
   * based on a 100 year constant max age
 * Outputs "You will need **Number** **Item**s to last the rest of your life." e.g.
 
@@ -93,6 +93,47 @@ supplyCal(0, 3, "cookie") // => "You will need 109500 cookies to last the rest o
 ```
 
 > Supply Calculator inspired by the Lifetime Supply Calculator lab designed for the Girl Develope It! curriculum. The original can be found [here](https://www.teaching-materials.org/javascript/exercises/functions)
+
+# Supply Calculator Solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+```js
+let amountPerYear = amountPerDay * 365
+```
+
+</div>
+</details>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+
+```js
+let numberOfYears = 100 - age
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+function supplyCalc(age, amountPerDay, item) {
+  let amountPerYear = amountPerDay * 365
+  let numberOfYears = 100 - age
+  let totalNeeded = amountperYear * numberOfYears
+
+  let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
+}
+```
+
+</div>
+</details>
 
 # Titleize - Functional Labs
 
@@ -109,6 +150,50 @@ titilize("eveRY green bus drives fAst") // => "Every Green Bus Drives Fast"
 titilize("FRIDAY IS THE LONGEST DAY") // => "Friday Is The Longest Day"
 ```
 
+# Titilize solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+```js
+function capitalize(word) {
+  return word[0].toUpperCase() + word.slice(1).toLowerCase()
+}
+```
+
+</div>
+</summary>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+
+```js
+let wordArray = string.split(" ")
+```
+
+</div>
+</summary>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+function titilize(string){
+  let wordArray = string.split(" ")
+  let newArray = wordArray.map(function(word){
+    return word[0].toUpperCase() + word.slice(1).toLowerCase()
+  })
+
+  return newArray.join(" ")
+}
+```
+
+</div>
+</summary>
+
 # MadLibs - Functional Labs
 
 Write a function that:
@@ -123,3 +208,18 @@ madLib('Bill', 'jump', 'dog') // => "Bill jumped the dog!"
 * Bonus: sanatize your inputs so the first word is *always* capitalized, and the other two words are *always* lowercase.
 
 * Double Extra Bonus: Expand this to a whole madlib story, not just a single sentence.
+
+# MadLibs solution
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+function madLib(noun, verb, directObject) {
+  return noun + " " + verb + "ed the " + directObject + "!"
+}
+```
+
+</div>
+</summary>
