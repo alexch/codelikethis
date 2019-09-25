@@ -163,7 +163,7 @@ function capitalize(word) {
 ```
 
 </div>
-</summary>
+</details>
 
 <details>
 <summary>Hint 2</summary>
@@ -174,7 +174,7 @@ let wordArray = string.split(" ")
 ```
 
 </div>
-</summary>
+</details>
 
 <details>
 <summary>Solution</summary>
@@ -192,7 +192,7 @@ function titilize(string){
 ```
 
 </div>
-</summary>
+</details>
 
 # MadLibs - Functional Labs
 
