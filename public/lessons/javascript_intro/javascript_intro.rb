@@ -16,7 +16,7 @@ class Track
       lesson name: "arguments"
       lesson name: "input_output",
         display_name: "I/O"
-      lesson name: "age_calculator"
+      lesson name: "functional_labs"
       lesson name: "/javascript/scope"
       lesson name: "/javascript/logic"
       lesson name: "/javascript/arrays"
