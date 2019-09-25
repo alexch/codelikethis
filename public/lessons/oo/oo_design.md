@@ -47,7 +47,7 @@ but most everything else is disallowed, especially
 
 If you see code like this:
 
-```
+```js
 let maxAge = course.students.reduce(
     (maxAge, student) => Math.max(maxAge, student.age)
   , 0);
@@ -62,7 +62,7 @@ then redesign your program so you can do this instead:
 
 ...which implies an object-oriented design like this:
 
-```
+```js
 class Course {
   constructor() {
     this.students = [];

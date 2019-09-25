@@ -114,7 +114,7 @@ Objects are *things* that can be *described* and can *do* things, or...
 
 This code 
 
-```
+```js
 let dog = {color: "brown"}
 ```
 
@@ -156,7 +156,7 @@ let lula = {color: "brown"}
 * a variable is a *reference* to an *instance* (persistent location in memory)
 * if you have several references to the same instance, odd things can happen
 
-```
+```js
 let abby = {color: "brown"}
 let abby = dog
 let lula = dog
@@ -170,7 +170,7 @@ abby.color // now we think that abby is gold too :-(
 
 Instance variables are *properties* of the object:
 
-```
+```js
 if (abby.color === 'brown') {
   console.log("Abby is a brown dog.");
 }
@@ -182,7 +182,7 @@ the DOT operator here says "get me the `color` that is attached to `abby`"
 
 Instance *methods* are also *properties* of the object:
 
-```
+```js
 let abby = {color: "brown"};
 abby.speak = function() {
   console.log("Bark!")
