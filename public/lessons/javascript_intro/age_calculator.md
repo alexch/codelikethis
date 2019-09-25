@@ -58,26 +58,43 @@ To flip it you could simply divide the `num` variable by `secInYr` rather than m
 </div>
 </details>
 
+# Functional Labs
 
+Try to solve the following labs by writing a function which returns output(s) given input(s)
 
-
-# More Functional Labs
-
-## Supply Calculator
+### For Example
 
 Write a function that:
 
-* accepts three arguments, an age, an amount per day, and an item
-* calculates the amount of items used over the course fo the rest of your life (based on a constant max age)
+* accepts a number as input
+* returns the input number plus the number positive one
+
+```js
+addOne(1)   // => 2
+addOne(2)   // => 3
+addOne(41)  // => 42
+addOne(-2)  // => -1
+addOne(-43) // => -42
+```
+
+# Supply Calculator - Functional Labs
+
+Write a function that:
+
+* accepts three arguments, a starting age, an amount per day, and an item name
+* calculates the amount of items used over the course fo the rest of your life
+  * based on a 100 year constant max age
 * Outputs "You will need **Number** **Item**s to last the rest of your life." e.g.
 
 ```js
 supplyCal(20, 3, "cookie") // => "You will need 87600 cookies to last the rest of your life"
+supplyCal(99, 3, "cookie") // => "You will need 1095 cookies to last the rest of your life"
+supplyCal(0, 3, "cookie") // => "You will need 109500 cookies to last the rest of your life"
 ```
 
 > Supply Calculator inspired by the Lifetime Supply Calculator lab designed for the Girl Develope It! curriculum. The original can be found [here](https://www.teaching-materials.org/javascript/exercises/functions)
 
-## Titilize
+# Titleize - Functional Labs
 
 Write a function that:
 
@@ -87,10 +104,12 @@ Write a function that:
 * returns a string with the first letter of each word capitalized e.g.
 
 ```js
+titilize("all dogs are good dogs") // => "All Dogs Are Good Dogs"
 titilize("eveRY green bus drives fAst") // => "Every Green Bus Drives Fast"
+titilize("FRIDAY IS THE LONGEST DAY") // => "Friday Is The Longest Day"
 ```
 
-## MadLibs
+# MadLibs - Functional Labs
 
 Write a function that:
 
