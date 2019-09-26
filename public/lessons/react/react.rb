@@ -72,7 +72,6 @@ class Track
     lesson name: "composition_vs_inheritance"
     lesson name: "using_refs"
     lesson name: "error_boundaries"
-    lesson name: "using_the_context"
     lesson name: "routing_in_react"
     lesson name: "routing_in_react_going_further"
 
