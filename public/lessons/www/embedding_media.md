@@ -94,11 +94,7 @@ This is often used for login boxes.
 
 # Embedding Flash
 
-<div style="border: 1px solid black; background: #FDFDFD; margin: auto; text-align: center">
-Adobe Flash <br>
-R.I.P. <br>
-1996 - 2015
-</div>
+![R I P Flash](/images/rip-flash.png)
 
 "In July 2017, Adobe announced that it would declare Flash to be [end-of-life](https://en.wikipedia.org/wiki/Adobe_Flash#End_of_life) in 2020, and will cease support, distribution, and security updates to Flash Player."
 
