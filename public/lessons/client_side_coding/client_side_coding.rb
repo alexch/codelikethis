@@ -64,15 +64,6 @@ class Track
       project name: "umbrella_today"
     end
 
-    # more advanced mapping
-    lesson name: "geolocation" do
-      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
-    end
-
-    lesson name: "geocoding" do
-      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
-    end
-
     lesson name: "interactive_mapping" do
       topic name: "leaflet"
       topic name: "geocoding"
