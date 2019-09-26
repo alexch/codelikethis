@@ -343,7 +343,6 @@ while (count < number) {
 ```js
 function isPrime(number) {
     let count = 2
-    let primeArray = []
     
     while (count < number) {
         if (!(number % count)) {
