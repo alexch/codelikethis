@@ -186,7 +186,7 @@ if (age >= 18 || hasPermissionSlip()) {
 
 # LAB: Good Friend, Bad Friend
 
-* Your [`hello.js` program](./input-and-output) should currently look something like this:
+* Your [`hello.js` program](/lessons/javascript/input-and-output) should currently look something like this:
 
 ```js
 console.log("What is your name?");
@@ -320,4 +320,3 @@ process.stdin.on('data', (chunk) => {
 * FreeCodeCamp:
   * From [Understanding Boolean Values](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-boolean-values)
   * up to [Chaining if-else statements](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/chaining-if-else-statements)
-
