@@ -138,7 +138,7 @@ let dog = {color: "brown"}
 
 # Literals create instances
 
-```
+```js
 let abby = {color: "brown"}
 let lula = {color: "brown"}
 ```
