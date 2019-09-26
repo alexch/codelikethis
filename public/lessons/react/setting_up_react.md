@@ -36,7 +36,7 @@ Add the following links to the `<head>` of the HTML file.
   </head>
 ```
 
-# Local Package Installation
+# Local Package Installation Requirements
 
 You will need to have the following to include React as a local package in your HTML file.
 
@@ -44,7 +44,7 @@ You will need to have the following to include React as a local package in your 
 - A package bundler like **Webpack** or **Browserify**
 - A compiler like **Babel**
 
-# Local Package Installation
+# Local Package Installation Setup
 
 We will start with installing React using NPM
 
@@ -53,7 +53,7 @@ npm init -y
 npm install --save react react-dom
 ```
 
-# Local Package Installation
+# Local Package Installation 1
 
 Download the React, ReactDOM, and Babel Scripts from the Content Delivery Network (CDN)
 
@@ -66,7 +66,7 @@ Download the React, ReactDOM, and Babel Scripts from the Content Delivery Networ
 ### Babel Standalone
 - https://unpkg.com/babel-standalone@6.15.0/babel.min.js
 
-# Local Package Installation
+# Local Package Installation 2
 
 Put the content of the scripts into a directory called `src` in the project root
 
@@ -77,7 +77,7 @@ mv path/to/downloads/react-dom.development.js ./src/
 mv path/to/downloads/babel.min.js ./src/
 ```
 
-# Local Package Installation
+# Local Package Installation 3
 
 Create an `index.html` file and source all three files in the head
 
@@ -96,7 +96,7 @@ Create an `index.html` file and source all three files in the head
 </html>
 ```
 
-# Local Package Installation
+# Local Package Installation 4
 
 Now simply write some react in a `<script></script>` tag
 
@@ -111,7 +111,7 @@ Example:
 </script>
 ```
 
-# Local Package Installation
+# Finished Local Package Installation
 
 ### Finished simple index.html
 
