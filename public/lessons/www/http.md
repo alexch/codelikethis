@@ -144,7 +144,7 @@ then the server replies with an HTTP response!
 
 If you have a working `telnet`, try this yourself. Also try `telnet towel.blinkenlights.nl` .
 
-# Telnet Screenshot
+# Curl Screenshot
 
-![telnet screenshot](/images/telnet-google.png)
+![curl screenshot](/images/http-curl-example.png)
 
