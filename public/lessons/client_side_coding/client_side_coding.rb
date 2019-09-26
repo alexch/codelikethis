@@ -83,10 +83,9 @@ class Track
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
     end
 
-    # probably should move all these lessons to later tracks
+    lesson name: "media"
 
-    lesson name: "canvas"
-    lesson name: "svg"
+    # probably should move all these lessons to later tracks
 
     lesson name: "security" do
       link name: "XSS"
