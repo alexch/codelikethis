@@ -39,9 +39,6 @@ class Track
       topic name: "react-component-state"
     end
 
-    lesson name: "stateless_functional_components",
-           description: "Some components will only accept data from their Props and don't need a State object themselves or from their parents. These kind of components can be built using only functions and are very simple to reason about."
-
     lesson name: "responding_to_events" do
       topic name: "react"
       topic name: "react-events"
