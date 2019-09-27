@@ -35,7 +35,7 @@ Chrome can be one of the most useful tools for debugging HTML and CSS.
 * An easy-to-read visual representation of your DOM will open, which can be modified and analyzed to track down any code that may be of issue.
 * Both CSS properties and HTML elements can also be added, removed, or modified to determine their impact on specific elements of your web page.
 
-![Image of the chrome web inspection tool](https://developer.chrome.com/devtools/images/devtools-window.png "Chrome Web Inspector")
+![Image of the chrome web inspection tool](/images/dom-debbuging.png)
 
 # Grab a Second Set of Eyes
 
