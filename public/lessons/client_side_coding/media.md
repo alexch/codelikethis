@@ -1,5 +1,9 @@
 # Types of Media
 
+*Images
+*Video
+*Audio
+
 # Image Types
 
 There are many different types of images, however we are going to focus on the three most common types of images you'll find around the web
@@ -48,12 +52,16 @@ A better way to embed a (relatively) large video file would be to use an `<ifram
 
 # Animation with Canvas
 
-[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
+You can animate elements within a `<canvas>` element using JavaScript.  Canvas elements work by continuously redrawing their contents as directed by your JavaScript.  Most animations make heavy use of the `setTimeout`, `setInterval` and `requestAnimationFrame` functions. There are also canvas specific methods (such as `requestAnimationFrame()`) that can be used to control animations.
+
+Since your animations are completely controlled by JavaScript it is suprisingly easy to make your animations interactive.
+
+There is a good tutorial for working with animations on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
 
 # Animating SVGs
 
-[Snap SVG](http://snapsvg.io/)
+Animating SVGs is done primarily through updates to the css that tells your browser how to draw the svg.  There are some JavaScript libraries you can use to simplify this process such as [Snap SVG](http://snapsvg.io/)
 
 # Audio
 
-CloudFlare's pretty easy...
+You can include audio in your site using an `<audio>` element with a `src` attribute that points to the location of your audio files.  You can also open a window to a dedicated audio hosting platform like [soundcloud](https://soundcloud.com/) using an `<iframe>` element to speed up page load.
