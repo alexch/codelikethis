@@ -130,6 +130,10 @@ In FireFox:
 
 >Note: If you're unsure where your error is coming from you can add abreak point at the top of your code and step through your whole program line by line
 
+# Step 2a breakdown
+
+![chrome debugger example](/images/chrome-debugger.png)
+
 # Step 2b: Add Breakpoints in FireFox
 
 * In the dev tools, navigate to the `Debugger` tab (to the immediate right of the `console` tab)
@@ -137,6 +141,10 @@ In FireFox:
 * Select the file you want to debug from the `Sources` section
 
 * Click on the line number where you want to add your breakpoint
+
+# Step 2b breakdown
+
+![firefox debugger example](/images/firefox-debugger.png)
 
 # Step 3: Run your Code
 
@@ -157,7 +165,12 @@ If you've stepped through your code, and are still having issues finding where t
 # VSCode's Debugger
 
 There is also a debugger tool built right into VSCode. This debugger allows you to set breakpoints by clicking just to the left of the line number. A faded red circle will appear when you hover over a valid location, and a solid red circle will appear at the breakpoint once you click.
+
 If you click the `Debug` icon on the left side of your editor it will open a box to the left that will display outputs.
+
+# VS Code Debugger Example
+
+![vscode debugger](/images/vscode-debugger.png)
 
 # But Wait! There's More!
 The VSCode debugger *also* allows you to track the value of variables or expressions through the execution of your code. To add a variable to watch:
