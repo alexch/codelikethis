@@ -75,15 +75,6 @@ class Track
       topic name: "http-methods"
     end
 
-    lesson name: "parameters_in_express" do
-      topic name: "get-request"
-      topic name: "post-request"
-      topic name: "http-methods"
-      topic name: "path-parameters"
-      topic name: "query-parameters"
-      topic name: "body-parameters"
-    end
-
     lesson name: "redirects" do
       topic name: "http-redirect"
     end
