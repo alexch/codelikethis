@@ -131,32 +131,6 @@ class Track
       topic name: "post-request"
     end
 
-    # lesson name: "client_vs_server_js"
-    #
-    # lesson name: "/db/overview", display_name: "State: Databases",
-    #        description: "Databases are very powerful, but they can also be very simple. For this lesson we will explore using a database to save a 'blob' of JavaScript data by name, then using that name to retrieve the blob later. We'll be using a 'NoSQL' document database (MongoDB or Firebase) but you can use these techniques with a relational (SQL) database as well."
-    #
-    # lesson name: "sessions", display_name: "State: Sessions" do
-    #   topic name: 'sessions'
-    #   topic name: 'state'
-    # end
-    #
-    # lesson name: "sessions_with_mongo"
-    #
-    #
-    # lesson name: "uploads", display_name: "State: Uploads" # forms, server store, cloud store, plugins  -- optional?
-    #
-    # lesson name: "express", description: "Express is a web framework for Node.js, adding features like middleware and routing to the barebones Node.js"
-    #
-    # lesson name: "security_overview" # id vs auth, login/logout, XSS etc?
-    # lesson name: "login_and_logout" # passport.js? http://www.passportjs.org/ https://github.com/jaredhanson/passport-local
-    # lesson name: "oauth"
-    #
-    # lesson name: "calling_apis"
-    # lesson name: "bots" do # todo: project: build a Slack Bot
-    #   link href: "https://medium.com/glitch/when-good-bots-go-bad-4007a2b2f41e"
-    # end
-    # lesson name: "building_apis"
 
   end
 end
