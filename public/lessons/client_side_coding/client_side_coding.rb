@@ -50,8 +50,7 @@ class Track
     end
 
     lesson name: "calling_apis",
-      display_name: "Calling APIs from JavaScript",
-      do
+      display_name: "Calling APIs from JavaScript" do
         topic name: "postman"
         topic name: "apis"
         link href: 'https://www.codecademy.com/tracks/parse'
