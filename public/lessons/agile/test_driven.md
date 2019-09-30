@@ -1,16 +1,6 @@
-# Test-Driven
+# Test Driven Development
 
-by Alex Chaffee
-
-alexch @ gmail.com
-
-# Intended Audience
-
-* Developers or QA Engineers
-* Familiar with Unit Testing (optional)
-* Want more detail on Automated Testing in general
-* Want to know the case for Test-Driven Development
-* Want to know style tips and gotchas for Testing and TDD
+The basic principle of TDD is that you write your tests first, and then you write code to make that test past.  You never write code you haven't already written a test for.
 
 # Part I: Basic Techniques
 

@@ -11,7 +11,7 @@
 
 ### Composing Behavior with Components
 
-```js
+```jsx
 /* FancyBorder will componse with children*/
 function FancyBorder(props) {
   return (
@@ -41,7 +41,7 @@ function WelcomeDialog() {
 * Sometimes components have children in several places
 * Assigning the child components to prop names can help organize
 
-```js
+```jsx
 function SplitPane(props) {
   return (
     <div className="SplitPane">
@@ -75,7 +75,7 @@ function App() {
 * Specific Components can configure General Components
 * Props can be used to configure
 
-```js
+```jsx
 function Dialog(props) {
   return (
     <FancyBorder color="blue">

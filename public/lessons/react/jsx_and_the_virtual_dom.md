@@ -9,7 +9,7 @@
 
 - This is JSX Code
 
-```javascript
+```jsx
 ReactDOM.render(
   <h1>Hello, React!</h1>,
   document.getElementById('root')
@@ -20,7 +20,7 @@ ReactDOM.render(
 
 - This is the ReactDOM code the JSX creates
 
-```javascript
+```jsx
 ReactDOM.render(React.createElement(
   'h1',
   null,
@@ -47,7 +47,7 @@ ReactDOM.render(React.createElement(
 
 Building a greeter
 
-```javascript
+```jsx
 const user = {
   firstName: 'Ada',
   lastName:  'Lovelace',
@@ -107,7 +107,7 @@ ReactDOM.render(
 - Tools like [Babel](https://babeljs.io) convert JSX to ReactDOM
 - You can use Babel as a script in your project HTML for development
 
-```
+```jsx
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
 <script type="text/babel">
 console.log( <h1>yo</h1> );

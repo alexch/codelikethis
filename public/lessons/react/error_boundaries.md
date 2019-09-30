@@ -22,7 +22,7 @@
 * `componentDidCatch` behaves like JavaScript `catch {}`
 * Only React Class components can be Boundaries
 
-```javascript
+```jsx
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -46,7 +46,7 @@ class ErrorBoundary extends React.Component {
 }
 ```
 
-```javascript
+```jsx
 <ErrorBoundary>
   <MyWidget />
 </ErrorBoundary>
@@ -79,7 +79,7 @@ componentDidCatch(error, info) {
 * Event handlers are just normal JavaScript
 * Use regular `try/catch` syntax
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);

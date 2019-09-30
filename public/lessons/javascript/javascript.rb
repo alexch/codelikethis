@@ -110,12 +110,7 @@ Track::Javascript = Track.new(
   lesson name: "promises" do
     video name: "Promises - Fun Fun Function", youtube_id: "2d7s3spWAzo"
   end
-  lesson name: "async_and_await" do
-    link href: "https://javascript.info/async-await"
-    link name: "Async/Await Fun Fun Function", href:
-        "https://www.youtube.com/watch?v=568g8hxJJp4"
-  end
-  lesson name: "evented_io" do
+  lesson name: "evented_io", display_name: "Evented I/O" do
     topic name: "es6"
     topic name: "promises"
     topic name: "async-await"

@@ -101,7 +101,7 @@ cy.visit('/cart')
 
 # get
 
-```
+```js
 cy.get('#someId')
 ```
 

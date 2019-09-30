@@ -3,7 +3,7 @@
 * Components can be rendered using If/Else or a Ternary
 * State within the Class or Function can be used in the conditions
 
-```javascript
+```jsx
 const UserGreeting = (props) => {
   return <h1>Welcome back!</h1>;
 }
@@ -29,7 +29,7 @@ ReactDOM.render(
 
 # React Elements as Variables - Components
 
-```javascript
+```jsx
 const LoginButton = (props) => {
   return (
     <button onClick={props.onClick}>
@@ -49,7 +49,7 @@ const LogoutButton = (props) => {
 
 # React Elements as Variables - Usage
 
-```javascript
+```jsx
 class LoginControl extends React.Component {
   constructor (props) {
     super (props);
@@ -92,7 +92,7 @@ class LoginControl extends React.Component {
 * `truth && expression` is always true and evaluates `expression`
 * `false && expression` is always false and evaluates `false`
 
-```javascript
+```jsx
 const Mailbox = (props) => {
   const unreadMessages = props.unreadMessages;
   return (
@@ -125,7 +125,7 @@ ReactDOM.render(
 
 ### Simple
 
-```javascript
+```jsx
 class Greeting extends React.Component {
   constructor (props) {
     super (props)
@@ -148,7 +148,7 @@ class Greeting extends React.Component {
 
 ### Complex
 
-```javascript
+```jsx
 render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
@@ -165,7 +165,7 @@ render() {
 
 # Preventing Component Rendering
 
-```javascript
+```jsx
 const WarningBanner = (props) => {
   if (!props.warn) {
     return null;

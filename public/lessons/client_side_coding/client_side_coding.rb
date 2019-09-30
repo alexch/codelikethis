@@ -51,7 +51,7 @@ class Track
 
     lesson name: "calling_apis",
       display_name: "Calling APIs from JavaScript",
-      description: "jQuery.ajax(), XMLHttpRequest, Fetch" do
+      do
         topic name: "postman"
         topic name: "apis"
         link href: 'https://www.codecademy.com/tracks/parse'

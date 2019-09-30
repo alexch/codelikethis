@@ -21,8 +21,6 @@ Inline elements should only contain data, or other inline elements.
 
 Block level elements can contain both block and inline elements.
 
-![Illustration of HTML displays](http://www.girldevelopitfargo.com/holidayhtmlcss/img/example-blockinline.png "HTML Displays")
-
 # CSS Display Property
 
 Elements are given a default **display** value based on their type - this is a CSS property that determines an element's layout, and how it interacts with other elements.

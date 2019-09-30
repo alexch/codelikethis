@@ -106,7 +106,7 @@ Some things to try:
 
     let snack = "Apple"
 
-![snack-apple](snack-apple.svg)
+![snack-apple](/images/snack-apple.svg)
 
 Think of a variable as an arrow **pointing** to a value.
 

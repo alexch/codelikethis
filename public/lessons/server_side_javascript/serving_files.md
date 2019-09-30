@@ -29,7 +29,9 @@ serving "." at http://127.0.0.1:8080
 * Express comes with its own static file server
 * Using it is a one-liner: 
 
-        app.use(express.static('.'))
+```js
+app.use(express.static('.'))
+```
 
 # LAB: static file server
 
@@ -43,13 +45,15 @@ serving "." at http://127.0.0.1:8080
     
 * create a file called `app.js` containing the following code:
 
-        const express = require('express')
-        const app = express()
-        const port = process.env.PORT || 5000
-        
-        app.use(express.static('.'))
-        
-        app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+```js
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 5000
+
+app.use(express.static('.'))
+
+app.listen(port, () => console.log(`Example app listeningport ${port}!`))
+```
 
 * create a file called `index.html` containing
 

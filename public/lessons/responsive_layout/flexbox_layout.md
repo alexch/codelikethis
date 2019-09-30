@@ -1,6 +1,6 @@
 # Flexbox
 
-<img src="centered-flexbox.png" width="480px"/>
+<img src="/images/centered-flexbox.png" width="480px"/>
 
 # Introduction to Flexbox
 
