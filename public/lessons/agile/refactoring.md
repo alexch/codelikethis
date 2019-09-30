@@ -27,7 +27,6 @@ After these slides, we’ll start with some actual production code, make sure it
 > disclaimer: This presentation uses some
 > spiritual imagery but is not intended to
 > parody any religion or culture
-> (except American New Age Hippies)
 
 # What is Refactoring?
 
@@ -62,8 +61,6 @@ debugging
 # Why refactor?
 
 ![yoda](/images/yoda-clear-your-mind.gif)
-
-(Yoda ≈ Buddha)
 
 # Refactor to understand
 
@@ -326,13 +323,13 @@ don't confuse *method chaining* (often good) with *feature envy* (usually bad))
 
 ## Method Chaining
 
-```
+```js
 string.split(' ').map((s)=>s.toUpperCase()).join(' ')
 ```
 
 ## Feature Envy
 
-```
+```js
 course.students[0].phone.sendText('hi')
 ```
 

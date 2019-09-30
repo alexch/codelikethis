@@ -128,6 +128,7 @@ alexch @ gmail.com
 * Monitoring
 
 # A Good Test Is...
+
 * Automated
 * Isolated
 * Repeatable
@@ -160,8 +161,6 @@ alexch @ gmail.com
 * Improve design
 * Support refactorings
 * Enable experimentation and change
-
-# When do you test?
 
 # When do you test?
 
@@ -500,6 +499,7 @@ expect( function(){ parser.parse(bogus); } )
 *  Quite brittle; often thrown away after the refactoring is done
 
 # Pair Programming
+
 * A pair's job is to keep you focused
   * "Wait, let's write a test first."
   * "Wait, let's refactor first."
@@ -507,6 +507,7 @@ expect( function(){ parser.parse(bogus); } )
   * "Can I drive?"
 
 # Ping-Pong Pairing
+
 * One pair writes a test
 * The other pair makes it pass and writes the next test
 * Repeat
@@ -524,13 +525,16 @@ expect( function(){ parser.parse(bogus); } )
 * If your regression test is high-level (e.g. Selenium), you probably want a failing unit test too
 
 # Do Over
-* Often the best thing to do is throw away your work and start again
+
+Often the best thing to do is throw away your work and start again
 
 # Leave One For Tomorrow
+
 * At the end of the day, write a failing test and leave it there for tomorrow
 * Based on writer's trick: start a sentence and leave it unfinished
 
 # The Need For Speed
+
 * Tests are only valuable if they're run all the time
 * If they're slow, people will not want to run them all the time
 * So keep them fast!
@@ -663,19 +667,18 @@ In Jasmine (built in, see [the docs](https://jasmine.github.io/2.0/introduction.
 * Both are useful at times
 
 # Inside-out
+
 * Start with domain objects
 * Next layer of tests
 
 # Outside-in
+
 * Start with customer story or user interface
 * Makes you think like a user
 * Tests capture these requirements
 * Lower layers implemented with
 
 # Outside-in design, inside-out development
+
 * Write a bunch of UI-level tests
 * Leave them there while you test-drive inside-out
-
-# Part IV: Q&A
-
-Thanks!
