@@ -125,7 +125,6 @@ Track::Javascript = Track.new(
   lesson name: 'encapsulation'
 
   # One-offs
-  lesson name: 'unicode'
   # TODO: make a new track for these
   lesson name: "take_a_minute_to_refactor_winner"
 
