@@ -85,14 +85,5 @@ class Track
 
     lesson name: "media"
 
-    # probably should move all these lessons to later tracks
-
-    lesson name: "security" do
-      link name: "XSS"
-      link name: "CSRF"
-      link href: "https://www.quora.com/What-is-the-difference-between-XSS-and-CSRF-from-their-execution-perspective"
-      link href: "https://blog.plan99.net/its-time-to-kill-the-web-974a9fe80c89#7a16",
-        name: "Web apps are impossible to secure"
-    end
   end
 end
