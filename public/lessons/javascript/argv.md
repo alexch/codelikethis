@@ -101,7 +101,7 @@ let sum = 0
 ```js
 let numbers = process.argv.slice(2);
 
-funtion add(array){
+function add(array){
     let sum = 0
     let intArray = numbers.map(number => parseInt(number))
 

@@ -168,7 +168,7 @@ There is also a debugger tool built right into VSCode. This debugger allows you 
 
 If you click the `Debug` icon on the left side of your editor it will open a box to the left that will display outputs.
 
-# VS Code Debugger Example
+# VSCode Debugger Example
 
 ![vscode debugger](/images/vscode-debugger.png)
 

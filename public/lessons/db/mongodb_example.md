@@ -21,7 +21,9 @@ Here are its docs:
 
 Connect to MongoDB with a URI:
   
-    const url = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+```js
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+```
 
 > if there's a shell environment variable named MONGODB_URI, use it; otherwise, connect to localhost
 
@@ -47,9 +49,11 @@ The first two parameters are not useful to us; the next parameter is the command
 
 So after running these commands:
 
-    let params = process.argv.slice(2);
-    let command = params.shift();
-    let text = params.join(' ').trim();
+```js
+let params = process.argv.slice(2);
+let command = params.shift();
+let text = params.join(' ').trim();
+```
 
 we have the following values:
 

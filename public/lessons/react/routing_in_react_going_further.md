@@ -17,7 +17,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 
 ### Example
 
-```javascript
+```jsx
 <Route
   path="/:a([A-Za-z]+)"
   render={({ match, props, location }) => (
@@ -34,7 +34,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 
 ### Example
 
-```javascript
+```jsx
 <Route
   path="/:a([A-Za-z]+)/:b(\d+)"
   render={({ match, props, location }) => (
@@ -58,7 +58,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 
 ### Example
 
-```javascript
+```jsx
 const Nav = props => {
   return (
     <div>
@@ -85,7 +85,7 @@ const Nav = props => {
 
 ### Example
 
-```javascript
+```jsx
 const App = props => {
   return (
     <BrowserRouter>
@@ -113,7 +113,7 @@ const App = props => {
 
 ### Example
 
-```javascript
+```jsx
 const NotFound = () => (
   <div>
     <h1>That page was not found</h1>
@@ -143,7 +143,7 @@ const App = props => {
 
 ### Examples
 
-```javascript
+```jsx
 const Home = () => <h1>You are Home</h1>;
 const Posts = () => <h1>All the Posts</h1>;
 

@@ -7,7 +7,7 @@
 
 ### Boiling Point Calculator
 
-```javascript
+```jsx
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
     return (
@@ -25,7 +25,7 @@ function BoilingVerdict(props) {
 * An element to collect input is needed
 * The input is passed to the `BoilingVerdict` Component
 
-```javascript
+```jsx
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -63,7 +63,7 @@ class Calculator extends React.Component {
 
 ### What we want
 
-```javascript
+```jsx
 class Calculator extends React.Component {
   render() {
     return (
@@ -78,7 +78,7 @@ class Calculator extends React.Component {
 
 ### Extract TemperatureInput
 
-```javascript
+```jsx
 class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
@@ -112,7 +112,7 @@ class TemperatureInput extends React.Component {
 
 ### Remove State from TemperatureInput
 
-```javascript
+```jsx
 class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
@@ -147,7 +147,7 @@ class TemperatureInput extends React.Component {
 
 ### Parent Calculator Passes State to Children
 
-```javascript
+```jsx
 class Calculator extends React.Component {
   constructor(props) {
     super(props);

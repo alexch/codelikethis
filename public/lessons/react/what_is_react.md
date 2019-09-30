@@ -151,7 +151,7 @@ ReactDOM.render(
 
 Accepts a description of the components that make up the page, and what DOM node to **render** the results to.
 
-```javascript
+```jsx
 ReactDOM.render()
 // API signature
 ReactDOM.render(element, container[, callback])
@@ -166,7 +166,7 @@ ReactDOM.render(element, container[, callback])
 
 Accepts an element type, props of the element, and child elements.
 
-```javascript
+```jsx
 React.createElement()
 // API signature
 React.createElement(

@@ -86,7 +86,7 @@ whose IDs member is an array of numbers.
 * so if you _copy_ a JSON blob and _paste_ it into the Node REPL
 * it will look like this:
 
-```javascript
+```
 
 $ node
 > { "Image": { "Width":  800, "Height": 600, "Title":  "View from 15th Floor", "Thumbnail": { "Url":    "http://www.example.com/image/481989943", "Height": 125, "Width":  100 }, "Animated" : false, "IDs": [116, 943, 234, 38793] } }

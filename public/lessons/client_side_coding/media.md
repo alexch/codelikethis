@@ -1,8 +1,8 @@
 # Types of Media
 
-*Images
-*Video
-*Audio
+* Images
+* Video
+* Audio
 
 # Image Types
 
@@ -64,4 +64,4 @@ Animating SVGs is done primarily through updates to the css that tells your brow
 
 # Audio
 
-You can include audio in your site using an `<audio>` element with a `src` attribute that points to the location of your audio files.  You can also open a window to a dedicated audio hosting platform like [soundcloud](https://soundcloud.com/) using an `<iframe>` element to speed up page load.
+You can include audio in your site using an `<audio>` element with a `src` attribute that points to the location of your audio files. Or by using JavaScript to create a new `Audio` object `let myAudio = new Audio('filename.mp3')` and setting it to play on some event. You can also open a window to a dedicated audio hosting platform like [soundcloud](https://soundcloud.com/) using an `<iframe>` element to speed up page load.
