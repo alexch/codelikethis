@@ -55,7 +55,7 @@ function moveToRoom(newRoom) {
 }
 ```
 
-You may want to create a [State Machine](/lessons/cs/state_machines) to represent the rooms.
+You may want to create a [State Machine](/lessons/javascript/state_machines) to represent the rooms.
 
 ## And Don't Forget to Demo!
 
