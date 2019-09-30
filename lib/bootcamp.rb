@@ -37,7 +37,6 @@ class Bootcamp < Site
       ::Track::Agile,
       ::Track::Git,
       ::Track::TricksOfTheTrade, # or "trade secrets" ?
-      ::Track::Career,
     ]
   end
 
