@@ -121,7 +121,7 @@ prints the current value of count.
 
 goes *back to the `while` line* and checks again
 
-# `while` breakdown (pt.2)
+# `while` breakdown (pt.3)
 
     while (count <= 100)
 
@@ -131,7 +131,7 @@ compares `count` to `100`.
 
 Eventually, `count` becomes `101`, and the `while` expression is `false`, and so we stop looping and go on.
 
-# `break` dancing
+# break dancing
 
 The magic word `break` stops a loop immediately.
 
@@ -212,7 +212,7 @@ function poemLine(lineNumber) {
     } else if (lineNumber === 4) {
         return "4!"
     } else {
-        return " " + lineNumber + " potato,"
+        return lineNumber + " potato,"
     }
 }
 ```
@@ -343,7 +343,6 @@ while (count < number) {
 ```js
 function isPrime(number) {
     let count = 2
-    let primeArray = []
     
     while (count < number) {
         if (!(number % count)) {
