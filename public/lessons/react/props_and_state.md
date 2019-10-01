@@ -23,7 +23,7 @@
 * Any function that accepts one argument as props and returns JSX is valid
 * Stateless functions have no State i.e. `state = {value: 'something'}`
 
-```javascript
+```html
 <body>
   <div id="root"/>
 </body>
@@ -50,7 +50,7 @@
 * Neither Function nor Class components should mutate their Props
 * React requires Components to be 'Pure' toward their Props
 
-```javascript
+```jsx
 /* Always returns the same JSX for given inputs */
 
 const UserInfo = (props) => {
@@ -69,7 +69,7 @@ const UserInfo = (props) => {
 
 * 'Pure' functions don't mutate inputs and always return the same output for the same inputs
 
-```javascript
+```jsx
 /* This is a 'Pure' function */
 /* It always returns the same output for given inputs */
 
@@ -78,7 +78,7 @@ function sum (first, second) {
 }
 ```
 
-```javascript
+```jsx
 /* This is an 'Impure' function */
 /* It can return different things based on the balance */
 
@@ -117,7 +117,7 @@ function deduct (bankAccount, amount) {
 
 # State - Tick Code
 
-```javascript
+```jsx
 function tick() {
   const element = (
     <div>
@@ -138,7 +138,7 @@ setInterval(tick, 1000);
 
 > Does this use component state?
 
-```javascript
+```jsx
 /* Now we have a component */
 function Clock(props) {
   return (
@@ -164,7 +164,7 @@ setInterval(tick, 1000);
 
 * Convert the stateless function to a Class
 
-```javascript
+```jsx
 /* From this */
 function Clock(props) {
   return (
@@ -190,7 +190,7 @@ class Clock extends React.Component {
 
 # State - Start the Clock
 
-```javascript
+```jsx
 class Clock extends React.Component {
   constructor(props) {
     /* Make sure to call super in a constructor */
@@ -213,7 +213,7 @@ class Clock extends React.Component {
 
 # State - Manage the Clock
 
-```javascript
+```jsx
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -257,7 +257,7 @@ class Clock extends React.Component {
 
 * Never update state directly, use `setState({some: 'state'})`
 
-```js
+```jsx
 /* Not good */
 this.state.comment = 'Hello';
 
@@ -271,7 +271,7 @@ this.setState({comment: 'Hello'});
 * React **may** batch those updates together for performance
 * If you use a prior value to calculate the state, pass a callback function
 
-```js
+```jsx
 /* Incorrect */
 this.setState({
   counter: this.state.counter + this.props.increment,
@@ -289,7 +289,7 @@ this.setState((prevState, props) => ({
 * This allows for independent property merges
 * The merge is shallow
 
-```javascript
+```jsx
 constructor(props) {
   super(props);
   this.state = {
@@ -316,4 +316,44 @@ componentDidMount() {
 # State - Many Clocks
 
 <p data-height="265" data-theme-id="light" data-slug-hash="pZxMag" data-default-tab="js,result" data-user="Dangeranger" data-pen-title="Hello World in React" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/pZxMag/">Hello World in React</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+# Using Functional Component Syntax
+
+Instead of creating a Component by extending the Component class we can write a function like this:
+
+```jsx
+function StatelessComponent (props) {
+  return <h1>Hello {props.name}</h1>
+}
+```
+
+Then we can slot it into a stateful component like so:
+
+```jsx
+class Stateful extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {name: "Bill"};
+  }
+
+  render() {
+    return (
+      <div>
+        <StatelessComponent name={this.state.name} />
+      </div>
+    );
+  }
+}
+```
+
+We could also slot it into another stateless component and pass props directly to it:
+
+```jsx
+function AlsoStateless (props) {
+  return (
+    <div>
+      <StatelessComponent name="Bob" />
+    </div>
+  )
+}
+```

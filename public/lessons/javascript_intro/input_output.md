@@ -200,6 +200,8 @@ async function fullName() {
 
   console.log("Hello, " + firstName + " " + lastName + "!")
 }
+
+fullName()
 ```
 
 </div>

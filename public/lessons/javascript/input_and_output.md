@@ -307,7 +307,7 @@ function ask(questionText) {
 </details>
 
 <details>
-<summary></summary>
+<summary>Solution</summary>
 <div>
 
 ```js

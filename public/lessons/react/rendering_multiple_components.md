@@ -3,7 +3,7 @@
 * Map() takes a list and returns a transformed new list
 * Escape the JavaScript within JSX using `{}`
 
-```javascript
+```jsx
 NumberList (props) => {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
@@ -26,7 +26,7 @@ ReactDOM.render(
 
 # Multiple Components with Keys
 
-```javascript
+```jsx
 
 NumberList = (props) => {
   const numbers = props.numbers;
@@ -56,7 +56,7 @@ ReactDOM.render(
 * Database IDs can make good Keys
 * Indexes of the Components are a good backup
 
-```javascript
+```jsx
 ListItem = (props) => {
   // Correct! There is no need to specify the key here:
   return <li>{props.value}</li>;
@@ -93,7 +93,7 @@ ReactDOM.render(
 * Keys live on the components
 * Keys do not live on the content of the component
 
-```javascript
+```jsx
 ListItem = (props) => {
   const value = props.value;
   return (
@@ -126,7 +126,7 @@ ReactDOM.render(
 
 # Unique Component Keys
 
-```javascript
+```jsx
 Blog = (props) => {
   const sidebar = (
     <ul>
@@ -170,7 +170,7 @@ ReactDOM.render(
 * Arrya.map() can then be included inline
 * Multiple nested embeddings signals that a Component might need extraction
 
-```javascript
+```jsx
 NumberList = (props) => {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
@@ -186,7 +186,7 @@ NumberList = (props) => {
 }
 ```
 
-```javascript
+```jsx
 NumberList = (props) => {
   const numbers = props.numbers;
   return (

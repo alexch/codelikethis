@@ -50,8 +50,7 @@ class Track
     end
 
     lesson name: "calling_apis",
-      display_name: "Calling APIs from JavaScript",
-      description: "jQuery.ajax(), XMLHttpRequest, Fetch" do
+      display_name: "Calling APIs from JavaScript" do
         topic name: "postman"
         topic name: "apis"
         link href: 'https://www.codecademy.com/tracks/parse'
@@ -62,15 +61,6 @@ class Track
       project name: "dothraki_translator"
       project name: "socket_chat"
       project name: "umbrella_today"
-    end
-
-    # more advanced mapping
-    lesson name: "geolocation" do
-      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
-    end
-
-    lesson name: "geocoding" do
-      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
     end
 
     lesson name: "interactive_mapping" do
@@ -92,17 +82,7 @@ class Track
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
     end
 
-    # probably should move all these lessons to later tracks
+    lesson name: "media"
 
-    lesson name: "canvas"
-    lesson name: "svg"
-
-    lesson name: "security" do
-      link name: "XSS"
-      link name: "CSRF"
-      link href: "https://www.quora.com/What-is-the-difference-between-XSS-and-CSRF-from-their-execution-perspective"
-      link href: "https://blog.plan99.net/its-time-to-kill-the-web-974a9fe80c89#7a16",
-        name: "Web apps are impossible to secure"
-    end
   end
 end

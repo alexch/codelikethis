@@ -20,9 +20,6 @@ class Track
     project from: 'FreeCodeCamp',
             name: 'Applied Responsive Web Design Projects'
 
-    lesson name: "intro",
-           display_name: "Introductions and Requirements"
-
     lesson name: "hello_html",
            display_name: "Hello, HTML World!"
 
@@ -46,9 +43,6 @@ class Track
 
     lesson name: "css",
            display_name: "Styling with CSS"
-
-    lesson name: "layout_survey",
-      display_name: "A Historical Survey of Web Layout"
 
     lesson name: "dom_debugging",
            display_name: "DOM Debugging"
