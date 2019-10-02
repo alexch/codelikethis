@@ -67,6 +67,12 @@ class Site < Thing
     Projects.new(projects: Project.all)
   end
 
+  def references
+    require 'references'
+    # for now, just get all references ever
+    References.new(references: Reference.all)
+  end
+
   def all_things
     tracks.map do |track|
       track.all_things

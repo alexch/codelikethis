@@ -13,6 +13,7 @@ class Lesson < Thing
   contains :videos
   contains :links
   contains :projects
+  contains :references
   contains :topics
   contains :goals
   contains :labs
@@ -163,6 +164,11 @@ class Lesson < Thing
               a 'Projects', href: '#projects'
             }
           end
+          if target.references?
+            li(class: 'list-group-item') {
+              a 'References', href: '#references'
+            }
+          end
         }
       }
       br
@@ -258,6 +264,17 @@ class Lesson < Thing
             ul(class: 'links') do
               target.projects.each do |project|
                 li { widget project.link_view }
+              end
+            end
+          }
+        end
+
+        if target.references?
+          div(class: 'references', id: 'references') {
+            h2 "Suggested References"
+            ul(class: 'links') do
+              target.references.each do |reference|
+                li { widget reference.link_view }
               end
             end
           }

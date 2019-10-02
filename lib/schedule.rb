@@ -265,6 +265,28 @@ class Schedule < Thing
             render_events(events) if events
           }
         end
+
+        references = json['references']
+        events = json['events']
+
+        if references || events
+          div(class: 'row') {
+            div(class: 'col card-text col-md-8') {
+              if references
+                b "References:"
+                ul {
+                  references.each do |reference_info|
+                    reference = Reference.from_json(reference_info)
+                    li {
+                      widget reference.link_view(show_description: true)
+                    }
+                  end
+                }
+              end
+            }
+            render_events(events) if events
+          }
+        end
       }
     end
 

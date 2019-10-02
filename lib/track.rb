@@ -53,6 +53,7 @@ class Track < Thing
 
   contains :links
   contains :projects
+  contains :references
   contains :topics
   contains :goals
 
@@ -108,6 +109,15 @@ class Track < Thing
       lesson_defined_projects += lesson.projects
     end
     (track_defined_projects + lesson_defined_projects).uniq
+  end
+
+  def references
+    track_defined_references = things_of_class(Reference)
+    lesson_defined_references = []
+    things_of_class(Lesson).each do |lesson|
+      lesson_defined_references += lesson.references
+    end
+    (track_defined_references + lesson_defined_references).uniq
   end
 
   def lab_names
@@ -234,6 +244,16 @@ class Track < Thing
             end
           end
         end
+
+        if target.references?
+          h2 "References"
+          ul(class: 'references') do
+            target.references.each do |reference|
+              li { widget reference.link_view }
+            end
+          end
+        end
+
 
         if target.links?
           h2 "Links"
