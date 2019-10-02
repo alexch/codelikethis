@@ -38,6 +38,8 @@ I guessed it in 5 tries.
 
 * Before writing real code in a text editor, try writing *pseudocode* or a *flowchart* on paper. That will help you to understand the essence of the algorithm without getting bogged down in syntax (like semicolons and parentheses).
 
+* Look back at the programs you've already written. Can you use any functions or logic you've already written?
+
 * Think of the guesses not just as *confirming* a possibility, but as *eliminating* a range of possible solutions.
 
 * We've called the currently-being-asked-about number a "guess", but a better name might be "pivot" or "fulcrum" since it's essentially dividing the set of solutions into two parts. (See the Khan Academy link below for a visualization of this effect.)
