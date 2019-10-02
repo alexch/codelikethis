@@ -118,6 +118,7 @@ Track::Javascript = Track.new(
 
   # advanced
   lesson name: 'encapsulation'
+  lesson name: 'state_machines'
 
   # One-offs
   # TODO: make a new track for these
