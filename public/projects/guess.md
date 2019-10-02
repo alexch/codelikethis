@@ -54,13 +54,46 @@ I guessed it in 5 tries.
 
 * Accept a parameter specifying the maximum guess; e.g. `node guess.js 500` means `Please think of a number between 1 and 500 (inclusive)`.
 
+<details>
+<div>
+<summary>Hint 1</summary>
+Remember our old friend `process.argv` can be used to pull arguments from the command 
+</div>
+</details>
+
+<details>
+<div>
+<summary>Hint 2</summary>
+You can set a default value to a variable using the logical 'or' operator.
+
+```js
+let maxNum = process.argv[2] || 100
+```
+
+</div>
+</details>
+
 * **Cheat detector**: if a response contradicts an earlier response, complain and ask again. e.g. `But you said it was lower than 25, so it can't also be higher than 24!`
+
+<details>
+<div>
+<summary>Hint</summary>
+How would <em>you</em> determine if someone was cheating in guess the number?
+</div>
+</details>
 
 * **Role Reversal!** In two parts:
    1. Write the *reverse* game, where the *computer* thinks of a number and the *human* guesses it. (Put this in a different source file so you don't mess up the first program.)
    2. Combine your two programs into one, so the players (computer and human) take turns -- first one guesses, then the other, then repeat <br><br>
 
 * **Refactor!** What code is shared between the two programs? Can you unify the code by extracting functions? Are your function and variable names descriptive? Can you remove any comments (without reducing clarity)?
+
+<details>
+<div>
+<summary>Hint</summary>
+You may want to make an `initialize` function that will ask which game you want to play and then call the function containing that version of the game depending on the users input.
+</div>
+</details>
 
 * **Test!** How could you write unit tests for a game like this? Are there any parts of the algorithm that you can extract into a function, then write tests for just that function?
 
