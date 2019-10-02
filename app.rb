@@ -179,6 +179,20 @@ class App < Sinatra::Base
     page(thing: project).to_html
   end
 
+  get "/references" do
+    page(thing: site.references).to_html
+  end
+
+  get "/references/:file.:ext" do
+    path = File.join(here, "public", "references", "#{params[:file]}.#{params[:ext]}")
+    send_file(path)
+  end
+
+  get "/references/:reference_name" do
+    reference = Reference.new(name: params[:reference_name])
+    page(thing: reference).to_html
+  end
+
   get "/schedule" do
     if (site && site.schedule)
       page(thing: site.schedule).to_html
