@@ -30,7 +30,7 @@ and sign up for accounts on:
   * **Install** Node.js from <https://nodejs.org/>
   * version 12.X.X Current is preferred (the button on the right side)
     * run `node -v` in terminal to check
-    * if you can't install v10, anything past 10.X.X LTS is probably okay
+    * if you can't install v12, anything past 10.X.X LTS is probably okay
 
 ## Git
 

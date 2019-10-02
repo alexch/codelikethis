@@ -31,10 +31,6 @@ First, clone the starter project here:
   * the Info box is filled in with the correct latitude and longitude
    
 > How do we get the nested list of Vermont towns and counties?
-
-# State Transition Diagram
-
-TODO
  
 # User Stories
 

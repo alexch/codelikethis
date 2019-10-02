@@ -25,15 +25,11 @@ You can follow the instructions here to achieve this if you **DO NOT** already h
 
 - https://docs.mongodb.com/manual/administration/install-community/
 
-### Sign up for MLab Account
+### Sign up for a mongoDB Atlas Account
 
-We use the free database as a service provider MLab for connecting a production version of the application to a database hosted in the cloud. Please visit the following URL and sign-up for an MLab account in order to create and use a database which is reachable from the internet.
+We use the free database as a service provider Atlas for connecting a production version of the application to a database hosted in the cloud. Please visit the following URL and sign-up for an Atlas account in order to create and use a database which is reachable from the internet.
 
-- https://mlab.com/signup
-
-After creating an account please follow the following instructions to create your first database within MLab.
-
-- https://docs.mlab.com/
+- https://www.mongodb.com/cloud/atlas
 
 ## Considerations
 

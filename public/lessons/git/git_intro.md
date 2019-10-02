@@ -142,7 +142,7 @@ When you create a commit, you always provide a *message* describing the nature o
 git commit -m 'allow users to change their profile picture'
 ```
 
-Commit messages are important. Think of them as journal entries -- without them you will be tracking *what* you changed, but not *why* you made the changes.
+Commit messages are important, and should describe **why** you made the changes. Think of them as journal entries -- without them you will be tracking *what* you changed, but not *why* you made the changes.
 
 # LAB: Make a shopping list (cont.)
 
@@ -174,12 +174,6 @@ And to prove that the change actually made it into the history, run `git log`.
         shopping list
 
 Again, **don't skim past this message**. Look for terms you understand. Try to figure out what the program is telling you. Is everything as you would expect? If not, what's different? What don't you understand?
-
-# Add vs Commit
-
-Q: Why does git have a two-step process for tracking changes? Why doesn't `git add` just add the changes to the history immediately?
-
-A: ?
 
 # Add vs Commit
 
