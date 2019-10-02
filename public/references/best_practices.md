@@ -4,7 +4,7 @@
 
 In JavaScript variable names are written in camel case. This means the words are concatanated with every word after the first being capatilized e.g. `let myVariableName = value`
 
-Class names are still concatanated by the first word is capitilized e.g. `new Class = MyNewClass`
+Class names are still concatanated but the first word is capitilized e.g. `new Class = MyNewClass`
 
 ## What makes a good variable name?
 
@@ -12,21 +12,21 @@ Keep your variable names short and descriptive.  Oftentimes people will give var
 
 Likewise names that are too verbose are also confusing. Try and limit your variable names to 1 - 3 words rather than writing a whole sentence. Abreviations can be useful as long as it's very clear what they're standing in for e.g. `object => obj`
 
-Here are a few examples of good variable names:
+Here are a few examples of **good** variable names:
 
-* userName
-* num
-* dogObject
-* isTrue
+* `userName`
+* `num`
+* `dogObject`
+* `isTrue`
 
 Here are a few examples of **bad** variable names:
 
-* x
-* y
-* n
-* i
-* spqr
-* variableForStoringUserInputFromTheCommandLine
+* `x`
+* `y`
+* `n`
+* `i`
+* `spqr`
+* `variableForStoringUserInputFromTheCommandLine`
 
 # Global Variables
 
@@ -39,6 +39,7 @@ To make sure you don't have any accidental globals always declare your variables
 To avoid globals we can wrap code blocks inside an object literal
 
 instead of:
+
 ```js
 let price = 3.5
 
@@ -109,15 +110,62 @@ Comments are super helpful for understanding your code.  There is an old program
 
 Make your code modular.  Try and stick to the principle of each method or function only performing a single task this will allow you to more easily modify your code and extract only the parts you need for a given task.
 
-Instead of:
+Instead of doing everything at once like this:
 
 ```js
+let currentNumber = 100
+
+while (currentNumber > 2) {
+  let count = 2
+  let number = currentNumber
+  let isPrime = true
+  while (count < number) {
+        if (!(number % count)) {
+            isPrime = false
+            break
+        } else {
+            count++
+        }
+    }
+    if(isPrime) {
+        console.log(currentNumber)
+        currentNumber--
+    } else {
+        currentNumber--
+    }
+}
 ```
 
-You could extract  :
+You could extract your prime check and make it a stand-alone function:
 
 ```js
+let currentNumber = 100
+
+function isPrime(number) {
+    let count = 2
+
+    while (count < number) {
+        if (!(number % count)) {
+            return false
+        } else {
+            count++
+        }
+    }
+
+    return true
+}
+
+while (currentNumber > 2) {
+    if(isPrime(currentNumber)) {
+        console.log(currentNumber)
+        currentNumber--
+    } else {
+        currentNumber--
+    }
+}
 ```
+
+While the second code block here is slightly longer it is much easier to follow since we no longer have to conceptualize the entire program at once, and we no longer have nested loops.
 
 # Use the Right Tool for the Job
 

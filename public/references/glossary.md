@@ -7,7 +7,7 @@ let array = ['string', 1234, variableName, {name: 'object'}, ['banana', 'apple',
 ```
 
 ## Bang
-!, the not operator, also called an exclamation point.
+"**!**", the not operator, also called an exclamation point.
 ```javascript
 !true // => false
 ```
@@ -28,7 +28,7 @@ string // => undefined
 A function which is passed to another function as an argument.
 ```javascript
 function callContainer(callback) {
-  callback()// accepts a function as an argument then calls that function
+  callback() // accepts a function as an argument then calls that function
 }
 
 function sayHello() {
@@ -70,6 +70,7 @@ setInterval(1000, callbackFunction)
 ## Function
 A self contained block of code. Functions are defined with the `function` keyword, optionally a name for the function, an open an close parentheses, which may have argument variables, and an open and closed set of curly braces defining the body of the function where the action of the function happens. Functions can also be written in 'fat arrow' syntax in which case they don't need the function keyword, and instead have a fat arrow `=>` between the parentheses that accepts arguments, and the curly braces.
 >Functions return `undefined` unless they have a specific value returned, marked by the `return` keyword
+
 ```javascript
 function add(arg1, arg2) { // classic fuction definition
   return arg1 + arg2
@@ -83,6 +84,7 @@ let anotherValidFunction = function() {
   console.log('You can only call me below this definition')
 }
 ```
+
 Functions set to a variable name with the `let`, `const`, or `var` keyword do not hoist and can only be used after being defined.
 
 ## HTML
@@ -90,6 +92,7 @@ Hyper Text Markup Language. It's a high level programming language, and the Face
 
 ## Instance
 A specific usage of a value.
+
 ```javascript
 function doSomething(thing) {
   //does stuff
@@ -105,6 +108,7 @@ Input/Output, The parts of the computer you interact with.  Input is anything th
 
 ## Iterator
 A method that loops over the properties of an object or an array, and performs an action on them. Common iterators are the `forEach` method on arrays, `for ... of` loops, and `for ... in` loops.
+
 ```javascript
 let array = ['a thing', 'another thing']
 array.forEach(thing => console.log(thing))
@@ -123,6 +127,7 @@ A library is an extension to a programming language that extneds or changes the 
 
 ## Method
 A method is a function attached to an object. If you define a method using fat arrow syntax it will bind the keyword `this` to the object the method is attached to.
+
 ```javascript
 const object = {
   method() {
@@ -133,11 +138,11 @@ const object = {
     console.log("I'm a fat arrow method!")
   }
 }
-
 ```
 
 ## Null
 Null is a value that stands in for "nothing." Javascript has several nulls:
+
   * `null` Nothing, there is no value
   * `undefined` I don't know what the value is
   * `NaN` Not a Number
@@ -145,6 +150,7 @@ Null is a value that stands in for "nothing." Javascript has several nulls:
 
 ## Object
 An object is a collection of key value pairs. The values can be any JavaScript value, including functions (in which case they become methods), and the keys are strings. Objects are created using curly braces to deliniate the object with the keys and thier values seperated by colons, and the key/value pairs seperated by commas
+
 ```javascript
 let object = {
 
@@ -165,7 +171,6 @@ let object = {
    
   inception: {name: "objects in objects"}
 }
-
 ```
 
 ## Operator
@@ -176,6 +181,7 @@ An ordered collection that is "first in, first out." There is no Queue object in
 
 ## Recursion
 When you call a function inside of itself to cause a loop
+
 ```javascript
 function count(num){//function that takes a number
   console.log(num)// prints the number
@@ -208,7 +214,3 @@ A specific type of value, i.e. `number`, or `string`
 
 ## Variable
 Something that stands in for something else, and is bound to the scope in which it's defined. Declared with the `let`, `const`, or `var` keyword. `let` allows a variable to be mutated. `const` does not allow the variable to be mutated. `var` is older and behaves a lot like let, but doesn't allways bind to it's containing scope, and **should not be used**.
-```javascript
-
-
-```

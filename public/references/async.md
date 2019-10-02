@@ -11,16 +11,16 @@ A promise is something that stands in for a piece of data you don't have yet. Th
 
 Promise chaining is a way of making your asynchronous code run top to bottom like synchronous programming, but still allowing you to wait for the initail input. To chain promises you use a special method called `.then` which accepts a [callback function](./callbacks.md) as its argument, and passes the return value of the previous promise to the callback function as an argument. It is most often used when performing `fetch` requests.
 
-```javascript
-let someArray = []//global variable we will manipulate inside our .then
+```js
+let someArray = [] //global variable we will manipulate inside our .then
 
 fetch('some URL or file path')
 .then(
-  function(res){//passes the response of the fetch request as an argument
+  function(res){ //passes the response of the fetch request as an argument
     return res.json()
 })
 .then(
-  function(jsonObj) {//passes the return value of the previous '.then' as an argument
+  function(jsonObj) { //passes the return value of the previous '.then' as an argument
     someArray.push(jsonObj)
 }) //you can continue chaining as many '.then's as you need
 ```
@@ -29,15 +29,15 @@ fetch('some URL or file path')
 
 There is a special keyword in JavaScript which allows us to write asynchronous code blocks called `async` inside these code blocks we can use the keyword `await` to essentially pause the execution of the code until the promise is returned, and it only resumes once that promise has been resolved.
 
-```javascript
+```js
   function ask(questionText) {
-  return new Promise((resolve, reject) => {//'ask' is a normal function that returns a promise
+  return new Promise((resolve, reject) => { //'ask' is a normal function that returns a promise
     readlineInterface.question(questionText, resolve);
   });
 };
 
 async function askName() {
-  let name = await ask('What is your name?')// the program will not continue until this promise has been resolved
+  let name = await ask('What is your name?') // the program will not continue until this promise has been resolved
   console.log(`Hello, ${name}!`)
 }
 ```
