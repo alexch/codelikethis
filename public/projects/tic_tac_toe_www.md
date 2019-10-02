@@ -6,9 +6,7 @@ Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two play
 
 In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) in a web-based UI.
 
-We recommend that before you start this project, you complete the [Tic Tac Toe (CLI)](tic_tac_toe) project (at least up to the "Artificial Stupidity" story). This will help you keep the *game rules* separate from the *user interface*, both in your mind and in your code. You may even be able to reuse many of the functions you wrote earlier.
-
-Template repository: https://github.com/BurlingtonCodeAcademy/tic-tac-toe-www -- either clone this directly, or use your own GitHub Classroom repo.
+We recommend that you focus on the game's logic before you worry about the UI. It may be helpful to complete the [Tic Tac Toe (CLI)](tic_tac_toe) project (at least up to the "Artificial Stupidity" story). This will help you keep the *game rules* separate from the *user interface*, both in your mind and in your code. You may even be able to reuse many of the functions you wrote for that project.
 
 ## Wireframes
 
@@ -72,9 +70,7 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 
 ### No Rules
 
-**Given** an empty board, and
-
-**Given** the current player is X
+**Given** an empty board, and the current player is X
 
 **When** the user selects a cell
 
