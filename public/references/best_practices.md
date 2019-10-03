@@ -28,7 +28,9 @@ Here are a few examples of **bad** variable names:
 * `spqr`
 * `variableForStoringUserInputFromTheCommandLine`
 
-# Global Variables
+# Global Variables and Encapsulation
+
+## Global Variables
 
 Global variables are bad.  They are dangerous, and you should avoid using them at all if you can.  Global variables can be changed from anywhere in your program and used from anywhere so if a part of your code expects a variable to be a certain way, and a different part changes that variable now you've got a bug that's very hard to track down as both parts of your code are working as intended they just don't work well *together*.
 
@@ -48,6 +50,7 @@ function getPrice() {
 }
 
 function haggle() {
+  price = 3
   return "How about $3"
 }
 ```
@@ -63,6 +66,7 @@ let treeFiddy = {
   },
 
   haggle: function() {
+    this.price = 3
     return "How about $3"
   }
 }
@@ -70,7 +74,7 @@ let treeFiddy = {
 
 This way of containing your variables is pretty good. However there are some drawbacks. Now when you want to access any value or function from that object you will have to call the object first e.g. `treeFiddy.getPrice()` rather than just `getPrice()`
 
-This leads to a lot of repetition throughout your code which is somewhat annoying, but it's a small price to pay to encapsulate related code
+This leads to a lot of repetition throughout your code which is somewhat annoying, but it's a small price to pay to encapsulate related code, and not accidentally overwrite a global variable.
 
 ## Module Pattern
 
@@ -86,6 +90,7 @@ let treeFiddy = function() {
     },
 
     haggle: function() {
+      price = 3
       return "How about $3"
     }
   }
@@ -94,7 +99,9 @@ let treeFiddy = function() {
 
 This method of encapsulation can be rather confusing because IIFEs can be confusing to work with, you need to use different syntax for your inner functions, and you still need to repeat the module name, which makes your code more verbose.
 
-# Use a Linter
+# Make Your Code Human Readable
+
+## Use a Linter
 
 Your browser will always try to run your code if it can, and ignore broken code where possible. While it can be more relaxing to turn off your linter while you're writing code you should turn it back on to check your code afterwards, and try to fix all your syntax issues.
 
@@ -102,11 +109,13 @@ Your browser will always try to run your code if it can, and ignore broken code 
 
 Always format your code.  If you're nesting scope, t's an additional level of indentation for each level deep you nest.  Whitespace is your friend. Give different code blocks an empty line between them.  It won't matter to your computer, and will make your code much easier to read for a human.  VSCode has a built-in formatter you can access by right clicking on your document (`option` + `click` on a mac) adn selecting 'format document' from the dropdown menu, or by using the key-command `shift` + `alt` + `f`.
 
-# Comments
+## Comments
 
 Comments are super helpful for understanding your code.  There is an old programming myth that "good code should explain itself."  This is not completely true. No matter how good your code is it will always be clearer to you than to anyone else.  You don't need to document every variable assignment, and function, but you should be giving short descriptions of intended behavior throughout your code.
 
-# Modular Code
+# Extending Your Code
+
+## Modular Code
 
 Make your code modular.  Try and stick to the principle of each method or function only performing a single task this will allow you to more easily modify your code and extract only the parts you need for a given task.
 
@@ -167,11 +176,15 @@ while (currentNumber > 2) {
 
 While the second code block here is slightly longer it is much easier to follow since we no longer have to conceptualize the entire program at once, and we no longer have nested loops.
 
-# Use the Right Tool for the Job
+## Use the Right Tool for the Job
 
 JavaScript isn't always the solution for every part of a web app. For example; instead of writing complex code to decide what type of media is submitted through a form you could just have a radio button so the user can tell you what they're submitting.
 
-# Setup a Default Configuration
+## Don't Reinvent the Wheel
+
+There are many libraries for many different coding problems.  If there's already a library out there that solves your issue either in part or in whole use that library.
+
+## Setup a Default Configuration
 
 It may be useful to setup a default starting state in your program, so you can be sure that it is always starting with the expected initial values e.g.
 
@@ -192,11 +205,13 @@ start()
 
 Then everytime you call the program you first reset the state to the intial state
 
-# Don't Nest Too Deep
+## Don't Nest Too Deep
 
-Keep your nesting shallow. You are hardly ever going to need to nest more thatn 2 or 3 levels deep.  If you're going deeper than that it's probably a sign that you can extract some functionality and make it its own code block.
+Keep your nesting shallow. You are hardly ever going to need to nest more than 2 or 3 levels deep.  If you're going deeper than that it's probably a sign that you can extract some functionality and make it its own code block.
 
-# Optimize Loops
+# Loops
+
+## Optimize Loops
 
 When using loops, especially on arrays there are a few tricks you can use to optimize your performance, and since loops execute over and over this can be an easy way to drastically improve your program's performance overall.
 
@@ -233,7 +248,7 @@ while(int < length) {
 
 You should also avoid putting heavyweight code into your loops, such as reguar expressions, or DOM manipulation.
 
-# Sanatize your inputs
+## Sanatize your inputs
 
 Users are never going to use your code in exactly the way you intend them to so it's always a good idea to convert any user input explicitly into the form you expect it to be in when you use it.  e.g.
 
@@ -252,7 +267,3 @@ let name = process.stdin.once('data', (chunk) => {
   return chunk
 })
 ```
-
-# Don't Reinvent the Wheel
-
-There are many libraries for many different coding problems.  If there's already a library out there that solves your issue either in part or in whole use that library.
