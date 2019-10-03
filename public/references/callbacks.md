@@ -13,18 +13,23 @@ function doThis() {
   //just your standard javascript function
 }
 
-container(someArgument, doThis)
+container(someArgument, doThis) // will call doThis passing in someArgument
+
 //or
+
 container(function(someArgument) {
   //does something
 })
+
 //you could also use fat arrow functions
+
 container(someArgument => {
   return someValue
 })
 //or
 container(someArg => someValue)
 ```
+
 Callback functions are a native part of JavaScript, and the original way of handling asynchronous programming in JavaScript. We now have more ways of handling callbacks, however callbacks are still prevelent throughout the language, and are useful in a variety of situations, such as passing some form of input, which will be given after the program has started, to a function, or waiting for some event to happen before the callback can be called.
 
 ## Callback Hell

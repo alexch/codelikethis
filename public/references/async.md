@@ -1,6 +1,7 @@
 # Asynchronous Programming
 
 ## What is asynchronous programming?
+
 By default JavaScript runs synchronously. That means it runs top to bottom straight through without ever stopping. This is good in many instances because we want our computers to run fast and not get hung up on things, but what if you need to wait for user input, read from a file, or fetch something from the internet? By default the program's just going to keep running and will either error out, or give some unexpected because the values you expected to have are undefined. The way we get around this is with promises.
 
 ## What is a promise?
@@ -42,4 +43,4 @@ async function askName() {
 }
 ```
 
->The above code will not actually work as we haven't set up the readline interface.
+>The above code will not actually work as we haven't actually set up the readline interface.
