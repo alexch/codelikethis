@@ -247,8 +247,6 @@ console.log('The GPA is ' + gpa(grades));
 
 # Class GPA solution
 
-# Speak solution
-
 <details>
 <summary>Hint</summary>
 <div>
