@@ -8,8 +8,7 @@ Your task for this project is to build a web-server and front-end application th
 
 ### Starter Code
 
-Starter code exists for this project at:
-  - https://github.com/BurlingtonCodeAcademy/til
+Follow the Github Classroom link and clone the starter repository down to your local machine
 
 This code includes a command-line program and an Express web server program which can both connect to a MongoDB database server running either locally on the development environment or remotely in the cloud.
 
@@ -46,31 +45,23 @@ We use the free database as a service provider Atlas for connecting a production
   * How could you add comments to TIL entries?
   * How do you enforce who can create/edit/delete new entries?
 
-## Stories
+## Backlog
 
 <!--BOX-->
 
 ### Creating a new TIL entry
 
-**Given**:
+**Given**: an empty HTML form at the path `/`
 
-An empty HTML form at the path `/`
-
-**When**
-
-A user inputs:
+**When** a user inputs:
 
 ```
 To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
 ```
 
-**Then**
+**Then** a new TIL entry is created
 
-A new TIL entry is created
-
-**And**
-
-The TIL entry.text equals:
+**And** the TIL entry.text equals:
 
 ```
 To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
@@ -82,9 +73,7 @@ To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
 
 ### Listing existing TIL entries
 
-**Given**
-
-An existing TIL entry with the text:
+**Given** an existing TIL entry with the text:
 
 ```
 To convert and object to JSON use JSON.stringify({text: 'I learned something'});
@@ -93,15 +82,11 @@ To convert and object to JSON use JSON.stringify({text: 'I learned something'});
 And a when of:
 `2018-01-01T12:15:00+0400`
 
-**When**
-
-A user visits the URL path:
+**When** a user visits the URL path:
 
 `/facts`
 
-**Then**
-
-The web-page should display a list of HTML formatted TIL entry including exactly one with:
+**Then** the web-page should display a list of HTML formatted TIL entry including exactly one with:
 
 | Attribute   | Value                                                                            |
 | :---------- | :------                                                                          |
@@ -114,9 +99,7 @@ The web-page should display a list of HTML formatted TIL entry including exactly
 
 ### Display a TIL entry
 
-**Given**
-
-An existing TIL entry with the `text` attribute of:
+**Given** an existing TIL entry with the `text` attribute of:
 
 `To get an objects attributes use Object.keys(someObject);`
 
@@ -126,15 +109,11 @@ And the `when` attribute  of:
 
 And an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
 
-**When**
-
-A user visits the URL path:
+**When** a user visits the URL path:
 
 `/facts/:objectId`
 
-**Then**
-
-The web-page should display a single HTML formatted TIL entry with the attributes:
+**Then** the web-page should display a single HTML formatted TIL entry with the attributes:
 
 | Attribute   | Value                                                       |
 | :---------- | :------                                                     |
@@ -147,18 +126,14 @@ The web-page should display a single HTML formatted TIL entry with the attribute
 
 ### Listing multiple TIL entries
 
-**Given**
-
-An existing TIL entry with the following attributes:
+**Given** an existing TIL entry with the following attributes:
 
 | Attribute   | Value                                                         |
 | :---------- | :------                                                       |
 | text        | `To get an objects attributes use Object.values(someObject);` |
 | when        | `2018-01-01T15:30:00+0400`                                    |
 
-**And**
-
-An second TIL entry with the following attributes:
+**And** an second TIL entry with the following attributes:
 
 | Attribute   | Value                                                                         |
 | :---------- | :------                                                                       |
@@ -166,15 +141,11 @@ An second TIL entry with the following attributes:
 | when        | `2018-01-01T16:10:00+0400`                                                    |
 
 
-**When**
-
-A user visits the URL path in the browser:
+**When** a user visits the URL path in the browser:
 
 `/facts`
 
-**Then**
-
-The web-page should display two HTML formatted TIL entries with the attributes:
+**Then** the web-page should display two HTML formatted TIL entries with the attributes:
 
 | Attribute   | Value                                                                         |  Order |
 | :---------- | :------                                                                       | :----- |
@@ -189,37 +160,25 @@ The web-page should display two HTML formatted TIL entries with the attributes:
 
 ### Editing an existing TIL entry
 
-**Given**
-
-An existing TIL entry with the following attributes:
+**Given** an existing TIL entry with the following attributes:
 
 | Attribute   | Value                                                                         |
 | :---------- | :------                                                                       |
 | text        | `To convert string input to an Integer use parseInt("42")` |
 | when        | `2018-01-01T17:00:00+0400`                                                    |
 
-**And**
+**And** the record has an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
 
-The record has an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
+**When** a user visits the URL path `/facts/:objectId`
 
-**When**
-
-A user visits the URL path `/facts/:objectId`
-
-**Then**
-
-The web-page is populated with a `<form>` element containing the following inputs and values
+**Then** the web-page is populated with a `<form>` element containing the following inputs and values
 
 | Input          | Value                                                      |
 | :----------    | :------                                                    |
 | text           | `To convert string input to an Integer use parseInt("42")` |
 | datetime-local | `2018-01-01T17:00:00+0400`                                 |
 
-**NOTE**
-
-Take a look at the `DateTime-Local` input type on Mozilla Developer Network
-
-- [DateTime-Local Form Input Type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local)
+>Note: Take a look at the `DateTime-Local` input type on Mozilla Developer Network [DateTime-Local Form Input Type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local)
 
 <!--/BOX-->
 
@@ -227,41 +186,29 @@ Take a look at the `DateTime-Local` input type on Mozilla Developer Network
 
 ### Delete a TIL entry
 
-An existing TIL entry with the following attributes:
+**Given** an existing TIL entry with the following attributes:
 
 | Attribute   | Value                                                                         |
 | :---------- | :------                                                                       |
 | text        | `To convert a number to a string use (42).toString()` |
 | when        | `2018-01-01T19:30:00+0400`                                                    |
 
-**And**
+**And** the record has an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
 
-The record has an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
+**When** a user visits the URL path `/facts/:objectId`
 
-**When**
+**And** the user clicks on the `<button>` with `textContent` of `Delete` within the page's `<form>` element.
 
-A user visits the URL path `/facts/:objectId`
+**Then** the user should be presented with a confirmation dialog asking `Are you sure you want to delete this TIL Entry?`
 
-**And**
+**And** the TIL entry should be `deleted` from the `facts` collection within the database, after clicking `Confirm`
 
-The user clicks on the `<button>` with `textContent` of `Delete` within the page's `<form>` element.
-
-**Then**
-
-The user should be presented with a confirmation dialog asking `Are you sure you want to delete this TIL Entry?`
-
-**And**
-
-The TIL entry should be `deleted` from the `facts` collection within the database, after clicking `Confirm`
-
-**And**
-
-The user should be receive an HTTP response code of `200` and **then be redirected** to the `/` URL path
+**And** the user should be receive an HTTP response code of `200` and **then be redirected** to the `/` URL path
 
 <!--/BOX-->
 
 <!--BOX-->
-## Extra Feature Ideas
+## Icebox
 
 - Tagging entries with a category
 - Filtering entries by category
