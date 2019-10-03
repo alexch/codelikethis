@@ -339,6 +339,7 @@ It's saying "milk" and "chunky monkey ice cream" were *removed*, and "ketchup" w
 # LAB: Push It To The Limit
 
 1. Sign in to [GitHub.com](https://github.com) and create a repository
+![new github repo](/images/new-repository.png)
 2. Name it the same as your local repo directory (`shopping`)
 3. **Don't** initialize it with a README
 4. Follow the "if you have a repo already" instructions
