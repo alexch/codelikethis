@@ -27,7 +27,7 @@ Move to?
 
 ---
 
-After the user (acting as Player X) types <kbd>2</kbd><kbd>Enter</kbd>, the board should redraw like this:
+After the user (acting as Player X) types <kbd>2</kbd> <kbd>Enter</kbd>, the board should redraw like this:
 
 ```
  1 | X | 3
@@ -41,7 +41,7 @@ Move to?
 ```
 ---
 
-Next, after the user (now acting as Player O) types <kbd>5</kbd><kbd>Enter</kbd>, the board should redraw like this:
+Next, after the user (now acting as Player O) types <kbd>5</kbd> <kbd>Enter</kbd>, the board should redraw like this:
 
 ```
  1 | X | 3
@@ -64,7 +64,7 @@ Move to?
 
 **Given** the current player is X
 
-**When** the user selects a cell (e.g. typing <kbd>2</kbd><kbd>Enter</kbd>)
+**When** the user selects a cell (e.g. typing <kbd>2</kbd> <kbd>Enter</kbd>)
 
 **Then** the board redraws
 
@@ -78,7 +78,7 @@ Move to?
 
 **Given** the player is O
 
-**When** the user selects a cell (e.g. typing <kbd>5</kbd><kbd>Enter</kbd>)
+**When** the user selects a cell (e.g. typing <kbd>5</kbd> <kbd>Enter</kbd>)
 
 **Then** an O appears in that cell
 
@@ -114,7 +114,7 @@ Move to?
 
 **And** the game ends
 
-(and likewise for Player O)
+> and likewise for Player O
 
 <!--/BOX-->
 
@@ -122,7 +122,9 @@ Move to?
 
 ### Stalemate
 
-**Given** all cells are full and neither player has three in a row
+**Given** all cells are full 
+
+**And** neither player has three in a row
 
 **When** the turn ends
 
@@ -153,9 +155,11 @@ When displaying the name of a player, use their name and also say which symbol t
 
 <!--/BOX-->
 
+## Icebox
+
 <!--BOX-->
 
-### Artificial Intelligence (Optional)
+### Artificial Intelligence
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D

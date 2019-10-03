@@ -29,8 +29,6 @@ Input some markdown source on the left and see it rendered on the right.
 
 * Clone the repo: (do this once only -- and use the Github Classroom URL instead if one is provided)
 
-        git clone git@github.com:BurlingtonCodeAcademy/markdown_preview.git
-
 * Install dependencies: (do this once)
 
         cd markdown_preview

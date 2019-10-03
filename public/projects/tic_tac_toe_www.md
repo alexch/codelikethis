@@ -217,9 +217,11 @@ Time Elapsed 00:01:25
 
 <!--/BOX-->
 
+## Icebox
+
 <!--BOX-->
 
-### Artificial Intelligence (OPTIONAL)
+### Artificial Intelligence
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D
@@ -229,7 +231,7 @@ Time Elapsed 00:01:25
 
 <!--BOX-->
 
-### EXTRA BONUS: Play Nine Games at Once (OPTIONAL)
+### EXTRA SUPER BONUS: Play Nine Games at Once
 
 - Change the rules of the game so that nine 3x3 boards are played at once by two players.
 - A win can be achieved on any of the nine boards by placing three X's or three O's in a row.

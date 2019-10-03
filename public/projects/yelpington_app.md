@@ -100,7 +100,7 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 
 **Then** they should see all the restaurant information, formatted and styled nicely
 
-**NOTE: Use AJAX or Fetch to load the data.**
+>Note: Use AJAX or Fetch to load the data.
 
 > Note: the Fetch API [does not work well with the `file:///` URL scheme](https://github.com/github/fetch/pull/92).
 > That's why we've added a simple `node` static server to this repository.
