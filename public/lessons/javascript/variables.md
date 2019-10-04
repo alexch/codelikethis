@@ -123,7 +123,7 @@ color = "black"    // 'black'
 color + fruit      // 'blackberry'
 ```
 
-*Reaassignment* only changes the name of an object. It does *not* change the data inside the object.
+*Reassignment* only changes the name of an object. It does *not* change the data inside the object.
 
 This is analogous to removing a label from one box and placing it on a different box.
 
