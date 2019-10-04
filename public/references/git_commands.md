@@ -1,4 +1,5 @@
-# Creating a Local Repository
+# Git Commands
+Please note that any text in angle brackets `<>` is a placeholder for an actual value, you shouldn't type it in literally (or include the angle brackets).
 
 ## From Scratch
 
@@ -20,6 +21,7 @@
   * Alternatively you can add files individually by using `git add <file name>`
   * `git add ./<subdirectory name>` will add all the files inside the specified subdirectory
   >Note: If you are adding a file that is inside a subdirectory you will need to pass the path to that file e.g. `git add ./client/public/index.html`
+<br /><br />
 
 * `git commit -m "message"` turns the *staged* changes into a new *commit* history entry
 
@@ -35,6 +37,7 @@
 
 * `git push` sends your change history from your local repository to a remote repository
   * If you are pushing from a local repository to a *new* GitHub repository use the command `git push -u origin master` to make your local repo track changes to the remote repo.
+<br /><br />
 
 * `git pull` gets new changes from a remote repository and applies them to your local repository.
   * If you're code has changed in both the local and remote repositories you might get merge conflicts.  Git will try to auto resolve merges where possible, but sometimes you will have to tell it explicitly which changes should overwrite, or if you want to apply the changes from both repositories.
