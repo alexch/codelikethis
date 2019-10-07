@@ -1,6 +1,5 @@
 # Remock
 
-
 In this project you will re-create a complicated blog style web page.
 
 ## Example Web Page Screenshots
@@ -19,10 +18,10 @@ In this project you will re-create a complicated blog style web page.
   * Matching typography
   * Hover-ability highlighting
 
-## Stories
+# Stories
 
 <!--BOX-->
-### Make it work
+## Make it work
 
 Create a page layout with empty `div`s and other page elements. Don't worry about making all the content correct; focus on the layout.
 
@@ -31,7 +30,7 @@ Create a page layout with empty `div`s and other page elements. Don't worry abou
 <!--/BOX-->
 
 <!--BOX-->
-### Make it right
+## Make it right
 
 * Fill in the page content.
 * Make interactive elements work correctly.
@@ -41,7 +40,7 @@ Create a page layout with empty `div`s and other page elements. Don't worry abou
 <!--/BOX-->
 
 <!--BOX-->
-### Make it better
+## Make it better
 
 Experiment with design improvements. For example:
 
@@ -53,7 +52,7 @@ Experiment with design improvements. For example:
 <!--/BOX-->
 
 <!--BOX-->
-### Links
+## Links
 
 - Clicking on "Continue Reading" navigates to the `continue-reading.html` page
 - Clicking on "Learn More" navigates to the `learn-more.html` page
@@ -63,7 +62,7 @@ Experiment with design improvements. For example:
 <!--/BOX-->
 
 <!--BOX-->
-### Highlighting Links
+## Highlighting Links
 
 - Hovering over "Button Style" links **lightens** the color of the link.
 - Hovering over "Text Style" links **changes** the color of the link from **grey to red**.
@@ -71,16 +70,16 @@ Experiment with design improvements. For example:
 <!--/BOX-->
 
 <!--BOX-->
-### Form Inputs
+## Form Inputs
 
 - Entering a form input with an "input device" such as a *cursor* or a *focus* **changes the color from light grey to white**
 
 <!--/BOX-->
 
 
-## Screen-shots
+# Screen-shots
 
-### Home Page
+## Home Page
 
 ![](/images/home-1.png)
 ![](/images/home-2.png)
@@ -89,13 +88,13 @@ Experiment with design improvements. For example:
 
 ====================
 
-### Continue Page
+## Continue Page
 
 ![](/images/right-1.png)
 ![](/images/right-2.png)
 ![](/images/right-3.png)
 
-### Learn More Page
+## Learn More Page
 
 ![](/images/left-1.png)
 ![](/images/left-2.png)
@@ -103,7 +102,7 @@ Experiment with design improvements. For example:
 
 ====================
 
-### Blog Post Page
+## Blog Post Page
 
 ![](/images/none-1.png)
 ![](/images/none-2.png)

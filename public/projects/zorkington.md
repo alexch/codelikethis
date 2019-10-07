@@ -127,8 +127,6 @@ up to the third floor. If the door is locked, use the code
 
 **And** returns to the prompt
 
-<!--/BOX-->
-
 <details>
 <summary>Hint</summary>
 <div>
@@ -144,6 +142,8 @@ let sign = {
 
 </div>
 </details>
+
+<!--/BOX-->
 
 <!--BOX-->
 ## Don't take the sign

@@ -6,7 +6,7 @@ It is not meant to be stressful.
 
 This is to show both the teachers and yourself areas that you could use support and/or improvement on, as well as clarify your strengths throughout this course.
 
-After you complete this, you will pair up with another student and disuss each other's self-assessment in each category. Take the opportunity to dig in to your partner's answers and find the reasons and examples behind their rating (high or low) and encourage them to change the rating up or down accordingly. (If you are unsure about how to start the conversation, consider playing the [Five Whys](https://en.wikipedia.org/wiki/5_Whys) game.)
+After you complete this, you will pair up with another student and discuss each other's self-assessment in each category. Take the opportunity to dig in to your partner's answers and find the reasons and examples behind their rating (high or low) and encourage them to change the rating up or down accordingly. (If you are unsure about how to start the conversation, consider playing the [Five Whys](https://en.wikipedia.org/wiki/5_Whys) game.)
 
 Later (likely next week), you will also meet with at least two instructors for a half hour to talk about your self assessment and figure out how we can best support you in the areas you'd like to improve on throughout the second half of the course.
 

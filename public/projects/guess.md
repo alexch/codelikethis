@@ -36,19 +36,21 @@ I guessed it in 5 tries.
 
 ## Hints
 
-* Before writing real code in a text editor, try writing *pseudocode* or a *flowchart* on paper. That will help you to understand the essence of the algorithm without getting bogged down in syntax (like semicolons and parentheses).
+* Before writing real code in a text editor, try writing *pseudocode* or a *flowchart* on paper, or as comments in your program file. That will help you to understand the essence of the algorithm without getting bogged down in syntax (like semicolons and parentheses).
 
 * Look back at the programs you've already written. Can you use any functions or logic you've already written?
 
-* Think of the guesses not just as *confirming* a possibility, but as *eliminating* a range of possible solutions.
+* Think of the guesses not just as *confirming* a possibility, but as *eliminating* a range of possiblities.
 
 * We've called the currently-being-asked-about number a "guess", but a better name might be "pivot" or "fulcrum" since it's essentially dividing the set of solutions into two parts. (See the Khan Academy link below for a visualization of this effect.)
 
-* Remember to keep track of the previous answers, or at least keep track of the current high and low possibilities.
+* Remember to keep track of the previous answers, or at least keep track of the current high and low ends of the range.
 
 * Off-by-one errors will bite you here. Be clear in your own mind (and in the code!) about the distinction between "greater than" and "greater than or equal to" and the like.
 
 * Sign reversal errors are also a strong possibility. Be clear about the distinction between "my guess is higher than your number" and "your number is higher than my guess" and so forth.
+
+* When you feel like your game is mostly functional have a classmate play it.  See how they break it, and try to make your game more robust.
 
 # Stories
 
@@ -99,7 +101,7 @@ I guessed it in 5 tries.
 <details>
 <div>
 <summary>Hint</summary>
-If the number is higher, you'll want to modify the low end of the range, and vice versa for if the number is lower.
+If the number is higher, you'll want to modify the low end of the range, and vice versa if the number is lower.
 </div>
 </details>
 
@@ -125,6 +127,8 @@ If the number is higher, you'll want to modify the low end of the range, and vic
 
 **Then** accept a parameter specifying the maximum guess; e.g. `node index.js 500` means `Please think of a number between 1 and 500 (inclusive)`.
 
+**And** if no value is passed the game starts with a *default* value of 100
+
 <details>
 <div>
 <summary>Hint 1</summary>
@@ -135,12 +139,7 @@ Remember our old friend `process.argv` can be used to pull arguments from the co
 <details>
 <div>
 <summary>Hint 2</summary>
-You can set a default value to a variable using the logical 'or' operator.
-
-```js
-let maxNum = process.argv[2] || 100
-```
-
+You can set a default value to a variable using the logical 'or' operator `||`.
 </div>
 </details>
 

@@ -32,11 +32,11 @@ We will use [GitHub Pages](http://pages.github.com) to build and host your portf
   * Color and contrast
   * Using images
 
-## Stories
+# Stories
 
 <!--BOX-->
 
-### Home Page
+## Home Page
 
 Build an index.html that includes at least the following.
 
@@ -56,7 +56,7 @@ Build an index.html that includes at least the following.
 
 <!--BOX-->
 
-### About Me Page
+## About Me Page
 
 * Build a page that includes basic details about your history as a person such as:
   * What interestes you
@@ -67,7 +67,7 @@ Build an index.html that includes at least the following.
 
 <!--BOX-->
 
-### Projects Page
+## Projects Page
 
 * Link to the completed or in progress project repositories for this bootcamp.
   * Use links to your github repositories and/or links to your deployed projects, possibly with cover screenshots.
@@ -81,7 +81,7 @@ Build an index.html that includes at least the following.
 
 <!--BOX-->
 
-### Hobbies and Interests Page
+## Hobbies and Interests Page
 
 * Hobbies
   * Do you play any instruments or play in a band?
@@ -94,7 +94,7 @@ Build an index.html that includes at least the following.
 
 <!--BOX-->
 
-### Work History
+## Work History
 
 * Create a web version of your resume with basic formatting, don't stress too much about the layout. Make sure to include the following.
   * Your career goal(s).
@@ -119,7 +119,7 @@ Build an index.html that includes at least the following.
 
 <!--BOX-->
 
-### Navigation Bar
+## Navigation Bar
 
 * Build a "Nav Bar" using a consistent UI on each page, with links to the various other pages of your portfolio.
 * Style the navbar using Flexbox or another [CSS navbar technique](/lessons/responsive_layout/navigation) to that it can be seen on various screen sizes.
@@ -136,7 +136,7 @@ Build an index.html that includes at least the following.
 
 <!--BOX-->
 
-### Page Footer
+## Page Footer
 
 * Add a consistent footer to your portfolio page which should include:
   * Contact Info

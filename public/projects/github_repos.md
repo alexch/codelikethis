@@ -51,7 +51,9 @@ codelikethis    Code Like This web site
 
 ## Recent First
 
-**When** a repo has been more recently updated than another
+**Given** a repo has been more recently updated than another
+
+**When** the user asks for repos from a username
 
 **Then** the list should show that repo above the other
 

@@ -20,26 +20,28 @@ GitHub Emoji
 
 ```
 
-## Stories
+# Stories
 
 <!--BOX-->
 
-### One Big List
+## One Big List
+
+**Given** the user visits the homepage of your app
 
 **When** the page is loaded,
 
 **Then** the app should fetch the list of emoji from GitHub,
 
-**And Then** the user should see all emoji in a long list
+**And** the user should see all emoji in a long list
 
 <!--/BOX-->
 <!--BOX-->
 
-### Filter By Name
+## Filter By Name
 
 **When** the user enters a word into the "Filter" text field
 
-**Then** the list should show only those emoji whose name contains that word
+**Then** the list should show only those emoji whose names contain that word
 
 **Other Considerations**: if the list is immediately updated after every keypress, then it might cause performance problems or visual stutter. One way to limit this is to use a *cooldown timer* so that the filtering action only happens a second or so *after* the user presses a key, to allow for many keypresses in a row without interruption.
 

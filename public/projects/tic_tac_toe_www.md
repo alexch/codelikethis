@@ -124,21 +124,25 @@ Player O's turn
 
 ## Names
 
-When starting a game, allow the user(s) to choose the names of the players (not just X and O).
+**Given** a new game
+
+**When** starting a game
+
+**THen** allow the user(s) to choose the names of the players (not just X and O).
 
 <!--/BOX-->
 <!--BOX-->
 
 ## Game Time
 
-After starting a game, a game clock timer is present in the lower region of the web page.
+**Given** a new game
 
-The timer should show the time in the format:
+**When** the game is started
+
+**Then** the timer should show the time in the format:
 - `Time Elapsed 32 seconds`
 
-(See example below)
-
-Every second during game play, until a player has won, the clock should proceed by one second.
+**And** every second during game play, until a player has won, the clock should proceed by one second.
 
 Example:
 - 32 seconds
@@ -161,21 +165,27 @@ Time Elapsed 32 seconds
 <!--/BOX-->
 <!--BOX-->
 
-## Artificial Stupidity
-
-- When starting a new game, choose "Player vs Player" or "Player vs Computer"
-- If "Player vs Computer" is chosen, then do not ask for a name
-- The computer player always picks an empty cell *at random*
-- The human is always X and the computer is always O
-
-<!--/BOX-->
 <!--BOX-->
 
 ## New Game UI
 
-- design a clean "New Game" UI allowing choice of human or computer, name, and symbol
-- consider using a modal dialog box
-- consider button placement and visibility
+**Given** a new game
+
+**When** the game first loads
+
+**Then** give the user the options "Player vs Player" or "Player vs Computer"
+
+<!--/BOX-->
+
+## Artificial Stupidity
+
+**Given** a new game with the options "Player vs Player" or "Player vs Computer"
+
+**When** "Player vs Computer" is chosen
+
+**Then** do not ask for a name
+- The computer player always picks an empty cell *at random*
+- The human is always X and the computer is always O
 
 <!--/BOX-->
 

@@ -2,7 +2,7 @@
 
 During the last three weeks of this course, you'll spend most of your afternoons working on a single project. 
 
-Because the goal of this course is to prepare you for work on a software development team, your capstone project must be developed in a team. Since we love to pair program, it's best if your team has an even number of members, but an odd number can also work (please discuss this with staff first).
+Because the goal of this course is to prepare you for work on a software development team, your capstone project must be developed in a team.
 
 Capstone work is set to begin somewhere around the beginning of the final month with an Inception meeting to discuss scope and timing and how involved the sponsor wants to be. From then until the end of the course, the students will spend at least half their days in teams working on user stories.
 
@@ -51,7 +51,7 @@ If your project is sponsorless (i.e. your own idea), your coach (or maybe anothe
 
 ## Step 3: Inception
 
-Schedule a time for a project inception. Invite all team members and stakeholders (the project sponsor if you have one) and your coach. Allow at least 4 hours, intending to come out of the meeting with some rough wireframes, a story grid, a system architecture, and a work plan for each of four weeks. If you need to do more planning, schedule another 2-hour planning meeting for later in the week.
+Schedule a time for a project inception. Invite all team members and stakeholders (the project sponsor if you have one) and your coach. Allow at least 4 hours, intending to come out of the meeting with some rough wireframes, a story grid, a system architecture, and a work plan for each of the three weeks. If you need to do more planning, schedule another 2-hour planning meeting for later in the week.
 
 ## Step 4: Iteration
 
@@ -61,7 +61,6 @@ During each of the three weeks, schedule the following:
  * Daily standup meeting
  * Weekly retrospective
  * Acceptance meeting / sponsor demo (weekly, or more frequently if possible) -- to get the client to sign off on the features, report bugs, and adjust priorities
- * In-class demo (show and tell!) -- we will set up Friday morning slots during weeks 2 and 3 for you to demo your app to the class; consider this a dress rehearsal for Hiring Partner Demo Day
 
 ## FAQ
 

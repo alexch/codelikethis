@@ -177,6 +177,7 @@ til --list
 
 # Icebox
 
+<!--BOX-->
 - Tagging entries with a category
 - List entries after or before some date
 - List between two dates
@@ -185,3 +186,5 @@ til --list
     - entries with days of week descending on Y axis and weeks of year on the X axis
     - X for a day with an entry and an O for a day without an entry
     - Could you use colors in the terminal instead of an X or O?
+
+<!--/BOX-->

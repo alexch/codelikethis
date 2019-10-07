@@ -60,29 +60,17 @@ Move to?
 
 ## No Rules
 
-**Given** an empty board, and
+**Given** an empty board
 
-**Given** the current player is X
+**And** the current player is X
 
 **When** the user selects a cell (e.g. typing <kbd>2</kbd> <kbd>Enter</kbd>)
 
-**Then** the board redraws
+**Then** the board redraws, and an X appears in that cell
 
-**And** an X appears in that cell
+**And** the turn ends, and the current player changes from X to O
 
-**And** the turn ends
-
-**And** the current player changes from X to O
-
-<hr>
-
-**Given** the player is O
-
-**When** the user selects a cell (e.g. typing <kbd>5</kbd> <kbd>Enter</kbd>)
-
-**Then** an O appears in that cell
-
-**And** the turn ends, and the current player changes from O to X
+>And likewise for player O
 
 <!--/BOX-->
 
@@ -106,7 +94,7 @@ Move to?
 
 **Given** the turn has just ended
 
-**When** if there are three Xs in a row, column, or diagonal
+**When** there are three Xs in a row, column, or diagonal
 
 **Then** the system draws a line through the winning three cells
 
@@ -138,9 +126,9 @@ Move to?
 
 ## Names
 
-When starting a game, choose the names of the players (not just X and O).
+**When** starting a game, choose the names of the players (not just X and O).
 
-When displaying the name of a player, use their name and also say which symbol they are (X or O), e.g. `Alice's turn (X)`
+**Then** display the name of a player, and also say which symbol they are (X or O), e.g. `Alice's turn (X)`
 
 <!--/BOX-->
 
@@ -148,8 +136,11 @@ When displaying the name of a player, use their name and also say which symbol t
 
 ## Artificial Stupidity
 
-- When starting a new game, choose "Player vs Player" or "Player vs Computer"
-- If "Player vs Computer" is chosen, then do not ask for a name
+**Given** a new game with the options "Player vs Player" or "Player vs Computer"
+
+**When** "Player vs Computer" is chosen
+
+**Then** do not ask for a name
 - The computer player always picks an empty cell *at random*
 - The human is always X and the computer is always O
 

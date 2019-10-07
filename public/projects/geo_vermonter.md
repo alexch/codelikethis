@@ -20,9 +20,9 @@ First, clone the starter project here:
 # Game Rules:
 
 * when the player starts a game, they are dropped into a random spot inside Vermont
-* initial score is 100
+* the initial score is 100
 * the zoom level is pretty high (low to the ground) and there are no streets or markers, only satellite imagery
-* the map does **not** support zoom out, or slippy click-and-drag-to-move -- all movements must be deliberate, by clicking one of the north / south / east / west buttons
+* the map does **not** support zoom out, or slippy click-and-drag-to-move -- all movements must be deliberate, by clicking one of the north / south / east / west movement buttons
 * every time the user clicks a movement button, the map moves a fixed amount in that direction, and the score is decreased by 1
 * when the player clicks "Guess!" they can choose a county from a popup menu
 * if the guess is correct then:
@@ -62,7 +62,7 @@ First, clone the starter project here:
 
 Using [leaflet.js](#TODO) place a map of the state of Vermont inside the `map` div. Use the [Isri.WorldImagery tileset](https://leaflet-extras.github.io/leaflet-providers/preview/) and make sure **not** to show any street or town info to the user -- only satellite images.
 
-The map should be at a *fixed* zoom level, enough to show just the boundaries of the state and not much more.
+The map should be at a *fixed* zoom level (8 is pretty good for a map that's 600px high), enough to show just the boundaries of the state and not much more.
 
 The boundaries of Vermont are specified in [`border.js`](https://github.com/BurlingtonCodeAcademy/geo-vermonter/blob/master/border.js). Ask Josh for further instructions.
 
@@ -160,7 +160,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **When** the user clicks the "North" button
 
-**Then** the map scrolls a fixed distance to the north
+**Then** the map scrolls a fixed distance to the north (~.002 degrees lat or long should be a good distance)
 
 **And** the score is reduced by 1 point
 

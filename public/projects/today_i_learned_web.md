@@ -26,7 +26,7 @@ You can follow the instructions here to achieve this if you **DO NOT** already h
 
 ### Sign up for a mongoDB Atlas Account
 
-We use the free database as a service provider Atlas for connecting a production version of the application to a database hosted in the cloud. Please visit the following URL and sign-up for an Atlas account in order to create and use a database which is reachable from the internet.
+We use the free database as a service provider, Atlas, for connecting a production version of the application to a database hosted in the cloud. Please visit the following URL and sign-up for an Atlas account in order to create and use a database which is reachable from the internet.
 
 - https://www.mongodb.com/cloud/atlas
 
@@ -107,7 +107,7 @@ And the `when` attribute  of:
 
 `2018-01-01T14:05:00+0400`
 
-And an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
+And an `_id` attribute with a value, *represented with a placeholder as* `:objectId`.
 
 **When** a user visits the URL path:
 
@@ -167,7 +167,7 @@ And an `_id` attribute with a value, **represented with a placeholder as** `:obj
 | text        | `To convert string input to an Integer use parseInt("42")` |
 | when        | `2018-01-01T17:00:00+0400`                                                    |
 
-**And** the record has an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
+**And** the record has an `_id` attribute with a value, *represented with a placeholder as* `:objectId`.
 
 **When** a user visits the URL path `/facts/:objectId`
 
@@ -193,7 +193,7 @@ And an `_id` attribute with a value, **represented with a placeholder as** `:obj
 | text        | `To convert a number to a string use (42).toString()` |
 | when        | `2018-01-01T19:30:00+0400`                                                    |
 
-**And** the record has an `_id` attribute with a value, **represented with a placeholder as** `:objectId`.
+**And** the record has an `_id` attribute with a value, *represented with a placeholder as* `:objectId`.
 
 **When** a user visits the URL path `/facts/:objectId`
 
@@ -203,7 +203,7 @@ And an `_id` attribute with a value, **represented with a placeholder as** `:obj
 
 **And** the TIL entry should be `deleted` from the `facts` collection within the database, after clicking `Confirm`
 
-**And** the user should be receive an HTTP response code of `200` and **then be redirected** to the `/` URL path
+**And** the user should be receive an HTTP response code of `200` and *then be redirected* to the `/` URL path
 
 <!--/BOX-->
 

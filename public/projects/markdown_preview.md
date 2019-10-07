@@ -27,7 +27,7 @@ Input some markdown source on the left and see it rendered on the right.
 
 ## Setup
 
-* Clone the repo: (do this once only -- and use the Github Classroom URL instead if one is provided)
+* Clone the repo: (do this once only -- and use the Github Classroom URL)
 
 * Install dependencies: (do this once)
 
@@ -58,6 +58,8 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **Given** a running app
 
+**When** the user visits the http://localhost:8080
+
 **Then** the following elements should exist on the page:
 
 * *headline*: an `H1` element containing the text `Markdown Preview`
@@ -72,7 +74,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **Given** the user has entered text in the *source* text field
 
-**When** the user clicks *render* button
+**When** the user clicks the *render* button
 
 **Then** the text is copied into the *preview* area
 
@@ -83,7 +85,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **Given** the user has entered *markdown format* text in the *source* text field
 
-**When** the user clicks *render* button
+**When** the user clicks the *render* button
 
 **Then** the text is rendered as styled HTML into the *preview* area
 
@@ -98,7 +100,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **And** at least one second has elapsed since the user's last keypress
 
-**Then** the *render* button should activate automatically
+**Then** the *render* function should activate automatically
 
 **And** the text is rendered as styled HTML into the *preview* area
 

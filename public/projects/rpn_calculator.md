@@ -21,7 +21,7 @@ Another advantage is that you can represent any mathematical formula using a sim
 
 # Template
 
-Clone the GitHub repo set up when you follow the link we gave you for the classroom.
+Clone the GitHub repo set up when you follow the classroom link we gave you.
 
 Install the test runner (and any other required packages) with `npm install`
 

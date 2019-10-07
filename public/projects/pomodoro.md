@@ -2,9 +2,9 @@
 
 The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a [useful way](https://lifehacker.com/productivity-101-a-primer-to-the-pomodoro-technique-1598992730) to [focus on a problem](https://francescocirillo.com/pages/pomodoro-technique) for [a little while... but not too long](https://en.wikipedia.org/wiki/Timeboxing) that encourages regular breaks and can [change your perception of time itself](https://hackernoon.com/change-how-you-perceive-time-618282a1a9ec). 
 
-Build a single-page app that counts down from 25 minutes and makes an audible and/or visual alert when the time elapses.
+Build a single-page app that counts down from 25 minutes and makes audible and visual alerts when the time elapses.
 
-Template repo with Cypress acceptance tests here: <https://github.com/BurlingtonCodeAcademy/pomodoro> . They use the [Cypress Mock Clock](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock) to control time during test runs.
+Clone the your repository from the GitHub classroom. The tests use the [Cypress Mock Clock](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock) to control time during test runs.
 
 ## Wireframes
 
@@ -73,7 +73,7 @@ After implementing the basic features, feel free to implement your own ideas of 
 
 **And** the countdown should stop (if was in progress)
 
-**And** the Start button should be **enabled**
+**And** the Start button should be *enabled*
 
 <!--/BOX-->
 <!--BOX-->
@@ -99,7 +99,7 @@ After implementing the basic features, feel free to implement your own ideas of 
 
 **And** the Pause button should be *disabled*
 
-**And** the Start button should be **enabled**
+**And** the Start button should be *enabled*
 
 <!--/BOX-->
 <!--BOX-->
