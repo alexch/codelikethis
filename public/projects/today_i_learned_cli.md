@@ -10,11 +10,11 @@ Your task for this project is to build a command line program which you can use 
 * How could you find and edit an existing TIL entry?
 * How could you write multi-line TIL entries?
 
-## Backlog
+# Stories
 
 <!--BOX-->
 
-### Creating a new TIL entry
+## Creating a new TIL entry
 
 **Given** an empty command prompt
 
@@ -35,7 +35,7 @@ To convert JSON to a JavaScript object, use JSON.parse
 <!--/BOX-->
 <!--BOX-->
 
-### Listing existing TIL entries
+## Listing existing TIL entries
 
 **Given** an existing TIL entry with the content:
 ```
@@ -60,7 +60,7 @@ til --list
 <!--/BOX-->
 <!--BOX-->
 
-### Display a TIL entry
+## Display a TIL entry
 
 **Given** an existing TIL entry with the content:
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
@@ -84,7 +84,7 @@ CONTENT: To convert JSON to a JavaScript object, use JSON.parse(myObject)
 <!--/BOX-->
 <!--BOX-->
 
-### Listing multiple TIL entries
+## Listing multiple TIL entries
 
 **Given** an existing TIL entry with the content:
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
@@ -102,9 +102,7 @@ And the Date-Time:
 til --list
 ```
 
-**Then**
-
-Then the command prompt will contain
+**Then** the command prompt will contain:
 
 ```sh
 0 2018-01-01T12:15:00+0400 To convert JSON to a JavaScript object, use JSON.parse(myObject)
@@ -114,7 +112,7 @@ Then the command prompt will contain
 <!--/BOX-->
 <!--BOX-->
 
-### Editing an existing TIL entry
+## Editing an existing TIL entry
 
 **Given** an existing TIL entry with the content:
 
@@ -151,7 +149,7 @@ To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}
 <!--/BOX-->
 <!--BOX-->
 
-### Delete a TIL entry
+## Delete a TIL entry
 
 **Given** an existing TIL entry with the content:
 
@@ -177,9 +175,7 @@ til --list
 
 <!--/BOX-->
 
-## Tech
-
-## Icebox
+# Icebox
 
 - Tagging entries with a category
 - List entries after or before some date

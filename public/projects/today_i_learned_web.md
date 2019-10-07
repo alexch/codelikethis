@@ -45,11 +45,11 @@ We use the free database as a service provider Atlas for connecting a production
   * How could you add comments to TIL entries?
   * How do you enforce who can create/edit/delete new entries?
 
-## Backlog
+# Stories
 
 <!--BOX-->
 
-### Creating a new TIL entry
+## Creating a new TIL entry
 
 **Given**: an empty HTML form at the path `/`
 
@@ -71,7 +71,7 @@ To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
 
 <!--BOX-->
 
-### Listing existing TIL entries
+## Listing existing TIL entries
 
 **Given** an existing TIL entry with the text:
 
@@ -97,7 +97,7 @@ And a when of:
 
 <!--BOX-->
 
-### Display a TIL entry
+## Display a TIL entry
 
 **Given** an existing TIL entry with the `text` attribute of:
 
@@ -124,7 +124,7 @@ And an `_id` attribute with a value, **represented with a placeholder as** `:obj
 
 <!--BOX-->
 
-### Listing multiple TIL entries
+## Listing multiple TIL entries
 
 **Given** an existing TIL entry with the following attributes:
 
@@ -158,7 +158,7 @@ And an `_id` attribute with a value, **represented with a placeholder as** `:obj
 
 <!--BOX-->
 
-### Editing an existing TIL entry
+## Editing an existing TIL entry
 
 **Given** an existing TIL entry with the following attributes:
 
@@ -184,7 +184,7 @@ And an `_id` attribute with a value, **represented with a placeholder as** `:obj
 
 <!--BOX-->
 
-### Delete a TIL entry
+## Delete a TIL entry
 
 **Given** an existing TIL entry with the following attributes:
 
@@ -208,7 +208,7 @@ And an `_id` attribute with a value, **represented with a placeholder as** `:obj
 <!--/BOX-->
 
 <!--BOX-->
-## Icebox
+# Icebox
 
 - Tagging entries with a category
 - Filtering entries by category

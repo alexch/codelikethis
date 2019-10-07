@@ -54,11 +54,11 @@ Player X's turn
 Move to? 
 ```
 
-## Stories
+# Stories
 
 <!--BOX-->
 
-### No Rules
+## No Rules
 
 **Given** an empty board, and
 
@@ -88,7 +88,7 @@ Move to?
 
 <!--BOX-->
 
-### Rules
+## Rules
 
 **When** the user selects a cell that is not empty
 
@@ -102,7 +102,7 @@ Move to?
 
 <!--BOX-->
 
-### Win Condition
+## Win Condition
 
 **Given** the turn has just ended
 
@@ -120,7 +120,7 @@ Move to?
 
 <!--BOX-->
 
-### Stalemate
+## Stalemate
 
 **Given** all cells are full 
 
@@ -136,7 +136,7 @@ Move to?
 
 <!--BOX-->
 
-### Names
+## Names
 
 When starting a game, choose the names of the players (not just X and O).
 
@@ -146,7 +146,7 @@ When displaying the name of a player, use their name and also say which symbol t
 
 <!--BOX-->
 
-### Artificial Stupidity
+## Artificial Stupidity
 
 - When starting a new game, choose "Player vs Player" or "Player vs Computer"
 - If "Player vs Computer" is chosen, then do not ask for a name
@@ -155,11 +155,11 @@ When displaying the name of a player, use their name and also say which symbol t
 
 <!--/BOX-->
 
-## Icebox
+# Icebox
 
 <!--BOX-->
 
-### Artificial Intelligence
+## Artificial Intelligence
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D

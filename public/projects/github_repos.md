@@ -28,11 +28,11 @@ rerun           Restarts an app when the filesystem changes
 codelikethis    Code Like This web site
 ```
 
-## Stories
+# Stories
 
 <!--BOX-->
 
-### Big List
+## Big List
 
 **When** a user enters a name and clicks the "Show Repos" button
 
@@ -40,7 +40,7 @@ codelikethis    Code Like This web site
 
 **And** the name should be a link to the repo URL
 
-### Error Handling: No Such User
+## Error Handling: No Such User
 
 **When** a user enters a name that is *not* a world-visible GitHub account name 
 
@@ -49,7 +49,7 @@ codelikethis    Code Like This web site
 <!--/BOX-->
 <!--BOX-->
 
-### Recent First
+## Recent First
 
 **When** a repo has been more recently updated than another
 
@@ -59,7 +59,7 @@ codelikethis    Code Like This web site
 
 <!--/BOX-->
 
-### v2 Ideas
+# Icebox
 
 * Show more information for each repo
 * Use *authentication* to enable viewing private repos

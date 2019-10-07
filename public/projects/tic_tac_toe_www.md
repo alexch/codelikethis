@@ -47,13 +47,11 @@ Tic Tac Toe
 Player O's turn
 ```
 
-## Backlog
-
-The backlog is an ordered list of *user stories* (aka *features*). Make sure to implement them *in order*, and don't move on to the next one until you're confident that your current story meets all the requirements. Some features already have *acceptance tests* written in Cypress; make sure these work and also feel free to add your own tests in the `cypress/integration` directory.
+# Stories
 
 <!--BOX-->
 
-### Start Game
+## Start Game
 
 **Given** an empty board
 
@@ -68,7 +66,7 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 
 <!--BOX-->
 
-### No Rules
+## No Rules
 
 **Given** an empty board, and the current player is X
 
@@ -96,7 +94,7 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 
 <!--BOX-->
 
-### Rules
+## Rules
 
 **When** the user selects a cell that is not empty
 
@@ -107,7 +105,7 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 <!--/BOX-->
 <!--BOX-->
 
-### Win Condition
+## Win Condition
 
 **Given** the turn has just ended
 
@@ -124,14 +122,14 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 <!--/BOX-->
 <!--BOX-->
 
-### Names
+## Names
 
 When starting a game, allow the user(s) to choose the names of the players (not just X and O).
 
 <!--/BOX-->
 <!--BOX-->
 
-### Game Time
+## Game Time
 
 After starting a game, a game clock timer is present in the lower region of the web page.
 
@@ -163,7 +161,7 @@ Time Elapsed 32 seconds
 <!--/BOX-->
 <!--BOX-->
 
-### Artificial Stupidity
+## Artificial Stupidity
 
 - When starting a new game, choose "Player vs Player" or "Player vs Computer"
 - If "Player vs Computer" is chosen, then do not ask for a name
@@ -173,16 +171,19 @@ Time Elapsed 32 seconds
 <!--/BOX-->
 <!--BOX-->
 
-### New Game UI
+## New Game UI
 
 - design a clean "New Game" UI allowing choice of human or computer, name, and symbol
 - consider using a modal dialog box
 - consider button placement and visibility
 
 <!--/BOX-->
+
+# Icebox
+
 <!--BOX-->
 
-### Game Time Formatted (OPTIONAL)
+## Game Time Formatted
 
 After starting a game, a game clock timer is present in the lower region of the web page.
 
@@ -217,11 +218,9 @@ Time Elapsed 00:01:25
 
 <!--/BOX-->
 
-## Icebox
-
 <!--BOX-->
 
-### Artificial Intelligence
+## Artificial Intelligence
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D
@@ -231,7 +230,7 @@ Time Elapsed 00:01:25
 
 <!--BOX-->
 
-### EXTRA SUPER BONUS: Play Nine Games at Once
+## EXTRA SUPER BONUS: Play Nine Games at Once
 
 - Change the rules of the game so that nine 3x3 boards are played at once by two players.
 - A win can be achieved on any of the nine boards by placing three X's or three O's in a row.

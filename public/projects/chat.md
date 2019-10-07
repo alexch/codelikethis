@@ -109,7 +109,7 @@ function sendChatMessages(roomId, since, response) {
 }
 ```
 
-## Backlog
+# Stories
 
 <!--BOX-->
 
@@ -169,9 +169,9 @@ Client-side:
 
 ## Poll for new messages every 10 seconds
 
-Given a new message is sent
+**Given** a new message is sent
 
-Then the client will see it in less than 10 seconds (without clicking Refresh)
+**Then** the client will see it in less than 10 seconds (without clicking Refresh)
 
 ### Tech:
 
@@ -199,13 +199,13 @@ Message should be displayed with the `author` and `created_at`
 
 ## Validation
 
-Given an incoming message
+**Given** an incoming message
 
-When the message body is more than 500 characters long
+**When** the message body is more than 500 characters long
 
-Then the message is rejected
+**Then** the message is rejected
 
-And the user sees an error message
+**And** the user sees an error message
 
 <!--/BOX-->
 
@@ -218,14 +218,20 @@ Instead of the single Main room, enable a few different rooms that are always av
   * `GET /chat/rooms/dogs` gets all messages from the room whose id is "`dogs`".
   * `POST /chat/rooms/dogs` sends a message to that room
 
-Any message sent to /chat will still work, displayed in the Main room.
+**Given** a room named Dogs
 
-The client should show a list of all available rooms, either in a popup menu or a scrolling list.
+**When** a user is in the Dogs room, and makes a post
+
+**Then** the message will appear in Dogs
+
+**And** not in the Main room, but any message sent to /chat will still work, displayed in the Main room.
+
+**And** The client should show a list of all available rooms, either in a popup menu or a scrolling list.
 
 <!--/BOX-->
 
 
-## Icebox
+# Icebox
 
   * Build a beautiful, usable, responsive front end
     * possibly in React

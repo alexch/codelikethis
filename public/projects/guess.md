@@ -50,11 +50,80 @@ I guessed it in 5 tries.
 
 * Sign reversal errors are also a strong possibility. Be clear about the distinction between "my guess is higher than your number" and "your number is higher than my guess" and so forth.
 
-## Backlog
+# Stories
 
-* In the *optimal* solution, the game will find the correct number in no more than `[log2(n)+1]` guesses -- so for n=100, that's 7 guesses *max*. This solution is a good example of a *binary search algorithm* (not to be confused with *binary notation* which is a different kind of binary). Try implementing a binary search instead of a random search.
+<!--BOX-->
+## Pick a number, any number
 
-* Accept a parameter specifying the maximum guess; e.g. `node guess.js 500` means `Please think of a number between 1 and 500 (inclusive)`.
+**Given** the player starts the game
+
+**Then** the computer should ask the player if their number is some random between 1 and 100
+
+**And** waits for an answer, and saves the answer as a variable
+
+<!--/BOX-->
+
+<!--BOX-->
+## Let the computer win
+
+**Given** the computer has guessed a number
+
+**When** the player responds "yes" (or "y")
+
+**Then** the game exits with a victory message.
+
+<!--/BOX-->
+
+<!--BOX-->
+## The computer guessed wrong
+
+**Given** the computer has guessed a number
+
+**When** the player responds "no" (or "n")
+
+**Then** the computer asks if the number is higher or lower
+
+<!--/BOX-->
+
+<!--BOX-->
+## Modify your guess range
+
+**Given** the computer guessed the incorrect number
+
+**When** the player responds "higher" ("h") or "lower" ("l")
+
+**Then** the computer modifies the range it guesses within based on if the number was higher or lower
+
+**And** guess a new number within the modified range
+
+<details>
+<div>
+<summary>Hint</summary>
+If the number is higher, you'll want to modify the low end of the range, and vice versa for if the number is lower.
+</div>
+</details>
+
+<!--/BOX-->
+
+<!--BOX-->
+## Make it smarter
+
+* In the *optimal* solution, the game will find the correct number in no more than `[log2(n)+1]` guesses -- so for n=100, that's 7 guesses *max*. This solution is a good example of a *binary search algorithm*. 
+
+**Given** The player chooses a number between 1 and 100
+
+**Then** the computer should guess the number in no more than 7 tries
+
+<!--/BOX-->
+
+<!--BOX-->
+## Extend the guess range
+
+**Given** the game has not been started
+
+**When** the game is first called with `node index.js`
+
+**Then** accept a parameter specifying the maximum guess; e.g. `node index.js 500` means `Please think of a number between 1 and 500 (inclusive)`.
 
 <details>
 <div>
@@ -75,31 +144,49 @@ let maxNum = process.argv[2] || 100
 </div>
 </details>
 
-* **Cheat detector**: if a response contradicts an earlier response, complain and ask again. e.g. `But you said it was lower than 25, so it can't also be higher than 24!`
+<!--/BOX-->
 
-<details>
-<div>
-<summary>Hint</summary>
-How would <em>you</em> determine if someone was cheating in guess the number?
-</div>
-</details>
+<!--BOX-->
+## Cheat Detector
 
-* **Role Reversal!** In two parts:
+**Given** a higher/lower response contradicts an earlier response
+
+**Then** the computer complains
+
+**And** asks again. e.g. `But you said it was lower than 25, so it can't also be higher than 24!`
+
+<!--/BOX-->
+
+<!--BOX-->
+**Role Reversal!** In two parts:
    1. Write the *reverse* game, where the *computer* thinks of a number and the *human* guesses it. (Put this in a different source file so you don't mess up the first program.)
    2. Combine your two programs into one, so the players (computer and human) take turns -- first one guesses, then the other, then repeat <br><br>
 
-* **Refactor!** What code is shared between the two programs? Can you unify the code by extracting functions? Are your function and variable names descriptive? Can you remove any comments (without reducing clarity)?
-
-<details>
+   <details>
 <div>
 <summary>Hint</summary>
 You may want to make an `initialize` function that will ask which game you want to play and then call the function containing that version of the game depending on the users input.
 </div>
 </details>
 
-* **Test!** How could you write unit tests for a game like this? Are there any parts of the algorithm that you can extract into a function, then write tests for just that function?
+<!--/BOX-->
 
-* **Test first!** Now that you've written it once, throw it away! Start over from scratch, but this time, use *test-driven development*: write a test, watch it fail, make it pass, repeat.
+# Icebox
+
+<!--BOX-->
+**Refactor!** What code is shared between the two programs? Can you unify the code by extracting functions? Are your function and variable names descriptive? Can you remove any comments (without reducing clarity)?
+
+<!--/BOX-->
+
+<!--BOX-->
+**Test!** How could you write unit tests for a game like this? Are there any parts of the algorithm that you can extract into a function, then write tests for just that function?
+
+<!--/BOX-->
+
+<!--BOX-->
+**Test first!** Now that you've written it once, throw it away! Start over from scratch, but this time, use *test-driven development*: write a test, watch it fail, make it pass, repeat.
+
+<!--/BOX-->
 
 ## References
 

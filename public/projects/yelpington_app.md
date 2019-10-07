@@ -61,11 +61,11 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 ```
 
 
-## Backlog
+# Stories
 
 <!--BOX-->
 
-### Zero Pull Requests
+## Zero Pull Requests
 
 * If you previously did the [Yelpington Repo](yelpington_repo) project, please check <https://github.com/BurlingtonCodeAcademy/yelpington/pulls> and if any open PRs have your name on them, finish them up and get the PRs accepted or closed.
 * Otherwise, **clone** the Yelpington repository, either [from GitHub directly](https://github.com/BurlingtonCodeAcademy/yelpington), or from the GitHub Classroom link provided by your instructor.
@@ -92,7 +92,7 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 <!--/BOX-->
 
 <!--BOX-->
-### Show Restaurant
+## Show Restaurant
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
 
@@ -124,7 +124,7 @@ let name = document.location.hash.slice(1)
 <!--/BOX-->
 
 <!--BOX-->
-### Show Restaurant Map
+## Show Restaurant Map
 
 **Given** the id of a restaurant (e.g. `joes-diner`)
 
@@ -148,7 +148,7 @@ let name = document.location.hash.slice(1)
 <!--/BOX-->
 
 <!--BOX-->
-### Show All Restaurants (list)
+## Show All Restaurants (list)
 
 **When** the user visits `http://localhost:8080/`
 
@@ -157,7 +157,7 @@ let name = document.location.hash.slice(1)
 <!--/BOX-->
 
 <!--BOX-->
-### Show All Restaurants (map)
+## Show All Restaurants (map)
 
 **When** the user visits `http://localhost:8080/` with no query string
 
@@ -169,7 +169,7 @@ let name = document.location.hash.slice(1)
 
 <!--BOX-->
 
-### Formatted Notes
+## Formatted Notes
 
 **Given** markdown-formatted text inside a `notes` item
 

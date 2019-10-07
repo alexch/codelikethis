@@ -31,7 +31,7 @@ After implementing the basic features, feel free to implement your own ideas of 
   * Guide: https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock
   * API doc: https://docs.cypress.io/api/commands/clock.html
   
-## Backlog
+## Stories
 
 > Please implement these user stories in order. There are Cypress acceptance tests for most of them in the repo. Feel free to add your own unit tests and/or acceptance tests too!
 

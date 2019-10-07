@@ -65,12 +65,10 @@ After implementing a story, *before* starting work on the next story...
 
 And during the day, take breaks, find other student teams and play each others' games!
 
-## Backlog
-
-Stories in the backlog are **required** to complete the project
+# Stories
 
 <!--BOX-->
-### One Room
+## One Room
 
 **When** the user launches the program
 
@@ -113,7 +111,7 @@ while(answer !== 'exit') {
 </details>
 
 <!--BOX-->
-### Read the sign
+## Read the sign
 
 **Given** the player is in the room "182 Main St."
 
@@ -148,7 +146,7 @@ let sign = {
 </details>
 
 <!--BOX-->
-### Don't take the sign
+## Don't take the sign
 
 **Given** the player is in the room `182 Main St.`
 
@@ -166,7 +164,7 @@ That would be selfish. How will other students find their way?
 
 
 <!--BOX-->
-### Blocked
+## Blocked
 
 **Given** the player is in the room `182 Main St.`
 
@@ -181,7 +179,7 @@ The door is locked. There is a keypad on the door handle.
 
 <!--/BOX-->
 <!--BOX-->
-### Speak friend and enter
+## Speak friend and enter
 
 **Given** the player is in the room `182 Main St.`
 
@@ -199,7 +197,7 @@ shuts behind you.
 <!--/BOX-->
 
 <!--BOX-->
-### Unauthorized Access
+## Unauthorized Access
 
 **Given** the player is in the room `182 Main St.`
 
@@ -216,7 +214,7 @@ Bzzzzt! The door is still locked.
 <!--/BOX-->
 
 <!--BOX-->
-### Foyer
+## Foyer
 
 **Given** the player is in `182 Main St. - Foyer`
 
@@ -234,7 +232,7 @@ A copy of Seven Days lies in a corner.
 <!--/BOX-->
 <!--BOX-->
 
-### Inventory
+## Inventory
 
 **Given** the player is in `182 Main St. - Foyer`
 
@@ -255,7 +253,7 @@ and ignoring the articles, just like everybody else does.
 
 <!--BOX-->
 
-### Display Inventory
+## Display Inventory
 
 **Given** the paper is in the player's inventory
 
@@ -271,7 +269,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 <!--/BOX-->
 <!--BOX-->
 
-### Drop Inventory
+## Drop Inventory
 
 **Given** the copy of Seven Days is in the player's inventory
 
@@ -285,7 +283,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 <!--BOX-->
 
-### More rooms and more stories, e.g.
+## More rooms and more stories, e.g.
 
 * when you unlock the door to the foyer it *stays* unlocked
 
@@ -307,7 +305,7 @@ Please *write stories* for each of these features *before* implementing them.
 
 <!--/BOX-->
 
-## Icebox
+# Icebox
 
 * Status line (showing room name)
 * Web User Interface for the game

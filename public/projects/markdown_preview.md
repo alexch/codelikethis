@@ -49,7 +49,7 @@ Input some markdown source on the left and see it rendered on the right.
  * in the Cypress Runner window, click the "Run All Tests" button, or click on a single test to run it alone
 
 
-## Backlog (required user stories)
+# Stories
 
 We have provided Cypress tests that run through the first few features. Please make sure to keep running the tests, to ensure later changes don't break earlier features.
 
@@ -123,6 +123,8 @@ Make the *formatted text* in the *preview* area look pretty.
 Maybe make different elements different colors, or improve margins and padding, or whatever you like.
 
 <!--/BOX-->
+
+# Icebox
 
 <!--BOX-->
 

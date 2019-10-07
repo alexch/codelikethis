@@ -21,9 +21,7 @@ Another advantage is that you can represent any mathematical formula using a sim
 
 # Template
 
-Clone this GitHub repo: https://github.com/BurlingtonCodeAcademy/rpn_calculator
-
-(If we are using GitHub Classroom, you will get your own personal repo to clone instead.)
+Clone the GitHub repo set up when you follow the link we gave you for the classroom.
 
 Install the test runner (and any other required packages) with `npm install`
 
@@ -47,7 +45,7 @@ class Calculator {
 module.exports = Calculator;
 ```
 
-# Backlog
+# Stories
 
 <!--BOX-->
 

@@ -32,7 +32,7 @@ First, clone the starter project here:
    
 > How do we get the nested list of Vermont towns and counties?
  
-# User Stories
+# Stories
 
 <!--BOX-->
 ## Basic Layout
@@ -71,6 +71,8 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--BOX-->
 ## Game On
 
+**Given** a page with a map, Start, Quit, and Guess buttons
+
 **When** the user clicks *Start a Game*
 
 **Then** the Start button is disabled
@@ -84,6 +86,8 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 <!--BOX-->
 ## Random Spot
+
+**Given** the game has not been started
 
 **When** the user clicks *Start a Game*
 
@@ -102,6 +106,8 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--BOX-->
 ## I Give Up!
 
+**Given** the game has been started
+
 **When** the user clicks the "I Give Up" button
 
 **Then** the app displays the lat/long position inside the `info` panel
@@ -112,6 +118,8 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 <!--BOX-->
 ## Guess the County
+
+**Given** the game has been started
 
 **When** the user clicks the Guess button
 
@@ -129,7 +137,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 <hr>
 
-**When** the user types in an incorrect county 
+**When** the user selects an incorrect county 
 
 **Then** The game *subtracts* 10 from score
 
@@ -148,6 +156,8 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--BOX-->
 ## Move
 
+**Given** the game has been started
+
 **When** the user clicks the "North" button
 
 **Then** the map scrolls a fixed distance to the north
@@ -160,6 +170,8 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 <!--BOX-->
 ## Return
+
+**Given** the user has started the game, and moved from their initial location
 
 **When** the user clicks the "Return" button
 
@@ -220,18 +232,29 @@ Initially, implement your server code as simply as possible. Over the course of 
 
 <!--/BOX-->
 
-<!--BOX-->
-### Replay game:
+# Icebox
 
-1. when the game is saved, don't just save the name and score: all the info, including spot and all moves taken, and any guesses, should be saved as well
-2. when viewing old games, the user can select one and see the above info
-3. a live replay at one move per second (this will likely be a whole new story)
+<!--BOX-->
+## Previous Games:
+
+**Given** the game is over
+
+**When** the game is saved, don't just save the name and score: all the info, including spot and all moves taken, and any guesses, should be saved as well
+
+**Then** viewing old games, the user can select one and see the above info
 
 <!--/BOX-->
 
+<!--BOX-->
+## View Replay
 
+**Given** the user is viewing previous games
 
-# Backlog
+**When** the user selects 'view replay' on a game
+
+**Then** the game shows a replay at a speed of 1 move per second
+
+<!--/BOX-->
 
 Ideas for future work:
 
