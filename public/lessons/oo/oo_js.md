@@ -157,7 +157,7 @@ let lula = {color: "brown"}
 * if you have several references to the same instance, odd things can happen
 
 ```js
-let abby = {color: "brown"}
+let dog = {color: "brown"}
 let abby = dog
 let lula = dog
 
