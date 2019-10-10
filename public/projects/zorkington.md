@@ -16,7 +16,7 @@ In this project, you will create a version of Zork that takes place in the faraw
 
 ## Goals
 
-* utilizing functions, and objects for a deeper understanding of encapsulation.
+* utilizing functions, methods, and objects for a deeper understanding of encapsulation.
 * understand state and state transitions, which are useful in many areas, e.g. 
   * photo carousel
   * buttons, menus, other widgets
@@ -43,6 +43,7 @@ If you are not comfortable using classes, constructors, and objects you may save
 
 ```js
 let currentRoom = null;
+
 function moveToRoom(newRoom) {
   if (canMoveToRoom(newRoom)) {
     currentRoom = newRoom;
@@ -50,7 +51,7 @@ function moveToRoom(newRoom) {
 }
 ```
 
->Note: Using functions and global variables may work for a simple version of this game, however it will be much, much harder to scale up.
+>Note: Using functions, global variables, and logical statements may work for a simple version of this game, however it will be much, much harder to scale up than if you use objects.
 
 You may want to create a [State Machine](/lessons/javascript/state_machines) to represent potential room transitions.
 
@@ -134,8 +135,9 @@ You could do this with nested logic statements, however that will get complicate
 
 ```js
 let sign = {
-  read: function() {
-    return "Welcome to Burlington Code Academy! Come on up to the third floor. If the door is locked, use the code 12345."
+  description: "Welcome to Burlington Code Academy! Come on up to the third floor.\nIf the door is locked, use the code 12345."
+  read: () => {
+    return this.description
   }
 }
 ```
@@ -175,7 +177,6 @@ That would be selfish. How will other students find their way?
 ```
 The door is locked. There is a keypad on the door handle.
 ```
-</span>
 
 <!--/BOX-->
 <!--BOX-->
