@@ -9,11 +9,11 @@ let stringUtils = {
       word.slice(1).toLowerCase();
   },
   rant: function(opinion) {
-    return option.toUpperCase() + '!!!';
+    return opinion.toUpperCase() + '!!!';
   }
 }
 
-stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
+stringUtils.rant('i love pizza') // => 'I LOVE PIZZA!!!'
 ```
 
 # Methods Can Access Object State
