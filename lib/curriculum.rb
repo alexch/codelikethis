@@ -27,17 +27,11 @@ class Curriculum < Site
       ::Track::Oo,
       ::Track::Db,
       ::Track::React,
-
       ::Track::Separator,
-
       ::Track::Agile,
       ::Track::Git,
-      ::Track::Cs,
-      ::Track::Ux,
-      ::Track::TricksOfTheTrade, # or "trade secrets" ?
+      ::Track::TricksOfTheTrade,
       ::Track::Career,
-      ::Track::Qa,
-
     ]
   end
 
