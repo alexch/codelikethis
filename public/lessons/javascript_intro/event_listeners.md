@@ -1,14 +1,15 @@
 # Event Listeners
 
-Event Listeners are a special type of function in javascript that waits for a specified event, and then calls a function after that event has been triggered
+Event Listeners are a special type of function in JavaScript that waits for a specified event, and then calls a callback function after that event has been triggered
 
 # Common Usage
 
 * `element.addEventListener('event', callback)`
-  * Used in client side JavaScript to add an event listener taking a specified event and callback function to be triggered on that event
+  * Used in client side JavaScript to add an event listener to a specific element taking a specified event and callback function to be triggered.
 
-* `<div onclick="function(){...}" >...</div>`
-  * fires the specified function when the element (`<div>` in this example) is clicked
+* `<div onclick="myFunction()" >...</div>`
+  * Inline in your HTML, fires the specified function when the element (`<div>` in this example) is clicked
+  >NOTE: Unlike other event listeners you **do** want to call the function being set on the `onclick` property.
 
 * `setTimeout(i, callback)`
   * Calls the callback function *after* `i` milliseconds
@@ -18,11 +19,11 @@ Event Listeners are a special type of function in javascript that waits for a sp
 
 # Event Listeners as HTML properties
 
-The `onclick` poroperty can be set on any html element.
+The `onclick` property can be set on any html element.
 
-Some elements have a default `onclick`. Namely forms, which send a post request with the contents of the form as the body of the post request, and `<a>` (anchor) tags which go to a specified page or html fragment.
+Some elements have a default `onclick`. Namely `<a>` (anchor) tags which go to a specified page or html fragment.
 
-There are a few ways to set the `onclick` property, though it is often done inline
+There are a few ways to set the `onclick` property. The most common ways are inline in your HTML, or by adding an event listener to an element using DOM queries
 
 # Lab: Event Listeners on different HTML elements
 
@@ -75,15 +76,15 @@ Let's play around with setting event listeners on different elements!
 
 * error
 
-And many, many more...
+[And many, many more...](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 # The Structure of the Event Listener in JavaScript
 
 ![event-listener-breakdown](/images/event-listener.png)
 
-# Adding Event Listeners using the DOM
+# Event Listeners using the DOM Queries and JS
 
-* Add a `script` tag to your HTML and either link to an external javascript file or write your javascript write in the `script` tag
+* Add a `<script>` tag to your HTML and either link to an external javascript file or write your javascript right in the `<script>` tag
 
 * use a DOM query to target an HTML element and set it to a variable
 
@@ -92,5 +93,5 @@ And many, many more...
 * pass the event listener the event you want it to listen for as the first argument
 > Note: The event should be a string. e.g. 'click'
 
-* pass the callback as the second argument. You can either define it inline, or define it else where and pass the function name as the second argument
+* pass the callback as the second argument. You can either define it inline, or define it elsewhere, and pass the function name as the second argument
 > Do NOT call the callback function when you pass it in!

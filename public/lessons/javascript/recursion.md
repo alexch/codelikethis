@@ -118,7 +118,7 @@ factorial(10)   // 3628800
 <details>
 <summary>Hint</summary>
 <div>
-You may want to use logic to define edge cases, and breakpoints. e.g.
+You may want to use logic to define the base case, and breakpoints. e.g.
 
 ```js
 if (number === 1) {

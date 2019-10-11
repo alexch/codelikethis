@@ -6,7 +6,7 @@
 # What is the DOM?
 
 * DOM stands for **Document Object Model**
-* can be a bit tricky to wrap your head around. It is essentially a set of objects and methods that defines how your HTML document is accessed and manipulated.
+* The DOM can be a bit tricky to wrap your head around. It is essentially a set of objects and methods that defines how your HTML document is accessed and manipulated.
 * A central metaphor of the DOM is that your HTML file is a tree, and HTML elements are branches and leaves on that tree.
 * A visual representation of the DOM can be seen by using the 'Inspect' feature of your browser.
 
@@ -35,6 +35,8 @@ Chrome can be one of the most useful tools for debugging HTML and CSS.
 * An easy-to-read visual representation of your DOM will open, which can be modified and analyzed to track down any code that may be of issue.
 * Both CSS properties and HTML elements can also be added, removed, or modified to determine their impact on specific elements of your web page.
 
+# Chrome Inspector
+
 ![Image of the chrome web inspection tool](/images/dom-debugging.png)
 
 # Grab a Second Set of Eyes
@@ -46,5 +48,7 @@ Often staring at thousands of semi-colons and angle brackets can be overwhelming
 * A program that assesses code in order to locate any possible errors
 
 There are endless options for both HTML and CSS linters. A quick Google search will yield a number of potential websites and plugins to help debug your code.
+
+You can download your preferred linter through the VS Code marketplace. (ESLint comes bundled with VS Code by default)
 
 E.g. <https://validator.w3.org/>

@@ -9,17 +9,17 @@
 # Intro to HTML
 
 * Stands for Hyper-Text Markup Language.
-* Every HTML file = one web page.
-* Invented by Tim Berners-Lee
+* Every HTML file is one web page.
+* Invented by Sir Tim Berners-Lee
 * Based on SGML
 * Standard language used for creating web pages.
 * Composed of tags
-* Used in tandem with CSS and JavaScript
+* CSS and JavaScript are designed to work in tandem with HTML
 * HTML is for structuring content. It does not perform complex computations.
 
 # What Is It?
 
-HTML is a coding language composed of various types of *tags*, also known as *elements*. These are what are used to build web pages. They are the Lincoln Logs of the Internet.
+HTML is a coding language composed of various types of *tags*, also known as *elements*. These are what are used to build web pages.
 
 * HTML is used to **build** web pages by using **tags**.
 * Web browsers "read" HTML and render it as pretty visual elements for humans.
@@ -73,6 +73,10 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 | \<hr>                | Horizontal rule (dividing line) |
 | \<blockquote>        | "call-out" quotation            |
 | etc.                 |                                 |
+
+# Self Closing Tags
+
+Some tags can act as both an opening and a closing tag. These are written with a forward slash at the end, and are most commonly seen fro tags thaat insert something into the page such as an image, or a line break. e.g. `<img src="myImg.jpg" />` is a self closing image tag.
 
 # Attributes
 
