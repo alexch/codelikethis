@@ -10,7 +10,7 @@ In this project, you will pair up and work with other teams to create an online 
 
 * JSON
 * AJAX
-* Maps
+* Leaflet Maps
 * Accessing and parsing URLs from JavaScript
 
 ## Goals
@@ -47,7 +47,7 @@ As specified in the [Yelpington Repo](./yelpington_repo) project, we will need J
 * kebab-case
 
 This *id* is **not** the same as an HTML element id; instead, it's a *primary key* for our
-database. (Yes, in this context, the filesystem is a database. Really.) Every record (restaurant)
+database. (Yes, in this context, the filesystem is a database.) Every record (restaurant)
 needs a unique identifier.
 
 We will also need a file named `all.json` which contains a list of all the ids, e.g.:
@@ -67,11 +67,12 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 
 ## Zero Pull Requests
 
-* If you previously did the [Yelpington Repo](yelpington_repo) project, please check <https://github.com/BurlingtonCodeAcademy/yelpington/pulls> and if any open PRs have your name on them, finish them up and get the PRs accepted or closed.
-* Otherwise, **clone** the Yelpington repository, either [from GitHub directly](https://github.com/BurlingtonCodeAcademy/yelpington), or from the GitHub Classroom link provided by your instructor.
+* If you previously did the [Yelpington Repo](yelpington_repo) project, please check <https://github.com/BurlingtonCodeAcademy/yelpington/pulls>  
+  * If any open PRs have your name on them, finish them up, get the PRs accepted, and close them out.
+* Otherwise, **clone** the Yelpington repository, either from the GitHub Classroom link provided by your instructor.
 * Make sure your local setup is working. First run `npm install`, then run `npm start` and visit <http://localhost:8080/all.json> You should see something like this:
 
-```javascript
+```json
 [
   "kountry-kart-deli",
   "american-flatbread",
@@ -98,7 +99,7 @@ We will also need a file named `all.json` which contains a list of all the ids, 
 
 **When** the user visits `http://localhost:8080/restaurant.html#joes-diner`
 
-**Then** they should see all the restaurant information, formatted and styled nicely
+**Then** they should see all the information for that restaurant formatted and styled nicely
 
 >Note: Use AJAX or Fetch to load the data.
 
@@ -132,8 +133,7 @@ let name = document.location.hash.slice(1)
 
 **Then** they see a [Leaflet web map](/lessons/client_side_coding/interactive_mapping), centered at that restaurant's location
 
-> You must decide *how* and *when* to look up the restaurant's `Latitude/Longitude`, and
-> whether to do it automatically or manually.
+> You must decide *how* and *when* to look up the restaurant's `Latitude/Longitude`, and whether to do it automatically or manually.
 
 > [Nominatim](https://nominatim.openstreetmap.org/) is a good option. Try the following:
 
@@ -191,7 +191,7 @@ HTML:
 
 <!--BOX-->
 
-```
+```html
 <h2>Mr Mikes</h2>
 <p>The pizza is <strong>awesome</strong> here!</p>
 ```

@@ -220,7 +220,9 @@ Instead of the single Main room, enable a few different rooms that are always av
 
 **Given** a room named Dogs
 
-**When** a user is in the Dogs room, and submits a post
+**When** a user is in the Dogs room
+
+**And** submits a post
 
 **Then** the message will appear in Dogs
 

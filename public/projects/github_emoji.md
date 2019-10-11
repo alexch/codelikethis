@@ -20,6 +20,11 @@ GitHub Emoji
 
 ```
 
+## Tech
+
+* AJAX
+* Iteration
+
 # Stories
 
 <!--BOX-->
@@ -46,9 +51,4 @@ GitHub Emoji
 **Other Considerations**: if the list is immediately updated after every keypress, then it might cause performance problems or visual stutter. One way to limit this is to use a *cooldown timer* so that the filtering action only happens a second or so *after* the user presses a key, to allow for many keypresses in a row without interruption.
 
 <!--/BOX-->
-
-## Tech
-
-* AJAX
-* Iteration
 

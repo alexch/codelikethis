@@ -4,9 +4,7 @@
 
 In this project we will build our own version of the game using locations inside Vermont.
 
-First, clone the starter project here: 
-
-  http://github.com/BurlingtonCodeAcademy/geo-vermonter-react
+First, clone the starter project from the github classroom link
 
 `cd` into the repo directory and then run `npm install`
 
@@ -19,9 +17,10 @@ First, clone the starter project here:
 
 # Game Rules:
 
+* before the game begins the user should see a map of Vermont zoomed out just enough to view the whole state (zoom level ~8 on a map with a 600px height)
 * when the player starts a game, they are dropped into a random spot inside Vermont
 * the initial score is 100
-* the zoom level is pretty high (low to the ground) and there are no streets or markers, only satellite imagery
+* the zoom level is 18 and there are no streets or markers, only satellite imagery
 * the map does **not** support zoom out, or slippy click-and-drag-to-move -- all movements must be deliberate, by clicking one of the north / south / east / west movement buttons
 * every time the user clicks a movement button, the map moves a fixed amount in that direction, and the score is decreased by 1
 * when the player clicks "Guess!" they can choose a county from a popup menu
@@ -31,8 +30,6 @@ First, clone the starter project here:
   * the Info box is filled in with the correct latitude and longitude
    
 > How do we get the nested list of Vermont towns and counties?
- 
-# Stories
 
 <!--BOX-->
 ## Basic Layout
@@ -56,6 +53,15 @@ First, clone the starter project here:
 
 <!--/BOX-->
 
+### Tech:
+
+Initially, implement your server code as simply as possible. Over the course of the week, we will learn more ways of saving state on a server or database.
+
+1. in RAM (a list of JS objects in an array) -- this will get erased when you restart the server but will be just fine for demos
+2. in a file -- this will work locally but will not work on Heroku
+3. in MongoDB
+
+# Stories
 
 <!--BOX-->
 ## State of the State
@@ -99,7 +105,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **And** displays question marks inside the lat, long, county, and town fields
 
-*(optional)* **And** displays a small map of Vermont counties on the side, e.g. https://geology.com/county-map/vermont-county-map.gif
+> optionally: it displays a small map of Vermont counties on the side, e.g. https://geology.com/county-map/vermont-county-map.gif
 
 <!--/BOX-->
 
@@ -123,7 +129,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **When** the user clicks the Guess button
 
-**Then** the user sees a *modal dialog box* (or a *modeless dialog box*) asking "What county are we in?" with a [popup list of all Vermont counties](https://en.wikipedia.org/wiki/List_of_counties_in_Vermont)
+**Then** the user sees a *modal dialog box* asking "What county are we in?" with a [popup list of all Vermont counties](https://en.wikipedia.org/wiki/List_of_counties_in_Vermont)
 
 **And** two buttons ("Guess" and "Cancel")
 
@@ -164,14 +170,16 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 
 **And** the score is reduced by 1 point
 
-(and same as above for East, South, West buttons)
+>and likewise for East, South, and West buttons
 
 <!--/BOX-->
 
 <!--BOX-->
 ## Return
 
-**Given** the user has started the game, and moved from their initial location
+**Given** the user has started the game
+
+**And** moved from their initial location
 
 **When** the user clicks the "Return" button
 
@@ -180,7 +188,7 @@ The boundaries of Vermont are specified in [`border.js`](https://github.com/Burl
 <!--/BOX-->
 
 <!--BOX-->
-## breadcrumbs
+## Breadcrumbs
 
 When the user clicks a movement button
 
@@ -191,7 +199,7 @@ And keeps showing the dotted line during the rest of game
 <!--/BOX-->
 
 <!--BOX-->
-## save score (local)
+## Save Score (local)
 
 **When** the user wins a game
 
@@ -221,14 +229,6 @@ And keeps showing the dotted line during the rest of game
 **When** the user selects "high scores" from the nav bar
 
 **Then** the app shows a list of all games, in score order (top to bottom), including scores from all other players
-
-### Tech:
-
-Initially, implement your server code as simply as possible. Over the course of the week, we will learn more ways of saving state on a server or database.
-
-1. in RAM (a list of JS objects in an array) -- this will get erased when you restart the server but will be just fine for demos
-2. in a file -- this will work locally but will not work on Heroku
-3. in MongoDB
 
 <!--/BOX-->
 

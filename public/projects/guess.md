@@ -59,9 +59,9 @@ I guessed it in 5 tries.
 
 **Given** the player starts the game
 
-**Then** the computer should ask the player if their number is some random between 1 and 100
+**Then** the computer should ask the player if their number is a random between 1 and 100
 
-**And** waits for an answer, and saves the answer as a variable
+**And** waits for an answer, which it saves as a variable
 
 <!--/BOX-->
 
@@ -96,7 +96,7 @@ I guessed it in 5 tries.
 
 **Then** the computer modifies the range it guesses within based on if the number was higher or lower
 
-**And** guess a new number within the modified range
+**And** guesses a new number within the modified range
 
 <details>
 <div>
@@ -152,7 +152,7 @@ You can set a default value to a variable using the logical 'or' operator `||`.
 
 **Then** the computer complains
 
-**And** asks again. e.g. `But you said it was lower than 25, so it can't also be higher than 24!`
+**And** asks again, or exits. e.g. `But you said it was lower than 25, so it can't also be higher than 24!`
 
 <!--/BOX-->
 
@@ -164,7 +164,7 @@ You can set a default value to a variable using the logical 'or' operator `||`.
    <details>
 <div>
 <summary>Hint</summary>
-You may want to make an `initialize` function that will ask which game you want to play and then call the function containing that version of the game depending on the users input.
+You may want to make an `initialize` function that will ask which game you want to play and then call the function containing that version of the game depending on the user's input.
 </div>
 </details>
 

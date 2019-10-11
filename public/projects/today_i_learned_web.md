@@ -1,22 +1,22 @@
 # Today I Learned - Web Application
 
-During your programming journey you will come across questions every day and need to find answers for those questions. Recent studies have found a [cognitive benefit to journaling](https://psychcentral.com/lib/the-health-benefits-of-journaling/) when learning new content, or balancing between multiple priorities. For many people the act of writing down a problem, the path to finding a solution, and the answer, stimulates pathways in the brain which help in memory recall and problem solving.
+During your programming journey you will come across questions every day and need to find answers for those questions. Studies have found a [cognitive benefit to journaling](https://psychcentral.com/lib/the-health-benefits-of-journaling/) when learning new content, or balancing between multiple priorities. For many people the act of writing down a problem, the path to finding a solution, and the answer, stimulates pathways in the brain which help in memory recall and problem solving.
 
 Your task for this project is to build a web-server and front-end application that you can use to record, search, edit, and reference answers for various programming tasks. The notes that you create will serve as both a log of your personal learning, and a reference of prior solved problems to remind yourself how to do tasks in the future.
 
-## Tech
+# Tech
 
-### Starter Code
+## Starter Code
 
 Follow the Github Classroom link and clone the starter repository down to your local machine
 
 This code includes a command-line program and an Express web server program which can both connect to a MongoDB database server running either locally on the development environment or remotely in the cloud.
 
-### MongoDB Installation
+## MongoDB Installation
 
 Please make sure that you have a recent version of MongoDB installed on your development environment.
 
-Use the following command in a terminal and look for a version of `3.4+`.
+Use the following command in a terminal and look for a version of `4.x`.
 
 `$ mongo --version`
 
@@ -24,7 +24,7 @@ You can follow the instructions here to achieve this if you **DO NOT** already h
 
 - https://docs.mongodb.com/manual/administration/install-community/
 
-### Sign up for a mongoDB Atlas Account
+## Sign up for a mongoDB Atlas Account
 
 We use the free database as a service provider, Atlas, for connecting a production version of the application to a database hosted in the cloud. Please visit the following URL and sign-up for an Atlas account in order to create and use a database which is reachable from the internet.
 
@@ -56,7 +56,7 @@ We use the free database as a service provider, Atlas, for connecting a producti
 **When** a user inputs:
 
 ```
-To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
+To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}");
 ```
 
 **Then** a new TIL entry is created
@@ -64,7 +64,7 @@ To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
 **And** the TIL entry.text equals:
 
 ```
-To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
+To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}");
 ```
 
 <!--/BOX-->
@@ -76,7 +76,7 @@ To convert JSON to JavaScript object user JSON.parse("{some: 'json'}");
 **Given** an existing TIL entry with the text:
 
 ```
-To convert and object to JSON use JSON.stringify({text: 'I learned something'});
+To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}");
 ```
 
 And a when of:
@@ -86,11 +86,11 @@ And a when of:
 
 `/facts`
 
-**Then** the web-page should display a list of HTML formatted TIL entry including exactly one with:
+**Then** the web-page should display a list of HTML formatted TIL entries including exactly one entry with:
 
 | Attribute   | Value                                                                            |
 | :---------- | :------                                                                          |
-| text        | `To convert an object to JSON use JSON.stringify({text: 'I learned something'})` |
+| text        | `To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}"); |
 | when        | `2018-01-01T12:15:00+0400`                                                       |
 
 <!--/BOX-->
@@ -137,8 +137,8 @@ And an `_id` attribute with a value, *represented with a placeholder as* `:objec
 
 | Attribute   | Value                                                                         |
 | :---------- | :------                                                                       |
-| text        | `To replace part of a string use "my string".replace(/string/, "new string")` |
-| when        | `2018-01-01T16:10:00+0400`                                                    |
+| text        | `To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}");` |
+| when        | `2018-01-01T12:15:00+0400`                                                    |
 
 
 **When** a user visits the URL path in the browser:
@@ -151,8 +151,8 @@ And an `_id` attribute with a value, *represented with a placeholder as* `:objec
 | :---------- | :------                                                                       | :----- |
 | text        | `To get an objects attributes use Object.keys(someObject)`                    |      1 |
 | when        | `2018-01-01T14:05:00+0400`                                                    |      1 |
-| text        | `To replace part of a string use "my string".replace(/string/, "new string")` |      2 |
-| when        | `2018-01-01T16:10:00+0400`                                                    |      2 |
+| text        | `To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}");` |      2 |
+| when        | `2018-01-01T12:15:00+0400`                                                    |      2 |
 
 <!--/BOX-->
 

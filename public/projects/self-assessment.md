@@ -8,7 +8,7 @@ This is to show both the teachers and yourself areas that you could use support 
 
 After you complete this, you will pair up with another student and discuss each other's self-assessment in each category. Take the opportunity to dig in to your partner's answers and find the reasons and examples behind their rating (high or low) and encourage them to change the rating up or down accordingly. (If you are unsure about how to start the conversation, consider playing the [Five Whys](https://en.wikipedia.org/wiki/5_Whys) game.)
 
-Later (likely next week), you will also meet with at least two instructors for a half hour to talk about your self assessment and figure out how we can best support you in the areas you'd like to improve on throughout the second half of the course.
+Later you will also meet with at least two instructors for a half hour to talk about your self assessment, and figure out how we can best support you in the areas you'd like to improve on throughout the second half of the course.
 
 You have final say over your own scores throughout this process. Remember that the numbers are just a starting point for a few conversations, and the numbers may change during each conversation.
 
@@ -46,14 +46,14 @@ Please assign yourself a score between 1-4 for the following:
 ## Projects
 
 - **4**: You regularly complete all required stories and implement additional features for most projects
-- **3**: You regularly complete all required stories although it could use more work
-- **2**: Your pair partner often solves the problems and you feel like you’re along for the ride
+- **3**: You regularly complete all required stories although you often don't implement icebox features
+- **2**: Your pair partner often solves the problems and you feel like you’re just along for the ride
 - **1**: You struggle to get close to completing most projects on a regular basis
 
 ## Career Development
 
 - **4**: You are confident that you’ll get a coding job soon & are comfortable with the career topics the course has covered
-- **3**: Your career readiness is now at a point where you think you can get a job 
+- **3**: Your career readiness is now at a point where you think you can get a coding job
 - **2**: You feel like you are lost and it’s nerve-wracking to think about getting a job after this course
 - **1**: You are confident that you will be unable to get a job after the course
 

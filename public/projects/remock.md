@@ -12,11 +12,11 @@ In this project you will re-create a complicated blog style web page.
 
 ## Goals
 
-  * Using display, position, and float for layout
+  * Using display, position, and other css properties for layout
   * Spacing of elements
   * Color matching
   * Matching typography
-  * Hover-ability highlighting
+  * Using CSS to modify styles based on events (e.g. highlight on hover)
 
 # Stories
 
@@ -25,8 +25,6 @@ In this project you will re-create a complicated blog style web page.
 
 Create a page layout with empty `div`s and other page elements. Don't worry about making all the content correct; focus on the layout.
 
-> After this phase, do a git commit and a demo.
-
 <!--/BOX-->
 
 <!--BOX-->
@@ -34,8 +32,6 @@ Create a page layout with empty `div`s and other page elements. Don't worry abou
 
 * Fill in the page content.
 * Make interactive elements work correctly.
-
-> After this phase, do a git commit and a demo.
 
 <!--/BOX-->
 

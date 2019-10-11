@@ -11,8 +11,10 @@ We will use [GitHub Pages](http://pages.github.com) to build and host your portf
 ## Steps
 
 1. Visit <https://pages.github.com/> and follow the steps there to create a "Hello World" site living at <https://yourgithubusername.github.io> .
+>Note: This is not the literal URL, please substitute `yourgithubusername` with your actual github username.
 
 2. Edit the HTML file to include the following information:
+
   * Your full name
   * Your Github username, with a link to your GitHub Repos page e.g. <https://github.com/BurlingtonCodeAcademy>
   * Your public social media accounts, with links, e.g. <https://twitter.com/btvcodeacademy>
@@ -153,7 +155,7 @@ Build an index.html that includes at least the following.
 
 <!--BOX-->
 
-### Portfolio Sitemap.xml
+## Portfolio Sitemap.xml
 
 * Create a [sitemap.txt file](https://en.wikipedia.org/wiki/Sitemaps) for Search Engines to use.
 * **Automatic generation**: Use the [Node Sitemap Generatore](https://www.npmjs.com/package/sitemap-generator-cli) to build an XML file which contains all your pages files.

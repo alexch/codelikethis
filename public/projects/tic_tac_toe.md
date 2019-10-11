@@ -102,7 +102,7 @@ Move to?
 
 **And** the game ends
 
-> and likewise for Player O
+> And likewise for Player O
 
 <!--/BOX-->
 

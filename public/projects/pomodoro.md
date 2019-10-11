@@ -4,7 +4,7 @@ The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a 
 
 Build a single-page app that counts down from 25 minutes and makes audible and visual alerts when the time elapses.
 
-Clone the your repository from the GitHub classroom. The tests use the [Cypress Mock Clock](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock) to control time during test runs.
+Clone the your repository created by the GitHub classroom link. The tests use the [Cypress Mock Clock](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock) to control time during test runs.
 
 ## Wireframes
 
@@ -31,13 +31,13 @@ After implementing the basic features, feel free to implement your own ideas of 
   * Guide: https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Clock
   * API doc: https://docs.cypress.io/api/commands/clock.html
   
-## Stories
+# Stories
 
 > Please implement these user stories in order. There are Cypress acceptance tests for most of them in the repo. Feel free to add your own unit tests and/or acceptance tests too!
 
 <!--BOX-->
 
-### Countdown
+## Countdown
 
 **Given** a set duration of 25 minutes
 
@@ -50,7 +50,7 @@ After implementing the basic features, feel free to implement your own ideas of 
 <!--/BOX-->
 <!--BOX-->
 
-### Zero!
+## Zero!
 
 **Given** that the timer is counting down 
 
@@ -65,7 +65,7 @@ After implementing the basic features, feel free to implement your own ideas of 
 <!--/BOX-->
 <!--BOX-->
 
-### Reset
+## Reset
 
 **When** the user clicks Reset
 
@@ -78,7 +78,7 @@ After implementing the basic features, feel free to implement your own ideas of 
 <!--/BOX-->
 <!--BOX-->
 
-### Ding!
+## Ding!
 
 **Given** that the timer is counting down 
 
@@ -89,7 +89,7 @@ After implementing the basic features, feel free to implement your own ideas of 
 <!--/BOX-->
 <!--BOX-->
 
-### Pause
+## Pause
 
 **Given** that the timer is counting down 
 
@@ -102,9 +102,21 @@ After implementing the basic features, feel free to implement your own ideas of 
 **And** the Start button should be *enabled*
 
 <!--/BOX-->
+
+<!--BOX-->
+## Resume
+
+**Given** the game is paused
+
+**When** the user clicks the Start button
+
+**Then** the timer should resume from the current time.
+
+<!--/BOX-->
+
 <!--BOX-->
 
-### Flash!
+## Flash!
 
 **Given** that the timer is counting down 
 

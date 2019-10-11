@@ -1,6 +1,6 @@
 # Today I Learned - Command Line
 
-During your programming journey you will come across questions every day and need to find answers for those questions. Recent studies have found a [cognitive benefit to journaling](https://psychcentral.com/lib/the-health-benefits-of-journaling/) when learning new content, or balancing between multiple priorities. For many people the act of writing down a problem, the path to finding a solution, and the answer, stimulates pathways in the brain which help in memory recall and problem solving.
+During your programming journey you will come across questions every day and need to find answers for those questions. Studies have found a [cognitive benefit to journaling](https://psychcentral.com/lib/the-health-benefits-of-journaling/) when learning new content, or balancing between multiple priorities. For many people the act of writing down a problem, the path to finding a solution, and the answer, stimulates pathways in the brain which help in memory recall and problem solving.
 
 Your task for this project is to build a command line program which you can use to record, search, edit, and reference answers for various programming questions and answers.
 
@@ -21,7 +21,7 @@ Your task for this project is to build a command line program which you can use 
 **When** a user inputs:
 
 ```sh
-til To convert JSON to a JavaScript object use JSON.parse
+til To convert JSON to a JavaScript object use JSON.parse(myObject)
 ```
 
 **Then** a new TIL entry is created
@@ -29,7 +29,7 @@ til To convert JSON to a JavaScript object use JSON.parse
 **And** the TIL entry.content equals:
 
 ```
-To convert JSON to a JavaScript object, use JSON.parse
+To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
 
 <!--/BOX-->
@@ -38,6 +38,7 @@ To convert JSON to a JavaScript object, use JSON.parse
 ## Listing existing TIL entries
 
 **Given** an existing TIL entry with the content:
+
 ```
 To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```

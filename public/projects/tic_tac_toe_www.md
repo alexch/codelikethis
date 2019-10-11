@@ -74,9 +74,7 @@ Player O's turn
 
 **Then** the board redraws
 
-**And** an X appears in that cell
-
-**And** the turn ends
+**And** an X appears in that cell, and the turn ends
 
 **And** the current player changes from X to O
 
@@ -128,7 +126,7 @@ Player O's turn
 
 **When** starting a game
 
-**THen** allow the user(s) to choose the names of the players (not just X and O).
+**Then** allow the user(s) to choose the names of the players (not just X and O).
 
 <!--/BOX-->
 <!--BOX-->
@@ -140,7 +138,7 @@ Player O's turn
 **When** the game is started
 
 **Then** the timer should show the time in the format:
-- `Time Elapsed 32 seconds`
+- `Time Elapsed XX seconds`
 
 **And** every second during game play, until a player has won, the clock should proceed by one second.
 
