@@ -114,7 +114,7 @@ class Lesson < Thing
     attr_reader :target
 
     # proxy readers to the target (model) object
-    # todo: use DelegateClass?
+    # TODO: use DelegateClass?
     [
         :labs, :track,
         :name, :display_name,

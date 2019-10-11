@@ -1,7 +1,7 @@
+# coding: utf-8
 require "track"
 
 require_relative '../../../lib/link.rb' # :-(
-
 
 Track::Javascript = Track.new(
   name: "javascript",
@@ -92,7 +92,7 @@ Track::Javascript = Track.new(
   lesson name: "timing", display_name: "Timing in JavaScript"
 
   # lessons on testing in JavaScript
-  # todo: move to new testing_in_javascript track
+  # TODO: move to new testing_in_javascript track
   lesson name: "/agile/test_driven"
   lesson name: "no_frills_testing"
   lesson name: "cypress"
@@ -106,7 +106,7 @@ Track::Javascript = Track.new(
     topic name: "object-oriented-programming"
   end
 
-  
+
   lesson name: "promises" do
     video name: "Promises - Fun Fun Function", youtube_id: "2d7s3spWAzo"
   end

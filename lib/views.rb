@@ -57,8 +57,8 @@ module Views
     text.gsub('<!--BOX-->', "<!--BOX-->\n" )
   end
 
-  # todo: test
-  # todo: unify with Deck::Slide's markdown munging
+  # TODO: test
+  # TODO: unify with Deck::Slide's markdown munging
   def munge_html html
     lines = (["<div class='markdown-body'>"] +
         html.split("\n").map do |line|

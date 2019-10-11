@@ -1,6 +1,6 @@
 class Topic < Thing
 
-  # todo: validate against topics.json
+  # TODO: validate against topics.json
 
   def href
     "/topics/#{name}"

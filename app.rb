@@ -183,7 +183,7 @@ class App < Sinatra::Base
   end
 
   get "/topics/:topic_name" do
-    # todo: make this actually work
+    # TODO: make this actually work
     topic = Topic.new(name: params[:topic_name], site: site)
     page(thing: topic).to_html
   end

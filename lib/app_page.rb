@@ -34,7 +34,7 @@ class ThingPage < AppPage
     ].compact.uniq.join(' - ')
   end
 
-  # todo: promote into Page
+  # TODO: promote into Page
   # font_name: if nil, use href param
   # href: if nil or default, use local path /name.css
   def font name: nil, href: nil

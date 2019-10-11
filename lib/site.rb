@@ -56,7 +56,7 @@ class Site < Thing
     self.class.const_get('NavBar') || NavBar
   end
 
-  # todo: Test
+  # TODO: Test
   def projects
     require 'projects'
     # for now, just get all projects ever

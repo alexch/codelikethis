@@ -20,7 +20,7 @@ class Project < Thing
     end
   end
 
-  #todo: unit test this hash-or-string-to-object magic
+  # TODO: unit test this hash-or-string-to-object magic
   def self.from_json project_info
     project_info = {name: project_info} if project_info.is_a? String
     project_info.symbolize_keys!
@@ -53,8 +53,8 @@ class Project < Thing
     File.new(path)
   end
 
-  # todo: use OO, not switch statement, for 'From' href and icon
-  # todo: more unit tests around all these cases
+  # TODO: use OO, not switch statement, for 'From' href and icon
+  # TODO: more unit tests around all these cases
   def href
     case from
     when nil

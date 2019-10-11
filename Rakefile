@@ -1,4 +1,5 @@
 require 'rspec/core/rake_task'
+require 'rake/notes/rake_task'
 
 task :default => :spec
 

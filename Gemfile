@@ -21,6 +21,7 @@ gem "rspec", "~> 3.8"
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
+  gem "rake-notes", "~> 0.2"
   gem "listen", "~> 3.1"
   gem 'wdm', '~> 0.1.0' if Gem.win_platform?
   gem "files", "~> 0.4.0"

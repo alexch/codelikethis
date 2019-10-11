@@ -9,8 +9,8 @@ class Projects < Thing
   class ProjectsView < Erector::Widget
     include Views
 
-    # todo: show which track(s) each project is in
-    # todo: sort by schedule
+    # TODO: show which track(s) each project is in
+    # TODO: sort by schedule
     def content
       h1 "Projects"
       ul do
@@ -24,4 +24,3 @@ class Projects < Thing
   end
 
 end
-

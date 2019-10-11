@@ -30,7 +30,7 @@ describe Site do
       def tracks
         [
             ::Track::PuppyLove,
-            ::Track::Www # todo: make a test track, don't reuse a real track
+            ::Track::Www # TODO make a test track, don't reuse a real track
         ]
       end
     end
@@ -50,8 +50,7 @@ describe Site do
     end
 
     describe 'projects' do
-      it 'should include projects inside nested lessons'
+      xit 'should include projects inside nested lessons'
     end
   end
-
 end

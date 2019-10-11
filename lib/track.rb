@@ -71,12 +71,12 @@ class Track < Thing
     goals and not goals.empty?
   end
 
-  # todo: test
+  # TODO: test
   def links
     super + @things.map(&:links).flatten
   end
 
-  # todo: test
+  # TODO: test
   def topics
     things_of_class(Topic, all_things) # is this line useful? might have a side effect?
     (super || []) + (@things.map do |thing|
@@ -100,7 +100,7 @@ class Track < Thing
     list
   end
 
-  # todo: unit test this
+  # TODO: unit test this
   def projects
     track_defined_projects = things_of_class(Project)
     lesson_defined_projects = []
@@ -186,7 +186,7 @@ class Track < Thing
         if target.description?
           div(class: 'description') do
             h2 "Description"
-            p target.description # todo: markdown?
+            p target.description # TODO: markdown?
           end
         end
 
@@ -280,7 +280,7 @@ class Track < Thing
             text item_name
             span.loading_image unless current_page? item
 
-            # todo: handle lessons with videos better
+            # TODO: handle lessons with videos better
             if item.respond_to? :video? and item.video?
               span.video_link {
                 i(class: 'fas fa-video')
