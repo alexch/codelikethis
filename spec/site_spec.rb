@@ -1,15 +1,7 @@
-require "wrong"
-require "files"
 require "spec_helper"
-
-here = File.expand_path(File.dirname(__FILE__))
-project = File.expand_path("#{here}/..")
-
-require "#{project}/lib/site"
+require "site"
 
 describe Site do
-
-  include Files
 
   describe "by default" do
 
