@@ -34,6 +34,11 @@ class App < Sinatra::Base
   include Erector::Mixin
   include AppHelpers
 
+  if ENV['ROLLBAR_ACCESS_TOKEN']
+    require 'rollbar/middleware/sinatra'
+    use Rollbar::Middleware::Sinatra
+  end
+
   set :static_cache_control, [:public, :max_age => 300]
 
   before do

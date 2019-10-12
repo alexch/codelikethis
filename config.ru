@@ -2,10 +2,18 @@ require './app'
 require 'rack/rewrite'
 require 'rack/cache'
 
+if ENV['ROLLBAR_ACCESS_TOKEN']
+  require 'rollbar'
+  Rollbar.configure do |config|
+    config.access_token = ENV['ROLLBAR_ACCESS_TOKEN']
+  end
+end
+
 if ENV['RACK_ENV'] == 'production'
   require 'rack/ssl'
   use Rack::SSL
 end
+
 use Rack::Cache
 use Rack::ConditionalGet
 use Rack::ETag

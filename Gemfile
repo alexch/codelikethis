@@ -15,10 +15,12 @@ gem "redcarpet", "~> 2.3"
 gem "rack-ssl", "~> 1.4"
 gem "barnes", "~> 0.0.7"
 gem "nokogiri", "~> 1.7" # fixed versions, for Windows
+gem "oj", "~> 3.9"
 gem "rack-cache", "~> 1.9.0"
 gem "rake", "~> 12.3"
 gem "rake-notes", "~> 0.2"
 gem "rspec", "~> 3.8"
+gem "rollbar", "~> 2.22"
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
