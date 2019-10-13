@@ -2,13 +2,14 @@ require './app'
 require 'rack/rewrite'
 require 'rack/cache'
 
+# Production/Staging level services or config
+require 'newrelic_rpm' if ENV['NEW_RELIC_LICENSE_KEY']
 if ENV['ROLLBAR_ACCESS_TOKEN']
   require 'rollbar'
   Rollbar.configure do |config|
     config.access_token = ENV['ROLLBAR_ACCESS_TOKEN']
   end
 end
-
 if ENV['RACK_ENV'] == 'production'
   require 'rack/ssl'
   use Rack::SSL
