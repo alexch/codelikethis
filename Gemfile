@@ -18,7 +18,7 @@ gem "nokogiri", "~> 1.7" # fixed versions, for Windows
 gem 'newrelic_rpm', '~> 3.15', '>= 3.15.2.317'
 gem "oj", "~> 3.9"
 gem "rack-cache", "~> 1.9.0"
-gem "rake", "~> 12.3"
+gem "rake", "~> 13.0"
 gem "rake-notes", "~> 0.2"
 gem "rspec", "~> 3.8"
 gem "rollbar", "~> 2.22"
