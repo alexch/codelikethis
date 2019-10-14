@@ -189,7 +189,7 @@ The VSCode debugger *also* allows you to track the value of variables or express
 
 # Rubber Ducky Debugging
 
-Rubber Docky debugging is a simple way to debug a problem with no technology required.
+Rubber Ducky debugging is a simple way to debug a problem with no technology required.
 
 * grab an inanimate object, preferably made of rubber and shaped like a water fowl
 
