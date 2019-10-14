@@ -96,6 +96,7 @@ Track::Javascript = Track.new(
   lesson name: "/agile/test_driven"
   lesson name: "no_frills_testing"
   lesson name: "cypress"
+  lesson name: "unit_testing"
 
 
   # ES6 and modern JS deep dives

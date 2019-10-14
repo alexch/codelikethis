@@ -46,5 +46,7 @@ class Track
       lesson name: "common_methods"
       lesson name: "/javascript/recursion"
       lesson name: "asynchronous_js"
+      lesson name: "/javascript/debugging_techniques"
+      lesson name: "/javascript/unit_testing"
       end
     end

@@ -4,7 +4,7 @@ According to expressjs.com (the official website for Express) Express is a "Fast
 
 # Cool! What Does That Mean?
 
-Javascript was not built for server side coding and so it is very hard to write a working server using vanilla JavaScript, so we use a library to extend JavaScript's functionality to make server side codeing easy.
+Javascript was not built for server side coding and so it is very hard to write a working server using vanilla JavaScript, so we use a library to extend JavaScript's functionality to make server side coding easy.
 
 Unlike some libraries Express doesn't force you to write your code a certain way, meaning it looks alot like the JavaScript you're used to.
 

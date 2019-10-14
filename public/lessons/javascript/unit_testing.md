@@ -18,7 +18,7 @@ When unit testing the programmer gives a value to the function or class, and tel
 
 # Integration Testing
 
-Integration Testing is the middle level of testing, and tests multible units that interact with one another, providing them a given input and expected outputs to see all outputs as well as any unexpected side effects
+Integration Testing is the middle level of testing, and tests multiple units that interact with one another, providing them a given input and expected outputs to see all outputs as well as any unexpected side effects
 
 # Acceptance testing
 
@@ -26,19 +26,53 @@ Acceptance tests, or End to End tests are the most abstract form of testing and 
 
 # Testing Frameworks & Libraries
 
-As with all things JavaSCript everyone has their own opinion on how to write tests, and many programmers have made frameworks to codify their perfered method.  In this lesson we will be focusing on unit testing using Mocha and Chai
+As with all things JavaScript everyone has their own opinion on how to write tests, and many programmers have made frameworks to codify their perfered method.  In this lesson we will be focusing on unit testing using [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
 
 # Mocha
 
-Mocha is an asynchronous JavaScript testing framework that works in both Node.js and the browser.  Mocha tests run from top to bottom, and since they're asynchronous it is easy to track exactly which test you're on, and what you're testing.
+Mocha is an asynchronous JavaScript testing framework that works in both Node.js and the browser.  Mocha tests run from top to bottom.
 
-Mocha allows you to use any assertion library you want for writing its tests.  This means we can use `chai` right inside of `mocha` to use whatever method of writing assertions we want
+Since they're asynchronous it is easy to track exactly which test you're on, and what you're testing.
 
-You can install mocha globally using `npm install --global mocha` then write your tests using the mocha framework. Don't forget to add a test script in your package.json `"test": "mocha"`
+Mocha allows you to use any assertion library you want for writing its tests.
+
+This means we can use Chai right inside of Mocha to use whatever style of writing assertions we want
+
+# Installing Mocha
+
+* Initilaze your directory with `npm init -y`
+
+* Install mocha globally using `npm install --global mocha`
+
+* Create a file for your tests named `test.js`
+
+* Add a test script in your package.json:
+
+```
+"scripts": {
+  "test": "mocha"
+}
+```
+
+* Write a passing test to make sure your tests actually run e.g. 
+
+```js
+const assert = require('assert')
+
+describe('True'), function() {
+  it('should equal "true"'), function() {
+    assert.equal(true, true)
+  }
+}
+```
+
+* Run the test and watch it pass.
 
 # The Mocha Lifecycle
 
-Mocha supports several lifecycle hooks for setting up code before running the tests, and cleaning up after them.  It doesn't matter where in your codeblock you put the lifecycle callabcks as they will run when their lifecycle event is hit rather than at the location where they are defined.
+Mocha supports several lifecycle hooks for setting up code before running the tests, and cleaning up after them.
+
+It doesn't matter where in your codeblock you put the lifecycle callbacks as they will run when their lifecycle event is hit rather than at the location where they are defined.
 
 * `before(function(){...})`  run this block of code prior to **all** the tests in this block.
 * `after(function(){...})`  run this block of code after **all** the tests in this block.
@@ -53,8 +87,7 @@ Mocha supports several lifecycle hooks for setting up code before running the te
 
 # Callbacks in Mocha
 
-Mocha handels async code using callback functions. Usually this callback is named `done`, and if `done`
-is called without errors then the test passes
+Mocha handels asynchronous code using callback functions. Usually this callback is named `done`, and if `done` is called without errors then the test passes
 
 ```js
 describe('User', function() {
@@ -74,6 +107,8 @@ describe('User', function() {
 # Mocha Promises
 
 As well as callback functions mocha also supports promises! This can be quite useful if your api returns promises or uses promise chaining rather than callback functions.
+
+To make our assertions with promises we can use the Chai extension library `chai-as-promised` which will allow us to use the `.eventually` keyword to write tests around promises.
 
 ```js
 beforeEach(function() {
@@ -111,7 +146,9 @@ describe('#find()', function() {
 
 # Danger: Arrow Functions
 
-Do to arrow functions binding `this` to context they can cause issues with testing.  It is recomended you don't use them when writing your tests.
+Do to arrow functions binding `this` to context they can cause issues with testing.
+
+It is recomended you don't use them when writing your tests.
 
 # Pending Tests
 
@@ -238,4 +275,4 @@ assert.lengthOf(tea.flavors, 3, 'tea has 3 types of flavor'); // object 'tea' ha
 
 # Attribution
 
-All code examples are taken from the main [mocha](https://mochajs.org) and [chai](https://www.chaijs.com) websites
+All code examples are taken from the main [mocha](https://mochajs.org) and [chai](https://www.chaijs.com) websites respectively
