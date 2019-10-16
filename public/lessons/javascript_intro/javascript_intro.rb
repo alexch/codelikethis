@@ -48,5 +48,9 @@ class Track
       lesson name: "asynchronous_js"
       lesson name: "/javascript/debugging_techniques"
       lesson name: "/javascript/unit_testing"
+      lesson name: "/javascript/timing"
+      lesson name: "refactoring_intro"
+      lesson name: "/www/forms"
+      lesson name: "/www/embedding_media"
       end
     end
