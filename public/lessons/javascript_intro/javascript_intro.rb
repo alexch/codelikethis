@@ -27,6 +27,7 @@ class Track
       lesson name: "/javascript/objects"
       lesson name: "object_methods"
       lesson name: "/oo/oo_js"
+      lesson name: "object_labs"
       lesson name: "methods_and_classes"
       lesson name: "simple_http"
       lesson name: "/www/html"
