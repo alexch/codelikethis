@@ -180,7 +180,9 @@ function factorial(n) {
         f = f * stack.pop();
     }
     return f;
-} 
+}
+
+console.log(factorial(5)) // => 120
 ```
 
 What do you think about this implementation compared to the previous one? What are the advantages and disadvantages of recursion vs. loops?
@@ -224,7 +226,7 @@ function fibbo(array) {
   if(array.length === 10) {
     return array
   } else {
-    fibbo(array)
+    return fibbo(array)
   }
 }
 

@@ -150,7 +150,7 @@ The factory method works *exactly the same way* as the factory function, but
 * the factory function is in the *global namespace*
 * the factory method is in the *class namespace* so it's more clear that it is meant to create one of *this class* of objects
  
- # Static Factory Methods 
+# Static Factory Methods 
 
 To make a *factory method* in JavaScript, use the [`static`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static) keyword:
 
