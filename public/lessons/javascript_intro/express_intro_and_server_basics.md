@@ -46,8 +46,9 @@ serving "." at http://127.0.0.1:8080
 # LAB: static file server
 
 * create a new Express project dir called `static-server`:
+
 ```
-cd ~/code
+cd code
 mkdir static-server
 npm init -y
 npm install express
@@ -87,7 +88,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 * Now open a web browser and visit <http://localhost:5000/index.html>
 
 
-# oops
+# Oops!
 
 The good news: your web server can now serve static files to its clients!
 

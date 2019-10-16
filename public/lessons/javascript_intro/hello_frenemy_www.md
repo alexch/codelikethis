@@ -7,11 +7,12 @@ Unfortunately it only exists on your local machine, and onle runs in the termina
 Let's share it with the world!
 
 # Structuring your directory
-  Make a new subdirectory for your hello.js program and go ahead and move that file into there
 
-  Inside that same directory create a new file called `index.html`
+Make a new subdirectory for your hello.js program and go ahead and move that file into that directory.
 
-  >In a blank HTML file you can type `!` and then hit `tab` to get a basic HTML template.
+Inside that same directory create a new file called`index.html`
+
+>In a blank HTML file you can type `!` and then hit`tab` to get a basic HTML template.
 
 # Serving your Files
 
@@ -28,6 +29,7 @@ We are going to use a javascript library called `node-static` to serve your stat
   * Go to localhost:8080 in your browser. What do you see?
 
 # Adding Content
+
 Your browser probably just opened up to a blank page. This is because we haven't added any content yet, but that's easy to fix.
 
 Create a `<div>` element with an `id` property and add a little text content.
