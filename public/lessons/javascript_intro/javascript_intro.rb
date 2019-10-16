@@ -47,6 +47,7 @@ class Track
       lesson name: "/javascript/recursion"
       lesson name: "asynchronous_js"
       lesson name: "/javascript/debugging_techniques"
+      lesson name: "/tricks_of_the_trade/modern_debugging"
       lesson name: "/javascript/unit_testing"
       lesson name: "/javascript/timing"
       lesson name: "refactoring_intro"
