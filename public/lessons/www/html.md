@@ -76,7 +76,7 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 
 # Self Closing Tags
 
-Some tags can act as both an opening and a closing tag. These are written with a forward slash at the end, and are most commonly seen fro tags thaat insert something into the page such as an image, or a line break. e.g. `<img src="myImg.jpg" />` is a self closing image tag.
+Some tags can act as both an opening and a closing tag. These are written with a forward slash at the end, and are most commonly seen for tags that insert something into the page such as an image, or a line break. e.g. `<img src="myImg.jpg" />` is a self closing image tag.
 
 # Attributes
 
