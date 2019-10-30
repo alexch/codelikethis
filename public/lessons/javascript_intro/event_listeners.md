@@ -11,10 +11,10 @@ Event Listeners are a special type of function in JavaScript that waits for a sp
   * Inline in your HTML, fires the specified function when the element (`<div>` in this example) is clicked
   >NOTE: Unlike other event listeners you **do** want to call the function being set on the `onclick` property.
 
-* `setTimeout(i, callback)`
+* `setTimeout(callback, int)`
   * Calls the callback function *after* `i` milliseconds
 
-* `setInterval(i, callback)`
+* `setInterval(callback, int)`
   * Calls the callback function *every* `i` milliseconds
 
 # Event Listeners as HTML properties
