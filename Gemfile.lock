@@ -67,7 +67,7 @@ GEM
     mustermann (1.0.3)
     newrelic_rpm (3.18.1.330)
     nio4r (2.5.2)
-    nokogiri (1.10.4)
+    nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     oj (3.9.2)
     optimist (3.0.0)
