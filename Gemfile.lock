@@ -86,7 +86,7 @@ GEM
     rack-rewrite (1.5.1)
     rack-ssl (1.4.1)
       rack
-    rake (13.0.0)
+    rake (13.0.1)
     rake-notes (0.2.2)
       colored
       rake
