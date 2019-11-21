@@ -37,10 +37,10 @@ Where can you go from here?
 # Local Communities
 
 * Meetups
-  * Burlignton Code
-  * Code for BTV
-  * VT Coders Connection
+  * [Burlignton Code Academy](https://www.meetup.com/Burlington-Code-Academy/)
+  * [Code for BTV](https://www.meetup.com/CodeForBTV/)
+  * [VT Coders Connection](https://www.meetup.com/VTCode/)
 
 * [Tech Jam](https://techjamvt.com/)
 
-* Enroll in our JavaScript Bootcamp
+* [Enroll in our JavaScript Bootcamp](https://www.burlingtoncodeacademy.com/apply/)
