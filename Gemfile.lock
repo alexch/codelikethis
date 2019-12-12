@@ -56,7 +56,7 @@ GEM
     files (0.4.0)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
-    json (2.2.0)
+    json (2.3.0)
     listen (3.2.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
