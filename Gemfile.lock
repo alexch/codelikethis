@@ -78,7 +78,7 @@ GEM
       method_source (~> 0.9.0)
     puma (4.3.0)
       nio4r (~> 2.0)
-    rack (2.0.7)
+    rack (2.0.8)
     rack-cache (1.10.0)
       rack (>= 0.4)
     rack-protection (2.0.7)
