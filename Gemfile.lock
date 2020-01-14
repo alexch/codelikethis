@@ -94,7 +94,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     redcarpet (2.3.0)
-    rollbar (2.22.1)
+    rollbar (2.23.2)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
