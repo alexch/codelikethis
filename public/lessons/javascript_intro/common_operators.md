@@ -74,7 +74,7 @@ The `void` keyword takes an expression as its operand and causes it to return `u
 ```js
 void (1+1) // => undefined
 
-function sayHello() {return "Hello, world!"}
+function sayHello() { return "Hello, world!" }
 
 void sayHello() // => undefined
 ```

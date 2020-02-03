@@ -58,9 +58,11 @@ Track::Javascript = Track.new(
   lesson name: "/server_side_javascript/hello_express", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
   lesson name: "values"
+  lesson name: "/javascript_intro/common_operators"
   lesson name: "strings"
   lesson name: "unicode"
   lesson name: "numbers"
+  lesson name: "/javascript_intro/common_methods"
   lesson name: "variables"
   lesson name: "null"
   lesson name: "functions"
@@ -77,7 +79,7 @@ Track::Javascript = Track.new(
 
   lesson name: "methods"
   lesson name: "iteration_methods"
-  lesson name: "/jjavascript_intro/object_labs"
+  lesson name: "/javascript_intro/object_labs"
   lesson name: "stacks"
   lesson name: "scope"
   lesson name: "recursion"
