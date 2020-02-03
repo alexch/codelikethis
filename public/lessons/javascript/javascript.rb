@@ -64,7 +64,7 @@ Track::Javascript = Track.new(
   lesson name: "variables"
   lesson name: "null"
   lesson name: "functions"
-
+  lesson name: "/javascript_intro/functional_labs"
   lesson name: "logic"
   lesson name: "input_and_output"
   lesson name: "loops"
@@ -77,7 +77,7 @@ Track::Javascript = Track.new(
 
   lesson name: "methods"
   lesson name: "iteration_methods"
-
+  lesson name: "/jjavascript_intro/object_labs"
   lesson name: "stacks"
   lesson name: "scope"
   lesson name: "recursion"
