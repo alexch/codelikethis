@@ -60,6 +60,18 @@ class Bootcamp < Site
                   href: "https://www.burlingtoncodeacademy.com/software-development-bootcamp/"
                 text "."
               }
+              p(class: 'card-text') {
+                text "Common answers and explanations are in the "
+                a "References section",
+                  href: "https://bootcamp.burlingtoncodeacademy.com/references/"
+                text "."
+              }
+              p(class: 'card-text') {
+                text "The course projects are in the "
+                a "Project Section",
+                  href: "https://bootcamp.burlingtoncodeacademy.com/projects/"
+                text "."
+              }
             }
           }
           br
