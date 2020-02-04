@@ -202,20 +202,21 @@ When you pass a *variable* to a function, that variable's *value* is assigned to
 > The variable and parameter names **do not** need to match!
 
 ```js
-function shouter(someString) {
-  let loudString = someString.toUpperCase();
-  return loudString + '!!!';
+function shouter(someMessage) {
+  let loudMessage = someMessage.toUpperCase();
+  return loudMessage + '!!!';
 }
 
 let feeling = "I feel great";
 let strongFeeling = shouter(feeling);
+// => "I FEEL GREAT!!!";
 ```
 
 
 | Outside the function | Inside the function | Value               |
 |----------------------|---------------------|---------------------|
-| `feeling`            | `opinion`           | `"I feel great"`    |
-|                      | `strongOpinion`     | `"I FEEL GREAT"`    |
+| `feeling`            | `someMessage`       | `"I feel great"`    |
+|                      | `loudMessage`       | `"I FEEL GREAT"`    |
 | `strongFeeling`      |                     | `"I FEEL GREAT!!!"` |
 
 # Four Function Syntaxes
