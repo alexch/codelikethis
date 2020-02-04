@@ -1,8 +1,10 @@
-# Methods on Strings
+# Common JavaScript Methods
+
+## Methods on Strings
 
 Methods do NOT mutate the strings they're called on. They return NEW strings with the return value of the method.
 
-# .charAt(num)
+### .charAt(num)
 
 Returns the character to the right of the specified index
 
@@ -10,7 +12,7 @@ Returns the character to the right of the specified index
 'dog'.charAt(1) // => 'o'
 ```
 
-# .slice(num1, num2)
+### .slice(num1, num2)
 
 Returns a string from the right of the first specified index to the left of the second specified index, or the end of the string
 
@@ -20,7 +22,7 @@ Returns a string from the right of the first specified index to the left of the 
 'supercalifragilisticexpialadocious'.slice(9) // => 'fragilisticexpialadocious'
 ```
 
-# .toLowerCase()
+### .toLowerCase()
 
 returns a lowercase version of the string it's called on
 
@@ -28,7 +30,7 @@ returns a lowercase version of the string it's called on
 'HeLlo'.toLowerCase() // => 'hello'
 ```
 
-# .toUpperCase()
+### .toUpperCase()
 
 returns a capitalized version of the string it's called on
 
@@ -37,18 +39,18 @@ returns a capitalized version of the string it's called on
 ```
 
 
-# .split(char)
+### .split(char)
 
 returns an array of strings split at the specified character
 
 ```javascript
 'blueberry'.split('e') // => ['blu', 'b', 'rry']
 ```
-# Methods on Numbers
+## Methods on Numbers
 
 Numbers also have some methods that can be called on them.  There is also a globally available `Math` class available in JavaScript which has a number of usefull methods attached to it
 
-# .toString()
+### .toString()
 
 takes a number object and turns it into a string
 
@@ -61,7 +63,7 @@ x.toString() // => '10'
 
 >Note that you will need to assign to value of the number to a variable (or wrap it in parentheses) and then call `.toString()` on it otherwise you'll get `SyntaxError: Invalid or unexpected token`.
 
-# .toPrecision(num)
+### .toPrecision(num)
 
 takes a number object and evaluatues it to a specified number of places
 
@@ -69,7 +71,7 @@ takes a number object and evaluatues it to a specified number of places
 (7.54321768).toPrecision(4) // => 7.543
 ```
 
-# .isNaN()
+### .isNaN()
 
 evaluates a value and returns a boolean depending on if it's a number or not
 
@@ -82,7 +84,7 @@ y.isNaN() // => true
 
 ```
 
-# Math.floor(num)
+### Math.floor(num)
 
 trims all decimal places off a given number
 
@@ -94,7 +96,7 @@ Math.floor(134.97837) // => 134
 
 >Note that this does not round the number, it just trims off everything after the decimal point
 
-# Math.random()
+### Math.random()
 
 returns a random number between 0 (inclusive) and one (exclusive)
 
