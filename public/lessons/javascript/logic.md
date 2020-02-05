@@ -186,7 +186,7 @@ if (age >= 18 || hasPermissionSlip()) {
 
 # LAB: Good Friend, Bad Friend
 
-* Your [`hello.js` program](./input-output) should currently look something like this:
+* Your [`hello.js` program](./input-and-output#lab_hello_friend) should currently look something like this:
 
 ```js
 console.log("What is your name?");
