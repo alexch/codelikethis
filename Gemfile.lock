@@ -40,7 +40,7 @@ GEM
       zeitwerk (~> 2.2)
     awesome_print (1.8.0)
     backports (3.16.0)
-    barnes (0.0.7)
+    barnes (0.0.8)
       multi_json (~> 1)
       statsd-ruby (~> 1.1)
     chronic (0.10.2)
