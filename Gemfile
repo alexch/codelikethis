@@ -17,7 +17,7 @@ gem "barnes", "~> 0.0.7"
 gem "nokogiri", "~> 1.7" # fixed versions, for Windows
 gem 'newrelic_rpm', '~> 6.8', '>= 3.15.2.317'
 gem "oj", "~> 3.9"
-gem "rack-cache", "~> 1.10.0"
+gem "rack-cache", "~> 1.11.0"
 gem "rake", "~> 13.0"
 gem "rake-notes", "~> 0.2"
 gem "rspec", "~> 3.8"
