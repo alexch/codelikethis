@@ -69,7 +69,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
-    oj (3.10.0)
+    oj (3.10.2)
     optimist (3.0.0)
     polyglot (0.3.5)
     predicated (0.2.6)
