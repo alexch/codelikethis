@@ -15,7 +15,7 @@ gem "redcarpet", "~> 2.3"
 gem "rack-ssl", "~> 1.4"
 gem "barnes", "~> 0.0.7"
 gem "nokogiri", "~> 1.7" # fixed versions, for Windows
-gem 'newrelic_rpm', '~> 3.15', '>= 3.15.2.317'
+gem 'newrelic_rpm', '~> 6.8', '>= 3.15.2.317'
 gem "oj", "~> 3.9"
 gem "rack-cache", "~> 1.10.0"
 gem "rake", "~> 13.0"
