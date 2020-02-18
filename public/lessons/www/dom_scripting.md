@@ -218,6 +218,12 @@ button.addEventListener('click', sayMagicWord())
 ```
 
 This **calls the function** `sayMagicWord` when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).
+# LAB: Add Item to List
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="DOM-scripting-lab-3" src="https://codepen.io/burlingtoncodeacademy/embed/preview/oNXLdKm?height=265&theme-id=light&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/oNXLdKm'>DOM-scripting-lab-3</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 # Event Parameters
 
