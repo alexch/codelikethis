@@ -114,7 +114,7 @@ There is also a property called `innerText` but it's confusing and implemented d
 
 # LAB: Update and Element
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="DOM-scripting-lab-1" src="https://codepen.io/burlingtoncodeacademy/embed/preview/gOpMvgr?height=265&theme-id=light&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="600" style="width: 100%;" scrolling="no" title="DOM-scripting-lab-1" src="https://codepen.io/burlingtoncodeacademy/embed/preview/gOpMvgr?height=265&theme-id=light&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/gOpMvgr'>DOM-scripting-lab-1</a> by Joshua Burke
   (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
