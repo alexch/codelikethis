@@ -112,6 +112,13 @@ There is also a property called `innerText` but it's confusing and implemented d
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent>
 
+# LAB: Update and Element
+
+<iframe height="265" style="width: 100%;" scrolling="no" title="DOM-scripting-lab-1" src="https://codepen.io/burlingtoncodeacademy/embed/preview/gOpMvgr?height=265&theme-id=light&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/gOpMvgr'>DOM-scripting-lab-1</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 # Nodes vs Elements
 
 In the DOM, the term "node" means *almost any* item that you can find in the document tree.
