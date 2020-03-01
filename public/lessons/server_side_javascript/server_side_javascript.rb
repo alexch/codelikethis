@@ -27,6 +27,8 @@ class Track
 
     lesson name: "/www/http"
 
+    lesson name: "intro_to_server_side_js"
+
     lesson name: '/www/urls'
 
     lesson name: "serving_files", description: "building a simple file server in Express/NodeJS" do
@@ -45,6 +47,8 @@ class Track
       topic name: "path"
       topic name: "mime-types"
     end
+
+    lesson name: "/javascript/json"
 
     lesson name: "/www/forms" do
       topic name: "forms"

@@ -126,5 +126,10 @@ let newText = JSON.stringify(data)
 ```
 # Using POSTMAN
 
-https://www.getpostman.com/
+* First you will need to install Postman: https://www.getpostman.com/
 
+* create a new `GET` request to the url `https://jsonplaceholder.typicode.com/posts/1`
+
+* hit `send` and see the response.
+
+There are also many plugins for Postman that give you collections of comon requests for certain sites and APIs. These collections are stored on the sites themselves rather than on Postman.

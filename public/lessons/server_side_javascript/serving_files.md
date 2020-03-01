@@ -9,20 +9,11 @@ At its core, HTTP is a *file transfer protocol*.
 
 # node-static
 
-In earlier lessons, you may have used the `node-static` package to serve your HTML, JS, CSS, images, etc...
+In earlier lessons, you may have used the `node-static` package, or the `live-server` VSCode plugin to serve your HTML, JS, CSS, images, etc...
 
-*node-static* is a standalone static file server built in NodeJS
+*node-static*, and *live-server* are standalone static file servers built in NodeJS
 
-It's useful for local development but not great for production deployments
-
-Usage:
-
-```
-$ npm install node-static
-$ npx node-static
-npx: installed 6 in 1.359s
-serving "." at http://127.0.0.1:8080
-```
+They're useful for local development but not great for production deployments
 
 # static file server in Express
 
