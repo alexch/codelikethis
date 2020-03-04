@@ -80,7 +80,7 @@ Basemap providers for LeafletJS
 * **L** is the **global** LeafletJS function.
 * You can access all the objects and functions within LeafletJS from **L**
 * There is extensive documentation:
-  * <https://leafletjs.com/reference-1.3.0.html>
+  * <https://leafletjs.com/reference-1.6.0.html>
 
 ```js
 L.map('map').setView([51.505, -0.09], 13)
