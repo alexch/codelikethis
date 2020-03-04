@@ -132,7 +132,7 @@ Several other map shapes exist:
 - Circle
 - CircleMarker
 
-<https://leafletjs.com/reference-1.3.0.html>
+<https://leafletjs.com/reference-1.6.0.html>
 
 # GeoJSON
 
