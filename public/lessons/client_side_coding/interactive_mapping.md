@@ -29,7 +29,7 @@ Include the CSS and JavaScript in the Head of the HTML page
 **Add the CSS First**
 
 ```html
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
 ```
 
 **Then the JavaScript**
@@ -37,7 +37,7 @@ Include the CSS and JavaScript in the Head of the HTML page
 > Make sure you put this AFTER Leaflet's CSS
 
 ```html
- <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 ```
 
 **Then create the map container**
