@@ -55,6 +55,7 @@ needs a unique identifier.
 
 
 <!--BOX-->
+
 ## Home Page
 
 **Given** the server is running
@@ -66,9 +67,11 @@ needs a unique identifier.
 **And** there should be pins for each restaurant in the database.
 
 **And** a list of all restaurants in a nav bar
+
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Visit a restaurant page
 
 **Given** the user is on the homepage
@@ -76,9 +79,11 @@ needs a unique identifier.
 **When** they click on a pin *or* the restaurant's name in the nav bar
 
 **Then** the user should be redirected to a dedicated restaurant page.
+
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Show Restaurant
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
@@ -94,6 +99,7 @@ needs a unique identifier.
 > Feel free to write your own server if you want to using ExpressJS
 
 <!--BOX-->
+
 **Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant.html#joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-coding/urls_and_javascript) lesson.
 <details>
 <summary>
@@ -108,9 +114,11 @@ let name = document.location.hash.slice(1)
 </details>
 
 <!--/BOX-->
+
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Show Restaurant Map
 
 **Given** the id of a restaurant (e.g. `joes-diner`)
@@ -135,43 +143,12 @@ let name = document.location.hash.slice(1)
 
 <!--BOX-->
 
-## Formatted Notes
+## IceBox
 
-**Given** markdown-formatted text inside a `notes` item
+* Create your own API endpoint to extend the restaurants listed, or to create your own restaurant data.
 
-**Then** the page should render it *into HTML* before inserting it into the page
+* Create a contact form to submit user comments to the restaurant page which will then be displayed on that page.
 
-#### Example:
-
-JSON:
-
-<!--BOX-->
-
-```
-"notes": ["##Mr Mikes\nThe pizza is **awesome** here!"]
-```
-
-<!--/BOX-->
-
-HTML:
-
-<!--BOX-->
-
-```html
-<h2>Mr Mikes</h2>
-<p>The pizza is <strong>awesome</strong> here!</p>
-```
-
-<!--/BOX-->
-
-Result:
-
-<!--BOX-->
-
-## Mr Mikes
-
-The pizza is **awesome** here!
-
-<!--/BOX-->
+* Use a database or local storage to get the comments to persist across sessions.
 
 <!--/BOX-->
