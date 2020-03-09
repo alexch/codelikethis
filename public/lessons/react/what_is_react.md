@@ -85,18 +85,42 @@ Declarative is different than **Imperative** code which:
 An imperative example would be manipulating the DOM like this:
 
 ```javascript
-window.onLoad function () {
-  var heading = document.createElement('h1');
-  var text = document.createTextNode('Hello DOM!');
+// When the Winow 'load' event fires, run the following JavaScript
+(window.onLoad = function() {
+
+  // Create the H1 Element
+  const heading = document.createElement('h1');
+
+  // Create the Text node and content
+  const text = document.createTextNode('Hello DOM!');
+
+  // Add the Text node to the parent H1
   heading.appendChild(text);
+
+  // Add the H1 Element to the Body Element
   document.body.appendChild(heading);
-}
+})()
 ```
 
 # Simple Example
 
-<p data-height="228" data-theme-id="dark" data-slug-hash="mLqoGK" data-default-tab="babel" data-user="Dangeranger" data-embed-version="2" data-pen-title="mLqoGK" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/mLqoGK/">mLqoGK</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+```javascript
+ReactDOM.render(
+  <div>
+    <h1>Reasons to love React!</h1>
+    <ul>
+      <li>Easier</li>
+      <li>Reliable</li>
+      <li>Fast</li>
+    </ul>
+  </div>,
+  document.getElementById('root'));
+```
 
+<iframe height="350" style="width: 100%;" scrolling="no" title="Hello React" src="https://codepen.io/burlingtoncodeacademy/embed/BaNJRrQ?height=265&theme-id=light&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/BaNJRrQ'>Hello React</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 # React Form
 
@@ -114,11 +138,10 @@ But when the form initiates a `onSubmit` event React will handle the changes usi
 
 # React Form CodePen
 
-<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="js,result" data-user="Dangeranger" data-slug-hash="BXzKQM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="React Form Example">
-  <span>See the Pen <a href="https://codepen.io/Dangeranger/pen/BXzKQM/">
-  React Form Example</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="React Form Example" src="https://codepen.io/burlingtoncodeacademy/embed/gOpoWBw?height=265&theme-id=light&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/gOpoWBw'>React Form Example</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 # ReactDOM Code
 
