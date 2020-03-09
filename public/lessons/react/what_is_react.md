@@ -150,34 +150,44 @@ But when the form initiates a `onSubmit` event React will handle the changes usi
 ```javascript
 ReactDOM.render(
   React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-      "form",
-      {
-        id: "my-form",
-        onSubmit: this.handleSubmit
-      },
+      'form',
+      { id: 'my-form' },
       React.createElement(
-        "input",
+        'input',
         {
-          id: "create",
-          type: "text",
-          placeholder: "something"
+          id: 'create',
+          type: 'text',
+          placeholder: 'something'
         }
       )
     )
-  ), document.getElementById('root'));
+  ),
+  document.getElementById('root')
+);
 ```
+
+<h3>
+  <a href="https://babeljs.io/en/repl#?browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=EoUwhgxgLgIg8gWQHQCcQDsAmIUAoBQABIQDyYCWAbgHxHGkBmA9igLaHmYC8ARKwJ4BaZmx616xEuXQAHAK5QO3HhDRgoIHoSj8ZIXhoAeULTIA2kEAAsmZ7Cl4BnJqxBQr0gOY8A9OPokPiKs_oEUNAA0dJhMEHKu6FBInm4AomYgCVAAQvwAkpi4AOQoTExQRQCUlQDcQA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.8.7&externalPlugins=">Live Example</a>
+</h3>
+
 
 # ReactDOM function API
 
 Accepts a description of the components that make up the page, and what DOM node to **render** the results to.
 
-```jsx
+```javascript
+// Render function on ReactDOM
 ReactDOM.render()
+
 // API signature
-ReactDOM.render(element, container[, callback])
+ReactDOM.render(
+  element,
+  container,
+  [callback] /* Optional*/
+)
 ```
 
 - `element` => The DOM element and children to generate.
@@ -189,13 +199,15 @@ ReactDOM.render(element, container[, callback])
 
 Accepts an element type, props of the element, and child elements.
 
-```jsx
+```javascript
+// CreateElement function on ReactDOM
 React.createElement()
+
 // API signature
 React.createElement(
   type,
-  [props],
-  [...children]
+  [props], /* Optional*/
+  [...children] /* Optional*/
 )
 ```
 
@@ -211,5 +223,3 @@ React allows you to:
 - Write functions that update the HTML when state changes
 - Delegate responsibility over the DOM to a library
 - Be confident that the desired application state will be achieved
-
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
