@@ -128,7 +128,16 @@ See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/Java
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
 
+# Optimal Layout - MacOS
+
+## Arrange your application windows like so
+
 ![terminal next to browser](../images/terminal-and-browser.png)
+
+# Optimal Layout - Windows
+
+## Arrange your application windows like so
+
 ![terminal next to browser](../images/terminal-and-browser-win.png)
 
 # Lab: Interactive Calculator
@@ -157,18 +166,18 @@ NodeJS (aka `node`) is an engine that runs JavaScript programs -- either from fi
 
 > WARNING: Before you start typing, look at the prompt!
 
-* *the shell* is the command line interpreter that the terminal starts with
-  * its prompt is usually
+* A *shell* is the command interpreter that the terminal starts with
+  * The prompt typically looks like:
     *  `Davids-Macbook-Pro:~ David$` (Mac)
     *  `david@davidspc:~$` (Ubuntu Linux)
     *   `C:\Users\david>` (Windows)
-* *node* is a command line program that is launched *from the shell*
-  * its prompt is usually `>`
+* The command *node* is a program that is launched *from the shell*
+  * The *node* prompt will look like: `>`
 
-From inside `node`, if you want to get back to the shell...
+While running *node*, if you want to *return* to the *shell*
 
-  * type <kbd>Ctrl</kbd>-<kbd>C</kbd> twice
-  * or type `.exit` and <kbd>Enter</kbd>
+  * Type <kbd>Ctrl</kbd>-<kbd>C</kbd> *twice*
+  * *OR* type `.exit` and then <kbd>Enter</kbd>
 
 # When in doubt, try it out!
 
@@ -182,10 +191,18 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 
 # Directories
 
-* a *directory* is a location on your hard disk
-  * also called a *folder*
-* directories can contain *files*
-* directories can also contain other directories (called *subdirectories*)
+* A *directory* is a location on your hard disk
+  * Also sometimes called a *folder*
+* Directories can contain *files*
+* Directories can also contain other directories (called *subdirectories*)
+* There are visible directories like: `/Users/yourUserName/Downloads/`
+* There are hidden directories like: `/Users/yourUserName/.ssh/`
+* There are also hidden files...
+* We will cover how to view these in the command line
+
+[Show hidden in Finder](https://appleinsider.com/articles/18/07/27/how-to-see-hidden-files-and-folders-in-macos)
+
+[Show hidden in Windows](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10)
 
 # Where am I?
 
@@ -197,26 +214,26 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 
 # Home Directory
 
-* when you first open the Terminal you are in your HOME DIRECTORY
-* if you store files directly in your home directory, it will soon get cluttered
-* for this class, we recommend:
-  * create a `code` directory inside your home directory
-  * create a new directory inside `code` for each lesson or project
+* When you first open the Terminal you are in your HOME DIRECTORY
+* If you store files directly in your home directory, it will soon get cluttered
+* For this class, we recommend:
+  * Create a `code` directory inside your home directory
+  * Create a new directory inside `code` for each lesson or project
 > WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`
 
 > WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`. You can get back to your home directory by typing `cd %HOME%`
 
 # Listing Directory Contents
 
-* when you type `ls` ("list") it shows the contents of the current directory
+* When you type `ls` ("list") it shows the contents of the current directory
   * **On Windows** you may need to type `dir` instead
 
-* if you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
+* If you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
   * **On Windows** you may need to type `dir /A:SH` instead
 
 # Making a directory
 
-* when you type `mkdir` ("make directory") it creates a new *subdirectory* inside the current directory
+* When you type `mkdir` ("make directory") it creates a new *subdirectory* inside the current directory
 
 ```bash
 mkdir code
@@ -231,53 +248,53 @@ mkdir code
 
 # Basic Command Review (Unix)
 
-* `pwd` ("print working dir") -- shows the name of the current directory
-* `cd` ("change dir") -- move into a different directory
-* `ls` ("list") -- shows the contents of the current directory
-* `mkdir` ("make dir") -- creates a new subdirectory inside the current directory
+* `pwd` ("print working dir") -- Shows the name of the current directory
+* `cd` ("change dir") -- Move into a different directory
+* `ls` ("list") -- Shows the contents of the current directory
+* `mkdir` ("make dir") -- Creates a new subdirectory inside the current directory
 
 > These apply to Mac / Unix / Linux / bash / cmder
 
 # Basic Command Review (DOS)
 
 * `cd` ("change dir") -- With no directory, it lists the current directory. Otherwise, it changes to the specified directory
-* `dir` ("directory") -- shows the contents of the current directory
-* `mkdir` ("make dir") -- creates a new subdirectory inside the current directory
+* `dir` ("directory") -- Shows the contents of the current directory
+* `mkdir` ("make dir") -- Creates a new subdirectory inside the current directory
 
 > These apply to Windows / DOS / PowerShell
 
 # LAB: make a subdirectory and then enter it
 
-1. open **Terminal** or **Command Prompt**
+1. Open **Terminal** or **Command Prompt**
 1. Confirm that you are in your home directory
-2. make a new subdirectory using `mkdir code`
-3. change into that directory using `cd code`
-4. make sure you're really there using `pwd`
+2. Make a new subdirectory using `mkdir code`
+3. Change into that directory using `cd code`
+4. Make sure you're really there using `pwd`
    * **On Windows** use `cd`
-5. list its contents using `ls` (and note that it's empty)
+5. List its contents using `ls` (and note that it's empty)
    * **On Windows** use `dir`
 
 # Files
 
-* a file is a place on disk for storing stuff
-* "stuff" here could be anything at all
-  * documents, pictures, sounds, applications...
-* every file lives inside a directory
+* A file is a place on disk for storing "stuff"
+* The "stuff" here could be any "data" at all
+  * Documents, pictures, sounds, applications, or anyting else!
+* Every file lives inside a directory
 
 # Text Editor
 
-* a text editor is a program that edits a text file
-* a text editor is *like* a word processor
-* but a text editor is **not** a word processor
-* You probably have *VS Code* <https://code.visualstudio.com/>
-  * others include *TextMate*, *Notepad++*, *Sublime Text*, *Vim*, *Emacs*, *Atom*
-  * but **NOT** *TextEdit* or *Wordpad* or *Microsoft Word*
+* A text editor is a program that edits a text file
+* A text editor is *like* a word processor
+* BUT a text editor is **not** a word processor
+* You probably have installed by now: *VS Code* <https://code.visualstudio.com/>
+  * Some other editors include *Atom*, *Sublime Text*, *Notepad++*, *TextMate*, *Vim*, *Emacs*
+  * The following are **NOT** editors: *TextEdit*, *Wordpad*, *Microsoft Word*
 
 # Source File
 
-* source code is the essence of a program
-* source files are text files that contain source code
-* to **RUN** a JavaScript program you type `node` and then the name of the source file, like this:
+* Source code is the essence of a program
+* Source files are text files that contain source code
+* To **RUN** a JavaScript program you type `node` and then the name of the source file, like this:
 
 ```bash
 $ node hello.js
@@ -313,10 +330,12 @@ These work in `bash`:
 
 Also:
 
-* you can use <kbd>Esc</kbd> instead of <kbd>Alt</kbd> for the above
+* You can use <kbd>Esc</kbd> instead of <kbd>Alt</kbd> for the above
 * <kbd>Esc</kbd>-<kbd>Backspace</kbd> (delete previous word)
 * up/down arrow (scroll through history)
 * <kbd>End</kbd> and <kbd>Home</kbd> (jump to end or beginning of line)
 * <kbd>Tab</kbd> for auto-completion of filenames (e.g. typing `node h`<kbd>Tab</kbd> will emit `node hello.js`)
 
 <small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/))</small>
+
+[Bash Shortcuts Cheatsheet](https://kapeli.com/cheat_sheets/Bash_Shortcuts.docset/Contents/Resources/Documents/index "Bash Shortcuts Cheatsheet")
