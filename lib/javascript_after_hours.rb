@@ -35,7 +35,6 @@ class JavascriptAfterHours < Site
     external :script, (<<-JS)
       window.addEventListener('DOMContentLoaded', (e) => {
         $(document).ready(function() {
-          console.log('Hi from the collapse toggle!');
           $('#sidebar-javascript_intro-lessons').collapse('show');
         })
       })
@@ -52,7 +51,7 @@ class JavascriptAfterHours < Site
               }
               p(class: 'card-text') {
                 text "This site contains the curriculum for our "
-                a "2019 JavaScript After Hours class",
+                a "Spring 2020 JavaScript After Hours class",
                   href: "https://www.burlingtoncodeacademy.com/javascript-after-hours/"
                 text "."
               }
@@ -61,7 +60,7 @@ class JavascriptAfterHours < Site
           br
           div.card {
             iframe(
-              src: "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F09300&showTitle=1&title=JavaScript%20Part%20Time%20Fall%202019&showNav=1&showDate=1&showPrint=1&showTabs=1&showCalendars=0&mode=WEEK",
+              src: "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=YnVybGluZ3RvbmNvZGVhY2FkZW15LmNvbV91cXU2YmUwa2I3bDZxdTBjMTl2amZvaXZ0NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237CB342&showTitle=1&title=JavaScript%20After%20Hours%20Spring%202020&showNav=1&showDate=1&showPrint=1&showTabs=1&showCalendars=0&mode=WEEK",
               style: 'border-width:0',
               width: '800',
               height: '600',
@@ -89,33 +88,7 @@ class JavascriptAfterHours < Site
 
     def nav_items
       nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
-      nav_item name: "Hire Our Grads", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
-      # nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
-      # nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
-
-      nav_item name: "Schedule", href: "/schedule"
-
-      nav_item name: "Curriculum", dropdown: true do
-        a(@site.display_name, class: 'dropdown-item', href: @site.href)
-        @site.tracks.each do |track|
-          if (track == ::Track::Separator)
-            hr
-          else
-
-            a(class: ['dropdown-item', 'track-name'],
-              href: track.href
-            ) {
-              i(class: "fas fa-angle-right")
-              text nbsp
-              text nbsp
-              text track.display_name
-            }
-          end
-        end
-
-
-      end
-
+      nav_item name: "Hire Partners", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
       nav_item name: "Apply", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
     end
   end
