@@ -35,6 +35,7 @@ class Track
       lesson name: "/www/dom_debugging"
       lesson name: "hello_frenemy_www"
       lesson name: "/www/dom_scripting"
+      lesson name: "/www/dom_scripting_labs"
       lesson name: "event_listeners"
       lesson name: "express_intro_and_server_basics"
       lesson name: "deploy_tic_tac_toe"

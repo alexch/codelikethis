@@ -49,6 +49,8 @@ class Track
 
     lesson name: "dom_scripting"
 
+    lesson name: "dom_scripting_labs"
+
     lesson name: "forms"
 
     lesson name: "embedding_media"
