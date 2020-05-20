@@ -161,10 +161,31 @@ Now the caption can be as wide as its parent (the wrapper), since its parent is 
 * However, recent developments have allowed developers to use new CSS properties to achieve the same result, and much more.
 * Because of this, the `float` property should only be used for wrapping text around images, which was its original purpose - gone are the days of CSS layout using floats.
 
-# LAB: Learn CSS Layout
+# LAB: Image Wrapping
 
-Do these tutorials:
+Let's open our trusty "example-html" directory once more.
 
-https://learn.shayhowe.com/html-css/
+You should currently have two HTML files in this directory.
 
-[Learn CSS Layout](http://learnlayout.com/position.html)
+* `index.html` with a navigation section, a fair bit of text, some images, and a couple videos
+* `about.html` with a header, and a link back to the home page
+
+In this lab we'll be focusing on the `index.html` file, so open that up in VSCode
+
+* Add a `style` tag at the top of the html document's `body` section
+* Add container `div`s for each image, and give them a `class` name.
+* In each container, on the same level as the image, add a `p` tag with some text in it
+* Using the style tag write some CSS to wrap the text around the images.
+
+# Lab: Make It Pretty
+
+Now we've got a page with some wrapped images, a whole lot of text, and some links. Things are starting to get laid out, but our page still looks like something from the early 90s, and our navigation bar is far from ideal.
+
+Let's spruce things up a bit!
+
+Using the `style` tag we previously inserted into our index.html file do the following:
+
+* Make the navigation section a horizontal bar across the top of the page
+* Change the background color of the nav bar
+* Add a background image to the main body of the page (make sure your text remains legible)
+* Seperate different sections with some space between them
