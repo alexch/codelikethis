@@ -50,29 +50,42 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 
 | tag      | meaning                   |
 |----------|---------------------------|
-| \<head>  | head (contains metadata)  |
-| \<body>  | page body                 |
-| \<div>   | division                  |
-| \<h1>    | Heading (level 1)         |
-| \<p>     | Paragraph containing text |
-| \<span>  | Text without a line break |
-| \<img>   | Image tag                 |
-| \<link>  | Link tag                  |
-| \<style> | Style tag                 |
+| `<head>`  | head (contains metadata)  |
+| `<body>`  | page body                 |
+| `<div>`   | division                  |
+| `<h1>`    | Heading (level 1)         |
+| `<p>`     | Paragraph containing text |
+| `<span>`  | Text without a line break |
+| `<img>`   | Image tag                 |
+| `<link>`  | Link tag                  |
+| `<style>` | Style tag                 |
 
 
 # Examples of Style Tags
 
 | tag                  | example                         |
 |----------------------|---------------------------------|
-| \<b>                 | <b>bold</b>                     |
-| \<i>                 | <i>italic</i>                   |
-| \<strong>            | <strong>strong</strong>         |
-| \<em>                | <em>emphasis</em>               |
-| \<br>                | Line break                      |
-| \<hr>                | Horizontal rule (dividing line) |
-| \<blockquote>        | "call-out" quotation            |
+| `<b>`                 | <b>bold</b>                     |
+| `<i>`                 | <i>italic</i>                   |
+| `<strong>`            | <strong>strong</strong>         |
+| `<em>`                | <em>emphasis</em>               |
+| `<br>`                | Line break                      |
+| `<hr>`                | Horizontal rule (dividing line) |
+| `<blockquote>`        | "call-out" quotation            |
 | etc.                 |                                 |
+
+# Lab: Create a Web Page
+
+That's enough theory! Let's build something!
+
+* Open up VSCode and create a file named `index.html`
+* Type out your page structure following the example on the "Standard Page Structure" slide
+* **Or** use emmet abbreviations by typing an exclamation point `!` and hitting <kbd>Tab</kbd>
+* Add an `h1` tag in the body of your document, and some text inside the `h1`
+* Enter `open index.html` into your terminal if you're on a Mac
+  * or on Windows, use `start index.html`
+  * or enter `pwd` and copy and paste the directory path into your browser (chrome), then click on the `index.html` file
+  * or drag your html file directly into your browser window
 
 # Self Closing Tags
 
@@ -91,6 +104,15 @@ Attributes further define HTML elements and their purpose. For example, an image
 * Attributes are not always required. However in the example above, a source is needed for the image to be displayed.
 * Others include `style` (for inline CSS), `title` (for hover-over tooltips), `href` (hyperlink reference)
 * Attribute names should always be lowercase
+
+# Lab: Adding Attributes
+
+Let's add a few attributes to the `h1` in the HTML file we just created.
+
+* Give your element an `id`
+* Change the color of your text using the `style` attribute and setting it to a key:value pair
+  * e.g. `style="color:red"`
+* Add an image to your page
 
 # Style vs Layout vs Semantics
 

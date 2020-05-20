@@ -2,7 +2,7 @@
             topic name: "element-structure"
             topic name: "developer-tools"
 
-# Lets write our first HTML document!
+# Lets Write Another HTML document!
 
 * Create a file named index.html and open it in your text editor
 * All HTML documents should begin with a DOCTYPE declaration.  This does not require a **closing tag**.
@@ -50,13 +50,22 @@ So it looks like this:
 </html>
 ```
 
-# Let's Open Our First Web Page!
+# Let's Open Our Web Page!
 
 * We will now open our first web page using a web browser
 * Enter `open index.html` into your terminal
   * or on Windows, use `start index.html`
   * or enter `pwd` and copy and paste the directory path into your browser (chrome), then click on the `index.html` file
 
+# Use a VSCode Extension
+
+There are several plugins for VSCode designed to help you serve static webfiles. Let's use one to make viewing our webpage a little easier.
+
+* Go ahead and click the "Extensions" (or press <kbd>ctrl</kbd> + <kbd>shift</kbd> + X)
+* Search for 'Live Server' and install the extension of that name developed by Ritwick Dey.
+* Close and reopen VSCode.
+* You should now have a button in the lower right corner of VSCode that says 'go live'
+* Click it to launch your site (locally at least)
 
 # Inspect The File With Chrome
 
@@ -68,4 +77,3 @@ So it looks like this:
 * Notice how the HTML tags are displayed
 * You can do this for **any website** to examine how it is structured
   * or to change its colors, or remove ads, or...?
-
