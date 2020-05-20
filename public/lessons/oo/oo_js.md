@@ -5,8 +5,6 @@
 
 # Object-Oriented JavaScript
 
-This lesson assumes you are familiar with the usage of JavaScript [Objects](../javascript/objects) and [Methods](../javascript/methods) and the fact that JavaScript is a [hybrid language](../javascript/hybrid_styles).
-
 JavaScript is a hybrid of (at least) three styles:
 
   * procedural
@@ -86,7 +84,8 @@ let p = rectangle.perimeter()
 
 # Object vs. Object
 
-* In JS, an "object" is just a [hash](/lessons/javascript/hashes)
+* In JS, an "object" is just a hash
+  * a hash is just an unordered collection
   * not very object-oriented
 * To be object-oriented you need to add a few things
   * the "`this`" variable
@@ -125,7 +124,7 @@ let dog = {color: "brown"}
 # References and Instances
 
 * Imagine computer memory with two compartments: *references* and *instances*
-  * also known as "the stack" (or "the scope") and "the heap"
+  * also known as "the scope" and "the heap"
   * also known as "pointers" and "values"
 * References include *parameters* and *local variables*
 * Instances contain the "real" data

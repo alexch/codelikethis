@@ -68,7 +68,7 @@ e.g.
     node add 1 2 3 4
     10
 
-> Hint: Do you remember how to [convert a string to a number](./numbers#anchor/converting-a_string_to_a_number)?
+> Hint: Command line arguments come in as strings so you will need to convert them to numbers.
 
 # Add solution
 
@@ -81,7 +81,7 @@ let numberArray = process.argv.slice(2).map(number => parseInt(number))
 ```
 
 </div>
-</summary>
+</details>
 
 <details>
 <summary>Hint 2</summary>
@@ -92,7 +92,7 @@ let sum = 0
 ```
 
 </div>
-</summary>
+</details>
 
 <details>
 <summary>Solution</summary>
@@ -114,4 +114,4 @@ console.log(add(numbers))
 ```
 
 </div>
-</summary>
+</details>
