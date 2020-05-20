@@ -218,12 +218,6 @@ button.addEventListener('click', sayMagicWord())
 ```
 
 This **calls the function** `sayMagicWord` when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).
-# LAB: Add Item to List
-
-<iframe height="600" style="width: 100%;" scrolling="no" title="DOM-scripting-lab-3" src="https://codepen.io/burlingtoncodeacademy/embed/preview/oNXLdKm?height=265&theme-id=light&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/oNXLdKm'>DOM-scripting-lab-3</a> by Joshua Burke
-  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
 
 # Event Parameters
 
@@ -231,7 +225,7 @@ An event handler function can optionally accept a parameter -- usually called `e
 
 An [event object](https://developer.mozilla.org/en-US/docs/Web/API/Event) has many properties but the most important one is `event.target`, which points to the element where the action took place.
 
-For instance, for a **click** event, `event.target` contains a pointer to the *button* that was clicked.
+For instance, for a **click** event, `event.target` contains a pointer to the *element* that was clicked.
 
 ```html
 <button type="button" id="presto">Presto...</button>
@@ -255,9 +249,6 @@ prestoButton.addEventListener('click', sayMagicWord)
 abraButton.addEventListener('click', sayMagicWord)
 </script>
 ```
-
-(See the above script in action [here](magic.html))
-
 
 # Event Bubbling & Capture
 

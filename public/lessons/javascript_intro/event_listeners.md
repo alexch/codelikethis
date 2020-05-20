@@ -25,7 +25,7 @@ Some elements have a default `onclick`. Namely `<a>` (anchor) tags which go to a
 
 There are a few ways to set the `onclick` property. The most common ways are inline in your HTML, or by adding an event listener to an element using DOM queries
 
-# Lab: Event Listeners on different HTML elements
+# Lab: Event Listeners on Different Elements
 
 Let's play around with setting event listeners on different elements!
 
@@ -82,7 +82,7 @@ Let's play around with setting event listeners on different elements!
 
 ![event-listener-breakdown](/images/event-listener.png)
 
-# Event Listeners using the DOM Queries and JS
+# Event Listeners Using DOM Queries and JS
 
 * Add a `<script>` tag to your HTML and either link to an external javascript file or write your javascript right in the `<script>` tag
 

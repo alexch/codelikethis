@@ -84,7 +84,7 @@ Track::Javascript = Track.new(
   lesson name: "scope"
   lesson name: "recursion"
 
-  lesson name: "debugging_techniques"
+  lesson name: "debugging_locally"
 
   # lessons below this point are not necessarily in pedagogical order;
   # they may be woven in to the above track, or other tracks, as desired
