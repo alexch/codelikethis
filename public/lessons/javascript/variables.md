@@ -33,7 +33,7 @@ fruit.toUpperCase() // "BERRY"
 
 # Don't let me down 
 
-Unfortunately, in JavaScript you can only use `let` once per variable name (in a given *scope*), otherwise you will get an error:
+In JavaScript you can only use `let` once per variable name (in a given *scope*), otherwise you will get an error:
 
 ```js
 Identifier 'x' has already been declared
@@ -56,7 +56,7 @@ SyntaxError: Identifier 'x' has already been declared
 
 Think of memory as a giant warehouse.
 
-![Warehouse from Raiders of the Lost Ark](/images/warehouse.jpg)
+![Warehouse from Raiders of the Lost Ark](https://res.cloudinary.com/btvca/image/upload/v1574445214/curriculum/warehouse_ob5utf.jpg)
 
 Like this warehouse from the movie Raiders of the Lost Ark, 
 computer memory is vast and filled with boxes of various sizes.
@@ -106,7 +106,7 @@ Some things to try:
 
     let snack = "Apple"
 
-![snack-apple](/images/snack-apple.svg)
+![snack-apple](https://res.cloudinary.com/btvca/image/upload/v1574445202/curriculum/snack-apple_ltysdv.svg)
 
 Think of a variable as an arrow **pointing** to a value.
 
@@ -115,8 +115,8 @@ Think of a variable as an arrow **pointing** to a value.
 You can assign and reassign variables at will.
 
 ```js
-color = "blue"     // assign 'blue' to color
-fruit = "berry"    // assign 'berry' to fruit
+let color = "blue"     // assign 'blue' to color
+let fruit = "berry"    // assign 'berry' to fruit
 color + fruit      // 'blueberry'
 
 color = "black"    // 'black'
@@ -136,7 +136,7 @@ let fruit = "Apple"
 let snack = fruit
 ```
 
-![snack-fruit](/images/snack-fruit.svg)
+![snack-fruit](https://res.cloudinary.com/btvca/image/upload/v1574445202/curriculum/snack-fruit_momdep.svg)
 
 After this both `snack` and `fruit` are *pointing* to the same *value*
 
@@ -151,7 +151,7 @@ let fruit = "banana"
 let snack = fruit.toUpperCase()
 ```
 
-![fruit-banana-snack-banana](/images/fruit-banana-snack-banana.svg)
+![fruit-banana-snack-banana](https://res.cloudinary.com/btvca/image/upload/v1574445175/curriculum/fruit-banana-snack-banana_fbbd8h.svg)
 
 `"banana"` and `"BANANA"` are two *different values* in memory. The original value is still sitting around and still pointed to by `fruit`.
 

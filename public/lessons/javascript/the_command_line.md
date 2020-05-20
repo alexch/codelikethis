@@ -50,7 +50,6 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 * to open your Terminal:
   * **Mac OS**: launch the "Terminal" application
   * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
-    * Startup command: `{bash::bash}`
     * Startup directory: `C:\Users\yourname`
   * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `PowerShell`) -- but beware, the commands are slightly different than in bash
 
@@ -282,7 +281,7 @@ Also:
 
 <small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/))</small>
 
-# LAB: Next Steps
+# More Resources:
 
 Want to learn enough command line to be dangerous?
 Check out <https://www.learnenough.com/command-line-tutorial> by Michael Hartl (founder of [Tau Day](https://tauday.com/) and all around solid geek).

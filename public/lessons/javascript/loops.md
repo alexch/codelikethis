@@ -43,7 +43,7 @@ This is called an *infinite loop*.
 
 # One Infinite Loop
 
-![One Infinite Loop](/images/one-infinite-loop.jpg)
+![One Infinite Loop](https://res.cloudinary.com/btvca/image/upload/v1574445194/curriculum/one-infinite-loop_eful1h.jpg)
 
 *Fun Fact:* The address of Apple HQ is
 
@@ -52,7 +52,7 @@ This is called an *infinite loop*.
 
 *Image from the Wikimedia Commons, licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Joe Ravi*
 
-# LAB: Infinite Counting
+# Infinite Counting
 
 Let's write a program that counts from 0 to infinity. Put this in a file called `count.js`.
 
@@ -74,7 +74,28 @@ Next, we will change your `count.js` program so that it only counts to 100.
 
 Please try this yourself! But it's kind of tricky, so on the next slide I'll show you one solution.
 
-# while for a while
+# Solution: Who wants to loop forever?
+
+<details>
+<summary>Hint</summary>
+
+Remember, a while loop only runs while the check evaluates true
+<div>
+
+```js
+while(/*this expression is true...*/) {
+    // ...do this action
+}
+```
+
+</div>
+</details>
+
+
+<details>
+<summary>Solution</summary>
+
+<div>
 
 ```js
 let count = 1;
@@ -84,7 +105,10 @@ while (count <= 100) {
 }
 ```
 
-Did you find a solution? Did your program stop at 100 or 99?
+</div>
+</details>
+
+Did your program stop at 100, 101, or 99?
 
 # `while`
 
@@ -266,7 +290,7 @@ for (var i=0; i < 8; i++) {
 
 # `for..of`
 
-The `for..of` loop was added to JavaScript fairly recently. It loops over an [array](./arrays) and hides the messy details of initializing and incrementing a counter:
+The `for..of` loop was added to JavaScript fairly recently. It loops over an [array](/lessons/javascript-track/arrays) and hides the messy details of initializing and incrementing a counter:
 
 ```javascript
 const lineNumbers = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -370,13 +394,3 @@ while (currentNumber > 2) {
 
 </div>
 </details>
-
-# LAB: More about loops
-
-Exercisms:
-
-  * [Collatz Conjecture](https://exercism.io/my/solutions?exercise_id=collatz-conjecture&track_id=javascript)
-  * [Pangram](https://exercism.io/my/solutions?exercise_id=pangram&track_id=javascript)
-
-* [An overview of JavaScript iterators
-](https://medium.freecodecamp.org/javascript-iterators-17ab32c3cae7) - The difference between for, for…in and for…of loops

@@ -68,7 +68,7 @@ Wait a second. "Truthy?"
 
 # What is truthiness?
 
-![Truthiness](/images/truthiness.png)
+![Truthiness](https://res.cloudinary.com/btvca/image/upload/v1574445211/curriculum/truthiness_jhdubk.png)
 
 * in the Colbert Report, [truthiness](https://en.wikipedia.org/wiki/Truthiness) means things we *feel* to be true, even though we know they're probably not
 
@@ -169,7 +169,7 @@ You can make more complicated logical expressions using conjunctions:
 |Conjunction|Operator|Example|Meaning|
 |---|---|---|---|
 | AND | `&&` | `X && Y` | "are both X and Y true?" |
-| OR | <code>&#124;&#124;</code> | <code>X &#124;&#124; Y</code> | "is either X or Y (or both) true?" |
+| OR | `||` | `X || Y` | "is either X or Y (or both) true?" |
 | NOT | `!`  | `!X` | "is X false?" |
 
 For example:
@@ -186,7 +186,7 @@ if (age >= 18 || hasPermissionSlip()) {
 
 # LAB: Good Friend, Bad Friend
 
-* Your [`hello.js` program](./input-and-output#lab_hello_friend) should currently look something like this:
+* Your `hello.js` program should currently look something like this:
 
 ```js
 console.log("What is your name?");
@@ -314,9 +314,3 @@ process.stdin.on('data', (chunk) => {
 
 </div>
 </details>
-
-# Lab: exercises about logic
-
-* FreeCodeCamp:
-  * From [Understanding Boolean Values](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-boolean-values)
-  * up to [Chaining if-else statements](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/chaining-if-else-statements)
