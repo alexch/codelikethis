@@ -46,13 +46,9 @@ app.use(express.static('.'))
 app.listen(port, () => console.log(`Example app listeningport ${port}!`))
 ```
 
-* create a file called `index.html` containing
+* create a file called `index.html` containing an `h1` element, with the text "Hello, world!"
 
-```html
- <h1>Hello in HTML</h1>
-```
-
-* in `package.json`, add
+* in `package.json`, add a start script
 
 ```json
 {
@@ -67,7 +63,7 @@ app.listen(port, () => console.log(`Example app listeningport ${port}!`))
 * Now open a web browser and visit <http://localhost:5000/index.html>
 
 
-# oops
+# Oops!
 
 The good news: your web server can now serve static files to its clients!
 
@@ -153,3 +149,10 @@ the server must send the correct *[status code](https://en.wikipedia.org/wiki/Li
 Note: even though there is an error, the server *still returns a body and content-type* for display to the user.
 
 In this case, we just see Express' boring default error page, but it's possible to get [very creative](https://www.canva.com/learn/404-page-design/) with web site error pages.
+
+# Lab: Create a 404 page
+
+Go back to your "static-server" directory, and let's make a custom 404 page!
+
+* Create a page in your "public" directory named 404.html
+* When the user visits any route other than your home route the 404 page should be displayed.

@@ -52,7 +52,7 @@ In Code, open the file named `package.json`, it will have a section like this:
   },
 ```
 
-Change it to look like this:
+Add a start script like this:
 ```json
 "scripts": {
     "start": "node server.js",
@@ -73,10 +73,11 @@ Now make a git repo for your app.
 > Make sure you are in the correct directory with `pwd`
 
 ```bash
-pwd           # the response should end with "hello-node"
 git init
+
 git add .
-git commit -m "first commit"
+
+git commit -m "initial commit"
 ```
 
 # Hello, Heroku!
@@ -85,6 +86,7 @@ Heroku uses git for its deploys. Whenever you push a new version of your git rep
 
 ```sh
 heroku create
+
 git push heroku master
 ```
 
@@ -102,9 +104,7 @@ heroku open
 
 # High Five!
 
-If you are working with a partner, give them a high five.
-
-If you are alone, give yourself a high five.
+Give yourself a high five.
 
 ![high five](/images/high-five.svg)
 
@@ -113,17 +113,17 @@ You deserve it!
 <small>image by [Pandark](https://www.deviantart.com/pandark/art/High-Five-350078391) ([CC-BY-SA](http://creativecommons.org/licenses/by-sa/3.0/))
 </small>
 
-# Hello, You!
+# Lab: Hello, You!
 
-Now go back to Code, and modify the app so instead of saying "Hello, World!" it says something clever and personalized.
+Now go back to VSCode, and modify the server code so instead of saying "Hello, World!" it says something clever and personalized.
 
 Once you've made the change...
 
-1. test it locally
-2. add the changed file to git and commit the change
-3. re-deploy to Heroku
-4. reload the web page and read your new message
-5. give yourself a high five!
+* test it locally
+* add the changed file to git and commit the change
+* re-deploy to Heroku
+* reload the web page and read your new message
+* give yourself a high five!
 
 # Parameters in Express
 
@@ -137,19 +137,37 @@ Example:
 | Route:| `/hello/:friend` | 
 | Params:| `{friend: 'Gandalf'}` | 
 
-Express will grab the *value* from the path itself, and put it into the `request.params` object for you to use later.
+Express will grab the *value* from the path itself, and assign it to `request.params` for you to use later.
 
-# Hello, Query Friend!
+# Lab: Hello, Query Friend!
 
-Now change your "Hello, Express" server to also have the following route:
+Now change your "Hello, Express" code so that when you visit a path containing someone's name it greets the user by that name.
 
-```javascript
-app.get('/hello/:friend', (request, response)=> {
-    response.send('Hello, ' + request.params.friend + '!');
-});
+e.g. visiting `http://localhost:5000/Gandalf` prints "Hello, Gandalf!" on the web page.
+
+<details>
+<summary>Hint</summary>
+
+You can set up a path parameter in express with a colon `:` followed by the variable name
+
+e.g. `/:friend` provides a variable in the `params` object with the key of `friend`
+
+</details>
+
+<details>
+<summary>Solution</summary>
+Add the following route to your `server.js` file
+<div>
+
+```js
+app.get('/:friend', (req, res) => {
+  res.send('Hello, ' + req.params.friend + "!")
+})
 ```
 
-Prove that it works by visiting <http://localhost:5000/hello/Gandalf> (or use your own name)
+</div>
+
+</details>
 
 # Resources
 

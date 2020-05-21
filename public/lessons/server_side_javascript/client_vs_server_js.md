@@ -1,25 +1,55 @@
+# The Structure of the Internet
 
-# How can I use JavaScript files in client-side HTML pages?
+<!--Picture of server requests pinging around -->
 
-In a NodeJS environment (server side), you include JS files using `const Room = require('room.js')` in a different JS file.
+# The Client/Server Model
 
-On the client you include JS files using `<script src='room.js'>` in an HTML file
+* The **client** is any part of your webapp useable by your end users
+  * web pages
+  * forms
+  * Images
+  * Interactive elements
+* The **server** listens for requests from the client, and sends responses
+  * mostly just listeners and rules
+  * runs in a node.js environment
 
-# But what if I really want to use my code in both places?
+# Using Plugins
 
-* you need to put the `room.js` file somewhere that both the server and the client can see it
-  * This is weird because usually those two directories are separate (`lib` and `public` respectively)
-* also inside room.js you say `module.exports = class Room { ...`
-  * This means that *even if* you download `room.js` onto the client, it will break because *there is no global named `module`* in your browser
-* so you’d need to add `<script>module = {}</script>` in your HTML, *above* the `<script src='room.js'>`
-  * you’ll also need to make sure that none of your code calls anything in the NodeJS core or in any NPM package
+Plugins, and libraries like Live Server, and node-static provide an easy way for you to get a site up and running fast.
 
-# That sounds complicated. Is it bad?
+* Pros:
+  * easy to setup
+  * inbuilt tools
 
-it’s not a *bad* idea to reuse code between layers, it’s just non-traditional so some things don’t work like you expect them to.
+* Cons:
+  * Opaque
+  * Best for local development only
 
-There are also tools like *browserify* that make it "easier"
+# Server Side JavaScript
 
-http://browserify.org/
+Server Side JS runs in a node environment, and is a set of rules to determine *what happens* when we get a certain *request* to a specific *route*
 
-but by “easier” I mean “replace one form of complexity with a different form of complexity”
+e.g. **When** you have a `GET` request to `/` **Send** the `index.html` file to the browser
+
+# Structuring Your Directory
+
+<!--Image goes here. Boxes in boxes-->
+
+# Core Concept: the Public Directory
+
+The directory that contains the files needed for the client side of your web app is often named "public"
+
+* naming convention assumed by some libraries
+* contains subdirectories for different file types
+  * images
+  * JS
+  * CSS
+* HTML files live directly in in the "public" folder
+
+# Is there a special syntax for server side JS?
+
+* No, but...
+* Different frameworks have their own ideas about how a server *should* be set up
+* Slightly different than client side JS
+  * different methods to import external files
+  * module/global (nodeJS) v. document/window (browser JS)

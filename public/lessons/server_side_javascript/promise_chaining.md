@@ -5,7 +5,9 @@ A promise is something that stands in for a piece of data you don't have yet. Th
 
 # Promise Chaining
 
-Promise chaining is a way of making your asynchronous code run top to bottom like synchronous programming, but still allowing you to wait for data to be fetched from somewhere else. To chain promises you use a special method `.then()` which accepts a callback function as its argument, and passes the resolved value of the previous promise to the callback function as an argument.
+Promise chaining is a way of making your asynchronous code run top to bottom like synchronous programming, but still allowing you to wait for data to be fetched from somewhere else.
+
+To chain promises you use a special method `.then()` which accepts a callback function as its argument, and passes the resolved value of the *previous promise* to the callback function as an argument.
 
 ```js
 let someArray = [] //global variable we will manipulate inside our .then
@@ -23,7 +25,7 @@ fetch('some URL or file path')
 
 # Promise chaining in ExpressJS
 
-Promise chaining with `.then` is the most comon way of dealing with fetch, post, or any other types of requests in express because fetching any data takes time, and we need to force our program to wait to recieve that data before we can use it.
+Promise chaining with `.then` is the most common way of dealing with fetch, post, or any other types of requests in express because fetching any data takes time, and we need to force our program to wait to recieve that data before we can use it.
 
 So a GET request handler in express might look something like this:
 
@@ -43,4 +45,24 @@ app.get('/some_api', (req, res) => {
 
 Yes you can.
 
-**BUT** async/await is very new and not fully implemented by many frameworks and libraries, express included.  While it will work mostly as expected it doesn't have all the functionality that express gives you with promise chaining with `.then`. In particular you will need to define how to handle errors for each of your blocks otherwise your server will crash if it runs into an error, rather than alerting you of the error and continuing on.
+**BUT** async/await is fairly new and not fully implemented by some frameworks and libraries.
+
+Luckily for us express recently added support for async/await in their framework. You can make the request/response callback an asyc function, and then await inside of it.
+
+# Try and Catch
+
+When using async/await on your server you need to set up explicit error handling rules, or the server will crash on an error.
+
+You can do this with a `try` block for the happy path, and a `catch` block for error handling
+
+```js
+app.get('/some_api', async (req, res) => {
+  try {
+    let data = await fetch(req + '.json')
+    res.send(data)
+  }
+  catch (error) {
+    console.error("something went wrong: " + error.message)
+  }
+})
+```

@@ -7,6 +7,8 @@
   
 the "code we run" is also called an *endpoint* or a *route* or a *script* or a *handler* or...
 
+The "code we run" doesn't have to be complicated. It could be as simple as sending a file.
+
 # Routing is simple...
 
 Many web app server frameworks have complicated systems for routing, but that complexity is not essential.
@@ -94,21 +96,17 @@ Params: {name: 'Gandalf'}
 
 Express will grab the *value* from the path itself, and put it into the `request.params` object for you to use later.
 
-# LAB: Hello, Path Friend!
-
-Change your "Hello, Express" server to have the following route:
-
-```js
-app.get('/hello/:friend', (request, response)=> {
-    response.send('Hello, ' + request.params.friend + '!')
-});
-```
-
-Prove that it works by visiting <http://localhost:5000/hello/Gandalf> (or use your own name)
-
 # LAB: Hello, You!
 
-Now add a new route
+Let's go back to our "Hello, Express!" lab and add another route.
+
+* When you visit the path 'localhost:5000/hello/you/from/me'
+* Then the webpage should display "Hello to you, from me."
+* Where "you" and "me" are path parameters
+* Format the names so that they are always capitalized
+* 'localhost:5000/hello/gandalf/from/frodo' displays "Hello to Gandalf, from Frodo
+
+
 
 ```js
 app.get('/hello/:you/from/:me', (request, response)=> {
@@ -146,7 +144,11 @@ Express will grab the *name* and *value* from the query string, and put it into 
 
 # LAB: Hello, Query Friend!
 
-Now change your "Hello, Express" server to have the following route:
+Now change your "Hello, Express" server so if you visit the route "localhost:5000/hello?friend=Gandalf" (or any other name you want) it says "Hello, Gandalf!" (or whatever name you assign `friend` to)
+
+<details>
+<summary>Soluion</summary>
+<div>
 
 ```js
 app.get('/hello', (request, response)=> {
@@ -154,14 +156,16 @@ app.get('/hello', (request, response)=> {
 });
 ```
 
-Prove that it works by visiting <http://localhost:5000/hello?friend=Gandalf> (or use your own name)
+</div>
+</details>
 
 # Body Parameters in Express
 
 Since request bodies can appear in several different formats, you need to use the correct *middleware* to extract them.
 
-* [`express.urlencoded`](https://expressjs.com/en/4x/api.html#express.urlencoded) parses incoming requests with URL-encoded payloads
-* [`express.json`](https://expressjs.com/en/4x/api.html#express.json) parses incoming requests with JSON payloads
+* [`body-parser](https://expressjs.com/en/resources/middleware/body-parser.html) parses incoming request bodies. Very useful for reading form submissions!
+* [`express.urlencoded`](https://expressjs.com/en/4x/api.html#express.urlencoded) parses incoming requests with URL-encoded payloads.
+* [`express.json`](https://expressjs.com/en/4x/api.html#express.json) parses incoming requests with JSON payloads.
 
 Example (from [the express guide](http://expressjs.com/en/resources/middleware/body-parser.html)):
 
