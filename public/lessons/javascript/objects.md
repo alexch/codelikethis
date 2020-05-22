@@ -170,7 +170,7 @@ let alice = {
 
 Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 
-> Note: The above shows the essence of [JSON](/lessons/javascript-track/json):
+> Note: The above shows the essence of [JSON](./json):
 > a syntax for representing data structures containing primitive values,
 > including nested objects and arrays.
 

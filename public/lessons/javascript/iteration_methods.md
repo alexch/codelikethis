@@ -12,7 +12,7 @@
 
 # What makes an Object?
 
-We have set up some objects previously, but what actually makes an object? Is it the presence of properties? Methods? Both? Neither? Do any other JavaScript types bejave like objects?
+We have set up some objects previously, but what actually makes an object? Is it the presence of properties? Methods? Both? Neither? Do any other JavaScript data types behave like objects?
 
 # Arrays are Objects
 
