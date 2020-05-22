@@ -47,7 +47,7 @@ Yes you can.
 
 **BUT** async/await is fairly new and not fully implemented by some frameworks and libraries.
 
-Luckily for us express recently added support for async/await in their framework. You can make the request/response callback an asyc function, and then await inside of it.
+Luckily for us express recently added support for async/await in their framework. You can make the request/response callback an async function, and then await inside of it.
 
 # Try and Catch
 

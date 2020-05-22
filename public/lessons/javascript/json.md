@@ -4,7 +4,7 @@ JSON stands for "**J**ava**S**cript **O**bject **N**otation" and is one of the m
 
 JSON is a type of text document that is in the shape of a JavaScript object. However there are some restrictions to what kind of data you can put in a JSON object. In general JSON is only used for strings, numbers, and booleans, but mostly strings.
 
-JSON objects can contain arrays of acceptable datatypes, and other JSON objects as the values for there keys, as well as the datatypes previously mentioned.
+JSON objects can contain arrays of acceptable datatypes, and other JSON objects as the values for their keys, as well as the datatypes previously mentioned.
 
 # Why JSON?
 

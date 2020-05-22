@@ -163,7 +163,7 @@ app.get('/hello', (request, response)=> {
 
 Since request bodies can appear in several different formats, you need to use the correct *middleware* to extract them.
 
-* [`body-parser](https://expressjs.com/en/resources/middleware/body-parser.html) parses incoming request bodies. Very useful for reading form submissions!
+* [`body-parser`](https://expressjs.com/en/resources/middleware/body-parser.html) parses incoming request bodies. Very useful for reading form submissions!
 * [`express.urlencoded`](https://expressjs.com/en/4x/api.html#express.urlencoded) parses incoming requests with URL-encoded payloads.
 * [`express.json`](https://expressjs.com/en/4x/api.html#express.json) parses incoming requests with JSON payloads.
 

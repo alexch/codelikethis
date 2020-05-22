@@ -141,7 +141,7 @@ Express will grab the *value* from the path itself, and assign it to `request.pa
 
 # Lab: Hello, Query Friend!
 
-Now change your "Hello, Express" code so that when you visit a path containing someone's name it greets the user by that name.
+Now change your "Hello, Express" code so that when you visit a path containing someone's name, it greets the user by that name.
 
 e.g. visiting `http://localhost:5000/Gandalf` prints "Hello, Gandalf!" on the web page.
 
