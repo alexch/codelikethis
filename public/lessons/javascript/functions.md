@@ -271,7 +271,7 @@ How could we use ARGV to make this more modular?
 
 Can you write the inverse function; one that takes a number of seconds and tells you the exact age?
 
-You can get the current date by calling `Date.now()` which will give you a time in milliseconds, and the date you were born by createing a new `Date` object. You can then figure out the time that's elapsed in milliseconds by subtracting the date you were born from the current date
+You can get the current date by calling `Date.now()` which will give you a time in milliseconds, and the date you were born by creating a new `Date` object. You can then figure out the time that's elapsed in milliseconds by subtracting the date you were born from the current date
 
 ```javascript
   let date = new Date(1992, 05, 12, 3, 14) //new Date(year, month, day, hour, minute)
@@ -360,7 +360,7 @@ let numberOfYears = 100 - age
 function supplyCalc(age, amountPerDay, item) {
   let amountPerYear = amountPerDay * 365
   let numberOfYears = 100 - age
-  let totalNeeded = amountperYear * numberOfYears
+  let totalNeeded = amountPerYear * numberOfYears
 
   let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
 }

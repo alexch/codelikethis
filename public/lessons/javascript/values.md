@@ -116,16 +116,18 @@ What happens when you try to put quotes inside your string's quotes?
 
 Strings have many operations attached to them. These attached operations are refered to as 'methods' (more on that later) and are quite useful. Let's try a few of them out in your console now:
 
-    * `"titanic".toUpperCase()`
-    * `"QUIETLY".toLowerCase()`
-    * `"Java".repeat(10)`
-    * `"banana".length`
-    * `"berry".charAt(1)`
-    * `"berry".charAt(0)`
-    * `"apple"[3]`
-    * `"banana".includes("nan")`
-    * `"banana".endsWith("ana")`
-    * `"blueberry".replace("blue", "black")`
+```js
+"titanic".toUpperCase()
+"QUIETLY".toLowerCase()
+"Java".repeat(10)
+"banana".length
+"berry".charAt(1)
+"berry".charAt(0)
+"apple"[3]
+"banana".includes("nan")
+"banana".endsWith("ana")
+"blueberry".replace("blue", "black")
+```
 
 # Booleans
 
