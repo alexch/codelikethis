@@ -98,14 +98,14 @@ HTML5 defines a standard `<video>` tag
 
   * video hosting sites like YouTube, and Vimeo have their own rules and sample code which you should find and copy into your HTML file
 
-> **Tip**: you can use automatically start playing the video when the page loads; to be polite you should also mute the volume, like this: `<video muted=true autoplay=true src='/videos/yelling-man.mp4'>`
+> **Tip**: you can automatically start playing the video when the page loads; to be polite you should also mute the volume, like this: `<video muted=true autoplay=true src='/videos/yelling-man.mp4'>`
 
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 * https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content
 
 # Embedding Audio
 
-HTML5 also has a prebuilt `<audio>` tagthat you can use to embed your local audio files into your web pages. There are several key attributes for audio elements.
+HTML5 also has a prebuilt `<audio>` tag that you can use to embed your local audio files into your web pages. There are several key attributes for audio elements.
 
 * `src` Like with all other forms of media the `src` attribut tells your tag where the actual audio file lives
 * `autoplay` Accepts a boolean value, when set to `true` it will begin playback as soon as it can

@@ -165,7 +165,7 @@ see more at the [Cypress Lesson](/lessons/javascript-track/cypress)
 * more detailed assertions are written in [Mocha](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) + [Chai](https://www.chaijs.com/api/bdd/)
   * (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) )
 
-see more at the [Cypress Lesson](/lessons/javascript-track/cypress)
+see more at the [Cypress Lesson](../javascript/cypress)
 
 # Lab: Let's Test Our Projects
 

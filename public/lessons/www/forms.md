@@ -6,7 +6,7 @@
 
 # Forms contain inputs
 
-a `<form>` is an HTTP element that contains input elements
+a `<form>` is an HTML element that contains input elements
 
   * when the user enters data into these input elements
   * and clicks the "Submit" button

@@ -32,7 +32,7 @@ In FireFox:
 
 * Click on the line number where you want to add your breakpoint
 
->Note: If you're unsure where your error is coming from you can add abreak point at the top of your code and step through your whole program line by line
+>Note: If you're unsure where your error is coming from you can add a break point at the top of your code and step through your whole program line by line
 
 # Step 2a breakdown
 
