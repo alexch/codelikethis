@@ -169,7 +169,7 @@ You can make more complicated logical expressions using conjunctions:
 |Conjunction|Operator|Example|Meaning|
 |---|---|---|---|
 | AND | `&&` | `X && Y` | "are both X and Y true?" |
-| OR | `||` | `X || Y` | "is either X or Y (or both) true?" |
+| OR | <code>&#124;&#124;</code> | <code>X &#124;&#124; Y</code> | "is either X or Y (or both) true?" |
 | NOT | `!`  | `!X` | "is X false?" |
 
 For example:
