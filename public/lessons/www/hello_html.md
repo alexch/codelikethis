@@ -52,7 +52,7 @@ So it looks like this:
 
 # Let's Open Our Web Page!
 
-* We will now open our first web page using a web browser
+* We will now open our web page using a web browser
 * Enter `open index.html` into your terminal
   * or on Windows, use `start index.html`
   * or enter `pwd` and copy and paste the directory path into your browser (chrome), then click on the `index.html` file

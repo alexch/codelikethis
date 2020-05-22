@@ -38,6 +38,7 @@ Anchor tags are probably the most useful element to use when setting up site nav
 * **And** an anchor tag that links back to the home page (index.html)
 * In the index.html file set up several sections with placeholder text
   * You can easily generate placeholder text through [lorem ipsum generators](https://loremipsum.io/ultimate-list-of-lorem-ipsum-generators/)
+  * Or by using the `lorem` shortcut in VSCode. Try typing `lorem` and hitting <kbd>Tab</kbd>!
   * The basic idea is to have a page that needs to scroll to have different sections in view. So don't be stingy with the text!
 
 * In your `index.html` document create a nav section that links to at least two internal sections, the about page, and at least one external site of your choice. 

@@ -116,7 +116,7 @@ Let's add a few attributes to the `h1` in the HTML file we just created.
 
 # Style vs Layout vs Semantics
 
-This war has raged inside HTML since the beginning of the WWW.
+This war has raged inside HTML since the beginning of the web.
 
 Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>`), where as some _describe_ it's contents (ex. `<strong>`). Web content isn't just about appearence. It matters how it is intepreted.
 

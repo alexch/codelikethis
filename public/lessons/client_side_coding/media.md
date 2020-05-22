@@ -32,16 +32,16 @@ Despite how they appear they are still rectangular and as such will prevent you 
 
 # svg
 
-SVG stands for **standard vector graphic** and unlike other types of images they are not made out of pixels.  They are instead collections of instructoins that tell the computer how to draw a specific shape.
+SVG stands for **standard vector graphic** and unlike other types of images they are not made out of pixels.  They are instead collections of instructions that tell the computer how to draw a specific shape.
 
-Since they are not blocks of pixels SVGs can be scaled up indefinately with no detrinmental effects on quality, and they have very small file sizes compared to the other two image types covered above. They also are **exactly** the shape they appear to be and as such will only block what they appear to cover.
+Since they are not blocks of pixels SVGs can be scaled up indefinitely with no detrimental effects on quality, and they have very small file sizes compared to the other two image types covered above. They also are **exactly** the shape they appear to be and as such will only block what they appear to cover.
 
 # Lab: Embedding Images
 
 Let's go to our trusty "example-html" directory, and add some images to make your page more engaging!
 
 * add in one image from an external source per section on your `index.html` document
-  * There are many sites around the web that serve up placeholder images. (PlaceKitten)[https://placekitten.com/] is the classic, though (PlaceCage)[https://www.placecage.com/], and (FillMurray)[https://www.fillmurray.com/] are both hilarious
+  * There are many sites around the web that serve up placeholder images. [PlaceKitten](https://placekitten.com/) is the classic, though [PlaceCage](https://www.placecage.com/), and [FillMurray](https://www.fillmurray.com/) are both hilarious
 
 * Choose an image from your computer to include on your About page
 * Create a subdirectory named "images" (or 'imgs', or 'pictures', or whatever name makes sense to you)
@@ -58,7 +58,7 @@ Video is a popular part of many web apps, and can provide a hook to draw people 
 * embedding the video using an iFrame
 * creating an animation using JavaScript and the `<canvas>` element
 
-You can also animate SVGs by applying transformations to them that are triggered under certain ocnditions
+You can also animate SVGs by applying transformations to them that are triggered under certain conditions
 
 # Embedded Video
 
@@ -76,9 +76,9 @@ This is great for very small video files, but when working with larger video fil
 
 A better way to embed a (relatively) large video file would be to use an `<iframe>` element.  iframes open a window in your page to another site.
 
-This means that you can host your video on adedicated video platform (like YouTube) and then just reference that location in your iframe.  This will prevent a video from slowing down your page's loading however the video may not be available immediately when the page loads.
+This means that you can host your video on a dedicated video platform (like YouTube) and then just reference that location in your iframe.  This will prevent a video from slowing down your page's loading however the video may not be available immediately when the page loads.
 
-You will also need to make sure that you have the proper permissions to access your chosen vide hosting platform, and if the url path to that video changes it will break your iframe.
+You will also need to make sure that you have the proper permissions to access your chosen video hosting platform, and if the url path to that video changes it will break your iframe.
 
 # Lab: Embedding an iFrame
 
