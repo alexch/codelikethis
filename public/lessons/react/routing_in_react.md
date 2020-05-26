@@ -22,7 +22,7 @@ ReactDom.render(
 );
 ```
 
-# React Routing - Traditional
+# Routing the Traditional Way
 
 * Most web frameworks like Express, Angular, Ember, etc. have routing
 * Most routing systems are pretty static
@@ -191,6 +191,15 @@ const Router = () => {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<Router />, rootElement);
 ```
+
+# Lab: React Nav Bar
+
+Let's set up a simple site with some basic navigation using React Router.
+
+- Create a new react app
+- Create an `About` Component, a `Homepage` component, and a `Nav` component
+- add links to the `Nav` component that direct you to the `Home` and `About` pages
+- The `Nav` component should be loaded on both the `Home`, and `About` pages
 
 # React Routing - The Match Object
 
