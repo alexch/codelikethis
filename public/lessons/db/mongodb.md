@@ -47,31 +47,30 @@ Like in a relational database, a document can be created, read, updated, deleted
 
 This nesting and type-flexibility makes it very appropriate to store whatever JavaScript objects your app uses, without needing to devise a *mapping* between nested objects and joined relational tables.
 
-# Mongo Console
+# Lab: Mongo CLI
 
-MongoDB has a JavaScript REPL console, like `node`. 
+Let's make our first Mongo collection through the terminal!
 
-Launch it by typing `mongo dbname` on the command line -- e.g. for the `til` database, run `mongo til`
-
-In this console, run `help` to see what's possible.
-
-```
-> db.entries.find({})
-{ "_id" : ObjectId("5b5d0e45114a7c1433296d71"), "when" : ISODate("2018-07-29T00:45:57.074Z"), "text" : "hello" }
-{ "_id" : ObjectId("5b5d1595e71e8e073c15b229"), "when" : ISODate("2018-07-29T01:17:09.191Z"), "text" : "hello there" }
-{ "_id" : ObjectId("5b5e143b203dd808f88d2548"), "when" : ISODate("2018-07-29T19:23:39.695Z"), "text" : "chickens like corn" }
-{ "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
-
-> db.entries.find({ when: {'$gte': new Date(2018, 6, 29) }})
-{ "_id" : ObjectId("5b5e143b203dd808f88d2548"), "when" : ISODate("2018-07-29T19:23:39.695Z"), "text" : "chickens like corn" }
-{ "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
-
-```
+- Open your console and `cd` over to the location where you installed MongoDB
+- Once you're in the `bin` directory you can type `mongo test` to start the mongo shell, and create a collection named "test"
+- Once you're in the mongo shell type `help` to see the opttions available to you
+- Create an object and insert it into the collection
+  - Add a few
+- View all the objects you just added
+- View a single object
+- Update an object
+- Delete an object
 
 # Concept: ObjectId
 
 - `_id` is assigned by Mongo when a document is inserted
-- `ObjectId` is a factory function that either generates a new id, or 
+- `ObjectId` is a factory function that either generates a new id, or transforms a given string into a Mongo ID object
 
-# Lab: Connect and Collect
+# Lab: Exploring with Compass
 
+When you installed MongoDB you should have also installed an application called "Compass."  This is MongoDb's GUI tool. Let's open it up and see what it can do!
+
+- Open compass and hit the green button that says "connect"
+- Look for the database named "test" in the left side nav bar, and open it
+- Create a new collection
+- In the collection you just created try tunning through all the CRUD functions
