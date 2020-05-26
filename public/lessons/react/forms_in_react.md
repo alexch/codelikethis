@@ -177,3 +177,11 @@ class Reservation extends React.Component {
 ```
 
 [MDN Computed Property Name ES6 Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
+
+# Lab: Say My Name!
+
+Remember when we made a webpage that greeted users by a name entered in an HTML form? (It was several weeks ago so I don't blame you if you don't) Let's do that again, but this time with React!
+
+- Create a page containin a form, and a display area
+- When a user enters their name in the form, and hits "submit"
+- The page greets the user by the name they entered

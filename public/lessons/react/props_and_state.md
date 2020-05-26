@@ -103,7 +103,7 @@ function deduct (bankAccount, amount) {
   * Never mutate the State directly
   * Always use `this.setState()`
   * Limit access to State from children
-  * If building from a prior value, pass an update function to `this.setState()`
+  * If building from a prior value, pass an update callback function to `this.setState()`
 
 [Props vs State](http://lucybain.com/blog/2016/react-state-vs-pros/)
 
@@ -264,6 +264,16 @@ this.state.comment = 'Hello';
 /* Excellent */
 this.setState({comment: 'Hello'});
 ```
+
+# Lab: Color Clicker
+
+Let's create a new react project that has a button you can click to change the color of some text.
+
+- Create a new React component using `npx create-react-app`
+- Change your App component from a stateless functional component into a stateful class based component
+- Render a header with blue text, and a button that says "Change Color"
+- Using the state make it so that when you click the button the text changes to red
+- When you click the button again the text should change back to blue
 
 # State - Updates can be Async
 

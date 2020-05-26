@@ -200,3 +200,14 @@ NumberList = (props) => {
   );
 }
 ```
+
+# Lab: Multi-Greeter
+
+Let's make a component that greets every name on a list!
+
+- Generate a new React App with `create-react-app`
+- Create a new component named `Greeter` that:
+  - Takes a name as a prop
+  - Says hello to the given name
+- In your `App` component add an array of names
+- For each name on the list render the `Greeter` component taking the name

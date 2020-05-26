@@ -1,10 +1,10 @@
 # What is React?
 
 - React is a JavaScript library from Facebook.
-- Which makes building complex user interfaces easy.
-- By breaking the UI up into small, composible, functional components.
-- By providing tools to create components for each part of the interface.
-- And manage the assembly of those components into the final resulting web page.
+- Which makes building complex user interfaces easy by:
+  - breaking the UI up into small, composible, functional components
+  - providing tools to create components for each part of the interface
+  - managing the assembly of those components into the final resulting web page
 
 ![react logo](/images/React-icon.svg)
 
@@ -27,7 +27,7 @@ Components are individual pieces of a web page interface like:
 - React controls the **rendering** of the page by using something called the [Virtual DOM](https://reactjs.org/docs/faq-internals.html).
 - **DOM** stands for *Document-Object-Model*, and is managed by the browser.
 - What this means in practice is that React keeps a copy of the web page structure and state in **memory**.
-- This copy is accessible to JavaScript and React makes **changes** to the **real** DOM all at once instead of one at a time.
+- This copy is accessible to JavaScript which React uses make **changes** to the **real** DOM as a batch update.
 
 # DOM Components
 
@@ -173,6 +173,14 @@ ReactDOM.render(
   <a href="https://babeljs.io/en/repl#?browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=EoUwhgxgLgIg8gWQHQCcQDsAmIUAoBQABIQDyYCWAbgHxHGkBmA9igLaHmYC8ARKwJ4BaZmx616xEuXQAHAK5QO3HhDRgoIHoSj8ZIXhoAeULTIA2kEAAsmZ7Cl4BnJqxBQr0gOY8A9OPokPiKs_oEUNAA0dJhMEHKu6FBInm4AomYgCVAAQvwAkpi4AOQoTExQRQCUlQDcQA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.8.7&externalPlugins=">Live Example</a>
 </h3>
 
+# JSX
+
+As well as using the `React.createElement` interface you can use JSX
+
+- mixture of HTML and JavaScript
+- Looks a lot like HTML
+  - **but** you can escape to JavaScript with culy braces `{}`
+- Slightly different syntax in some cases
 
 # ReactDOM function API
 
