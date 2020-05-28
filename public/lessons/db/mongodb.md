@@ -53,7 +53,7 @@ Let's make our first Mongo collection through the terminal!
 
 - Open your console and `cd` over to the location where you installed MongoDB
 - Once you're in the `bin` directory you can type `mongo test` to start the mongo shell, and create a collection named "test"
-- Once you're in the mongo shell type `help` to see the opttions available to you
+- Once you're in the mongo shell type `help` to see the options available to you
 - Create an object and insert it into the collection
   - Add a few
 - View all the objects you just added
@@ -73,4 +73,4 @@ When you installed MongoDB you should have also installed an application called 
 - Open compass and hit the green button that says "connect"
 - Look for the database named "test" in the left side nav bar, and open it
 - Create a new collection
-- In the collection you just created try tunning through all the CRUD functions
+- In the collection you just created try running through all the CRUD functions
