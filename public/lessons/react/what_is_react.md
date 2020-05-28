@@ -2,7 +2,7 @@
 
 - React is a JavaScript library from Facebook.
 - Which makes building complex user interfaces easy by:
-  - breaking the UI up into small, composible, functional components
+  - breaking the UI up into small, composable, functional components
   - providing tools to create components for each part of the interface
   - managing the assembly of those components into the final resulting web page
 
@@ -27,7 +27,7 @@ Components are individual pieces of a web page interface like:
 - React controls the **rendering** of the page by using something called the [Virtual DOM](https://reactjs.org/docs/faq-internals.html).
 - **DOM** stands for *Document-Object-Model*, and is managed by the browser.
 - What this means in practice is that React keeps a copy of the web page structure and state in **memory**.
-- This copy is accessible to JavaScript which React uses make **changes** to the **real** DOM as a batch update.
+- This copy is accessible to JavaScript which React uses to make **changes** to the **real** DOM as a batch update.
 
 # DOM Components
 
