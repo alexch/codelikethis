@@ -79,6 +79,7 @@ Track::Javascript = Track.new(
 
   lesson name: "methods"
   lesson name: "iteration_methods"
+  lesson name: "objects_methods_and_classes"
   lesson name: "/javascript_intro/object_labs"
   lesson name: "stacks"
   lesson name: "scope"
