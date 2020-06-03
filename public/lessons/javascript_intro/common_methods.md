@@ -77,8 +77,8 @@ evaluates a value and returns a boolean depending on if it's a number or not
 x = 10
 y = 'cat'
 
-x.isNaN() // => false
-y.isNaN() // => true
+isNaN(x) // => false
+isNaN(y) // => true
 
 ```
 
