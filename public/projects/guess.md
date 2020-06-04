@@ -125,23 +125,7 @@ If the number is higher, you'll want to modify the low end of the range, and vic
 
 **When** the game is first called with `node index.js`
 
-**Then** accept a parameter specifying the maximum guess; e.g. `node index.js 500` means `Please think of a number between 1 and 500 (inclusive)`.
-
-**And** if no value is passed the game starts with a *default* value of 100
-
-<details>
-<div>
-<summary>Hint 1</summary>
-Remember our old friend `process.argv` can be used to pull arguments from the command 
-</div>
-</details>
-
-<details>
-<div>
-<summary>Hint 2</summary>
-You can set a default value to a variable using the logical 'or' operator `||`.
-</div>
-</details>
+**Then** allow the user to set the high range so it could be any number (greater than 1)
 
 <!--/BOX-->
 
