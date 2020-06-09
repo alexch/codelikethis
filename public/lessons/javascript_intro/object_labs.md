@@ -216,136 +216,98 @@ function ask(questionText) {
 
 ```js
 const readline = require('readline')
-const readlineInterface = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const rlInterface = readline.createInterface(process.stdin, process.stdout)
 
 function ask(questionText) {
   return new Promise((resolve, reject) => {
-    readlineInterface.question(questionText, resolve);
-  });
-};
+    rlInterface.question(questionText, resolve)
+  })
+}
 
-let player = {
-  inventory: [],
-  trapped: true,
-  facing: "north",
-  escape() {
-    this.trapped = false
-    return "The door unlocks with an audible click."
+let inventory = []
+
+class Item {
+  constructor(name, description, action, takeable) {
+    this.name = name;
+    this.desc = description;
+    this.takeable = takeable || false
+    this.action = action || 'nothing happens...'
+  }
+
+  take() {
+    if(this.takeable) {
+      inventory.push(this.name)
+      return `You picked up ${this.name}`
+    } else {
+      return "You can't take that"
+    }
+  }
+
+  use() {
+    
+    if (this.name === 'desk' && inventory.includes('smallKey')) {
+      return 'you open the drawer, inside is a large key'
+    } else {
+      return this.action
+    }
   }
 }
 
-let cabinet = {
-  name: "cabinet",
-  desc: "A large cabinet locked wih a heavy padlock",
-  unlock() {
-    this.desc = "A large cabinet.  Scrawled on the interior of the door is a message: The door code is 12345"
-    return "You unlock the padlock with the key. You may now open the cabinate."
-  }
-}
+let desk = new Item('desk', 'A small writing desk.\nThere is a single drawer.', 'the desk is locked')
 
-writingDesk = {
-  name: "Writing Desk",
-  desc: "A fancy writing desk. One of the drawers is slightly ajar...",
-  inventory: ['key'],
-  takeKey() {
-    let key = this.inventory.pop()
-    player.inventory.push(key)
-  }
-}
+let rug = new Item('rug', 'a faded rug', 'you lift the rug\nunderneath is a small key')
 
-paper = {
-  name: "paper",
-  desc: "The paper says: To free your mind start where all great stories start."
-}
+let clock = new Item('clock', `the clock keeps ticking away\nthere is no way to open it`)
 
-let room = {
-  inventory: [
-    cabinet,
-    writingDesk,
-    paper
-  ],
-  north: "The north wall of the room is blank, broken only by a large door with a keypad on the handle.\nThe door is locked",
-  south: "On the south wall of the room is large cabinet.",
-  east: "Set against the east wall is a fancy writing desk.",
-  west: "Tacked to the west wall is a single sheet of paper",
+let smallKey = new Item('smallKey', 'a small key', 'this looks like it would fit the lock on the desk...', true)
+
+let largeKey = new Item('largeKey', 'a large key', 'this looks like it would fit the lock on the door...', true)
+
+let lookupTable = {
+  desk: desk,
+  rug: rug,
+  clock: clock,
+  smallKey: smallKey,
+  largeKey: largeKey
 }
 
 async function play() {
-  let userIn = await ask('>_ ')
+  let userAction = await ask('What would you like to do? ')
+  let inputArray = userAction.split(' ')
+  let action = inputArray[0]
+  let target = inputArray[1]
 
-  if(userIn.includes('exit') && !player.trapped) {
-    console.log('You have escaped!')
-    process.exit()
+  if (action === 'use') {
+    console.log(lookupTable[target].use())
+    return play()
   }
-  else if(userIn.includes('examine') && userIn.includes('desk')) {
-    console.log(writingDesk.desc)
-    play()
+  else if(action === 'examine') {
+    console.log(lookupTable[target].desc)
+    return play()
   }
-  else if (userIn.includes('examine')&& userIn.includes('north')) {
-    player.facing = 'north'
-    console.log(room[player.facing])
-    play()
+  else if(action === 'take') {
+    console.log(lookupTable[target].take())
+    return play()
   }
-  else if (userIn.includes('examine')&& userIn.includes('south')) {
-    player.facing = 'south'
-    console.log(room[player.facing])
-    play()
-  }
-  else if (userIn.includes('examine') && userIn.includes('east')) {
-    player.facing = 'east'
-    console.log(room[player.facing])
-    play()
-  }
-  else if (userIn.includes('examine') && userIn.includes('west')) {
-    player.facing = 'west'
-    console.log(room[player.facing])
-    play()
-  }
-  else if (userIn.includes('examine')&& userIn.includes('desk')) {
-    player.facing = 'east'
-    console.log(writingDesk.desc)
-    play()
-  }
-  else if (userIn.includes('examine')&& userIn.includes('cabinet')) {
-    player.facing = 'south'
-    console.log(cabinet.desc)
-    play()
-  }
-  else if (userIn.includes('examine')&& userIn.includes('paper')) {
-    player.facing = 'west'
-    console.log(paper.desc)
-    play()
-  }
-  else if (userIn.includes('unlock')) {
-    if(player.facing === 'south' && player.inventory.includes('key')) {
-      console.log(cabinet.unlock())
-      console.log(cabinet.desc)
-    } else if (player.facing === 'north' && userIn.includes('12345')) {
-      console.log(player.escape())
+  else if (action === 'leave') {
+    if(inventory.includes('largeKey')) {
+      console.log('Congratulations you win!')
+      process.exit()
     } else {
-      console.log("Nothing happens. Perhaps you're facing the wrong way?")
+      console.log('the door is locked')
+      return play()
     }
-    play()
-  }
-  else if(userIn.includes('examine')) {
-    console.log(room[player.facing])
-    play()
-  }
-  else if(userIn.includes('open') && userIn.includes('desk')) {
-    console.log("You open the drawer.  Inside is a key.\n You take the key...")
-    writingDesk.takeKey()
-    play()
   } else {
-    console.log('Invalid input')
-    play()
+    console.log('sorry invalid input\ntry again...')
+    return play()
   }
   
 }
 
+console.log('Welcome brave traveler to your DOOOOOOM!\nYou find yourself trapped in a small room, to your left is a small desk\nin the middle of the floor is a faded rug\nto your right is a grandfather clock\ndirectly across from you is the door out')
+
 play()
+
 ```
 
 </div>

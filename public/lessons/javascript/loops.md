@@ -80,6 +80,7 @@ Please try this yourself! But it's kind of tricky, so on the next slide I'll sho
 <summary>Hint</summary>
 
 Remember, a while loop only runs while the check evaluates true
+
 <div>
 
 ```js
