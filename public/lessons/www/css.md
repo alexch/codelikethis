@@ -1,19 +1,3 @@
-    topic name: "css"
-    topic name: "styling"
-    topic name: "inline-styling"
-    topic name: "properties"
-    topic name: "selectors"
-    topic name: "compound-selectors"
-    topic name: "pseudo-class-selectors"
-    topic name: "html-linking"
-    topic name: "html-elements"
-    topic name: "element-box-model"
-    topic name: "style-overrides"
-    link href: "https://meyerweb.com/eric/tools/css/reset/"
-    link href: "http://learnlayout.com/box-model.html"
-    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css", from: "FreeCodeCamp",
-        name: 'Basic CSS'
-
 # CSS
 
   * Cascading Style Sheets (CSS)
@@ -75,6 +59,40 @@ p {
 
 What is the CSS doing here?
 
+# Including CSS in HTML
+
+There are several ways to add style to an HTML page
+
+  * `<h1 style="color: red; font-size: 32px;">` Inline
+  * `<link>` Tag to a CSS file
+  * `<style>` Tags with `@import` of a CSS file
+
+# CSS Style Tags
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cat</title>
+    <style type="text/css" media="screen">
+      h1 {
+        color:red;
+        font-size:24px;
+      }
+
+      p {
+        color:blue;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+  	<h1>My Cat Bob</h1>
+    <p>My cat is named Bob. He is a lazy cat.</p>
+  </body>
+</html>
+```
+
 # Selectors and Properties
 
   * CSS is constructed of **selectors** and **properties**.
@@ -102,12 +120,6 @@ What is the CSS doing here?
 | `font-size`   | size of font                           |
 | `font-family` | defines font                           |
 
-# LAB: Basic Selectors
-
-* Complete the following exercise on Mozilla Developer Network
-
-  * [Selecting Different Elements](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors#Active_learning_Selecting_different_elements)
-
 # Compound Selectors 1
 
 Selectors can target elements nested within other elements
@@ -131,11 +143,34 @@ h1 .title {
 }
 ```
 
-# LAB: Multiple Class Selectors
+# LAB: Fancy Header
 
-* Complete the following exercise on Mozilla Developer Network
+Let's make a site with a fancy title!
 
-  * [CSS Selectors for Multiple Classes](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors#Active_learning_Handling_multiple_classes)
+* Open up VSCode and make a new HTML document
+* The body of your HTML should contain a header That says "My Super Fancy Header"
+* Add a `<style>` tag to your page and use multi class selectors to:
+
+  * Make the entire header a uniform size, and font
+  * Make the words in your header alternate colors.
+
+# Fancy Header Template
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cat</title>
+    <!--Write your CSS in the style tag-->
+    <style type="text/css" media="screen">
+      
+    </style>
+  </head>
+  <body>
+  	<div>My Super Fancy Header</div>
+  </body>
+</html>
+```
 
 # Compound Selectors 3
 
@@ -183,44 +218,6 @@ a:active {
 * Complete the following CSS selector game
 
   * https://flukeout.github.io/
-
-# Including CSS into HTML
-
-There are several ways to add style to an HTML page
-
-  * `<style>` Embedded CSS
-  * `<link>` Tag to a CSS file
-  * `<h1 style="color: red; font-size: 32px;">` Inline
-  * `<link>` Tag to a CSS file
-  * `<style>` Tags with `@import` of a CSS file
-
-# CSS Style Tags
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Cat</title>
-    <style type="text/css" media="screen">
-     div {
-       float: left;
-       width: 49%;
-       height: 100px;
-       border: solid red 1px;
-     }
-
-     button {
-       float: left;
-       clear: both;
-     }
-    </style>
-  </head>
-  <body>
-  	<h1>My Cat Bob</h1>
-    <p>My cat is named Bob. He is a lazy cat.</p>
-  </body>
-</html>
-```
 
 # Linking to CSS
 
