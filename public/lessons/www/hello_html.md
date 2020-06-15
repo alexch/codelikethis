@@ -77,3 +77,12 @@ There are several plugins for VSCode designed to help you serve static webfiles.
 * Notice how the HTML tags are displayed
 * You can do this for **any website** to examine how it is structured
   * or to change its colors, or remove ads, or...?
+
+# Lab: Add more Sections
+
+Now that you've got your basic HTML document  set up, let's add a few more sections!
+
+*Each section should consist of at least one image, and some placeholder text
+* You can easily generate placeholder text through [lorem ipsum generators](https://loremipsum.io/ultimate-list-of-lorem-ipsum-generators/)
+* The basic idea is to have a page that needs to scroll to have different sections in view. So don't be stingy with the text!
+

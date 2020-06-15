@@ -23,6 +23,8 @@ class Track
     lesson name: "hello_html",
            display_name: "Hello, HTML World!"
 
+    lesson name: 'anchors'
+
     lesson name: "http",
           display_name: "How the Web Works"
 
