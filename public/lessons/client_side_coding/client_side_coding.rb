@@ -28,6 +28,8 @@ class Track
             link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
     end
 
+    lesson name: "/javascript_intro/event_listeners"
+
     lesson name: "jquery" do
       topic name: "jquery"
       topic name: "jquery-selectors"
