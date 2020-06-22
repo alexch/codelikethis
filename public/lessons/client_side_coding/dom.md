@@ -149,7 +149,7 @@ target.appendChild(paragraph)
     * <http://msdn.microsoft.com/library>
     * <http://www.w3schools.com/jsref>
     * [the Style object](http://www.w3schools.com/jsref/dom_obj_style.asp)
-    * <http://www.w3schools.com/HTMLDOM>
+    * <https://www.w3schools.com/js/js_htmldom.asp>
     * [DOM objects and methods](http://www.howtocreate.co.uk/tutorials/javascript/domstructure) - "all properties, collections and methods of the W3C DOM that can be reliably used in all major DOM browsers"
 * Events
   * <http://www.quirksmode.org/js/introevents.html>
