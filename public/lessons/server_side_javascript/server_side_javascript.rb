@@ -85,6 +85,8 @@ class Track
       topic name: "http-redirect"
     end
 
+    lesson name: "promise_chaining"
+
     lesson name: "blog",
            description: "codealong walkthrough, building a blog server by adding routes and form submission to the core Express server" do
       topic name: "servers"
