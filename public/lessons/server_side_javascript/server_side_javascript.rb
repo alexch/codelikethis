@@ -29,6 +29,8 @@ class Track
 
     lesson name: "intro_to_server_side_js"
 
+    lesson name: "client_vs_server_js"
+
     lesson name: '/www/urls'
 
     lesson name: "serving_files", description: "building a simple file server in Express/NodeJS" do

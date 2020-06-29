@@ -1,7 +1,3 @@
-# The Structure of the Internet
-
-<!--Picture of server requests pinging around -->
-
 # The Client/Server Model
 
 * The **client** is any part of your webapp useable by your end users
