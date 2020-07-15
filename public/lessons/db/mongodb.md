@@ -1,4 +1,30 @@
-# MongoDB
+# MongoDB Installation
+
+### For Windows users
+
+* Go to https://www.mongodb.com/try/download/community
+  * Select the latest stable version (4.2.X+)
+  * Make sure the `package` is `msi`
+  * Download, and run the installation wizard, choose the default setup
+  * At the final step of the installer make sure "Install Mongo Compass" is checked
+
+* Try running the command `mongo` in your terminal **This probably won't work**
+* If the `mongo` command worked, congratulations! You're done!
+  * > Hang tight while we get everyone else sorted out
+
+* To set up the command line path open your file explorer, and right click on "This PC"
+* Select “Advanced System Settings”
+* Select “Environment Variables…” from the popup box
+* Under "System Variables", double click on Path
+* Paste the full file path to Mongo's `bin` folder. `C:\Program Files\MongoDB\Server\4.2\bin` by default
+* Close then reopen your terminal. Run `mongo`
+
+### For Mac Users
+
+* Open your terminal and enter the following commands
+* `brew tap mongodb/brew`
+* `brew install mongodb-community@4.2`
+
 
 # MongoDB Overview
 
@@ -51,8 +77,7 @@ This nesting and type-flexibility makes it very appropriate to store whatever Ja
 
 Let's make our first Mongo collection through the terminal!
 
-- Open your console and `cd` over to the location where you installed MongoDB
-- Once you're in the `bin` directory you can type `mongo test` to start the mongo shell, and create a collection named "test"
+- Enter the Mongo shell
 - Once you're in the mongo shell type `help` to see the options available to you
 - Create an object and insert it into the collection
   - Add a few
