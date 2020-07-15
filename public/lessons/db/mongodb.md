@@ -17,13 +17,15 @@
 * Select “Environment Variables…” from the popup box
 * Under "System Variables", double click on Path
 * Paste the full file path to Mongo's `bin` folder. `C:\Program Files\MongoDB\Server\4.2\bin` by default
-* Close then reopen your terminal. Run `mongo`
+* Close then reopen your terminal.
+* Run `mongo` to start up your MongoDB environment
 
 ### For Mac Users
 
 * Open your terminal and enter the following commands
 * `brew tap mongodb/brew`
 * `brew install mongodb-community@4.2`
+* To run the MongoDb environment use `brew services start mongodb-community@4.2`
 
 
 # MongoDB Overview
