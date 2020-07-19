@@ -78,6 +78,8 @@ class Track
 
     lesson name: "firebase_intro"
 
+    lesson name: "authentication"
+
 
     # lesson name: 'joins'
 
