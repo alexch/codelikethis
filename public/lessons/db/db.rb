@@ -76,6 +76,7 @@ class Track
       topic name: "mongodb-shell"
     end
 
+    lesson name: "firebase_intro"
 
 
     # lesson name: 'joins'
