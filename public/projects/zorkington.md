@@ -4,7 +4,7 @@
 
 [Zork](https://en.wikipedia.org/wiki/Zork) was not the first text adventure game, but it was the first to achieve commercial success.
 
-In this project, you will create a version of Zork that takes place in the faraway kingdom of Burlington, Vermont.
+In this project, you will create a version of Zork born from your own beautiful mind. In our example case, it's one that takes place in the faraway kingdom of Burlington, Vermont. Feel free to use it as well :)
 
 ## Links
  
@@ -17,7 +17,7 @@ In this project, you will create a version of Zork that takes place in the faraw
 ## Goals
 
 * utilizing functions, methods, and objects for a deeper understanding of encapsulation.
-* understand state and state transitions, which are useful in many areas, e.g. 
+* understand *state* and *state transitions*, which are useful in many areas, e.g. 
   * photo carousel
   * buttons, menus, other widgets
   * parsers
@@ -68,12 +68,14 @@ And during the day, take breaks, find other student teams and play each others' 
 
 # Stories
 
+> Note: These stories build off of the **Design** section above. While the stories provided are meant to implement those concepts, artistic liberty in how these stories manifest is ultimately yours. If you're unsure if an idea or mechanic will fulfill a certain story, ask your instructor.
+
 <!--BOX-->
 ## One Room
 
 **When** the user launches the program
 
-**Then** the console displays the following text
+**Then** the console displays introductory text
 
 ```
 182 Main St.
@@ -87,15 +89,14 @@ On the door is a handwritten sign.
 
 **And** waits for input
 
-**And** if the user types "gargle"
+**And** if the user types an unknown command
 
-**Then** the game should output 
+**Then** the game should output "I don't know how to ____" (or something similar)
 
 ```
+>_gargle
 Sorry, I don't know how to gargle.
 ```
-
-<!--/BOX-->
 
 <details>
 <summary>Hint</summary>
@@ -110,23 +111,30 @@ while(answer !== 'exit') {
 
 </div>
 </details>
+<!--/BOX-->
+
+
 
 <!--BOX-->
 ## Read the sign
 
-**Given** the player is in the room "182 Main St."
+**Given** the player has been given introductory text
 
-**When** the player types "read sign"
+**When** the player enters a valid interactive command
 
-**Then** the game displays the text
+**Then** the game should output accordingly
 
 ```
-The sign says "Welcome to Burlington Code Academy! Come on 
-up to the third floor. If the door is locked, use the code
-12345."
+>_ read sign
+The sign says "Welcome to Burlington Code Academy!
+Come on up to the third floor.
+If the door is locked, use the code 12345."
 ```
+
+**And** puts the player in the `starting room`
 
 **And** returns to the prompt
+
 
 <details>
 <summary>Hint</summary>
@@ -150,13 +158,14 @@ let sign = {
 <!--BOX-->
 ## Don't take the sign
 
-**Given** the player is in the room `182 Main St.`
+**Given** the player is in the `starting room`
 
-**When** the player types `take sign`
+**When** the player attempts to take something
 
-**Then** the game displays the text
+**Then** the game denies the player
 
 ```
+>_take sign
 That would be selfish. How will other students find their way?
 ```
 
@@ -168,13 +177,14 @@ That would be selfish. How will other students find their way?
 <!--BOX-->
 ## Blocked
 
-**Given** the player is in the room `182 Main St.`
+**Given** the player is in the `starting room`
 
-**When** the player types `open door`
+**When** the player attempts to enter a new room
 
-**Then** the game displays the text
+**Then** the game denies the player
 
 ```
+>_open door
 The door is locked. There is a keypad on the door handle.
 ```
 
@@ -182,51 +192,54 @@ The door is locked. There is a keypad on the door handle.
 <!--BOX-->
 ## Speak friend and enter
 
-**Given** the player is in the room `182 Main St.`
+**Given** the player is in the `starting room`
 
-**When** the player types `enter code 12345` or `key in 12345`
+**When** the player enters a correct password
 
-**Then** the game displays the text
+**Then** the game allows the player to enter
 
 ```
-Success! The door opens. You enter the foyer and the door
-shuts behind you.
+>_enter code 12345
+Success! The door opens.
+You enter the foyer and the door shuts behind you.
 ```
 
-**And** the player enters room `182 Main St. - Foyer`
-
+**And** the player enters a `new room`
 <!--/BOX-->
 
 <!--BOX-->
 ## Unauthorized Access
 
-**Given** the player is in the room `182 Main St.`
+**Given** the player is in the `starting room`
 
-**When** the player types `enter code 54321` (or any code that is not `12345`)
+**When** the player enters an incorrect password
 
-**Then** the game displays the text
+**Then** the game denies the player to enter
 
 ```
+>_enter code 00000
 Bzzzzt! The door is still locked.
 ```
 
-**And** the player remains in room `182 Main St.`
-
+**And** the player remains in the `starting room`
 <!--/BOX-->
 
 <!--BOX-->
 ## Foyer
 
-**Given** the player is in `182 Main St. - Foyer`
+**Given** the player is in the `next room`
 
-**Then** the game displays the text
+**Then** the game displays a description, with at least one item in said description
 
 ```
-You are in a foyer. Or maybe it's an antechamber. Or a 
-vestibule. Or an entryway. Or an atrium. Or a narthex.
-But let's forget all that fancy flatlander vocabulary,
-and just call it a foyer. In Vermont, this is pronounced
-"FO-ee-yurr".
+You are in a foyer. Or maybe it's an antechamber. 
+Or a vestibule. 
+Or an entryway. 
+Or an atrium. 
+Or a narthex. 
+But let's forget all that fancy flatlander vocabulary, and just call it a foyer.
+In Vermont, this is pronounced "FO-ee-yurr". 
+Anyways, it's definitely not a mudroom. 
 A copy of Seven Days lies in a corner.
 ```
 
@@ -235,20 +248,21 @@ A copy of Seven Days lies in a corner.
 
 ## Inventory
 
-**Given** the player is in `182 Main St. - Foyer`
+**Given** the player is in the `next room`
 
-**And** the player has not yet picked up Seven Days
+**And** the player has not yet picked up the described item
 
-**When** the player types `take paper` or `take seven days`
+**When** the player enters a command to pick it up
 
-**Then** the game displays the text
+**Then** the game allows the player to do so
 
 ```
+>_take paper
 You pick up the paper and leaf through it looking for comics 
 and ignoring the articles, just like everybody else does.
 ```
 
-**And** the paper is added to the player's inventory
+**And** the paper is added to the player's `inventory`
 
 <!--/BOX-->
 
@@ -256,12 +270,11 @@ and ignoring the articles, just like everybody else does.
 
 ## Display Inventory
 
-**Given** the paper is in the player's inventory
+**Given** an item is in the player's 'inventory'
 
 **When** the player types `i` or `inventory` or `take inventory`
 
-**Then** the game displays the text
-
+**Then** the game displays the player's `inventory`
 ```
 You are carrying:
 A copy of Seven Days, Vermont's Alt-Weekly
@@ -272,13 +285,18 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 ## Drop Inventory
 
-**Given** the copy of Seven Days is in the player's inventory
+**Given** an item is in the player's `inventory`
 
-**When** the player types `drop paper` or `drop seven days`
+**When** the player types `drop <ITEM>`
 
-**Then** the copy of Seven Days is removed from the player's inventory
+**Then** that item is removed from the player's `inventory`
 
-**And** the copy of Seven Days is added to the current room's inventory
+```
+>_drop paper
+You drop the paper
+```
+
+**And** that item is added to the current room's `inventory`
 
 <!--/BOX-->
 
@@ -286,21 +304,24 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 ## More rooms and more stories, e.g.
 
-* when you unlock the door to the foyer it *stays* unlocked
+* when you unlock a room it should *stay* unlocked
 
-* `read paper` or `read seven days`
+* additional interactive commands
+  * `read seven days`
+  * `go upstairs` 
+  * `look outside`
+  * etc.
 
-* `go up` or `go upstairs` 
+* Additional inventory-based events
 
-* Bob speaks gibberish until you get him a cup of tea from Muddy's
+  Examples:
 
-    * then you can `attend lecture` or `sit down` or some other command to attend class
-    
-* After class you are `hungry` (status) which makes your stomach growl before every prompt
+  - Bob speaks gibberish until you get him a `cup of tea` from Muddy's. then you can `attend lecture` or `sit down` or some other command to attend class
 
-    * buying and eating a slice of pizza at Mr. Mike's removes the status
+  - You get `hungry` (status) which makes your stomach growl before every prompt. Buying and eating a slice of pizza at Mr. Mike's removes the status
 
-* [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing\))
+  - You need to grab the bathroom key from the classroom and use it on the locked bathroom door.
+  * Cheat code! [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing\))
 
 Please *write stories* for each of these features *before* implementing them.
 
