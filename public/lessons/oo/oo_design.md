@@ -47,7 +47,7 @@ but most everything else is disallowed, especially
 
 If you see code like this:
 
-```
+```js
 let maxAge = course.students.reduce(
     (maxAge, student) => Math.max(maxAge, student.age)
   , 0);
@@ -62,7 +62,7 @@ then redesign your program so you can do this instead:
 
 ...which implies an object-oriented design like this:
 
-```
+```js
 class Course {
   constructor() {
     this.students = [];
@@ -133,7 +133,7 @@ It's best if dependencies are *one-way* and hierarchies are *shallow*.
 
 CRC = Classes, Reponsibilities, Collaborators
 
-![example CRC for Chat House](./crc-chat.jpg)
+![example CRC for Chat House](/images/crc-chat.jpg)
 
 For each class (object type) in your system, make a box (or an index card). In this box, write the **Class name**, a list of its **Responsibilities**, and draw arrows to its **Collaborators**.
 

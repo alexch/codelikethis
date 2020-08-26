@@ -3,16 +3,16 @@
 * Components can be rendered using If/Else or a Ternary
 * State within the Class or Function can be used in the conditions
 
-```javascript
-UserGreeting = (props) => {
+```jsx
+const UserGreeting = (props) => {
   return <h1>Welcome back!</h1>;
 }
 
-GuestGreeting = (props) => {
+const GuestGreeting = (props) => {
   return <h1>Please sign up.</h1>;
 }
 
-Greeting = (props) =>  {
+const Greeting = (props) =>  {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
     return <UserGreeting />;
@@ -25,13 +25,12 @@ ReactDOM.render(
   <Greeting isLoggedIn={false} />,
   document.getElementById('root')
 );
-
 ```
 
 # React Elements as Variables - Components
 
-```javascript
-function LoginButton(props) {
+```jsx
+const LoginButton = (props) => {
   return (
     <button onClick={props.onClick}>
       Login
@@ -39,7 +38,7 @@ function LoginButton(props) {
   );
 }
 
-function LogoutButton(props) {
+const LogoutButton = (props) => {
   return (
     <button onClick={props.onClick}>
       Logout
@@ -50,7 +49,7 @@ function LogoutButton(props) {
 
 # React Elements as Variables - Usage
 
-```javascript
+```jsx
 class LoginControl extends React.Component {
   constructor (props) {
     super (props);
@@ -93,8 +92,8 @@ class LoginControl extends React.Component {
 * `truth && expression` is always true and evaluates `expression`
 * `false && expression` is always false and evaluates `false`
 
-```javascript
-function Mailbox(props) {
+```jsx
+const Mailbox = (props) => {
   const unreadMessages = props.unreadMessages;
   return (
     <div>
@@ -126,7 +125,7 @@ ReactDOM.render(
 
 ### Simple
 
-```javascript
+```jsx
 class Greeting extends React.Component {
   constructor (props) {
     super (props)
@@ -149,7 +148,7 @@ class Greeting extends React.Component {
 
 ### Complex
 
-```javascript
+```jsx
 render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
@@ -166,8 +165,8 @@ render() {
 
 # Preventing Component Rendering
 
-```javascript
-function WarningBanner(props) {
+```jsx
+const WarningBanner = (props) => {
   if (!props.warn) {
     return null;
   }
@@ -206,3 +205,14 @@ class Page extends React.Component {
 ```
 
 [Example CodePen](https://codepen.io/Dangeranger/pen/BPvEqv?editors=0010)
+
+# Lab: Modal Display
+
+Let's create a simple modal popup using the power of conditional rendering!  Modal boxes are used all over the web, and are essentially a popup display. You see them quite often with image galleries where you can click a preview thumbnail, and the full size image opens as a popup.
+
+- Create a new react project
+- It should have a button that says "Click me"
+- When this button is pressed a box should open *on top of* the existing page
+- And it should say "Hello! I am a modal!"
+- And have a "close" button
+- When the "close" button is clicked the modal should go away

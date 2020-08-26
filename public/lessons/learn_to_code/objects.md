@@ -36,7 +36,7 @@ On screen she looks like this...
 
 ...but here's what she looks like up close:
 
-![picture of Dot the Operator](dot.jpg)
+![picture of Dot the Operator](/images/dot.jpg)
 
 # Dot's job
 

@@ -13,7 +13,7 @@ There are several communities that you can use to find pairs within.
 ### Install Tech for Video/Voice/Screen Sharing
 
 * You will need at a minimum one of the video & screen share options such as Zoom, Hangouts, or Skype.
-* **Opionally** you can install an editor extension to allow for collaboration within the editor for two people at once.
+* **Optionally** you can install an editor extension to allow for collaboration within the editor for two people at once such as VSCode's [Liveshare](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare).
 
 ### Find a Pair
 

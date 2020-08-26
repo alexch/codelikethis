@@ -89,7 +89,7 @@ remote: https://damp-retreat-99529.herokuapp.com/ deployed to Heroku
 
 Visit this URL in a web browser using copy-and-paste, or use this handy shortcut from the console:
 
-```js
+```
 heroku open
 ```
 
@@ -99,7 +99,7 @@ If you are working with a partner, give them a high five.
 
 If you are alone, give yourself a high five.
 
-![high five](../images/high-five.svg)
+![high five](/images/high-five.svg)
 
 You deserve it!
 

@@ -7,7 +7,7 @@
 
 ### Boiling Point Calculator
 
-```javascript
+```jsx
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
     return (
@@ -25,7 +25,7 @@ function BoilingVerdict(props) {
 * An element to collect input is needed
 * The input is passed to the `BoilingVerdict` Component
 
-```javascript
+```jsx
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -63,7 +63,7 @@ class Calculator extends React.Component {
 
 ### What we want
 
-```javascript
+```jsx
 class Calculator extends React.Component {
   render() {
     return (
@@ -78,7 +78,7 @@ class Calculator extends React.Component {
 
 ### Extract TemperatureInput
 
-```javascript
+```jsx
 class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
@@ -112,7 +112,7 @@ class TemperatureInput extends React.Component {
 
 ### Remove State from TemperatureInput
 
-```javascript
+```jsx
 class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
@@ -147,7 +147,7 @@ class TemperatureInput extends React.Component {
 
 ### Parent Calculator Passes State to Children
 
-```javascript
+```jsx
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -205,6 +205,14 @@ class Calculator extends React.Component {
 * Child components use a Parent updater function to lift state up
 * State flowing down makes state changes simpler to debug
 * Props should be derived from State
+
+# Lab: Post Selector
+
+Let's create a React component that consists of two main components; a list of posts, and a display box. These should be two seperate components. You will also need a parent component that renders both the list, and the display box.
+
+Using state and props set up the page so that when you click on a post the cotent is rendered in the display box.
+
+> Hint: If you want to store your posts locally it might be easiest to create JSON files to represent the posts. Or you could just use [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 ### Links
 

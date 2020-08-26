@@ -1,13 +1,12 @@
 # What is React?
 
-- React is a JavaScript library.
-- That makes the building complex user interfaces easier.
-- By breaking them up into small, simple, functional components.
+- React is a JavaScript library from Facebook.
+- Which makes building complex user interfaces easy by:
+  - breaking the UI up into small, composable, functional components
+  - providing tools to create components for each part of the interface
+  - managing the assembly of those components into the final resulting web page
 
-# How?
-
-- By providing tools to create components for each part of the interface.
-- And manage the assembly of those components into the final resulting web page.
+![react logo](/images/React-icon.svg)
 
 # What are components?
 
@@ -17,55 +16,46 @@ Components are individual pieces of a web page interface like:
 - a comment
 - a form
 - an up-vote button
+- or any isolated part of a larger user interface
 
 # Components Example
 
-<!--
-Include screen-shot of Github feed here with boxes outlining
-the various sections of the web page as components.
--->
+![react twitter components](/images/react-twitter-components.jpg)
 
-# Virtual DOM 1
+# Virtual DOM
 
 - React controls the **rendering** of the page by using something called the [Virtual DOM](https://reactjs.org/docs/faq-internals.html).
 - **DOM** stands for *Document-Object-Model*, and is managed by the browser.
 - What this means in practice is that React keeps a copy of the web page structure and state in **memory**.
-- This copy is accessible to JavaScript and React makes **changes** to the **real** DOM all at once instead of one at a time.
+- This copy is accessible to JavaScript which React uses to make **changes** to the **real** DOM as a batch update.
 
-# Virtual DOM 2
+# DOM Components
 
-Imagine an auction application with several parts.
+Imagine an application with several parts.
 
-- The items on auction right now with current prices.
-- Your current bid, and your maximum bid ceiling.
-- A SOLD label applied to an item that has closed.
-- The items that will come up for auction soon.
-- Recently sold items and their closing prices.
+- User home page
+- Profile photo
+- Description
+- Links to other web pages
+- Uploaded photos
+- Social feed
+- Trending topics
 
-# Virtual DOM 3
+# DOM Example
 
-In this application there are many changes that can happen at once.
 
-- The items available can increase or decrease.
-- Your current bid can increase in response to another bidder.
-- The SOLD label can be applied or maybe removed.
-- New items can appear with their opening prices.
-- Recently sold items can appear with prices.
+![react component tree](/images/react-component-tree.svg)
 
-# Virtual DOM 4
+# Automatic Updates
 
-React makes managing a complicated page like this easier by determining what the page needs to look like at any given rendered **frame**.
+For every change in the components **React**:
 
-# Virtual DOM 5
-
-For every given frame **React**:
-
-- Records any changes within that time slot.
+- Records any changes within a time slot.
 - Calculates the interdependencies between components.
 - Generates the next state of the interface.
 - Renders the frame to the browser.
 
-# Virtual DOM 6
+# Reacting to Changes
 
 This lets you as the **programmer**:
 
@@ -73,21 +63,9 @@ This lets you as the **programmer**:
 - Decide how to handle change when it occurs.
 - Delegate to React how to build the page for you when changes happen.
 
-# Declarative Intent 1
+# Declarative UI
 
 React lets you to **declare** what you want the page to be.
-
-```javascript
-ReactDOM.render(React.createElement(
-  'h1',
-  null,
-  'Hello, React!'
-), document.getElementById('root'));
-```
-
-# Declarative Intent 2
-
-What is **Declarative Intent**?
 
 Declarative means that you do not instruct the computer about what steps to take in order to achieve your desired result.
 
@@ -95,9 +73,9 @@ Declarative means that you do not instruct the computer about what steps to take
 - You must describe something that is possible.
 - The computer figures out how to make it so.
 
-!["make it so"](./make-it-so.jpg)
+!["make it so"](/images/make-it-so.jpg)
 
-# Declarative Intent 3
+# Declarative vs Imperative
 
 Declarative is different than **Imperative** code which:
 
@@ -107,47 +85,44 @@ Declarative is different than **Imperative** code which:
 An imperative example would be manipulating the DOM like this:
 
 ```javascript
-window.onLoad function () {
-  var heading = document.createElement('h1');
-  var text = document.createTextNode('Hello DOM!');
+// When the Winow 'load' event fires, run the following JavaScript
+(window.onLoad = function() {
+
+  // Create the H1 Element
+  const heading = document.createElement('h1');
+
+  // Create the Text node and content
+  const text = document.createTextNode('Hello DOM!');
+
+  // Add the Text node to the parent H1
   heading.appendChild(text);
+
+  // Add the H1 Element to the Body Element
   document.body.appendChild(heading);
-}
+})()
 ```
 
-# Declarative Intent 4
-
-<p data-height="228" data-theme-id="dark" data-slug-hash="mLqoGK" data-default-tab="babel" data-user="Dangeranger" data-embed-version="2" data-pen-title="mLqoGK" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/mLqoGK/">mLqoGK</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-# Declarative Intent 5
-
-Something a little more complicated
+# Simple Example
 
 ```javascript
 ReactDOM.render(
-  React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "form",
-      {
-        id: "my-form",
-        onSubmit: this.handleSubmit
-      },
-      React.createElement(
-        "input",
-        {
-          id: "create",
-          type: "text",
-          placeholder: "something"
-        }
-      )
-    )
-  ), document.getElementById('root'));
+  <div>
+    <h1>Reasons to love React!</h1>
+    <ul>
+      <li>Easier</li>
+      <li>Reliable</li>
+      <li>Fast</li>
+    </ul>
+  </div>,
+  document.getElementById('root'));
 ```
 
-# Declarative Intent 6
+<iframe height="350" style="width: 100%;" scrolling="no" title="Hello React" src="https://codepen.io/burlingtoncodeacademy/embed/BaNJRrQ?height=265&theme-id=light&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/BaNJRrQ'>Hello React</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# React Form
 
 Given a `<root>` element exists the result is:
 
@@ -161,14 +136,66 @@ Given a `<root>` element exists the result is:
 
 But when the form initiates a `onSubmit` event React will handle the changes using the `handleSubmit` handler function.
 
-# Declarative Intent 7
+# React Form CodePen
+
+<iframe height="265" style="width: 100%;" scrolling="no" title="React Form Example" src="https://codepen.io/burlingtoncodeacademy/embed/gOpoWBw?height=265&theme-id=light&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/gOpoWBw'>React Form Example</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# ReactDOM Code
+
+#### The final plain React Code after Babel transformation
+
+```javascript
+ReactDOM.render(
+  React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'form',
+      { id: 'my-form' },
+      React.createElement(
+        'input',
+        {
+          id: 'create',
+          type: 'text',
+          placeholder: 'something'
+        }
+      )
+    )
+  ),
+  document.getElementById('root')
+);
+```
+
+<h3>
+  <a href="https://babeljs.io/en/repl#?browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=EoUwhgxgLgIg8gWQHQCcQDsAmIUAoBQABIQDyYCWAbgHxHGkBmA9igLaHmYC8ARKwJ4BaZmx616xEuXQAHAK5QO3HhDRgoIHoSj8ZIXhoAeULTIA2kEAAsmZ7Cl4BnJqxBQr0gOY8A9OPokPiKs_oEUNAA0dJhMEHKu6FBInm4AomYgCVAAQvwAkpi4AOQoTExQRQCUlQDcQA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.8.7&externalPlugins=">Live Example</a>
+</h3>
+
+# JSX
+
+As well as using the `React.createElement` interface you can use JSX
+
+- mixture of HTML and JavaScript
+- Looks a lot like HTML
+  - **but** you can escape to JavaScript with culy braces `{}`
+- Slightly different syntax in some cases
+
+# ReactDOM function API
 
 Accepts a description of the components that make up the page, and what DOM node to **render** the results to.
 
 ```javascript
+// Render function on ReactDOM
 ReactDOM.render()
+
 // API signature
-ReactDOM.render(element, container[, callback])
+ReactDOM.render(
+  element,
+  container,
+  [callback] /* Optional*/
+)
 ```
 
 - `element` => The DOM element and children to generate.
@@ -176,17 +203,19 @@ ReactDOM.render(element, container[, callback])
 - `callback` => Optional function to call after generation.
 - [ReactDOM.render API Docs](https://reactjs.org/docs/react-api.html#createelement)
 
-# Declarative Intent 8
+# React.createElement function API
 
 Accepts an element type, props of the element, and child elements.
 
 ```javascript
+// CreateElement function on ReactDOM
 React.createElement()
+
 // API signature
 React.createElement(
   type,
-  [props],
-  [...children]
+  [props], /* Optional*/
+  [...children] /* Optional*/
 )
 ```
 

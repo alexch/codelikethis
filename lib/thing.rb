@@ -13,12 +13,12 @@ class Thing
   # # every Thing might have topics
   attr_reader :topics
 
-  # todo: check keys against "contains" per-subclass attribute list
+  # TODO: check keys against "contains" per-subclass attribute list
 
   def initialize **options, &block
     @things = [] # this thing's child things
 
-    #TODO: test
+    # TODO: test
     options = {name: options} if options.is_a? String
 
     options.each_pair do |key, value|
@@ -29,7 +29,7 @@ class Thing
     instance_eval &block if block
   end
 
-  # todo: make these equality functions respect "contains" ivars
+  # TODO: make these equality functions respect "contains" ivars
   def ==(other)
     other.class == self.class and other.name == name
   end
@@ -210,7 +210,7 @@ class Thing
       (prefix, word) = word.scan(/^(["']*)(.*)$/).flatten
 
       word = WEIRD_WORDS[word.downcase] ||
-        ALIASES[word.downcase] ||     # todo: test ALIASES
+        ALIASES[word.downcase] ||     # TODO: test ALIASES
         (!first_word && SMALL_WORDS[word.downcase]) ||
         word.capitalize
       first_word = false
@@ -218,5 +218,4 @@ class Thing
       prefix + word
     end.join(" ")
   end
-
 end

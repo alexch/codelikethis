@@ -8,7 +8,7 @@
 
 * Let's make a simple map!
 
-![](./simple-map-leaflet.png)
+![Leaflet Map](/images/simple-map-leaflet.png)
 
 ```js
 var map = L.map('map').setView([51.505, -0.09], 13);
@@ -29,7 +29,7 @@ Include the CSS and JavaScript in the Head of the HTML page
 **Add the CSS First**
 
 ```html
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
 ```
 
 **Then the JavaScript**
@@ -37,7 +37,7 @@ Include the CSS and JavaScript in the Head of the HTML page
 > Make sure you put this AFTER Leaflet's CSS
 
 ```html
- <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 ```
 
 **Then create the map container**
@@ -80,7 +80,7 @@ Basemap providers for LeafletJS
 * **L** is the **global** LeafletJS function.
 * You can access all the objects and functions within LeafletJS from **L**
 * There is extensive documentation:
-  * <https://leafletjs.com/reference-1.3.0.html>
+  * <https://leafletjs.com/reference-1.6.0.html>
 
 ```js
 L.map('map').setView([51.505, -0.09], 13)
@@ -132,7 +132,7 @@ Several other map shapes exist:
 - Circle
 - CircleMarker
 
-<https://leafletjs.com/reference-1.3.0.html>
+<https://leafletjs.com/reference-1.6.0.html>
 
 # GeoJSON
 
@@ -187,3 +187,87 @@ someLayer.addTo(mymap);
 let layer = L.geoJson(statesData);
 let results = leafletPip.pointInLayer([-88, 38], layer);
 ```
+
+>Note: While Leaflet takes its coordinates in 'lat, long' format Leaflet-PIP takes its coordinates in 'Long, Lat' format.
+
+# Geocoding
+
+Geocoding is the process of converting an address into a set of lat/long coordinates.
+
+Leaflet can only add markers (and polygons, and lines, and...) by using lat/long values. So if we want to add markers at certain addresses we will need to use geocoding to get their lat/long locations.
+
+# Geocoding Services
+
+Geocoding like many mapping problems can be rather tricky.  Luckily there are free resources we can use to do the geocoding for us!  The one we will be using in this lesson is called '[nominatim](https://nominatim.openstreetmap.org/)'
+
+# Nominatim
+
+To get a set of geographic coordinates from nominatim you can go to [nominatim.openstreetmap.org](https://nominatim.openstreetmap.org/) and enter an address in the search bar.
+
+This will redirect you to a zoomed in view of the address, and you will see a blue box with the address on the left side of the screen, underneath the 'search' bar.
+
+Click on the button labeled 'details' to see all sort sof geographic information about the address including the latitude and longitude.
+
+# Success!
+
+You can now use the data from the `Center Point` value, which is in lat, long format, to add a marker to your Leaflet map.
+
+But what if we wanted to add markers for multiple addresses? It would get pretty frustrating having to manually go in and get lat/long values for every address we want to mark.
+
+# Make it Procedural
+
+Let's write a function that when given an address fetches the lat/long value from Nominatim.
+
+First we'll need to send a fetch the data from nominatim. We can use a query parameter in the address we're fetching from to fetch data for a specific address.  Let's also make sur ethe data we get back is easy for us to use.  We can do this by specifying the format we want our response to be in.
+
+```js
+function getLatLong(address) {
+  fetch(
+    `https://nominatim.openstreetmap.org/search/?q=${address}&format=json`
+  )
+}
+```
+
+# Sanitize Your Inputs!
+
+A normal string isn't necessarily url safe.  Luckily we can use the function `encodeURIComponent()` to turn any string into a url safe string.
+
+```js
+function getLatLong(address) {
+  let urlAddress = encodeURIComponent(address)
+  fetch(
+    `https://nominatim.openstreetmap.org/search/?q=${urlAddress}&format=json`
+  )
+}
+```
+
+# Translate the Data
+
+Now that we've fetched the data we need from Nominatim we need to translate it into something we can use.  We can do this by chaining promises with `.then()`
+
+> Remember: `.then()` only returns a promise so to get the values out of the function we'll need to have a variable we can manipulate
+
+```js
+function getLatLong(address) {
+  let urlAddress = encodeURIComponent(address)
+  let latLngObj = {
+    lat: null,
+    long: null
+  }
+
+  fetch(
+    `https://nominatim.openstreetmap.org/search/?q=${urlAddress}&format=json`
+  )
+    .then(res => res.json())
+    .then(jsonObj => {
+      latLngObj.lat = jsonObj[0].lat
+      latLngObj.long = jsonObj[0].lon
+    })
+
+  return latLngObj
+}
+```
+
+# Congratulations!
+
+You now have a function that can take any address and get a lat/long object back for that address!

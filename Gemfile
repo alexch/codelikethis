@@ -1,34 +1,34 @@
 source 'https://rubygems.org'
+ruby "~> 2.5.5"
 
-gem "sinatra", "~> 2.0.1"
-gem "sinatra-contrib"
+gem "sinatra", "~> 2.0.8", ">= 2.0.8.1"
+gem "sinatra-contrib", "~> 2.0", ">= 2.0.8.1"
 gem "erector", ">=0.9.0"
-gem "thin"
-gem "activesupport"
-gem "json", "~>1.8"
+gem "puma", "~> 4.3", ">= 4.3.5"
+gem "activesupport", "~> 6.0", ">= 6.0.3.1"
+gem "json", "~> 2.2"
 gem "rack-rewrite", "~>1.5"
-gem "sass", "~> 3.5.0"
-gem "awesome_print"
-gem "chronic"
-gem "redcarpet" # todo: , "~> 3.4"
-
-# gem "deckrb", path: "../deck.rb"  # uncomment for local development
+gem "sass", "~> 3.7.4"
+gem "awesome_print", "~> 1.8"
+gem "chronic", "~> 0.10.2"
+gem "redcarpet", "~> 2.3"
+gem "rack-ssl", "~> 1.4", ">= 1.4.1"
+gem "barnes", "~> 0.0.7"
+gem "nokogiri", "~> 1.7" # fixed versions, for Windows
+gem 'newrelic_rpm', '~> 6.8', '>= 3.15.2.317'
+gem "oj", "~> 3.9"
+gem "rack-cache", "~> 1.12", ">= 1.12.0"
+gem "rake", "~> 13.0"
+gem "rake-notes", "~> 0.2"
+gem "rspec", "~> 3.8"
+gem "rollbar", "~> 2.25"
 gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
 
 group :development, :test do
-  # gem "rerun", path: "../rerun"  # uncomment for local development
-  gem "rerun", git: "https://github.com/alexch/rerun.git"
-
-  gem "listen"
-  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-  gem "rake", ">=10.0.1"
+  gem "listen", "~> 3.1"
+  gem 'wdm', '~> 0.1.0' if Gem.win_platform?
+  gem "files", "~> 0.4.0"
+  gem "pry", "~> 0.12.2"
   gem "wrong", git: "https://github.com/alexch/wrong.git"
-  gem "files", ">=0.4.0"
+  gem "rerun", git: "https://github.com/alexch/rerun.git"
 end
-
-group :test do
-  gem "rspec"
-end
-
-# odd fixed versions, for Windows
-gem "nokogiri", "~>1.7"

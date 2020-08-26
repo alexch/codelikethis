@@ -56,7 +56,7 @@ class TracksTable < Erector::Widget
   end
 
   def href
-    "/lessons" # todo: make a "/tracks" endpoint instead
+    "/lessons" # TODO: make a "/tracks" endpoint instead
   end
 
 end

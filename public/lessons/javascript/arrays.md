@@ -30,9 +30,10 @@ and put these 3 other values inside it
 
 # Array Indexes
 
-* Every slot in the array has a serial number
+* Every slot in the array has an index
 * You can retrieve any item in an array by its INDEX
 * Square brackets after an array mean "the whatever-th item in this array"
+  * This method of accessing items is referred to as "square bracket notation"
 * The following code retrieves one fruit
 
 ```javascript
@@ -95,7 +96,7 @@ Did you get the result you expected?
 
 Why or why not?
 
-# Undefined means 🤷
+# Undefined Means 🤷
 
 by returning *undefined*, the computer is answering the question
 
@@ -111,7 +112,7 @@ with the answer
 
 There are many methods here and you should not try to memorize them all. But skim them and remember how to get back to this documentation page later.
 
-# Adding values to an array
+# Adding Values to an Array
 
 * **push** adds a single value to the end of an array
 
@@ -210,7 +211,7 @@ This means to go through the entire array, one item at a time, usually in order,
 
 In the next slides we will illustrate 3 different ways to iterate... one way is explicit, one way is concise, and one way is fancy.
 
-# Explicit: Looping through an array with for
+# Explicit: Looping Through an Array with for
 
 JavaScript inherited `for(;;)` from C; it's cumbersome but you should learn to recognize it. 
 
@@ -230,7 +231,7 @@ for (let i=0; i < fruits.length; i++) {
 | `console.log(fruits[i])` | print the `i`th element of the `fruits` array |
 | `i++`                    | and then *increment* `i` before the next time through |
 
-# Concise: Looping through an array with for-of
+# Looping Through an Array with for-of
 
 Recently, JavaScript added `for..of`, which hides the messy details of incrementing an index counter and accessing each array item.
 
@@ -247,9 +248,9 @@ for (let fruit of fruits) {
 | `let fruit`              | name it `fruit` |
 | `{` ... `}`              | and send it to this block of code |
 
-# Fancy: Looping through an array with forEach
+# Looping Through an Array with forEach
 
-`forEach` is an [iteration method](./iteration-methods) that behaves a lot like `for..of` but in a *[functional style](hybrid-styles)* :
+`forEach` is an [iteration method](./iteration_methods) that behaves a lot like `for..of` but in a *[functional style](hybrid-styles)* :
 
 ```js
 fruits.forEach( (fruit) => {
@@ -267,7 +268,7 @@ fruits.forEach( (fruit) => {
  
 [MDN: Array.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
-# LAB: loud backwards fruit
+# LAB: Loud Backwards Fruit
 
 Given this array:
 
@@ -281,13 +282,13 @@ write a program that prints:
     BANANA
     APPLE
 
-# Setting items in an array
+# Setting Items in an Array
 
 The `[]` operator works for assignment as well.
 
 `fruits[0] = 'apricot'` will set the `0`th item of the array to the string `'apricot'`
 
-# Checking every item in an array
+# Checking Every Item in an Array
 
 The `includes` method checks if a given value is inside an array (or not).
 
@@ -299,7 +300,7 @@ fruits.includes("pizza")   // false
 
 Remember, here we are sending a message *to an array*, asking if it includes a certain *string*.
 
-# LAB: enemies list refactoring
+# LAB: Enemies List Refactoring
 
 Refactoring is changing existing code so that it *works* the same, but is cleaner and easier to read.
 
@@ -314,6 +315,29 @@ Please take a few minutes to **refactor** your old `hello.js` program to use arr
 * How can you use array methods to check if a name is in the enemies list?
 * BEWARE: your new code might need more curly braces than the old code; make sure the `{`s and `}`s properly match
 
-# LAB: more about arrays
+# Enemies List solution
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let enemiesArray = ["Darth", "Voldemort", "Sauron"]
+
+console.log("What is your name?");
+process.stdin.on('data', (chunk) => {
+    let name = chunk.toString().trim();
+    if (enemiesArray.includes(name)) {
+      console.log("NOOOOOO! Go away " + name + "!")
+    } else {
+      console.log("Hello, " + name + "!");
+    }
+});
+```
+
+</div>
+</details>
+
+# More About Arrays
 
 * [Eloquent JavaScript Chapter 4](http://eloquentjavascript.net/04_data.html): Data Structures: Objects and Arrays

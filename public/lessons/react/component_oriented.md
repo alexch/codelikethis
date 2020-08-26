@@ -70,7 +70,7 @@ class ProfileList extends React.Component {
 * Many components can be built based on collections of data
 * Components can be **conditionally** rendered
 
-```
+```js
 class Comment extends React.Component {
   render () {
     return (
@@ -142,7 +142,7 @@ class CommentList extends React.Component {
 
 # Granular Render Updates
 
-![render performance](granular-dom-updates.gif)
+![render performance](/images/granular-dom-updates.gif)
 
 # Component Lifecycle
 
@@ -171,6 +171,6 @@ class CommentList extends React.Component {
 
 # Lifecycle Methods Diagram
 
-![react-component-lifecycle](react-component-lifecycle.png)
+![react-component-lifecycle](/images/react-component-lifecycle.png)
 
 <http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/>

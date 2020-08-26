@@ -5,6 +5,18 @@
 
 module Views
 
+  def stylesheet attributes = {}
+    href = if attributes[:href]
+             href
+           elsif attributes[:name]
+             "/css/#{attributes[:name]}.css"
+           else
+             raise "requires either a name or an href"
+           end
+    link_attributes = {rel: "stylesheet", href: href}.merge(attributes)
+    link(link_attributes)
+  end
+
   def centered_codelikethis_logo
     center class: 'logo ml-auto mr-auto' do
       img.logo(src: '/images/codelikethis-logo.png',
@@ -19,7 +31,7 @@ module Views
       # https://twitter.com/settings/widgets
       # https://dev.twitter.com/docs/embedded-timelines
       rawtext <<-HTML
-<a class="twitter-timeline" href="https://twitter.com/codelikethis">Tweets by codelikethis</a> 
+<a class="twitter-timeline" href="https://twitter.com/burlingtoncodeacademy">Tweets by Burlington Code Academy</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       HTML
     end
@@ -45,8 +57,8 @@ module Views
     text.gsub('<!--BOX-->', "<!--BOX-->\n" )
   end
 
-  # todo: test
-  # todo: unify with Deck::Slide's markdown munging
+  # TODO: test
+  # TODO: unify with Deck::Slide's markdown munging
   def munge_html html
     lines = (["<div class='markdown-body'>"] +
         html.split("\n").map do |line|

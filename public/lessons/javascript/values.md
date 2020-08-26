@@ -23,6 +23,20 @@ A **number** is what it sounds like -- any integer or decimal.
 3.14
 ```
 
+# Lab: Playing with Numbers
+
+Open up a node environment in your terminal (`node` <kbd>Enter</kbd>). Once you're in the node environment you should be able to write javascript, and run it inside your terminal. Try out the following equations:
+
+    * Add two numbers together with the `+` operator
+    * Multiply two numbers with the `*` operator
+    * Divide two numbers using the `/` operator
+    * Square a number by raising it to the power of 2 `**2`
+    * Create a more complex mathematical equation. Useing a mixture of different operators
+    * Bonus: Weird math! Try the following equations:
+        * `0.1 + 0.2`, `2**53` and `2**53 + 1`, and `Infinity - Infinity`
+
+What have you noticed about math in JavaScript
+
 # Strings
 
 A **string** is an object that's a collection of characters, like a word or a sentence.
@@ -33,9 +47,91 @@ A **string** is an object that's a collection of characters, like a word or a se
 "Cherry Pie"
 ```
 
+# Slicing and Dicing
+
+Every string is made of lots of other strings.
+
+You can pull out parts of a string with the `slice` method.
+
+```js
+// this means "slice from character 0 to character 4"
+"blueberry".slice(0, 4) 
+
+// this means "slice from character 4 to the end
+"blueberry".slice(4)
+```
+
+These start and end numbers are called *indexes* (or *indices* if you're feeling fancy).
+
+[MDN: slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+
+# String Indexing Explained
+
+Humans like to start counting at 1, but computers like to start counting at 0.
+
+This can be confusing, so here's a visualization to help explain it.
+
+Think of the indexes as pointing at the *spaces between* characters, as in this diagram:
+
+    | B | L | U | E | B | E | R | R | Y |
+    0   1   2   3   4   5   6   7   8   9
+     
+So with this picture in your mind, `slice`...
+  
+   * includes the character to the *right* of the start index
+   * includes the character to the *left* of the end index...
+   * ...but *excludes* the character to the *right* of the end index
+
+Try various start and end values in the console and see what happens!
+
+# Characters
+
+Q: A string is "a series of characters"... but what is a character?
+
+A: a character is a *number* (or *character code*) that stands for a *symbol*.
+
+|symbol|code|name|
+|---|---|---|
+| `A` | 65 | capital A |
+| `B` | 66 | capital B |
+| `Z` | 90 | capital Z |
+| `_` | 95 | underscore |
+| `a` | 97 | lowercase A |
+| ??? | 10 | newline |
+
+(Some characters stand for *unprintable* symbols like `newline` or `tab` or `bell`.)
+
+# Lab: Playing with Strings
+
+Open up a Node instance in your terminal, and let's play around with strings!
+
+    * Add two strings together that use the same type of quotes (e.g.`'Java' + 'Script'`)
+    * Add two strings together using different types of quotes (e.g. `"I'm double quoted!" + 'I am single quoted.')
+    * Subtract two strings (e.g. `'cats' - 'dogs'`)
+    * Add a string to a number
+
+What happens when you try to put quotes inside your string's quotes?
+
+# Lab: String Methods
+
+Strings have many operations attached to them. These attached operations are refered to as 'methods' (more on that later) and are quite useful. Let's try a few of them out in your console now:
+
+```js
+"titanic".toUpperCase()
+"QUIETLY".toLowerCase()
+"Java".repeat(10)
+"banana".length
+"berry".charAt(1)
+"berry".charAt(0)
+"apple"[3]
+"banana".includes("nan")
+"banana".endsWith("ana")
+"blueberry".replace("blue", "black")
+```
+
 # Booleans
 
-A **boolean** is a value that is either `true` or `false`.
+A **boolean** is a value that is either true or false, and is represented in JavaScript with the keywords `true`, and `false`.
 
 (It's named after *[George Boole](https://en.wikipedia.org/wiki/George_Boole)*, 
 a 19th-century mathematician who invented [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra).)
@@ -48,6 +144,8 @@ Values can be combined or manipulated using **operators**, like...
  * TIMES (`*`)
  * POWER (`**`)
  * DOT (`.`)
+ * ASSIGNMENT (`=`)
+ * COMPARISON (`===`)
 
 An operator *sends a message* to the value
 
@@ -65,13 +163,22 @@ When reading JavaScript code, if you ever see two slashes in a row, that means "
 
 A comment is a message for humans. JavaScript ignores everything to the right of the slashes, so you can explain what the nearby code does, or why it does it.
 
-In these lessons, we often use comments to explain the *result* of executing the nearby code. In this case, we sometimes add an arrow to the comment:
+In these lessons, we often use comments to explain the *result* of executing the nearby code. In this case, we sometimes add an arrow to the comment:  
 
 ```javascript
 2 + 2  //=> 4
+3 + 5 // -> 8
 ```
 
-> JavaScript also has multi-line comments via `/* ... */` but those are less common.
+> JavaScript also has multi-line comments via `/* ... */` but those are less common. They can also be used to comment out a section within a line:  
+
+```javascript
+/* This is
+ * a multiline
+ * comment! */
+
+ console.log(x /*some variable from earlier*/);
+ ```
 
 # Expression Evaluation
 
@@ -118,7 +225,7 @@ Sometimes the return value is a different value *and* a different type.
 "banana".length  // return value: 6
 ```
 
-Sometimes the return value is a magic value!
+Sometimes the return value is a special value!
 
 ```js
 (5).length     // return value: undefined
@@ -154,7 +261,7 @@ Some statements have values, so `node` will *evaluate* them and *print* those va
 undefined
 ```
 
-## expression vs statement
+# Expression vs Statement Breakdown
 
 |Expression | Statement |
 |---|---|
@@ -166,7 +273,7 @@ undefined
 
 Read more here: (https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74)
     
-# LAB: Values: readings and exercises
+# Readings and Exercises:
 
 * Eloquent JavaScript
     - read [Introduction](https://eloquentjavascript.net/00_intro.html) 

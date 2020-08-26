@@ -1,4 +1,5 @@
 require 'rspec/core/rake_task'
+require 'rake/notes/rake_task'
 
 task :default => :spec
 
@@ -18,17 +19,16 @@ task :build_css do
   sass_dir = File.join public_dir, "scss"
   images_dir = File.join public_dir, "images"
   javascripts_dir = File.join public_dir, "js"
-  bootstrap_dir = File.join sass_dir, "bootstrap-4.0.0-beta.2/scss"
+  bootstrap_dir = File.join sass_dir, "bootstrap-4.3.1/scss"
 
   puts "Building CSS..."
   scss_file = File.join(sass_dir, "app.scss")
   css_file = File.join(css_dir, "app.css")
 
-  if File.mtime(scss_file) > File.mtime(css_file)
-  sh(["sass",
+  if !File.exist?(css_file) || File.mtime(scss_file) > File.mtime(css_file)
+    sh(["bin/sass",
       "--load-path #{bootstrap_dir}",
-      "--line-numbers", # adds comments inside the .css file
-      "--line-comments", # creates a .map file
+      "--style compressed",
       scss_file,
       css_file,
      ].join(" "))
@@ -45,7 +45,6 @@ task :build => [
   puts "Built."
 end
 
-require 'awesome_print'
 desc "run app and keep building and running it"
 task :rerun do
   cmd = %w{bundle exec rerun -- rackup}
@@ -54,5 +53,15 @@ end
 
 desc "run app"
 task :run => :build do
-  sh "rackup"
+  sh "bundle exec rackup"
+end
+
+desc "clean"
+task :clean do
+  public_dir = "public"
+  css_dir = File.join public_dir, "css"
+  css_file = File.join(css_dir, "app.css")
+  map_file = File.join(css_dir,"app.css.map")
+  File.delete(css_file)
+  File.delete(map_file)
 end

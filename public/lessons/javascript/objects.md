@@ -170,7 +170,7 @@ let alice = {
 
 Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 
-> Note: The above shows the essence of [JSON](../javascript/json):
+> Note: The above shows the essence of [JSON](./json):
 > a syntax for representing data structures containing primitive values,
 > including nested objects and arrays.
 
@@ -203,9 +203,10 @@ for (let state in states) {
 }
 ```
 
-In your NodeJS console, try to write code that outputs:
+In a new JS file, try to write code that outputs:
 
 ```
+VT is short for Vermont
 CA is short for California
 MA is short for Massachusetts
 NY is short for New York
@@ -213,11 +214,22 @@ NY is short for New York
 
 <details>
 <summary>Solution:</summary>
-<pre>
+<div>
+
+```js
+let states = {
+  'VT': 'Vermont',
+  'CA': 'California',
+  'MA': 'Massachusetts',
+  'NY': 'New York'
+}
+
 for (let state in states) {
     console.log(state + ' is short for ' + states[state]);
 }
-</pre>
+```
+
+</div>
 </details>
 
 **Note:** use "`for...of`" for arrays, use "`for...in`" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
@@ -244,6 +256,41 @@ console.log('The GPA is ' + gpa(grades));
 * The answer is 3.5 ... but don't just return 3.5, make it work for real.
 
 > Hint: There's more than one way to solve this!
+
+# Class GPA solution
+
+<details>
+<summary>Hint</summary>
+<div>
+You can use dot notation to access properties on an object
+
+```js
+grades.midterm // => 3.3
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let grades = {
+  'midterm': 3.3,
+  'project': 4.0,
+  'final': 3.2
+}
+
+function gpa(object) {
+  return (object.midterm + object.project + object.final) / 3
+}
+
+console.log('The GPA is ' + gpa(grades));
+```
+
+</div>
+</details>
 
 # All keys are strings, even nulls
 
@@ -325,9 +372,74 @@ $ node order burger burger shake fries burger
 Your order total is $19.61
 ```
 
+# Menu Order solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+You can get an array of arguments form the command line by using `process.argv.slice(2)`
+
+</div>
+</details>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+Create an object that represents your menu
+
+```js
+menu = {
+  burger: 5,
+  fries: 3.5,
+  //etc.
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Hint 3</summary>
+<div>
+You can access the value of a key using a string with square bracket notation
+
+```js
+menu["burger"] // => 5
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let order = process.argv.slice(2)
+
+let menu = {
+  burger: 5,
+  fries: 3.5,
+  shake: 1.11,
+  salad: 4.25
+}
+
+let orderPrice = 0
+
+order.forEach((item) => {
+  orderPrice += menu[item]
+})
+
+console.log("Your order total is $" + orderPrice)
+```
+
+</div>
+</details>
+
 # Object Instance Methods
 
-Here's a taste of [object instance methods](./methods).
+Here's a taste of [object instance methods](/lessons/javascript-track/methods).
 
 A method is a *function* attached to an *object* as a *property*.
 
@@ -345,7 +457,9 @@ let stringUtils = {
 stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
 
-# LAB: more about JS Objects
+# More About JS Objects
+
+* Eloquent JavaScript: [Chapter 4](https://eloquentjavascript.net/04_data.html)
 
 * FreeCodeCamp:
   * From [Build JavaScript Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects)

@@ -1,6 +1,6 @@
 # Today I Learned - Command Line
 
-During your programming journey you will come across questions every day and need to find answers for those questions. Recent studies have found a [cognitive benefit to journaling](https://psychcentral.com/lib/the-health-benefits-of-journaling/) when learning new content, or balancing between multiple priorities. For many people the act of writing down a problem, the path to finding a solution, and the answer, stimulates pathways in the brain which help in memory recall and problem solving.
+During your programming journey you will come across questions every day and need to find answers for those questions. Studies have found a [cognitive benefit to journaling](https://psychcentral.com/lib/the-health-benefits-of-journaling/) when learning new content, or balancing between multiple priorities. For many people the act of writing down a problem, the path to finding a solution, and the answer, stimulates pathways in the brain which help in memory recall and problem solving.
 
 Your task for this project is to build a command line program which you can use to record, search, edit, and reference answers for various programming questions and answers.
 
@@ -10,40 +10,35 @@ Your task for this project is to build a command line program which you can use 
 * How could you find and edit an existing TIL entry?
 * How could you write multi-line TIL entries?
 
-## Stories
+# Stories
 
 <!--BOX-->
 
-### Creating a new TIL entry
+## Creating a new TIL entry
 
 **Given** an empty command prompt
 
 **When** a user inputs:
 
 ```sh
-til To convert JSON to a JavaScript object use JSON.parse
+til To convert JSON to a JavaScript object use JSON.parse(myObject)
 ```
 
-**Then**
+**Then** a new TIL entry is created
 
-A new TIL entry is created
-
-**And**
-
-The TIL entry.content equals:
+**And** the TIL entry.content equals:
 
 ```
-To convert JSON to a JavaScript object, use JSON.parse
+To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
 
 <!--/BOX-->
 <!--BOX-->
 
-### Listing existing TIL entries
+## Listing existing TIL entries
 
-**Given**
+**Given** an existing TIL entry with the content:
 
-An existing TIL entry with the content:
 ```
 To convert JSON to a JavaScript object, use JSON.parse(myObject)
 ```
@@ -51,17 +46,13 @@ To convert JSON to a JavaScript object, use JSON.parse(myObject)
 And the Date-Time:
 `2018-01-01T12:15:00+0400`
 
-**When**
-
-A user inputs:
+**When** a user inputs:
 
 ```sh
 til --list
 ```
 
-**Then**
-
-Then the command prompt will contain
+**Then** the command prompt will contain
 
 ```sh
 0 2018-01-01T12:15:00+0400 To convert JSON to a JavaScript object, use JSON.parse(myObject)
@@ -70,27 +61,21 @@ Then the command prompt will contain
 <!--/BOX-->
 <!--BOX-->
 
-### Display a TIL entry
+## Display a TIL entry
 
-**Given**
-
-An existing TIL entry with the content:
+**Given** an existing TIL entry with the content:
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
 
 And the Date-Time:
 `2018-01-01T12:15:00+0400`
 
-**When**
-
-A user inputs:
+**When** a user inputs:
 
 ```sh
 til --show 0
 ```
 
-**Then ##
-
-Then the terminal will output
+**Then** the terminal will output
 
 ```sh
 CREATED: 2018-01-01T12:15:00+0400
@@ -100,33 +85,25 @@ CONTENT: To convert JSON to a JavaScript object, use JSON.parse(myObject)
 <!--/BOX-->
 <!--BOX-->
 
-### Listing multiple TIL entries
+## Listing multiple TIL entries
 
-**Given**
-
-An existing TIL entry with the content:
+**Given** an existing TIL entry with the content:
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
 And the Date-Time:
 `2018-01-01T12:15:00+0400`
 
-**And**
-
-An existing TIL entry with the content:
+**And** an existing TIL entry with the content:
 `To get the length of a JavaScript Array, ['some', 'array'].length`
 And the Date-Time:
 `2018-03-02T18:30:00+0400`
 
-**When**
-
-A user inputs:
+**When** a user inputs:
 
 ```sh
 til --list
 ```
 
-**Then**
-
-Then the command prompt will contain
+**Then** the command prompt will contain:
 
 ```sh
 0 2018-01-01T12:15:00+0400 To convert JSON to a JavaScript object, use JSON.parse(myObject)
@@ -136,25 +113,19 @@ Then the command prompt will contain
 <!--/BOX-->
 <!--BOX-->
 
-### Editing an existing TIL entry
+## Editing an existing TIL entry
 
-**Given**
-
-An existing TIL entry with the content:
+**Given** an existing TIL entry with the content:
 
 `To convert JSON to a JavaScript object, use JSON.parse(myObject)`
 
-**When**
-
-A user inputs:
+**When** a user inputs:
 
 ```sh
 til --edit 0
 ```
 
-**And**
-
-The user changes the contents:
+**And** the user changes the contents:
 
 From:
 
@@ -168,13 +139,9 @@ To:
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
 
-**And**
+**And** the TIL entry is saved
 
-The TIL entry is saved
-
-**Then**
-
-The contents of the TIL entry will contain:
+**Then** the contents of the TIL entry will contain:
 
 ```text
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
@@ -183,11 +150,10 @@ To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}
 <!--/BOX-->
 <!--BOX-->
 
-### Delete a TIL entry
+## Delete a TIL entry
 
-**Given**
+**Given** an existing TIL entry with the content:
 
-An existing TIL entry with the content:
 ```text
 To convert JSON to a JavaScript object, use JSON.parse('{"name": "Ada Lovelace"}')
 ```
@@ -202,8 +168,7 @@ til --delete 0
 
 `D 0 2018-01-01T12:15:00+0400 To convert JSON to a Javascript object, use JSON.parse('{"name": "Ada Lovelace"}')`
 
-**And**
-There are zero entries when the user inputs
+**And** there are zero entries when the user inputs
 
 ```sh
 til --list
@@ -211,10 +176,9 @@ til --list
 
 <!--/BOX-->
 
-## Tech
+# Icebox
 
-## Extra Feature Ideas
-
+<!--BOX-->
 - Tagging entries with a category
 - List entries after or before some date
 - List between two dates
@@ -223,3 +187,5 @@ til --list
     - entries with days of week descending on Y axis and weeks of year on the X axis
     - X for a day with an entry and an O for a day without an entry
     - Could you use colors in the terminal instead of an X or O?
+
+<!--/BOX-->

@@ -101,11 +101,13 @@ The `printLine` function itself is called a *callback*
 1. Open `hello.js` in your text editor
 2. Change it to contain the following code:
 
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString();
-            console.log("Hello, " + name + "!");
-        });
+```js
+console.log("What is your name?");
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString();
+    console.log("Hello, " + name + "!");
+});
+```
 
 3. Save the file and switch back to the terminal
 4. Run the program using `node hello.js`
@@ -127,7 +129,7 @@ What happens? Is this what you expected?
 * First things first: get back to the command line
 * This program doesn't *exit* yet, so you will need to *force* it to close
 * Do this by holding down CONTROL and pressing C
-    * abbreviated ⌃C or ^C or CTRL-C
+    * abbreviated ⌃C or CTRL-C
 
 # Let's fix this
 
@@ -148,22 +150,22 @@ What happens? Is this what you expected?
 * Fortunately, there's an easy fix
 * If you send the message `trim` to a string, it will remove all SPACES and NEWLINES from both ends
 
-# LAB: fixing Hello, Friend
+# Solution: fixing Hello, Friend
 
-* Change the program to look like this:
+* If you're still struggling to sanatize your input change the program to look like this:
 
 ```js
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString().trim();
-            console.log("Hello, " + name + "!");
-        });
+console.log("What is your name?");
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString().trim();
+    console.log("Hello, " + name + "!");
+});
 ```
 
 * Run it and make sure it works OK
 * Press ⌃C to close it
 
-# LAB: This Way To The Exit
+# This Way To The Exit
 
 * Change the program to look like this:
 
@@ -187,12 +189,14 @@ Note that:
 * What happens if you type your name in all lowercase?
 * Make the program capitalize your name for you even if you forget.
 
-**Hint**: remember `slice` from the [Strings lesson](strings#/anchor/slicing_and_dicing)?
+**Hint**: remember `slice` from the [Strings lesson](/lessons/javascript-track/strings)?
 
-# LAB: YELL YOUR NAME
+# YELL YOUR NAME!
 
 * Now go crazy and make it YELL your name!
     * Hint: Use the [toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) method
+
+Okay, that was a bit much. Let's go back to just having our name capitalized.
 
 # readline
 
@@ -219,8 +223,6 @@ function ask(questionText) {
   });
 }
 ```
-
-> This is called "boilerplate code" -- you don't need to fully understand it before using it.
 
 # using readline - explanation
 
@@ -283,11 +285,51 @@ async function start() {
 
 * Run the program by typing `node name.js` on the command line.
 
-# CONGRATULATIONS!
+# Full Name solution
 
-> You just wrote a program!
+<details>
+<summary>Hint</summary>
+You may want to use readline to accept user input asynchronously
+<div>
 
-You are now officially a coder. HIGH FIVE!
+```js
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+
+async function fullName() {
+  let prenomen = await ask("What is your first name? ")
+  let cognomen = await ask("What is your last name? ")
+
+  console.log("Hello, " + prenomen + " " + cognomen + "!")
+}
+```
+
+</div>
+</details>
 
 # Lab: Name Length
 
@@ -299,8 +341,10 @@ You are now officially a coder. HIGH FIVE!
         Hello, Grace Hopper!
         Your name is 11 characters long.
 
-# Project: Guess the Number
+# Lab: Madlibs
 
-You may now start on the [Guess the Number](/projects/guess) project.
+Let's create a Madlib template! The goal for this lab is to create a program that will ask for certain types of words (noun, verb, adjective, etc.) and once it has recieved a certain number of inputs it will insert those words, in the correct places, into a story which your computer will print to the terminal.
 
-(You will probably also need to learn about [logic](logic) and [loops](loops) to get it working, so don't be afraid to read ahead and to ask for help.)
+* create a story with at least five words omitted (it does not have to be a long story ~1 paragraph)
+* create a function that asks for input for each of the omitted words
+* print the story to the console, filling in the blanks with the provided words.

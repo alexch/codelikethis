@@ -6,12 +6,14 @@ class TracksSidebar < Erector::Widget
   needs :tracks, :current
 
   external :script, (<<-JS)
-  $(document).ready(function() {
-    $('#sidebar a').click(function(eventObject) {
-      console.log($(this));
-      console.log($(this).find('.loading_image'));
-      $(this).find('.loading_image').css('display', 'inline-block');
-      return true; // propagate event
+  window.addEventListener('DOMContentLoaded', (e) => {
+    $(document).ready(function() {
+      $('#sidebar a').click(function(eventObject) {
+        console.log($(this));
+        console.log($(this).find('.loading_image'));
+        $(this).find('.loading_image').css('display', 'inline-block');
+        return true; // propagate event
+      });
     });
   });
   JS
@@ -30,9 +32,7 @@ class TracksSidebar < Erector::Widget
 
   def content
     div(class: 'row justify-content-between') {
-      div(class: 'col-8') {
-        h3 "Tracks"
-      }
+      div(class: 'col-8') {}
       div(class: 'col-4') {
         # expando button for tracks
         button(:class => 'tracks-toggler btn border-0 collapsed',
@@ -77,32 +77,21 @@ class TracksSidebar < Erector::Widget
       lessons_id = "sidebar-#{track.name}-lessons"
 
       div(class: 'lesson-name') {
-
         unless @current == track
-          tooltip_text = "Track: <u>#{track.display_name}</u><br>"
-          if track.description?
-            tooltip_text += "<p><small>#{track.description}</small><p>"
-          end
-          tooltip_text += "Click for More Info"
-          a(**({href: track.href,
-            class: 'track-info-link'} +
-            with_tooltip(tooltip_text))) {
+          a(href: track.href, class: 'track-info-link') do
             i(class: 'fas fa-info-circle')
-          }
+          end
         end
 
         a(href: "##{lessons_id}",
           'data-toggle': 'collapse',
           'data-target': "##{lessons_id}",
           'data-parent': "##{html_id}-tracks") {
-          i(class: "fas fa-paw")
+          i(class: "fas fa-angle-right")
           text nbsp
           text nbsp
           text track.display_name
         }
-        # 'aria-expanded': false
-        # 'aria-controls': '???'
-
       }
 
       div(class: ['collapse', ('show' if track == current_track)],

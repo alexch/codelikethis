@@ -1,6 +1,5 @@
 # Remock
 
-
 In this project you will re-create a complicated blog style web page.
 
 ## Example Web Page Screenshots
@@ -13,97 +12,163 @@ In this project you will re-create a complicated blog style web page.
 
 ## Goals
 
-  * Using display, position, and float for layout
+  * Using display, position, and other css properties for layout
   * Spacing of elements
   * Color matching
   * Matching typography
-  * Hover-ability highlighting
+  * Using CSS to modify styles based on events (e.g. highlight on hover)
 
-## Stories
+# Designing Your Site
 
 <!--BOX-->
-### Make it work
+## Sketch It Out
 
-Create a page layout with empty `div`s and other page elements. Don't worry about making all the content correct; focus on the layout.
+Grab a pencil and (preferably graph) paper, and replicate the provided layout, paying additional attention to the details.
 
-> After this phase, do a git commit and a demo.
+Be mindful of how the containers are aligned not only in relation to the page, but to each other as well.
+
+<details>
+<summary>Details</summary>
+<div>
+Ask yourself the following:
+
+* What elements line up where?  
+* Do they fit the full width of the page? 
+* Are they centered? If so, what are they centered in relation to? 
+* What is the **smallest** thing I can work on? 
+* What stylings/elements can I reuse?
+</div>
+</details>
+<!-- Make an image here>
 
 <!--/BOX-->
 
 <!--BOX-->
-### Make it right
+## Break It Down
 
-* Fill in the page content.
-* Make interactive elements work correctly.
-
-> After this phase, do a git commit and a demo.
-
+Now that you have your outline, break it down into pieces you can handle, like a single row. Or if that row holds multiple containers, start with one of the containers!
 <!--/BOX-->
 
 <!--BOX-->
-### Make it better
+## Build It Up
 
-Experiment with design improvements. For example:
-
+Take those pieces and put it all together! Then, once you have the general layout of your pages, focus on the details, like:
 * fonts and typography
 * whitespace adjustment
 * navigation reorganization
 * clearer separation between functional page elements
+* [pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 
 <!--/BOX-->
 
+# Stories
+### Besides your site's overall design, the following stories must be completed as well:
+
 <!--BOX-->
-### Links
+## Links
+
+**Given** the browser has loaded the page
+
+**When** the user clicks on a button
+
+**Then** the browser's URL changes 
+
+**And** the new page loads
 
 - Clicking on "Continue Reading" navigates to the `continue-reading.html` page
 - Clicking on "Learn More" navigates to the `learn-more.html` page
 - Clicking on "Just Another Post" navigates to the `blog-post.html` page
 - Clicking on **Any Page's Title Header** navigates to the `index.html` page
+- Clicking on **Any Page's Header** navigates to the `index.html` page
 
 <!--/BOX-->
 
 <!--BOX-->
-### Highlighting Links
+## Highlighting Button Links
 
-- Hovering over "Button Style" links **lightens** the color of the link.
-- Hovering over "Text Style" links **changes** the color of the link from **grey to red**.
+**Given** the browser has loaded the page
+
+**When** the user mouses over a "Button Style" link
+
+**Then** the link's color *lightens*
 
 <!--/BOX-->
 
 <!--BOX-->
-### Form Inputs
+## Highlighting Text Links
 
-- Entering a form input with an "input device" such as a *cursor* or a *focus* **changes the color from light grey to white**
+**Given** the browser has loaded the page
+
+**When** the user mouses over a "Text Style" link
+
+**Then** the link *changes* colors entirely
+
+<!--/BOX-->
+
+<!--BOX-->
+## Form Inputs
+
+**Given** the browser has loaded the page
+
+**When** the user enters a form with an "input device" (like a *cursor* or a *focus*) 
+
+**Then** the form background and 
+- Entering a form input with an "input device" such as a *cursor* or a *[focus](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus)* **changes the color of its border and background**
 
 <!--/BOX-->
 
 
-## Screen-shots
+# Screen-shots 
+### [Link to Drive](https://drive.google.com/drive/folders/1Y5G571wVANV62R0D_6vPe8YFQe9gAD6O?usp=sharing)
+<br>
 
-### Home Page
+<details>
+<summary>Home Page</summary>
+<div>
 
-![](mock_screenshots/home-1.png)
-![](mock_screenshots/home-2.png)
-![](mock_screenshots/home-3.png)
-![](mock_screenshots/home-4.png)
+![](/images/home-1.png)
+![](/images/home-2.png)
+![](/images/home-3.png)
+![](/images/home-4.png)
 
-====================
-
-### Continue Page
-
-![](mock_screenshots/right-1.png)
-![](mock_screenshots/right-2.png)
-![](mock_screenshots/right-3.png)
-
-### Learn More Page
-
-![](mock_screenshots/left-1.png)
-![](mock_screenshots/left-2.png)
-![](mock_screenshots/left-3.png)
+</div>
+</details>
 
 ====================
 
-### Blog Post Page
+<details>
+<summary>Continue Page</summary>
+<div>
+![](/images/right-1.png)
+![](/images/right-2.png)
+![](/images/right-3.png)
+</div>
+</details>
 
-![](mock_screenshots/none-1.png)
-![](mock_screenshots/none-2.png)
+====================
+
+
+<details>
+<summary>Learn More Page</summary>
+<div>
+
+![](/images/left-1.png)
+![](/images/left-2.png)
+![](/images/left-3.png)
+
+</div>
+</details>
+
+====================
+
+<details>
+<summary>Blog Post Page</summary>
+<div>
+
+![](/images/none-1.png)
+![](/images/none-2.png)
+</div>
+</details>
+
+
+

@@ -1,7 +1,4 @@
-    video youtube_id: '-jRREn6ifEQ'
-    topic name: "text-editor"
-    link name: 'How to Design Programs (preface)',
-         href: "https://htdp.org/2018-01-06/Book/part_preface.html"
+<!-- Before running this slide deck do class introductions -->
 
 # Intro
 
@@ -16,7 +13,7 @@ In computers, code is a series of instructions that tell a computer what to do.
 # What is coding?
 
 * coding (aka programming or software development) is a *creative, human* activity
-* *coding* does not mean "cracking the code" or "deciphering" -- it's not a mystery or a secret, it's a language
+* *coding* does not mean "cracking the code" or "deciphering" -- it's not a mystery or a secret, at least no more than any other language
 * the words (and numerals and punctuation) we write are translated into long strings of ones and zeros
 
 # What is coding NOT?
@@ -27,7 +24,6 @@ In computers, code is a series of instructions that tell a computer what to do.
 * coding is **not** solitary
   * most coding happens in a team
   * all professional coding happens with clients / users / designers / managers etc.
-  * pair programming is awesome
 * coding is **not** about finding the right answer
   * there's always more than one way to do it
   * every solution has tradeoffs
@@ -50,7 +46,7 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 * a recipe is a collection of *ingredients* and *instructions*
 
-![Grandma's Cookie Recipe](../images/cookie-recipe.gif)
+![Grandma's Cookie Recipe](https://res.cloudinary.com/btvca/image/upload/v1574445171/curriculum/cookie-recipe_rwfphm.gif)
 
 * a program is a collection of *data* and *code*
 
@@ -101,7 +97,7 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 * Docendo discimus ("By Teaching We Learn")
 * Promote yourself to TA
 
-> The best way to learn is to teach. <br>- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
+> The best way to learn is to teach. <br />- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
 
 # Technical requirements
 

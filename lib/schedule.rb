@@ -17,7 +17,7 @@ class Schedule < Thing
   end
 
   def view
-    # todo: pass in this object, not a pointer to naked json
+    # TODO: pass in this object, not a pointer to naked json
     ScheduleView.new(site: @site, schedule: @data)
   end
 
@@ -214,7 +214,7 @@ class Schedule < Thing
       div(class: 'box') {
 
         p {
-          i(class: "fas fa-paw")
+          i(class: "fas fa-angle-right")
           text nbsp
           b " Track: "
           widget track.link_view
@@ -236,7 +236,7 @@ class Schedule < Thing
               end
             end
             things_with_commas(lessons) do |lesson|
-              # todo: unify with track.rb
+              # TODO: unify with track.rb
               if lesson.respond_to?(:slides) && (lesson.slides.length == 0)
                 span("*", class: 'no-slides')
               end
@@ -257,6 +257,28 @@ class Schedule < Thing
                     project = Project.from_json(project_info)
                     li {
                       widget project.link_view(show_description: true)
+                    }
+                  end
+                }
+              end
+            }
+            render_events(events) if events
+          }
+        end
+
+        references = json['references']
+        events = json['events']
+
+        if references || events
+          div(class: 'row') {
+            div(class: 'col card-text col-md-8') {
+              if references
+                b "References:"
+                ul {
+                  references.each do |reference_info|
+                    reference = Reference.from_json(reference_info)
+                    li {
+                      widget reference.link_view(show_description: true)
                     }
                   end
                 }
