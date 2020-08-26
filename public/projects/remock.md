@@ -79,6 +79,7 @@ Take those pieces and put it all together! Then, once you have the general layou
 - Clicking on "Learn More" navigates to the `learn-more.html` page
 - Clicking on "Just Another Post" navigates to the `blog-post.html` page
 - Clicking on **Any Page's Title Header** navigates to the `index.html` page
+- Clicking on **Any Page's Header** navigates to the `index.html` page
 
 <!--/BOX-->
 
