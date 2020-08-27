@@ -71,6 +71,7 @@ And during the day, take breaks, find other student teams and play each others' 
 > Note: These stories build off of the **Design** section above. While the stories provided are meant to implement those concepts, artistic liberty in how these stories manifest is ultimately yours. If you're unsure if an idea or mechanic will fulfill a certain story, ask your instructor.
 
 <!--BOX-->
+
 ## One Room
 
 **When** the user launches the program
@@ -111,11 +112,13 @@ while(answer !== 'exit') {
 
 </div>
 </details>
+
 <!--/BOX-->
 
 
 
 <!--BOX-->
+
 ## Read the sign
 
 **Given** the player has been given introductory text
@@ -156,6 +159,7 @@ let sign = {
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Don't take the sign
 
 **Given** the player is in the `starting room`
@@ -175,6 +179,7 @@ That would be selfish. How will other students find their way?
 
 
 <!--BOX-->
+
 ## Blocked
 
 **Given** the player is in the `starting room`
@@ -189,7 +194,9 @@ The door is locked. There is a keypad on the door handle.
 ```
 
 <!--/BOX-->
+
 <!--BOX-->
+
 ## Speak friend and enter
 
 **Given** the player is in the `starting room`
@@ -205,9 +212,11 @@ You enter the foyer and the door shuts behind you.
 ```
 
 **And** the player enters a `new room`
+
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Unauthorized Access
 
 **Given** the player is in the `starting room`
@@ -222,9 +231,11 @@ Bzzzzt! The door is still locked.
 ```
 
 **And** the player remains in the `starting room`
+
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Foyer
 
 **Given** the player is in the `next room`
@@ -244,6 +255,7 @@ A copy of Seven Days lies in a corner.
 ```
 
 <!--/BOX-->
+
 <!--BOX-->
 
 ## Inventory
@@ -281,6 +293,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 ```
 
 <!--/BOX-->
+
 <!--BOX-->
 
 ## Drop Inventory

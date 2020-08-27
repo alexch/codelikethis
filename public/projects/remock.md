@@ -21,6 +21,7 @@ In this project you will re-create a complicated blog style web page.
 # Designing Your Site
 
 <!--BOX-->
+
 ## Sketch It Out
 
 Grab a pencil and (preferably graph) paper, and replicate the provided layout, paying additional attention to the details.
@@ -39,17 +40,19 @@ Ask yourself the following:
 * What stylings/elements can I reuse?
 </div>
 </details>
-<!-- Make an image here>
 
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Break It Down
 
 Now that you have your outline, break it down into pieces you can handle, like a single row. Or if that row holds multiple containers, start with one of the containers!
+
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Build It Up
 
 Take those pieces and put it all together! Then, once you have the general layout of your pages, focus on the details, like:
@@ -62,9 +65,10 @@ Take those pieces and put it all together! Then, once you have the general layou
 <!--/BOX-->
 
 # Stories
-### Besides your site's overall design, the following stories must be completed as well:
+Besides your site's overall design, the following stories must be completed as well:
 
 <!--BOX-->
+
 ## Links
 
 **Given** the browser has loaded the page
@@ -84,6 +88,7 @@ Take those pieces and put it all together! Then, once you have the general layou
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Highlighting Button Links
 
 **Given** the browser has loaded the page
@@ -95,6 +100,7 @@ Take those pieces and put it all together! Then, once you have the general layou
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Highlighting Text Links
 
 **Given** the browser has loaded the page
@@ -106,6 +112,7 @@ Take those pieces and put it all together! Then, once you have the general layou
 <!--/BOX-->
 
 <!--BOX-->
+
 ## Form Inputs
 
 **Given** the browser has loaded the page
@@ -116,7 +123,6 @@ Take those pieces and put it all together! Then, once you have the general layou
 - Entering a form input with an "input device" such as a *cursor* or a *[focus](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus)* **changes the color of its border and background**
 
 <!--/BOX-->
-
 
 # Screen-shots 
 ### [Link to Drive](https://drive.google.com/drive/folders/1Y5G571wVANV62R0D_6vPe8YFQe9gAD6O?usp=sharing)
