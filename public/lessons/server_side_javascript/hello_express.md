@@ -53,12 +53,13 @@ In Code, open the file named `package.json`, it will have a section like this:
 ```
 
 Add a start script like this:
+
 ```json
 "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  ```
+```
 
 > Note that the code after `start` is *exactly* what you typed in the shell to run the app locally.
 
@@ -125,6 +126,7 @@ Once you've made the change...
 * reload the web page and read your new message
 * give yourself a high five!
 
+
 # Parameters in Express
 
 The special character `:` means "this is a [path parameter](./parameters#path_parameters)"
@@ -139,17 +141,38 @@ Example:
 
 Express will grab the *value* from the path itself, and assign it to `request.params` for you to use later.
 
+# Lab: Visualize It
+
+In your `server.js` file, set up a route `/:key`, that when visited,
+prints `request.params` to the command line.
+
+Then visit `http://localhost:5000/value`
+
+You should see the params printing to the terminal
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```javascript
+app.get('/:key', (request,response)=>{
+  console.log(request.params) // prints {key: 'value'}
+})
+```
+</div>
+
+</details>
+
+
 # Lab: Hello, Query Friend!
 
-Now change your "Hello, Express" code so that when you visit a path containing someone's name, it greets the user by that name.
+Now change your `server.js` code so that when you visit a path containing someone's name, it greets the user by that name.
 
 e.g. visiting `http://localhost:5000/Gandalf` prints "Hello, Gandalf!" on the web page.
 
 <details>
 <summary>Hint</summary>
-
 You can set up a path parameter in express with a colon `:` followed by the variable name
-
 e.g. `/:friend` provides a variable in the `params` object with the key of `friend`
 
 </details>
@@ -179,4 +202,3 @@ Some other Node/Express tutorials:
 
 * <https://expressjs.com/>
 
-'
