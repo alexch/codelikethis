@@ -4,16 +4,12 @@
 
 A "Personal Portfolio" is a web site that showcases your personal work. It can serve as a resume that people can interact with to see examples of the work in question.
 
-We will use [GitHub Pages](http://pages.github.com) to build and host your portfolio site.
+We will be building it in React, and hosting it on Heroku!
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2MsN8gpT6jY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Info
 
-## Steps
 
-1. Visit <https://pages.github.com/> and follow the steps there to create a "Hello World" site living at <https://yourgithubusername.github.io> .
->Note: This is not the literal URL, please substitute `yourgithubusername` with your actual github username.
-
-2. Edit the HTML file to include the following information:
+**Your Portfolio should have:**
 
   * Your full name
   * Your Github username, with a link to your GitHub Repos page e.g. <https://github.com/BurlingtonCodeAcademy>
@@ -23,7 +19,40 @@ We will use [GitHub Pages](http://pages.github.com) to build and host your portf
   * How to contact you. e.g. email, phone, Skype id.
     * Consider what information you want to be available when anyone Googles your name.
 
-3. Deploy the changes and demo it to another student in the class.
+
+**It should also:**
+
+Be available for the world to see!!!
+
+The proper scripts for deployment have been provided on the root level of your repo.
+
+`"heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"` 
+
+Whenever you `push` your repository to heroku with `git push heroku master`, this script will update and compile your code for you. Nice!
+You will still need to set up your server so your React application will know how to serve your files properly, though.
+
+
+How, you ask?
+<details>
+<summary>Hint 1</summary>
+
+When designing a single page application with `React Router`, issues usually revolve around the conflict in routing approaches between `React Router` and your server (`express`). This needs to be addressed! 
+
+Solution:
+Create a "catch-all" route in your `express` server that *always* serves your `index.html` file.  
+
+
+</details>
+
+<details>
+<summary>Hint 2</summary>
+
+Don't forget to statically serve your `/build` folder in your `express` server as well!
+
+[more about it here](https://create-react-app.dev/docs/deployment/)
+
+</details>
+
 
 ## Goals
 
@@ -36,12 +65,12 @@ We will use [GitHub Pages](http://pages.github.com) to build and host your portf
 
 # Stories
 
+While the specific style choices and functionality are ultimately up to you, the following stories are required. 
+
 <!--BOX-->
 
 ## Home Page
-
-Build an index.html that includes at least the following.
-
+Should have:
 * A profile image of you.
 * A short description of who you are, for example:
 
@@ -60,7 +89,7 @@ Build an index.html that includes at least the following.
 
 ## About Me Page
 
-* Build a page that includes basic details about your history as a person such as:
+* Build a page (or component) that includes basic details about your history as a person such as:
   * What interestes you
   * Where you grew up
   * Why you got into programming
@@ -73,7 +102,7 @@ Build an index.html that includes at least the following.
 
 * Link to the completed or in progress project repositories for this bootcamp.
   * Use links to your github repositories and/or links to your deployed projects, possibly with cover screenshots.
-  * We will later deploy your projects to Heroku or Github pages. Make sure to update the link to a live example of your work if possible.
+  * Make sure the links are up to date! 
 * Add cover screenshots for each project.
   * Optionally add a separate page for each with a description of the objectives, your approach to solving the project, and anything else that you learned.
   * Optionally record a video showing your walkthrough of the project program or application in use.
@@ -122,9 +151,11 @@ Build an index.html that includes at least the following.
 <!--BOX-->
 
 ## Navigation Bar
+This should exist, and better yet *persist* across all other pages of your site.  
 
 * Build a "Nav Bar" using a consistent UI on each page, with links to the various other pages of your portfolio.
 * Style the navbar using Flexbox or another [CSS navbar technique](/lessons/responsive_layout/navigation) to that it can be seen on various screen sizes.
+
 
 ##### Example Navigation Elements
 
@@ -140,7 +171,7 @@ Build an index.html that includes at least the following.
 
 ## Page Footer
 
-* Add a consistent footer to your portfolio page which should include:
+* Add a consistent, and better yet *persistent*, footer to your portfolio page which should include:
   * Contact Info
   * CopyWrite Info
   * Social Media Links
