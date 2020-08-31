@@ -1,6 +1,8 @@
 
 # Setup
-* Download [MongoDB Compass](https://www.mongodb.com/try/download/compass)
+* Download [MongoDB Community Server](https://www.mongodb.com/try/download/community)
+
+This should include MongoDB Compass.
 
 Compass is a GUI, or *graphical user interface*, that simply provides a platform to view your data without the initial need for knowing MongoDB [query syntax](https://docs.mongodb.com/manual/tutorial/query-documents/).
 
@@ -16,12 +18,21 @@ This makes it a great place to start!
 
 > "Mongo is not a toy, although it can be fun to play with." - Josh Burke
 
-# Drivers
-* MongoDB has its own [query syntax](https://docs.mongodb.com/manual/tutorial/query-documents/) that, while very similar to JavaScript at times, has its own rules and structure! 
 
-This allows MongoDB to be used with a number of languages through the use of *drivers*, which are language-specific! For our case, we'll be using MongoDB's **Node.js driver**, because we're JavaScript people, and we're working server side.
+# Lab: Exploring with Compass
 
-[Full list of drivers](https://docs.mongodb.com/drivers/)
+This is MongoDb's GUI tool. Let's open it up and see what it can do!
+
+- Open Compass and click on the green "Connect" button; it defaults to `localhost` for ease of use.
+
+![Compass](/images/Compass.png)
+
+- Look for the database named `test**` in the left side nav bar, and open it
+- Create a new collection
+- In the collection you just created try running through all the CRUD functions
+  - Add some documents, update them, delete them...
+
+** `test` is a default database name provided by MongoDB.
 
 # Concept: Database
 
@@ -36,15 +47,15 @@ mongodb://username:password@host/database
 for example
 
 ```
-mongodb://mydatabasehost.com:27017/til
+mongodb://mydatabasehost.com:27017/example_db
 ```
 
 or (locally)
 
 ```
-mongodb://localhost:27017
+mongodb://localhost:27017/example_db
 ```
-If no database with the provided name is 
+If no database with the provided name is given, it will default to `test`.
 Note that the term "database" is overloaded: it refers to either:
 
 1. a single MongoDB *process* hosting many data sets
@@ -52,9 +63,11 @@ Note that the term "database" is overloaded: it refers to either:
 
 # Concept: Collection
 
-a *collection* holds documents
+A *collection* holds documents. 
 
-this is analogous to a *table* in SQL
+Many collections can live in a *database*.
+
+This is analogous to a *table* in SQL.
 
 # Concept: Document
 
@@ -66,7 +79,14 @@ Like in a relational database, a document can be *created, read, updated, delete
 
 This nesting and type-flexibility makes it very appropriate to store whatever JavaScript objects your app uses, without needing to devise a *mapping* between nested objects and joined relational tables.
 
-# Do it with JavaScript!
+# Drivers
+* MongoDB has its own [query syntax](https://docs.mongodb.com/manual/tutorial/query-documents/) that, while very similar to JavaScript at times, has its own rules and structure! 
+
+This allows MongoDB to be used with a number of languages through the use of *drivers*, which are language-specific! For our case, we'll be using MongoDB's **Node.js driver**, because we're JavaScript people, and we're working server side.
+
+[Full list of drivers](https://docs.mongodb.com/drivers/)
+
+# Lab: Do it with JavaScript!
 
 Let's make our first Mongo collection! 
 
@@ -81,7 +101,7 @@ npm init -y
 npm install mongodb
 ```
 
-# Do it with JavaScript!, cont.
+# Do it with JavaScript! cont.
 
 Next, create a file called `mongoClient.js`
 
@@ -97,7 +117,7 @@ const uri = "mongodb://localhost:27017" //mongodb connects to port 27017 by defa
 const client = new MongoClient(uri)
 ```
 
-# Do it with JavaScript, cont.
+# Do it with JavaScript! cont.
 
 Now, *connect* to the database `library`, and insert a *document* into the `books` *collection*
 
@@ -117,17 +137,11 @@ async function run() {
 }
 run()
 ```
-Note: This is a bare-bones example that does nothing for error handling but is simply meant to demonstrate basic data flow.
+Note: This is a bare-bones example that does nothing for error handling. It is simply meant to demonstrate the most basic data flow.
 
 # View it in Compass
-- Open Compass
-- Connect to the default, `mongodb://localhost:27017/....`
 
-![Compass](/images/Compass.png)
-
-# View it in Compass, cont.
-
-And then select the database and collection on the side and...
+Select the database and collection on the side and...
 
 ![Compass2](/images/Compass2.png)
 
@@ -137,11 +151,3 @@ Voila! But what's that `_id` thing?
 
 - `_id` is assigned by Mongo when a document is inserted
 - `ObjectId` is a factory function that either generates a new id, or transforms a given string into a Mongo ID object
-
-# Lab: Exploring with Compass
-
-This is MongoDb's GUI tool. Let's open it up and see what it can do!
-
-- Look for the database named "test" in the left side nav bar, and open it
-- Create a new collection
-- In the collection you just created try running through all the CRUD functions
