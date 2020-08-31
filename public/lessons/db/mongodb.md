@@ -1,32 +1,10 @@
-# MongoDB Installation
 
-### For Windows users
+# Setup
+* Download [MongoDB Compass](https://www.mongodb.com/try/download/compass)
 
-* Go to https://www.mongodb.com/try/download/community
-  * Select the latest stable version (4.2.X+)
-  * Make sure the `package` is `msi`
-  * Download, and run the installation wizard, choose the default setup
-  * At the final step of the installer make sure "Install Mongo Compass" is checked
+Compass is a GUI, or *graphical user interface*, that simply provides a platform to view your data without the initial need for knowing MongoDB [query syntax](https://docs.mongodb.com/manual/tutorial/query-documents/).
 
-* Try running the command `mongo` in your terminal **This probably won't work**
-* If the `mongo` command worked, congratulations! You're done!
-  * > Hang tight while we get everyone else sorted out
-
-* To set up the command line path open your file explorer, and right click on "This PC"
-* Select “Advanced System Settings”
-* Select “Environment Variables…” from the popup box
-* Under "System Variables", double click on Path
-* Paste the full file path to Mongo's `bin` folder. `C:\Program Files\MongoDB\Server\4.2\bin` by default
-* Close then reopen your terminal.
-* Run `mongo` to start up your MongoDB environment
-
-### For Mac Users
-
-* Open your terminal and enter the following commands
-* `brew tap mongodb/brew`
-* `brew install mongodb-community@4.2`
-* To run the MongoDb environment use `brew services start mongodb-community@4.2`
-
+This makes it a great place to start!
 
 # MongoDB Overview
 
@@ -37,6 +15,13 @@
 * indexing on fields by value or free-text search 
 
 > "Mongo is not a toy, although it can be fun to play with." - Josh Burke
+
+# Drivers
+* MongoDB has its own [query syntax](https://docs.mongodb.com/manual/tutorial/query-documents/) that, while very similar to JavaScript at times, has its own rules and structure! 
+
+This allows MongoDB to be used with a number of languages through the use of *drivers*, which are language-specific! For our case, we'll be using MongoDB's **Node.js driver**, because we're JavaScript people, and we're working server side.
+
+[Full list of drivers](https://docs.mongodb.com/drivers/)
 
 # Concept: Database
 
@@ -54,6 +39,12 @@ for example
 mongodb://mydatabasehost.com:27017/til
 ```
 
+or (locally)
+
+```
+mongodb://localhost:27017
+```
+If no database with the provided name is 
 Note that the term "database" is overloaded: it refers to either:
 
 1. a single MongoDB *process* hosting many data sets
@@ -67,26 +58,80 @@ this is analogous to a *table* in SQL
 
 # Concept: Document
 
-In MongoDB, a *document* is essentially a single JavaScript object
+In MongoDB, a *document* is essentially a single JavaScript *object*
 
-Like in a relational database, a document can be created, read, updated, deleted, indexed, searched for, ...
+Like in a relational database, a document can be *created, read, updated, deleted, indexed, searched for*, ...
 
 *Unlike* in a relational database, a document can contain *any* value for its fields, *including arrays and nested objects*.
 
 This nesting and type-flexibility makes it very appropriate to store whatever JavaScript objects your app uses, without needing to devise a *mapping* between nested objects and joined relational tables.
 
-# Lab: Mongo CLI
+# Do it with JavaScript!
 
-Let's make our first Mongo collection through the terminal!
+Let's make our first Mongo collection! 
 
-- Enter the Mongo shell
-- Once you're in the mongo shell type `help` to see the options available to you
-- Create an object and insert it into the collection
-  - Add a few
-- View all the objects you just added
-- View a single object
-- Update an object
-- Delete an object
+**We will insert a *document* into a *collection* that lives in a *database*.**
+
+Start by making new directory, and initializing it as an npm repository and installing the `mongodb` drivers. 
+
+```
+mkdir mongo_example
+cd mongo_example
+npm init -y
+npm install mongodb
+```
+
+# Do it with JavaScript!, cont.
+
+Next, create a file called `mongoClient.js`
+
+This is where we'll configure the *client*, or the *software* that connects to the server
+
+The server, in this case, is `localhost:27017`
+
+in `mongoClient.js`, add:
+
+```javascript
+const { MongoClient } = require("mongodb");
+const uri = "mongodb://localhost:27017" //mongodb connects to port 27017 by default
+const client = new MongoClient(uri)
+```
+
+# Do it with JavaScript, cont.
+
+Now, *connect* to the database `library`, and insert a *document* into the `books` *collection*
+
+Let's do this with an *asynchronous* function so we can harness the `await` keyword and keep things in order
+
+like so:
+
+```javascript
+async function run() {
+
+    await client.connect()
+    const database = client.db('library')
+    const collection = database.collection('books')
+    await collection.insertOne({ title: "Eloquent Javascript", author: "Marijn Haverbeke" })
+    await client.close()
+
+}
+run()
+```
+Note: This is a bare-bones example that does nothing for error handling but is simply meant to demonstrate basic data flow.
+
+# View it in Compass
+- Open Compass
+- Connect to the default, `mongodb://localhost:27017/....`
+
+![Compass](/images/Compass.png)
+
+# View it in Compass, cont.
+
+And then select the database and collection on the side and...
+
+![Compass2](/images/Compass2.png)
+
+Voila! But what's that `_id` thing?
 
 # Concept: ObjectId
 
@@ -95,9 +140,8 @@ Let's make our first Mongo collection through the terminal!
 
 # Lab: Exploring with Compass
 
-When you installed MongoDB you should have also installed an application called "Compass."  This is MongoDb's GUI tool. Let's open it up and see what it can do!
+This is MongoDb's GUI tool. Let's open it up and see what it can do!
 
-- Open compass and hit the green button that says "connect"
 - Look for the database named "test" in the left side nav bar, and open it
 - Create a new collection
 - In the collection you just created try running through all the CRUD functions
