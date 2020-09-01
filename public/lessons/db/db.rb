@@ -76,6 +76,12 @@ class Track
       topic name: "mongodb-shell"
     end
 
+    lesson name: "mongoose" do
+      topic name: "mongodb-queries"
+      topic name: "schema"
+      topic name: "collection"
+    end
+
     lesson name: "firebase_intro"
 
     lesson name: "authentication"
