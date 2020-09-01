@@ -1,29 +1,43 @@
 # Querying Arrays
 
-* Assume the following slides operate on a collection with the following documents
+This lesson makes the following assumptions:
+
+**1.** You have properly connected to your database, and declared the following:
 
 ```javascript
-db.inventory.insertMany( [
-   { item: "journal", instock: [ { warehouse: "A", qty: 5 }, { warehouse: "C", qty: 15 } ] },
-   { item: "notebook", instock: [ { warehouse: "C", qty: 5 } ] },
-   { item: "paper", instock: [ { warehouse: "A", qty: 60 }, { warehouse: "B", qty: 15 } ] },
-   { item: "planner", instock: [ { warehouse: "A", qty: 40 }, { warehouse: "B", qty: 5 } ] },
-   { item: "postcard", instock: [ { warehouse: "B", qty: 15 }, { warehouse: "C", qty: 35 } ] }
+const { MongoClient } = require("mongodb");
+const uri = "mongodb://localhost:27017"
+const client = new MongoClient(uri, { useUnifiedTopology: true })
+
+async function runQuery() {
+    await client.connect()
+    const database = client.db('test')
+    const collection = database.collection('inventory')
+    
+     // insert query here
+    const results =  
+
+ 
+    await results.forEach(doc => console.log(doc))
+    // close connection
+    await client.close()
+
+}
+runQuery()
+```
+**2.** You have added the following test-data:
+
+```javascript
+await collection.insertMany([
+   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "A" },
+   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+   { item: "planner", qty: 75, size: { h: 22.85, w: 30, uom: "cm" }, status: "D" },
+   { item: "postcard", qty: 45, size: { h: 10, w: 15.25, uom: "cm" }, status: "A" }
 ]);
+
 ```
-
-# Matching Nested Array Documents
-
-* At least ONE of the documents in the nested array must match exactly
-* Order of the properties matters in the query
-
-```javascript
-db.inventory.find(
-  { "instock":
-    { warehouse: "A", qty: 5 }
-  }
-)
-```
+Here is the document we will be querying for (in a variety of ways)
 
 ```javascript
 // Matching document
@@ -35,13 +49,13 @@ db.inventory.find(
 * To query with relaxed conditions, use the property name "." sub-document property concatenation within quotes.
 
 ```javascript
-db.inventory.find( { 'instock.qty': 5 } )
+const results = await collection.find( { 'instock.qty': 5 } )
 ```
 
 * Range conditions are also supported
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   { 'instock.qty':
     { $lte: 20 }
   }
@@ -54,7 +68,7 @@ db.inventory.find(
 * Is there a difference betweeen the two below queries?
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   { 'instock.qty':
     { $lte: 20, $gte: 5 }
   }
@@ -62,7 +76,7 @@ db.inventory.find(
 ```
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   { 'instock.qty':
     { $lte: 20 },
     'instock.qty': { $gte: 5}
@@ -76,7 +90,7 @@ db.inventory.find(
 * Syntax is: `'<property>.<index>.<subProperty>'`
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   { 'instock.0.qty':
     { $lte: 20 }
   }
@@ -89,7 +103,7 @@ db.inventory.find(
 * This makes the conditions act like OR condtions
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   {
     "instock.qty": 5,
     "instock.warehouse": "A"
@@ -103,7 +117,7 @@ db.inventory.find(
 * This acts like an AND between the two conditions
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   { "instock":
     { $elemMatch:
       {
@@ -120,7 +134,7 @@ db.inventory.find(
 * `$elemMatch` can be used with range conditions
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   { "instock":
     { $elemMatch:
       {
@@ -137,7 +151,7 @@ db.inventory.find(
 * `$elemMatch` can also be used with multiple range conditions
 
 ```javascript
-db.inventory.find(
+const results = await collection.find(
   { "instock":
     {
       $elemMatch: {
