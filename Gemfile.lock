@@ -56,7 +56,7 @@ GEM
     files (0.4.0)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
-    json (2.3.0)
+    json (2.3.1)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -66,11 +66,11 @@ GEM
     multi_json (1.14.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    newrelic_rpm (6.11.0.365)
+    newrelic_rpm (6.12.0.367)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    oj (3.10.8)
+    oj (3.10.13)
     optimist (3.0.1)
     polyglot (0.3.5)
     predicated (0.2.6)
@@ -95,7 +95,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redcarpet (2.3.0)
-    rollbar (2.25.1)
+    rollbar (3.0.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -157,11 +157,11 @@ DEPENDENCIES
   deckrb!
   erector (>= 0.9.0)
   files (~> 0.4.0)
-  json (~> 2.2)
+  json (~> 2.3, >= 2.3.1)
   listen (~> 3.1)
-  newrelic_rpm (~> 6.8, >= 3.15.2.317)
-  nokogiri (~> 1.7)
-  oj (~> 3.9)
+  newrelic_rpm (~> 6.12, >= 6.12.0.367)
+  nokogiri (~> 1.10, >= 1.10.10)
+  oj (~> 3.10, >= 3.10.13)
   pry (~> 0.12.2)
   puma (~> 4.3, >= 4.3.5)
   rack-cache (~> 1.12, >= 1.12.0)
@@ -171,7 +171,7 @@ DEPENDENCIES
   rake-notes (~> 0.2)
   redcarpet (~> 2.3)
   rerun!
-  rollbar (~> 2.25)
+  rollbar (~> 3.0, >= 3.0.0)
   rspec (~> 3.8)
   sass (~> 3.7.4)
   sinatra (~> 2.0.8, >= 2.0.8.1)
@@ -182,4 +182,4 @@ RUBY VERSION
    ruby 2.5.5p157
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
