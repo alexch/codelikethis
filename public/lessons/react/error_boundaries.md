@@ -59,7 +59,7 @@ class ErrorBoundary extends React.Component {
   * Holds information about the component stack at the time of error
 * Can be used as a top level wrapper, or many small error wrappers
 
-```
+```jsx
 componentDidCatch(error, info) {
 
   /* Example stack information:
@@ -80,26 +80,22 @@ componentDidCatch(error, info) {
 * Use regular `try/catch` syntax
 
 ```jsx
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null };
-  }
+function MyComponent (props) {
 
-  handleClick = () => {
+  const [error, setError] = useState(null)
+
+  const handleClick = () => {
     try {
-      // Do something that could throw
+      // Do something that could fail
     } catch (error) {
-      this.setState({ error });
+      setError(error);
     }
   }
 
-  render() {
-    if (this.state.error) {
-      return <h1>Caught an error.</h1>
-    }
-    return <div onClick={this.handleClick}>Click Me</div>
+  if (error) {
+    return <h1>Caught an error.</h1>
   }
+  return <div onClick={this.handleClick}>Click Me</div>
 }
 ```
 

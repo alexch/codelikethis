@@ -50,39 +50,32 @@ const LogoutButton = (props) => {
 # React Elements as Variables - Usage
 
 ```jsx
-class LoginControl extends React.Component {
-  constructor (props) {
-    super (props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = { isLoggedIn: false };
-  }
+function LoginControl (props) {
+
+  const [isLoggedIn, setLogIn] = useState(false)
 
   handleLoginClick () {
-    this.setState({ isLoggedIn: true });
+    setLogIn(true);
   }
 
   handleLogoutClick () {
-    this.setState({ isLoggedIn: false });
+    setLogIn(false);
   }
 
-  render () {
-    const isLoggedIn = this.state.isLoggedIn;
-    let button;
+  let button;
 
-    if (isLoggedIn) {
-      button = <LogoutButton onClick={ this.handleLogoutClick } />;
-    } else {
-      button = <LoginButton onClick={ this.handleLoginClick } />
-    }
-
-    return (
-      <div>
-        <Greeting isLoggedIn={ isLoggedIn } />
-        { button }
-      </div>
-    );
+  if (isLoggedIn) {
+    button = <LogoutButton onClick={ this.handleLogoutClick } />;
+  } else {
+    button = <LoginButton onClick={ this.handleLoginClick } />
   }
+
+  return (
+    <div>
+      <Greeting isLoggedIn={ isLoggedIn } />
+      { button }
+    </div>
+  );
 }
 ```
 
@@ -126,30 +119,21 @@ ReactDOM.render(
 ### Simple
 
 ```jsx
-class Greeting extends React.Component {
-  constructor (props) {
-    super (props)
-    this.state = {
-      isLoggedIn: false
-    }
-  }
+function Greeting (props) {
 
-  render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = props.isLoggedIn;
 
-    return (
-      <div>
-        The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
-      </div>
-    );
-  }
+  return (
+    <div>
+      The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    </div>
+  );
 }
 ```
 
 ### Complex
 
 ```jsx
-render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
@@ -160,7 +144,6 @@ render() {
       )}
     </div>
   );
-}
 ```
 
 # Preventing Component Rendering
@@ -178,29 +161,31 @@ const WarningBanner = (props) => {
   );
 }
 
-class Page extends React.Component {
+function Page (props) {
   constructor(props) {
     super(props);
     this.state = {showWarning: true};
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
-  handleToggleClick() {
-    this.setState(prevState => ({
-      showWarning: !prevState.showWarning
-    }));
+  const [showWarning, setWarning] = useState(true)
+
+  function handleToggleClick() {
+    if(showWarning) {
+      setWarning(false)
+    } else {
+      setWarning(true)
+    }
   }
 
-  render() {
-    return (
-      <div>
-        <WarningBanner warn={this.state.showWarning} />
-        <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Hide' : 'Show'}
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <WarningBanner warn={showWarning} />
+      <button onClick={handleToggleClick}>
+        {showWarning ? 'Hide' : 'Show'}
+      </button>
+    </div>
+  );
 }
 ```
 

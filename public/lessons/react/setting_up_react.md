@@ -47,19 +47,22 @@ Let's create our first React Component!  If you haven't already installed `creat
 
 >Note: After you open VSCode it will ask if you want to use eslint from node modules. React has it's own eslint extension to properly highlight react components so use it.
 
-# Core Concept: functional v. class based components
+# Core Concept: Class Based Components
 
-`create-react-app` generates functional React components
+As of React 16.8, and the introduction of Hooks class based components are starting to become less, and less common however it's still important to understand them as they reveal more of the internal processes of React, and are still fairly prevelant in older code.
 
-- functions that return JSX
-- the return value of the function is drawn to the page
-- the name of the function is the name of the component
-- component names should be capitalized
+# The State Object
 
-You can also use class based components by extending the React Component
+Every React component keeps track of its own state in an internal object named `state`. In a class based component you can access state through `this.state`. In a functional component you have to use Hooks to access state.
 
-- `class MyComponent extends React.Component{...`
-- has access to state, and lifecycle methods
-- the return value of the `render` method is drawn to the page
-- the name of the class is the name of the component
-- component names should be capitalized. **Always.**
+React likes to be in complete control of the page so it's important to only update the page through state, and **never through direct DOM manipulation!**
+
+# Lifecycle Methods
+
+Class based components also have access to a component's lifecycle methods. These are methods which get called at certain points during the component's life.
+
+The most common of these are:
+
+- `componentDidMount` fires when the component is first loaded onto the page
+- `componentDidUpdate` fires whenever `props` or `state` are updated
+- `componentWillUnmount` fires right before the component is removed from the page

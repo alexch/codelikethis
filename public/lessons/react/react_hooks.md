@@ -135,6 +135,14 @@ It is important that you start the name of your custom Hook with `use` otherwise
 
 > e.g. useMyCustomHook
 
+# Lab: More Hook Practice
+
+Let's go back to some of our old example code, and change it from class based components to functional components.
+
+- Change [the Ticking Clock example](lessons/react/props-and-state#anchor/state__manage_the_clock) so that it uses functional components, and hooks
+- Change [the Color Clicker lab](/lessons/react/props-and-state#anchor/lab_color_clicker) so that it uses functional components, and hooks
+- Change the (Forms - TextArea example)[/lessons/react/forms-in-react#anchor/forms__textarea] to be a functional component with Hooks
+
 # Refs, and Readings
 
 - [Start here with the React docs](https://reactjs.org/docs/hooks-intro.html)

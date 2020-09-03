@@ -6,12 +6,12 @@
 * Generate child compoents with `render()`
 
 ```javascript
-class Profile extends React.Component {
+function Profile (props) {
   userData = () => {
     return data || fetchDataFromDatabase();
   }
 
-  render() {
+  return(
     <Header>
       <Profile
         name={userData.name}
@@ -21,7 +21,7 @@ class Profile extends React.Component {
       <Activity />
       <Contact />
     </Header>
-  }
+  )
 }
 ```
 
@@ -51,8 +51,8 @@ class Profile extends React.Component {
 * React will iterate over and render each
 
 ```javascript
-class ProfileList extends React.Component {
-  render() {
+function ProfileList (props) {
+  return(
     <Header>
       [
         <Profile userId="One"/>,
@@ -60,7 +60,7 @@ class ProfileList extends React.Component {
         <Profile userId="Three"/>
       ]
     </Header>
-  }
+  )
 }
 ```
 
@@ -71,37 +71,37 @@ class ProfileList extends React.Component {
 * Components can be **conditionally** rendered
 
 ```js
-class Comment extends React.Component {
+function Comment (props) {
   render () {
     return (
       <li>
-        <p>User: {this.props.user}</p>
-        <p>Comment: {this.props.content}</p>
+        <p>User: {props.user}</p>
+        <p>Comment: {props.content}</p>
       </li>
     )
   }
 }
 
-class CommentList extends React.Component {
-  render() {
-    const comments = [
-      { user: 'Joshua', content: 'Components are my fave!' },
-      { user: 'Ada', content: 'Yes they make life easy' },
-      { user: 'Alex', content: 'Loved them for years' }
-    ];
-    const commentComponents = forms.map((comment, index) => {
-      return <Comment user={ comment.user } content={ comment.content }/>
-    });
+function CommentList (props) {
 
-    return (
-    <div className="comments">
-      <h2>Comment List</h2>
-      <ul>
-      { commentComponents }
-      </ul>
-    </div>
-    )
-  }
+  const comments = [
+    { user: 'Joshua', content: 'Components are my fave!' },
+    { user: 'Ada', content: 'Yes they make life easy' },
+    { user: 'Alex', content: 'Loved them for years' }
+  ];
+
+  const commentComponents = forms.map((comment, index) => {
+    return <Comment user={ comment.user } content={ comment.content }/>
+  });
+
+  return (
+  <div className="comments">
+    <h2>Comment List</h2>
+    <ul>
+    { commentComponents }
+    </ul>
+  </div>
+  )
 }
 ```
 
