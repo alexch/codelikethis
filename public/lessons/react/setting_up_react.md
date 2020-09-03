@@ -1,6 +1,6 @@
 # Create React App
 
-There is a package called `create-react-app` which will automatically install all your required dependencies, and set up a directory for your react app automatically.
+There is a very useful package called `create-react-app` which will automatically install all your required dependencies, and set up a directory for your react app automatically.
 
 # Using Create React App
 
@@ -44,6 +44,8 @@ Let's create our first React Component!  If you haven't already installed `creat
 - `cd` into your code folder
 - create a React app named `first-reapp`
 - Change your app so it displays an `h1` with the text "Hello, React!"
+
+>Note: After you open VSCode it will ask if you want to use eslint from node modules. React has it's own eslint extension to properly highlight react components so use it.
 
 # Core Concept: functional v. class based components
 

@@ -25,6 +25,8 @@ class Track
     lesson name: "setting_up_react",
            description: "Preparing the development environment for React"
 
+    lesson name: "class_v_functional_components"
+
     lesson name: "component_oriented",
            description: "React applications are organized into components. This lesson will show how components can be built up out of smaller components and then reused in new contexts." do
       topic name: "react"
@@ -52,6 +54,7 @@ class Track
       topic name: "react-forms"
     end
 
+    lesson name: "react_hooks"
 
     lesson name: "conditionally_rendering_components" do
       topic name: "react"

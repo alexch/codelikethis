@@ -70,7 +70,6 @@ Track::Javascript = Track.new(
   lesson name: "logic"
   lesson name: "input_and_output"
   lesson name: "loops"
-
   lesson name: "arrays"
   lesson name: "argv"
 
