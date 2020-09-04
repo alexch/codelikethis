@@ -207,6 +207,15 @@ class App < Sinatra::Base
     page(thing: topic).to_html
   end
 
+  not_found do
+    status 404
+    'The requested resource cannot be found.'
+  end
+
+  error do
+    'An error has occurred'
+  end
+
   def track_dir
     track.dir
   end
