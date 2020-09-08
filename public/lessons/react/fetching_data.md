@@ -83,6 +83,23 @@ class App extends React.Component {
 }
 ```
 
+# Fetching Data With Hooks
+
+To fetch data (and store it) in a functional component we need to use Hooks
+
+- first set up a property in state, and an updater function using `setState`
+- then fetch the data with `useEffect`
+- and use your updater function to set the fetched data in state
+- use your state property to conditionally render data to the page when it's loaded
+
+# Lab: Functional Fetching
+
+Let's practice fetching data with `useEffect` by creating a React app that fetches a list of users, and displays them on the page
+
+- Create a new React app
+- When the page loads fetch a list of userss from `https://jsonplaceholder.typicode.com/users`
+- Then display a list of the user names on the page
+
 # Fetching Data - Handle Errors
 
 * Errors in `fetch` using APIs happen
@@ -92,55 +109,27 @@ class App extends React.Component {
 ### Component with Error Handling
 
 ```jsx
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
-    };
-  }
+function AuthorList(props) {
+  const [authors, setAuthors] = useState(null)
 
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            items: result
-          });
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error: error
-          });
-        }
-      );
-  }
-
-  render() {
-    const { error, isLoaded, items } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      console.log(this.state.items);
-      return (
-        <ul>
-          {items.map(item => (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </li>
-          ))}
-        </ul>
-      );
-    }
-  }
+      .then(res => {
+        setAuthors(res)
+      }).catch((err) => {
+        alert('Something went wrong...')
+        console.error(err.message)
+      })
+  })
+  
+  return(
+    <ul>
+      {authors ? authors.map((author) => {
+        return <li>{author.name}</li>
+      }) : 'loading...'}
+    </ul>
+  )
 }
 ```
 

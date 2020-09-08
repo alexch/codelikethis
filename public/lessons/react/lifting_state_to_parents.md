@@ -93,6 +93,7 @@ function TemperatureInput (props) {
 
 * The components must be kept in sync
 * Each TemperatureInput holds it's own state
+* Sibling components can not communicate directly
 * State can be moved to `Calculator` to achieve this
 
 ### Remove State from TemperatureInput
@@ -121,9 +122,9 @@ function TemperatureInput (props) {
 
 # Lifting State - Parent State
 
-* Children call `onTemperatureChange` with new state
-* Parent updates state with `setState`
-* Children re-render
+* Children call `setTemperature` from props with new state
+* Parent updates state with `setTemperature`
+* Children re-render with new props
 
 ### Parent Calculator Passes State to Children
 

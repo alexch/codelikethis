@@ -111,20 +111,6 @@ useEffect(() => {
   })
 ```
 
-# Lab: Fetching Data
-
-Let's practice `useEffect` by creating a React app that fetches some data, and displays it to the page
-
-- Create a new React app
-- When the page loads fetch a list of userss from `https://jsonplaceholder.typicode.com/users`
-- Then display a list of the user names on the page
-
-<details>
-<summary>Hint</summary>
-
-You may want to combine `useState`, and `useEffect` to achieve this.
-</details>
-
 # Creating Custom Hooks
 
 You can also create your own custom hooks by simply writing a function that performs the actions you want your hooks to take. This can be done to combine multiple hooks into one reusable operation, or to create an entirely new bit of functionality
