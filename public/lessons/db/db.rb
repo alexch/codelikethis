@@ -81,6 +81,19 @@ class Track
       topic name: "schema"
       topic name: "collection"
     end
+    
+    lesson name: "security_and_authentication" do
+      topic name: "connection"
+      topic name: "servers"
+      topic name: "databases"
+    end
+
+    lesson name: "passport" do
+      topic name: "connection"
+      topic name: "servers"
+      topic name: "databases"
+      topic name: "authentication"
+    end
 
     lesson name: "firebase_intro"
 
