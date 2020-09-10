@@ -27,13 +27,13 @@ A **number** is what it sounds like -- any integer or decimal.
 
 Open up a node environment in your terminal (`node` <kbd>Enter</kbd>). Once you're in the node environment you should be able to write javascript, and run it inside your terminal. Try out the following equations:
 
-    * Add two numbers together with the `+` operator
-    * Multiply two numbers with the `*` operator
-    * Divide two numbers using the `/` operator
-    * Square a number by raising it to the power of 2 `**2`
-    * Create a more complex mathematical equation. Useing a mixture of different operators
-    * Bonus: Weird math! Try the following equations:
-        * `0.1 + 0.2`, `2**53` and `2**53 + 1`, and `Infinity - Infinity`
+- Add two numbers together with the `+` operator
+- Multiply two numbers with the `*` operator
+- Divide two numbers using the `/` operator
+- Square a number by raising it to the power of 2 `**2`
+- Create a more complex mathematical equation. Useing amixture of different operators
+- Bonus: Weird math! Try the following equations:
+    - `0.1 + 0.2`, `2**53` and `2**53 + 1`, and `Infinity - Infinity`
 
 What have you noticed about math in JavaScript
 
@@ -65,11 +65,9 @@ These start and end numbers are called *indexes* (or *indices* if you're feeling
 
 [MDN: slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 
-# String Indexing Explained
+# String Indexing
 
 Humans like to start counting at 1, but computers like to start counting at 0.
-
-This can be confusing, so here's a visualization to help explain it.
 
 Think of the indexes as pointing at the *spaces between* characters, as in this diagram:
 
@@ -84,50 +82,16 @@ So with this picture in your mind, `slice`...
 
 Try various start and end values in the console and see what happens!
 
-# Characters
-
-Q: A string is "a series of characters"... but what is a character?
-
-A: a character is a *number* (or *character code*) that stands for a *symbol*.
-
-|symbol|code|name|
-|---|---|---|
-| `A` | 65 | capital A |
-| `B` | 66 | capital B |
-| `Z` | 90 | capital Z |
-| `_` | 95 | underscore |
-| `a` | 97 | lowercase A |
-| ??? | 10 | newline |
-
-(Some characters stand for *unprintable* symbols like `newline` or `tab` or `bell`.)
-
 # Lab: Playing with Strings
 
 Open up a Node instance in your terminal, and let's play around with strings!
 
-    * Add two strings together that use the same type of quotes (e.g.`'Java' + 'Script'`)
-    * Add two strings together using different types of quotes (e.g. `"I'm double quoted!" + 'I am single quoted.')
-    * Subtract two strings (e.g. `'cats' - 'dogs'`)
-    * Add a string to a number
+- Add two strings together that use the same type of quotes (e.g.`'Java' + 'Script'`)
+- Add two strings together using different types of quotes (e.g. `"I'm double quoted!" + 'I am single quoted.')
+- Subtract two strings (e.g. `'cats' - 'dogs'`)
+- Add a string to a number
 
 What happens when you try to put quotes inside your string's quotes?
-
-# Lab: String Methods
-
-Strings have many operations attached to them. These attached operations are refered to as 'methods' (more on that later) and are quite useful. Let's try a few of them out in your console now:
-
-```js
-"titanic".toUpperCase()
-"QUIETLY".toLowerCase()
-"Java".repeat(10)
-"banana".length
-"berry".charAt(1)
-"berry".charAt(0)
-"apple"[3]
-"banana".includes("nan")
-"banana".endsWith("ana")
-"blueberry".replace("blue", "black")
-```
 
 # Booleans
 
