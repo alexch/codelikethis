@@ -1,33 +1,82 @@
+# Overview
+Welcome to the server-side! In this slide deck, we will be covering the basic aspects of servers, like what they are and how they relate to your viewing web pages! 
 
-# Client Side JS vs. Server Side JS
+# What is a server?
+*Server* is a term that refers to both hardware and/or software. It is used to define the relationship between the computer a user is interacting with (client) and the distinctly different environment that said user will request information from. 
 
-Client side JavaScript operates in your browser's environment, while server side JavaScript operates in a Node environment. As we discovered when working with front end (a.k.a. client side) JavaScript there are some differences in what options you have available to you, and the syntax you use.
+## When dealing with hardware, it: 
 
-* In Node you can import files by using `require` or `import`. In the browser you import files by having a `<script>` tag with a `src` attribute equal to the file's name
+- is an ordinary computer
+  - *usually* elsewhere
+  - can be the same computer!
+- stores the software that defines behavior
+- contains the components for a website
+  - JavaScript files
+  - HTML
+  - CSS stylesheets
+  - Images
 
-* In a node environment we have access to npm modules, which we can include by doing an `npm install <module name>` through the terminal. We cannot use node modules in client side JavaScript
+## When dealing with software, it:
 
-This means that you will generally want to write seperate JavaScript files for server side, and client side applications.
+- understands URLs (AKA web addresses)
+- listens for a *protocol** request
+- responds to request
+- sends response through a *protocol* response
 
-# But what if I really want to use my code in both places?
+# Requests
+Servers have uniquely defined rules that determine how they will respond based on a request.
 
-* you need to put the `room.js` file somewhere that both the server and the client can see it
-  * This is weird because usually those two directories are separate (`lib` and `public` respectively)
-* also inside room.js you say `module.exports = class Room { ...`
-  * This means that *even if* you download `room.js` onto the client, it will break because *there is no global named `module`* in your browser
-* so you’d need to add `<script>module = {}</script>` in your HTML, *above* the `<script src='room.js'>`
-  * you’ll also need to make sure that none of your code calls anything in the NodeJS core or in any NPM package
+## The request:
 
-# That sounds complicated. Is it bad?
+- is sent from the *client* (most often a web browser)
+- is sent to the server via protocol (like HTTP)
+- should be intentional and explicit
+- can contain information from a user's input
+- can be used to:
+  - update a database
+  - navigate a website
+  - retrieve information
+  - and more!
 
-it’s not necessarily a *bad* idea to reuse code between layers, it’s just non-traditional so some things don’t work like you expect them to.
+# Responses
+Servers have uniquely defined rules that determine how they will respond based on a request.
 
-There are also tools like *browserify* that make it "easier"
+## The response:
 
-http://browserify.org/
+- is sent by the server
+- sends information back to the *client* (most often a web browser)
+- is typically determined by the request received
+- may carry out an action based on the request
+- contain a status code for general information
+  - 200 is `OK`
+  - 404 is `Not Found`
+  - and more...
 
-# Is there a special syntax for server side JS?
+# Headers
+When requests and responses are sent between server and browser, additional information is included in *headers*
 
-The short answer is "no." We started by writing JavaScript in a Node environment. We ran our command line applications in a NodeJS environment, and NodeJS operates the same way on a server as it does on your local machine.
+The header can be loosely categorized based on its context: **request, response, or general**
 
-However there are libraries that make writing the server itself a bit easier since setting up a server can get a little complicated useing just standard JavaScript. The library we will be using is called ["express"](https://expressjs.com/)
+- **request headers** 
+    - contain information about the client (requester), or what the request is expecting.
+- **response headers** 
+    - contain details about the response, like server location and time.
+- **general headers** 
+    - can be included in both request and responses, but provide no info based on what information is contained.
+
+# Server-side programming
+"Server-side" is mean to describe everything that happens in between a request and a response. 
+
+## Server-side code:
+
+- is used to deliver information efficiently
+- is used to keep things secure
+- is versatile
+- is not visible to the *client* (most often a web browser)
+- can be written in a number of programming languages!
+
+# Resources
+
+* [Introduction to the Server Side](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction)
+* [What is a web server?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server)
+* [Medium Post](https://medium.com/@BaaniLeen/web-development-series-intro-to-server-side-scripting-fe5626323f92)
