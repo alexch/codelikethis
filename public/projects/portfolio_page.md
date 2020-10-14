@@ -100,6 +100,8 @@ Should have:
 
 ## Projects Page
 
+* A list of all the repos on your personal github account
+  * You can generate this using the [GitHub Rest API](https://developer.github.com/v3/repos/)
 * Link to the completed or in progress project repositories for this bootcamp.
   * Use links to your github repositories and/or links to your deployed projects, possibly with cover screenshots.
   * Make sure the links are up to date! 
