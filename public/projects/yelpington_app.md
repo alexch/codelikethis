@@ -8,6 +8,7 @@ In this project, you will create an online directory of restaurants in Burlingto
 
 # Tech
 
+* ExpressJS
 * JSON
 * AJAX
 * Leaflet Maps
@@ -16,13 +17,14 @@ In this project, you will create an online directory of restaurants in Burlingto
 
 learn how to...
 
+* serve JSON files from a server
 * load JSON files into a JavaScript app
 * parse JSON files, and display data on a web page.
 * display, and manipulate embedded maps on a web page
 
 ## Design
 
-We have set up an API endpoint for serving JSON files with restaurant data that is structured like so:
+You should set up an API endpoint for serving JSON files with restaurant data that is structured like so:
 
 ```json
 {
@@ -38,7 +40,19 @@ We have set up an API endpoint for serving JSON files with restaurant data that 
 }
 ```
 
-Which you can access through this endpoint: <https://json-server.burlingtoncodeacademy.now.sh/restaurants>
+This endpoint should also hold a directory of restaurant IDs formatted like so:
+
+```json
+[
+  "joes-diner",
+  "american-flatbread",
+  "kountry-kart-deli",
+  .
+  .
+  .
+
+]
+```
 
 **Note** that we are defining our own *id* format; its rules are:
 
@@ -53,6 +67,44 @@ needs a unique identifier.
 
 # Stories
 
+<!--BOX-->
+
+## Create a Server
+
+Create a simple Express server so that:
+
+**Given** the server is started with the command `npm start`
+
+**When** the user visits the homepage (http://localhost:8080)
+
+**Then** An HTML file should be served which displays the title:
+<h1>Yelpington!</h1>
+
+<!--/BOX-->
+
+<!--BOX-->
+
+## API endpoint: All restaurants
+
+**Given** the server is running
+
+**When** the user visits the route `/api`
+
+**Then** the user should see a list of all available restaurant IDs in JSON format
+
+<!--/BOX-->
+
+<!--BOX-->
+
+## API endpoint: Single Restaurants
+
+**Given** the server is running
+
+**When** the user visits the the route `/api/restaurant-id`
+
+**Then** the user should see the information of the restaurant whose ID was used in JSON format
+
+<!--/BOX-->
 
 <!--BOX-->
 
@@ -94,13 +146,11 @@ needs a unique identifier.
 
 >Note: Use AJAX/Fetch to load the data.
 
-> We've added a simple `node` static server to this repository.
-> Install it with `npm install` and run it with `npm start`
-> Feel free to write your own server if you want to using ExpressJS
+<!--/BOX-->
 
 <!--BOX-->
 
-**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant.html#joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-coding/urls_and_javascript) lesson.
+**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant#joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-coding/urls_and_javascript) lesson.
 <details>
 <summary>
 Click here for a more detailed hint
@@ -112,8 +162,6 @@ let name = document.location.hash.slice(1)
 
 (`slice(1)` removes the `#` from the `hash` field of the `document.location` URL object.)
 </details>
-
-<!--/BOX-->
 
 <!--/BOX-->
 
@@ -144,8 +192,6 @@ let name = document.location.hash.slice(1)
 <!--BOX-->
 
 ## IceBox
-
-* Create your own API endpoint to extend the restaurants listed, or to create your own restaurant data.
 
 * Create a contact form to submit user comments to the restaurant page which will then be displayed on that page.
 
