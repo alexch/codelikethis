@@ -21,13 +21,13 @@ class Track
     goal name: "how to extend your application's functionality by calling APIs"
     goal name: "how to streamline and codify your application with an API of its own"
 
+    lesson name: "intro_to_server_side_js"  
+      
     lesson name: "hello_node"
 
     lesson name: "hello_express"
 
     lesson name: "/www/http"
-
-    lesson name: "intro_to_server_side_js"
 
     lesson name: "client_vs_server_js"
 
@@ -80,12 +80,6 @@ class Track
       topic name: "http"
       topic name: "http-methods"
     end
-
-    lesson name: "redirects" do
-      topic name: "http-redirect"
-    end
-
-    lesson name: "promise_chaining"
 
     lesson name: "blog",
            description: "codealong walkthrough, building a blog server by adding routes and form submission to the core Express server" do

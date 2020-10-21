@@ -1,19 +1,21 @@
-# Many Ways To Pass Parameters
+# Overview
+When sending information to a server, like navigating the web is wont to do, it is important to understand a few things how that information can be sent. As with most things in programming, it isn't a one-size-fits-all approach. 
 
-in HTTP
+These are dependent upon the method, like GET or POST.
+
+# Passing Parameters
+You can pass parameters in a number of ways:
 
 * on the Path
   * (between the hostname and the `?`)
 * in a GET request's "query" section
   * (after the `?`)
-* in a POST request in query param format
-  * (inside the request body)
 * in a POST request in JSON format
   * (inside the request body)
 
 # For Example...
 
-Let's imagine four different ways to send the same information to GitHub.com:
+Let's imagine three different ways to send the same information to GitHub.com:
 
 ```js
 {
@@ -26,51 +28,51 @@ Let's imagine four different ways to send the same information to GitHub.com:
 ```
 
 # Path Parameters
+path parameters are great for making *legible URLs*. Your URL is part of your user interface; treat it like the address of a resource!
 
+This path:
 `http://github.com/BurlingtonCodeAcademy/til/blob/master/README.md`
 
-path parameters are great for making *legible URLs*
+would match this route in `express`:
+```js
+app.get('/:user/:repo/:section/:branch/:filepath',(req,res)=>{
+  console.log(req.params)
+})
+```
 
-your URL is part of your user interface; treat it like the address of a resource, not as a call to a function
+That is, if GitHub's server was a simple `express` app `;-)`
 
-
-# REST area
-
-The concept of "path parameters" is central to an idea called REST.
-
-It argues that people designing web applications should consider their apps URLs to be an essential part of their app's design and functionality, and that those URL paths should follow a convention that exposes parts of the app as *resources* that can be identified and interacted with individually using a common set of *methods* (that happen to be more or less the same as the HTTP methods).
-
-(There is a lot more to learn about REST but at least now you know roughly what it means.) 
 
 # Query Parameters
 
-(aka search params / GET params)
+Query Parameters use the same URL slot as normal queries, but use a particular format to encode multiple parameters into a single string. This should sound familiar from our lesson on URLS.
 
 `github.com/file?user=BurlingtonCodeAcademy&repo=til&section=blob&branch=master&filename=README.md`
 
+This would be available to an `express` server like so:
+
+```js
+app.get('/?user=BurlingtonCodeAcademy&repo=til&section=blob&branch=master&filename=README.md',(req,res)=>{
+  console.log(req.query)
+})
+```
+This is admittedly a little convoluted to look at. You're sure to have seen it at some point, however, especially in search engines where the long strings of text can be handled by the browser.
 
 # Post Parameters
-
-POST params:
-
-```
-POST /file HTTP/1.1
-Host: localhost
-Content-Type: application/x-www-form-urlencoded
-
-user=BurlingtonCodeAcademy&repo=til&section=blob&branch=master&filename=README.md
-```
-
-# Post Body as JSON
-
-this is the simplest way to understand, but it's not standard, so you may have to write more code to do it
+The other HTTP method used for passing parameters is POST. POST is implicitly more secure, as the information isn't sent directly to the server through a super-visible URL. Instead, it is contained in a post *body* when the information is JSON formatted.
 
 ```
-POST /file HTTP/1.1
-Host: localhost
-Content-Type: application/json
+POST /file 
 
 {"user":"BurlingtonCodeAcademy","repo":"til","section":"blob","branch":"master","filepath":"/README.md"}
+```
+
+assuming the proper middleware is in place, this information would be available in `express` like so:
+
+```js
+app.post('/file',(req,res)=>{
+  console.log(req.body)
+})
 ```
 
 # Summary: GET vs POST
@@ -78,7 +80,6 @@ Content-Type: application/json
 remember, HTTP defines several *methods* (GET, POST, PUT, HEAD, etc...)
 
 GET requests
-
  - Query Parameters are in the URL, after the `?`
  - format: `name=value&othername=othervalue`
  - plus weird escaping rules (percent-encoding and space-to-plus)
@@ -86,32 +87,11 @@ GET requests
 POST requests
 
  - Post Parameters are in the *body* of the request
- - Usually in the same `name=value&` format
  - Can also be big file uploads, or a JSON format payload, or others
 
-# Parsing Parameters
+# Additional Concept: REST
+The concept of "path parameters" is central to an idea called REST.
 
-Your app server framework (Express) will convert query or post params into an object for you, but it's not hard to do yourself.
+It argues that people designing web applications should consider their apps URLs to be an essential part of their app's design and functionality, and that those URL paths should follow a convention that exposes parts of the app as *resources* that can be identified and interacted with individually using a common set of *methods* (that happen to be more or less the same as the HTTP methods).
 
-Here's a small function that parses any string in "query parameter" (aka "URI Encoded") format, either from the `?` part of the URL, or the body of a request:
-
-```javascript
-function decodeParams(query) {
-  if (query.startsWith('?')) {
-    query = query.slice(1);
-  }
-
-  let fields = query.split('&');
-
-  let params = {};
-  for (let field of fields) {
-    let [ name, value ] = field.split('=');
-    value = value.replace(/\+/g, ' ');
-    params[name] = decodeURIComponent(value);
-  }
-
-  return params;
-}
-```
-
-(Note that the above function assumes each parameter can only have one value; in HTTP it's possible for the client to pass several parameters with the same name, causing headaches for server API designers.)
+(There is a lot more to learn about REST but at least now you know roughly what it means.) 
