@@ -23,3 +23,5 @@
 - [DOM Queries](https://burlingtoncodeacademy.github.io/webdev-prework-track/DOM_queries)
 
 - [DOM Scripting](https://burlingtoncodeacademy.github.io/webdev-prework-track/DOM_manipulation)
+
+- [Mongo Queries](https://burlingtoncodeacademy.github.io/webdev-prework-track/complex_queries_with_mongodb_and_javascript)
