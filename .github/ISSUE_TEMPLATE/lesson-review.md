@@ -1,6 +1,6 @@
 ---
 name: Lesson Review
-about: Describe this issue template's purpose here.
+about: Review learning material(s) included in courses.
 title: '[REVIEW] of lesson: LESSON_NAME'
 labels: 'review'
 assignees: ''
