@@ -22,8 +22,6 @@ class Track
     goal name: "how to streamline and codify your application with an API of its own"
 
     lesson name: "intro_to_server_side_js"  
-      
-    lesson name: "hello_node"
 
     lesson name: "hello_express"
 
