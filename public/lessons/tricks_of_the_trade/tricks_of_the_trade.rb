@@ -22,7 +22,5 @@ class Track < Thing
       link href: "https://firstround.com/review/Your-Product-Demos-Suck-Because-Theyre-Focused-on-Your-Product/"
     end
 
-    lesson name: "code_debt"
-
   end
 end
