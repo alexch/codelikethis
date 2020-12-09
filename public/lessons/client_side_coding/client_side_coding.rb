@@ -30,16 +30,6 @@ class Track
 
     lesson name: "/javascript_intro/event_listeners"
 
-    lesson name: "jquery" do
-      topic name: "jquery"
-      topic name: "jquery-selectors"
-      topic name: "jquery-collections"
-      topic name: "jquery-binding"
-      link href: "http://docs.railsbridge.org/frontend/jquery"
-      link href: "https://www.codecademy.com/tracks/jquery",
-                name: "Codecademy Track for jQuery"
-    end
-
     lesson name: "ajax" do
       topic name: "ajax"
       topic name: "json"
