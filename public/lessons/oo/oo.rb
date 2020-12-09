@@ -19,7 +19,6 @@ Track::Oo = Track.new(
     topic name: "hashes"
     topic name: "object-oriented-programming"
     topic name: "prototypes"
-    topic name: "encapsulation"
     topic name: "this"
     topic name: "object-creation"
     topic name: "fat-arrow"
