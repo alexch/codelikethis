@@ -22,7 +22,6 @@ class Curriculum < Site
       ::Track::Www,
       ::Track::ResponsiveLayout,
       ::Track::ClientSideCoding,
-      ::Track::Bootstrap,
       ::Track::ServerSideJavascript,
       ::Track::Oo,
       ::Track::Db,
