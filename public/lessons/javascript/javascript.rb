@@ -60,7 +60,6 @@ Track::Javascript = Track.new(
   lesson name: "values"
   lesson name: "/javascript_intro/common_operators"
   lesson name: "strings"
-  lesson name: "unicode"
   lesson name: "numbers"
   lesson name: "/javascript_intro/common_methods"
   lesson name: "variables"
