@@ -120,8 +120,4 @@ Track::Javascript = Track.new(
   lesson name: 'encapsulation'
   lesson name: 'state_machines'
 
-  # One-offs
-  # TODO: make a new track for these
-  lesson name: "take_a_minute_to_refactor_winner"
-
 end
