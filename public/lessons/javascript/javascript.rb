@@ -93,7 +93,6 @@ Track::Javascript = Track.new(
   # lessons on testing in JavaScript
   # TODO: move to new testing_in_javascript track
   lesson name: "/agile/test_driven"
-  lesson name: "no_frills_testing"
   lesson name: "cypress"
   lesson name: "unit_testing"
 
