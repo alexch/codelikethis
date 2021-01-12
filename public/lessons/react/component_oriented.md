@@ -1,15 +1,13 @@
 # React Components
 
 * Isolated pieces of a website or app
-* Can be rendered manually or programatically
-* Dynamic data is passed in via Props
-* Generate child compoents with `render()`
+* Can be passed data from parent components in the form of `props`
+* Can be rendered manually, or programatically
+* Return JSX
 
 ```javascript
 function Profile (props) {
-  userData = () => {
-    return data || fetchDataFromDatabase();
-  }
+  const [userData, setUserData] = useState(data) 
 
   return(
     <Header>
@@ -28,21 +26,9 @@ function Profile (props) {
 # Using Components
 
 * Typically the `index.js` initiates the components tree from the top level
-* Child components are rendered after their parents
-* Parents pass Props and State to children
-
-```javascript
-<html>
-  <body>
-    <div id="root"/>
-  </body>
-  <script>
-    ReactDom.render(<Profile />,
-      document.getElementById('root')
-    )
-  </script>
-</html>
-```
+* Can be made up of other components
+* Child components are rendered by their parents
+* Parents pass stateful data as props to children
 
 # Using Arrays of Components
 
@@ -72,14 +58,12 @@ function ProfileList (props) {
 
 ```js
 function Comment (props) {
-  render () {
-    return (
-      <li>
-        <p>User: {props.user}</p>
-        <p>Comment: {props.content}</p>
-      </li>
-    )
-  }
+  return (
+    <li>
+      <p>User: {props.user}</p>
+      <p>Comment: {props.content}</p>
+    </li>
+  ) 
 }
 
 function CommentList (props) {
@@ -90,17 +74,17 @@ function CommentList (props) {
     { user: 'Alex', content: 'Loved them for years' }
   ];
 
-  const commentComponents = forms.map((comment, index) => {
+  const commentComponents = comments.map((comment, index) => {
     return <Comment user={ comment.user } content={ comment.content }/>
   });
 
   return (
-  <div className="comments">
-    <h2>Comment List</h2>
-    <ul>
-    { commentComponents }
-    </ul>
-  </div>
+    <div className="comments">
+      <h2>Comment List</h2>
+      <ul>
+        { commentComponents }
+      </ul>
+    </div>
   )
 }
 ```
@@ -108,28 +92,26 @@ function CommentList (props) {
 # Immutable Components
 
 * Once components are rendered they cannot be updated
-* Re-rendering the component is how to update
+* Re-rendering the component is how to update them
+* Re-renders are triggered when `state` or `props` change
 
-```html
-<html>
-  <body>
-    <div id="root"/>
-  </body>
-  <script>
-    function tick() {
-      const element = (
-        <div>
-          <h1>Hello, world!</h1>
-          <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        </div>
-      );
-      // highlight-next-line
-      ReactDOM.render(element, document.getElementById('root'));
-    }
+```js
+function Tick(props) {
+  [date, setDate] = useState(new Date().toLocaleTimeString())
 
-    setInterval(tick, 1000);
-  </script>
-</html>
+  useEffect(() => {
+    setTimeout(() => {
+      setDate(new Date().toLocaleTimeString())
+    }, 1000)
+  })
+
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {date}.</h2>
+    </div>
+  )
+}
 ```
 
 
