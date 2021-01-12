@@ -121,7 +121,7 @@ ReactDOM.render(
 ```jsx
 function Greeting (props) {
 
-    const isLoggedIn = props.isLoggedIn;
+  const isLoggedIn = props.isLoggedIn;
 
   return (
     <div>
@@ -162,11 +162,6 @@ const WarningBanner = (props) => {
 }
 
 function Page (props) {
-  constructor(props) {
-    super(props);
-    this.state = {showWarning: true};
-    this.handleToggleClick = this.handleToggleClick.bind(this);
-  }
 
   const [showWarning, setWarning] = useState(true)
 
