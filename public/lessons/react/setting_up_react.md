@@ -49,9 +49,21 @@ Let's create our first React Component!  If you haven't already installed `creat
 
 >Note: After you open VSCode it will ask if you want to use eslint from node modules. React has it's own eslint extension to properly highlight react components so use it.
 
+# Core Concept: Functional Components
+
+By default `create-react-app` will set you up with a functional component.
+
+Functional components are just functions that return JSX
+
+**But** React still needs to be in scope for a functional component to work, even theough it's not explicitly used in the component
+
 # Core Concept: Class Based Components
 
-As of React 16.8, and the introduction of Hooks class based components are starting to become less, and less common however it's still important to understand them as they reveal more of the internal processes of React, and are still fairly prevelant in older code.
+Class based components are an older way of setting up React Components, and are more representative of the way react actually works.
+
+They are slightly less readable, and as of React 16.8 are less common since Hooks allow functional components to have all the same functionality.
+
+This transition from class based to functional components happened very quickly not too long ago so a lot of documentation still uses class based components.
 
 # The State Object
 
