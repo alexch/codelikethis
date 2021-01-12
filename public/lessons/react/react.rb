@@ -73,7 +73,6 @@ class Track
     lesson name: "using_refs"
     lesson name: "error_boundaries"
     lesson name: "routing_in_react"
-    lesson name: "routing_in_react_going_further"
 
     link href: "https://reactjs.org/tutorial/tutorial.html",
          name: "Build a Tic-Tac-Toe game in the browser with React"

@@ -1,87 +1,17 @@
 # Fetching Data
 
-* Most React frontend apps need server data
-* The browsers `window.fetch` API can be used to make requests
-* The `componentDidMount()` is recommended as a best practice
+* Most React frontend apps (and most web apps in general) need server data
+* The browsers `fetch` API can be used to fetch data from databases or other locations on the internet
+* Fetched data should be stored in state, and the values in state are rendered to the page
+* It is generally best practice to fetch when the component first mounts, during the `componentDidMount` lifecycle process
 
-### Basic Component
 
-```jsx
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: []
-    };
-  }
-
-  /* This is where data will be fetched from */
-  componentDidMount() {}
-
-  render() {
-    const { items } = this.state;
-    return (
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
-          </li>
-        ))}
-      </ul>
-    );
-  }
-}
-```
-
-# Fetching Data - componentDidMount
+# Fetching Data Cont.
 
 * Render an empty component first
 * Get data after it has been rendered
-* Re-render with data from `setState({some: 'state'})`
-
-### Component with Data
-
-```jsx
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      isLoaded: false,
-    };
-  }
-
-  componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(res => res.json())
-      .then(result => {
-        this.setState({
-          isLoaded: true,
-          items: result
-        });
-      });
-  }
-
-  render() {
-    const { items } = this.state;
-    if (!isLoaded) {
-      return <div>Loading ... </div>;
-    } else {
-      return (
-        <ul>
-          {items.map(item => (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </li>
-          ))}
-        </ul>
-      );
-    }
-  }
-}
-```
+* Re-render by setting the fetched data in state
+* We can access the state and lifecycle render methods by using the `useState` and `useEffect` hooks respectively
 
 # Fetching Data With Hooks
 
@@ -92,6 +22,18 @@ To fetch data (and store it) in a functional component we need to use Hooks
 - and use your updater function to set the fetched data in state
 - use your state property to conditionally render data to the page when it's loaded
 
+> Note: Changing state triggers a re-render, a re-render triggers `useEffect` so remember to wrap your state changes in conditionals, or you'll be trapped in an infinte render cycle.
+
+# Fetching Data Example
+
+```jsx
+
+function DisplayMessages(props) {
+  
+}
+
+```
+
 # Lab: Functional Fetching
 
 Let's practice fetching data with `useEffect` by creating a React app that fetches a list of users, and displays them on the page
@@ -99,6 +41,7 @@ Let's practice fetching data with `useEffect` by creating a React app that fetch
 - Create a new React app
 - When the page loads fetch a list of userss from `https://jsonplaceholder.typicode.com/users`
 - Then display a list of the user names on the page
+  - This means you will also be *rendering multiple components*
 
 # Fetching Data - Handle Errors
 
