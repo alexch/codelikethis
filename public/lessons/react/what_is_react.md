@@ -75,7 +75,7 @@ We can access these methods using React hooks to make our component do whatever 
 
 # Lifecycle Diagram
 
-![react component tree](/images/react-component-lifecycle.png)
+![react component lifecycle](/images/react-component-lifecycle.png)
 
 # Declarative UI
 

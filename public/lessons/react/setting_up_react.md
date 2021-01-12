@@ -9,6 +9,8 @@ There is a very useful package called `create-react-app` which will automaticall
 
 This will create a directory for the front end of your app called `app-name`. Inside that there will be a package.json file with all the scripts you need to create a react app, run it locally, and build a production version of that site.
 
+The directory (`app-name` in this example) is automatically set up as a git repository
+
 # Directory Structure
 
 There are two main parts of the `create-react-app` directory
@@ -57,12 +59,24 @@ Every React component keeps track of its own state in an internal object named `
 
 React likes to be in complete control of the page so it's important to only update the page through state, and **never through direct DOM manipulation!**
 
+# Never Directly Manipulate the DOM
+
+This is very important, and bears repeating.
+
+**Never** directly manipulate the DOM when using React. All changes should be made through the state of the component using `this.setState` if it's a class based component, or the `useState` hook if it's a functional component.
+
+Direct manipulation of the DOM will confuse React, and cause bugs.
+
 # Lifecycle Methods
 
-Class based components also have access to a component's lifecycle methods. These are methods which get called at certain points during the component's life.
+Class based components also have direct access to a component's lifecycle methods. These are methods which get called at certain points during the component's life.
 
 The most common of these are:
 
 - `componentDidMount` fires when the component is first loaded onto the page
 - `componentDidUpdate` fires whenever `props` or `state` are updated
 - `componentWillUnmount` fires right before the component is removed from the page
+
+# Lifecycle Diagram
+
+![react component lifecycle](/images/react-component-lifecycle.png)
