@@ -35,7 +35,7 @@ Pros:
 
 Cons:
 
-- hooks are very new
+- hooks are very new, so documentation is sparse
 - an additional layer of abstaraction
 
 # What are Hooks?
@@ -44,7 +44,7 @@ Hooks are a way to bring state, and life-cycle operations into functional Compon
 
 The two most common hooks are `useState` and `useEffect`
 
-`useState` is used to set up state, and state 
+`useState` is used to set up, and manipulate state 
 
 # Which Should I Use?
 
@@ -60,15 +60,15 @@ With the advent of hooks functional components are becoming much more common. In
 
 Let's convert a class based component into a function!
 
-Go ahead and clone down [this example code](https://github.com/Habenzy/class-comp-example) then run an `npm install` to bring in all the dependencies
+Go ahead and clone down [this example code](https://github.com/Habenzy/class-comp-example) then run an `npm install` to bring in all the dependencies.
 
-This is a simple class based React app that accepts an input in a form, and displays it as an `<h2>` on the page when the form is submitted
+This is a simple class based React app that accepts an input in a form, and displays it as an `<h2>` on the page when the form is submitted.
 
-Follow along as I transform this class based compopnent into a functional component
+Follow along as I transform this class based compopnent into a functional component!
 
 # Compare and Contrast
 
-<!--screen shots go here-->
+![class vs. functional components](/images/func_v_class_comp.png)
 
 # The Future of React
 
