@@ -73,6 +73,10 @@ React builds and handles changes to the elements on the page through several met
 
 We can access these methods using React hooks to make our component do whatever we want when it loads, changes, or is removed from the page. More on hooks later!
 
+# Lifecycle Diagram
+
+![react component tree](/images/react-component-lifecycle.png)
+
 # Declarative UI
 
 React lets you to **declare** what you want the page to be.
@@ -132,62 +136,13 @@ ReactDOM.render(
   (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-# React Form
-
-Given a `<root>` element exists the result is:
-
-```html
-<div>
-  <form id="my-form">
-    <input id="create" type="text" placeholder="something"/>
-  </form>
-</div>
-```
-
-But when the form initiates a `onSubmit` event React will handle the changes using the `handleSubmit` handler function.
-
-# React Form CodePen
-
-<iframe height="265" style="width: 100%;" scrolling="no" title="React Form Example" src="https://codepen.io/burlingtoncodeacademy/embed/gOpoWBw?height=265&theme-id=light&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/gOpoWBw'>React Form Example</a> by Joshua Burke
-  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-# ReactDOM Code
-
-#### The final plain React Code after Babel transformation
-
-```javascript
-ReactDOM.render(
-  React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'form',
-      { id: 'my-form' },
-      React.createElement(
-        'input',
-        {
-          id: 'create',
-          type: 'text',
-          placeholder: 'something'
-        }
-      )
-    )
-  ),
-  document.getElementById('root')
-);
-```
-
-<h3>
-  <a href="https://babeljs.io/en/repl#?browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=EoUwhgxgLgIg8gWQHQCcQDsAmIUAoBQABIQDyYCWAbgHxHGkBmA9igLaHmYC8ARKwJ4BaZmx616xEuXQAHAK5QO3HhDRgoIHoSj8ZIXhoAeULTIA2kEAAsmZ7Cl4BnJqxBQr0gOY8A9OPokPiKs_oEUNAA0dJhMEHKu6FBInm4AomYgCVAAQvwAkpi4AOQoTExQRQCUlQDcQA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.8.7&externalPlugins=">Live Example</a>
-</h3>
-
 # JSX
 
-As well as using the `React.createElement` interface you can use JSX
+Hold up! What's that stuff that looks like HTML doing in my JavaScript!
 
-- mixture of HTML and JavaScript
+It's not really HTML, it's JSX which is:
+
+- A mixture of HTML and JavaScript
 - Looks a lot like HTML
   - **but** you can escape to JavaScript with culy braces `{}`
 - Slightly different syntax in some cases
@@ -215,7 +170,7 @@ ReactDOM.render(
 
 # React.createElement function API
 
-Accepts an element type, props of the element, and child elements.
+Under the hood React is compiling the JSX into HTML using the `createElement` method which accepts an element type, props of the element, and child elements, and creates corresponding HTML elements.
 
 ```javascript
 // CreateElement function on ReactDOM
