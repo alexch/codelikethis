@@ -63,6 +63,16 @@ This lets you as the **programmer**:
 - Decide how to handle change when it occurs.
 - Delegate to React how to build the page for you when changes happen.
 
+# The React Lifecycle
+
+React builds and handles changes to the elements on the page through several methods native to React components the most common of which are:
+
+- componentDidMount
+- componentDidUpdate
+- componentWillUnmount
+
+We can access these methods using React hooks to make our component do whatever we want when it loads, changes, or is removed from the page. More on hooks later!
+
 # Declarative UI
 
 React lets you to **declare** what you want the page to be.
