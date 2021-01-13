@@ -26,17 +26,17 @@ const Router = () => (
 ```jsx
 // Express example
 app.get('/', handleIndex)
-app.get('/posts, handlePosts)
+app.get('/posts', handlePosts)
 app.get('/posts/:id', handlePost)
 app.get('/posts/:id/edit', handlePostEdit)
 
-app.listen()
+app.listen(5000)
 ```
 
 # React Routing - Most Basic
 
 * React-router **can** route to just a basic function
-* React-router routes are just **special** components that delegate to others
+* React-router routes are just **special** components that delegate to other components to handle the rendering
 * Routes are generated when your app runs
 
 ```jsx
