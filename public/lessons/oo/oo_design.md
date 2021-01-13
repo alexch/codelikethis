@@ -57,4 +57,18 @@ Beware of generating too many children from a single class, or too many generati
 
 # When in Doubt Draw It Out
 
-If you're having trouble figuring out what data should go where draw a diagram outline what needs to be set up, and what operations need which data
+If you're having trouble figuring out what data should go where draw a diagram outline what needs to be set up, and what operations need which data.
+
+For each class (object type) in your system, make a box (or an index card). In this box, write the **Class name**, a list of its **Responsibilities**, and draw arrows to its **Collaborators**.
+
+This specific type of diagram is called a CRC diagram, and looks something like this:
+
+![example CRC for Chat House](/images/crc-chat.jpg)
+
+# Privacy of Data
+
+To be truly object oriented an object should be entirely self contained. The only interface it has to the outside world should be in the form of arguments to a method, though it can reference its own properties with the `this` keyword.
+
+Objects should never reference, or access other object's properties in a purely object oriented model.
+
+Unfortunately this is not something JavaScript enforces. So we, as the programmer, need to be disciplined about it when we are writing the code.
