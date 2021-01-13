@@ -1,6 +1,6 @@
 # How to Use Hooks
 
-Hooks can be used inside any functional React component, but they can *only* be used inside a functional React component, or a custom Hook. You can also use the same hook multiple times in the same component to set up different operations, and values.
+Hooks can be used inside any functional React component, but they can *only* be used inside a functional React component, or a custom Hook. You can also use the same hook multiple times in the same component to set up different operations, or values.
 
 You can **not** use Hooks in:
 
@@ -9,18 +9,21 @@ You can **not** use Hooks in:
 - loops
 - conditional statements
 - nested functions
+- anything that's not a functional React component
 
 # How Hooks Work
 
 Each Hook has a slightly different use case, but there are some aspects of Hooks which apply to all of them
 
-Hooks are just functions that come with the React package that allow functional components. You can import them by targeting them directly in your import
+Hooks are just functions that come with the React package that allow functional components to access state, and lifecycle methods. You can import them by targeting them directly in your import
 
-> e.g. `import React, {useState} from 'react'`
+> e.g. `import React, { useState } from 'react'`
 
 Each Hook can be used multiple times, but it is worth noting that *order is important*.
 
 Hooks must be rendered in the same order every time to work properly which is why you can't use hooks inside loops, or conditionals.
+
+> Those curly braces around useState are important since `useState` is not the default export for the React package
 
 # Benefits of Hooks
 
@@ -110,6 +113,8 @@ useEffect(() => {
     return function() {chatService.close()}
   })
 ```
+
+The function that is returned from our callback (`function() {chatService.close()}`) will be called during the `componentWillUnmount` lifecycle stage
 
 # Creating Custom Hooks
 
