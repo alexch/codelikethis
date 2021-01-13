@@ -1,111 +1,27 @@
 # Object-Oriented Design
 
-Topics:
+There are quite a few object oriented programming languages out there, and while they don't have the same syntax they all share a common set of design principles which they must adhere to.
 
-* the Linguistic Metaphor
-* the Law of Demeter
-* Feature Envy and the Single Responsibility Principle
-* CRC Diagrams
+JavaScript is not one of these languages, but it does borrow a few things from them so we can use some principles of object oriented design to help make our code more organized, more efficient, and easier to maintain.
 
-# The Linguistic Metaphor
+Since JS is not a purely object oriented these principles are less like rules and more like guidelines.
 
-One way to think about objects: 
+While design principles are useful tools don't let them get in they way of making your program work.
 
-Objects are *things* that can be *described* and can *do* things, or...
 
-  * Objects are nouns
-    * (things)
-  * Methods are verbs
-    * (actions, behaviors, or imperative messages ("Sit! Good dog."))
-  * Attributes are adjectives
-    * (a property that describes a particular thing)
-  * Classes are categories
-    * (a noun that describes a *type* of thing, not a thing itself)
+# Principles of OO Design
 
-# The Law of Demeter
+Object oriented languages are built on several core principles which we can apply to our JavaScript code
 
-the [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter) (aka the Principle of Least Knowledge) is not really a law, but a rule of thumb for designing object-oriented programs. 
+- encapsulation of data and behavior
+- pointers
+- privacy of data
 
-> "Only talk to your friends."
+# Encapsulation
 
-# The Law of Demeter Explained
+"Encapsulation of data and behavior" is really just a fancy way of saying "object"
 
-Explanation [in plain English](http://wiki.c2.com/?LawOfDemeter):
-
-* Your method can call other methods in its class directly (via `this`)
-* Your method can call methods on its own fields directly, but not on the fields' fields
-* When your method takes parameters, your method can call methods on those parameters directly.
-* When your method creates local objects, that method can call methods on the local objects.
-
-but most everything else is disallowed, especially
-
-* sharing state using globals
-* "walking down" a nested object hierarchy
-  * though "method chaining" is fine, as long as the object returned is the original object, or a known friend of the caller
-
-# a LoD example
-
-If you see code like this:
-
-```js
-let maxAge = course.students.reduce(
-    (maxAge, student) => Math.max(maxAge, student.age)
-  , 0);
-if (maxAge < 18) {
-```
-
-then redesign your program so you can do this instead:
-
-`if (course.hasOnlyMinorStudents()) {`
-
-# LoD example continued
-
-...which implies an object-oriented design like this:
-
-```js
-class Course {
-  constructor() {
-    this.students = [];
-  }
-  hasOnlyMinorStudents() {
-    return this.maxStudentAge() < 18;
-  }
-  maxStudentAge() {
-    return this.students.reduce((maxAge, student) => 
-            Math.max(maxAge, student.age), 0);
-  }
-```
-
-* the complexity of students and age
-   * i.e. the fact that there is an array of students,
-   * and each student has an "age" property that represents "years old",
-   * and 18 is the age of majority in the USA
-* is *hidden* (or *encapsulated*) behind the simpler "course" interface
-
-# Dots In A Row
-
-don't confuse *method chaining* (often good) with *feature envy* (usually bad)
-
-## Method Chaining
-
-With method chaining, you are usually calling the same object -- or at least the same *type* of object -- again and again, so the number of collaborators is limited:
-
-```javascript
-string.split(' ').map((s)=>s.toUpperCase()).join(' ')
-```
-
-## Feature Envy
-
-With feature envy (a LoD violation), you are traversing a graph of collaborators until you find the one with the data or method you want: 
-
-```javascript
-course.students[0].phone.sendText('hi')
-```
-
-| style | dots | collaborators |
-|---|---|---|
-| method chaining | 4 | **2** (String, Array) |
-| feature envy | 3 | **5** (Course, Array, Student, Phone, String)
+BUT there are some guidelines we want to keep in mind when creating objects if we're trying to follow OO design principles
 
 # The Single Responsibility Principle
 
@@ -121,7 +37,7 @@ Objects can communicate through the same stable *interface* without regard for t
 
 # Shallow Hierarchies
 
-OO systems rely on pointers, so it's there's a risk of confusing designs, including:
+OO systems rely on pointers, so there's a risk of confusing designs, including:
 
   * deep hierarchies
   * parallel hierarchies
@@ -129,17 +45,16 @@ OO systems rely on pointers, so it's there's a risk of confusing designs, includ
 
 It's best if dependencies are *one-way* and hierarchies are *shallow*.
 
-# CRC Diagrams
+This means you should try to limit *nesting* and *inheritance* as much as possible, and your objects shouldn't rely on any outside data. They can send and receive messages but shouldn't care where the messages are coming from, or going to.
 
-CRC = Classes, Reponsibilities, Collaborators
+# Classes, Hierarchy, and Inheritance
 
-![example CRC for Chat House](/images/crc-chat.jpg)
+Classes are a key component of OO Design in JavaScript. They allow you to create many objects with shared behavior, but different data. You can even generate child classes with the `extends` keyword to create children with additional, separate behaviors.
 
-For each class (object type) in your system, make a box (or an index card). In this box, write the **Class name**, a list of its **Responsibilities**, and draw arrows to its **Collaborators**.
+When setting up child classes keep in mind that a child should be able to do anything its parent can do, and then some.
 
-This is a useful technique that has fallen out of favor because lots of people overused it.
+Beware of generating too many children from a single class, or too many generations of children. The computer will understand it just fine, but it will quickly become confusing for our squishy, meat brains.
 
-Don't overspecify, and don't fall in love with your design; as soon as you start to write code, your design will change. A diagram is a model of your system -- not the system itself! -- and remember:
+# When in Doubt Draw It Out
 
-> "All models are wrong, but some are useful" - George E. P. Box (1919 – 2013)
-
+If you're having trouble figuring out what data should go where draw a diagram outline what needs to be set up, and what operations need which data
