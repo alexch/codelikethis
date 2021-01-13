@@ -86,11 +86,11 @@ In order to get more comfortable with `useState` we are going to create a functi
 
 Like `useState` `useEffect` must be directly imported from React before you can use it.
 
-`useEffect` is used to setup what React refers to as "side effects." These are operations which fall outside the normal React render cycle, such as direct manipulation of the document, or window objects, fetching data, setting up event listeners, or performing cleanup tasks.
+`useEffect` is used to setup what React refers to as "side effects." These are operations which fall outside the normal React render cycle, such as direct manipulation of the window objects, fetching data, setting up event listeners, or performing cleanup tasks.
 
 You can think of `useEffect` as an all-in-one function for the `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` lifecycle methods
 
-Some effects require cleanup, while others do not
+`useEffect` can clean up after itself by returning a clean up function, but not every operation needs to be cleaned up.
 
 # useEffect with no Cleanup
 
@@ -116,23 +116,59 @@ useEffect(() => {
 
 The function that is returned from our callback (`function() {chatService.close()}`) will be called during the `componentWillUnmount` lifecycle stage
 
+# Fetching with useEffect
+
+A very common use of `useEffect` is to fetch data, but you have to be a little careful when doing so...
+
+Because `useEffect` combines `componentDidMount` and `componentDidUpdate` it fires its callback when the page first loads, and then again everytime the component re-renders. Changing state causes a re-render so if you forget to wrap your `setStateProperty` function in a gaurd clause you can get trapped in an infinite render cycle.
+
+`useEffect` and `useState`combined should look something like this:
+
+```js
+function ShowData(props) {
+
+  const [data, setData] = useState(null)
+
+  useEffect(() => {
+    if(!data) {
+      fetch(someURL)
+        .then(res => res.json())
+        .then(jsonData => {
+          setData(jsonData)
+        })
+    }
+  })
+
+  return (
+    <div>
+      { data }
+    </div>
+  )
+}
+```
+
+# Lab: Fetch a Post
+
+Let's practice our hooks by fetching some data, and putting it on the page!
+
+- Create a new React App.
+  - You will only need a single component at this point
+- fetch a post from jsonplaceholder.typicode.com and display it on the page
+- parse and format the post so that it looks nice when put onto the page
+  - a sub component that acts as a shell for the post might be helpful here, but isn't required
+- Display the author's name along with the post
+
+> Bonus challenge: display *all* posts from jsonplaceholder, with authors, on the page
+
 # Creating Custom Hooks
 
 You can also create your own custom hooks by simply writing a function that performs the actions you want your hooks to take. This can be done to combine multiple hooks into one reusable operation, or to create an entirely new bit of functionality
 
 # Hook Naming Conventions
 
-It is important that you start the name of your custom Hook with `use` otherwise React might not recognize it as a valed hook.
+It is important that you start the name of your custom Hook with `use` otherwise React won't recognize it as a valid hook.
 
 > e.g. useMyCustomHook
-
-# Lab: More Hook Practice
-
-Let's go back to some of our old example code, and change it from class based components to functional components.
-
-- Change [the Ticking Clock example](lessons/react/props-and-state#anchor/state__manage_the_clock) so that it uses functional components, and hooks
-- Change [the Color Clicker lab](/lessons/react/props-and-state#anchor/lab_color_clicker) so that it uses functional components, and hooks
-- Change the [Forms - TextArea example](/lessons/react/forms-in-react#anchor/forms__textarea) to be a functional component with Hooks
 
 # Refs, and Readings
 
