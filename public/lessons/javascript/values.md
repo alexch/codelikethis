@@ -97,8 +97,36 @@ What happens when you try to put quotes inside your string's quotes?
 
 A **boolean** is a value that is either true or false, and is represented in JavaScript with the keywords `true`, and `false`.
 
+Booleans in JavaScript are often the result of a comparison, and used to run code conditionally (more on that later). Pretty much any data in JavaScript can be evaluated as a boolean so often we use implicit truthy, or falsy values instead of the actual keywords `true` and `false`
+
 (It's named after *[George Boole](https://en.wikipedia.org/wiki/George_Boole)*, 
 a 19th-century mathematician who invented [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra).)
+
+# Booleans and Conditionals
+
+Let's look ahead a little bit and use a simple conditional to evaluate various values. A conditional starts with the keyword `if` then takes a check in parentheses `if('some condition')` and finally a block of code defined by curly braces which only runs if the check evaluates to `true`
+
+Don't worry too much about how conditionals work right now, we'll go into a lot more depth in them later on. For now just use the conditional given on the next slide to complete the lab, swapping out the check for different values to answer the questions
+
+# Lab: Is it True?
+
+Given this conditional answer the following questions. If the check (currently the string `'this is true'`) is true it will print `It is truthy` to the console, otherwise nothing will print.
+
+```js
+if(true) {
+    console.log('It is truthy')
+}
+```
+
+* Is the boolean `true` truthy?
+    * how about `false`?
+* Try replacing `true` with a string
+    * Is it truthy?
+* Try replacing `true` with a number
+    * Is it true?
+    * What about the number `0`?
+* Try replacing `true` with the expression `1 < 2`
+    * What happens if you switch the operator like so `1 > 2`?
 
 # Operators
 
