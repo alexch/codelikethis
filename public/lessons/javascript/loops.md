@@ -173,6 +173,20 @@ while (true) {
 }
 ```
 
+# Different Kinds of Loops
+
+While the `while` loop is arguably the most straightforward, and widely used loop in JavaScript it's not the only type of loop.  JavaScript inherited the `for` loop from C; it's cumbersome and confusing but you should learn to recognize it.
+
+```js
+for (var i=0; i < 8; i++) {
+  console.log(poemLine(i));
+}
+```
+
+# Flavors of For
+
+There are also a couple variations on the `for` loop that can be used to iterate over different data structures. These types of loops are known collectively as iterators, the most comon of which are the `for ...in` loop, and the `for ...of` loop. More on those later!
+
 # LAB: One Potato
 
 Remember this poem?
@@ -267,38 +281,6 @@ while (i <= 8) {
 }
 ```
 
-# `for`
-
-JavaScript inherited `for(;;)` from C; it's cumbersome and confusing but you should learn to recognize it.
-
-```js
-for (var i=0; i < 8; i++) {
-  console.log(poemLine(i));
-}
-```
-
-|phrase|meaning|
-|---|---|
-| `for`                    | in a loop, |
-| `var i`                  | make an *index* variable named `i` |
-| `i=0`                    | and initially set it to `0` |
-| `i < 8`                  | then, as long as `i` is less than `8` |
-| `{` ... `}`              | execute this block of code |
-| `console.log(poemLine(i))` | (which prints the `i+1`th potato message) |
-| `i++`                    | and then *increment* `i` before the next time through |
-
-> Note that `i++` is executed **after** the `console.log` (the "body") and **before** the second `i<8` (the "condition").
-
-# `for..of`
-
-The `for..of` loop was added to JavaScript fairly recently. It loops over an [array](/lessons/javascript-track/arrays) and hides the messy details of initializing and incrementing a counter:
-
-```javascript
-const lineNumbers = [1, 2, 3, 4, 5, 6, 7, 8];
-for (let lineNumber of lineNumbers) {
-  console.log(poemLine(lineNumber));
-}
-```
 
 # LAB: Prime Numbers
 
