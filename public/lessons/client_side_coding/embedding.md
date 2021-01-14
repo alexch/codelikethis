@@ -43,6 +43,61 @@ Or, if the user moves their location on an embedded Google Map, your app could b
 * a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network#Notable_content_delivery_service_providers) hosts all sorts of media for you for $$$
   * Amazon AWS / CloudFront, CloudFlare, Akamai...
 
+# Image Types
+
+There are many different types of images:
+* svg
+* png
+* ptg
+* psd
+* jpg
+* and the list goes on...
+
+Let's focus on a few of the common types of images you'll find around the web; JPGs (or JPEGs), PNGs, and SVGs.
+
+# jpeg/jpg
+
+* One of the most common image types
+* relatively small file size
+* limited features
+* no transparency
+* pixel based (raster) image type
+* rectangular in shape
+
+> Note: JPGs and JPEGs are the same type of image, however when embedding them in your page you will need to make sure you are using the correct file extension otherwise your site won't be able to locate the image. Also **case matters!**
+
+# png
+
+* Similar in size to JPGs (though often slightly larger)
+* pixel based (raster) image type
+* supports transparent
+* rectangular in shape
+
+> Note: While PNGs can *appear* to be irregular in shape they are not, transparent sections will still block users from interacting with any content behind them
+# svg
+
+SVG stands for **standard vector graphic**
+
+* VERY small file size
+* vector based image type
+* scales indefinitely
+* can be irregular in shape
+* Only covers the exact area it appears to cover
+
+# Lab: Embedding Images
+
+Let's go to our trusty "example-html" directory, and add some images to make your page more engaging!
+
+* add in one image from an external source per section on your `index.html` document
+  * There are many sites around the web that serve up placeholder images. [PlaceKitten](https://placekitten.com/) is the classic, though [PlaceCage](https://www.placecage.com/), and [FillMurray](https://www.fillmurray.com/) are both hilarious
+
+* Choose an image from your computer to include on your About page
+* Create a subdirectory named "images" (or 'imgs', or 'pictures', or whatever name makes sense to you)
+* Place a copy of your chosen image into the newly created subdirectory.
+* Embed that image into your About page.
+* Bonus Challenge: What happens when you wrap an image in an anchor tag?
+
+
 # Embedding IFrames
 
 `<iframe>` means "inline frame"
@@ -84,11 +139,33 @@ This is often used for login boxes.
 
 > Warning: iframes can take longer to load than the rest of the page, and can eat up CPU and RAM, so don't overuse them
 
+# Lab: Embedding an iFrame
+
+iFrames are often used to embed videos from dedicated hosts such as Vimeo or YouTube
+
+Let's add a video to our site! Open up YouTube, and find a short video, and a long video. Leave them open in different tabs.
+
+* Open up your "example-html" directory if it's not already open.
+* Go back to the open video tabs, and click on the "share" button
+  * Choose the "embed" option, and copy the code for the iframe element it gives you
+  * Paste that code into your `index.html` file
+  * Play around with the options on the iFrame to modify the video's behavior/attributes
+
 # Embedding Flash
 
 ![R I P Flash](https://res.cloudinary.com/btvca/image/upload/v1574445198/curriculum/rip-flash_gzmwcj.png)
 
 "In July 2017, Adobe announced that it would declare Flash to be [end-of-life](https://en.wikipedia.org/wiki/Adobe_Flash#End_of_life) in 2020, and will cease support, distribution, and security updates to Flash Player."
+
+# Modern Animations
+
+Flash used to be the way to create web animations, but now we have better options
+
+* `<canvas>` elements using JavaScript
+* Pure CSS animations
+* The JavaScript animation api
+* Third party animation frameworks such as [Snap SVG](http://snapsvg.io/)
+ 
 
 # Embedding Video
 

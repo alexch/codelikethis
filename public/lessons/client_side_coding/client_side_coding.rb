@@ -76,7 +76,5 @@ class Track
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
     end
 
-    lesson name: "media"
-
   end
 end

@@ -55,7 +55,7 @@ class Track
 
     lesson name: "forms"
 
-    lesson name: "embedding_media"
+    lesson name: "/client_side_coding/embedding"
 
     link href: "http://docs.railsbridge.org/javascript-to-do-list/",
          name: "RailsBridge To Do List",
