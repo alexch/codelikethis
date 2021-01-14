@@ -54,15 +54,27 @@ In computers, code is a series of instructions that tell a computer what to do.
 
 (recipe from popcornpottery.com)
 
+# Programmatic Thinking
+
+Throughout this course one of the most important skills you will learn is how to think like a programmer.
+
+Computers are weird, and very literal. Here are a few things to keep in mind when working with them:
+
+* Computers are very fast, but not very smart. They will only ever do exactly what you tell them to
+* Computers are really bad at being random. There's always a pattern, though it's not always obvious
+  * When you run into a bug, try and replicate it. If you know the actions that break your code it's easier to guard against them
+* Getting a different error is good. It means you're making progress so don't get discouraged!
+* Build things for fun, and to learn
+
 # Languages
 
-* every program is written in a LANGUAGE
+* Every program is written in a LANGUAGE
   * like Java or Python or C or Fortran
   * even HTML and CSS and SQL are languages
   * every computer language has a silly name
-* computer languages are very **specific** compared to natural languages
-* different languages are useful in different areas, but there is a lot of overlap
-* today we will learn the JavaScript programming language
+* Computer languages are very **specific** compared to natural languages
+* Different languages are useful in different areas, but there is a lot of overlap
+* Today we will learn the JavaScript programming language
 
 # Errors Are Awesome
 
@@ -110,10 +122,12 @@ Software:
 * Git - version 2.x
 * GitHub 
   * **Sign up** for an account at <https://github.com/>
-  * Add an SSH key to your GitHub account; follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
 * Heroku
   * **Sign up** for an account at <https://signup.heroku.com>
   * **Install** the Heroku Command Line Interface (CLI) at <https://devcenter.heroku.com/articles/heroku-cli>
+* Postman
+* MongoDB, and Compass
+* create-react-app 
 
 * Please stop right now and check
   * If you do not have these, RAISE YOUR HAND
