@@ -46,6 +46,7 @@
     * this function is named an *asynchronous callback*
     * *asynchronous* is Greek for "out of time" or "not together in time"
 
+
 # Terminal I/O
 
 * In JavaScript,
@@ -60,9 +61,17 @@
 process.stdin.once('data', (chunk) => { console.log(chunk.toString()) } )
 ```
 
-> The weirdness is explained on the next slide!
+# Lab: Echo
+
+The code on the previous slide will take in user input, and echo it back to the console. Let's try it out!
+
+  * Create a new file called `echo.js`
+  * Type the code from the previous slide into that file
+  * Run the file in the terminal with the command `node echo.js`
 
 # node load code, decoded
+
+Let's break down the code we just wrote
 
 ```js
 process.stdin.once('data',
@@ -70,7 +79,7 @@ process.stdin.once('data',
 )
 ```
 
-> `once` is a function that takes two parameters,
+> `once` is a special type of function, called an event listener, that takes two parameters,
 > and its second parameter is **another function**
 
 |phrase|meaning|
@@ -113,11 +122,11 @@ process.stdin.once('data', (chunk) => {
 4. Run the program using `node hello.js`
 5. Type in your name and press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
 
-What happens? Is this what you expected?
+As It's written this program has a bit of a bug. What looks off in the output?
 
 # Yikes!
 
-* Uh-oh! We've got trouble... what is that exclamation point doing way down there?
+* What is that exclamation point doing way down there?
 
 * The first thing to do is DON'T PANIC!
 * You are *totally* going to figure this out.
@@ -133,9 +142,8 @@ What happens? Is this what you expected?
 
 # Let's fix this
 
-* Have you figured out what the problem is?
-* If not, I'll tell you on the next slide.
-* Take a second and try to figure it out first. I'll wait.
+* Do you know what the issue is?
+* Think back to 
 
 # The newline character
 
