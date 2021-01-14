@@ -150,7 +150,7 @@ There is a global `JSON` object in JavaScript that can be used to manipulate JSO
 
 # API Endpoints
 
-API stands for "Aplication Program Interface"
+API stands for "Application Program Interface"
 
 APIs are used to send data into a front end application
 
@@ -162,7 +162,7 @@ Many APIs send data over as JSON, or have the option to send data as JSON based 
 
 An API Endpoint in its simplest incarnation could be a directory in your filesystem where you store JSON files
 
-When you recieve a request from your client side application your server will then query that directory for a document matching the request, and if it finds one it sends the data back over
+When you receive a request from your client side application your server will then query that directory for a document matching the request, and if it finds one it sends the data back over
 
 # Querying APIs
 
