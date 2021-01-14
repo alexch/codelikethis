@@ -28,7 +28,6 @@ describe Curriculum do
         www
         responsive_layout
         client_side_coding
-        bootstrap
         server_side_javascript
         oo
         db
