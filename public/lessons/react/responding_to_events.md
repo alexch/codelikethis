@@ -133,7 +133,7 @@ ReactDOM.render(
 
 * Class constructor with `this.function = this.function.bind(this)` are verbose
 * Rewrite the Class property as an arrow function as below
-* Only availble when transformed via Babel using `create-react-app` or other
+* Only available when transformed via Babel using `create-react-app` or other
 
 ```javascript
 class LoggingButton extends React.Component {
