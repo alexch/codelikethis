@@ -58,6 +58,43 @@ Try all of these out in `node` or the browser console!
 
 Check out [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) docs for more.
 
+# Lab: Combining Concepts
+
+Let's try chaining a few of these methods together.
+
+Given the String "this is a fantastic string" can you add methods onto it so that it gets transformed into:
+
+```
+THIS
+IS
+A
+FANTASTIC
+STRING
+```
+
+<details>
+<summary>Hint</summary>
+
+<div>
+You can chain multiple methods off of each other by calling them one after another. e.g.
+
+```js
+"Hello".repeat(3).toLowercase() // => "hellohellohello"
+```
+
+</div>
+</details>
+
+<details>
+<summary>Hint</summary>
+
+<div>
+
+The newline character `\n` can be used to create line breaks
+
+</div>
+</details>
+
 # Slicing and Dicing
 
 Every string is made of lots of other strings.
@@ -211,7 +248,7 @@ It works fine for many applications, but if you're dealing with user input or mu
 
 Here `-1` means "the left side is less than the right side". Try other comparisons and see what you get!
 
-# LAB: Strings: Exercises
+# More Practice: Strings
 
 * [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
     - start with the challenge [Declare String Variables](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables)
