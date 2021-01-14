@@ -46,10 +46,10 @@ The `+` operator can be used on an operand to convert that operand into a number
 
 # Delete
 
-The keyword `delete` is an operator that deletes whatever object, property, or element that's passed to it as an operand.
+The keyword `delete` is an operator that deletes whatever property, or element that's passed to it as an operand. However `delete` can't be used to delete full objects
 
 ```js
-delete objectName // deletes the object named `objectName`
+delete objectName // returns false, objectName still exists
 delete objectName.prop // deletes the property `prop` off of the object `objectName`
 delete arrayName[3] // deletes the element at index three of the array `arrayName`
 ```
