@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby "~> 2.5.5"
+ruby "~> 2.7.0"
 
 gem "sinatra", "~> 2.0.8", ">= 2.0.8.1"
 gem "sinatra-contrib", "~> 2.0", ">= 2.0.8.1"
 gem "erector", ">=0.9.0"
-gem "puma", "~> 4.3", ">= 4.3.5"
+gem "puma", "~> 5.1"
 gem "activesupport", "~> 6.0", ">= 6.0.3.1"
 gem "json", "~> 2.3", ">= 2.3.1"
 gem "rack-rewrite", "~>1.5"
@@ -22,7 +22,7 @@ gem "rake", "~> 13.0"
 gem "rake-notes", "~> 0.2"
 gem "rspec", "~> 3.8"
 gem "rollbar", "~> 3.0", ">= 3.0.0"
-gem "deckrb", git: "https://github.com/alexch/deck.rb.git"
+gem "deckrb", git: "https://github.com/BurlingtonCodeAcademy/deck.rb.git"
 
 group :development, :test do
   gem "listen", "~> 3.1"
