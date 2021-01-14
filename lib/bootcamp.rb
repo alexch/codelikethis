@@ -25,7 +25,6 @@ class Bootcamp < Site
       ::Track::Www,
       ::Track::ResponsiveLayout,
       ::Track::ClientSideCoding,
-      ::Track::Bootstrap,
       ::Track::ServerSideJavascript,
       ::Track::Oo,
       ::Track::Db,
@@ -33,7 +32,6 @@ class Bootcamp < Site
 
       ::Track::Separator,
 
-      ::Track::Prerequisites,
       ::Track::Agile,
       ::Track::Git,
       ::Track::TricksOfTheTrade, # or "trade secrets" ?
