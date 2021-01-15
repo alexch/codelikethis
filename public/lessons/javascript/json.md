@@ -100,7 +100,9 @@ $ node
         Height: 125,
         Width: 100 },
      Animated: false,
-     IDs: [ 116, 943, 234, 38793 ] } }
+     IDs: [ 116, 943, 234, 38793 ]
+    }
+}
 
 ```
 
@@ -109,7 +111,7 @@ $ node
 
 # Lab: Creating a JSON file
 
-JSON files are easy to create since they are just JS objects, that only contain strings. When creating JSON objects **keep in mind** that the keys need to be double qouted.
+JSON files are easy to create since they are just JS objects, that only contain strings. When creating JSON objects **keep in mind** that the keys need to be double quoted.
 
 Let's go ahead and create a JSON file now.
 
