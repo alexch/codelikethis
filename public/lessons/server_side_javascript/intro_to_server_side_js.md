@@ -50,7 +50,7 @@ Servers have uniquely defined rules that determine how they will respond based o
 - contain a status code for general information
   - 200 is `OK`
   - 404 is `Not Found`
-  - and more...
+  - [and more...](https://http.cat/)
 
 # Headers
 When requests and responses are sent between server and browser, additional information is included in *headers*
@@ -65,7 +65,7 @@ The header can be loosely categorized based on its context: **request, response,
     - can be included in both request and responses, but provide no info based on what information is contained.
 
 # Server-side programming
-"Server-side" is mean to describe everything that happens in between a request and a response. 
+"Server-side" is meant to describe everything that happens in between a request and a response. 
 
 ## Server-side code:
 
@@ -74,6 +74,75 @@ The header can be loosely categorized based on its context: **request, response,
 - is versatile
 - is not visible to the *client* (most often a web browser)
 - can be written in a number of programming languages!
+
+# Server Environment
+
+All code needs to run in some sort of environment, which affects the syntax, and options available to you.
+
+When we are doing DOM Scripting, working with React, or otherwise doing *client-side* coding we are working in the browser's environment
+
+*Server-side* JavaScript generally runs in a Node environment
+
+# Welcome Back Node!
+
+If Node.js sounds familiar, that's because we started this course programming in a Node environment!
+
+# Differences Between Node and the Browser
+
+* Global Objects
+  * `global` v. `browser` or `window`
+* Import/export methods
+  * `require` v. `import`
+
+# Server and Client
+
+The Server and Client sides to your application have separate, but related jobs, and each is useful for specific things.
+
+* Client Side:
+  * Directly interactive
+  * Presents Data to users
+  * Sends requests to the server
+  * Not secure, all data/code is available through the browser
+  * Options depend on browser
+
+* Server Side:
+  * Listens for requests from the client, and sends back responses
+  * Not directly accessible from the Client
+  * Secure
+  * Consistent
+
+Together they make a full stack application
+
+# Structuring your Directory
+
+When creating a full stack application, your server file should live at the root level of your project, while all the client side code should live in a dedicated subdirectory; often called `client` or `public`
+
+![directory file structure](/images/basic-server-structure.png)
+
+# Setting up Your Client with React
+
+`create-react-app` can be used to easily generate a React front end for your application.
+
+* Create a project directory
+* Inside that directory run `npm init -y`
+* Install any server dependencies, and create your server file
+* Still inside the directory run `npx create-react-app client`
+* Now you have a React front end!
+
+![React server example](/images/client-closed.png)
+
+![React server example](/images/client-open.png)
+
+# React Caveats
+
+When using a React front end there are a couple things to keep in mind
+
+* React is a single page web App. All user facing routes should return the `index.html` file
+* `create-react-app` creates a git repo. Git does not like it when you try to put repos in repos
+  * run `rm -rf .git` from inside `client` to remove the interior repo otherwise git will have issues
+* React has `production`, and `build` versions. You generally want to serve the `build` version
+  * If you need to have the production version talk to your server you will need to [proxy the requests from React](https://create-react-app.dev/docs/proxying-api-requests-in-development/)
+  * And you will need to have React's production server, and your custom server running at the same time
 
 # Resources
 
