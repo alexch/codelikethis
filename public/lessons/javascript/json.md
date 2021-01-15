@@ -197,6 +197,8 @@ For this lab we will go back to the `json-server` directory.  Currently it shoul
 * Create a `server.js` file in the root level of your project
 * Create a `public` directory inside `json-server` with a file named `index.html` inside of it, and a file named `reply.html`
 
+![Lab setup example](/images/json-lab-example.png)
+
 # Setting Up an API: The Stories
 
 * When the user visits the homepage there should be a form with fields for "name," "quest," and "favorite color."
