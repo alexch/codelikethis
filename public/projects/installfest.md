@@ -25,7 +25,7 @@ and sign up for accounts on:
       * MacOS: <kbd>CMD</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
       * Windows: <kbd>CTRL</kbd>-<kbd>SHIFT</kbd>-<kbd>P</kbd>
    * then type "install" and select " **Install 'code' Command In Path** "
-   * Now you can type `code .` from the terminal to open the current dir!
+   * Now you can type `code .` from the terminal to open the current directory!
 
 ## Node.js (JavaScript)
 
@@ -65,7 +65,7 @@ and sign up for accounts on:
 ## VS Code Terminal
 1. Open VS Code
 2. Press <kbd>Crtl</kbd>-<kbd>Shift</kbd>-<kbd>P</kbd>, and type in `Default Shell`
-3. Choose  `Git Bash`
+3. Choose  `cmd` or `Git Bash`
 
 ---
 
