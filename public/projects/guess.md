@@ -31,7 +31,6 @@ Is it... 69? N
 Is it higher (H), or lower (L)? L
 Is it... 66? Y
 Your number was 66!
-I guessed it in 5 tries.
 ```
 
 ## Hints
@@ -57,11 +56,11 @@ I guessed it in 5 tries.
 <!--BOX-->
 ## Pick a number, any number
 
-**Given** the player starts the game
+**Given** the player starts the game with the command `node index.js` in the terminal
 
-**Then** the computer should ask the player if their number is a random between 1 and 100
+**Then** the computer should ask the player if their number is a random number between 1 and 100
 
-**And** waits for an answer, which it saves as a variable
+**And** waits for an answer, which it stores as a variable
 
 <!--/BOX-->
 
@@ -73,6 +72,8 @@ I guessed it in 5 tries.
 **When** the player responds "yes" (or "y")
 
 **Then** the game exits with a victory message.
+
+> e.g. `Your number was XX!`
 
 <!--/BOX-->
 
@@ -94,13 +95,23 @@ I guessed it in 5 tries.
 
 **When** the player responds "higher" ("h") or "lower" ("l")
 
-**Then** the computer modifies the range it guesses within based on if the number was higher or lower
+**Then** the computer modifies the range it guesses within based on the answer
+
+e.g. 
+
+```
+Is your number 41? no
+Is your number higher(h) or lower(l)? h
+
+```
 
 **And** guesses a new number within the modified range
 
+Given the example above the computer now guesses between 42 and 100
+
 <details>
-<div>
 <summary>Hint</summary>
+<div>
 If the number is higher, you'll want to modify the low end of the range, and vice versa if the number is lower.
 </div>
 </details>
@@ -114,7 +125,11 @@ If the number is higher, you'll want to modify the low end of the range, and vic
 
 **Given** The player chooses a number between 1 and 100
 
-**Then** the computer should guess the number in no more than 7 tries
+**When** the computer guesses a number
+
+**Then** the computer should make a smart guess
+
+**So That** the computer guesses the number in no more than 7 tries
 
 <!--/BOX-->
 
@@ -125,7 +140,7 @@ If the number is higher, you'll want to modify the low end of the range, and vic
 
 **When** the game is first called with `node index.js`
 
-**Then** allow the user to set the high range so it could be any number (greater than 1)
+**Then** allow the user to set the high range so it could be any number greater than 1
 
 <!--/BOX-->
 
@@ -136,38 +151,49 @@ If the number is higher, you'll want to modify the low end of the range, and vic
 
 **Then** the computer complains
 
-**And** asks again, or exits. e.g. `But you said it was lower than 25, so it can't also be higher than 24!`
+**And** asks again, or exits. e.g. `You said it was lower than 25, so it can't also be higher than 24!`
+
+> Note: it is possible to set the logic up in a way so that the game won't allow the player to cheat, but we still need to be notified if they try it.
 
 <!--/BOX-->
 
 <!--BOX-->
-**Role Reversal!** In two parts:
-   1. Write the *reverse* game, where the *computer* thinks of a number and the *human* guesses it. (Put this in a different source file so you don't mess up the first program.)
-   2. Combine your two programs into one, so the players (computer and human) take turns -- first one guesses, then the other, then repeat <br><br>
+## Role Reversal!
 
-   <details>
-<div>
-<summary>Hint</summary>
-You may want to make an `initialize` function that will ask which game you want to play and then call the function containing that version of the game depending on the user's input.
-</div>
-</details>
+Now try and create the reverse game where the computer picks a number, and you guess it. Create a new file called `reverse_game.js` to hold this program 
+   
+**Given** The game has been started with `node reverse_game.js`
+
+**Then** the game will ask you to guess a number
+
+**And** if you guess wrong it will tell you if you guessed too high or too low
+
+**And** prompt you to guess again
+
+**When** you guess correctly the computer will congratulate you, and end the game
 
 <!--/BOX-->
 
 # Icebox
 
 <!--BOX-->
-**Refactor!** What code is shared between the two programs? Can you unify the code by extracting functions? Are your function and variable names descriptive? Can you remove any comments (without reducing clarity)?
+**Play it again!**
+
+When the game finishes, instead of exiting, it should ask you if you want to play again. If you say "yes" it should restart the game from the beginning, otherwise it exits.
 
 <!--/BOX-->
 
 <!--BOX-->
-**Test!** How could you write unit tests for a game like this? Are there any parts of the algorithm that you can extract into a function, then write tests for just that function?
+**How many tries?**
+
+When the game finishes modify the victory message so it tells the user how many guesses it took for the computer to guess the correct number.
 
 <!--/BOX-->
 
 <!--BOX-->
-**Test first!** Now that you've written it once, throw it away! Start over from scratch, but this time, use *test-driven development*: write a test, watch it fail, make it pass, repeat.
+**Combine the games**
+
+Modify the program in `index.js` so that the user can choose whether to play the normal game, or the reverse game when the program is started with `node index.js`
 
 <!--/BOX-->
 
