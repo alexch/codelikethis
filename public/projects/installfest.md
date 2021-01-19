@@ -7,6 +7,8 @@ Before the class starts, please install the following:
 * VS Code text editor
 * Node.js
 * Git
+* MongoDB & Compass
+* create-react-app
 
 and sign up for accounts on:
 
@@ -104,3 +106,30 @@ brew install git
 ```
 
 If all goes well, sign up for GitHub and Heroku using the instructions above.
+
+# MongoDB and Compass
+
+## Windows only
+
+Go to MongoDB's website and download the community version of their software [here.](https://www.mongodb.com/try/download/community) Choose the current version with platform set to `Windows` and package set to `msi.` Download and run the automatic installer. Make sure the "Install Compass" box is checked (it should be by default)
+
+## Mac
+
+Check the documentation on [this page](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/) for Mac install instructions.
+
+Run the following commands in your terminal to install mongoDB:
+
+* `brew tap mongodb/brew`
+* `brew install mongodb-community@4.4`
+
+And run the following command to test it:
+
+* `brew services start mongodb-community@4.4`
+
+If you run into any issues please let one of our instructors or TAs know
+
+# Create React App
+
+Run the following command in your terminal:
+
+* `npm install -g create-react-app`
