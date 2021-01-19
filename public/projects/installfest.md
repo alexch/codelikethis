@@ -30,9 +30,9 @@ and sign up for accounts on:
 ## Node.js (JavaScript)
 
   * **Install** Node.js from <https://nodejs.org/>
-  * version 12.X.X Current is preferred (the button on the right side)
+  * version 15.X.X Current is preferred (the button on the right side)
     * run `node -v` in terminal to check
-    * if you can't install v12, anything past 10.X.X LTS is probably okay
+    * if you can't install v15, anything past 12.X.X LTS is probably okay
 
 ## Git
 
@@ -41,14 +41,11 @@ and sign up for accounts on:
 ## GitHub
 
   * **Sign up** for an account at <https://github.com/>
-  * **Install** the GitHub Desktop app at <https://desktop.github.com/>
-  * Add an SSH key to your GitHub account; follow these instructions: <https://help.github.com/articles/connecting-to-github-with-ssh/>
 
 ## Heroku
 
   * **Sign up** for an account at <https://signup.heroku.com>
   * **Install** the Heroku Command Line Interface (CLI) at <https://devcenter.heroku.com/articles/heroku-cli>
-
 
 ---
 
@@ -63,8 +60,7 @@ and sign up for accounts on:
 4. **Right**-click `Cmder` and select "Create Shortcut"
 5. **Click and Drag** that shortcut to the desktop
 6. **Double-click** the shortcut to open the terminal
-7. Press <kbd>Win</kbd>-<kbd>Alt</kbd>-<kbd>P</kbd> (or select "Settings..." from the window's menu) and change the "startup task" to `{bash::bash}`
-cmder
+7. Press <kbd>Win</kbd>-<kbd>Alt</kbd>-<kbd>P</kbd> (or select "Settings..." from the window's menu) and make sure the "startup task" is set to `{cmd::Cmder as Admin}`
 
 ## VS Code Terminal
 1. Open VS Code
@@ -108,6 +104,8 @@ brew install git
 If all goes well, sign up for GitHub and Heroku using the instructions above.
 
 # MongoDB and Compass
+
+MongDB and it's GUI Compass will be used later in the course when we dive in to databases.
 
 ## Windows only
 
