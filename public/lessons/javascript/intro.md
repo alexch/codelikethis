@@ -1,5 +1,3 @@
-<!-- Before running this slide deck do class introductions -->
-
 # Intro
 
 You may have never programmed before. Now you will.
