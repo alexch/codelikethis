@@ -39,7 +39,11 @@ class App < Sinatra::Base
     use Rollbar::Middleware::Sinatra
   end
 
-  set :static_cache_control, [:public, :max_age => 300]
+  configure do
+    set :protection, :except => :frame_options
+    set :static_cache_control, [:public, :max_age => 300]
+  end
+
 
   before do
     cache_control :public, max_age: 300
