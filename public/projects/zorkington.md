@@ -123,7 +123,7 @@ while(answer !== 'exit') {
 
 **Given** the player has been given introductory text
 
-**When** the player enters a valid interactive command
+**When** the player enters a valid interactive command, and target
 
 **Then** the game should output accordingly
 
@@ -142,7 +142,7 @@ If the door is locked, use the code 12345."
 <details>
 <summary>Hint</summary>
 <div>
-You could do this with nested logic statements, however that will get complicated fast.  Instead you may want to make your items objects with properties and methods.
+You could do this with nested logic statements, however that will get very complicated very fast.  Instead you may want to make your items objects with properties and methods.
 
 ```js
 let sign = {
@@ -164,7 +164,7 @@ let sign = {
 
 **Given** the player is in the `starting room`
 
-**When** the player attempts to take something
+**When** the player attempts to take something that is not takeable
 
 **Then** the game denies the player
 
