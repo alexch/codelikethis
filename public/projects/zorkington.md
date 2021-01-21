@@ -33,25 +33,11 @@ Your code will need to represent (or *reify*) several distinct states, including
     * room inventory (mutable)
   * current player
     * player inventory (mutable)
-    * player status (mutable) (hungry, tired, etc.)  
+    * player status (mutable)
 
 Think about appropriate data structures for each of these. Note that you do not need to write code for these until you are actually implementing a story that requires them, but it is good to make a rough plan early on, to anticipate pitfalls and estimate how difficult upcoming stories will be.
 
-Remember to *refactor*. Sometimes a data structure that works well for the simple case will need to be altered to work for the general case. In this project, the app will grow (more rooms, more commands) from story to story and your data structures should change to accomodate.
-
-If you are not comfortable using classes, constructors, and objects you may save state in *global variables* like this:
-
-```js
-let currentRoom = null;
-
-function moveToRoom(newRoom) {
-  if (canMoveToRoom(newRoom)) {
-    currentRoom = newRoom;
-  }
-}
-```
-
->Note: Using functions, global variables, and logical statements may work for a simple version of this game, however it will be much, much harder to scale up than if you use objects.
+Remember to *refactor*. Sometimes a data structure that works well for the simple case will need to be altered to work for the general case. In this project, the app will grow (more rooms, more commands) from story to story and your data structures should change to accommodate.
 
 You may want to create a [State Machine](/lessons/javascript/state_machines) to represent potential room transitions.
 
@@ -64,7 +50,7 @@ After implementing a story, *before* starting work on the next story...
 * The client should try to prove that the program does what the story says it's supposed to do
 * If the client rejects your story, keep coding until it works right, then do another demo
 
-And during the day, take breaks, find other student teams and play each others' games!
+And during the day take breaks, and play each others' games!
 
 # Stories
 
@@ -119,11 +105,11 @@ while(answer !== 'exit') {
 
 <!--BOX-->
 
-## Read the sign
+## Interact With an Item
 
 **Given** the player has been given introductory text
 
-**When** the player enters a valid interactive command, and target
+**When** the player enters a valid command, and target
 
 **Then** the game should output accordingly
 
@@ -142,7 +128,7 @@ If the door is locked, use the code 12345."
 <details>
 <summary>Hint</summary>
 <div>
-You could do this with nested logic statements, however that will get very complicated very fast.  Instead you may want to make your items objects with properties and methods.
+You may want to make your items objects with their own properties and methods.
 
 ```js
 let sign = {
@@ -160,7 +146,7 @@ let sign = {
 
 <!--BOX-->
 
-## Don't take the sign
+## Immovable Objects
 
 **Given** the player is in the `starting room`
 
@@ -180,7 +166,7 @@ That would be selfish. How will other students find their way?
 
 <!--BOX-->
 
-## Blocked
+## Locked Out
 
 **Given** the player is in the `starting room`
 
@@ -201,9 +187,9 @@ The door is locked. There is a keypad on the door handle.
 
 **Given** the player is in the `starting room`
 
-**When** the player enters a correct password
+**When** the player solves a puzzle (e.g. enters a correct password)
 
-**Then** the game allows the player to enter
+**Then** the game allows the player to enter the `next room`
 
 ```
 >_enter code 12345
@@ -211,7 +197,7 @@ Success! The door opens.
 You enter the foyer and the door shuts behind you.
 ```
 
-**And** the player enters a `new room`
+**And** the player moves into the `next room`
 
 <!--/BOX-->
 
@@ -221,9 +207,9 @@ You enter the foyer and the door shuts behind you.
 
 **Given** the player is in the `starting room`
 
-**When** the player enters an incorrect password
+**When** the player fails the puzzle (e.g. enters the incorrect password)
 
-**Then** the game denies the player to enter
+**Then** the game denies the player entry
 
 ```
 >_enter code 00000
@@ -240,7 +226,7 @@ Bzzzzt! The door is still locked.
 
 **Given** the player is in the `next room`
 
-**Then** the game displays a description, with at least one item in said description
+**Then** the game displays a description, with at least one (takeable) item in said description
 
 ```
 You are in a foyer. Or maybe it's an antechamber. 
@@ -262,7 +248,7 @@ A copy of Seven Days lies in a corner.
 
 **Given** the player is in the `next room`
 
-**And** the player has not yet picked up the described item
+**And** the player has not yet picked up the item
 
 **When** the player enters a command to pick it up
 
@@ -274,7 +260,7 @@ You pick up the paper and leaf through it looking for comics
 and ignoring the articles, just like everybody else does.
 ```
 
-**And** the paper is added to the player's `inventory`
+**And** the item is added to the player's `inventory`
 
 <!--/BOX-->
 
@@ -315,33 +301,49 @@ You drop the paper
 
 <!--BOX-->
 
-## More rooms and more stories, e.g.
+## Keep it Open
 
-* when you unlock a room it should *stay* unlocked
+**Given** you have unlocked a door
 
-* additional interactive commands
-  * `read seven days`
-  * `go upstairs` 
-  * `look outside`
-  * etc.
+**When** you try and open the door again
 
-* Additional inventory-based events
+**Then** the door should still be unlocked
 
-  Examples:
+**And** You should be moved to the next room
 
-  - Bob speaks gibberish until you get him a `cup of tea` from Muddy's. then you can `attend lecture` or `sit down` or some other command to attend class
+<!--/BOX-->
 
-  - You get `hungry` (status) which makes your stomach growl before every prompt. Buying and eating a slice of pizza at Mr. Mike's removes the status
+<!--BOX-->
 
-  - You need to grab the bathroom key from the classroom and use it on the locked bathroom door.
-  * Cheat code! [`xyzzy`](https://en.wikipedia.org/wiki/Xyzzy_(computing\))
+## Keep it Open
 
-Please *write stories* for each of these features *before* implementing them.
+**Given** you have unlocked a door
+
+**When** you try and open the door again
+
+**Then** the door should still be unlocked, and allow you to pass to the next room
+
+<!--/BOX-->
+
+<!--BOX-->
+
+## More Rooms
+
+Create at least 4 more rooms, with their own connections, puzzles, and/or inventories
+
+Each room should have:
+
+* A limited number of other rooms it connects to (you can't move directly between some rooms without going through others)
+* A unique description
+* A separate Inventory (the inventory can be empty)
+* Optionally you can add more puzzles, locked doors, and interactive items
 
 <!--/BOX-->
 
 # Icebox
 
+* Win condition, create a puzzle that can be solved to win (or loose) the game
+
 * Status line (showing room name)
-* Web User Interface for the game
+ 
 * write a *word wrapping* function and use it to format all output
