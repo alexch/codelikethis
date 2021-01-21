@@ -93,6 +93,8 @@ And a when of:
 | text        | `To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}"); |
 | when        | `2018-01-01T12:15:00+0400`                                                       |
 
+> Note: this section was first written in 2018, The actual date for your TIL entry should be much more recent
+
 <!--/BOX-->
 
 <!--BOX-->
@@ -154,6 +156,8 @@ And an `_id` attribute with a value, *represented with a placeholder as* `:objec
 | text        | `To convert JSON to JavaScript object user JSON.parse("{'some': 'json'}");` |      2 |
 | when        | `2018-01-01T12:15:00+0400`                                                    |      2 |
 
+**And** should be able to navigate to an individual entry's page by clicking on the text
+
 <!--/BOX-->
 
 <!--BOX-->
@@ -195,9 +199,9 @@ And an `_id` attribute with a value, *represented with a placeholder as* `:objec
 
 **And** the record has an `_id` attribute with a value, *represented with a placeholder as* `:objectId`.
 
-**When** a user visits the URL path `/facts/:objectId`
+**When** a user visits the URL path `/facts/:objectId` they should see a "Delete" button
 
-**And** the user clicks on the `<button>` with `textContent` of `Delete` within the page's `<form>` element.
+**And** the user clicks on the "Delete" button
 
 **Then** the user should be presented with a confirmation dialog asking `Are you sure you want to delete this TIL Entry?`
 
@@ -214,7 +218,6 @@ And an `_id` attribute with a value, *represented with a placeholder as* `:objec
 - Filtering entries by category
 - Enter details containing Markdown and display the output of the Markdown as HTML.
 - Search entries by the text they contain, such as 'Javascript', 'React', 'NodeJS', or 'Mongo'.
-- Reports of TIL entry activity:
-  - Bar Chart with number of entries over the last seven days.
+- Search entries by date
 
 <!--/BOX-->
