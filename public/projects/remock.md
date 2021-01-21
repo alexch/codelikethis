@@ -124,6 +124,12 @@ Besides your site's overall design, the following stories must be completed as w
 **Then** the form background and border change color
 <!--/BOX-->
 
+## Icebox
+
+* Add in different types of media i.e. audio, and video
+* Have the contact form alert the user when it is submitted, then reset the form
+* Animate elements of your layout
+
 # Screen-shots 
 ### [Link to Drive](https://drive.google.com/drive/folders/1Y5G571wVANV62R0D_6vPe8YFQe9gAD6O?usp=sharing)
 <br>
