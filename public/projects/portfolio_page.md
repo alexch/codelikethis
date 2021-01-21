@@ -156,7 +156,7 @@ Should have:
 This should exist, and better yet *persist* across all other pages of your site.  
 
 * Build a "Nav Bar" using a consistent UI on each page, with links to the various other pages of your portfolio.
-* Style the navbar using Flexbox or another [CSS navbar technique](/lessons/responsive_layout/navigation) to that it can be seen on various screen sizes.
+* Style the navbar using Flexbox or another [CSS navbar technique](/lessons/responsive_layout/navigation) so that it can be seen on various screen sizes.
 
 
 ##### Example Navigation Elements
@@ -186,15 +186,9 @@ This should exist, and better yet *persist* across all other pages of your site.
 
 <!--/BOX-->
 
-<!--BOX-->
+# Icebox
 
-## Portfolio Sitemap.xml
-
-* Create a [sitemap.txt file](https://en.wikipedia.org/wiki/Sitemaps) for Search Engines to use.
-* **Automatic generation**: Use the [Node Sitemap Generatore](https://www.npmjs.com/package/sitemap-generator-cli) to build an XML file which contains all your pages files.
-  * `npx sitemap-generator-cli yourusername.github.io`
-* **Manual generation**: Use the  http://www.advancedhtml.co.uk/robots-sitemaps.htm#sitemaps for instructions
-* OPTIONAL: submit your site to Google https://www.google.com/webmasters/tools/home?hl=en and (in a day or two) wait to see your sitemap reflected in the Google search results
-  * (the easiest way to verify it is "Alternative Methods - HTML tag")
-
-<!--/BOX-->
+* make the page fully mobile responsive
+* animate elements of your page
+* create a sitemap for your site
+* host your site live on the internet
