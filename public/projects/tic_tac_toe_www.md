@@ -51,6 +51,14 @@ Player O's turn
 
 <!--BOX-->
 
+## Build the Board
+
+**Given** the site has been loaded in the browser
+
+**When** the user visits the site
+
+**Then** the user should see a 3 by 3 grid, a start button, a title, and a status area
+
 ## Start Game
 
 **Given** an empty board
