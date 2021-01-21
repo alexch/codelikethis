@@ -12,11 +12,13 @@ In this project, you will create an online directory of restaurants in Burlingto
 * JSON
 * AJAX
 * Leaflet Maps
+* React
 
 ## Goals
 
 learn how to...
 
+* set up a server for a React app
 * serve JSON files from a server
 * load JSON files into a JavaScript app
 * parse JSON files, and display data on a web page.
@@ -54,6 +56,8 @@ This endpoint should also hold a directory of restaurant IDs formatted like so:
 ]
 ```
 
+You need to include at least 8 restaurants on your site.
+
 **Note** that we are defining our own *id* format; its rules are:
 
 * contents are the same as the base file name, except:
@@ -64,6 +68,18 @@ This endpoint should also hold a directory of restaurant IDs formatted like so:
 This *id* is **not** the same as an HTML element id; instead, it's a *primary key* for our
 database. (Yes, in this context, the API is a database.) Every record (restaurant)
 needs a unique identifier.
+
+> These JSON files should not be directly accessible through the browser. The only way to access the data should be through the endpoints you set up in your server.
+
+## The Setup
+
+React is a framework for creating single page web apps, that behave like they have multiple pages. When serving react you only ever need to serve the `index.html` file to handle all of the user-facing pages.
+
+In the development environment React needs to be running its own prepackaged interpreter to parse the pages, so you will need to **BOTH** the React server (`cd client` then `npm start`) and your backend server (from the root level of your project `npm start`) running at the same time, on different ports, and proxying requests between them.
+
+Currently the project is setup to proxy requests to a server running on `localhost:8000` while the front end will be running on React's default port `localhost:3000`
+
+To view your page start both servers, and visit the site at `localhost:3000`
 
 # Stories
 
@@ -100,7 +116,7 @@ Create a simple Express server so that:
 
 **Given** the server is running
 
-**When** the user visits the the route `/api/restaurant-id`
+**When** the user visits the the route `/api/restaurant-id` (substituting `restaurant-id` for an actual restaurant's ID)
 
 **Then** the user should see the information of the restaurant whose ID was used in JSON format
 
@@ -112,7 +128,7 @@ Create a simple Express server so that:
 
 **Given** the server is running
 
-**When** the user visits the home page (e.g. `http://localhost:8080`)
+**When** the user visits the home page (e.g. `http://localhost:3000`)
 
 **Then** a leaflet map should be displayed, centered on downtown burlington.
 
@@ -140,7 +156,7 @@ Create a simple Express server so that:
 
 **Given** the id of a single restaurant (e.g. `joes-diner`)
 
-**When** the user visits `http://localhost:8080/restaurant.html#joes-diner`
+**When** the user visits `http://localhost:3000/restaurant/joes-diner`
 
 **Then** they should see all the information for that restaurant formatted and styled nicely
 
@@ -150,17 +166,17 @@ Create a simple Express server so that:
 
 <!--BOX-->
 
-**Hint:** To access *the current page's path* -- to get from `http://localhost:8080/restaurant#joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-coding/urls_and_javascript) lesson.
+**Hint:** To access *the current page's path* -- to get from `http://localhost:3000/restaurant/joes-diner` to `joes-diner` -- review the [URLs and JavaScript](/lessons/client-side-coding/urls_and_javascript) lesson.
 <details>
 <summary>
 Click here for a more detailed hint
 </summary>
 
 ```
-let name = document.location.hash.slice(1)
+let name = document.location.path.split('/')[2]
 ```
 
-(`slice(1)` removes the `#` from the `hash` field of the `document.location` URL object.)
+(`split('/')` will break the path down into an array of its parts => `['', 'restaurant', 'joes-diner']`)
 </details>
 
 <!--/BOX-->
@@ -171,7 +187,7 @@ let name = document.location.hash.slice(1)
 
 **Given** the id of a restaurant (e.g. `joes-diner`)
 
-**When** the user sees the restaurant's page (e.g. `/joes-diner`)
+**When** the user sees the restaurant's page (e.g. `/restaurant/joes-diner`)
 
 **Then** they see a [Leaflet web map](/lessons/client_side_coding/interactive_mapping), centered at that restaurant's location
 
