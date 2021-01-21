@@ -10,6 +10,8 @@ In this project you will re-create a complicated blog style web page.
 
 [Video Walk-though of the web-site with interactions](https://drive.google.com/open?id=1XIVPNTcvcjIio1SaC2npyetsqlCvANN9)
 
+> Note: The video walk-through is a bit cropped on the edges. It should be used as a reference for functionality *not layout*. To see examples of the layout check the screenshots at the bottom of this page
+
 ## Goals
 
   * Using display, position, and other css properties for layout
@@ -58,9 +60,10 @@ Now that you have your outline, break it down into pieces you can handle, like a
 Take those pieces and put it all together! Then, once you have the general layout of your pages, focus on the details, like:
 * fonts and typography
 * whitespace adjustment
-* navigation reorganization
-* clearer separation between functional page elements
-* [pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+* images
+* color pallet
+
+> It's important to get the layout done **BEFORE** you start focusing on the specifics, so don't skip steps!
 
 <!--/BOX-->
 
@@ -79,11 +82,10 @@ Besides your site's overall design, the following stories must be completed as w
 
 **And** the new page loads
 
-- Clicking on "Continue Reading" navigates to the `continue-reading.html` page
-- Clicking on "Learn More" navigates to the `learn-more.html` page
-- Clicking on "Just Another Post" navigates to the `blog-post.html` page
-- Clicking on **Any Page's Title Header** navigates to the `index.html` page
-- Clicking on **Any Page's Header** navigates to the `index.html` page
+- Clicking on "Continue Reading" navigates to the `continue-reading` page
+- Clicking on "Learn More" navigates to the `learn-more` page
+- Clicking on "Just Another Post" navigates to the `blog-post` page
+- Clicking on **Any Page's Header** navigates to the `index` page
 
 <!--/BOX-->
 
@@ -95,7 +97,7 @@ Besides your site's overall design, the following stories must be completed as w
 
 **When** the user mouses over a "Button Style" link
 
-**Then** the link's color *lightens*
+**Then** the button's color *lightens*
 
 <!--/BOX-->
 
@@ -119,9 +121,7 @@ Besides your site's overall design, the following stories must be completed as w
 
 **When** the user enters a form with an "input device" (like a *cursor* or a *focus*) 
 
-**Then** the form background and 
-- Entering a form input with an "input device" such as a *cursor* or a *[focus](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus)* **changes the color of its border and background**
-
+**Then** the form background and border change color
 <!--/BOX-->
 
 # Screen-shots 
