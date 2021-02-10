@@ -110,7 +110,7 @@ Don't worry too much about how conditionals work right now, we'll go into a lot 
 
 # Lab: Is it True?
 
-Given this conditional answer the following questions. If the check (currently the string `'this is true'`) is true it will print `It is truthy` to the console, otherwise nothing will print.
+Given this conditional answer the following questions. If the check (currently the boolean `true`) is true it will print `It is truthy` to the console, otherwise nothing will print.
 
 ```js
 if(true) {

@@ -81,7 +81,7 @@ void sayHello() // => undefined
 
 # Incrementers/Decrementers
 
-Incrementers and decrementers are not officially classified in JavaScript as unary operators since they behave slightly diferently than other operators, they are instead given their own special classification. However since they only accept one operand they are, by definition, unary operators.
+Incrementers and decrementers are not officially classified in JavaScript as unary operators since they behave slightly differently than other operators, they are instead given their own special classification. However since they only accept one operand they are, by definition, unary operators.
 
 * `++` increments the value to its left by one
 

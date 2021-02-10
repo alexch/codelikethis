@@ -138,10 +138,10 @@ Besides your site's overall design, the following stories must be completed as w
 <summary>Home Page</summary>
 <div>
 
-![](/images/home-1.png)
-![](/images/home-2.png)
-![](/images/home-3.png)
-![](/images/home-4.png)
+![Home page](/images/home-1.png)
+![Home page](/images/home-2.png)
+![Home page](/images/home-3.png)
+![Home page](/images/home-4.png)
 
 </div>
 </details>
@@ -151,9 +151,11 @@ Besides your site's overall design, the following stories must be completed as w
 <details>
 <summary>Continue Page</summary>
 <div>
-![](/images/right-1.png)
-![](/images/right-2.png)
-![](/images/right-3.png)
+
+![Continue Reading](/images/right-1.png)
+![Continue Reading](/images/right-2.png)
+![Continue Reading](/images/right-3.png)
+
 </div>
 </details>
 
@@ -164,9 +166,9 @@ Besides your site's overall design, the following stories must be completed as w
 <summary>Learn More Page</summary>
 <div>
 
-![](/images/left-1.png)
-![](/images/left-2.png)
-![](/images/left-3.png)
+![Learn More](/images/left-1.png)
+![Learn More](/images/left-2.png)
+![Learn More](/images/left-3.png)
 
 </div>
 </details>
@@ -177,8 +179,9 @@ Besides your site's overall design, the following stories must be completed as w
 <summary>Blog Post Page</summary>
 <div>
 
-![](/images/none-1.png)
-![](/images/none-2.png)
+![Blog Post](/images/none-1.png)
+![Blog Post](/images/none-2.png)
+
 </div>
 </details>
 

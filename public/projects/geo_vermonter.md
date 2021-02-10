@@ -256,11 +256,12 @@ And keeps showing the dotted line during the rest of game
 
 <!--/BOX-->
 
-Ideas for future work:
-
-Invent some new game modes, and put links to the various modes inside the nav bar. For instance...
+<!--BOX-->
+## Challenge Mode
 
   * Guess the town, not the county
   * Daily Challenge - every user uses the same point
   * Burlington Challenge - guess the neigborhood
+
+<!--/BOX-->
 

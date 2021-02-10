@@ -112,12 +112,11 @@ function issueJWT(user) {
     };
     const signedToken = jsonwebtoken.sign(payload, 'secret', { expiresIn: expiresIn });
     return {
-        token: "Bearer " + signedToken,
+        token: signedToken,
         expires: expiresIn
     }
 }
 ```
-Note the `"Bearer "` preceding the `signedToken` is expected syntax for what's called a *Bearer Token*
 
 # Logging In
 Let's say we have a simple form, with `user` and `password` sent to `/login` via `POST` method. The following checks the database to see if the user and password are correct, and issues a token if they are.
@@ -150,11 +149,11 @@ app.post('/login', (req, res, next)=>{
 # Authentication Middleware
 Now, we need to add a route to check the (presumably saved) JWT coming back from the browser!
 
-After all that setup, this is where it finall starts looking like middleware!
+After all that setup, this is where it finally starts looking like middleware!
 
 ```javascript
 app.get('/dashboard', passport.authenticate('jwt', { session: false }),
-    (req, res, next) => {
+    (req, res) => {
         res.status(200).json({ success: true, msg: "Success!!!" })
     })
 
@@ -176,7 +175,7 @@ In Postman, it should look something like this:
 
 
 # See it in Postman, cont.
-Copy the `Bearer <token>` from the JSON response, and make a GET request to `/dashboard` with it in the *header* remember, the header is where the JWT will live, should it get stored in the browser. 
+Copy the `token` from the JSON response, and make a GET request to `/dashboard` and set your token as a *Bearer token* in the "Authentication" tab
 
 That will look something like this:
 
@@ -184,5 +183,8 @@ That will look something like this:
 
 SUCCESS!!! We have effectively created a JSON Web Token, and used it to authenticate a using Passport authentication as middleware.
 
-**Extra credit**: Instead of using Postman to run the requests, create a site that, when the user logs in, will be authenticated and redirected to their dashboard. Then, they will remain logged in on subsequent requests.
+# Great! But What About Outside of Postman?
 
+Unfortunately the code we just wrote won't work in a real world environment
+
+It relies on 
