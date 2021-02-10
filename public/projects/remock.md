@@ -122,6 +122,7 @@ Besides your site's overall design, the following stories must be completed as w
 **When** the user enters a form with an "input device" (like a *cursor* or a *focus*) 
 
 **Then** the form background and border change color
+
 <!--/BOX-->
 
 ## Icebox
