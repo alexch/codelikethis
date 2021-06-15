@@ -63,6 +63,8 @@ Write code in `node` to figure out if...
   * 100 is divisible by 8
   * 330 is divisible by 11
   * 337 is divisible by 7
+
+> Hint: remember the `modulus` operator `%`
   
 # Strings vs. Numbers
 
@@ -118,10 +120,12 @@ This is called type *coercion* and just like with people, coercion is stressful 
 
 For instance, if you ask the user their age, and read it from a web form or keyboard input, it will be in a string. If you forget to explicitly convert that to a number before using it in a calculation, the results can be unexpected...
 
-      > "30" - 1              // "30" is coerced into a number
-      29            
-      > "30" + 1              // 1 is coerced into a string
-      '301'
+```js
+> "30" - 1  // "30" is coerced into a number
+29            
+> "30" + 1  // 1 is coerced into a string
+'301'
+```
 
 ([You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md) has way more information than you wanted to know on this subject.)
 
@@ -220,11 +224,8 @@ true
 Infinity
 ```
 
-# Okay, that's enough math for now!
- 
-# LAB: exercises about numbers
+# LAB: optional exercises about numbers
 
 * [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
     - start with the challenge [Add Two Numbers](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript)
     - continue through the challenge [Compound Assignment With Augmented Division](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-division)
-

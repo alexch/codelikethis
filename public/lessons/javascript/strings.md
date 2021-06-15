@@ -78,9 +78,7 @@ STRING
 <div>
 You can chain multiple methods off of each other by calling them one after another. e.g.
 
-```js
-"Hello".repeat(3).toLowercase() // => "hellohellohello"
-```
+    "Hello".repeat(3).toLowercase()
 
 </div>
 </details>
@@ -175,14 +173,20 @@ JavaScript strings are Unicode
 
 > That means you can use emoji in your JavaScript programs!
 
-Like this:
+Like the following:
 
 ```js
 "😂".repeat(20)
+> '😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂'
+
+"😂".codePointAt(0)
+> 128514
+
+String.fromCodePoint(128514)
+> "😂"
 ```
 
- * sadly, this doesn't work in Windows PowerShell
- * more details at our [unicode lesson](/lessons/cs/unicode)
+ * Sadly, this may not work by default in Windows Cmd or PowerShell
 
 # Comparing Strings
 
@@ -236,17 +240,6 @@ false
 The standard left-to-right code-to-code comparison algorithm is simplistic but very fast.
 
 It works fine for many applications, but if you're dealing with user input or multiple languages...
-
-# Smart String Comparison
-
-...use [localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) instead, which understands case and diacriticals and dialects.
-
-```js
-> "banana".localeCompare("CHERRY")
--1
-```
-
-Here `-1` means "the left side is less than the right side". Try other comparisons and see what you get!
 
 # More Practice: Strings
 

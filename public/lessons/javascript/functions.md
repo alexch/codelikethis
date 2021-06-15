@@ -42,7 +42,7 @@ function add(x, y) {
 * `sum` is a *local variable* of the function
 * `sum` is also the function's *return value* because of the magic word *return*
 
-# Call Me, Maybe
+# Calling a Function by Name
 
 You call a function by its name, plus parentheses:
 
@@ -63,10 +63,10 @@ One number is *divisible* by another if you divide them and the *remainder* is 0
 Write a function called `divisible` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
 
 ```js
-divisible(100, 10)    //=> true
-divisible(100, 7)     //=> false
-divisible(3333, 11)   //=> true
-divisible(99, 12)     //=> false
+divisible(100, 10)   //=> true
+divisible(100, 7)    //=> false
+divisible(3333, 11)  //=> true
+divisible(99, 12)    //=> false
 ```
 
 # Divisible solution
@@ -86,13 +86,11 @@ The modulus operator `%` returns either an integer or zero.  Integers are truthy
 
 You may need to use some logic. You can create a simple control flow with an `if ...else` statement
 
-```js
-if(/*this expression evaluates true*/) {
-  //do this
-} else {
-  //otherwise do this
-}
-```
+    if(/*this expression evaluates true*/) {
+      //do this
+    } else {
+      //otherwise do this
+    }
 
 </div>
 </details>
@@ -101,17 +99,15 @@ if(/*this expression evaluates true*/) {
 <summary>Solution</summary>
 <div>
 
-```js
-function divisible(operator, operand) {
-  if(operator % operand) {
-    return true
-  } else {
-    return false
-  }
-}
+    function divisible(operator, operand) {
+      if(operator % operand) {
+        return true
+      } else {
+        return false
+      }
+    }
 
-divisible(100, 10) // => true
-```
+    divisible(100, 10) // => true
 
 </div>
 </details>
@@ -178,16 +174,14 @@ let restOfString = string.slice(1)
   <summary>Answer</summary>
   <div>
 
-```js
-function capitalize(word) {
-  let firstLetter = word[0];
-  let restOfWord = word.slice(1);
-  return firstLetter.toUpperCase() + restOfWord.toLowerCase();
-}
+    function capitalize(word) {
+      let firstLetter = word[0];
+      let restOfWord = word.slice(1);
+      return firstLetter.toUpperCase() + restOfWord.toLowerCase();
+    }
 
-console.log(capitalize('smith'));
-console.log(capitalize('MACGUYVER'));
-```
+    console.log(capitalize('smith'));
+    console.log(capitalize('MACGUYVER'));
 
 The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function.
   </div>
@@ -286,25 +280,23 @@ Here's one solution for the age calculator:
 <summary>Answer</summary>
 <div>
 
-```js
-let age = 27
+    let age = 27
 
-function ageCalc(num) {
-  let secondsInMin = 60
-  let minInHour = 60
-  let hrInDay = 24
-  let dayInYr = 365.25
+    function ageCalc(num) {
+      let secondsInMin = 60
+      let minInHour = 60
+      let hrInDay = 24
+      let dayInYr = 365.25
 
-  let secInYr = secondsInMin * minInHour * hrInDay * dayInYr
+      let secInYr = secondsInMin * minInHour * hrInDay * dayInYr
 
-  let ageInSec = num * secInYr
+      let ageInSec = num * secInYr
 
-  return ageInSec
-}
+      return ageInSec
+    }
 
-console.log(ageCalc(age))
+    console.log(ageCalc(age))
 
-```
 
 To flip it you could simply divide the `num` variable by `secInYr` rather than multiplying to get years in a number of seconds.
 
@@ -334,9 +326,7 @@ supplyCal(0, 3, "cookie") // => "You will need 109500 cookies to last the rest o
 <summary>Hint 1</summary>
 <div>
 
-```js
-let amountPerYear = amountPerDay * 365
-```
+    let amountPerYear = amountPerDay * 365
 
 </div>
 </details>
@@ -345,9 +335,7 @@ let amountPerYear = amountPerDay * 365
 <summary>Hint 2</summary>
 <div>
 
-```js
-let numberOfYears = 100 - age
-```
+    let numberOfYears = 100 - age
 
 </div>
 </details>
@@ -356,15 +344,13 @@ let numberOfYears = 100 - age
 <summary>Solution</summary>
 <div>
 
-```js
-function supplyCalc(age, amountPerDay, item) {
-  let amountPerYear = amountPerDay * 365
-  let numberOfYears = 100 - age
-  let totalNeeded = amountPerYear * numberOfYears
+    function supplyCalc(age, amountPerDay, item) {
+      let amountPerYear = amountPerDay * 365
+      let numberOfYears = 100 - age
+      let totalNeeded = amountPerYear * numberOfYears
 
-  let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
+      let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
 }
-```
 
 </div>
 </details>
@@ -390,11 +376,10 @@ titilize("FRIDAY IS THE LONGEST DAY") // => "Friday Is The Longest Day"
 <summary>Hint 1</summary>
 <div>
 
-```js
-function capitalize(word) {
-  return word[0].toUpperCase() + word.slice(1).toLowerCase()
-}
-```
+    function capitalize(word) {
+      return word[0].toUpperCase() + word.slice(1).toLowerCase()
+    }
+
 
 </div>
 </details>
@@ -403,9 +388,7 @@ function capitalize(word) {
 <summary>Hint 2</summary>
 <div>
 
-```js
-let wordArray = string.split(" ")
-```
+    let wordArray = string.split(" ")
 
 </div>
 </details>
@@ -414,16 +397,14 @@ let wordArray = string.split(" ")
 <summary>Solution</summary>
 <div>
 
-```js
-function titilize(string){
-  let wordArray = string.split(" ")
-  let newArray = wordArray.map(function(word){
-    return word[0].toUpperCase() + word.slice(1).toLowerCase()
-  })
+    function titilize(string){
+      let wordArray = string.split(" ")
+      let newArray = wordArray.map(function(word){
+        return word[0].toUpperCase() + word.slice(1).toLowerCase()
+      })
 
-  return newArray.join(" ")
-}
-```
+      return newArray.join(" ")
+    }
 
 </div>
 </details>
