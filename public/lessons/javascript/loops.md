@@ -13,11 +13,12 @@ A LOOP is when we ask a program to do something many times.
 
 # while
 
-The simplest loop in JavaScript is `while`.
+The simplest loop in JavaScript is a `while` loop.
 
 ```js
 while (someCondition) {
-    someAction()
+  // this code runs once per loop cycle
+  doSomeAction()
 }
 ```
 
@@ -25,69 +26,77 @@ In English this reads, "While some condition is true, do some action".
 
 # while true
 
-If you want something to keep going forever, set condition to `true`:
+To loop forever, set the condition to `true`:
 
 ```js
 while (true) {
-  console.log("Hello")
+  // this will loop forever
+  // because `true` never changes
+  console.log("Hello");
 }
 ```
 
-This means "While true is true, say 'Hello'". Obviously `true` will always be true, so it goes forever.
+This means "While `true` is `true`, say 'Hello'".
 
-To stop it, hold down the CONTROL key and press the C key.
+`true` will always be true, so it loops forever.
+
+To stop the loop, hold down the CONTROL key and press the C key, <kbd>CRTL</kbd>+<kbd>C</kbd>.
 
 This is called an *infinite loop*.
-
-**Note well!** The lines between `{` and `}` are INDENTED. Indentation is very important to you and other humans. It lets our eyes follow the patterns and helps us quickly see what parts of the program go with each other.
 
 # One Infinite Loop
 
 ![One Infinite Loop](https://res.cloudinary.com/btvca/image/upload/v1574445194/curriculum/one-infinite-loop_eful1h.jpg)
 
-*Fun Fact:* The address of Apple HQ is
+*Fun Fact:* The address of Apple Headquarters is
 
     1 Infinite Loop
     Cupertino, CA 95014
 
-*Image from the Wikimedia Commons, licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Joe Ravi*
+*Wikimedia Commons, image licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Joe Ravi*
 
-# Infinite Counting
+# Counting Forever
 
-Let's write a program that counts from 0 to infinity. Put this in a file called `count.js`.
+Let's write a program that counts forever. 
+
+Put this in a file called `count.js`.
 
 ```js
-let count = 0;
+let count = 1;
 while (true) {
-    console.log(count);
-    count = count + 1;
+  console.log(count);
+  count = count + 1;
 }
 ```
 
 Run the program with `node count.js`.
 
-> Remember, CONTROL-C means "Stop everything!!!"
+> Remember to <kbd>CRTL</kbd>+<kbd>C</kbd> to stop the program
 
-# LAB: Who wants to loop forever?
+# LAB: Count to 100
 
-Next, we will change your `count.js` program so that it only counts to 100.
+Next, change your `count.js` program so that it count 1 to 100.
 
-Please try this yourself! But it's kind of tricky, so on the next slide I'll show you one solution.
+```js
+let count = 1;
+while (/* count is less than or equal to 100 */) {
+  console.log(count);
+  count = count + 1;
+}
+```
 
-# Solution: Who wants to loop forever?
+# Solution: Count to 100
 
 <details>
 <summary>Hint</summary>
+<div>
 
 Remember, a while loop only runs while the check evaluates true
 
-<div>
 
-```js
-while(/*this expression is true...*/) {
-    // ...do this action
-}
-```
+    while(/*this expression is true...*/) {
+        // ...do this action
+    }
 
 </div>
 </details>
@@ -95,32 +104,29 @@ while(/*this expression is true...*/) {
 
 <details>
 <summary>Solution</summary>
-
 <div>
 
-```js
-let count = 1;
-while (count <= 100) {
-    console.log(count);
-    count = count + 1;
-}
-```
+    let count = 1;
+    while (count <= 100) {
+      console.log(count);
+      count = count + 1;
+    }
 
 </div>
 </details>
 
 Did your program stop at 100, 101, or 99?
 
-# `while`
+# While Loops
 
-* The `while` statement keeps checking the expression
+* The `while` statement keeps checking the test expression
 
   * if it's `true` then it loops back
   * if it's `false` then it stops looping and goes on to the rest of the program
 
 This is fairly complicated, so let's stop here and make sure to understand everything that's happening in this little program.
 
-# `while` breakdown (pt.1)
+# While breakdown (pt.1)
 
     let count = 1
 
@@ -132,7 +138,7 @@ starts a loop and immediately compares `count` to `100`.
 
 `1` is less than `100`, so the expression is `true`, so we continue with the block of code starting with the `{`.
 
-# `while` breakdown (pt.2)
+# While breakdown (pt.2)
 
       console.log(count);
 
@@ -146,7 +152,7 @@ prints the current value of count.
 
 goes *back to the `while` line* and checks again
 
-# `while` breakdown (pt.3)
+# While breakdown (pt.3)
 
     while (count <= 100)
 
@@ -156,38 +162,121 @@ compares `count` to `100`.
 
 Eventually, `count` becomes `101`, and the `while` expression is `false`, and so we stop looping and go on.
 
-# break dancing
+# Break in a While Loop
 
-The magic word `break` stops a loop immediately.
+The magic word `break` stops looping immediately.
 
-Here's a more verbose way of counting to 100:
+Here is another way to count to 100, but this time using `break`:
 
 ```js
 let count = 0;
 while (true) {
-    console.log(count);
-    count = count + 1;
-    if (count > 100) {
-        break;
-    }
+  console.log(count);
+  count = count + 1;
+  if (count > 100) {
+      break;
+  }
 }
 ```
 
-# Different Kinds of Loops
+# For Loops
 
-While the `while` loop is arguably the most straightforward, and widely used loop in JavaScript it's not the only type of loop.  JavaScript inherited the `for` loop from C; it's cumbersome and confusing but you should learn to recognize it.
+The `while` loop is simple, but there is another loop called a `for` loop that combines multiple operations within the `for` statement.
 
 ```js
-for (var i=0; i < 8; i++) {
-  console.log(poemLine(i));
+for (let count = 1; count <= 100; count++) {
+  console.log(count);
 }
 ```
 
-# Flavors of For
 
-There are also a couple variations on the `for` loop that can be used to iterate over different data structures. These types of loops are known collectively as iterators, the most comon of which are the `for ...in` loop, and the `for ...of` loop. More on those later!
+# For Loops with Arrays
+
+A `for` loop is often seen paired with an indexed data structure known as an Array
+
+```js
+let poemLines = [
+  'Roses are red', 
+  'Violets are blue', 
+  'Honey is sweet',
+  'And so are you'
+];
+
+for (let line = 0; line < poemLines.length; line++) {
+  console.log(poemLines(index));
+}
+```
+
+[JavaScript.info Guide for Arrays](https://javascript.info/array)
+
+[MDN Guide for Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections)
+
+
+# For Loop Breakdown (pt.1)
+
+We are using the for loop to get each item in the Array collection `poemLines`
+
+```
+let poemLines = [
+  'Roses are red', 
+  'Violets are blue', 
+  'Honey is sweet',
+  'And so are you'
+];
+```
+
+# For Loop Breakdown (pt.2)
+
+The `for (...) ` part of a `for` loop is where the loop:
+
+1. Initializes a variable to track
+2. Determines whether to run again
+3. Changes the variable after the loop runs.
+
+```js
+for (let line = 0; line < poemLines.length; line++)
+```
+
+# For Loop Breakdown (pt.3)
+
+Think about the three parts as three separate lines of code.
+
+1. Initialize a variable to track
+
+```js
+let line = 0;
+```
+
+2. Determine whether to run again
+
+```js
+line < poemLines.length;
+```
+
+3. Change the variable after the loop runs
+
+```js
+line++;
+```
+
+# For Loop Breakdown (pt.4)
+
+The `body` of the loop is the code that runs on each time through the loop
+
+```js
+for (let line = 0; line < poemLines.length; line++) 
+/* everything inside the curly braces is the body */
+{
+  // this code will run each time we loop
+  // since `index` changes each time,
+  // a different poem line is printed each cycle
+  console.log(poemLines(index));
+}
+```
 
 # LAB: One Potato
+
+Now let's apply what we have learned about `while` and `for` loops to print a poem in JavaScript.
 
 Remember this poem?
 
@@ -204,176 +293,88 @@ Please write a program called `potato.js` that prints that poem, using loops.
 
 (No, you can't just print the entire poem as a single string; that would be cheating.)
 
-# Many Potatoes, Many Solutions
+# Counting Potatoes Solution (pt.1)
 
-Remember, there's always more than one solution to any problem! Don't get fixated on finding the One Right Answer.
+Let's separate the solution into two parts.
 
-> "The strategy is definitely: first make it work, then make it right, and, finally, make it fast."
-> - Brian Kernighan, creator of the C programming language
-
-In the next slides we will examine several different ways to write the One Potato program.
-
-> Note: changing the design of a program that's already working correctly is called **refactoring**
-
-# functional decomposition
-
-The first thing we'll do is *decompose* the problem into two smaller problems:
-
-1. counting from 1 to 8
-2. printing the correct message for each line
-
-*Decomposition* is one of the most important skills in programming. It lets you focus.
-
-Also known as "*divide and conquer*".
-
-Introducing a *function* is the most straightforward way to embody a smaller task.
-
-[Modular Decomposition](http://www.cs.columbia.edu/~evs/songs/Modular_20Decomposition.mp3) song by Eric Siegel, Ph.D.
-
-# Fake it till you make it
-
-Functional decomposition is also a great way to write a program that you haven't quite figured out yet.
-
-When you reach a step that you don't know how to do, or just don't want to think about right now, call a function *that you haven't written yet*.
-
-Then later on -- only *after* the parent function is written -- go back and make the faked-out function work.
-
-# counting potatoes
-
-Let's separate *formatting* from *counting*.
-
-This function does one thing only: create the correct string for a given line number.
-
-```js
-function poemLine(lineNumber) {
-    if (lineNumber === 8) {
-        return "More!"
-    } else if (lineNumber === 4) {
-        return "4!"
-    } else {
-        return lineNumber + " potato,"
-    }
-}
-```
-
-Now that we have an isolated formatting function, let's look at different ways to do looping.
-
-# `while true`
-
-```js
-let i = 1;
-while (true) {
-    console.log(poemLine(i));
-    i = i + 1;
-    if (i > 8) {
-        break;
-    }
-}
-```
-
-# `while`
-
-```js
-let i = 1;
-while (i <= 8) {
-    console.log(poemLine(i));
-    i = i + 1;
-}
-```
-
-
-# LAB: Prime Numbers
-
-A *prime number* is one that is only *divisible* by itself and 1.
-
-The goal of this lab is to print all (and only) the prime numbers between 2 and 100.
-
-To do this, your code will probably need to use one or the other, or both, of these:
-
-  * *nested functions* - functions that call other functions
-  * *nested loops* - loops that contain other loops
-
-# Prime Numbers solution
-
-<details>
-<summary>Hint 1</summary>
-<div>
-You may want to use the logic in the `isDivisible` function you made during the functional labs.
-
-```js
-function divisible(divisor, dividend) {
-    if (!(divisor % dividend)) {
-        return true
-    } else {
-        return false
-    }
-}
-```
-
-</div>
-</details>
-
-<details>
-<summary>Hint 2</summary>
-<div>
-Fake it till you make it!
-
-```js
-function isPrime(number) {
-    return true
-}
-```
-
-</div>
-</details>
-
-<details>
-<summary>Hint 3</summary>
-<div>
-Use a while loop to iterate through all the integers between your number and 2
-
-```js
-let count = 2
-
-while (count < number) {
-    //Your code goes here
-}
-```
-
-</div>
-</details>
+Create a function `poemLine` does only one thing; create the correct string for a given line number.
 
 <details>
 <summary>Solution</summary>
 <div>
 
-```js
-function isPrime(number) {
-    let count = 2
-    
-    while (count < number) {
-        if (!(number % count)) {
-            return false
-        } else {
-            count++
-        }
+    function poemLine(lineNumber) {
+      if (lineNumber === 8) {
+          return "More!"
+      } else if (lineNumber === 4) {
+          return "4!"
+      } else {
+          return lineNumber + " potato,"
+      }
     }
 
-    return true
-}
+</div>
+</details>
 
-let currentNumber = 100
+# Counting Potatoes Solution (pt.2)
 
-while (currentNumber > 2) {
-    if(isPrime(currentNumber)) {
-        console.log(currentNumber)
-        currentNumber--
-    } else {
-        currentNumber--
+The second part of the solution only loops, based on a counter `lineNumber`.
+
+<details>
+<summary>Solution</summary>
+<div>
+
+    function poemLine(lineNumber) {
+      if (lineNumber === 8) {
+          return "More!"
+      } else if (lineNumber === 4) {
+          return "4!"
+      } else {
+          return lineNumber + " potato,"
+      }
     }
-}
 
-```
+    // New Code Below
+
+    let lineNumber = 1;
+
+    while (lineNumber <= 8) {
+      console.log(poemLine(lineNumber));
+      lineNumber = lineNumber + 1;
+    }
+
+</div>
+</details>
+
+# Counting Potatoes, alternative with `break`
+
+An alternative solution uses `break` to stop looping after eight cycles.
+
+<details>
+<summary>Solution</summary>
+<div>
+
+    function poemLine(lineNumber) {
+      if (lineNumber === 8) {
+          return "More!"
+      } else if (lineNumber === 4) {
+          return "4!"
+      } else {
+          return lineNumber + " potato,"
+      }
+    }
+
+    // New Code Below
+
+    let lineNumber = 1;
+
+    while (true) {
+      console.log(poemLine(lineNumber));
+      lineNumber = lineNumber + 1;
+      if (lineNumber > 8) {
+          break;
+      }
+    }
 
 </div>
 </details>
