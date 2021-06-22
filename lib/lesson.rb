@@ -286,7 +286,7 @@ class Lesson < Thing
       stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
       stylesheet name: "highlight/solarized-light"
       script defer: "defer",
-             src: "/highlight.min.js"
+             src: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"
     end
 
     def breadcrumbs
