@@ -114,23 +114,6 @@ causes an error. You need to do
 
 instead. Why?
 
-# The Tragedy of the Equal Sign
-
-* a single equal sign means ASSIGNMENT
-  * `name = "Alice"` -- "assign the value 'Alice' to the variable 'name'"
-* two equal signs means COMPARISON
-  * `name == "Alice"` -- "does the variable 'name' contain the string 'Alice'?"
-
-> This is confusing! (More about it on the next slide.)
-
-# A Notorious Bad Idea
-
-> "A **notorious example for a bad idea** was the choice of the equal sign to denote assignment. It goes back to Fortran in 1957 and **has blindly been copied by armies of language designers**. Why is it a bad idea? Because it overthrows a century old tradition to let "=" denote a comparison for equality, a predicate which is either true or false. But Fortran made it to mean assignment, the **enforcing** of equality... `x = y` does not mean the same thing as `y = x`."
->
-> — [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth), Good Ideas, Through the Looking Glass (2005)
-
-see also http://en.wikipedia.org/wiki/Assignment_%28computer_science%29#Assignment_versus_equality
-
 # Condition or Assignment?
 
 > BEWARE of using a single equal sign inside an `if` condition!
@@ -162,7 +145,7 @@ Since the rules for type conversion are confusing, most JavaScript experts recom
 
 > Using `==` can have some very interesting side effects, see [Stackoverflow](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons)
 
-# Conjunction Junction
+# Logical Conjunctions
 
 You can make more complicated logical expressions using conjunctions:
 
@@ -186,14 +169,19 @@ if (age >= 18 || hasPermissionSlip()) {
 
 # LAB: Good Friend, Bad Friend
 
-* Your `hello.js` program should currently look something like this:
+In this lab you will create a program to read input from a human user, and then make a decision about what to output as a message based on that input.
+
+Start with a `hello.js` program that looks like this:
 
 ```js
 console.log("What is your name?");
-process.stdin.once('data', (chunk) => {
-    let name = chunk.toString().trim();
-    console.log("Hello, " + name + "!");
-});
+
+function handleInput(chunk) {
+  let name = chunk.toString().trim();
+  console.log("Hello, " + name + "!");
+}
+
+process.stdin.once('data', handleInput);
 ```
 
 * Now change `hello.js` so that it doesn't always say hello!
@@ -205,17 +193,18 @@ process.stdin.once('data', (chunk) => {
 <summary>Solution</summary>
 <div>
 
-```js
-console.log("What is your name?");
-process.stdin.on('data', (chunk) => {
-    let name = chunk.toString().trim();
-    if (name === "Darth") {
-      console.log("Noooooo! That's impossible!")
-    } else {
-      console.log("Hello, " + name + "!");
+    console.log("What is your name?");
+
+    function handleInput(chunk) {
+      let name = chunk.toString().trim();
+      if (name === "Darth") {
+        console.log("Noooooo! That's impossible!")
+      } else {
+        console.log("Hello, " + name + "!");
+      }
     }
-});
-```
+
+    process.stdin.on('data', handleInput);
 
 </div>
 </details>
@@ -241,9 +230,7 @@ Using `.on` instead of `.once` will keep the process running
 <div>
 Remember
 
-```js
-process.exit()
-```
+    process.exit()
 
 will end your program.
 </div>
@@ -254,19 +241,20 @@ will end your program.
 <summary>Solution</summary>
 <div>
 
-```js
-console.log("What is your name?");
-process.stdin.on('data', (chunk) => {
-    let name = chunk.toString().trim();
-    if (name === "bye!") {
-      process.exit()
-    }else if (name === "Darth") {
-      console.log("Noooooo! That's impossible!\nWhat is your name?")
-    } else {
-      console.log("Hello, " + name + "!\nWhat is your name?");
+    console.log("What is your name?");
+
+    function handleInput(chunk) {
+      let name = chunk.toString().trim();
+      if (name === "bye!") {
+        process.exit()
+      } else if (name === "Darth") {
+        console.log("Noooooo! That's impossible!\nWhat is your name?")
+      } else {
+        console.log("Hello, " + name + "!\nWhat is your name?");
+      }
     }
-});
-```
+
+    process.stdin.on('data', handleInput);
 
 </div>
 </details>
@@ -274,8 +262,8 @@ process.stdin.on('data', (chunk) => {
 # LAB: Enemies List
 
 * Change `hello.js` so that it says "Go away!" if the user's name is any one of a number of evil names
-* For instance, Voldemort, Satan, Lex Luthor...
-* Bonus: don't let enemies sneak in even if they spell their names with capital letters, like `VolDeMort`
+* For instance, Voldemort, Palpatine, Lex Luthor...
+* Bonus Challenge: don't let enemies sneak in even if they spell their names with capital letters, like `VolDeMort`
 
 # Enemies List solution
 
@@ -284,12 +272,10 @@ process.stdin.on('data', (chunk) => {
 <div>
 You can do multiple checks in a single if statement by using the logical "or" operator: `||`
 
-```js
-if(checkOne || checkTwo || checkThree) {
-  //this block of code runs if any of the checks are true
-}
+    if(checkOne || checkTwo || checkThree) {
+      //this block of code runs if any of the checks are true
+    }
 
-```
 
 </div>
 </details>
@@ -298,19 +284,20 @@ if(checkOne || checkTwo || checkThree) {
 <summary>Solution</summary>
 <div>
 
-```js
-console.log("What is your name?");
-process.stdin.on('data', (chunk) => {
-    let name = chunk.toString().trim();
-    if (name === "bye!") {
-      process.exit()
-    }else if (name === "Darth" || name === "Sauron" || name === "Voldemort") {
-      console.log("Noooooo! That's impossible!\nWhat is your name?")
-    } else {
-      console.log("Hello, " + name + "!\nWhat is your name?");
+    console.log("What is your name?");
+
+    function handleInput(chunk) => {
+      let name = chunk.toString().trim();
+      if (name === "bye!") {
+        process.exit();
+      } else if (name === "Darth" || name === "Sauron" || name === "Voldemort") {
+        console.log("Noooooo! That's impossible!\nWhat is your name?")
+      } else {
+        console.log("Hello, " + name + "!\nWhat is your name?");
+      }
     }
-});
-```
+
+    process.stdin.on('data',);
 
 </div>
 </details>
