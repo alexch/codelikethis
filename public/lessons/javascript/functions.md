@@ -396,14 +396,24 @@ titilize("FRIDAY IS THE LONGEST DAY") // => "Friday Is The Longest Day"
 <details>
 <summary>Solution</summary>
 <div>
+    function capitalize(word) {
+      return word[0].toUpperCase() + word.slice(1).toLowerCase()
+    }
 
-    function titilize(string){
-      let wordArray = string.split(" ")
-      let newArray = wordArray.map(function(word){
-        return word[0].toUpperCase() + word.slice(1).toLowerCase()
-      })
+    function titilize(string) {
+      let wordArray = string.split(" ");
 
-      return newArray.join(" ")
+      let newString = "";
+      let wordsModified = 0;
+
+      while (wordsModified < wordArray.length) {
+        let currentWord = wordArray[wordsModified];
+        let newWord = capitalize(currentWord);
+        newString = newString + " " + newWord;
+        wordsModified = wordsModified + 1;
+      }
+
+      return newString.trim();
     }
 
 </div>
