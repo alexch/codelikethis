@@ -12,36 +12,37 @@
 
 * Performing *calculations* and accessing *memory* is **very fast**
 * ...but reading and writing to I/O devices is **slow**
-    * (at least as far as the CPU is concerned)
-    * I/O operations can take *seconds* or *milliseconds*; CPU operations take *nanoseconds*
+  * (at least as far as the CPU is concerned)
+  * I/O operations can take *seconds* or *milliseconds*; CPU operations take *nanoseconds*
 * Every time you ask JavaScript to do an I/O operation, it *pauses your program*
   * this allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed or a file to be written
 * In NodeJS, you have to write a function for JavaScript to run once it *resumes*
-    * this function is named an *asynchronous callback*
-    * *asynchronous* is Greek for "out of time" or "not together in time"
+  * this function is named an *asynchronous callback*
+  * *asynchronous* is Greek for "out of time" or "not together in time"
 
 # Terminal I/O
 
 * In JavaScript,
-    * `console.log` means "print a line to the terminal"
+  * `console.log` means "print a line to the terminal"
 
 * In NodeJS,
-    * `process.stdin` means "input coming from the terminal"
+  * `process.stdin` means "input coming from the terminal"
 
-    * Reading a line in NodeJS is **weird**; here's one way to do it
-
-```js
-process.stdin.once('data', (chunk) => { console.log(chunk.toString()) } )
-```
+  * Reading a line of input in NodeJS is **weird**
 
 > The weirdness is explained on the next slide!
 
 # node load code, decoded
 
 ```js
-process.stdin.once('data',
-    (chunk) => { console.log(chunk.toString()) }
-)
+function handleInput(input) {
+  let inputAsString = input.toString();
+  console.log("The input is: ", inputAsString);
+}
+
+process.stdin.once('data', handleInput)
+
+console.log("Waiting for input...");
 ```
 
 > `once` is a function that takes two parameters,
@@ -49,28 +50,28 @@ process.stdin.once('data',
 
 |phrase|meaning|
 |---|---|
-| `process.stdin`        | hey terminal input, |
-| `.once('data',` ... `)`  | when you get some data, |
-| `(chunk)`              | please name it `chunk` |
-| ` => `                 | and send it to |
-| ` { ` ... ` }`         | this block of code |
-| `console.log(chunk.toString())`   | convert it to a string and print it to the terminal |
+| `process.stdin`              | hey terminal input, |
+| `.once('data', ...)`         | when you get some data, |
+| `function handleInput(input)`| please name it `input` |
+| ` { ... }`                   | send it to this block of code |
+| `input.toString()`           | convert it to a string  |
+| `console.log(inputAsString)` | and print it to the terminal |
 
 # Welcome to Callback City!
 
-The previous one-liner code is equivalent to this:
+The previous code is equivalent to this:
 
 ```js
-function printLine(chunk) { 
-    console.log(chunk) 
-}
-process.stdin.once('data', printLine);
+process.stdin.once('data', function handleInput(input) { 
+  let inputAsString = input.toString();
+  console.log(inputAsString);
+});
 ```
 
-The `printLine` function itself is called a *callback* 
-(since you are asking the I/O device to *call you back* when it receives input).
+The `handleInput` function itself is called a *callback* 
+(since you are asking the I/O device to *call the function* when it receives input).
 
-# readline
+# Readline
 
 * NodeJS is more than a *JavaScript interpreter*
 * It's also a collection of *JavaScript libraries*
@@ -79,7 +80,7 @@ The `printLine` function itself is called a *callback*
     * the "books" in this library are functions
       * (and classes and other things too)
 
-# using readline
+# Using readline
 
 > Warning: this code uses features we have not yet covered! Copy and paste it verbatim during the codealong below, and don't worry if it doesn't make much sense yet.
 
@@ -139,13 +140,13 @@ async function start() {
 
 * run it from the command line using `node quest.js`
 
-# async and await
+# Async Await
 
 * We will learn a lot more about callbacks, promises, and `async`/`await` later
 * For now, follow these two rules when using `async` and `await`:
 
-    1. `await` means "wait for the following thing to happen"
-    2. when you use `await` inside a function, you must use `async` to define that function
+  1. `await` means "wait for the following thing to happen"
+  2. when you use `await` inside a function, you must use `async` to define that function
 
 > WARNING: `async` functions don't play nicely with `for` loops! (Fortunately, there are other ways to loop that do work well.)
 
@@ -162,11 +163,14 @@ async function start() {
 # Full Name solution
 
 <details>
-<summary>Hint</summary>
+<summary>
+Hint
+</summary>
 <div>
 You may want to use `readline` and the `ask()` function.
 
-```js
+<pre>
+<code class="language-javascript">
 const readline = require('readline');
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
@@ -175,16 +179,19 @@ function ask(questionText) {
     readlineInterface.question(questionText, resolve);
   });
 }
-```
+</code>
+</pre>
 
 </div>
 </details>
 
 <details>
-<summary>Solution</summary>
-<div>
+<summary>
+Solution
+</summary>
 
-```js
+<pre>
+<code class="language-javascript">
 const readline = require('readline');
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
@@ -202,7 +209,6 @@ async function fullName() {
 }
 
 fullName()
-```
-
-</div>
+</code>
+</pre>
 </details>

@@ -73,7 +73,7 @@ Run the program with `node count.js`.
 
 > Remember to <kbd>CRTL</kbd>+<kbd>C</kbd> to stop the program
 
-# LAB: Count to 100
+# LAB: Count to One Hundred
 
 Next, change your `count.js` program so that it count 1 to 100.
 
@@ -88,31 +88,34 @@ while (/* count is less than or equal to 100 */) {
 # Solution: Count to 100
 
 <details>
-<summary>Hint</summary>
-<div>
+
+<summary>
+Hint
+</summary>
 
 Remember, a while loop only runs while the check evaluates true
-
-
-    while(/*this expression is true...*/) {
-        // ...do this action
-    }
-
-</div>
+<pre>
+<code class="language-javascript">
+while(/*this expression is true...*/) {
+    // ...do this action
+}
+</code>
+</pre>
 </details>
 
-
 <details>
-<summary>Solution</summary>
-<div>
-
-    let count = 1;
-    while (count <= 100) {
-      console.log(count);
-      count = count + 1;
-    }
-
-</div>
+<summary>
+Solution
+</summary>
+<pre>
+<code class="language-javascript">
+let count = 1;
+while (count <= 100) {
+  console.log(count);
+  count = count + 1;
+}
+</code>
+</pre>
 </details>
 
 Did your program stop at 100, 101, or 99?
@@ -300,20 +303,22 @@ Let's separate the solution into two parts.
 Create a function `poemLine` does only one thing; create the correct string for a given line number.
 
 <details>
-<summary>Solution</summary>
-<div>
-
-    function poemLine(lineNumber) {
-      if (lineNumber === 8) {
-          return "More!"
-      } else if (lineNumber === 4) {
-          return "4!"
-      } else {
-          return lineNumber + " potato,"
-      }
-    }
-
-</div>
+<summary>
+Solution
+</summary>
+<pre>
+<code class="language-javascript">
+function poemLine(lineNumber) {
+  if (lineNumber === 8) {
+      return "More!"
+  } else if (lineNumber === 4) {
+      return "4!"
+  } else {
+      return lineNumber + " potato,"
+  }
+}
+</code>
+</pre>
 </details>
 
 # Counting Potatoes Solution (pt.2)
@@ -321,29 +326,31 @@ Create a function `poemLine` does only one thing; create the correct string for 
 The second part of the solution only loops, based on a counter `lineNumber`.
 
 <details>
-<summary>Solution</summary>
-<div>
+<summary>
+Solution
+</summary>
+<pre>
+<code class="language-javascript">
+function poemLine(lineNumber) {
+  if (lineNumber === 8) {
+      return "More!"
+  } else if (lineNumber === 4) {
+      return "4!"
+  } else {
+      return lineNumber + " potato,"
+  }
+}
 
-    function poemLine(lineNumber) {
-      if (lineNumber === 8) {
-          return "More!"
-      } else if (lineNumber === 4) {
-          return "4!"
-      } else {
-          return lineNumber + " potato,"
-      }
-    }
+// New Code Below
 
-    // New Code Below
+let lineNumber = 1;
 
-    let lineNumber = 1;
-
-    while (lineNumber <= 8) {
-      console.log(poemLine(lineNumber));
-      lineNumber = lineNumber + 1;
-    }
-
-</div>
+while (lineNumber <= 8) {
+  console.log(poemLine(lineNumber));
+  lineNumber = lineNumber + 1;
+}
+</code>
+</pre>
 </details>
 
 # Counting Potatoes, alternative with `break`
@@ -352,29 +359,29 @@ An alternative solution uses `break` to stop looping after eight cycles.
 
 <details>
 <summary>Solution</summary>
-<div>
+<pre>
+<code class="language-javascript">
+function poemLine(lineNumber) {
+  if (lineNumber === 8) {
+      return "More!"
+  } else if (lineNumber === 4) {
+      return "4!"
+  } else {
+      return lineNumber + " potato,"
+  }
+}
 
-    function poemLine(lineNumber) {
-      if (lineNumber === 8) {
-          return "More!"
-      } else if (lineNumber === 4) {
-          return "4!"
-      } else {
-          return lineNumber + " potato,"
-      }
-    }
+// New Code Below
 
-    // New Code Below
+let lineNumber = 1;
 
-    let lineNumber = 1;
-
-    while (true) {
-      console.log(poemLine(lineNumber));
-      lineNumber = lineNumber + 1;
-      if (lineNumber > 8) {
-          break;
-      }
-    }
-
-</div>
+while (true) {
+  console.log(poemLine(lineNumber));
+  lineNumber = lineNumber + 1;
+  if (lineNumber > 8) {
+      break;
+  }
+}
+</code>
+</pre>
 </details>
