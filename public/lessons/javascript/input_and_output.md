@@ -38,28 +38,64 @@
 
 * Performing *calculations* and accessing *memory* is **very fast**
 * ...but reading and writing to I/O devices is **slow**
-    * (at least as far as the CPU is concerned)
-    * I/O operations can take *seconds* or *milliseconds*; CPU operations take *nanoseconds*
+  * (at least as far as the CPU is concerned)
+  * I/O operations can take *seconds* or *milliseconds*; CPU operations take *nanoseconds*
 * Every time you ask JavaScript to do an I/O operation, it *pauses your program*
   * this allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed or a file to be written
 * In NodeJS, you have to write a function for JavaScript to run once it *resumes*
-    * this function is named an *asynchronous callback*
-    * *asynchronous* is Greek for "out of time" or "not together in time"
-
+  * this function is named an *asynchronous callback*
+  * *asynchronous* is Greek for "out of time" or "not together in time"
 
 # Terminal I/O
 
 * In JavaScript,
-    * `console.log` means "print a line to the terminal"
+  * `console.log` means "print a line to the terminal"
 
 * In NodeJS,
-    * `process.stdin` means "input coming from the terminal"
+  * `process.stdin` means "input coming from the terminal"
 
-    * Reading a line in NodeJS is **weird**; here's one way to do it
+  * Reading a line of input in NodeJS is **weird**
+
+> The weirdness is explained on the next slide!
+
+# Input Output Decoded
 
 ```js
-process.stdin.once('data', (chunk) => { console.log(chunk.toString()) } )
+function handleInput(input) {
+  let inputAsString = input.toString();
+  console.log("The input is: ", inputAsString);
+}
+
+process.stdin.once('data', handleInput)
+
+console.log("Waiting for input...");
 ```
+
+> `once` is a function that takes two parameters,
+> and its second parameter is **another function**
+
+|phrase|meaning|
+|---|---|
+| `process.stdin`              | hey terminal input, |
+| `.once('data', ...)`         | when you get some data, |
+| `function handleInput(input)`| please name it `input` |
+| ` { ... }`                   | send it to this block of code |
+| `input.toString()`           | convert it to a string  |
+| `console.log(inputAsString)` | and print it to the terminal |
+
+# Welcome to Callback City!
+
+The previous code is equivalent to this:
+
+```js
+process.stdin.once('data', function handleInput(input) { 
+  let inputAsString = input.toString();
+  console.log(inputAsString);
+});
+```
+
+The `handleInput` function itself is called a *callback* 
+(since you are asking the I/O device to *call the function* when it receives input).
 
 # Lab: Echo
 
@@ -69,144 +105,7 @@ The code on the previous slide will take in user input, and echo it back to the 
   * Type the code from the previous slide into that file
   * Run the file in the terminal with the command `node echo.js`
 
-# node load code, decoded
-
-Let's break down the code we just wrote
-
-```js
-process.stdin.once('data',
-    (chunk) => { console.log(chunk.toString()) }
-)
-```
-
-> `once` is a special type of function, called an event listener, that takes two parameters,
-> and its second parameter is **another function**
-
-|phrase|meaning|
-|---|---|
-| `process.stdin`        | hey terminal input, |
-| `.once('data',` ... `)`  | when you get some data, |
-| `(chunk)`              | please name it `chunk` |
-| ` => `                 | and send it to |
-| ` { ` ... ` }`         | this block of code |
-| `console.log(chunk.toString())`   | convert it to a string and print it to the terminal |
-
-# Welcome to Callback City!
-
-The previous one-liner code is equivalent to this:
-
-```js
-function printLine(chunk) { 
-    console.log(chunk) 
-}
-process.stdin.once('data', printLine);
-```
-
-The `printLine` function itself is called a *callback* 
-(since you are asking the I/O device to *call you back* when it receives input).
-
-# LAB: Hello, friend!
-
-1. Open `hello.js` in your text editor
-2. Change it to contain the following code:
-
-```js
-console.log("What is your name?");
-process.stdin.once('data', (chunk) => {
-    let name = chunk.toString();
-    console.log("Hello, " + name + "!");
-});
-```
-
-3. Save the file and switch back to the terminal
-4. Run the program using `node hello.js`
-5. Type in your name and press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
-
-As It's written this program has a bit of a bug. What looks off in the output?
-
-# Yikes!
-
-* What is that exclamation point doing way down there?
-
-* The first thing to do is DON'T PANIC!
-* You are *totally* going to figure this out.
-* And even if you don't, you haven't actually broken anything.
-* In fact, it's really hard to break a computer just by typing, so stay calm.
-
-# Control-C to close
-
-* First things first: get back to the command line
-* This program doesn't *exit* yet, so you will need to *force* it to close
-* Do this by holding down CONTROL and pressing C
-    * abbreviated ⌃C or CTRL-C
-
-# Let's fix this
-
-* Do you know what the issue is?
-* Think back to 
-
-# The newline character
-
-* Here's a fun fact:
-* In addition to letters, numbers, and punctuation, computers also store other keys inside strings
-* Among these CONTROL CHARACTERS is the one that represents the RETURN KEY
-* This character's name is NEWLINE
-* Every time you read a line, the computer reads *all* the characters, *including the newline*!
-
-# Trim it
-
-* Fortunately, there's an easy fix
-* If you send the message `trim` to a string, it will remove all SPACES and NEWLINES from both ends
-
-# Solution: fixing Hello, Friend
-
-* If you're still struggling to sanatize your input change the program to look like this:
-
-```js
-console.log("What is your name?");
-process.stdin.once('data', (chunk) => {
-    let name = chunk.toString().trim();
-    console.log("Hello, " + name + "!");
-});
-```
-
-* Run it and make sure it works OK
-* Press ⌃C to close it
-
-# This Way To The Exit
-
-* Change the program to look like this:
-
-```js
-console.log("What is your name?");
-process.stdin.once('data', (chunk) => {
-    let name = chunk.toString().trim();
-    console.log("Hello, " + name + "!");
-    process.exit();
-});
-```
-
-Note that:
-
-  * `process.exit` uses the same `process` object as `process.stdin`
-  * The call to `process.exit()` must be *inside* the callback
-    * Otherwise, what happens? Try it and see!
-
-# LAB: Capitalization
-
-* What happens if you type your name in all lowercase?
-* Make the program capitalize your name for you even if you forget.
-
-**Hint**: remember `slice` from the [Strings lesson](/lessons/javascript-track/strings)?
-
-# YELL YOUR NAME!
-
-* Now go crazy and make it YELL your name!
-    * Hint: Use the [toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) method
-
-Okay, that was a bit much. Let's go back to just having our name capitalized.
-
-# readline
+# Readline
 
 * NodeJS is more than a *JavaScript interpreter*
 * It's also a collection of *JavaScript libraries*
@@ -215,7 +114,7 @@ Okay, that was a bit much. Let's go back to just having our name capitalized.
     * the "books" in this library are functions
       * (and classes and other things too)
 
-# using readline
+# Using readline
 
 > Warning: this code uses features we have not yet covered! Copy and paste it verbatim during the codealong below, and don't worry if it doesn't make much sense yet.
 
@@ -231,6 +130,8 @@ function ask(questionText) {
   });
 }
 ```
+
+> This is called "boilerplate code" -- you don't need to fully understand it before using it.
 
 # using readline - explanation
 
@@ -273,13 +174,13 @@ async function start() {
 
 * run it from the command line using `node quest.js`
 
-# async and await
+# Async Await
 
 * We will learn a lot more about callbacks, promises, and `async`/`await` later
 * For now, follow these two rules when using `async` and `await`:
 
-    1. `await` means "wait for the following thing to happen"
-    2. when you use `await` inside a function, you must use `async` to define that function
+  1. `await` means "wait for the following thing to happen"
+  2. when you use `await` inside a function, you must use `async` to define that function
 
 > WARNING: `async` functions don't play nicely with `for` loops! (Fortunately, there are other ways to loop that do work well.)
 
@@ -296,11 +197,14 @@ async function start() {
 # Full Name solution
 
 <details>
-<summary>Hint</summary>
-You may want to use readline to accept user input asynchronously
+<summary>
+Hint
+</summary>
 <div>
+You may want to use `readline` and the `ask()` function.
 
-```js
+<pre>
+<code class="language-javascript">
 const readline = require('readline');
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
@@ -309,16 +213,19 @@ function ask(questionText) {
     readlineInterface.question(questionText, resolve);
   });
 }
-```
+</code>
+</pre>
 
 </div>
 </details>
 
 <details>
-<summary>Solution</summary>
-<div>
+<summary>
+Solution
+</summary>
 
-```js
+<pre>
+<code class="language-javascript">
 const readline = require('readline');
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
@@ -329,14 +236,15 @@ function ask(questionText) {
 }
 
 async function fullName() {
-  let prenomen = await ask("What is your first name? ")
-  let cognomen = await ask("What is your last name? ")
+  let firstName = await ask("What is your first name? ")
+  let lastName = await ask("What is your last name? ")
 
-  console.log("Hello, " + prenomen + " " + cognomen + "!")
+  console.log("Hello, " + firstName + " " + lastName + "!")
 }
-```
 
-</div>
+fullName()
+</code>
+</pre>
 </details>
 
 # Lab: Name Length
@@ -344,15 +252,7 @@ async function fullName() {
 * Change `name.js` so it also prints the number of characters in the user's name.
 * For instance:
 
-        What is your first name? Grace
-        What is your last name? Hopper
-        Hello, Grace Hopper!
-        Your name is 11 characters long.
-
-# Lab: Madlibs
-
-Let's create a Madlib template! The goal for this lab is to create a program that will ask for certain types of words (noun, verb, adjective, etc.) and once it has recieved a certain number of inputs it will insert those words, in the correct places, into a story which your computer will print to the terminal.
-
-* create a story with at least five words omitted (it does not have to be a long story ~1 paragraph)
-* create a function that asks for input for each of the omitted words
-* print the story to the console, filling in the blanks with the provided words.
+    What is your first name? Grace
+    What is your last name? Hopper
+    Hello, Grace Hopper!
+    Your name is 11 characters long.
