@@ -25,26 +25,29 @@ The sever forms of scope are *Global*, *Local*, and *Private*
 
 If you declare a variable without a keyword (`var`, `let`, `const`) then it is a **global variable** and can be seen and used by *any line of code in your entire program*
 
-Global variables are very useful but also very dangerous. A mistake in *any part* of your program using a global variable could introduce a bug in *any other part* of your program using that global variable.
+> Global variables can **sometimes** be useful, but are also **dangerous**. 
+
+A mistake in *any part* of your program accessing a global variable could introduce a bug in *any other part* of your program referencing that same variable.
 
 # Scope is a One-Way Mirror
 
-> scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in
+> Scope is a one-way mirror -- inner scopes can see out, but outer scopes cannot see in.
 
 ![one way mirror functions](../../images/one-way-mirror.gif)
 
-> Mr. Bean -- in the interrogation room scope -- can't see the cops in the observation room scope.
+> Mr. Bean -- within the interrogation room scope -- can't see the detectives in the observation room scope.
 
 # Block Scope
 
 `let` and `const` are *block*-scoped: any block of code surrounded by `{` curly braces `}` can have its own set of local `let` variables
 
 ```javascript
-let name = 'Mr. Bean';
+let name = "Global";
 {
-    let name ='Detective';
+  let name = 'Mr. Bean';
     {
-        console.log(name);
+      let name = 'Detective';
+      console.log(name);
     }
     console.log(name);
 }
@@ -68,28 +71,31 @@ let fruit = 'Apple';
 }
 ```
 
-# Top Level Functions are Global
+# Functions default to Global
+
+> Unless a function definition is nested within another function, or a code block, it will be global.
 
 ```javascript
 let name = 'Alice';   // global
 
-// alpha can see global name
-// alpha can see global function named beta
+// alpha can see variable 'name'
+// alpha can see function named 'beta'
 let alpha = function() {
   console.log(name);  
   beta();
 }
 
-// alpha() uses let 
-// must be called after defined
+// 'alpha' must be called after defined
 alpha();
 
-function beta() {     // beta is hoisted!
-  let name = 'Bob';   // this name is local to beta
-  console.log(name);  // prints "Bob"
+// the 'beta' definition is hoisted
+function beta() {
+  // this 'name' is local to 'beta'
+  let name = 'Bob';   
+  console.log(name);
 }
 
-console.log(name);    // prints "Alice"
+console.log(name);
 ```
 
 # Parameters are local to their function
@@ -109,31 +115,9 @@ function rant(message) {
 * the local variable `loudMessage`
 * the parameter `message`
 
-# Exercise: Guess the Variable with Functions
-
-```javascript
-let poet = 'Robert Frost';
-
-function famousPoem(poet) {
-
-  let poemAuthors = {
-   'Robert Frost': 'Stopping by Woods on a Snowy Evening',
-   'Walt Whitman': 'Leaves of Grass',
-   'undefined': 'The Lanyard' // Billy Collins
-  };
-  return poemAuthors[poet];
-}
-
-famousPoem('Walt Whitman'); // Which Poem?
-famousPoem(poet);           // Which Poem?
-
-poet = 'Maya Angelou';
-famousPoem();               // Which Poem?
-```
-
 # Scope Error
 
-* when you try to use a variable that is out of scope, you will get an error
+> When you try to use a variable that is out of scope, you will get an error
 
 ```javascript
 function gamma() {
@@ -214,3 +198,71 @@ function countLetters(words) {
 }
 ```
 ...because `addLetterCount` is *not* nested inside `countLetters`
+
+# Exercise: Guess the Variable with Functions
+
+```javascript
+let poet = "Robert Frost";
+
+function famousPoem(poet) {
+  let poemAuthors = {
+    "Robert Frost": "Stopping by Woods on a Snowy Evening",
+    "Walt Whitman": "Leaves of Grass",
+    undefined: "The Lanyard", // Billy Collins
+  };
+
+  function findAuthor(poet) {
+    // looks up the poem by author
+    return poemAuthors[poet];
+  }
+
+  return findAuthor(poet);
+}
+
+console.log(famousPoem("Walt Whitman")); // Which Poem?
+console.log(famousPoem(poet)); // Which Poem?
+
+poet = "Maya Angelou";
+console.log(famousPoem()); // Which Poem?
+```
+
+<details>
+<summary>Hint 1</summary>
+<div>
+
+The inner function `findAuthor` can see the variable `poemAuthors`
+
+</div>
+</details>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+
+The call to `famousPoem(poet)` can see the variable `poet` defined on line 1
+
+</div>
+</details>
+
+<details>
+<summary>Hint 3</summary>
+<div>
+
+Calling a function without an argument causes the variable in the function definition to become `undefined` during the call
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+<pre>
+<code class="language-javascript">
+console.log(famousPoem("Walt Whitman")); // Leaves of Grass
+console.log(famousPoem(poet)); // Stopping by Woods on a Snowy Evening
+console.log(famousPoem()); // The Lanyard
+</code>
+</pre>
+
+</div>
+</details>

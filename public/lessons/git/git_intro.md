@@ -65,7 +65,7 @@ You should see something like this:
 
 ```
 $ git init
-Initialized empty Git repository in /Users/alex/code/shopping/.git/
+Initialized empty Git repository in /Users/Someone/code/shopping/.git/
 
 $ git status
 On branch master
@@ -168,8 +168,8 @@ Once again, run `git status`, expecting to see:
 And to prove that the change actually made it into the history, run `git log`. 
 
     commit d8b95657eebea7083de1a4fb96ba7fb296637342
-    Author: Alex Chaffee <achaffee@burlingtoncodeacademy.com>
-    Date:   Fri Sep 7 11:24:33 2018 -0400
+    Author: Some Person <someone@burlingtoncodeacademy.com>
+    Date:   Fri Sep 1 12:00:00 2020 -0400
     
         shopping list
 
@@ -249,7 +249,7 @@ Now let's pretend that a few days have passed... (or a few hours...) and you ate
 
 But Ben & Jerry's has such weird ice cream names, and you can't remember whether you bought Chunky Monkey or Chubby Hubby or Cherry Garcia!
 
-> oh no, it's an **ice creaMERGENCY!!!**
+> It's an **ice cream EMERGENCY!!!**
 
 Fortunately, git is a time machine. You can view *any point* in history and see the changes made at that point in history.
 
@@ -270,8 +270,8 @@ My commit id is `d8b9565` so I would run
 
 ```
 commit d8b95657eebea7083de1a4fb96ba7fb296637342
-Author: Alex Chaffee <alex@stinky.com>
-Date:   Fri Sep 7 11:24:33 2018 -0400
+Author: Some Person <someone@burlingtoncodeacademy.com>
+Date:   Fri Sep 1 12:00:00 2020 -0400
 
     shopping list
 
@@ -305,8 +305,8 @@ Run `git show` on your *second* commit to see something like this:
 ```
 git show e9c9b25c6
 commit e9c9b25c65a83729a90c8740f71dc89432d7b548
-Author: Alex Chaffee <alex@stinky.com>
-Date:   Fri Sep 7 11:53:23 2018 -0400
+Author: Some Person <someone@burlingtoncodeacademy.com>
+Date:   Fri Sep 1 12:00:00 2020 -0400
 
     oh no, out of condiments
 

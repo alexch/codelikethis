@@ -125,7 +125,7 @@ instead. Why?
   * so `if (x = 2)` means `if 2` which is *always truthy*
   * also, the value of `x` will be 2 afterwards, no matter what it was before
 
-# The Tragedy of the Threequal Sign
+# Different Kinds of Equals Signs
 
 In addition to `=` and `==`, JavaScript also has `===`.
 
@@ -185,35 +185,37 @@ process.stdin.once('data', handleInput);
 ```
 
 * Now change `hello.js` so that it doesn't always say hello!
-  * If the user's name is "Darth" then say "Noooooo! That's impossible!"
+* If the user's name is "Darth" then say "Noooooo! That's impossible!"
 
 # Good Friend, Bad Friend solution
 
 <details>
 <summary>Solution</summary>
 <div>
+<pre>
+<code class="language-javascript">
+console.log("What is your name?");
 
-    console.log("What is your name?");
+function handleInput(chunk) {
+  let name = chunk.toString().trim();
+  if (name === "Darth") {
+    console.log("Noooooo! That's impossible!")
+  } else {
+    console.log("Hello, " + name + "!");
+  }
+}
 
-    function handleInput(chunk) {
-      let name = chunk.toString().trim();
-      if (name === "Darth") {
-        console.log("Noooooo! That's impossible!")
-      } else {
-        console.log("Hello, " + name + "!");
-      }
-    }
-
-    process.stdin.on('data', handleInput);
-
+process.stdin.on('data', handleInput);
+</code>
+</pre>
 </div>
 </details>
 
 # Lab: Infinite Names
 
 * Change `hello.js` so it keeps asking for names forever...
-  * ...unless and until someone says their name is "bye!"
-  * then it stops and exits back to the terminal
+* ...unless and until someone says their name is "bye!"
+* then it stops and exits back to the terminal
 
 # Infinite Names solution
 
@@ -229,9 +231,11 @@ Using `.on` instead of `.once` will keep the process running
 <summary>Hint 2</summary>
 <div>
 Remember
-
-    process.exit()
-
+<pre>
+<code class="language-javascript">
+process.exit()
+</code>
+</pre>
 will end your program.
 </div>
 </details>
@@ -240,29 +244,29 @@ will end your program.
 <details>
 <summary>Solution</summary>
 <div>
+<pre>
+<code class="language-javascript">
+console.log("What is your name?");
 
-    console.log("What is your name?");
+function handleInput(chunk) {
+  let name = chunk.toString().trim();
+  if (name === "bye!") {
+    process.exit()
+  } else if (name === "Darth") {
+    console.log("Noooooo! That's impossible!\nWhat is your name?")
+  } else {
+    console.log("Hello, " + name + "!\nWhat is your name?");
+  }
+}
 
-    function handleInput(chunk) {
-      let name = chunk.toString().trim();
-      if (name === "bye!") {
-        process.exit()
-      } else if (name === "Darth") {
-        console.log("Noooooo! That's impossible!\nWhat is your name?")
-      } else {
-        console.log("Hello, " + name + "!\nWhat is your name?");
-      }
-    }
-
-    process.stdin.on('data', handleInput);
-
-</div>
-</details>
+process.stdin.on('data', handleInput);
+</code>
+</pre>
 
 # LAB: Enemies List
 
 * Change `hello.js` so that it says "Go away!" if the user's name is any one of a number of evil names
-* For instance, Voldemort, Palpatine, Lex Luthor...
+* For instance, Darth Vader, Voldemort, Palpatine, Lex Luthor...
 * Bonus Challenge: don't let enemies sneak in even if they spell their names with capital letters, like `VolDeMort`
 
 # Enemies List solution
@@ -271,33 +275,36 @@ will end your program.
 <summary>Hint</summary>
 <div>
 You can do multiple checks in a single if statement by using the logical "or" operator: `||`
-
-    if(checkOne || checkTwo || checkThree) {
-      //this block of code runs if any of the checks are true
-    }
-
-
+<pre>
+<code class="language-javascript">
+if(checkOne || checkTwo || checkThree) {
+  //this block of code runs if any of the checks are true
+}
+</code>
+</pre>
 </div>
 </details>
 
 <details>
 <summary>Solution</summary>
 <div>
+<pre>
+<code class="language-javascript">
+console.log("What is your name?");
 
-    console.log("What is your name?");
+function handleInput(chunk) => {
+  let name = chunk.toString().trim();
+  if (name === "bye!") {
+    process.exit();
+  } else if (name === "Darth" || name === "Sauron" || name === "Voldemort") {
+    console.log("Noooooo! That's impossible!\nWhat is your name?")
+  } else {
+    console.log("Hello, " + name + "!\nWhat is your name?");
+  }
+}
 
-    function handleInput(chunk) => {
-      let name = chunk.toString().trim();
-      if (name === "bye!") {
-        process.exit();
-      } else if (name === "Darth" || name === "Sauron" || name === "Voldemort") {
-        console.log("Noooooo! That's impossible!\nWhat is your name?")
-      } else {
-        console.log("Hello, " + name + "!\nWhat is your name?");
-      }
-    }
-
-    process.stdin.on('data',);
-
+process.stdin.on('data',);
+</code>
+</pre>
 </div>
 </details>
