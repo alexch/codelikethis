@@ -42,7 +42,7 @@ A mistake in *any part* of your program accessing a global variable could introd
 `let` and `const` are *block*-scoped: any block of code surrounded by `{` curly braces `}` can have its own set of local `let` variables
 
 ```javascript
-let name = "Global";
+let name = 'Global';
 {
   let name = 'Mr. Bean';
     {
@@ -63,7 +63,7 @@ If a variable name can't be found in the *current* scope, then JavaScript looks 
 ```javascript
 let fruit = 'Apple';
 {
-    let fruit ='Blueberry';
+    let fruit = 'Blueberry';
     {
         let name = 'Cantaloupe';
     }
@@ -121,8 +121,8 @@ function rant(message) {
 
 ```javascript
 function gamma() {
-  let x = "declared inside gamma";
-  console.log("Inside gamma: x is " + x);
+  let x = 'declared inside gamma';
+  console.log('Inside gamma: x is ' + x);
 }
 
 console.log(x);  // ReferenceError: x is not defined
@@ -202,13 +202,13 @@ function countLetters(words) {
 # Exercise: Guess the Variable with Functions
 
 ```javascript
-let poet = "Robert Frost";
+let poet = 'Robert Frost';
 
 function famousPoem(poet) {
   let poemAuthors = {
-    "Robert Frost": "Stopping by Woods on a Snowy Evening",
-    "Walt Whitman": "Leaves of Grass",
-    undefined: "The Lanyard", // Billy Collins
+    'Robert Frost': 'Stopping by Woods on a Snowy Evening',
+    'Walt Whitman': 'Leaves of Grass',
+    undefined: 'The Lanyard';, // Billy Collins
   };
 
   function findAuthor(poet) {
@@ -219,10 +219,10 @@ function famousPoem(poet) {
   return findAuthor(poet);
 }
 
-console.log(famousPoem("Walt Whitman")); // Which Poem?
+console.log(famousPoem('Walt Whitman')); // Which Poem?
 console.log(famousPoem(poet)); // Which Poem?
 
-poet = "Maya Angelou";
+poet = 'Maya Angelou';
 console.log(famousPoem()); // Which Poem?
 ```
 
@@ -258,7 +258,7 @@ Calling a function without an argument causes the variable in the function defin
 <div>
 <pre>
 <code class="language-javascript">
-console.log(famousPoem("Walt Whitman")); // Leaves of Grass
+console.log(famousPoem('Walt Whitman')); // Leaves of Grass
 console.log(famousPoem(poet)); // Stopping by Woods on a Snowy Evening
 console.log(famousPoem()); // The Lanyard
 </code>

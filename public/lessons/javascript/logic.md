@@ -53,7 +53,7 @@ The phrase immediately after `if` is a *condition*.
 
 ```js
 if (age < 18) {
-  console.log("Sorry, you can't vote yet.");
+  console.log('Sorry, you cannot vote yet.');
 }
 ```
 
@@ -92,9 +92,9 @@ The magic word `else` allows **BRANCHING**.
 
 ```js
 if (age >= 18) {
-  console.log("allowed");
+  console.log('allowed');
 } else {
-  console.log("denied");
+  console.log('denied');
 }
 ```
 
@@ -159,9 +159,9 @@ For example:
 
 ```js
 if (age >= 18 || hasPermissionSlip()) {
-  console.log("allowed");
+  console.log('allowed');
 } else {
-  console.log("denied");
+  console.log('denied');
 }
 ```
 
@@ -174,11 +174,11 @@ In this lab you will create a program to read input from a human user, and then 
 Start with a `hello.js` program that looks like this:
 
 ```js
-console.log("What is your name?");
+console.log('What is your name?');
 
 function handleInput(chunk) {
   let name = chunk.toString().trim();
-  console.log("Hello, " + name + "!");
+  console.log('Hello, ' + name + '!');
 }
 
 process.stdin.once('data', handleInput);
@@ -194,14 +194,14 @@ process.stdin.once('data', handleInput);
 <div>
 <pre>
 <code class="language-javascript">
-console.log("What is your name?");
+console.log('What is your name?');
 
 function handleInput(chunk) {
   let name = chunk.toString().trim();
-  if (name === "Darth") {
-    console.log("Noooooo! That's impossible!")
+  if (name === 'Darth') {
+    console.log('Noooooo! That is impossible!')
   } else {
-    console.log("Hello, " + name + "!");
+    console.log('Hello, ' + name + '!');
   }
 }
 
@@ -246,16 +246,16 @@ will end your program.
 <div>
 <pre>
 <code class="language-javascript">
-console.log("What is your name?");
+console.log('What is your name?');
 
 function handleInput(chunk) {
   let name = chunk.toString().trim();
-  if (name === "bye!") {
+  if (name === 'bye!') {
     process.exit()
-  } else if (name === "Darth") {
-    console.log("Noooooo! That's impossible!\nWhat is your name?")
+  } else if (name === 'Darth') {
+    console.log('Noooooo! That is impossible!\nWhat is your name?')
   } else {
-    console.log("Hello, " + name + "!\nWhat is your name?");
+    console.log('Hello, ' + name + '!\nWhat is your name?');
   }
 }
 
@@ -265,7 +265,7 @@ process.stdin.on('data', handleInput);
 
 # LAB: Enemies List
 
-* Change `hello.js` so that it says "Go away!" if the user's name is any one of a number of evil names
+* Change `hello.js` so that it says 'Go away!' if the user's name is any one of a number of evil names
 * For instance, Darth Vader, Voldemort, Palpatine, Lex Luthor...
 * Bonus Challenge: don't let enemies sneak in even if they spell their names with capital letters, like `VolDeMort`
 
@@ -290,16 +290,16 @@ if(checkOne || checkTwo || checkThree) {
 <div>
 <pre>
 <code class="language-javascript">
-console.log("What is your name?");
+console.log('What is your name?');
 
 function handleInput(chunk) => {
   let name = chunk.toString().trim();
   if (name === "bye!") {
     process.exit();
-  } else if (name === "Darth" || name === "Sauron" || name === "Voldemort") {
-    console.log("Noooooo! That's impossible!\nWhat is your name?")
+  } else if (name === 'Darth' || name === 'Sauron' || name === 'Voldemort') {
+    console.log('Noooooo! That is impossible!\nWhat is your name?')
   } else {
-    console.log("Hello, " + name + "!\nWhat is your name?");
+    console.log('Hello, ' + name + '!\nWhat is your name?');
   }
 }
 
