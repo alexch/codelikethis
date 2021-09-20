@@ -4,6 +4,8 @@ Event Listeners are a special type of function in JavaScript that waits for a sp
 
 They are used in pretty much every single web application out there. They're how you make your page perform actions from clicking through links, to triggering animations when you scroll over a section of the page
 
+---
+
 # Common Usage
 
 * `setTimeout(callback, int)`
@@ -19,6 +21,8 @@ They are used in pretty much every single web application out there. They're how
   * Inline in your HTML, fires the specified function when the element (`<div>` in this example) is clicked
   * You can also directly alter the properties of the `<div>` with this event listener
   >NOTE: Unlike other event listeners you **do** want to call the function being set on the `onclick` property.
+
+---
 
 # Different Types of Events
 
@@ -37,6 +41,8 @@ They are used in pretty much every single web application out there. They're how
 * error
 
 [And many, many more...](https://developer.mozilla.org/en-US/docs/Web/Events)
+
+---
 
 # Event Listeners as HTML properties
 
@@ -57,6 +63,8 @@ function turnRed(evt) {
 ```
 
 Some elements have default event properties already attached to them. Most commonly `<a>` (anchor) tags which go to a specified page or html fragment `onclick`, and `<form>`s which sent a request, and reload the page when an `onsubmit` event is fired
+
+---
 
 # Lab: Event Listeners on Different Elements
 
@@ -93,6 +101,8 @@ Let's play around with setting event listeners on different elements!
 
 * Bonus: What happens if you nest `div`s inside your `div` with different event listeners on them? Which events get triggered?
 
+---
+
 # Adding Event Listeners with JavaScript
 
 As well as adding event listeners inline with HTML you can also attach event listeners to elements using JavaScript
@@ -101,9 +111,13 @@ This can help keep your code organized, and makes it easier to attach complicate
 
 `addEventListener` is a method that can be called on HTML elements in JavaScript. To use it you will first need to add a `<script>` tag to your HTML file which will allow you to add JavaScript to your file. Then target the element you want to add the event listener to with a DOM query, and assign it to a variable. Finally call the `addEventListener` method on it
 
+---
+
 # The Structure of the Event Listener in JavaScript
 
 ![event-listener-breakdown](/images/event-listener.png)
+
+---
 
 # addEventListener
 
@@ -113,6 +127,7 @@ This can help keep your code organized, and makes it easier to attach complicate
   * The second is a callback function to execute the desired action
 * The callback can be defined in-line, or elsewhere in the code. 
 
+---
 
 # Lab: Highlighter
 
@@ -123,3 +138,5 @@ The goal of this exercise is to create a simple webpage that contains a title, a
 * When you highlight the block of text with your cursor the background color should turn yellow, and stay yellow when it's no longer highlighted
 * When you hover your cursor over the title the text should change color, and change back when you're no longer hovering over it
 * Bonus Challenge! Can you make so that only the background of the specific section of text you highlighted turns yellow?
+
+---

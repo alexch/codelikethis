@@ -1,6 +1,8 @@
 # Synchronous Programming v. Asynchronous Programming
 JavaScript was built as a synchronous programming language, which means that by default your program will run top to bottom without ever stopping. But what if you have to fetch something from memory, or from the web? That could take milliseconds, or even seconds while your program is going to run in nanoseconds. What about waiting for user input, which could take some unspecified amount of time?
 
+---
+
 # How to Make JS Asynchronous
 
 * Callback Functions
@@ -9,11 +11,15 @@ JavaScript was built as a synchronous programming language, which means that by 
 
 * Async/Await
 
+---
+
 # Callback Functions
 
 A callback is a function definition that is passed to another function as an argument.
 
 ![Callback Example](/images/callback-example.png)
+
+---
 
 # Callback Hell
 
@@ -41,10 +47,13 @@ function callbackHell(event) {
 
 You're probably in callback hell
 
+---
 
 # What is a Promise?
 
 A promise is something that stands in for a piece of data you don't have yet. This allows us to write code around values we will be getting at some point while the program is running.
+
+---
 
 # Promise Chaining
 
@@ -64,6 +73,8 @@ fetch('some URL or file path')
 }) //you can continue chaining as many '.then's as you need
 ```
 
+---
+
 # async/await
 
 There is a special keyword in JavaScript which allows us to write asynchronous code blocks called `async` inside these code blocks we can use the keyword `await` to essentially pause the execution of the code until the promise is returned, and it only resumes once that promise has been resolved.
@@ -75,6 +86,8 @@ const readlineInterface = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
+---
 
 //----Everything above this line is setup to allow i/o through the terminal--------------------------------------------------------
 
@@ -90,6 +103,8 @@ async function askName() {
 }
 ```
 
+---
+
 # Lab: Quest.js
 
 Write an async function that asks:
@@ -99,34 +114,11 @@ Write an async function that asks:
 * Your favorite color
 * and then prints out the line "Hello, **name**! Good Luck **quest**, here's a **color** flower."
 
+---
+
 # Quest Solution
 
-<details>
-<summary>Hint</summary>
-<div>
 You may want to use readline and the `ask()` function
-
-```js
-const readline = require('readline');
-
-const readlineInterface = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-function ask(questionText) {
-  return new Promise((resolve, reject) => {//'ask' is a normal function that returns a promise
-    readlineInterface.question(questionText, resolve);
-  });
-};
-```
-
-</div>
-</details>
-
-<details>
-<summary>Solution</summary>
-<div>
 
 ```js
 async function quest() {
@@ -137,6 +129,4 @@ async function quest() {
   console.log("Hello, " + name + "! Good Luck " + quest + ", here's a " +  color + "flower")
 }
 ```
-
-</div>
-</details>
+---

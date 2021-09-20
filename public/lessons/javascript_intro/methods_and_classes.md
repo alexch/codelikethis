@@ -6,6 +6,8 @@
 * `circle.area` is a *method* and evaluates to `function() {...}`
 * `circle.area()` is a *method call* and evaluates to `12.566370614359172`
 
+---
+
 # the `class` keyword
 
 In 2015, JavaScript introduced the `class` keyword which is syntactic sugar on top of JavaScript's existing prototype system. 
@@ -38,6 +40,8 @@ circle.area();              // call the area method, which
 
 [MDN: classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
+---
+
 # Stay classy, JavaScript
 
 This is the first time we've seen **classes** in JavaScript
@@ -50,16 +54,22 @@ An *instance* is an **individual** object of that type.
 
 > For example, there are many houses, but my house is yellow.
 
+---
+
 ## The Cookie Analogy:
 
   * class ~= cookie cutter
   * instance ~= cookie
   * instance data ~= icing and sprinkles
 
+---
+
 # Constructors and "new"
 
 * A constructor is a **function** that's called when you use the **new** keyword
 * It's the very first method that's ever called on that particular instance
+
+---
 
 ## What `new` does, in detail:
 
@@ -70,11 +80,15 @@ An *instance* is an **individual** object of that type.
   * set `this` back to whatever it was before
   * return a reference to the object
 
+---
+
 # Constructors are for Initialization
 
 the principle of *Complete Construction* says that after the constructor executes, the object is in a *valid* state
 
 in practice, this means "pass all initial values into the constructor"
+
+---
 
 ## A Better Circle:
 
@@ -99,9 +113,13 @@ Use it like this:
     circle.area();              // call the area method, which
                                 // returns 12.566370614359172 
 
+---
+
 ## Q: Why is this better?
 
 A: because it preserves *encapsulation* -- the idea that an object should be responsible for setting its own properties
+
+---
 
 # Constructors are for Validation
 
@@ -123,6 +141,8 @@ class Circle {
 * validation is one of the most valuable features of object-oriented programming
   * it lets you *write less code* in other methods, confident that you don't have to check for bad data or boundary conditions
 
+---
+
 # Factory Town
 
 Sometimes one constructor just isn't enough.
@@ -135,7 +155,9 @@ function circleFromDiameter(diameter) {
 }
 ```
 
-The above is called a "factory function" since it constructs objects for you, based on your specifications. 
+The above is called a "factory function" since it constructs objects for you, based on your specifications.
+
+---
 
 # Factory Methods
 
@@ -149,6 +171,8 @@ The factory method works *exactly the same way* as the factory function, but
 
 * the factory function is in the *global namespace*
 * the factory method is in the *class namespace* so it's more clear that it is meant to create one of *this class* of objects
+
+---
  
 # Static Factory Methods 
 
@@ -184,3 +208,5 @@ let circle = Circle.fromDiameter(4)
 ```
 
 > Note that (lowercase "c") `circle.fromDiameter()` does **not** work. **Static methods are attached to classes**, not instances.
+
+---

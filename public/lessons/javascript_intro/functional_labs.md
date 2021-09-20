@@ -14,6 +14,8 @@ ageCalc(age) // should print "You are 852055200 seconds old." to the console
 
 How could we use ARGV to make this more modular?
 
+---
+
 # Flip it around!
 
 Can you write the inverse function; one that takes a number of seconds and tells you the exact age?
@@ -25,13 +27,11 @@ You can get the current date by calling `Date.now()` which will give you a time 
   let ageInMilliSec = Date.now() - date
 ```
 
+---
+
 # Solution
 
 Here's one solution for the age calculator:
-
-<details>
-<summary>Answer</summary>
-<div>
 
 ```js
 let age = 27
@@ -55,12 +55,13 @@ console.log(ageCalc(age))
 
 To flip it you could simply divide the `num` variable by `secInYr` rather than multiplying to get years in a number of seconds.
 
-</div>
-</details>
+---
 
 # Functional Labs
 
 Try to solve the following labs by writing a function which returns output(s) given input(s)
+
+---
 
 ### For Example
 
@@ -76,6 +77,8 @@ addOne(41)  // => 42
 addOne(-2)  // => -1
 addOne(-43) // => -42
 ```
+
+---
 
 # Supply Calculator - Functional Labs
 
@@ -94,33 +97,10 @@ supplyCal(0, 3, "cookie") // => "You will need 109500 cookies to last the rest o
 
 > Supply Calculator inspired by the Lifetime Supply Calculator lab designed for the Girl Develope It! curriculum. The original can be found [here](https://www.teaching-materials.org/javascript/exercises/functions)
 
+---
+
 # Supply Calculator Solution
 
-<details>
-<summary>Hint 1</summary>
-<div>
-
-```js
-let amountPerYear = amountPerDay * 365
-```
-
-</div>
-</details>
-
-<details>
-<summary>Hint 2</summary>
-<div>
-
-```js
-let numberOfYears = 100 - age
-```
-
-</div>
-</details>
-
-<details>
-<summary>Solution</summary>
-<div>
 
 ```js
 function supplyCalc(age, amountPerDay, item) {
@@ -131,9 +111,7 @@ function supplyCalc(age, amountPerDay, item) {
   let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
 }
 ```
-
-</div>
-</details>
+---
 
 # Titleize - Functional Labs
 
@@ -150,35 +128,10 @@ titilize("eveRY green bus drives fAst") // => "Every Green Bus Drives Fast"
 titilize("FRIDAY IS THE LONGEST DAY") // => "Friday Is The Longest Day"
 ```
 
+---
+
 # Titilize solution
 
-<details>
-<summary>Hint 1</summary>
-<div>
-
-```js
-function capitalize(word) {
-  return word[0].toUpperCase() + word.slice(1).toLowerCase()
-}
-```
-
-</div>
-</details>
-
-<details>
-<summary>Hint 2</summary>
-<div>
-
-```js
-let wordArray = string.split(" ")
-```
-
-</div>
-</details>
-
-<details>
-<summary>Solution</summary>
-<div>
 
 ```js
 function titilize(string){
@@ -190,9 +143,7 @@ function titilize(string){
   return newArray.join(" ")
 }
 ```
-
-</div>
-</details>
+---
 
 # MadLibs - Functional Labs
 
@@ -209,17 +160,13 @@ madLib('Bill', 'jump', 'dog') // => "Bill jumped the dog!"
 
 * Double Extra Bonus: Expand this to a whole madlib story, not just a single sentence.
 
-# MadLibs solution
+---
 
-<details>
-<summary>Solution</summary>
-<div>
+# MadLibs solution
 
 ```js
 function madLib(noun, verb, directObject) {
   return noun + " " + verb + "ed the " + directObject + "!"
 }
 ```
-
-</div>
-</summary>
+---

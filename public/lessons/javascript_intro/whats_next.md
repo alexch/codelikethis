@@ -4,6 +4,8 @@ You've succesfully made it through the JavaScript After Hours part time course!
 
 Where can you go from here?
 
+---
+
 # How to be a programmer
 
 * [How to be a programmer in ten years](http://norvig.com/21-days.html)
@@ -15,6 +17,8 @@ Where can you go from here?
   * Learn more programming languages
   * Understand computer hardware a little
   * Explore the standards
+
+---
 
 # Online Resources
 
@@ -34,6 +38,8 @@ Where can you go from here?
 
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
+---
+
 # Local Communities
 
 * Meetups
@@ -44,3 +50,5 @@ Where can you go from here?
 * [Tech Jam](https://techjamvt.com/)
 
 * [Enroll in our JavaScript Bootcamp](https://www.burlingtoncodeacademy.com/apply/)
+
+---

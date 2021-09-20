@@ -8,6 +8,8 @@
 
 * the only part of your laptop that is *really* a computer is the CPU and the RAM; all the other parts (keyboard, trackpad, display, disk drive, etc.) are technically I/O devices 
 
+---
+
 # Memory vs I/O
 
 * Performing *calculations* and accessing *memory* is **very fast**
@@ -20,6 +22,8 @@
   * this function is named an *asynchronous callback*
   * *asynchronous* is Greek for "out of time" or "not together in time"
 
+---
+
 # Terminal I/O
 
 * In JavaScript,
@@ -31,6 +35,8 @@
   * Reading a line of input in NodeJS is **weird**
 
 > The weirdness is explained on the next slide!
+
+---
 
 # node load code, decoded
 
@@ -57,6 +63,8 @@ console.log("Waiting for input...");
 | `input.toString()`           | convert it to a string  |
 | `console.log(inputAsString)` | and print it to the terminal |
 
+---
+
 # Welcome to Callback City!
 
 The previous code is equivalent to this:
@@ -71,6 +79,8 @@ process.stdin.once('data', function handleInput(input) {
 The `handleInput` function itself is called a *callback* 
 (since you are asking the I/O device to *call the function* when it receives input).
 
+---
+
 # Readline
 
 * NodeJS is more than a *JavaScript interpreter*
@@ -79,6 +89,8 @@ The `handleInput` function itself is called a *callback*
     * `readline` makes it easier to read lines, naturally :-)
     * the "books" in this library are functions
       * (and classes and other things too)
+
+---
 
 # Using readline
 
@@ -99,6 +111,8 @@ function ask(questionText) {
 
 > This is called "boilerplate code" -- you don't need to fully understand it before using it.
 
+---
+
 # using readline - explanation
 
 | code                                                        | explanation                                                                                                                             |
@@ -110,6 +124,8 @@ function ask(questionText) {
 | `function ask(questionText) {...}`                          | a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) to asynchronously ask a question and wait for a reply |
 
 (We will cover the Promise API in much more detail later; for now, all you really need to know is that Promises allow us to use `async` and `await` in the next slide.)
+
+---
 
 # LAB: using readline and await
 
@@ -140,6 +156,8 @@ async function start() {
 
 * run it from the command line using `node quest.js`
 
+---
+
 # Async Await
 
 * We will learn a lot more about callbacks, promises, and `async`/`await` later
@@ -149,6 +167,8 @@ async function start() {
   2. when you use `await` inside a function, you must use `async` to define that function
 
 > WARNING: `async` functions don't play nicely with `for` loops! (Fortunately, there are other ways to loop that do work well.)
+
+---
 
 # LAB: Full Name
 
@@ -160,38 +180,11 @@ async function start() {
 
 * Run the program by typing `node name.js` on the command line.
 
+---
+
 # Full Name solution
 
-<details>
-<summary>
-Hint
-</summary>
-<div>
-You may want to use `readline` and the `ask()` function.
-
-<pre>
-<code class="language-javascript">
-const readline = require('readline');
-const readlineInterface = readline.createInterface(process.stdin, process.stdout);
-
-function ask(questionText) {
-  return new Promise((resolve, reject) => {
-    readlineInterface.question(questionText, resolve);
-  });
-}
-</code>
-</pre>
-
-</div>
-</details>
-
-<details>
-<summary>
-Solution
-</summary>
-
-<pre>
-<code class="language-javascript">
+```js
 const readline = require('readline');
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
@@ -209,6 +202,4 @@ async function fullName() {
 }
 
 fullName()
-</code>
-</pre>
-</details>
+```

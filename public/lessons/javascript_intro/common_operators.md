@@ -2,6 +2,8 @@
 
 A character or group of characters that represent an action to be taken on one or more values
 
+---
+
 # Types of Operators
 
 * Unary Operators
@@ -32,6 +34,8 @@ A character or group of characters that represent an action to be taken on one o
 
   * The Ternary Operator
 
+---
+
 # The Unary `+`
 
 The `+` operator can be used on an operand to convert that operand into a number.
@@ -44,6 +48,8 @@ The `+` operator can be used on an operand to convert that operand into a number
 +"cheese" // => NaN
 ```
 
+---
+
 # Delete
 
 The keyword `delete` is an operator that deletes whatever property, or element that's passed to it as an operand. However `delete` can't be used to delete full objects
@@ -53,6 +59,8 @@ delete objectName // returns false, objectName still exists
 delete objectName.prop // deletes the property `prop` off of the object `objectName`
 delete arrayName[3] // deletes the element at index three of the array `arrayName`
 ```
+
+---
 
 # typeof
 
@@ -67,6 +75,8 @@ typeof false // => 'boolean'
 typeof null // => 'object'
 ```
 
+---
+
 # Void
 
 The `void` keyword takes an expression as its operand and causes it to return `undefined` rather than the normal return value of the expression.
@@ -78,6 +88,8 @@ function sayHello() { return "Hello, world!" }
 
 void sayHello() // => undefined
 ```
+
+---
 
 # Incrementers/Decrementers
 
@@ -93,6 +105,8 @@ Incrementers and decrementers are not officially classified in JavaScript as una
 "cheese"++ // => NaN
 ```
 > Note: the incrementer and decrementer only work on the number type.
+
+---
 
 # Arithmetic Operators
 
@@ -121,6 +135,8 @@ Returns a **new** number
 5 ** 2 // => 25
 ```
 
+---
+
 # Lab: Arithmetic
 
 In the terminal go into a node environment, and try to figure out the answers to the following questions using arithmetic operators
@@ -147,6 +163,8 @@ In the terminal go into a node environment, and try to figure out the answers to
 
     * perform an operation on `x`, what is the return value? What is the value of x?
 
+---
+
 # Logical Operators
 
 Evaluates two values or expressions and returns a boolean
@@ -165,6 +183,8 @@ undefined || 'cat' // => 'cat'
 !true // => false
 !(7 < 5) // => true
 ```
+
+---
 
 # Comparison Operators
 
@@ -197,9 +217,13 @@ Compares two values and returns a boolean
 'cat' !== 'cat' // => false
 ```
 
+---
+
 # Equals vs Identity
 
 It is worth noting the descrepency between the double equals `==` and triple equals `===`.The double equals will try and coerce the operands so that they match if possible, while the triple equals will perform a comparison on the values as they are.  When comparing two values you should **always** use the triple equals.
+
+---
 
 # Lab: Compare and Contrast
 
@@ -214,6 +238,8 @@ Open up a node environment in your terminal, and let's play around with some com
 * What's the difference between the double equals `==` and triple equals `===`?
 
 * Are two empty arrays equal to each other? How about two arrays with identical content?
+
+---
 
 # Assignment Operators
 
@@ -236,6 +262,8 @@ x += y // x => 10
 x -= y // x => 4
 ```
 
+---
+
 # Lab: Assignments
 Let's take a few minutes to play around with assignment operators, so go ahead open up a node environment in your terminal, and let's figure some things out.
 
@@ -252,6 +280,8 @@ Let's take a few minutes to play around with assignment operators, so go ahead o
   * add a value to `string` using `+=`, what is the value of `string`?
 
   * What is the value of `string` if you use `-=` instead?
+
+---
 
 # Bitwise Operators
 
@@ -271,6 +301,7 @@ Bitwise Operators treat their operands as a set of 32 bits(binary), rather than 
 15 ^ 9 // => 6; binary 1111 ^ 1001 evaluates to 0110 (6)
 ~15 // => -16; binary ~0000...001111 evaluates to 1111..110000 (-16)
 ```
+---
 
 # The Ternary Operator
 
@@ -280,5 +311,9 @@ The ternary operator, also called the conditional operator, is the only trinary 
 expression ? valueOne : valueTwo // If the expresion evaluates to true returns valueOne, otherwise returns valueTwo
 ```
 
+---
+
 # Documentation
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Unary)
+
+---

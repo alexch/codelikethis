@@ -2,11 +2,15 @@
 
 According to expressjs.com (the official website for Express) Express is a "Fast, unopinionated, minimalist web framework for Node.js"
 
+---
+
 # Cool! What Does That Mean?
 
 Javascript was not built for server side coding and so it is very hard to write a working server using vanilla JavaScript, so we use a library to extend JavaScript's functionality to make server side coding easy.
 
 Unlike some libraries Express doesn't force you to write your code a certain way, meaning it looks alot like the JavaScript you're used to.
+
+---
 
 # Serving Files
 
@@ -16,6 +20,8 @@ At its core, HTTP is a *file transfer protocol*.
 * most web servers directly map incoming URL paths to filesystem paths
 * because these files are stored on disk on the server, they are called *static files*
   * to distinguish from *dynamic pages* (aka *routes*) which the server will create on the fly for every request 
+
+---
 
 # node-static
 
@@ -34,6 +40,8 @@ npx: installed 6 in 1.359s
 serving "." at http://127.0.0.1:8080
 ```
 
+---
+
 # static file server in Express
 
 * Express comes with its own static file server
@@ -42,6 +50,8 @@ serving "." at http://127.0.0.1:8080
 ```javascript
  app.use(express.static('.'))
 ```
+
+---
 
 # LAB: static file server
 
@@ -87,6 +97,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 * Now open a web browser and visit <http://localhost:5000/index.html>
 
+---
 
 # Oops!
 
@@ -96,11 +107,15 @@ The bad news: your web clients can now see *any files they like* in your project
 
 (including your server source code and configuration files, which may include secrets like passwords)
 
+---
+
 ## LAB: Hack Your Own Server
 
 open a web browser and visit <http://localhost:5000/package.json>
 
 `package.json` should probably be more secret than that `:-)`
+
+---
 
 # Solution: public directory
 
@@ -127,6 +142,8 @@ Now you can put HTML, CSS, PNG, and `.js` files inside `/public` where your clie
 
 > Note that the URL path `/index.html` maps directly to the filesystem path `static-server/public/index.html`
 
+---
+
 # index.html
 
 A little historical note...
@@ -139,6 +156,8 @@ A little historical note...
 * This is *why* index.html is named *index* -- it is a *replacement* for the automatic default *index* page.
 
 Now open a web browser and visit <http://localhost:5000/> and you will see the contents of `index.html` ("Hello in HTML") even though your request did not contain the words "index" or "html", just the path `/`
+
+---
 
 # Content-Type
 
@@ -157,11 +176,15 @@ Now open a web browser and visit <http://localhost:5000/> and you will see the c
     * `text/css` means CSS Stylesheet
     * ...these are called *MIME Types* (after the Multipurpose Internet Mail Extensions specification)
 
+---
+
 # Viewing Headers
 
 **TIP:** open the browser DevTools and click on the Headers sub-tab to see Content-Type and other headers:
 
 ![headers](/images/content-type.png)
+
+---
 
 # 404 Not Found and other status codes
 

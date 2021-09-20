@@ -19,6 +19,8 @@ Accounts:
 
 > If you do not have these, RAISE YOUR HAND!
 
+---
+
 # What will we learn?
 
 In this class, you will learn about:
@@ -31,6 +33,8 @@ In this class, you will learn about:
 
 Follow along online! Put a browser pointed at this site on one side of your screen, and Terminal on the other.
 
+---
+
 # What if I know some of this already?
 
 * Pair up
@@ -38,7 +42,9 @@ Follow along online! Put a browser pointed at this site on one side of your scre
 * Docendo discimus ("By Teaching We Learn")
 * Promote yourself to TA
 
-> The best way to learn is to teach. <br>- [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
+> The best way to learn is to teach. [Latin proverb](https://en.wikipedia.org/wiki/Docendo_discimus)
+
+---
 
 # What is code?
 
@@ -47,6 +53,8 @@ Generally, *code* is something that stands for something else.
 Specifically, *source code* is a series of instructions that tell a computer what to do.
 
 > With computers, "code" is not about **secrets** -- it's about **symbols**.
+
+---
 
 # What is coding?
 
@@ -57,6 +65,8 @@ Specifically, *source code* is a series of instructions that tell a computer wha
   * between you and a computer
   * between you and other coders
   * between you and future you
+
+---
 
 # What is coding NOT?
 
@@ -75,6 +85,8 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 > "The only perfect program is an empty file." - Alex
 
+---
+
 # A Program Is Like A Recipe
 
 * a recipe is a collection of *ingredients* and *instructions*
@@ -89,6 +101,8 @@ Writing a recipe involves trying out the recipe (baking a test batch), then twea
 
 <small>(recipe from popcornpottery.com)</small>
 
+---
+
 # Languages
 
 * every program is written in a **language**
@@ -98,6 +112,8 @@ Writing a recipe involves trying out the recipe (baking a test batch), then twea
 * computer languages are **very specific** compared to natural languages
 * different languages are useful in different areas, but there is a lot of overlap
 * today we will play with the JavaScript programming language
+
+---
 
 # Errors Are Awesome
 
@@ -114,6 +130,8 @@ Writing a recipe involves trying out the recipe (baking a test batch), then twea
 
 See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong) from MDN
 
+---
+
 # Lab: Opening the Terminal
 
 * to open your Terminal:
@@ -128,17 +146,23 @@ See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/Java
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
 
+  ---
+
 # Optimal Layout - MacOS
 
 ## Arrange your application windows like so
 
 ![terminal next to browser](../images/terminal-and-browser.png)
 
+---
+
 # Optimal Layout - Windows
 
 ## Arrange your application windows like so
 
 ![terminal next to browser](../images/terminal-and-browser-win.png)
+
+---
 
 # Lab: Interactive Calculator
 
@@ -154,6 +178,8 @@ See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/Java
 * Yay! Your computer is an expensive calculator!
 * **Bonus**: what other math can you do?
 
+---
+
 # Node is a JavaScript Engine
 
 ![Diagram: Node Train: Command Line](https://docs.google.com/drawings/d/e/2PACX-1vSKCgLe4wp1JroIot-SsVP-TKqHsySU-06oOGe3zYWBZ4jOc77quoRH2XhyNKBBuLx4IgbLim2NZLqK/pub?w=953&amp;h=522)
@@ -161,6 +187,8 @@ See also: [What went wrong?](https://developer.mozilla.org/en-US/docs/Learn/Java
 An "engine" is a type of program that either [*executes* or *empowers*](https://en.wikipedia.org/wiki/Software_engine) other programs.
 
 NodeJS (aka `node`) is an engine that runs JavaScript programs -- either from files, or interactively from the command line.
+
+---
 
 # A Tale of Two Prompts
 
@@ -179,6 +207,8 @@ While running *node*, if you want to *return* to the *shell*
   * Type <kbd>Ctrl</kbd>-<kbd>C</kbd> *twice*
   * *OR* type `.exit` and then <kbd>Enter</kbd>
 
+---
+
 # When in doubt, try it out!
 
 From now on, whenever you see text in the `code font`, try typing it into the terminal and see what happens! For example:
@@ -188,6 +218,8 @@ From now on, whenever you see text in the `code font`, try typing it into the te
 ```
 
 If that doesn't print `'podcast'`, look at the prompt; you may be inside your shell instead of inside node.
+
+---
 
 # Directories
 
@@ -204,6 +236,9 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 
 [Show hidden in Windows](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10)
 
+
+---
+
 # Where am I?
 
 * Inside the Terminal, you are always "inside" a directory.
@@ -211,6 +246,8 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 * To find out which directory you are in, type: <kbd>p</kbd><kbd>w</kbd><kbd>d</kbd><kbd>Return</kbd>
   * This stands for "print working directory" (not "password").
   * Most of the time you can also look at the prompt to see what the current directory is.
+
+---
 
 # Home Directory
 
@@ -223,6 +260,8 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 
 > WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`. You can get back to your home directory by typing `cd %HOME%`
 
+---
+
 # Listing Directory Contents
 
 * When you type `ls` ("list") it shows the contents of the current directory
@@ -230,6 +269,8 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 
 * If you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
   * **On Windows** you may need to type `dir /A:SH` instead
+
+---
 
 # Making a directory
 
@@ -239,12 +280,16 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 mkdir code
 ```
 
+---
+
 # Changing directories
 
 * `cd` ("change dir") moves you into a different directory
 * For example, `cd code` would move you into a subdirectory named `code`
 * If you ever get lost, type `cd` all on its own and press the return key. This will send you back to your home directory.
 > Unix shell only, not Windows!
+
+---
 
 # Basic Command Review (Unix)
 
@@ -255,6 +300,8 @@ mkdir code
 
 > These apply to Mac / Unix / Linux / bash / cmder
 
+---
+
 # Basic Command Review (DOS)
 
 * `cd` ("change dir") -- With no directory, it lists the current directory. Otherwise, it changes to the specified directory
@@ -262,6 +309,8 @@ mkdir code
 * `mkdir` ("make dir") -- Creates a new subdirectory inside the current directory
 
 > These apply to Windows / DOS / PowerShell
+
+---
 
 # LAB: make a subdirectory and then enter it
 
@@ -274,12 +323,16 @@ mkdir code
 5. List its contents using `ls` (and note that it's empty)
    * **On Windows** use `dir`
 
+---
+
 # Files
 
 * A file is a place on disk for storing "stuff"
 * The "stuff" here could be any "data" at all
   * Documents, pictures, sounds, applications, or anyting else!
 * Every file lives inside a directory
+
+---
 
 # Text Editor
 
@@ -289,6 +342,8 @@ mkdir code
 * You probably have installed by now: *VS Code* <https://code.visualstudio.com/>
   * Some other editors include *Atom*, *Sublime Text*, *Notepad++*, *TextMate*, *Vim*, *Emacs*
   * The following are **NOT** editors: *TextEdit*, *Wordpad*, *Microsoft Word*
+
+---
 
 # Source File
 
@@ -304,6 +359,8 @@ Hello, World!
 * The Recipe Metaphor
   * source file ≈ recipe
   * running a program ≈ cooking
+
+---
 
 # LAB: Hello, World
 
@@ -322,6 +379,8 @@ Hello, World!
 
 What happens? Is this what you expected?
 
+---
+
 # Command-Line Shortcuts
 
 These work in `bash`:
@@ -339,3 +398,5 @@ Also:
 <small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/))</small>
 
 [Bash Shortcuts Cheatsheet](https://kapeli.com/cheat_sheets/Bash_Shortcuts.docset/Contents/Resources/Documents/index "Bash Shortcuts Cheatsheet")
+
+---

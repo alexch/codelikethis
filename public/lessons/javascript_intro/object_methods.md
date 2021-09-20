@@ -16,6 +16,8 @@ let stringUtils = {
 stringUtils.rant('i love pizza') // => 'I LOVE PIZZA!!!'
 ```
 
+---
+
 # Methods Can Access Object State
 
 `this` is a magic word that means "this object I'm in *right now*"
@@ -33,11 +35,12 @@ rectangle.height   //=> 10
 rectangle.area()   //=> 80
 ```
 
+---
+
 # Extending objects on the fly
 
 Since JavaScript is a *dynamic* language,
 you can add methods to *any object*.
-
 
 ```js
 let rectangle = {
@@ -56,6 +59,8 @@ rectangle.area()   //=> 80
 
 * remember, `this` means "this object I'm in *right now*" which in this case is the rectangle
 * `this.height` on the *inside* of the object means the same as `rectangle.height` on the *outside*
+
+---
 
 # Lab: Speak
 
@@ -76,37 +81,13 @@ console.log(dog.speak())
 
 prints the following line:
 
-```
+```js
 My name is Abby and I have 4 paws!
 ```
 
+---
+
 # Speak solution
-
-<details>
-<summary>Hint</summary>
-<div>
-You can append a method to an object literally
-
-```js
-let dog = {
-  name: "Abby"
-  paws: 4
-  speak: function() {/*code goes here*/}
-}
-```
-
-or you can append it using dot notation
-
-```js
-dog.speak = function(){/*code goes here*/}
-```
-
-</div>
-</details>
-
-<details>
-<summary>Solution</summary>
-<div>
 
 ```js
 let dog = {
@@ -119,5 +100,4 @@ dog.speak = function() {
 }
 ```
 
-</div>
-</details>
+---

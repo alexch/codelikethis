@@ -19,6 +19,8 @@ then `process.argv` contains:
 ]
 ```
 
+---
+
 # Why ARGV?
 
 ARGV is a historical name. It means "Argument Vector" and has been around since the early 1970s.
@@ -36,6 +38,8 @@ sayHello('Bill')
 ```
 In the preceding code block `name` is a variable which stands in for the argument, while `'Bill'` is an argument to the `sayHello` function
 
+---
+
 # LAB: Command-Line Hello
 
 Open up your `hello.js` file and extend it to accept names from the argument vector
@@ -50,6 +54,8 @@ and run it a few times from the Terminal, e.g.
     node hello Bob
     node hello "good buddy"
 
+---
+
 # LAB: Hi, Everybody!
 
 Change `hello.js` to respond to *every one* of its command line arguments.
@@ -60,24 +66,11 @@ For instance:
     Hello, Alice!
     Hello, Bob!
 
+---
 # Hi, Everybody! solution
 
-<details>
-<summary>Hint</summary>
-<div>
-
 ```js
-let namesArray = process.argv.slice(2)
-```
 
-</div>
-</details>
-
-<details>
-<summary>Solution</summary>
-<div>
-
-```js
 let namesArray = process.argv.slice(2);
 
 function hello(array) {
@@ -89,8 +82,7 @@ function hello(array) {
 hello(namesArray)
 ```
 
-</div>
-</details>
+---
 
 # LAB: Add
 
@@ -103,33 +95,8 @@ e.g.
 
 # Add solution
 
-<details>
-<summary>Hint 1</summary>
-<div>
-
 ```js
-let numberArray = process.argv.slice(2).map(number => parseInt(number))
-```
 
-</div>
-</details>
-
-<details>
-<summary>Hint 2</summary>
-<div>
-
-```js
-let sum = 0
-```
-
-</div>
-</details>
-
-<details>
-<summary>Solution</summary>
-<div>
-
-```js
 let numbers = process.argv.slice(2);
 
 funtion add(array){
@@ -144,5 +111,4 @@ funtion add(array){
 console.log(add(numbers))
 ```
 
-</div>
-</details>
+---

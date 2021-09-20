@@ -2,6 +2,8 @@
 
 Methods do NOT mutate the strings they're called on. They return NEW strings with the return value of the method.
 
+---
+
 # .charAt(num)
 
 Returns the character to the right of the specified index
@@ -9,6 +11,8 @@ Returns the character to the right of the specified index
 ```javascript
 'dog'.charAt(1) // => 'o'
 ```
+
+---
 
 # .slice(num1, num2)
 
@@ -20,6 +24,8 @@ Returns a string from the right of the first specified index to the left of the 
 'supercalifragilisticexpialadocious'.slice(9) // => 'fragilisticexpialadocious'
 ```
 
+---
+
 # .toLowerCase()
 
 returns a lowercase version of the string it's called on
@@ -27,6 +33,7 @@ returns a lowercase version of the string it's called on
 ```javascript
 'HeLlo'.toLowerCase() // => 'hello'
 ```
+---
 
 # .toUpperCase()
 
@@ -36,6 +43,7 @@ returns a capitalized version of the string it's called on
 'hello'.toUpperCase() // => HELLO
 ```
 
+---
 
 # .split(char)
 
@@ -44,9 +52,14 @@ returns an array of strings split at the specified character
 ```javascript
 'blueberry'.split('e') // => ['blu', 'b', 'rry']
 ```
+
+---
+
 # Methods on Numbers
 
 Numbers also have some methods that can be called on them.  There is also a globally available `Math` class available in JavaScript which has a number of usefull methods attached to it
+
+---
 
 # .toString()
 
@@ -61,6 +74,8 @@ x.toString() // => '10'
 
 >Note that you will need to assign to value of the number to a variable (or wrap it in parentheses) and then call `.toString()` on it otherwise you'll get `SyntaxError: Invalid or unexpected token`.
 
+---
+
 # .toPrecision(num)
 
 takes a number object and evaluatues it to a specified number of places
@@ -68,6 +83,8 @@ takes a number object and evaluatues it to a specified number of places
 ```javascript
 (7.54321768).toPrecision(4) // => 7.543
 ```
+
+---
 
 # .isNaN()
 
@@ -82,6 +99,8 @@ isNaN(y) // => true
 
 ```
 
+---
+
 # Math.floor(num)
 
 trims all decimal places off a given number
@@ -94,6 +113,8 @@ Math.floor(134.97837) // => 134
 
 >Note that this does not round the number, it just trims off everything after the decimal point
 
+---
+
 # Math.random()
 
 returns a random number between 0 (inclusive) and one (exclusive)
@@ -102,3 +123,4 @@ returns a random number between 0 (inclusive) and one (exclusive)
 Math.random() // => a random number between 0 and 0.99999999999...
 
 ```
+---

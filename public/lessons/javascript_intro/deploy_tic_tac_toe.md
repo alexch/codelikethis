@@ -6,6 +6,8 @@ Go to [heroku.com](https://www.heroku.com) follow the signup instructions, and d
 
 You will also need to download the Git CLI tool
 
+---
+
 # Prepare Tic-Tac-Toe
 
 Install express `npm install express`
@@ -13,6 +15,8 @@ Install express `npm install express`
 Create a server file in the root of your tic-tac-toe directory (app.js or server.js are good names for this file)
 
 Turn your directory into a git repository be typing `git init` into the terminal.  Make sure you're in the right repository!
+
+---
 
 # Setting up the Server
 
@@ -32,6 +36,8 @@ app.get('/', function (req, res) {
 app.listen(process.env.PORT || 8080);
 ```
 
+---
+
 # Add a Start Script
 
 Once you deploy your app to Heroku it will need to know which file to run to serve your app.
@@ -47,6 +53,8 @@ We tell it which file to run with a start script in your `package.json`.  Open u
 
 ```
 
+---
+
 # Create a New Heroku Project
 
 Add and commit your changes to the git repository. `git add .` then `git commit -m "a commit message goes here"` in the terminal
@@ -55,5 +63,10 @@ Creating a new Heroku project is as easy as typing `heroku create` into the term
 
 You can now deploy your app to heroku be typing `git push heroku master` into the terminal.
 
-#High Five!
+---
+
+# High Five!
+
 You now have a working web app that anyone in the world can visit!
+
+---
