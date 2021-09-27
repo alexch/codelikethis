@@ -31,4 +31,4 @@ group :test do
 end
 
 # odd fixed versions, for Windows
-gem "nokogiri", "~>1.7"
+gem "nokogiri", "~>1.12"
