@@ -61,7 +61,7 @@ let people = ['peter', 'paul', 'mary'];
 delete somePerson 
 // returns false, objectName still exists
 
-delete objectName.name
+delete somePerson.name
 // deletes the property `name` on the object `somePerson`
 
 delete arrayName[2]
