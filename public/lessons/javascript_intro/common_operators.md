@@ -59,10 +59,10 @@ let somePerson = { name: 'John', age: 42 };
 let people = ['peter', 'paul', 'mary'];
 
 delete somePerson 
-// returns false, objectName still exists
+// returns false, somePerson still exists
 
 delete somePerson.name
-// deletes the property `name` on the object `somePerson`
+// delete the property `name` on the object `somePerson`
 
 delete arrayName[2]
 // deletes the element mary at index two of the array `people`
