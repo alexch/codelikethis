@@ -28,8 +28,6 @@ A character or group of characters that represent an action to be taken on one o
 
   * Assignment Operators
 
-  * Bitwise Operators
-
 * Trinary Operators
 
   * The Ternary Operator
@@ -41,10 +39,10 @@ A character or group of characters that represent an action to be taken on one o
 The `+` operator can be used on an operand to convert that operand into a number.
 
 ```js
-+"33" // => 33
-+"0" // => 0
-+"" // => 0
-+" "// => 0
++"33"     // => 33
++"0"      // => 0
++""       // => 0
++" "      // => 0
 +"cheese" // => NaN
 ```
 
@@ -52,12 +50,22 @@ The `+` operator can be used on an operand to convert that operand into a number
 
 # Delete
 
-The keyword `delete` is an operator that deletes whatever property, or element that's passed to it as an operand. However `delete` can't be used to delete full objects
+The `delete` operator removes the property passed as an operand
+
+However `delete` cannot be used to completely remove objects
 
 ```js
-delete objectName // returns false, objectName still exists
-delete objectName.prop // deletes the property `prop` off of the object `objectName`
-delete arrayName[3] // deletes the element at index three of the array `arrayName`
+let somePerson = { name: 'John', age: 42 };
+let people = ['peter', 'paul', 'mary'];
+
+delete somePerson 
+// returns false, objectName still exists
+
+delete objectName.name
+// deletes the property `name` on the object `somePerson`
+
+delete arrayName[2]
+// deletes the element mary at index two of the array `people`
 ```
 
 ---
@@ -67,44 +75,53 @@ delete arrayName[3] // deletes the element at index three of the array `arrayNam
 The keyword `typeof` is a unary operator that returns the type of the operand it's called on as a string.
 
 ```js
-typeof function() {...} // => 'function'
-typeof "Hello, world!" // => 'string'
-typeof [1, 2, 3, "red"] // => 'object'
+typeof function() {...}   // => 'function'
+typeof "Hello, world!"    // => 'string'
+typeof [1, 2, 3, "red"]   // => 'object'
 typeof unassignedVariable // => 'undefined'
-typeof false // => 'boolean'
-typeof null // => 'object'
+typeof false              // => 'boolean'
+typeof null               // => 'object'
 ```
 
 ---
 
 # Void
 
-The `void` keyword takes an expression as its operand and causes it to return `undefined` rather than the normal return value of the expression.
+The `void` keyword takes an expression as an operand and causes it to return `undefined` rather than the normal return value of the expression.
 
 ```js
-void (1+1) // => undefined
-
-function sayHello() { return "Hello, world!" }
-
+1 + 1           // => 2
+void (1 + 1)    // => undefined
 void sayHello() // => undefined
+
+function sayHello() { 
+  return "Hello, world!";
+}
+
 ```
 
 ---
 
-# Incrementers/Decrementers
+# Increment & Decrement
 
-Incrementers and decrementers are not officially classified in JavaScript as unary operators since they behave slightly differently than other operators, they are instead given their own special classification. However since they only accept one operand they are, by definition, unary operators.
+Increment and decrement are a special classification since they change their variable operand. Because they only accept one operand they are, by definition unary operators.
 
-* `++` increments the value to its left by one
+* `++` increments the value to the left by one
 
-* `--` decrements the value to its left by one
+* `--` decrements the value to the left by one
 
 ```js
-3++ // => 4
-7-- // => 6
+let myNumber = 3;
+
+myNumber++
+console.log(myNumber); // => 4
+
+myNumber--
+console.log(myNumber); // => 3
+
 "cheese"++ // => NaN
 ```
-> Note: the incrementer and decrementer only work on the number type.
+> NOTE: increment and decrement only work on the numbers
 
 ---
 
@@ -176,12 +193,12 @@ Evaluates two values or expressions and returns a boolean
 * `!` **not**; inverts the truthyness/falsyness of the preceding value or expression
 
 ```javascript
-'dog' && 'cat' // => 'cat'
-null && 'cat' // => false
-'dog' || 'cat' // => 'dog'
+'dog' && 'cat'     // => 'cat'
+null && 'cat'      // => false
+'dog' || 'cat'     // => 'dog'
 undefined || 'cat' // => 'cat'
-!true // => false
-!(7 < 5) // => true
+!true              // => false
+!(7 < 5)           // => true
 ```
 
 ---
@@ -198,6 +215,17 @@ Compares two values and returns a boolean
 
 * `<=` less than or equal to
 
+```javascript
+5 > 3 // => true
+5 < 3 // => false
+5 >= 3 // => true
+5 <= 5 // => true
+```
+
+---
+
+# Equality Operators
+
 * `==` equal to
 
 * `===` identity
@@ -207,13 +235,13 @@ Compares two values and returns a boolean
 * `!==` REALLY not equal
 
 ```javascript
-5 > 3 // => true
-5 < 3 // => false
-5 >= 3 // => true
-5 <= 5 // => true
-5 == '5' // => true
-5 === '5' // => false
-'cat' != 'dog' // => true
+5 == '5'        // => true
+true == '1'     // => true
+
+5 === '5'       // => false
+true === '1'    // => false
+
+'cat' != 'dog'  // => true
 'cat' !== 'cat' // => false
 ```
 
@@ -221,7 +249,13 @@ Compares two values and returns a boolean
 
 # Equals vs Identity
 
-It is worth noting the descrepency between the double equals `==` and triple equals `===`.The double equals will try and coerce the operands so that they match if possible, while the triple equals will perform a comparison on the values as they are.  When comparing two values you should **always** use the triple equals.
+There is a difference between the double equals `==` and triple equals `===`.
+
+The double equals will try and **coerce** the operands so that are comparable. 
+
+The triple equals will only perform a comparison on the values as they are.  
+
+When comparing two values you should **always** use the triple equals.
 
 ---
 
@@ -243,8 +277,7 @@ Open up a node environment in your terminal, and let's play around with some com
 
 # Assignment Operators
 
-Modifies an existing value
-MUTATES the value
+Modifies an existing  value by some amount.
 
 * `=` sets the variable on the left equal to the value on the right
 
@@ -257,7 +290,7 @@ let x = 7
 let y = 3
 
 1 += 2 // => 3
-x = y // x => 3
+x = y  // x => 3
 x += y // x => 10
 x -= y // x => 4
 ```
@@ -281,26 +314,6 @@ Let's take a few minutes to play around with assignment operators, so go ahead o
 
   * What is the value of `string` if you use `-=` instead?
 
----
-
-# Bitwise Operators
-
-Bitwise Operators treat their operands as a set of 32 bits(binary), rather than as decimal, or hexadecimal operators, but they return standard JavaScript numbers. These operators are very fast and powerful, but can be rather confusing as they are directly manipulating binary values.
-
-* `&` "and", returns a 1 in the bit position where the bits in both operands are 1
-
-* `|` "or", returns a 0 in the bit position where the bits in both operands are 0
-
-* `^` "xor", returns a 0 in the bit position where the bits in both operands are the same
-
-* `~` "not", inverts the bits of its operand
-
-```js
-15 & 9 // => 9; binary 1111 & 1001 evaluates to 1001 (9)
-15 | 9 // => 15; binary 1111 | 1001 evaluates to 1111 (15)
-15 ^ 9 // => 6; binary 1111 ^ 1001 evaluates to 0110 (6)
-~15 // => -16; binary ~0000...001111 evaluates to 1111..110000 (-16)
-```
 ---
 
 # The Ternary Operator
