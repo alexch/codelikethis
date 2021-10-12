@@ -16,7 +16,9 @@ A character or group of characters that represent an action to be taken on one o
 
   * `void`
 
-  * Incrementers/Decrementers
+  * Increment `++`
+
+  * Decrement `--`
 
 * Binary Operators
 
@@ -65,7 +67,7 @@ delete somePerson.name
 // delete the property `name` on the object `somePerson`
 
 delete arrayName[2]
-// deletes the element mary at index two of the array `people`
+// delete the element 'mary' at index two of the array `people`
 ```
 
 ---
@@ -92,6 +94,7 @@ The `void` keyword takes an expression as an operand and causes it to return `un
 ```js
 1 + 1           // => 2
 void (1 + 1)    // => undefined
+sayHello()      // => "Hello, world!"
 void sayHello() // => undefined
 
 function sayHello() { 
@@ -104,11 +107,11 @@ function sayHello() {
 
 # Increment & Decrement
 
-Increment and decrement are a special classification since they change their variable operand. Because they only accept one operand they are, by definition unary operators.
+Increment and decrement are special since they change their variable operand. Because they only accept one operand, they are by definition unary operators.
 
-* `++` increments the value to the left by one
+* `++` increments the **variable** to the left by one
 
-* `--` decrements the value to the left by one
+* `--` decrements the **variable** to the left by one
 
 ```js
 let myNumber = 3;
@@ -121,7 +124,7 @@ console.log(myNumber); // => 3
 
 "cheese"++ // => NaN
 ```
-> NOTE: increment and decrement only work on the numbers
+> NOTE: increment and decrement only work on numbers
 
 ---
 
@@ -129,7 +132,7 @@ console.log(myNumber); // => 3
 
 Takes two numbers and performs an operation on them
 
-Returns a **new** number
+Returns a **new** number as a result
 
 * `+` addition
 
@@ -144,11 +147,11 @@ Returns a **new** number
 * `**` exponent
 
 ```javascript
-2 + 1 // => 3
-2 - 1 // => 1
-2 * 2 // => 4
-6 / 2 // => 3
-6 % 3 // => 0
+2 + 1  // => 3
+2 - 1  // => 1
+2 * 2  // => 4
+6 / 2  // => 3
+6 % 3  // => 0
 5 ** 2 // => 25
 ```
 
@@ -321,7 +324,16 @@ Let's take a few minutes to play around with assignment operators, so go ahead o
 The ternary operator, also called the conditional operator, is the only trinary operator in JavaScript, and is a way of handeling control flow.
 
 ```js
-expression ? valueOne : valueTwo // If the expresion evaluates to true returns valueOne, otherwise returns valueTwo
+expression ? valueOne : valueTwo 
+// If the expression evaluates to true returns valueOne
+//   otherwise returns valueTwo
+```
+
+```js
+let isAllowed = true;
+
+return isAllowed ? 'You are allowed' : 'You are denied';
+// => 'You are allowed'
 ```
 
 ---
