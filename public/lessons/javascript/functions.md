@@ -82,34 +82,35 @@ The modulus operator `%` returns either an integer or zero.  Integers are truthy
 
 <details>
 <summary>Hint 2</summary>
-<div>
+<div>You may need to use some logic. You can create a simple control flow with an `if ...else` statement</div>
 
-You may need to use some logic. You can create a simple control flow with an `if ...else` statement
+<pre>
+  <code class="language-javascript">
+  if(/*this expression evaluates true*/) {
+    //do this
+  } else {
+    //otherwise do this
+  }
+  <code>
+</pre>
 
-    if(/*this expression evaluates true*/) {
-      //do this
-    } else {
-      //otherwise do this
-    }
-
-</div>
 </details>
 
 <details>
 <summary>Solution</summary>
-<div>
-
-    function divisible(operator, operand) {
-      if(operator % operand) {
-        return true
-      } else {
-        return false
-      }
+<pre>
+  <code class="language-javascript">
+  function divisible(operator, operand) {
+    if(operator % operand) {
+      return true
+    } else {
+      return false
     }
+  }
 
-    divisible(100, 10) // => true
-
-</div>
+  divisible(100, 10) // => true
+  <code>
+</pre>
 </details>
 
 # Shouter
@@ -147,33 +148,28 @@ Remember that there are many [string operations](https://developer.mozilla.org/e
 
 <details>
   <summary>Hint One</summary>
-Try getting the first letter from the String using indexing
 <div>
 
-```js
-let firstLetter = string[0]
-```
+Try getting the first letter from the String using indexing
+
+<pre><code class="language-javascript">let firstLetter = string[0]<code></pre>
 
 </div>
 </details>
 
 <details>
   <summary>Hint Two</summary>
-Try using the method `slice`
-[String Slice - Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 <div>
+Try using the method <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">Slice</a>
 
-```js
-let restOfString = string.slice(1)
-```
+<pre><code class="language-javascript">let restOfString = string.slice(1)<code></pre>
 
 </div>
 </details>
 
 <details>
   <summary>Answer</summary>
-  <div>
-
+  <pre><code class="language-javascript">
     function capitalize(word) {
       let firstLetter = word[0];
       let restOfWord = word.slice(1);
@@ -182,8 +178,9 @@ let restOfString = string.slice(1)
 
     console.log(capitalize('smith'));
     console.log(capitalize('MACGUYVER'));
-
-The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function.
+  <code></pre>
+  <div>
+  The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function.
   </div>
 
 
