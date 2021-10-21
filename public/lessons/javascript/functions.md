@@ -205,8 +205,8 @@ let strongFeeling = shouter(feeling);
 
 | Outside the function | Inside the function | Value               |
 |----------------------|---------------------|---------------------|
-| `feeling`            | `someString`           | `"I feel great"`    |
-|                      | `loudString`     | `"I FEEL GREAT"`    |
+| `feeling`            | `someString`        | `"I feel great"`    |
+|                      | `loudString`        | `"I FEEL GREAT"`    |
 | `strongFeeling`      |                     | `"I FEEL GREAT!!!"` |
 
 # Four Function Syntaxes
@@ -275,24 +275,26 @@ Here's one solution for the age calculator:
 
 <details>
 <summary>Answer</summary>
+  <pre><code class="language-javascript">
+  let age = 27
+
+  function ageCalc(num) {
+    let secondsInMin = 60
+    let minInHour = 60
+    let hrInDay = 24
+    let dayInYr = 365.25
+
+    let secInYr = secondsInMin * minInHour * hrInDay * dayInYr
+
+    let ageInSec = num * secInYr
+
+    return ageInSec
+  }
+
+  console.log(ageCalc(age))
+  <code></pre>
 <div>
 
-    let age = 27
-
-    function ageCalc(num) {
-      let secondsInMin = 60
-      let minInHour = 60
-      let hrInDay = 24
-      let dayInYr = 365.25
-
-      let secInYr = secondsInMin * minInHour * hrInDay * dayInYr
-
-      let ageInSec = num * secInYr
-
-      return ageInSec
-    }
-
-    console.log(ageCalc(age))
 
 
 To flip it you could simply divide the `num` variable by `secInYr` rather than multiplying to get years in a number of seconds.
@@ -321,35 +323,38 @@ supplyCal(0, 3, "cookie") // => "You will need 109500 cookies to last the rest o
 
 <details>
 <summary>Hint 1</summary>
-<div>
 
-    let amountPerYear = amountPerDay * 365
+Calculate the number of cookies needed per year
 
-</div>
+<pre><code class="language-javascript">
+let amountPerYear = amountPerDay * 365
+<code></pre>
 </details>
 
 <details>
 <summary>Hint 2</summary>
-<div>
 
-    let numberOfYears = 100 - age
+Calculate the number of years of life left
 
-</div>
+<pre><code class="language-javascript">
+let numberOfYears = 100 - age
+<code></pre>
 </details>
 
 <details>
 <summary>Solution</summary>
-<div>
 
-    function supplyCalc(age, amountPerDay, item) {
-      let amountPerYear = amountPerDay * 365
-      let numberOfYears = 100 - age
-      let totalNeeded = amountPerYear * numberOfYears
+Use the number of cookies per year, and number of years of life, to calculate the total cookies
 
-      let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
+<pre><code class="language-javascript">
+function supplyCalc(age, amountPerDay, item) {
+  let amountPerYear = amountPerDay * 365
+  let numberOfYears = 100 - age
+  let totalNeeded = amountPerYear * numberOfYears
+
+  let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
 }
-
-</div>
+<code></pre>
 </details>
 
 # Lab: Titleize
@@ -371,52 +376,56 @@ titilize("FRIDAY IS THE LONGEST DAY") // => "Friday Is The Longest Day"
 
 <details>
 <summary>Hint 1</summary>
-<div>
 
-    function capitalize(word) {
-      return word[0].toUpperCase() + word.slice(1).toLowerCase()
-    }
+Make a function to capitalize each word
 
-
-</div>
+<pre><code class="language-javascript">
+function capitalize(word) {
+  let firstLetter = word[0].toUpperCase();
+  let restOfWord = word.slice(1).toLowerCase();
+  return firstLetter + restOfWord;
+}
+<code></pre>
 </details>
 
 <details>
 <summary>Hint 2</summary>
-<div>
 
-    let wordArray = string.split(" ")
+Split the words in the string into an Array of items
 
-</div>
+<pre><code class="language-javascript">
+let wordArray = string.split(" ")
+<code></pre>
 </details>
 
 <details>
 <summary>Solution</summary>
-<div>
 
-    function capitalize(word) {
-      let firstLetter = word[0].toUpperCase();
-      let restOfWord = word.slice(1).toLowerCase();
-      return firstLetter + restOfWord;
-    }
+Loop over every item in the Array of words, capitalize each, and then add them to a new string
 
-    function titilize(string) {
-      let wordArray = string.split(" ");
+<pre><code class="language-javascript">
+function capitalize(word) {
+  let firstLetter = word[0].toUpperCase();
+  let restOfWord = word.slice(1).toLowerCase();
+  return firstLetter + restOfWord;
+}
 
-      let newString = "";
-      let wordsModified = 0;
+function titilize(string) {
+  let wordArray = string.split(" ");
 
-      while (wordsModified < wordArray.length) {
-        let currentWord = wordArray[wordsModified];
-        let newWord = capitalize(currentWord);
-        newString = newString + " " + newWord;
-        wordsModified = wordsModified + 1;
-      }
+  let newString = "";
+  let wordsModified = 0;
 
-      return newString.trim();
-    }
+  while (wordsModified < wordArray.length) {
+    let currentWord = wordArray[wordsModified];
+    let newWord = capitalize(currentWord);
+    newString = newString + " " + newWord;
+    wordsModified = wordsModified + 1;
+  }
 
-</div>
+  return newString.trim();
+}
+<code></pre>
 </details>
 
 # More About Functions
