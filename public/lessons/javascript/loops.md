@@ -206,7 +206,7 @@ let poemLines = [
 ];
 
 for (let line = 0; line < poemLines.length; line++) {
-  console.log(poemLines(index));
+  console.log(poemLines(line));
 }
 ```
 
@@ -273,7 +273,7 @@ for (let line = 0; line < poemLines.length; line++)
   // this code will run each time we loop
   // since `index` changes each time,
   // a different poem line is printed each cycle
-  console.log(poemLines(index));
+  console.log(poemLines(line));
 }
 ```
 
@@ -355,7 +355,7 @@ while (lineNumber <= 8) {
 
 # Counting Potatoes, alternative with `break`
 
-An alternative solution uses `break` to stop looping after eight cycles.
+Another solution using the `break` to stop looping after eight cycles.
 
 <details>
 <summary>Solution</summary>
