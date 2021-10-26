@@ -206,7 +206,7 @@ let poemLines = [
 ];
 
 for (let line = 0; line < poemLines.length; line++) {
-  console.log(poemLines(line));
+  console.log(poemLines[line]);
 }
 ```
 
@@ -273,7 +273,7 @@ for (let line = 0; line < poemLines.length; line++)
   // this code will run each time we loop
   // since `index` changes each time,
   // a different poem line is printed each cycle
-  console.log(poemLines(line));
+  console.log(poemLines[line]);
 }
 ```
 
