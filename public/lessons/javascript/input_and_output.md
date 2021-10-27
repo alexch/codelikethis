@@ -121,7 +121,7 @@ Code along time! Please follow along with the instructor and enter this code int
 > Run it from the command line using `node quest.js`
 
 ```javascript
-const  = require('readline');
+const readline = require('readline');
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
 function ask(questionText) {
