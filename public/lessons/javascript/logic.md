@@ -70,15 +70,15 @@ Wait a second. "Truthy?"
 
 ![Truthiness](https://res.cloudinary.com/btvca/image/upload/v1574445211/curriculum/truthiness_jhdubk.png)
 
-* in the Colbert Report, [truthiness](https://en.wikipedia.org/wiki/Truthiness) means things we *feel* to be true, even though we know they're probably not
+* In the "Colbert Report", [truthiness](https://en.wikipedia.org/wiki/Truthiness) means things we *feel* to be true, even though we know they're probably not
 
-* In JavaScript, **all** values have truthiness **unless** they are defined as falsy.
+* In JavaScript, **all** values are *truthy* **unless** they are defined as *falsy*.
 
 * [MDN: Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
 
 # What is falsiness?
 
-`false`, `null`, `undefined`, `0`, `NaN`, and the empty string (`""`) are all falsy.
+`false`, `null`, `undefined`, `0`, `NaN`, and the empty string `""` are all falsy.
 
 Fortunately, `true` is truthy and `false` is falsy.
 
@@ -86,12 +86,12 @@ Unfortunately, the string `"false"` is truthy, and the string `"0"` is truthy, e
 
 [MDN: Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
 
-# if... then... else...
+# If...Then...Else...
 
-The magic word `else` allows **BRANCHING**.
+The magic word `else` allows for conditional **branching**.
 
 ```js
-if (age >= 18) {
+if ( age >= 18 ) {
   console.log('allowed');
 } else {
   console.log('denied');
@@ -104,26 +104,27 @@ It takes the first path if the condition is truthy, and takes the second path if
 
 # 2 + 2 = ?
 
-Sadly, this mathematical expression:
+Sadly, this mathematical expression causes an error
 
-    2 + 2 = 4
+  2 + 2 = 4
 
-causes an error. You need to do
+You need to do the following instead
 
-    2 + 2 == 4
+  2 + 2 === 4
 
-instead. Why?
+Why is this needed?
 
-# Condition or Assignment?
+# Conditional or Assignment?
 
 > BEWARE of using a single equal sign inside an `if` condition!
 
-* the value of a comparison is either `true` or `false`
-  * so `if (x == 2)` means `if x is 2` which changes based on `x`
+* The value of a comparison is either `true` or `false`
+  * So `if (x === 2)` means `if x is equal to 2` which changes based on `x`
 
-* the value of an assignment is the *value being assigned*
-  * so `if (x = 2)` means `if 2` which is *always truthy*
-  * also, the value of `x` will be 2 afterwards, no matter what it was before
+* The value of an assignment is the *value being assigned*
+  * So `if (x = 2)` means `if 2` which is *always truthy*
+  * Also, the value of `x` will be 2 afterwards, no matter what it was before
+  * This is bad, and almost always wrong
 
 # Different Kinds of Equals Signs
 
@@ -174,14 +175,21 @@ In this lab you will create a program to read input from a human user, and then 
 Start with a `hello.js` program that looks like this:
 
 ```js
-console.log('What is your name?');
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
-function handleInput(chunk) {
-  let name = chunk.toString().trim();
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+
+function start() {
+  let name = ask('What is your name?');
   console.log('Hello, ' + name + '!');
 }
 
-process.stdin.once('data', handleInput);
+start();
 ```
 
 * Now change `hello.js` so that it doesn't always say hello!
@@ -194,10 +202,17 @@ process.stdin.once('data', handleInput);
 <div>
 <pre>
 <code class="language-javascript">
-console.log('What is your name?');
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
-function handleInput(chunk) {
-  let name = chunk.toString().trim();
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+
+function start() {
+  let name = ask('What is your name?');
   if (name === 'Darth') {
     console.log('Noooooo! That is impossible!')
   } else {
@@ -205,7 +220,7 @@ function handleInput(chunk) {
   }
 }
 
-process.stdin.on('data', handleInput);
+start();
 </code>
 </pre>
 </div>
@@ -220,48 +235,36 @@ process.stdin.on('data', handleInput);
 # Infinite Names solution
 
 <details>
-<summary>Hint 1</summary>
-<div>
-Using `.on` instead of `.once` will keep the process running
-
-</div>
-</details>
-
-<details>
-<summary>Hint 2</summary>
-<div>
-Remember
-<pre>
-<code class="language-javascript">
-process.exit()
-</code>
-</pre>
-will end your program.
-</div>
-</details>
-
-
-<details>
 <summary>Solution</summary>
 <div>
 <pre>
 <code class="language-javascript">
-console.log('What is your name?');
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
-function handleInput(chunk) {
-  let name = chunk.toString().trim();
-  if (name === 'bye!') {
-    process.exit()
-  } else if (name === 'Darth') {
-    console.log('Noooooo! That is impossible!\nWhat is your name?')
-  } else {
-    console.log('Hello, ' + name + '!\nWhat is your name?');
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+
+function start() {
+  let name = ask('What is your name?');
+
+  while (name !== 'bye!') {
+    if (name === 'Darth') {
+      console.log('Noooooo! That is impossible!')
+    } else {
+      console.log('Hello, ' + name + '!');
+    }
   }
 }
 
-process.stdin.on('data', handleInput);
+start();
 </code>
 </pre>
+</div>
+</details>
 
 # LAB: Enemies List
 
@@ -290,20 +293,31 @@ if(checkOne || checkTwo || checkThree) {
 <div>
 <pre>
 <code class="language-javascript">
-console.log('What is your name?');
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
-function handleInput(chunk) => {
-  let name = chunk.toString().trim();
-  if (name === "bye!") {
-    process.exit();
-  } else if (name === 'Darth' || name === 'Sauron' || name === 'Voldemort') {
-    console.log('Noooooo! That is impossible!\nWhat is your name?')
-  } else {
-    console.log('Hello, ' + name + '!\nWhat is your name?');
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
+
+function start() {
+  let name = ask('What is your name?');
+  let nameOne = 'Darth Vader';
+  let nameTwo = 'Lex Luthor';
+  let nameThree = 'Palpatine';
+
+  while (name !== 'bye!') {
+    if (nameOne || nameTwo || nameThree) {
+      console.log('Noooooo! That is impossible!')
+    } else {
+      console.log('Hello, ' + name + '!');
+    }
   }
 }
 
-process.stdin.on('data',);
+start();
 </code>
 </pre>
 </div>
