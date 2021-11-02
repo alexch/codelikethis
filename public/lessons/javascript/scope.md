@@ -33,11 +33,9 @@ A mistake in *any part* of your program accessing a global variable can introduc
 
 # Scope is a One-Way Mirror
 
-> Scope is a one-way mirror,  inner scopes can see out, but outer scopes cannot see in.
-
 ![An example of a one way mirror metaphor for scope](../../images/one-way-mirror.gif)
 
-> Mr. Bean, within the interrogation room scope, cannot see the detectives in the observation room scope.
+> Scope is a one-way mirror, inner scopes can see out, but outer scopes cannot see in. The interrogation room scope, cannot see the detectives in the observation room scope.
 
 # Block Scope
 
@@ -56,7 +54,7 @@ let name = 'Global';
 console.log(name);
 ```
 
-> If a variable name cannot be found in the *current* scope, then JavaScript looks in the *next outer scope*, and so on
+> If a variable name cannot be found in the *current* scope, then JavaScript looks in the *next outer scope*
 
 # Exercise: Guess the Variable 1
 
@@ -108,7 +106,7 @@ console.log(fruit);
 
 # Functions names default to Global
 
-> Unless a function definition is nested within another function, or a code block, it will be global.
+> Unless a function definition is nested within another function, or a code block, it is global.
 
 ```javascript
 // global "name" variable
@@ -116,21 +114,19 @@ let name = 'Alice';
 
 function sayNames() {
   // can see variable "name"
-  // can see function named "saySecondName"
   console.log('Printing first name: ' + name);
   saySecondName();
 }
 
 function saySecondName() {
-  // this 'name' is local to the function
+  // this "name" is local to the function
   let name = 'Bob';
-  // it will print the value 'Bob', not 'Alice'
   console.log('Printing second name: ' + name);
 }
 
 sayNames();
 
-// this will print the global 'name'
+// this will print the global "name"
 console.log(name);
 ```
 
@@ -154,7 +150,7 @@ console.log(shout(myOpinion));
 
 # Scope Error
 
-> When you try to use a variable that is out of scope, you will get an error
+> Trying to use a variable that is out of scope will result in an error
 
 ```javascript
 function doSomething() {
@@ -170,7 +166,7 @@ console.log(privateVariable);
 
 JavaScript also supports *closure scope*
 
-Which means that variables visible where a function is defined are also visible to the new function body
+Meaning, variables that are visible where a function is defined are also visible to the new function's body
 
 ```javascript
 // Outer function definition
@@ -194,9 +190,7 @@ function singSong() {
 }
 ```
 
-`chorus` is **enclosed** within `singSong`, so it *inherits* `singSong`'s scope
-
-`numberOfBottles` is visible to **both** `singSong` **and** `chorus`
+`chorus` is **enclosed** within `singSong`, so it *inherits* `singSong`'s scope and `numberOfBottles` is visible to **both** `singSong` **and** `chorus`
 
 # Nested Scopes
 
@@ -207,8 +201,6 @@ For each `function someName() {}` that is defined:
 3. This can repeat, again, and again
 
 # Why Nested Scopes? 1
-
-* Nested 'callbacks' can access local variables just like their neighboring code can
 
 ```javascript
 let phrase = 'all dogs are good dogs';
@@ -240,8 +232,6 @@ The `letterCount`, `currentIndex`, and `allWords` are visible inside the *inner*
 
 # Why Nested Scopes? 2
 
-> NOTE: This will **not** work:
-
 ```javascript
 function wordCount() {
   while (currentIndex < allWords.length) {
@@ -264,4 +254,4 @@ function countLetters(words) {
 }
 ```
 
-> This fails because `wordCount` is *not* nested inside `countLetters`, and so **cannot** see the variables within the function's scope
+> NOTE: This fails because `wordCount` is *not* nested inside `countLetters`, and so **cannot** see the variables within the function's scope
