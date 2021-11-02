@@ -184,8 +184,8 @@ function ask(questionText) {
   });
 }
 
-function start() {
-  let name = ask('What is your name?');
+async function start() {
+  let name = await ask('What is your name?');
   console.log('Hello, ' + name + '!');
 }
 
@@ -211,8 +211,8 @@ function ask(questionText) {
   });
 }
 
-function start() {
-  let name = ask('What is your name?');
+async function start() {
+  let name = await ask('What is your name?');
   if (name === 'Darth') {
     console.log('Noooooo! That is impossible!')
   } else {
@@ -248,10 +248,11 @@ function ask(questionText) {
   });
 }
 
-function start() {
-  let name = ask('What is your name?');
+async function start() {
+  let name = null;
 
   while (name !== 'bye!') {
+    name = await ask('What is your name?');
     if (name === 'Darth') {
       console.log('Noooooo! That is impossible!')
     } else {
@@ -302,15 +303,19 @@ function ask(questionText) {
   });
 }
 
-function start() {
-  let name = ask('What is your name?');
+async function start() {
+  let name = null;
   let nameOne = 'Darth Vader';
   let nameTwo = 'Lex Luthor';
   let nameThree = 'Palpatine';
 
   while (name !== 'bye!') {
-    if (nameOne || nameTwo || nameThree) {
-      console.log('Noooooo! That is impossible!')
+    name = await ask('What is your name?');
+    // is there a better way?
+    if (name === nameOne ||
+        name === nameTwo || 
+        name === nameThree) {
+      console.log('Go away!')
     } else {
       console.log('Hello, ' + name + '!');
     }
