@@ -7,80 +7,77 @@
 
 # Arrays
 
-* An ARRAY is a CONTAINER
-  * an object that contains other objects
-* It's a list of objects
+* An ARRAY is a CONTAINER for values
+* It is an object that contains other objects
+* It resembles an ordered list
 
-# What makes an array an array
+# What makes an Array an Array?
 
 * You can put any values inside it
 * In any order
-* They stay in order (unless you move them later)
-* Duplicates are fine
+* They will stay in order, unless you move them later
+* Duplicate values are allowed
 
 # Creating an array
 
 ```js
-["apple", "banana", "cherry"]
+let fruits = ['apple', 'banana', 'cherry'];
 ```
 
-square brackets on their own mean "please go *create* an array now"
+Square brackets around values mean, "please go create an array"
 
-and put these 3 other values inside it
+And put these three values inside of it
 
-# Array Indexes
+# Arrays are Indexed
 
-* Every slot in the array has an index
+* Every "slot" in the array has an INDEX
 * You can retrieve any item in an array by its INDEX
-* Square brackets after an array mean "the whatever-th item in this array"
+* Square brackets after an array mean "get the N-th item in this array"
   * This method of accessing items is referred to as "square bracket notation"
 * The following code retrieves one fruit
 
 ```javascript
-let fruits = ["apple", "banana", "cherry"];
+let fruits = ['apple', 'banana', 'cherry'];
 fruits[1]
 ```
 
-...but which fruit? See next slide!
+> But which fruit is `fruits[1]` ?
 
 # LAB: Array Indexes Exercise
 
-Try this in node:
+Try this in an interactive `node` shell:
 
 ```js
-let fruits = ["apple", "banana", "cherry"]
+let fruits = ['apple', 'banana', 'cherry'];
+// which fruit is this?
 fruits[1]
 ```
 
 Did you get the result you expected?
 
-Why or why not?
+# Arrays Start at Zero
 
-# Start At Zero
+When counting, humans start at one, but **computers start at zero**.
 
-When counting,
+So the first item in an array is number **zero**, not number **one**.
 
-humans start at one,
+# Array Length
 
-but **computers start at zero**.
-
-So the first item in an array is number zero, not number one.
-
-# Length
-
-Every array has a *property* named `length`
+Every Array has a **property** named `length`
 
 ```js
-let fruits = ["apple", "banana", "cherry"]
-fruits.length //=> 3
+let fruits = ['apple', 'banana', 'cherry'];
+// what is the length of the fruit Array?
+fruits.length
 ```
 
-Q: How can you get the last item in an array... even if you don't know its index beforehand?
+> How can you get the last item in an array, even if you don't know its index beforehand?
 
 # The End
 
 ```js
-let fruits = ["apple", "banana", "cherry"]
+let fruits = ['apple', 'banana', 'cherry'];
+// which fruit is last?
 fruits[fruits.length - 1]
 ```
 
@@ -89,6 +86,8 @@ fruits[fruits.length - 1]
 Try this:
 
 ```js
+let fruits = ['apple', 'banana', 'cherry'];
+// which value is at index 99?
 fruits[99]
 ```
 
@@ -96,7 +95,7 @@ Did you get the result you expected?
 
 Why or why not?
 
-# Undefined Means 🤷
+# Undefined Means 🤷 "unknown"
 
 by returning *undefined*, the computer is answering the question
 
@@ -108,32 +107,36 @@ with the answer
 
 # Array Methods
 
-[MDN: Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) lists the array API interface -- containing all the methods and properties that are common to all array values. 
+[MDN: Array Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods) lists the Array API interface. Containing all the methods and properties that are common to all array values. 
 
-There are many methods here and you should not try to memorize them all. But skim them and remember how to get back to this documentation page later.
+There are many methods there and you should NOT try to **memorize** them all, just skim them and remember how to get back to this documentation page later.
 
-# Adding Values to an Array
+# Adding Values to an Array 1
 
-* **push** adds a single value to the end of an array
+* The `.push` method adds a single value to the end of an array
 
 ```javascript
-let fruits = ["apple", "banana", "cherry"]
-fruits.push("pineapple")
-fruits //=> ["apple", "banana", "cherry", "pineapple"]
+let fruits = ['apple', 'banana', 'cherry'];
+fruits.push('pineapple')
+fruits //=> ['apple', 'banana', 'cherry', 'pineapple']
 ```
 
-* **push** can also add several values at once
+# Adding Values to an Array 2
+
+* The `.push` method can also add several values at once
 
 ```javascript
-fruits.push("nectarine", "strawberry")
-fruits //=> ["apple", "banana", "cherry", "pineapple", "nectarine", "strawberry"]
-````
+let fruits = ['apple', 'banana', 'cherry'];
+fruits.push('nectarine', 'strawberry')
+fruits //=> ['apple', 'banana', 'cherry', 'nectarine', 'strawberry]
+```
 
-# Yarra Lasrever
+# Array Reverse
 
 ```js
-let fruits = ["apple", "banana", "cherry"]
+let fruits = ['apple', 'banana', 'cherry'];
 fruits.reverse()
+fruits //=> ['cherry', 'banana', 'apple']
 ```
 
 Try this now in a console. Do you see what you expect?
@@ -152,7 +155,9 @@ fruits.slice(1, 3) //=> [ 'banana', 'cherry' ]
 fruits.slice(2) //=> [ 'cherry', 'date', 'elderberry' ]
 ```
 
-These start and end numbers are called *indexes* (or *indices* if you're feeling fancy).
+These start and end numbers are *indexes*
+
+The `.slice()` function can accept **one** or **two** arguments
 
 [MDN: slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
@@ -176,7 +181,7 @@ So with this picture in your mind, imagine that `slice`...
    * ...but *excludes* the item to the *right* of the end index
 
 ```javascript
-['B', 'L', 'U', 'E'].slice(1, 3) //=> [ 'L', 'U' ]
+['B', 'L', 'U', 'E'].slice(1, 3); //=> [ 'L', 'U' ]
 ```
 
 # Array to String
@@ -184,52 +189,48 @@ So with this picture in your mind, imagine that `slice`...
 There are a few easy ways to turn an array into a string.
 
 ```js
-fruits.join()           // 'apple,banana,cherry'
-fruits.join(" and ")    // 'apple and banana and cherry'
-fruits.toString()       // 'apple,banana,cherry'
-fruits.toSource()       // [ 'apple', 'banana', 'cherry' ]
+fruits.join();        //=> 'apple,banana,cherry'
+fruits.join(" and "); //=> 'apple and banana and cherry'
+fruits.join("-");     //=> 'apple-banana-cherry'
+fruits.toString();    //=> 'apple,banana,cherry'
 ```
-
-Note that `console.log` uses `toSource()`, which is usually better for debugging than `toString`...
-
-...but the `toSource` method only works in web browsers, not in NodeJS, at least not by default :-(
 
 # String to Array
 
 You can also easily turn a string into an array.
 
 ```javascript
-'dog'.split('') //=> ['d', 'o', 'g']
-'my dog has fleas'.split(' ') //=> [ 'my', 'dog', 'has', 'fleas' ]
+'dog'.split('');               //=> ['d', 'o', 'g']
+'my dog has fleas'.split(' '); //=> [ 'my', 'dog', 'has', 'fleas' ]
 ```
 
-# Loops and Iterators
+# Arrays and Loops
 
-There are many ways to "iterate" through an array.
+There are ways to loop through an array's items
 
-This means to go through the entire array, one item at a time, usually in order, and then *do something* with each individual item.
+This means to go through the entire array, one item at a time, in order, and *do something* with each item.
 
-In the next slides we will illustrate 3 different ways to iterate... one way is explicit, one way is concise, and one way is fancy.
+# Looping Through an Array with `for`
 
-# Explicit: Looping Through an Array with for
-
-JavaScript inherited `for(;;)` from C; it's cumbersome but you should learn to recognize it. 
+JavaScript has had a `for` loop for quite some time
 
 ```js
-for (let i=0; i < fruits.length; i++) {
-  console.log(fruits[i]);
+let fruits = ['apple', 'banana', 'cherry'];
+
+for (let index = 0; index < fruits.length; index++) {
+  console.log(fruits[index]);
 }
 ```
 
 |phrase|meaning|
 |---|---|
-| `for`                    | in a loop, |
-| `let i`                  | make an *index* variable named `i` |
-| `i=0`                    | and initially set it to `0` |
-| `i < fruits.length`      | then, as long as `i` is less than the number of `fruits` |
-| `{` ... `}`              | execute this block of code |
-| `console.log(fruits[i])` | print the `i`th element of the `fruits` array |
-| `i++`                    | and then *increment* `i` before the next time through |
+| `for`                        | in a loop, |
+| `let index`                  | make an *index* variable named `index` |
+| `index = 0`                  | and set `index` to `0` |
+| `index < fruits.length`      | then, as long as `index` is less than the number of `fruits` |
+| `{` ... `}`                  | execute this block of code |
+| `console.log(fruits[index])` | print the element at `index` in the `fruits` array |
+| `index++`                    | and then *increment* `index` before the next cycle |
 
 # Looping Through an Array with for-of
 
@@ -248,47 +249,31 @@ for (let fruit of fruits) {
 | `let fruit`              | name it `fruit` |
 | `{` ... `}`              | and send it to this block of code |
 
-# Looping Through an Array with forEach
-
-`forEach` is an [iteration method](./iteration_methods) that behaves a lot like `for..of` but in a *[functional style](hybrid-styles)* :
-
-```js
-fruits.forEach( (fruit) => {
-  console.log("I like " + fruit + "!")
-});
-```
-
-|phrase|meaning|
-|---|---|
-| `fruits.forEach(`...`)`  | hey `fruits`, for each thing inside you, |
-| `(fruit)`                | please name it `fruit` |
-| ` => `                   | and send it to |
-| `{` ... `}`              | this block of code |
-| `console.log(fruit)`     | so I can print it to the terminal |
- 
-[MDN: Array.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-
 # LAB: Loud Backwards Fruit
 
 Given this array:
 
 ```js
-let fruits = ["apple", "banana", "cherry"]
+let fruits = ['apple', 'banana', 'cherry']
 ```
 
-write a program that prints:
+Write a program that prints the following
 
-    CHERRY
-    BANANA
-    APPLE
+```
+CHERRY
+BANANA
+APPLE
+```
 
-# Setting Items in an Array
+> NOTE: CHERRY being bolded is not required
+
+# Setting Items Within an Array
 
 The `[]` operator works for assignment as well.
 
 `fruits[0] = 'apricot'` will set the `0`th item of the array to the string `'apricot'`
 
-# Checking Every Item in an Array
+# Checking for Inclusion Within an Array
 
 The `includes` method checks if a given value is inside an array (or not).
 
@@ -320,24 +305,41 @@ Please take a few minutes to **refactor** your old `hello.js` program to use arr
 <details>
 <summary>Solution</summary>
 <div>
+<pre>
+<code class="language-javascript">
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
-```js
-let enemiesArray = ["Darth", "Voldemort", "Sauron"]
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
+}
 
-console.log("What is your name?");
-process.stdin.on('data', (chunk) => {
-    let name = chunk.toString().trim();
-    if (enemiesArray.includes(name)) {
-      console.log("NOOOOOO! Go away " + name + "!")
+async function start() {
+  let name = null;
+  let enemies = ['Darth Vader', 'Lex Luthor', 'Palpatine']
+
+  while (name !== 'bye!') {
+    name = await ask('What is your name?');
+    // Using someArray.includes(someValue);
+    if (enemies.includes(name)) {
+      console.log('Go away!')
     } else {
-      console.log("Hello, " + name + "!");
+      console.log('Hello, ' + name + '!');
     }
-});
-```
+  }
+}
 
+start();
+</code>
+</pre>
 </div>
 </details>
 
 # More About Arrays
 
-* [Eloquent JavaScript Chapter 4](http://eloquentjavascript.net/04_data.html): Data Structures: Objects and Arrays
+* [Eloquent JavaScript Chapter-4: Data Structures](http://eloquentjavascript.net/04_data.html)
+* [JavaScript.info Arrays](https://javascript.info/array)
+* [JavaScript.info Array Methods](https://javascript.info/array-methods)
+* [MDN JavaScript Guide - Indexed Collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections)
