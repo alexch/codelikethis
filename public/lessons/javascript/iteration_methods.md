@@ -23,7 +23,7 @@ let myArray = ['apple', 'cherry', 'pineapple'];
 ```
 
 * `myArray.length` is a *property* that is the number of elements in the array
-* `myArray.reverse()` is a *method* that reverses the ordering of all elements in the array 
+* `myArray.reverse()` is a *method* that reverses the ordering of all elements in the array
 
 > NOTE: Properties are called by their name alone, but Methods require parenthesis `()` after the name
 
@@ -42,7 +42,7 @@ Every JavaScript array has [many tools](https://developer.mozilla.org/en-US/docs
 | [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)  | scan the entire collection and "reduce" it to... | ...a single result, e.g. a total |
 
 * We call this group of methods "[iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)"
-* There are about a dozen built-in iteration methods, plus lots more added by libraries like [lodash](https://lodash.com/). 
+* There are about a dozen built-in iteration methods, plus lots more added by libraries like [lodash](https://lodash.com/).
 
 # Iterators are Callback Functions
 
@@ -128,7 +128,7 @@ function beginsWithC(word) {
   return word.charAt(0).toUpperCase() === 'C';
 };
 
-names.find(beginsWithC); 
+names.find(beginsWithC);
 //=> 'Carol'
 ```
 
@@ -181,7 +181,7 @@ function beginsWithC(word) {
   return word.charAt(0).toUpperCase() === 'C';
 }
 
-names.filter(beginsWithC) 
+names.filter(beginsWithC)
 //=> [ 'Charlie', 'Carol' ]
 ```
 
@@ -194,7 +194,7 @@ let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry']
 ```
 
 Now go find your code from the previous lab ("Find a Berry")
-and change it to use `filter` to return a new array 
+and change it to use `filter` to return a new array
 containing **all** the fruits that end with the string `'berry'`
 
 # Find All Berries Solution
@@ -225,7 +225,7 @@ let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David'];
 function upperCase(word) {
     return word.toUpperCase();
 }
-names.map(upperCase) 
+names.map(upperCase)
 //=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
 ```
 
@@ -233,7 +233,7 @@ It's called "map" because in a mathematical sense, it defines a *mapping* from o
 
 | from | to |
 |---|---|
-| 'Alice'| 'ALICE' | 
+| 'Alice'| 'ALICE' |
 | 'Bob'| 'BOB' |
 | 'Charlie' | 'CHARLIE' |
 | 'Carol' | 'CAROL' |
@@ -260,7 +260,9 @@ titleize("the rain in spain falls MAINLY on the PLAIN")
 
 There is a solution on the next slide, but please try on your own first.
 
-# Solution: Titleize
+> Think about how to combine the `.map(someFunction)` method with the `capitalize(someWord)` function.
+
+# Solution: Titleize with Map
 
 <details>
 <summary>Solution</summary>
@@ -273,11 +275,41 @@ function capitalize(word) {
 }
 
 function titleize(phrase) {
-  let words = [];
-  phrase.split(' ').forEach((word) => {
-    words.push(capitalize(word))
-  });
-  return words.join(' ');
+  let wordArray = phrase.split(' ');
+  let capitalizedWords = wordArray.map(capitalize);
+  let finalSentence = capitalizedWords.join(' ');
+  return finalSentence;
+}
+</code>
+</pre>
+</details>
+
+# Solution: Titleize with ForEach
+
+<details>
+<summary>Solution</summary>
+<pre>
+<code class="language-javascript">
+function capitalize(word) {
+  let firstLetter = word[0];
+  let restOfWord = word.slice(1);
+  return firstLetter.toUpperCase() + restOfWord.toLowerCase();
+}
+
+function titleize(phrase) {
+  let wordArray = phrase.split(' ');
+  let capitalizedWords = [];
+
+  // Use a variable and update it
+  function capitalizeAndPush(word) {
+    let completed = capitalize(word);
+    capitalizedWords.push(completed);
+  }
+
+  // forEach does not return a value
+  wordArray.forEach(capitalizeAndPush);
+  let finalSentence = capitalizedWords.join(' ');
+  return finalSentence;
 }
 </code>
 </pre>
