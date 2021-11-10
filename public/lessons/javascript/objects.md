@@ -188,6 +188,7 @@ Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 There is a way to loop through every property in an object.
 
 This `for..in` loop:
+
 * Grabs every property in the `states` object, one at a time
 * And inside the loop
 * Sets the `state` value to that property's *key*
@@ -255,7 +256,6 @@ Object.keys(states)
 ```
 
 [MDN Documentation on Object.keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
-
 
 # LAB: Class GPA
 
@@ -332,73 +332,68 @@ console.log('The GPA is ' + gpa(grades));
     * `false` or `true`
     * `0` (or any number)
 
-# `delete`
+# The `delete` Operator
 
 To remove a key-value pair from an object, use the keyword `delete`:
 
 ```js
-states = {
+let states = {
   CA: 'California',
   MA: 'Massachusetts',
   NY: 'New York'
 }
 
-{ CA: 'California', MA: 'Massachusetts', NY: 'New York' }
+console.log(states);
+// => { CA: 'California', MA: 'Massachusetts', NY: 'New York' }
 
-> delete states.MA
+delete states.MA
 
-true
-
-> states
-
-{ CA: 'California', NY: 'New York' }
+console.log(states);
+// => { CA: 'California', NY: 'New York' }
 ```
 
-> note that `delete` is **not** a function; it's a keyword
+> NOTE: `delete` is **not** a function, it is an operator
 
-# fake delete
+# A Way to Fake `delete`
 
 You can get a similar effect by setting the value to `null` or `undefined`, but beware: the key remains!
 
 ```js
-> states.CA = null
-null
-> states.NY = undefined
-undefined
-> states
-{ CA: null, NY: undefined }
-> for (let state of states) { console.log(state) }
+let states = {
+  CA: 'California',
+  MA: 'Massachusetts',
+  NY: 'New York'
+}
+
+states.CA = null
+states.NY = undefined
+console.log(states);
+// => { CA: null, NY: undefined }
+
+for (let state in states) { 
+  console.log(state) 
+}
+// => null
+// => undefined
 ```
 
-> Remember, this only removes the *value*, but not the *key*, from the property list.
-> This can be dangerous!
+> NOTE: This only changes the *value*, but not the *key*
 
 # LAB: A Menu Order
 
-* Write a program that accepts a food order based on a menu.
-  * Name your program `order.js`.
-  * Create an object to store all the item names and their prices.
-  * Accept an order on the command line and calculate the total for all items.
-  * Print the total order price and exit.
+Write a function that accepts an order with items in a menu object
 
-| Item   | Price |
-|--------|-------|
-| Burger | $5.00 |
-| Fries  | $3.50 |
-| Shake  | $1.11 |
-| Salad  | $4.25 |
+  * Name your file `order.js`
+  * Create an object, called `menu`, to store all the item names and their prices
+  * Accept an order as an Array of Strings, containing the desired items
+  * Print the total price, based on what is ordered
 
-## Example Program Usage
-
-```
-$ node order burger fries
-
-Your order total is $8.50
-
-$ node order burger burger shake fries burger
-
-Your order total is $19.61
-```
+| ItemName   | Price |
+|------------|-------|
+| burger     | $5.00 |
+| fries      | $3.50 |
+| shake      | $1.11 |
+| salad      | $4.25 |
 
 # Menu Order solution
 
@@ -406,89 +401,96 @@ Your order total is $19.61
 <summary>Hint 1</summary>
 <div>
 
-You can get an array of arguments form the command line by using `process.argv.slice(2)`
+For every item in the `order`, look up its value in the `menu`, and add the price to a `total`
 
 </div>
 </details>
 
 <details>
 <summary>Hint 2</summary>
-<div>
+
 Create an object that represents your menu
 
-```js
-menu = {
+<pre>
+<code class="language-javascript">
+let menu = {
   burger: 5,
-  fries: 3.5,
-  //etc.
+  fries:  3.5,
+  shake:  1.11,
+  salad:  4.25
 }
-```
-
-</div>
+</code>
+</pre>
 </details>
 
 <details>
 <summary>Hint 3</summary>
-<div>
+
 You can access the value of a key using a string with square bracket notation
 
-```js
+<pre>
+<code class="language-javascript">
 menu["burger"] // => 5
-```
-
-</div>
+</code>
+</pre>
 </details>
 
 <details>
 <summary>Solution</summary>
-<div>
+<pre>
+<code class="language-javascript">
+let order = ['burger', 'burger', 'shake', 'fries', 'burger'];
 
-```js
-let order = process.argv.slice(2)
+function calculateTotal(order) {
+  let menu = {
+    burger: 5,
+    fries: 3.5,
+    shake: 1.11,
+    salad: 4.25
+  };
 
-let menu = {
-  burger: 5,
-  fries: 3.5,
-  shake: 1.11,
-  salad: 4.25
+  let orderTotal = 0;
+
+  function addItemPrice(item) {
+    orderTotal = orderTotal + menu[item];
+  }
+
+  order.forEach(addItemPrice);
+
+  return orderTotal;
 }
 
-let orderPrice = 0
-
-order.forEach((item) => {
-  orderPrice += menu[item]
-})
-
-console.log("Your order total is $" + orderPrice)
-```
-
-</div>
+console.log("Your order total is $" + calculateTotal(order));
+</code>
+</pre>
 </details>
 
-# Object Instance Methods
+# Object Methods Preview
 
-Here's a taste of [object instance methods](/lessons/javascript-track/methods).
+Here is a little preview of [object methods](https://javascript.info/object-methods)
 
-A method is a *function* attached to an *object* as a *property*.
+A **METHOD** is any *function* attached to an *object* as a *property*
+
+The object can then **call** that property as a function
 
 ```js
-let stringUtils = {
+let stringHelpers = {
   capitalize: function(word) {
     return word.charAt(0).toUpperCase() +
       word.slice(1).toLowerCase();
   },
-  rant: function(opinion) {
+  yell: function(opinion) {
     return option.toUpperCase() + '!!!';
   }
 }
 
-stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
+stringHelpers.yell('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
 
 # More About JS Objects
 
 * Eloquent JavaScript: [Chapter 4](https://eloquentjavascript.net/04_data.html)
 
-* FreeCodeCamp:
+* FreeCodeCamp Practice Exercises:
   * From [Build JavaScript Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects)
-  * to [Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects)
+  * To [Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects)
