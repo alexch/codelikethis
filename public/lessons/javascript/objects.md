@@ -153,7 +153,7 @@ The last two expressions look for *a key named `desired`*, but only the first on
 | `materials.desired   ` | `undefined` | "get me the property named 'desired'"  |
 | `materials['desired']` | `undefined` | "get me the property named 'desired'"  |
 
-> This can be confusing!
+> NOTE: This can be confusing!
 
 # An Object is a Data Structure
 
@@ -175,41 +175,28 @@ let alice = {
     }
   },
   pets: ['Mittens', 'Fido']
-}
+};
+
+console.log(alice.homeAddress.zipCode);
+// => '05401'
 ```
 
 Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 
-> Note: The above shows the essence of [JSON](./json):
-> a syntax for representing data structures containing primitive values,
-> including nested objects and arrays.
-
-# `Object.keys`
-
-`Object.keys` is a special function that:
-
-  * takes any object
-  * returns an array
-  * containing that object's keys
-
-Example:
-
-```javascript
-Object.keys(states)  //=> [ 'CA', 'MA', 'NY' ]
-```
-
 # LAB: Looping through an object with for...in
 
-Here's a way to loop through every property in an object.
+There is a way to loop through every property in an object.
 
-This `for..in` loop grabs every property in the `states` object, 
-one at a time,
-and inside the loop,
-sets the `state` value to that property's *key*
+This `for..in` loop:
+* Grabs every property in the `states` object, one at a time
+* And inside the loop
+* Sets the `state` value to that property's *key*
 
 ```js
 for (let state in states) {
-    
+// write code here 
+// using the state variable
+// and the states object
 }
 ```
 
@@ -224,9 +211,8 @@ NY is short for New York
 
 <details>
 <summary>Solution:</summary>
-<div>
-
-```js
+<pre>
+<code class="language-javascript">
 let states = {
   'VT': 'Vermont',
   'CA': 'California',
@@ -237,74 +223,106 @@ let states = {
 for (let state in states) {
     console.log(state + ' is short for ' + states[state]);
 }
-```
-
-</div>
+</code>
+</pre>
 </details>
 
-**Note:** use "`for...of`" for arrays, use "`for...in`" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
+> NOTE: Use `for...in` for objects, and not `for..of`.
+> See [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
 
-**WARNING:** remember the `let` or you will be defining a *global variable* named `state`
+> WARNING: remember to use the `let` keyword or you will be defining a *global variable* named `state`
+
+# Object Properties as an Array
+
+It is also possible to convert an Object's properties into an Array of Strings, and then loop over that Array
+
+[`Object.keys(someObject)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) is a function that
+
+  * Receives any object as an argument
+  * Returns an array of **all** the object's property names
+
+Example:
+
+```javascript
+let states = {
+  CA: 'California',
+  MA: 'Massachusetts',
+  NY: 'New York'
+}
+
+Object.keys(states)
+//=> [ 'CA', 'MA', 'NY' ]
+```
+
+[MDN Documentation on Object.keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+
 
 # LAB: Class GPA
 
-Please create a new file called `gpa.js`, and type in the following code
-(which defines a `grades` object and calls a `gpa` function):
+Create a new JavaScript file called `gpa.js`, with the following code:
 
 ```javascript
 let grades = {
-  'midterm': 3.3,
-  'project': 4.0,
-  'final': 3.2
+  midterm: 3.3,
+  project: 4.0,
+  final: 3.2
 }
 
-console.log('The GPA is ' + gpa(grades));
+function gpa(someGrades) {
+  // write your code here
+}
+
+console.log('The final GPA is ' + gpa(grades));
 ```
 
-* Now write the `gpa` function, and run `node gpa`!
-* Assume that all grades carry equal weight toward the GPA.
-* The answer is 3.5 ... but don't just return 3.5, make it work for real.
+* Write the `gpa` function
+* Assume that all grades carry equal weight toward the GPA
 
-> Hint: There's more than one way to solve this!
+> The answer is 3.5 ... but don't just return 3.5, make it work for real. There is more than one way to solve this.
 
 # Class GPA solution
 
 <details>
-<summary>Hint</summary>
+<summary>Hint 1</summary>
 <div>
-You can use dot notation to access properties on an object
+You can use `for..in` to loop over an object's properties
+</div>
+</details>
 
-```js
-grades.midterm // => 3.3
-```
-
+<details>
+<summary>Hint 2</summary>
+<div>
+You can use `Object.keys(someObject) to get all an object's properties as an Array, then check their length with `.length`
 </div>
 </details>
 
 <details>
 <summary>Solution</summary>
-<div>
-
-```js
+<pre>
+<code class="language-javascript">
 let grades = {
-  'midterm': 3.3,
-  'project': 4.0,
-  'final': 3.2
+  midterm: 3.3,
+  project: 4.0,
+  final: 3.2
 }
 
-function gpa(object) {
-  return (object.midterm + object.project + object.final) / 3
+function gpa(gradeObject) {
+  let total = 0;
+  let gradeCount = Object.keys(gradeObject).count;
+  for (let grade in gradeObject) {
+    total = total + gradeObject[grade];
+  }
+  return total / gradeCount;
 }
 
 console.log('The GPA is ' + gpa(grades));
-```
-
-</div>
+</code>
+</pre>
 </details>
 
-# All keys are strings, even nulls
+# All keys become Strings
 
-* In a JavaScript object, keys must be strings
+* In a JavaScript object, keys must be strings, even `null`, `0`, and `undefined`
 
 * **Beware** of using these as keys, since they get converted to strings in unexpected ways:
 
