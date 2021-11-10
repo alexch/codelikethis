@@ -23,31 +23,33 @@
 
 > All models are wrong, but some are useful. -- [George Box](https://en.wikipedia.org/wiki/All_models_are_wrong)
 
-# An Object Contains Properties
+# Objects Contain Properties
 
 ```javascript
-let abby = {
-  'species': 'dog',
-  'color': 'brown',
+let fido = {
+  species: 'dog',
+  color: 'brown',
   spayed: true,
-  breed: 'mutt',
   weight: 40,
-  'favorite activity': 'chasing squirrels'
+  favoriteActivities: [
+    'sleeping',
+    'chasing squirrels'
+  ]
 }
 ```
 
-* This is called **object literal** syntax since it defines the object exactly as it's **written**.
-* The string on the left is called the *key*; the string on the right is called a *value*; the two together are called an *entry* or a *property*.
-* JavaScript object keys are always strings, but if the key has no spaces in it, you can omit the quotations
-* `let abby = {...}` is an assignment, setting the variable `abby` to point to the object we just defined
+* Object **properties** are **KEY** and **VALUE** pairs
+* The **key** is on the left and the **value** on the right; the two together are called a *property*.
+* JavaScript object keys are always strings. If the key has no spaces you can omit surrounding quotes.
+* `let fido = {...}` is an assignment, setting the variable `fido` to point to the object we just defined
 
-# An Object is a Lookup Table
+# An Object is like a Lookup Table
 
-An object is useful for putting many similar things together.
+Objects are useful for putting many similar values together.
 
-Let's make an object that maps a state's *abbreviation* to its *full name*
+Let's make an object that binds a state *abbreviation* to its *full name*
 
-*Type this in a NodeJS console*:
+*Type this in a NodeJS console, or a JavaScript file*:
 
 ```javascript
 let states = {
@@ -60,7 +62,7 @@ let states = {
 
 # Getting Object Properties
 
-You can get the properties of an object with either *dots* or *brackets*:
+You can get the properties of an object using either *dots* or *brackets*:
 
 | With Dots   | With Brackets  | The Value         |
 |-------------|----------------|-------------------|
@@ -78,7 +80,7 @@ states.VT     // also 'Vermont'
 
 # Setting Object Properties
 
-* You can set the properties of an object with either *dots* or *brackets* followed by a `=` (single equal sign)
+* You can set the properties of an object with either *dots* or *brackets* followed by `=` ( a single equal sign)
 * Adding properties works even after the object has been created.
 
 ```javascript
@@ -87,16 +89,16 @@ states.WY = 'Wyoming'
 states['FL'] = 'Florida'
 ```
 
-* Setting a property with a key that already exists *removes* the original value first
+* Setting a property with a key that already exists *updates* the original value
 ```javascript
 states.VT = 'The Green Mountain State'
 ```
 
-# Dots vs. Brackets
+# Dots vs. Brackets 1
 
-Dots are prettier than square brackets, but less versatile, since some keys simply cannot be represented using dot notation, and trying to use them causes syntax errors.
+Dots are *prettier* than square brackets, but less versatile, since some keys simply cannot be represented using dot notation, and trying to use them causes syntax errors.
 
-The bracket `[]` syntax is less common but covers more uses (e.g., if the key contains spaces, or is inside a variable).
+The bracket `[]` syntax is less common but covers all uses (e.g., if the key contains spaces, or is **a variable**).
 
 ```javascript
 > let capitals = {}
@@ -113,7 +115,9 @@ capitals.'New York' = 'Albany'
 SyntaxError: Unexpected string
 ```
 
-If you get those errors, revert to brackets, which is more reliable:
+# Dots vs. Brackets 2
+
+If you get an error when setting a property, revert to brackets, which are more reliable:
 
 ```javascript
 > capitals['New York'] = 'Albany'
@@ -122,26 +126,32 @@ If you get those errors, revert to brackets, which is more reliable:
 { 'New York': 'Albany' }
 ```
 
-# Dots vs. Brackets vs. Variables
+# Dots vs. Brackets with Variables 1
 
-You can use variables instead of literals to get and set properties.
+You can use **variables** instead of values to get and set properties.
 
 Given this code ...
 
 ```js
-let items = {
-    brick: 'red'
+let materials = {
+  brick: 'a red brick',
+  siding: 'some wooden clapboards'
 }
-let item = 'brick'
+
+let desired = 'brick'
+console.log(materials[desired]);
+// => 'a red brick'
 ```
 
-... two of the following expressions look for *a key named `item`*, but only one looks for a key named *the value of the variable named item*:
+# Dots vs. Brackets with Variables 2
+
+The last two expressions look for *a key named `desired`*, but only the first one looks for a key named *the value of the variable named desired*:
 
 | code            | value       | explanation                         |
 |-----------------|-------------|-------------------------------------|
-| `items.item   ` | `undefined` | "get me the property named 'item'"  |
-| `items['item']` | `undefined` | "get me the property named 'item'"  |
-| `items[item]  ` | `'red'`     | "get me the property named 'brick'" |
+| `materials[desired]  ` | `'a red brick'`     | "get me the property named 'brick'" |
+| `materials.desired   ` | `undefined` | "get me the property named 'desired'"  |
+| `materials['desired']` | `undefined` | "get me the property named 'desired'"  |
 
 > This can be confusing!
 
