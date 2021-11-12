@@ -480,7 +480,7 @@ let stringHelpers = {
       word.slice(1).toLowerCase();
   },
   yell: function(opinion) {
-    return option.toUpperCase() + '!!!';
+    return opinion.toUpperCase() + '!!!';
   }
 }
 
