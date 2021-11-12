@@ -1,9 +1,12 @@
 # Methods are Functions Attached to Objects
 
 ```js
+// A plain object with a method "area" attached
 let circle = {
   radius: 2,
-  
+  area() {
+    return Math.PI * this.radius * this.radius;
+  }
 }
 ```
 
@@ -40,8 +43,8 @@ let circle = new Circle();
 // set its radius to 2
 circle.radius = 2;          
 // call the area method, which
-circle.area();              
 // returns 12.566370614359172 
+circle.area();              
 ```
 
 [MDN: classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
@@ -110,23 +113,22 @@ circle.area();
 // returns 12.566370614359172 
 ```
 
-> Q: Why is this better?
-
 # Constructors Validate Objects
 
-Constructors are a great place to *validate* your input values
+Constructors can **validate** input values
 
 ```javascript
 class Circle {
   constructor(radius) {
     if (radius <= 0) {
-        throw('radius must be a positive number')
+      throw('ERROR: radius must be a positive number')
     }
     this.radius = radius;
   }
 }
 
-
+let negativeCircle = new Circle(-1);
+// Uncaught 'ERROR: radius must be a positive number'
 ```
 
 * The `if` statement is called a "guard clause"
@@ -134,27 +136,31 @@ class Circle {
 * Validation is a valuable feature of object-oriented programming
   * Be confident that you don't have to check for bad data or boundary conditions
 
-# Factory Town
+# Factory Functions
 
-Sometimes one constructor just isn't enough.
-
-When the constructor accepts different parameters from the ones that you have on hand, you could define a *factory function* like this:
+When an object constructor accepts different values from the ones that you have on hand, you could define a function to alter the input value like this:
 
 ```javascript
+let someDiameter = 20;
+
 function circleFromDiameter(diameter) {
-    return new Circle(diameter / 2);
+  return new Circle(diameter / 2);
 }
+
+let myCircle = circleFromDiameter(20);
+console.log(myCircle.radius);
+// 10;
 ```
 
-The above is called a "factory function" since it constructs objects for you, based on your specifications. 
+> The above is called a "factory function" since it constructs objects for you, based on your specifications. 
 
 # Factory Methods
 
 For convenience and code organization, factory functions are often attached to the *class* -- **not the instance** -- of the objects they create.
 
 | Factory Function | Factory Method |
-|---|---|
-| `let c = circleFromDiameter(2)` | `let c = Circle.fromDiameter(2)` |
+|------------------|----------------|
+| `let c = circleFromDiameter(2)`   | `let c = Circle.fromDiameter(2)` |
 
 The factory method works *exactly the same way* as the factory function, but
 
@@ -173,7 +179,7 @@ class Circle {
   
   constructor(radius) {
     if (radius <= 0) {
-        throw('radius must be a positive number')
+      throw('ERROR: radius must be a positive number')
     }
     this.radius = radius;
   }
@@ -188,7 +194,7 @@ class Circle {
 }
 ```
 
-and call it like this:
+Use it like this:
 
 ```javascript
 let circle = Circle.fromDiameter(4)
