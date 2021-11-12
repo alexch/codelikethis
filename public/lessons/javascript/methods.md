@@ -20,9 +20,7 @@ let stringUtils = {
 stringUtils.yell('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
 
-# Methods Can Access Object State
-
-`this` is a magic word that means "this object I'm in *right now*"
+# Methods Can Access Object Properties
 
 ```js
 let rectangle = {
@@ -36,10 +34,11 @@ let rectangle = {
 rectangle.height   //=> 10
 rectangle.area()   //=> 80
 ```
+> The keyword `this` means "this object I'm in **right now**"
 
 # The `this` Keyword is Special
 
-The `this` keyword is a special value that returns a reference to the object that it is used within
+The `this` keyword is a special value that is a reference to the object that it is used within
 
 ```js
 let cardinal = {
@@ -63,11 +62,9 @@ console.log(blueJay.describe());
 // 'I am a blue bird'
 ```
 
-# Extending objects on the fly
+# Extending Objects with Methods
 
-Since JavaScript is a *dynamic* language,
-you can add methods to *any object*.
-
+Since JavaScript is a *dynamic* language, you can add methods to *any object*.
 
 ```js
 let rectangle = {
@@ -84,7 +81,7 @@ rectangle.area = function() {
 rectangle.area()   //=> 80
 ```
 
-* remember, `this` means "this object I'm in *right now*" which in this case is the rectangle
+* Remember, `this` means "this object I'm in *right now*" which in this case is the rectangle
 * `this.height` on the *inside* of the object means the same as `rectangle.height` on the *outside*
 
 # Lab: Speak
@@ -133,17 +130,18 @@ dog.speak = function() {
 You can add methods to *all objects of the same type* like this:
 
 ```js
-"banana".capitalize() //=> TypeError: "banana".capitalize is not a function
+'banana'.capitalize() 
+//=> TypeError: 'banana'.capitalize is not a function
 
 String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() +
     this.slice(1).toLowerCase();
 }
 
-"banana".capitalize() //=> "Banana"
+'banana'.capitalize() //=> "Banana"
 ```
 
-`String.prototype` is a special object whose properties (including methods!) are made available to **all strings**.
+> `String.prototype` is a special object whose properties (including methods!) are made available to **all strings**.
 
 # Clever = Danger
 
