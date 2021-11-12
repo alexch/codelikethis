@@ -12,12 +12,12 @@ let stringUtils = {
     return word.charAt(0).toUpperCase() +
       word.slice(1).toLowerCase();
   },
-  rant: function(opinion) {
+  yell: function(opinion) {
     return option.toUpperCase() + '!!!';
   }
 }
 
-stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
+stringUtils.yell('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
 
 # Methods Can Access Object State
@@ -26,15 +26,41 @@ stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
 
 ```js
 let rectangle = {
-    height: 10,
-    width: 8,
-    area: function() {
-        return this.height * this.width;
-    }
+  height: 10,
+  width: 8,
+  area: function() {
+    return this.height * this.width;
+  }
 }
 
 rectangle.height   //=> 10
 rectangle.area()   //=> 80
+```
+
+# The `this` Keyword is Special
+
+The `this` keyword is a special value that returns a reference to the object that it is used within
+
+```js
+let cardinal = {
+  color: 'red',
+  describe: function() {
+    return 'I am a ' + this.color + ' bird';
+  }
+}
+
+let blueJay = {
+  color: 'blue',
+  describe: function() {
+    return 'I am a ' + this.color + ' bird';
+  }
+}
+
+
+console.log(cardinal.describe());
+// 'I am a red bird'
+console.log(blueJay.describe());
+// 'I am a blue bird'
 ```
 
 # Extending objects on the fly
@@ -45,14 +71,14 @@ you can add methods to *any object*.
 
 ```js
 let rectangle = {
-    height: 10,
-    width: 8,
+  height: 10,
+  width: 8,
 }
 
 rectangle.area()   //=> TypeError: rectangle.area is not a function
 
 rectangle.area = function() {
-     return this.height * this.width;
+  return this.height * this.width;
 }
 
 rectangle.area()   //=> 80
@@ -67,8 +93,8 @@ Using the following definition:
 
 ```javascript
 let dog = {
-    name: 'Abby',
-    paws: 4
+  name: 'Fido',
+  paws: 4
 }
 ```
 
@@ -81,49 +107,25 @@ console.log(dog.speak())
 prints the following line:
 
 ```
-My name is Abby and I have 4 paws!
+My name is Fido and I have 4 paws!
 ```
 
 # Speak solution
 
 <details>
-<summary>Hint</summary>
-<div>
-You can append a method to an object literally
-
-```js
-let dog = {
-  name: "Abby"
-  paws: 4
-  speak: function() {/*code goes here*/}
-}
-```
-
-or you can append it using dot notation
-
-```js
-dog.speak = function(){/*code goes here*/}
-```
-
-</div>
-</details>
-
-<details>
 <summary>Solution</summary>
-<div>
-
-```js
+<pre>
+<code class="language-javascript">
 let dog = {
-    name: 'Abby',
-    paws: 4
+  name: 'Abby',
+  paws: 4
 }
 
 dog.speak = function() {
   return "My name is " + this.name + " and I have " + this.paws + "paws"
 }
-```
-
-</div>
+</code>
+</pre>
 </details>
 
 # A Clever Trick: Extending System Classes
@@ -134,9 +136,9 @@ You can add methods to *all objects of the same type* like this:
 "banana".capitalize() //=> TypeError: "banana".capitalize is not a function
 
 String.prototype.capitalize = function() {
-      return this.charAt(0).toUpperCase() +
-        this.slice(1).toLowerCase();
-    }
+  return this.charAt(0).toUpperCase() +
+    this.slice(1).toLowerCase();
+}
 
 "banana".capitalize() //=> "Banana"
 ```
@@ -152,4 +154,3 @@ This clever trick is useful but dangerous. Don't outsmart yourself!
 Specifically, if you change the definition of basic types, you might introduce bugs somewhere else in your program -- possibly in code that you didn't even write yourself!
 
 That's why extending system classes is sometimes called by the derogatory term "monkey patching".
-

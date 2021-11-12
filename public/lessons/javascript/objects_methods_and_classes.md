@@ -1,16 +1,21 @@
-# Methods are Functions, Not Values
+# Methods are Functions Attached to Objects
 
-> **Beware** of the difference between value properties and method properties!
+```js
+let circle = {
+  radius: 2,
+  
+}
+```
 
 Given a `circle` object with a radius of 2:
 
 * `circle.radius` is a *value* and evaluates to `2`
-* `circle.area` is a *method* and evaluates to `function() {...}`
+* `circle.area` is a *method* and evaluates to a `function() {...}`
 * `circle.area()` is a *method call* and evaluates to `12.566370614359172`
 
-# the `class` keyword
+# The `class` keyword 1
 
-In 2015, JavaScript introduced the `class` keyword which is syntactic sugar on top of JavaScript's existing prototype system. 
+JavaScript has the `class` keyword which is syntactic sugar on top of JavaScript's existing prototype system. 
 
 This new `class` syntax is much easier to understand than the previous system.
 
@@ -25,60 +30,59 @@ class Circle {
 }
 ```
 
+# The `class` keyword 2
+
 Use it like this:
 
 ```javascript
-let circle = new Circle();  // create a new Circle instance
-circle.radius = 2;          // set its radius to 2
-circle.area();              // call the area method, which
-                            // returns 12.566370614359172 
+// create a new Circle instance
+let circle = new Circle();  
+// set its radius to 2
+circle.radius = 2;          
+// call the area method, which
+circle.area();              
+// returns 12.566370614359172 
 ```
-
-* A Note On Spelling:
-  * "Circle" with a capital C is the constructor
-  * "circle" with a lowercase C is the object (instance)
 
 [MDN: classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 # Stay classy, JavaScript
 
-This is the first time we've seen **classes** in JavaScript
-
 Classes are for making lots of objects with the same methods, but different data
 
-A *class* defines a **type** of object.
+A `class` defines a **type** of object.
 
-An *instance* is an **individual** object of that type.
+An **instance** is an **individual** object of that type.
 
 > For example, there are many houses, but my house is yellow.
 
 ## The Cookie Analogy:
 
-  * class ~= cookie cutter
-  * instance ~= cookie
-  * instance data ~= icing and sprinkles
+  * A class ~= cookie cutter
+  * An instance ~= cookie
+  * An instance's data ~= icing and sprinkles
 
-# Constructors and "new"
+# Object Constructors and `new`
 
 * A constructor is a **function** that's called when you use the **new** keyword
 * It's the very first method that's ever called on that particular instance
 
-## What `new` does, in detail:
+What `new` does, in detail:
 
-  * make a new empty object
-  * set the object's class
-  * set `this` to point to the object
-  * call the constructor function
-  * set `this` back to whatever it was before
-  * return a reference to the object
+  * Create a new empty object
+  * Set the object's class
+  * Set `this` to point to the object
+  * Call the constructor function
+  * Set `this` back to whatever it was before
+  * Return a reference to the object
 
-# Constructors are for Initialization
+# Initialize Objects with Constructors 1
 
-the principle of *Complete Construction* says that after the constructor executes, the object is in a *valid* state
+After the constructor executes, the object should be in a *valid* state
 
-in practice, this means "pass all initial values into the constructor"
+In practice, this means "pass all initial values into the constructor" and use them to build the object
 
-## A Better Circle:
+## A Better Circle
 
 ```js
 class Circle {
@@ -94,36 +98,41 @@ class Circle {
 }
 ```
 
-Use it like this:
+# Initialize Objects with Constructors 2
 
-    let circle = new Circle(2);  // create a new Circle instance
-                                 // with radius 2
-    circle.area();              // call the area method, which
-                                // returns 12.566370614359172 
+Use the constructor function like this:
 
-## Q: Why is this better?
+```js
+// Create a new Circle instance with radius 2
+let circle = new Circle(2);
+// call the area method, which
+circle.area();
+// returns 12.566370614359172 
+```
 
-A: because it preserves *encapsulation* -- the idea that an object should be responsible for setting its own properties
+> Q: Why is this better?
 
-# Constructors are for Validation
+# Constructors Validate Objects
 
-constructors are a great place to *validate* your values
+Constructors are a great place to *validate* your input values
 
 ```javascript
 class Circle {
-    constructor(radius) {
-        if (radius <= 0) {
-            throw('radius must be a positive number')
-        }
-        this.radius = radius;
+  constructor(radius) {
+    if (radius <= 0) {
+        throw('radius must be a positive number')
     }
+    this.radius = radius;
+  }
+}
+
+
 ```
 
-* that `if` statement is known as a "guard clause"
-  * it guards against bad values entering your algorithm
-  * also known as "asserting your arguments" or "design by contract"
-* validation is one of the most valuable features of object-oriented programming
-  * it lets you *write less code* in other methods, confident that you don't have to check for bad data or boundary conditions
+* The `if` statement is called a "guard clause"
+  * It guards against bad values entering your object
+* Validation is a valuable feature of object-oriented programming
+  * Be confident that you don't have to check for bad data or boundary conditions
 
 # Factory Town
 
