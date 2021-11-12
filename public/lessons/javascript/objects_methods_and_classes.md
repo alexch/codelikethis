@@ -200,16 +200,16 @@ Use it like this:
 let circle = Circle.fromDiameter(4)
 ```
 
-> Note that (lowercase "c") `circle.fromDiameter()` does **not** work. **Static methods are attached to classes**, not instances.
+> Note that lowercase "c", `circle.fromDiameter()`, does **not** work. **Static methods are attached to classes**, not instances.
 
 # Lab: Cake factory
 
 Create a class definition, or factory function that generates different `Cake` objects that can have different flavors, icings, and decorations, with a method to print a description of the cake to the console.
 
-  - Set up a `Cake` class definition with a constructor or factory function
-    * It should take three arguments: flavor, icing, and decoration
-    * There should be a method that uses those properties to print a description of the cake
+* Set up a `Cake` class definition with a constructor
+  * It should take three arguments: flavor, icing, and decoration
+  * There should be a method that uses those properties to print a description of the cake
 
-  * Given this code: 'let myCake = new Cake(chocolate, caramel, sprinkles)`
-  * When calling `myCake.describe()`
-  * Then you should get "It is a chocolate cake, with caramel frosting, and sprinkles" printed to the console.
+* Given this code: 'let myCake = new Cake(chocolate, caramel, sprinkles)`
+  * When you call `myCake.describe()`
+  * Then you should see "It is a chocolate cake, with caramel frosting, and sprinkles" printed to the console.
