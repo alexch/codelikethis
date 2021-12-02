@@ -171,13 +171,12 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 
 ![Flexbox Align Self Property](https://cdn-images-1.medium.com/max/1000/1*HIADl1oL6pxXb2dMh_pXSQ.gif "Self aligning with Flexbox")
 
-# Flexi-grid
+# FlexBox Grid
 
-**Q**: What do you get when you put a Flexbox inside a Flexbox?
+> **Question:** What do you get when you put a Flexbox inside a Flexbox?
+> A FlexBox grid!
 
-**A**: A grid! (But not CSS Grid)
-
-[flex-grid](./flex-grid.html)
+[A Simple FlexBox Grid](./flex-grid.html)
 
 ```html
 <div class='two-columns'>
@@ -206,6 +205,15 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 }
 </style>
 ```
+
+# FlexBox Grid CodePen
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/burlingtoncodeacademy/embed/vYeOjdz?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/burlingtoncodeacademy/pen/vYeOjdz">
+  Untitled</a> by Burlington Code Academy (<a href="https://codepen.io/burlingtoncodeacademy">@burlingtoncodeacademy</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
 
 # Flexbox Lab
 
