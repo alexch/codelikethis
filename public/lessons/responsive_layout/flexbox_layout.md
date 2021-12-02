@@ -118,7 +118,7 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 }
 ```
 
-![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox")
+![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1600/1*4yKnG2-vuPF5XA-BmXADLQ.gif "Flex direction with Flexbox")
 
 > NOTE: if you want your items to be columns, use `flex-direction: row` in the container, and if you want rows, use `flex-direction: column` in the container
 
@@ -207,8 +207,26 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 </style>
 ```
 
+# Flexbox Lab
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Flexbox-dispay-LAB-JSAH-Summer-2021" src="https://codepen.io/burlingtoncodeacademy/embed/NWaqYmE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/burlingtoncodeacademy/pen/NWaqYmE">
+  Flexbox-dispay-LAB-JSAH-Summer-2021</a> by Burlington Code Academy (<a href="https://codepen.io/burlingtoncodeacademy">@burlingtoncodeacademy</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+# Flexbox Playground
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Flexbox playground" src="https://codepen.io/burlingtoncodeacademy/full/wvKRojY" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/burlingtoncodeacademy/pen/wvKRojY">
+  Flexbox playground</a> by Burlington Code Academy (<a href="https://codepen.io/burlingtoncodeacademy">@burlingtoncodeacademy</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+> View this playground in CodePen: https://codepen.io/burlingtoncodeacademy/pen/wvKRojY
+
 # Let's Play a Game
 
-Flexbox Froggy is a great way to practice using flexbox to lay elements out on a page
+Flexbox Froggy is a great way to practice using CSS Flexbox to lay elements out on a page
 
 Click [here](https://flexboxfroggy.com/) and try to complete all 24 levels.
