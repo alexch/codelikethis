@@ -15,9 +15,11 @@
 
 "DOM Scripting" means using JavaScript to manipulate the DOM (page elements and contents) inside a web page, either during page load, or in response to user events, like clicking a button or selecting text.
 
-# scripts as attributes
+# Scripts as attributes
 
 This is the simplest way to execute JavaScript inside a Web page.
+
+> This is NOT the best way to execute JavaScript.
 
 ```html
 <button name="button" onclick="alert('Abracadabra!')">
@@ -31,7 +33,7 @@ Try it out here: <button name="button" onclick="alert('Abracadabra!')">Magic</bu
 
 (We will discuss several other ways to attach event handlers later in this lesson.)
 
-# the script tag (no src)
+# A Script Tag
 
 Without a `src` attribute, it defines a script and *immediately executes* its code:
 
@@ -42,7 +44,7 @@ Without a `src` attribute, it defines a script and *immediately executes* its co
 </script>
 ```
 
-# the script tag (src)
+# A Script Tag with src
 
 With a `src` attribute, it *loads code from a separate file*, and and *immediately executes* it:
 
@@ -56,7 +58,7 @@ The `script` tag may appear in the `head` or in the `body`. Scripts are executed
 
 > HINT: to be sure that your code executes after the page has been fully loaded, put your `<script>` tags at the *bottom* of the `<body>` section.
 
-# `document`
+# The `document`
 
 In a DOM script, the current page is always available via the *global variable* named `document`.
 
@@ -64,11 +66,11 @@ In addition to providing many useful *functions*, it also provides some *propert
 
 |Property|Description|
 |---|---|
-| `document.URL` | the URL of the current page, in the form of a string. |
-| `document.location` | the URL of the current page, in the form of a Location object. |
-| `document.location = 'http://example.com'` | causes the browser to visit that web page.|
-| `document.title` | the *title* of the document, which appears inside windows and tabs.|
-| `document.title = 'the joy of cooking'` | immediately changes the *title* of the document. Some apps use this to display, e.g., a count of unread messages, which the user can then see without switching tabs.|
+| `document.URL` | URL of the current page, as a string |
+| `document.location` | URL of the current page, as a Location object |
+| `document.location = 'http://example.com'` | Navigate to a web page|
+| `document.title` | The *title* of the document, as seen on tabs|
+| `document.title = 'the joy of cooking'` | Updates the *title* of the document|
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Document>
 
@@ -119,27 +121,6 @@ There is also a property called `innerText` but it's confusing and implemented d
   (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-# Nodes vs Elements
-
-In the DOM, the term "node" means *almost any* item that you can find in the document tree.
-
-When you're hunting for a function or property, sometimes it's on Node, and sometimes it's on Element. Make sure to check *both* of these documentation pages:
-
-  * <https://developer.mozilla.org/en-US/docs/Web/API/Node>
-  * <https://developer.mozilla.org/en-US/docs/Web/API/Element>
-
-For instance, `attributes` is a property of Element, but `childNodes` is a property of Node.
-
-# Other Node Types
-
-An element is a particular type of node, and it's the most common, but beware, these are also nodes...
-
-* Document, Element, Text, Comment, CDATASection, ProcessingInstruction, DocumentFragment, DocumentType, Notation, Entity, EntityReference
-
-...and all of them have their own properties that are *not* part of the basic Node set.
-
-> Also, this sense of "node" is **completely different** from the "node" in NodeJS. :-(
-
 # Finding many elements
 
 In addition to getting a *single* element by its `id` or a CSS selector, you can also ask the document to give *all* elements that match a certain criterion.
@@ -164,7 +145,7 @@ let elements = document.querySelectorAll('h2.preview > p')
 
 These return *collection* objects, so you must write more code to get the actual element objects, or to check the collection's length.
 
-# Events as functions
+# Event Handler Functions
 
 In JavaScript, *event handlers* are *callback functions*.
 
@@ -181,10 +162,13 @@ let button = document.getElementById('magic');
 2) Attach the callback, like this:
 
 ```js
+// plain function definition
+button.addEventListener('click', function magicWord() { alert('Abracadabra!') });
+// anonymous arrow function
 button.addEventListener('click', () => { alert('Abracadabra!') });
 ```
 
-> NOTE: using the "fat arrow" for event handlers is a **very good idea** since fat arrows will restore the `this` variable to point to the same object as when the listener was added.
+> NOTE: using the "fat arrow" for event handlers is a **good idea** since fat arrows will restore the `this` variable to point to the same object as when the listener was added.
 
 <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
 
@@ -252,9 +236,9 @@ abraButton.addEventListener('click', sayMagicWord)
 
 # Event Bubbling & Capture
 
-- Events are created by their elements
+- Events are created by their elements!!!
 - After creation they move up the chain by default
-- This behavior can be changed by using `cancel` on the listener
+- This behavior can be changed by using `event.stopPropagation()` in the listener
 
 ```html
 <div onclick="alert('outer div')">OUTER DIV
@@ -264,9 +248,9 @@ abraButton.addEventListener('click', sayMagicWord)
 </div>
 ```
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="bubble-events" src="//codepen.io/Dangeranger/embed/GbjpbP/?height=265&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/Dangeranger/pen/GbjpbP/'>bubble-events</a> by Joshua Burke
-  (<a href='https://codepen.io/Dangeranger'>@Dangeranger</a>) on <a href='https://codepen.io'>CodePen</a>.
+<iframe height="265" style="width: 100%;" scrolling="no" title="bubble-events" src="https://codepen.io/burlingtoncodeacademy/embed/ZEXWrNK?default-tab=html%2Cresult" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/ZEXWrNK'>bubble-events</a>  by Burlington Code Academy
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 # Event Diagram
