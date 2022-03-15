@@ -1,80 +1,48 @@
 # What is an Operator?
 
-A character or group of characters that represent an action to be taken on one or more values
+An OPERATOR is a SYMBOL that represent an OPERATION to be taken on one or more VALUES
+
+Operators can be represented by one or more characters.
+
+> e.g. `+`, `-`, `*`, `||`, `&&`
 
 ---
 
 # Types of Operators
 
-* Unary Operators
+- Unary Operators
+  - **One operator with one value**
 
-  * `+`
+- Binary Operators
+  - **One operator with two values**
+  - Arithmetic Operators
+  - Logical Operators
+  - Comparison Operators
+  - Assignment Operators
 
-  * `delete`
-
-  * `typeof`
-
-  * `void`
-
-  * Increment `++`
-
-  * Decrement `--`
-
-* Binary Operators
-
-  * Arithmetic Operators
-
-  * Logical Operators
-
-  * Comparison Operators
-
-  * Assignment Operators
-
-* Trinary Operators
-
-  * The Ternary Operator
+- Trinary Operators
+  - **One operator with three values**
+  - The Ternary Operator
 
 ---
 
 # The Unary `+`
 
-The `+` operator can be used on an operand to convert that operand into a number.
+The `+` operator can be used on a single value to convert that value into a number.
 
 ```js
-+"33"     // => 33
-+"0"      // => 0
-+""       // => 0
-+" "      // => 0
-+"cheese" // => NaN
-```
-
----
-
-# Delete
-
-The `delete` operator removes the property passed as an operand
-
-However `delete` cannot be used to completely remove objects
-
-```js
-let somePerson = { name: 'John', age: 42 };
-let people = ['peter', 'paul', 'mary'];
-
-delete somePerson 
-// returns false, somePerson still exists
-
-delete somePerson.name
-// delete the property `name` on the object `somePerson`
-
-delete arrayName[2]
-// delete the element 'mary' at index two of the array `people`
++'33'     // => 33
++'0'      // => 0
++''       // => 0
++' '      // => 0
++'cheese' // => NaN
 ```
 
 ---
 
 # typeof
 
-The keyword `typeof` is a unary operator that returns the type of the operand it's called on as a string.
+`typeof` is a unary operator that returns the **type** of the operand
 
 ```js
 typeof function() {...}   // => 'function'
@@ -87,31 +55,12 @@ typeof null               // => 'object'
 
 ---
 
-# Void
+# Increment and Decrement
 
-The `void` keyword takes an expression as an operand and causes it to return `undefined` rather than the normal return value of the expression.
+Increment and decrement change their variable operand.
 
-```js
-1 + 1           // => 2
-void (1 + 1)    // => undefined
-sayHello()      // => "Hello, world!"
-void sayHello() // => undefined
-
-function sayHello() { 
-  return "Hello, world!";
-}
-
-```
-
----
-
-# Increment & Decrement
-
-Increment and decrement are special since they change their variable operand. Because they only accept one operand, they are by definition unary operators.
-
-* `++` increments the **variable** to the left by one
-
-* `--` decrements the **variable** to the left by one
+- `++` increment the **variable** by one
+- `--` decrement the **variable** by one
 
 ```js
 let myNumber = 3;
@@ -122,31 +71,27 @@ console.log(myNumber); // => 4
 myNumber--
 console.log(myNumber); // => 3
 
-"cheese"++ // => NaN
+"cheese"++             // => NaN
 ```
-> NOTE: increment and decrement only work on numbers
+
+> NOTE: Increment and decrement only work on variables which have a Number value.
 
 ---
 
 # Arithmetic Operators
 
-Takes two numbers and performs an operation on them
+Accept two number values and perform an operation on them.
 
-Returns a **new** number as a result
+Returns a **NEW** number as a result.
 
-* `+` addition
+- `+` Addition
+- `-` Subtraction
+- `*` Multiplication
+- `/` Division
+- `%` Modulus
+- `**` Exponent
 
-* `-` subtraction
-
-* `*` multiplication
-
-* `/` division
-
-* `%` modulus
-
-* `**` exponent
-
-```javascript
+```js
 2 + 1  // => 3
 2 - 1  // => 1
 2 * 2  // => 4
@@ -159,43 +104,31 @@ Returns a **new** number as a result
 
 # Lab: Arithmetic
 
-In the terminal go into a node environment, and try to figure out the answers to the following questions using arithmetic operators
+Open a terminal and start `node`, or create a new JavaScript file.
 
-  * Does JavaScript follow order of operations when parsing equations?
+Determine answers to the following questions using arithmetic operators.
 
-  * What happens when you try to add a string number (e.g. `"12"`) to an actual number?
-
-  * What happens when you try and subtract a string number from an actual number?
-
-  * What happens when you perform arithmetic operations on strings?
-
-    * addition?
-
-    * subtraction?
-
-    * multiplication?
-
-    * division?
-
-  * Can you perform operations on `NaN`?
-
-  * Assign a variable `x` to a numerical value
-
-    * perform an operation on `x`, what is the return value? What is the value of x?
+- Does JavaScript follow order of operations when parsing equations?
+- What happens when you try to add a string number (e.g. `"12"`) to a number?
+- What happens when you try and subtract a string number from a  number?
+- What happens when you perform arithmetic operations on strings?
+  - Addition?
+  - Subtraction?
+  - Multiplication?
+  - Division?
+- Can you perform operations on `NaN`?
 
 ---
 
 # Logical Operators
 
-Evaluates two values or expressions and returns a boolean
+Evaluate two expressions and return a boolean
 
-* `&&` **and**; evaluates true if BOTH sides are truthy
+- `&&` **and**; returns `true` if BOTH sides are considered truthy
+- `||` **or**; returns `true` if EITHER side is considered truthy
+- `!` **not**; inverts the result of the preceding expression
 
-* `||` **or**; evaluates true if EITHER side is truthy
-
-* `!` **not**; inverts the truthyness/falsyness of the preceding value or expression
-
-```javascript
+```js
 'dog' && 'cat'     // => 'cat'
 null && 'cat'      // => false
 'dog' || 'cat'     // => 'dog'
@@ -208,17 +141,14 @@ undefined || 'cat' // => 'cat'
 
 # Comparison Operators
 
-Compares two values and returns a boolean
+Compare two values and returns a boolean
 
-* `>` greater than
+- `>` greater than
+- `<` less than
+- `>=` greater than or equal to
+- `<=` less than or equal to
 
-* `<` less than
-
-* `>=` greater than or equal to
-
-* `<=` less than or equal to
-
-```javascript
+```js
 5 > 3 // => true
 5 < 3 // => false
 5 >= 3 // => true
@@ -229,15 +159,12 @@ Compares two values and returns a boolean
 
 # Equality Operators
 
-* `==` equal to
+- `==` equal to
+- `===` identical
+- `!=` not equal
+- `!==` not identical
 
-* `===` identity
-
-* `!=` not equal
-
-* `!==` REALLY not equal
-
-```javascript
+```js
 5 == '5'        // => true
 true == '1'     // => true
 
@@ -250,13 +177,13 @@ true === '1'    // => false
 
 ---
 
-# Equals vs Identity
+# Equals vs. Identity
 
 There is a difference between the double equals `==` and triple equals `===`.
 
-The double equals will try and **coerce** the operands so that are comparable. 
+The double equals will try and **coerce** the operands so that are comparable.
 
-The triple equals will only perform a comparison on the values as they are.  
+The triple equals will only perform a comparison on the values as they are.
 
 When comparing two values you should **always** use the triple equals.
 
@@ -266,62 +193,51 @@ When comparing two values you should **always** use the triple equals.
 
 Open up a node environment in your terminal, and let's play around with some comparison operators.
 
-* What happens when you compare two strings with greater than `>`?
-
-  * Did it give you the value you expected?
-
-  * What do you think it's using to compare the two?
-
-* What's the difference between the double equals `==` and triple equals `===`?
-
-* Are two empty arrays equal to each other? How about two arrays with identical content?
+- What happens when you compare two strings with greater than `>`?
+  - Did it result in the value you expected?
+  - How are they being compared?
+- Find a difference between the double equals `==` and triple equals `===`
 
 ---
 
 # Assignment Operators
 
-Modifies an existing  value by some amount.
+Modify an existing value by some other value.
 
-* `=` sets the variable on the left equal to the value on the right
+- `=` sets the variable on the left equal to the value on the right
+- `+=` adds the value to the right to the variable on the left
+- `-=` subtracts the value to the right from the variable on the left
 
-* `+=` adds the value to the right to the variable on the left
-
-* `-=` subtracts the value to the right from the variable on the left
-
-```javascript
+```js
 let x = 7
 let y = 3
 
-1 += 2 // => 3
-x = y  // x => 3
-x += y // x => 10
-x -= y // x => 4
+x += 1 // x => 8
+y += 3 // y => 6
+
+x += y // x => 14
+y -= x // x => -8
 ```
 
 ---
 
-# Lab: Assignments
-Let's take a few minutes to play around with assignment operators, so go ahead open up a node environment in your terminal, and let's figure some things out.
+# Lab: Assignment
 
-* assign a variable `x` using the `let` keyword to a numerical value.
+Open a terminal and start `node`, or create a new JavaScript file.
 
-* assign a variable `y` using the `const` keyword to a numerical value.
-
-* add a value to x using the `+=` operator. What's the value of `x`?
-
-* add a value to y using the `+=` operator. Did you get the value you expected?
-
-* create a variable named `string` that is a string.
-
-  * add a value to `string` using `+=`, what is the value of `string`?
-
-  * What is the value of `string` if you use `-=` instead?
+- Assign a variable `x` using the `let` keyword to a numerical value.
+- Assign a variable `y` using the `const` keyword to a numerical value.
+- Add a value to x using the `+=` operator. What's the value of `x`?
+- Add a value to y using the `+=` operator. Did you get the value you expected?
+- Create a variable named `string` that is a string.
+  - Add a value to `string` using `+=`, what is the value of `string`?
+  - What is the value of `string` if you use `-=` instead?
 
 ---
 
 # The Ternary Operator
 
-The ternary operator, also called the conditional operator, is the only trinary operator in JavaScript, and is a way of handeling control flow.
+The **ternary** operator is the only **trinary** operator in JavaScript
 
 ```js
 expression ? valueOne : valueTwo 
@@ -335,10 +251,3 @@ let isAllowed = true;
 return isAllowed ? 'You are allowed' : 'You are denied';
 // => 'You are allowed'
 ```
-
----
-
-# Documentation
-[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Unary)
-
----
