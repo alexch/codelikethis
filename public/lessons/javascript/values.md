@@ -65,6 +65,8 @@ The second number is which character to end on.
 
 [MDN: slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 
+---
+
 # String Indexing
 
 Indexes are the positions of characters within a String.

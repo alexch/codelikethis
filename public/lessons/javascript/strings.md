@@ -6,27 +6,41 @@
 
 # String Literals
 
-* The word **literal** means "exactly as written" 
-* A **string literal** is a string, whose characters are written out explicitly in your code
-* JavaScript string literals are **surrounded** with either single quotes (`'`) or double quotes (`"`)
-  * *but not both in the same string!*
+- The word **LITERAL** means "exactly as written"
+- A **String literal** is a string, whose characters are written out explicitly in your code
+- JavaScript string literals are **surrounded** with either single quotes (`'`) or double quotes (`"`)
 
 ```js
 'My dog has fleas'
-"Vermonters have a hundred words for 'snow'"
+"Vermont has a hundred words for 'snow'"
 ```
 
 ---
 
-# String Escaping
+# Escaping Strings
 
-* Some characters cannot be typed literally, so you need to use an **escape character** to represent it
-* Backslash (<kbd>\\</kbd>) is the *escape character* in JavaScript strings
-* Backslash means "the next character means something special"
-  * For instance backslash-n (`\n`) means "newline"
+- Some characters cannot be typed **literally**, you need to use an **escape character** to represent it
+- Backslash (<kbd>\\</kbd>) is the *escape character* in JavaScript strings
+- A backslash means **the next character means something special**
+  - For instance backslash-n (`\n`) means **newline**
 
 ```js
 console.log('Roses are red,\nViolets are blue;\nCandy is sweet,\nAnd so are you.')
+```
+
+---
+
+# Lab: String Formatting
+
+How could you format the following string to print in the format below?
+
+`'Roses are red, Violets are blue; Candy is sweet, And so are you.'`
+
+```txt
+'Roses are red,
+  Violets are blue;
+    Candy is sweet,
+      And so are you.'
 ```
 
 ---
@@ -35,33 +49,25 @@ console.log('Roses are red,\nViolets are blue;\nCandy is sweet,\nAnd so are you.
 
 A string understands lots of **messages**.
 
-Here are a few:
+Here are some of them.
 
 ```js
 'drive' + 'way'
 'Java' + "Script"
-"Bert's pal Ernie" + ' sings "Rubber Duckie"'
-
 'banana'.length
-
 'titanic'.toUpperCase()
 'QUIETLY'.toLowerCase()
-
 'Hello'.concat(', world!')
 'All dogs are good dogs'.replaceAll('dogs', 'puppers')
-
 'Java'.repeat(10)
-
 'berry'.charAt(0)
 'berry'.charAt(1)
-
 'banana'.includes('nan')
 'banana'.endsWith('ana')
-
 'blueberry'.replace('blue', 'black')
 ```
 
-Try all of these out in an interactive `node` shell or a JavaScript file in your editor.
+Try them out in an interactive `node` shell, or a JavaScript file in an editor.
 
 Check out [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) docs for more.
 
@@ -69,23 +75,23 @@ Check out [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 
 # Lab: Combining Concepts
 
-Let's try chaining a few of these methods together.
+Practice combining operators and methods.
 
-Given the following String
+Given the following String, can you send messages to it to match the formatting below?
 
 ```js
 'this is a fantastic string'
 ```
 
-Can you send messages to it to print the following?
-
-```
+```txt
 THIS
 IS
 A
 FANTASTIC
 STRING
 ```
+
+> Remember the messages you saw in the prior slide.
 
 <details>
 <summary>Hint 1</summary>
@@ -123,87 +129,102 @@ The newline character can be used to create line breaks.
 
 ---
 
-# Slicing and Dicing
+# String Slicing
 
-Every string is made of lots of other strings.
-
-You can pull out parts of a string with the `slice` message.
+You can extract sub-parts of a string using `slice`
 
 ```js
-// this means "slice from character 0 to character 4"
-'blueberry'.slice(0, 4) 
+// "slice from character 0 to character 4"
+"blueberry".slice(0, 4) 
 
-// this means "slice from character 4 to the end
-'blueberry'.slice(4)
+// "slice from character 4 to the end
+"blueberry".slice(4)
 ```
 
-> These start and end numbers are called *indexes*, or *indices* if you're feeling fancy.
+The first number is which character to start from.
+
+The second number is which character to end on.
 
 [MDN: slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 
 ---
 
-# String Indexing Explained
+# String Indexing
 
-Humans like to start counting at 1, but computers like to start counting at 0.
+Indexes are the positions of characters within a String.
 
-This can be confusing, so here's a visualization to help explain it.
+```txt
+| B | L | U | E | B | E | R | R | Y |
+0   1   2   3   4   5   6   7   8   9
+```
 
-Think of the indexes as pointing at the *spaces between* characters, as in this diagram:
-
-    | B | L | U | E | B | E | R | R | Y |
-    0   1   2   3   4   5   6   7   8   9
-     
-So with this picture in your mind, `slice`...
+Then `'blueberry'.slice(0, 4)`
   
-   * includes the character to the *right* of the start index
-   * includes the character to the *left* of the end index...
-   * ...but *excludes* the character to the *right* of the end index
+- Includes the characters to the **right** of the start index
+- Includes the characters to the **left** of the end index
+- And **excludes** the character to the **right** of the end index
 
-Try various start and end values in the console and see what happens!
+---
+
+# Lab: Breaking Up Strings
+
+Use the **Starting String** below, some operators, and multiple uses of `.slice()` to create the **Target Final String**.
+
+Starting String
+
+```js
+'strawberry banana milk shake'
+```
+
+Target Final String
+
+```js
+'blueberry shake'
+```
+
+> Hint: You can create variables using `let` to store sub-strings.
 
 ---
 
 # Characters
 
-Q: A string is "a series of characters"... but what is a character?
+A string is composed of a sequence of characters.
 
-A: A character is a *number* (or *character code*) that stands for a *symbol*.
+A character is a Number, or **character code**, that stands for a **symbol**.
 
-|symbol|code|name|
-|---|---|---|
-| `A` | 65 | capital A |
-| `B` | 66 | capital B |
-| `Z` | 90 | capital Z |
-| `_` | 95 | underscore |
-| `a` | 97 | lowercase A |
-| ??? | 10 | newline |
+|symbol|code |name         |
+|------|-----|-------------|
+| `A`  | 65  | capital A   |
+| `B`  | 66  | capital B   |
+| `Z`  | 90  | capital Z   |
+| `_`  | 95  | underscore  |
+| `a`  | 97  | lowercase A |
+| ???  | 10  | newline     |
 
-(Some characters stand for *unprintable* symbols like `newline` or `tab` or `bell`.)
+> Some characters stand for symbols like `newline` or `tab`
 
 ---
 
-# ASCII and Ye Shall Receive
+# ASCII Characters
 
-* ASCII: American Standard Code for Information Interchange
-* Was invented in 1963, in the United States...
+- ASCII: American Standard Code for Information Interchange
+- Invented in 1963 in the United States
 
 ![ASCII Table](/images/ASCII-Table-wide.svg)
 
-<small>(image from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg))</small>
+> Credit [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg))
 
 ---
 
-# Unicode
+# Unicode Characters
 
-* ASCII only goes from 0 to 127
-* Unicode is the same as ASCII for values from 0 and 127
-    * but Unicode goes a *lot* higher
-* Currently more than 130,000 characters, including symbols for
-  * 139 modern and historic scripts
-  * accents and other diacritics
-  * various mathematical ∞, currency £, and cultural ☮ symbols
-  * [emoji](https://en.wikipedia.org/wiki/Emoji) 😂
+- ASCII only goes from 0 to 127
+- Unicode is the same as ASCII for values from 0 and 127
+- Currently more than 130,000 characters, including symbols for
+  - 139 modern and historic scripts
+  - Accents and other diacritics
+  - Various mathematical ∞, currency £, and cultural ☮ symbols
+  - Also, [emoji](https://en.wikipedia.org/wiki/Emoji) 😂😂😂😂
 
 ---
   
@@ -216,17 +237,17 @@ JavaScript strings are Unicode
 Like the following:
 
 ```js
-'😂'.repeat(20)
-> '😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂'
+'😂'.repeat(10)
+// '😂😂😂😂😂😂😂😂😂😂'
 
 '😂'.codePointAt(0)
-> 128514
+// 128514
 
 String.fromCodePoint(128514)
-> '😂'
+// '😂'
 ```
 
- * Sadly, this *may* not work by default in Windows Cmd or PowerShell
+> This **may** not work by default in Windows Cmd or PowerShell
 
 ---
 
@@ -241,40 +262,46 @@ false
 true
 ```
 
-> Strings are compared *one character at a time* using the *Unicode values* of each character.
+> Strings are compared **one character at a time** using the **Unicode values** of each character.
 
 ---
 
-# Comparing Strings: Example
+# Lab: Apple vs. Apricot
 
-So if you say `'apple' < 'apricot'`, JavaScript does something like this behind the scenes:
+Which of these Strings is considered greater than the other?
 
 ```js
-> 'apple'.charCodeAt(0)
-97
-> 'apricot'.charCodeAt(0)
-97
-
-> 'apple'.charCodeAt(1)
-112
-> 'apricot'.charCodeAt(1)
-112
-
-> 'apple'.charCodeAt(2)
-112
-> 'apricot'.charCodeAt(2)
-114
+'apple' > 'apricot'
 ```
 
-In the above, 112 is less than 114, so the comparison stops there and returns `true`.
+> Think through this comparison first, then check it in JavaScript.
 
 ---
 
-# String Comparison Gotcha
+# Comparing Strings: Explanation
 
-In ASCII and Unicode, all the uppercase letters are together (codes 65 to 90), then all lowercase letters (codes 97 to 122).
+When comparing`'apple' > 'apricot'`, JavaScript does this behind the scenes:
 
-> That means that **all** uppercase strings are less than **all** lowercase strings.
+```js
+'apple'.charCodeAt(0) > 'apricot'.charCodeAt(0);
+// value: 97
+
+'apple'.charCodeAt(1) > 'apricot'.charCodeAt(1);
+// value: 112
+
+'apple'.charCodeAt(2) > 'apricot'.charCodeAt(2);
+// value: 114
+```
+
+> In the above, 112 is less than 114, so the comparison stops there and returns `false`.
+
+---
+
+# Comparing Strings: Cont
+
+In both ASCII and Unicode, uppercase characters (codes 65 to 90) and lowercase letters (codes 97 to 122) are different.
+
+> That means that **all** uppercase strings are considered less than **all** lowercase strings.
 
 ```js
 > 'apple' < 'banana'
@@ -282,15 +309,3 @@ true
 > 'apple' < 'BANANA'
 false
 ```
-
-The standard left-to-right code-to-code comparison algorithm is simplistic but very fast.
-
-It works fine for many applications, but if you're dealing with user input or multiple languages...
-
----
-
-# More Practice: Strings
-
-* [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
-    - Start with the challenge [Declare String Variables](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables)
-    - Continue until completing the challenge [Word Blanks](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/word-blanks)
