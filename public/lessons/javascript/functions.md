@@ -17,7 +17,7 @@ A **FUNCTION** is a **NAME** for a piece of code
 
 ```js
 function greetByName(someName) {
-  return "Hello there! It's nice to meet you " + someName + ".";
+  return 'Hello there! It is nice to meet you ' + someName + '.';
 }
 ```
 
@@ -27,10 +27,10 @@ function greetByName(someName) {
 
 Here are some reasons why this is useful:
 
-* Use code from several places in a file
-* Perform the same procedure on different input values
-* Organize your code into different 'modules' of functionality
-* Limit visibility and access of variables, or values
+- Use code from several places in a file
+- Perform the same procedure on different input values
+- Organize your code into different 'modules' of functionality
+- Limit visibility and access of variables, or values
 
 # Function example
 
@@ -43,11 +43,11 @@ function add(firstNum, secondNum) {
 }
 ```
 
-* `function` means, define a function
-* `add` is the **name** of the function
-* `firstNum, secondNum` are the **parameters** to the function, also called **arguments**
-* `sum` is a **local variable** of the function
-* `sum` is also the **return value** of the function
+- `function` means, define a function
+- `add` is the **name** of the function
+- `firstNum, secondNum` are the **parameters** to the function, also called **arguments**
+- `sum` is a **local variable** of the function
+- `sum` is also the **return value** of the function
 
 # Calling a Function
 
@@ -71,8 +71,8 @@ A number is **divisible** by another if when you divide them, the **remainder** 
 
 Write a function called `divisible` that:
 
-* Accepts two numbers as parameters
-* Returns `true` if the first number is divisible by the second number, and `false` otherwise
+- Accepts two numbers as parameters
+- Returns `true` if the first number is divisible by the second number, and `false` otherwise
 
 ```js
 function divisible(firstNum, secondNum) {
@@ -151,9 +151,9 @@ shouter('i like pizza');
 
 Write a function called `capitalize` that:
 
-* Accepts a one word string as a parameter.
-* Returns a new **Capitalized** version of a word.
-* Remember to only uppercase the first letter of the word.
+- Accepts a one word string as a parameter.
+- Returns a new **Capitalized** version of a word.
+- Remember to only uppercase the first letter of the word.
 
 ```js
 function capitalize(someWord) {
@@ -234,17 +234,17 @@ let result = shouter(nameToShout);
 
 | Outside              | Inside              | Value               |
 |----------------------|---------------------|---------------------|
-| `nameToShout`        | `someString`        | `"Grace Hopper"`    |
-|                      | `loudString`        | `"GRACE HOPPER"`    |
-| `result`             |                     | `"GRACE HOPPER!!!"` |
+| `nameToShout`        | `someString`        | `'Grace Hopper'`    |
+|                      | `loudString`        | `'GRACE HOPPER'`    |
+| `result`             |                     | `'GRACE HOPPER!!!'` |
 
 # Lab: Age Calculator
 
 Write a function named `ageInSeconds` that:
 
-* Accepts a person's age in years
-* Multiplies the age in years by the number of **seconds** in a year
-* `return`s the person's age in **seconds**
+- Accepts a person's age in years
+- Multiplies the age in years by the number of **seconds** in a year
+- `return`s the person's age in **seconds**
 
 ```js
 let age = 27;
@@ -261,9 +261,9 @@ ageInSeconds(age);
 
 Now write a reverse function that:
 
-* Accepts a number of **seconds** as a **parameter**
-* Divides the age in **seconds** by the number of seconds in a **year**
-* `return`s the age in years, or fractions of a year
+- Accepts a number of **seconds** as a **parameter**
+- Divides the age in **seconds** by the number of seconds in a **year**
+- `return`s the age in years, or fractions of a year
 
 ```javascript
 let ageInSeconds = 852055200;
@@ -306,17 +306,16 @@ Here's one solution for the ageInSeconds calculator:
 
 Write a function named `supplyCalc` that:
 
-* Accepts three arguments, a starting age, an amount per day, and an item name
-* Calculates the amount of items used over the rest of your life
-  * Based on a 100 year max age
-* `return`s 'You will need **Number** **Item**s to last the rest of your life.' e.g.
+- Accepts three arguments, a starting age, an amount per day, and an item name
+- Calculates the amount of items used over the rest of your life, based on a 100 year max age
+- `return`s 'You will need **Number** **Item**s to last the rest of your life.' e.g.
 
 ```js
-supplyCalc(20, 3, "cookie") 
+supplyCalc(20, 3, 'cookie') 
 // 'You will need 87600 cookies to last the rest of your life'
-supplyCalc(99, 3, "cakes")
+supplyCalc(99, 3, 'cakes')
 // 'You will need 1095 cakes to last the rest of your life'
-supplyCalc(0, 3, "pies")
+supplyCalc(0, 3, 'pies')
 // 'You will need 109500 pies to last the rest of your life'
 ```
 
@@ -351,11 +350,11 @@ Use the number of cookies per year, and number of years of life, to calculate th
 
 <pre><code class="language-javascript">
 function supplyCalc(age, amountPerDay, item) {
-  let amountPerYear = amountPerDay * 365
-  let numberOfYears = 100 - age
-  let totalNeeded = amountPerYear * numberOfYears
+  let amountPerYear = amountPerDay *365;
+  let numberOfYears = 100 - age;
+  let totalNeeded = amountPerYear* numberOfYears;
 
-  let message = "You will need" + totalNeeded + " " + item + "s to last the rest of your life"
+  return 'You will need' + totalNeeded + ' ' + item + 's to last the rest of your life';
 }
 <code></pre>
 </details>
@@ -364,10 +363,10 @@ function supplyCalc(age, amountPerDay, item) {
 
 Write a function named `titleize` that:
 
-* Accepts a string as an argument
-* Splits apart the words in the string
-* Capitalizes each word
-* `return`s a string with the first letter of each word capitalized e.g.
+- Accepts a string as an argument
+- Splits apart the words in the string
+- Capitalizes each word
+- `return`s a string with the first letter of each word capitalized e.g.
 
 ```js
 titleize('all dogs are good dogs');
@@ -400,7 +399,7 @@ function capitalize(word) {
 Split the words in the string into an Array of items
 
 <pre><code class="language-javascript">
-let wordArray = string.split(" ")
+let wordArray = string.split(' ');
 <code></pre>
 </details>
 
@@ -417,15 +416,15 @@ function capitalize(word) {
 }
 
 function titleize(string) {
-  let wordArray = string.split(" ");
+  let wordArray = string.split(' ');
 
-  let newString = "";
+  let newString = '';
   let wordsModified = 0;
 
   while (wordsModified < wordArray.length) {
     let currentWord = wordArray[wordsModified];
     let newWord = capitalize(currentWord);
-    newString = newString + " " + newWord;
+    newString = newString + ' ' + newWord;
     wordsModified = wordsModified + 1;
   }
 
@@ -436,8 +435,8 @@ function titleize(string) {
 
 # More About Functions
 
-* [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
-    - start with the challenge [Write Reusable JavaScript with Functions](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions)
-    - continue through the challenge [Assignment with a Returned Value](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/assignment-with-a-returned-value)
+- [FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures)
+  - start with the challenge [Write Reusable JavaScript with Functions](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions)
+  - continue through the challenge [Assignment with a Returned Value](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/assignment-with-a-returned-value)
 
-* Read [Eloquent JavaScript chapter 3](http://eloquentjavascript.net/03_functions.html)
+- Read [Eloquent JavaScript chapter 3](http://eloquentjavascript.net/03_functions.html)
