@@ -5,9 +5,9 @@
 
 # Variables
 
-* A **VARIABLE** is a **NAME** for a **VALUE**.
-* You give a value a name using the **assignment** operator `=`
-* Anywhere you use a value, you can use a variable instead.
+- A **VARIABLE** is a **NAME** for a **VALUE**.
+- You give a value a name using the **assignment** operator `=`
+- Anywhere you use a value, you can use a variable instead.
 
 ```js
 let color = "blue"
@@ -18,9 +18,9 @@ fruit.toUpperCase() // "BERRY"
 
 # Let vs Var vs Cont
 
-* `let`  declares a variable in JavaScript
-* `const` declares a variable that cannot be reassigned
-* `var` is like `let` but is no longer recommended
+- `let`  declares a variable in JavaScript
+- `const` declares a variable that cannot be reassigned
+- `var` is like `let` but is no longer recommended
 
 # Rebinding Let
 
@@ -42,9 +42,9 @@ Think of memory as a giant warehouse. Computer memory is vast and filled with bo
 
 If memory is a giant warehouse...
 
-* Memory locations are **boxes** in that warehouse
-* Then a **value** is the **contents** of a box
-* And a **variable** is a **label** you apply to the outside of the box
+- Memory locations are **boxes** in that warehouse
+- Then a **value** is the **contents** of a box
+- And a **variable** is a **label** you apply to the outside of the box
 
 # Variables as Documentation
 
@@ -67,13 +67,13 @@ Let's spend a few minutes just playing around with variables in the JavaScript c
 
 Some things to try:
 
-* Assign your birth year to a variable, then calculate your current age in years
-* Write a poem (with at least two lines) and assign it to a variable
-* Print the poem to the console *with proper line formatting*
-* Assign your best friend's name to a variable
-* YELL YOUR BEST FRIEND'S NAME
-* Get a new best friend
-* And YELL THEIR NAME TOO
+- Assign your birth year to a variable, then calculate your current age in years
+- Write a poem (with at least two lines) and assign it to a variable
+- Print the poem to the console *with proper line formatting*
+- Assign your best friend's name to a variable
+- YELL YOUR BEST FRIEND'S NAME
+- Get a new best friend
+- And YELL THEIR NAME TOO
 
 # Variables Point at Values
 
@@ -89,8 +89,8 @@ Think of a variable as an arrow **pointing** to a value.
 
 You can assign and reassign variables at will
 
-* Reassignment changes the name of an object. It does *not* change the data inside the object
-* This is analogous to removing a label from one box and placing it on a different box
+- Reassignment changes the name of an object. It does *not* change the data inside the object
+- This is analogous to removing a label from one box and placing it on a different box
 
 ```js
 let color = "blue" // assign 'blue' to color
@@ -141,25 +141,24 @@ This is true for all primitive values.
 
 # Constants: Variables that Aren't Variable
 
-* `const` is just like `let`, but also *prevents reassignment*
-* The value of a `const` is *constant* after it's been set once
+- `const` is just like `let`, but also *prevents reassignment*
+- The value of a `const` is *constant* after it's been set once
 
-```javascript
+```js
 const pi = 3.14159;
 ```
 
-```javascript
+```js
 pi = 7;
 TypeError: Assignment to constant variable.
 ```
 
-> WARNING: `const` prevents *reassignment* but does not prevent changing the *insides* of objects (like the dates in the previous slide).
+> While`const` prevents **reassignment**, it does not prevent changing the **properties** within **objects**
 
 # Summary: Variables
 
-* variables are names for memory locations, which hold values
-* *declaring* a variable says what its *scope* is
-* *assigning* a variable changes which location it points to
-* you can have many names for the same location
-* sometimes values can change on the inside of a location
-  * (which is useful but could cause bugs)
+- variables are names for memory locations, which hold values
+- *declaring* a variable says what its *scope* is
+- *assigning* a variable changes which location it points to
+- you can have many names for the same location
+- sometimes values can change on the inside of a location
