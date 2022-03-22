@@ -13,42 +13,49 @@
 
 # Functions
 
-Remember that a **variable** is a **name** for a piece of data
+A **FUNCTION** is a **NAME** for a piece of code
 
-A **function** is the **name** for a piece of code
+```js
+function greetByName(someName) {
+  return "Hello there! It's nice to meet you " + someName + ".";
+}
+```
 
-## Why would you want to name a chunk of code?
+> This is similar to how a **variable** is a **name** for a piece of data
 
-Perhaps...
+# Why Name a Piece of Code?
 
-* you have some code you want to run again and again
-* you want to do the same operation on different values
-* you want to keep your code organized
+Here are some reasons why this is useful:
+
+* Use code from several places in a file
+* Perform the same procedure on different input values
+* Organize your code into different 'modules' of functionality
+* Limit visibility and access of variables, or values
 
 # Function example
 
 Here's an example function:
 
 ```js
-function add(x, y) {
-  let sum = x + y;
+function add(firstNum, secondNum) {
+  let sum = firstNum + secondNum;
   return sum;
 }
 ```
 
-* `function` means "define a function"
-* `add` is the *name* of the function
-* `x, y` are the *parameters* of the function (also called *arguments*)
-* `sum` is a *local variable* of the function
-* `sum` is also the function's *return value* because of the magic word *return*
+* `function` means, define a function
+* `add` is the **name** of the function
+* `firstNum, secondNum` are the **parameters** to the function, also called **arguments**
+* `sum` is a **local variable** of the function
+* `sum` is also the **return value** of the function
 
-# Calling a Function by Name
+# Calling a Function
 
-You call a function by its name, plus parentheses:
+You call a function by referencing the name followed by parentheses:
 
 ```js
-function add(x, y) {
-  let sum = x + y;
+function add(firstNum, secondNum) {
+  let sum = firstNum + secondNum;
   return sum;
 }
 
@@ -56,18 +63,29 @@ add(2, 3)   // returns 5
 add(12, 30) // returns 42
 ```
 
+> This is also known as **executing** the function.
+
 # Lab: One Nation, Divisible
 
-One number is *divisible* by another if you divide them and the *remainder* is 0.
+A number is **divisible** by another if when you divide them, the **remainder** is `0`.
 
-Write a function called `divisible` that takes two numbers, and returns `true` if the first number is divisible by the second number, and `false` otherwise.
+Write a function called `divisible` that:
+
+* Accepts two numbers as parameters
+* Returns `true` if the first number is divisible by the second number, and `false` otherwise
 
 ```js
-divisible(100, 10)   //=> true
-divisible(100, 7)    //=> false
-divisible(3333, 11)  //=> true
-divisible(99, 12)    //=> false
+function divisible(firstNum, secondNum) {
+  // write your code here
+}
+
+divisible(100, 10)  // true
+divisible(100, 7)   // false
+divisible(3333, 11) // true
+divisible(99, 12)   // false
 ```
+
+> If you write the solution in a file, use `console.log(divisible(100, 7))` to print the `return` value.
 
 # Divisible solution
 
@@ -75,7 +93,7 @@ divisible(99, 12)    //=> false
 <summary>Hint 1</summary>
 <div>
 
-The modulus operator `%` returns either an integer or zero.  Integers are truthy, while 0 is falsey
+The modulus operator `%` returns either an integer or zero.  Integers are truthy, while 0 is falsy.
 
 </div>
 </details>
@@ -115,7 +133,7 @@ The modulus operator `%` returns either an integer or zero.  Integers are truthy
 
 # Shouter
 
-Here is a function that takes some String as input, and as output returns a shouted version of that String.
+Here is a function that takes a String as input, and it `return`s a shouted version of that String.
 
 ```js
 function shouter(someString) {
@@ -123,28 +141,32 @@ function shouter(someString) {
   return loudString + '!!!';
 }
 
-shouter('i like pizza');  => 'I LIKE PIZZA!!!'
+shouter('i like pizza');
+// 'I LIKE PIZZA!!!'
 ```
 
-The variable `loudString` is called a **local variable** and can only be used **inside** the function.
+> The variable `loudString` is called a **local variable** and can only be used **inside** the function.
 
 # Lab: Capitalize
 
-Please write a function that returns a **Capitalized** version of a word.
-Only uppercase the first letter of the word.
+Write a function called `capitalize` that:
 
-For example:
+* Accepts a one word string as a parameter.
+* Returns a new **Capitalized** version of a word.
+* Remember to only uppercase the first letter of the word.
 
-`capitalize('tomato')` returns `'Tomato'`
+```js
+function capitalize(someWord) {
+  // your code here
+}
 
-A solution is on the next slide, but try to solve it on your own.
-Remember that there are many [string operations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2) available to you...
+capitalize('tomato')
+// 'Tomato'
+```
+
+> Remember there are many [string operations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods)
 
 # Capitalize Lab Solution
-
-[Useful String Methods](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods#Strings_as_objects)
-
-[String Manipulation](https://www.digitalocean.com/community/tutorials/how-to-index-split-and-manipulate-strings-in-javascript#accessing-characters)
 
 <details>
   <summary>Hint One</summary>
@@ -182,103 +204,88 @@ Try using the method <a href="https://developer.mozilla.org/en-US/docs/Web/JavaS
   <div>
   The variables `firstLetter` and `restOfWord` are called *local variables* and can only be used *inside* the `capitalize` function.
   </div>
-
-
 </details>
 
-# Passing Variables to Functions
+# Passing Variables as Parameters
 
-When you pass a *variable* to a function, that variable's *value* is assigned to a *parameter*.
-
-> The variable and parameter names **do not** need to match!
+When you pass a **variable** to a function, that variable **value** is assigned to a **parameter**.
 
 ```js
+let nameToShout = 'Grace Hopper';
+
+shouter(nameToShout);
+// 'GRACE HOPPER!!!'
+```
+
+> The variable name and parameter name **DO NOT** need to match
+
+# Shouter Function Explanation
+
+```js
+let nameToShout = 'Grace Hopper';
+
 function shouter(someString) {
   let loudString = someString.toUpperCase();
   return loudString + '!!!';
 }
 
-let feeling = "I feel great";
-let strongFeeling = shouter(feeling);
+let result = shouter(nameToShout);
 ```
 
-
-| Outside the function | Inside the function | Value               |
+| Outside              | Inside              | Value               |
 |----------------------|---------------------|---------------------|
-| `feeling`            | `someString`        | `"I feel great"`    |
-|                      | `loudString`        | `"I FEEL GREAT"`    |
-| `strongFeeling`      |                     | `"I FEEL GREAT!!!"` |
-
-# Four Function Syntaxes
-
-> **WARNING**: JavaScript has many ways to define a function.
-
-[Function declaration syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
-
-```js
-function add(x,y) { return x + y; }
-```
-
-The following are all roughly equivalent to the above:
-
-[Function Expression](https://developer.mozilla.org/en-US/docs/web/JavaScript/Reference/Operators/function)
-
-```js
-let add = function(x,y) { return x + y; };
-```
-
-[Arrow Function Expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-
-```js
-let add = (x,y) => { return x + y; };
-```
-
-[Arrow Function Expression with implicit return value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#Function_body)
-
-```js
-let add = (x,y) => x + y;
-```
-
-* Note that these new forms are *anonymous*, meaning there is **no name** between `function` and `(x,y)`
-    * the name of the function **is** the name of the variable that points to it
+| `nameToShout`        | `someString`        | `"Grace Hopper"`    |
+|                      | `loudString`        | `"GRACE HOPPER"`    |
+| `result`             |                     | `"GRACE HOPPER!!!"` |
 
 # Lab: Age Calculator
 
-Write a function that calculates the number of seconds old you are when given your age
+Write a function named `ageInSeconds` that:
 
-```javascript
-let age = 27
+* Accepts a person's age in years
+* Multiplies the age in years by the number of **seconds** in a year
+* `return`s the person's age in **seconds**
 
-function ageCalc (num) {
-  //Your code goes here
+```js
+let age = 27;
+
+function ageInSeconds(num) {
+  // your code here
 }
 
-ageCalc(age) // should print "You are 852055200 seconds old." to the console
+ageInSeconds(age);
+// 'You are 852055200 seconds old'
 ```
 
-How could we use ARGV to make this more modular?
+# Age Function Reverse
 
-# Flip it around!
+Now write a reverse function that:
 
-Can you write the inverse function; one that takes a number of seconds and tells you the exact age?
-
-You can get the current date by calling `Date.now()` which will give you a time in milliseconds, and the date you were born by creating a new `Date` object. You can then figure out the time that's elapsed in milliseconds by subtracting the date you were born from the current date
+* Accepts a number of **seconds** as a **parameter**
+* Divides the age in **seconds** by the number of seconds in a **year**
+* `return`s the age in years, or fractions of a year
 
 ```javascript
-  let date = new Date(1992, 05, 12, 3, 14) //new Date(year, month, day, hour, minute)
-  let ageInMilliSec = Date.now() - date
+let ageInSeconds = 852055200;
+
+function ageInYears(seconds) {
+  // your code here
+}
+
+ageInYears(ageInSeconds);
+// 'You are 27 years old'
 ```
 
 # Solution
 
-Here's one solution for the age calculator:
+Here's one solution for the ageInSeconds calculator:
 
 <details>
 <summary>Answer</summary>
   <pre><code class="language-javascript">
   let age = 27
 
-  function ageCalc(num) {
+  function ageInSeconds(num) {
     let secondsInMin = 60
     let minInHour = 60
     let hrInDay = 24
@@ -291,33 +298,29 @@ Here's one solution for the age calculator:
     return ageInSec
   }
 
-  console.log(ageCalc(age))
+  console.log(ageInSeconds(age))
   <code></pre>
-<div>
-
-
-
-To flip it you could simply divide the `num` variable by `secInYr` rather than multiplying to get years in a number of seconds.
-
-</div>
 </details>
 
 # Lab: Supply Calculator
 
-Write a function that:
+Write a function named `supplyCalc` that:
 
-* accepts three arguments, a starting age, an amount per day, and an item name
-* calculates the amount of items used over the course of the rest of your life
-  * based on a 100 year constant max age
-* Outputs "You will need **Number** **Item**s to last the rest of your life." e.g.
+* Accepts three arguments, a starting age, an amount per day, and an item name
+* Calculates the amount of items used over the rest of your life
+  * Based on a 100 year max age
+* `return`s 'You will need **Number** **Item**s to last the rest of your life.' e.g.
 
 ```js
-supplyCal(20, 3, "cookie") // => "You will need 87600 cookies to last the rest of your life"
-supplyCal(99, 3, "cookie") // => "You will need 1095 cookies to last the rest of your life"
-supplyCal(0, 3, "cookie") // => "You will need 109500 cookies to last the rest of your life"
+supplyCalc(20, 3, "cookie") 
+// 'You will need 87600 cookies to last the rest of your life'
+supplyCalc(99, 3, "cakes")
+// 'You will need 1095 cakes to last the rest of your life'
+supplyCalc(0, 3, "pies")
+// 'You will need 109500 pies to last the rest of your life'
 ```
 
-> Supply Calculator inspired by the Lifetime Supply Calculator lab designed for the Girl Develope It! curriculum. The original can be found [here](https://www.teaching-materials.org/javascript/exercises/functions)
+> Inspired by the Lifetime Supply Calculator lab designed for the Girl Develope It! curriculum. The original can be found [here](https://www.teaching-materials.org/javascript/exercises/functions)
 
 # Supply Calculator Solution
 
@@ -359,20 +362,23 @@ function supplyCalc(age, amountPerDay, item) {
 
 # Lab: Titleize
 
-Write a function that:
+Write a function named `titleize` that:
 
-* accepts a string as an argument
-* splits apart the words in the string
-* capitalizes each word
-* returns a string with the first letter of each word capitalized e.g.
+* Accepts a string as an argument
+* Splits apart the words in the string
+* Capitalizes each word
+* `return`s a string with the first letter of each word capitalized e.g.
 
 ```js
-titilize("all dogs are good dogs") // => "All Dogs Are Good Dogs"
-titilize("eveRY green bus drives fAst") // => "Every Green Bus Drives Fast"
-titilize("FRIDAY IS THE LONGEST DAY") // => "Friday Is The Longest Day"
+titleize('all dogs are good dogs');
+// 'All Dogs Are Good Dogs'
+titleize('eveRY green bus drives fAst');
+// 'Every Green Bus Drives Fast'
+titleize('FRIDAY IS THE LONGEST DAY');
+// 'Friday Is The Longest Day'
 ```
 
-# Titilize solution
+# Titleize solution
 
 <details>
 <summary>Hint 1</summary>
@@ -410,7 +416,7 @@ function capitalize(word) {
   return firstLetter + restOfWord;
 }
 
-function titilize(string) {
+function titleize(string) {
   let wordArray = string.split(" ");
 
   let newString = "";
