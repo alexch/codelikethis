@@ -7,59 +7,54 @@
 
 # Loops
 
-Computers are like robots. They are good at doing things over and over and over and over again.
+Computers are good at doing things over and over again.
 
-A LOOP is when we ask a program to do something many times.
+A **LOOP** is when a program does something repeatedly, until some **CONDITION** is met.
 
-# while
+# While Loop
 
-The simplest loop in JavaScript is a `while` loop.
+The simplest kind of loop is the `while` loop.
+
+The loop below counts from one to five, followed by `Ha ha ha!` each time.
 
 ```js
-while (someCondition) {
-  // this code runs once per loop cycle
-  doSomeAction()
+let count = 1;
+while (count <= 5) {
+  // the code below runs once per loop cycle
+  console.log('' + count + ', Ha ha ha!');
+  count = count + 1;
 }
 ```
 
-In English this reads, "While some condition is true, do some action".
+> In English this reads, "While some condition is true, do some action".
 
-# while true
+# While True
 
-To loop forever, set the condition to `true`:
+To loop forever, set the **CONDITION** to `true`:
 
 ```js
 while (true) {
-  // this will loop forever
-  // because `true` never changes
-  console.log("Hello");
+  // will loop forever
+  // because true is always true
+  console.log('Hello');
 }
 ```
 
-This means "While `true` is `true`, say 'Hello'".
-
-`true` will always be true, so it loops forever.
-
-To stop the loop, hold down the CONTROL key and press the C key, <kbd>CRTL</kbd>+<kbd>C</kbd>.
-
-This is called an *infinite loop*.
+> To stop the loop, hold down the CONTROL+C keys, <kbd>CRTL</kbd>+<kbd>C</kbd>.
 
 # One Infinite Loop
 
 ![One Infinite Loop](https://res.cloudinary.com/btvca/image/upload/v1574445194/curriculum/one-infinite-loop_eful1h.jpg)
 
-*Fun Fact:* The address of Apple Headquarters is
-
-    1 Infinite Loop
-    Cupertino, CA 95014
+> Fun Fact: The address of Apple Headquarters is 1 Infinite Loop
 
 *Wikimedia Commons, image licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Joe Ravi*
 
 # Counting Forever
 
-Let's write a program that counts forever. 
+Write the following code in a file called, `count.js`.
 
-Put this in a file called `count.js`.
+Then run the program using `node count.js`.
 
 ```js
 let count = 1;
@@ -69,13 +64,11 @@ while (true) {
 }
 ```
 
-Run the program with `node count.js`.
-
-> Remember to <kbd>CRTL</kbd>+<kbd>C</kbd> to stop the program
+> Remember: <kbd>CRTL</kbd>+<kbd>C</kbd> will stop the program
 
 # LAB: Count to One Hundred
 
-Next, change your `count.js` program so that it count 1 to 100.
+Update `count.js` so that it counts from 1 to 100, **inclusive**.
 
 ```js
 let count = 1;
@@ -97,7 +90,7 @@ Remember, a while loop only runs while the check evaluates true
 <pre>
 <code class="language-javascript">
 while(/*this expression is true...*/) {
-    // ...do this action
+  // execute this code
 }
 </code>
 </pre>
@@ -118,73 +111,87 @@ while (count <= 100) {
 </pre>
 </details>
 
-Did your program stop at 100, 101, or 99?
+> Did your program stop at 100, 101, or 99?
 
-# While Loops
+# While Loops Breakdown
 
-* The `while` statement keeps checking the test expression
+* A `while` statement checks the **condition** every cycle
+  * **IF** *condition* evaluates to `true`, **THEN** then loop again
+  * **IF** *condition* evaluates to `false`, **THEN** stop looping and proceed to the code after the loop
 
-  * if it's `true` then it loops back
-  * if it's `false` then it stops looping and goes on to the rest of the program
+```js
+let count = 1;
+while (count <= 100) {
+  console.log(count);
+  count = count + 1;
+}
+```
 
-This is fairly complicated, so let's stop here and make sure to understand everything that's happening in this little program.
+# While Breakdown
 
-# While breakdown (pt.1)
+1. Create a **variable** named `count` and set the value to `1`
+2. Begin loop if `count` is less than `100`
+3. `1` is less than `100`, so run the **body** of the loop
+4. Repeat, starting from the **condition** at top of the loop
 
-    let count = 1
+```js
+let count = 1;
+while (count <= 100) {
+  console.log(count);
+  count = count + 1;
+}
+```
 
-creates a *variable* named `count` and sets its value to `1`.
+# While Breakdown Cont
 
-    while (count <= 100)
+* Step 1
 
-starts a loop and immediately compares `count` to `100`.
+```js
+let count = 1
+```
 
-`1` is less than `100`, so the expression is `true`, so we continue with the block of code starting with the `{`.
+* Step 2
 
-# While breakdown (pt.2)
+```js
+while (count <= 100) { ... }
+```
 
-      console.log(count);
+* Step 3
 
-prints the current value of count.
+```js
+console.log(count);
+count = count + 1;
+```
 
-      count = count + 1
+* Step 4
 
-*increments* the `count` variable... it was `1`, so now it's `2`
-
-    }
-
-goes *back to the `while` line* and checks again
-
-# While breakdown (pt.3)
-
-    while (count <= 100)
-
-compares `count` to `100`.
-
-`2` is less than `100`, so the expression is `true`, so we continue with the loop.
-
-Eventually, `count` becomes `101`, and the `while` expression is `false`, and so we stop looping and go on.
+```js
+while (count <= 100) { ... }
+```
 
 # Break in a While Loop
 
-The magic word `break` stops looping immediately.
+If the program encounters the keyword `break` the loops stops.
 
-Here is another way to count to 100, but this time using `break`:
+Alternative code counting from 1 to 100 using `break` is below
 
 ```js
 let count = 0;
 while (true) {
+  if (count > 100) {
+    break;
+  }
+
   console.log(count);
   count = count + 1;
-  if (count > 100) {
-      break;
-  }
 }
 ```
 
 # For Loops
 
-The `while` loop is simple, but there is another loop called a `for` loop that combines multiple operations within the `for` statement.
+A `while` loop is simple, but requires a **variable** in the **condition** or the `break` keyword.
+
+There is another kind of loop called a `for` loop.
 
 ```js
 for (let count = 1; count <= 100; count++) {
@@ -192,115 +199,67 @@ for (let count = 1; count <= 100; count++) {
 }
 ```
 
+# For Loop Breakdown
 
-# For Loops with Arrays
-
-A `for` loop is often seen paired with an indexed data structure known as an Array
-
-```js
-let poemLines = [
-  'Roses are red', 
-  'Violets are blue', 
-  'Honey is sweet',
-  'And so are you'
-];
-
-for (let line = 0; line < poemLines.length; line++) {
-  console.log(poemLines[line]);
-}
-```
-
-[JavaScript.info Guide for Arrays](https://javascript.info/array)
-
-[MDN Guide for Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections)
-
-
-# For Loop Breakdown (pt.1)
-
-We are using the for loop to get each item in the Array collection `poemLines`
-
-```
-let poemLines = [
-  'Roses are red', 
-  'Violets are blue', 
-  'Honey is sweet',
-  'And so are you'
-];
-```
-
-# For Loop Breakdown (pt.2)
-
-The `for (...) ` part of a `for` loop is where the loop:
+The `for (...)` part of a `for` loop is where the loop:
 
 1. Initializes a variable to track
-2. Determines whether to run again
-3. Changes the variable after the loop runs.
+2. Checks whether to run again
+3. Updates the variable after the loop body runs.
 
 ```js
-for (let line = 0; line < poemLines.length; line++)
+for (let count = 1; count <= 100; count++) {...}
 ```
 
-# For Loop Breakdown (pt.3)
+# For Loop Breakdown Cont
 
 Think about the three parts as three separate lines of code.
 
-1. Initialize a variable to track
+1. `let count = 0;` <- Initialize a variable to track
 
-```js
-let line = 0;
-```
+2. `count <= 100;` <- Determine whether to run again
 
-2. Determine whether to run again
+3. `line++;` <- Update the variable after the loop body runs
 
-```js
-line < poemLines.length;
-```
-
-3. Change the variable after the loop runs
-
-```js
-line++;
-```
-
-# For Loop Breakdown (pt.4)
+# For Loop Body
 
 The `body` of the loop is the code that runs on each time through the loop
 
 ```js
-for (let line = 0; line < poemLines.length; line++) 
-/* everything inside the curly braces is the body */
-{
+for (let count = 0; count <= 100; count++) {
   // this code will run each time we loop
-  // since `index` changes each time,
-  // a different poem line is printed each cycle
-  console.log(poemLines[line]);
+  // since `count` changes each time,
+  // a different number printed each cycle
+  console.log(count);
 }
 ```
 
+> Everything inside the curly braces is the body
+
 # LAB: One Potato
 
-Now let's apply what we have learned about `while` and `for` loops to print a poem in JavaScript.
+Apply what you learned about `while` and `for` loops to print a poem.
 
-Remember this poem?
+Create a file called `potato.js` that prints the following when executed by `node`.
 
-    1 potato,
-    2 potato,
-    3 potato,
-    4!
-    5 potato,
-    6 potato,
-    7 potato,
-    More!
+```js
+1 potato,
+2 potato,
+3 potato,
+4!
+5 potato,
+6 potato,
+7 potato,
+More!
+```
 
-Please write a program called `potato.js` that prints that poem, using loops.
-
-(No, you can't just print the entire poem as a single string; that would be cheating.)
+> Make sure to use a `while` or `for` loop in your solution
 
 # Counting Potatoes Solution (pt.1)
 
-Let's separate the solution into two parts.
+Separate the solution into two parts.
 
-Create a function `poemLine` does only one thing; create the correct string for a given line number.
+Create a function `poemLine` does only one thing; create the correct output for a given line number.
 
 <details>
 <summary>
