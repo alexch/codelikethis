@@ -1,169 +1,109 @@
-    video youtube_id: 'DKGZlaPlVLY'
     topic name: "input-output"
-    topic name: "node"
-    topic name: "terminal"
     topic name: "functions"
-    topic name: "methods"
-    topic name: "es6"
-    topic name: "variables"
+    topic name: "promise"
+    topic name: "async-await"
     topic name: "values"
     topic name: "callbacks"
-    topic name: "command-line"
-    topic name: "strings"
-    project name: "guess"
     link name: "Mozilla Developer Network: Callbacks",
          href: "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
-    link name: "Wikipedia: Callbacks",
-         href: "https://en.wikipedia.org/wiki/Callback_(computer_programming)#JavaScript"
     link name: "Mozilla Developer Network: Async Functions",
          href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
     link name: "Mozilla Developer Network: Await async functions",
          href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await"
-    link name: "Kyle Simpson: Input & Output",
-         href: "https://frontendmasters.com/courses/javascript-basics/input-output/"
-    link name: "You Don't Know JS: Input & Output",
-         href: "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#output"
 
 # Input and Output
 
-* Computers have many senses -- keyboard, mouse, network card, camera, joystick, etc. Collectively, these are called **INPUT**.
-
-* Computers can also express themselves in many ways -- text, graphics, sound, networking, printing, etc. Collectively, these are called **OUTPUT**.
-
-* Input and Output together are called **I/O**.
-
-* the only part of your laptop that is *really* a computer is the CPU and the RAM; all the other parts (keyboard, trackpad, display, disk drive, etc.) are technically I/O devices 
+* Computers can receive data from a keyboard, mouse, camera, microphone, etc.
+  * These are called **INPUT**s
+* Computers can also emit data like; text, graphics, sound, printing, etc.
+  * These are called **OUTPUT**s
 
 # Memory vs I/O
 
-* Performing *calculations* and accessing *memory* is **very fast**
-* Reading *Input* and writing *Output*  is **slow**
-  * I/O operations can take many *milliseconds*
-  * CPU operations take *nanoseconds*, 1000x faster
-* Every time you ask JavaScript to do an I/O operation, it *pauses your program*
-  * This allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed or a file to be written
-* Node.js uses a *function* to run once the program *resumes*
-  * This is called an *asynchronous callback*
-  * *asynchronous* is Greek for "out of time" or "not together in time"
-
-# The Readline Library
-
-* Node.js is more than just a *JavaScript interpreter*
-* It is also a collection of *JavaScript libraries*
-* One of the libraries is called `readline`
-  * Readline makes it easier to read lines of input from a human, or a program
+* Performing **calculations** and using **memory** is **fast**
+* Reading **Input** and writing **Output**  is **slow**
+  * CPU operations = **nanoseconds**, 1/1,000,000,000 second
+  * I/O operations = **milliseconds** to **seconds**
+* During an I/O operation, the program is paused, or waits.
+  * CPU does other things during that time.
 
 # Using Readline
 
-To use `readline`, add the following lines at the top of a JavaScript file
+`readline` is a **library**, which is code you can **use**, but someone else **wrote**
 
-```javascript
+Use Readline like the following example:
+
+```js
+// include the library
 const readline = require('readline');
-const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+// create an "interface", using STDIN and STDOUT
+const readlineInterface = readline.createInterface(
+  process.stdin, 
+  process.stdout
+);
 
+// create a function called "ask" that
+// OUTPUTs a question, and waits for INPUT
 function ask(questionText) {
+  // use a "Promise", which stands in for a future answer
   return new Promise((resolve, reject) => {
     readlineInterface.question(questionText, resolve);
   });
 }
 ```
 
-# Using Readline Step-by-Step
+# Echo Input with Readline
 
-| code                                                        | explanation                                                                                                                             |
-|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| `const readline = require('readline');`                     | load the `readline` package and name it `readline`                                                                                      |
-| `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings:                                                                         |
-| `  process.stdin,`                                | for input, use the *standard input stream* (i.e. terminal keyboard input)                                                               |
-| `  process.stdout`                               | for output, use the *standard output stream* (i.e. terminal console output)                                                             |
-| `function ask(questionText) {...}`                          | a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) to asynchronously ask a question and wait for a reply |
-
-(We will cover the Promise API in much more detail later; for now, all you really need to know is that Promises allow us to use `async` and `await` in the next slide.)
-
-# Echoing with Readline
-
-```javascript
-const readline = require("readline");
-const readlineInterface = readline.createInterface(
-  process.stdin,
-  process.stdout
-);
-
-function ask(questionText) {
-  return new Promise((resolve, reject) => {
-    readlineInterface.question(questionText, resolve);
-  });
-}
-
+```js
+// make sure readline the code from the prior slide
+// is included at the top of your file
 async function echo() {
   console.log("Starting program...");
-  let message = await ask("Say something awesome, and I will repeat it!\n> ");
+  let message = await ask("Say something, and I will echo!\n> ");
   console.log("You wrote:\n" + "=> " + message);
   console.log("Program complete...");
   process.exit();
 }
-
+// call the "echo" function
 echo();
 ```
 
 # LAB: Echo
 
-The code on the previous slide will take in user input, and echo it back to the console. Let's try it out!
+Create a new file called `echo.js`
 
-  * Create a new file called `echo.js`
-  * Type the code from the previous slide into that file
-  * Run the file in the terminal with the command `node echo.js`
+* Include the `readline` library, `readlineInterface`, and `ask` function
+* Add the code from the previous slide into the file
+* Run `echo.js` using `node`, type an INPUT, and then press the `[ENTER]` key
 
-# LAB: Using Readline Many Times
+# Async and Await
 
-Code along time! Please follow along with the instructor and enter this code into a file named `quest.js`:
+A **PROMISE** is something that stands in for a finished result, while a task is still processing.
 
-> Run it from the command line using `node quest.js`
+An example would be a **ticket** or **receipt** used to redeem an order from a food-truck.
 
-```javascript
-const readline = require('readline');
-const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+> Promises can be `await`ed, within a function marked as `async`.
 
-function ask(questionText) {
-  return new Promise((resolve, reject) => {
-    readlineInterface.question(questionText, resolve);
-  });
-}
+1. `await` means "wait for the following to finish"
+2. To use `await` inside a function, you must use mark it as `async`
 
-start();
-
-async function start() {
-  let name = await ask('What is your name? ');
-  let quest = await ask('What is your quest? ');
-  let color = await ask('What is your favorite color? ');
-  console.log('Hello ' + name + '! ' +
-    'Good luck with ' + quest + ', ' +
-    'and here is a ' + color + ' flower for you.');
-  process.exit();
-}
-```
-
-# Async Await
-
-* We will learn more about callbacks, promises, and `async`/`await` later
-* For now, follow these two rules when using `async` and `await`:
-
-  1. `await` means "wait for the following thing to happen"
-  2. when you use `await` inside a function, you must use `async` to define that function
-
-> WARNING: `async` functions don't play nicely with plain `for` loops, but there are other ways to loop that do work well
+> WARNING: `async` functions and `for` loops do not mix well, use `while` instead
 
 # LAB: First and Last Name
 
-* Now it's your turn to write a program from scratch.
-* Write a program named `name.js` that asks two things:
+Now it's your turn to write a program from scratch.
 
-  1. Your first name
-  2. Your last name
+Write a program named `name.js` that asks two things:
 
-* Then it says hello to the user by their *full name*.
+1. Your first name
+2. Your last name
+3. Then it should output the following:
 
-* Run the program by typing `node name.js` on the command line.
+```txt
+'Hello, {firstName} {lastName}!'
+```
+
+> Replace the {firstName} and {lastName} with your INPUT values
 
 # First and Last Name solution
 
@@ -172,7 +112,7 @@ async function start() {
 Hint
 </summary>
 <div>
-You may want to use `readline` and the `ask()` function.
+You will need `readline` and the `ask()` function.
 
 <pre>
 <code class="language-javascript">
@@ -197,15 +137,7 @@ Solution
 
 <pre>
 <code class="language-javascript">
-const readline = require('readline');
-const readlineInterface = readline.createInterface(process.stdin, process.stdout);
-
-function ask(questionText) {
-  return new Promise((resolve, reject) => {
-    readlineInterface.question(questionText, resolve);
-  });
-}
-
+// include 'readline' and the 'ask' functions above
 async function fullName() {
   let firstName = await ask("What is your first name? ")
   let lastName = await ask("What is your last name? ")
@@ -218,29 +150,74 @@ fullName()
 </pre>
 </details>
 
+# LAB: What is your Quest
+
+Create a file named `quest.js`.
+
+Make the program ask three things:
+
+1. "What is your name?"
+2. "What is your quest?"
+3. "What is your favorite color?"
+
+After asking all three questions, the program should answer:
+
+```txt
+'Hello {name}! Good luck with {quest}, and here is a {color} flower for you.'
+```
+
+# Solution: What is your Quest
+
+<details>
+<summary>
+Solution
+</summary>
+
+<pre>
+<code class="language-javascript">
+// include 'readline' and the 'ask' function above
+async function start() {
+  let name = await ask('What is your name? ');
+  let quest = await ask('What is your quest? ');
+  let color = await ask('What is your favorite color? ');
+  console.log('Hello ' + name + '! ' +
+    'Good luck with ' + quest + ', ' +
+    'and here is a ' + color + ' flower for you.');
+  process.exit();
+}
+</code>
+</pre>
+</details>
+
 # LAB: Name Length
 
-* Now create a file `nameLength.js` that calculates length of the user's first and last name combined
-* For instance:
+Create a file `name-length.js` that:
 
-```
+* Calculates length of the first and last name INPUT combined
+* Count only the **non-blank** characters.
+
+Example:
+
+```txt
 What is your first name? Grace
 What is your last name? Hopper
 Hello, Grace Hopper!
 Your name is 11 characters long.
 ```
 
-> NOTE: Remember to count only non-empty characters
+> NOTE: Whitespace, tabs, and new-lines are considered **blank**
 
 # LAB: Length of Each Name
 
-* Now create a file `allNamesLength.js` that asks for all the user's names, prints the length of each *individual* name, and prints the final total for all names.
+Create a file `allNamesLength.js` that:
 
-* Run the program by typing `node allNamesLength.js` on the command line.
+* Asks for a user's first name, middle name, and last name.
+* Then prints the length of each *individual* name
+* And finally prints the total character count for all three names.
 
-For instance:
+Example:
 
-```
+```txt
 What is your first name? Augusta
 What is your middle name? Ada
 What is your last name? King
