@@ -1,138 +1,157 @@
     topic name: "scope"
-    topic name: "global-variables"
-    topic name: "local-variables"
-    topic name: "parameters"
+    topic name: "variables"
     topic name: "functions"
-    topic name: "closure-scope"
-    #todo: make a cleaner protocol than @description=
-    @description = "When can you access a JavaScript variable? It depends on its scope. In this lesson we discuss the various scopes a variable can occupy, including global vs local, functional vs lexical, private vs public."
-    link href: "https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/"
-    link href: "https://scotch.io/tutorials/understanding-scope-in-javascript"
+    topic name: "closures"
+    link href: "https://developer.mozilla.org/en-US/docs/Glossary/Scope"
+    link href: "https://javascript.info/closure"
+    link href: "https://www.digitalocean.com/community/tutorials/understanding-scope-in-javascript"
 
 # Scope
 
-A **SCOPE** is all the variables and functions that are *visible* from a given location in your code
+The **SCOPE** is a context, including all the variables **accessible** from a given code location
 
-There are several kinds of scope including:
+There are different kinds of **SCOPE**:
 
-**Global scope**: variables that can be seen from *anywhere* else in the program
-
-**Local scope**: variables that can only be seen *near* where they are defined, such as inside a *function* or *code block*
-
-**Private scope**: variables that cannot be seen beyond a specific part of your code
-
-> JavaScript does not have *built in* support for marking a variable private, yet
+* **Global**: can be accessed from **anywhere**
+* **Local**: can be accessed **within** where it is defined
+  * Includes **functions**, **loops**, or  **code blocks**
+* **Private**: cannot be accessed beyond a specific place
 
 # Global Scope
 
-If you declare a variable without a keyword like `var`, `let`, or `const` then it is a **global variable** and can be seen and used by *any line of code in your entire program*
+A variable without `var`, `let`, or `const` becomes a **global variable** and can be accessed **anywhere**.
 
-> Global variables can **sometimes** be useful, but are always **dangerous**. 
+```js
+nameToSay = 'Grace'; // global variable
 
-A mistake in *any part* of your program accessing a global variable can introduce a bug in *any other part* of your program referencing that same variable
+function sayName(someName) {
+  let greeting; // local variable
+  greeting = 'Hello, ' + someName + '!';
+  return greeting;
+}
+sayName(nameToSay);
+```
 
-# Scope is a One-Way Mirror
+> Global variables are **dangerous**, minimize their use.
+
+# Scope is One-way
 
 ![An example of a one way mirror metaphor for scope](../../images/one-way-mirror.gif)
 
-> Scope is a one-way mirror, inner scopes can see out, but outer scopes cannot see in. The interrogation room scope, cannot see the detectives in the observation room scope.
+> Scope is like a one-way mirror, inner scopes can see out, but outer scopes cannot see in.
 
-# Block Scope
+# One-way Scope Example
 
-`let` and `const` create a *block*-scoped variable. Any *blocks* of code surrounded by `{` curly braces `}` can have their own set of local `let` or `const` variables of the same name
+Loops, Conditionals, and Functions use **code-blocks** which have their own **SCOPE**
 
-```javascript
-let name = 'Global';
+* Variables defined with `let` or `cont` **CANNOT** be accessed outside a code-block.
+* Code within a code-block **CAN** use variables from outside.
+
+```js
+nameToSay = 'Grace'; // global variable
+
+function sayMaxTimes(maximum) { // code block 1
+  let count = 1;
+  while (count <= maximum) { // code block 2
+    let greeting;
+    greeting = 'Count:' + count + ' Hello, ' + nameToSay + '!';  
+    console.log(greeting);
+    count = count + 1;
+  }
+}
+sayMaxTimes(5);
+```
+
+# Exercise: Guess the Name
+
+* `let` and `const` create variables within a **SCOPE**
+* Code **blocks** code are surrounded by curly braces, e.g. `{...}`
+* Code **blocks** act as a **local** scope
+
+```js
+let name = 'Outside observer';
 {
   let name = 'Mr. Bean';
-    {
-      let name = 'Detective';
-      console.log(name);
-    }
-    console.log(name);
+  {
+    let name = 'Detective';
+    console.log(name); // what value is name?
+  }
+  console.log(name); // what value is name?
 }
-console.log(name);
+console.log(name); // what value is name?
 ```
 
 > If a variable name cannot be found in the *current* scope, then JavaScript looks in the *next outer scope*
 
-# Exercise: Guess the Variable 1
+# Exercise: Guess the Fruit
 
 * Which fruit would be logged below?
 
-```javascript
+```js
 let fruit = 'Apple';
 {
   let fruit = 'Blueberry';
-    {
-      let fruit = 'Cantaloupe';
-    }
-  // What is the value of fruit?
-  console.log(fruit);
+  {
+    let fruit = 'Cantaloupe';
+    console.log(fruit); // what value is fruit?
+  }
+  console.log(fruit); // what value is fruit?
 }
+console.log(fruit); // what value is fruit?
 ```
 
-# Exercise: Guess the Variable 2
+# Exercise: Guess the Value
 
+* Which name would be logged below?
 * Which fruit would be logged below?
+* Which animal would be logged below?
 
-```javascript
-let fruit = 'Apple';
+```js
+let name = 'Ada Lovelace';
 {
-  let fruit = 'Blueberry';
-    {
-      let fruit = 'Cantaloupe';
-      // What is the value of fruit now?
-      console.log(fruit);
-    }
+  let fruit = 'Apple';
+  {
+    let animal = 'Horse';
+    let name = 'Mr. Bean';
+    console.log(fruit); // what is the value?
+  }
+  console.log(animal); // what is the value?
 }
+console.log(name); // what is the value?
 ```
 
-# Exercise: Guess the Variable 3
+# Function Names Global
 
-* Which fruit would be logged below?
+> Unless nested within another function, or code-block, functions are global
 
-```javascript
-let fruit = 'Apple';
-{
-  let fruit = 'Blueberry';
-    {
-      let fruit = 'Cantaloupe';
-    }
-}
-// What is the value of fruit now?
-console.log(fruit);
-```
-
-# Functions names default to Global
-
-> Unless a function definition is nested within another function, or a code block, it is global.
-
-```javascript
-// global "name" variable
+```js
+// global 'name'
 let name = 'Alice';
 
 function sayNames() {
-  // can see variable "name"
+  // can see global variable 'name'
   console.log('Printing first name: ' + name);
   saySecondName();
 }
 
 function saySecondName() {
-  // this "name" is local to the function
+  // function local variable 'name'
   let name = 'Bob';
   console.log('Printing second name: ' + name);
 }
 
 sayNames();
-
-// this will print the global "name"
-console.log(name);
+// 'Printing first name: Alice'
+// 'Printing second name: Bob'
 ```
 
-# Parameters are local to their function
+# Function Parameters Local
 
-```javascript
+The `shout` function has two **local** scope variables
+
+* Both variables `message` and `loudMessage`
+
+```js
 let myOpinion = 'i love cheese';
 
 function shout(message) {
@@ -141,117 +160,55 @@ function shout(message) {
 }
 
 console.log(shout(myOpinion));
+// 'I LOVE CHEESE!!!'
 ```
 
-`shout` function has *two* locally scoped variables:
+# Scope Access Errors
 
-* the local variable `loudMessage`
-* the "parameter" named `message`, also called an "argument"
+Trying to use a variable that is not in scope will result in a `ReferenceError`
 
-# Scope Error
-
-> Trying to use a variable that is out of scope will result in an error
-
-```javascript
+```js
 function doSomething() {
-  let privateVariable = 'you cannot see me';
-  console.log('Inside myPrivateVariable is ' + privateVariable);
+  let localVariable = 'accessible within the function';
+  console.log('Inside: myPrivateVariable is ' + localVariable);
 }
 
-// ReferenceError: privateVariable is not defined
-console.log(privateVariable);
+doSomething();
+// 'Inside: myPrivateVariable is accessible within the function'
+console.log(localVariable);
+// ReferenceError: localVariable is not defined
 ```
 
-# Closure Scope
+# Nested Function Scopes
 
-JavaScript also supports *closure scope*
+For each definition of `function someName() {...}`:
 
-Meaning, variables that are visible where a function is defined are also visible to the new function's body
+1. JavaScript creates a new **scope** for the function
+2. The new scope references the outer scope
+3. This nesting can repeat indefinitely
 
-```javascript
-// Outer function definition
-function singSong() {
-  let numberOfBottles = 99
+# Why Nested Scopes?
 
-  // Inner function definition
-  function chorus() {
-    let message = '' + numberOfBottles
-      + ' bottles of beer on the wall, '
-      + numberOfBottles + ' bottles of beer, '
-      + 'take one down, pass it around, '
-      + (numberOfBottles - 1) + ' bottles of beer on the wall.'
-    return message;
-  }
+`letterCount`, `currentIndex`, and `allWords` are visible inside the **inner** function as well as the **outer** function
 
-  while (numberOfBottles > 0) {
-    console.log(chorus())
-    numberOfBottles -= 1
-  }
-}
-```
+```js
+let phrase = 'all dogs are good dogs'; // global
 
-`chorus` is **enclosed** within `singSong`, so it *inherits* `singSong`'s scope and `numberOfBottles` is visible to **both** `singSong` **and** `chorus`
-
-# Nested Scopes
-
-For each `function someName() {}` that is defined:
-
-1. JavaScript creates a *new scope* for the function
-2. The new scope *points to* the current outer scope
-3. This can repeat, again, and again
-
-# Why Nested Scopes? 1
-
-```javascript
-let phrase = 'all dogs are good dogs';
-
-function countLetters(words) {
+function countLetters(words) { // outer scope
   let allWords = words.split(' ');
   let letterCount = 0;
   let currentIndex = 0;
 
-  function wordCount() {
+  function wordCount() { // inner scope
     while (currentIndex < allWords.length) {
       let currentWord = allWords[currentIndex]
       let wordLength = currentWord.length
       letterCount += wordLength;
-
       currentIndex = currentIndex + 1;
     }
   }
-
-  wordCount()
-
-  return letterCount;
+  wordCount() // function updates letterCount
+  return letterCount; 
 }
-
-countLetters(phrase)
+countLetters(phrase) // calls outer function
 ```
-
-The `letterCount`, `currentIndex`, and `allWords` are visible inside the *inner* function as well as the outer function
-
-# Why Nested Scopes? 2
-
-```javascript
-function wordCount() {
-  while (currentIndex < allWords.length) {
-    let currentWord = allWords[currentIndex]
-    let wordLength = currentWord.length
-    letterCount += wordLength;
-
-    currentIndex = currentIndex + 1;
-  }
-}
-
-function countLetters(words) {
-  let allWords = words.split(' ');
-  let letterCount = 0;
-  let currentIndex = 0;
-
-  wordCount()
-
-  return letterCount;
-}
-```
-
-> NOTE: This fails because `wordCount` is *not* nested inside `countLetters`, and so **cannot** see the variables within the function's scope
