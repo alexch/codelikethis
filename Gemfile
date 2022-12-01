@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "sinatra", "~> 2.0.1"
+gem "sinatra", "~> 3.0.4"
 gem "sinatra-contrib"
 gem "erector", ">=0.9.0"
 gem "thin"
