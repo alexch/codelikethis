@@ -3,16 +3,16 @@
 * Components can be rendered using If/Else or a Ternary
 * State within the Class or Function can be used in the conditions
 
-```javascript
-UserGreeting = (props) => {
+```jsx
+const UserGreeting = (props) => {
   return <h1>Welcome back!</h1>;
 }
 
-GuestGreeting = (props) => {
+const GuestGreeting = (props) => {
   return <h1>Please sign up.</h1>;
 }
 
-Greeting = (props) =>  {
+const Greeting = (props) =>  {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
     return <UserGreeting />;
@@ -25,13 +25,12 @@ ReactDOM.render(
   <Greeting isLoggedIn={false} />,
   document.getElementById('root')
 );
-
 ```
 
 # React Elements as Variables - Components
 
-```javascript
-function LoginButton(props) {
+```jsx
+const LoginButton = (props) => {
   return (
     <button onClick={props.onClick}>
       Login
@@ -39,7 +38,7 @@ function LoginButton(props) {
   );
 }
 
-function LogoutButton(props) {
+const LogoutButton = (props) => {
   return (
     <button onClick={props.onClick}>
       Logout
@@ -50,40 +49,33 @@ function LogoutButton(props) {
 
 # React Elements as Variables - Usage
 
-```javascript
-class LoginControl extends React.Component {
-  constructor (props) {
-    super (props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = { isLoggedIn: false };
-  }
+```jsx
+function LoginControl (props) {
+
+  const [isLoggedIn, setLogIn] = useState(false)
 
   handleLoginClick () {
-    this.setState({ isLoggedIn: true });
+    setLogIn(true);
   }
 
   handleLogoutClick () {
-    this.setState({ isLoggedIn: false });
+    setLogIn(false);
   }
 
-  render () {
-    const isLoggedIn = this.state.isLoggedIn;
-    let button;
+  let button;
 
-    if (isLoggedIn) {
-      button = <LogoutButton onClick={ this.handleLogoutClick } />;
-    } else {
-      button = <LoginButton onClick={ this.handleLoginClick } />
-    }
-
-    return (
-      <div>
-        <Greeting isLoggedIn={ isLoggedIn } />
-        { button }
-      </div>
-    );
+  if (isLoggedIn) {
+    button = <LogoutButton onClick={ this.handleLogoutClick } />;
+  } else {
+    button = <LoginButton onClick={ this.handleLoginClick } />
   }
+
+  return (
+    <div>
+      <Greeting isLoggedIn={ isLoggedIn } />
+      { button }
+    </div>
+  );
 }
 ```
 
@@ -93,8 +85,8 @@ class LoginControl extends React.Component {
 * `truth && expression` is always true and evaluates `expression`
 * `false && expression` is always false and evaluates `false`
 
-```javascript
-function Mailbox(props) {
+```jsx
+const Mailbox = (props) => {
   const unreadMessages = props.unreadMessages;
   return (
     <div>
@@ -126,31 +118,22 @@ ReactDOM.render(
 
 ### Simple
 
-```javascript
-class Greeting extends React.Component {
-  constructor (props) {
-    super (props)
-    this.state = {
-      isLoggedIn: false
-    }
-  }
+```jsx
+function Greeting (props) {
 
-  render() {
-    const isLoggedIn = this.state.isLoggedIn;
+  const isLoggedIn = props.isLoggedIn;
 
-    return (
-      <div>
-        The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
-      </div>
-    );
-  }
+  return (
+    <div>
+      The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    </div>
+  );
 }
 ```
 
 ### Complex
 
-```javascript
-render() {
+```jsx
   const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
@@ -161,13 +144,12 @@ render() {
       )}
     </div>
   );
-}
 ```
 
 # Preventing Component Rendering
 
-```javascript
-function WarningBanner(props) {
+```jsx
+const WarningBanner = (props) => {
   if (!props.warn) {
     return null;
   }
@@ -179,30 +161,38 @@ function WarningBanner(props) {
   );
 }
 
-class Page extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {showWarning: true};
-    this.handleToggleClick = this.handleToggleClick.bind(this);
+function Page (props) {
+
+  const [showWarning, setWarning] = useState(true)
+
+  function handleToggleClick() {
+    if(showWarning) {
+      setWarning(false)
+    } else {
+      setWarning(true)
+    }
   }
 
-  handleToggleClick() {
-    this.setState(prevState => ({
-      showWarning: !prevState.showWarning
-    }));
-  }
-
-  render() {
-    return (
-      <div>
-        <WarningBanner warn={this.state.showWarning} />
-        <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Hide' : 'Show'}
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <WarningBanner warn={showWarning} />
+      <button onClick={handleToggleClick}>
+        {showWarning ? 'Hide' : 'Show'}
+      </button>
+    </div>
+  );
 }
 ```
 
 [Example CodePen](https://codepen.io/Dangeranger/pen/BPvEqv?editors=0010)
+
+# Lab: Modal Display
+
+Let's create a simple modal popup using the power of conditional rendering!  Modal boxes are used all over the web, and are essentially a popup display. You see them quite often with image galleries where you can click a preview thumbnail, and the full size image opens as a popup.
+
+- Create a new react project
+- It should have a button that says "Click me"
+- When this button is pressed a box should open *on top of* the existing page
+- And it should say "Hello! I am a modal!"
+- And have a "close" button
+- When the "close" button is clicked the modal should go away

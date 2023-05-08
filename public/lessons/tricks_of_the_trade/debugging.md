@@ -43,7 +43,7 @@ Debugging is an art, not a science. But its principles are scientific:
 
 # Breathe
 
-* [In through the nose](http://qr.ae/TUp1vd)...
+* In through the nose...
 * Out through the mouth...
 * In through the nose...
 * Ahhhhhhhh.
@@ -106,7 +106,7 @@ This is one reason why *pair programming* is so effective.
 
 If you don't have a pair, try explaining your problem out loud to a pet, or a doll.
 
-![rubber duck](rubber-duck.jpg)
+![rubber duck](/images/rubber-duck.jpg)
 
 # Read the Error
 

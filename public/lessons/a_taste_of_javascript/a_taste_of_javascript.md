@@ -99,7 +99,7 @@ Specifically, *source code* is a series of instructions that tell a computer wha
 
 * a recipe is a collection of *ingredients* and *instructions*
 
-![Grandma's Cookie Recipe](../images/cookie-recipe.gif)
+![Grandma's Cookie Recipe](/images/cookie-recipe.gif)
 
 * a program is a collection of *data* (ingredients) and *code* (instructions)
 
@@ -174,7 +174,7 @@ function clicked() {
 
 Computers used to not have screens! They were connected to devices like this:
 
-![tty](../images/tty.jpg)
+![tty](/images/tty.jpg)
 
 The Terminal app is a direct descendant of a TeleType printer or TTY.
 
@@ -198,7 +198,7 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
 
-![terminal next to browser](../images/terminal-and-browser.png)
+![terminal next to browser](/images/terminal-and-browser.png)
 
 # Lab: Interactive Calculator
 
@@ -216,7 +216,7 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 # Node is a JavaScript Engine
 
-![Diagram: Node Train: Command Line](https://docs.google.com/drawings/d/e/2PACX-1vSKCgLe4wp1JroIot-SsVP-TKqHsySU-06oOGe3zYWBZ4jOc77quoRH2XhyNKBBuLx4IgbLim2NZLqK/pub?w=953&amp;h=522)
+![Diagram: Node Train: Command Line](/images/train.png)
 
 An "engine" is a type of program that either [*executes* or *empowers*](https://en.wikipedia.org/wiki/Software_engine) other programs.
 
@@ -241,10 +241,14 @@ From inside `node`, if you want to get back to the shell...
 
 # Basic Commands (Mac / Unix / Bash)
 
-* `pwd` ("print working dir") -- shows the name of the current directory
-* `ls` ("list") -- shows the contents of the current directory
-* `mkdir` ("make dir") -- creates a new subdirectory inside the current directory
-* `cd` ("change dir") -- move into a different directory
+| Command | Purpose                 | Description                                             |
+| :--     | :--                     | :--                                                     |
+| `pwd`   | Print working directory | shows the name of the current directory                 |
+| `cd`    | Change Directory        | move into a different directory                         |
+| `ls`    | List sub                | shows the contents of the current directory             |
+| `mkdir` | Make directory          | creates a new subdirectory inside the current directory |
+| `touch` | Make a file             | creates an empty file with a name and file type         |
+| `rm`    | Remove a file           | deletes a file from the file system                     |
 
 > Windows shells have slightly different commands; if these commands don't work for you, ask a TA how to use "bash" instead.
 
@@ -292,13 +296,12 @@ Hello, World!
 2. Open this directory in your text editor
 3. Create a file named `hello.js` using the *File > New* menu
 4. Inside this file, put the following source code:
-
-        console.log("Hello, World!");
-
+    - `console.log("Hello, World!");`
 5. Save the file
 6. Switch back to the terminal (using <kbd>Alt</kbd>-<kbd>Tab</kbd> or <kbd>Cmd</kbd>-<kbd>Tab</kbd> or clicking)
   <br>(If you are using VS Code, you can click **Terminal &rarr; New Terminal** for the built-in terminal panel)
-7. Run this file using `node hello.js`
+7. Run this file using:
+    - `node hello.js`
 
 What happens? Is this what you expected?
 
@@ -307,14 +310,16 @@ What happens? Is this what you expected?
 1. Inside your `code` directory, create a file named `countdown.js`
 2. Inside this file, put the following source code:
 
-        let count = 10;
-        
-        while (count > 0) {
-          console.log(count + '...');
-          count = count - 1;
-        }
-        
-        console.log('Blastoff!');
+```javascript
+let count = 10;
+
+while (count > 0) {
+  console.log(count + '...');
+  count = count - 1;
+}
+
+console.log('Blastoff!');
+```
 
 3. Save the file
 4. In your terminal, run `node countdown.js`
@@ -328,12 +333,16 @@ What happens? Is this what you expected?
 * Remember the cooking analogy? The code is the instructions; now let's allow the user (you!) to change the ingredients
 * Change line 1 to the following:
 
-        let count = parseInt(process.argv[2])
+```javascript
+let count = parseInt(process.argv[2])
+```
 
 * run the program with new inputs from the command line like this:
 
-        node countdown 5
-        node countdown 100
+```shell
+$ node countdown 5
+$ node countdown 100
+```
 
 # ARGV
 
@@ -341,10 +350,10 @@ What happens? Is this what you expected?
 * `process.argv` is an *array* containing the *command-line arguments*
 * For example, on my system, if I type `node countdown 99`, `argv` contains...
 
-| index | meaning | value |
-|---|---|---|
-| 0 | location of the NodeJS engine | `'/usr/local/Cellar/node/11.10.0/bin/node'` |
-| 1 | location of the current program | `'/Users/alex/code/countdown'` |
-| 2 | "first" command-line argument | `'99'` |
+| index | meaning                         | value                                       |
+|   :-- | :--                             | :--                                         |
+|     0 | location of the NodeJS engine   | `'/usr/local/Cellar/node/11.10.0/bin/node'` |
+|     1 | location of the current program | `'/Users/alex/code/countdown'`              |
+|     2 | "first" command-line argument   | `'99'`                                      |
 
 * Computers (usually) start counting at zero, so `process.argv[2]` gets the third item from the array `process.argv`

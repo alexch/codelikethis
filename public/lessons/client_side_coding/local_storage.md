@@ -12,22 +12,22 @@ LocalStorage acts sort of like an object hash -- but you should use its `get` an
 # LocalStorage API
 
 * set an item
-```
+```js
 localStorage.setItem('myCat', 'Tom');
 ```
 
 * get an item
-```
-var cat = localStorage.getItem('myCat');
+```js
+let cat = localStorage.getItem('myCat');
 ```
 
 * remove an item
-```
+```js
 localStorage.removeItem('myCat');
 ```
 
 * clear all items
-```
+```js
 localStorage.clear();
 ```
 
@@ -37,12 +37,12 @@ localStorage.clear();
 * but you can use this **one weird trick** to save a nested object:
 
 * set an item
-```
+```js
 localStorage.setItem('myCat', JSON.stringify(cat));
 ```
 
 * get an item
-```
+```js
 var cat = JSON.parse(localStorage.getItem('myCat'));
 ```
 

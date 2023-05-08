@@ -5,7 +5,7 @@
 * The URL is a form of data communication
 * React-Router is a tool for declarative routing using components
 
-```javascript
+```jsx
 const Router = () => (
   <BrowserRouter>
     <Switch>
@@ -16,34 +16,30 @@ const Router = () => (
   </BrowserRouter>
 );
 
-ReactDom.render(
-  <Router />,
-  document.getElementById('root')
-);
 ```
 
-# React Routing - Traditional
+# Routing the Traditional Way
 
 * Most web frameworks like Express, Angular, Ember, etc. have routing
 * Most routing systems are pretty static
 
-```javascript
+```jsx
 // Express example
 app.get('/', handleIndex)
-app.get('/posts, handlePosts)
+app.get('/posts', handlePosts)
 app.get('/posts/:id', handlePost)
 app.get('/posts/:id/edit', handlePostEdit)
 
-app.listen()
+app.listen(5000)
 ```
 
 # React Routing - Most Basic
 
 * React-router **can** route to just a basic function
-* React-router routes are just **special** components that delegate to others
+* React-router routes are just **special** components that delegate to other components to handle the rendering
 * Routes are generated when your app runs
 
-```javascript
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -66,7 +62,7 @@ ReactDOM.render( <App />, root)
 * JSX from those components will be rendered on a "match"
 * React-router uses Regex to match the "path" to the "route"
 
-```javascript
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Link } from "react-router-dom";
@@ -84,7 +80,7 @@ const root = document.getElementById('root');
 ReactDOM.render( <Router />, root)
 ```
 
-```javascript
+```jsx
 // File: components/App.js
 import React from 'react';
 
@@ -107,7 +103,7 @@ export default App;
 * Browser URL is changed
 * Browser history is preserved
 
-```javascript
+```jsx
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -153,7 +149,7 @@ ReactDOM.render(<Router />, rootElement);
 
 # React Routing - Matching Routes
 
-```javascript
+```jsx
 const App = () => {
   return (
     <div>
@@ -192,13 +188,22 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<Router />, rootElement);
 ```
 
+# Lab: React Nav Bar
+
+Let's set up a simple site with some basic navigation using React Router.
+
+- Create a new react app
+- Create an `About` Component, a `Homepage` component, and a `Nav` component
+- add links to the `Nav` component that direct you to the `Home` and `About` pages
+- The `Nav` component should be loaded on both the `Home`, and `About` pages
+
 # React Routing - The Match Object
 
 * Match is one of the Props passed from a Route
 * It is a JavaScript object
 * You can use the properties to do logic, or fill values
 
-```javascript
+```jsx
 const App = () => {
   return (
     <div>
@@ -235,7 +240,7 @@ ReactDOM.render(<Router />, rootElement);
 
 # React Routing - Match Object Details
 
-```
+```jsx
 // From <Dashboard />
 Object {props: Object}
   match: Object
@@ -246,7 +251,7 @@ Object {props: Object}
 
 ```
 
-```
+```jsx
 // From <Home />
 Object {props: Object}
   props: Object
@@ -272,7 +277,7 @@ Object {props: Object}
 * Parameters can be passed into components from the Route `path`
 * Parameters can be required or optional
 
-```javascript
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -300,7 +305,7 @@ ReactDOM.render(<App />, rootElement);
 
 # React Router - Sub-Parameters
 
-```
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -328,3 +333,134 @@ ReactDOM.render(<App />, rootElement);
 ```
 
 [CodeSandbox - Subparams](https://codesandbox.io/s/k956r67znr)
+
+# React Routing - Query Parameters
+
+* Query parameters are the `name=value` pairs afte a `?` in a URL
+* `<Link />` Components can pass URL Parameters to a Route
+* The `to` param works differently between strings and objects
+* Params can be parsed using `new URLSearchParams(params)`
+
+### Example
+
+```jsx
+const Nav = props => {
+  return (
+    <div>
+      <Link to="/path?id=42">Params within 'to'</Link>
+      <br />
+      <Link to={{ pathname: "/path?id=9000" }}>Params within Pathname</Link>
+      <br />
+      <Link to={{ pathname: "/path", search: "id=789" }}>
+        Params 'Search' property
+      </Link>
+    </div>
+  );
+};
+```
+
+[CodePen](https://codesandbox.io/s/1o9o1wn5l3)
+
+
+# React Routing - Switch Component
+
+* Useful to avoid over matching
+* Switch renders only the first matching `<Route>` instead of all
+* Can be used to build a catch all route for 404 like pages
+
+### Example
+
+```jsx
+const App = props => {
+  return (
+    <BrowserRouter>
+      <React.Fragment>
+        <Nav />
+        <Switch>
+          <Route path="/posts" component={Posts} />
+          <Route path="/authors" component={Authors} />
+          <Route path="/:author/:post" component={AuthorPost} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </React.Fragment>
+    </BrowserRouter>
+  );
+};
+```
+
+[CodeSandbox](https://codesandbox.io/s/pl0wpn6q0)
+
+# React Routing - Catch All Route
+
+* Catch all routes can be useful to prevent 404 errors
+* Allow for a 'helpful' message, instead of a "Page Not Found" HTTP error
+* Are easy to create with the `<Switch>` and `<Route>` components
+
+### Example
+
+```jsx
+const NotFound = () => (
+  <div>
+    <h1>That page was not found</h1>
+  </div>
+);
+
+const App = props => {
+  return (
+    <BrowserRouter>
+      <React.Fragment>
+        <Nav />
+        <Switch>
+          <Route path="/posts" component={Posts} />
+          <Route path="/authors" component={Authors} />
+          <Route exact path="/" component={Home} />
+          <Route path="" component={NotFound} />
+        </Switch>
+      </React.Fragment>
+    </BrowserRouter>
+  );
+};
+```
+
+[CodeSandbox](https://codesandbox.io/s/m58vy8q99j)
+
+# React Routing - Redirection
+
+### Examples
+
+```jsx
+const Home = () => <h1>You are Home</h1>;
+const Posts = () => <h1>All the Posts</h1>;
+
+const App = props => {
+  return (
+    <BrowserRouter>
+      <React.Fragment>
+        <Nav />
+          <Route path="/posts" component={Posts} />
+          <Route path="/willredirect" render={() => (
+            <Redirect to="/posts" />
+          )} />
+          <Route exact path="/" component={Home} />
+      </React.Fragment>
+    </BrowserRouter>
+  );
+};
+```
+
+[CodeSandbox](https://codesandbox.io/s/yp4xrk60mv)
+
+# Lab: React Router Blog
+
+Let's create a fake blog using [JSONPlaceholder](https://jsonplaceholder.typicode.com/) and React Router!
+
+* When the user visits the homepage they should see a welcome page with:
+  * a greeting ('Welcome to our page, click an article to get started')
+  * a list of all available articles from JSONPlaceholder by title
+* When the user clicks an article's title it should take you to a new page with:
+  * the contents of that article
+  * the title
+  * the author's name
+  * and when you click the author's name it should take you to a page with a list of all the articles **by that author**
+
+>Hint: You might want to look back at some of your [previous projects](https://bootcamp.burlingtoncodeacademy.com/projects/yelpington-app) and/or the [JSON](../javascript/json) lesson for inspiration

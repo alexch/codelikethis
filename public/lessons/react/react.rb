@@ -25,6 +25,8 @@ class Track
     lesson name: "setting_up_react",
            description: "Preparing the development environment for React"
 
+    lesson name: "class_v_functional_components"
+
     lesson name: "component_oriented",
            description: "React applications are organized into components. This lesson will show how components can be built up out of smaller components and then reused in new contexts." do
       topic name: "react"
@@ -39,9 +41,6 @@ class Track
       topic name: "react-component-state"
     end
 
-    lesson name: "stateless_functional_components",
-           description: "Some components will only accept data from their Props and don't need a State object themselves or from their parents. These kind of components can be built using only functions and are very simple to reason about."
-
     lesson name: "responding_to_events" do
       topic name: "react"
       topic name: "react-events"
@@ -55,6 +54,7 @@ class Track
       topic name: "react-forms"
     end
 
+    lesson name: "react_hooks"
 
     lesson name: "conditionally_rendering_components" do
       topic name: "react"
@@ -72,9 +72,7 @@ class Track
     lesson name: "composition_vs_inheritance"
     lesson name: "using_refs"
     lesson name: "error_boundaries"
-    lesson name: "using_the_context"
     lesson name: "routing_in_react"
-    lesson name: "routing_in_react_going_further"
 
     link href: "https://reactjs.org/tutorial/tutorial.html",
          name: "Build a Tic-Tac-Toe game in the browser with React"

@@ -1,16 +1,31 @@
 # Rendering Multiple Components
 
-* Map() takes a list and returns a transformed new list
+Rendering lists of components is easy!
+
+React natively knows how to deal with arrays of components, so if we need to render multiple components we can put them in an array, and then put the array directly into the JSX
+
+Rendering arrays of components is automatic, but what if you have an array of *raw data* that needs to be presented on the page?
+
+# Creating Arrays with `.map()`
+
+Remember our old friends the array iterators? `.map()` is an especially useful iteration method for React
+
+* `.map()` takes an array and returns a transformed new array
+* `.map()` can be used to generate an array of components from an array of data
 * Escape the JavaScript within JSX using `{}`
 
-```javascript
-NumberList (props) => {
+# `.map()` Example
+
+```jsx
+function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    <li>{number}</li>
+    <li>{ number }</li>
   );
   return (
-    <ul>{listItems}</ul>
+    <ul>
+      { listItems }
+    </ul>
   );
 }
 
@@ -24,19 +39,53 @@ ReactDOM.render(
 
 [Example CodePen](https://codepen.io/Dangeranger/pen/mjaYPa)
 
+# Lab: Rendering an Array of Components
+
+Let's put this theory into practice!
+
+Here is a simple React component that takes a quote, and author as props, and displays them on the page:
+
+```jsx
+//definition
+function Quote(props) {
+  return(
+    <div>
+      <h4>{ props.quote }</h4>
+      <h6>~ <i>{ props.author }</i></h6>
+    </div>
+  )
+}
+
+//component being used
+<Quote quote="It's a dangerous business going out your front door..." author="Bilbo Baggins" />
+
+```
+
+Create a new React application that displays a title (e.g. "Inspiring Quotes"), and no fewer than six instances of the `Quote` component defined above.
+
 # Multiple Components with Keys
 
-```javascript
+When rendering arrays of multiple elements it's best practice to attach a unique `key` property to them.
 
-NumberList = (props) => {
+The `key` property is used internally by React to more effeciently display, and manage lists of components.
+
+> Note: Not having a key property won't break your code, but you will get an error in your browser's console
+
+# Components With Keys Example
+
+```jsx
+
+function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
     <li key={number.toString()}>
-      {number}
+      { number }
     </li>
   );
   return (
-    <ul>{listItems}</ul>
+    <ul>
+      { listItems }
+    </ul>
   );
 }
 
@@ -56,13 +105,13 @@ ReactDOM.render(
 * Database IDs can make good Keys
 * Indexes of the Components are a good backup
 
-```javascript
-ListItem = (props) => {
+```jsx
+function ListItem(props) {
   // Correct! There is no need to specify the key here:
   return <li>{props.value}</li>;
 }
 
-NumberList = (props) => {
+function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
     // Correct! Key should be specified inside the array.
@@ -88,45 +137,9 @@ ReactDOM.render(
 [Why Keys are Important](https://reactjs.org/docs/reconciliation.html#recursing-on-children)
 [Indexes Can Impact Performance](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)
 
-# Component Keys - Common Mistake
-
-* Keys live on the components
-* Keys do not live on the content of the component
-
-```javascript
-ListItem = (props) => {
-  const value = props.value;
-  return (
-    // Wrong! There is no need to specify the key here:
-    <li key={value.toString()}>
-      {value}
-    </li>
-  );
-}
-
-NumberList (props) => {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) =>
-    // Wrong! The key should have been specified here:
-    <ListItem value={number} />
-  );
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
-```
-
 # Unique Component Keys
 
-```javascript
+```jsx
 Blog = (props) => {
   const sidebar = (
     <ul>
@@ -170,7 +183,7 @@ ReactDOM.render(
 * Arrya.map() can then be included inline
 * Multiple nested embeddings signals that a Component might need extraction
 
-```javascript
+```jsx
 NumberList = (props) => {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
@@ -186,7 +199,7 @@ NumberList = (props) => {
 }
 ```
 
-```javascript
+```jsx
 NumberList = (props) => {
   const numbers = props.numbers;
   return (
@@ -200,3 +213,14 @@ NumberList = (props) => {
   );
 }
 ```
+
+# Lab: Multi-Greeter
+
+Let's make a component that greets every name on a list!
+
+- Generate a new React App with `create-react-app`
+- Create a new component named `Greeter` that:
+  - Takes a name as a prop
+  - Says hello to the given name
+- In your `App` component add an array of names
+- For each name on the list render the `Greeter` component taking the name as a prop

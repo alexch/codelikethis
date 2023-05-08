@@ -7,7 +7,7 @@ Ref. WGR Chapter 9, Section 9.3, Hashes
 
 a *hash* is an *abstract data type*
 
-![corned beef hash](../images/cornedbeefhash.jpeg)
+![corned beef hash](/images/cornedbeefhash.jpeg)
 
 * unordered collection of key/value pairs
 * keys must be unique

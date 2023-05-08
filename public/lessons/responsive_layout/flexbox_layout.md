@@ -1,6 +1,6 @@
 # Flexbox
 
-<img src="centered-flexbox.png" width="480px"/>
+<img src="/images/centered-flexbox.png" width="480px"/>
 
 # Introduction to Flexbox
 
@@ -118,7 +118,7 @@ Not anymore! Flexbox makes this easy, with one simple line of CSS. There are 5 d
 }
 ```
 
-![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1000/1*htfdNmRIIFu_veRaFOj5qA.gif "Flex direction with Flexbox")
+![Flexbox Direction Property](https://cdn-images-1.medium.com/max/1600/1*4yKnG2-vuPF5XA-BmXADLQ.gif "Flex direction with Flexbox")
 
 > NOTE: if you want your items to be columns, use `flex-direction: row` in the container, and if you want rows, use `flex-direction: column` in the container
 
@@ -171,13 +171,12 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 
 ![Flexbox Align Self Property](https://cdn-images-1.medium.com/max/1000/1*HIADl1oL6pxXb2dMh_pXSQ.gif "Self aligning with Flexbox")
 
-# Flexi-grid
+# FlexBox Grid
 
-**Q**: What do you get when you put a Flexbox inside a Flexbox?
+> **Question:** What do you get when you put a Flexbox inside a Flexbox?
+> A FlexBox grid!
 
-**A**: A grid! (But not CSS Grid)
-
-[flex-grid](./flex-grid.html)
+[A Simple FlexBox Grid](./flex-grid.html)
 
 ```html
 <div class='two-columns'>
@@ -206,3 +205,36 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 }
 </style>
 ```
+
+# FlexBox Grid CodePen
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/burlingtoncodeacademy/embed/vYeOjdz?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/burlingtoncodeacademy/pen/vYeOjdz">
+  Untitled</a> by Burlington Code Academy (<a href="https://codepen.io/burlingtoncodeacademy">@burlingtoncodeacademy</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+
+# Flexbox Lab
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Flexbox-dispay-LAB-JSAH-Summer-2021" src="https://codepen.io/burlingtoncodeacademy/embed/NWaqYmE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/burlingtoncodeacademy/pen/NWaqYmE">
+  Flexbox-dispay-LAB-JSAH-Summer-2021</a> by Burlington Code Academy (<a href="https://codepen.io/burlingtoncodeacademy">@burlingtoncodeacademy</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+# Flexbox Playground
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Flexbox playground" src="https://codepen.io/burlingtoncodeacademy/full/wvKRojY" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/burlingtoncodeacademy/pen/wvKRojY">
+  Flexbox playground</a> by Burlington Code Academy (<a href="https://codepen.io/burlingtoncodeacademy">@burlingtoncodeacademy</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+> View this playground in CodePen: https://codepen.io/burlingtoncodeacademy/pen/wvKRojY
+
+# Let's Play a Game
+
+Flexbox Froggy is a great way to practice using CSS Flexbox to lay elements out on a page
+
+Click [here](https://flexboxfroggy.com/) and try to complete all 24 levels.

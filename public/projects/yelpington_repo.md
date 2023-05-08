@@ -133,7 +133,7 @@ This example shows why git *cannot* automatically resolve intra-line conflicts. 
 
 * If a student team is not getting merge conflicts, force one: after a PR is created, go into the main repo and commit a change to that file.  
 
-## Icebox
+# Icebox
 
 * make it a web app and/or API
 * make a slack plugin

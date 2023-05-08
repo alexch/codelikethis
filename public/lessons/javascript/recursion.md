@@ -10,7 +10,7 @@
 
 *recursion* is when a function *calls itself*
 
-![ouroboros](../images/ouroboros.jpg)
+![ouroboros](/images/ouroboros.jpg)
 
 (like Ouroboros, a mythical serpent who eats its own tail)
 
@@ -88,7 +88,7 @@ Fill out the cells of the following table for the call `countdown(5)`:
 
 In addition to the base case, a recursive function needs to define at least one other case; this case *wraps around* the base case like a Russian doll.
 
-![matryoshka](../images/matryoshka.jpg)
+![matryoshka](/images/matryoshka.jpg)
 
 You can think of a recursive function as starting with a large problem, and gradually reducing the problem until it reaches the base case.
 
@@ -116,16 +116,35 @@ factorial(10)   // 3628800
 # Solution: Factorial
 
 <details>
-<summary>Click Here for Solution</summary>
-<pre>
+<summary>Hint</summary>
+<div>
+You may want to use logic to define the base case, and breakpoints. e.g.
+
+```js
+if (number === 1) {
+  return 1
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
 function factorial(n) {
-    if (n == 1) {
+    if (n === 1) {
         return 1;
     } else {
         return n * factorial(n - 1);
     }
 }
-</pre>
+```
+
+</div>
+</details>
 
 # Exercise: Draw It Out
 
@@ -161,7 +180,9 @@ function factorial(n) {
         f = f * stack.pop();
     }
     return f;
-} 
+}
+
+console.log(factorial(5)) // => 120
 ```
 
 What do you think about this implementation compared to the previous one? What are the advantages and disadvantages of recursion vs. loops?
@@ -175,3 +196,42 @@ Using recursion, write a program called `fib.js` so that running `node fib.js 10
 ```
 
 which are the first 10 elements of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+
+
+# Recursive Fibonacci solution
+
+<details>
+<summary>Hint</summary>
+<div>
+Look back to fibonacci using stacks. Instead of looping with `while` you can use recursion 
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+let series = [0, 1];
+
+function fibbo(array) {
+  let lastNum = array.pop()
+  let penultNum = array.pop()
+  let nextNum = lastNum + penultNum
+
+  array.push(punultNum)
+  array.push(lastNum)
+  array.push(nextNum)
+
+  if(array.length === 10) {
+    return array
+  } else {
+    return fibbo(array)
+  }
+}
+
+console.log(fibbo(series));
+```
+
+</div>
+</details>

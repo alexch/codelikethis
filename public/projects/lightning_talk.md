@@ -19,7 +19,7 @@ Here are some topics (some delivered by past cohorts) to inspire you:
 * Pair Programming Pitfalls
 * So You've Been Breached: how to react to being hacked
 
-Optional: present it to the Burlington JavaScript meetup during one of their Lightning Talk sessions.
+>Optional: present it to the Burlington JavaScript meetup during one of their Lightning Talk sessions.
 
 ## Lightning Talk Rules
 

@@ -2,7 +2,7 @@
 
 * a *stack* is a *metaphor* for a physical stack
 
-![pancakes](../images/pancakes.jpg)
+![pancakes](/images/pancakes.jpg)
 
 [photo by Michael Stern](https://www.flickr.com/photos/68711844@N07/15638298618)
 [CC-BY-SA](https://creativecommons.org/licenses/by-sa/2.0/)
@@ -16,7 +16,7 @@
 
 # Pushing and Popping
 
-![stack](../images/stack.png) 
+![stack](/images/stack.png) 
 
 <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>
 

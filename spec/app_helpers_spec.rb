@@ -15,13 +15,13 @@ describe AppHelpers do
   include AppHelpers
 
   describe 'page_title' do
-    example { expect(page_title("Foo")).to eq("Foo - Code Like This") }
-    example { page_title("Foo", "bar").should == "Foo bar - Code Like This" }
+    example { expect(page_title("Foo")).to eq("Foo") }
+    example { page_title("Foo", "bar").should == "Foo bar" }
 
     let(:track) { Track::Ruby }
     let(:lesson) { track.lesson_named "bad_names" }
 
-    example { page_title(track).should == "Ruby Topics - Code Like This" }
-    example { page_title(lesson).should == "Bad Names - Code Like This" }
+    example { page_title(track).should == "Ruby Topics" }
+    example { page_title(lesson).should == "Bad Names" }
   end
 end

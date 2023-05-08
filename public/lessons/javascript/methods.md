@@ -12,53 +12,76 @@ let stringUtils = {
     return word.charAt(0).toUpperCase() +
       word.slice(1).toLowerCase();
   },
-  rant: function(opinion) {
-    return option.toUpperCase() + '!!!';
+  yell: function(opinion) {
+    return opinion.toUpperCase() + '!!!';
   }
 }
 
-stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
+stringUtils.yell('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
 
-# Methods Can Access Object State
-
-`this` is a magic word that means "this object I'm in *right now*"
+# Methods Can Access Object Properties
 
 ```js
 let rectangle = {
-    height: 10,
-    width: 8,
-    area: function() {
-        return this.height * this.width;
-    }
+  height: 10,
+  width: 8,
+  area: function() {
+    return this.height * this.width;
+  }
 }
 
 rectangle.height   //=> 10
 rectangle.area()   //=> 80
 ```
+> The keyword `this` means "this object I'm in **right now**"
 
-# Extending objects on the fly
+# The `this` Keyword is Special
 
-Since JavaScript is a *dynamic* language,
-you can add methods to *any object*.
+The `this` keyword is a special value that is a reference to the object that it is used within
 
+```js
+let cardinal = {
+  color: 'red',
+  describe: function() {
+    return 'I am a ' + this.color + ' bird';
+  }
+}
+
+let blueJay = {
+  color: 'blue',
+  describe: function() {
+    return 'I am a ' + this.color + ' bird';
+  }
+}
+
+
+console.log(cardinal.describe());
+// 'I am a red bird'
+console.log(blueJay.describe());
+// 'I am a blue bird'
+```
+
+# Extending Objects with Methods
+
+Since JavaScript is a *dynamic* language, you can add methods to *any object*.
 
 ```js
 let rectangle = {
-    height: 10,
-    width: 8,
+  height: 10,
+  width: 8,
 }
 
 rectangle.area()   //=> TypeError: rectangle.area is not a function
 
 rectangle.area = function() {
-     return this.height * this.width;
+  return this.height * this.width;
 }
 
 rectangle.area()   //=> 80
 ```
 
-* remember, `this` means "this object I'm in *right now*" which in this case is the rectangle
+* Remember, `this` means "this object I'm in *right now*" which in this case is the rectangle
 * `this.height` on the *inside* of the object means the same as `rectangle.height` on the *outside*
 
 # Lab: Speak
@@ -67,8 +90,8 @@ Using the following definition:
 
 ```javascript
 let dog = {
-    name: 'Abby',
-    paws: 4
+  name: 'Fido',
+  paws: 4
 }
 ```
 
@@ -81,25 +104,44 @@ console.log(dog.speak())
 prints the following line:
 
 ```
-My name is Abby and I have 4 paws!
+My name is Fido and I have 4 paws!
 ```
+
+# Speak solution
+
+<details>
+<summary>Solution</summary>
+<pre>
+<code class="language-javascript">
+let dog = {
+  name: 'Abby',
+  paws: 4
+}
+
+dog.speak = function() {
+  return "My name is " + this.name + " and I have " + this.paws + "paws"
+}
+</code>
+</pre>
+</details>
 
 # A Clever Trick: Extending System Classes
 
 You can add methods to *all objects of the same type* like this:
 
 ```js
-"banana".capitalize() //=> TypeError: "banana".capitalize is not a function
+'banana'.capitalize() 
+//=> TypeError: 'banana'.capitalize is not a function
 
 String.prototype.capitalize = function() {
-      return this.charAt(0).toUpperCase() +
-        this.slice(1).toLowerCase();
-    }
+  return this.charAt(0).toUpperCase() +
+    this.slice(1).toLowerCase();
+}
 
-"banana".capitalize() //=> "Banana"
+'banana'.capitalize() //=> "Banana"
 ```
 
-`String.prototype` is a special object whose properties (including methods!) are made available to **all strings**.
+> `String.prototype` is a special object whose properties (including methods!) are made available to **all strings**.
 
 # Clever = Danger
 
@@ -110,4 +152,3 @@ This clever trick is useful but dangerous. Don't outsmart yourself!
 Specifically, if you change the definition of basic types, you might introduce bugs somewhere else in your program -- possibly in code that you didn't even write yourself!
 
 That's why extending system classes is sometimes called by the derogatory term "monkey patching".
-

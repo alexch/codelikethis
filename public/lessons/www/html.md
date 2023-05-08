@@ -9,17 +9,17 @@
 # Intro to HTML
 
 * Stands for Hyper-Text Markup Language.
-* Every HTML file = one web page.
-* Invented by Tim Berners-Lee
+* Every HTML file is one web page.
+* Invented by Sir Tim Berners-Lee
 * Based on SGML
 * Standard language used for creating web pages.
 * Composed of tags
-* Used in tandem with CSS and JavaScript
+* CSS and JavaScript are designed to work in tandem with HTML
 * HTML is for structuring content. It does not perform complex computations.
 
 # What Is It?
 
-HTML is a coding language composed of various types of *tags*, also known as *elements*. These are what are used to build web pages. They are the Lincoln Logs of the Internet.
+HTML is a coding language composed of various types of *tags*, also known as *elements*. These are what are used to build web pages.
 
 * HTML is used to **build** web pages by using **tags**.
 * Web browsers "read" HTML and render it as pretty visual elements for humans.
@@ -50,29 +50,46 @@ Lets break down the page structure above. You can see above, all HTML tags are s
 
 | tag      | meaning                   |
 |----------|---------------------------|
-| \<head>  | head (contains metadata)  |
-| \<body>  | page body                 |
-| \<div>   | division                  |
-| \<h1>    | Heading (level 1)         |
-| \<p>     | Paragraph containing text |
-| \<span>  | Text without a line break |
-| \<img>   | Image tag                 |
-| \<link>  | Link tag                  |
-| \<style> | Style tag                 |
+| `<head>`  | head (contains metadata)  |
+| `<body>`  | page body                 |
+| `<div>`   | division                  |
+| `<h1>`    | Heading (level 1)         |
+| `<p>`     | Paragraph containing text |
+| `<span>`  | Text without a line break |
+| `<img>`   | Image tag                 |
+| `<link>`  | Link tag                  |
+| `<style>` | Style tag                 |
 
 
 # Examples of Style Tags
 
 | tag                  | example                         |
 |----------------------|---------------------------------|
-| \<b>                 | <b>bold</b>                     |
-| \<i>                 | <i>italic</i>                   |
-| \<strong>            | <strong>strong</strong>         |
-| \<em>                | <em>emphasis</em>               |
-| \<br>                | Line break                      |
-| \<hr>                | Horizontal rule (dividing line) |
-| \<blockquote>        | "call-out" quotation            |
+| `<b>`                 | <b>bold</b>                     |
+| `<i>`                 | <i>italic</i>                   |
+| `<strong>`            | <strong>strong</strong>         |
+| `<em>`                | <em>emphasis</em>               |
+| `<br>`                | Line break                      |
+| `<hr>`                | Horizontal rule (dividing line) |
+| `<blockquote>`        | "call-out" quotation            |
 | etc.                 |                                 |
+
+# Lab: Create a Web Page
+
+That's enough theory! Let's build something!
+
+* Open up VSCode and create a file named `index.html`
+* Type out your page structure following the example on the "Standard Page Structure" slide
+* **Or** use emmet abbreviations by typing an exclamation point `!` and hitting <kbd>Tab</kbd>
+* Add an `h1` tag in the body of your document, and some text inside the `h1`
+* Enter `open index.html` into your terminal if you're on a Mac
+  * or on Windows, use `start index.html`
+  * or enter `pwd` and copy and paste the directory path into your browser (chrome), then click on the `index.html` file
+  * or drag your html file directly into your browser window
+
+# Self Closing Tags
+
+Some tags can act as both an opening and a closing tag. These are written with a forward slash at the end, and are most commonly seen for tags that insert something into the page such as an image, or a line break. e.g. `<img src="myImg.jpg" />` is a self closing image tag.
 
 # Attributes
 
@@ -88,9 +105,18 @@ Attributes further define HTML elements and their purpose. For example, an image
 * Others include `style` (for inline CSS), `title` (for hover-over tooltips), `href` (hyperlink reference)
 * Attribute names should always be lowercase
 
+# Lab: Adding Attributes
+
+Let's add a few attributes to the `h1` in the HTML file we just created.
+
+* Give your element an `id`
+* Change the color of your text using the `style` attribute and setting it to a key:value pair
+  * e.g. `style="color:red"`
+* Add an image to your page
+
 # Style vs Layout vs Semantics
 
-This war has raged inside HTML since the beginning of the WWW.
+This war has raged inside HTML since the beginning of the web.
 
 Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>`), where as some _describe_ it's contents (ex. `<strong>`). Web content isn't just about appearence. It matters how it is intepreted.
 
@@ -99,15 +125,99 @@ Some tags exclusively describe _how_ it's contents should be displayed (ex. `<b>
 * Imagine a blind person using a screen reader - how might they understand the difference between a `<strong>` and a `<b>` tag?
 * Not all elements **style** content, and not all elements define **structure** or layout.
 
-# HTML Has Flaws
+# Tables
 
-* Difficult to parse (both for humans and for programs)
-* Poor whitespace rules
-* Case insensitive, except when it's not
-  * For example, Ç is &amp;Ccedil; and ç is &amp;ccedil;
-* Open and close tag names should match but often aren't required to
-  * For example, &lt;b>bold &lt;i>italic&lt;/b>&lt;/i>
-* Browsers will happily render invalid HTML, which leads to the propagation of invalid HTML
-* Muddled distinctions
-  * between *semantics* (what the tag's content *means*) and *style* (how the tag's content is *displayed*)
-  * between *elements* and *attributes* and *content*
+* Tables are comprised 4 elements: `<table>`, `<tr>`, `<th>`, and `<td>`
+* Tables are a way of structuring data into rows and columns.
+
+# Example Table structure:
+
+```html
+<h1>Grocery List</h1>
+<table>
+  <tr>
+    <th>Fruit</th>
+    <th>Grains</th>
+    <th>Dairy</th>
+  </tr>
+  <tr>
+    <td>Apples</td>
+    <td>White Rice</td>
+    <td>Milk</td>
+  </tr>
+  <tr>
+    <td>Bananas</td>
+    <td>Oatmeal</td>
+    <td>Yogurt</td>
+  </tr>
+</table>
+```
+# The Result
+
+<h1>Grocery List</h1>
+<table>
+  <tr>
+    <th>Fruit</th>
+    <th>Grains</th>
+    <th>Dairy</th>
+  </tr>
+  <tr>
+    <td>Apples</td>
+    <td>White Rice</td>
+    <td>Milk</td>
+  </tr>
+  <tr>
+    <td>Bananas</td>
+    <td>Oatmeal</td>
+    <td>Yogurt</td>
+  </tr>
+</table>
+
+# Lists
+
+* Two main types of HTML lists: *ordered* and *unordered*.
+* `<ul>` describes a unordered list
+  * this list
+  * is unordered
+* `<ol>` describes an ordered list.
+  1. this list
+  2. is ordered
+
+```html
+<ul>
+  <li>Pizza</li>
+  <li>Pasta</li>
+  <li>Bread</li>
+</ul>
+```
+
+# The Result
+
+<ul>
+  <li>Pizza</li>
+  <li>Pasta</li>
+  <li>Bread</li>
+</ul>
+
+# Commenting with HTML
+
+* Commenting is important in **any** form of coding.
+* Comments help both you and others to better understand the intent of the code.
+* Especially helpful when reviewing large amounts of code.
+
+Comments in HTML are not read by browsers. They use the following syntax:
+
+`<!-- This is a comment! -->`
+
+* Note that no closing tag is necessary. Comments can also be used to temporarily disable a block of code. For example:
+
+```html
+<!-- I don't want this to be shown because it is silly
+<body>
+	<div>
+		<p>I do not want this content to be shown</p>
+		<img src="/images/dog-pic.jpg" alt="this is a doggo" title="Doggo">
+	</div>
+</body>
+-->
+```

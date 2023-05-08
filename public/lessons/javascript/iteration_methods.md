@@ -10,87 +10,132 @@
          href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods",
          from: "Mozilla Developer Network"
 
-# Arrays are Objects
+# Array Properties and Methods
 
-Surprise! 
+Every JavaScript *Array* is also a JavaScript *Object*
 
-Every JavaScript *array* is also a JavaScript *object*
-
-That means that arrays have *properties* and *methods* like any other object.
+That means that arrays have *properties* and *methods* like other objects.
 
 Examples:
 
-  * `array.length` is a *read-only property* that always contains the number of elements in the array
-  * `array.reverse()` is a *method* that reverses the ordering of all elements in the array 
+```javascript
+let myArray = ['apple', 'cherry', 'pineapple'];
+```
 
-See [MDN: Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) to see a lot more array methods
+* `myArray.length` is a *property* that is the number of elements in the array
+* `myArray.reverse()` is a *method* that reverses the ordering of all elements in the array
+
+> NOTE: Properties are called by their name alone, but Methods require parenthesis `()` after the name
+
+See [MDN: Array Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods) to see a lot more array methods
 
 # Iteration Methods
 
-Every JavaScript array has a few [very handy methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)
-that let you *apply a function* to its contents.
+Every JavaScript array has [many tools](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods) that let you pass each item to a  *function* to its contents.
 
-| method | description | returns |
+| method name | description | returns |
 |---|---|---|
-| [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)  | do something to each item | `undefined`|
-| [`find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)  | find the first item that matches | one matching item (or `undefined` if no match) |
-| [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | accept or reject each item | a new collection, possibly smaller |
-| [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)  | change each item into a new item | a new collection of the same size |
+| [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)  | do something with each item | `undefined`|
+| [`find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)  | find the first item matching the test | one matching item (or `undefined` if no match) |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | accept or reject each item | a new Array of matching items |
+| [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)  | change each item into a new item | a new Array of the same size |
 | [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)  | scan the entire collection and "reduce" it to... | ...a single result, e.g. a total |
 
 * We call this group of methods "[iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods)"
-* There are about a dozen built-in iteration methods, plus lots more added by libraries like [lodash](https://lodash.com/). 
+* There are about a dozen built-in iteration methods, plus lots more added by libraries like [lodash](https://lodash.com/).
 
-# forEach
+# Iterators are Callback Functions
 
-`forEach` works a lot like `for..of`, but using a callback function
-
-Given this array of names...
+A [callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_functio) is **any** function passed to another function as an argument. Callback functions are then called by the outer function in order to do some work.
 
 ```javascript
-let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David']
+function printDate(value) {
+  console.log('The date is: ' + value);
+}
+
+function currentDate(callback) {
+  let now = Date().toLocaleString();
+  // calling the inner callback
+  callback(now);
+  // back in the outer function
+  console.log('All Done!');
+}
+
+currentDate(printDate)
 ```
 
-|this code... | and this code... |
-|---|---|
-|<pre><code class="javascript">for (let name of names) {<br>&nbsp;&nbsp;console.log(name.toUpperCase())<br>}<br></code></pre>|<pre><code class="javascript">let printUpper = function(name) { <br>&nbsp;&nbsp;console.log(name.toUpperCase())<br>}<br>names.forEach(printUpper)</code></pre>|
+# The `forEach` Method 1
 
-both print the same thing:
+`forEach` works a lot like `for..of`, but passes each value to a [callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) as an argument, one after another.
+
+```js
+let names = ['Alice', 'Bob', 'Carol'];
+
+function printUpperCase(name) {
+  console.log(name.toUpperCase())
+}
+
+names.forEach(printUpperCase);
+
+/* Prints the following:
+ALICE
+BOB
+CAROL
+*/
+```
+
+# The `forEach` Method 2
+
+Given an array of names:
+
+```javascript
+let names = ['Alice', 'Bob', 'Carol'];
+```
+This code:
+
+```js
+for (let name of names) {
+  console.log(name.toUpperCase())
+}
+```
+
+And this code:
+
+```js
+function printUpperCase(name) {
+  console.log(name.toUpperCase())
+}
+
+names.forEach(printUpperCase)
+```
+
+Print the same thing:
 
 ```text
 ALICE
 BOB
 CAROL
-CHARLIE
-DAVID
 ```
 
-# Find
+# The `find` Method
 
-to find the first item that matches the condition...
+Find the first item that matches the condition function
 
 ```javascript
-let names = ['Alice', 'Bob', 'Carol', 'Charlie', 'David'];
-let beginsWithC = function(word) {
-    return word.charAt(0).toUpperCase() === 'C';
+let names = ['Alice', 'Bob', 'Carol'];
+
+function beginsWithC(word) {
+  return word.charAt(0).toUpperCase() === 'C';
 };
-let cName = names.find(beginsWithC) //=> 'Carol'
+
+names.find(beginsWithC);
+//=> 'Carol'
 ```
 
 Note that:
 
-* the `beginsWithC` function returns `true` or `false`
-* the `find` method returns an item (from the array)
-
-# Find Inline
-
-For conciseness, people often define the filter function *inline*, like this:
-
-```javascript
-names.find((word) => word.charAt(0).toUpperCase() === 'C')
-```
-
-Q: Is this more or less clear than the previous slide?
+* `beginsWithC` function must return a `true` or `false` value
+* `find` method returns a single item from the array, or `undefined`
 
 # Lab: Find a Berry
 
@@ -100,20 +145,44 @@ Given the following array:
 let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry']
 ```
 
-write some code that uses `find` to return the first item that ends with the string `'berry'`
+Write code that uses `find` to return the first item that ends with the string `'berry'`
 
 (in this case, `'Blueberry'`)
 
-# Filter
+<details>
+<summary>Solution</summary>
+<div>
+<pre>
+<code class="language-javascript">
+let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry'];
 
-the `filter` iteration method returns *all* matching values, in a *new array*
+function endBerry(word) {
+  return word.endsWith("berry")
+}
+
+fruits.find(endBerry);
+</code>
+</pre>
+</div>
+</details>
+
+# The `filter` Method
+
+The `filter` iteration method returns *all* matching values, in a *new array*
+
+Note that
+* `beginsWithC` function must **still* return a `true` or `false` value
+* `filter` method returns an Array of all values passing the test
 
 ```javascript
 let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David'];
-let beginsWithC = function(word) {
-    return word.charAt(0).toUpperCase() === 'C';
+
+function beginsWithC(word) {
+  return word.charAt(0).toUpperCase() === 'C';
 }
-let cNames = names.filter(beginsWithC) //=> [ 'Charlie', 'Carol' ]
+
+names.filter(beginsWithC)
+//=> [ 'Charlie', 'Carol' ]
 ```
 
 # Lab: Find all Berries
@@ -125,28 +194,46 @@ let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry']
 ```
 
 Now go find your code from the previous lab ("Find a Berry")
-and change it to use `filter` to return a new array 
+and change it to use `filter` to return a new array
 containing **all** the fruits that end with the string `'berry'`
 
-> Hint: all you need to do is change `find` to `filter` -- the matching function itself is the same. 
+# Find All Berries Solution
 
-# Map
+<details>
+<summary>Solution</summary>
+<div>
+<pre>
+<code class="language-javascript">
+let fruits = ['Apple', 'Blueberry', 'Cherry', 'Date', 'Elderberry'];
+
+function endBerry(word) {
+  return word.endsWith("berry")
+}
+
+fruits.filter(endBerry);
+</code>
+</pre>
+</div>
+</details>
+
+# The `map` Method
 
 The `map` iteration method returns a *new array* whose elements correspond to the elements of the original array.
 
 ```javascript
 let names = ['Alice', 'Bob', 'Charlie', 'Carol', 'David'];
-let upper = function(word) {
+function upperCase(word) {
     return word.toUpperCase();
 }
-let bigNames = names.map(upper) //=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
+names.map(upperCase)
+//=> [ 'ALICE', 'BOB', 'CHARLIE', 'CAROL', 'DAVID' ]
 ```
 
 It's called "map" because in a mathematical sense, it defines a *mapping* from one collection to another.
 
 | from | to |
 |---|---|
-| 'Alice'| 'ALICE' | 
+| 'Alice'| 'ALICE' |
 | 'Bob'| 'BOB' |
 | 'Charlie' | 'CHARLIE' |
 | 'Carol' | 'CAROL' |
@@ -154,7 +241,7 @@ It's called "map" because in a mathematical sense, it defines a *mapping* from o
 
 # Lab: Titleize with Map
 
-Remember the [capitalize function](./functions#anchor/capitalize)? It capitalizes the first letter of a string and makes the whole rest of the string lowercase.
+Remember the [capitalize function](/lessons/javascript-track/functions#anchor/capitalize)? It capitalizes the first letter of a string and makes the whole rest of the string lowercase.
 
 ```javascript
 function capitalize(word) {
@@ -173,45 +260,66 @@ titleize("the rain in spain falls MAINLY on the PLAIN")
 
 There is a solution on the next slide, but please try on your own first.
 
-> Hint: Inside your titleize function, you could call the existing capitalize function. Or you could "inline" the capitalization code. Or you could do something else! 
+> Think about how to combine the `.map(someFunction)` method with the `capitalize(someWord)` function.
 
-# Solution: Titleize
+# Solution: Titleize with Map
 
-Here's one way to do it:
-
-```javascript
-function titleize(phrase) {
-  return phrase.split(' ').map((word) => capitalize(word)).join(' ');
+<details>
+<summary>Solution</summary>
+<pre>
+<code class="language-javascript">
+function capitalize(word) {
+  let firstLetter = word[0];
+  let restOfWord = word.slice(1);
+  return firstLetter.toUpperCase() + restOfWord.toLowerCase();
 }
-```
 
-Here's another, where the existing `capitalize` method is used *as is* as a mapping function:
-
-```javascript
 function titleize(phrase) {
-  return phrase.split(' ').map(capitalize).join(' ');
+  let wordArray = phrase.split(' ');
+  let capitalizedWords = wordArray.map(capitalize);
+  let finalSentence = capitalizedWords.join(' ');
+  return finalSentence;
 }
-```
+</code>
+</pre>
+</details>
 
-And another:
+# Solution: Titleize with ForEach
 
-```javascript
+<details>
+<summary>Solution</summary>
+<pre>
+<code class="language-javascript">
+function capitalize(word) {
+  let firstLetter = word[0];
+  let restOfWord = word.slice(1);
+  return firstLetter.toUpperCase() + restOfWord.toLowerCase();
+}
+
 function titleize(phrase) {
-    let words = [];
-    let originalWords = phrase.split(' ');
-    originalWords.forEach((word) => {
-        words.push(capitalize(word))
-    });
-    return words.join(' ');
-}
-```
+  let wordArray = phrase.split(' ');
+  let capitalizedWords = [];
 
-* The first two solutions use **method chaining** -- taking the **result** of one method, and immediately calling a method on that result **without assigning it to a variable**, again and again until you get a final result.
+  // Use a variable and update it
+  function capitalizeAndPush(word) {
+    let completed = capitalize(word);
+    capitalizedWords.push(completed);
+  }
+
+  // forEach does not return a value
+  wordArray.forEach(capitalizeAndPush);
+  let finalSentence = capitalizedWords.join(' ');
+  return finalSentence;
+}
+</code>
+</pre>
+</details>
+
+# Aside: Method Chaining
+
+* The solution above uses **method chaining** -- taking the **result** of one method, and immediately calling a method on that result **without assigning it to a variable**, again and again until you get a final result.
 * Method chaining can be very elegant, but it can also be very dense, making the code harder to understand, test, and debug.
 * "Unspooling" a method chain into intermediate variables (like example 3) can make the code easier to follow, but it can also make it cluttered and obscure the algorithm.
-
-> Whether to use method chaining is a very subjective aesthetic judgement. YMMV!
-
 
 # Reduce
 
@@ -241,7 +349,7 @@ See how the accumulator is used to pass information from one iteration to the ne
 
 # Iteration Methods in Emoji
 
-![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
+![map filter reduce in emoji](https://res.cloudinary.com/btvca/image/upload/v1574445188/curriculum/map-filter-reduce-in-emoji_t6emre.png)
 
 <small>(image used with [permission](https://twitter.com/AccordionGuy/status/1098031540725051399) by [@AccordionGuy](https://twitter.com/AccordionGuy) based on [a tweet by @steveluscher](https://twitter.com/steveluscher/status/741089564329054208) -- with a [working implementation](http://www.globalnerdy.com/2016/06/26/demonstrating-map-filter-and-reduce-in-swift-using-food-emoji/) 😲 in Swift)
 </small>

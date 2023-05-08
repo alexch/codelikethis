@@ -1,20 +1,18 @@
-require 'sinatra/base'
-require "sinatra/cookies"
-
-require 'erector'
-require 'deck/slide'
-require 'deck/slide_deck'
-require 'deck/rack_app'
+# frozen_string_literal:  true
 
 # add "lib" dir to Ruby load path
 here = ::File.expand_path(File.dirname(__FILE__))
 lib = "#{here}/lib"
-$: << lib
+$LOAD_PATH << lib
 
+require 'sinatra/base'
+require 'sinatra/cookies'
+require 'erector'
+require 'deck/slide'
+require 'deck/slide_deck'
+require 'deck/rack_app'
 require 'util'
-require "hash_extensions"
-# require_all(lib)
-
+require 'hash_extensions'
 require 'site'
 require 'app_page'
 require 'tracks_table'
@@ -25,8 +23,7 @@ module AppHelpers
   def page_title object, extra = nil
     [
         (object.display_name rescue object.to_s),
-        extra,
-        "- Code Like This"
+        extra
     ].compact.join(' ')
   end
 end
@@ -37,7 +34,19 @@ class App < Sinatra::Base
   include Erector::Mixin
   include AppHelpers
 
+  if ENV['ROLLBAR_ACCESS_TOKEN']
+    require 'rollbar/middleware/sinatra'
+    use Rollbar::Middleware::Sinatra
+  end
+
+  configure do
+    set :protection, :except => :frame_options
+    set :static_cache_control, [:public, :max_age => 300]
+  end
+
+
   before do
+    cache_control :public, max_age: 300
     Thread.current[:development_mode] = (request.host =~ /^(localhost|127\.0\.0\.1)$/)
   end
 
@@ -65,6 +74,10 @@ class App < Sinatra::Base
     def view
       TracksSidebar.new(tracks: @site.tracks, current: nil)
     end
+  end
+
+  get '/favicon.ico' do
+    send_file(File.join(here, "public", "images", "favicon.ico"))
   end
 
   get '/lessons' do
@@ -170,6 +183,20 @@ class App < Sinatra::Base
     page(thing: project).to_html
   end
 
+  get "/references" do
+    page(thing: site.references).to_html
+  end
+
+  get "/references/:file.:ext" do
+    path = File.join(here, "public", "references", "#{params[:file]}.#{params[:ext]}")
+    send_file(path)
+  end
+
+  get "/references/:reference_name" do
+    reference = Reference.new(name: params[:reference_name])
+    page(thing: reference).to_html
+  end
+
   get "/schedule" do
     if (site && site.schedule)
       page(thing: site.schedule).to_html
@@ -179,7 +206,7 @@ class App < Sinatra::Base
   end
 
   get "/topics/:topic_name" do
-    # todo: make this actually work
+    # TODO: make this actually work
     topic = Topic.new(name: params[:topic_name], site: site)
     page(thing: topic).to_html
   end
@@ -217,17 +244,17 @@ class App < Sinatra::Base
     end
 
     site = [
-        CodeLikeThis,
         Bootcamp,
         JavascriptAfterHours,
         Curriculum,
-        Taste
+        Taste,
+        CodeLikeThis,
     ].map(&:new).detect do |site|
       site.host? sitename
     end
     if site.nil?
-      @warning = "No site found for #{sitename}; using CodeLikeThis content."
-      site = CodeLikeThis.new
+      @warning = "No site found for #{sitename}; using Bootcamp content."
+      site = Bootcamp.new
     end
     site
   end

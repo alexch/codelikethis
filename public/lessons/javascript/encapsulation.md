@@ -108,12 +108,7 @@ Note that only `area` and `circumference` are exposed via a pointer to the circl
 
 Expanded:
 
-```
-( function() { ... }  ) ();
-   ↑           ↑         ↑
-  define       ↑       invoke
-              execute   
-```
+![IIFE Example](/images/iife-breakdown.png)
 
 The trick is, when you *invoke* the function, you generate a *new scope* for that invocation's closure.
 

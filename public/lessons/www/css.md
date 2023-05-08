@@ -1,19 +1,3 @@
-    topic name: "css"
-    topic name: "styling"
-    topic name: "inline-styling"
-    topic name: "properties"
-    topic name: "selectors"
-    topic name: "compound-selectors"
-    topic name: "pseudo-class-selectors"
-    topic name: "html-linking"
-    topic name: "html-elements"
-    topic name: "element-box-model"
-    topic name: "style-overrides"
-    link href: "https://meyerweb.com/eric/tools/css/reset/"
-    link href: "http://learnlayout.com/box-model.html"
-    lab href: "https://learn.freecodecamp.org/responsive-web-design/basic-css", from: "FreeCodeCamp",
-        name: 'Basic CSS'
-
 # CSS
 
   * Cascading Style Sheets (CSS)
@@ -75,6 +59,40 @@ p {
 
 What is the CSS doing here?
 
+# Including CSS in HTML
+
+There are several ways to add style to an HTML page
+
+  * `<h1 style="color: red; font-size: 32px;">` Inline
+  * `<link>` Tag to a CSS file
+  * `<style>` Tags with `@import` of a CSS file
+
+# CSS Style Tags
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cat</title>
+    <style type="text/css" media="screen">
+      h1 {
+        color:red;
+        font-size:24px;
+      }
+
+      p {
+        color:blue;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+  	<h1>My Cat Bob</h1>
+    <p>My cat is named Bob. He is a lazy cat.</p>
+  </body>
+</html>
+```
+
 # Selectors and Properties
 
   * CSS is constructed of **selectors** and **properties**.
@@ -85,17 +103,17 @@ What is the CSS doing here?
 
 # Examples of Selectors
 
-| selector     | meaning          |
-|--------------|------------------|
+| selector         | meaning          |
+|------------------|------------------|
 | `p`, `div`, etc. | element selector |
-| `.class`     | class selector   |
-| `#id`        | ID selector      |
-| `*`          | Wildcard ("any") |
+| `.class`         | class selector   |
+| `#id`            | ID selector      |
+| `*`              | Wildcard ("any") |
 
 # Examples of Properties
 
-| property    | meaning                                |
-|-------------|----------------------------------------|
+| property      | meaning                                |
+|---------------|----------------------------------------|
 | `color`       | text color                             |
 | `border`      | Defines border width, style, and color |
 | `text-align`  | justifies text                         |
@@ -123,6 +141,35 @@ h1 .title {
   margin: 0, auto;
   padding-top: 1em;
 }
+```
+
+# LAB: Fancy Header
+
+Let's make a site with a fancy title!
+
+* Open up VSCode and make a new HTML document
+* The body of your HTML should contain a header That says "My Super Fancy Header"
+* Add a `<style>` tag to your page and use multi class selectors to:
+
+  * Make the entire header a uniform size, and font
+  * Make the words in your header alternate colors.
+
+# Fancy Header Template
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cat</title>
+    <!--Write your CSS in the style tag-->
+    <style type="text/css" media="screen">
+      
+    </style>
+  </head>
+  <body>
+  	<div>My Super Fancy Header</div>
+  </body>
+</html>
 ```
 
 # Compound Selectors 3
@@ -166,43 +213,11 @@ a:active {
 }
 ```
 
-# Including CSS into HTML
+# LAB: CSS Diner
 
-There are several ways to add style to an HTML page
+* Complete the following CSS selector game
 
-  * `<style>` Embedded CSS
-  * `<link>` Tag to a CSS file
-  * `<h1 style="color: red; font-size: 32px;">` Inline
-  * `<link>` Tag to a CSS file
-  * `<style>` Tags with `@import` of a CSS file
-
-# CSS Style Tags
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Cat</title>
-    <style type="text/css" media="screen">
-     div {
-       float: left;
-       width: 49%;
-       height: 100px;
-       border: solid red 1px;
-     }
-
-     button {
-       float: left;
-       clear: both;
-     }
-    </style>
-  </head>
-  <body>
-  	<h1>My Cat Bob</h1>
-    <p>My cat is named Bob. He is a lazy cat.</p>
-  </body>
-</html>
-```
+  * https://flukeout.github.io/
 
 # Linking to CSS
 
@@ -320,16 +335,3 @@ h1 {
   background-color: blue;
 }
 ```
-
-# TODO
-
-- `px` and `pt` and `em` and `rem`
-- fonts: which fonts are always available? what are web fonts?
-- fontawesome (inline icons as font glyphs)
-- space vs. greater-than (descendant vs. child) in css selectors
-
-- "every config file eventually becomes Turing-complete" see also <http://beza1e1.tuxen.de/articles/accidentally_turing_complete.html> and
-<https://stackoverflow.com/questions/648246/at-what-point-does-a-config-file-become-a-programming-language>
-
-- reset.css
-- print.css

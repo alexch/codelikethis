@@ -23,7 +23,7 @@
 * the **terminal** is a window into which you can talk directly to your computer
   * aka *console* or *command line* or *command prompt* or *shell*
 
-![Shall we play a game?](../images/wargames-terminal.jpg)
+![Shall we play a game?](/images/wargames-terminal.jpg)
 
 <small>from WarGames, (1983)</small>
 
@@ -35,7 +35,7 @@
 
 Computers used to not have screens! They were connected to devices like this:
 
-![tty](../images/tty.jpg)
+![tty](/images/tty.jpg)
 
 The Terminal app is a direct descendant of a TeleType printer or TTY.
 
@@ -50,7 +50,6 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 * to open your Terminal:
   * **Mac OS**: launch the "Terminal" application
   * **Windows**: launch the "Cmder" application (pronounced "Commander"), make a new console (<kbd>Ctrl</kbd>-<kbd>T</kbd>) and select
-    * Startup command: `{bash::bash}`
     * Startup directory: `C:\Users\yourname`
   * *Windows (alternate)*: Launch the Windows Command Prompt (`cmd.exe` or `PowerShell`) -- but beware, the commands are slightly different than in bash
 
@@ -59,7 +58,8 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
   * ...and if your window is too short then the top lines will *scroll away* and you will miss them
   * Make it look like this:
 
-![terminal next to browser](../images/terminal-and-browser.png)
+![terminal next to browser](/images/terminal-and-browser.png)
+![terminal next to browser](/images/terminal-and-browser-win.png)
 
 # Lab: Interactive Calculator
 
@@ -77,7 +77,7 @@ See [this twitter thread](https://twitter.com/b0rk/status/980825751456047104) fo
 
 # Node is a JavaScript Engine
 
-![Diagram: Node Train: Command Line](https://docs.google.com/drawings/d/e/2PACX-1vSKCgLe4wp1JroIot-SsVP-TKqHsySU-06oOGe3zYWBZ4jOc77quoRH2XhyNKBBuLx4IgbLim2NZLqK/pub?w=953&amp;h=522)
+![Diagram: Node Train: Command Line](/images/train.png)
 
 An "engine" is a type of program that either [*executes* or *empowers*](https://en.wikipedia.org/wiki/Software_engine) other programs.
 
@@ -87,8 +87,8 @@ NodeJS (aka `node`) is an engine that runs JavaScript programs -- either from fi
 
 > WARNING: Before you start typing, look at the prompt!
 
-* *the shell* is the command line that the terminal starts with
-  * its prompt usually looks like this:
+* *the shell* is the command line interpreter that the terminal starts with
+  * its prompt is usually
     *  `Davids-Macbook-Pro:~ David$` (Mac)
     *  `david@davidspc:~$` (Ubuntu Linux)
     *   `C:\Users\david>` (Windows)
@@ -132,6 +132,7 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 * for this class, we recommend:
   * create a `code` directory inside your home directory
   * create a new directory inside `code` for each lesson or project
+> WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`
 
 > WARNING: On some windows systems, Command Prompt will open to `C:\Windows\System32`. You can get back to your home directory by typing `cd %HOME%`
 
@@ -139,14 +140,14 @@ If that doesn't print `'podcast'`, look at the prompt; you may be inside your sh
 
 * when you type `ls` ("list") it shows the contents of the current directory
   * **On Windows** you may need to type `dir` instead
-  
+
 * if you type `ls -al` ("list all long") it also shows *hidden* files and *extra info* like the modification date
   * **On Windows** you may need to type `dir /A:SH` instead
-  
+
 # Lab: Home Decor
 
-1. Using your GUI desktop, navigate to your home directory and open it in a desktop window. 
-<br>(Your desktop is called "Finder" in MacOS, or "Explorer" in Windows)
+1. Using your GUI, navigate to your home directory and open it in a file manager window.
+<br>(Your file manager is called "Finder" in MacOS, or "Explorer" in Windows. There are various ones on linux.)
 2. Using your terminal, list your home directory's contents.
 3. Look carefully at them both. What's the same? What's different?
 
@@ -247,12 +248,12 @@ What happens? Is this what you expected?
 2. Inside this file, put the following source code:
 
         let count = 10;
-        
+
         while (count > 0) {
           console.log(count + '...');
           count = count - 1;
         }
-        
+
         console.log('Blastoff!');
 
 3. Save the file
@@ -268,7 +269,7 @@ What happens? Is this what you expected?
 
 These work in `bash`:
 
-![bash shortcuts](../images/bash-cursor-shortcuts.jpg)
+![bash shortcuts](/images/bash-cursor-shortcuts.jpg)
 
 Also:
 
@@ -280,7 +281,7 @@ Also:
 
 <small>(image source: [Clément Chastagnol](https://clementc.github.io/blog/2018/01/25/moving_cli/))</small>
 
-# LAB: Next Steps
+# More Resources:
 
 Want to learn enough command line to be dangerous?
 Check out <https://www.learnenough.com/command-line-tutorial> by Michael Hartl (founder of [Tau Day](https://tauday.com/) and all around solid geek).
@@ -288,6 +289,5 @@ Check out <https://www.learnenough.com/command-line-tutorial> by Michael Hartl (
 Want to be a command-line hacker like in War Games?
 Play this game: <http://overthewire.org/wargames/bandit/> where you use *your real command line* `ssh` tool to connect to sandboxed hosts and infiltrate them.
 
-Want to learn the history of software user interfaces and operating systems? 
+Want to learn the history of software user interfaces and operating systems?
 Read [In The Beginning Was The Command Line](http://cristal.inria.fr/~weis/info/commandline.html) by Neal Stephenson
-
