@@ -1,9 +1,5 @@
 {
-  "addons": [
-    "librato",
-    "papertrail",
-    "rollbar"
-  ],
+  "addons": ["librato", "papertrail", "rollbar"],
   "buildpacks": [
     {
       "url": "heroku/metrics"
@@ -45,9 +41,8 @@
     }
   },
   "name": "codelikethis",
-  "scripts": {
-  },
-  "stack": "heroku-18",
+  "scripts": {},
+  "stack": "heroku-22",
   "environments": {
     "review": {
       "addons": [],
