@@ -12,6 +12,7 @@ A Regular Expression is a program that matches (or fails to match) parts of a st
 - [Regexr - Symbol by symbol explanation of the regular expression](https://regexr.com/ "Symbol by symbol explanation of the regular expression")
 - [Regexper - Diagram the regular expression in a 'Railroad' style](https://regexper.com "Diagram the regular expression in 'railroad' style")
 - [Debuggex - Debug and diagram Regular Expressions](https://www.debuggex.com/ "Debug and diagram Regular Expressions")
+- [Cyrilex - Debug and diagram regular expressions, along with a string generator](https://extendsclass.com/regex-tester.html "Debug and diagram regular expressions, along with a string generator")
 
 ## Simple language matching library
 
