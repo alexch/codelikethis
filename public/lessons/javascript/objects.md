@@ -23,31 +23,33 @@
 
 > All models are wrong, but some are useful. -- [George Box](https://en.wikipedia.org/wiki/All_models_are_wrong)
 
-# An Object Contains Properties
+# Objects Contain Properties
 
 ```javascript
-let abby = {
-  'species': 'dog',
-  'color': 'brown',
+let fido = {
+  species: 'dog',
+  color: 'brown',
   spayed: true,
-  breed: 'mutt',
   weight: 40,
-  'favorite activity': 'chasing squirrels'
+  favoriteActivities: [
+    'sleeping',
+    'chasing squirrels'
+  ]
 }
 ```
 
-* This is called **object literal** syntax since it defines the object exactly as it's **written**.
-* The string on the left is called the *key*; the string on the right is called a *value*; the two together are called an *entry* or a *property*.
-* JavaScript object keys are always strings, but if the key has no spaces in it, you can omit the quotations
-* `let abby = {...}` is an assignment, setting the variable `abby` to point to the object we just defined
+* Object **properties** are **KEY** and **VALUE** pairs
+* The **key** is on the left and the **value** on the right; the two together are called a *property*.
+* JavaScript object keys are always strings. If the key has no spaces you can omit surrounding quotes.
+* `let fido = {...}` is an assignment, setting the variable `fido` to point to the object we just defined
 
-# An Object is a Lookup Table
+# An Object is like a Lookup Table
 
-An object is useful for putting many similar things together.
+Objects are useful for putting many similar values together.
 
-Let's make an object that maps a state's *abbreviation* to its *full name*
+Let's make an object that binds a state *abbreviation* to its *full name*
 
-*Type this in a NodeJS console*:
+*Type this in a NodeJS console, or a JavaScript file*:
 
 ```javascript
 let states = {
@@ -60,7 +62,7 @@ let states = {
 
 # Getting Object Properties
 
-You can get the properties of an object with either *dots* or *brackets*:
+You can get the properties of an object using either *dots* or *brackets*:
 
 | With Dots   | With Brackets  | The Value         |
 |-------------|----------------|-------------------|
@@ -78,7 +80,7 @@ states.VT     // also 'Vermont'
 
 # Setting Object Properties
 
-* You can set the properties of an object with either *dots* or *brackets* followed by a `=` (single equal sign)
+* You can set the properties of an object with either *dots* or *brackets* followed by `=` ( a single equal sign)
 * Adding properties works even after the object has been created.
 
 ```javascript
@@ -87,16 +89,16 @@ states.WY = 'Wyoming'
 states['FL'] = 'Florida'
 ```
 
-* Setting a property with a key that already exists *removes* the original value first
+* Setting a property with a key that already exists *updates* the original value
 ```javascript
 states.VT = 'The Green Mountain State'
 ```
 
-# Dots vs. Brackets
+# Dots vs. Brackets 1
 
-Dots are prettier than square brackets, but less versatile, since some keys simply cannot be represented using dot notation, and trying to use them causes syntax errors.
+Dots are *prettier* than square brackets, but less versatile, since some keys simply cannot be represented using dot notation, and trying to use them causes syntax errors.
 
-The bracket `[]` syntax is less common but covers more uses (e.g., if the key contains spaces, or is inside a variable).
+The bracket `[]` syntax is less common but covers all uses (e.g., if the key contains spaces, or is **a variable**).
 
 ```javascript
 > let capitals = {}
@@ -113,7 +115,9 @@ capitals.'New York' = 'Albany'
 SyntaxError: Unexpected string
 ```
 
-If you get those errors, revert to brackets, which is more reliable:
+# Dots vs. Brackets 2
+
+If you get an error when setting a property, revert to brackets, which are more reliable:
 
 ```javascript
 > capitals['New York'] = 'Albany'
@@ -122,28 +126,34 @@ If you get those errors, revert to brackets, which is more reliable:
 { 'New York': 'Albany' }
 ```
 
-# Dots vs. Brackets vs. Variables
+# Dots vs. Brackets with Variables 1
 
-You can use variables instead of literals to get and set properties.
+You can use **variables** instead of values to get and set properties.
 
 Given this code ...
 
 ```js
-let items = {
-    brick: 'red'
+let materials = {
+  brick: 'a red brick',
+  siding: 'some wooden clapboards'
 }
-let item = 'brick'
+
+let desired = 'brick'
+console.log(materials[desired]);
+// => 'a red brick'
 ```
 
-... two of the following expressions look for *a key named `item`*, but only one looks for a key named *the value of the variable named item*:
+# Dots vs. Brackets with Variables 2
+
+The last two expressions look for *a key named `desired`*, but only the first one looks for a key named *the value of the variable named desired*:
 
 | code            | value       | explanation                         |
 |-----------------|-------------|-------------------------------------|
-| `items.item   ` | `undefined` | "get me the property named 'item'"  |
-| `items['item']` | `undefined` | "get me the property named 'item'"  |
-| `items[item]  ` | `'red'`     | "get me the property named 'brick'" |
+| `materials[desired]  ` | `'a red brick'`     | "get me the property named 'brick'" |
+| `materials.desired   ` | `undefined` | "get me the property named 'desired'"  |
+| `materials['desired']` | `undefined` | "get me the property named 'desired'"  |
 
-> This can be confusing!
+> NOTE: This can be confusing!
 
 # An Object is a Data Structure
 
@@ -165,47 +175,36 @@ let alice = {
     }
   },
   pets: ['Mittens', 'Fido']
-}
+};
+
+console.log(alice.homeAddress.zipCode);
+// => '05401'
 ```
 
 Given the above, the value of `alice.homeAddress.zipCode` is `'05401'`
 
-> Note: The above shows the essence of [JSON](../javascript/json):
-> a syntax for representing data structures containing primitive values,
-> including nested objects and arrays.
-
-# `Object.keys`
-
-`Object.keys` is a special function that:
-
-  * takes any object
-  * returns an array
-  * containing that object's keys
-
-Example:
-
-```javascript
-Object.keys(states)  //=> [ 'CA', 'MA', 'NY' ]
-```
-
 # LAB: Looping through an object with for...in
 
-Here's a way to loop through every property in an object.
+There is a way to loop through every property in an object.
 
-This `for..in` loop grabs every property in the `states` object, 
-one at a time,
-and inside the loop,
-sets the `state` value to that property's *key*
+This `for..in` loop:
+
+* Grabs every property in the `states` object, one at a time
+* And inside the loop
+* Sets the `state` value to that property's *key*
 
 ```js
 for (let state in states) {
-    
+// write code here 
+// using the state variable
+// and the states object
 }
 ```
 
-In your NodeJS console, try to write code that outputs:
+In a new JS file, try to write code that outputs:
 
 ```
+VT is short for Vermont
 CA is short for California
 MA is short for Massachusetts
 NY is short for New York
@@ -214,40 +213,116 @@ NY is short for New York
 <details>
 <summary>Solution:</summary>
 <pre>
+<code class="language-javascript">
+let states = {
+  'VT': 'Vermont',
+  'CA': 'California',
+  'MA': 'Massachusetts',
+  'NY': 'New York'
+}
+
 for (let state in states) {
     console.log(state + ' is short for ' + states[state]);
 }
+</code>
 </pre>
 </details>
 
-**Note:** use "`for...of`" for arrays, use "`for...in`" for objects -- see [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
+> NOTE: Use `for...in` for objects, and not `for..of`.
+> See [this article](https://bitsofco.de/for-in-vs-for-of/) for more detail about **of** vs. **in**.
 
-**WARNING:** remember the `let` or you will be defining a *global variable* named `state`
+> WARNING: remember to use the `let` keyword or you will be defining a *global variable* named `state`
+
+# Object Properties as an Array
+
+It is also possible to convert an Object's properties into an Array of Strings, and then loop over that Array
+
+[`Object.keys(someObject)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) is a function that
+
+  * Receives any object as an argument
+  * Returns an array of **all** the object's property names
+
+Example:
+
+```javascript
+let states = {
+  CA: 'California',
+  MA: 'Massachusetts',
+  NY: 'New York'
+}
+
+Object.keys(states)
+//=> [ 'CA', 'MA', 'NY' ]
+```
+
+[MDN Documentation on Object.keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
 # LAB: Class GPA
 
-Please create a new file called `gpa.js`, and type in the following code
-(which defines a `grades` object and calls a `gpa` function):
+Create a new JavaScript file called `gpa.js`, with the following code:
 
 ```javascript
 let grades = {
-  'midterm': 3.3,
-  'project': 4.0,
-  'final': 3.2
+  midterm: 3.3,
+  project: 4.0,
+  final: 3.2
+}
+
+function gpa(someGrades) {
+  // write your code here
+}
+
+console.log('The final GPA is ' + gpa(grades));
+```
+
+* Write the `gpa` function
+* Assume that all grades carry equal weight toward the GPA
+
+> The answer is 3.5 ... but don't just return 3.5, make it work for real. There is more than one way to solve this.
+
+# Class GPA solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+You can use `for..in` to loop over an object's properties
+</div>
+</details>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+You can use `Object.keys(someObject) to get all an object's properties as an Array, then check their length with `.length`
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<pre>
+<code class="language-javascript">
+let grades = {
+  midterm: 3.3,
+  project: 4.0,
+  final: 3.2
+}
+
+function gpa(gradeObject) {
+  let total = 0;
+  let gradeCount = Object.keys(gradeObject).count;
+  for (let grade in gradeObject) {
+    total = total + gradeObject[grade];
+  }
+  return total / gradeCount;
 }
 
 console.log('The GPA is ' + gpa(grades));
-```
+</code>
+</pre>
+</details>
 
-* Now write the `gpa` function, and run `node gpa`!
-* Assume that all grades carry equal weight toward the GPA.
-* The answer is 3.5 ... but don't just return 3.5, make it work for real.
+# All keys become Strings
 
-> Hint: There's more than one way to solve this!
-
-# All keys are strings, even nulls
-
-* In a JavaScript object, keys must be strings
+* In a JavaScript object, keys must be strings, even `null`, `0`, and `undefined`
 
 * **Beware** of using these as keys, since they get converted to strings in unexpected ways:
 
@@ -257,96 +332,165 @@ console.log('The GPA is ' + gpa(grades));
     * `false` or `true`
     * `0` (or any number)
 
-# `delete`
+# The `delete` Operator
 
 To remove a key-value pair from an object, use the keyword `delete`:
 
 ```js
-states = {
+let states = {
   CA: 'California',
   MA: 'Massachusetts',
   NY: 'New York'
 }
 
-{ CA: 'California', MA: 'Massachusetts', NY: 'New York' }
+console.log(states);
+// => { CA: 'California', MA: 'Massachusetts', NY: 'New York' }
 
-> delete states.MA
+delete states.MA
 
-true
-
-> states
-
-{ CA: 'California', NY: 'New York' }
+console.log(states);
+// => { CA: 'California', NY: 'New York' }
 ```
 
-> note that `delete` is **not** a function; it's a keyword
+> NOTE: `delete` is **not** a function, it is an operator
 
-# fake delete
+# A Way to Fake `delete`
 
 You can get a similar effect by setting the value to `null` or `undefined`, but beware: the key remains!
 
 ```js
-> states.CA = null
-null
-> states.NY = undefined
-undefined
-> states
-{ CA: null, NY: undefined }
-> for (let state of states) { console.log(state) }
+let states = {
+  CA: 'California',
+  MA: 'Massachusetts',
+  NY: 'New York'
+}
+
+states.CA = null
+states.NY = undefined
+console.log(states);
+// => { CA: null, NY: undefined }
+
+for (let state in states) { 
+  console.log(state) 
+}
+// => null
+// => undefined
 ```
 
-> Remember, this only removes the *value*, but not the *key*, from the property list.
-> This can be dangerous!
+> NOTE: This only changes the *value*, but not the *key*
 
 # LAB: A Menu Order
 
-* Write a program that accepts a food order based on a menu.
-  * Name your program `order.js`.
-  * Create an object to store all the item names and their prices.
-  * Accept an order on the command line and calculate the total for all items.
-  * Print the total order price and exit.
+Write a function that accepts an order with items in a menu object
 
-| Item   | Price |
-|--------|-------|
-| Burger | $5.00 |
-| Fries  | $3.50 |
-| Shake  | $1.11 |
-| Salad  | $4.25 |
+  * Name your file `order.js`
+  * Create an object, called `menu`, to store all the item names and their prices
+  * Accept an order as an Array of Strings, containing the desired items
+  * Print the total price, based on what is ordered
 
-## Example Program Usage
+| ItemName   | Price |
+|------------|-------|
+| burger     | $5.00 |
+| fries      | $3.50 |
+| shake      | $1.11 |
+| salad      | $4.25 |
 
-```
-$ node order burger fries
+# Menu Order solution
 
-Your order total is $8.50
+<details>
+<summary>Hint 1</summary>
+<div>
 
-$ node order burger burger shake fries burger
+For every item in the `order`, look up its value in the `menu`, and add the price to a `total`
 
-Your order total is $19.61
-```
+</div>
+</details>
 
-# Object Instance Methods
+<details>
+<summary>Hint 2</summary>
 
-Here's a taste of [object instance methods](./methods).
+Create an object that represents your menu
 
-A method is a *function* attached to an *object* as a *property*.
+<pre>
+<code class="language-javascript">
+let menu = {
+  burger: 5,
+  fries:  3.5,
+  shake:  1.11,
+  salad:  4.25
+}
+</code>
+</pre>
+</details>
+
+<details>
+<summary>Hint 3</summary>
+
+You can access the value of a key using a string with square bracket notation
+
+<pre>
+<code class="language-javascript">
+menu["burger"] // => 5
+</code>
+</pre>
+</details>
+
+<details>
+<summary>Solution</summary>
+<pre>
+<code class="language-javascript">
+let order = ['burger', 'burger', 'shake', 'fries', 'burger'];
+
+function calculateTotal(order) {
+  let menu = {
+    burger: 5,
+    fries: 3.5,
+    shake: 1.11,
+    salad: 4.25
+  };
+
+  let orderTotal = 0;
+
+  function addItemPrice(item) {
+    orderTotal = orderTotal + menu[item];
+  }
+
+  order.forEach(addItemPrice);
+
+  return orderTotal;
+}
+
+console.log("Your order total is $" + calculateTotal(order));
+</code>
+</pre>
+</details>
+
+# Object Methods Preview
+
+Here is a little preview of [object methods](https://javascript.info/object-methods)
+
+A **METHOD** is any *function* attached to an *object* as a *property*
+
+The object can then **call** that property as a function
 
 ```js
-let stringUtils = {
+let stringHelpers = {
   capitalize: function(word) {
     return word.charAt(0).toUpperCase() +
       word.slice(1).toLowerCase();
   },
-  rant: function(opinion) {
-    return option.toUpperCase() + '!!!';
+  yell: function(opinion) {
+    return opinion.toUpperCase() + '!!!';
   }
 }
 
-stringUtils.rant('i love pizza') //=> 'I LOVE PIZZA!!!'
+stringHelpers.yell('i love pizza') //=> 'I LOVE PIZZA!!!'
 ```
 
-# LAB: more about JS Objects
+# More About JS Objects
 
-* FreeCodeCamp:
+* Eloquent JavaScript: [Chapter 4](https://eloquentjavascript.net/04_data.html)
+
+* FreeCodeCamp Practice Exercises:
   * From [Build JavaScript Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/build-javascript-objects)
-  * to [Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects)
+  * To [Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects)

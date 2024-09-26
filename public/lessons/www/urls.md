@@ -15,7 +15,9 @@
 
 # URL Diagram
 
-![complex url](/lessons/www/complex_url.png) (via [DoePud](https://doepud.co.uk/blog/anatomy-of-a-url))
+![complex url](/images/complex_url.png)
+
+(via [DoePud](https://doepud.co.uk/blog/anatomy-of-a-url))
 
 # URL Breakdown
 
@@ -140,3 +142,22 @@ in normal pages, it asks the browser to scroll to a location *inside* the docume
 
 in Single-Page Apps (SPAs) it is used to determine which pseudo-page to display
 
+
+# Reading the Anchor Fragment
+
+`document.location.hash` returns the URL's *fragment* (everything after the `#`) as a string
+
+Normal web pages use the anchor to *scroll* to an element with a matching `id` or `name` attribute
+
+Single-Page Apps use the anchor to *redraw* the page and call it "routing"
+
+# Lab: Say Hello, Rebuilt
+
+We are going to build a site that greets the user by name once more. Instead of having any sort of input form we are going to use anchor fragments to determine the name
+
+* Create an HTML document that displays the text "Hello, stranger!" when you visit the home page (localhost:5500 if you're using live-server)
+* If the user specifies a name in the URL the page should greet them by that name instead
+  * e.g. localhost:5500#Bob -> "Hello, Bob!"
+* Format the name so it is always capitalized regardless of how it's put into the address bar
+* If the name is on your enemies list tell the person to "Go away!"
+  * and redirect back to the home page

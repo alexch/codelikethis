@@ -2,13 +2,11 @@
 
 Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two players on a 3x3 grid.
 
-![tic tac toe completed](tic_tac_toe.svg)
+![tic tac toe completed](/images/tic_tac_toe.svg)
 
 In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) and a terminal-based UI.
 
 We recommend that you implement this command-line, terminal UI project before starting the [Tic Tac Toe (WWW)](tic_tac_toe_www) project.
-
-Template repository: <https://github.com/BurlingtonCodeAcademy/tic-tac-toe>
 
 <small>(image source: [Public Domain](https://en.wikipedia.org/wiki/Tic-tac-toe#/media/File:Tic_tac_toe.svg))</small>
 
@@ -29,7 +27,7 @@ Move to?
 
 ---
 
-After the user (acting as Player X) types <kbd>2</kbd><kbd>Enter</kbd>, the board should redraw like this:
+After the user (acting as Player X) types <kbd>2</kbd> <kbd>Enter</kbd>, the board should redraw like this:
 
 ```
  1 | X | 3
@@ -43,7 +41,7 @@ Move to?
 ```
 ---
 
-Next, after the user (now acting as Player O) types <kbd>5</kbd><kbd>Enter</kbd>, the board should redraw like this:
+Next, after the user (now acting as Player O) types <kbd>5</kbd> <kbd>Enter</kbd>, the board should redraw like this:
 
 ```
  1 | X | 3
@@ -56,41 +54,29 @@ Player X's turn
 Move to? 
 ```
 
-## Stories
+# Stories
 
 <!--BOX-->
 
-### No Rules
+## No Rules
 
-**Given** an empty board, and
+**Given** an empty board
 
-**Given** the current player is X
+**And** the current player is X
 
-**When** the user selects a cell (e.g. typing <kbd>2</kbd><kbd>Enter</kbd>)
+**When** the user selects a cell (e.g. typing <kbd>2</kbd> <kbd>Enter</kbd>)
 
-**Then** the board redraws
+**Then** the board redraws, and an X appears in that cell
 
-**And** an X appears in that cell
+**And** the turn ends, and the current player changes from X to O
 
-**And** the turn ends
-
-**And** the current player changes from X to O
-
-<hr>
-
-**Given** the player is O
-
-**When** the user selects a cell (e.g. typing <kbd>5</kbd><kbd>Enter</kbd>)
-
-**Then** an O appears in that cell
-
-**And** the turn ends, and the current player changes from O to X
+>And likewise for player O
 
 <!--/BOX-->
 
 <!--BOX-->
 
-### Rules
+## Rules
 
 **When** the user selects a cell that is not empty
 
@@ -104,11 +90,11 @@ Move to?
 
 <!--BOX-->
 
-### Win Condition
+## Win Condition
 
 **Given** the turn has just ended
 
-**When** if there are three Xs in a row, column, or diagonal
+**When** there are three Xs in a row, column, or diagonal
 
 **Then** the system draws a line through the winning three cells
 
@@ -116,15 +102,17 @@ Move to?
 
 **And** the game ends
 
-(and likewise for Player O)
+> And likewise for Player O
 
 <!--/BOX-->
 
 <!--BOX-->
 
-### Stalemate
+## Stalemate
 
-**Given** all cells are full and neither player has three in a row
+**Given** all cells are full 
+
+**And** neither player has three in a row
 
 **When** the turn ends
 
@@ -136,28 +124,33 @@ Move to?
 
 <!--BOX-->
 
-### Names
+## Names
 
-When starting a game, choose the names of the players (not just X and O).
+**When** starting a game, choose the names of the players (not just X and O).
 
-When displaying the name of a player, use their name and also say which symbol they are (X or O), e.g. `Alice's turn (X)`
+**Then** display the name of a player, and also say which symbol they are (X or O), e.g. `Alice's turn (X)`
 
 <!--/BOX-->
 
 <!--BOX-->
 
-### Artificial Stupidity
+## Artificial Stupidity
 
-- When starting a new game, choose "Player vs Player" or "Player vs Computer"
-- If "Player vs Computer" is chosen, then do not ask for a name
+**Given** a new game with the options "Player vs Player" or "Player vs Computer"
+
+**When** "Player vs Computer" is chosen
+
+**Then** do not ask for a name
 - The computer player always picks an empty cell *at random*
 - The human is always X and the computer is always O
 
 <!--/BOX-->
 
+# Icebox
+
 <!--BOX-->
 
-### Artificial Intelligence (Optional)
+## Artificial Intelligence
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D

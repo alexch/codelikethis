@@ -25,7 +25,7 @@ Let's lift the hood and check out the engine that makes the World Wide Web run.
 * This file contains code, which tells your browser how, and what, to render. 
 * A web server responds to this request, by telling the browser where the file lives. 
 
-![HTTP Request](/lessons/www/http_request.png "HTTP Request") (via <https://betterexplained.com/>)
+![HTTP Request](/images/http_request.png "HTTP Request") (via <https://betterexplained.com/>)
 
 # HTTP Methods
 
@@ -122,29 +122,7 @@ The above languages run *inside* the web browser (aka "the client side"). On the
 * `Content-Length` header so the client knows how big a file to expect
 * ...and many more headers to help clients and servers work together
 
-# HTTP telnet example
+# Curl Screenshot
 
-`telnet` is the original program for connecting to other computers on the Internet. 
-
-> Unfortunately, many modern OSs don't ship with a working version of `telnet`, so you should watch your instructor's terminal, or skip ahead to the next slide.
-
-```bash
-$ telnet google.com 80
-```
-
-That opens a connection to one of Google's many web servers. 
-
-In HTTP, the client starts the conversation, so type this and hit <kbd>Enter</kbd>:
-
-```
-GET /
-```
-
-then the server replies with an HTTP response!
-
-If you have a working `telnet`, try this yourself. Also try `telnet towel.blinkenlights.nl` .
-
-# Telnet Screenshot
-
-![telnet screenshot](/lessons/www/telnet-google.png)
+![curl screenshot](/images/http-curl-example.png)
 

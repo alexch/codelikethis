@@ -1,149 +1,94 @@
-# Setup for React
+# Create React App
 
-This lesson will describe how to:
-- Use React in an HTML page
-- Configure your editor to highlight React JSX code
-- Test the output of JSX in the browser
+There is a very useful package called `create-react-app` which will automatically install all your required dependencies, and set up a directory for your react app automatically.
 
-# Adding React to an HTML Page
+# Using Create React App
 
-React can be added like any other library by using a `<script>` link in the header
+1. Install Create React App **globally** `npm install -g creat-react-app`
+2. From the command line type `npx create-react-app app-name`
 
-The `<script>` link can be to a Content Delivery Network (CDN) or a local package.
+This will create a directory for the front end of your app called `app-name`. Inside that there will be a package.json file with all the scripts you need to create a react app, run it locally, and build a production version of that site.
 
-# Using the CDN Links
+The directory (`app-name` in this example) is automatically set up as a git repository
 
-Add the following links to the `<head>` of the HTML file.
+# Directory Structure
 
-### React Development
-- https://unpkg.com/react@16/umd/react.development.js
+There are two main parts of the `create-react-app` directory
 
-### ReactDOM Development
-- https://unpkg.com/react-dom@16/umd/react-dom.development.js
+- the `src` folder
+- the `public` folder
 
-### Babel Standalone
-- https://unpkg.com/babel-standalone@6.15.0/babel.min.js
+> If you create a production build with `npm run build` you will additionally have a `build` folder. More on that when we talk about serving React projects next week!
 
-# Example HTML File Head
+# Core Concept: the `src` folder
 
-```html
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  </head>
-```
+The `src` folder is where the meat of your React project lives
 
-# Local Package Installation
+- Create a JS file for each component
+- Import components where needed
+- The `App.js` file lays out the whole page
+- `index.js` draws the content to the page
+- CSS for your project also goes in here
 
-You will need to have the following to include React as a local package in your HTML file.
+# Core Concept: the `public` folder
 
-- A package manager like **NPM** or **Yarn**
-- A package bundler like **Webpack** or **Browserify**
-- A compiler like **Babel**
+The `public` folder is where your react component gets drawn to.
 
-# Local Package Installation
+- Contains `index.html`
+- Displays the front end of the app
+- Keep images you want to display in here
+- Don't tweak the HTML!
 
-We will start with installing React using NPM
+# Lab: Create a React Component
 
-```sh
+Let's create our first React Component!  If you haven't already installed `create-react-app` go ahead and do that now `npm install -g create-react-app`
 
+- `cd` into your code folder
+- create a React app named `first-reapp`
+- Change your app so it displays an `h1` with the text "Hello, React!"
 
-```sh
-npm init -y
-npm install --save react react-dom
-```
+>Note: After you open VSCode it will ask if you want to use eslint from node modules. React has it's own eslint extension to properly highlight react components so use it.
 
-# Local Package Installation
+# Core Concept: Functional Components
 
-Download the React, ReactDOM, and Babel Scripts from the Content Delivery Network (CDN)
+By default `create-react-app` will set you up with a functional component.
 
-### React Development
-- https://unpkg.com/react@16/umd/react.development.js
+Functional components are just functions that return JSX
 
-### ReactDOM Development
-- https://unpkg.com/react-dom@16/umd/react-dom.development.js
+**But** React still needs to be in scope for a functional component to work, even theough it's not explicitly used in the component
 
-### Babel Standalone
-- https://unpkg.com/babel-standalone@6.15.0/babel.min.js
+# Core Concept: Class Based Components
 
-# Local Package Installation
+Class based components are an older way of setting up React Components, and are more representative of the way react actually works.
 
-Put the content of the scripts into a directory called `src` in the project root
+They are slightly less readable, and as of React 16.8 are less common since Hooks allow functional components to have all the same functionality.
 
-```shell
-mkdir js
-mv path/to/downloads/react.development.js ./src/
-mv path/to/downloads/react-dom.development.js ./src/
-mv path/to/downloads/babel.min.js ./src/
-```
+This transition from class based to functional components happened very quickly not too long ago so a lot of documentation still uses class based components.
 
-# Local Package Installation
+# The State Object
 
-Create an `index.html` file and source all three files in the head
+Every React component keeps track of its own state in an internal object named `state`. In a class based component you can access state through `this.state`. In a functional component you have to use Hooks to access state.
 
-```html
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="src/react.development.js"></script>
-    <script src="src/react-dom.development.js"></script>
-    <script src="src/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="output"></div>
-  </body>
-</html>
-```
+React likes to be in complete control of the page so it's important to only update the page through state, and **never through direct DOM manipulation!**
 
-# Local Package Installation
+# Never Directly Manipulate the DOM
 
-Now simply write some react in a `<script></script>` tag
+This is very important, and bears repeating.
 
-Example:
+**Never** directly manipulate the DOM when using React. All changes should be made through the state of the component using `this.setState` if it's a class based component, or the `useState` hook if it's a functional component.
 
-```
-<script type="text/babel">
-  ReactDOM.render(
-  <h1>Hello, local React!</h1>,
-  document.getElementById('output')
-  );
-</script>
-```
+Direct manipulation of the DOM will confuse React, and cause bugs.
 
-# Local Package Installation
+# Lifecycle Methods
 
-### Finished simple index.html
+Class based components also have direct access to a component's lifecycle methods. These are methods which get called at certain points during the component's life.
 
-```html
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="src/react.development.js"></script>
-    <script src="src/react-dom.development.js"></script>
-    <script src="src/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="output"></div>
-    <script type="text/babel">
-      ReactDOM.render(
-      <h1>Hello, local React!</h1>,
-      document.getElementById('output')
-      );
-    </script>
-  </body>
-</html>
-```
+The most common of these are:
 
-# Editor Configuration
+- `componentDidMount` fires when the component is first loaded onto the page
+- `componentDidUpdate` fires whenever `props` or `state` are updated
+- `componentWillUnmount` fires right before the component is removed from the page
 
-The VS Code editor extension 'Sublime Babel' will highlight the syntax for React, JSX, and ES6+ Code.
+# Lifecycle Diagram
 
-- Visit `https://marketplace.visualstudio.com/vscode`
-- Search for "sublime babel"
-- Extension page for [Sublime Babel](https://marketplace.visualstudio.com/items?itemName=joshpeng.sublime-babel-vscode)
-- Install the extenstion from the Visual Studio Marketplace or directly within the VS Code editor.
+![react component lifecycle](/images/react-component-lifecycle.png)

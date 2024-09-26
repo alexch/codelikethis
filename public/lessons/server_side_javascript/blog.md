@@ -67,7 +67,7 @@ Our existing server code will handle a default static home page; if we name it `
 
 Create a directory named `public` and a file named `index.html` containing:
 
-```
+```html
 <h1>Express Blog</h1>
 
 <form method='GET' action='/search'>
@@ -97,7 +97,7 @@ Create a directory named `articles`. Inside this directory create a file named `
 
 ## articles/1.json
 
-```
+```json
 {
   "id": 1,
   "title": "How to Cross a Rubicon",
@@ -216,7 +216,7 @@ For example, `/articles/1.json` will be served statically, but `/articles.json` 
 
 ## app.js
 
-```
+```js
 app.get('/articles', (request, response) => {
   response.sendFile($path.join(publicDir, 'articles.html'))
 })

@@ -39,7 +39,7 @@ window.location === document.location
 // => true
 ```
 
-# `window` is magic
+# The `window`
 
 * `window.location = "http://google.com"`
   * makes the browser load a new page
@@ -60,24 +60,16 @@ window.parseInt('123')  // thing
 ```
 
 # Locating HTML Elements
+
 * the hard way
   * traverse the document tree using DOM Node methods
 * the somewhat easier way
   * `document.getElementsByTagName('p')[0]`
 * the easy way
   * `document.getElementById('article')`
-* the awesome way
-    * `$('#article')`
-    * jQuery + CSS Selectors FTW!
-
-# $?
-
-* dollar sign, like underscore, is a valid symbol name
-* jQuery (and some other libraries) define `$` as a function that's like a souped-up `getElementById`
-  * unfortunately, the object `$` returns is not an Element, but a wrapper
-  * somewhat different API
 
 # Adding HTML
+
 * brute force (raw HTML strings)
 
 ```javascript
@@ -87,9 +79,23 @@ var message = document.getElementById('message');
 message.innerHTML = "<b>bye</b>!";
 ```
 
+* programmatically with JS
+
+```js
+
+let target = document.getElementById('someElement')
+
+let paragraph = document.createElement('p')
+paragraph.textContent = "I’ve seen things you people wouldn’t believe. Attack ships on fire off the shoulder of Orion. I watched C-beams glitter in the dark near the Tannhauser gate. All those moments will be lost in time, like tears in rain."
+
+target.appendChild(paragraph)
+```
+
 # Altering HTML Elements
 
-* Look at DOM reference
+* Target an element through a DOM query and assign it to a variable
+* Use the reference to the element to manipulate existing properties
+  * Or add entirely new properties
 
 # the style property
 
@@ -97,107 +103,6 @@ message.innerHTML = "<b>bye</b>!";
 * CSS uses dashes; JavaScript uses camelCase
 
         div.style.backgroundColor = "#FF0000";
-
-# the "px" problem
-
-* CSS position and layout attributes need a unit
-* the default is **not** "px"
-  * except sometimes it works
-  * which is worse than never working
-
-        div.style.width = "10px";
-
-* here's a handy helper method
-
-```javascript
-Number.prototype.px = function() {
-    return "" + this + "px";
-}
-
-(5).px(); // "5px"
-x = 10;
-x.px();   // "10px"
-```
-
-* here's a trick for reading "px" values
-
-```javascript
-parseInt(h1.style.width)
-```
-
-
-# setTimeout
-
-* You pass in a function (let's call it F) and a number (call it N)
-* Execution returns *immediately*
-* F gets called approximately N milliseconds later
-  * not exact, but close enough for simple animation
-* F is known as a **callback**
-  * because the system calls it back at some later point
-  * callbacks are used all over the place in JavaScript
-    * events, Jasmine tests, jQuery, node.js, ...
-
-# Wait a second... did you say ANIMATION???!?!
-
-* Animating HTML is very exciting
-
-```javascript
-function slide(element) {
-    element.style.position = "fixed";
-    var x = 0;
-    function step() {
-        if (x > 1000) {
-            // stop the animation
-            return;
-        } else {
-            element.style.left = x.px();
-            x += 10;
-            // schedule the next animation
-            setTimeout(step, 100);
-        }
-    }
-    step();  // start animation
-}
-```
-
-Scoping note: `step` is available inside the function itself because we defined it with a name, not anonymously.
-
-see [animate.html](../javascript/animate.html) for a live example
-
-# jQuery Animation
-
-* jQuery has some fun methods to animate CSS attributes
-* <http://api.jquery.com/animate>
-
-```javascript
-$("#logo").animate({
-    backgroundColor: "#aa0000"
-}, 1000 );
-```
-
-  * You choose the attribute(s) and their final value, plus the duration of the entire effect
-  * jQuery calculates and interpolates the details
-* jQuery UI has lots more
-  * <http://jqueryui.com/>, not <http://jquery.com/>
-
-# Testing Animation
-
-* Use a "Mock Clock"
-  * replace `setTimeout` with a different function during tests
-  * this function keeps track of what would be called when
-  * then "ticks" forward when asked
-  * you can simulate speeding up and slowing down time
-* In Jasmine:
-
-```javascript
-beforeEach(function() {
-  jasmine.Clock.useMock();
-});
-//... call the code that calls setTimeout
-jasmine.Clock.tick(500); // advance 500 msec
-```
-
-  * see thread [How to test timers?](http://groups.google.com/group/jasmine-js/browse_thread/thread/f987956c624840d1/73b3ff5391244b19)
 
 # Events
 
@@ -209,63 +114,10 @@ jasmine.Clock.tick(500); // advance 500 msec
 * "listener" is just another name for "callback" (for events)
   * also called "handler"
 
-# How do I hook thee up? Let me count the ways.
-
-> How do I love thee? Let me count the ways.
-
-> I love thee to the depth and breadth and height
-
-> My soul can reach, when feeling out of sight
-
-> For the ends of Being and ideal Grace.
-
->  - Elizabeth Barrett Browning (1806-1861)
-
 ## Event Name Gotcha
 
 * the name of the property is **not** camelCase
 * the property name starts with "on" but the event name does **not** include "on"
-
-## Event Binding
-
-1. assign a *string* to the onwhatever property in HTML
-
-        <div onclick='alert("hi")'>hi</div>
-
-2. assign a function to the onwhatever property in JS
-
-        <div id='hi'>hi</div>
-        <script>
-        div = document.getElementById('hi');
-        div.onclick = function() {
-            alert("hi");
-            return false;
-        }
-        </script>
-
-    * gotcha: can only attach a single listener
-
-3. call the `addEventListener` method in JS
-
-        div.addEventListener('click', function() {
-            alert("hi");
-        });
-
-    * gotcha: in IE, you must use `attachEvent` instead
-
-4. use jQuery's `bind` method
-
-        $('#hi').bind('click', function() {
-            alert("hi");
-        });
-
-4. use jQuery's convenience method for standard event types
-
-        $('#hi').click(function() {
-            alert("hi");
-        });
-
-    * gotcha: if you call `click()` with no parameters, it *triggers* a click
 
 # `return false`
 
@@ -276,7 +128,8 @@ jasmine.Clock.tick(500); // advance 500 msec
 
 * Mouse
     * mousedown, mouseup, click
-    * mouseover
+    * mouseover, dblclick
+    * and many more. There are a ton of mouse events. A ridiculous number really.
 * Keyboard
     * keydown, keypress, keyup
 * Window
@@ -286,27 +139,18 @@ jasmine.Clock.tick(500); // advance 500 msec
     * resize, scroll, contextmenu
 * Form
     * focus, blur
-      * blur is the stupidest name ever in the history of stupid
-      * should have been "unfocus" or "losefocus"
+      * "blur" should probably have been "unfocus," but we're stuck with it now
     * change, select
     * submit, reset
 
-# Headless DOM
-
-* TODO: headless horseman image
-* [env.js](http://www.envjs.com/) is a simulated browser environment written in JavaScript
-* good for automated testing (e.g. continuous integration box)
-
 # References
+
 * DOM
     * <http://msdn.microsoft.com/library>
     * <http://www.w3schools.com/jsref>
     * [the Style object](http://www.w3schools.com/jsref/dom_obj_style.asp)
-    * <http://www.w3schools.com/HTMLDOM>
+    * <https://www.w3schools.com/js/js_htmldom.asp>
     * [DOM objects and methods](http://www.howtocreate.co.uk/tutorials/javascript/domstructure) - "all properties, collections and methods of the W3C DOM that can be reliably used in all major DOM browsers"
-* Animation
-  * <http://api.jquery.com/category/effects/>
-  * <http://api.jquery.com/animate/>
 * Events
   * <http://www.quirksmode.org/js/introevents.html>
   * <http://www.quirksmode.org/js/events_events.html>

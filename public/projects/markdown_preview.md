@@ -27,14 +27,12 @@ Input some markdown source on the left and see it rendered on the right.
 
 ## Setup
 
-* Clone the repo: (do this once only -- and use the Github Classroom URL instead if one is provided)
-
-        git clone git@github.com:BurlingtonCodeAcademy/markdown_preview.git
+* Follow the github classroom link and clone the repo
 
 * Install dependencies: (do this once)
 
-        cd markdown_preview
-        npm install -y
+        cd markdown_preview-yourgithubusername
+        npm install
 
 * Launch the app locally:
 
@@ -50,19 +48,20 @@ Input some markdown source on the left and see it rendered on the right.
 * Run the Cypress tests:
  * in the Cypress Runner window, click the "Run All Tests" button, or click on a single test to run it alone
 
-
-## Backlog (required user stories)
-
 We have provided Cypress tests that run through the first few features. Please make sure to keep running the tests, to ensure later changes don't break earlier features.
+
+# Stories
 
 <!--BOX-->
 ## Page Elements
 
 **Given** a running app
 
+**When** the user visits the http://localhost:8080
+
 **Then** the following elements should exist on the page:
 
-* *headline*: an `H1` element containing the text `Markdown Preview`
+* *headline*: an `H1` element containing the text "Markdown Preview"
 * *source*: a `textarea` element with the id `source`
 * *preview*: a `div` element with the id `preview`
 * *render*: a `button` element  with the id `render`
@@ -74,7 +73,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **Given** the user has entered text in the *source* text field
 
-**When** the user clicks *render* button
+**When** the user clicks the *render* button
 
 **Then** the text is copied into the *preview* area
 
@@ -85,7 +84,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **Given** the user has entered *markdown format* text in the *source* text field
 
-**When** the user clicks *render* button
+**When** the user clicks the *render* button
 
 **Then** the text is rendered as styled HTML into the *preview* area
 
@@ -100,7 +99,7 @@ We have provided Cypress tests that run through the first few features. Please m
 
 **And** at least one second has elapsed since the user's last keypress
 
-**Then** the *render* button should activate automatically
+**Then** the *render* function should activate automatically
 
 **And** the text is rendered as styled HTML into the *preview* area
 
@@ -125,6 +124,8 @@ Make the *formatted text* in the *preview* area look pretty.
 Maybe make different elements different colors, or improve margins and padding, or whatever you like.
 
 <!--/BOX-->
+
+# Icebox
 
 <!--BOX-->
 
@@ -161,7 +162,7 @@ This isn't a user story, but an invitation for you to clean your code and experi
 
 **Then** the selected text is replaced without double asterisks
 
-**And** the preview text is displayed in normal
+**And** the preview text is displayed as normal text
 
 > **Hint**: the [TextArea Element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement) has [many properties](https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement#Properties) -- including `value` (to return the user's text) and `selectionStart` and `selectionEnd` (to show which text the user has selected). It also has a method [`setRangeText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setRangeText) which replaces the current selection's text with a string you specify.
 
@@ -188,7 +189,7 @@ This isn't a user story, but an invitation for you to clean your code and experi
 
 **Then** the selected text is replaced without double asterisks
 
-**And** the preview text is displayed in normal
+**And** the preview text is displayed as normal text
 
 <!--/BOX-->
 

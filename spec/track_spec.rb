@@ -205,7 +205,6 @@ fill a glass of water at the sink
       end
     end
 
-    # TODO
     describe 'projects' do
       it 'should include projects inside nested lessons'
       it 'should include projects declared inside itself'

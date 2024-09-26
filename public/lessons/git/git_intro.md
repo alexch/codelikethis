@@ -65,7 +65,7 @@ You should see something like this:
 
 ```
 $ git init
-Initialized empty Git repository in /Users/alex/code/shopping/.git/
+Initialized empty Git repository in /Users/Someone/code/shopping/.git/
 
 $ git status
 On branch master
@@ -142,7 +142,7 @@ When you create a commit, you always provide a *message* describing the nature o
 git commit -m 'allow users to change their profile picture'
 ```
 
-Commit messages are important. Think of them as journal entries -- without them you will be tracking *what* you changed, but not *why* you made the changes.
+Commit messages are important, and should describe **why** you made the changes. Think of them as journal entries -- without them you will be tracking *what* you changed, but not *why* you made the changes.
 
 # LAB: Make a shopping list (cont.)
 
@@ -168,18 +168,12 @@ Once again, run `git status`, expecting to see:
 And to prove that the change actually made it into the history, run `git log`. 
 
     commit d8b95657eebea7083de1a4fb96ba7fb296637342
-    Author: Alex Chaffee <achaffee@burlingtoncodeacademy.com>
-    Date:   Fri Sep 7 11:24:33 2018 -0400
+    Author: Some Person <someone@burlingtoncodeacademy.com>
+    Date:   Fri Sep 1 12:00:00 2020 -0400
     
         shopping list
 
 Again, **don't skim past this message**. Look for terms you understand. Try to figure out what the program is telling you. Is everything as you would expect? If not, what's different? What don't you understand?
-
-# Add vs Commit
-
-Q: Why does git have a two-step process for tracking changes? Why doesn't `git add` just add the changes to the history immediately?
-
-A: ?
 
 # Add vs Commit
 
@@ -255,7 +249,7 @@ Now let's pretend that a few days have passed... (or a few hours...) and you ate
 
 But Ben & Jerry's has such weird ice cream names, and you can't remember whether you bought Chunky Monkey or Chubby Hubby or Cherry Garcia!
 
-> oh no, it's an **ice creaMERGENCY!!!**
+> It's an **ice cream EMERGENCY!!!**
 
 Fortunately, git is a time machine. You can view *any point* in history and see the changes made at that point in history.
 
@@ -276,8 +270,8 @@ My commit id is `d8b9565` so I would run
 
 ```
 commit d8b95657eebea7083de1a4fb96ba7fb296637342
-Author: Alex Chaffee <alex@stinky.com>
-Date:   Fri Sep 7 11:24:33 2018 -0400
+Author: Some Person <someone@burlingtoncodeacademy.com>
+Date:   Fri Sep 1 12:00:00 2020 -0400
 
     shopping list
 
@@ -296,7 +290,7 @@ index 0000000..9f0ab0a
 
 Now we remember ... 
 
-![chunky monkey](chunky-monkey-detail.png)
+![chunky monkey](/images/chunky-monkey-detail.png)
 
 Oh, Chunky Monkey, how could I ever forget you?
 
@@ -311,8 +305,8 @@ Run `git show` on your *second* commit to see something like this:
 ```
 git show e9c9b25c6
 commit e9c9b25c65a83729a90c8740f71dc89432d7b548
-Author: Alex Chaffee <alex@stinky.com>
-Date:   Fri Sep 7 11:53:23 2018 -0400
+Author: Some Person <someone@burlingtoncodeacademy.com>
+Date:   Fri Sep 1 12:00:00 2020 -0400
 
     oh no, out of condiments
 
@@ -339,6 +333,7 @@ It's saying "milk" and "chunky monkey ice cream" were *removed*, and "ketchup" w
 # LAB: Push It To The Limit
 
 1. Sign in to [GitHub.com](https://github.com) and create a repository
+![new github repo](/images/new-repository.png)
 2. Name it the same as your local repo directory (`shopping`)
 3. **Don't** initialize it with a README
 4. Follow the "if you have a repo already" instructions
@@ -357,7 +352,7 @@ Now reload the page and see your changes!
 > Git does not automatically push and pull changes!
 
 1. **On GitHub.com**, find your `shopping` repo and click on `groceries.txt`
-2. Find the **pencil icon** on the upper right and click it -- this opens a text editor **inside your browser** ![github pencil](github-pencil.png)
+2. Find the **pencil icon** on the upper right and click it -- this opens a text editor **inside your browser** ![github pencil](/images/github-pencil.png)
 3. Make some changes and save them as a new commit
 4. Go back to your terminal and text editor. **Notice that you still have the old version.**
 5. On your terminal, run the command `git pull` 

@@ -37,8 +37,7 @@
 <p data-height="407" data-theme-id="light" data-slug-hash="ZqvJbM" data-default-tab="css,result" data-user="Dangeranger" data-pen-title="Basic Grid Example" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/ZqvJbM/">Basic Grid Example</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-# Mozilla Grid Tutorial
 
-* Complete the following walkthough to create your first CSS Grid site
+# Let's play a game!
 
-[Mozilla CSS Grid Tutorial](https://mozilladevelopers.github.io/playground/css-grid)
+Let's practice some more grid setup! [Grid Garden](https://cssgridgarden.com/) Is a fantastic game by the same people who brought you Flexbox Froggy that lets you practice using grid properties. Go there now, and see if you can complete all 28 levels!

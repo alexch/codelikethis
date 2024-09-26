@@ -10,7 +10,7 @@ require 'nav_bar'
 
 class CodeLikeThis < Site
   def hostname
-    ["codelikethis.com", "localhost"]
+    ["codelikethis.com"]
   end
 
   def tracks

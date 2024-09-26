@@ -14,7 +14,7 @@
 
 In geometry, a square is a rectangle whose sides are equal. We can model this in code like this:
 
-```
+```js
 class Rectangle {
     constructor(length, width) {
         this.length = length;
@@ -59,21 +59,16 @@ Q: Given an object instance, how do you tell what class it is?
 
 A: There are many ways, and they are all a bit weird.
 
-```
-> typeof(c)
-'object'
+```js
+typeof(c) // => 'object'
 
-> c instanceof Circle
-true
+c instanceof Circle // => true
 
-> c.constructor.name
-'Circle'
+c.constructor.name // => 'Circle'
 
-> Circle.prototype
-Circle {}
+Circle.prototype // => Circle {}
 
-> Circle.prototype.isPrototypeOf(c)
-true
+Circle.prototype.isPrototypeOf(c) // => true
 ```
 
 # What's your behavior?

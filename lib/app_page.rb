@@ -19,7 +19,7 @@ class ThingPage < AppPage
   include Views
 
   def doctype
-    '<!doctype html>'
+    '<!DOCTYPE html>'
   end
 
   def html_attributes
@@ -34,26 +34,13 @@ class ThingPage < AppPage
     ].compact.uniq.join(' - ')
   end
 
-  # todo: promote into Page
+  # TODO: promote into Page
   # font_name: if nil, use href param
   # href: if nil or default, use local path /name.css
   def font name: nil, href: nil
     raise "name or href param required" unless (name or href)
     href ||= "/#{name}.css"
     link rel: "stylesheet", href: href, type: "text/css", charset: "utf-8"
-  end
-
-  # todo: promote into Page
-  def stylesheet attributes = {}
-    href = if attributes[:href]
-             href
-           elsif attributes[:name]
-             "/css/#{attributes[:name]}.css"
-           else
-             raise "requires either a name or an href"
-           end
-    link_attributes = {rel: "stylesheet", href: href}.merge(attributes)
-    link(link_attributes)
   end
 
   def head_content
@@ -68,95 +55,44 @@ class ThingPage < AppPage
       meta name: 'keywords', content: @thing.topics.map(&:name).join(',')
     end
 
-    # todo: parameterize bootstrap version
-    # todo: parameterize using CDN vs local file
-    stylesheet href: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css",
-               integrity: "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb",
+    stylesheet href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+               integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
                crossorigin: "anonymous"
-
-    font name: "fonts/Museo500"
-    font href: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:600"
-
-    stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
-
-    # load this application's CSS from /css/app.css
-    stylesheet name: "app"
-
-    # todo: parameterize using CDN vs local file for jQuery
-    script src: "https://code.jquery.com/jquery-3.2.1.slim.min.js",
-           integrity: "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN",
-           crossorigin: "anonymous"
-
-    # todo: use local file for jQuery if CDN failed
-    # todo: parameterize location of local file
-    # script raw("window.jQuery || document.write('<script src=\"../../../../assets/js/vendor/jquery.min.js\"><\/script>');")
-
-    # todo: parameterize using CDN vs local file for Popper
-    script src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js",
-           integrity: "sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh",
-           crossorigin: "anonymous"
-
-    # todo: parameterize using CDN vs local file for Bootstrap
-    script src: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js",
-           integrity: "sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ",
-           crossorigin: "anonymous"
-
-    # fontawesome is now SVGs
-    script defer: 'defer',
-           src: '/js/fontawesome-all.js'
-
-    # client-side code highlighting from https://highlightjs.org
-    # stylesheet name: "highlight/xcode"
-    stylesheet name: "highlight/solarized-light"
-
-    script src: "/highlight.min.js"
-    script raw(<<-JS)
-hljs.configure({languages: []});
-hljs.initHighlightingOnLoad();
-JS
-
-    script raw(<<-JS)
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-    JS
+    stylesheet name: 'app'
 
   end
 
   def body_scripts
-    # load this application's JS from /js/app.js
-    script src: "/js/app.js"
+    script defer: "defer",
+           src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
+           integrity: "sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=",
+           crossorigin: "anonymous"
+
+    script defer: "defer",
+           src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+           integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
+           crossorigin: "anonymous"
+
+    script defer: "defer",
+           src: "https://cdn.jsdelivr.net/combine/npm/@fortawesome/fontawesome-free@5.8.2,npm/@fortawesome/fontawesome-free@5.8.2/js/solid.min.js",
+           crossorigin: "anonymous"
+
+    script defer: "defer",
+           src: "/js/app.js"
   end
 
   def footer_content
-    text "This curriculum was created by Alex Chaffee and Burlington Code Academy, with significant contributions from Joshua Burke, Robin Hrynyszyn, Robin Rainwalker, and Benjamin Boas."
-
-    # text "Unless otherwise noted, all contents copyright ", raw('&copy;'), " 2013-2018 "
-    # a "Alex Chaffee.", href: "http://alexchaffee.com"
-    br
-
     p(rawtext <<-HTML)
-    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Code Like This"</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="http://codelikethis.com" property="cc:attributionName" rel="cc:attributionURL">Alex Chaffee</a>
-    is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">"Burlington Code Academy Curriculum"</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://burlingtoncodeacademy.com" property="cc:attributionName" rel="cc:attributionURL">Burlington Code Academy</a>
+    is licensed under:
+    <br /><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
     <br />
     <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
-    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
+    <img alt="Creative Commons License" style="border-width:0" src="/images/by-cs-sa-license.png" />
     </a>
     <br />
     HTML
     br style: "clear:both"
-    br
-    p do
-      text "This site built on "
-      a "Sinatra", href: "http://sinatrarb.com"
-      text ", "
-      a "Erector", href: "http://erector.rubyforge.org"
-      text ", "
-      a "Deck", href: "https://github.com/alexch/deck.rb"
-      text ", "
-      a "Bootstrap", href: "https://getbootstrap.com"
-      text ", and so on."
-    end
   end
 
   def self.google_analytics_code account_id
@@ -175,7 +111,6 @@ $(function () {
     JAVASCRIPT
   end
 
-
   def all_tracks
     @site.tracks
   end
@@ -193,7 +128,7 @@ $(function () {
 
   def breadcrumbs
     if @thing.view.respond_to? :breadcrumbs
-      section(class: 'breadcrumbs container-fluid') do
+      section(class: 'breadcrumbs container') do
         widget @thing.view, {}, content_method_name: :breadcrumbs
       end
     end
@@ -204,12 +139,11 @@ $(function () {
     # top nav
     widget @site.navbar
 
-    breadcrumbs
-
-    #todo: add 'main' element type to Erector
-    element('main', class: 'container-fluid') {
-      div(class: "row") {
-
+    element('main', class: 'container') {
+      div(class: "bc-back-forthl") do
+        breadcrumbs
+      end
+      div(class: "row first") {
         center_cols = 12
         # first the sidebar
         if @sidebar
@@ -221,9 +155,7 @@ $(function () {
         center_cols -= 3 if outline?
 
         # now the real body
-        div(class: "col-md-#{center_cols}") {
-          a name: 'content'
-
+        div(class: "col-md-#{center_cols}", id: "welcome") {
           if @warning
             div(class: 'row') {
               div(@warning, class: "warning alert alert-warning")
@@ -258,29 +190,11 @@ $(function () {
       }
     }
 
-    breadcrumbs
-
     footer(class: ['footer', 'navbar-light']) {
       footer_content
     }
 
     body_scripts
-  end
-
-  def self.google_analytics_code account_id
-    <<-JAVASCRIPT
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '#{account_id}']);
-    _gaq.push(['_setDomainName', 'none']);
-    _gaq.push(['_setAllowLinker', true]);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    JAVASCRIPT
   end
 
   external :script, google_analytics_code('UA-23417120-3')

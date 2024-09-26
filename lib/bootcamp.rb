@@ -12,7 +12,7 @@ class Bootcamp < Site
 
   # base site has all tracks
   def hostname
-    ["bootcamp.burlingtoncodeacademy.com", "bootcamp"]
+    ["bootcamp.burlingtoncodeacademy.com", "bootcamp", "localhost"]
   end
 
   def google_calendar_id
@@ -25,7 +25,6 @@ class Bootcamp < Site
       ::Track::Www,
       ::Track::ResponsiveLayout,
       ::Track::ClientSideCoding,
-      ::Track::Bootstrap,
       ::Track::ServerSideJavascript,
       ::Track::Oo,
       ::Track::Db,
@@ -33,14 +32,9 @@ class Bootcamp < Site
 
       ::Track::Separator,
 
-      ::Track::Prerequisites,
       ::Track::Agile,
       ::Track::Git,
-      ::Track::Cs,
-      ::Track::Ux,
       ::Track::TricksOfTheTrade, # or "trade secrets" ?
-      ::Track::Career,
-      ::Track::Qa,
     ]
   end
 
@@ -60,67 +54,43 @@ class Bootcamp < Site
               }
               p(class: 'card-text') {
                 text "This site contains the curriculum for our "
-                a "2018 Web Development Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
+                a "Spring 2020 JavaScript Software Development Bootcamp",
+                  href: "https://www.burlingtoncodeacademy.com/software-development-bootcamp/"
+                text "."
+              }
+              p(class: 'card-text') {
+                text "Common answers and explanations are in the "
+                a "References section",
+                  href: "https://bootcamp.burlingtoncodeacademy.com/references/"
+                text "."
+              }
+              p(class: 'card-text') {
+                text "The course projects are in the "
+                a "Project Section",
+                  href: "https://bootcamp.burlingtoncodeacademy.com/projects/"
                 text "."
               }
             }
           }
           br
           div.card {
-            div(class: 'card-body') {
-              p(class: 'card-text') {
-                h2 "What next?"
-                ul {
-                  li {
-                    text "Peruse the "
-                    i(class: 'fas fa-angle-double-left')
-                    b "Tracks"
-                    i(class: 'fas fa-angle-double-left')
-                    text " in the sidebar to see what we are teaching."
-                  }
-                  li {
-                    text "Look at the "
-                    a "class schedule", href: "/schedule"
-                    text " or a "
-                    a "list of possible projects", href: "/projects"
-                    text " the students will work on during the course."
-                  }
-                  li {
-                    text "Browse the "
-                    a "GitHub repository", href: "http://github.com/alexch/codelikethis"
-                    text "."
-                  }
-                  li {
-                    text "Visit the central "
-                    a "Code Like This", href: "http://codelikethis.com/"
-                    text " site, with even more lessons."
-                  }
-                }
-              }
-            }
+            iframe(
+              src: "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=YnVybGluZ3RvbmNvZGVhY2FkZW15LmNvbV9hazFxMDRvNzBwYXBqODJkb2ZsYXVnMGM1c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=M2w3Mmc5YWV0cXJsdWgycDhqc2lsY2NoZDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23009688&color=%23F09300&showTabs=1&showCalendars=1&mode=WEEK&title=Spring%202020%20Software%20Development%20Bootcamp",
+              style: 'border-width:0',
+              width: '800',
+              height: '600',
+              frameborder: '0',
+              scrolling: 'no'
+            )
           }
-          div.card do
-            div(class: "help", style: 'border: 10px solid #ddddee') {
-              img(src: "/images/tracks-lessons-slides.png")
-            }
-          end
         }
       }
-
     end
-
-    # def notice
-    #   p.notice {
-    #     text "This site contains the curriculum for our "
-    #     a "Summer 2018 bootcamp", href: "http://burlingtoncodeacademy.com/bootcamp"
-    #     text " in Burlington, Vermont. "
-    #   }
-    # end
   end
 
   class NavBar < ::NavBar
     def logo klass: nil, style: nil
-      a(href: 'http://www.burlingtoncodeacademy.com',
+      a(href: '/',
         class: 'navbar-brand') {
         img.logo(src: '/images/burlingtoncodeacademy-logo.png',
                  width: 265, height: 36,
@@ -131,36 +101,13 @@ class Bootcamp < Site
     end
 
     def nav_items
-      nav_item name: "Bootcamp", href: "http://www.burlingtoncodeacademy.com/bootcamp/"
-      nav_item name: "Hire Our Grads", href: "http://www.burlingtoncodeacademy.com/hiring-partners/"
-      # nav_item name: "Events", href: "http://www.burlingtoncodeacademy.com/events/"
-      # nav_item name: "Blog", href: "http://www.burlingtoncodeacademy.com/blog/"
-
-      nav_item name: "Schedule", href: "/schedule"
-
-      nav_item name: "Curriculum", dropdown: true do
-        a(@site.display_name, class: 'dropdown-item', href: @site.href)
-        @site.tracks.each do |track|
-          if (track == ::Track::Separator)
-            hr
-          else
-
-          a(class: ['dropdown-item', 'track-name'],
-            href: track.href
-          ) {
-            i(class: "fas fa-paw")
-            text nbsp
-            text nbsp
-            text track.display_name
-          }
-          end
-        end
-
-
-      end
-
-      nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
+      nav_item name: 'Home', href: 'https://www.burlingtoncodeacademy.com/'
+      nav_item name: 'Bootcamp', href: 'https://www.burlingtoncodeacademy.com/software-development-bootcamp/'
+      nav_item name: 'Events', href: 'http://www.burlingtoncodeacademy.com/events/'
+      nav_item name: 'Blog', href: 'http://www.burlingtoncodeacademy.com/blog/'
+      nav_item name: 'Apply',
+               href: 'http://www.burlingtoncodeacademy.com/apply/',
+               button: true
     end
   end
-
 end

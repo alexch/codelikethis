@@ -9,7 +9,7 @@
 
 2. State:
   - **Private** data held within the Component
-  - *Can* be updated using `setState({someNew: 'data'})`
+  - *Can* be updated using `setState({someNew: 'data'})` or the updater from `useState`
   - **Must** be updated from the object that owns it
   - *Can* be passed down to children as Props
   - *Can* be updated by children by passing functions
@@ -20,16 +20,19 @@
 
 * At their most basic form Components are a lot like functions
 * They accept input from their props and return HTML snippets as React Elements
-* Any function that accepts one argument as props and returns JSX is valid
-* Stateless functions have no State i.e. `state = {value: 'something'}`
+* Any function that accepts one argument (props) and returns JSX is valid
+* Stateless functions traditionally have no state of their own
 
-```javascript
+```html
 <body>
   <div id="root"/>
 </body>
 <script>
   /* This is a perfectly valid React Component*/
-  const HelloThere = (props) => <h1>Hello, { props.name }</h1>;
+  const HelloThere = (props) => {
+    return <h1>Hello, { props.name }</h1>
+  }
+
   ReactDom.render(<HelloThere name="Grace Hopper"/>,
     document.getElementById('root')
   )
@@ -50,10 +53,10 @@
 * Neither Function nor Class components should mutate their Props
 * React requires Components to be 'Pure' toward their Props
 
-```javascript
+```jsx
 /* Always returns the same JSX for given inputs */
 
-const UserInfo = (props) => {
+function UserInfo (props) {
   return (
     <div className="UserInfo">
       <Avatar user={ props.user } />
@@ -69,7 +72,7 @@ const UserInfo = (props) => {
 
 * 'Pure' functions don't mutate inputs and always return the same output for the same inputs
 
-```javascript
+```jsx
 /* This is a 'Pure' function */
 /* It always returns the same output for given inputs */
 
@@ -78,7 +81,7 @@ function sum (first, second) {
 }
 ```
 
-```javascript
+```jsx
 /* This is an 'Impure' function */
 /* It can return different things based on the balance */
 
@@ -95,15 +98,15 @@ function deduct (bankAccount, amount) {
   * Data managed by the component that changes over time
   * Considered private data by default
   * Cannot be changed by the Parent
-  * Has a set default value, can be `Null`
+  * Has a set default value, can be `null`
   * Plain JavaScript Object
 
 ### Rules
 
   * Never mutate the State directly
-  * Always use `this.setState()`
+  * Always use `this.setState()` or the updater from `useState`
   * Limit access to State from children
-  * If building from a prior value, pass an update function to `this.setState()`
+  * If building from a prior value, pass an update callback function to `this.setState()`
 
 [Props vs State](http://lucybain.com/blog/2016/react-state-vs-pros/)
 
@@ -117,7 +120,7 @@ function deduct (bankAccount, amount) {
 
 # State - Tick Code
 
-```javascript
+```jsx
 function tick() {
   const element = (
     <div>
@@ -138,7 +141,7 @@ setInterval(tick, 1000);
 
 > Does this use component state?
 
-```javascript
+```jsx
 /* Now we have a component */
 function Clock(props) {
   return (
@@ -164,7 +167,7 @@ setInterval(tick, 1000);
 
 * Convert the stateless function to a Class
 
-```javascript
+```jsx
 /* From this */
 function Clock(props) {
   return (
@@ -190,7 +193,7 @@ class Clock extends React.Component {
 
 # State - Start the Clock
 
-```javascript
+```jsx
 class Clock extends React.Component {
   constructor(props) {
     /* Make sure to call super in a constructor */
@@ -213,7 +216,7 @@ class Clock extends React.Component {
 
 # State - Manage the Clock
 
-```javascript
+```jsx
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -257,7 +260,7 @@ class Clock extends React.Component {
 
 * Never update state directly, use `setState({some: 'state'})`
 
-```
+```jsx
 /* Not good */
 this.state.comment = 'Hello';
 
@@ -265,13 +268,23 @@ this.state.comment = 'Hello';
 this.setState({comment: 'Hello'});
 ```
 
+# Lab: Color Clicker
+
+Let's create a new react project that has a button you can click to change the color of some text.
+
+- Create a new React component using `npx create-react-app`
+- Change your App component from a stateless functional component into a stateful class based component
+- Render a header with blue text, and a button that says "Change Color"
+- Using the state make it so that when you click the button the text changes to red
+- When you click the button again the text should change back to blue
+
 # State - Updates can be Async
 
 * Calling `setState()` schedules an update
 * React **may** batch those updates together for performance
 * If you use a prior value to calculate the state, pass a callback function
 
-```
+```jsx
 /* Incorrect */
 this.setState({
   counter: this.state.counter + this.props.increment,
@@ -289,7 +302,7 @@ this.setState((prevState, props) => ({
 * This allows for independent property merges
 * The merge is shallow
 
-```javascript
+```jsx
 constructor(props) {
   super(props);
   this.state = {
@@ -316,4 +329,44 @@ componentDidMount() {
 # State - Many Clocks
 
 <p data-height="265" data-theme-id="light" data-slug-hash="pZxMag" data-default-tab="js,result" data-user="Dangeranger" data-pen-title="Hello World in React" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/pZxMag/">Hello World in React</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+# Using Functional Component Syntax
+
+Instead of creating a Component by extending the Component class we can write a function like this:
+
+```jsx
+function StatelessComponent (props) {
+  return <h1>Hello {props.name}</h1>
+}
+```
+
+Then we can slot it into a stateful component like so:
+
+```jsx
+class Stateful extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {name: "Bill"};
+  }
+
+  render() {
+    return (
+      <div>
+        <StatelessComponent name={this.state.name} />
+      </div>
+    );
+  }
+}
+```
+
+We could also slot it into another stateless component and pass props directly to it:
+
+```jsx
+function AlsoStateless (props) {
+  return (
+    <div>
+      <StatelessComponent name="Bob" />
+    </div>
+  )
+}
+```

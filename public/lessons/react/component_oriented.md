@@ -1,17 +1,15 @@
 # React Components
 
 * Isolated pieces of a website or app
-* Can be rendered manually or programatically
-* Dynamic data is passed in via Props
-* Generate child compoents with `render()`
+* Can be passed data from parent components in the form of `props`
+* Can be rendered manually, or programatically
+* Return JSX
 
 ```javascript
-class Profile extends React.Component {
-  userData = () => {
-    return data || fetchDataFromDatabase();
-  }
+function Profile (props) {
+  const [userData, setUserData] = useState(data) 
 
-  render() {
+  return(
     <Header>
       <Profile
         name={userData.name}
@@ -21,28 +19,16 @@ class Profile extends React.Component {
       <Activity />
       <Contact />
     </Header>
-  }
+  )
 }
 ```
 
 # Using Components
 
 * Typically the `index.js` initiates the components tree from the top level
-* Child components are rendered after their parents
-* Parents pass Props and State to children
-
-```javascript
-<html>
-  <body>
-    <div id="root"/>
-  </body>
-  <script>
-    ReactDom.render(<Profile />,
-      document.getElementById('root')
-    )
-  </script>
-</html>
-```
+* Can be made up of other components
+* Child components are rendered by their parents
+* Parents pass stateful data as props to children
 
 # Using Arrays of Components
 
@@ -51,8 +37,8 @@ class Profile extends React.Component {
 * React will iterate over and render each
 
 ```javascript
-class ProfileList extends React.Component {
-  render() {
+function ProfileList (props) {
+  return(
     <Header>
       [
         <Profile userId="One"/>,
@@ -60,7 +46,7 @@ class ProfileList extends React.Component {
         <Profile userId="Three"/>
       ]
     </Header>
-  }
+  )
 }
 ```
 
@@ -70,66 +56,62 @@ class ProfileList extends React.Component {
 * Many components can be built based on collections of data
 * Components can be **conditionally** rendered
 
-```
-class Comment extends React.Component {
-  render () {
-    return (
-      <li>
-        <p>User: {this.props.user}</p>
-        <p>Comment: {this.props.content}</p>
-      </li>
-    )
-  }
+```js
+function Comment (props) {
+  return (
+    <li>
+      <p>User: {props.user}</p>
+      <p>Comment: {props.content}</p>
+    </li>
+  ) 
 }
 
-class CommentList extends React.Component {
-  render() {
-    const comments = [
-      { user: 'Joshua', content: 'Components are my fave!' },
-      { user: 'Ada', content: 'Yes they make life easy' },
-      { user: 'Alex', content: 'Loved them for years' }
-    ];
-    const commentComponents = forms.map((comment, index) => {
-      return <Comment user={ comment.user } content={ comment.content }/>
-    });
+function CommentList (props) {
 
-    return (
+  const comments = [
+    { user: 'Joshua', content: 'Components are my fave!' },
+    { user: 'Ada', content: 'Yes they make life easy' },
+    { user: 'Alex', content: 'Loved them for years' }
+  ];
+
+  const commentComponents = comments.map((comment, index) => {
+    return <Comment user={ comment.user } content={ comment.content }/>
+  });
+
+  return (
     <div className="comments">
       <h2>Comment List</h2>
       <ul>
-      { commentComponents }
+        { commentComponents }
       </ul>
     </div>
-    )
-  }
+  )
 }
 ```
 
 # Immutable Components
 
 * Once components are rendered they cannot be updated
-* Re-rendering the component is how to update
+* Re-rendering the component is how to update them
+* Re-renders are triggered when `state` or `props` change
 
-```html
-<html>
-  <body>
-    <div id="root"/>
-  </body>
-  <script>
-    function tick() {
-      const element = (
-        <div>
-          <h1>Hello, world!</h1>
-          <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        </div>
-      );
-      // highlight-next-line
-      ReactDOM.render(element, document.getElementById('root'));
-    }
+```js
+function Tick(props) {
+  [date, setDate] = useState(new Date().toLocaleTimeString())
 
-    setInterval(tick, 1000);
-  </script>
-</html>
+  useEffect(() => {
+    setTimeout(() => {
+      setDate(new Date().toLocaleTimeString())
+    }, 1000)
+  })
+
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {date}.</h2>
+    </div>
+  )
+}
 ```
 
 
@@ -142,7 +124,7 @@ class CommentList extends React.Component {
 
 # Granular Render Updates
 
-![render performance](granular-dom-updates.gif)
+![render performance](/images/granular-dom-updates.gif)
 
 # Component Lifecycle
 
@@ -171,6 +153,6 @@ class CommentList extends React.Component {
 
 # Lifecycle Methods Diagram
 
-![react-component-lifecycle](react-component-lifecycle.png)
+![react-component-lifecycle](/images/react-component-lifecycle.png)
 
 <http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/>

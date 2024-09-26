@@ -14,7 +14,7 @@ Anywhere you can use an object, you can use a variable instead.
 
 Think of memory as a giant warehouse.
 
-![Warehouse from Raiders of the Lost Ark](../images/warehouse.jpg)
+![Warehouse from Raiders of the Lost Ark](/images/warehouse.jpg)
 
 Like this warehouse from the movie Raiders of the Lost Ark, 
 computer memory is vast and filled with boxes of various sizes.
@@ -59,7 +59,7 @@ Let's spend a few minutes just playing around in IRB. Some things to try:
 
     snack = "Apple"
 
-![snack-apple](snack-apple.svg)
+![snack-apple](/images/snack-apple.svg)
 
 Think of a variable as **pointing** to an object.
 
@@ -83,7 +83,7 @@ This is analogous to a label being removed from one box and placed on a differen
     fruit = "Apple"
     snack = fruit
 
-![snack-fruit](snack-fruit.svg)
+![snack-fruit](/images/snack-fruit.svg)
 
 After this both `snack` and `fruit`...
 
@@ -99,7 +99,7 @@ most messages return *new* values
     fruit = "banana"
     snack = fruit.upcase
 
-![fruit-banana-snack-banana](fruit-banana-snack-banana.svg)
+![fruit-banana-snack-banana](/images/fruit-banana-snack-banana.svg)
 
 `"banana"` and `"BANANA"` are two *different objects* in memory
 

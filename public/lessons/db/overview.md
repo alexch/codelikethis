@@ -55,7 +55,7 @@ The needs of the two scenarios are often very different, and people with experie
 
 In an organization with a history of using integration DBs, it can be difficult to write applications, since common operations (like adding a table or renaming a field) must go through a process to make sure they don't break *other apps* or use cases.
 
-> One the great advantages of an application database is that it is easier to change since all its use is **encapsulated** by a single application. Evolutionary database design and database refactoring can be used to make significant changes to an application database's design even after the database is put into production.
+> One of the great advantages of an application database is that it is easier to change since all its use is **encapsulated** by a single application. Evolutionary database design and database refactoring can be used to make significant changes to an application database's design even after the database is put into production.
  
 # Relational Database vs Document Database
 
@@ -99,7 +99,6 @@ Example (SQL):
 Example (Mongo):
 
 `db.collection('students').find({})`  -- "give me all the documents from the collection named 'students'"
-
 
 # Record
 
@@ -225,25 +224,4 @@ a *schema* defines the *types, names, valid values* of a database
 
 in SQL the schema is *explicit* and must be defined before inserting any data
 
-in NoSQL, often, the schema is *implicit* and it's up to the application developer to ensure the data conforms to the application's needs
-
-# Schema Migration
-
-a *migration* is a *script* that changes a schema
-
-usually during the lifetime of your app, your database schema will change many times
-
-a **very good idea** is to capture each of those changes in a *migration script* -- a program that, when run, updates a database from version N to version N + 1
-
-that way you can run -- **and test, and change** -- the migration on your development database *before* running it on your staging and production databases
-
-Ruby on Rails has a great system for doing migrations; there are a few libraries for doing it in MongoDB but none is standard; see
-
-  *  <https://www.npmjs.com/package/migrate-mongo>
-  * <https://blog.coinbase.com/how-we-do-mongodb-migrations-at-coinbase-47f18110d17f>
-
-<!--
-todo:
-replication / sharding
-permissions / users / roles / authentication (new slide set)
--->
+in NoSQL, often, the schema is *implicit* and it's up to the application developer to ensure the data conforms to the application's needs, but you can use frameworks such as [mongoose](https://mongoosejs.com/) for schema validation.

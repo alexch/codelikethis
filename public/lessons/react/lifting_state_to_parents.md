@@ -7,7 +7,7 @@
 
 ### Boiling Point Calculator
 
-```javascript
+```jsx
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
     return (
@@ -25,33 +25,25 @@ function BoilingVerdict(props) {
 * An element to collect input is needed
 * The input is passed to the `BoilingVerdict` Component
 
-```javascript
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {temperature: ''};
-  }
+```jsx
+function Calculator (props) {
 
-  handleChange(e) {
-    this.setState({temperature: e.target.value});
-  }
+  const [temperature, setTemperature] = useState('')
 
-  render() {
-    const temperature = this.state.temperature;
-    return (
-      <fieldset>
-        <legend>Enter temperature in Celsius:</legend>
-        <input
-          value={temperature}
-          onChange={this.handleChange} />
+  return (
+    <fieldset>
+      <legend>Enter temperature in Celsius:</legend>
+      <input
+        value={temperature}
+        onChange={(evt) => {
+          setTemperature(evt.target.value)
+        }} />
 
-        <BoilingVerdict
-          celsius={parseFloat(temperature)} />
+      <BoilingVerdict
+        celsius={parseFloat(temperature)} />
 
-      </fieldset>
-    );
-  }
+    </fieldset>
+  );
 }
 ```
 
@@ -63,42 +55,35 @@ class Calculator extends React.Component {
 
 ### What we want
 
-```javascript
-class Calculator extends React.Component {
-  render() {
-    return (
-      <div>
-        <TemperatureInput scale="c" />
-        <TemperatureInput scale="f" />
-      </div>
-    );
-  }
+```jsx
+function Calculator (props) {
+
+  return (
+    <div>
+      <TemperatureInput scale="c" />
+      <TemperatureInput scale="f" />
+    </div>
+  );
 }
 ```
 
 ### Extract TemperatureInput
 
-```javascript
-class TemperatureInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {temperature: ''};
-  }
+```jsx
+function TemperatureInput (props) {
+  const [temperature, setTemperature] = useState('')
 
-  handleChange(e) {
-    this.setState({temperature: e.target.value});
-  }
-
-  render() {
-    const temperature = this.state.temperature;
-    const scale = this.props.scale;
-    return (
-      <fieldset>
-        <legend>Enter temperature in {scaleNames[scale]}:</legend>
-        <input value={temperature}
-               onChange={this.handleChange} />
-      </fieldset>
+  const scale = props.scale;
+  return (
+    <fieldset>
+      <legend>Enter temperature in {scaleNames[scale]}:</legend>
+      <input value={temperature}
+              onChange={(evt) => {
+                  setTemperature(evt.target.value)
+                }
+              }
+      />
+    </fieldset>
     );
   }
 }
@@ -108,66 +93,49 @@ class TemperatureInput extends React.Component {
 
 * The components must be kept in sync
 * Each TemperatureInput holds it's own state
+* Sibling components can not communicate directly
 * State can be moved to `Calculator` to achieve this
 
 ### Remove State from TemperatureInput
 
-```javascript
-class TemperatureInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
+```jsx
+function TemperatureInput (props) {
+  
 
   /* Send changes to the parent */
-  handleChange(e) {
-    this.props.onTemperatureChange(e.target.value);
+  handleChange(evt) {
+    props.setTemperature(evt.target.value);
+    props.setScale(props.scale)
   }
 
   /* Use READ-ONLY Props instead of State */
-  render() {
-    const temperature = this.props.temperature;
-    const scale = this.props.scale;
-    return (
-      <fieldset>
-        <legend>Enter temperature in {scaleNames[scale]}:</legend>
-        <input value={temperature}
-               onChange={this.handleChange} />
-      </fieldset>
-    );
-  }
+
+  return (
+    <fieldset>
+      <legend>Enter temperature in {scaleNames[scale]}:</legend>
+      <input value={props.temperature}
+             onChange={this.handleChange} />
+    </fieldset>
+  );
 }
 ```
 
 # Lifting State - Parent State
 
-* Children call `onTemperatureChange` with new state
-* Parent updates state with `setState`
-* Children re-render
+* Children call `setTemperature` from props with new state
+* Parent updates state with `setTemperature`
+* Children re-render with new props
 
 ### Parent Calculator Passes State to Children
 
-```javascript
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
-    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
-    this.state = {temperature: '', scale: 'c'};
-  }
+```jsx
+function Calculator (props) {
 
-  handleCelsiusChange(temperature) {
-    this.setState({scale: 'c', temperature});
-  }
+    const [scale, setScale] = useState('c')
+    const [temperature, setTemperature] = useState('')
 
-  handleFahrenheitChange(temperature) {
-    this.setState({scale: 'f', temperature});
-  }
-
-  render() {
-    const scale = this.state.scale;
-    const temperature = this.state.temperature;
     const celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+    
     const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
 
     return (
@@ -175,16 +143,19 @@ class Calculator extends React.Component {
         <TemperatureInput
           scale="c"
           temperature={celsius}
-          onTemperatureChange={this.handleCelsiusChange} />
+          setScale={setScale}
+          setTemperature={setTemperature}
+        />
 
         <TemperatureInput
           scale="f"
           temperature={fahrenheit}
-          onTemperatureChange={this.handleFahrenheitChange} />
+          setScale={setScale}
+          setTemperature={setTemperature}
+        />
 
         <BoilingVerdict
           celsius={parseFloat(celsius)} />
-
       </div>
     );
   }
@@ -205,6 +176,14 @@ class Calculator extends React.Component {
 * Child components use a Parent updater function to lift state up
 * State flowing down makes state changes simpler to debug
 * Props should be derived from State
+
+# Lab: Post Selector
+
+Let's create a React component that consists of two main components; a list of posts, and a display box. These should be two seperate components. You will also need a parent component that renders both the list, and the display box.
+
+Using state and props set up the page so that when you click on a post the cotent is rendered in the display box.
+
+> Hint: If you want to store your posts locally it might be easiest to create JSON files to represent the posts. Or you could just use [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 ### Links
 

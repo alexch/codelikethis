@@ -30,6 +30,24 @@ class Track
               description: "this is actually a fairly advanced lab that asks you to create and style a login form like Mint.com's. It should be moved to a project, and we should have a lesson on basic FORM element creation and use."
     end
 
+    lesson name: "css_grid",
+           display_name: "Page Layout with CSS Grid" do
+            topic name: "css-grid"
+      video youtube_id: 'FEnRpy9Xfes'
+      link href: "https://mozilladevelopers.github.io/playground/css-grid/",
+           name: "Mozilla CSS Grid Tutorial",
+           description: "A thourough walk-through of CSS Grid and related tools"
+      link href: "https://cssgridgarden.com",
+           name: "Grid Garden",
+           description: "a step-by-step game that teaches you CSS Grid"
+      link href: "https://www.youtube.com/watch?v=tFKrK4eAiUQ",
+           name: "Incredibly Easy Layouts with CSS Grid",
+           description: "Jen Simmons shows you how to do a common responsive image gallery in just two lines of code."
+      link href: "https://www.youtube.com/watch?v=dQHtT47eH0M&vl=en",
+           name: "Using Flexbox + CSS Grid Together: Easy Gallery Layout",
+           description: "Jen Simmons explains how to nest Flexbox and Grid together to make common layouts easy."
+    end
+
     lesson name: "flexbox_layout",
            display_name: "Page Layout With CSS Flexbox" do
             topic name: "css-flexbox"
@@ -56,30 +74,8 @@ class Track
 
     lab name: 'FreeCodeCamp "Responsive Web Design"'
 
-    lesson name: "css_grid",
-           display_name: "Page Layout with CSS Grid" do
-            topic name: "css-grid"
-      video youtube_id: 'FEnRpy9Xfes'
-      link href: "https://mozilladevelopers.github.io/playground/css-grid/",
-           name: "Mozilla CSS Grid Tutorial",
-           description: "A thourough walk-through of CSS Grid and related tools"
-      link href: "https://cssgridgarden.com",
-           name: "Grid Garden",
-           description: "a step-by-step game that teaches you CSS Grid"
-      link href: "https://www.youtube.com/watch?v=tFKrK4eAiUQ",
-           name: "Incredibly Easy Layouts with CSS Grid",
-           description: "Jen Simmons shows you how to do a common responsive image gallery in just two lines of code."
-      link href: "https://www.youtube.com/watch?v=dQHtT47eH0M&vl=en",
-           name: "Using Flexbox + CSS Grid Together: Easy Gallery Layout",
-           description: "Jen Simmons explains how to nest Flexbox and Grid together to make common layouts easy."
-    end
-
     lesson name: "navigation",
            description: "Nav bars, drop-downs, breadcrumbs, site maps, anchors" # todo: link to Bootstrap's responsive nav bar
-
-    lesson name: "css_frameworks", display_name: "Other CSS Frameworks" do
-      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
-    end
 
   end
 end

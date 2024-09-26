@@ -1,15 +1,7 @@
-require "wrong"
-require "files"
 require "spec_helper"
-
-here = File.expand_path(File.dirname(__FILE__))
-project = File.expand_path("#{here}/..")
-
-require "#{project}/lib/site"
+require "site"
 
 describe Site do
-
-  include Files
 
   describe "by default" do
 
@@ -38,7 +30,7 @@ describe Site do
       def tracks
         [
             ::Track::PuppyLove,
-            ::Track::Www # todo: make a test track, don't reuse a real track
+            ::Track::Www # TODO make a test track, don't reuse a real track
         ]
       end
     end
@@ -58,8 +50,7 @@ describe Site do
     end
 
     describe 'projects' do
-      it 'should include projects inside nested lessons'
+      xit 'should include projects inside nested lessons'
     end
   end
-
 end

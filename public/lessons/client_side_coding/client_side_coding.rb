@@ -18,7 +18,9 @@ class Track
     project name: "tic_tac_toe_www"
     project name: "hangman"
 
-    # lesson name: "dom"
+    lesson name: "dom"
+
+    lesson name: "browser_debugging"
 
     lesson name: "embedding",
            description: 'how to use Web APIs and embedded widgets to serve maps, videos, surveys, and other content from around the Web inside your own sites' do
@@ -26,15 +28,7 @@ class Track
             link href: "https://www.theodinproject.com/courses/html5-and-css3/lessons/embedding-images-and-video"
     end
 
-    lesson name: "jquery" do
-      topic name: "jquery"
-      topic name: "jquery-selectors"
-      topic name: "jquery-collections"
-      topic name: "jquery-binding"
-      link href: "http://docs.railsbridge.org/frontend/jquery"
-      link href: "https://www.codecademy.com/tracks/jquery",
-                name: "Codecademy Track for jQuery"
-    end
+    lesson name: "/javascript_intro/event_listeners"
 
     lesson name: "ajax" do
       topic name: "ajax"
@@ -50,8 +44,7 @@ class Track
     end
 
     lesson name: "calling_apis",
-      display_name: "Calling APIs from JavaScript",
-      description: "jQuery.ajax(), XMLHttpRequest, Fetch" do
+      display_name: "Calling APIs from JavaScript" do
         topic name: "postman"
         topic name: "apis"
         link href: 'https://www.codecademy.com/tracks/parse'
@@ -62,15 +55,6 @@ class Track
       project name: "dothraki_translator"
       project name: "socket_chat"
       project name: "umbrella_today"
-    end
-
-    # more advanced mapping
-    lesson name: "geolocation" do
-      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
-    end
-
-    lesson name: "geocoding" do
-      link href: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation"
     end
 
     lesson name: "interactive_mapping" do
@@ -92,17 +76,5 @@ class Track
       link href: "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
     end
 
-    # probably should move all these lessons to later tracks
-
-    lesson name: "canvas"
-    lesson name: "svg"
-
-    lesson name: "security" do
-      link name: "XSS"
-      link name: "CSRF"
-      link href: "https://www.quora.com/What-is-the-difference-between-XSS-and-CSRF-from-their-execution-perspective"
-      link href: "https://blog.plan99.net/its-time-to-kill-the-web-974a9fe80c89#7a16",
-        name: "Web apps are impossible to secure"
-    end
   end
 end

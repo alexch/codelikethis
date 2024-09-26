@@ -13,6 +13,7 @@ class Lesson < Thing
   contains :videos
   contains :links
   contains :projects
+  contains :references
   contains :topics
   contains :goals
   contains :labs
@@ -114,7 +115,7 @@ class Lesson < Thing
     attr_reader :target
 
     # proxy readers to the target (model) object
-    # todo: use DelegateClass?
+    # TODO: use DelegateClass?
     [
         :labs, :track,
         :name, :display_name,
@@ -142,8 +143,6 @@ class Lesson < Thing
 
     def outline
       div.outline {
-        h3 "Outline"
-
         ul(class: 'list-group') {
           slides.each do |slide|
             li(class: 'list-group-item') {
@@ -165,22 +164,29 @@ class Lesson < Thing
               a 'Projects', href: '#projects'
             }
           end
+          if target.references?
+            li(class: 'list-group-item') {
+              a 'References', href: '#references'
+            }
+          end
         }
       }
       br
       if slides?
         div(class: 'row text-center') {
           div(class: 'col') {
-            a("Show Slides", href: @target.slides_href, class: 'slides btn btn-primary')
+            a("Slides", href: @target.slides_href, class: 'slides btn btn-primary')
             br
           }
         }
         br
       end
-
     end
 
     def content
+      div(class: "bc-trail") do
+        widget Breadcrumbs, parents: [TracksTable.new, target.track], display_name: target.display_name
+      end
 
       if description?
         div(class: 'description', id: 'description') {
@@ -192,7 +198,6 @@ class Lesson < Thing
 
       if !topics.empty?
         div(class: 'topics', id: 'topics') {
-          h2 "Topics"
           topics.each do |topic|
             widget topic.link_view
             text raw(nbsp)
@@ -218,23 +223,15 @@ class Lesson < Thing
         div(class: 'videos', id: 'videos') {
           h2 {
             i(class: "fas fa-video")
-            text nbsp
-            text "Videos"
           }
           videos.each { |video| widget video.view }
         }
+        br
       end
-
-      br
 
       div.main_column {
         if slides?
           div(class: 'slides', id: 'slides') {
-            h2 {
-              i(class: "fas fa-clone")
-              text nbsp
-              text "Slides"
-            }
             slides.each do |slide|
               widget slide
             end
@@ -272,19 +269,24 @@ class Lesson < Thing
           }
         end
 
-        br
+        if target.references?
+          div(class: 'references', id: 'references') {
+            h2 "Suggested References"
+            ul(class: 'links') do
+              target.references.each do |reference|
+                li { widget reference.link_view }
+              end
+            end
+          }
+        end
 
-        # todo: put comments back on codelikethis.com only
-        # div(class: 'comments', id: 'comments') {
-        #   h2 "Comments"
-        #   widget Disqus,
-        #          shortname: "codelikethis",
-        #          developer: (@development_mode ? 1 : nil),
-        #          identifier: "lesson_#{track.name}_#{name}",
-        #          title: "#{track.display_name}: #{display_name}"
-        # }
+        br
       }
 
+      stylesheet name: "github-markdown" # from https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css
+      stylesheet name: "highlight/solarized-light"
+      script defer: "defer",
+             src: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"
     end
 
     def breadcrumbs
@@ -294,15 +296,13 @@ class Lesson < Thing
         end
 
         div(class: 'col-6 text-center') do
-          a(with_tooltip("This Track") + {href: track.href}) {
-            i(class: "fas fa-paw")
+          a(href: track.href) {
             text nbsp
             text track.display_name
             text nbsp
-            i(class: "fas fa-paw")
           }
           br
-          h1(display_name, class: 'lesson-name')
+          h2(display_name, class: 'lesson-name')
 
         end
 
@@ -318,7 +318,7 @@ class Lesson < Thing
                                      {href: previous_lesson.name}) do
           i(class: "fas fa-arrow-left")
           text nbsp
-          text "Previous Lesson"
+          text "Previous"
         end
       end
     end
@@ -329,12 +329,11 @@ class Lesson < Thing
               {href: next_lesson.name,
                class: ['button', 'next_lesson', 'float-right']
               }) do
-          text "Next Lesson"
+          text "Next"
           text nbsp
           i(class: "fas fa-arrow-right")
         end
       end
     end
   end
-
 end

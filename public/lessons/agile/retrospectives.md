@@ -27,7 +27,7 @@ At regular intervals, the team meets to discuss
 
 # The Bible
 
-![Agile Retrospectives book cover](./agile-retrospectives.jpg)
+![Agile Retrospectives book cover](/images/agile-retrospectives.jpg)
 
 <https://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649>
 

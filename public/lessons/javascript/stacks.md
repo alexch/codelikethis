@@ -15,7 +15,7 @@
 
 * a *stack* is a *metaphor* for a physical stack
 
-![pancakes](../images/pancakes.jpg)
+![pancakes](https://res.cloudinary.com/btvca/image/upload/v1574445195/curriculum/pancakes_wijsp5.jpg)
 
 (like this yummy stack of pancakes)
 
@@ -35,11 +35,9 @@
 
 Imagine a stack that starts with a single pancake ("1")
 
-![stack](../images/stack.png) 
+![stack](https://res.cloudinary.com/btvca/image/upload/v1574445203/curriculum/stack_vsmjs4.png) 
 
-<small>(image source: <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>, public domain)</small>
-
-Try playing around with this [stack visualization tool](https://www.cs.usfca.edu/~galles/visualization/StackArray.html) (from David Galles at University of San Francisco) to get a feel for it.
+> (image source: <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>, public domain)
 
 # The Freedom of Constraints
 
@@ -91,6 +89,8 @@ ReferenceError: fizz is not defined
     at TTY.onread (net.js:598:20)
 ```
 
+# Stack Trace Explained
+
 In this context the term "stack" refers to the *call stack*.
 
 The JavaScript interpreter is a program, and that program uses a stack internally to keep track of the list of functions that call functions that call functions that call...
@@ -129,6 +129,27 @@ Please split into pairs and do this right now. A solution is on the next slide.
 
 # Solution: Fibonacci Stack
 
+<details>
+<summary>Hint</summary>
+<div>
+You will need to push the first two numbers you popped off in the opisite order you poped them
+
+```js
+let a = series.pop()
+let b = series.pop()
+//......
+
+series.push(b)
+series.push(a)
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
 ```js
 let series = [0, 1];
 while (series.length < 10) {
@@ -142,15 +163,16 @@ while (series.length < 10) {
 console.log(series);
 ```
 
-Note that we had to pop `a` and `b` in *reverse* order because it's a stack.
-
-Note also that we had to push `a` and `b` back on to the stack after adding them to get `c`.
+</div>
+</details>
 
 # Uses for stacks
 
 Stacks are useful in many scenarios
 
+* reading the stack trace
 * function call stack
 * [RPN calculator](/projects/rpn_calculator)
 * backtracking, e.g. chess or [tic-tac-toe](/projects/tic-tac-toe) AI
 * recursion
+* web page navigation

@@ -1,215 +1,121 @@
-    video youtube_id: 'DKGZlaPlVLY'
     topic name: "input-output"
-    topic name: "node"
-    topic name: "terminal"
     topic name: "functions"
-    topic name: "methods"
-    topic name: "es6"
-    topic name: "variables"
+    topic name: "promise"
+    topic name: "async-await"
     topic name: "values"
     topic name: "callbacks"
-    topic name: "command-line"
-    topic name: "strings"
-    project name: "guess"
     link name: "Mozilla Developer Network: Callbacks",
          href: "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
-    link name: "Wikipedia: Callbacks",
-         href: "https://en.wikipedia.org/wiki/Callback_(computer_programming)#JavaScript"
     link name: "Mozilla Developer Network: Async Functions",
          href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
     link name: "Mozilla Developer Network: Await async functions",
          href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await"
-    link name: "Kyle Simpson: Input & Output",
-         href: "https://frontendmasters.com/courses/javascript-basics/input-output/"
-    link name: "You Don't Know JS: Input & Output",
-         href: "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#output"
 
 # Input and Output
 
-* Computers have many senses -- keyboard, mouse, network card, camera, joystick, etc. Collectively, these are called **INPUT**.
-
-* Computers can also express themselves in many ways -- text, graphics, sound, networking, printing, etc. Collectively, these are called **OUTPUT**.
-
-* Input and Output together are called **I/O**.
-
-* the only part of your laptop that is *really* a computer is the CPU and the RAM; all the other parts (keyboard, trackpad, display, disk drive, etc.) are technically I/O devices 
+* Computers can receive data from a keyboard, mouse, camera, microphone, etc.
+  * These are called **INPUT**s
+* Computers can also emit data like; text, graphics, sound, printing, etc.
+  * These are called **OUTPUT**s
 
 # Memory vs I/O
 
-* Performing *calculations* and accessing *memory* is **very fast**
-* ...but reading and writing to I/O devices is **slow**
-    * (at least as far as the CPU is concerned)
-    * I/O operations can take *seconds* or *milliseconds*; CPU operations take *nanoseconds*
-* Every time you ask JavaScript to do an I/O operation, it *pauses your program*
-  * this allows the CPU to spend time doing other things, not just sitting idle waiting for a key to be pressed or a file to be written
-* In NodeJS, you have to write a function for JavaScript to run once it *resumes*
-    * this function is named an *asynchronous callback*
-    * *asynchronous* is Greek for "out of time" or "not together in time"
+* Performing **calculations** and using **memory** is **fast**
+* Reading **Input** and writing **Output**  is **slow**
+  * CPU operations = **nanoseconds**, 1/1,000,000,000 second
+  * I/O operations = **milliseconds** to **seconds**
+* During an I/O operation, the program is paused, or waits.
+  * CPU does other things during that time.
 
-# Terminal I/O
+# Using Readline
 
-* In JavaScript,
-    * `console.log` means "print a line to the terminal"
+`readline` is a **library**, which is code you can **use**, but someone else **wrote**
 
-* In NodeJS,
-    * `process.stdin` means "input coming from the terminal"
-
-    * Reading a line in NodeJS is **weird**; here's one way to do it
+Use Readline like the following example:
 
 ```js
-process.stdin.once('data', (chunk) => { console.log(chunk.toString()) } )
-```
+// include the library
+const readline = require('readline');
+// create an "interface", using STDIN and STDOUT
+const readlineInterface = readline.createInterface(
+  process.stdin, 
+  process.stdout
+);
 
-> The weirdness is explained on the next slide!
-
-# node load code, decoded
-
-```js
-process.stdin.once('data',
-    (chunk) => { console.log(chunk.toString()) }
-)
-```
-
-> `once` is a function that takes two parameters,
-> and its second parameter is **another function**
-
-|phrase|meaning|
-|---|---|
-| `process.stdin`        | hey terminal input, |
-| `.once('data',` ... `)`  | when you get some data, |
-| `(chunk)`              | please name it `chunk` |
-| ` => `                 | and send it to |
-| ` { ` ... ` }`         | this block of code |
-| `console.log(chunk.toString())`   | convert it to a string and print it to the terminal |
-
-# Welcome to Callback City!
-
-The previous one-liner code is equivalent to this:
-
-```js
-function printLine(chunk) { 
-    console.log(chunk) 
+// create a function called "ask" that
+// OUTPUTs a question, and waits for INPUT
+function ask(questionText) {
+  // use a "Promise", which stands in for a future answer
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+  });
 }
-process.stdin.once('data', printLine);
 ```
 
-The `printLine` function itself is called a *callback* 
-(since you are asking the I/O device to *call you back* when it receives input).
-
-# LAB: Hello, friend!
-
-1. Open `hello.js` in your text editor
-2. Change it to contain the following code:
-
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString();
-            console.log("Hello, " + name + "!");
-        });
-
-3. Save the file and switch back to the terminal
-4. Run the program using `node hello.js`
-5. Type in your name and press the <kbd>Return</kbd> key (also called <kbd>Enter</kbd>)
-
-What happens? Is this what you expected?
-
-# Yikes!
-
-* Uh-oh! We've got trouble... what is that exclamation point doing way down there?
-
-* The first thing to do is DON'T PANIC!
-* You are *totally* going to figure this out.
-* And even if you don't, you haven't actually broken anything.
-* In fact, it's really hard to break a computer just by typing, so stay calm.
-
-# Control-C to close
-
-* First things first: get back to the command line
-* This program doesn't *exit* yet, so you will need to *force* it to close
-* Do this by holding down CONTROL and pressing C
-    * abbreviated ⌃C or ^C or CTRL-C
-
-# Let's fix this
-
-* Have you figured out what the problem is?
-* If not, I'll tell you on the next slide.
-* Take a second and try to figure it out first. I'll wait.
-
-# The newline character
-
-* Here's a fun fact:
-* In addition to letters, numbers, and punctuation, computers also store other keys inside strings
-* Among these CONTROL CHARACTERS is the one that represents the RETURN KEY
-* This character's name is NEWLINE
-* Every time you read a line, the computer reads *all* the characters, *including the newline*!
-
-# Trim it
-
-* Fortunately, there's an easy fix
-* If you send the message `trim` to a string, it will remove all SPACES and NEWLINES from both ends
-
-# LAB: fixing Hello, Friend
-
-* Change the program to look like this:
+# Echo Input with Readline
 
 ```js
-        console.log("What is your name?");
-        process.stdin.once('data', (chunk) => {
-            let name = chunk.toString().trim();
-            console.log("Hello, " + name + "!");
-        });
+// make sure readline the code from the prior slide
+// is included at the top of your file
+async function echo() {
+  console.log("Starting program...");
+  let message = await ask("Say something, and I will echo!\n> ");
+  console.log("You wrote:\n" + "=> " + message);
+  console.log("Program complete...");
+  process.exit();
+}
+// call the "echo" function
+echo();
 ```
 
-* Run it and make sure it works OK
-* Press ⌃C to close it
+# LAB: Echo
 
-# LAB: This Way To The Exit
+Create a new file called `echo.js`
 
-* Change the program to look like this:
+* Include the `readline` library, `readlineInterface`, and `ask` function
+* Add the code from the previous slide into the file
+* Run `echo.js` using `node`, type an INPUT, and then press the `[ENTER]` key
 
-```js
-console.log("What is your name?");
-process.stdin.once('data', (chunk) => {
-    let name = chunk.toString().trim();
-    console.log("Hello, " + name + "!");
-    process.exit();
-});
+# Async and Await
+
+A **PROMISE** is something that stands in for a finished result, while a task is still processing.
+
+An example would be a **ticket** or **receipt** used to redeem an order from a food-truck.
+
+> Promises can be `await`ed, within a function marked as `async`.
+
+1. `await` means "wait for the following to finish"
+2. To use `await` inside a function, you must use mark it as `async`
+
+> WARNING: `async` functions and `for` loops do not mix well, use `while` instead
+
+# LAB: First and Last Name
+
+Now it's your turn to write a program from scratch.
+
+Write a program named `name.js` that asks two things:
+
+1. Your first name
+2. Your last name
+3. Then it should output the following:
+
+```txt
+'Hello, {firstName} {lastName}!'
 ```
 
-Note that:
+> Replace the {firstName} and {lastName} with your INPUT values
 
-  * `process.exit` uses the same `process` object as `process.stdin`
-  * The call to `process.exit()` must be *inside* the callback
-    * Otherwise, what happens? Try it and see!
+# First and Last Name solution
 
-# LAB: Capitalization
+<details>
+<summary>
+Hint
+</summary>
+<div>
+You will need `readline` and the `ask()` function.
 
-* What happens if you type your name in all lowercase?
-* Make the program capitalize your name for you even if you forget.
-
-**Hint**: remember `slice` from the [Strings lesson](strings#/anchor/slicing_and_dicing)?
-
-# LAB: YELL YOUR NAME
-
-* Now go crazy and make it YELL your name!
-    * Hint: Use the [toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) method
-
-# readline
-
-* NodeJS is more than a *JavaScript interpreter*
-* It's also a collection of *JavaScript libraries*
-* One of the libraries is called `readline`
-    * `readline` makes it easier to read lines, naturally :-)
-    * the "books" in this library are functions
-      * (and classes and other things too)
-
-# using readline
-
-> Warning: this code uses features we have not yet covered! Copy and paste it verbatim during the codealong below, and don't worry if it doesn't make much sense yet.
-
-To use `readline`, include the following lines in the top of your source file:
-
-```javascript
+<pre>
+<code class="language-javascript">
 const readline = require('readline');
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
@@ -218,38 +124,58 @@ function ask(questionText) {
     readlineInterface.question(questionText, resolve);
   });
 }
-```
+</code>
+</pre>
 
-> This is called "boilerplate code" -- you don't need to fully understand it before using it.
+</div>
+</details>
 
-# using readline - explanation
+<details>
+<summary>
+Solution
+</summary>
 
-| code                                                        | explanation                                                                                                                             |
-|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| `const readline = require('readline');`                     | load the `readline` package and name it `readline`                                                                                      |
-| `const readlineInterface = readline.createInterface({...})` | create an *interface* to readline using the following settings:                                                                         |
-| `  process.stdin,`                                | for input, use the *standard input stream* (i.e. terminal keyboard input)                                                               |
-| `  process.stdout`                               | for output, use the *standard output stream* (i.e. terminal console output)                                                             |
-| `function ask(questionText) {...}`                          | a function named *ask* that uses the [Promise API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) to asynchronously ask a question and wait for a reply |
+<pre>
+<code class="language-javascript">
+// include 'readline' and the 'ask' functions above
+async function fullName() {
+  let firstName = await ask("What is your first name? ")
+  let lastName = await ask("What is your last name? ")
 
-(We will cover the Promise API in much more detail later; for now, all you really need to know is that Promises allow us to use `async` and `await` in the next slide.)
-
-# LAB: using readline and await
-
-Codealong time! Please follow along with the instructor and enter this code into a file named `quest.js`:
-
-```javascript
-const readline = require('readline');
-const readlineInterface = readline.createInterface(process.stdin, process.stdout);
-
-function ask(questionText) {
-  return new Promise((resolve, reject) => {
-    readlineInterface.question(questionText, resolve);
-  });
+  console.log("Hello, " + firstName + " " + lastName + "!")
 }
 
-start();
+fullName()
+</code>
+</pre>
+</details>
 
+# LAB: What is your Quest
+
+Create a file named `quest.js`.
+
+Make the program ask three things:
+
+1. "What is your name?"
+2. "What is your quest?"
+3. "What is your favorite color?"
+
+After asking all three questions, the program should answer:
+
+```txt
+'Hello {name}! Good luck with {quest}, and here is a {color} flower for you.'
+```
+
+# Solution: What is your Quest
+
+<details>
+<summary>
+Solution
+</summary>
+
+<pre>
+<code class="language-javascript">
+// include 'readline' and the 'ask' function above
 async function start() {
   let name = await ask('What is your name? ');
   let quest = await ask('What is your quest? ');
@@ -259,48 +185,46 @@ async function start() {
     'and here is a ' + color + ' flower for you.');
   process.exit();
 }
+</code>
+</pre>
+</details>
+
+# LAB: Name Length
+
+Create a file `name-length.js` that:
+
+* Calculates length of the first and last name INPUT combined
+* Count only the **non-blank** characters.
+
+Example:
+
+```txt
+What is your first name? Grace
+What is your last name? Hopper
+Hello, Grace Hopper!
+Your name is 11 characters long.
 ```
 
-* run it from the command line using `node quest.js`
+> NOTE: Whitespace, tabs, and new-lines are considered **blank**
 
-# async and await
+# LAB: Length of Each Name
 
-* We will learn a lot more about callbacks, promises, and `async`/`await` later
-* For now, follow these two rules when using `async` and `await`:
+Create a file `allNamesLength.js` that:
 
-    1. `await` means "wait for the following thing to happen"
-    2. when you use `await` inside a function, you must use `async` to define that function
+* Asks for a user's first name, middle name, and last name.
+* Then prints the length of each *individual* name
+* And finally prints the total character count for all three names.
 
-> WARNING: `async` functions don't play nicely with `for` loops! (Fortunately, there are other ways to loop that do work well.)
+Example:
 
-# LAB: Full Name
+```txt
+What is your first name? Augusta
+What is your middle name? Ada
+What is your last name? King
 
-* Now it's your turn to write a program from scratch.
-* Write a program named `name.js` that asks two things:
-  1. Your first name
-  2. Your last name
-* Then it says hello to the user by their *full name*.
-
-* Run the program by typing `node name.js` on the command line.
-
-# CONGRATULATIONS!
-
-> You just wrote a program!
-
-You are now officially a coder. HIGH FIVE!
-
-# Lab: Name Length
-
-* Change `name.js` so it also prints the number of characters in the user's name.
-* For instance:
-
-        What is your first name? Grace
-        What is your last name? Hopper
-        Hello, Grace Hopper!
-        Your name is 11 characters long.
-
-# Project: Guess the Number
-
-You may now start on the [Guess the Number](/projects/guess) project.
-
-(You will probably also need to learn about [logic](logic) and [loops](loops) to get it working, so don't be afraid to read ahead and to ask for help.)
+Hello, Augusta Ada King!
+Your first name is 7 characters long.
+Your middle name is 3 characters long.
+Your last name is 4 characters long.
+Your full name is 14 characters long.
+```

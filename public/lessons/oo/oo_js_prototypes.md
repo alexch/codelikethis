@@ -50,8 +50,10 @@ if (!Object.create) {
 * By convention, constructors are capitalized, and represent a type name (or class name)
 * You can use `instanceof` to check an object's type
 
-        circle instanceof Circle  // true
-        circle instanceof Object  // also true
+```js
+circle instanceof Circle  // true
+circle instanceof Object  // also true
+```
 
   * note: no parens required
 
