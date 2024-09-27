@@ -1,21 +1,51 @@
+# The Client/Server Model
 
-# Why can't I use my server-side JavaScript files in my client-side HTML pages?
+* The **client** is any part of your webapp useable by your end users
+  * web pages
+  * forms
+  * Images
+  * Interactive elements
+* The **server** listens for requests from the client, and sends responses
+  * mostly just listeners and rules
+  * runs in a node.js environment
 
-* on a nodejs server, you include JS files using `const Room = require('room.js')` in a JS file, but on the client you include JS files using `<script src='room.js'>` in an HTML file
+# Using Plugins
 
-# Okay, but what if I really want to reuse my code?
+Plugins, and libraries like Live Server, and node-static provide an easy way for you to get a site up and running fast.
 
-* you need to put the `room.js` file somewhere that both the server and the client can see it, which is weird cause usually those two directories are separate (`lib` and `public` respectively)
-* also inside room.js you say `module.exports = class Room { ...` which means that *even if* you download `room.js` onto the client, it will break because *there is no global named `module`* in browserland
-* so you’d need to add `<script>module = {}</script>` in your HTML, *above* the `<script src='room.js'>`
-* you’d also need to make sure that none of your code calls anything in the NodeJS core or in any NPM package
+* Pros:
+  * easy to setup
+  * inbuilt tools
 
-# That sounds complicated. Is it bad?
+* Cons:
+  * Opaque
+  * Best for local development only
 
-it’s not a *bad* idea to reuse code between layers, it’s just non-traditional so some things don’t work right
+# Server Side JavaScript
 
-there are also tools like *browserify* that make it easier
+Server Side JS runs in a node environment, and is a set of rules to determine *what happens* when we get a certain *request* to a specific *route*
 
-http://browserify.org/
+e.g. **When** you have a `GET` request to `/` **Send** the `index.html` file to the browser
 
-but by “easier” i mean “replace one form of complexity with a different form of complexity”
+# Structuring Your Directory
+
+<!--Image goes here. Boxes in boxes-->
+
+# Core Concept: the Public Directory
+
+The directory that contains the files needed for the client side of your web app is often named "public"
+
+* naming convention assumed by some libraries
+* contains subdirectories for different file types
+  * images
+  * JS
+  * CSS
+* HTML files live directly in in the "public" folder
+
+# Is there a special syntax for server side JS?
+
+* No, but...
+* Different frameworks have their own ideas about how a server *should* be set up
+* Slightly different than client side JS
+  * different methods to import external files
+  * module/global (nodeJS) v. document/window (browser JS)

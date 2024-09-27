@@ -161,3 +161,12 @@ class LoggingButton extends React.Component {
 ```
 
 [Arrow Functions as Class Properties](https://medium.com/quick-code/react-quick-tip-use-class-properties-and-arrow-functions-to-avoid-binding-this-to-methods-29628aca2e25)
+
+# Lab: Logging in
+
+Let's create a simple login page! Create a new React project that:
+
+- Displays a button that says "please log in" when you first visit the page
+- When the button is clicked
+  - the button should disapear
+  - and the page should display "Welcome! This is React."

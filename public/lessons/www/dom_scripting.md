@@ -27,7 +27,7 @@ This is the simplest way to execute JavaScript inside a Web page.
 
 Try it out here: <button name="button" onclick="alert('Abracadabra!')">Magic</button>
 
-`onclick` is an *attribute* that contains a *script* that pops up an alert box. Also known as an *event handler*. 
+`onclick` is an *attribute* that contains a *script* that pops up an alert box. Also known as an *event handler*.
 
 (We will discuss several other ways to attach event handlers later in this lesson.)
 
@@ -37,8 +37,8 @@ Without a `src` attribute, it defines a script and *immediately executes* its co
 
 ```html
 <script>
-var message = "Shazam!"
-alert(message)
+  var message = "Shazam!"
+  alert(message)
 </script>
 ```
 
@@ -77,7 +77,7 @@ In addition to providing many useful *functions*, it also provides some *propert
 If an element has an `id` attribute, you can get a *pointer* to that element with a single line of code:
 
 ```js
-var element = document.getElementById(id);
+let element = document.getElementById(id);
 ```
 
 Once you have a pointer to that element, you can manipulate it further. You can also log it to the console for further inspection using:
@@ -91,7 +91,7 @@ console.log(element)
 # Finding an Element by CSS Selector
 
 ```js
-var element = document.querySelector('main div.preview > p')
+let element = document.querySelector('main div.preview > p')
 ```
 
 This returns the first Element within the document that matches the specified selector (in this case, the first `<p>` that is a direct child of any `<div class='preview'>` that is in the `main` section).
@@ -104,13 +104,20 @@ This returns the first Element within the document that matches the specified se
 Once you find an element (using `getElementById` or any other way), you can start using it.
 
 ```js
-var header = document.getElementById('header')
-var text = header.textContent
+let header = document.getElementById('header')
+let text = header.textContent
 ```
 
 There is also a property called `innerText` but it's confusing and implemented differently in different browsers.
 
 <https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent>
+
+# LAB: Update an Element
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="DOM-scripting-lab-1" src="https://codepen.io/burlingtoncodeacademy/embed/preview/gOpMvgr?height=265&theme-id=light&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/gOpMvgr'>DOM-scripting-lab-1</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 # Nodes vs Elements
 
@@ -137,11 +144,23 @@ An element is a particular type of node, and it's the most common, but beware, t
 
 In addition to getting a *single* element by its `id` or a CSS selector, you can also ask the document to give *all* elements that match a certain criterion.
 
-`var elements = document.getElementsByClassName('profile-picture')` - by *CSS Class* name
+```js
+let elements = document.getElementsByClassName('profile-picture')
+```
 
-`var elements = document.getElementsByTagName('h2')` - by *Element* name
+> by *CSS Class* name
 
-`var elements = document.querySelectorAll('h2.preview > p')` - by *CSS Selector* expression
+```js
+let elements = document.getElementsByTagName('h2')
+```
+
+> by *Element* name
+
+```js
+let elements = document.querySelectorAll('h2.preview > p')
+```
+
+> by *CSS Selector* expression
 
 These return *collection* objects, so you must write more code to get the actual element objects, or to check the collection's length.
 
@@ -153,18 +172,28 @@ The classic example of an event handler is "onclick", i.e. "please call this fun
 
 To attach an event handler,
 
-1. Find the element, e.g. 
+1) Find the element, e.g.
 
-        var button = document.getElementById('magic');
-2. Attach the callback, like this:
+```js
+let button = document.getElementById('magic');
+```
 
-        button.addEventListener('click', 
-          ()=>{alert('Abracadabra!')}
-        );
+2) Attach the callback, like this:
+
+```js
+button.addEventListener('click', () => { alert('Abracadabra!') });
+```
 
 > NOTE: using the "fat arrow" for event handlers is a **very good idea** since fat arrows will restore the `this` variable to point to the same object as when the listener was added.
 
 <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
+
+# LAB: Update Element on Click
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="DOM-scripting-lab-2" src="https://codepen.io/burlingtoncodeacademy/embed/preview/vYOKdJO?height=265&theme-id=light&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/burlingtoncodeacademy/pen/vYOKdJO'>DOM-scripting-lab-2</a> by Joshua Burke
+  (<a href='https://codepen.io/burlingtoncodeacademy'>@burlingtoncodeacademy</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 # Events by Reference
 
@@ -176,7 +205,7 @@ If you have already defined an event handler function, you can attach it by refe
 function sayMagicWord() {
     alert('Shazam!');
 }
-var button = document.getElementById('magic');
+let button = document.getElementById('magic');
 button.addEventListener('click', sayMagicWord)
 </script>
 ```
@@ -184,7 +213,8 @@ button.addEventListener('click', sayMagicWord)
 > NOTE: if you attach a listener by reference, pass the *name* of the function only! Do not immediately *invoke* the function, like this:
 
 ```js
-button.addEventListener('click', sayMagicWord())  // BAD CODE, DO NOT USE
+// BAD CODE, DO NOT USE
+button.addEventListener('click', sayMagicWord())
 ```
 
 This **calls the function** `sayMagicWord` when the listener is *attached* and tries to attach the *return value* of `sayMagicWord` (which will likely be `undefined`).
@@ -195,7 +225,7 @@ An event handler function can optionally accept a parameter -- usually called `e
 
 An [event object](https://developer.mozilla.org/en-US/docs/Web/API/Event) has many properties but the most important one is `event.target`, which points to the element where the action took place.
 
-For instance, for a **click** event, `event.target` contains a pointer to the *button* that was clicked.
+For instance, for a **click** event, `event.target` contains a pointer to the *element* that was clicked.
 
 ```html
 <button type="button" id="presto">Presto...</button>
@@ -220,4 +250,25 @@ abraButton.addEventListener('click', sayMagicWord)
 </script>
 ```
 
-(See the above script in action [here](magic.html))
+# Event Bubbling & Capture
+
+- Events are created by their elements
+- After creation they move up the chain by default
+- This behavior can be changed by using `cancel` on the listener
+
+```html
+<div onclick="alert('outer div')">OUTER DIV
+  <div onclick="alert('inner div')">INNER DIV
+    <p onclick="alert('paragraph')">Paragraph</p>
+  </div>
+</div>
+```
+
+<iframe height="265" style="width: 100%;" scrolling="no" title="bubble-events" src="//codepen.io/Dangeranger/embed/GbjpbP/?height=265&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/Dangeranger/pen/GbjpbP/'>bubble-events</a> by Joshua Burke
+  (<a href='https://codepen.io/Dangeranger'>@Dangeranger</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# Event Diagram
+
+![event flow diagram](/images/eventflow.svg)

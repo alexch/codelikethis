@@ -7,7 +7,7 @@
 
 [Embedding](/lessons/www/embedding-media) is the process of including *media* from other sources into your web sites.
 
-"other documents" can include: 
+"other documents" can include:
 
   * media files
     * images, sound, video
@@ -26,10 +26,10 @@ For instance, you could programmatically pause and play an embedded audio clip, 
 
 Or, if the user moves their location on an embedded Google Map, your app could be notified and find the city name and look up restaurants in that area on [Yelp's API](https://www.yelp.com/developers/documentation/v3).
 
-> This lesson focuses on *static* embedding: 
+> This lesson focuses on *static* embedding:
 > displaying media and allowing the user to interact with it directly.
-> The [Interactive Embedding](/lessons/client-side-coding/embedding) lesson focuses on *interactive* embedding: 
-> using JavaScript to pass messages between your page's 
+> The [Interactive Embedding](/lessons/client-side-coding/embedding) lesson focuses on *interactive* embedding:
+> using JavaScript to pass messages between your page's
 > scripts and the embedded media.
 
 # Embedding Images
@@ -52,13 +52,22 @@ Or, if the user moves their location on an embedded Google Map, your app could b
 
 `<iframe>` means "inline frame"
 
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
 ```html
-<iframe height='300' width='400' src='example.com'></iframe>
+<iframe id="inlineFrameExample"
+    title="Inline Frame Example"
+    width="300"
+    height="200"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+</iframe>
 ```
 
 <iframe height='300' width='400' src='http://example.com'></iframe>
+
+
+### More Information
+
+[MDN IFrame Reference](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 
 # Malware Vectors
 
@@ -72,7 +81,7 @@ Refused to display 'http://www.burlingtoncodeacademy.com/' in a frame because it
   * other web servers (e.g. Apache) set these headers *off* by default
 
 **Beware** giving foreign JavaScript access to your page contents and user-input data
-  
+
   * the `sandbox` attribute limits what the loaded page can do
 
 # Embedding HTML snippets
@@ -85,13 +94,9 @@ This is often used for login boxes.
 
 # Embedding Flash
 
-<div style="border: 1px solid black; background: #FDFDFD; margin: auto; text-align: center">
-Adobe Flash <br>
-R.I.P. <br>
-1996 - 2015 
-</div>
+![R I P Flash](/images/rip-flash.png)
 
-"In July 2017, Adobe announced that it would declare Flash to be [end-of-life](https://en.wikipedia.org/wiki/Adobe_Flash#End_of_life) in 2020, and will cease support, distribution, and security updates to Flash Player." 
+"In July 2017, Adobe announced that it would declare Flash to be [end-of-life](https://en.wikipedia.org/wiki/Adobe_Flash#End_of_life) in 2020, and will cease support, distribution, and security updates to Flash Player."
 
 # Embedding Video
 
@@ -137,7 +142,7 @@ audio.play();
 </iframe>
 ```
 
-OpenStreetMaps defines a "bounding box" as a four-tuple: min Longitude, min Latitude, max Longitude, max Latitude. 
+OpenStreetMaps defines a "bounding box" as a four-tuple: min Longitude, min Latitude, max Longitude, max Latitude.
 
 You can find the bounding box for a given map on https://www.openstreetmap.org/ by clicking the **Export** button.
 

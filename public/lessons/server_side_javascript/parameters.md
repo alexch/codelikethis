@@ -15,7 +15,7 @@ in HTTP
 
 Let's imagine four different ways to send the same information to GitHub.com:
 
-```
+```js
 {
   user: "BurlingtonCodeAcademy",
   repo: "til",

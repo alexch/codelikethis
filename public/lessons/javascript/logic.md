@@ -68,7 +68,7 @@ Wait a second. "Truthy?"
 
 # What is truthiness?
 
-![Truthiness](../images/truthiness.png)
+![Truthiness](https://res.cloudinary.com/btvca/image/upload/v1574445211/curriculum/truthiness_jhdubk.png)
 
 * in the Colbert Report, [truthiness](https://en.wikipedia.org/wiki/Truthiness) means things we *feel* to be true, even though we know they're probably not
 
@@ -82,7 +82,7 @@ Wait a second. "Truthy?"
 
 Fortunately, `true` is truthy and `false` is falsy.
 
-Unfortunately, the string `"false"` is truthy, and the string `"0"` is truthy, even though the number `0` is falsy.
+Unfortunately, the string `"false"` is truthy, and the string `"0"` is truthy, even though the number `0` is falsy. This is because the string contains a character, and, even though the character is `0`, any string with at least one character is truthy.
 
 [MDN: Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
 
@@ -160,6 +160,8 @@ Since the rules for type conversion are confusing, most JavaScript experts recom
 
 > always use `===`, never use `==`
 
+> Using `==` can have some very interesting side effects, see [Stackoverflow](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons)
+
 # Conjunction Junction
 
 You can make more complicated logical expressions using conjunctions:
@@ -184,12 +186,12 @@ if (age >= 18 || hasPermissionSlip()) {
 
 # LAB: Good Friend, Bad Friend
 
-* Your [`hello.js` program](./input-and-output) should currently look something like this:
+* Your `hello.js` program should currently look something like this:
 
 ```js
 console.log("What is your name?");
-process.stdin.on('data', (chunk) => {
-    let name = chunk.toString();
+process.stdin.once('data', (chunk) => {
+    let name = chunk.toString().trim();
     console.log("Hello, " + name + "!");
 });
 ```
@@ -197,11 +199,77 @@ process.stdin.on('data', (chunk) => {
 * Now change `hello.js` so that it doesn't always say hello!
   * If the user's name is "Darth" then say "Noooooo! That's impossible!"
 
+# Good Friend, Bad Friend solution
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+console.log("What is your name?");
+process.stdin.on('data', (chunk) => {
+    let name = chunk.toString().trim();
+    if (name === "Darth") {
+      console.log("Noooooo! That's impossible!")
+    } else {
+      console.log("Hello, " + name + "!");
+    }
+});
+```
+
+</div>
+</details>
+
 # Lab: Infinite Names
 
 * Change `hello.js` so it keeps asking for names forever...
   * ...unless and until someone says their name is "bye!"
   * then it stops and exits back to the terminal
+
+# Infinite Names solution
+
+<details>
+<summary>Hint 1</summary>
+<div>
+Using `.on` instead of `.once` will keep the process running
+
+</div>
+</details>
+
+<details>
+<summary>Hint 2</summary>
+<div>
+Remember
+
+```js
+process.exit()
+```
+
+will end your program.
+</div>
+</details>
+
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+console.log("What is your name?");
+process.stdin.on('data', (chunk) => {
+    let name = chunk.toString().trim();
+    if (name === "bye!") {
+      process.exit()
+    }else if (name === "Darth") {
+      console.log("Noooooo! That's impossible!\nWhat is your name?")
+    } else {
+      console.log("Hello, " + name + "!\nWhat is your name?");
+    }
+});
+```
+
+</div>
+</details>
 
 # LAB: Enemies List
 
@@ -209,9 +277,40 @@ process.stdin.on('data', (chunk) => {
 * For instance, Voldemort, Satan, Lex Luthor...
 * Bonus: don't let enemies sneak in even if they spell their names with capital letters, like `VolDeMort`
 
-# Lab: exercises about logic
+# Enemies List solution
 
-* FreeCodeCamp:
-  * From [Understanding Boolean Values](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/understanding-boolean-values)
-  * up to [Chaining if-else statements](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/chaining-if-else-statements)
+<details>
+<summary>Hint</summary>
+<div>
+You can do multiple checks in a single if statement by using the logical "or" operator: `||`
 
+```js
+if(checkOne || checkTwo || checkThree) {
+  //this block of code runs if any of the checks are true
+}
+
+```
+
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+console.log("What is your name?");
+process.stdin.on('data', (chunk) => {
+    let name = chunk.toString().trim();
+    if (name === "bye!") {
+      process.exit()
+    }else if (name === "Darth" || name === "Sauron" || name === "Voldemort") {
+      console.log("Noooooo! That's impossible!\nWhat is your name?")
+    } else {
+      console.log("Hello, " + name + "!\nWhat is your name?");
+    }
+});
+```
+
+</div>
+</details>

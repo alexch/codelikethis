@@ -6,7 +6,7 @@
 
 ### Basic Component
 
-```javascript
+```jsx
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +42,7 @@ class App extends React.Component {
 
 ### Component with Data
 
-```javascript
+```jsx
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -91,7 +91,7 @@ class App extends React.Component {
 
 ### Component with Error Handling
 
-```javascript
+```jsx
 class App extends React.Component {
   constructor(props) {
     super(props);

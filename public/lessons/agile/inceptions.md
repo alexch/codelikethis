@@ -1,7 +1,7 @@
 # 
 
 <br><br><br><br>
-![inception](inception.jpg)
+![inception](/images/inception.jpg)
 
 # What is an Inception?
 
@@ -128,7 +128,7 @@ How do we want to work?
 
 # Elevator Pitch
 
-Play the ![Mad Libs](./mad-libs.jpg) Pitch Game!
+Play the ![Mad Libs](/images/mad-libs.jpg) Pitch Game!
 
 > An elevator pitch is a concise, clear, persuasive explanation of a product that can be told in the time it would take to ride an elevator.
 
@@ -141,7 +141,7 @@ Then select a spokesperson to share your result with the group. If time allows, 
 
 # Elevator Pitch Example
 
-![elevator pitch](elevator-pitch.png)
+![elevator pitch](/images/elevator-pitch.png)
 
 (from <https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/>)
 

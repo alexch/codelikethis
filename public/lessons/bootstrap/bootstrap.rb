@@ -46,6 +46,5 @@ class Track
         topic name: "bootstrap-components"
       end
 
-    lesson name: "/responsive_layout/css_frameworks"
   end
 end

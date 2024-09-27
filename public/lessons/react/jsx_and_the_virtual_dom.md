@@ -2,6 +2,7 @@
 
 - Mixes HTML and JavaScript together
 - Makes building the UI easier
+- Bound by HTML tags
 - Is transformed into ReactDom code
 - Is used everyday in React
 
@@ -9,7 +10,7 @@
 
 - This is JSX Code
 
-```javascript
+```jsx
 ReactDOM.render(
   <h1>Hello, React!</h1>,
   document.getElementById('root')
@@ -20,7 +21,7 @@ ReactDOM.render(
 
 - This is the ReactDOM code the JSX creates
 
-```javascript
+```jsx
 ReactDOM.render(React.createElement(
   'h1',
   null,
@@ -36,111 +37,90 @@ ReactDOM.render(React.createElement(
 </div>
 ```
 
-# What we learned
+# Key Concepts
 
 - JSX feels like HTML (inside of JavaScript)
 - JSX compiles to ReactDOM code
 - JSX is a 'syntax extension' to JavaScript
+- React can only render a single JSX component
+  - **but** that component can have as many children as you want
 - ReactDOM builds the HTML from the virtual DOM
 
 # JSX can embed JavaScript expressions
 
-Building a greeter
+- When writing JSX you can escape back to JavaScript using curly braces `{}`
+- Any JavaScript expression can be used in JSX
+  - **but** if the expresion doesn't return anything, nothing will be displayed
 
-```javascript
-const user = {
-  firstName: 'Ada',
-  lastName:  'Lovelace',
-  nickName:  'The queen of numbers'
-};
+# Lab: React Greeter
 
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
+Let's create a page that greets a user by name.
+
+- create a new React app using `create-react-app`
+- add the following object to `App.js`:
+
+```js
+let user = {
+  firstName: Ada,
+  lastName: Lovelace
+}
+```
+
+- Greet your user by their first and last name
+- When you change the object the greeting should change
+
+# React Greeter: Classified
+
+Hard coding a user object is OK, but it's not ideal. Let's look a little ahead and change our functional component into a class based component so we can leverage the awesome power of state!
+
+- Replace the `function` keyword with the `class` keyword
+- remove the parentheses after your component's name
+- between the components name, and the opening curly brace add the following code: `extends React.Component`
+  - the full line should now look like this `class MyComponent extends React.Component {`
+- wrap your return statement in a render method
+
+```js
+  render() {
+    return(
+      //JSX goes here
+    )
+  }
+}
+```
+
+# Leveraging State
+
+Now let's track the state of our component!
+
+- In our React component add a constructor
+- Add a single object named `state` to the constructor
+  - use the `this` keyword `this.state = {...}`
+- In state add key value pairs for `firstName`, and `lastName`
+- Change your JSX to greet the user in state rather than the hardcoded object
+
+# React Greeter: Final Product
+
+The App.js component should now look something like this:
+
+```jsx
+import React from 'react'
+
+class App extends React.Component{
+  constructor(){
+    this.state = {
+      firstName: 'Ada',
+      lastName: 'Lovelace'
+    }
+  }
+
+  render() {
+    return (
+      <h1>
+        Hello, {this.state.firstName + ' ' + this.state.lastName}
+      </h1>
+    )
+  }
 }
 
-const element = (
-  <div>
-    <h1>Welcome to React, {formatName(user)}!</h1>
-    <h2>{user.nickName}</h2>  
-  </div>
-  );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+export default App
 ```
-
-# After compiling JSX -> JS
-
-```
-const user = {
-  firstName: 'Ada',
-  lastName:  'Lovelace',
-  nickName:  'The queen of numbers'
-};
-
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
-}
-
-const element = (
-  <div>
-    <h1>Welcome to React, {formatName(user)}!</h1>
-    <h2>{user.nickName}</h2>  
-  </div>
-  );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
-```
-
-# JSX results
-
-<p data-height="265" data-theme-id="dark" data-slug-hash="NMEdwm" data-default-tab="js,result" data-user="Dangeranger" data-embed-version="2" data-pen-title="Embedding with JSX " class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/NMEdwm/">Embedding with JSX </a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-# JSX is transformed into ReactDOM
-
-- Tools like [Babel](https://babeljs.io) convert JSX to ReactDOM
-- You can use Babel as a script in your project HTML for development
-
-```
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js">
-<script type="text/babel">
-console.log( <h1>yo</h1> );
-</script>
-```
-
-
-## Example
-
-```html
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-  </head>
-  <body>
-    <div id="output"></div>
-    
-    <!-- Load Babel and React -->
-    <!-- Your script here -->
-    <script type="text/babel">
-      ReactDOM.render(
-       <h1>Hello, again React!</h1>,
-       document.getElementById('output')
-      );
-    </script>
-  </body>
-</html>
-```
-
-# Live Example
-
-<p data-height="265" data-theme-id="dark" data-slug-hash="vjQZVa" data-default-tab="html,result" data-user="Dangeranger" data-embed-version="2" data-pen-title="Single File React" class="codepen">See the Pen <a href="https://codepen.io/Dangeranger/pen/vjQZVa/">Single File React</a> by Joshua Burke (<a href="https://codepen.io/Dangeranger">@Dangeranger</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>

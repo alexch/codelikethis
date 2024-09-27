@@ -5,7 +5,7 @@
 * The URL is a form of data communication
 * React-Router is a tool for declarative routing using components
 
-```javascript
+```jsx
 const Router = () => (
   <BrowserRouter>
     <Switch>
@@ -22,12 +22,12 @@ ReactDom.render(
 );
 ```
 
-# React Routing - Traditional
+# Routing the Traditional Way
 
 * Most web frameworks like Express, Angular, Ember, etc. have routing
 * Most routing systems are pretty static
 
-```javascript
+```jsx
 // Express example
 app.get('/', handleIndex)
 app.get('/posts, handlePosts)
@@ -43,7 +43,7 @@ app.listen()
 * React-router routes are just **special** components that delegate to others
 * Routes are generated when your app runs
 
-```javascript
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -66,7 +66,7 @@ ReactDOM.render( <App />, root)
 * JSX from those components will be rendered on a "match"
 * React-router uses Regex to match the "path" to the "route"
 
-```javascript
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Link } from "react-router-dom";
@@ -84,7 +84,7 @@ const root = document.getElementById('root');
 ReactDOM.render( <Router />, root)
 ```
 
-```javascript
+```jsx
 // File: components/App.js
 import React from 'react';
 
@@ -107,7 +107,7 @@ export default App;
 * Browser URL is changed
 * Browser history is preserved
 
-```javascript
+```jsx
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -153,7 +153,7 @@ ReactDOM.render(<Router />, rootElement);
 
 # React Routing - Matching Routes
 
-```javascript
+```jsx
 const App = () => {
   return (
     <div>
@@ -192,13 +192,22 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<Router />, rootElement);
 ```
 
+# Lab: React Nav Bar
+
+Let's set up a simple site with some basic navigation using React Router.
+
+- Create a new react app
+- Create an `About` Component, a `Homepage` component, and a `Nav` component
+- add links to the `Nav` component that direct you to the `Home` and `About` pages
+- The `Nav` component should be loaded on both the `Home`, and `About` pages
+
 # React Routing - The Match Object
 
 * Match is one of the Props passed from a Route
 * It is a JavaScript object
 * You can use the properties to do logic, or fill values
 
-```javascript
+```jsx
 const App = () => {
   return (
     <div>
@@ -235,7 +244,7 @@ ReactDOM.render(<Router />, rootElement);
 
 # React Routing - Match Object Details
 
-```
+```jsx
 // From <Dashboard />
 Object {props: Object}
   match: Object
@@ -246,7 +255,7 @@ Object {props: Object}
 
 ```
 
-```
+```jsx
 // From <Home />
 Object {props: Object}
   props: Object
@@ -272,7 +281,7 @@ Object {props: Object}
 * Parameters can be passed into components from the Route `path`
 * Parameters can be required or optional
 
-```javascript
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -300,7 +309,7 @@ ReactDOM.render(<App />, rootElement);
 
 # React Router - Sub-Parameters
 
-```
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";

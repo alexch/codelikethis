@@ -1,6 +1,6 @@
 # Zorkington
 
-![zork west of house](./zork-west-of-house.jpg)
+![zork west of house](/images/zork-west-of-house.jpg)
 
 [Zork](https://en.wikipedia.org/wiki/Zork) was not the first text adventure game, but it was the first to achieve commercial success.
 
@@ -13,16 +13,10 @@ In this project, you will create a version of Zork that takes place in the faraw
 * http://mentalfloss.com/article/29885/eaten-grue-brief-history-zork
 * [Zork running in a web browser on an IBM 5050 PC emulator written in JavaScript.](https://www.pcjs.org/disks/pcx86/games/infocom/zork1/)
 
-## Tech
-
-* JavaScript
-* Terminal I/O
-* String parsing (for commands)
-* Word wrapping
-* State transition diagrams? [compsci]
 
 ## Goals
 
+* utilizing functions, methods, and objects for a deeper understanding of encapsulation.
 * understand state and state transitions, which are useful in many areas, e.g. 
   * photo carousel
   * buttons, menus, other widgets
@@ -34,20 +28,22 @@ In this project, you will create a version of Zork that takes place in the faraw
 Your code will need to represent (or *reify*) several distinct states, including:
 
   * current room
-  * room descriptions (immutable)
-  * room connections (immutable)
-  * room inventory (mutable)
-  * player inventory (mutable)
-  * player status (mutable) (hungry, tired, etc.)  
+    * room descriptions (immutable)
+    * room connections (immutable)
+    * room inventory (mutable)
+  * current player
+    * player inventory (mutable)
+    * player status (mutable) (hungry, tired, etc.)  
 
 Think about appropriate data structures for each of these. Note that you do not need to write code for these until you are actually implementing a story that requires them, but it is good to make a rough plan early on, to anticipate pitfalls and estimate how difficult upcoming stories will be.
 
 Remember to *refactor*. Sometimes a data structure that works well for the simple case will need to be altered to work for the general case. In this project, the app will grow (more rooms, more commands) from story to story and your data structures should change to accomodate.
 
-If you know about JavaScript classes and constructors, feel free to use them; otherwise you may save state in *global variables* like this:
+If you are not comfortable using classes, constructors, and objects you may save state in *global variables* like this:
 
 ```js
 let currentRoom = null;
+
 function moveToRoom(newRoom) {
   if (canMoveToRoom(newRoom)) {
     currentRoom = newRoom;
@@ -55,7 +51,9 @@ function moveToRoom(newRoom) {
 }
 ```
 
-You may want to create a [State Machine](/lessons/cs/state_machines) to represent the rooms.
+>Note: Using functions, global variables, and logical statements may work for a simple version of this game, however it will be much, much harder to scale up than if you use objects.
+
+You may want to create a [State Machine](/lessons/javascript/state_machines) to represent potential room transitions.
 
 ## And Don't Forget to Demo!
 
@@ -68,10 +66,10 @@ After implementing a story, *before* starting work on the next story...
 
 And during the day, take breaks, find other student teams and play each others' games!
 
-## Backlog
+# Stories
 
 <!--BOX-->
-### One Room
+## One Room
 
 **When** the user launches the program
 
@@ -98,8 +96,23 @@ Sorry, I don't know how to gargle.
 ```
 
 <!--/BOX-->
+
+<details>
+<summary>Hint</summary>
+<div>
+Since you're going to want to display the prompt over and over again it might make sense to put it inside a loop
+
+```js
+while(answer !== 'exit') {
+  answer = await ask('>_ ')
+}
+```
+
+</div>
+</details>
+
 <!--BOX-->
-### Read the sign
+## Read the sign
 
 **Given** the player is in the room "182 Main St."
 
@@ -115,9 +128,27 @@ up to the third floor. If the door is locked, use the code
 
 **And** returns to the prompt
 
+<details>
+<summary>Hint</summary>
+<div>
+You could do this with nested logic statements, however that will get complicated fast.  Instead you may want to make your items objects with properties and methods.
+
+```js
+let sign = {
+  description: "Welcome to Burlington Code Academy! Come on up to the third floor.\nIf the door is locked, use the code 12345."
+  read: () => {
+    return this.description
+  }
+}
+```
+
+</div>
+</details>
+
 <!--/BOX-->
+
 <!--BOX-->
-### Don't take the sign
+## Don't take the sign
 
 **Given** the player is in the room `182 Main St.`
 
@@ -135,7 +166,7 @@ That would be selfish. How will other students find their way?
 
 
 <!--BOX-->
-### Blocked
+## Blocked
 
 **Given** the player is in the room `182 Main St.`
 
@@ -146,11 +177,10 @@ That would be selfish. How will other students find their way?
 ```
 The door is locked. There is a keypad on the door handle.
 ```
-</span>
 
 <!--/BOX-->
 <!--BOX-->
-### Speak friend and enter
+## Speak friend and enter
 
 **Given** the player is in the room `182 Main St.`
 
@@ -168,7 +198,7 @@ shuts behind you.
 <!--/BOX-->
 
 <!--BOX-->
-### Unauthorized Access
+## Unauthorized Access
 
 **Given** the player is in the room `182 Main St.`
 
@@ -185,7 +215,7 @@ Bzzzzt! The door is still locked.
 <!--/BOX-->
 
 <!--BOX-->
-### Foyer
+## Foyer
 
 **Given** the player is in `182 Main St. - Foyer`
 
@@ -203,7 +233,7 @@ A copy of Seven Days lies in a corner.
 <!--/BOX-->
 <!--BOX-->
 
-### Inventory
+## Inventory
 
 **Given** the player is in `182 Main St. - Foyer`
 
@@ -221,9 +251,10 @@ and ignoring the articles, just like everybody else does.
 **And** the paper is added to the player's inventory
 
 <!--/BOX-->
+
 <!--BOX-->
 
-### Display Inventory
+## Display Inventory
 
 **Given** the paper is in the player's inventory
 
@@ -239,7 +270,7 @@ A copy of Seven Days, Vermont's Alt-Weekly
 <!--/BOX-->
 <!--BOX-->
 
-### Drop Inventory
+## Drop Inventory
 
 **Given** the copy of Seven Days is in the player's inventory
 
@@ -253,15 +284,17 @@ A copy of Seven Days, Vermont's Alt-Weekly
 
 <!--BOX-->
 
-### More rooms and more stories, e.g.
+## More rooms and more stories, e.g.
+
+* when you unlock the door to the foyer it *stays* unlocked
 
 * `read paper` or `read seven days`
 
 * `go up` or `go upstairs` 
 
-* Alex C speaks gibberish until you get him a cup of coffee from Muddy's
+* Bob speaks gibberish until you get him a cup of tea from Muddy's
 
-    * then you can `attend lecture` or `sit down` or `pair up` or something
+    * then you can `attend lecture` or `sit down` or some other command to attend class
     
 * After class you are `hungry` (status) which makes your stomach growl before every prompt
 
@@ -273,7 +306,7 @@ Please *write stories* for each of these features *before* implementing them.
 
 <!--/BOX-->
 
-## Icebox
+# Icebox
 
 * Status line (showing room name)
 * Web User Interface for the game

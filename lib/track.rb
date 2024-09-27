@@ -53,6 +53,7 @@ class Track < Thing
 
   contains :links
   contains :projects
+  contains :references
   contains :topics
   contains :goals
 
@@ -71,12 +72,12 @@ class Track < Thing
     goals and not goals.empty?
   end
 
-  # todo: test
+  # TODO: test
   def links
     super + @things.map(&:links).flatten
   end
 
-  # todo: test
+  # TODO: test
   def topics
     things_of_class(Topic, all_things) # is this line useful? might have a side effect?
     (super || []) + (@things.map do |thing|
@@ -100,7 +101,7 @@ class Track < Thing
     list
   end
 
-  # todo: unit test this
+  # TODO: unit test this
   def projects
     track_defined_projects = things_of_class(Project)
     lesson_defined_projects = []
@@ -108,6 +109,15 @@ class Track < Thing
       lesson_defined_projects += lesson.projects
     end
     (track_defined_projects + lesson_defined_projects).uniq
+  end
+
+  def references
+    track_defined_references = things_of_class(Reference)
+    lesson_defined_references = []
+    things_of_class(Lesson).each do |lesson|
+      lesson_defined_references += lesson.references
+    end
+    (track_defined_references + lesson_defined_references).uniq
   end
 
   def lab_names
@@ -186,7 +196,7 @@ class Track < Thing
         if target.description?
           div(class: 'description') do
             h2 "Description"
-            p target.description # todo: markdown?
+            p target.description # TODO: markdown?
           end
         end
 
@@ -235,6 +245,16 @@ class Track < Thing
           end
         end
 
+        if target.references?
+          h2 "References"
+          ul(class: 'references') do
+            target.references.each do |reference|
+              li { widget reference.link_view }
+            end
+          end
+        end
+
+
         if target.links?
           h2 "Links"
           ul(class: 'links') do
@@ -280,7 +300,7 @@ class Track < Thing
             text item_name
             span.loading_image unless current_page? item
 
-            # todo: handle lessons with videos better
+            # TODO: handle lessons with videos better
             if item.respond_to? :video? and item.video?
               span.video_link {
                 i(class: 'fas fa-video')
@@ -291,7 +311,7 @@ class Track < Thing
 
             if item.respond_to?(:slides)
               text ' '
-              span("(#{item.slides.length} slides)", class: 'slide_count')
+              span("*", class: 'slide_count') if item.slides.none?
             end
 
           }

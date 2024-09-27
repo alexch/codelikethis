@@ -43,7 +43,7 @@ This is called an *infinite loop*.
 
 # One Infinite Loop
 
-![One Infinite Loop](../images/one-infinite-loop.jpg)
+![One Infinite Loop](https://res.cloudinary.com/btvca/image/upload/v1574445194/curriculum/one-infinite-loop_eful1h.jpg)
 
 *Fun Fact:* The address of Apple HQ is
 
@@ -52,7 +52,7 @@ This is called an *infinite loop*.
 
 *Image from the Wikimedia Commons, licensed under the Creative Commons Attribution-Share Alike 3.0 Unported license. Attribution: Joe Ravi*
 
-# LAB: Infinite Counting
+# Infinite Counting
 
 Let's write a program that counts from 0 to infinity. Put this in a file called `count.js`.
 
@@ -74,7 +74,29 @@ Next, we will change your `count.js` program so that it only counts to 100.
 
 Please try this yourself! But it's kind of tricky, so on the next slide I'll show you one solution.
 
-# while for a while
+# Solution: Who wants to loop forever?
+
+<details>
+<summary>Hint</summary>
+
+Remember, a while loop only runs while the check evaluates true
+
+<div>
+
+```js
+while(/*this expression is true...*/) {
+    // ...do this action
+}
+```
+
+</div>
+</details>
+
+
+<details>
+<summary>Solution</summary>
+
+<div>
 
 ```js
 let count = 1;
@@ -84,7 +106,10 @@ while (count <= 100) {
 }
 ```
 
-Did you find a solution? Did your program stop at 100 or 99?
+</div>
+</details>
+
+Did your program stop at 100, 101, or 99?
 
 # `while`
 
@@ -121,7 +146,7 @@ prints the current value of count.
 
 goes *back to the `while` line* and checks again
 
-# `while` breakdown (pt.2)
+# `while` breakdown (pt.3)
 
     while (count <= 100)
 
@@ -131,7 +156,7 @@ compares `count` to `100`.
 
 Eventually, `count` becomes `101`, and the `while` expression is `false`, and so we stop looping and go on.
 
-# `break` dancing
+# break dancing
 
 The magic word `break` stops a loop immediately.
 
@@ -212,7 +237,7 @@ function poemLine(lineNumber) {
     } else if (lineNumber === 4) {
         return "4!"
     } else {
-        return "" + lineNumber + ","
+        return lineNumber + " potato,"
     }
 }
 ```
@@ -266,7 +291,7 @@ for (var i=0; i < 8; i++) {
 
 # `for..of`
 
-The `for..of` loop was added to JavaScript fairly recently. It loops over an [array](./arrays) and hides the messy details of initializing and incrementing a counter:
+The `for..of` loop was added to JavaScript fairly recently. It loops over an [array](/lessons/javascript-track/arrays) and hides the messy details of initializing and incrementing a counter:
 
 ```javascript
 const lineNumbers = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -286,39 +311,87 @@ To do this, your code will probably need to use one or the other, or both, of th
   * *nested functions* - functions that call other functions
   * *nested loops* - loops that contain other loops
 
-Please try this now; if you get stuck, the next few slides have some tips.
+# Prime Numbers solution
 
-# TIP: Prime Numbers: Tip 1
+<details>
+<summary>Hint 1</summary>
+<div>
+You may want to use the logic in the `isDivisible` function you made during the functional labs.
 
-use the `isDivisible` function you wrote back in the [functions](functions) lesson
-
-# TIP: Prime Numbers: Tip 2
-
-## Fake it till you make it
-
-Write a function named `isPrime` that takes one parameter, and returns `true` if that number is prime.
-
-This function pretends that every number is prime:
-
-```
-function isPrime(number) {
-    return true;
+```js
+function divisible(divisor, dividend) {
+    if (!(divisor % dividend)) {
+        return true
+    } else {
+        return false
+    }
 }
 ```
 
-First write your code assuming that `isPrime` works correctly...then once the rest of the program is working, come back and focus on the smaller problem of finding out if a given number is prime.
+</div>
+</details>
 
+<details>
+<summary>Hint 2</summary>
+<div>
+Fake it till you make it!
 
-# TIP: Prime Numbers: Tip 3
+```js
+function isPrime(number) {
+    return true
+}
+```
 
-write a main loop that counts from 2 to 100; inside that loop, call `isPrime` and print the number if `isPrime` is true
+</div>
+</details>
 
-# LAB: More about loops
+<details>
+<summary>Hint 3</summary>
+<div>
+Use a while loop to iterate through all the integers between your number and 2
 
-Exercisms:
+```js
+let count = 2
 
-  * [Collatz Conjecture](https://exercism.io/my/solutions?exercise_id=collatz-conjecture&track_id=javascript)
-  * [Pangram](https://exercism.io/my/solutions?exercise_id=pangram&track_id=javascript)
+while (count < number) {
+    //Your code goes here
+}
+```
 
-* [An overview of JavaScript iterators
-](https://medium.freecodecamp.org/javascript-iterators-17ab32c3cae7) - The difference between for, for…in and for…of loops
+</div>
+</details>
+
+<details>
+<summary>Solution</summary>
+<div>
+
+```js
+function isPrime(number) {
+    let count = 2
+    
+    while (count < number) {
+        if (!(number % count)) {
+            return false
+        } else {
+            count++
+        }
+    }
+
+    return true
+}
+
+let currentNumber = 100
+
+while (currentNumber > 2) {
+    if(isPrime(currentNumber)) {
+        console.log(currentNumber)
+        currentNumber--
+    } else {
+        currentNumber--
+    }
+}
+
+```
+
+</div>
+</details>

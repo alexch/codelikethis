@@ -1,6 +1,6 @@
 # React Routing - Going Further
 
-React Router offers a lot of power and flexibility, we will explore the following features in upcoming slides.
+React Router offers a lot of power and flexibility.
 
 * Validating routes with Regular Expressions
 * Capturing and parsing URL Query Parameters
@@ -17,7 +17,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 
 ### Example
 
-```javascript
+```jsx
 <Route
   path="/:a([A-Za-z]+)"
   render={({ match, props, location }) => (
@@ -34,7 +34,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 
 ### Example
 
-```javascript
+```jsx
 <Route
   path="/:a([A-Za-z]+)/:b(\d+)"
   render={({ match, props, location }) => (
@@ -58,7 +58,7 @@ React Router offers a lot of power and flexibility, we will explore the followin
 
 ### Example
 
-```javascript
+```jsx
 const Nav = props => {
   return (
     <div>
@@ -85,7 +85,7 @@ const Nav = props => {
 
 ### Example
 
-```javascript
+```jsx
 const App = props => {
   return (
     <BrowserRouter>
@@ -113,7 +113,7 @@ const App = props => {
 
 ### Example
 
-```javascript
+```jsx
 const NotFound = () => (
   <div>
     <h1>That page was not found</h1>
@@ -143,7 +143,7 @@ const App = props => {
 
 ### Examples
 
-```javascript
+```jsx
 const Home = () => <h1>You are Home</h1>;
 const Posts = () => <h1>All the Posts</h1>;
 
@@ -164,3 +164,18 @@ const App = props => {
 ```
 
 [CodeSandbox](https://codesandbox.io/s/yp4xrk60mv)
+
+# Lab: React Router Blog
+
+Let's create a fake blog using [JSONPlaceholder](https://jsonplaceholder.typicode.com/) and React Router!
+
+* When the user visits the homepage they should see a welcome page with:
+  * a greeting ('Welcome to our page, click an article to get started')
+  * a list of all available articles from JSONPlaceholder by title
+* When the user clicks an article's title it should take you to a new page with:
+  * the contents of that article
+  * the title
+  * the author's name
+  * and when you click the author's name it should take you to a page with a list of all the articles **by that author**
+
+>Hint: You might want to look back at some of your [previous projects](https://bootcamp.burlingtoncodeacademy.com/projects/yelpington-app) and/or the [JSON](../javascript/json) lesson for inspiration

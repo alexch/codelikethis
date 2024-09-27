@@ -142,7 +142,7 @@ When you create a commit, you always provide a *message* describing the nature o
 git commit -m 'allow users to change their profile picture'
 ```
 
-Commit messages are important. Think of them as journal entries -- without them you will be tracking *what* you changed, but not *why* you made the changes.
+Commit messages are important, and should describe **why** you made the changes. Think of them as journal entries -- without them you will be tracking *what* you changed, but not *why* you made the changes.
 
 # LAB: Make a shopping list (cont.)
 
@@ -174,12 +174,6 @@ And to prove that the change actually made it into the history, run `git log`.
         shopping list
 
 Again, **don't skim past this message**. Look for terms you understand. Try to figure out what the program is telling you. Is everything as you would expect? If not, what's different? What don't you understand?
-
-# Add vs Commit
-
-Q: Why does git have a two-step process for tracking changes? Why doesn't `git add` just add the changes to the history immediately?
-
-A: ?
 
 # Add vs Commit
 
@@ -296,7 +290,7 @@ index 0000000..9f0ab0a
 
 Now we remember ... 
 
-![chunky monkey](chunky-monkey-detail.png)
+![chunky monkey](/images/chunky-monkey-detail.png)
 
 Oh, Chunky Monkey, how could I ever forget you?
 
@@ -339,6 +333,7 @@ It's saying "milk" and "chunky monkey ice cream" were *removed*, and "ketchup" w
 # LAB: Push It To The Limit
 
 1. Sign in to [GitHub.com](https://github.com) and create a repository
+![new github repo](/images/new-repository.png)
 2. Name it the same as your local repo directory (`shopping`)
 3. **Don't** initialize it with a README
 4. Follow the "if you have a repo already" instructions
@@ -357,7 +352,7 @@ Now reload the page and see your changes!
 > Git does not automatically push and pull changes!
 
 1. **On GitHub.com**, find your `shopping` repo and click on `groceries.txt`
-2. Find the **pencil icon** on the upper right and click it -- this opens a text editor **inside your browser** ![github pencil](github-pencil.png)
+2. Find the **pencil icon** on the upper right and click it -- this opens a text editor **inside your browser** ![github pencil](/images/github-pencil.png)
 3. Make some changes and save them as a new commit
 4. Go back to your terminal and text editor. **Notice that you still have the old version.**
 5. On your terminal, run the command `git pull` 

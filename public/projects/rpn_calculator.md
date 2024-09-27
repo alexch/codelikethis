@@ -1,6 +1,6 @@
 # RPN Calculator
 
-"RPN" stands for "Reverse Polish Notation". (See [the wikipedia entry](http://en.wikipedia.org/wiki/Reverse_Polish_notation) for more information on this colorful term.) Briefly, in an RPN world, instead of using normal "infix" notation, e.g.
+"RPN" stands for "Reverse Polish Notation". (See [the wikipedia entry](http://en.wikipedia.org/wiki/Reverse_Polish_notation) for more information on this colorful term.) In short with RPN instead of using normal "infix" notation, e.g.
 
     2 + 2
     
@@ -8,7 +8,7 @@ you use "postfix" notation, e.g.
 
     2 2 +
 
-While this may seem bizarre, there are some advantages to doing things this way. For one, you never need to use parentheses, since there is never any ambiguity as to what order to perform operations in. The rule is, you always go from the back, or the left side.
+While this may look bizarre, there are some advantages to doing things this way. For one, you never need to use parentheses, since there is never any ambiguity as to what order to perform operations in. The rule is, you always go from the back, or the left side.
 
     1 + 2 * 3 =>
     (1 + 2) * 3 or
@@ -21,9 +21,7 @@ Another advantage is that you can represent any mathematical formula using a sim
 
 # Template
 
-Clone this GitHub repo: https://github.com/BurlingtonCodeAcademy/rpn_calculator
-
-(If we are using GitHub Classroom, you will get your own personal repo to clone instead.)
+Clone the GitHub repo set up when you follow the classroom link we gave you.
 
 Install the test runner (and any other required packages) with `npm install`
 
@@ -47,7 +45,7 @@ class Calculator {
 module.exports = Calculator;
 ```
 
-# Backlog
+# Stories
 
 <!--BOX-->
 
@@ -57,7 +55,9 @@ Run the tests (aka "Jasmine spec") in `calculator.spec.js` like this:
 
     npm test
 
-Keep writing code until each and every spec is passing. 
+Keep writing code until each and every test is passing. 
+
+>Don't move on to the next test until you've got the preceeding test passing
 
 Add your own specs to this file...
 

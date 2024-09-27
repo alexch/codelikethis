@@ -7,3 +7,5 @@ spec/results.txt
 *__
 .dropbox.attr
 .node_modules
+public/css/app.css
+public/css/app.css.map

@@ -15,18 +15,16 @@ A few ways to define a function:
 function add(x,y) { return x + y; }
 ```
 
-Not recommended (why not?)
-
 ## Function Expression
 
 ```javascript
-var subtract = function(x,y) { return x - y; }
+let subtract = function(x,y) { return x - y; }
 ```
 
 ## Named Function Expression
 
 ```javascript
-var factorial = function fact(x) {
+let factorial = function fact(x) {
   if (x == 1) {
     return 1;
   } else {
@@ -35,15 +33,13 @@ var factorial = function fact(x) {
 }
 ```
 
-useful only for debugging [and recursion?]
-
 ## Method
 
 ```javascript
-var student = {
+let student = {
     gpa: 4.0,
     grade: function() {
-        var gradeLetters = ["F", "D", "C", "B", "A"];
+        let gradeLetters = ["F", "D", "C", "B", "A"];
         return gradeLetters[Math.floor(this.gpa)];
     }
 };
@@ -64,8 +60,8 @@ student.grade = function() { ... }
 ## Sample code
 
 ```javascript
-var alice = {firstName: 'Alice', lastName: 'Liddell'};
-var bob = {firstName: 'Bob', lastName: 'Jones'};
+let alice = {firstName: 'Alice', lastName: 'Liddell'};
+let bob = {firstName: 'Bob', lastName: 'Jones'};
 alice.fullName = function() { return this.firstName + " " + this.lastName; }
 bob.fullName = alice.fullName;  // Whoa, trippy!
 alice.fullName(); //=> "Alice Liddell"
@@ -80,6 +76,6 @@ bob.fullName(); //=> "Bob Jones"
 
 # Map Filter Reduce in Emoji
 
-![map filter reduce in emoji](../images/map-filter-reduce-in-emoji.png)
+![map filter reduce in emoji](/images/map-filter-reduce-in-emoji.png)
 
 (source unknown)

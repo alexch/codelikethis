@@ -9,6 +9,7 @@ Before the class starts, please install the following:
 * Git
 
 and sign up for accounts on:
+
 * GitHub
 * Heroku
 
@@ -27,9 +28,9 @@ and sign up for accounts on:
 ## Node.js (JavaScript)
 
   * **Install** Node.js from <https://nodejs.org/>
-  * version 10.X.X LTS is preferred
+  * version 12.X.X Current is preferred (the button on the right side)
     * run `node -v` in terminal to check
-    * if you can't install v10, anything past 6.0 is probably okay
+    * if you can't install v12, anything past 10.X.X LTS is probably okay
 
 ## Git
 
@@ -55,13 +56,18 @@ and sign up for accounts on:
 
 1. Visit <https://cmder.net>
 2. Click "Download Full"
-3. Save the ZIP file and unzip it into your *home directory*
+3. Save the ZIP file and unzip it into your *home directory* or into `C:\cmder`
   * if your username is `Alice` you should now have `C:\Users\Alice\cmder\Cmder.exe`
 4. **Right**-click `Cmder` and select "Create Shortcut"
 5. **Click and Drag** that shortcut to the desktop
 6. **Double-click** the shortcut to open the terminal
 7. Press <kbd>Win</kbd>-<kbd>Alt</kbd>-<kbd>P</kbd> (or select "Settings..." from the window's menu) and change the "startup task" to `{bash::bash}`
 cmder
+
+## VS Code Terminal
+1. Open VS Code
+2. Press <kbd>Crtl</kbd>-<kbd>Shift</kbd>-<kbd>P</kbd>, and type in `Default Shell`
+3. Choose  `Git Bash`
 
 ---
 

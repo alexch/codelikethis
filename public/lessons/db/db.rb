@@ -76,18 +76,10 @@ class Track
       topic name: "mongodb-shell"
     end
 
-    lesson name: 'map_reduce' do
-      link href: "https://docs.mongodb.com/manual/core/map-reduce/"
-    end
+    lesson name: "firebase_intro"
 
-    # SQL
-    lesson name: "sql" do
-      link href: "https://node-postgres.com/"
-      link href: "https://github.com/brianc/node-postgres"
-      # link href: 'http://docs.sequelizejs.com/',
-      #      name: 'Sequelize',
-      #      description: 'a promise-based Object-Relational Mapper for Node.js'
-    end
+    lesson name: "authentication"
+
 
     # lesson name: 'joins'
 

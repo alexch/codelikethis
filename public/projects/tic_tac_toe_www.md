@@ -2,13 +2,11 @@
 
 Tic Tac Toe (aka "Noughts and Crosses") is a simple game played between two players on a 3x3 grid.
 
-![tic tac toe completed](tic_tac_toe.svg)
+![tic tac toe completed](/images/tic_tac_toe.svg)
 
 In this project you will implement the [game rules](https://en.wikipedia.org/wiki/Tic-tac-toe) in a web-based UI.
 
-We recommend that before you start this project, you complete the [Tic Tac Toe (CLI)](tic_tac_toe) project (at least up to the "Artificial Stupidity" story). This will help you keep the *game rules* separate from the *user interface*, both in your mind and in your code. You may even be able to reuse many of the functions you wrote earlier.
-
-Template repository: https://github.com/BurlingtonCodeAcademy/tic-tac-toe-www -- either clone this directly, or use your own GitHub Classroom repo.
+We recommend that you focus on the game's logic before you worry about the UI. It may be helpful to complete the [Tic Tac Toe (CLI)](tic_tac_toe) project (at least up to the "Artificial Stupidity" story). This will help you keep the *game rules* separate from the *user interface*, both in your mind and in your code. You may even be able to reuse many of the functions you wrote for that project.
 
 ## Wireframes
 
@@ -49,13 +47,11 @@ Tic Tac Toe
 Player O's turn
 ```
 
-## Backlog
-
-The backlog is an ordered list of *user stories* (aka *features*). Make sure to implement them *in order*, and don't move on to the next one until you're confident that your current story meets all the requirements. Some features already have *acceptance tests* written in Cypress; make sure these work and also feel free to add your own tests in the `cypress/integration` directory.
+# Stories
 
 <!--BOX-->
 
-### Start Game
+## Start Game
 
 **Given** an empty board
 
@@ -70,19 +66,15 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 
 <!--BOX-->
 
-### No Rules
+## No Rules
 
-**Given** an empty board, and
-
-**Given** the current player is X
+**Given** an empty board, and the current player is X
 
 **When** the user selects a cell
 
 **Then** the board redraws
 
-**And** an X appears in that cell
-
-**And** the turn ends
+**And** an X appears in that cell, and the turn ends
 
 **And** the current player changes from X to O
 
@@ -100,7 +92,7 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 
 <!--BOX-->
 
-### Rules
+## Rules
 
 **When** the user selects a cell that is not empty
 
@@ -111,7 +103,7 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 <!--/BOX-->
 <!--BOX-->
 
-### Win Condition
+## Win Condition
 
 **Given** the turn has just ended
 
@@ -128,23 +120,27 @@ The backlog is an ordered list of *user stories* (aka *features*). Make sure to 
 <!--/BOX-->
 <!--BOX-->
 
-### Names
+## Names
 
-When starting a game, allow the user(s) to choose the names of the players (not just X and O).
+**Given** a new game
+
+**When** starting a game
+
+**Then** allow the user(s) to choose the names of the players (not just X and O).
 
 <!--/BOX-->
 <!--BOX-->
 
-### Game Time
+## Game Time
 
-After starting a game, a game clock timer is present in the lower region of the web page.
+**Given** a new game
 
-The timer should show the time in the format:
-- `Time Elapsed 32 seconds`
+**When** the game is started
 
-(See example below)
+**Then** the timer should show the time in the format:
+- `Time Elapsed XX seconds`
 
-Every second during game play, until a player has won, the clock should proceed by one second.
+**And** every second during game play, until a player has won, the clock should proceed by one second.
 
 Example:
 - 32 seconds
@@ -167,26 +163,35 @@ Time Elapsed 32 seconds
 <!--/BOX-->
 <!--BOX-->
 
-### Artificial Stupidity
+<!--BOX-->
 
-- When starting a new game, choose "Player vs Player" or "Player vs Computer"
-- If "Player vs Computer" is chosen, then do not ask for a name
+## New Game UI
+
+**Given** a new game
+
+**When** the game first loads
+
+**Then** give the user the options "Player vs Player" or "Player vs Computer"
+
+<!--/BOX-->
+
+## Artificial Stupidity
+
+**Given** a new game with the options "Player vs Player" or "Player vs Computer"
+
+**When** "Player vs Computer" is chosen
+
+**Then** do not ask for a name
 - The computer player always picks an empty cell *at random*
 - The human is always X and the computer is always O
 
 <!--/BOX-->
+
+# Icebox
+
 <!--BOX-->
 
-### New Game UI
-
-- design a clean "New Game" UI allowing choice of human or computer, name, and symbol
-- consider using a modal dialog box
-- consider button placement and visibility
-
-<!--/BOX-->
-<!--BOX-->
-
-### Game Time Formatted (OPTIONAL)
+## Game Time Formatted
 
 After starting a game, a game clock timer is present in the lower region of the web page.
 
@@ -223,7 +228,7 @@ Time Elapsed 00:01:25
 
 <!--BOX-->
 
-### Artificial Intelligence (OPTIONAL)
+## Artificial Intelligence
 
 - Instead of picking a random cell, the AI chooses the *best* random cell
 - This will require R&D
@@ -233,13 +238,13 @@ Time Elapsed 00:01:25
 
 <!--BOX-->
 
-### EXTRA BONUS: Play Nine Games at Once (OPTIONAL)
+## EXTRA SUPER BONUS: Play Nine Games at Once
 
 - Change the rules of the game so that nine 3x3 boards are played at once by two players.
 - A win can be achieved on any of the nine boards by placing three X's or three O's in a row.
 - Winning on any board will award the player a win for the entire game.
 - See this description for more information: http://www.stratigery.com/gen9.html
 
-![tic-tac-toe-9x9](tic-tac-toe-9x9.png)
+![tic-tac-toe-9x9](/images/tic-tac-toe-9x9.png)
 
 <!--/BOX-->

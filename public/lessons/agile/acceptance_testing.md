@@ -16,7 +16,7 @@ Where does Acceptance Testing fit in with other forms of automated tests?
 
 # Why test?
 
-the point of all automated testing is feedback
+The point of all automated testing is feedback
 
 > If a test fails in the woods, does anyone hear it fail?
 
@@ -155,7 +155,7 @@ When Cucumber works it's amazingly great, but most teams find it slows them down
     * as screenshots & videos for later viewing
     * as DOM copies for later debugging (!!)
 
-see more at the [Cypress Lesson](/lessons/javascript/cypress)
+see more at the [Cypress Lesson](/lessons/javascript-track/cypress)
   
 # Cypress
 
@@ -165,7 +165,17 @@ see more at the [Cypress Lesson](/lessons/javascript/cypress)
 * more detailed assertions are written in [Mocha](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha) + [Chai](https://www.chaijs.com/api/bdd/)
   * (very similar to Jasmine and Jest -- but [not identical](https://medium.com/@NicholasBoll/using-jest-matchers-in-cypress-5e8e7281f5dd) )
 
-see more at the [Cypress Lesson](/lessons/javascript/cypress)
+see more at the [Cypress Lesson](../javascript/cypress)
+
+# Lab: Let's Test Our Projects
+
+In an ideal world all code would be tested. Unfortunately due to time constraints, and the fact that few programmers actually enjoy writing tests they usually are the first thing to be cut from a project.  Let's write some end to end tests for our remock project.
+
+Go ahead and cd over to the directory that your remock project lives in then install Cypress using the command `npm install cypress`  Beware! Cypress can take a while to install.
+
+Once Cypress is installed go into the `fixtures` directory Cypress created for you, and create a file named `test.spec.js`
+
+In that file write tests for each of the stories on the [Remock Project](https://bootcamp.burlingtoncodeacademy.com/projects/remock)
 
 # Good Ideas
 

@@ -9,27 +9,20 @@ At its core, HTTP is a *file transfer protocol*.
 
 # node-static
 
-In earlier lessons, you may have used the `node-static` package to serve your HTML, JS, CSS, images, etc...
+In earlier lessons, you may have used the `node-static` package, or the `live-server` VSCode plugin to serve your HTML, JS, CSS, images, etc...
 
-*node-static* is a standalone static file server built in NodeJS
+*node-static*, and *live-server* are standalone static file servers built in NodeJS
 
-It's useful for local development but not great for production deployments
-
-Usage:
-
-```
-$ npm install node-static
-$ npx node-static
-npx: installed 6 in 1.359s
-serving "." at http://127.0.0.1:8080
-```
+They're useful for local development but not great for production deployments
 
 # static file server in Express
 
 * Express comes with its own static file server
 * Using it is a one-liner: 
 
-        app.use(express.static('.'))
+```js
+app.use(express.static('.'))
+```
 
 # LAB: static file server
 
@@ -43,32 +36,34 @@ serving "." at http://127.0.0.1:8080
     
 * create a file called `app.js` containing the following code:
 
-        const express = require('express')
-        const app = express()
-        const port = process.env.PORT || 5000
-        
-        app.use(express.static('.'))
-        
-        app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+```js
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 5000
 
-* create a file called `index.html` containing
+app.use(express.static('.'))
 
-        <h1>Hello in HTML</h1>
+app.listen(port, () => console.log(`Example app listeningport ${port}!`))
+```
 
-* in `package.json`, add
+* create a file called `index.html` containing an `h1` element, with the text "Hello, world!"
 
-        {
-          "scripts": {
-            "start": "node app.js"
-          }
-        }
+* in `package.json`, add a start script
+
+```json
+{
+  "scripts": {
+    "start": "node app.js"
+  }
+}
+```
 
 * launch the web server using `npm start`
 
 * Now open a web browser and visit <http://localhost:5000/index.html>
 
 
-# oops
+# Oops!
 
 The good news: your web server can now serve static files to its clients!
 
@@ -139,7 +134,7 @@ Now open a web browser and visit <http://localhost:5000/> and you will see the c
 
 **TIP:** open the browser DevTools and click on the Headers sub-tab to see Content-Type and other headers:
 
-![headers](content-type.png)
+![headers](/images/content-type.png)
 
 # 404 Not Found and other status codes
 
@@ -154,3 +149,10 @@ the server must send the correct *[status code](https://en.wikipedia.org/wiki/Li
 Note: even though there is an error, the server *still returns a body and content-type* for display to the user.
 
 In this case, we just see Express' boring default error page, but it's possible to get [very creative](https://www.canva.com/learn/404-page-design/) with web site error pages.
+
+# Lab: Create a 404 page
+
+Go back to your "static-server" directory, and let's make a custom 404 page!
+
+* Create a page in your "public" directory named 404.html
+* When the user visits any route other than your home route the 404 page should be displayed.

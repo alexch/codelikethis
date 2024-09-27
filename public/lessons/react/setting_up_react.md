@@ -1,149 +1,63 @@
-# Setup for React
+# Create React App
 
-This lesson will describe how to:
-- Use React in an HTML page
-- Configure your editor to highlight React JSX code
-- Test the output of JSX in the browser
+There is a package called `create-react-app` which will automatically install all your required dependencies, and set up a directory for your react app automatically.
 
-# Adding React to an HTML Page
+# Using Create React App
 
-React can be added like any other library by using a `<script>` link in the header
+1. Install Create React App **globally** `npm install -g creat-react-app`
+2. From the command line type `npx create-react-app app-name`
 
-The `<script>` link can be to a Content Delivery Network (CDN) or a local package.
+This will create a directory for the front end of your app called `app-name`. Inside that there will be a package.json file with all the scripts you need to create a react app, run it locally, and build a production version of that site.
 
-# Using the CDN Links
+# Directory Structure
 
-Add the following links to the `<head>` of the HTML file.
+There are two main parts of the `create-react-app` directory
 
-### React Development
-- https://unpkg.com/react@16/umd/react.development.js
+- the `src` folder
+- the `public` folder
 
-### ReactDOM Development
-- https://unpkg.com/react-dom@16/umd/react-dom.development.js
+> If you create a production build with `npm run build` you will additionally have a `build` folder. More on that when we talk about serving React projects next week!
 
-### Babel Standalone
-- https://unpkg.com/babel-standalone@6.15.0/babel.min.js
+# Core Concept: the `src` folder
 
-# Example HTML File Head
+The `src` folder is where the meat of your React project lives
 
-```html
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  </head>
-```
+- Create a JS file for each component
+- Import components where needed
+- The `App.js` file lays out the whole page
+- `index.js` draws the content to the page
+- CSS for your project also goes in here
 
-# Local Package Installation
+# Core Concept: the `public` folder
 
-You will need to have the following to include React as a local package in your HTML file.
+The `public` folder is where your react component gets drawn to.
 
-- A package manager like **NPM** or **Yarn**
-- A package bundler like **Webpack** or **Browserify**
-- A compiler like **Babel**
+- Contains `index.html`
+- Displays the front end of the app
+- Keep images you want to display in here
+- Don't tweak the HTML!
 
-# Local Package Installation
+# Lab: Create a React Component
 
-We will start with installing React using NPM
+Let's create our first React Component!  If you haven't already installed `create-react-app` go ahead and do that now `npm install -g create-react-app`
 
-```sh
+- `cd` into your code folder
+- create a React app named `first-reapp`
+- Change your app so it displays an `h1` with the text "Hello, React!"
 
+# Core Concept: functional v. class based components
 
-```sh
-npm init -y
-npm install --save react react-dom
-```
+`create-react-app` generates functional React components
 
-# Local Package Installation
+- functions that return JSX
+- the return value of the function is drawn to the page
+- the name of the function is the name of the component
+- component names should be capitalized
 
-Download the React, ReactDOM, and Babel Scripts from the Content Delivery Network (CDN)
+You can also use class based components by extending the React Component
 
-### React Development
-- https://unpkg.com/react@16/umd/react.development.js
-
-### ReactDOM Development
-- https://unpkg.com/react-dom@16/umd/react-dom.development.js
-
-### Babel Standalone
-- https://unpkg.com/babel-standalone@6.15.0/babel.min.js
-
-# Local Package Installation
-
-Put the content of the scripts into a directory called `src` in the project root
-
-```shell
-mkdir js
-mv path/to/downloads/react.development.js ./src/
-mv path/to/downloads/react-dom.development.js ./src/
-mv path/to/downloads/babel.min.js ./src/
-```
-
-# Local Package Installation
-
-Create an `index.html` file and source all three files in the head
-
-```html
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="src/react.development.js"></script>
-    <script src="src/react-dom.development.js"></script>
-    <script src="src/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="output"></div>
-  </body>
-</html>
-```
-
-# Local Package Installation
-
-Now simply write some react in a `<script></script>` tag
-
-Example:
-
-```
-<script type="text/babel">
-  ReactDOM.render(
-  <h1>Hello, local React!</h1>,
-  document.getElementById('output')
-  );
-</script>
-```
-
-# Local Package Installation
-
-### Finished simple index.html
-
-```html
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="src/react.development.js"></script>
-    <script src="src/react-dom.development.js"></script>
-    <script src="src/babel.min.js"></script>
-  </head>
-  <body>
-    <div id="output"></div>
-    <script type="text/babel">
-      ReactDOM.render(
-      <h1>Hello, local React!</h1>,
-      document.getElementById('output')
-      );
-    </script>
-  </body>
-</html>
-```
-
-# Editor Configuration
-
-The VS Code editor extension 'Sublime Babel' will highlight the syntax for React, JSX, and ES6+ Code.
-
-- Visit `https://marketplace.visualstudio.com/vscode`
-- Search for "sublime babel"
-- Extension page for [Sublime Babel](https://marketplace.visualstudio.com/items?itemName=joshpeng.sublime-babel-vscode)
-- Install the extenstion from the Visual Studio Marketplace or directly within the VS Code editor.
+- `class MyComponent extends React.Component{...`
+- has access to state, and lifecycle methods
+- the return value of the `render` method is drawn to the page
+- the name of the class is the name of the component
+- component names should be capitalized. **Always.**

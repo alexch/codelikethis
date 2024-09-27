@@ -1,4 +1,32 @@
-# MongoDB
+# MongoDB Installation
+
+### For Windows users
+
+* Go to https://www.mongodb.com/try/download/community
+  * Select the latest stable version (4.2.X+)
+  * Make sure the `package` is `msi`
+  * Download, and run the installation wizard, choose the default setup
+  * At the final step of the installer make sure "Install Mongo Compass" is checked
+
+* Try running the command `mongo` in your terminal **This probably won't work**
+* If the `mongo` command worked, congratulations! You're done!
+  * > Hang tight while we get everyone else sorted out
+
+* To set up the command line path open your file explorer, and right click on "This PC"
+* Select “Advanced System Settings”
+* Select “Environment Variables…” from the popup box
+* Under "System Variables", double click on Path
+* Paste the full file path to Mongo's `bin` folder. `C:\Program Files\MongoDB\Server\4.2\bin` by default
+* Close then reopen your terminal.
+* Run `mongo` to start up your MongoDB environment
+
+### For Mac Users
+
+* Open your terminal and enter the following commands
+* `brew tap mongodb/brew`
+* `brew install mongodb-community@4.2`
+* To run the MongoDb environment use `brew services start mongodb-community@4.2`
+
 
 # MongoDB Overview
 
@@ -47,31 +75,29 @@ Like in a relational database, a document can be created, read, updated, deleted
 
 This nesting and type-flexibility makes it very appropriate to store whatever JavaScript objects your app uses, without needing to devise a *mapping* between nested objects and joined relational tables.
 
-# Mongo Console
+# Lab: Mongo CLI
 
-MongoDB has a JavaScript REPL console, like `node`. 
+Let's make our first Mongo collection through the terminal!
 
-Launch it by typing `mongo dbname` on the command line -- e.g. for the `til` database, run `mongo til`
-
-In this console, run `help` to see what's possible.
-
-```
-> db.entries.find({})
-{ "_id" : ObjectId("5b5d0e45114a7c1433296d71"), "when" : ISODate("2018-07-29T00:45:57.074Z"), "text" : "hello" }
-{ "_id" : ObjectId("5b5d1595e71e8e073c15b229"), "when" : ISODate("2018-07-29T01:17:09.191Z"), "text" : "hello there" }
-{ "_id" : ObjectId("5b5e143b203dd808f88d2548"), "when" : ISODate("2018-07-29T19:23:39.695Z"), "text" : "chickens like corn" }
-{ "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
-
-> db.entries.find({ when: {'$gte': new Date(2018, 6, 29) }})
-{ "_id" : ObjectId("5b5e143b203dd808f88d2548"), "when" : ISODate("2018-07-29T19:23:39.695Z"), "text" : "chickens like corn" }
-{ "_id" : ObjectId("5b5e27ba44c44608f97083f3"), "when" : ISODate("2018-07-29T20:46:50.749Z"), "text" : "dogs like to bark" }
-
-```
+- Enter the Mongo shell
+- Once you're in the mongo shell type `help` to see the options available to you
+- Create an object and insert it into the collection
+  - Add a few
+- View all the objects you just added
+- View a single object
+- Update an object
+- Delete an object
 
 # Concept: ObjectId
 
 - `_id` is assigned by Mongo when a document is inserted
-- `ObjectId` is a factory function that either generates a new id, or 
+- `ObjectId` is a factory function that either generates a new id, or transforms a given string into a Mongo ID object
 
-# Lab: Connect and Collect
+# Lab: Exploring with Compass
 
+When you installed MongoDB you should have also installed an application called "Compass."  This is MongoDb's GUI tool. Let's open it up and see what it can do!
+
+- Open compass and hit the green button that says "connect"
+- Look for the database named "test" in the left side nav bar, and open it
+- Create a new collection
+- In the collection you just created try running through all the CRUD functions

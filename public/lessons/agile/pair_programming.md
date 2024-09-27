@@ -10,14 +10,6 @@ One problem
 
 ...notwithstanding remote pairing tools and face-to-face pairing desks)
 
-# Pairing is like Rally Racing
-
-One driver, one navigator
-
-<!VIDEO 4WcHVkDXdpU>
-
-Listen to how engaged the navigator is. They are focused on what's coming next, but they are **not** idly speculating. E.g. circa 4min in
-
 # Pair Programming Benefits
 
 > Two heads are better than one!
@@ -108,7 +100,7 @@ _Docendo discimus_ - "by teaching we learn"
 
 > It's better to have them and not need them, than to need them and not have them.
 
-![mentos](mentos.jpg)
+![mentos](/images/mentos.jpg)
 
 # Do...
 

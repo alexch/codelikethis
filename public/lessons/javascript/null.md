@@ -96,15 +96,11 @@ Which idea is better?
 
 Why or why not?
 
-# failure recovery: different modes for different roles
+# Failure Recovery
 
 *graceful* - generally good for users
 
-<<<<<<< variant A
   * provide information and context in non-technical language
->>>>>>> variant B
-  * provide information and context
-======= end
   * help user accomplish their goal
   * allow user to try again immediately
 

@@ -7,7 +7,7 @@ class NavBar < Erector::Widget
 
   def content
     nav(class: 'navbar navbar-expand-md fixed-top navbar-light') {
-      div(class: 'container') {
+      div(class: 'container p-0') {
         div(class: 'col navbar-left') {
           logo
         }
@@ -23,9 +23,8 @@ class NavBar < Erector::Widget
           span class: 'navbar-toggler-icon'
         }
 
-        div(class: 'col collapse navbar-collapse navbar-right', id: 'pageNavbar') {
+        div(class: 'col collapse navbar-collapse navbar-right px-0', id: 'pageNavbar') {
           ul(class: 'navbar-nav ml-auto align-items-center') {
-            # nav_item name: "Home", href: "http://www.burlingtoncodeacademy.com/"
             nav_items
           }
         }

@@ -1,6 +1,6 @@
 # Flexbox
 
-<img src="centered-flexbox.png" width="480px"/>
+<img src="/images/centered-flexbox.png" width="480px"/>
 
 # Introduction to Flexbox
 
@@ -206,3 +206,9 @@ Then give the first item `order: 2`, and the second item `order: 1`.
 }
 </style>
 ```
+
+# Let's Play a Game
+
+Flexbox Froggy is a great way to practice using flexbox to lay elements out on a page
+
+Click [here](https://flexboxfroggy.com/) and try to complete all 24 levels.

@@ -25,7 +25,7 @@
 
 # Mobile Device Simulator
 
-![Mobile Device Simulation Screenshot](mobile-device-simulation.png "Mobile Device Simulation Screeenshot")
+![Mobile Device Simulation Screenshot](/images/mobile-device-simulation.png "Mobile Device Simulation Screeenshot")
 
 [Link: Firefox Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode "Firefox Responsive Design Mode")
 
@@ -114,3 +114,17 @@ Only change the layout to `position: relative;` when
 * The result of this is modifying your CSS as screen sizes increase, rather than modifying your CSS as screen sizes decrease
 * In other words, your media queries will be written for minimum widths, not maximum widths
 * Tip: You can also set media queries in-between two screen sizes
+
+# Lab: Shift It Around
+
+Remember our old friend example-html? Let's bring it back for one final lab.
+
+Here we have a page that is starting to look somewhat decent, but what happens when you squish the screen down?
+
+In this lab we are going to make the `index.html` page look good at any size. Feel free to use flexbox, and/or grid while you complete the following tasks for mobile view (screen width < 450px)
+
+* Lay your nav bar out vertically
+* Don't wrap the text around the images
+* Decrease the space between elements
+* Resize the images, and iframes so they fit the page.
+* Remove the background image, or use a different (smaller) background image

@@ -7,6 +7,8 @@
   
 the "code we run" is also called an *endpoint* or a *route* or a *script* or a *handler* or...
 
+The "code we run" doesn't have to be complicated. It could be as simple as sending a file.
+
 # Routing is simple...
 
 Many web app server frameworks have complicated systems for routing, but that complexity is not essential.
@@ -33,7 +35,7 @@ as well as a shared context of documentation and tutorials so other coders don't
 
 In the [Hello, Express](./hello_express) lesson we saw the following route:
 
-```
+```js
 app.get('/', (request, response) => response.send('Hello World!'))
 ```
 
@@ -72,6 +74,14 @@ This means,
 
 * for more info, see the full [Express Routing Guide](https://expressjs.com/en/guide/routing.html) on their web site
 
+# Parameters in Express
+
+Express provides several different "parameters" objects:
+
+* `req.params` for *path parameters* (aka *route parameters*) signified with a `:` in the route matcher
+* `req.query` for *query parameters* which appear after the `?` in the URL
+* `req.body` for *post parameters* which appear inside the request body
+
 # Path Parameters in Express
 
 The special character `:` means "this is a [path parameter](./parameters#path_parameters)"
@@ -86,23 +96,19 @@ Params: {name: 'Gandalf'}
 
 Express will grab the *value* from the path itself, and put it into the `request.params` object for you to use later.
 
-# LAB: Hello, Path Friend!
-
-Change your "Hello, Express" server to have the following route:
-
-```
-app.get('/hello/:friend', (request, response)=> {
-    response.send('Hello, ' + request.params.friend + '!')
-});
-```
-
-Prove that it works by visiting <http://localhost:5000/hello/Gandalf> (or use your own name)
-
 # LAB: Hello, You!
 
-Now add a new route
+Let's go back to our "Hello, Express!" lab and add another route.
 
-```
+* When you visit the path 'localhost:5000/hello/you/from/me'
+* Then the webpage should display "Hello to you, from me."
+* Where "you" and "me" are path parameters
+* Format the names so that they are always capitalized
+* 'localhost:5000/hello/gandalf/from/frodo' displays "Hello to Gandalf, from Frodo
+
+
+
+```js
 app.get('/hello/:you/from/:me', (request, response)=> {
     response.send(`${request.params.me} says, "Hello, ${request.params.you}!')
 });
@@ -128,4 +134,49 @@ app.get('/hello/:you/from/:me', (request, response)=> { ...
 
 app.get('/hello/:friend', (request, response)=> { ... 
 });
+```
+
+# Query Parameters in Express
+
+For query parameters like `?season=winter&weather=cold`
+
+Express will grab the *name* and *value* from the query string, and put it into the `request.query` object for you to use later
+
+# LAB: Hello, Query Friend!
+
+Now change your "Hello, Express" server so if you visit the route "localhost:5000/hello?friend=Gandalf" (or any other name you want) it says "Hello, Gandalf!" (or whatever name you assign `friend` to)
+
+<details>
+<summary>Soluion</summary>
+<div>
+
+```js
+app.get('/hello', (request, response)=> {
+    response.send('Hello, ' + request.query.friend + '!')
+});
+```
+
+</div>
+</details>
+
+# Body Parameters in Express
+
+Since request bodies can appear in several different formats, you need to use the correct *middleware* to extract them.
+
+* [`body-parser`](https://expressjs.com/en/resources/middleware/body-parser.html) parses incoming request bodies. Very useful for reading form submissions!
+* [`express.urlencoded`](https://expressjs.com/en/4x/api.html#express.urlencoded) parses incoming requests with URL-encoded payloads.
+* [`express.json`](https://expressjs.com/en/4x/api.html#express.json) parses incoming requests with JSON payloads.
+
+Example (from [the express guide](http://expressjs.com/en/resources/middleware/body-parser.html)):
+
+```javascript
+// POST /login gets urlencoded bodies
+app.post('/login', express.urlencoded(), function (req, res) {
+  res.send('welcome, ' + req.body.username)
+})
+
+// POST /api/users gets JSON bodies
+app.post('/api/users', express.json(), function (req, res) {
+  // create user in req.body
+})
 ```

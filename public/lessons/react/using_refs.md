@@ -19,7 +19,7 @@
 * Attach the Ref to a React Element using the `ref` attribute
 * Assign the Ref to an **instance property** in the Constructor
 
-```
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +44,7 @@ class MyComponent extends React.Component {
 * `componentDidMount` and `componentDidUpdate` are triggers
 * Adding `focus` to an element is imperative
 
-```
+```jsx
 class CustomTextInput extends React.Component {
   constructor(props) {
     super(props);
@@ -85,8 +85,8 @@ class CustomTextInput extends React.Component {
 * Stateless Functional components don't have instances
 * Stateless Functional components can **use** refs however
 
-```
-function MyFunctionalComponent() {
+```jsx
+const MyFunctionalComponent = () =>  {
   return <input />;
 }
 
@@ -106,8 +106,8 @@ class Parent extends React.Component {
 
 # Refs - Functional Component Usage
 
-```
-function CustomTextInput(props) {
+```jsx
+const CustomTextInput = (props) => {
   // textInput must be declared here so the ref can refer to it
   let textInput = React.createRef();
 
@@ -138,9 +138,9 @@ function CustomTextInput(props) {
 * Breaks component encapsulation
 * Useful in re-usable components (General vs Specific)
 
-```
+```jsx
 // Basic React function component
-function FancyButton(props) {
+const FancyButton = (props) => {
   return (
     <button className="FancyButton">
       {props.children}
@@ -149,7 +149,7 @@ function FancyButton(props) {
 }
 ```
 
-```
+```jsx
 // React component that can receive a Ref
 const FancyButton = React.forwardRef((props, ref) => (
   <button ref={ref} className="FancyButton">
@@ -169,7 +169,7 @@ const ref = React.createRef();
 * React calls the callback on `componentDidMount` and `componentDidUpdate`
 * Ref is set to Null on `ComponentWillUnmount`
 
-```
+```jsx
 class CustomTextInput extends React.Component {
   constructor(props) {
     super(props);
@@ -216,8 +216,8 @@ class CustomTextInput extends React.Component {
 * Parents can pass a ref to children inline
 * Note that inline callbacks are called twice
 
-```
-function CustomTextInput(props) {
+```jsx
+const CustomTextInput = (props) =>  {
   return (
     <div>
       <input ref={props.inputRef} />

@@ -10,7 +10,7 @@
 
 # Hash
 
-![corned beef hash](../images/cornedbeefhash.jpeg)
+![corned beef hash](/images/cornedbeefhash.jpeg)
 
 * during breakfast, *hash* is a *delicious processed meat product*
 * during coding, a *hash* is an *abstract data type*

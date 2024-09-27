@@ -77,9 +77,5 @@ class Track
     lesson name: "navigation",
            description: "Nav bars, drop-downs, breadcrumbs, site maps, anchors" # todo: link to Bootstrap's responsive nav bar
 
-    lesson name: "css_frameworks", display_name: "Other CSS Frameworks" do
-      link href: "https://blog.webkid.io/css-frameworks-bootstrap-alternatives/"
-    end
-
   end
 end

@@ -11,6 +11,6 @@ class MarkdownWidget < Erector::Widget
   end
 
   def outline
-    # todo: scan for H2s and such
+    # TODO: scan for H2s and such
   end
 end

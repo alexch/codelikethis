@@ -27,17 +27,11 @@ class Curriculum < Site
       ::Track::Oo,
       ::Track::Db,
       ::Track::React,
-
       ::Track::Separator,
-
       ::Track::Agile,
       ::Track::Git,
-      ::Track::Cs,
-      ::Track::Ux,
-      ::Track::TricksOfTheTrade, # or "trade secrets" ?
+      ::Track::TricksOfTheTrade,
       ::Track::Career,
-      ::Track::Qa,
-
     ]
   end
 
@@ -138,7 +132,7 @@ class Curriculum < Site
           a(class: ['dropdown-item', 'track-name'],
             href: track.href
           ) {
-            i(class: "fas fa-paw")
+            i(class: "fas fa-angle-right")
             text nbsp
             text nbsp
             text track.display_name
@@ -149,7 +143,7 @@ class Curriculum < Site
 
       end
 
-      nav_item name: "Apply Now", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
+      nav_item name: "Apply", href: "http://www.burlingtoncodeacademy.com/apply/", button: true
     end
   end
 

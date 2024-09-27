@@ -1,7 +1,7 @@
+# coding: utf-8
 require "track"
 
 require_relative '../../../lib/link.rb' # :-(
-
 
 Track::Javascript = Track.new(
   name: "javascript",
@@ -58,12 +58,15 @@ Track::Javascript = Track.new(
   lesson name: "/server_side_javascript/hello_express", description: "Build a simple 'Hello World' application in NodeJS and deploy it to Heroku."
 
   lesson name: "values"
+  lesson name: "/javascript_intro/common_operators"
   lesson name: "strings"
+  lesson name: "unicode"
   lesson name: "numbers"
+  lesson name: "/javascript_intro/common_methods"
   lesson name: "variables"
   lesson name: "null"
   lesson name: "functions"
-
+  lesson name: "/javascript_intro/functional_labs"
   lesson name: "logic"
   lesson name: "input_and_output"
   lesson name: "loops"
@@ -76,13 +79,13 @@ Track::Javascript = Track.new(
 
   lesson name: "methods"
   lesson name: "iteration_methods"
-
+  lesson name: "objects_methods_and_classes"
+  lesson name: "/javascript_intro/object_labs"
   lesson name: "stacks"
   lesson name: "scope"
   lesson name: "recursion"
 
-  lesson name: "/tricks_of_the_trade/debugging"
-  lesson name: "/tricks_of_the_trade/modern_debugging"
+  lesson name: "debugging_locally"
 
   # lessons below this point are not necessarily in pedagogical order;
   # they may be woven in to the above track, or other tracks, as desired
@@ -92,11 +95,11 @@ Track::Javascript = Track.new(
   lesson name: "timing", display_name: "Timing in JavaScript"
 
   # lessons on testing in JavaScript
-  # todo: move to new testing_in_javascript track
+  # TODO: move to new testing_in_javascript track
   lesson name: "/agile/test_driven"
-  lesson name: "tdd_in_js"
   lesson name: "no_frills_testing"
   lesson name: "cypress"
+  lesson name: "unit_testing"
 
 
   # ES6 and modern JS deep dives
@@ -107,52 +110,19 @@ Track::Javascript = Track.new(
     topic name: "object-oriented-programming"
   end
 
-  lesson name: "ecosystem",
-         display_name: "The JavaScript Ecosystem",
-         description: "ECMAScript? ES2015? ES6? CoffeeScript? Babel? Webpack? Browserify? Node? NPM? Wasm? WTF? In this lesson, we try to unravel the rat's nest of JavaScript tools, transpilers, and language variants."
-  lesson name: "ES6" do
-    link name: "Exploring ES6", href: "http://exploringjs.com/es6.html"
-  end
+
   lesson name: "promises" do
     video name: "Promises - Fun Fun Function", youtube_id: "2d7s3spWAzo"
   end
-  lesson name: "async_and_await" do
-    link href: "https://javascript.info/async-await"
-    link name: "Async/Await Fun Fun Function", href:
-        "https://www.youtube.com/watch?v=568g8hxJJp4"
-  end
-  lesson name: "evented_io" do
+  lesson name: "evented_io", display_name: "Evented I/O" do
     topic name: "es6"
     topic name: "promises"
     topic name: "async-await"
   end
-  lesson name: "rest_and_spread",
-         description: "Rest and Spread are modern JavaScript language features that let you transform argument lists, arrays, and key-value pairs into each other concisely. Perhaps too concisely! They can be difficult to understand since a single operator -- dot-dot-dot or '...' -- does a lot of heavy lifting. In this lesson we unpack the dots and examine when to use them... and when not to." do
-    link href: "https://dmitripavlutin.com/how-three-dots-changed-javascript/"
-    link href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
-    link href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters"
-  end
-  lesson name: "named_parameters" do
-    link name: "named_parameters", href: "http://2ality.com/2011/11/keyword-parameters.html"
-  end
 
   # advanced
   lesson name: 'encapsulation'
-  lesson name: "javascript_for_programmers"
-
-  # todo: FP track?
-  lesson name: "functional_programming_in_javascript" do
-    link href: "https://hackernoon.com/two-years-of-functional-programming-in-javascript-lessons-learned-1851667c726"
-  end
-
-  link href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
-  link href: "https://learnpythonthehardway.org/book/advice.html"
-  link href: "http://jsforcats.com"
-  link href: "https://www.destroyallsoftware.com/talks/wat"
-  link href: "https://www.codecademy.com/tracks/javascript"
-  link href: "https://www.theodinproject.com/courses/javascript"
-
-  link href: "http://news.codecademy.com/your-guide-to-semicolons-in-javascript/"
+  lesson name: 'state_machines'
 
   # One-offs
   # TODO: make a new track for these

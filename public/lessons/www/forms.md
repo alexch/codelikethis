@@ -6,7 +6,7 @@
 
 # Forms contain inputs
 
-a `<form>` is an HTTP element that contains input elements
+a `<form>` is an HTML element that contains input elements
 
   * when the user enters data into these input elements
   * and clicks the "Submit" button
@@ -19,22 +19,21 @@ a `<form>` is an HTTP element that contains input elements
 ```html
 <form method='post'>
   Name: <input type='text' name='name' value='Alice'>
-  <br>
+  <br />
   Password: <input type='password' name='password'>
-  <br>
+  <br />
   <input type='submit'>
 </form>
 ```
 
-<!--BOX-->
+
 <form method='post'>
-  Name: <input type='text' name='name' value='Alice'>
-  <br>
-  Password: <input type='password' name='password'>
-  <br>
-  <input type='submit'>
+  Name: <input type='text' name='name' value='Alice' />
+  <br />
+  Password: <input type='password' name='password' />
+  <br />
+  <input type='submit' />
 </form>
-<!--/BOX-->
 
 # Forms are semantic
 
@@ -111,39 +110,83 @@ There are many more types of form elements (or "widgets") that let the user ente
   * including parameters like `q=apple&submit=Search`
   * (yes, the submit button's text label becomes the value)
 
-# Form submission in detail
+# Forms as Input
 
-* Read more here: <https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data>
-* see also [Query String Escaping](https://en.wikipedia.org/wiki/Query_string) aka [URL encoding](https://en.wikipedia.org/wiki/Percent-encoding)
-* and [this lesson on parameters](/lessons/server_side_javascript/parameters) goes into more detail on how the parameters are encoded/decoded in HTTP
+Forms are a great way to accept user input in your webpages. The simplest way to handle user input is to create a form with an `<input type="text" />` element, and an `<input type="submit" />` element.
 
-# Form reply: body
+When the form is submitted you use JavaScript to read the value of the text field, and do whatever manipulations, or actions you need to do based on that input.
 
-After the server receives and processes the request, it can return any HTTP response.
+# Lab: Say Hello
 
-Usually that request is a full HTML page (for display to the user) or a JSON document (for use by your client-side app).
+In this lab you will set up an input form where you can enter a name, and the page will display text greeting that name.
 
-# Form reply: redirect
+  - Set up a form with a text input, and submit button
+  - When a user inputs their name and hits submit the page displays a personalized greeting for that name
+  -  Format the name so that it's always capitalized
+  - Bonus Challenge: Can you get it to say hello to some names, and tell others to go away?
 
-Sometimes the response is a **302 redirect** which helps keep your endpoints and address bar clean:
 
-  1. form page, visible *before* the user starts entering values
-  2. form submit handler, which redirects to...
-  3. results page
+# Say Hello Solution
 
-...but many times it's an all-in-one handler which redraws the original page.
+<details>
+<summary>Hint 1</summary>
+<div>
 
-# Form reply: error
+Text inputs have a `value` property which is equal to the text that's currently in the input area. This value comes into JavaScript as a string, and all standard string methods work on it.
 
-Sometimes the response is an error. 
+</div>
+</details>
 
-It's important for you to design your app to be *robust*, meaning that if an error happens, it will *fail gracefully*.
+<details>
+<summary>Hint 2</summary>
+<div>
 
-Usually this means informing the user that the request could not be completed, and giving them the option to try again immediately, or asking them to try again later.
+When working with forms part of the default `submit` action is to refresh the page, which means you loose any DOM manipulation you might have applied. You can prevent default behaviours from taking place by calling `event.preventDefault()`
 
-In the Fetch API, you can provide an `catch` callback which will receive network errors if and when they happen; you can also check `if (!response.ok) {` inside your main `then` callback.
+</div>
+</details>
 
-see https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
+<details>
+<summary>Solution</summary>
+<div>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title
+</head>
+
+<body>
+  <form id='name' onsubmit="sayHello(event)">
+    <input id="name-input" type='text' />
+    <input type='submit' />
+  </form>
+
+  <h1 id='display'></h1>
+
+  <script>
+
+    let nameInput = document.getElementById('name-input')
+    let display = document.getElementById('display')
+
+    function sayHello (event) {
+      event.preventDefault()
+      let name = nameInput.value
+      let formattedName = name[0].toUpperCase() + name.toLowerCase().slice(1)
+      display.textContent = "Hello, " + formattedName + "!"
+    }
+    
+  </script>
+</body>
+</html>
+  ```
+
+</div>
+</details>
 
 # References
 
