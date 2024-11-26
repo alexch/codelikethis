@@ -54,7 +54,7 @@ GEM
     files (0.4.0)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
-    json (1.8.6)
+    json (2.3.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -142,7 +142,7 @@ DEPENDENCIES
   deckrb!
   erector (>= 0.9.0)
   files (>= 0.4.0)
-  json (~> 1.8)
+  json (~> 2.3)
   listen
   nokogiri (~> 1.7)
   rack-rewrite (~> 1.5)
